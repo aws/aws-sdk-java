@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A docker container that is part of a task.
+ * A Docker container that is part of a task.
  * </p>
  */
 public class Container implements Serializable, Cloneable {

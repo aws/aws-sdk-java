@@ -93,6 +93,58 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setVolumesFrom(new ListUnmarshaller<VolumeFrom>(VolumeFromJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("hostname", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setHostname(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("user", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setUser(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("workingDirectory", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setWorkingDirectory(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("disableNetworking", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setDisableNetworking(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("privileged", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setPrivileged(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("readonlyRootFilesystem", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setReadonlyRootFilesystem(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("dnsServers", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setDnsServers(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("dnsSearchDomains", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setDnsSearchDomains(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("extraHosts", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setExtraHosts(new ListUnmarshaller<HostEntry>(HostEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("dockerSecurityOptions", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setDockerSecurityOptions(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("dockerLabels", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setDockerLabels(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ulimits", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setUlimits(new ListUnmarshaller<Ulimit>(UlimitJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("logConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setLogConfiguration(LogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

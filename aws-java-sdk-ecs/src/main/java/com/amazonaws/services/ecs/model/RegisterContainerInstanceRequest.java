@@ -25,8 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Service agent, and it is not intended for use outside of the agent.
  * </p>
  * <p>
- * Registers an Amazon EC2 instance into the specified cluster. This
- * instance will become available to place containers on.
+ * Registers an EC2 instance into the specified cluster. This instance
+ * becomes available to place containers on.
  * </p>
  *
  * @see com.amazonaws.services.ecs.AmazonECS#registerContainerInstance(RegisterContainerInstanceRequest)
@@ -34,24 +34,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to register your container instance with. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * The short name or full Amazon Resource Name (ARN) of the cluster with
+     * which to register your container instance. If you do not specify a
+     * cluster, the default cluster is assumed..
      */
     private String cluster;
 
     /**
-     * The instance identity document for the Amazon EC2 instance to
-     * register. This document can be found by running the following command
-     * from the instance: <code>curl
+     * The instance identity document for the EC2 instance to register. This
+     * document can be found by running the following command from the
+     * instance: <code>curl
      * http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      */
     private String instanceIdentityDocument;
 
     /**
-     * The instance identity document signature for the Amazon EC2 instance
-     * to register. This signature can be found by running the following
-     * command from the instance: <code>curl
+     * The instance identity document signature for the EC2 instance to
+     * register. This signature can be found by running the following command
+     * from the instance: <code>curl
      * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      */
     private String instanceIdentityDocumentSignature;
@@ -74,41 +74,47 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     private String containerInstanceArn;
 
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to register your container instance with. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * The container instance attributes that this container instance
+     * supports.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributes;
+
+    /**
+     * The short name or full Amazon Resource Name (ARN) of the cluster with
+     * which to register your container instance. If you do not specify a
+     * cluster, the default cluster is assumed..
      *
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to register your container instance with. If you do not
-     *         specify a cluster, the default cluster is assumed..
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster with
+     *         which to register your container instance. If you do not specify a
+     *         cluster, the default cluster is assumed..
      */
     public String getCluster() {
         return cluster;
     }
     
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to register your container instance with. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * The short name or full Amazon Resource Name (ARN) of the cluster with
+     * which to register your container instance. If you do not specify a
+     * cluster, the default cluster is assumed..
      *
-     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to register your container instance with. If you do not
-     *         specify a cluster, the default cluster is assumed..
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster with
+     *         which to register your container instance. If you do not specify a
+     *         cluster, the default cluster is assumed..
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
     
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to register your container instance with. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * The short name or full Amazon Resource Name (ARN) of the cluster with
+     * which to register your container instance. If you do not specify a
+     * cluster, the default cluster is assumed..
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to register your container instance with. If you do not
-     *         specify a cluster, the default cluster is assumed..
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster with
+     *         which to register your container instance. If you do not specify a
+     *         cluster, the default cluster is assumed..
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -119,14 +125,14 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The instance identity document for the Amazon EC2 instance to
-     * register. This document can be found by running the following command
-     * from the instance: <code>curl
+     * The instance identity document for the EC2 instance to register. This
+     * document can be found by running the following command from the
+     * instance: <code>curl
      * http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      *
-     * @return The instance identity document for the Amazon EC2 instance to
-     *         register. This document can be found by running the following command
-     *         from the instance: <code>curl
+     * @return The instance identity document for the EC2 instance to register. This
+     *         document can be found by running the following command from the
+     *         instance: <code>curl
      *         http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      */
     public String getInstanceIdentityDocument() {
@@ -134,14 +140,14 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The instance identity document for the Amazon EC2 instance to
-     * register. This document can be found by running the following command
-     * from the instance: <code>curl
+     * The instance identity document for the EC2 instance to register. This
+     * document can be found by running the following command from the
+     * instance: <code>curl
      * http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      *
-     * @param instanceIdentityDocument The instance identity document for the Amazon EC2 instance to
-     *         register. This document can be found by running the following command
-     *         from the instance: <code>curl
+     * @param instanceIdentityDocument The instance identity document for the EC2 instance to register. This
+     *         document can be found by running the following command from the
+     *         instance: <code>curl
      *         http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      */
     public void setInstanceIdentityDocument(String instanceIdentityDocument) {
@@ -149,16 +155,16 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The instance identity document for the Amazon EC2 instance to
-     * register. This document can be found by running the following command
-     * from the instance: <code>curl
+     * The instance identity document for the EC2 instance to register. This
+     * document can be found by running the following command from the
+     * instance: <code>curl
      * http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIdentityDocument The instance identity document for the Amazon EC2 instance to
-     *         register. This document can be found by running the following command
-     *         from the instance: <code>curl
+     * @param instanceIdentityDocument The instance identity document for the EC2 instance to register. This
+     *         document can be found by running the following command from the
+     *         instance: <code>curl
      *         http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -170,14 +176,14 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The instance identity document signature for the Amazon EC2 instance
-     * to register. This signature can be found by running the following
-     * command from the instance: <code>curl
+     * The instance identity document signature for the EC2 instance to
+     * register. This signature can be found by running the following command
+     * from the instance: <code>curl
      * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      *
-     * @return The instance identity document signature for the Amazon EC2 instance
-     *         to register. This signature can be found by running the following
-     *         command from the instance: <code>curl
+     * @return The instance identity document signature for the EC2 instance to
+     *         register. This signature can be found by running the following command
+     *         from the instance: <code>curl
      *         http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      */
     public String getInstanceIdentityDocumentSignature() {
@@ -185,14 +191,14 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The instance identity document signature for the Amazon EC2 instance
-     * to register. This signature can be found by running the following
-     * command from the instance: <code>curl
+     * The instance identity document signature for the EC2 instance to
+     * register. This signature can be found by running the following command
+     * from the instance: <code>curl
      * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      *
-     * @param instanceIdentityDocumentSignature The instance identity document signature for the Amazon EC2 instance
-     *         to register. This signature can be found by running the following
-     *         command from the instance: <code>curl
+     * @param instanceIdentityDocumentSignature The instance identity document signature for the EC2 instance to
+     *         register. This signature can be found by running the following command
+     *         from the instance: <code>curl
      *         http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      */
     public void setInstanceIdentityDocumentSignature(String instanceIdentityDocumentSignature) {
@@ -200,16 +206,16 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The instance identity document signature for the Amazon EC2 instance
-     * to register. This signature can be found by running the following
-     * command from the instance: <code>curl
+     * The instance identity document signature for the EC2 instance to
+     * register. This signature can be found by running the following command
+     * from the instance: <code>curl
      * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIdentityDocumentSignature The instance identity document signature for the Amazon EC2 instance
-     *         to register. This signature can be found by running the following
-     *         command from the instance: <code>curl
+     * @param instanceIdentityDocumentSignature The instance identity document signature for the EC2 instance to
+     *         register. This signature can be found by running the following command
+     *         from the instance: <code>curl
      *         http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -372,6 +378,87 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * The container instance attributes that this container instance
+     * supports.
+     *
+     * @return The container instance attributes that this container instance
+     *         supports.
+     */
+    public java.util.List<Attribute> getAttributes() {
+        if (attributes == null) {
+              attributes = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>();
+              attributes.setAutoConstruct(true);
+        }
+        return attributes;
+    }
+    
+    /**
+     * The container instance attributes that this container instance
+     * supports.
+     *
+     * @param attributes The container instance attributes that this container instance
+     *         supports.
+     */
+    public void setAttributes(java.util.Collection<Attribute> attributes) {
+        if (attributes == null) {
+            this.attributes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
+        attributesCopy.addAll(attributes);
+        this.attributes = attributesCopy;
+    }
+    
+    /**
+     * The container instance attributes that this container instance
+     * supports.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributes(java.util.Collection)} or {@link
+     * #withAttributes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attributes The container instance attributes that this container instance
+     *         supports.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RegisterContainerInstanceRequest withAttributes(Attribute... attributes) {
+        if (getAttributes() == null) setAttributes(new java.util.ArrayList<Attribute>(attributes.length));
+        for (Attribute value : attributes) {
+            getAttributes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The container instance attributes that this container instance
+     * supports.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attributes The container instance attributes that this container instance
+     *         supports.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RegisterContainerInstanceRequest withAttributes(java.util.Collection<Attribute> attributes) {
+        if (attributes == null) {
+            this.attributes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
+            attributesCopy.addAll(attributes);
+            this.attributes = attributesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -388,7 +475,8 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
         if (getInstanceIdentityDocumentSignature() != null) sb.append("InstanceIdentityDocumentSignature: " + getInstanceIdentityDocumentSignature() + ",");
         if (getTotalResources() != null) sb.append("TotalResources: " + getTotalResources() + ",");
         if (getVersionInfo() != null) sb.append("VersionInfo: " + getVersionInfo() + ",");
-        if (getContainerInstanceArn() != null) sb.append("ContainerInstanceArn: " + getContainerInstanceArn() );
+        if (getContainerInstanceArn() != null) sb.append("ContainerInstanceArn: " + getContainerInstanceArn() + ",");
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();
     }
@@ -404,6 +492,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getTotalResources() == null) ? 0 : getTotalResources().hashCode()); 
         hashCode = prime * hashCode + ((getVersionInfo() == null) ? 0 : getVersionInfo().hashCode()); 
         hashCode = prime * hashCode + ((getContainerInstanceArn() == null) ? 0 : getContainerInstanceArn().hashCode()); 
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode()); 
         return hashCode;
     }
     
@@ -427,6 +516,8 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
         if (other.getVersionInfo() != null && other.getVersionInfo().equals(this.getVersionInfo()) == false) return false; 
         if (other.getContainerInstanceArn() == null ^ this.getContainerInstanceArn() == null) return false;
         if (other.getContainerInstanceArn() != null && other.getContainerInstanceArn().equals(this.getContainerInstanceArn()) == false) return false; 
+        if (other.getAttributes() == null ^ this.getAttributes() == null) return false;
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false) return false; 
         return true;
     }
     

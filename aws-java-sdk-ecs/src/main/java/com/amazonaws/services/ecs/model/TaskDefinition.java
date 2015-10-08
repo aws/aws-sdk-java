@@ -30,8 +30,8 @@ public class TaskDefinition implements Serializable, Cloneable {
 
     /**
      * A list of container definitions in JSON format that describe the
-     * different containers that make up your task. For more information on
-     * container definition parameters and defaults, see <a
+     * different containers that make up your task. For more information
+     * about container definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
@@ -39,23 +39,22 @@ public class TaskDefinition implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<ContainerDefinition> containerDefinitions;
 
     /**
-     * The family of your task definition. You can think of the
-     * <code>family</code> as the name of your task definition.
+     * The family of your task definition, used as the definition name.
      */
     private String family;
 
     /**
-     * The revision of the task in a particular family. You can think of the
-     * revision as a version number of a task definition in a family. When
-     * you register a task definition for the first time, the revision is
-     * <code>1</code>, and each time you register a new revision of a task
-     * definition in the same family, the revision value always increases by
-     * one (even if you have deregistered previous revisions in this family).
+     * The revision of the task in a particular family. The revision is a
+     * version number of a task definition in a family. When you register a
+     * task definition for the first time, the revision is <code>1</code>;
+     * each time you register a new revision of a task definition in the same
+     * family, the revision value always increases by one (even if you have
+     * deregistered previous revisions in this family).
      */
     private Integer revision;
 
     /**
-     * The list of volumes in a task. For more information on volume
+     * The list of volumes in a task. For more information about volume
      * definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
@@ -70,6 +69,11 @@ public class TaskDefinition implements Serializable, Cloneable {
      * <b>Allowed Values: </b>ACTIVE, INACTIVE
      */
     private String status;
+
+    /**
+     * The container instance attributes required by your task.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> requiresAttributes;
 
     /**
      * The full Amazon Resource Name (ARN) of the of the task definition.
@@ -106,15 +110,15 @@ public class TaskDefinition implements Serializable, Cloneable {
 
     /**
      * A list of container definitions in JSON format that describe the
-     * different containers that make up your task. For more information on
-     * container definition parameters and defaults, see <a
+     * different containers that make up your task. For more information
+     * about container definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      *
      * @return A list of container definitions in JSON format that describe the
-     *         different containers that make up your task. For more information on
-     *         container definition parameters and defaults, see <a
+     *         different containers that make up your task. For more information
+     *         about container definition parameters and defaults, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      *         ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      *         Developer Guide</i>.
@@ -129,15 +133,15 @@ public class TaskDefinition implements Serializable, Cloneable {
     
     /**
      * A list of container definitions in JSON format that describe the
-     * different containers that make up your task. For more information on
-     * container definition parameters and defaults, see <a
+     * different containers that make up your task. For more information
+     * about container definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      *
      * @param containerDefinitions A list of container definitions in JSON format that describe the
-     *         different containers that make up your task. For more information on
-     *         container definition parameters and defaults, see <a
+     *         different containers that make up your task. For more information
+     *         about container definition parameters and defaults, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      *         ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      *         Developer Guide</i>.
@@ -154,8 +158,8 @@ public class TaskDefinition implements Serializable, Cloneable {
     
     /**
      * A list of container definitions in JSON format that describe the
-     * different containers that make up your task. For more information on
-     * container definition parameters and defaults, see <a
+     * different containers that make up your task. For more information
+     * about container definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
@@ -168,8 +172,8 @@ public class TaskDefinition implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param containerDefinitions A list of container definitions in JSON format that describe the
-     *         different containers that make up your task. For more information on
-     *         container definition parameters and defaults, see <a
+     *         different containers that make up your task. For more information
+     *         about container definition parameters and defaults, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      *         ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      *         Developer Guide</i>.
@@ -187,8 +191,8 @@ public class TaskDefinition implements Serializable, Cloneable {
     
     /**
      * A list of container definitions in JSON format that describe the
-     * different containers that make up your task. For more information on
-     * container definition parameters and defaults, see <a
+     * different containers that make up your task. For more information
+     * about container definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
@@ -196,8 +200,8 @@ public class TaskDefinition implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param containerDefinitions A list of container definitions in JSON format that describe the
-     *         different containers that make up your task. For more information on
-     *         container definition parameters and defaults, see <a
+     *         different containers that make up your task. For more information
+     *         about container definition parameters and defaults, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      *         ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      *         Developer Guide</i>.
@@ -218,35 +222,29 @@ public class TaskDefinition implements Serializable, Cloneable {
     }
 
     /**
-     * The family of your task definition. You can think of the
-     * <code>family</code> as the name of your task definition.
+     * The family of your task definition, used as the definition name.
      *
-     * @return The family of your task definition. You can think of the
-     *         <code>family</code> as the name of your task definition.
+     * @return The family of your task definition, used as the definition name.
      */
     public String getFamily() {
         return family;
     }
     
     /**
-     * The family of your task definition. You can think of the
-     * <code>family</code> as the name of your task definition.
+     * The family of your task definition, used as the definition name.
      *
-     * @param family The family of your task definition. You can think of the
-     *         <code>family</code> as the name of your task definition.
+     * @param family The family of your task definition, used as the definition name.
      */
     public void setFamily(String family) {
         this.family = family;
     }
     
     /**
-     * The family of your task definition. You can think of the
-     * <code>family</code> as the name of your task definition.
+     * The family of your task definition, used as the definition name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param family The family of your task definition. You can think of the
-     *         <code>family</code> as the name of your task definition.
+     * @param family The family of your task definition, used as the definition name.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -257,59 +255,59 @@ public class TaskDefinition implements Serializable, Cloneable {
     }
 
     /**
-     * The revision of the task in a particular family. You can think of the
-     * revision as a version number of a task definition in a family. When
-     * you register a task definition for the first time, the revision is
-     * <code>1</code>, and each time you register a new revision of a task
-     * definition in the same family, the revision value always increases by
-     * one (even if you have deregistered previous revisions in this family).
+     * The revision of the task in a particular family. The revision is a
+     * version number of a task definition in a family. When you register a
+     * task definition for the first time, the revision is <code>1</code>;
+     * each time you register a new revision of a task definition in the same
+     * family, the revision value always increases by one (even if you have
+     * deregistered previous revisions in this family).
      *
-     * @return The revision of the task in a particular family. You can think of the
-     *         revision as a version number of a task definition in a family. When
-     *         you register a task definition for the first time, the revision is
-     *         <code>1</code>, and each time you register a new revision of a task
-     *         definition in the same family, the revision value always increases by
-     *         one (even if you have deregistered previous revisions in this family).
+     * @return The revision of the task in a particular family. The revision is a
+     *         version number of a task definition in a family. When you register a
+     *         task definition for the first time, the revision is <code>1</code>;
+     *         each time you register a new revision of a task definition in the same
+     *         family, the revision value always increases by one (even if you have
+     *         deregistered previous revisions in this family).
      */
     public Integer getRevision() {
         return revision;
     }
     
     /**
-     * The revision of the task in a particular family. You can think of the
-     * revision as a version number of a task definition in a family. When
-     * you register a task definition for the first time, the revision is
-     * <code>1</code>, and each time you register a new revision of a task
-     * definition in the same family, the revision value always increases by
-     * one (even if you have deregistered previous revisions in this family).
+     * The revision of the task in a particular family. The revision is a
+     * version number of a task definition in a family. When you register a
+     * task definition for the first time, the revision is <code>1</code>;
+     * each time you register a new revision of a task definition in the same
+     * family, the revision value always increases by one (even if you have
+     * deregistered previous revisions in this family).
      *
-     * @param revision The revision of the task in a particular family. You can think of the
-     *         revision as a version number of a task definition in a family. When
-     *         you register a task definition for the first time, the revision is
-     *         <code>1</code>, and each time you register a new revision of a task
-     *         definition in the same family, the revision value always increases by
-     *         one (even if you have deregistered previous revisions in this family).
+     * @param revision The revision of the task in a particular family. The revision is a
+     *         version number of a task definition in a family. When you register a
+     *         task definition for the first time, the revision is <code>1</code>;
+     *         each time you register a new revision of a task definition in the same
+     *         family, the revision value always increases by one (even if you have
+     *         deregistered previous revisions in this family).
      */
     public void setRevision(Integer revision) {
         this.revision = revision;
     }
     
     /**
-     * The revision of the task in a particular family. You can think of the
-     * revision as a version number of a task definition in a family. When
-     * you register a task definition for the first time, the revision is
-     * <code>1</code>, and each time you register a new revision of a task
-     * definition in the same family, the revision value always increases by
-     * one (even if you have deregistered previous revisions in this family).
+     * The revision of the task in a particular family. The revision is a
+     * version number of a task definition in a family. When you register a
+     * task definition for the first time, the revision is <code>1</code>;
+     * each time you register a new revision of a task definition in the same
+     * family, the revision value always increases by one (even if you have
+     * deregistered previous revisions in this family).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param revision The revision of the task in a particular family. You can think of the
-     *         revision as a version number of a task definition in a family. When
-     *         you register a task definition for the first time, the revision is
-     *         <code>1</code>, and each time you register a new revision of a task
-     *         definition in the same family, the revision value always increases by
-     *         one (even if you have deregistered previous revisions in this family).
+     * @param revision The revision of the task in a particular family. The revision is a
+     *         version number of a task definition in a family. When you register a
+     *         task definition for the first time, the revision is <code>1</code>;
+     *         each time you register a new revision of a task definition in the same
+     *         family, the revision value always increases by one (even if you have
+     *         deregistered previous revisions in this family).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -320,13 +318,13 @@ public class TaskDefinition implements Serializable, Cloneable {
     }
 
     /**
-     * The list of volumes in a task. For more information on volume
+     * The list of volumes in a task. For more information about volume
      * definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      *
-     * @return The list of volumes in a task. For more information on volume
+     * @return The list of volumes in a task. For more information about volume
      *         definition parameters and defaults, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      *         ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
@@ -341,13 +339,13 @@ public class TaskDefinition implements Serializable, Cloneable {
     }
     
     /**
-     * The list of volumes in a task. For more information on volume
+     * The list of volumes in a task. For more information about volume
      * definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      *
-     * @param volumes The list of volumes in a task. For more information on volume
+     * @param volumes The list of volumes in a task. For more information about volume
      *         definition parameters and defaults, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      *         ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
@@ -364,7 +362,7 @@ public class TaskDefinition implements Serializable, Cloneable {
     }
     
     /**
-     * The list of volumes in a task. For more information on volume
+     * The list of volumes in a task. For more information about volume
      * definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
@@ -377,7 +375,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumes The list of volumes in a task. For more information on volume
+     * @param volumes The list of volumes in a task. For more information about volume
      *         definition parameters and defaults, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      *         ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
@@ -395,7 +393,7 @@ public class TaskDefinition implements Serializable, Cloneable {
     }
     
     /**
-     * The list of volumes in a task. For more information on volume
+     * The list of volumes in a task. For more information about volume
      * definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
@@ -403,7 +401,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumes The list of volumes in a task. For more information on volume
+     * @param volumes The list of volumes in a task. For more information about volume
      *         definition parameters and defaults, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      *         ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
@@ -507,6 +505,79 @@ public class TaskDefinition implements Serializable, Cloneable {
     }
 
     /**
+     * The container instance attributes required by your task.
+     *
+     * @return The container instance attributes required by your task.
+     */
+    public java.util.List<Attribute> getRequiresAttributes() {
+        if (requiresAttributes == null) {
+              requiresAttributes = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>();
+              requiresAttributes.setAutoConstruct(true);
+        }
+        return requiresAttributes;
+    }
+    
+    /**
+     * The container instance attributes required by your task.
+     *
+     * @param requiresAttributes The container instance attributes required by your task.
+     */
+    public void setRequiresAttributes(java.util.Collection<Attribute> requiresAttributes) {
+        if (requiresAttributes == null) {
+            this.requiresAttributes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> requiresAttributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(requiresAttributes.size());
+        requiresAttributesCopy.addAll(requiresAttributes);
+        this.requiresAttributes = requiresAttributesCopy;
+    }
+    
+    /**
+     * The container instance attributes required by your task.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRequiresAttributes(java.util.Collection)} or
+     * {@link #withRequiresAttributes(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param requiresAttributes The container instance attributes required by your task.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public TaskDefinition withRequiresAttributes(Attribute... requiresAttributes) {
+        if (getRequiresAttributes() == null) setRequiresAttributes(new java.util.ArrayList<Attribute>(requiresAttributes.length));
+        for (Attribute value : requiresAttributes) {
+            getRequiresAttributes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The container instance attributes required by your task.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param requiresAttributes The container instance attributes required by your task.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public TaskDefinition withRequiresAttributes(java.util.Collection<Attribute> requiresAttributes) {
+        if (requiresAttributes == null) {
+            this.requiresAttributes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> requiresAttributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(requiresAttributes.size());
+            requiresAttributesCopy.addAll(requiresAttributes);
+            this.requiresAttributes = requiresAttributesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -523,7 +594,8 @@ public class TaskDefinition implements Serializable, Cloneable {
         if (getFamily() != null) sb.append("Family: " + getFamily() + ",");
         if (getRevision() != null) sb.append("Revision: " + getRevision() + ",");
         if (getVolumes() != null) sb.append("Volumes: " + getVolumes() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() );
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getRequiresAttributes() != null) sb.append("RequiresAttributes: " + getRequiresAttributes() );
         sb.append("}");
         return sb.toString();
     }
@@ -539,6 +611,7 @@ public class TaskDefinition implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRevision() == null) ? 0 : getRevision().hashCode()); 
         hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getRequiresAttributes() == null) ? 0 : getRequiresAttributes().hashCode()); 
         return hashCode;
     }
     
@@ -562,6 +635,8 @@ public class TaskDefinition implements Serializable, Cloneable {
         if (other.getVolumes() != null && other.getVolumes().equals(this.getVolumes()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getRequiresAttributes() == null ^ this.getRequiresAttributes() == null) return false;
+        if (other.getRequiresAttributes() != null && other.getRequiresAttributes().equals(this.getRequiresAttributes()) == false) return false; 
         return true;
     }
     

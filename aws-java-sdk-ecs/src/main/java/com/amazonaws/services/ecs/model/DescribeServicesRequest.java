@@ -29,39 +29,46 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeServicesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of the cluster that hosts the service you want to describe.
+     * The name of the cluster that hosts the service to describe. If you do
+     * not specify a cluster, the default cluster is assumed.
      */
     private String cluster;
 
     /**
-     * A list of services you want to describe.
+     * A list of services to describe.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> services;
 
     /**
-     * The name of the cluster that hosts the service you want to describe.
+     * The name of the cluster that hosts the service to describe. If you do
+     * not specify a cluster, the default cluster is assumed.
      *
-     * @return The name of the cluster that hosts the service you want to describe.
+     * @return The name of the cluster that hosts the service to describe. If you do
+     *         not specify a cluster, the default cluster is assumed.
      */
     public String getCluster() {
         return cluster;
     }
     
     /**
-     * The name of the cluster that hosts the service you want to describe.
+     * The name of the cluster that hosts the service to describe. If you do
+     * not specify a cluster, the default cluster is assumed.
      *
-     * @param cluster The name of the cluster that hosts the service you want to describe.
+     * @param cluster The name of the cluster that hosts the service to describe. If you do
+     *         not specify a cluster, the default cluster is assumed.
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
     
     /**
-     * The name of the cluster that hosts the service you want to describe.
+     * The name of the cluster that hosts the service to describe. If you do
+     * not specify a cluster, the default cluster is assumed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cluster The name of the cluster that hosts the service you want to describe.
+     * @param cluster The name of the cluster that hosts the service to describe. If you do
+     *         not specify a cluster, the default cluster is assumed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -72,9 +79,9 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * A list of services you want to describe.
+     * A list of services to describe.
      *
-     * @return A list of services you want to describe.
+     * @return A list of services to describe.
      */
     public java.util.List<String> getServices() {
         if (services == null) {
@@ -85,9 +92,9 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of services you want to describe.
+     * A list of services to describe.
      *
-     * @param services A list of services you want to describe.
+     * @param services A list of services to describe.
      */
     public void setServices(java.util.Collection<String> services) {
         if (services == null) {
@@ -100,7 +107,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of services you want to describe.
+     * A list of services to describe.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setServices(java.util.Collection)} or {@link
@@ -109,7 +116,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param services A list of services you want to describe.
+     * @param services A list of services to describe.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -123,11 +130,11 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of services you want to describe.
+     * A list of services to describe.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param services A list of services you want to describe.
+     * @param services A list of services to describe.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

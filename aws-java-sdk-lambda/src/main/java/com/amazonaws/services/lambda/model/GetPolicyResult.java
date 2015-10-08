@@ -22,48 +22,48 @@ import java.io.Serializable;
 public class GetPolicyResult implements Serializable, Cloneable {
 
     /**
-     * The access policy associated with the specified function. The response
-     * returns the same as a string using "\" as an escape character in the
-     * JSON.
+     * The resource policy associated with the specified function. The
+     * response returns the same as a string using "\" as an escape character
+     * in the JSON.
      */
     private String policy;
 
     /**
-     * The access policy associated with the specified function. The response
-     * returns the same as a string using "\" as an escape character in the
-     * JSON.
+     * The resource policy associated with the specified function. The
+     * response returns the same as a string using "\" as an escape character
+     * in the JSON.
      *
-     * @return The access policy associated with the specified function. The response
-     *         returns the same as a string using "\" as an escape character in the
-     *         JSON.
+     * @return The resource policy associated with the specified function. The
+     *         response returns the same as a string using "\" as an escape character
+     *         in the JSON.
      */
     public String getPolicy() {
         return policy;
     }
     
     /**
-     * The access policy associated with the specified function. The response
-     * returns the same as a string using "\" as an escape character in the
-     * JSON.
+     * The resource policy associated with the specified function. The
+     * response returns the same as a string using "\" as an escape character
+     * in the JSON.
      *
-     * @param policy The access policy associated with the specified function. The response
-     *         returns the same as a string using "\" as an escape character in the
-     *         JSON.
+     * @param policy The resource policy associated with the specified function. The
+     *         response returns the same as a string using "\" as an escape character
+     *         in the JSON.
      */
     public void setPolicy(String policy) {
         this.policy = policy;
     }
     
     /**
-     * The access policy associated with the specified function. The response
-     * returns the same as a string using "\" as an escape character in the
-     * JSON.
+     * The resource policy associated with the specified function. The
+     * response returns the same as a string using "\" as an escape character
+     * in the JSON.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policy The access policy associated with the specified function. The response
-     *         returns the same as a string using "\" as an escape character in the
-     *         JSON.
+     * @param policy The resource policy associated with the specified function. The
+     *         response returns the same as a string using "\" as an escape character
+     *         in the JSON.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

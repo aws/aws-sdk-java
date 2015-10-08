@@ -32,25 +32,25 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest i
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the container instances you want to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * hosts the container instances to describe. If you do not specify a
+     * cluster, the default cluster is assumed.
      */
     private String cluster;
 
     /**
-     * A space-separated list of container instance UUIDs or full Amazon
+     * A space-separated list of container instance IDs or full Amazon
      * Resource Name (ARN) entries.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> containerInstances;
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the container instances you want to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * hosts the container instances to describe. If you do not specify a
+     * cluster, the default cluster is assumed.
      *
      * @return The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the container instances you want to describe. If you do not
-     *         specify a cluster, the default cluster is assumed.
+     *         hosts the container instances to describe. If you do not specify a
+     *         cluster, the default cluster is assumed.
      */
     public String getCluster() {
         return cluster;
@@ -58,12 +58,12 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest i
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the container instances you want to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * hosts the container instances to describe. If you do not specify a
+     * cluster, the default cluster is assumed.
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the container instances you want to describe. If you do not
-     *         specify a cluster, the default cluster is assumed.
+     *         hosts the container instances to describe. If you do not specify a
+     *         cluster, the default cluster is assumed.
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
@@ -71,14 +71,14 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest i
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the container instances you want to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * hosts the container instances to describe. If you do not specify a
+     * cluster, the default cluster is assumed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the container instances you want to describe. If you do not
-     *         specify a cluster, the default cluster is assumed.
+     *         hosts the container instances to describe. If you do not specify a
+     *         cluster, the default cluster is assumed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -89,10 +89,10 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * A space-separated list of container instance UUIDs or full Amazon
+     * A space-separated list of container instance IDs or full Amazon
      * Resource Name (ARN) entries.
      *
-     * @return A space-separated list of container instance UUIDs or full Amazon
+     * @return A space-separated list of container instance IDs or full Amazon
      *         Resource Name (ARN) entries.
      */
     public java.util.List<String> getContainerInstances() {
@@ -104,10 +104,10 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A space-separated list of container instance UUIDs or full Amazon
+     * A space-separated list of container instance IDs or full Amazon
      * Resource Name (ARN) entries.
      *
-     * @param containerInstances A space-separated list of container instance UUIDs or full Amazon
+     * @param containerInstances A space-separated list of container instance IDs or full Amazon
      *         Resource Name (ARN) entries.
      */
     public void setContainerInstances(java.util.Collection<String> containerInstances) {
@@ -121,7 +121,7 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A space-separated list of container instance UUIDs or full Amazon
+     * A space-separated list of container instance IDs or full Amazon
      * Resource Name (ARN) entries.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -131,7 +131,7 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest i
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerInstances A space-separated list of container instance UUIDs or full Amazon
+     * @param containerInstances A space-separated list of container instance IDs or full Amazon
      *         Resource Name (ARN) entries.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -146,12 +146,12 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A space-separated list of container instance UUIDs or full Amazon
+     * A space-separated list of container instance IDs or full Amazon
      * Resource Name (ARN) entries.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerInstances A space-separated list of container instance UUIDs or full Amazon
+     * @param containerInstances A space-separated list of container instance IDs or full Amazon
      *         Resource Name (ARN) entries.
      *
      * @return A reference to this updated object so that method calls can be chained

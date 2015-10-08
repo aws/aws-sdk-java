@@ -30,25 +30,25 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the task you want to describe. If you do not specify a cluster,
-     * the default cluster is assumed.
+     * hosts the task to describe. If you do not specify a cluster, the
+     * default cluster is assumed.
      */
     private String cluster;
 
     /**
-     * A space-separated list of task UUIDs or full Amazon Resource Name
-     * (ARN) entries.
+     * A space-separated list of task IDs or full Amazon Resource Name (ARN)
+     * entries.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> tasks;
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the task you want to describe. If you do not specify a cluster,
-     * the default cluster is assumed.
+     * hosts the task to describe. If you do not specify a cluster, the
+     * default cluster is assumed.
      *
      * @return The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the task you want to describe. If you do not specify a cluster,
-     *         the default cluster is assumed.
+     *         hosts the task to describe. If you do not specify a cluster, the
+     *         default cluster is assumed.
      */
     public String getCluster() {
         return cluster;
@@ -56,12 +56,12 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the task you want to describe. If you do not specify a cluster,
-     * the default cluster is assumed.
+     * hosts the task to describe. If you do not specify a cluster, the
+     * default cluster is assumed.
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the task you want to describe. If you do not specify a cluster,
-     *         the default cluster is assumed.
+     *         hosts the task to describe. If you do not specify a cluster, the
+     *         default cluster is assumed.
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
@@ -69,14 +69,14 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the task you want to describe. If you do not specify a cluster,
-     * the default cluster is assumed.
+     * hosts the task to describe. If you do not specify a cluster, the
+     * default cluster is assumed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the task you want to describe. If you do not specify a cluster,
-     *         the default cluster is assumed.
+     *         hosts the task to describe. If you do not specify a cluster, the
+     *         default cluster is assumed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -87,11 +87,11 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * A space-separated list of task UUIDs or full Amazon Resource Name
-     * (ARN) entries.
+     * A space-separated list of task IDs or full Amazon Resource Name (ARN)
+     * entries.
      *
-     * @return A space-separated list of task UUIDs or full Amazon Resource Name
-     *         (ARN) entries.
+     * @return A space-separated list of task IDs or full Amazon Resource Name (ARN)
+     *         entries.
      */
     public java.util.List<String> getTasks() {
         if (tasks == null) {
@@ -102,11 +102,11 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * A space-separated list of task UUIDs or full Amazon Resource Name
-     * (ARN) entries.
+     * A space-separated list of task IDs or full Amazon Resource Name (ARN)
+     * entries.
      *
-     * @param tasks A space-separated list of task UUIDs or full Amazon Resource Name
-     *         (ARN) entries.
+     * @param tasks A space-separated list of task IDs or full Amazon Resource Name (ARN)
+     *         entries.
      */
     public void setTasks(java.util.Collection<String> tasks) {
         if (tasks == null) {
@@ -119,8 +119,8 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * A space-separated list of task UUIDs or full Amazon Resource Name
-     * (ARN) entries.
+     * A space-separated list of task IDs or full Amazon Resource Name (ARN)
+     * entries.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTasks(java.util.Collection)} or {@link
@@ -129,8 +129,8 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tasks A space-separated list of task UUIDs or full Amazon Resource Name
-     *         (ARN) entries.
+     * @param tasks A space-separated list of task IDs or full Amazon Resource Name (ARN)
+     *         entries.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -144,13 +144,13 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * A space-separated list of task UUIDs or full Amazon Resource Name
-     * (ARN) entries.
+     * A space-separated list of task IDs or full Amazon Resource Name (ARN)
+     * entries.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tasks A space-separated list of task UUIDs or full Amazon Resource Name
-     *         (ARN) entries.
+     * @param tasks A space-separated list of task IDs or full Amazon Resource Name (ARN)
+     *         entries.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

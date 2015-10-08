@@ -21,9 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.lambda.AWSLambda#getPolicy(GetPolicyRequest) GetPolicy operation}.
  * <p>
- * Returns the access policy, containing a list of permissions granted
- * via the <code>AddPermission</code> API, associated with the specified
- * bucket.
+ * Returns the resource policy, containing a list of permissions that
+ * apply to a specific to an ARN that you specify via the
+ * <code>Qualifier</code> paramter.
+ * </p>
+ * <p>
+ * For informration about adding permissions, see AddPermission.
  * </p>
  * <p>
  * You need permission for the <code>lambda:GetPolicy action.</code>
@@ -34,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Function name whose access policy you want to retrieve. <p> You can
+     * Function name whose resource policy you want to retrieve. <p> You can
      * specify an unqualified function name (for example, "Thumbnail") or you
      * can specify Amazon Resource Name (ARN) of the function (for example,
      * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
@@ -44,13 +47,26 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements Seriali
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionName;
 
     /**
-     * Function name whose access policy you want to retrieve. <p> You can
+     * You can specify this optional query parameter to specify function
+     * version or alias name in which case this API will return all
+     * permissions associated with the specific ARN. If you don't provide
+     * this parameter, the API will return permissions that apply to the
+     * unqualified function ARN.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     */
+    private String qualifier;
+
+    /**
+     * Function name whose resource policy you want to retrieve. <p> You can
      * specify an unqualified function name (for example, "Thumbnail") or you
      * can specify Amazon Resource Name (ARN) of the function (for example,
      * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
@@ -60,10 +76,10 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements Seriali
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @return Function name whose access policy you want to retrieve. <p> You can
+     * @return Function name whose resource policy you want to retrieve. <p> You can
      *         specify an unqualified function name (for example, "Thumbnail") or you
      *         can specify Amazon Resource Name (ARN) of the function (for example,
      *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
@@ -77,7 +93,7 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * Function name whose access policy you want to retrieve. <p> You can
+     * Function name whose resource policy you want to retrieve. <p> You can
      * specify an unqualified function name (for example, "Thumbnail") or you
      * can specify Amazon Resource Name (ARN) of the function (for example,
      * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
@@ -87,10 +103,10 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements Seriali
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName Function name whose access policy you want to retrieve. <p> You can
+     * @param functionName Function name whose resource policy you want to retrieve. <p> You can
      *         specify an unqualified function name (for example, "Thumbnail") or you
      *         can specify Amazon Resource Name (ARN) of the function (for example,
      *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
@@ -104,7 +120,7 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * Function name whose access policy you want to retrieve. <p> You can
+     * Function name whose resource policy you want to retrieve. <p> You can
      * specify an unqualified function name (for example, "Thumbnail") or you
      * can specify Amazon Resource Name (ARN) of the function (for example,
      * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
@@ -116,10 +132,10 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements Seriali
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName Function name whose access policy you want to retrieve. <p> You can
+     * @param functionName Function name whose resource policy you want to retrieve. <p> You can
      *         specify an unqualified function name (for example, "Thumbnail") or you
      *         can specify Amazon Resource Name (ARN) of the function (for example,
      *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
@@ -137,6 +153,75 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
+     * You can specify this optional query parameter to specify function
+     * version or alias name in which case this API will return all
+     * permissions associated with the specific ARN. If you don't provide
+     * this parameter, the API will return permissions that apply to the
+     * unqualified function ARN.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @return You can specify this optional query parameter to specify function
+     *         version or alias name in which case this API will return all
+     *         permissions associated with the specific ARN. If you don't provide
+     *         this parameter, the API will return permissions that apply to the
+     *         unqualified function ARN.
+     */
+    public String getQualifier() {
+        return qualifier;
+    }
+    
+    /**
+     * You can specify this optional query parameter to specify function
+     * version or alias name in which case this API will return all
+     * permissions associated with the specific ARN. If you don't provide
+     * this parameter, the API will return permissions that apply to the
+     * unqualified function ARN.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier You can specify this optional query parameter to specify function
+     *         version or alias name in which case this API will return all
+     *         permissions associated with the specific ARN. If you don't provide
+     *         this parameter, the API will return permissions that apply to the
+     *         unqualified function ARN.
+     */
+    public void setQualifier(String qualifier) {
+        this.qualifier = qualifier;
+    }
+    
+    /**
+     * You can specify this optional query parameter to specify function
+     * version or alias name in which case this API will return all
+     * permissions associated with the specific ARN. If you don't provide
+     * this parameter, the API will return permissions that apply to the
+     * unqualified function ARN.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier You can specify this optional query parameter to specify function
+     *         version or alias name in which case this API will return all
+     *         permissions associated with the specific ARN. If you don't provide
+     *         this parameter, the API will return permissions that apply to the
+     *         unqualified function ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetPolicyRequest withQualifier(String qualifier) {
+        this.qualifier = qualifier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -148,7 +233,8 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements Seriali
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFunctionName() != null) sb.append("FunctionName: " + getFunctionName() );
+        if (getFunctionName() != null) sb.append("FunctionName: " + getFunctionName() + ",");
+        if (getQualifier() != null) sb.append("Qualifier: " + getQualifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +245,7 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements Seriali
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode()); 
+        hashCode = prime * hashCode + ((getQualifier() == null) ? 0 : getQualifier().hashCode()); 
         return hashCode;
     }
     
@@ -172,6 +259,8 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements Seriali
         
         if (other.getFunctionName() == null ^ this.getFunctionName() == null) return false;
         if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false) return false; 
+        if (other.getQualifier() == null ^ this.getQualifier() == null) return false;
+        if (other.getQualifier() != null && other.getQualifier().equals(this.getQualifier()) == false) return false; 
         return true;
     }
     

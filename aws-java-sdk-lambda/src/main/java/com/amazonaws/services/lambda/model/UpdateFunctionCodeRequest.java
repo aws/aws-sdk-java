@@ -46,8 +46,8 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest implement
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionName;
 
@@ -86,6 +86,12 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest implement
     private String s3ObjectVersion;
 
     /**
+     * This boolean parameter can be used to request AWS Lambda to update the
+     * Lambda function and publish a version as an atomic operation.
+     */
+    private Boolean publish;
+
+    /**
      * The existing Lambda function name whose code you want to replace. <p>
      * You can specify an unqualified function name (for example,
      * "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
@@ -97,8 +103,8 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest implement
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @return The existing Lambda function name whose code you want to replace. <p>
      *         You can specify an unqualified function name (for example,
@@ -126,8 +132,8 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest implement
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The existing Lambda function name whose code you want to replace. <p>
      *         You can specify an unqualified function name (for example,
@@ -157,8 +163,8 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest implement
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The existing Lambda function name whose code you want to replace. <p>
      *         You can specify an unqualified function name (for example,
@@ -365,6 +371,56 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * This boolean parameter can be used to request AWS Lambda to update the
+     * Lambda function and publish a version as an atomic operation.
+     *
+     * @return This boolean parameter can be used to request AWS Lambda to update the
+     *         Lambda function and publish a version as an atomic operation.
+     */
+    public Boolean isPublish() {
+        return publish;
+    }
+    
+    /**
+     * This boolean parameter can be used to request AWS Lambda to update the
+     * Lambda function and publish a version as an atomic operation.
+     *
+     * @param publish This boolean parameter can be used to request AWS Lambda to update the
+     *         Lambda function and publish a version as an atomic operation.
+     */
+    public void setPublish(Boolean publish) {
+        this.publish = publish;
+    }
+    
+    /**
+     * This boolean parameter can be used to request AWS Lambda to update the
+     * Lambda function and publish a version as an atomic operation.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param publish This boolean parameter can be used to request AWS Lambda to update the
+     *         Lambda function and publish a version as an atomic operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateFunctionCodeRequest withPublish(Boolean publish) {
+        this.publish = publish;
+        return this;
+    }
+
+    /**
+     * This boolean parameter can be used to request AWS Lambda to update the
+     * Lambda function and publish a version as an atomic operation.
+     *
+     * @return This boolean parameter can be used to request AWS Lambda to update the
+     *         Lambda function and publish a version as an atomic operation.
+     */
+    public Boolean getPublish() {
+        return publish;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -380,7 +436,8 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest implement
         if (getZipFile() != null) sb.append("ZipFile: " + getZipFile() + ",");
         if (getS3Bucket() != null) sb.append("S3Bucket: " + getS3Bucket() + ",");
         if (getS3Key() != null) sb.append("S3Key: " + getS3Key() + ",");
-        if (getS3ObjectVersion() != null) sb.append("S3ObjectVersion: " + getS3ObjectVersion() );
+        if (getS3ObjectVersion() != null) sb.append("S3ObjectVersion: " + getS3ObjectVersion() + ",");
+        if (isPublish() != null) sb.append("Publish: " + isPublish() );
         sb.append("}");
         return sb.toString();
     }
@@ -395,6 +452,7 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((getS3Bucket() == null) ? 0 : getS3Bucket().hashCode()); 
         hashCode = prime * hashCode + ((getS3Key() == null) ? 0 : getS3Key().hashCode()); 
         hashCode = prime * hashCode + ((getS3ObjectVersion() == null) ? 0 : getS3ObjectVersion().hashCode()); 
+        hashCode = prime * hashCode + ((isPublish() == null) ? 0 : isPublish().hashCode()); 
         return hashCode;
     }
     
@@ -416,6 +474,8 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest implement
         if (other.getS3Key() != null && other.getS3Key().equals(this.getS3Key()) == false) return false; 
         if (other.getS3ObjectVersion() == null ^ this.getS3ObjectVersion() == null) return false;
         if (other.getS3ObjectVersion() != null && other.getS3ObjectVersion().equals(this.getS3ObjectVersion()) == false) return false; 
+        if (other.isPublish() == null ^ this.isPublish() == null) return false;
+        if (other.isPublish() != null && other.isPublish().equals(this.isPublish()) == false) return false; 
         return true;
     }
     

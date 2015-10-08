@@ -34,23 +34,23 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the tasks you want to list. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * hosts the tasks to list. If you do not specify a cluster, the default
+     * cluster is assumed..
      */
     private String cluster;
 
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
-     * container instance that you want to filter the <code>ListTasks</code>
-     * results with. Specifying a <code>containerInstance</code> will limit
-     * the results to tasks that belong to that container instance.
+     * The container instance ID or full Amazon Resource Name (ARN) of the
+     * container instance with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>containerInstance</code> limits the
+     * results to tasks that belong to that container instance.
      */
     private String containerInstance;
 
     /**
-     * The name of the family that you want to filter the
-     * <code>ListTasks</code> results with. Specifying a <code>family</code>
-     * will limit the results to tasks that belong to that family.
+     * The name of the family with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>family</code> limits the results to tasks
+     * that belong to that family.
      */
     private String family;
 
@@ -78,24 +78,23 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     private Integer maxResults;
 
     /**
-     * The <code>startedBy</code> value that you want to filter the task
-     * results with. Specifying a <code>startedBy</code> value will limit the
-     * results to tasks that were started with that value.
+     * The <code>startedBy</code> value with which to filter the task
+     * results. Specifying a <code>startedBy</code> value limits the results
+     * to tasks that were started with that value.
      */
     private String startedBy;
 
     /**
-     * The name of the service that you want to filter the
-     * <code>ListTasks</code> results with. Specifying a
-     * <code>serviceName</code> will limit the results to tasks that belong
-     * to that service.
+     * The name of the service with which to filter the
+     * <code>ListTasks</code> results. Specifying a <code>serviceName</code>
+     * limits the results to tasks that belong to that service.
      */
     private String serviceName;
 
     /**
-     * The task status that you want to filter the <code>ListTasks</code>
-     * results with. Specifying a <code>desiredStatus</code> of
-     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * The task status with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> limits the results to tasks that are in the
      * <code>STOPPED</code> status, which can be useful for debugging tasks
      * that are not starting properly or have died or finished. The default
      * status filter is <code>RUNNING</code>.
@@ -107,12 +106,12 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the tasks you want to list. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * hosts the tasks to list. If you do not specify a cluster, the default
+     * cluster is assumed..
      *
      * @return The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the tasks you want to list. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     *         hosts the tasks to list. If you do not specify a cluster, the default
+     *         cluster is assumed..
      */
     public String getCluster() {
         return cluster;
@@ -120,12 +119,12 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the tasks you want to list. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * hosts the tasks to list. If you do not specify a cluster, the default
+     * cluster is assumed..
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the tasks you want to list. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     *         hosts the tasks to list. If you do not specify a cluster, the default
+     *         cluster is assumed..
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
@@ -133,14 +132,14 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the tasks you want to list. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * hosts the tasks to list. If you do not specify a cluster, the default
+     * cluster is assumed..
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the tasks you want to list. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     *         hosts the tasks to list. If you do not specify a cluster, the default
+     *         cluster is assumed..
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -151,47 +150,47 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
-     * container instance that you want to filter the <code>ListTasks</code>
-     * results with. Specifying a <code>containerInstance</code> will limit
-     * the results to tasks that belong to that container instance.
+     * The container instance ID or full Amazon Resource Name (ARN) of the
+     * container instance with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>containerInstance</code> limits the
+     * results to tasks that belong to that container instance.
      *
-     * @return The container instance UUID or full Amazon Resource Name (ARN) of the
-     *         container instance that you want to filter the <code>ListTasks</code>
-     *         results with. Specifying a <code>containerInstance</code> will limit
-     *         the results to tasks that belong to that container instance.
+     * @return The container instance ID or full Amazon Resource Name (ARN) of the
+     *         container instance with which to filter the <code>ListTasks</code>
+     *         results. Specifying a <code>containerInstance</code> limits the
+     *         results to tasks that belong to that container instance.
      */
     public String getContainerInstance() {
         return containerInstance;
     }
     
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
-     * container instance that you want to filter the <code>ListTasks</code>
-     * results with. Specifying a <code>containerInstance</code> will limit
-     * the results to tasks that belong to that container instance.
+     * The container instance ID or full Amazon Resource Name (ARN) of the
+     * container instance with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>containerInstance</code> limits the
+     * results to tasks that belong to that container instance.
      *
-     * @param containerInstance The container instance UUID or full Amazon Resource Name (ARN) of the
-     *         container instance that you want to filter the <code>ListTasks</code>
-     *         results with. Specifying a <code>containerInstance</code> will limit
-     *         the results to tasks that belong to that container instance.
+     * @param containerInstance The container instance ID or full Amazon Resource Name (ARN) of the
+     *         container instance with which to filter the <code>ListTasks</code>
+     *         results. Specifying a <code>containerInstance</code> limits the
+     *         results to tasks that belong to that container instance.
      */
     public void setContainerInstance(String containerInstance) {
         this.containerInstance = containerInstance;
     }
     
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
-     * container instance that you want to filter the <code>ListTasks</code>
-     * results with. Specifying a <code>containerInstance</code> will limit
-     * the results to tasks that belong to that container instance.
+     * The container instance ID or full Amazon Resource Name (ARN) of the
+     * container instance with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>containerInstance</code> limits the
+     * results to tasks that belong to that container instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerInstance The container instance UUID or full Amazon Resource Name (ARN) of the
-     *         container instance that you want to filter the <code>ListTasks</code>
-     *         results with. Specifying a <code>containerInstance</code> will limit
-     *         the results to tasks that belong to that container instance.
+     * @param containerInstance The container instance ID or full Amazon Resource Name (ARN) of the
+     *         container instance with which to filter the <code>ListTasks</code>
+     *         results. Specifying a <code>containerInstance</code> limits the
+     *         results to tasks that belong to that container instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -202,41 +201,41 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The name of the family that you want to filter the
-     * <code>ListTasks</code> results with. Specifying a <code>family</code>
-     * will limit the results to tasks that belong to that family.
+     * The name of the family with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>family</code> limits the results to tasks
+     * that belong to that family.
      *
-     * @return The name of the family that you want to filter the
-     *         <code>ListTasks</code> results with. Specifying a <code>family</code>
-     *         will limit the results to tasks that belong to that family.
+     * @return The name of the family with which to filter the <code>ListTasks</code>
+     *         results. Specifying a <code>family</code> limits the results to tasks
+     *         that belong to that family.
      */
     public String getFamily() {
         return family;
     }
     
     /**
-     * The name of the family that you want to filter the
-     * <code>ListTasks</code> results with. Specifying a <code>family</code>
-     * will limit the results to tasks that belong to that family.
+     * The name of the family with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>family</code> limits the results to tasks
+     * that belong to that family.
      *
-     * @param family The name of the family that you want to filter the
-     *         <code>ListTasks</code> results with. Specifying a <code>family</code>
-     *         will limit the results to tasks that belong to that family.
+     * @param family The name of the family with which to filter the <code>ListTasks</code>
+     *         results. Specifying a <code>family</code> limits the results to tasks
+     *         that belong to that family.
      */
     public void setFamily(String family) {
         this.family = family;
     }
     
     /**
-     * The name of the family that you want to filter the
-     * <code>ListTasks</code> results with. Specifying a <code>family</code>
-     * will limit the results to tasks that belong to that family.
+     * The name of the family with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>family</code> limits the results to tasks
+     * that belong to that family.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param family The name of the family that you want to filter the
-     *         <code>ListTasks</code> results with. Specifying a <code>family</code>
-     *         will limit the results to tasks that belong to that family.
+     * @param family The name of the family with which to filter the <code>ListTasks</code>
+     *         results. Specifying a <code>family</code> limits the results to tasks
+     *         that belong to that family.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -391,41 +390,41 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The <code>startedBy</code> value that you want to filter the task
-     * results with. Specifying a <code>startedBy</code> value will limit the
-     * results to tasks that were started with that value.
+     * The <code>startedBy</code> value with which to filter the task
+     * results. Specifying a <code>startedBy</code> value limits the results
+     * to tasks that were started with that value.
      *
-     * @return The <code>startedBy</code> value that you want to filter the task
-     *         results with. Specifying a <code>startedBy</code> value will limit the
-     *         results to tasks that were started with that value.
+     * @return The <code>startedBy</code> value with which to filter the task
+     *         results. Specifying a <code>startedBy</code> value limits the results
+     *         to tasks that were started with that value.
      */
     public String getStartedBy() {
         return startedBy;
     }
     
     /**
-     * The <code>startedBy</code> value that you want to filter the task
-     * results with. Specifying a <code>startedBy</code> value will limit the
-     * results to tasks that were started with that value.
+     * The <code>startedBy</code> value with which to filter the task
+     * results. Specifying a <code>startedBy</code> value limits the results
+     * to tasks that were started with that value.
      *
-     * @param startedBy The <code>startedBy</code> value that you want to filter the task
-     *         results with. Specifying a <code>startedBy</code> value will limit the
-     *         results to tasks that were started with that value.
+     * @param startedBy The <code>startedBy</code> value with which to filter the task
+     *         results. Specifying a <code>startedBy</code> value limits the results
+     *         to tasks that were started with that value.
      */
     public void setStartedBy(String startedBy) {
         this.startedBy = startedBy;
     }
     
     /**
-     * The <code>startedBy</code> value that you want to filter the task
-     * results with. Specifying a <code>startedBy</code> value will limit the
-     * results to tasks that were started with that value.
+     * The <code>startedBy</code> value with which to filter the task
+     * results. Specifying a <code>startedBy</code> value limits the results
+     * to tasks that were started with that value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startedBy The <code>startedBy</code> value that you want to filter the task
-     *         results with. Specifying a <code>startedBy</code> value will limit the
-     *         results to tasks that were started with that value.
+     * @param startedBy The <code>startedBy</code> value with which to filter the task
+     *         results. Specifying a <code>startedBy</code> value limits the results
+     *         to tasks that were started with that value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -436,47 +435,41 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The name of the service that you want to filter the
-     * <code>ListTasks</code> results with. Specifying a
-     * <code>serviceName</code> will limit the results to tasks that belong
-     * to that service.
+     * The name of the service with which to filter the
+     * <code>ListTasks</code> results. Specifying a <code>serviceName</code>
+     * limits the results to tasks that belong to that service.
      *
-     * @return The name of the service that you want to filter the
-     *         <code>ListTasks</code> results with. Specifying a
-     *         <code>serviceName</code> will limit the results to tasks that belong
-     *         to that service.
+     * @return The name of the service with which to filter the
+     *         <code>ListTasks</code> results. Specifying a <code>serviceName</code>
+     *         limits the results to tasks that belong to that service.
      */
     public String getServiceName() {
         return serviceName;
     }
     
     /**
-     * The name of the service that you want to filter the
-     * <code>ListTasks</code> results with. Specifying a
-     * <code>serviceName</code> will limit the results to tasks that belong
-     * to that service.
+     * The name of the service with which to filter the
+     * <code>ListTasks</code> results. Specifying a <code>serviceName</code>
+     * limits the results to tasks that belong to that service.
      *
-     * @param serviceName The name of the service that you want to filter the
-     *         <code>ListTasks</code> results with. Specifying a
-     *         <code>serviceName</code> will limit the results to tasks that belong
-     *         to that service.
+     * @param serviceName The name of the service with which to filter the
+     *         <code>ListTasks</code> results. Specifying a <code>serviceName</code>
+     *         limits the results to tasks that belong to that service.
      */
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
     
     /**
-     * The name of the service that you want to filter the
-     * <code>ListTasks</code> results with. Specifying a
-     * <code>serviceName</code> will limit the results to tasks that belong
-     * to that service.
+     * The name of the service with which to filter the
+     * <code>ListTasks</code> results. Specifying a <code>serviceName</code>
+     * limits the results to tasks that belong to that service.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param serviceName The name of the service that you want to filter the
-     *         <code>ListTasks</code> results with. Specifying a
-     *         <code>serviceName</code> will limit the results to tasks that belong
-     *         to that service.
+     * @param serviceName The name of the service with which to filter the
+     *         <code>ListTasks</code> results. Specifying a <code>serviceName</code>
+     *         limits the results to tasks that belong to that service.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -487,9 +480,9 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The task status that you want to filter the <code>ListTasks</code>
-     * results with. Specifying a <code>desiredStatus</code> of
-     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * The task status with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> limits the results to tasks that are in the
      * <code>STOPPED</code> status, which can be useful for debugging tasks
      * that are not starting properly or have died or finished. The default
      * status filter is <code>RUNNING</code>.
@@ -497,9 +490,9 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>RUNNING, PENDING, STOPPED
      *
-     * @return The task status that you want to filter the <code>ListTasks</code>
-     *         results with. Specifying a <code>desiredStatus</code> of
-     *         <code>STOPPED</code> will limit the results to tasks that are in the
+     * @return The task status with which to filter the <code>ListTasks</code>
+     *         results. Specifying a <code>desiredStatus</code> of
+     *         <code>STOPPED</code> limits the results to tasks that are in the
      *         <code>STOPPED</code> status, which can be useful for debugging tasks
      *         that are not starting properly or have died or finished. The default
      *         status filter is <code>RUNNING</code>.
@@ -511,9 +504,9 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * The task status that you want to filter the <code>ListTasks</code>
-     * results with. Specifying a <code>desiredStatus</code> of
-     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * The task status with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> limits the results to tasks that are in the
      * <code>STOPPED</code> status, which can be useful for debugging tasks
      * that are not starting properly or have died or finished. The default
      * status filter is <code>RUNNING</code>.
@@ -521,9 +514,9 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>RUNNING, PENDING, STOPPED
      *
-     * @param desiredStatus The task status that you want to filter the <code>ListTasks</code>
-     *         results with. Specifying a <code>desiredStatus</code> of
-     *         <code>STOPPED</code> will limit the results to tasks that are in the
+     * @param desiredStatus The task status with which to filter the <code>ListTasks</code>
+     *         results. Specifying a <code>desiredStatus</code> of
+     *         <code>STOPPED</code> limits the results to tasks that are in the
      *         <code>STOPPED</code> status, which can be useful for debugging tasks
      *         that are not starting properly or have died or finished. The default
      *         status filter is <code>RUNNING</code>.
@@ -535,9 +528,9 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * The task status that you want to filter the <code>ListTasks</code>
-     * results with. Specifying a <code>desiredStatus</code> of
-     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * The task status with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> limits the results to tasks that are in the
      * <code>STOPPED</code> status, which can be useful for debugging tasks
      * that are not starting properly or have died or finished. The default
      * status filter is <code>RUNNING</code>.
@@ -547,9 +540,9 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>RUNNING, PENDING, STOPPED
      *
-     * @param desiredStatus The task status that you want to filter the <code>ListTasks</code>
-     *         results with. Specifying a <code>desiredStatus</code> of
-     *         <code>STOPPED</code> will limit the results to tasks that are in the
+     * @param desiredStatus The task status with which to filter the <code>ListTasks</code>
+     *         results. Specifying a <code>desiredStatus</code> of
+     *         <code>STOPPED</code> limits the results to tasks that are in the
      *         <code>STOPPED</code> status, which can be useful for debugging tasks
      *         that are not starting properly or have died or finished. The default
      *         status filter is <code>RUNNING</code>.
@@ -565,9 +558,9 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The task status that you want to filter the <code>ListTasks</code>
-     * results with. Specifying a <code>desiredStatus</code> of
-     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * The task status with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> limits the results to tasks that are in the
      * <code>STOPPED</code> status, which can be useful for debugging tasks
      * that are not starting properly or have died or finished. The default
      * status filter is <code>RUNNING</code>.
@@ -575,9 +568,9 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>RUNNING, PENDING, STOPPED
      *
-     * @param desiredStatus The task status that you want to filter the <code>ListTasks</code>
-     *         results with. Specifying a <code>desiredStatus</code> of
-     *         <code>STOPPED</code> will limit the results to tasks that are in the
+     * @param desiredStatus The task status with which to filter the <code>ListTasks</code>
+     *         results. Specifying a <code>desiredStatus</code> of
+     *         <code>STOPPED</code> limits the results to tasks that are in the
      *         <code>STOPPED</code> status, which can be useful for debugging tasks
      *         that are not starting properly or have died or finished. The default
      *         status filter is <code>RUNNING</code>.
@@ -589,9 +582,9 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * The task status that you want to filter the <code>ListTasks</code>
-     * results with. Specifying a <code>desiredStatus</code> of
-     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * The task status with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> limits the results to tasks that are in the
      * <code>STOPPED</code> status, which can be useful for debugging tasks
      * that are not starting properly or have died or finished. The default
      * status filter is <code>RUNNING</code>.
@@ -601,9 +594,9 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>RUNNING, PENDING, STOPPED
      *
-     * @param desiredStatus The task status that you want to filter the <code>ListTasks</code>
-     *         results with. Specifying a <code>desiredStatus</code> of
-     *         <code>STOPPED</code> will limit the results to tasks that are in the
+     * @param desiredStatus The task status with which to filter the <code>ListTasks</code>
+     *         results. Specifying a <code>desiredStatus</code> of
+     *         <code>STOPPED</code> limits the results to tasks that are in the
      *         <code>STOPPED</code> status, which can be useful for debugging tasks
      *         that are not starting properly or have died or finished. The default
      *         status filter is <code>RUNNING</code>.

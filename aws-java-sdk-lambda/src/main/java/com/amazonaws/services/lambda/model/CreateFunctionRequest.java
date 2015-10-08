@@ -49,8 +49,8 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * specify functions to other AWS Lambda APIs, such as <a>Invoke</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionName;
 
@@ -59,7 +59,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      */
     private String runtime;
 
@@ -90,6 +90,11 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     private String handler;
 
     /**
+     * The code for the Lambda function.
+     */
+    private FunctionCode code;
+
+    /**
      * A short, user-defined function description. Lambda does not use this
      * value. Assign a meaningful description as you see fit.
      * <p>
@@ -105,7 +110,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * The default is 3 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      */
     private Integer timeout;
 
@@ -123,9 +128,10 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     private Integer memorySize;
 
     /**
-     * The code for the Lambda function.
+     * This boolean parameter can be used to request AWS Lambda to create the
+     * Lambda function and publish a version as an atomic operation.
      */
-    private FunctionCode code;
+    private Boolean publish;
 
     /**
      * The name you want to assign to the function you are uploading. You can
@@ -140,8 +146,8 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * specify functions to other AWS Lambda APIs, such as <a>Invoke</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @return The name you want to assign to the function you are uploading. You can
      *         specify an unqualified function name (for example, "Thumbnail") or you
@@ -171,8 +177,8 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * specify functions to other AWS Lambda APIs, such as <a>Invoke</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The name you want to assign to the function you are uploading. You can
      *         specify an unqualified function name (for example, "Thumbnail") or you
@@ -204,8 +210,8 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The name you want to assign to the function you are uploading. You can
      *         specify an unqualified function name (for example, "Thumbnail") or you
@@ -231,7 +237,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @return The runtime environment for the Lambda function you are uploading.
      *         Currently, Lambda supports "java" and "nodejs" as the runtime.
@@ -247,7 +253,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
      *         Currently, Lambda supports "java" and "nodejs" as the runtime.
@@ -265,7 +271,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
      *         Currently, Lambda supports "java" and "nodejs" as the runtime.
@@ -285,7 +291,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
      *         Currently, Lambda supports "java" and "nodejs" as the runtime.
@@ -303,7 +309,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
      *         Currently, Lambda supports "java" and "nodejs" as the runtime.
@@ -460,6 +466,39 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * The code for the Lambda function.
+     *
+     * @return The code for the Lambda function.
+     */
+    public FunctionCode getCode() {
+        return code;
+    }
+    
+    /**
+     * The code for the Lambda function.
+     *
+     * @param code The code for the Lambda function.
+     */
+    public void setCode(FunctionCode code) {
+        this.code = code;
+    }
+    
+    /**
+     * The code for the Lambda function.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param code The code for the Lambda function.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateFunctionRequest withCode(FunctionCode code) {
+        this.code = code;
+        return this;
+    }
+
+    /**
      * A short, user-defined function description. Lambda does not use this
      * value. Assign a meaningful description as you see fit.
      * <p>
@@ -514,7 +553,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * The default is 3 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      *
      * @return The function execution time at which Lambda should terminate the
      *         function. Because the execution time has cost implications, we
@@ -532,7 +571,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * The default is 3 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      *
      * @param timeout The function execution time at which Lambda should terminate the
      *         function. Because the execution time has cost implications, we
@@ -552,7 +591,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      *
      * @param timeout The function execution time at which Lambda should terminate the
      *         function. Because the execution time has cost implications, we
@@ -640,36 +679,53 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The code for the Lambda function.
+     * This boolean parameter can be used to request AWS Lambda to create the
+     * Lambda function and publish a version as an atomic operation.
      *
-     * @return The code for the Lambda function.
+     * @return This boolean parameter can be used to request AWS Lambda to create the
+     *         Lambda function and publish a version as an atomic operation.
      */
-    public FunctionCode getCode() {
-        return code;
+    public Boolean isPublish() {
+        return publish;
     }
     
     /**
-     * The code for the Lambda function.
+     * This boolean parameter can be used to request AWS Lambda to create the
+     * Lambda function and publish a version as an atomic operation.
      *
-     * @param code The code for the Lambda function.
+     * @param publish This boolean parameter can be used to request AWS Lambda to create the
+     *         Lambda function and publish a version as an atomic operation.
      */
-    public void setCode(FunctionCode code) {
-        this.code = code;
+    public void setPublish(Boolean publish) {
+        this.publish = publish;
     }
     
     /**
-     * The code for the Lambda function.
+     * This boolean parameter can be used to request AWS Lambda to create the
+     * Lambda function and publish a version as an atomic operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code The code for the Lambda function.
+     * @param publish This boolean parameter can be used to request AWS Lambda to create the
+     *         Lambda function and publish a version as an atomic operation.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public CreateFunctionRequest withCode(FunctionCode code) {
-        this.code = code;
+    public CreateFunctionRequest withPublish(Boolean publish) {
+        this.publish = publish;
         return this;
+    }
+
+    /**
+     * This boolean parameter can be used to request AWS Lambda to create the
+     * Lambda function and publish a version as an atomic operation.
+     *
+     * @return This boolean parameter can be used to request AWS Lambda to create the
+     *         Lambda function and publish a version as an atomic operation.
+     */
+    public Boolean getPublish() {
+        return publish;
     }
 
     /**
@@ -688,10 +744,11 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
         if (getRuntime() != null) sb.append("Runtime: " + getRuntime() + ",");
         if (getRole() != null) sb.append("Role: " + getRole() + ",");
         if (getHandler() != null) sb.append("Handler: " + getHandler() + ",");
+        if (getCode() != null) sb.append("Code: " + getCode() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getTimeout() != null) sb.append("Timeout: " + getTimeout() + ",");
         if (getMemorySize() != null) sb.append("MemorySize: " + getMemorySize() + ",");
-        if (getCode() != null) sb.append("Code: " + getCode() );
+        if (isPublish() != null) sb.append("Publish: " + isPublish() );
         sb.append("}");
         return sb.toString();
     }
@@ -705,10 +762,11 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getRuntime() == null) ? 0 : getRuntime().hashCode()); 
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode()); 
         hashCode = prime * hashCode + ((getHandler() == null) ? 0 : getHandler().hashCode()); 
+        hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode()); 
-        hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode()); 
+        hashCode = prime * hashCode + ((isPublish() == null) ? 0 : isPublish().hashCode()); 
         return hashCode;
     }
     
@@ -728,14 +786,16 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false) return false; 
         if (other.getHandler() == null ^ this.getHandler() == null) return false;
         if (other.getHandler() != null && other.getHandler().equals(this.getHandler()) == false) return false; 
+        if (other.getCode() == null ^ this.getCode() == null) return false;
+        if (other.getCode() != null && other.getCode().equals(this.getCode()) == false) return false; 
         if (other.getDescription() == null ^ this.getDescription() == null) return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
         if (other.getTimeout() == null ^ this.getTimeout() == null) return false;
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false) return false; 
         if (other.getMemorySize() == null ^ this.getMemorySize() == null) return false;
         if (other.getMemorySize() != null && other.getMemorySize().equals(this.getMemorySize()) == false) return false; 
-        if (other.getCode() == null ^ this.getCode() == null) return false;
-        if (other.getCode() != null && other.getCode().equals(this.getCode()) == false) return false; 
+        if (other.isPublish() == null ^ this.isPublish() == null) return false;
+        if (other.isPublish() != null && other.isPublish().equals(this.isPublish()) == false) return false; 
         return true;
     }
     

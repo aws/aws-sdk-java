@@ -135,6 +135,27 @@ public class RegisterContainerInstanceRequestMarshaller implements Marshaller<Re
                 jsonWriter.key("containerInstanceArn").value(registerContainerInstanceRequest.getContainerInstanceArn());
             }
 
+            com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesList = (com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>)(registerContainerInstanceRequest.getAttributes());
+            if (attributesList != null && !(attributesList.isAutoConstruct() && attributesList.isEmpty())) {
+
+                jsonWriter.key("attributes");
+                jsonWriter.array();
+
+                for (Attribute attributesListValue : attributesList) {
+                    if (attributesListValue != null) {
+                        jsonWriter.object();
+                        if (attributesListValue.getName() != null) {
+                            jsonWriter.key("name").value(attributesListValue.getName());
+                        }
+                        if (attributesListValue.getValue() != null) {
+                            jsonWriter.key("value").value(attributesListValue.getValue());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
           jsonWriter.endObject();
 
           String snippet = stringWriter.toString();

@@ -48,9 +48,9 @@
         "documentation" : "<p>Your resource limits have been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Creates one or more WorkSpaces.</p> <note> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p> </note>\n@param createWorkspacesRequest Contains the inputs for the <a>CreateWorkspaces</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateWorkspaces operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Creates one or more WorkSpaces.</p> <note> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p> </note>\n@param createWorkspacesRequest Contains the inputs for the <a>CreateWorkspaces</a> operation.\n@return Result of the CreateWorkspaces operation returned by the service.\n@throws ResourceLimitExceededException Your resource limits have been exceeded.*/",
       "asyncDocumentation" : "/**<p>Creates one or more WorkSpaces.</p> <note> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p> </note>\n@param createWorkspacesRequest Contains the inputs for the <a>CreateWorkspaces</a> operation.\n@return A Java Future containing the result of the CreateWorkspaces operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Creates one or more WorkSpaces.</p> <note> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p> </note>\n@param createWorkspacesRequest Contains the inputs for the <a>CreateWorkspaces</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateWorkspaces operation returned by the service.*/",
       "syncReturnType" : "CreateWorkspacesResult",
       "asyncReturnType" : "CreateWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateWorkspacesResult>",
@@ -80,9 +80,9 @@
         "documentation" : "<p>One or more parameter values are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Obtains information about the WorkSpace bundles that are available to your account in the specified region.</p> <p>You can filter the results with either the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter, but not both.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspaceBundlesRequest Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeWorkspaceBundles operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Obtains information about the WorkSpace bundles that are available to your account in the specified region.</p> <p>You can filter the results with either the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter, but not both.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspaceBundlesRequest Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.\n@return Result of the DescribeWorkspaceBundles operation returned by the service.\n@throws InvalidParameterValuesException One or more parameter values are not valid.*/",
       "asyncDocumentation" : "/**<p>Obtains information about the WorkSpace bundles that are available to your account in the specified region.</p> <p>You can filter the results with either the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter, but not both.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspaceBundlesRequest Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.\n@return A Java Future containing the result of the DescribeWorkspaceBundles operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Obtains information about the WorkSpace bundles that are available to your account in the specified region.</p> <p>You can filter the results with either the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter, but not both.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspaceBundlesRequest Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeWorkspaceBundles operation returned by the service.*/",
       "syncReturnType" : "DescribeWorkspaceBundlesResult",
       "asyncReturnType" : "DescribeWorkspaceBundlesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspaceBundlesResult>",
@@ -112,9 +112,9 @@
         "documentation" : "<p>One or more parameter values are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon WorkSpaces and are available to your account.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspaceDirectoriesRequest Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeWorkspaceDirectories operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon WorkSpaces and are available to your account.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspaceDirectoriesRequest Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.\n@return Result of the DescribeWorkspaceDirectories operation returned by the service.\n@throws InvalidParameterValuesException One or more parameter values are not valid.*/",
       "asyncDocumentation" : "/**<p>Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon WorkSpaces and are available to your account.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspaceDirectoriesRequest Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.\n@return A Java Future containing the result of the DescribeWorkspaceDirectories operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon WorkSpaces and are available to your account.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspaceDirectoriesRequest Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeWorkspaceDirectories operation returned by the service.*/",
       "syncReturnType" : "DescribeWorkspaceDirectoriesResult",
       "asyncReturnType" : "DescribeWorkspaceDirectoriesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspaceDirectoriesResult>",
@@ -147,9 +147,9 @@
         "documentation" : "<p>The specified resource is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Obtains information about the specified WorkSpaces. </p> <p>Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspacesRequest Contains the inputs for the <a>DescribeWorkspaces</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeWorkspaces operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Obtains information about the specified WorkSpaces. </p> <p>Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspacesRequest Contains the inputs for the <a>DescribeWorkspaces</a> operation.\n@return Result of the DescribeWorkspaces operation returned by the service.\n@throws InvalidParameterValuesException One or more parameter values are not valid.\n@throws ResourceUnavailableException The specified resource is not available.*/",
       "asyncDocumentation" : "/**<p>Obtains information about the specified WorkSpaces. </p> <p>Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspacesRequest Contains the inputs for the <a>DescribeWorkspaces</a> operation.\n@return A Java Future containing the result of the DescribeWorkspaces operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Obtains information about the specified WorkSpaces. </p> <p>Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>\n@param describeWorkspacesRequest Contains the inputs for the <a>DescribeWorkspaces</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeWorkspaces operation returned by the service.*/",
       "syncReturnType" : "DescribeWorkspacesResult",
       "asyncReturnType" : "DescribeWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspacesResult>",
@@ -176,9 +176,9 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>, <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have rebooted.</p> </note>\n@param rebootWorkspacesRequest Contains the inputs for the <a>RebootWorkspaces</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the RebootWorkspaces operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>, <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have rebooted.</p> </note>\n@param rebootWorkspacesRequest Contains the inputs for the <a>RebootWorkspaces</a> operation.\n@return Result of the RebootWorkspaces operation returned by the service.*/",
       "asyncDocumentation" : "/**<p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>, <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have rebooted.</p> </note>\n@param rebootWorkspacesRequest Contains the inputs for the <a>RebootWorkspaces</a> operation.\n@return A Java Future containing the result of the RebootWorkspaces operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>, <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have rebooted.</p> </note>\n@param rebootWorkspacesRequest Contains the inputs for the <a>RebootWorkspaces</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the RebootWorkspaces operation returned by the service.*/",
       "syncReturnType" : "RebootWorkspacesResult",
       "asyncReturnType" : "RebootWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<RebootWorkspacesResult>",
@@ -205,9 +205,9 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a WorkSpace causes the following to occur:</p> <ul> <li>The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have been installed, or system settings that have been made since the WorkSpace was created will be lost.</li> <li>The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so the snapshot can be as much as 12 hours old.</li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely rebuilt.</p> </note>\n@param rebuildWorkspacesRequest Contains the inputs for the <a>RebuildWorkspaces</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the RebuildWorkspaces operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a WorkSpace causes the following to occur:</p> <ul> <li>The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have been installed, or system settings that have been made since the WorkSpace was created will be lost.</li> <li>The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so the snapshot can be as much as 12 hours old.</li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely rebuilt.</p> </note>\n@param rebuildWorkspacesRequest Contains the inputs for the <a>RebuildWorkspaces</a> operation.\n@return Result of the RebuildWorkspaces operation returned by the service.*/",
       "asyncDocumentation" : "/**<p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a WorkSpace causes the following to occur:</p> <ul> <li>The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have been installed, or system settings that have been made since the WorkSpace was created will be lost.</li> <li>The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so the snapshot can be as much as 12 hours old.</li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely rebuilt.</p> </note>\n@param rebuildWorkspacesRequest Contains the inputs for the <a>RebuildWorkspaces</a> operation.\n@return A Java Future containing the result of the RebuildWorkspaces operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a WorkSpace causes the following to occur:</p> <ul> <li>The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have been installed, or system settings that have been made since the WorkSpace was created will be lost.</li> <li>The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so the snapshot can be as much as 12 hours old.</li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely rebuilt.</p> </note>\n@param rebuildWorkspacesRequest Contains the inputs for the <a>RebuildWorkspaces</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the RebuildWorkspaces operation returned by the service.*/",
       "syncReturnType" : "RebuildWorkspacesResult",
       "asyncReturnType" : "RebuildWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<RebuildWorkspacesResult>",
@@ -234,9 +234,9 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is not maintained and will be destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely terminated.</p> </note>\n@param terminateWorkspacesRequest Contains the inputs for the <a>TerminateWorkspaces</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the TerminateWorkspaces operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is not maintained and will be destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely terminated.</p> </note>\n@param terminateWorkspacesRequest Contains the inputs for the <a>TerminateWorkspaces</a> operation.\n@return Result of the TerminateWorkspaces operation returned by the service.*/",
       "asyncDocumentation" : "/**<p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is not maintained and will be destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely terminated.</p> </note>\n@param terminateWorkspacesRequest Contains the inputs for the <a>TerminateWorkspaces</a> operation.\n@return A Java Future containing the result of the TerminateWorkspaces operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is not maintained and will be destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely terminated.</p> </note>\n@param terminateWorkspacesRequest Contains the inputs for the <a>TerminateWorkspaces</a> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the TerminateWorkspaces operation returned by the service.*/",
       "syncReturnType" : "TerminateWorkspacesResult",
       "asyncReturnType" : "TerminateWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<TerminateWorkspacesResult>",
@@ -1011,8 +1011,8 @@
           "simpleType" : "FailedWorkspaceChangeRequest",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1149,8 +1149,8 @@
             "simpleType" : "FailedWorkspaceChangeRequest",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1277,8 +1277,8 @@
           "simpleType" : "FailedWorkspaceChangeRequest",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1415,8 +1415,8 @@
             "simpleType" : "FailedWorkspaceChangeRequest",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3055,8 +3055,8 @@
           "simpleType" : "TerminateRequest",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>",
-          "templateType" : "java.util.List<TerminateRequest>"
+          "templateType" : "java.util.List<TerminateRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3197,8 +3197,8 @@
             "simpleType" : "TerminateRequest",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>",
-            "templateType" : "java.util.List<TerminateRequest>"
+            "templateType" : "java.util.List<TerminateRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3325,8 +3325,8 @@
           "simpleType" : "RebootRequest",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>",
-          "templateType" : "java.util.List<RebootRequest>"
+          "templateType" : "java.util.List<RebootRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3467,8 +3467,8 @@
             "simpleType" : "RebootRequest",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>",
-            "templateType" : "java.util.List<RebootRequest>"
+            "templateType" : "java.util.List<RebootRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3595,8 +3595,8 @@
           "simpleType" : "RebuildRequest",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>",
-          "templateType" : "java.util.List<RebuildRequest>"
+          "templateType" : "java.util.List<RebuildRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3737,8 +3737,8 @@
             "simpleType" : "RebuildRequest",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>",
-            "templateType" : "java.util.List<RebuildRequest>"
+            "templateType" : "java.util.List<RebuildRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4415,8 +4415,8 @@
           "simpleType" : "FailedWorkspaceChangeRequest",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4553,8 +4553,8 @@
             "simpleType" : "FailedWorkspaceChangeRequest",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4681,8 +4681,8 @@
           "simpleType" : "WorkspaceBundle",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>",
-          "templateType" : "java.util.List<WorkspaceBundle>"
+          "templateType" : "java.util.List<WorkspaceBundle>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4922,8 +4922,8 @@
             "simpleType" : "WorkspaceBundle",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>",
-            "templateType" : "java.util.List<WorkspaceBundle>"
+            "templateType" : "java.util.List<WorkspaceBundle>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5099,8 +5099,8 @@
           "simpleType" : "WorkspaceDirectory",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>",
-          "templateType" : "java.util.List<WorkspaceDirectory>"
+          "templateType" : "java.util.List<WorkspaceDirectory>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5340,8 +5340,8 @@
             "simpleType" : "WorkspaceDirectory",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>",
-            "templateType" : "java.util.List<WorkspaceDirectory>"
+            "templateType" : "java.util.List<WorkspaceDirectory>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5468,8 +5468,8 @@
           "simpleType" : "FailedCreateWorkspaceRequest",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>",
-          "templateType" : "java.util.List<FailedCreateWorkspaceRequest>"
+          "templateType" : "java.util.List<FailedCreateWorkspaceRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5583,8 +5583,8 @@
           "simpleType" : "Workspace",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-          "templateType" : "java.util.List<Workspace>"
+          "templateType" : "java.util.List<Workspace>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5721,8 +5721,8 @@
             "simpleType" : "Workspace",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-            "templateType" : "java.util.List<Workspace>"
+            "templateType" : "java.util.List<Workspace>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5837,8 +5837,8 @@
             "simpleType" : "FailedCreateWorkspaceRequest",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>",
-            "templateType" : "java.util.List<FailedCreateWorkspaceRequest>"
+            "templateType" : "java.util.List<FailedCreateWorkspaceRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6740,8 +6740,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7037,8 +7037,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7229,8 +7229,8 @@
           "simpleType" : "Workspace",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-          "templateType" : "java.util.List<Workspace>"
+          "templateType" : "java.util.List<Workspace>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7470,8 +7470,8 @@
             "simpleType" : "Workspace",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-            "templateType" : "java.util.List<Workspace>"
+            "templateType" : "java.util.List<Workspace>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7764,8 +7764,8 @@
           "simpleType" : "WorkspaceRequest",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>",
-          "templateType" : "java.util.List<WorkspaceRequest>"
+          "templateType" : "java.util.List<WorkspaceRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7906,8 +7906,8 @@
             "simpleType" : "WorkspaceRequest",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>",
-            "templateType" : "java.util.List<WorkspaceRequest>"
+            "templateType" : "java.util.List<WorkspaceRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8330,8 +8330,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8524,8 +8524,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9458,8 +9458,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9522,8 +9522,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10175,8 +10175,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10240,8 +10240,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10577,8 +10577,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10975,8 +10975,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,

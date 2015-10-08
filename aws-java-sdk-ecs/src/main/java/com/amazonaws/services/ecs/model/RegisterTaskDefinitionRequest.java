@@ -24,7 +24,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Registers a new task definition from the supplied <code>family</code>
  * and <code>containerDefinitions</code> . Optionally, you can add data
  * volumes to your containers with the <code>volumes</code> parameter.
- * For more information on task definition parameters and defaults, see
+ * For more information about task definition parameters and defaults,
+ * see
  * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"> Amazon ECS Task Definitions </a>
  * in the <i>Amazon EC2 Container Service Developer Guide</i> .
  * </p>
@@ -35,10 +36,10 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
 
     /**
      * You must specify a <code>family</code> for a task definition, which
-     * allows you to track multiple versions of the same task definition. You
-     * can think of the <code>family</code> as a name for your task
-     * definition. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed.
+     * allows you to track multiple versions of the same task definition. The
+     * <code>family</code> is used as a name for your task definition. Up to
+     * 255 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      */
     private String family;
 
@@ -56,16 +57,16 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
 
     /**
      * You must specify a <code>family</code> for a task definition, which
-     * allows you to track multiple versions of the same task definition. You
-     * can think of the <code>family</code> as a name for your task
-     * definition. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed.
+     * allows you to track multiple versions of the same task definition. The
+     * <code>family</code> is used as a name for your task definition. Up to
+     * 255 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      *
      * @return You must specify a <code>family</code> for a task definition, which
-     *         allows you to track multiple versions of the same task definition. You
-     *         can think of the <code>family</code> as a name for your task
-     *         definition. Up to 255 letters (uppercase and lowercase), numbers,
-     *         hyphens, and underscores are allowed.
+     *         allows you to track multiple versions of the same task definition. The
+     *         <code>family</code> is used as a name for your task definition. Up to
+     *         255 letters (uppercase and lowercase), numbers, hyphens, and
+     *         underscores are allowed.
      */
     public String getFamily() {
         return family;
@@ -73,16 +74,16 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
     
     /**
      * You must specify a <code>family</code> for a task definition, which
-     * allows you to track multiple versions of the same task definition. You
-     * can think of the <code>family</code> as a name for your task
-     * definition. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed.
+     * allows you to track multiple versions of the same task definition. The
+     * <code>family</code> is used as a name for your task definition. Up to
+     * 255 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      *
      * @param family You must specify a <code>family</code> for a task definition, which
-     *         allows you to track multiple versions of the same task definition. You
-     *         can think of the <code>family</code> as a name for your task
-     *         definition. Up to 255 letters (uppercase and lowercase), numbers,
-     *         hyphens, and underscores are allowed.
+     *         allows you to track multiple versions of the same task definition. The
+     *         <code>family</code> is used as a name for your task definition. Up to
+     *         255 letters (uppercase and lowercase), numbers, hyphens, and
+     *         underscores are allowed.
      */
     public void setFamily(String family) {
         this.family = family;
@@ -90,18 +91,18 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
     
     /**
      * You must specify a <code>family</code> for a task definition, which
-     * allows you to track multiple versions of the same task definition. You
-     * can think of the <code>family</code> as a name for your task
-     * definition. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed.
+     * allows you to track multiple versions of the same task definition. The
+     * <code>family</code> is used as a name for your task definition. Up to
+     * 255 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param family You must specify a <code>family</code> for a task definition, which
-     *         allows you to track multiple versions of the same task definition. You
-     *         can think of the <code>family</code> as a name for your task
-     *         definition. Up to 255 letters (uppercase and lowercase), numbers,
-     *         hyphens, and underscores are allowed.
+     *         allows you to track multiple versions of the same task definition. The
+     *         <code>family</code> is used as a name for your task definition. Up to
+     *         255 letters (uppercase and lowercase), numbers, hyphens, and
+     *         underscores are allowed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

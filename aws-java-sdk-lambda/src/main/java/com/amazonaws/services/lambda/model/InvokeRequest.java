@@ -21,7 +21,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.lambda.AWSLambda#invoke(InvokeRequest) Invoke operation}.
  * <p>
- * Invokes a specified Lambda function.
+ * Invokes a specific Lambda function version.
+ * </p>
+ * <p>
+ * If you don't provide the <code>Qualifier</code> parameter, it uses the
+ * unqualified function ARN which results in invocation of the $LATEST
+ * version of the Lambda function (when you create a Lambda function, the
+ * $LATEST is the version). The AWS Lambda versioning and aliases feature
+ * allows you to publish multiple versions of a Lambda function and also
+ * create aliases for each function version. So each your Lambda function
+ * version can be invoked using multiple ARNs. For more information, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+ * . Using the <code>Qualifier</code> parameter, you can specify a
+ * function version or alias name to invoke specific function version. If
+ * you specify function version, the API uses the qualified function ARN
+ * to invoke a specific function version. If you specify alias name, the
+ * API uses the alias ARN to invoke the function version to which the
+ * alias points.
  * </p>
  * <p>
  * This operation requires permission for the
@@ -43,8 +59,8 @@ public class InvokeRequest extends AmazonWebServiceRequest implements Serializab
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionName;
 
@@ -94,6 +110,21 @@ public class InvokeRequest extends AmazonWebServiceRequest implements Serializab
     private java.nio.ByteBuffer payload;
 
     /**
+     * You can use this optional paramter to specify a Lambda function
+     * version or alias name. If you specify function version, the API uses
+     * qualified function ARN to invoke a specific Lambda function. If you
+     * specify alias name, the API uses the alias ARN to invoke the Lambda
+     * function version to which the alias points. <p>If you don't provide
+     * this parameter, then the API uses unqualified function ARN which
+     * results in invocation of the $LATEST version.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     */
+    private String qualifier;
+
+    /**
      * The Lambda function name. <p> You can specify an unqualified function
      * name (for example, "Thumbnail") or you can specify Amazon Resource
      * Name (ARN) of the function (for example,
@@ -104,8 +135,8 @@ public class InvokeRequest extends AmazonWebServiceRequest implements Serializab
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @return The Lambda function name. <p> You can specify an unqualified function
      *         name (for example, "Thumbnail") or you can specify Amazon Resource
@@ -131,8 +162,8 @@ public class InvokeRequest extends AmazonWebServiceRequest implements Serializab
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The Lambda function name. <p> You can specify an unqualified function
      *         name (for example, "Thumbnail") or you can specify Amazon Resource
@@ -160,8 +191,8 @@ public class InvokeRequest extends AmazonWebServiceRequest implements Serializab
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The Lambda function name. <p> You can specify an unqualified function
      *         name (for example, "Thumbnail") or you can specify Amazon Resource
@@ -601,6 +632,87 @@ public class InvokeRequest extends AmazonWebServiceRequest implements Serializab
     }
 
     /**
+     * You can use this optional paramter to specify a Lambda function
+     * version or alias name. If you specify function version, the API uses
+     * qualified function ARN to invoke a specific Lambda function. If you
+     * specify alias name, the API uses the alias ARN to invoke the Lambda
+     * function version to which the alias points. <p>If you don't provide
+     * this parameter, then the API uses unqualified function ARN which
+     * results in invocation of the $LATEST version.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @return You can use this optional paramter to specify a Lambda function
+     *         version or alias name. If you specify function version, the API uses
+     *         qualified function ARN to invoke a specific Lambda function. If you
+     *         specify alias name, the API uses the alias ARN to invoke the Lambda
+     *         function version to which the alias points. <p>If you don't provide
+     *         this parameter, then the API uses unqualified function ARN which
+     *         results in invocation of the $LATEST version.
+     */
+    public String getQualifier() {
+        return qualifier;
+    }
+    
+    /**
+     * You can use this optional paramter to specify a Lambda function
+     * version or alias name. If you specify function version, the API uses
+     * qualified function ARN to invoke a specific Lambda function. If you
+     * specify alias name, the API uses the alias ARN to invoke the Lambda
+     * function version to which the alias points. <p>If you don't provide
+     * this parameter, then the API uses unqualified function ARN which
+     * results in invocation of the $LATEST version.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier You can use this optional paramter to specify a Lambda function
+     *         version or alias name. If you specify function version, the API uses
+     *         qualified function ARN to invoke a specific Lambda function. If you
+     *         specify alias name, the API uses the alias ARN to invoke the Lambda
+     *         function version to which the alias points. <p>If you don't provide
+     *         this parameter, then the API uses unqualified function ARN which
+     *         results in invocation of the $LATEST version.
+     */
+    public void setQualifier(String qualifier) {
+        this.qualifier = qualifier;
+    }
+    
+    /**
+     * You can use this optional paramter to specify a Lambda function
+     * version or alias name. If you specify function version, the API uses
+     * qualified function ARN to invoke a specific Lambda function. If you
+     * specify alias name, the API uses the alias ARN to invoke the Lambda
+     * function version to which the alias points. <p>If you don't provide
+     * this parameter, then the API uses unqualified function ARN which
+     * results in invocation of the $LATEST version.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier You can use this optional paramter to specify a Lambda function
+     *         version or alias name. If you specify function version, the API uses
+     *         qualified function ARN to invoke a specific Lambda function. If you
+     *         specify alias name, the API uses the alias ARN to invoke the Lambda
+     *         function version to which the alias points. <p>If you don't provide
+     *         this parameter, then the API uses unqualified function ARN which
+     *         results in invocation of the $LATEST version.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InvokeRequest withQualifier(String qualifier) {
+        this.qualifier = qualifier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -616,7 +728,8 @@ public class InvokeRequest extends AmazonWebServiceRequest implements Serializab
         if (getInvocationType() != null) sb.append("InvocationType: " + getInvocationType() + ",");
         if (getLogType() != null) sb.append("LogType: " + getLogType() + ",");
         if (getClientContext() != null) sb.append("ClientContext: " + getClientContext() + ",");
-        if (getPayload() != null) sb.append("Payload: " + getPayload() );
+        if (getPayload() != null) sb.append("Payload: " + getPayload() + ",");
+        if (getQualifier() != null) sb.append("Qualifier: " + getQualifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -631,6 +744,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements Serializab
         hashCode = prime * hashCode + ((getLogType() == null) ? 0 : getLogType().hashCode()); 
         hashCode = prime * hashCode + ((getClientContext() == null) ? 0 : getClientContext().hashCode()); 
         hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode()); 
+        hashCode = prime * hashCode + ((getQualifier() == null) ? 0 : getQualifier().hashCode()); 
         return hashCode;
     }
     
@@ -652,6 +766,8 @@ public class InvokeRequest extends AmazonWebServiceRequest implements Serializab
         if (other.getClientContext() != null && other.getClientContext().equals(this.getClientContext()) == false) return false; 
         if (other.getPayload() == null ^ this.getPayload() == null) return false;
         if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false) return false; 
+        if (other.getQualifier() == null ^ this.getQualifier() == null) return false;
+        if (other.getQualifier() != null && other.getQualifier().equals(this.getQualifier()) == false) return false; 
         return true;
     }
     

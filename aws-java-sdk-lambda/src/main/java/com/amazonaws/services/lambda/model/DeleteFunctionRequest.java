@@ -24,8 +24,18 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the specified Lambda function code and configuration.
  * </p>
  * <p>
- * When you delete a function the associated access policy is also
+ * If you don't specify a function version, AWS Lambda will delete the
+ * function, including all its versions, and any aliases pointing to the
+ * function versions.
+ * </p>
+ * <p>
+ * When you delete a function the associated resource policy is also
  * deleted. You will need to delete the event source mappings explicitly.
+ * </p>
+ * <p>
+ * For information about function versioning, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+ * .
  * </p>
  * <p>
  * This operation requires permission for the
@@ -47,10 +57,30 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionName;
+
+    /**
+     * Using this optional parameter you can specify a function version (but
+     * not the $LATEST version) to direct AWS Lambda to delete a specific
+     * function version. If the function version has one or more aliases
+     * pointing to it, you will get an error because you cannot have aliases
+     * pointing to it. You can delete any function version but not the
+     * $LATEST, that is, you cannot specify $LATEST as the value of this
+     * parameter. The $LATEST version can be deleted only when you want to
+     * delete all the function versions and aliases. <p>You can only specify
+     * a function version and not alias name using this parameter. You cannot
+     * delete a function version using its alias. <p>If you don't specify
+     * this parameter, AWS Lambda will delete the function, including all its
+     * versions and aliases.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     */
+    private String qualifier;
 
     /**
      * The Lambda function to delete. <p> You can specify an unqualified
@@ -63,8 +93,8 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @return The Lambda function to delete. <p> You can specify an unqualified
      *         function name (for example, "Thumbnail") or you can specify Amazon
@@ -90,8 +120,8 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The Lambda function to delete. <p> You can specify an unqualified
      *         function name (for example, "Thumbnail") or you can specify Amazon
@@ -119,8 +149,8 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The Lambda function to delete. <p> You can specify an unqualified
      *         function name (for example, "Thumbnail") or you can specify Amazon
@@ -140,6 +170,117 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * Using this optional parameter you can specify a function version (but
+     * not the $LATEST version) to direct AWS Lambda to delete a specific
+     * function version. If the function version has one or more aliases
+     * pointing to it, you will get an error because you cannot have aliases
+     * pointing to it. You can delete any function version but not the
+     * $LATEST, that is, you cannot specify $LATEST as the value of this
+     * parameter. The $LATEST version can be deleted only when you want to
+     * delete all the function versions and aliases. <p>You can only specify
+     * a function version and not alias name using this parameter. You cannot
+     * delete a function version using its alias. <p>If you don't specify
+     * this parameter, AWS Lambda will delete the function, including all its
+     * versions and aliases.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @return Using this optional parameter you can specify a function version (but
+     *         not the $LATEST version) to direct AWS Lambda to delete a specific
+     *         function version. If the function version has one or more aliases
+     *         pointing to it, you will get an error because you cannot have aliases
+     *         pointing to it. You can delete any function version but not the
+     *         $LATEST, that is, you cannot specify $LATEST as the value of this
+     *         parameter. The $LATEST version can be deleted only when you want to
+     *         delete all the function versions and aliases. <p>You can only specify
+     *         a function version and not alias name using this parameter. You cannot
+     *         delete a function version using its alias. <p>If you don't specify
+     *         this parameter, AWS Lambda will delete the function, including all its
+     *         versions and aliases.
+     */
+    public String getQualifier() {
+        return qualifier;
+    }
+    
+    /**
+     * Using this optional parameter you can specify a function version (but
+     * not the $LATEST version) to direct AWS Lambda to delete a specific
+     * function version. If the function version has one or more aliases
+     * pointing to it, you will get an error because you cannot have aliases
+     * pointing to it. You can delete any function version but not the
+     * $LATEST, that is, you cannot specify $LATEST as the value of this
+     * parameter. The $LATEST version can be deleted only when you want to
+     * delete all the function versions and aliases. <p>You can only specify
+     * a function version and not alias name using this parameter. You cannot
+     * delete a function version using its alias. <p>If you don't specify
+     * this parameter, AWS Lambda will delete the function, including all its
+     * versions and aliases.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier Using this optional parameter you can specify a function version (but
+     *         not the $LATEST version) to direct AWS Lambda to delete a specific
+     *         function version. If the function version has one or more aliases
+     *         pointing to it, you will get an error because you cannot have aliases
+     *         pointing to it. You can delete any function version but not the
+     *         $LATEST, that is, you cannot specify $LATEST as the value of this
+     *         parameter. The $LATEST version can be deleted only when you want to
+     *         delete all the function versions and aliases. <p>You can only specify
+     *         a function version and not alias name using this parameter. You cannot
+     *         delete a function version using its alias. <p>If you don't specify
+     *         this parameter, AWS Lambda will delete the function, including all its
+     *         versions and aliases.
+     */
+    public void setQualifier(String qualifier) {
+        this.qualifier = qualifier;
+    }
+    
+    /**
+     * Using this optional parameter you can specify a function version (but
+     * not the $LATEST version) to direct AWS Lambda to delete a specific
+     * function version. If the function version has one or more aliases
+     * pointing to it, you will get an error because you cannot have aliases
+     * pointing to it. You can delete any function version but not the
+     * $LATEST, that is, you cannot specify $LATEST as the value of this
+     * parameter. The $LATEST version can be deleted only when you want to
+     * delete all the function versions and aliases. <p>You can only specify
+     * a function version and not alias name using this parameter. You cannot
+     * delete a function version using its alias. <p>If you don't specify
+     * this parameter, AWS Lambda will delete the function, including all its
+     * versions and aliases.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier Using this optional parameter you can specify a function version (but
+     *         not the $LATEST version) to direct AWS Lambda to delete a specific
+     *         function version. If the function version has one or more aliases
+     *         pointing to it, you will get an error because you cannot have aliases
+     *         pointing to it. You can delete any function version but not the
+     *         $LATEST, that is, you cannot specify $LATEST as the value of this
+     *         parameter. The $LATEST version can be deleted only when you want to
+     *         delete all the function versions and aliases. <p>You can only specify
+     *         a function version and not alias name using this parameter. You cannot
+     *         delete a function version using its alias. <p>If you don't specify
+     *         this parameter, AWS Lambda will delete the function, including all its
+     *         versions and aliases.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DeleteFunctionRequest withQualifier(String qualifier) {
+        this.qualifier = qualifier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -151,7 +292,8 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFunctionName() != null) sb.append("FunctionName: " + getFunctionName() );
+        if (getFunctionName() != null) sb.append("FunctionName: " + getFunctionName() + ",");
+        if (getQualifier() != null) sb.append("Qualifier: " + getQualifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -162,6 +304,7 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode()); 
+        hashCode = prime * hashCode + ((getQualifier() == null) ? 0 : getQualifier().hashCode()); 
         return hashCode;
     }
     
@@ -175,6 +318,8 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
         
         if (other.getFunctionName() == null ^ this.getFunctionName() == null) return false;
         if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false) return false; 
+        if (other.getQualifier() == null ^ this.getQualifier() == null) return false;
+        if (other.getQualifier() != null && other.getQualifier().equals(this.getQualifier()) == false) return false; 
         return true;
     }
     

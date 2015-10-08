@@ -18,8 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An Amazon EC2 instance that is running the Amazon ECS agent and has
- * been registered with a cluster.
+ * An EC2 instance that is running the Amazon ECS agent and has been
+ * registered with a cluster.
  * </p>
  */
 public class ContainerInstance implements Serializable, Cloneable {
@@ -29,13 +29,13 @@ public class ContainerInstance implements Serializable, Cloneable {
      * contains the <code>arn:aws:ecs</code> namespace, followed by the
      * region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * then the container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      */
     private String containerInstanceArn;
 
     /**
-     * The Amazon EC2 instance ID of the container instance.
+     * The EC2 instance ID of the container instance.
      */
     private String ec2InstanceId;
 
@@ -67,8 +67,8 @@ public class ContainerInstance implements Serializable, Cloneable {
     /**
      * This parameter returns <code>true</code> if the agent is actually
      * connected to Amazon ECS. Registered instances with an agent that may
-     * be unhealthy or stopped will return <code>false</code>, and instances
-     * without a connected agent cannot accept placement request.
+     * be unhealthy or stopped return <code>false</code>, and instances
+     * without a connected agent cannot accept placement requests.
      */
     private Boolean agentConnected;
 
@@ -94,19 +94,25 @@ public class ContainerInstance implements Serializable, Cloneable {
     private String agentUpdateStatus;
 
     /**
+     * The attributes set for the container instance by the Amazon ECS
+     * container agent at instance registration.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributes;
+
+    /**
      * The Amazon Resource Name (ARN) of the container instance. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the
      * region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * then the container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      *
      * @return The Amazon Resource Name (ARN) of the container instance. The ARN
      *         contains the <code>arn:aws:ecs</code> namespace, followed by the
      *         region of the container instance, the AWS account ID of the container
      *         instance owner, the <code>container-instance</code> namespace, and
-     *         then the container instance UUID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     *         then the container instance ID. For example,
+     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      */
     public String getContainerInstanceArn() {
         return containerInstanceArn;
@@ -117,15 +123,15 @@ public class ContainerInstance implements Serializable, Cloneable {
      * contains the <code>arn:aws:ecs</code> namespace, followed by the
      * region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * then the container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      *
      * @param containerInstanceArn The Amazon Resource Name (ARN) of the container instance. The ARN
      *         contains the <code>arn:aws:ecs</code> namespace, followed by the
      *         region of the container instance, the AWS account ID of the container
      *         instance owner, the <code>container-instance</code> namespace, and
-     *         then the container instance UUID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     *         then the container instance ID. For example,
+     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      */
     public void setContainerInstanceArn(String containerInstanceArn) {
         this.containerInstanceArn = containerInstanceArn;
@@ -136,8 +142,8 @@ public class ContainerInstance implements Serializable, Cloneable {
      * contains the <code>arn:aws:ecs</code> namespace, followed by the
      * region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * then the container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -145,8 +151,8 @@ public class ContainerInstance implements Serializable, Cloneable {
      *         contains the <code>arn:aws:ecs</code> namespace, followed by the
      *         region of the container instance, the AWS account ID of the container
      *         instance owner, the <code>container-instance</code> namespace, and
-     *         then the container instance UUID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     *         then the container instance ID. For example,
+     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -157,29 +163,29 @@ public class ContainerInstance implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon EC2 instance ID of the container instance.
+     * The EC2 instance ID of the container instance.
      *
-     * @return The Amazon EC2 instance ID of the container instance.
+     * @return The EC2 instance ID of the container instance.
      */
     public String getEc2InstanceId() {
         return ec2InstanceId;
     }
     
     /**
-     * The Amazon EC2 instance ID of the container instance.
+     * The EC2 instance ID of the container instance.
      *
-     * @param ec2InstanceId The Amazon EC2 instance ID of the container instance.
+     * @param ec2InstanceId The EC2 instance ID of the container instance.
      */
     public void setEc2InstanceId(String ec2InstanceId) {
         this.ec2InstanceId = ec2InstanceId;
     }
     
     /**
-     * The Amazon EC2 instance ID of the container instance.
+     * The EC2 instance ID of the container instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ec2InstanceId The Amazon EC2 instance ID of the container instance.
+     * @param ec2InstanceId The EC2 instance ID of the container instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -438,13 +444,13 @@ public class ContainerInstance implements Serializable, Cloneable {
     /**
      * This parameter returns <code>true</code> if the agent is actually
      * connected to Amazon ECS. Registered instances with an agent that may
-     * be unhealthy or stopped will return <code>false</code>, and instances
-     * without a connected agent cannot accept placement request.
+     * be unhealthy or stopped return <code>false</code>, and instances
+     * without a connected agent cannot accept placement requests.
      *
      * @return This parameter returns <code>true</code> if the agent is actually
      *         connected to Amazon ECS. Registered instances with an agent that may
-     *         be unhealthy or stopped will return <code>false</code>, and instances
-     *         without a connected agent cannot accept placement request.
+     *         be unhealthy or stopped return <code>false</code>, and instances
+     *         without a connected agent cannot accept placement requests.
      */
     public Boolean isAgentConnected() {
         return agentConnected;
@@ -453,13 +459,13 @@ public class ContainerInstance implements Serializable, Cloneable {
     /**
      * This parameter returns <code>true</code> if the agent is actually
      * connected to Amazon ECS. Registered instances with an agent that may
-     * be unhealthy or stopped will return <code>false</code>, and instances
-     * without a connected agent cannot accept placement request.
+     * be unhealthy or stopped return <code>false</code>, and instances
+     * without a connected agent cannot accept placement requests.
      *
      * @param agentConnected This parameter returns <code>true</code> if the agent is actually
      *         connected to Amazon ECS. Registered instances with an agent that may
-     *         be unhealthy or stopped will return <code>false</code>, and instances
-     *         without a connected agent cannot accept placement request.
+     *         be unhealthy or stopped return <code>false</code>, and instances
+     *         without a connected agent cannot accept placement requests.
      */
     public void setAgentConnected(Boolean agentConnected) {
         this.agentConnected = agentConnected;
@@ -468,15 +474,15 @@ public class ContainerInstance implements Serializable, Cloneable {
     /**
      * This parameter returns <code>true</code> if the agent is actually
      * connected to Amazon ECS. Registered instances with an agent that may
-     * be unhealthy or stopped will return <code>false</code>, and instances
-     * without a connected agent cannot accept placement request.
+     * be unhealthy or stopped return <code>false</code>, and instances
+     * without a connected agent cannot accept placement requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param agentConnected This parameter returns <code>true</code> if the agent is actually
      *         connected to Amazon ECS. Registered instances with an agent that may
-     *         be unhealthy or stopped will return <code>false</code>, and instances
-     *         without a connected agent cannot accept placement request.
+     *         be unhealthy or stopped return <code>false</code>, and instances
+     *         without a connected agent cannot accept placement requests.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -489,13 +495,13 @@ public class ContainerInstance implements Serializable, Cloneable {
     /**
      * This parameter returns <code>true</code> if the agent is actually
      * connected to Amazon ECS. Registered instances with an agent that may
-     * be unhealthy or stopped will return <code>false</code>, and instances
-     * without a connected agent cannot accept placement request.
+     * be unhealthy or stopped return <code>false</code>, and instances
+     * without a connected agent cannot accept placement requests.
      *
      * @return This parameter returns <code>true</code> if the agent is actually
      *         connected to Amazon ECS. Registered instances with an agent that may
-     *         be unhealthy or stopped will return <code>false</code>, and instances
-     *         without a connected agent cannot accept placement request.
+     *         be unhealthy or stopped return <code>false</code>, and instances
+     *         without a connected agent cannot accept placement requests.
      */
     public Boolean getAgentConnected() {
         return agentConnected;
@@ -672,6 +678,87 @@ public class ContainerInstance implements Serializable, Cloneable {
     }
 
     /**
+     * The attributes set for the container instance by the Amazon ECS
+     * container agent at instance registration.
+     *
+     * @return The attributes set for the container instance by the Amazon ECS
+     *         container agent at instance registration.
+     */
+    public java.util.List<Attribute> getAttributes() {
+        if (attributes == null) {
+              attributes = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>();
+              attributes.setAutoConstruct(true);
+        }
+        return attributes;
+    }
+    
+    /**
+     * The attributes set for the container instance by the Amazon ECS
+     * container agent at instance registration.
+     *
+     * @param attributes The attributes set for the container instance by the Amazon ECS
+     *         container agent at instance registration.
+     */
+    public void setAttributes(java.util.Collection<Attribute> attributes) {
+        if (attributes == null) {
+            this.attributes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
+        attributesCopy.addAll(attributes);
+        this.attributes = attributesCopy;
+    }
+    
+    /**
+     * The attributes set for the container instance by the Amazon ECS
+     * container agent at instance registration.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributes(java.util.Collection)} or {@link
+     * #withAttributes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attributes The attributes set for the container instance by the Amazon ECS
+     *         container agent at instance registration.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ContainerInstance withAttributes(Attribute... attributes) {
+        if (getAttributes() == null) setAttributes(new java.util.ArrayList<Attribute>(attributes.length));
+        for (Attribute value : attributes) {
+            getAttributes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The attributes set for the container instance by the Amazon ECS
+     * container agent at instance registration.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attributes The attributes set for the container instance by the Amazon ECS
+     *         container agent at instance registration.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ContainerInstance withAttributes(java.util.Collection<Attribute> attributes) {
+        if (attributes == null) {
+            this.attributes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
+            attributesCopy.addAll(attributes);
+            this.attributes = attributesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -692,7 +779,8 @@ public class ContainerInstance implements Serializable, Cloneable {
         if (isAgentConnected() != null) sb.append("AgentConnected: " + isAgentConnected() + ",");
         if (getRunningTasksCount() != null) sb.append("RunningTasksCount: " + getRunningTasksCount() + ",");
         if (getPendingTasksCount() != null) sb.append("PendingTasksCount: " + getPendingTasksCount() + ",");
-        if (getAgentUpdateStatus() != null) sb.append("AgentUpdateStatus: " + getAgentUpdateStatus() );
+        if (getAgentUpdateStatus() != null) sb.append("AgentUpdateStatus: " + getAgentUpdateStatus() + ",");
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();
     }
@@ -712,6 +800,7 @@ public class ContainerInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRunningTasksCount() == null) ? 0 : getRunningTasksCount().hashCode()); 
         hashCode = prime * hashCode + ((getPendingTasksCount() == null) ? 0 : getPendingTasksCount().hashCode()); 
         hashCode = prime * hashCode + ((getAgentUpdateStatus() == null) ? 0 : getAgentUpdateStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode()); 
         return hashCode;
     }
     
@@ -743,6 +832,8 @@ public class ContainerInstance implements Serializable, Cloneable {
         if (other.getPendingTasksCount() != null && other.getPendingTasksCount().equals(this.getPendingTasksCount()) == false) return false; 
         if (other.getAgentUpdateStatus() == null ^ this.getAgentUpdateStatus() == null) return false;
         if (other.getAgentUpdateStatus() != null && other.getAgentUpdateStatus().equals(this.getAgentUpdateStatus()) == false) return false; 
+        if (other.getAttributes() == null ^ this.getAttributes() == null) return false;
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false) return false; 
         return true;
     }
     

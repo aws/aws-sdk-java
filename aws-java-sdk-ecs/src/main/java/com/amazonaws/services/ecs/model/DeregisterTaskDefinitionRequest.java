@@ -43,7 +43,7 @@ public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest imp
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to deregister. You must specify a
+     * the task definition to deregister. You must specify a
      * <code>revision</code>.
      */
     private String taskDefinition;
@@ -51,12 +51,12 @@ public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest imp
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to deregister. You must specify a
+     * the task definition to deregister. You must specify a
      * <code>revision</code>.
      *
      * @return The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to deregister. You must specify a
+     *         the task definition to deregister. You must specify a
      *         <code>revision</code>.
      */
     public String getTaskDefinition() {
@@ -66,12 +66,12 @@ public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest imp
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to deregister. You must specify a
+     * the task definition to deregister. You must specify a
      * <code>revision</code>.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to deregister. You must specify a
+     *         the task definition to deregister. You must specify a
      *         <code>revision</code>.
      */
     public void setTaskDefinition(String taskDefinition) {
@@ -81,14 +81,14 @@ public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest imp
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to deregister. You must specify a
+     * the task definition to deregister. You must specify a
      * <code>revision</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to deregister. You must specify a
+     *         the task definition to deregister. You must specify a
      *         <code>revision</code>.
      *
      * @return A reference to this updated object so that method calls can be chained

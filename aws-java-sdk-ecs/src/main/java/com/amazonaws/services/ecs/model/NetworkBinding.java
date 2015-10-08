@@ -19,7 +19,10 @@ import java.io.Serializable;
 /**
  * <p>
  * Details on the network bindings between a container and its host
- * container instance.
+ * container instance. After a task reaches the <code>RUNNING</code>
+ * status, manual and automatic host and container port assignments are
+ * visible in the <code>networkBindings</code> section of DescribeTasks
+ * API responses.
  * </p>
  */
 public class NetworkBinding implements Serializable, Cloneable {

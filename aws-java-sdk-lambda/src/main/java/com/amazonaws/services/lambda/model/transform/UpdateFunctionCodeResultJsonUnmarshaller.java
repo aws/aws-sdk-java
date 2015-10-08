@@ -85,6 +85,14 @@ public class UpdateFunctionCodeResultJsonUnmarshaller implements Unmarshaller<Up
                     context.nextToken();
                     updateFunctionCodeResult.setLastModified(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CodeSha256", targetDepth)) {
+                    context.nextToken();
+                    updateFunctionCodeResult.setCodeSha256(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Version", targetDepth)) {
+                    context.nextToken();
+                    updateFunctionCodeResult.setVersion(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

@@ -18,10 +18,10 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * These errors are usually caused by something the client did, such as
- * use an action or resource on behalf of a user that doesn't have
- * permission to use the action or resource, or specify an identifier
- * that is not valid.
+ * These errors are usually caused by a client action, such as using an
+ * action or resource on behalf of a user that doesn't have permission to
+ * use the action or resource, or specifying an identifier that is not
+ * valid.
  * </p>
  */        
 public class ClientException extends AmazonServiceException {

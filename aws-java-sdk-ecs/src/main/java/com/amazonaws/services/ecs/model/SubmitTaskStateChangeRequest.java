@@ -39,7 +39,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest implem
     private String cluster;
 
     /**
-     * The task UUID or full Amazon Resource Name (ARN) of the task in the
+     * The task ID or full Amazon Resource Name (ARN) of the task in the
      * state change request.
      */
     private String task;
@@ -94,10 +94,10 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The task UUID or full Amazon Resource Name (ARN) of the task in the
+     * The task ID or full Amazon Resource Name (ARN) of the task in the
      * state change request.
      *
-     * @return The task UUID or full Amazon Resource Name (ARN) of the task in the
+     * @return The task ID or full Amazon Resource Name (ARN) of the task in the
      *         state change request.
      */
     public String getTask() {
@@ -105,10 +105,10 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * The task UUID or full Amazon Resource Name (ARN) of the task in the
+     * The task ID or full Amazon Resource Name (ARN) of the task in the
      * state change request.
      *
-     * @param task The task UUID or full Amazon Resource Name (ARN) of the task in the
+     * @param task The task ID or full Amazon Resource Name (ARN) of the task in the
      *         state change request.
      */
     public void setTask(String task) {
@@ -116,12 +116,12 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * The task UUID or full Amazon Resource Name (ARN) of the task in the
+     * The task ID or full Amazon Resource Name (ARN) of the task in the
      * state change request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param task The task UUID or full Amazon Resource Name (ARN) of the task in the
+     * @param task The task ID or full Amazon Resource Name (ARN) of the task in the
      *         state change request.
      *
      * @return A reference to this updated object so that method calls can be chained

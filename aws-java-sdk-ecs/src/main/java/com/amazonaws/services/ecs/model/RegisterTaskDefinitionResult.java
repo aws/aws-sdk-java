@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class RegisterTaskDefinitionResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * The full description of the registered task definition.
      */
     private TaskDefinition taskDefinition;
 
     /**
-     * 
+     * The full description of the registered task definition.
      *
-     * @return 
+     * @return The full description of the registered task definition.
      */
     public TaskDefinition getTaskDefinition() {
         return taskDefinition;
     }
     
     /**
-     * 
+     * The full description of the registered task definition.
      *
-     * @param taskDefinition 
+     * @param taskDefinition The full description of the registered task definition.
      */
     public void setTaskDefinition(TaskDefinition taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
     
     /**
-     * 
+     * The full description of the registered task definition.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param taskDefinition 
+     * @param taskDefinition The full description of the registered task definition.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

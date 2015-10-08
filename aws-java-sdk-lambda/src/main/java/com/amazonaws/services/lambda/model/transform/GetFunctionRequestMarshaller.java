@@ -47,7 +47,7 @@ public class GetFunctionRequestMarshaller implements Marshaller<Request<GetFunct
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "/2015-03-31/functions/{FunctionName}/versions/HEAD";
+        String path = "/2015-03-31/functions/{FunctionName}?Qualifier={Qualifier}";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -99,6 +99,18 @@ public class GetFunctionRequestMarshaller implements Marshaller<Request<GetFunct
             
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (getFunctionRequest.getFunctionName() == null) ? "" : StringUtils.fromString(getFunctionRequest.getFunctionName())); 
+        } 
+        if (DYNAMIC_QUERY_PARAMS.containsKey("Qualifier")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("Qualifier");
+
+            String value = (getFunctionRequest.getQualifier() == null) ? null : StringUtils.fromString(getFunctionRequest.getQualifier());
+
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
+            }
+            
+        } else {
+            uriResourcePath = uriResourcePath.replace("{Qualifier}", (getFunctionRequest.getQualifier() == null) ? "" : StringUtils.fromString(getFunctionRequest.getQualifier())); 
         } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));

@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * These errors are usually caused by a server-side issue.
+ * These errors are usually caused by a server issue.
  * </p>
  */        
 public class ServerException extends AmazonServiceException {

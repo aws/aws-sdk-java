@@ -45,7 +45,7 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * The most recent desired count of tasks that was specified for the
-     * service to deploy and/or maintain.
+     * service to deploy or maintain.
      */
     private Integer desiredCount;
 
@@ -204,10 +204,10 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * The most recent desired count of tasks that was specified for the
-     * service to deploy and/or maintain.
+     * service to deploy or maintain.
      *
      * @return The most recent desired count of tasks that was specified for the
-     *         service to deploy and/or maintain.
+     *         service to deploy or maintain.
      */
     public Integer getDesiredCount() {
         return desiredCount;
@@ -215,10 +215,10 @@ public class Deployment implements Serializable, Cloneable {
     
     /**
      * The most recent desired count of tasks that was specified for the
-     * service to deploy and/or maintain.
+     * service to deploy or maintain.
      *
      * @param desiredCount The most recent desired count of tasks that was specified for the
-     *         service to deploy and/or maintain.
+     *         service to deploy or maintain.
      */
     public void setDesiredCount(Integer desiredCount) {
         this.desiredCount = desiredCount;
@@ -226,12 +226,12 @@ public class Deployment implements Serializable, Cloneable {
     
     /**
      * The most recent desired count of tasks that was specified for the
-     * service to deploy and/or maintain.
+     * service to deploy or maintain.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param desiredCount The most recent desired count of tasks that was specified for the
-     *         service to deploy and/or maintain.
+     *         service to deploy or maintain.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -1,0 +1,1858 @@
+{
+  "metadata" : {
+    "apiVersion" : "2015-05-28",
+    "exceptionUnmarshallerImpl" : null,
+    "protocol" : "rest-json",
+    "checksumFormat" : null,
+    "documentation" : null,
+    "defaultEndpoint" : "https://data.iot.us-east-1.amazonaws.com",
+    "defaultEndpointWithoutHttpProtocol" : "data.iot.us-east-1.amazonaws.com",
+    "syncInterface" : "AWSIotData",
+    "syncClient" : "AWSIotDataClient",
+    "asyncInterface" : "AWSIotDataAsync",
+    "asyncClient" : "AWSIotDataAsyncClient",
+    "packageName" : "com.amazonaws.services.iotdata",
+    "packagePath" : "com/amazonaws/services/iotdata",
+    "serviceAbbreviation" : null,
+    "serviceFullName" : "AWS IoT Data Plane",
+    "hasApiWithStreamInput" : false,
+    "jsonContentVersion" : null,
+    "endpointPrefix" : "data.iot",
+    "signingName" : "iotdata",
+    "serviceName" : "AWS IoT Data Plane",
+    "jsonProtocol" : true,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+  },
+  "operations" : {
+    "DeleteThingShadow" : {
+      "documentation" : null,
+      "operationName" : "DeleteThingShadow",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "deleteThingShadowRequest",
+        "variableType" : "DeleteThingShadowRequest",
+        "variableDeclarationType" : "DeleteThingShadowRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteThingShadowRequest",
+        "variableSetterType" : "DeleteThingShadowRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "DeleteThingShadowResult",
+        "documentation" : null
+      },
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "InternalFailureException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "MethodNotAllowedException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "UnsupportedDocumentEncodingException",
+        "documentation" : null
+      } ],
+      "hasBlobMemberAsPayload" : true,
+      "syncDocumentation" : "/**Invokes the DeleteThingShadow operation.\n@param deleteThingShadowRequest \n@return Result of the DeleteThingShadow operation returned by the service.\n@throws ResourceNotFoundException \n@throws InvalidRequestException \n@throws ThrottlingException \n@throws UnauthorizedException \n@throws ServiceUnavailableException \n@throws InternalFailureException \n@throws MethodNotAllowedException \n@throws UnsupportedDocumentEncodingException */",
+      "asyncDocumentation" : "/**Invokes the DeleteThingShadow operation asynchronously.\n@param deleteThingShadowRequest \n@return A Java Future containing the result of the DeleteThingShadow operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**Invokes the DeleteThingShadow operation asynchronously.\n@param deleteThingShadowRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteThingShadow operation returned by the service.*/",
+      "syncReturnType" : "DeleteThingShadowResult",
+      "asyncReturnType" : "DeleteThingShadowResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteThingShadowResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteThingShadowResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteThingShadowRequest, DeleteThingShadowResult>",
+      "methodName" : "deleteThingShadow"
+    },
+    "GetThingShadow" : {
+      "documentation" : null,
+      "operationName" : "GetThingShadow",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "getThingShadowRequest",
+        "variableType" : "GetThingShadowRequest",
+        "variableDeclarationType" : "GetThingShadowRequest",
+        "documentation" : null,
+        "simpleType" : "GetThingShadowRequest",
+        "variableSetterType" : "GetThingShadowRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "GetThingShadowResult",
+        "documentation" : null
+      },
+      "exceptions" : [ {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "InternalFailureException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "MethodNotAllowedException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "UnsupportedDocumentEncodingException",
+        "documentation" : null
+      } ],
+      "hasBlobMemberAsPayload" : true,
+      "syncDocumentation" : "/**Invokes the GetThingShadow operation.\n@param getThingShadowRequest \n@return Result of the GetThingShadow operation returned by the service.\n@throws InvalidRequestException \n@throws ResourceNotFoundException \n@throws ThrottlingException \n@throws UnauthorizedException \n@throws ServiceUnavailableException \n@throws InternalFailureException \n@throws MethodNotAllowedException \n@throws UnsupportedDocumentEncodingException */",
+      "asyncDocumentation" : "/**Invokes the GetThingShadow operation asynchronously.\n@param getThingShadowRequest \n@return A Java Future containing the result of the GetThingShadow operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**Invokes the GetThingShadow operation asynchronously.\n@param getThingShadowRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetThingShadow operation returned by the service.*/",
+      "syncReturnType" : "GetThingShadowResult",
+      "asyncReturnType" : "GetThingShadowResult",
+      "asyncFutureType" : "java.util.concurrent.Future<GetThingShadowResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<GetThingShadowResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetThingShadowRequest, GetThingShadowResult>",
+      "methodName" : "getThingShadow"
+    },
+    "Publish" : {
+      "documentation" : null,
+      "operationName" : "Publish",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "publishRequest",
+        "variableType" : "PublishRequest",
+        "variableDeclarationType" : "PublishRequest",
+        "documentation" : null,
+        "simpleType" : "PublishRequest",
+        "variableSetterType" : "PublishRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : null,
+      "exceptions" : [ {
+        "exceptionName" : "InternalFailureException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "MethodNotAllowedException",
+        "documentation" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "syncDocumentation" : "/**Invokes the Publish operation.\n@param publishRequest \n@throws InternalFailureException \n@throws InvalidRequestException \n@throws UnauthorizedException \n@throws MethodNotAllowedException */",
+      "asyncDocumentation" : "/**Invokes the Publish operation asynchronously.\n@param publishRequest */",
+      "asyncDocumentationWithHandler" : "/**Invokes the Publish operation asynchronously.\n@param publishRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncReturnType" : "void",
+      "asyncReturnType" : "Void",
+      "asyncFutureType" : "java.util.concurrent.Future<Void>",
+      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PublishRequest, Void>",
+      "methodName" : "publish"
+    },
+    "UpdateThingShadow" : {
+      "documentation" : null,
+      "operationName" : "UpdateThingShadow",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "updateThingShadowRequest",
+        "variableType" : "UpdateThingShadowRequest",
+        "variableDeclarationType" : "UpdateThingShadowRequest",
+        "documentation" : null,
+        "simpleType" : "UpdateThingShadowRequest",
+        "variableSetterType" : "UpdateThingShadowRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "UpdateThingShadowResult",
+        "documentation" : null
+      },
+      "exceptions" : [ {
+        "exceptionName" : "ConflictException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "RequestEntityTooLargeException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "InternalFailureException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "MethodNotAllowedException",
+        "documentation" : null
+      }, {
+        "exceptionName" : "UnsupportedDocumentEncodingException",
+        "documentation" : null
+      } ],
+      "hasBlobMemberAsPayload" : true,
+      "syncDocumentation" : "/**Invokes the UpdateThingShadow operation.\n@param updateThingShadowRequest \n@return Result of the UpdateThingShadow operation returned by the service.\n@throws ConflictException \n@throws RequestEntityTooLargeException \n@throws InvalidRequestException \n@throws ThrottlingException \n@throws UnauthorizedException \n@throws ServiceUnavailableException \n@throws InternalFailureException \n@throws MethodNotAllowedException \n@throws UnsupportedDocumentEncodingException */",
+      "asyncDocumentation" : "/**Invokes the UpdateThingShadow operation asynchronously.\n@param updateThingShadowRequest \n@return A Java Future containing the result of the UpdateThingShadow operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**Invokes the UpdateThingShadow operation asynchronously.\n@param updateThingShadowRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateThingShadow operation returned by the service.*/",
+      "syncReturnType" : "UpdateThingShadowResult",
+      "asyncReturnType" : "UpdateThingShadowResult",
+      "asyncFutureType" : "java.util.concurrent.Future<UpdateThingShadowResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<UpdateThingShadowResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateThingShadowRequest, UpdateThingShadowResult>",
+      "methodName" : "updateThingShadow"
+    }
+  },
+  "shapes" : {
+    "PublishRequest" : {
+      "c2jName" : "PublishRequest",
+      "documentation" : null,
+      "shapeName" : "PublishRequest",
+      "deprecated" : false,
+      "required" : [ "topic" ],
+      "hasPayloadMember" : true,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : null,
+        "name" : "Topic",
+        "c2jName" : "topic",
+        "c2jShape" : "Topic",
+        "variable" : {
+          "variableName" : "topic",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "topic",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "topic",
+          "marshallLocationName" : "topic",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "flattened" : false,
+          "header" : false,
+          "uri" : true,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the Topic property for this object.\n@return The value of the Topic property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : null,
+        "name" : "Qos",
+        "c2jName" : "qos",
+        "c2jShape" : "Qos",
+        "variable" : {
+          "variableName" : "qos",
+          "variableType" : "Integer",
+          "variableDeclarationType" : "Integer",
+          "documentation" : null,
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "setterModel" : {
+          "variableName" : "qos",
+          "variableType" : "Integer",
+          "variableDeclarationType" : "Integer",
+          "documentation" : null,
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "qos",
+          "marshallLocationName" : "qos",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : true
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the Qos property for this object.\n@return The value of the Qos property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : null,
+        "name" : "Payload",
+        "c2jName" : "payload",
+        "c2jShape" : "Payload",
+        "variable" : {
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : null,
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "setterModel" : {
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : null,
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "getterModel" : {
+          "returnType" : "java.nio.ByteBuffer",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "payload",
+          "marshallLocationName" : "payload",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : true,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "publishRequest",
+        "variableType" : "PublishRequest",
+        "variableDeclarationType" : "PublishRequest",
+        "documentation" : null,
+        "simpleType" : "PublishRequest",
+        "variableSetterType" : "PublishRequest"
+      },
+      "marshaller" : {
+        "action" : "Publish",
+        "verb" : "POST",
+        "target" : null,
+        "requestUri" : "/topics/{topic}",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Qos" : {
+          "documentation" : null,
+          "name" : "Qos",
+          "c2jName" : "qos",
+          "c2jShape" : "Qos",
+          "variable" : {
+            "variableName" : "qos",
+            "variableType" : "Integer",
+            "variableDeclarationType" : "Integer",
+            "documentation" : null,
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "setterModel" : {
+            "variableName" : "qos",
+            "variableType" : "Integer",
+            "variableDeclarationType" : "Integer",
+            "documentation" : null,
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "qos",
+            "marshallLocationName" : "qos",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : true
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the Qos property for this object.\n@return The value of the Qos property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Payload" : {
+          "documentation" : null,
+          "name" : "Payload",
+          "c2jName" : "payload",
+          "c2jShape" : "Payload",
+          "variable" : {
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : null,
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "setterModel" : {
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : null,
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "payload",
+            "marshallLocationName" : "payload",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : true,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Topic" : {
+          "documentation" : null,
+          "name" : "Topic",
+          "c2jName" : "topic",
+          "c2jShape" : "Topic",
+          "variable" : {
+            "variableName" : "topic",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "topic",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "topic",
+            "marshallLocationName" : "topic",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "flattened" : false,
+            "header" : false,
+            "uri" : true,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the Topic property for this object.\n@return The value of the Topic property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "UnauthorizedException" : {
+      "c2jName" : "UnauthorizedException",
+      "documentation" : null,
+      "shapeName" : "UnauthorizedException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "unauthorizedException",
+        "variableType" : "UnauthorizedException",
+        "variableDeclarationType" : "UnauthorizedException",
+        "documentation" : null,
+        "simpleType" : "UnauthorizedException",
+        "variableSetterType" : "UnauthorizedException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "UnauthorizedException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "MethodNotAllowedException" : {
+      "c2jName" : "MethodNotAllowedException",
+      "documentation" : null,
+      "shapeName" : "MethodNotAllowedException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "methodNotAllowedException",
+        "variableType" : "MethodNotAllowedException",
+        "variableDeclarationType" : "MethodNotAllowedException",
+        "documentation" : null,
+        "simpleType" : "MethodNotAllowedException",
+        "variableSetterType" : "MethodNotAllowedException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "MethodNotAllowedException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "ConflictException" : {
+      "c2jName" : "ConflictException",
+      "documentation" : null,
+      "shapeName" : "ConflictException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "conflictException",
+        "variableType" : "ConflictException",
+        "variableDeclarationType" : "ConflictException",
+        "documentation" : null,
+        "simpleType" : "ConflictException",
+        "variableSetterType" : "ConflictException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "ConflictException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "RequestEntityTooLargeException" : {
+      "c2jName" : "RequestEntityTooLargeException",
+      "documentation" : null,
+      "shapeName" : "RequestEntityTooLargeException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "requestEntityTooLargeException",
+        "variableType" : "RequestEntityTooLargeException",
+        "variableDeclarationType" : "RequestEntityTooLargeException",
+        "documentation" : null,
+        "simpleType" : "RequestEntityTooLargeException",
+        "variableSetterType" : "RequestEntityTooLargeException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "RequestEntityTooLargeException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "GetThingShadowRequest" : {
+      "c2jName" : "GetThingShadowRequest",
+      "documentation" : null,
+      "shapeName" : "GetThingShadowRequest",
+      "deprecated" : false,
+      "required" : [ "thingName" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : null,
+        "name" : "ThingName",
+        "c2jName" : "thingName",
+        "c2jShape" : "ThingName",
+        "variable" : {
+          "variableName" : "thingName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "thingName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "thingName",
+          "marshallLocationName" : "thingName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "flattened" : false,
+          "header" : false,
+          "uri" : true,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "getThingShadowRequest",
+        "variableType" : "GetThingShadowRequest",
+        "variableDeclarationType" : "GetThingShadowRequest",
+        "documentation" : null,
+        "simpleType" : "GetThingShadowRequest",
+        "variableSetterType" : "GetThingShadowRequest"
+      },
+      "marshaller" : {
+        "action" : "GetThingShadow",
+        "verb" : "GET",
+        "target" : null,
+        "requestUri" : "/things/{thingName}/shadow",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "ThingName" : {
+          "documentation" : null,
+          "name" : "ThingName",
+          "c2jName" : "thingName",
+          "c2jShape" : "ThingName",
+          "variable" : {
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "thingName",
+            "marshallLocationName" : "thingName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "flattened" : false,
+            "header" : false,
+            "uri" : true,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "GetThingShadowResult" : {
+      "c2jName" : "GetThingShadowResponse",
+      "documentation" : null,
+      "shapeName" : "GetThingShadowResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : true,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : null,
+        "name" : "Payload",
+        "c2jName" : "payload",
+        "c2jShape" : "JsonDocument",
+        "variable" : {
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : null,
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "setterModel" : {
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : null,
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "getterModel" : {
+          "returnType" : "java.nio.ByteBuffer",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "payload",
+          "marshallLocationName" : "payload",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : true,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "getThingShadowResult",
+        "variableType" : "GetThingShadowResult",
+        "variableDeclarationType" : "GetThingShadowResult",
+        "documentation" : null,
+        "simpleType" : "GetThingShadowResult",
+        "variableSetterType" : "GetThingShadowResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Payload" : {
+          "documentation" : null,
+          "name" : "Payload",
+          "c2jName" : "payload",
+          "c2jShape" : "JsonDocument",
+          "variable" : {
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : null,
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "setterModel" : {
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : null,
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "payload",
+            "marshallLocationName" : "payload",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : true,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "UnsupportedDocumentEncodingException" : {
+      "c2jName" : "UnsupportedDocumentEncodingException",
+      "documentation" : null,
+      "shapeName" : "UnsupportedDocumentEncodingException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "unsupportedDocumentEncodingException",
+        "variableType" : "UnsupportedDocumentEncodingException",
+        "variableDeclarationType" : "UnsupportedDocumentEncodingException",
+        "documentation" : null,
+        "simpleType" : "UnsupportedDocumentEncodingException",
+        "variableSetterType" : "UnsupportedDocumentEncodingException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "UnsupportedDocumentEncodingException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "ThrottlingException" : {
+      "c2jName" : "ThrottlingException",
+      "documentation" : null,
+      "shapeName" : "ThrottlingException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "throttlingException",
+        "variableType" : "ThrottlingException",
+        "variableDeclarationType" : "ThrottlingException",
+        "documentation" : null,
+        "simpleType" : "ThrottlingException",
+        "variableSetterType" : "ThrottlingException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "ThrottlingException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "ServiceUnavailableException" : {
+      "c2jName" : "ServiceUnavailableException",
+      "documentation" : null,
+      "shapeName" : "ServiceUnavailableException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "serviceUnavailableException",
+        "variableType" : "ServiceUnavailableException",
+        "variableDeclarationType" : "ServiceUnavailableException",
+        "documentation" : null,
+        "simpleType" : "ServiceUnavailableException",
+        "variableSetterType" : "ServiceUnavailableException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "ServiceUnavailableException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "ResourceNotFoundException" : {
+      "c2jName" : "ResourceNotFoundException",
+      "documentation" : null,
+      "shapeName" : "ResourceNotFoundException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "resourceNotFoundException",
+        "variableType" : "ResourceNotFoundException",
+        "variableDeclarationType" : "ResourceNotFoundException",
+        "documentation" : null,
+        "simpleType" : "ResourceNotFoundException",
+        "variableSetterType" : "ResourceNotFoundException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "ResourceNotFoundException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "InternalFailureException" : {
+      "c2jName" : "InternalFailureException",
+      "documentation" : null,
+      "shapeName" : "InternalFailureException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "internalFailureException",
+        "variableType" : "InternalFailureException",
+        "variableDeclarationType" : "InternalFailureException",
+        "documentation" : null,
+        "simpleType" : "InternalFailureException",
+        "variableSetterType" : "InternalFailureException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "InternalFailureException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "InvalidRequestException" : {
+      "c2jName" : "InvalidRequestException",
+      "documentation" : null,
+      "shapeName" : "InvalidRequestException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "invalidRequestException",
+        "variableType" : "InvalidRequestException",
+        "variableDeclarationType" : "InvalidRequestException",
+        "documentation" : null,
+        "simpleType" : "InvalidRequestException",
+        "variableSetterType" : "InvalidRequestException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "InvalidRequestException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "DeleteThingShadowResult" : {
+      "c2jName" : "DeleteThingShadowResponse",
+      "documentation" : null,
+      "shapeName" : "DeleteThingShadowResult",
+      "deprecated" : false,
+      "required" : [ "payload" ],
+      "hasPayloadMember" : true,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : null,
+        "name" : "Payload",
+        "c2jName" : "payload",
+        "c2jShape" : "JsonDocument",
+        "variable" : {
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : null,
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "setterModel" : {
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : null,
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "getterModel" : {
+          "returnType" : "java.nio.ByteBuffer",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "payload",
+          "marshallLocationName" : "payload",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : true,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteThingShadowResult",
+        "variableType" : "DeleteThingShadowResult",
+        "variableDeclarationType" : "DeleteThingShadowResult",
+        "documentation" : null,
+        "simpleType" : "DeleteThingShadowResult",
+        "variableSetterType" : "DeleteThingShadowResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Payload" : {
+          "documentation" : null,
+          "name" : "Payload",
+          "c2jName" : "payload",
+          "c2jShape" : "JsonDocument",
+          "variable" : {
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : null,
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "setterModel" : {
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : null,
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "payload",
+            "marshallLocationName" : "payload",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : true,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "UpdateThingShadowResult" : {
+      "c2jName" : "UpdateThingShadowResponse",
+      "documentation" : null,
+      "shapeName" : "UpdateThingShadowResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : true,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : null,
+        "name" : "Payload",
+        "c2jName" : "payload",
+        "c2jShape" : "JsonDocument",
+        "variable" : {
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : null,
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "setterModel" : {
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : null,
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "getterModel" : {
+          "returnType" : "java.nio.ByteBuffer",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "payload",
+          "marshallLocationName" : "payload",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : true,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "updateThingShadowResult",
+        "variableType" : "UpdateThingShadowResult",
+        "variableDeclarationType" : "UpdateThingShadowResult",
+        "documentation" : null,
+        "simpleType" : "UpdateThingShadowResult",
+        "variableSetterType" : "UpdateThingShadowResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Payload" : {
+          "documentation" : null,
+          "name" : "Payload",
+          "c2jName" : "payload",
+          "c2jShape" : "JsonDocument",
+          "variable" : {
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : null,
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "setterModel" : {
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : null,
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "payload",
+            "marshallLocationName" : "payload",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : true,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "UpdateThingShadowRequest" : {
+      "c2jName" : "UpdateThingShadowRequest",
+      "documentation" : null,
+      "shapeName" : "UpdateThingShadowRequest",
+      "deprecated" : false,
+      "required" : [ "thingName", "payload" ],
+      "hasPayloadMember" : true,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : null,
+        "name" : "ThingName",
+        "c2jName" : "thingName",
+        "c2jShape" : "ThingName",
+        "variable" : {
+          "variableName" : "thingName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "thingName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "thingName",
+          "marshallLocationName" : "thingName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "flattened" : false,
+          "header" : false,
+          "uri" : true,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : null,
+        "name" : "Payload",
+        "c2jName" : "payload",
+        "c2jShape" : "JsonDocument",
+        "variable" : {
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : null,
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "setterModel" : {
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : null,
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "getterModel" : {
+          "returnType" : "java.nio.ByteBuffer",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "payload",
+          "marshallLocationName" : "payload",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : true,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "updateThingShadowRequest",
+        "variableType" : "UpdateThingShadowRequest",
+        "variableDeclarationType" : "UpdateThingShadowRequest",
+        "documentation" : null,
+        "simpleType" : "UpdateThingShadowRequest",
+        "variableSetterType" : "UpdateThingShadowRequest"
+      },
+      "marshaller" : {
+        "action" : "UpdateThingShadow",
+        "verb" : "POST",
+        "target" : null,
+        "requestUri" : "/things/{thingName}/shadow",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Payload" : {
+          "documentation" : null,
+          "name" : "Payload",
+          "c2jName" : "payload",
+          "c2jShape" : "JsonDocument",
+          "variable" : {
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : null,
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "setterModel" : {
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : null,
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "payload",
+            "marshallLocationName" : "payload",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : true,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "ThingName" : {
+          "documentation" : null,
+          "name" : "ThingName",
+          "c2jName" : "thingName",
+          "c2jShape" : "ThingName",
+          "variable" : {
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "thingName",
+            "marshallLocationName" : "thingName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "flattened" : false,
+            "header" : false,
+            "uri" : true,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "DeleteThingShadowRequest" : {
+      "c2jName" : "DeleteThingShadowRequest",
+      "documentation" : null,
+      "shapeName" : "DeleteThingShadowRequest",
+      "deprecated" : false,
+      "required" : [ "thingName" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : null,
+        "name" : "ThingName",
+        "c2jName" : "thingName",
+        "c2jShape" : "ThingName",
+        "variable" : {
+          "variableName" : "thingName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "thingName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "thingName",
+          "marshallLocationName" : "thingName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "flattened" : false,
+          "header" : false,
+          "uri" : true,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteThingShadowRequest",
+        "variableType" : "DeleteThingShadowRequest",
+        "variableDeclarationType" : "DeleteThingShadowRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteThingShadowRequest",
+        "variableSetterType" : "DeleteThingShadowRequest"
+      },
+      "marshaller" : {
+        "action" : "DeleteThingShadow",
+        "verb" : "DELETE",
+        "target" : null,
+        "requestUri" : "/things/{thingName}/shadow",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "ThingName" : {
+          "documentation" : null,
+          "name" : "ThingName",
+          "c2jName" : "thingName",
+          "c2jShape" : "ThingName",
+          "variable" : {
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "thingName",
+            "marshallLocationName" : "thingName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "flattened" : false,
+            "header" : false,
+            "uri" : true,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    }
+  },
+  "customizationConfig" : {
+    "requestMetrics" : null,
+    "useAutoConstructList" : false,
+    "useAutoConstructMap" : false,
+    "serviceClientHoldInputStream" : false,
+    "operationsWithResponseStreamContentLengthValidation" : null,
+    "customExceptionUnmarshallerImpl" : null,
+    "customClientConfiguration" : null,
+    "customResponseMetadataClassName" : null,
+    "skipInterfaceAdditions" : false,
+    "customServiceNameForRequest" : null,
+    "requiredParamValidationEnabled" : false,
+    "additionalShapeConstructors" : null,
+    "simpleMethods" : null,
+    "authPolicyActions" : {
+      "skip" : true,
+      "actionPrefix" : null,
+      "fileNamePrefix" : null
+    },
+    "customCodeTemplates" : null,
+    "operationModifiers" : null,
+    "shapeSubstitutions" : null,
+    "shapeModifiers" : null
+  },
+  "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
+}

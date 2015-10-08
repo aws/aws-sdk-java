@@ -279,11 +279,105 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
             
     /**
      * <p>
+     * Using this API you can update function version to which the alias
+     * points to and alias description. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
+     * 
+     * </p>
+     * <p>
+     * This requires permission for the lambda:UpdateAlias action.
+     * </p>
+     *
+     * @param updateAliasRequest Container for the necessary parameters to
+     *           execute the UpdateAlias operation on AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateAlias service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateAliasResult> updateAliasAsync(final UpdateAliasRequest updateAliasRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateAliasResult>() {
+            public UpdateAliasResult call() throws Exception {
+                return updateAlias(updateAliasRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Using this API you can update function version to which the alias
+     * points to and alias description. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
+     * 
+     * </p>
+     * <p>
+     * This requires permission for the lambda:UpdateAlias action.
+     * </p>
+     *
+     * @param updateAliasRequest Container for the necessary parameters to
+     *           execute the UpdateAlias operation on AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateAlias service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateAliasResult> updateAliasAsync(
+            final UpdateAliasRequest updateAliasRequest,
+            final AsyncHandler<UpdateAliasRequest, UpdateAliasResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateAliasResult>() {
+            public UpdateAliasResult call() throws Exception {
+              UpdateAliasResult result;
+                try {
+                result = updateAlias(updateAliasRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateAliasRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Deletes the specified Lambda function code and configuration.
      * </p>
      * <p>
-     * When you delete a function the associated access policy is also
+     * If you don't specify a function version, AWS Lambda will delete the
+     * function, including all its versions, and any aliases pointing to the
+     * function versions.
+     * </p>
+     * <p>
+     * When you delete a function the associated resource policy is also
      * deleted. You will need to delete the event source mappings explicitly.
+     * </p>
+     * <p>
+     * For information about function versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -320,8 +414,18 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Deletes the specified Lambda function code and configuration.
      * </p>
      * <p>
-     * When you delete a function the associated access policy is also
+     * If you don't specify a function version, AWS Lambda will delete the
+     * function, including all its versions, and any aliases pointing to the
+     * function versions.
+     * </p>
+     * <p>
+     * When you delete a function the associated resource policy is also
      * deleted. You will need to delete the event source mappings explicitly.
+     * </p>
+     * <p>
+     * For information about function versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -367,16 +471,25 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * Adds a permission to the access policy associated with the specified
-     * AWS Lambda function. In a "push event" model, the access policy
-     * attached to the Lambda function grants Amazon S3 or a user application
-     * permission for the Lambda <code>lambda:Invoke</code> action. For
-     * information about the push model, see
+     * Adds a permission to the resource policy associated with the
+     * specified AWS Lambda function. You use resource policies to grant
+     * permissions to event sources that use "push" model. In "push" model,
+     * event sources (such as Amazon S3 and custom applications) invoke your
+     * Lambda function. Each permission you add to the resource policy allows
+     * an event source, permission to invoke the Lambda function.
+     * </p>
+     * <p>
+     * For information about the push model, see
      * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
-     * . Each Lambda function has one access policy associated with it. You
-     * can use the <code>AddPermission</code> API to add a permission to the
-     * policy. You have one access policy but it can have multiple permission
-     * statements.
+     * .
+     * </p>
+     * <p>
+     * If you are using versioning feature (see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * ), a Lambda function can have multiple ARNs that can be used to
+     * invoke the function. Note that, each permission you add to resource
+     * policy using this API is specific to an ARN, specified using the
+     * <code>Qualifier</code> parameter
      * </p>
      * <p>
      * This operation requires permission for the
@@ -409,16 +522,25 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
 
     /**
      * <p>
-     * Adds a permission to the access policy associated with the specified
-     * AWS Lambda function. In a "push event" model, the access policy
-     * attached to the Lambda function grants Amazon S3 or a user application
-     * permission for the Lambda <code>lambda:Invoke</code> action. For
-     * information about the push model, see
+     * Adds a permission to the resource policy associated with the
+     * specified AWS Lambda function. You use resource policies to grant
+     * permissions to event sources that use "push" model. In "push" model,
+     * event sources (such as Amazon S3 and custom applications) invoke your
+     * Lambda function. Each permission you add to the resource policy allows
+     * an event source, permission to invoke the Lambda function.
+     * </p>
+     * <p>
+     * For information about the push model, see
      * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
-     * . Each Lambda function has one access policy associated with it. You
-     * can use the <code>AddPermission</code> API to add a permission to the
-     * policy. You have one access policy but it can have multiple permission
-     * statements.
+     * .
+     * </p>
+     * <p>
+     * If you are using versioning feature (see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * ), a Lambda function can have multiple ARNs that can be used to
+     * invoke the function. Note that, each permission you add to resource
+     * policy using this API is specific to an ARN, specified using the
+     * <code>Qualifier</code> parameter
      * </p>
      * <p>
      * This operation requires permission for the
@@ -549,8 +671,97 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * You can remove individual permissions from an access policy
-     * associated with a Lambda function by providing a Statement ID.
+     * Returns the specified alias information such as the alias ARN,
+     * description, and function version it is pointing to. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
+     * 
+     * </p>
+     * <p>
+     * This requires permission for the lambda:GetAlias action.
+     * </p>
+     *
+     * @param getAliasRequest Container for the necessary parameters to
+     *           execute the GetAlias operation on AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the GetAlias
+     *         service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetAliasResult> getAliasAsync(final GetAliasRequest getAliasRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetAliasResult>() {
+            public GetAliasResult call() throws Exception {
+                return getAlias(getAliasRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the specified alias information such as the alias ARN,
+     * description, and function version it is pointing to. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
+     * 
+     * </p>
+     * <p>
+     * This requires permission for the lambda:GetAlias action.
+     * </p>
+     *
+     * @param getAliasRequest Container for the necessary parameters to
+     *           execute the GetAlias operation on AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the GetAlias
+     *         service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetAliasResult> getAliasAsync(
+            final GetAliasRequest getAliasRequest,
+            final AsyncHandler<GetAliasRequest, GetAliasResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetAliasResult>() {
+            public GetAliasResult call() throws Exception {
+              GetAliasResult result;
+                try {
+                result = getAlias(getAliasRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getAliasRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * You can remove individual permissions from an resource policy
+     * associated with a Lambda function by providing a statement ID that you
+     * provided when you addded the permission. The API removes corresponding
+     * permission that is associated with the specific ARN identified by the
+     * <code>Qualifier</code> parameter.
      * </p>
      * <p>
      * Note that removal of a permission will cause an active event source
@@ -588,8 +799,11 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
 
     /**
      * <p>
-     * You can remove individual permissions from an access policy
-     * associated with a Lambda function by providing a Statement ID.
+     * You can remove individual permissions from an resource policy
+     * associated with a Lambda function by providing a statement ID that you
+     * provided when you addded the permission. The API removes corresponding
+     * permission that is associated with the specific ARN identified by the
+     * <code>Qualifier</code> parameter.
      * </p>
      * <p>
      * Note that removal of a permission will cause an active event source
@@ -817,6 +1031,88 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
+     * Publishes a version of your function from the current snapshot of
+     * HEAD. That is, AWS Lambda takes a snapshot of the function code and
+     * configuration information from HEAD and publishes a new version. The
+     * code and <code>handler</code> of this specific Lambda function version
+     * cannot be modified after publication, but you can modify the
+     * configuration information.
+     * </p>
+     *
+     * @param publishVersionRequest Container for the necessary parameters to
+     *           execute the PublishVersion operation on AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PublishVersion service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<PublishVersionResult> publishVersionAsync(final PublishVersionRequest publishVersionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<PublishVersionResult>() {
+            public PublishVersionResult call() throws Exception {
+                return publishVersion(publishVersionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Publishes a version of your function from the current snapshot of
+     * HEAD. That is, AWS Lambda takes a snapshot of the function code and
+     * configuration information from HEAD and publishes a new version. The
+     * code and <code>handler</code> of this specific Lambda function version
+     * cannot be modified after publication, but you can modify the
+     * configuration information.
+     * </p>
+     *
+     * @param publishVersionRequest Container for the necessary parameters to
+     *           execute the PublishVersion operation on AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PublishVersion service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<PublishVersionResult> publishVersionAsync(
+            final PublishVersionRequest publishVersionRequest,
+            final AsyncHandler<PublishVersionRequest, PublishVersionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<PublishVersionResult>() {
+            public PublishVersionResult call() throws Exception {
+              PublishVersionResult result;
+                try {
+                result = publishVersion(publishVersionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(publishVersionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * <b>IMPORTANT:</b>This API is deprecated. We recommend you use Invoke
      * API (see Invoke).
      * </p>
@@ -1002,7 +1298,24 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * Invokes a specified Lambda function.
+     * Invokes a specific Lambda function version.
+     * </p>
+     * <p>
+     * If you don't provide the <code>Qualifier</code> parameter, it uses
+     * the unqualified function ARN which results in invocation of the
+     * $LATEST version of the Lambda function (when you create a Lambda
+     * function, the $LATEST is the version). The AWS Lambda versioning and
+     * aliases feature allows you to publish multiple versions of a Lambda
+     * function and also create aliases for each function version. So each
+     * your Lambda function version can be invoked using multiple ARNs. For
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * . Using the <code>Qualifier</code> parameter, you can specify a
+     * function version or alias name to invoke specific function version. If
+     * you specify function version, the API uses the qualified function ARN
+     * to invoke a specific function version. If you specify alias name, the
+     * API uses the alias ARN to invoke the function version to which the
+     * alias points.
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1035,7 +1348,24 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
 
     /**
      * <p>
-     * Invokes a specified Lambda function.
+     * Invokes a specific Lambda function version.
+     * </p>
+     * <p>
+     * If you don't provide the <code>Qualifier</code> parameter, it uses
+     * the unqualified function ARN which results in invocation of the
+     * $LATEST version of the Lambda function (when you create a Lambda
+     * function, the $LATEST is the version). The AWS Lambda versioning and
+     * aliases feature allows you to publish multiple versions of a Lambda
+     * function and also create aliases for each function version. So each
+     * your Lambda function version can be invoked using multiple ARNs. For
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * . Using the <code>Qualifier</code> parameter, you can specify a
+     * function version or alias name to invoke specific function version. If
+     * you specify function version, the API uses the qualified function ARN
+     * to invoke a specific function version. If you specify alias name, the
+     * API uses the alias ARN to invoke the function version to which the
+     * alias points.
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1082,9 +1412,12 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * Returns the access policy, containing a list of permissions granted
-     * via the <code>AddPermission</code> API, associated with the specified
-     * bucket.
+     * Returns the resource policy, containing a list of permissions that
+     * apply to a specific to an ARN that you specify via the
+     * <code>Qualifier</code> paramter.
+     * </p>
+     * <p>
+     * For informration about adding permissions, see AddPermission.
      * </p>
      * <p>
      * You need permission for the <code>lambda:GetPolicy action.</code>
@@ -1116,9 +1449,12 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
 
     /**
      * <p>
-     * Returns the access policy, containing a list of permissions granted
-     * via the <code>AddPermission</code> API, associated with the specified
-     * bucket.
+     * Returns the resource policy, containing a list of permissions that
+     * apply to a specific to an ARN that you specify via the
+     * <code>Qualifier</code> paramter.
+     * </p>
+     * <p>
+     * For informration about adding permissions, see AddPermission.
      * </p>
      * <p>
      * You need permission for the <code>lambda:GetPolicy action.</code>
@@ -1157,6 +1493,90 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
             throw ex;
               }
               asyncHandler.onSuccess(getPolicyRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns configuration information for the specified event source
+     * mapping (see CreateEventSourceMapping).
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:GetEventSourceMapping</code> action.
+     * </p>
+     *
+     * @param getEventSourceMappingRequest Container for the necessary
+     *           parameters to execute the GetEventSourceMapping operation on
+     *           AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetEventSourceMapping service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetEventSourceMappingResult> getEventSourceMappingAsync(final GetEventSourceMappingRequest getEventSourceMappingRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetEventSourceMappingResult>() {
+            public GetEventSourceMappingResult call() throws Exception {
+                return getEventSourceMapping(getEventSourceMappingRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns configuration information for the specified event source
+     * mapping (see CreateEventSourceMapping).
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:GetEventSourceMapping</code> action.
+     * </p>
+     *
+     * @param getEventSourceMappingRequest Container for the necessary
+     *           parameters to execute the GetEventSourceMapping operation on
+     *           AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetEventSourceMapping service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetEventSourceMappingResult> getEventSourceMappingAsync(
+            final GetEventSourceMappingRequest getEventSourceMappingRequest,
+            final AsyncHandler<GetEventSourceMappingRequest, GetEventSourceMappingResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetEventSourceMappingResult>() {
+            public GetEventSourceMappingResult call() throws Exception {
+              GetEventSourceMappingResult result;
+                try {
+                result = getEventSourceMapping(getEventSourceMappingRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getEventSourceMappingRequest, result);
                  return result;
         }
     });
@@ -1260,20 +1680,19 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * Returns configuration information for the specified event source
-     * mapping (see CreateEventSourceMapping).
+     * Deletes specified Lambda function alias. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
+     * 
      * </p>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetEventSourceMapping</code> action.
+     * This requires permission for the lambda:DeleteAlias action.
      * </p>
      *
-     * @param getEventSourceMappingRequest Container for the necessary
-     *           parameters to execute the GetEventSourceMapping operation on
-     *           AWSLambda.
+     * @param deleteAliasRequest Container for the necessary parameters to
+     *           execute the DeleteAlias operation on AWSLambda.
      * 
      * @return A Java Future object containing the response from the
-     *         GetEventSourceMapping service method, as returned by AWSLambda.
+     *         DeleteAlias service method, as returned by AWSLambda.
      * 
      *
      * @throws AmazonClientException
@@ -1284,35 +1703,35 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      *             If an error response is returned by AWSLambda indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<GetEventSourceMappingResult> getEventSourceMappingAsync(final GetEventSourceMappingRequest getEventSourceMappingRequest) 
+    public Future<Void> deleteAliasAsync(final DeleteAliasRequest deleteAliasRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetEventSourceMappingResult>() {
-            public GetEventSourceMappingResult call() throws Exception {
-                return getEventSourceMapping(getEventSourceMappingRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteAlias(deleteAliasRequest);
+                return null;
         }
     });
     }
 
     /**
      * <p>
-     * Returns configuration information for the specified event source
-     * mapping (see CreateEventSourceMapping).
+     * Deletes specified Lambda function alias. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
+     * 
      * </p>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetEventSourceMapping</code> action.
+     * This requires permission for the lambda:DeleteAlias action.
      * </p>
      *
-     * @param getEventSourceMappingRequest Container for the necessary
-     *           parameters to execute the GetEventSourceMapping operation on
-     *           AWSLambda.
+     * @param deleteAliasRequest Container for the necessary parameters to
+     *           execute the DeleteAlias operation on AWSLambda.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         GetEventSourceMapping service method, as returned by AWSLambda.
+     *         DeleteAlias service method, as returned by AWSLambda.
      * 
      *
      * @throws AmazonClientException
@@ -1323,21 +1742,20 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      *             If an error response is returned by AWSLambda indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<GetEventSourceMappingResult> getEventSourceMappingAsync(
-            final GetEventSourceMappingRequest getEventSourceMappingRequest,
-            final AsyncHandler<GetEventSourceMappingRequest, GetEventSourceMappingResult> asyncHandler)
+    public Future<Void> deleteAliasAsync(
+            final DeleteAliasRequest deleteAliasRequest,
+            final AsyncHandler<DeleteAliasRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetEventSourceMappingResult>() {
-            public GetEventSourceMappingResult call() throws Exception {
-              GetEventSourceMappingResult result;
-                try {
-                result = getEventSourceMapping(getEventSourceMappingRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteAlias(deleteAliasRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(getEventSourceMappingRequest, result);
-                 return result;
+              asyncHandler.onSuccess(deleteAliasRequest, null);
+                 return null;
         }
     });
     }
@@ -1347,6 +1765,14 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Returns the configuration information of the Lambda function. This
      * the same information you provided as parameters when uploading the
      * function by using CreateFunction.
+     * </p>
+     * <p>
+     * You can use the optional <code>Qualifier</code> parameter to retrieve
+     * configuration information for a specific Lambda function version. If
+     * you don't provide it, the API returns information about the $LATEST
+     * version of the function. For more information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1383,6 +1809,14 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Returns the configuration information of the Lambda function. This
      * the same information you provided as parameters when uploading the
      * function by using CreateFunction.
+     * </p>
+     * <p>
+     * You can use the optional <code>Qualifier</code> parameter to retrieve
+     * configuration information for a specific Lambda function version. If
+     * you don't provide it, the API returns information about the $LATEST
+     * version of the function. For more information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1722,11 +2156,182 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
+     * Returns list of aliases created for a Lambda function. For each
+     * alias, the response includes information such as the alias ARN,
+     * description, alias name, and the function version to which it points.
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
+     * 
+     * </p>
+     * <p>
+     * This requires permission for the lambda:ListAliases action.
+     * </p>
+     *
+     * @param listAliasesRequest Container for the necessary parameters to
+     *           execute the ListAliases operation on AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListAliases service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListAliasesResult> listAliasesAsync(final ListAliasesRequest listAliasesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListAliasesResult>() {
+            public ListAliasesResult call() throws Exception {
+                return listAliases(listAliasesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns list of aliases created for a Lambda function. For each
+     * alias, the response includes information such as the alias ARN,
+     * description, alias name, and the function version to which it points.
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
+     * 
+     * </p>
+     * <p>
+     * This requires permission for the lambda:ListAliases action.
+     * </p>
+     *
+     * @param listAliasesRequest Container for the necessary parameters to
+     *           execute the ListAliases operation on AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListAliases service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListAliasesResult> listAliasesAsync(
+            final ListAliasesRequest listAliasesRequest,
+            final AsyncHandler<ListAliasesRequest, ListAliasesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListAliasesResult>() {
+            public ListAliasesResult call() throws Exception {
+              ListAliasesResult result;
+                try {
+                result = listAliases(listAliasesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listAliasesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * List all versions of a function.
+     * </p>
+     *
+     * @param listVersionsByFunctionRequest Container for the necessary
+     *           parameters to execute the ListVersionsByFunction operation on
+     *           AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListVersionsByFunction service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListVersionsByFunctionResult> listVersionsByFunctionAsync(final ListVersionsByFunctionRequest listVersionsByFunctionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListVersionsByFunctionResult>() {
+            public ListVersionsByFunctionResult call() throws Exception {
+                return listVersionsByFunction(listVersionsByFunctionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * List all versions of a function.
+     * </p>
+     *
+     * @param listVersionsByFunctionRequest Container for the necessary
+     *           parameters to execute the ListVersionsByFunction operation on
+     *           AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListVersionsByFunction service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListVersionsByFunctionResult> listVersionsByFunctionAsync(
+            final ListVersionsByFunctionRequest listVersionsByFunctionRequest,
+            final AsyncHandler<ListVersionsByFunctionRequest, ListVersionsByFunctionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListVersionsByFunctionResult>() {
+            public ListVersionsByFunctionResult call() throws Exception {
+              ListVersionsByFunctionResult result;
+                try {
+                result = listVersionsByFunction(listVersionsByFunctionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listVersionsByFunctionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns the configuration information of the Lambda function and a
      * presigned URL link to the .zip file you uploaded with CreateFunction
      * so you can download the .zip file. Note that the URL is valid for up
      * to 10 minutes. The configuration information is the same information
      * you provided as parameters when uploading the function.
+     * </p>
+     * <p>
+     * Using the optional <code>Qualifier</code> parameter, you can specify
+     * a specific function version for which you want this information. If
+     * you don't specify this parameter, the API uses unqualified function
+     * ARN which return information about the $LATEST version of the Lambda
+     * function. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1766,6 +2371,15 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * you provided as parameters when uploading the function.
      * </p>
      * <p>
+     * Using the optional <code>Qualifier</code> parameter, you can specify
+     * a specific function version for which you want this information. If
+     * you don't specify this parameter, the API uses unqualified function
+     * ARN which return information about the $LATEST version of the Lambda
+     * function. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
+     * </p>
+     * <p>
      * This operation requires permission for the
      * <code>lambda:GetFunction</code> action.
      * </p>
@@ -1803,6 +2417,90 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
             throw ex;
               }
               asyncHandler.onSuccess(getFunctionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates an alias to the specified Lambda function version. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
+     * 
+     * </p>
+     * <p>
+     * This requires permission for the lambda:CreateAlias action.
+     * </p>
+     *
+     * @param createAliasRequest Container for the necessary parameters to
+     *           execute the CreateAlias operation on AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateAlias service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateAliasResult> createAliasAsync(final CreateAliasRequest createAliasRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateAliasResult>() {
+            public CreateAliasResult call() throws Exception {
+                return createAlias(createAliasRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates an alias to the specified Lambda function version. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
+     * 
+     * </p>
+     * <p>
+     * This requires permission for the lambda:CreateAlias action.
+     * </p>
+     *
+     * @param createAliasRequest Container for the necessary parameters to
+     *           execute the CreateAlias operation on AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateAlias service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateAliasResult> createAliasAsync(
+            final CreateAliasRequest createAliasRequest,
+            final AsyncHandler<CreateAliasRequest, CreateAliasResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateAliasResult>() {
+            public CreateAliasResult call() throws Exception {
+              CreateAliasResult result;
+                try {
+                result = createAlias(createAliasRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createAliasRequest, result);
                  return result;
         }
     });

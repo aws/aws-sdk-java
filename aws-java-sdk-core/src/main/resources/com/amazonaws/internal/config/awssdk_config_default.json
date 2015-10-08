@@ -186,6 +186,11 @@
       "serviceName": "dynamodb", // for v4 signing
       "regionMetadataServiceName": "streams.dynamodb" // for region metadata
     }
+  }, {
+    "key" : "AWSIotClient",
+    "config" : {
+      "regionMetadataServiceName": "iot" // for region metadata
+    }
   } ],
   "hostRegexToRegionMappings" : [ {
     "hostNameRegex" : "(.+\\.)?s3\\.amazonaws\\.com",

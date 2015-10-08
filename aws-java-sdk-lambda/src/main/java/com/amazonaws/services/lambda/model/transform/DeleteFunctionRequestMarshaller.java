@@ -47,7 +47,7 @@ public class DeleteFunctionRequestMarshaller implements Marshaller<Request<Delet
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "/2015-03-31/functions/{FunctionName}";
+        String path = "/2015-03-31/functions/{FunctionName}?Qualifier={Qualifier}";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -99,6 +99,18 @@ public class DeleteFunctionRequestMarshaller implements Marshaller<Request<Delet
             
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (deleteFunctionRequest.getFunctionName() == null) ? "" : StringUtils.fromString(deleteFunctionRequest.getFunctionName())); 
+        } 
+        if (DYNAMIC_QUERY_PARAMS.containsKey("Qualifier")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("Qualifier");
+
+            String value = (deleteFunctionRequest.getQualifier() == null) ? null : StringUtils.fromString(deleteFunctionRequest.getQualifier());
+
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
+            }
+            
+        } else {
+            uriResourcePath = uriResourcePath.replace("{Qualifier}", (deleteFunctionRequest.getQualifier() == null) ? "" : StringUtils.fromString(deleteFunctionRequest.getQualifier())); 
         } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));

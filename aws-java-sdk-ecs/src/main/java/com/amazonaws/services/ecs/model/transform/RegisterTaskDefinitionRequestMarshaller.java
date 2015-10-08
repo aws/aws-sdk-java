@@ -221,6 +221,146 @@ public class RegisterTaskDefinitionRequestMarshaller implements Marshaller<Reque
                             }
                             jsonWriter.endArray();
                         }
+                        if (containerDefinitionsListValue.getHostname() != null) {
+                            jsonWriter.key("hostname").value(containerDefinitionsListValue.getHostname());
+                        }
+                        if (containerDefinitionsListValue.getUser() != null) {
+                            jsonWriter.key("user").value(containerDefinitionsListValue.getUser());
+                        }
+                        if (containerDefinitionsListValue.getWorkingDirectory() != null) {
+                            jsonWriter.key("workingDirectory").value(containerDefinitionsListValue.getWorkingDirectory());
+                        }
+                        if (containerDefinitionsListValue.isDisableNetworking() != null) {
+                            jsonWriter.key("disableNetworking").value(containerDefinitionsListValue.isDisableNetworking());
+                        }
+                        if (containerDefinitionsListValue.isPrivileged() != null) {
+                            jsonWriter.key("privileged").value(containerDefinitionsListValue.isPrivileged());
+                        }
+                        if (containerDefinitionsListValue.isReadonlyRootFilesystem() != null) {
+                            jsonWriter.key("readonlyRootFilesystem").value(containerDefinitionsListValue.isReadonlyRootFilesystem());
+                        }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<String> dnsServersList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(containerDefinitionsListValue.getDnsServers());
+                        if (dnsServersList != null && !(dnsServersList.isAutoConstruct() && dnsServersList.isEmpty())) {
+
+                            jsonWriter.key("dnsServers");
+                            jsonWriter.array();
+
+                            for (String dnsServersListValue : dnsServersList) {
+                                if (dnsServersListValue != null) {
+                                    jsonWriter.value(dnsServersListValue);
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<String> dnsSearchDomainsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(containerDefinitionsListValue.getDnsSearchDomains());
+                        if (dnsSearchDomainsList != null && !(dnsSearchDomainsList.isAutoConstruct() && dnsSearchDomainsList.isEmpty())) {
+
+                            jsonWriter.key("dnsSearchDomains");
+                            jsonWriter.array();
+
+                            for (String dnsSearchDomainsListValue : dnsSearchDomainsList) {
+                                if (dnsSearchDomainsListValue != null) {
+                                    jsonWriter.value(dnsSearchDomainsListValue);
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<HostEntry> extraHostsList = (com.amazonaws.internal.ListWithAutoConstructFlag<HostEntry>)(containerDefinitionsListValue.getExtraHosts());
+                        if (extraHostsList != null && !(extraHostsList.isAutoConstruct() && extraHostsList.isEmpty())) {
+
+                            jsonWriter.key("extraHosts");
+                            jsonWriter.array();
+
+                            for (HostEntry extraHostsListValue : extraHostsList) {
+                                if (extraHostsListValue != null) {
+                                    jsonWriter.object();
+                                    if (extraHostsListValue.getHostname() != null) {
+                                        jsonWriter.key("hostname").value(extraHostsListValue.getHostname());
+                                    }
+                                    if (extraHostsListValue.getIpAddress() != null) {
+                                        jsonWriter.key("ipAddress").value(extraHostsListValue.getIpAddress());
+                                    }
+                                    jsonWriter.endObject();
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<String> dockerSecurityOptionsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(containerDefinitionsListValue.getDockerSecurityOptions());
+                        if (dockerSecurityOptionsList != null && !(dockerSecurityOptionsList.isAutoConstruct() && dockerSecurityOptionsList.isEmpty())) {
+
+                            jsonWriter.key("dockerSecurityOptions");
+                            jsonWriter.array();
+
+                            for (String dockerSecurityOptionsListValue : dockerSecurityOptionsList) {
+                                if (dockerSecurityOptionsListValue != null) {
+                                    jsonWriter.value(dockerSecurityOptionsListValue);
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
+                        if (containerDefinitionsListValue.getDockerLabels() != null) {
+                            jsonWriter.key("dockerLabels");
+                            jsonWriter.object();
+                            for (Map.Entry<String, String> dockerLabelsListValue : containerDefinitionsListValue.getDockerLabels().entrySet()) {
+                                if (dockerLabelsListValue.getValue() != null) {
+                                    jsonWriter.key(dockerLabelsListValue.getKey());
+
+                                    jsonWriter.value(dockerLabelsListValue.getValue());
+                                }
+                            }
+                            jsonWriter.endObject();
+                        }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<Ulimit> ulimitsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Ulimit>)(containerDefinitionsListValue.getUlimits());
+                        if (ulimitsList != null && !(ulimitsList.isAutoConstruct() && ulimitsList.isEmpty())) {
+
+                            jsonWriter.key("ulimits");
+                            jsonWriter.array();
+
+                            for (Ulimit ulimitsListValue : ulimitsList) {
+                                if (ulimitsListValue != null) {
+                                    jsonWriter.object();
+                                    if (ulimitsListValue.getName() != null) {
+                                        jsonWriter.key("name").value(ulimitsListValue.getName());
+                                    }
+                                    if (ulimitsListValue.getSoftLimit() != null) {
+                                        jsonWriter.key("softLimit").value(ulimitsListValue.getSoftLimit());
+                                    }
+                                    if (ulimitsListValue.getHardLimit() != null) {
+                                        jsonWriter.key("hardLimit").value(ulimitsListValue.getHardLimit());
+                                    }
+                                    jsonWriter.endObject();
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
+                        LogConfiguration logConfiguration = containerDefinitionsListValue.getLogConfiguration();
+                        if (logConfiguration != null) {
+
+                            jsonWriter.key("logConfiguration");
+                            jsonWriter.object();
+
+                            if (logConfiguration.getLogDriver() != null) {
+                                jsonWriter.key("logDriver").value(logConfiguration.getLogDriver());
+                            }
+                            if (logConfiguration.getOptions() != null) {
+                                jsonWriter.key("options");
+                                jsonWriter.object();
+                                for (Map.Entry<String, String> optionsListValue : logConfiguration.getOptions().entrySet()) {
+                                    if (optionsListValue.getValue() != null) {
+                                        jsonWriter.key(optionsListValue.getKey());
+
+                                        jsonWriter.value(optionsListValue.getValue());
+                                    }
+                                }
+                                jsonWriter.endObject();
+                            }
+                            jsonWriter.endObject();
+                        }
                         jsonWriter.endObject();
                     }
                 }

@@ -32,16 +32,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The full family name that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. Specifying a
-     * <code>familyPrefix</code> will limit the listed task definitions to
-     * task definition revisions that belong to that family.
+     * The full family name with which to filter the
+     * <code>ListTaskDefinitions</code> results. Specifying a
+     * <code>familyPrefix</code> limits the listed task definitions to task
+     * definition revisions that belong to that family.
      */
     private String familyPrefix;
 
     /**
-     * The task definition status that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. By default, only
+     * The task definition status with which to filter the
+     * <code>ListTaskDefinitions</code> results. By default, only
      * <code>ACTIVE</code> task definitions are listed. By setting this
      * parameter to <code>INACTIVE</code>, you can view task definitions that
      * are <code>INACTIVE</code> as long as an active task or service still
@@ -93,47 +93,47 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
     private Integer maxResults;
 
     /**
-     * The full family name that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. Specifying a
-     * <code>familyPrefix</code> will limit the listed task definitions to
-     * task definition revisions that belong to that family.
+     * The full family name with which to filter the
+     * <code>ListTaskDefinitions</code> results. Specifying a
+     * <code>familyPrefix</code> limits the listed task definitions to task
+     * definition revisions that belong to that family.
      *
-     * @return The full family name that you want to filter the
-     *         <code>ListTaskDefinitions</code> results with. Specifying a
-     *         <code>familyPrefix</code> will limit the listed task definitions to
-     *         task definition revisions that belong to that family.
+     * @return The full family name with which to filter the
+     *         <code>ListTaskDefinitions</code> results. Specifying a
+     *         <code>familyPrefix</code> limits the listed task definitions to task
+     *         definition revisions that belong to that family.
      */
     public String getFamilyPrefix() {
         return familyPrefix;
     }
     
     /**
-     * The full family name that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. Specifying a
-     * <code>familyPrefix</code> will limit the listed task definitions to
-     * task definition revisions that belong to that family.
+     * The full family name with which to filter the
+     * <code>ListTaskDefinitions</code> results. Specifying a
+     * <code>familyPrefix</code> limits the listed task definitions to task
+     * definition revisions that belong to that family.
      *
-     * @param familyPrefix The full family name that you want to filter the
-     *         <code>ListTaskDefinitions</code> results with. Specifying a
-     *         <code>familyPrefix</code> will limit the listed task definitions to
-     *         task definition revisions that belong to that family.
+     * @param familyPrefix The full family name with which to filter the
+     *         <code>ListTaskDefinitions</code> results. Specifying a
+     *         <code>familyPrefix</code> limits the listed task definitions to task
+     *         definition revisions that belong to that family.
      */
     public void setFamilyPrefix(String familyPrefix) {
         this.familyPrefix = familyPrefix;
     }
     
     /**
-     * The full family name that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. Specifying a
-     * <code>familyPrefix</code> will limit the listed task definitions to
-     * task definition revisions that belong to that family.
+     * The full family name with which to filter the
+     * <code>ListTaskDefinitions</code> results. Specifying a
+     * <code>familyPrefix</code> limits the listed task definitions to task
+     * definition revisions that belong to that family.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param familyPrefix The full family name that you want to filter the
-     *         <code>ListTaskDefinitions</code> results with. Specifying a
-     *         <code>familyPrefix</code> will limit the listed task definitions to
-     *         task definition revisions that belong to that family.
+     * @param familyPrefix The full family name with which to filter the
+     *         <code>ListTaskDefinitions</code> results. Specifying a
+     *         <code>familyPrefix</code> limits the listed task definitions to task
+     *         definition revisions that belong to that family.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -144,8 +144,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * The task definition status that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. By default, only
+     * The task definition status with which to filter the
+     * <code>ListTaskDefinitions</code> results. By default, only
      * <code>ACTIVE</code> task definitions are listed. By setting this
      * parameter to <code>INACTIVE</code>, you can view task definitions that
      * are <code>INACTIVE</code> as long as an active task or service still
@@ -155,8 +155,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ACTIVE, INACTIVE
      *
-     * @return The task definition status that you want to filter the
-     *         <code>ListTaskDefinitions</code> results with. By default, only
+     * @return The task definition status with which to filter the
+     *         <code>ListTaskDefinitions</code> results. By default, only
      *         <code>ACTIVE</code> task definitions are listed. By setting this
      *         parameter to <code>INACTIVE</code>, you can view task definitions that
      *         are <code>INACTIVE</code> as long as an active task or service still
@@ -170,8 +170,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * The task definition status that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. By default, only
+     * The task definition status with which to filter the
+     * <code>ListTaskDefinitions</code> results. By default, only
      * <code>ACTIVE</code> task definitions are listed. By setting this
      * parameter to <code>INACTIVE</code>, you can view task definitions that
      * are <code>INACTIVE</code> as long as an active task or service still
@@ -181,8 +181,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ACTIVE, INACTIVE
      *
-     * @param status The task definition status that you want to filter the
-     *         <code>ListTaskDefinitions</code> results with. By default, only
+     * @param status The task definition status with which to filter the
+     *         <code>ListTaskDefinitions</code> results. By default, only
      *         <code>ACTIVE</code> task definitions are listed. By setting this
      *         parameter to <code>INACTIVE</code>, you can view task definitions that
      *         are <code>INACTIVE</code> as long as an active task or service still
@@ -196,8 +196,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * The task definition status that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. By default, only
+     * The task definition status with which to filter the
+     * <code>ListTaskDefinitions</code> results. By default, only
      * <code>ACTIVE</code> task definitions are listed. By setting this
      * parameter to <code>INACTIVE</code>, you can view task definitions that
      * are <code>INACTIVE</code> as long as an active task or service still
@@ -209,8 +209,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ACTIVE, INACTIVE
      *
-     * @param status The task definition status that you want to filter the
-     *         <code>ListTaskDefinitions</code> results with. By default, only
+     * @param status The task definition status with which to filter the
+     *         <code>ListTaskDefinitions</code> results. By default, only
      *         <code>ACTIVE</code> task definitions are listed. By setting this
      *         parameter to <code>INACTIVE</code>, you can view task definitions that
      *         are <code>INACTIVE</code> as long as an active task or service still
@@ -228,8 +228,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * The task definition status that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. By default, only
+     * The task definition status with which to filter the
+     * <code>ListTaskDefinitions</code> results. By default, only
      * <code>ACTIVE</code> task definitions are listed. By setting this
      * parameter to <code>INACTIVE</code>, you can view task definitions that
      * are <code>INACTIVE</code> as long as an active task or service still
@@ -239,8 +239,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ACTIVE, INACTIVE
      *
-     * @param status The task definition status that you want to filter the
-     *         <code>ListTaskDefinitions</code> results with. By default, only
+     * @param status The task definition status with which to filter the
+     *         <code>ListTaskDefinitions</code> results. By default, only
      *         <code>ACTIVE</code> task definitions are listed. By setting this
      *         parameter to <code>INACTIVE</code>, you can view task definitions that
      *         are <code>INACTIVE</code> as long as an active task or service still
@@ -254,8 +254,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * The task definition status that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. By default, only
+     * The task definition status with which to filter the
+     * <code>ListTaskDefinitions</code> results. By default, only
      * <code>ACTIVE</code> task definitions are listed. By setting this
      * parameter to <code>INACTIVE</code>, you can view task definitions that
      * are <code>INACTIVE</code> as long as an active task or service still
@@ -267,8 +267,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ACTIVE, INACTIVE
      *
-     * @param status The task definition status that you want to filter the
-     *         <code>ListTaskDefinitions</code> results with. By default, only
+     * @param status The task definition status with which to filter the
+     *         <code>ListTaskDefinitions</code> results. By default, only
      *         <code>ACTIVE</code> task definitions are listed. By setting this
      *         parameter to <code>INACTIVE</code>, you can view task definitions that
      *         are <code>INACTIVE</code> as long as an active task or service still

@@ -222,6 +222,7 @@ public class SdkAsserts {
         assertTrue(e.getErrorCode().trim().length() > 0);
 
         assertNotNull(e.getServiceName());
-        assertTrue(e.getServiceName().startsWith("Amazon"));
+        assertTrue(e.getServiceName().startsWith("Amazon") || e.getServiceName().startsWith("AWS"));
     }
+
 }

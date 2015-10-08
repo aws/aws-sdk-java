@@ -22,8 +22,8 @@ import com.amazonaws.AmazonServiceException;
  * progress on the specified container instance. If the container agent
  * becomes disconnected while it is in a transitional stage, such as
  * <code>PENDING</code> or <code>STAGING</code> , the update process can
- * get stuck in that state. However, when the agent reconnects, it will
- * resume where it stopped previously.
+ * get stuck in that state. However, when the agent reconnects, it
+ * resumes where it stopped previously.
  * </p>
  */        
 public class UpdateInProgressException extends AmazonServiceException {

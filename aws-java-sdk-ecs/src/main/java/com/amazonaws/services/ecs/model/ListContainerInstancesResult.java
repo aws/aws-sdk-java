@@ -22,8 +22,9 @@ import java.io.Serializable;
 public class ListContainerInstancesResult implements Serializable, Cloneable {
 
     /**
-     * The list of container instance full Amazon Resource Name (ARN) entries
-     * for each container instance associated with the specified cluster.
+     * The list of container instances with full Amazon Resource Name (ARN)
+     * entries for each container instance associated with the specified
+     * cluster.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> containerInstanceArns;
 
@@ -38,11 +39,13 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
     private String nextToken;
 
     /**
-     * The list of container instance full Amazon Resource Name (ARN) entries
-     * for each container instance associated with the specified cluster.
+     * The list of container instances with full Amazon Resource Name (ARN)
+     * entries for each container instance associated with the specified
+     * cluster.
      *
-     * @return The list of container instance full Amazon Resource Name (ARN) entries
-     *         for each container instance associated with the specified cluster.
+     * @return The list of container instances with full Amazon Resource Name (ARN)
+     *         entries for each container instance associated with the specified
+     *         cluster.
      */
     public java.util.List<String> getContainerInstanceArns() {
         if (containerInstanceArns == null) {
@@ -53,11 +56,13 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
     }
     
     /**
-     * The list of container instance full Amazon Resource Name (ARN) entries
-     * for each container instance associated with the specified cluster.
+     * The list of container instances with full Amazon Resource Name (ARN)
+     * entries for each container instance associated with the specified
+     * cluster.
      *
-     * @param containerInstanceArns The list of container instance full Amazon Resource Name (ARN) entries
-     *         for each container instance associated with the specified cluster.
+     * @param containerInstanceArns The list of container instances with full Amazon Resource Name (ARN)
+     *         entries for each container instance associated with the specified
+     *         cluster.
      */
     public void setContainerInstanceArns(java.util.Collection<String> containerInstanceArns) {
         if (containerInstanceArns == null) {
@@ -70,8 +75,9 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
     }
     
     /**
-     * The list of container instance full Amazon Resource Name (ARN) entries
-     * for each container instance associated with the specified cluster.
+     * The list of container instances with full Amazon Resource Name (ARN)
+     * entries for each container instance associated with the specified
+     * cluster.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setContainerInstanceArns(java.util.Collection)} or
@@ -80,8 +86,9 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerInstanceArns The list of container instance full Amazon Resource Name (ARN) entries
-     *         for each container instance associated with the specified cluster.
+     * @param containerInstanceArns The list of container instances with full Amazon Resource Name (ARN)
+     *         entries for each container instance associated with the specified
+     *         cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -95,13 +102,15 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
     }
     
     /**
-     * The list of container instance full Amazon Resource Name (ARN) entries
-     * for each container instance associated with the specified cluster.
+     * The list of container instances with full Amazon Resource Name (ARN)
+     * entries for each container instance associated with the specified
+     * cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerInstanceArns The list of container instance full Amazon Resource Name (ARN) entries
-     *         for each container instance associated with the specified cluster.
+     * @param containerInstanceArns The list of container instances with full Amazon Resource Name (ARN)
+     *         entries for each container instance associated with the specified
+     *         cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

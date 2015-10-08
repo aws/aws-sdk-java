@@ -21,8 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.lambda.AWSLambda#removePermission(RemovePermissionRequest) RemovePermission operation}.
  * <p>
- * You can remove individual permissions from an access policy associated
- * with a Lambda function by providing a Statement ID.
+ * You can remove individual permissions from an resource policy
+ * associated with a Lambda function by providing a statement ID that you
+ * provided when you addded the permission. The API removes corresponding
+ * permission that is associated with the specific ARN identified by the
+ * <code>Qualifier</code> parameter.
  * </p>
  * <p>
  * Note that removal of a permission will cause an active event source to
@@ -38,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RemovePermissionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Lambda function whose access policy you want to remove a permission
+     * Lambda function whose resource policy you want to remove a permission
      * from. <p> You can specify an unqualified function name (for example,
      * "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
      * function (for example,
@@ -49,8 +52,8 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionName;
 
@@ -64,7 +67,20 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
     private String statementId;
 
     /**
-     * Lambda function whose access policy you want to remove a permission
+     * You can specify this optional parameter to remove permission
+     * associated with a specific function version or function alias. The
+     * value of this paramter is the function version or alias name. If you
+     * don't specify this parameter, the API removes permission associated
+     * with the unqualified function ARN.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     */
+    private String qualifier;
+
+    /**
+     * Lambda function whose resource policy you want to remove a permission
      * from. <p> You can specify an unqualified function name (for example,
      * "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
      * function (for example,
@@ -75,10 +91,10 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @return Lambda function whose access policy you want to remove a permission
+     * @return Lambda function whose resource policy you want to remove a permission
      *         from. <p> You can specify an unqualified function name (for example,
      *         "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
      *         function (for example,
@@ -93,7 +109,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Lambda function whose access policy you want to remove a permission
+     * Lambda function whose resource policy you want to remove a permission
      * from. <p> You can specify an unqualified function name (for example,
      * "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
      * function (for example,
@@ -104,10 +120,10 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName Lambda function whose access policy you want to remove a permission
+     * @param functionName Lambda function whose resource policy you want to remove a permission
      *         from. <p> You can specify an unqualified function name (for example,
      *         "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
      *         function (for example,
@@ -122,7 +138,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Lambda function whose access policy you want to remove a permission
+     * Lambda function whose resource policy you want to remove a permission
      * from. <p> You can specify an unqualified function name (for example,
      * "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
      * function (for example,
@@ -135,10 +151,10 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName Lambda function whose access policy you want to remove a permission
+     * @param functionName Lambda function whose resource policy you want to remove a permission
      *         from. <p> You can specify an unqualified function name (for example,
      *         "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
      *         function (for example,
@@ -202,6 +218,75 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * You can specify this optional parameter to remove permission
+     * associated with a specific function version or function alias. The
+     * value of this paramter is the function version or alias name. If you
+     * don't specify this parameter, the API removes permission associated
+     * with the unqualified function ARN.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @return You can specify this optional parameter to remove permission
+     *         associated with a specific function version or function alias. The
+     *         value of this paramter is the function version or alias name. If you
+     *         don't specify this parameter, the API removes permission associated
+     *         with the unqualified function ARN.
+     */
+    public String getQualifier() {
+        return qualifier;
+    }
+    
+    /**
+     * You can specify this optional parameter to remove permission
+     * associated with a specific function version or function alias. The
+     * value of this paramter is the function version or alias name. If you
+     * don't specify this parameter, the API removes permission associated
+     * with the unqualified function ARN.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier You can specify this optional parameter to remove permission
+     *         associated with a specific function version or function alias. The
+     *         value of this paramter is the function version or alias name. If you
+     *         don't specify this parameter, the API removes permission associated
+     *         with the unqualified function ARN.
+     */
+    public void setQualifier(String qualifier) {
+        this.qualifier = qualifier;
+    }
+    
+    /**
+     * You can specify this optional parameter to remove permission
+     * associated with a specific function version or function alias. The
+     * value of this paramter is the function version or alias name. If you
+     * don't specify this parameter, the API removes permission associated
+     * with the unqualified function ARN.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier You can specify this optional parameter to remove permission
+     *         associated with a specific function version or function alias. The
+     *         value of this paramter is the function version or alias name. If you
+     *         don't specify this parameter, the API removes permission associated
+     *         with the unqualified function ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RemovePermissionRequest withQualifier(String qualifier) {
+        this.qualifier = qualifier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -214,7 +299,8 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null) sb.append("FunctionName: " + getFunctionName() + ",");
-        if (getStatementId() != null) sb.append("StatementId: " + getStatementId() );
+        if (getStatementId() != null) sb.append("StatementId: " + getStatementId() + ",");
+        if (getQualifier() != null) sb.append("Qualifier: " + getQualifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -226,6 +312,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
         
         hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode()); 
         hashCode = prime * hashCode + ((getStatementId() == null) ? 0 : getStatementId().hashCode()); 
+        hashCode = prime * hashCode + ((getQualifier() == null) ? 0 : getQualifier().hashCode()); 
         return hashCode;
     }
     
@@ -241,6 +328,8 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
         if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false) return false; 
         if (other.getStatementId() == null ^ this.getStatementId() == null) return false;
         if (other.getStatementId() != null && other.getStatementId().equals(this.getStatementId()) == false) return false; 
+        if (other.getQualifier() == null ^ this.getQualifier() == null) return false;
+        if (other.getQualifier() != null && other.getQualifier().equals(this.getQualifier()) == false) return false; 
         return true;
     }
     

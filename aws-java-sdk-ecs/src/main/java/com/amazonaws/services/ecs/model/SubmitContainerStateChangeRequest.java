@@ -39,8 +39,8 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest i
     private String cluster;
 
     /**
-     * The task UUID or full Amazon Resource Name (ARN) of the task that
-     * hosts the container.
+     * The task ID or full Amazon Resource Name (ARN) of the task that hosts
+     * the container.
      */
     private String task;
 
@@ -109,35 +109,35 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * The task UUID or full Amazon Resource Name (ARN) of the task that
-     * hosts the container.
+     * The task ID or full Amazon Resource Name (ARN) of the task that hosts
+     * the container.
      *
-     * @return The task UUID or full Amazon Resource Name (ARN) of the task that
-     *         hosts the container.
+     * @return The task ID or full Amazon Resource Name (ARN) of the task that hosts
+     *         the container.
      */
     public String getTask() {
         return task;
     }
     
     /**
-     * The task UUID or full Amazon Resource Name (ARN) of the task that
-     * hosts the container.
+     * The task ID or full Amazon Resource Name (ARN) of the task that hosts
+     * the container.
      *
-     * @param task The task UUID or full Amazon Resource Name (ARN) of the task that
-     *         hosts the container.
+     * @param task The task ID or full Amazon Resource Name (ARN) of the task that hosts
+     *         the container.
      */
     public void setTask(String task) {
         this.task = task;
     }
     
     /**
-     * The task UUID or full Amazon Resource Name (ARN) of the task that
-     * hosts the container.
+     * The task ID or full Amazon Resource Name (ARN) of the task that hosts
+     * the container.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param task The task UUID or full Amazon Resource Name (ARN) of the task that
-     *         hosts the container.
+     * @param task The task ID or full Amazon Resource Name (ARN) of the task that hosts
+     *         the container.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

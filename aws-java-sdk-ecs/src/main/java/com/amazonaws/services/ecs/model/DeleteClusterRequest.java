@@ -32,41 +32,41 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to
+     * delete.
      */
     private String cluster;
 
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to
+     * delete.
      *
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to delete.
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster to
+     *         delete.
      */
     public String getCluster() {
         return cluster;
     }
     
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to
+     * delete.
      *
-     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to delete.
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster to
+     *         delete.
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
     
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to
+     * delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to delete.
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster to
+     *         delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.ecs.AmazonECS#runTask(RunTaskRequest) RunTask operation}.
  * <p>
  * Start a task using random placement and the default Amazon ECS
- * scheduler. If you want to use your own scheduler or place a task on a
- * specific container instance, use <code>StartTask</code> instead.
+ * scheduler. To use your own scheduler or place a task on a specific
+ * container instance, use <code>StartTask</code> instead.
  * </p>
  * <p>
  * <b>IMPORTANT:</b> The count parameter is limited to 10 tasks per call.
@@ -34,17 +34,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RunTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to run your task on. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to run your task. If you do not specify a cluster, the default
+     * cluster is assumed..
      */
     private String cluster;
 
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run. If a <code>revision</code>
-     * is not specified, the latest <code>ACTIVE</code> revision is used.
+     * the task definition to run. If a <code>revision</code> is not
+     * specified, the latest <code>ACTIVE</code> revision is used.
      */
     private String taskDefinition;
 
@@ -63,9 +63,9 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     private TaskOverride overrides;
 
     /**
-     * The number of instantiations of the specified task that you would like
-     * to place on your cluster. <important> <p>The <code>count</code>
-     * parameter is limited to 10 tasks per call. </important>
+     * The number of instantiations of the specified task to place on your
+     * cluster. <important> <p>The <code>count</code> parameter is limited to
+     * 10 tasks per call. </important>
      */
     private Integer count;
 
@@ -82,41 +82,41 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     private String startedBy;
 
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to run your task on. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to run your task. If you do not specify a cluster, the default
+     * cluster is assumed..
      *
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to run your task on. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster on
+     *         which to run your task. If you do not specify a cluster, the default
+     *         cluster is assumed..
      */
     public String getCluster() {
         return cluster;
     }
     
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to run your task on. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to run your task. If you do not specify a cluster, the default
+     * cluster is assumed..
      *
-     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to run your task on. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster on
+     *         which to run your task. If you do not specify a cluster, the default
+     *         cluster is assumed..
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
     
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to run your task on. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to run your task. If you do not specify a cluster, the default
+     * cluster is assumed..
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to run your task on. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster on
+     *         which to run your task. If you do not specify a cluster, the default
+     *         cluster is assumed..
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -129,13 +129,13 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run. If a <code>revision</code>
-     * is not specified, the latest <code>ACTIVE</code> revision is used.
+     * the task definition to run. If a <code>revision</code> is not
+     * specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @return The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run. If a <code>revision</code>
-     *         is not specified, the latest <code>ACTIVE</code> revision is used.
+     *         the task definition to run. If a <code>revision</code> is not
+     *         specified, the latest <code>ACTIVE</code> revision is used.
      */
     public String getTaskDefinition() {
         return taskDefinition;
@@ -144,13 +144,13 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run. If a <code>revision</code>
-     * is not specified, the latest <code>ACTIVE</code> revision is used.
+     * the task definition to run. If a <code>revision</code> is not
+     * specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run. If a <code>revision</code>
-     *         is not specified, the latest <code>ACTIVE</code> revision is used.
+     *         the task definition to run. If a <code>revision</code> is not
+     *         specified, the latest <code>ACTIVE</code> revision is used.
      */
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
@@ -159,15 +159,15 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run. If a <code>revision</code>
-     * is not specified, the latest <code>ACTIVE</code> revision is used.
+     * the task definition to run. If a <code>revision</code> is not
+     * specified, the latest <code>ACTIVE</code> revision is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run. If a <code>revision</code>
-     *         is not specified, the latest <code>ACTIVE</code> revision is used.
+     *         the task definition to run. If a <code>revision</code> is not
+     *         specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -265,41 +265,41 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
-     * The number of instantiations of the specified task that you would like
-     * to place on your cluster. <important> <p>The <code>count</code>
-     * parameter is limited to 10 tasks per call. </important>
+     * The number of instantiations of the specified task to place on your
+     * cluster. <important> <p>The <code>count</code> parameter is limited to
+     * 10 tasks per call. </important>
      *
-     * @return The number of instantiations of the specified task that you would like
-     *         to place on your cluster. <important> <p>The <code>count</code>
-     *         parameter is limited to 10 tasks per call. </important>
+     * @return The number of instantiations of the specified task to place on your
+     *         cluster. <important> <p>The <code>count</code> parameter is limited to
+     *         10 tasks per call. </important>
      */
     public Integer getCount() {
         return count;
     }
     
     /**
-     * The number of instantiations of the specified task that you would like
-     * to place on your cluster. <important> <p>The <code>count</code>
-     * parameter is limited to 10 tasks per call. </important>
+     * The number of instantiations of the specified task to place on your
+     * cluster. <important> <p>The <code>count</code> parameter is limited to
+     * 10 tasks per call. </important>
      *
-     * @param count The number of instantiations of the specified task that you would like
-     *         to place on your cluster. <important> <p>The <code>count</code>
-     *         parameter is limited to 10 tasks per call. </important>
+     * @param count The number of instantiations of the specified task to place on your
+     *         cluster. <important> <p>The <code>count</code> parameter is limited to
+     *         10 tasks per call. </important>
      */
     public void setCount(Integer count) {
         this.count = count;
     }
     
     /**
-     * The number of instantiations of the specified task that you would like
-     * to place on your cluster. <important> <p>The <code>count</code>
-     * parameter is limited to 10 tasks per call. </important>
+     * The number of instantiations of the specified task to place on your
+     * cluster. <important> <p>The <code>count</code> parameter is limited to
+     * 10 tasks per call. </important>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param count The number of instantiations of the specified task that you would like
-     *         to place on your cluster. <important> <p>The <code>count</code>
-     *         parameter is limited to 10 tasks per call. </important>
+     * @param count The number of instantiations of the specified task to place on your
+     *         cluster. <important> <p>The <code>count</code> parameter is limited to
+     *         10 tasks per call. </important>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

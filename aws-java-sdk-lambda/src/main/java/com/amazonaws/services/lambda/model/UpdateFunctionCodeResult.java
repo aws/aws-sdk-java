@@ -27,8 +27,8 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The name of the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionName;
 
@@ -36,7 +36,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) assigned to the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
+     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionArn;
 
@@ -44,7 +44,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      */
     private String runtime;
 
@@ -87,7 +87,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The default is 3 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      */
     private Integer timeout;
 
@@ -106,11 +106,25 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
     private String lastModified;
 
     /**
+     * It is the SHA256 hash of your function deployment package.
+     */
+    private String codeSha256;
+
+    /**
+     * The version of the Lambda function.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>(\$LATEST|[0-9]+)<br/>
+     */
+    private String version;
+
+    /**
      * The name of the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @return The name of the function.
      */
@@ -122,8 +136,8 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The name of the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The name of the function.
      */
@@ -137,8 +151,8 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The name of the function.
      *
@@ -154,7 +168,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) assigned to the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
+     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @return The Amazon Resource Name (ARN) assigned to the function.
      */
@@ -166,7 +180,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) assigned to the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
+     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionArn The Amazon Resource Name (ARN) assigned to the function.
      */
@@ -180,7 +194,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
+     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionArn The Amazon Resource Name (ARN) assigned to the function.
      *
@@ -196,7 +210,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @return The runtime environment for the Lambda function.
      *
@@ -210,7 +224,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -226,7 +240,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -244,7 +258,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -260,7 +274,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8
+     * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -455,7 +469,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The default is 3 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      *
      * @return The function execution time at which Lambda should terminate the
      *         function. Because the execution time has cost implications, we
@@ -473,7 +487,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * The default is 3 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      *
      * @param timeout The function execution time at which Lambda should terminate the
      *         function. Because the execution time has cost implications, we
@@ -493,7 +507,7 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      *
      * @param timeout The function execution time at which Lambda should terminate the
      *         function. Because the execution time has cost implications, we
@@ -590,6 +604,84 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
     }
 
     /**
+     * It is the SHA256 hash of your function deployment package.
+     *
+     * @return It is the SHA256 hash of your function deployment package.
+     */
+    public String getCodeSha256() {
+        return codeSha256;
+    }
+    
+    /**
+     * It is the SHA256 hash of your function deployment package.
+     *
+     * @param codeSha256 It is the SHA256 hash of your function deployment package.
+     */
+    public void setCodeSha256(String codeSha256) {
+        this.codeSha256 = codeSha256;
+    }
+    
+    /**
+     * It is the SHA256 hash of your function deployment package.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param codeSha256 It is the SHA256 hash of your function deployment package.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateFunctionCodeResult withCodeSha256(String codeSha256) {
+        this.codeSha256 = codeSha256;
+        return this;
+    }
+
+    /**
+     * The version of the Lambda function.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>(\$LATEST|[0-9]+)<br/>
+     *
+     * @return The version of the Lambda function.
+     */
+    public String getVersion() {
+        return version;
+    }
+    
+    /**
+     * The version of the Lambda function.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>(\$LATEST|[0-9]+)<br/>
+     *
+     * @param version The version of the Lambda function.
+     */
+    public void setVersion(String version) {
+        this.version = version;
+    }
+    
+    /**
+     * The version of the Lambda function.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>(\$LATEST|[0-9]+)<br/>
+     *
+     * @param version The version of the Lambda function.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateFunctionCodeResult withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -610,7 +702,9 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getTimeout() != null) sb.append("Timeout: " + getTimeout() + ",");
         if (getMemorySize() != null) sb.append("MemorySize: " + getMemorySize() + ",");
-        if (getLastModified() != null) sb.append("LastModified: " + getLastModified() );
+        if (getLastModified() != null) sb.append("LastModified: " + getLastModified() + ",");
+        if (getCodeSha256() != null) sb.append("CodeSha256: " + getCodeSha256() + ",");
+        if (getVersion() != null) sb.append("Version: " + getVersion() );
         sb.append("}");
         return sb.toString();
     }
@@ -630,6 +724,8 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode()); 
         hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode()); 
+        hashCode = prime * hashCode + ((getCodeSha256() == null) ? 0 : getCodeSha256().hashCode()); 
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode()); 
         return hashCode;
     }
     
@@ -661,6 +757,10 @@ public class UpdateFunctionCodeResult implements Serializable, Cloneable {
         if (other.getMemorySize() != null && other.getMemorySize().equals(this.getMemorySize()) == false) return false; 
         if (other.getLastModified() == null ^ this.getLastModified() == null) return false;
         if (other.getLastModified() != null && other.getLastModified().equals(this.getLastModified()) == false) return false; 
+        if (other.getCodeSha256() == null ^ this.getCodeSha256() == null) return false;
+        if (other.getCodeSha256() != null && other.getCodeSha256().equals(this.getCodeSha256()) == false) return false; 
+        if (other.getVersion() == null ^ this.getVersion() == null) return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false) return false; 
         return true;
     }
     

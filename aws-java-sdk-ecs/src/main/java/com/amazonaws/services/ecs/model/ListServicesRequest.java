@@ -30,8 +30,8 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the services you want to list. If you do not specify a cluster,
-     * the default cluster is assumed..
+     * hosts the services to list. If you do not specify a cluster, the
+     * default cluster is assumed..
      */
     private String cluster;
 
@@ -60,12 +60,12 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the services you want to list. If you do not specify a cluster,
-     * the default cluster is assumed..
+     * hosts the services to list. If you do not specify a cluster, the
+     * default cluster is assumed..
      *
      * @return The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the services you want to list. If you do not specify a cluster,
-     *         the default cluster is assumed..
+     *         hosts the services to list. If you do not specify a cluster, the
+     *         default cluster is assumed..
      */
     public String getCluster() {
         return cluster;
@@ -73,12 +73,12 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the services you want to list. If you do not specify a cluster,
-     * the default cluster is assumed..
+     * hosts the services to list. If you do not specify a cluster, the
+     * default cluster is assumed..
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the services you want to list. If you do not specify a cluster,
-     *         the default cluster is assumed..
+     *         hosts the services to list. If you do not specify a cluster, the
+     *         default cluster is assumed..
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
@@ -86,14 +86,14 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the services you want to list. If you do not specify a cluster,
-     * the default cluster is assumed..
+     * hosts the services to list. If you do not specify a cluster, the
+     * default cluster is assumed..
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the services you want to list. If you do not specify a cluster,
-     *         the default cluster is assumed..
+     *         hosts the services to list. If you do not specify a cluster, the
+     *         default cluster is assumed..
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

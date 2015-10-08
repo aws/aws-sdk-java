@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.ecs.AmazonECS#startTask(StartTaskRequest) StartTask operation}.
  * <p>
  * Starts a new task from the specified task definition on the specified
- * container instance or instances. If you want to use the default Amazon
- * ECS scheduler to place your task, use <code>RunTask</code> instead.
+ * container instance or instances. To use the default Amazon ECS
+ * scheduler to place your task, use <code>RunTask</code> instead.
  * </p>
  * <p>
  * <b>IMPORTANT:</b> The list of container instances to start tasks on is
@@ -35,17 +35,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class StartTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to start your task on. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to start your task. If you do not specify a cluster, the default
+     * cluster is assumed..
      */
     private String cluster;
 
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to start. If a <code>revision</code>
-     * is not specified, the latest <code>ACTIVE</code> revision is used.
+     * the task definition to start. If a <code>revision</code> is not
+     * specified, the latest <code>ACTIVE</code> revision is used.
      */
     private String taskDefinition;
 
@@ -64,10 +64,10 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     private TaskOverride overrides;
 
     /**
-     * The container instance UUIDs or full Amazon Resource Name (ARN)
-     * entries for the container instances on which you would like to place
-     * your task. <important> <p>The list of container instances to start
-     * tasks on is limited to 10. </important>
+     * The container instance IDs or full Amazon Resource Name (ARN) entries
+     * for the container instances on which you would like to place your
+     * task. <important> <p>The list of container instances to start tasks on
+     * is limited to 10. </important>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> containerInstances;
 
@@ -84,41 +84,41 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     private String startedBy;
 
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to start your task on. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to start your task. If you do not specify a cluster, the default
+     * cluster is assumed..
      *
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to start your task on. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster on
+     *         which to start your task. If you do not specify a cluster, the default
+     *         cluster is assumed..
      */
     public String getCluster() {
         return cluster;
     }
     
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to start your task on. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to start your task. If you do not specify a cluster, the default
+     * cluster is assumed..
      *
-     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to start your task on. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster on
+     *         which to start your task. If you do not specify a cluster, the default
+     *         cluster is assumed..
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
     
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to start your task on. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to start your task. If you do not specify a cluster, the default
+     * cluster is assumed..
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to start your task on. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster on
+     *         which to start your task. If you do not specify a cluster, the default
+     *         cluster is assumed..
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -131,13 +131,13 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to start. If a <code>revision</code>
-     * is not specified, the latest <code>ACTIVE</code> revision is used.
+     * the task definition to start. If a <code>revision</code> is not
+     * specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @return The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to start. If a <code>revision</code>
-     *         is not specified, the latest <code>ACTIVE</code> revision is used.
+     *         the task definition to start. If a <code>revision</code> is not
+     *         specified, the latest <code>ACTIVE</code> revision is used.
      */
     public String getTaskDefinition() {
         return taskDefinition;
@@ -146,13 +146,13 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to start. If a <code>revision</code>
-     * is not specified, the latest <code>ACTIVE</code> revision is used.
+     * the task definition to start. If a <code>revision</code> is not
+     * specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to start. If a <code>revision</code>
-     *         is not specified, the latest <code>ACTIVE</code> revision is used.
+     *         the task definition to start. If a <code>revision</code> is not
+     *         specified, the latest <code>ACTIVE</code> revision is used.
      */
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
@@ -161,15 +161,15 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to start. If a <code>revision</code>
-     * is not specified, the latest <code>ACTIVE</code> revision is used.
+     * the task definition to start. If a <code>revision</code> is not
+     * specified, the latest <code>ACTIVE</code> revision is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to start. If a <code>revision</code>
-     *         is not specified, the latest <code>ACTIVE</code> revision is used.
+     *         the task definition to start. If a <code>revision</code> is not
+     *         specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -267,15 +267,15 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The container instance UUIDs or full Amazon Resource Name (ARN)
-     * entries for the container instances on which you would like to place
-     * your task. <important> <p>The list of container instances to start
-     * tasks on is limited to 10. </important>
+     * The container instance IDs or full Amazon Resource Name (ARN) entries
+     * for the container instances on which you would like to place your
+     * task. <important> <p>The list of container instances to start tasks on
+     * is limited to 10. </important>
      *
-     * @return The container instance UUIDs or full Amazon Resource Name (ARN)
-     *         entries for the container instances on which you would like to place
-     *         your task. <important> <p>The list of container instances to start
-     *         tasks on is limited to 10. </important>
+     * @return The container instance IDs or full Amazon Resource Name (ARN) entries
+     *         for the container instances on which you would like to place your
+     *         task. <important> <p>The list of container instances to start tasks on
+     *         is limited to 10. </important>
      */
     public java.util.List<String> getContainerInstances() {
         if (containerInstances == null) {
@@ -286,15 +286,15 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * The container instance UUIDs or full Amazon Resource Name (ARN)
-     * entries for the container instances on which you would like to place
-     * your task. <important> <p>The list of container instances to start
-     * tasks on is limited to 10. </important>
+     * The container instance IDs or full Amazon Resource Name (ARN) entries
+     * for the container instances on which you would like to place your
+     * task. <important> <p>The list of container instances to start tasks on
+     * is limited to 10. </important>
      *
-     * @param containerInstances The container instance UUIDs or full Amazon Resource Name (ARN)
-     *         entries for the container instances on which you would like to place
-     *         your task. <important> <p>The list of container instances to start
-     *         tasks on is limited to 10. </important>
+     * @param containerInstances The container instance IDs or full Amazon Resource Name (ARN) entries
+     *         for the container instances on which you would like to place your
+     *         task. <important> <p>The list of container instances to start tasks on
+     *         is limited to 10. </important>
      */
     public void setContainerInstances(java.util.Collection<String> containerInstances) {
         if (containerInstances == null) {
@@ -307,10 +307,10 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * The container instance UUIDs or full Amazon Resource Name (ARN)
-     * entries for the container instances on which you would like to place
-     * your task. <important> <p>The list of container instances to start
-     * tasks on is limited to 10. </important>
+     * The container instance IDs or full Amazon Resource Name (ARN) entries
+     * for the container instances on which you would like to place your
+     * task. <important> <p>The list of container instances to start tasks on
+     * is limited to 10. </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setContainerInstances(java.util.Collection)} or
@@ -319,10 +319,10 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerInstances The container instance UUIDs or full Amazon Resource Name (ARN)
-     *         entries for the container instances on which you would like to place
-     *         your task. <important> <p>The list of container instances to start
-     *         tasks on is limited to 10. </important>
+     * @param containerInstances The container instance IDs or full Amazon Resource Name (ARN) entries
+     *         for the container instances on which you would like to place your
+     *         task. <important> <p>The list of container instances to start tasks on
+     *         is limited to 10. </important>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -336,17 +336,17 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * The container instance UUIDs or full Amazon Resource Name (ARN)
-     * entries for the container instances on which you would like to place
-     * your task. <important> <p>The list of container instances to start
-     * tasks on is limited to 10. </important>
+     * The container instance IDs or full Amazon Resource Name (ARN) entries
+     * for the container instances on which you would like to place your
+     * task. <important> <p>The list of container instances to start tasks on
+     * is limited to 10. </important>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerInstances The container instance UUIDs or full Amazon Resource Name (ARN)
-     *         entries for the container instances on which you would like to place
-     *         your task. <important> <p>The list of container instances to start
-     *         tasks on is limited to 10. </important>
+     * @param containerInstances The container instance IDs or full Amazon Resource Name (ARN) entries
+     *         for the container instances on which you would like to place your
+     *         task. <important> <p>The list of container instances to start tasks on
+     *         is limited to 10. </important>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

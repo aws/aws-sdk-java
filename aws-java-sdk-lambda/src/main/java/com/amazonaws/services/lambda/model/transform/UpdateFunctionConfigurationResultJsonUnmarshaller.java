@@ -85,6 +85,14 @@ public class UpdateFunctionConfigurationResultJsonUnmarshaller implements Unmars
                     context.nextToken();
                     updateFunctionConfigurationResult.setLastModified(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CodeSha256", targetDepth)) {
+                    context.nextToken();
+                    updateFunctionConfigurationResult.setCodeSha256(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Version", targetDepth)) {
+                    context.nextToken();
+                    updateFunctionConfigurationResult.setVersion(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

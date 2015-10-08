@@ -47,7 +47,7 @@ public class InvokeRequestMarshaller implements Marshaller<Request<InvokeRequest
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "/2015-03-31/functions/{FunctionName}/invocations";
+        String path = "/2015-03-31/functions/{FunctionName}/invocations?Qualifier={Qualifier}";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -108,6 +108,18 @@ public class InvokeRequestMarshaller implements Marshaller<Request<InvokeRequest
             
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (invokeRequest.getFunctionName() == null) ? "" : StringUtils.fromString(invokeRequest.getFunctionName())); 
+        } 
+        if (DYNAMIC_QUERY_PARAMS.containsKey("Qualifier")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("Qualifier");
+
+            String value = (invokeRequest.getQualifier() == null) ? null : StringUtils.fromString(invokeRequest.getQualifier());
+
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
+            }
+            
+        } else {
+            uriResourcePath = uriResourcePath.replace("{Qualifier}", (invokeRequest.getQualifier() == null) ? "" : StringUtils.fromString(invokeRequest.getQualifier())); 
         } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));

@@ -28,6 +28,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * you provided as parameters when uploading the function.
  * </p>
  * <p>
+ * Using the optional <code>Qualifier</code> parameter, you can specify a
+ * specific function version for which you want this information. If you
+ * don't specify this parameter, the API uses unqualified function ARN
+ * which return information about the $LATEST version of the Lambda
+ * function. For more information, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+ * .
+ * </p>
+ * <p>
  * This operation requires permission for the
  * <code>lambda:GetFunction</code> action.
  * </p>
@@ -47,10 +56,26 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionName;
+
+    /**
+     * Using this optional parameter to specify a function version or alias
+     * name. If you specify function version, the API uses qualified function
+     * ARN for the request and returns information about the specific Lambda
+     * function version. If you specify alias name, the API uses alias ARN
+     * and returns information about the function version to which the alias
+     * points. If you don't provide this parameter, the API uses unqualified
+     * function ARN and returns information about the $LATEST version of the
+     * Lambda function.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     */
+    private String qualifier;
 
     /**
      * The Lambda function name. <p> You can specify an unqualified function
@@ -63,8 +88,8 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @return The Lambda function name. <p> You can specify an unqualified function
      *         name (for example, "Thumbnail") or you can specify Amazon Resource
@@ -90,8 +115,8 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The Lambda function name. <p> You can specify an unqualified function
      *         name (for example, "Thumbnail") or you can specify Amazon Resource
@@ -119,8 +144,8 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The Lambda function name. <p> You can specify an unqualified function
      *         name (for example, "Thumbnail") or you can specify Amazon Resource
@@ -140,6 +165,93 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * Using this optional parameter to specify a function version or alias
+     * name. If you specify function version, the API uses qualified function
+     * ARN for the request and returns information about the specific Lambda
+     * function version. If you specify alias name, the API uses alias ARN
+     * and returns information about the function version to which the alias
+     * points. If you don't provide this parameter, the API uses unqualified
+     * function ARN and returns information about the $LATEST version of the
+     * Lambda function.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @return Using this optional parameter to specify a function version or alias
+     *         name. If you specify function version, the API uses qualified function
+     *         ARN for the request and returns information about the specific Lambda
+     *         function version. If you specify alias name, the API uses alias ARN
+     *         and returns information about the function version to which the alias
+     *         points. If you don't provide this parameter, the API uses unqualified
+     *         function ARN and returns information about the $LATEST version of the
+     *         Lambda function.
+     */
+    public String getQualifier() {
+        return qualifier;
+    }
+    
+    /**
+     * Using this optional parameter to specify a function version or alias
+     * name. If you specify function version, the API uses qualified function
+     * ARN for the request and returns information about the specific Lambda
+     * function version. If you specify alias name, the API uses alias ARN
+     * and returns information about the function version to which the alias
+     * points. If you don't provide this parameter, the API uses unqualified
+     * function ARN and returns information about the $LATEST version of the
+     * Lambda function.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier Using this optional parameter to specify a function version or alias
+     *         name. If you specify function version, the API uses qualified function
+     *         ARN for the request and returns information about the specific Lambda
+     *         function version. If you specify alias name, the API uses alias ARN
+     *         and returns information about the function version to which the alias
+     *         points. If you don't provide this parameter, the API uses unqualified
+     *         function ARN and returns information about the $LATEST version of the
+     *         Lambda function.
+     */
+    public void setQualifier(String qualifier) {
+        this.qualifier = qualifier;
+    }
+    
+    /**
+     * Using this optional parameter to specify a function version or alias
+     * name. If you specify function version, the API uses qualified function
+     * ARN for the request and returns information about the specific Lambda
+     * function version. If you specify alias name, the API uses alias ARN
+     * and returns information about the function version to which the alias
+     * points. If you don't provide this parameter, the API uses unqualified
+     * function ARN and returns information about the $LATEST version of the
+     * Lambda function.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier Using this optional parameter to specify a function version or alias
+     *         name. If you specify function version, the API uses qualified function
+     *         ARN for the request and returns information about the specific Lambda
+     *         function version. If you specify alias name, the API uses alias ARN
+     *         and returns information about the function version to which the alias
+     *         points. If you don't provide this parameter, the API uses unqualified
+     *         function ARN and returns information about the $LATEST version of the
+     *         Lambda function.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetFunctionRequest withQualifier(String qualifier) {
+        this.qualifier = qualifier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -151,7 +263,8 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFunctionName() != null) sb.append("FunctionName: " + getFunctionName() );
+        if (getFunctionName() != null) sb.append("FunctionName: " + getFunctionName() + ",");
+        if (getQualifier() != null) sb.append("Qualifier: " + getQualifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -162,6 +275,7 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode()); 
+        hashCode = prime * hashCode + ((getQualifier() == null) ? 0 : getQualifier().hashCode()); 
         return hashCode;
     }
     
@@ -175,6 +289,8 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
         
         if (other.getFunctionName() == null ^ this.getFunctionName() == null) return false;
         if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false) return false; 
+        if (other.getQualifier() == null ^ this.getQualifier() == null) return false;
+        if (other.getQualifier() != null && other.getQualifier().equals(this.getQualifier()) == false) return false; 
         return true;
     }
     

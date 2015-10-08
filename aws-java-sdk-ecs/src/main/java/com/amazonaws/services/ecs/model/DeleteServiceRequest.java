@@ -29,39 +29,46 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteServiceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of the cluster that hosts the service you want to delete.
+     * The name of the cluster that hosts the service to delete. If you do
+     * not specify a cluster, the default cluster is assumed.
      */
     private String cluster;
 
     /**
-     * The name of the service you want to delete.
+     * The name of the service to delete.
      */
     private String service;
 
     /**
-     * The name of the cluster that hosts the service you want to delete.
+     * The name of the cluster that hosts the service to delete. If you do
+     * not specify a cluster, the default cluster is assumed.
      *
-     * @return The name of the cluster that hosts the service you want to delete.
+     * @return The name of the cluster that hosts the service to delete. If you do
+     *         not specify a cluster, the default cluster is assumed.
      */
     public String getCluster() {
         return cluster;
     }
     
     /**
-     * The name of the cluster that hosts the service you want to delete.
+     * The name of the cluster that hosts the service to delete. If you do
+     * not specify a cluster, the default cluster is assumed.
      *
-     * @param cluster The name of the cluster that hosts the service you want to delete.
+     * @param cluster The name of the cluster that hosts the service to delete. If you do
+     *         not specify a cluster, the default cluster is assumed.
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
     
     /**
-     * The name of the cluster that hosts the service you want to delete.
+     * The name of the cluster that hosts the service to delete. If you do
+     * not specify a cluster, the default cluster is assumed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cluster The name of the cluster that hosts the service you want to delete.
+     * @param cluster The name of the cluster that hosts the service to delete. If you do
+     *         not specify a cluster, the default cluster is assumed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -72,29 +79,29 @@ public class DeleteServiceRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * The name of the service you want to delete.
+     * The name of the service to delete.
      *
-     * @return The name of the service you want to delete.
+     * @return The name of the service to delete.
      */
     public String getService() {
         return service;
     }
     
     /**
-     * The name of the service you want to delete.
+     * The name of the service to delete.
      *
-     * @param service The name of the service you want to delete.
+     * @param service The name of the service to delete.
      */
     public void setService(String service) {
         this.service = service;
     }
     
     /**
-     * The name of the service you want to delete.
+     * The name of the service to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param service The name of the service you want to delete.
+     * @param service The name of the service to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

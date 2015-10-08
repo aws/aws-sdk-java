@@ -47,7 +47,7 @@ public class RemovePermissionRequestMarshaller implements Marshaller<Request<Rem
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "/2015-03-31/functions/{FunctionName}/versions/HEAD/policy/{StatementId}";
+        String path = "/2015-03-31/functions/{FunctionName}/policy/{StatementId}?Qualifier={Qualifier}";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -111,6 +111,18 @@ public class RemovePermissionRequestMarshaller implements Marshaller<Request<Rem
             
         } else {
             uriResourcePath = uriResourcePath.replace("{StatementId}", (removePermissionRequest.getStatementId() == null) ? "" : StringUtils.fromString(removePermissionRequest.getStatementId())); 
+        } 
+        if (DYNAMIC_QUERY_PARAMS.containsKey("Qualifier")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("Qualifier");
+
+            String value = (removePermissionRequest.getQualifier() == null) ? null : StringUtils.fromString(removePermissionRequest.getQualifier());
+
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
+            }
+            
+        } else {
+            uriResourcePath = uriResourcePath.replace("{Qualifier}", (removePermissionRequest.getQualifier() == null) ? "" : StringUtils.fromString(removePermissionRequest.getQualifier())); 
         } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));

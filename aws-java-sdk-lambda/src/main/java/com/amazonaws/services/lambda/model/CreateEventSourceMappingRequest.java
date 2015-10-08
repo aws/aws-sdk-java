@@ -77,14 +77,14 @@ public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest imp
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionName;
 
     /**
-     * Indicates whether AWS Lambda should begin polling the event source,
-     * the default is not enabled.
+     * Indicates whether AWS Lambda should begin polling the event source. By
+     * default, <code>Enabled</code> is true.
      */
     private Boolean enabled;
 
@@ -188,8 +188,8 @@ public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest imp
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @return The Lambda function to invoke when AWS Lambda detects an event on the
      *         stream. <p> You can specify an unqualified function name (for example,
@@ -217,8 +217,8 @@ public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest imp
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The Lambda function to invoke when AWS Lambda detects an event on the
      *         stream. <p> You can specify an unqualified function name (for example,
@@ -248,8 +248,8 @@ public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest imp
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The Lambda function to invoke when AWS Lambda detects an event on the
      *         stream. <p> You can specify an unqualified function name (for example,
@@ -270,35 +270,35 @@ public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Indicates whether AWS Lambda should begin polling the event source,
-     * the default is not enabled.
+     * Indicates whether AWS Lambda should begin polling the event source. By
+     * default, <code>Enabled</code> is true.
      *
-     * @return Indicates whether AWS Lambda should begin polling the event source,
-     *         the default is not enabled.
+     * @return Indicates whether AWS Lambda should begin polling the event source. By
+     *         default, <code>Enabled</code> is true.
      */
     public Boolean isEnabled() {
         return enabled;
     }
     
     /**
-     * Indicates whether AWS Lambda should begin polling the event source,
-     * the default is not enabled.
+     * Indicates whether AWS Lambda should begin polling the event source. By
+     * default, <code>Enabled</code> is true.
      *
-     * @param enabled Indicates whether AWS Lambda should begin polling the event source,
-     *         the default is not enabled.
+     * @param enabled Indicates whether AWS Lambda should begin polling the event source. By
+     *         default, <code>Enabled</code> is true.
      */
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
     
     /**
-     * Indicates whether AWS Lambda should begin polling the event source,
-     * the default is not enabled.
+     * Indicates whether AWS Lambda should begin polling the event source. By
+     * default, <code>Enabled</code> is true.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param enabled Indicates whether AWS Lambda should begin polling the event source,
-     *         the default is not enabled.
+     * @param enabled Indicates whether AWS Lambda should begin polling the event source. By
+     *         default, <code>Enabled</code> is true.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -309,11 +309,11 @@ public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Indicates whether AWS Lambda should begin polling the event source,
-     * the default is not enabled.
+     * Indicates whether AWS Lambda should begin polling the event source. By
+     * default, <code>Enabled</code> is true.
      *
-     * @return Indicates whether AWS Lambda should begin polling the event source,
-     *         the default is not enabled.
+     * @return Indicates whether AWS Lambda should begin polling the event source. By
+     *         default, <code>Enabled</code> is true.
      */
     public Boolean getEnabled() {
         return enabled;

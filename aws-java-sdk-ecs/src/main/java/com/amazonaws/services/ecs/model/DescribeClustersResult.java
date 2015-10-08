@@ -27,7 +27,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Cluster> clusters;
 
     /**
-     * 
+     * Any failures associated with the call.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Failure> failures;
 
@@ -105,9 +105,9 @@ public class DescribeClustersResult implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * Any failures associated with the call.
      *
-     * @return 
+     * @return Any failures associated with the call.
      */
     public java.util.List<Failure> getFailures() {
         if (failures == null) {
@@ -118,9 +118,9 @@ public class DescribeClustersResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Any failures associated with the call.
      *
-     * @param failures 
+     * @param failures Any failures associated with the call.
      */
     public void setFailures(java.util.Collection<Failure> failures) {
         if (failures == null) {
@@ -133,7 +133,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Any failures associated with the call.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setFailures(java.util.Collection)} or {@link
@@ -142,7 +142,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param failures 
+     * @param failures Any failures associated with the call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -156,11 +156,11 @@ public class DescribeClustersResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Any failures associated with the call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param failures 
+     * @param failures Any failures associated with the call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

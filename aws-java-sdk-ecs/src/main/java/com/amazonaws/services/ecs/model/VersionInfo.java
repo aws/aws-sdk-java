@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The Docker and Amazon ECS container agent version information on a
+ * The Docker and Amazon ECS container agent version information about a
  * container instance.
  * </p>
  */

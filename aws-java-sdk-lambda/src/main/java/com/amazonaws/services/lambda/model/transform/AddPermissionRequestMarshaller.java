@@ -47,7 +47,7 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "/2015-03-31/functions/{FunctionName}/versions/HEAD/policy";
+        String path = "/2015-03-31/functions/{FunctionName}/policy?Qualifier={Qualifier}";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -99,6 +99,18 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
             
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (addPermissionRequest.getFunctionName() == null) ? "" : StringUtils.fromString(addPermissionRequest.getFunctionName())); 
+        } 
+        if (DYNAMIC_QUERY_PARAMS.containsKey("Qualifier")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("Qualifier");
+
+            String value = (addPermissionRequest.getQualifier() == null) ? null : StringUtils.fromString(addPermissionRequest.getQualifier());
+
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
+            }
+            
+        } else {
+            uriResourcePath = uriResourcePath.replace("{Qualifier}", (addPermissionRequest.getQualifier() == null) ? "" : StringUtils.fromString(addPermissionRequest.getQualifier())); 
         } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));

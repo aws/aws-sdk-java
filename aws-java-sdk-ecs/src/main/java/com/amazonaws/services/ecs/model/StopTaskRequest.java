@@ -23,6 +23,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Stops a running task.
  * </p>
+ * <p>
+ * When StopTask is called on a task, the equivalent of <code>docker
+ * stop</code> is issued to the containers running in the task. This
+ * results in a <code>SIGTERM</code> and a 30-second timeout, after which
+ * <code>SIGKILL</code> is sent and the containers are forcibly stopped.
+ * If the container handles the <code>SIGTERM</code> gracefully and exits
+ * within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
+ * </p>
  *
  * @see com.amazonaws.services.ecs.AmazonECS#stopTask(StopTaskRequest)
  */
@@ -30,25 +38,25 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements Serializ
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the task you want to stop. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * hosts the task to stop. If you do not specify a cluster, the default
+     * cluster is assumed..
      */
     private String cluster;
 
     /**
-     * The task UUIDs or full Amazon Resource Name (ARN) entry of the task
-     * you would like to stop.
+     * The task ID or full Amazon Resource Name (ARN) entry of the task to
+     * stop.
      */
     private String task;
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the task you want to stop. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * hosts the task to stop. If you do not specify a cluster, the default
+     * cluster is assumed..
      *
      * @return The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the task you want to stop. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     *         hosts the task to stop. If you do not specify a cluster, the default
+     *         cluster is assumed..
      */
     public String getCluster() {
         return cluster;
@@ -56,12 +64,12 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements Serializ
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the task you want to stop. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * hosts the task to stop. If you do not specify a cluster, the default
+     * cluster is assumed..
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the task you want to stop. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     *         hosts the task to stop. If you do not specify a cluster, the default
+     *         cluster is assumed..
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
@@ -69,14 +77,14 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements Serializ
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the task you want to stop. If you do not specify a cluster, the
-     * default cluster is assumed..
+     * hosts the task to stop. If you do not specify a cluster, the default
+     * cluster is assumed..
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the task you want to stop. If you do not specify a cluster, the
-     *         default cluster is assumed..
+     *         hosts the task to stop. If you do not specify a cluster, the default
+     *         cluster is assumed..
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -87,35 +95,35 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements Serializ
     }
 
     /**
-     * The task UUIDs or full Amazon Resource Name (ARN) entry of the task
-     * you would like to stop.
+     * The task ID or full Amazon Resource Name (ARN) entry of the task to
+     * stop.
      *
-     * @return The task UUIDs or full Amazon Resource Name (ARN) entry of the task
-     *         you would like to stop.
+     * @return The task ID or full Amazon Resource Name (ARN) entry of the task to
+     *         stop.
      */
     public String getTask() {
         return task;
     }
     
     /**
-     * The task UUIDs or full Amazon Resource Name (ARN) entry of the task
-     * you would like to stop.
+     * The task ID or full Amazon Resource Name (ARN) entry of the task to
+     * stop.
      *
-     * @param task The task UUIDs or full Amazon Resource Name (ARN) entry of the task
-     *         you would like to stop.
+     * @param task The task ID or full Amazon Resource Name (ARN) entry of the task to
+     *         stop.
      */
     public void setTask(String task) {
         this.task = task;
     }
     
     /**
-     * The task UUIDs or full Amazon Resource Name (ARN) entry of the task
-     * you would like to stop.
+     * The task ID or full Amazon Resource Name (ARN) entry of the task to
+     * stop.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param task The task UUIDs or full Amazon Resource Name (ARN) entry of the task
-     *         you would like to stop.
+     * @param task The task ID or full Amazon Resource Name (ARN) entry of the task to
+     *         stop.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

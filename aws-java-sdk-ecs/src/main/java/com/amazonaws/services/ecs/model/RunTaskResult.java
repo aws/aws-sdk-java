@@ -23,22 +23,21 @@ public class RunTaskResult implements Serializable, Cloneable {
 
     /**
      * A full description of the tasks that were run. Each task that was
-     * successfully placed on your cluster will be described here.
+     * successfully placed on your cluster are described here.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Task> tasks;
 
     /**
-     * Any failed tasks from your <code>RunTask</code> action are listed
-     * here.
+     * Any failures associated with the call.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Failure> failures;
 
     /**
      * A full description of the tasks that were run. Each task that was
-     * successfully placed on your cluster will be described here.
+     * successfully placed on your cluster are described here.
      *
      * @return A full description of the tasks that were run. Each task that was
-     *         successfully placed on your cluster will be described here.
+     *         successfully placed on your cluster are described here.
      */
     public java.util.List<Task> getTasks() {
         if (tasks == null) {
@@ -50,10 +49,10 @@ public class RunTaskResult implements Serializable, Cloneable {
     
     /**
      * A full description of the tasks that were run. Each task that was
-     * successfully placed on your cluster will be described here.
+     * successfully placed on your cluster are described here.
      *
      * @param tasks A full description of the tasks that were run. Each task that was
-     *         successfully placed on your cluster will be described here.
+     *         successfully placed on your cluster are described here.
      */
     public void setTasks(java.util.Collection<Task> tasks) {
         if (tasks == null) {
@@ -67,7 +66,7 @@ public class RunTaskResult implements Serializable, Cloneable {
     
     /**
      * A full description of the tasks that were run. Each task that was
-     * successfully placed on your cluster will be described here.
+     * successfully placed on your cluster are described here.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTasks(java.util.Collection)} or {@link
@@ -77,7 +76,7 @@ public class RunTaskResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tasks A full description of the tasks that were run. Each task that was
-     *         successfully placed on your cluster will be described here.
+     *         successfully placed on your cluster are described here.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -92,12 +91,12 @@ public class RunTaskResult implements Serializable, Cloneable {
     
     /**
      * A full description of the tasks that were run. Each task that was
-     * successfully placed on your cluster will be described here.
+     * successfully placed on your cluster are described here.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tasks A full description of the tasks that were run. Each task that was
-     *         successfully placed on your cluster will be described here.
+     *         successfully placed on your cluster are described here.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -115,11 +114,9 @@ public class RunTaskResult implements Serializable, Cloneable {
     }
 
     /**
-     * Any failed tasks from your <code>RunTask</code> action are listed
-     * here.
+     * Any failures associated with the call.
      *
-     * @return Any failed tasks from your <code>RunTask</code> action are listed
-     *         here.
+     * @return Any failures associated with the call.
      */
     public java.util.List<Failure> getFailures() {
         if (failures == null) {
@@ -130,11 +127,9 @@ public class RunTaskResult implements Serializable, Cloneable {
     }
     
     /**
-     * Any failed tasks from your <code>RunTask</code> action are listed
-     * here.
+     * Any failures associated with the call.
      *
-     * @param failures Any failed tasks from your <code>RunTask</code> action are listed
-     *         here.
+     * @param failures Any failures associated with the call.
      */
     public void setFailures(java.util.Collection<Failure> failures) {
         if (failures == null) {
@@ -147,8 +142,7 @@ public class RunTaskResult implements Serializable, Cloneable {
     }
     
     /**
-     * Any failed tasks from your <code>RunTask</code> action are listed
-     * here.
+     * Any failures associated with the call.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setFailures(java.util.Collection)} or {@link
@@ -157,8 +151,7 @@ public class RunTaskResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param failures Any failed tasks from your <code>RunTask</code> action are listed
-     *         here.
+     * @param failures Any failures associated with the call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -172,13 +165,11 @@ public class RunTaskResult implements Serializable, Cloneable {
     }
     
     /**
-     * Any failed tasks from your <code>RunTask</code> action are listed
-     * here.
+     * Any failures associated with the call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param failures Any failed tasks from your <code>RunTask</code> action are listed
-     *         here.
+     * @param failures Any failures associated with the call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

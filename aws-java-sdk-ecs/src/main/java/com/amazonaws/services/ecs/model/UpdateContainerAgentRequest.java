@@ -49,7 +49,7 @@ public class UpdateContainerAgentRequest extends AmazonWebServiceRequest impleme
     private String cluster;
 
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) entries
+     * The container instance ID or full Amazon Resource Name (ARN) entries
      * for the container instance on which you would like to update the
      * Amazon ECS container agent.
      */
@@ -101,11 +101,11 @@ public class UpdateContainerAgentRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) entries
+     * The container instance ID or full Amazon Resource Name (ARN) entries
      * for the container instance on which you would like to update the
      * Amazon ECS container agent.
      *
-     * @return The container instance UUID or full Amazon Resource Name (ARN) entries
+     * @return The container instance ID or full Amazon Resource Name (ARN) entries
      *         for the container instance on which you would like to update the
      *         Amazon ECS container agent.
      */
@@ -114,11 +114,11 @@ public class UpdateContainerAgentRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) entries
+     * The container instance ID or full Amazon Resource Name (ARN) entries
      * for the container instance on which you would like to update the
      * Amazon ECS container agent.
      *
-     * @param containerInstance The container instance UUID or full Amazon Resource Name (ARN) entries
+     * @param containerInstance The container instance ID or full Amazon Resource Name (ARN) entries
      *         for the container instance on which you would like to update the
      *         Amazon ECS container agent.
      */
@@ -127,13 +127,13 @@ public class UpdateContainerAgentRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) entries
+     * The container instance ID or full Amazon Resource Name (ARN) entries
      * for the container instance on which you would like to update the
      * Amazon ECS container agent.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerInstance The container instance UUID or full Amazon Resource Name (ARN) entries
+     * @param containerInstance The container instance ID or full Amazon Resource Name (ARN) entries
      *         for the container instance on which you would like to update the
      *         Amazon ECS container agent.
      *

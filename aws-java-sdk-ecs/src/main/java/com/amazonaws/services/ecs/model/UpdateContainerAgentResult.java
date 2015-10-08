@@ -22,41 +22,41 @@ import java.io.Serializable;
 public class UpdateContainerAgentResult implements Serializable, Cloneable {
 
     /**
-     * An Amazon EC2 instance that is running the Amazon ECS agent and has
-     * been registered with a cluster.
+     * An EC2 instance that is running the Amazon ECS agent and has been
+     * registered with a cluster.
      */
     private ContainerInstance containerInstance;
 
     /**
-     * An Amazon EC2 instance that is running the Amazon ECS agent and has
-     * been registered with a cluster.
+     * An EC2 instance that is running the Amazon ECS agent and has been
+     * registered with a cluster.
      *
-     * @return An Amazon EC2 instance that is running the Amazon ECS agent and has
-     *         been registered with a cluster.
+     * @return An EC2 instance that is running the Amazon ECS agent and has been
+     *         registered with a cluster.
      */
     public ContainerInstance getContainerInstance() {
         return containerInstance;
     }
     
     /**
-     * An Amazon EC2 instance that is running the Amazon ECS agent and has
-     * been registered with a cluster.
+     * An EC2 instance that is running the Amazon ECS agent and has been
+     * registered with a cluster.
      *
-     * @param containerInstance An Amazon EC2 instance that is running the Amazon ECS agent and has
-     *         been registered with a cluster.
+     * @param containerInstance An EC2 instance that is running the Amazon ECS agent and has been
+     *         registered with a cluster.
      */
     public void setContainerInstance(ContainerInstance containerInstance) {
         this.containerInstance = containerInstance;
     }
     
     /**
-     * An Amazon EC2 instance that is running the Amazon ECS agent and has
-     * been registered with a cluster.
+     * An EC2 instance that is running the Amazon ECS agent and has been
+     * registered with a cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerInstance An Amazon EC2 instance that is running the Amazon ECS agent and has
-     *         been registered with a cluster.
+     * @param containerInstance An EC2 instance that is running the Amazon ECS agent and has been
+     *         registered with a cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

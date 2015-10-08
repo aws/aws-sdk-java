@@ -69,6 +69,10 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                     context.nextToken();
                     taskDefinition.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("requiresAttributes", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setRequiresAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

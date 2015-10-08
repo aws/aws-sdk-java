@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Runs and maintains a desired number of tasks from a specified task
  * definition. If the number of tasks running in a service drops below
- * <code>desiredCount</code> , Amazon ECS will spawn another
- * instantiation of the task in the specified cluster.
+ * <code>desiredCount</code> , Amazon ECS spawns another instantiation of
+ * the task in the specified cluster.
  * </p>
  *
  * @see com.amazonaws.services.ecs.AmazonECS#createService(CreateServiceRequest)
@@ -32,8 +32,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateServiceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to run your service on. If you do not specify a cluster, the
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to run your service. If you do not specify a cluster, the
      * default cluster is assumed.
      */
     private String cluster;
@@ -49,9 +49,8 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-     * revision is used.
+     * the task definition to run in your service. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      */
     private String taskDefinition;
 
@@ -63,8 +62,8 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     private com.amazonaws.internal.ListWithAutoConstructFlag<LoadBalancer> loadBalancers;
 
     /**
-     * The number of instantiations of the specified task definition that you
-     * would like to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place
+     * and keep running on your cluster.
      */
     private Integer desiredCount;
 
@@ -83,12 +82,12 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     private String role;
 
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to run your service on. If you do not specify a cluster, the
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to run your service. If you do not specify a cluster, the
      * default cluster is assumed.
      *
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to run your service on. If you do not specify a cluster, the
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster on
+     *         which to run your service. If you do not specify a cluster, the
      *         default cluster is assumed.
      */
     public String getCluster() {
@@ -96,12 +95,12 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to run your service on. If you do not specify a cluster, the
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to run your service. If you do not specify a cluster, the
      * default cluster is assumed.
      *
-     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to run your service on. If you do not specify a cluster, the
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster on
+     *         which to run your service. If you do not specify a cluster, the
      *         default cluster is assumed.
      */
     public void setCluster(String cluster) {
@@ -109,14 +108,14 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * you want to run your service on. If you do not specify a cluster, the
+     * The short name or full Amazon Resource Name (ARN) of the cluster on
+     * which to run your service. If you do not specify a cluster, the
      * default cluster is assumed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         you want to run your service on. If you do not specify a cluster, the
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster on
+     *         which to run your service. If you do not specify a cluster, the
      *         default cluster is assumed.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -181,15 +180,13 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-     * revision is used.
+     * the task definition to run in your service. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @return The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run in your service. If a
-     *         <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-     *         revision is used.
+     *         the task definition to run in your service. If a <code>revision</code>
+     *         is not specified, the latest <code>ACTIVE</code> revision is used.
      */
     public String getTaskDefinition() {
         return taskDefinition;
@@ -198,15 +195,13 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-     * revision is used.
+     * the task definition to run in your service. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run in your service. If a
-     *         <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-     *         revision is used.
+     *         the task definition to run in your service. If a <code>revision</code>
+     *         is not specified, the latest <code>ACTIVE</code> revision is used.
      */
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
@@ -215,17 +210,15 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-     * revision is used.
+     * the task definition to run in your service. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run in your service. If a
-     *         <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-     *         revision is used.
+     *         the task definition to run in your service. If a <code>revision</code>
+     *         is not specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -325,35 +318,35 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * The number of instantiations of the specified task definition that you
-     * would like to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place
+     * and keep running on your cluster.
      *
-     * @return The number of instantiations of the specified task definition that you
-     *         would like to place and keep running on your cluster.
+     * @return The number of instantiations of the specified task definition to place
+     *         and keep running on your cluster.
      */
     public Integer getDesiredCount() {
         return desiredCount;
     }
     
     /**
-     * The number of instantiations of the specified task definition that you
-     * would like to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place
+     * and keep running on your cluster.
      *
-     * @param desiredCount The number of instantiations of the specified task definition that you
-     *         would like to place and keep running on your cluster.
+     * @param desiredCount The number of instantiations of the specified task definition to place
+     *         and keep running on your cluster.
      */
     public void setDesiredCount(Integer desiredCount) {
         this.desiredCount = desiredCount;
     }
     
     /**
-     * The number of instantiations of the specified task definition that you
-     * would like to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place
+     * and keep running on your cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param desiredCount The number of instantiations of the specified task definition that you
-     *         would like to place and keep running on your cluster.
+     * @param desiredCount The number of instantiations of the specified task definition to place
+     *         and keep running on your cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

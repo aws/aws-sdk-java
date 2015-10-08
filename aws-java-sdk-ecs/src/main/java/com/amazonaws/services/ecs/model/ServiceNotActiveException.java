@@ -20,7 +20,7 @@ import com.amazonaws.AmazonServiceException;
  * <p>
  * The specified service is not active. You cannot update a service that
  * is not active. If you have previously deleted a service, you can
- * recreate it with CreateService.
+ * re-create it with CreateService.
  * </p>
  */        
 public class ServiceNotActiveException extends AmazonServiceException {

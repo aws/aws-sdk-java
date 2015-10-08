@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.ecs.AmazonECS#deregisterContainerInstance(DeregisterContainerInstanceRequest) DeregisterContainerInstance operation}.
  * <p>
  * Deregisters an Amazon ECS container instance from the specified
- * cluster. This instance will no longer be available to run tasks.
+ * cluster. This instance is no longer available to run tasks.
  * </p>
  * <p>
  * If you intend to use the container instance for some other purpose
@@ -47,43 +47,43 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest 
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the container instance you want to deregister. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * hosts the container instance to deregister. If you do not specify a
+     * cluster, the default cluster is assumed.
      */
     private String cluster;
 
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
-     * container instance you want to deregister. The ARN contains the
+     * The container instance ID or full Amazon Resource Name (ARN) of the
+     * container instance to deregister. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the region of the
      * container instance, the AWS account ID of the container instance
      * owner, the <code>container-instance</code> namespace, and then the
-     * container instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      */
     private String containerInstance;
 
     /**
-     * Force the deregistration of the container instance. If you have tasks
+     * Forces the deregistration of the container instance. If you have tasks
      * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running and they will
+     * <code>force</code> option, these tasks remain running and they
      * continue to pass Elastic Load Balancing load balancer health checks
      * until you terminate the instance or the tasks stop through some other
      * means, but they are orphaned (no longer monitored or accounted for by
      * Amazon ECS). If an orphaned task on your container instance is part of
-     * an Amazon ECS service, then the service scheduler will start another
-     * copy of that task on a different container instance if possible.
+     * an Amazon ECS service, then the service scheduler starts another copy
+     * of that task, on a different container instance if possible.
      */
     private Boolean force;
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the container instance you want to deregister. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * hosts the container instance to deregister. If you do not specify a
+     * cluster, the default cluster is assumed.
      *
      * @return The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the container instance you want to deregister. If you do not
-     *         specify a cluster, the default cluster is assumed.
+     *         hosts the container instance to deregister. If you do not specify a
+     *         cluster, the default cluster is assumed.
      */
     public String getCluster() {
         return cluster;
@@ -91,12 +91,12 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest 
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the container instance you want to deregister. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * hosts the container instance to deregister. If you do not specify a
+     * cluster, the default cluster is assumed.
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the container instance you want to deregister. If you do not
-     *         specify a cluster, the default cluster is assumed.
+     *         hosts the container instance to deregister. If you do not specify a
+     *         cluster, the default cluster is assumed.
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
@@ -104,14 +104,14 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest 
     
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
-     * hosts the container instance you want to deregister. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * hosts the container instance to deregister. If you do not specify a
+     * cluster, the default cluster is assumed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
-     *         hosts the container instance you want to deregister. If you do not
-     *         specify a cluster, the default cluster is assumed.
+     *         hosts the container instance to deregister. If you do not specify a
+     *         cluster, the default cluster is assumed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -122,65 +122,65 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
-     * container instance you want to deregister. The ARN contains the
+     * The container instance ID or full Amazon Resource Name (ARN) of the
+     * container instance to deregister. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the region of the
      * container instance, the AWS account ID of the container instance
      * owner, the <code>container-instance</code> namespace, and then the
-     * container instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      *
-     * @return The container instance UUID or full Amazon Resource Name (ARN) of the
-     *         container instance you want to deregister. The ARN contains the
+     * @return The container instance ID or full Amazon Resource Name (ARN) of the
+     *         container instance to deregister. The ARN contains the
      *         <code>arn:aws:ecs</code> namespace, followed by the region of the
      *         container instance, the AWS account ID of the container instance
      *         owner, the <code>container-instance</code> namespace, and then the
-     *         container instance UUID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     *         container instance ID. For example,
+     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      */
     public String getContainerInstance() {
         return containerInstance;
     }
     
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
-     * container instance you want to deregister. The ARN contains the
+     * The container instance ID or full Amazon Resource Name (ARN) of the
+     * container instance to deregister. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the region of the
      * container instance, the AWS account ID of the container instance
      * owner, the <code>container-instance</code> namespace, and then the
-     * container instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      *
-     * @param containerInstance The container instance UUID or full Amazon Resource Name (ARN) of the
-     *         container instance you want to deregister. The ARN contains the
+     * @param containerInstance The container instance ID or full Amazon Resource Name (ARN) of the
+     *         container instance to deregister. The ARN contains the
      *         <code>arn:aws:ecs</code> namespace, followed by the region of the
      *         container instance, the AWS account ID of the container instance
      *         owner, the <code>container-instance</code> namespace, and then the
-     *         container instance UUID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     *         container instance ID. For example,
+     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      */
     public void setContainerInstance(String containerInstance) {
         this.containerInstance = containerInstance;
     }
     
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
-     * container instance you want to deregister. The ARN contains the
+     * The container instance ID or full Amazon Resource Name (ARN) of the
+     * container instance to deregister. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the region of the
      * container instance, the AWS account ID of the container instance
      * owner, the <code>container-instance</code> namespace, and then the
-     * container instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerInstance The container instance UUID or full Amazon Resource Name (ARN) of the
-     *         container instance you want to deregister. The ARN contains the
+     * @param containerInstance The container instance ID or full Amazon Resource Name (ARN) of the
+     *         container instance to deregister. The ARN contains the
      *         <code>arn:aws:ecs</code> namespace, followed by the region of the
      *         container instance, the AWS account ID of the container instance
      *         owner, the <code>container-instance</code> namespace, and then the
-     *         container instance UUID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     *         container instance ID. For example,
+     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -191,77 +191,77 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * Force the deregistration of the container instance. If you have tasks
+     * Forces the deregistration of the container instance. If you have tasks
      * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running and they will
+     * <code>force</code> option, these tasks remain running and they
      * continue to pass Elastic Load Balancing load balancer health checks
      * until you terminate the instance or the tasks stop through some other
      * means, but they are orphaned (no longer monitored or accounted for by
      * Amazon ECS). If an orphaned task on your container instance is part of
-     * an Amazon ECS service, then the service scheduler will start another
-     * copy of that task on a different container instance if possible.
+     * an Amazon ECS service, then the service scheduler starts another copy
+     * of that task, on a different container instance if possible.
      *
-     * @return Force the deregistration of the container instance. If you have tasks
+     * @return Forces the deregistration of the container instance. If you have tasks
      *         running on the container instance when you deregister it with the
-     *         <code>force</code> option, these tasks remain running and they will
+     *         <code>force</code> option, these tasks remain running and they
      *         continue to pass Elastic Load Balancing load balancer health checks
      *         until you terminate the instance or the tasks stop through some other
      *         means, but they are orphaned (no longer monitored or accounted for by
      *         Amazon ECS). If an orphaned task on your container instance is part of
-     *         an Amazon ECS service, then the service scheduler will start another
-     *         copy of that task on a different container instance if possible.
+     *         an Amazon ECS service, then the service scheduler starts another copy
+     *         of that task, on a different container instance if possible.
      */
     public Boolean isForce() {
         return force;
     }
     
     /**
-     * Force the deregistration of the container instance. If you have tasks
+     * Forces the deregistration of the container instance. If you have tasks
      * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running and they will
+     * <code>force</code> option, these tasks remain running and they
      * continue to pass Elastic Load Balancing load balancer health checks
      * until you terminate the instance or the tasks stop through some other
      * means, but they are orphaned (no longer monitored or accounted for by
      * Amazon ECS). If an orphaned task on your container instance is part of
-     * an Amazon ECS service, then the service scheduler will start another
-     * copy of that task on a different container instance if possible.
+     * an Amazon ECS service, then the service scheduler starts another copy
+     * of that task, on a different container instance if possible.
      *
-     * @param force Force the deregistration of the container instance. If you have tasks
+     * @param force Forces the deregistration of the container instance. If you have tasks
      *         running on the container instance when you deregister it with the
-     *         <code>force</code> option, these tasks remain running and they will
+     *         <code>force</code> option, these tasks remain running and they
      *         continue to pass Elastic Load Balancing load balancer health checks
      *         until you terminate the instance or the tasks stop through some other
      *         means, but they are orphaned (no longer monitored or accounted for by
      *         Amazon ECS). If an orphaned task on your container instance is part of
-     *         an Amazon ECS service, then the service scheduler will start another
-     *         copy of that task on a different container instance if possible.
+     *         an Amazon ECS service, then the service scheduler starts another copy
+     *         of that task, on a different container instance if possible.
      */
     public void setForce(Boolean force) {
         this.force = force;
     }
     
     /**
-     * Force the deregistration of the container instance. If you have tasks
+     * Forces the deregistration of the container instance. If you have tasks
      * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running and they will
+     * <code>force</code> option, these tasks remain running and they
      * continue to pass Elastic Load Balancing load balancer health checks
      * until you terminate the instance or the tasks stop through some other
      * means, but they are orphaned (no longer monitored or accounted for by
      * Amazon ECS). If an orphaned task on your container instance is part of
-     * an Amazon ECS service, then the service scheduler will start another
-     * copy of that task on a different container instance if possible.
+     * an Amazon ECS service, then the service scheduler starts another copy
+     * of that task, on a different container instance if possible.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param force Force the deregistration of the container instance. If you have tasks
+     * @param force Forces the deregistration of the container instance. If you have tasks
      *         running on the container instance when you deregister it with the
-     *         <code>force</code> option, these tasks remain running and they will
+     *         <code>force</code> option, these tasks remain running and they
      *         continue to pass Elastic Load Balancing load balancer health checks
      *         until you terminate the instance or the tasks stop through some other
      *         means, but they are orphaned (no longer monitored or accounted for by
      *         Amazon ECS). If an orphaned task on your container instance is part of
-     *         an Amazon ECS service, then the service scheduler will start another
-     *         copy of that task on a different container instance if possible.
+     *         an Amazon ECS service, then the service scheduler starts another copy
+     *         of that task, on a different container instance if possible.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -272,25 +272,25 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * Force the deregistration of the container instance. If you have tasks
+     * Forces the deregistration of the container instance. If you have tasks
      * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running and they will
+     * <code>force</code> option, these tasks remain running and they
      * continue to pass Elastic Load Balancing load balancer health checks
      * until you terminate the instance or the tasks stop through some other
      * means, but they are orphaned (no longer monitored or accounted for by
      * Amazon ECS). If an orphaned task on your container instance is part of
-     * an Amazon ECS service, then the service scheduler will start another
-     * copy of that task on a different container instance if possible.
+     * an Amazon ECS service, then the service scheduler starts another copy
+     * of that task, on a different container instance if possible.
      *
-     * @return Force the deregistration of the container instance. If you have tasks
+     * @return Forces the deregistration of the container instance. If you have tasks
      *         running on the container instance when you deregister it with the
-     *         <code>force</code> option, these tasks remain running and they will
+     *         <code>force</code> option, these tasks remain running and they
      *         continue to pass Elastic Load Balancing load balancer health checks
      *         until you terminate the instance or the tasks stop through some other
      *         means, but they are orphaned (no longer monitored or accounted for by
      *         Amazon ECS). If an orphaned task on your container instance is part of
-     *         an Amazon ECS service, then the service scheduler will start another
-     *         copy of that task on a different container instance if possible.
+     *         an Amazon ECS service, then the service scheduler starts another copy
+     *         of that task, on a different container instance if possible.
      */
     public Boolean getForce() {
         return force;

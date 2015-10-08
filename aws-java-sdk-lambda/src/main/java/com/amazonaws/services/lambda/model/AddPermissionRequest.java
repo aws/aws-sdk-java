@@ -21,16 +21,25 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.lambda.AWSLambda#addPermission(AddPermissionRequest) AddPermission operation}.
  * <p>
- * Adds a permission to the access policy associated with the specified
- * AWS Lambda function. In a "push event" model, the access policy
- * attached to the Lambda function grants Amazon S3 or a user application
- * permission for the Lambda <code>lambda:Invoke</code> action. For
- * information about the push model, see
+ * Adds a permission to the resource policy associated with the specified
+ * AWS Lambda function. You use resource policies to grant permissions to
+ * event sources that use "push" model. In "push" model, event sources
+ * (such as Amazon S3 and custom applications) invoke your Lambda
+ * function. Each permission you add to the resource policy allows an
+ * event source, permission to invoke the Lambda function.
+ * </p>
+ * <p>
+ * For information about the push model, see
  * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
- * . Each Lambda function has one access policy associated with it. You
- * can use the <code>AddPermission</code> API to add a permission to the
- * policy. You have one access policy but it can have multiple permission
- * statements.
+ * .
+ * </p>
+ * <p>
+ * If you are using versioning feature (see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+ * ), a Lambda function can have multiple ARNs that can be used to
+ * invoke the function. Note that, each permission you add to resource
+ * policy using this API is specific to an ARN, specified using the
+ * <code>Qualifier</code> parameter
  * </p>
  * <p>
  * This operation requires permission for the
@@ -42,7 +51,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class AddPermissionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Name of the Lambda function whose access policy you are updating by
+     * Name of the Lambda function whose resource policy you are updating by
      * adding a new permission. <p> You can specify an unqualified function
      * name (for example, "Thumbnail") or you can specify Amazon Resource
      * Name (ARN) of the function (for example,
@@ -53,8 +62,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionName;
 
@@ -124,7 +133,27 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
     private String sourceAccount;
 
     /**
-     * Name of the Lambda function whose access policy you are updating by
+     * You can specify this optional query parameter to specify function
+     * version or alias name. The permission will then apply to the specific
+     * qualified ARN. For example, if you specify function version 2 as the
+     * qualifier, then permission applies only when request is made using
+     * qualified function ARN:
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
+     * <p>If you specify alias name, for example "PROD", then the permission
+     * is valid only for requests made using the alias ARN:
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</code>
+     * <p>If the qualifier is not specified, the permission is valid only
+     * when requests is made using unqualified function ARN.
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     */
+    private String qualifier;
+
+    /**
+     * Name of the Lambda function whose resource policy you are updating by
      * adding a new permission. <p> You can specify an unqualified function
      * name (for example, "Thumbnail") or you can specify Amazon Resource
      * Name (ARN) of the function (for example,
@@ -135,10 +164,10 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @return Name of the Lambda function whose access policy you are updating by
+     * @return Name of the Lambda function whose resource policy you are updating by
      *         adding a new permission. <p> You can specify an unqualified function
      *         name (for example, "Thumbnail") or you can specify Amazon Resource
      *         Name (ARN) of the function (for example,
@@ -153,7 +182,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * Name of the Lambda function whose access policy you are updating by
+     * Name of the Lambda function whose resource policy you are updating by
      * adding a new permission. <p> You can specify an unqualified function
      * name (for example, "Thumbnail") or you can specify Amazon Resource
      * Name (ARN) of the function (for example,
@@ -164,10 +193,10 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName Name of the Lambda function whose access policy you are updating by
+     * @param functionName Name of the Lambda function whose resource policy you are updating by
      *         adding a new permission. <p> You can specify an unqualified function
      *         name (for example, "Thumbnail") or you can specify Amazon Resource
      *         Name (ARN) of the function (for example,
@@ -182,7 +211,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * Name of the Lambda function whose access policy you are updating by
+     * Name of the Lambda function whose resource policy you are updating by
      * adding a new permission. <p> You can specify an unqualified function
      * name (for example, "Thumbnail") or you can specify Amazon Resource
      * Name (ARN) of the function (for example,
@@ -195,10 +224,10 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName Name of the Lambda function whose access policy you are updating by
+     * @param functionName Name of the Lambda function whose resource policy you are updating by
      *         adding a new permission. <p> You can specify an unqualified function
      *         name (for example, "Thumbnail") or you can specify Amazon Resource
      *         Name (ARN) of the function (for example,
@@ -574,6 +603,117 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * You can specify this optional query parameter to specify function
+     * version or alias name. The permission will then apply to the specific
+     * qualified ARN. For example, if you specify function version 2 as the
+     * qualifier, then permission applies only when request is made using
+     * qualified function ARN:
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
+     * <p>If you specify alias name, for example "PROD", then the permission
+     * is valid only for requests made using the alias ARN:
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</code>
+     * <p>If the qualifier is not specified, the permission is valid only
+     * when requests is made using unqualified function ARN.
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @return You can specify this optional query parameter to specify function
+     *         version or alias name. The permission will then apply to the specific
+     *         qualified ARN. For example, if you specify function version 2 as the
+     *         qualifier, then permission applies only when request is made using
+     *         qualified function ARN:
+     *         <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
+     *         <p>If you specify alias name, for example "PROD", then the permission
+     *         is valid only for requests made using the alias ARN:
+     *         <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</code>
+     *         <p>If the qualifier is not specified, the permission is valid only
+     *         when requests is made using unqualified function ARN.
+     *         <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name</code>
+     */
+    public String getQualifier() {
+        return qualifier;
+    }
+    
+    /**
+     * You can specify this optional query parameter to specify function
+     * version or alias name. The permission will then apply to the specific
+     * qualified ARN. For example, if you specify function version 2 as the
+     * qualifier, then permission applies only when request is made using
+     * qualified function ARN:
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
+     * <p>If you specify alias name, for example "PROD", then the permission
+     * is valid only for requests made using the alias ARN:
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</code>
+     * <p>If the qualifier is not specified, the permission is valid only
+     * when requests is made using unqualified function ARN.
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier You can specify this optional query parameter to specify function
+     *         version or alias name. The permission will then apply to the specific
+     *         qualified ARN. For example, if you specify function version 2 as the
+     *         qualifier, then permission applies only when request is made using
+     *         qualified function ARN:
+     *         <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
+     *         <p>If you specify alias name, for example "PROD", then the permission
+     *         is valid only for requests made using the alias ARN:
+     *         <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</code>
+     *         <p>If the qualifier is not specified, the permission is valid only
+     *         when requests is made using unqualified function ARN.
+     *         <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name</code>
+     */
+    public void setQualifier(String qualifier) {
+        this.qualifier = qualifier;
+    }
+    
+    /**
+     * You can specify this optional query parameter to specify function
+     * version or alias name. The permission will then apply to the specific
+     * qualified ARN. For example, if you specify function version 2 as the
+     * qualifier, then permission applies only when request is made using
+     * qualified function ARN:
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
+     * <p>If you specify alias name, for example "PROD", then the permission
+     * is valid only for requests made using the alias ARN:
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</code>
+     * <p>If the qualifier is not specified, the permission is valid only
+     * when requests is made using unqualified function ARN.
+     * <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     *
+     * @param qualifier You can specify this optional query parameter to specify function
+     *         version or alias name. The permission will then apply to the specific
+     *         qualified ARN. For example, if you specify function version 2 as the
+     *         qualifier, then permission applies only when request is made using
+     *         qualified function ARN:
+     *         <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
+     *         <p>If you specify alias name, for example "PROD", then the permission
+     *         is valid only for requests made using the alias ARN:
+     *         <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</code>
+     *         <p>If the qualifier is not specified, the permission is valid only
+     *         when requests is made using unqualified function ARN.
+     *         <p><code>arn:aws:lambda:aws-region:acct-id:function:function-name</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public AddPermissionRequest withQualifier(String qualifier) {
+        this.qualifier = qualifier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -590,7 +730,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
         if (getAction() != null) sb.append("Action: " + getAction() + ",");
         if (getPrincipal() != null) sb.append("Principal: " + getPrincipal() + ",");
         if (getSourceArn() != null) sb.append("SourceArn: " + getSourceArn() + ",");
-        if (getSourceAccount() != null) sb.append("SourceAccount: " + getSourceAccount() );
+        if (getSourceAccount() != null) sb.append("SourceAccount: " + getSourceAccount() + ",");
+        if (getQualifier() != null) sb.append("Qualifier: " + getQualifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -606,6 +747,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode()); 
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode()); 
         hashCode = prime * hashCode + ((getSourceAccount() == null) ? 0 : getSourceAccount().hashCode()); 
+        hashCode = prime * hashCode + ((getQualifier() == null) ? 0 : getQualifier().hashCode()); 
         return hashCode;
     }
     
@@ -629,6 +771,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
         if (other.getSourceArn() != null && other.getSourceArn().equals(this.getSourceArn()) == false) return false; 
         if (other.getSourceAccount() == null ^ this.getSourceAccount() == null) return false;
         if (other.getSourceAccount() != null && other.getSourceAccount().equals(this.getSourceAccount()) == false) return false; 
+        if (other.getQualifier() == null ^ this.getQualifier() == null) return false;
+        if (other.getQualifier() != null && other.getQualifier().equals(this.getQualifier()) == false) return false; 
         return true;
     }
     

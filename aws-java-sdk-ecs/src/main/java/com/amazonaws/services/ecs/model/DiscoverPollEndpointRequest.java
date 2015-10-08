@@ -34,13 +34,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
+     * The container instance ID or full Amazon Resource Name (ARN) of the
      * container instance. The ARN contains the <code>arn:aws:ecs</code>
      * namespace, followed by the region of the container instance, the AWS
      * account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container
-     * instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      */
     private String containerInstance;
 
@@ -50,65 +50,65 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest impleme
     private String cluster;
 
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
+     * The container instance ID or full Amazon Resource Name (ARN) of the
      * container instance. The ARN contains the <code>arn:aws:ecs</code>
      * namespace, followed by the region of the container instance, the AWS
      * account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container
-     * instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      *
-     * @return The container instance UUID or full Amazon Resource Name (ARN) of the
+     * @return The container instance ID or full Amazon Resource Name (ARN) of the
      *         container instance. The ARN contains the <code>arn:aws:ecs</code>
      *         namespace, followed by the region of the container instance, the AWS
      *         account ID of the container instance owner, the
      *         <code>container-instance</code> namespace, and then the container
-     *         instance UUID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     *         instance ID. For example,
+     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      */
     public String getContainerInstance() {
         return containerInstance;
     }
     
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
+     * The container instance ID or full Amazon Resource Name (ARN) of the
      * container instance. The ARN contains the <code>arn:aws:ecs</code>
      * namespace, followed by the region of the container instance, the AWS
      * account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container
-     * instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      *
-     * @param containerInstance The container instance UUID or full Amazon Resource Name (ARN) of the
+     * @param containerInstance The container instance ID or full Amazon Resource Name (ARN) of the
      *         container instance. The ARN contains the <code>arn:aws:ecs</code>
      *         namespace, followed by the region of the container instance, the AWS
      *         account ID of the container instance owner, the
      *         <code>container-instance</code> namespace, and then the container
-     *         instance UUID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     *         instance ID. For example,
+     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      */
     public void setContainerInstance(String containerInstance) {
         this.containerInstance = containerInstance;
     }
     
     /**
-     * The container instance UUID or full Amazon Resource Name (ARN) of the
+     * The container instance ID or full Amazon Resource Name (ARN) of the
      * container instance. The ARN contains the <code>arn:aws:ecs</code>
      * namespace, followed by the region of the container instance, the AWS
      * account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container
-     * instance UUID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     * instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerInstance The container instance UUID or full Amazon Resource Name (ARN) of the
+     * @param containerInstance The container instance ID or full Amazon Resource Name (ARN) of the
      *         container instance. The ARN contains the <code>arn:aws:ecs</code>
      *         namespace, followed by the region of the container instance, the AWS
      *         account ID of the container instance owner, the
      *         <code>container-instance</code> namespace, and then the container
-     *         instance UUID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+     *         instance ID. For example,
+     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

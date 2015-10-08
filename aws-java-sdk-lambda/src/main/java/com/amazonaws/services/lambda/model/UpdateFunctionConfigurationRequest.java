@@ -47,8 +47,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      */
     private String functionName;
 
@@ -87,7 +87,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * The default is 3 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      */
     private Integer timeout;
 
@@ -115,8 +115,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @return The name of the Lambda function. <p> You can specify an unqualified
      *         function name (for example, "Thumbnail") or you can specify Amazon
@@ -142,8 +142,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The name of the Lambda function. <p> You can specify an unqualified
      *         function name (for example, "Thumbnail") or you can specify Amazon
@@ -171,8 +171,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 111<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
+     * <b>Length: </b>1 - 140<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The name of the Lambda function. <p> You can specify an unqualified
      *         function name (for example, "Thumbnail") or you can specify Amazon
@@ -345,7 +345,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * The default is 3 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      *
      * @return The function execution time at which AWS Lambda should terminate the
      *         function. Because the execution time has cost implications, we
@@ -363,7 +363,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * The default is 3 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      *
      * @param timeout The function execution time at which AWS Lambda should terminate the
      *         function. Because the execution time has cost implications, we
@@ -383,7 +383,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 60<br/>
+     * <b>Range: </b>1 - <br/>
      *
      * @param timeout The function execution time at which AWS Lambda should terminate the
      *         function. Because the execution time has cost implications, we

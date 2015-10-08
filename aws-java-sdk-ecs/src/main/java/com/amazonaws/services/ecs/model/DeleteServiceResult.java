@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class DeleteServiceResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * The full description of the deleted service.
      */
     private Service service;
 
     /**
-     * 
+     * The full description of the deleted service.
      *
-     * @return 
+     * @return The full description of the deleted service.
      */
     public Service getService() {
         return service;
     }
     
     /**
-     * 
+     * The full description of the deleted service.
      *
-     * @param service 
+     * @param service The full description of the deleted service.
      */
     public void setService(Service service) {
         this.service = service;
     }
     
     /**
-     * 
+     * The full description of the deleted service.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param service 
+     * @param service The full description of the deleted service.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

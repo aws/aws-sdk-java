@@ -23,7 +23,7 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
 
     /**
      * The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.
+     * <code>ListTaskDefinitions</code> request.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> taskDefinitionArns;
 
@@ -39,10 +39,10 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
 
     /**
      * The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.
+     * <code>ListTaskDefinitions</code> request.
      *
      * @return The list of task definition Amazon Resource Name (ARN) entries for the
-     *         <code>ListTaskDefintions</code> request.
+     *         <code>ListTaskDefinitions</code> request.
      */
     public java.util.List<String> getTaskDefinitionArns() {
         if (taskDefinitionArns == null) {
@@ -54,10 +54,10 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
     
     /**
      * The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.
+     * <code>ListTaskDefinitions</code> request.
      *
      * @param taskDefinitionArns The list of task definition Amazon Resource Name (ARN) entries for the
-     *         <code>ListTaskDefintions</code> request.
+     *         <code>ListTaskDefinitions</code> request.
      */
     public void setTaskDefinitionArns(java.util.Collection<String> taskDefinitionArns) {
         if (taskDefinitionArns == null) {
@@ -71,7 +71,7 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
     
     /**
      * The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.
+     * <code>ListTaskDefinitions</code> request.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTaskDefinitionArns(java.util.Collection)} or
@@ -81,7 +81,7 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinitionArns The list of task definition Amazon Resource Name (ARN) entries for the
-     *         <code>ListTaskDefintions</code> request.
+     *         <code>ListTaskDefinitions</code> request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -96,12 +96,12 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
     
     /**
      * The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.
+     * <code>ListTaskDefinitions</code> request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinitionArns The list of task definition Amazon Resource Name (ARN) entries for the
-     *         <code>ListTaskDefintions</code> request.
+     *         <code>ListTaskDefinitions</code> request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

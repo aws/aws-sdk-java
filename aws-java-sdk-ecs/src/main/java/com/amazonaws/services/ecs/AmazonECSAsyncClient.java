@@ -35,13 +35,11 @@ import com.amazonaws.services.ecs.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * <p>
- * </p>
- * <p>
  * Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast,
  * container management service that makes it easy to run, stop, and
- * manage Docker containers on a cluster of Amazon EC2 instances. Amazon
- * ECS lets you launch and stop container-enabled applications with
- * simple API calls, allows you to get the state of your cluster from a
+ * manage Docker containers on a cluster of EC2 instances. Amazon ECS
+ * lets you launch and stop container-enabled applications with simple
+ * API calls, allows you to get the state of your cluster from a
  * centralized service, and gives you access to many familiar Amazon EC2
  * features like security groups, Amazon EBS volumes, and IAM roles.
  * </p>
@@ -599,8 +597,8 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Start a task using random placement and the default Amazon ECS
-     * scheduler. If you want to use your own scheduler or place a task on a
-     * specific container instance, use <code>StartTask</code> instead.
+     * scheduler. To use your own scheduler or place a task on a specific
+     * container instance, use <code>StartTask</code> instead.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> The count parameter is limited to 10 tasks per
@@ -634,8 +632,8 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Start a task using random placement and the default Amazon ECS
-     * scheduler. If you want to use your own scheduler or place a task on a
-     * specific container instance, use <code>StartTask</code> instead.
+     * scheduler. To use your own scheduler or place a task on a specific
+     * container instance, use <code>StartTask</code> instead.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> The count parameter is limited to 10 tasks per
@@ -754,10 +752,10 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     
     /**
      * <p>
-     * Creates a new Amazon ECS cluster. By default, your account will
-     * receive a <code>default</code> cluster when you launch your first
-     * container instance. However, you can create your own cluster with a
-     * unique name with the <code>CreateCluster</code> action.
+     * Creates a new Amazon ECS cluster. By default, your account receives a
+     * <code>default</code> cluster when you launch your first container
+     * instance. However, you can create your own cluster with a unique name
+     * with the <code>CreateCluster</code> action.
      * </p>
      *
      * @param createClusterRequest Container for the necessary parameters to
@@ -786,10 +784,10 @@ public class AmazonECSAsyncClient extends AmazonECSClient
 
     /**
      * <p>
-     * Creates a new Amazon ECS cluster. By default, your account will
-     * receive a <code>default</code> cluster when you launch your first
-     * container instance. However, you can create your own cluster with a
-     * unique name with the <code>CreateCluster</code> action.
+     * Creates a new Amazon ECS cluster. By default, your account receives a
+     * <code>default</code> cluster when you launch your first container
+     * instance. However, you can create your own cluster with a unique name
+     * with the <code>CreateCluster</code> action.
      * </p>
      *
      * @param createClusterRequest Container for the necessary parameters to
@@ -1005,7 +1003,7 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Deregisters an Amazon ECS container instance from the specified
-     * cluster. This instance will no longer be available to run tasks.
+     * cluster. This instance is no longer available to run tasks.
      * </p>
      * <p>
      * If you intend to use the container instance for some other purpose
@@ -1052,7 +1050,7 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Deregisters an Amazon ECS container instance from the specified
-     * cluster. This instance will no longer be available to run tasks.
+     * cluster. This instance is no longer available to run tasks.
      * </p>
      * <p>
      * If you intend to use the container instance for some other purpose
@@ -1285,7 +1283,7 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Describes a task definition. You can specify a <code>family</code>
-     * and <code>revision</code> to find information on a specific task
+     * and <code>revision</code> to find information about a specific task
      * definition, or you can simply specify the family to find the latest
      * <code>ACTIVE</code> revision in that family.
      * </p>
@@ -1322,7 +1320,7 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Describes a task definition. You can specify a <code>family</code>
-     * and <code>revision</code> to find information on a specific task
+     * and <code>revision</code> to find information about a specific task
      * definition, or you can simply specify the family to find the latest
      * <code>ACTIVE</code> revision in that family.
      * </p>
@@ -1375,7 +1373,8 @@ public class AmazonECSAsyncClient extends AmazonECSClient
      * Registers a new task definition from the supplied <code>family</code>
      * and <code>containerDefinitions</code> . Optionally, you can add data
      * volumes to your containers with the <code>volumes</code> parameter.
-     * For more information on task definition parameters and defaults, see
+     * For more information about task definition parameters and defaults,
+     * see
      * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"> Amazon ECS Task Definitions </a>
      * in the <i>Amazon EC2 Container Service Developer Guide</i> .
      * </p>
@@ -1410,7 +1409,8 @@ public class AmazonECSAsyncClient extends AmazonECSClient
      * Registers a new task definition from the supplied <code>family</code>
      * and <code>containerDefinitions</code> . Optionally, you can add data
      * volumes to your containers with the <code>volumes</code> parameter.
-     * For more information on task definition parameters and defaults, see
+     * For more information about task definition parameters and defaults,
+     * see
      * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"> Amazon ECS Task Definitions </a>
      * in the <i>Amazon EC2 Container Service Developer Guide</i> .
      * </p>
@@ -1540,8 +1540,8 @@ public class AmazonECSAsyncClient extends AmazonECSClient
      * <p>
      * Runs and maintains a desired number of tasks from a specified task
      * definition. If the number of tasks running in a service drops below
-     * <code>desiredCount</code> , Amazon ECS will spawn another
-     * instantiation of the task in the specified cluster.
+     * <code>desiredCount</code> , Amazon ECS spawns another instantiation of
+     * the task in the specified cluster.
      * </p>
      *
      * @param createServiceRequest Container for the necessary parameters to
@@ -1572,8 +1572,8 @@ public class AmazonECSAsyncClient extends AmazonECSClient
      * <p>
      * Runs and maintains a desired number of tasks from a specified task
      * definition. If the number of tasks running in a service drops below
-     * <code>desiredCount</code> , Amazon ECS will spawn another
-     * instantiation of the task in the specified cluster.
+     * <code>desiredCount</code> , Amazon ECS spawns another instantiation of
+     * the task in the specified cluster.
      * </p>
      *
      * @param createServiceRequest Container for the necessary parameters to
@@ -1698,8 +1698,8 @@ public class AmazonECSAsyncClient extends AmazonECSClient
      * Service agent, and it is not intended for use outside of the agent.
      * </p>
      * <p>
-     * Registers an Amazon EC2 instance into the specified cluster. This
-     * instance will become available to place containers on.
+     * Registers an EC2 instance into the specified cluster. This instance
+     * becomes available to place containers on.
      * </p>
      *
      * @param registerContainerInstanceRequest Container for the necessary
@@ -1733,8 +1733,8 @@ public class AmazonECSAsyncClient extends AmazonECSClient
      * Service agent, and it is not intended for use outside of the agent.
      * </p>
      * <p>
-     * Registers an Amazon EC2 instance into the specified cluster. This
-     * instance will become available to place containers on.
+     * Registers an EC2 instance into the specified cluster. This instance
+     * becomes available to place containers on.
      * </p>
      *
      * @param registerContainerInstanceRequest Container for the necessary
@@ -1942,6 +1942,15 @@ public class AmazonECSAsyncClient extends AmazonECSClient
      * used in your service, you can reduce the desired count of your service
      * by one before modifying the task definition.
      * </p>
+     * <p>
+     * When UpdateService replaces a task during an update, the equivalent
+     * of <code>docker stop</code> is issued to the containers running in the
+     * task. This results in a <code>SIGTERM</code> and a 30-second timeout,
+     * after which <code>SIGKILL</code> is sent and the containers are
+     * forcibly stopped. If the container handles the <code>SIGTERM</code>
+     * gracefully and exits within 30 seconds from receiving it, no
+     * <code>SIGKILL</code> is sent.
+     * </p>
      *
      * @param updateServiceRequest Container for the necessary parameters to
      *           execute the UpdateService operation on AmazonECS.
@@ -1988,6 +1997,15 @@ public class AmazonECSAsyncClient extends AmazonECSClient
      * run. If your cluster cannot support another instantiation of the task
      * used in your service, you can reduce the desired count of your service
      * by one before modifying the task definition.
+     * </p>
+     * <p>
+     * When UpdateService replaces a task during an update, the equivalent
+     * of <code>docker stop</code> is issued to the containers running in the
+     * task. This results in a <code>SIGTERM</code> and a 30-second timeout,
+     * after which <code>SIGKILL</code> is sent and the containers are
+     * forcibly stopped. If the container handles the <code>SIGTERM</code>
+     * gracefully and exits within 30 seconds from receiving it, no
+     * <code>SIGKILL</code> is sent.
      * </p>
      *
      * @param updateServiceRequest Container for the necessary parameters to
@@ -2265,8 +2283,8 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Starts a new task from the specified task definition on the specified
-     * container instance or instances. If you want to use the default Amazon
-     * ECS scheduler to place your task, use <code>RunTask</code> instead.
+     * container instance or instances. To use the default Amazon ECS
+     * scheduler to place your task, use <code>RunTask</code> instead.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> The list of container instances to start tasks on
@@ -2300,8 +2318,8 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Starts a new task from the specified task definition on the specified
-     * container instance or instances. If you want to use the default Amazon
-     * ECS scheduler to place your task, use <code>RunTask</code> instead.
+     * container instance or instances. To use the default Amazon ECS
+     * scheduler to place your task, use <code>RunTask</code> instead.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> The list of container instances to start tasks on
@@ -2430,6 +2448,14 @@ public class AmazonECSAsyncClient extends AmazonECSClient
      * <p>
      * Stops a running task.
      * </p>
+     * <p>
+     * When StopTask is called on a task, the equivalent of <code>docker
+     * stop</code> is issued to the containers running in the task. This
+     * results in a <code>SIGTERM</code> and a 30-second timeout, after which
+     * <code>SIGKILL</code> is sent and the containers are forcibly stopped.
+     * If the container handles the <code>SIGTERM</code> gracefully and exits
+     * within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
+     * </p>
      *
      * @param stopTaskRequest Container for the necessary parameters to
      *           execute the StopTask operation on AmazonECS.
@@ -2458,6 +2484,14 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Stops a running task.
+     * </p>
+     * <p>
+     * When StopTask is called on a task, the equivalent of <code>docker
+     * stop</code> is issued to the containers running in the task. This
+     * results in a <code>SIGTERM</code> and a 30-second timeout, after which
+     * <code>SIGKILL</code> is sent and the containers are forcibly stopped.
+     * If the container handles the <code>SIGTERM</code> gracefully and exits
+     * within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
      * </p>
      *
      * @param stopTaskRequest Container for the necessary parameters to

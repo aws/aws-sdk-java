@@ -17,7 +17,11 @@ package com.amazonaws.services.lambda.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AWSLambda exception
+ * <p>
+ * You have exceeded your maximum total code size per account.
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html"> Limits </a>
+ * 
+ * </p>
  */        
 public class CodeStorageExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

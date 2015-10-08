@@ -15,11 +15,8 @@
 package com.amazonaws.test;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-
-import org.junit.BeforeClass;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSCredentials;
@@ -37,7 +34,10 @@ public abstract class AWSTestBase {
     /**
      * Shared AWS credentials, loaded from a properties file. Direct access to this field is
      * deprecated
+     * 
+     * @deprecated Extend from {@link AWSIntegrationTestBase} to access credentials
      */
+    @Deprecated
     public static AWSCredentials credentials;
 
     /** Default Properties Credentials file path */
@@ -52,25 +52,16 @@ public abstract class AWSTestBase {
             new SystemPropertiesCredentialsProvider());
 
     /**
-     * Before of super class is guaranteed to be called before that of a subclass so the following
-     * is safe. http://junit-team.github.io/junit/javadoc/latest/org/junit/Before.html
+     * @deprecated Extend from {@link AWSIntegrationTestBase} to access credentials
      */
-    @BeforeClass
+    @Deprecated
     public static void setUpCredentials() {
         if (credentials == null) {
             try {
                 credentials = chain.getCredentials();
-            } catch (Exception e) {
-                // ignored
+            } catch (Exception ignored) {
             }
         }
-    }
-
-    /**
-     * @return AWSCredentials to use during tests. Setup by base fixture
-     */
-    protected static AWSCredentials getCredentials() {
-        return credentials;
     }
 
     /**

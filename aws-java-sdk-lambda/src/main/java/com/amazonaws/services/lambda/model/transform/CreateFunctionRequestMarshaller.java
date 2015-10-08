@@ -112,15 +112,6 @@ public class CreateFunctionRequestMarshaller implements Marshaller<Request<Creat
             if (createFunctionRequest.getHandler() != null) {
                 jsonWriter.key("Handler").value(createFunctionRequest.getHandler());
             }
-            if (createFunctionRequest.getDescription() != null) {
-                jsonWriter.key("Description").value(createFunctionRequest.getDescription());
-            }
-            if (createFunctionRequest.getTimeout() != null) {
-                jsonWriter.key("Timeout").value(createFunctionRequest.getTimeout());
-            }
-            if (createFunctionRequest.getMemorySize() != null) {
-                jsonWriter.key("MemorySize").value(createFunctionRequest.getMemorySize());
-            }
             FunctionCode code = createFunctionRequest.getCode();
             if (code != null) {
 
@@ -140,6 +131,18 @@ public class CreateFunctionRequestMarshaller implements Marshaller<Request<Creat
                     jsonWriter.key("S3ObjectVersion").value(code.getS3ObjectVersion());
                 }
                 jsonWriter.endObject();
+            }
+            if (createFunctionRequest.getDescription() != null) {
+                jsonWriter.key("Description").value(createFunctionRequest.getDescription());
+            }
+            if (createFunctionRequest.getTimeout() != null) {
+                jsonWriter.key("Timeout").value(createFunctionRequest.getTimeout());
+            }
+            if (createFunctionRequest.getMemorySize() != null) {
+                jsonWriter.key("MemorySize").value(createFunctionRequest.getMemorySize());
+            }
+            if (createFunctionRequest.isPublish() != null) {
+                jsonWriter.key("Publish").value(createFunctionRequest.isPublish());
             }
 
           jsonWriter.endObject();

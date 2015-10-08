@@ -38,7 +38,7 @@ public class Cluster implements Serializable, Cloneable {
     private String clusterArn;
 
     /**
-     * A user-generated string that you can use to identify your cluster.
+     * A user-generated string that you use to identify your cluster.
      */
     private String clusterName;
 
@@ -138,29 +138,29 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * A user-generated string that you can use to identify your cluster.
+     * A user-generated string that you use to identify your cluster.
      *
-     * @return A user-generated string that you can use to identify your cluster.
+     * @return A user-generated string that you use to identify your cluster.
      */
     public String getClusterName() {
         return clusterName;
     }
     
     /**
-     * A user-generated string that you can use to identify your cluster.
+     * A user-generated string that you use to identify your cluster.
      *
-     * @param clusterName A user-generated string that you can use to identify your cluster.
+     * @param clusterName A user-generated string that you use to identify your cluster.
      */
     public void setClusterName(String clusterName) {
         this.clusterName = clusterName;
     }
     
     /**
-     * A user-generated string that you can use to identify your cluster.
+     * A user-generated string that you use to identify your cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clusterName A user-generated string that you can use to identify your cluster.
+     * @param clusterName A user-generated string that you use to identify your cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

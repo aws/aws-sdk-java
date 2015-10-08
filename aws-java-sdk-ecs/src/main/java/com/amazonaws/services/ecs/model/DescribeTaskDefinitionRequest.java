@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.ecs.AmazonECS#describeTaskDefinition(DescribeTaskDefinitionRequest) DescribeTaskDefinition operation}.
  * <p>
  * Describes a task definition. You can specify a <code>family</code> and
- * <code>revision</code> to find information on a specific task
+ * <code>revision</code> to find information about a specific task
  * definition, or you can simply specify the family to find the latest
  * <code>ACTIVE</code> revision in that family.
  * </p>
@@ -39,8 +39,7 @@ public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest imple
      * The <code>family</code> for the latest <code>ACTIVE</code> revision,
      * <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) for a specific revision in the family,
-     * or full Amazon Resource Name (ARN) of the task definition that you
-     * want to describe.
+     * or full Amazon Resource Name (ARN) of the task definition to describe.
      */
     private String taskDefinition;
 
@@ -48,14 +47,12 @@ public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest imple
      * The <code>family</code> for the latest <code>ACTIVE</code> revision,
      * <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) for a specific revision in the family,
-     * or full Amazon Resource Name (ARN) of the task definition that you
-     * want to describe.
+     * or full Amazon Resource Name (ARN) of the task definition to describe.
      *
      * @return The <code>family</code> for the latest <code>ACTIVE</code> revision,
      *         <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) for a specific revision in the family,
-     *         or full Amazon Resource Name (ARN) of the task definition that you
-     *         want to describe.
+     *         or full Amazon Resource Name (ARN) of the task definition to describe.
      */
     public String getTaskDefinition() {
         return taskDefinition;
@@ -65,14 +62,12 @@ public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest imple
      * The <code>family</code> for the latest <code>ACTIVE</code> revision,
      * <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) for a specific revision in the family,
-     * or full Amazon Resource Name (ARN) of the task definition that you
-     * want to describe.
+     * or full Amazon Resource Name (ARN) of the task definition to describe.
      *
      * @param taskDefinition The <code>family</code> for the latest <code>ACTIVE</code> revision,
      *         <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) for a specific revision in the family,
-     *         or full Amazon Resource Name (ARN) of the task definition that you
-     *         want to describe.
+     *         or full Amazon Resource Name (ARN) of the task definition to describe.
      */
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
@@ -82,16 +77,14 @@ public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest imple
      * The <code>family</code> for the latest <code>ACTIVE</code> revision,
      * <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) for a specific revision in the family,
-     * or full Amazon Resource Name (ARN) of the task definition that you
-     * want to describe.
+     * or full Amazon Resource Name (ARN) of the task definition to describe.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinition The <code>family</code> for the latest <code>ACTIVE</code> revision,
      *         <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) for a specific revision in the family,
-     *         or full Amazon Resource Name (ARN) of the task definition that you
-     *         want to describe.
+     *         or full Amazon Resource Name (ARN) of the task definition to describe.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

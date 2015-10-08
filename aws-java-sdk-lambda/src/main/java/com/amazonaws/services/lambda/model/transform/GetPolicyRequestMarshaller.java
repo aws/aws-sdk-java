@@ -47,7 +47,7 @@ public class GetPolicyRequestMarshaller implements Marshaller<Request<GetPolicyR
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "/2015-03-31/functions/{FunctionName}/versions/HEAD/policy";
+        String path = "/2015-03-31/functions/{FunctionName}/policy?Qualifier={Qualifier}";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -107,9 +107,25 @@ public class GetPolicyRequestMarshaller implements Marshaller<Request<GetPolicyR
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        try {
+          StringWriter stringWriter = new StringWriter();
+          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+          jsonWriter.object();
+          
+            if (getPolicyRequest.getQualifier() != null) {
+                jsonWriter.key("Qualifier").value(getPolicyRequest.getQualifier());
+            }
+
+          jsonWriter.endObject();
+
+          String snippet = stringWriter.toString();
+          byte[] content = snippet.getBytes(UTF8);
+          request.setContent(new StringInputStream(snippet));
+          request.addHeader("Content-Length", Integer.toString(content.length));
+          request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch(Throwable t) {
+          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

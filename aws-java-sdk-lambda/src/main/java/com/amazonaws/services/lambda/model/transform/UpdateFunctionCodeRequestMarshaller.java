@@ -47,7 +47,7 @@ public class UpdateFunctionCodeRequestMarshaller implements Marshaller<Request<U
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "/2015-03-31/functions/{FunctionName}/versions/HEAD/code";
+        String path = "/2015-03-31/functions/{FunctionName}/code";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -124,6 +124,9 @@ public class UpdateFunctionCodeRequestMarshaller implements Marshaller<Request<U
             }
             if (updateFunctionCodeRequest.getS3ObjectVersion() != null) {
                 jsonWriter.key("S3ObjectVersion").value(updateFunctionCodeRequest.getS3ObjectVersion());
+            }
+            if (updateFunctionCodeRequest.isPublish() != null) {
+                jsonWriter.key("Publish").value(updateFunctionCodeRequest.isPublish());
             }
 
           jsonWriter.endObject();
