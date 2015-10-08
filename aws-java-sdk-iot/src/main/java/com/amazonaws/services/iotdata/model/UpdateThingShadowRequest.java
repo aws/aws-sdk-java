@@ -19,39 +19,56 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * The input for the UpdateThingShadow operation.
+ * </p>
  */
 public class UpdateThingShadowRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the thing.
+     * </p>
+     */
     private String thingName;
-
+    /**
+     * <p>
+     * The state information, in JSON format.
+     * </p>
+     */
     private java.nio.ByteBuffer payload;
 
     /**
-     * Sets the value of the ThingName property for this object.
+     * <p>
+     * The name of the thing.
+     * </p>
      * 
      * @param thingName
-     *        The new value for the ThingName property for this object.
+     *        The name of the thing.
      */
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
 
     /**
-     * Returns the value of the ThingName property for this object.
+     * <p>
+     * The name of the thing.
+     * </p>
      * 
-     * @return The value of the ThingName property for this object.
+     * @return The name of the thing.
      */
     public String getThingName() {
         return this.thingName;
     }
 
     /**
-     * Sets the value of the ThingName property for this object.
+     * <p>
+     * The name of the thing.
+     * </p>
      * 
      * @param thingName
-     *        The new value for the ThingName property for this object.
+     *        The name of the thing.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -61,17 +78,21 @@ public class UpdateThingShadowRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Payload property for this object.
+     * <p>
+     * The state information, in JSON format.
+     * </p>
      * 
      * @param payload
-     *        The new value for the Payload property for this object.
+     *        The state information, in JSON format.
      */
     public void setPayload(java.nio.ByteBuffer payload) {
         this.payload = payload;
     }
 
     /**
-     * Returns the value of the Payload property for this object.
+     * <p>
+     * The state information, in JSON format.
+     * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
      * changes their {@code position}. We recommend using
@@ -83,17 +104,19 @@ public class UpdateThingShadowRequest extends AmazonWebServiceRequest implements
      * .
      * </p>
      * 
-     * @return The value of the Payload property for this object.
+     * @return The state information, in JSON format.
      */
     public java.nio.ByteBuffer getPayload() {
         return this.payload;
     }
 
     /**
-     * Sets the value of the Payload property for this object.
+     * <p>
+     * The state information, in JSON format.
+     * </p>
      * 
      * @param payload
-     *        The new value for the Payload property for this object.
+     *        The state information, in JSON format.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

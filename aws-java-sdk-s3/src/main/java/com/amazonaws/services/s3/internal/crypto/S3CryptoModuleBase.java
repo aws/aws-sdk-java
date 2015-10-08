@@ -431,16 +431,23 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         if (req instanceof MaterialsDescriptionProvider) {
             // per request level material description
             MaterialsDescriptionProvider mdp = (MaterialsDescriptionProvider) req;
-            Map<String,String> matdesc = mdp.getMaterialsDescription();
-            ContentCryptoMaterial ccm = newContentCryptoMaterial(this.kekMaterialsProvider,
-                    matdesc,
+            Map<String,String> matdesc_req = mdp.getMaterialsDescription();
+            ContentCryptoMaterial ccm = newContentCryptoMaterial(
+                    kekMaterialsProvider,
+                    matdesc_req,
                     cryptoConfig.getCryptoProvider(), req);
             if (ccm != null)
                 return ccm;
-            if (matdesc != null) {
-                throw new AmazonClientException(
-                    "No material available from the encryption material provider for description "
-                        + matdesc);
+            if (matdesc_req != null) {
+                // check to see if KMS is in use and if so we should fall thru
+                // to the s3 client level encryption material
+                EncryptionMaterials material =
+                        kekMaterialsProvider.getEncryptionMaterials();
+                if (!material.isKMSEnabled()) {
+                    throw new AmazonClientException(
+                        "No material available from the encryption material provider for description "
+                            + matdesc_req);
+                }
             }
             // if there is no material description, fall thru to use
             // the per s3 client level encryption  materials
@@ -509,19 +516,21 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     }
 
     /**
-     * @param kekMaterials a non-null encryption material
+     * @param materials a non-null encryption material
      */
     private ContentCryptoMaterial buildContentCryptoMaterial(
-            EncryptionMaterials kekMaterials, Provider provider,
+            EncryptionMaterials materials, Provider provider,
             AmazonWebServiceRequest req) {
         // Randomly generate the IV
         final byte[] iv = new byte[contentCryptoScheme.getIVLengthInBytes()];
         cryptoScheme.getSecureRandom().nextBytes(iv);
 
-        if (kekMaterials.isKMSEnabled()) {
+        if (materials.isKMSEnabled()) {
+            final Map<String, String> encryptionContext =
+                    ContentCryptoMaterial.mergeMaterialDescriptions(materials, req);
             GenerateDataKeyRequest keyGenReq = new GenerateDataKeyRequest()
-                .withEncryptionContext(kekMaterials.getMaterialsDescription())
-                .withKeyId(kekMaterials.getCustomerMasterKeyId())
+                .withEncryptionContext(encryptionContext)
+                .withKeyId(materials.getCustomerMasterKeyId())
                 .withKeySpec(contentCryptoScheme.getKeySpec());
             keyGenReq
                 .withGeneralProgressListener(req.getGeneralProgressListener())
@@ -533,13 +542,13 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                         contentCryptoScheme.getKeyGeneratorAlgorithm());
             byte[] keyBlob = copyAllBytesFrom(keyGenRes.getCiphertextBlob());
             return ContentCryptoMaterial.wrap(cek, iv,
-                    kekMaterials, contentCryptoScheme, provider,
-                    new KMSSecuredCEK(keyBlob));
+                    contentCryptoScheme, provider,
+                    new KMSSecuredCEK(keyBlob, encryptionContext));
         } else {
             // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
             return ContentCryptoMaterial.create(
-                    generateCEK(kekMaterials, provider),
-                    iv, kekMaterials, cryptoScheme, provider, kms, req);
+                    generateCEK(materials, provider),
+                    iv, materials, cryptoScheme, provider, kms, req);
         }
     }
 

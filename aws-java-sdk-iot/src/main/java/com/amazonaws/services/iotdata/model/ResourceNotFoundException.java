@@ -18,7 +18,9 @@ package com.amazonaws.services.iotdata.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * The specified resource does not exist.
+ * </p>
  */
 public class ResourceNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

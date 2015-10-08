@@ -19,37 +19,50 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * The input for the GetThingShadow operation.
+ * </p>
  */
 public class GetThingShadowRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the thing.
+     * </p>
+     */
     private String thingName;
 
     /**
-     * Sets the value of the ThingName property for this object.
+     * <p>
+     * The name of the thing.
+     * </p>
      * 
      * @param thingName
-     *        The new value for the ThingName property for this object.
+     *        The name of the thing.
      */
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
 
     /**
-     * Returns the value of the ThingName property for this object.
+     * <p>
+     * The name of the thing.
+     * </p>
      * 
-     * @return The value of the ThingName property for this object.
+     * @return The name of the thing.
      */
     public String getThingName() {
         return this.thingName;
     }
 
     /**
-     * Sets the value of the ThingName property for this object.
+     * <p>
+     * The name of the thing.
+     * </p>
      * 
      * @param thingName
-     *        The new value for the ThingName property for this object.
+     *        The name of the thing.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

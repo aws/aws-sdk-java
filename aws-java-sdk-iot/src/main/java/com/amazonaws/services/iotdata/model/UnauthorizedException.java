@@ -18,7 +18,9 @@ package com.amazonaws.services.iotdata.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * You are not authorized to perform this operation.
+ * </p>
  */
 public class UnauthorizedException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

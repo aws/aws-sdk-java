@@ -35,8 +35,8 @@
         "variableType" : "GenerateDataSetRequest",
         "variableDeclarationType" : "GenerateDataSetRequest",
         "documentation" : "Container for the parameters to the GenerateDataSet operation.",
-        "simpleType" : "GenerateDataSetRequest",
-        "variableSetterType" : "GenerateDataSetRequest"
+        "variableSetterType" : "GenerateDataSetRequest",
+        "simpleType" : "GenerateDataSetRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -80,16 +80,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "dataSetRequestId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -128,8 +128,8 @@
         "variableType" : "GenerateDataSetResult",
         "variableDeclarationType" : "GenerateDataSetResult",
         "documentation" : null,
-        "simpleType" : "GenerateDataSetResult",
-        "variableSetterType" : "GenerateDataSetResult"
+        "variableSetterType" : "GenerateDataSetResult",
+        "simpleType" : "GenerateDataSetResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -154,16 +154,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "dataSetRequestId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -218,16 +218,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "dataSetType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -269,16 +269,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : null,
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "setterModel" : {
           "variableName" : "dataSetPublicationDate",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : null,
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -320,16 +320,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleNameArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -371,16 +371,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "destinationS3BucketName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -422,16 +422,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "destinationS3Prefix",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -473,16 +473,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "snsTopicArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -521,8 +521,8 @@
         "variableType" : "GenerateDataSetRequest",
         "variableDeclarationType" : "GenerateDataSetRequest",
         "documentation" : null,
-        "simpleType" : "GenerateDataSetRequest",
-        "variableSetterType" : "GenerateDataSetRequest"
+        "variableSetterType" : "GenerateDataSetRequest",
+        "simpleType" : "GenerateDataSetRequest"
       },
       "marshaller" : {
         "action" : "GenerateDataSet",
@@ -551,16 +551,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "destinationS3Prefix",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -603,16 +603,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : null,
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "setterModel" : {
             "variableName" : "dataSetPublicationDate",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : null,
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -655,16 +655,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "snsTopicArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -707,16 +707,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "destinationS3BucketName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -759,16 +759,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "dataSetType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -811,16 +811,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleNameArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -872,8 +872,8 @@
         "variableType" : "MarketplaceCommerceAnalyticsException",
         "variableDeclarationType" : "MarketplaceCommerceAnalyticsException",
         "documentation" : null,
-        "simpleType" : "MarketplaceCommerceAnalyticsException",
-        "variableSetterType" : "MarketplaceCommerceAnalyticsException"
+        "variableSetterType" : "MarketplaceCommerceAnalyticsException",
+        "simpleType" : "MarketplaceCommerceAnalyticsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -951,8 +951,8 @@
         "variableType" : "DataSetType",
         "variableDeclarationType" : "DataSetType",
         "documentation" : null,
-        "simpleType" : "DataSetType",
-        "variableSetterType" : "DataSetType"
+        "variableSetterType" : "DataSetType",
+        "simpleType" : "DataSetType"
       },
       "marshaller" : null,
       "unmarshaller" : {

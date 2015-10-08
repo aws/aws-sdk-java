@@ -19,41 +19,62 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * The input for the Publish operation.
+ * </p>
  */
 public class PublishRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the MQTT topic.
+     * </p>
+     */
     private String topic;
-
+    /**
+     * <p>
+     * The Quality of Service (QoS) level.
+     * </p>
+     */
     private Integer qos;
-
+    /**
+     * <p>
+     * The state information, in JSON format.
+     * </p>
+     */
     private java.nio.ByteBuffer payload;
 
     /**
-     * Sets the value of the Topic property for this object.
+     * <p>
+     * The name of the MQTT topic.
+     * </p>
      * 
      * @param topic
-     *        The new value for the Topic property for this object.
+     *        The name of the MQTT topic.
      */
     public void setTopic(String topic) {
         this.topic = topic;
     }
 
     /**
-     * Returns the value of the Topic property for this object.
+     * <p>
+     * The name of the MQTT topic.
+     * </p>
      * 
-     * @return The value of the Topic property for this object.
+     * @return The name of the MQTT topic.
      */
     public String getTopic() {
         return this.topic;
     }
 
     /**
-     * Sets the value of the Topic property for this object.
+     * <p>
+     * The name of the MQTT topic.
+     * </p>
      * 
      * @param topic
-     *        The new value for the Topic property for this object.
+     *        The name of the MQTT topic.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -63,29 +84,35 @@ public class PublishRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Qos property for this object.
+     * <p>
+     * The Quality of Service (QoS) level.
+     * </p>
      * 
      * @param qos
-     *        The new value for the Qos property for this object.
+     *        The Quality of Service (QoS) level.
      */
     public void setQos(Integer qos) {
         this.qos = qos;
     }
 
     /**
-     * Returns the value of the Qos property for this object.
+     * <p>
+     * The Quality of Service (QoS) level.
+     * </p>
      * 
-     * @return The value of the Qos property for this object.
+     * @return The Quality of Service (QoS) level.
      */
     public Integer getQos() {
         return this.qos;
     }
 
     /**
-     * Sets the value of the Qos property for this object.
+     * <p>
+     * The Quality of Service (QoS) level.
+     * </p>
      * 
      * @param qos
-     *        The new value for the Qos property for this object.
+     *        The Quality of Service (QoS) level.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -95,17 +122,21 @@ public class PublishRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Payload property for this object.
+     * <p>
+     * The state information, in JSON format.
+     * </p>
      * 
      * @param payload
-     *        The new value for the Payload property for this object.
+     *        The state information, in JSON format.
      */
     public void setPayload(java.nio.ByteBuffer payload) {
         this.payload = payload;
     }
 
     /**
-     * Returns the value of the Payload property for this object.
+     * <p>
+     * The state information, in JSON format.
+     * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
      * changes their {@code position}. We recommend using
@@ -117,17 +148,19 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * .
      * </p>
      * 
-     * @return The value of the Payload property for this object.
+     * @return The state information, in JSON format.
      */
     public java.nio.ByteBuffer getPayload() {
         return this.payload;
     }
 
     /**
-     * Sets the value of the Payload property for this object.
+     * <p>
+     * The state information, in JSON format.
+     * </p>
      * 
      * @param payload
-     *        The new value for the Payload property for this object.
+     *        The state information, in JSON format.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

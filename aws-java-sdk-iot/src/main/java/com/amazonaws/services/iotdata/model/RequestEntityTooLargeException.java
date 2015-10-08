@@ -18,7 +18,9 @@ package com.amazonaws.services.iotdata.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * The payload exceeds the maximum size allowed.
+ * </p>
  */
 public class RequestEntityTooLargeException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

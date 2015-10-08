@@ -4,7 +4,7 @@
     "exceptionUnmarshallerImpl" : null,
     "protocol" : "rest-json",
     "checksumFormat" : null,
-    "documentation" : null,
+    "documentation" : "<fullname>AWS IoT (Beta)</fullname> <p><b>AWS IoT is considered a beta service as defined in the Service Terms</b></p> <p>AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.</p>",
     "defaultEndpoint" : "https://data.iot.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "data.iot.us-east-1.amazonaws.com",
     "syncInterface" : "AWSIotData",
@@ -27,51 +27,51 @@
   },
   "operations" : {
     "DeleteThingShadow" : {
-      "documentation" : null,
+      "documentation" : "<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
       "operationName" : "DeleteThingShadow",
       "deprecated" : false,
       "input" : {
         "variableName" : "deleteThingShadowRequest",
         "variableType" : "DeleteThingShadowRequest",
         "variableDeclarationType" : "DeleteThingShadowRequest",
-        "documentation" : null,
+        "documentation" : "<p>The input for the DeleteThingShadow operation.</p>",
         "simpleType" : "DeleteThingShadowRequest",
         "variableSetterType" : "DeleteThingShadowRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "DeleteThingShadowResult",
-        "documentation" : null
+        "documentation" : "<p>The output from the DeleteThingShadow operation.</p>"
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The specified resource does not exist.</p>"
       }, {
         "exceptionName" : "InvalidRequestException",
-        "documentation" : null
+        "documentation" : "<p>The request is not valid.</p>"
       }, {
         "exceptionName" : "ThrottlingException",
-        "documentation" : null
+        "documentation" : "<p>The rate exceeds the limit.</p>"
       }, {
         "exceptionName" : "UnauthorizedException",
-        "documentation" : null
+        "documentation" : "<p>You are not authorized to perform this operation.</p>"
       }, {
         "exceptionName" : "ServiceUnavailableException",
-        "documentation" : null
+        "documentation" : "<p>The service is temporarily unavailable.</p>"
       }, {
         "exceptionName" : "InternalFailureException",
-        "documentation" : null
+        "documentation" : "<p>An unexpected error has occurred.</p>"
       }, {
         "exceptionName" : "MethodNotAllowedException",
-        "documentation" : null
+        "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>"
       }, {
         "exceptionName" : "UnsupportedDocumentEncodingException",
-        "documentation" : null
+        "documentation" : "<p>The document encoding is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
-      "syncDocumentation" : "/**Invokes the DeleteThingShadow operation.\n@param deleteThingShadowRequest \n@return Result of the DeleteThingShadow operation returned by the service.\n@throws ResourceNotFoundException \n@throws InvalidRequestException \n@throws ThrottlingException \n@throws UnauthorizedException \n@throws ServiceUnavailableException \n@throws InternalFailureException \n@throws MethodNotAllowedException \n@throws UnsupportedDocumentEncodingException */",
-      "asyncDocumentation" : "/**Invokes the DeleteThingShadow operation asynchronously.\n@param deleteThingShadowRequest \n@return A Java Future containing the result of the DeleteThingShadow operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**Invokes the DeleteThingShadow operation asynchronously.\n@param deleteThingShadowRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteThingShadow operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param deleteThingShadowRequest The input for the DeleteThingShadow operation.\n@return Result of the DeleteThingShadow operation returned by the service.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.\n@throws MethodNotAllowedException The specified combination of HTTP verb and URI is not supported.\n@throws UnsupportedDocumentEncodingException The document encoding is not supported.*/",
+      "asyncDocumentation" : "/**<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param deleteThingShadowRequest The input for the DeleteThingShadow operation.\n@return A Java Future containing the result of the DeleteThingShadow operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param deleteThingShadowRequest The input for the DeleteThingShadow operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteThingShadow operation returned by the service.*/",
       "syncReturnType" : "DeleteThingShadowResult",
       "asyncReturnType" : "DeleteThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteThingShadowResult>",
@@ -80,51 +80,51 @@
       "methodName" : "deleteThingShadow"
     },
     "GetThingShadow" : {
-      "documentation" : null,
+      "documentation" : "<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
       "operationName" : "GetThingShadow",
       "deprecated" : false,
       "input" : {
         "variableName" : "getThingShadowRequest",
         "variableType" : "GetThingShadowRequest",
         "variableDeclarationType" : "GetThingShadowRequest",
-        "documentation" : null,
+        "documentation" : "<p>The input for the GetThingShadow operation.</p>",
         "simpleType" : "GetThingShadowRequest",
         "variableSetterType" : "GetThingShadowRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "GetThingShadowResult",
-        "documentation" : null
+        "documentation" : "<p>The output from the GetThingShadow operation.</p>"
       },
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
-        "documentation" : null
+        "documentation" : "<p>The request is not valid.</p>"
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The specified resource does not exist.</p>"
       }, {
         "exceptionName" : "ThrottlingException",
-        "documentation" : null
+        "documentation" : "<p>The rate exceeds the limit.</p>"
       }, {
         "exceptionName" : "UnauthorizedException",
-        "documentation" : null
+        "documentation" : "<p>You are not authorized to perform this operation.</p>"
       }, {
         "exceptionName" : "ServiceUnavailableException",
-        "documentation" : null
+        "documentation" : "<p>The service is temporarily unavailable.</p>"
       }, {
         "exceptionName" : "InternalFailureException",
-        "documentation" : null
+        "documentation" : "<p>An unexpected error has occurred.</p>"
       }, {
         "exceptionName" : "MethodNotAllowedException",
-        "documentation" : null
+        "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>"
       }, {
         "exceptionName" : "UnsupportedDocumentEncodingException",
-        "documentation" : null
+        "documentation" : "<p>The document encoding is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
-      "syncDocumentation" : "/**Invokes the GetThingShadow operation.\n@param getThingShadowRequest \n@return Result of the GetThingShadow operation returned by the service.\n@throws InvalidRequestException \n@throws ResourceNotFoundException \n@throws ThrottlingException \n@throws UnauthorizedException \n@throws ServiceUnavailableException \n@throws InternalFailureException \n@throws MethodNotAllowedException \n@throws UnsupportedDocumentEncodingException */",
-      "asyncDocumentation" : "/**Invokes the GetThingShadow operation asynchronously.\n@param getThingShadowRequest \n@return A Java Future containing the result of the GetThingShadow operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**Invokes the GetThingShadow operation asynchronously.\n@param getThingShadowRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetThingShadow operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param getThingShadowRequest The input for the GetThingShadow operation.\n@return Result of the GetThingShadow operation returned by the service.\n@throws InvalidRequestException The request is not valid.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.\n@throws MethodNotAllowedException The specified combination of HTTP verb and URI is not supported.\n@throws UnsupportedDocumentEncodingException The document encoding is not supported.*/",
+      "asyncDocumentation" : "/**<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param getThingShadowRequest The input for the GetThingShadow operation.\n@return A Java Future containing the result of the GetThingShadow operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param getThingShadowRequest The input for the GetThingShadow operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetThingShadow operation returned by the service.*/",
       "syncReturnType" : "GetThingShadowResult",
       "asyncReturnType" : "GetThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetThingShadowResult>",
@@ -133,14 +133,14 @@
       "methodName" : "getThingShadow"
     },
     "Publish" : {
-      "documentation" : null,
+      "documentation" : "<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>",
       "operationName" : "Publish",
       "deprecated" : false,
       "input" : {
         "variableName" : "publishRequest",
         "variableType" : "PublishRequest",
         "variableDeclarationType" : "PublishRequest",
-        "documentation" : null,
+        "documentation" : "<p>The input for the Publish operation.</p>",
         "simpleType" : "PublishRequest",
         "variableSetterType" : "PublishRequest"
       },
@@ -148,21 +148,21 @@
       "returnType" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
-        "documentation" : null
+        "documentation" : "<p>An unexpected error has occurred.</p>"
       }, {
         "exceptionName" : "InvalidRequestException",
-        "documentation" : null
+        "documentation" : "<p>The request is not valid.</p>"
       }, {
         "exceptionName" : "UnauthorizedException",
-        "documentation" : null
+        "documentation" : "<p>You are not authorized to perform this operation.</p>"
       }, {
         "exceptionName" : "MethodNotAllowedException",
-        "documentation" : null
+        "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**Invokes the Publish operation.\n@param publishRequest \n@throws InternalFailureException \n@throws InvalidRequestException \n@throws UnauthorizedException \n@throws MethodNotAllowedException */",
-      "asyncDocumentation" : "/**Invokes the Publish operation asynchronously.\n@param publishRequest */",
-      "asyncDocumentationWithHandler" : "/**Invokes the Publish operation asynchronously.\n@param publishRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncDocumentation" : "/**<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param publishRequest The input for the Publish operation.\n@throws InternalFailureException An unexpected error has occurred.\n@throws InvalidRequestException The request is not valid.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws MethodNotAllowedException The specified combination of HTTP verb and URI is not supported.*/",
+      "asyncDocumentation" : "/**<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param publishRequest The input for the Publish operation.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param publishRequest The input for the Publish operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -171,54 +171,54 @@
       "methodName" : "publish"
     },
     "UpdateThingShadow" : {
-      "documentation" : null,
+      "documentation" : "<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
       "operationName" : "UpdateThingShadow",
       "deprecated" : false,
       "input" : {
         "variableName" : "updateThingShadowRequest",
         "variableType" : "UpdateThingShadowRequest",
         "variableDeclarationType" : "UpdateThingShadowRequest",
-        "documentation" : null,
+        "documentation" : "<p>The input for the UpdateThingShadow operation.</p>",
         "simpleType" : "UpdateThingShadowRequest",
         "variableSetterType" : "UpdateThingShadowRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "UpdateThingShadowResult",
-        "documentation" : null
+        "documentation" : "<p>The output from the UpdateThingShadow operation.</p>"
       },
       "exceptions" : [ {
         "exceptionName" : "ConflictException",
-        "documentation" : null
+        "documentation" : "<p>The specified version does not match the version of the document.</p>"
       }, {
         "exceptionName" : "RequestEntityTooLargeException",
-        "documentation" : null
+        "documentation" : "<p>The payload exceeds the maximum size allowed.</p>"
       }, {
         "exceptionName" : "InvalidRequestException",
-        "documentation" : null
+        "documentation" : "<p>The request is not valid.</p>"
       }, {
         "exceptionName" : "ThrottlingException",
-        "documentation" : null
+        "documentation" : "<p>The rate exceeds the limit.</p>"
       }, {
         "exceptionName" : "UnauthorizedException",
-        "documentation" : null
+        "documentation" : "<p>You are not authorized to perform this operation.</p>"
       }, {
         "exceptionName" : "ServiceUnavailableException",
-        "documentation" : null
+        "documentation" : "<p>The service is temporarily unavailable.</p>"
       }, {
         "exceptionName" : "InternalFailureException",
-        "documentation" : null
+        "documentation" : "<p>An unexpected error has occurred.</p>"
       }, {
         "exceptionName" : "MethodNotAllowedException",
-        "documentation" : null
+        "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>"
       }, {
         "exceptionName" : "UnsupportedDocumentEncodingException",
-        "documentation" : null
+        "documentation" : "<p>The document encoding is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
-      "syncDocumentation" : "/**Invokes the UpdateThingShadow operation.\n@param updateThingShadowRequest \n@return Result of the UpdateThingShadow operation returned by the service.\n@throws ConflictException \n@throws RequestEntityTooLargeException \n@throws InvalidRequestException \n@throws ThrottlingException \n@throws UnauthorizedException \n@throws ServiceUnavailableException \n@throws InternalFailureException \n@throws MethodNotAllowedException \n@throws UnsupportedDocumentEncodingException */",
-      "asyncDocumentation" : "/**Invokes the UpdateThingShadow operation asynchronously.\n@param updateThingShadowRequest \n@return A Java Future containing the result of the UpdateThingShadow operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**Invokes the UpdateThingShadow operation asynchronously.\n@param updateThingShadowRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateThingShadow operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param updateThingShadowRequest The input for the UpdateThingShadow operation.\n@return Result of the UpdateThingShadow operation returned by the service.\n@throws ConflictException The specified version does not match the version of the document.\n@throws RequestEntityTooLargeException The payload exceeds the maximum size allowed.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.\n@throws MethodNotAllowedException The specified combination of HTTP verb and URI is not supported.\n@throws UnsupportedDocumentEncodingException The document encoding is not supported.*/",
+      "asyncDocumentation" : "/**<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param updateThingShadowRequest The input for the UpdateThingShadow operation.\n@return A Java Future containing the result of the UpdateThingShadow operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param updateThingShadowRequest The input for the UpdateThingShadow operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateThingShadow operation returned by the service.*/",
       "syncReturnType" : "UpdateThingShadowResult",
       "asyncReturnType" : "UpdateThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateThingShadowResult>",
@@ -230,7 +230,7 @@
   "shapes" : {
     "PublishRequest" : {
       "c2jName" : "PublishRequest",
-      "documentation" : null,
+      "documentation" : "<p>The input for the Publish operation.</p>",
       "shapeName" : "PublishRequest",
       "deprecated" : false,
       "required" : [ "topic" ],
@@ -239,7 +239,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "<p>The name of the MQTT topic.</p>",
         "name" : "Topic",
         "c2jName" : "topic",
         "c2jShape" : "Topic",
@@ -247,7 +247,7 @@
           "variableName" : "topic",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "<p>The name of the MQTT topic.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -285,12 +285,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the Topic property for this object.\n@return The value of the Topic property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.*/",
+        "getterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@return The name of the MQTT topic.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "<p>The Quality of Service (QoS) level.</p>",
         "name" : "Qos",
         "c2jName" : "qos",
         "c2jShape" : "Qos",
@@ -298,7 +298,7 @@
           "variableName" : "qos",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : null,
+          "documentation" : "<p>The Quality of Service (QoS) level.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -336,12 +336,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the Qos property for this object.\n@return The value of the Qos property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.*/",
+        "getterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@return The Quality of Service (QoS) level.*/",
+        "fluentSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "<p>The state information, in JSON format.</p>",
         "name" : "Payload",
         "c2jName" : "payload",
         "c2jShape" : "Payload",
@@ -349,7 +349,7 @@
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "<p>The state information, in JSON format.</p>",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -387,10 +387,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
+        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -419,7 +419,7 @@
       },
       "membersAsMap" : {
         "Qos" : {
-          "documentation" : null,
+          "documentation" : "<p>The Quality of Service (QoS) level.</p>",
           "name" : "Qos",
           "c2jName" : "qos",
           "c2jShape" : "Qos",
@@ -427,7 +427,7 @@
             "variableName" : "qos",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : null,
+            "documentation" : "<p>The Quality of Service (QoS) level.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -465,13 +465,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the Qos property for this object.\n@return The value of the Qos property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the Qos property for this object.\n@param qos The new value for the Qos property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.*/",
+          "getterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@return The Quality of Service (QoS) level.*/",
+          "fluentSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Payload" : {
-          "documentation" : null,
+          "documentation" : "<p>The state information, in JSON format.</p>",
           "name" : "Payload",
           "c2jName" : "payload",
           "c2jShape" : "Payload",
@@ -479,7 +479,7 @@
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "<p>The state information, in JSON format.</p>",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -517,13 +517,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
+          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Topic" : {
-          "documentation" : null,
+          "documentation" : "<p>The name of the MQTT topic.</p>",
           "name" : "Topic",
           "c2jName" : "topic",
           "c2jShape" : "Topic",
@@ -531,7 +531,7 @@
             "variableName" : "topic",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "<p>The name of the MQTT topic.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -569,16 +569,16 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the Topic property for this object.\n@return The value of the Topic property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the Topic property for this object.\n@param topic The new value for the Topic property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.*/",
+          "getterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@return The name of the MQTT topic.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
     "UnauthorizedException" : {
       "c2jName" : "UnauthorizedException",
-      "documentation" : null,
+      "documentation" : "<p>You are not authorized to perform this operation.</p>",
       "shapeName" : "UnauthorizedException",
       "deprecated" : false,
       "required" : null,
@@ -609,7 +609,7 @@
     },
     "MethodNotAllowedException" : {
       "c2jName" : "MethodNotAllowedException",
-      "documentation" : null,
+      "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>",
       "shapeName" : "MethodNotAllowedException",
       "deprecated" : false,
       "required" : null,
@@ -640,7 +640,7 @@
     },
     "ConflictException" : {
       "c2jName" : "ConflictException",
-      "documentation" : null,
+      "documentation" : "<p>The specified version does not match the version of the document.</p>",
       "shapeName" : "ConflictException",
       "deprecated" : false,
       "required" : null,
@@ -671,7 +671,7 @@
     },
     "RequestEntityTooLargeException" : {
       "c2jName" : "RequestEntityTooLargeException",
-      "documentation" : null,
+      "documentation" : "<p>The payload exceeds the maximum size allowed.</p>",
       "shapeName" : "RequestEntityTooLargeException",
       "deprecated" : false,
       "required" : null,
@@ -702,7 +702,7 @@
     },
     "GetThingShadowRequest" : {
       "c2jName" : "GetThingShadowRequest",
-      "documentation" : null,
+      "documentation" : "<p>The input for the GetThingShadow operation.</p>",
       "shapeName" : "GetThingShadowRequest",
       "deprecated" : false,
       "required" : [ "thingName" ],
@@ -711,7 +711,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "<p>The name of the thing.</p>",
         "name" : "ThingName",
         "c2jName" : "thingName",
         "c2jShape" : "ThingName",
@@ -719,7 +719,7 @@
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "<p>The name of the thing.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -757,10 +757,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
+        "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -789,7 +789,7 @@
       },
       "membersAsMap" : {
         "ThingName" : {
-          "documentation" : null,
+          "documentation" : "<p>The name of the thing.</p>",
           "name" : "ThingName",
           "c2jName" : "thingName",
           "c2jShape" : "ThingName",
@@ -797,7 +797,7 @@
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "<p>The name of the thing.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -835,16 +835,16 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
+          "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
     "GetThingShadowResult" : {
       "c2jName" : "GetThingShadowResponse",
-      "documentation" : null,
+      "documentation" : "<p>The output from the GetThingShadow operation.</p>",
       "shapeName" : "GetThingShadowResult",
       "deprecated" : false,
       "required" : null,
@@ -853,7 +853,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "<p>The state information, in JSON format.</p>",
         "name" : "Payload",
         "c2jName" : "payload",
         "c2jShape" : "JsonDocument",
@@ -861,7 +861,7 @@
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "<p>The state information, in JSON format.</p>",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -899,10 +899,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
+        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -927,7 +927,7 @@
       },
       "membersAsMap" : {
         "Payload" : {
-          "documentation" : null,
+          "documentation" : "<p>The state information, in JSON format.</p>",
           "name" : "Payload",
           "c2jName" : "payload",
           "c2jShape" : "JsonDocument",
@@ -935,7 +935,7 @@
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "<p>The state information, in JSON format.</p>",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -973,16 +973,16 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
+          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
     "UnsupportedDocumentEncodingException" : {
       "c2jName" : "UnsupportedDocumentEncodingException",
-      "documentation" : null,
+      "documentation" : "<p>The document encoding is not supported.</p>",
       "shapeName" : "UnsupportedDocumentEncodingException",
       "deprecated" : false,
       "required" : null,
@@ -1013,7 +1013,7 @@
     },
     "ThrottlingException" : {
       "c2jName" : "ThrottlingException",
-      "documentation" : null,
+      "documentation" : "<p>The rate exceeds the limit.</p>",
       "shapeName" : "ThrottlingException",
       "deprecated" : false,
       "required" : null,
@@ -1044,7 +1044,7 @@
     },
     "ServiceUnavailableException" : {
       "c2jName" : "ServiceUnavailableException",
-      "documentation" : null,
+      "documentation" : "<p>The service is temporarily unavailable.</p>",
       "shapeName" : "ServiceUnavailableException",
       "deprecated" : false,
       "required" : null,
@@ -1075,7 +1075,7 @@
     },
     "ResourceNotFoundException" : {
       "c2jName" : "ResourceNotFoundException",
-      "documentation" : null,
+      "documentation" : "<p>The specified resource does not exist.</p>",
       "shapeName" : "ResourceNotFoundException",
       "deprecated" : false,
       "required" : null,
@@ -1106,7 +1106,7 @@
     },
     "InternalFailureException" : {
       "c2jName" : "InternalFailureException",
-      "documentation" : null,
+      "documentation" : "<p>An unexpected error has occurred.</p>",
       "shapeName" : "InternalFailureException",
       "deprecated" : false,
       "required" : null,
@@ -1137,7 +1137,7 @@
     },
     "InvalidRequestException" : {
       "c2jName" : "InvalidRequestException",
-      "documentation" : null,
+      "documentation" : "<p>The request is not valid.</p>",
       "shapeName" : "InvalidRequestException",
       "deprecated" : false,
       "required" : null,
@@ -1168,7 +1168,7 @@
     },
     "DeleteThingShadowResult" : {
       "c2jName" : "DeleteThingShadowResponse",
-      "documentation" : null,
+      "documentation" : "<p>The output from the DeleteThingShadow operation.</p>",
       "shapeName" : "DeleteThingShadowResult",
       "deprecated" : false,
       "required" : [ "payload" ],
@@ -1177,7 +1177,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "<p>The state information, in JSON format.</p>",
         "name" : "Payload",
         "c2jName" : "payload",
         "c2jShape" : "JsonDocument",
@@ -1185,7 +1185,7 @@
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "<p>The state information, in JSON format.</p>",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -1223,10 +1223,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
+        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1251,7 +1251,7 @@
       },
       "membersAsMap" : {
         "Payload" : {
-          "documentation" : null,
+          "documentation" : "<p>The state information, in JSON format.</p>",
           "name" : "Payload",
           "c2jName" : "payload",
           "c2jShape" : "JsonDocument",
@@ -1259,7 +1259,7 @@
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "<p>The state information, in JSON format.</p>",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -1297,16 +1297,16 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
+          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
     "UpdateThingShadowResult" : {
       "c2jName" : "UpdateThingShadowResponse",
-      "documentation" : null,
+      "documentation" : "<p>The output from the UpdateThingShadow operation.</p>",
       "shapeName" : "UpdateThingShadowResult",
       "deprecated" : false,
       "required" : null,
@@ -1315,7 +1315,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "<p>The state information, in JSON format.</p>",
         "name" : "Payload",
         "c2jName" : "payload",
         "c2jShape" : "JsonDocument",
@@ -1323,7 +1323,7 @@
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "<p>The state information, in JSON format.</p>",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -1361,10 +1361,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
+        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1389,7 +1389,7 @@
       },
       "membersAsMap" : {
         "Payload" : {
-          "documentation" : null,
+          "documentation" : "<p>The state information, in JSON format.</p>",
           "name" : "Payload",
           "c2jName" : "payload",
           "c2jShape" : "JsonDocument",
@@ -1397,7 +1397,7 @@
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "<p>The state information, in JSON format.</p>",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -1435,16 +1435,16 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
+          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
     "UpdateThingShadowRequest" : {
       "c2jName" : "UpdateThingShadowRequest",
-      "documentation" : null,
+      "documentation" : "<p>The input for the UpdateThingShadow operation.</p>",
       "shapeName" : "UpdateThingShadowRequest",
       "deprecated" : false,
       "required" : [ "thingName", "payload" ],
@@ -1453,7 +1453,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "<p>The name of the thing.</p>",
         "name" : "ThingName",
         "c2jName" : "thingName",
         "c2jShape" : "ThingName",
@@ -1461,7 +1461,7 @@
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "<p>The name of the thing.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1499,12 +1499,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
+        "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "<p>The state information, in JSON format.</p>",
         "name" : "Payload",
         "c2jName" : "payload",
         "c2jShape" : "JsonDocument",
@@ -1512,7 +1512,7 @@
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "<p>The state information, in JSON format.</p>",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -1550,10 +1550,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
+        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1582,7 +1582,7 @@
       },
       "membersAsMap" : {
         "Payload" : {
-          "documentation" : null,
+          "documentation" : "<p>The state information, in JSON format.</p>",
           "name" : "Payload",
           "c2jName" : "payload",
           "c2jShape" : "JsonDocument",
@@ -1590,7 +1590,7 @@
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "<p>The state information, in JSON format.</p>",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -1628,13 +1628,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the Payload property for this object.\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The value of the Payload property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the Payload property for this object.\n@param payload The new value for the Payload property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
+          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ThingName" : {
-          "documentation" : null,
+          "documentation" : "<p>The name of the thing.</p>",
           "name" : "ThingName",
           "c2jName" : "thingName",
           "c2jShape" : "ThingName",
@@ -1642,7 +1642,7 @@
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "<p>The name of the thing.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1680,16 +1680,16 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
+          "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
     "DeleteThingShadowRequest" : {
       "c2jName" : "DeleteThingShadowRequest",
-      "documentation" : null,
+      "documentation" : "<p>The input for the DeleteThingShadow operation.</p>",
       "shapeName" : "DeleteThingShadowRequest",
       "deprecated" : false,
       "required" : [ "thingName" ],
@@ -1698,7 +1698,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "<p>The name of the thing.</p>",
         "name" : "ThingName",
         "c2jName" : "thingName",
         "c2jShape" : "ThingName",
@@ -1706,7 +1706,7 @@
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "<p>The name of the thing.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1744,10 +1744,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
+        "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1776,7 +1776,7 @@
       },
       "membersAsMap" : {
         "ThingName" : {
-          "documentation" : null,
+          "documentation" : "<p>The name of the thing.</p>",
           "name" : "ThingName",
           "c2jName" : "thingName",
           "c2jShape" : "ThingName",
@@ -1784,7 +1784,7 @@
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "<p>The name of the thing.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1822,10 +1822,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the ThingName property for this object.\n@return The value of the ThingName property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the ThingName property for this object.\n@param thingName The new value for the ThingName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
+          "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     }

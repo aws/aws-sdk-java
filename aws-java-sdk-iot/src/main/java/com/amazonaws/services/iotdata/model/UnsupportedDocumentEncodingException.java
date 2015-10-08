@@ -18,7 +18,9 @@ package com.amazonaws.services.iotdata.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * The document encoding is not supported.
+ * </p>
  */
 public class UnsupportedDocumentEncodingException extends
         AmazonServiceException {

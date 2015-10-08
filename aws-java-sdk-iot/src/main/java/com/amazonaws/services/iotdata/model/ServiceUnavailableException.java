@@ -18,7 +18,9 @@ package com.amazonaws.services.iotdata.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * The service is temporarily unavailable.
+ * </p>
  */
 public class ServiceUnavailableException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

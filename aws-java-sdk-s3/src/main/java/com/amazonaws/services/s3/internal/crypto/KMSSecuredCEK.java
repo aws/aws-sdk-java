@@ -17,13 +17,15 @@
  */
 package com.amazonaws.services.s3.internal.crypto;
 
+import java.util.Map;
+
 final class KMSSecuredCEK extends SecuredCEK {
     static final String KEY_PROTECTION_MECHANISM = "kms";
 
-    KMSSecuredCEK(byte[] encryptedKeyBlob) {
-        super(encryptedKeyBlob, KEY_PROTECTION_MECHANISM);
+    KMSSecuredCEK(byte[] encryptedKeyBlob, Map<String, String> matdesc) {
+        super(encryptedKeyBlob, KEY_PROTECTION_MECHANISM, matdesc);
     }
-    
+
     /**
      * Returns true if the specified key wrapping algorithm is
      * {@value #KEY_PROTECTION_MECHANISM}; false otherwise.

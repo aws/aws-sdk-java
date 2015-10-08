@@ -18,24 +18,35 @@ package com.amazonaws.services.iotdata.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The output from the DeleteThingShadow operation.
+ * </p>
  */
 public class DeleteThingShadowResult implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The state information, in JSON format.
+     * </p>
+     */
     private java.nio.ByteBuffer payload;
 
     /**
-     * Sets the value of the Payload property for this object.
+     * <p>
+     * The state information, in JSON format.
+     * </p>
      * 
      * @param payload
-     *        The new value for the Payload property for this object.
+     *        The state information, in JSON format.
      */
     public void setPayload(java.nio.ByteBuffer payload) {
         this.payload = payload;
     }
 
     /**
-     * Returns the value of the Payload property for this object.
+     * <p>
+     * The state information, in JSON format.
+     * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
      * changes their {@code position}. We recommend using
@@ -47,17 +58,19 @@ public class DeleteThingShadowResult implements Serializable, Cloneable {
      * .
      * </p>
      * 
-     * @return The value of the Payload property for this object.
+     * @return The state information, in JSON format.
      */
     public java.nio.ByteBuffer getPayload() {
         return this.payload;
     }
 
     /**
-     * Sets the value of the Payload property for this object.
+     * <p>
+     * The state information, in JSON format.
+     * </p>
      * 
      * @param payload
-     *        The new value for the Payload property for this object.
+     *        The state information, in JSON format.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

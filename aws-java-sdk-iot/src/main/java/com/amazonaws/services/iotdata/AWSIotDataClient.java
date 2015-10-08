@@ -40,7 +40,18 @@ import com.amazonaws.services.iotdata.model.transform.*;
  * Client for accessing AWS IoT Data Plane. All service calls made using this
  * client are blocking, and will not return until the service call completes.
  * <p>
- * 
+ * <fullname>AWS IoT (Beta)</fullname>
+ * <p>
+ * <b>AWS IoT is considered a beta service as defined in the Service Terms</b>
+ * </p>
+ * <p>
+ * AWS IoT-Data enables secure, bi-directional communication between
+ * Internet-connected things (such as sensors, actuators, embedded devices, or
+ * smart appliances) and the AWS cloud. It implements a broker for applications
+ * and things to publish messages over HTTP (Publish) and retrieve, update, and
+ * delete thing shadows. A thing shadow is a persistent representation of your
+ * things and their state in the AWS cloud.
+ * </p>
  */
 public class AWSIotDataClient extends AmazonWebServiceClient implements
         AWSIotData {
@@ -267,19 +278,35 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
     }
 
     /**
-     * Invokes the DeleteThingShadow operation.
+     * <p>
+     * Deletes the thing shadow for the specified thing.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html"
+     * >DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.
+     * </p>
      * 
      * @param deleteThingShadowRequest
+     *        The input for the DeleteThingShadow operation.
      * @return Result of the DeleteThingShadow operation returned by the
      *         service.
      * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
      * @throws InvalidRequestException
+     *         The request is not valid.
      * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
      * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
      * @throws InternalFailureException
+     *         An unexpected error has occurred.
      * @throws MethodNotAllowedException
+     *         The specified combination of HTTP verb and URI is not supported.
      * @throws UnsupportedDocumentEncodingException
+     *         The document encoding is not supported.
      */
     @Override
     public DeleteThingShadowResult deleteThingShadow(
@@ -316,18 +343,34 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
     }
 
     /**
-     * Invokes the GetThingShadow operation.
+     * <p>
+     * Gets the thing shadow for the specified thing.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html"
+     * >GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.
+     * </p>
      * 
      * @param getThingShadowRequest
+     *        The input for the GetThingShadow operation.
      * @return Result of the GetThingShadow operation returned by the service.
      * @throws InvalidRequestException
+     *         The request is not valid.
      * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
      * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
      * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
      * @throws InternalFailureException
+     *         An unexpected error has occurred.
      * @throws MethodNotAllowedException
+     *         The specified combination of HTTP verb and URI is not supported.
      * @throws UnsupportedDocumentEncodingException
+     *         The document encoding is not supported.
      */
     @Override
     public GetThingShadowResult getThingShadow(
@@ -364,13 +407,25 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
     }
 
     /**
-     * Invokes the Publish operation.
+     * <p>
+     * Publishes state information.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http"
+     * >HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.
+     * </p>
      * 
      * @param publishRequest
+     *        The input for the Publish operation.
      * @throws InternalFailureException
+     *         An unexpected error has occurred.
      * @throws InvalidRequestException
+     *         The request is not valid.
      * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
      * @throws MethodNotAllowedException
+     *         The specified combination of HTTP verb and URI is not supported.
      */
     @Override
     public void publish(PublishRequest publishRequest) {
@@ -404,20 +459,37 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
     }
 
     /**
-     * Invokes the UpdateThingShadow operation.
+     * <p>
+     * Updates the thing shadow for the specified thing.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html"
+     * >UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.
+     * </p>
      * 
      * @param updateThingShadowRequest
+     *        The input for the UpdateThingShadow operation.
      * @return Result of the UpdateThingShadow operation returned by the
      *         service.
      * @throws ConflictException
+     *         The specified version does not match the version of the document.
      * @throws RequestEntityTooLargeException
+     *         The payload exceeds the maximum size allowed.
      * @throws InvalidRequestException
+     *         The request is not valid.
      * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
      * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
      * @throws InternalFailureException
+     *         An unexpected error has occurred.
      * @throws MethodNotAllowedException
+     *         The specified combination of HTTP verb and URI is not supported.
      * @throws UnsupportedDocumentEncodingException
+     *         The document encoding is not supported.
      */
     @Override
     public UpdateThingShadowResult updateThingShadow(
