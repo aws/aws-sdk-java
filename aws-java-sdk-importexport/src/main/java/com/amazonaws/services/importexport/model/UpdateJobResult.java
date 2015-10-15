@@ -29,29 +29,21 @@ public class UpdateJobResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Artifact> artifactList;
 
     /**
-     * Sets the value of the Success property for this object.
-     * 
      * @param success
-     *        The new value for the Success property for this object.
      */
     public void setSuccess(Boolean success) {
         this.success = success;
     }
 
     /**
-     * Returns the value of the Success property for this object.
-     * 
-     * @return The value of the Success property for this object.
+     * @return
      */
     public Boolean getSuccess() {
         return this.success;
     }
 
     /**
-     * Sets the value of the Success property for this object.
-     * 
      * @param success
-     *        The new value for the Success property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -61,38 +53,28 @@ public class UpdateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the Success property for this object.
-     * 
-     * @return The value of the Success property for this object.
+     * @return
      */
     public Boolean isSuccess() {
         return this.success;
     }
 
     /**
-     * Sets the value of the WarningMessage property for this object.
-     * 
      * @param warningMessage
-     *        The new value for the WarningMessage property for this object.
      */
     public void setWarningMessage(String warningMessage) {
         this.warningMessage = warningMessage;
     }
 
     /**
-     * Returns the value of the WarningMessage property for this object.
-     * 
-     * @return The value of the WarningMessage property for this object.
+     * @return
      */
     public String getWarningMessage() {
         return this.warningMessage;
     }
 
     /**
-     * Sets the value of the WarningMessage property for this object.
-     * 
      * @param warningMessage
-     *        The new value for the WarningMessage property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -102,9 +84,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the ArtifactList property for this object.
-     * 
-     * @return The value of the ArtifactList property for this object.
+     * @return
      */
     public java.util.List<Artifact> getArtifactList() {
         if (artifactList == null) {
@@ -114,10 +94,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ArtifactList property for this object.
-     * 
      * @param artifactList
-     *        The new value for the ArtifactList property for this object.
      */
     public void setArtifactList(java.util.Collection<Artifact> artifactList) {
         if (artifactList == null) {
@@ -130,7 +107,6 @@ public class UpdateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ArtifactList property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setArtifactList(java.util.Collection)} or
@@ -139,7 +115,6 @@ public class UpdateJobResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param artifactList
-     *        The new value for the ArtifactList property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -155,10 +130,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ArtifactList property for this object.
-     * 
      * @param artifactList
-     *        The new value for the ArtifactList property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -35,29 +35,21 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     private String aPIVersion;
 
     /**
-     * Sets the value of the JobId property for this object.
-     * 
      * @param jobId
-     *        The new value for the JobId property for this object.
      */
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
 
     /**
-     * Returns the value of the JobId property for this object.
-     * 
-     * @return The value of the JobId property for this object.
+     * @return
      */
     public String getJobId() {
         return this.jobId;
     }
 
     /**
-     * Sets the value of the JobId property for this object.
-     * 
      * @param jobId
-     *        The new value for the JobId property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -67,29 +59,21 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Manifest property for this object.
-     * 
      * @param manifest
-     *        The new value for the Manifest property for this object.
      */
     public void setManifest(String manifest) {
         this.manifest = manifest;
     }
 
     /**
-     * Returns the value of the Manifest property for this object.
-     * 
-     * @return The value of the Manifest property for this object.
+     * @return
      */
     public String getManifest() {
         return this.manifest;
     }
 
     /**
-     * Sets the value of the Manifest property for this object.
-     * 
      * @param manifest
-     *        The new value for the Manifest property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,10 +83,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @see JobType
      */
     public void setJobType(String jobType) {
@@ -110,9 +91,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns the value of the JobType property for this object.
-     * 
-     * @return The value of the JobType property for this object.
+     * @return
      * @see JobType
      */
     public String getJobType() {
@@ -120,10 +99,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType
@@ -134,10 +110,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType
@@ -147,10 +120,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType
@@ -161,29 +131,21 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the ValidateOnly property for this object.
-     * 
      * @param validateOnly
-     *        The new value for the ValidateOnly property for this object.
      */
     public void setValidateOnly(Boolean validateOnly) {
         this.validateOnly = validateOnly;
     }
 
     /**
-     * Returns the value of the ValidateOnly property for this object.
-     * 
-     * @return The value of the ValidateOnly property for this object.
+     * @return
      */
     public Boolean getValidateOnly() {
         return this.validateOnly;
     }
 
     /**
-     * Sets the value of the ValidateOnly property for this object.
-     * 
      * @param validateOnly
-     *        The new value for the ValidateOnly property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -193,38 +155,28 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns the value of the ValidateOnly property for this object.
-     * 
-     * @return The value of the ValidateOnly property for this object.
+     * @return
      */
     public Boolean isValidateOnly() {
         return this.validateOnly;
     }
 
     /**
-     * Sets the value of the APIVersion property for this object.
-     * 
      * @param aPIVersion
-     *        The new value for the APIVersion property for this object.
      */
     public void setAPIVersion(String aPIVersion) {
         this.aPIVersion = aPIVersion;
     }
 
     /**
-     * Returns the value of the APIVersion property for this object.
-     * 
-     * @return The value of the APIVersion property for this object.
+     * @return
      */
     public String getAPIVersion() {
         return this.aPIVersion;
     }
 
     /**
-     * Sets the value of the APIVersion property for this object.
-     * 
      * @param aPIVersion
-     *        The new value for the APIVersion property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

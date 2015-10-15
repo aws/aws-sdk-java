@@ -1,459 +1,379 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.kinesis.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.kinesis.AmazonKinesis#putRecord(PutRecordRequest) PutRecord operation}.
  * <p>
- * Writes a single data record from a producer into an Amazon Kinesis
- * stream. Call <code>PutRecord</code> to send data from the producer
- * into the Amazon Kinesis stream for real-time ingestion and subsequent
- * processing, one record at a time. Each shard can support writes up to
- * 1,000 records per second, up to a maximum data write total of 1 MB per
- * second.
+ * Represents the input for <code>PutRecord</code>.
  * </p>
- * <p>
- * You must specify the name of the stream that captures, stores, and
- * transports the data; a partition key; and the data blob itself.
- * </p>
- * <p>
- * The data blob can be any type of data; for example, a segment from a
- * log file, geographic/location data, website clickstream data, and so
- * on.
- * </p>
- * <p>
- * The partition key is used by Amazon Kinesis to distribute data across
- * shards. Amazon Kinesis segregates the data records that belong to a
- * data stream into multiple shards, using the partition key associated
- * with each data record to determine which shard a given data record
- * belongs to.
- * </p>
- * <p>
- * Partition keys are Unicode strings, with a maximum length limit of 256
- * characters for each key. An MD5 hash function is used to map partition
- * keys to 128-bit integer values and to map associated data records to
- * shards using the hash key ranges of the shards. You can override
- * hashing the partition key to determine the shard by explicitly
- * specifying a hash value using the <code>ExplicitHashKey</code>
- * parameter. For more information, see
- * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream"> Adding Data to a Stream </a>
- * in the <i>Amazon Kinesis Developer Guide</i> .
- * </p>
- * <p>
- * <code>PutRecord</code> returns the shard ID of where the data record
- * was placed and the sequence number that was assigned to the data
- * record.
- * </p>
- * <p>
- * Sequence numbers generally increase over time. To guarantee strictly
- * increasing ordering, use the <code>SequenceNumberForOrdering</code>
- * parameter. For more information, see
- * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream"> Adding Data to a Stream </a>
- * in the <i>Amazon Kinesis Developer Guide</i> .
- * </p>
- * <p>
- * If a <code>PutRecord</code> request cannot be processed because of
- * insufficient provisioned throughput on the shard involved in the
- * request, <code>PutRecord</code> throws
- * <code>ProvisionedThroughputExceededException</code> .
- * </p>
- * <p>
- * By default, data records are accessible for only 24 hours from the
- * time that they are added to an Amazon Kinesis stream. This retention
- * period can be modified using the DecreaseStreamRetentionPeriod and
- * IncreaseStreamRetentionPeriod operations.
- * </p>
- *
- * @see com.amazonaws.services.kinesis.AmazonKinesis#putRecord(PutRecordRequest)
  */
-public class PutRecordRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class PutRecordRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The name of the stream to put the data record into.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     * The name of the stream to put the data record into.
+     * </p>
      */
     private String streamName;
-
     /**
+     * <p>
      * The data blob to put into the record, which is base64-encoded when the
      * blob is serialized. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size
-     * must not exceed the maximum record size (1 MB).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1048576<br/>
+     * base64-encoding) is added to the partition key size, the total size must
+     * not exceed the maximum record size (1 MB).
+     * </p>
      */
     private java.nio.ByteBuffer data;
-
     /**
+     * <p>
      * Determines which shard in the stream the data record is assigned to.
      * Partition keys are Unicode strings with a maximum length limit of 256
-     * characters for each key. Amazon Kinesis uses the partition key as
-     * input to a hash function that maps the partition key and associated
-     * data to a specific shard. Specifically, an MD5 hash function is used
-     * to map partition keys to 128-bit integer values and to map associated
-     * data records to shards. As a result of this hashing mechanism, all
-     * data records with the same partition key will map to the same shard
-     * within the stream.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * characters for each key. Amazon Kinesis uses the partition key as input
+     * to a hash function that maps the partition key and associated data to a
+     * specific shard. Specifically, an MD5 hash function is used to map
+     * partition keys to 128-bit integer values and to map associated data
+     * records to shards. As a result of this hashing mechanism, all data
+     * records with the same partition key will map to the same shard within the
+     * stream.
+     * </p>
      */
     private String partitionKey;
-
     /**
-     * The hash value used to explicitly determine the shard the data record
-     * is assigned to by overriding the partition key hash.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>0|([1-9]\d{0,38})<br/>
+     * The hash value used to explicitly determine the shard the data record is
+     * assigned to by overriding the partition key hash.
+     * </p>
      */
     private String explicitHashKey;
-
     /**
-     * Guarantees strictly increasing sequence numbers, for puts from the
-     * same client and to the same partition key. Usage: set the
-     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
-     * sequence number of record <i>n-1</i> (as returned in the result when
-     * putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
+     * Guarantees strictly increasing sequence numbers, for puts from the same
+     * client and to the same partition key. Usage: set the
+     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence
+     * number of record <i>n-1</i> (as returned in the result when putting
+     * record <i>n-1</i>). If this parameter is not set, records will be
+     * coarsely ordered based on arrival time.
+     * </p>
      */
     private String sequenceNumberForOrdering;
 
     /**
-     * The name of the stream to put the data record into.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @return The name of the stream to put the data record into.
-     */
-    public String getStreamName() {
-        return streamName;
-    }
-    
-    /**
      * The name of the stream to put the data record into.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param streamName The name of the stream to put the data record into.
+     * </p>
+     * 
+     * @param streamName
+     *        The name of the stream to put the data record into.
      */
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
-    
+
     /**
+     * <p>
      * The name of the stream to put the data record into.
+     * </p>
+     * 
+     * @return The name of the stream to put the data record into.
+     */
+    public String getStreamName() {
+        return this.streamName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param streamName The name of the stream to put the data record into.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the stream to put the data record into.
+     * </p>
+     * 
+     * @param streamName
+     *        The name of the stream to put the data record into.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutRecordRequest withStreamName(String streamName) {
-        this.streamName = streamName;
+        setStreamName(streamName);
         return this;
     }
 
     /**
+     * <p>
      * The data blob to put into the record, which is base64-encoded when the
      * blob is serialized. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size
-     * must not exceed the maximum record size (1 MB).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1048576<br/>
-     *
-     * @return The data blob to put into the record, which is base64-encoded when the
-     *         blob is serialized. When the data blob (the payload before
-     *         base64-encoding) is added to the partition key size, the total size
-     *         must not exceed the maximum record size (1 MB).
-     */
-    public java.nio.ByteBuffer getData() {
-        return data;
-    }
-    
-    /**
-     * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size
-     * must not exceed the maximum record size (1 MB).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1048576<br/>
-     *
-     * @param data The data blob to put into the record, which is base64-encoded when the
-     *         blob is serialized. When the data blob (the payload before
-     *         base64-encoding) is added to the partition key size, the total size
-     *         must not exceed the maximum record size (1 MB).
+     * base64-encoding) is added to the partition key size, the total size must
+     * not exceed the maximum record size (1 MB).
+     * </p>
+     * 
+     * @param data
+     *        The data blob to put into the record, which is base64-encoded when
+     *        the blob is serialized. When the data blob (the payload before
+     *        base64-encoding) is added to the partition key size, the total
+     *        size must not exceed the maximum record size (1 MB).
      */
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
     }
-    
+
     /**
+     * <p>
      * The data blob to put into the record, which is base64-encoded when the
      * blob is serialized. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size
-     * must not exceed the maximum record size (1 MB).
+     * base64-encoding) is added to the partition key size, the total size must
+     * not exceed the maximum record size (1 MB).
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
+     * changes their {@code position}. We recommend using
+     * {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view
+     * of the buffer with an independent {@code position}, and calling
+     * {@code get} methods on this rather than directly on the returned
+     * {@code ByteBuffer}. Doing so will ensure that anyone else using the
+     * {@code ByteBuffer} will not be affected by changes to the {@code position}
+     * .
+     * </p>
+     * 
+     * @return The data blob to put into the record, which is base64-encoded
+     *         when the blob is serialized. When the data blob (the payload
+     *         before base64-encoding) is added to the partition key size, the
+     *         total size must not exceed the maximum record size (1 MB).
+     */
+    public java.nio.ByteBuffer getData() {
+        return this.data;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1048576<br/>
-     *
-     * @param data The data blob to put into the record, which is base64-encoded when the
-     *         blob is serialized. When the data blob (the payload before
-     *         base64-encoding) is added to the partition key size, the total size
-     *         must not exceed the maximum record size (1 MB).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The data blob to put into the record, which is base64-encoded when the
+     * blob is serialized. When the data blob (the payload before
+     * base64-encoding) is added to the partition key size, the total size must
+     * not exceed the maximum record size (1 MB).
+     * </p>
+     * 
+     * @param data
+     *        The data blob to put into the record, which is base64-encoded when
+     *        the blob is serialized. When the data blob (the payload before
+     *        base64-encoding) is added to the partition key size, the total
+     *        size must not exceed the maximum record size (1 MB).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutRecordRequest withData(java.nio.ByteBuffer data) {
-        this.data = data;
+        setData(data);
         return this;
     }
 
     /**
+     * <p>
      * Determines which shard in the stream the data record is assigned to.
      * Partition keys are Unicode strings with a maximum length limit of 256
-     * characters for each key. Amazon Kinesis uses the partition key as
-     * input to a hash function that maps the partition key and associated
-     * data to a specific shard. Specifically, an MD5 hash function is used
-     * to map partition keys to 128-bit integer values and to map associated
-     * data records to shards. As a result of this hashing mechanism, all
-     * data records with the same partition key will map to the same shard
-     * within the stream.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @return Determines which shard in the stream the data record is assigned to.
-     *         Partition keys are Unicode strings with a maximum length limit of 256
-     *         characters for each key. Amazon Kinesis uses the partition key as
-     *         input to a hash function that maps the partition key and associated
-     *         data to a specific shard. Specifically, an MD5 hash function is used
-     *         to map partition keys to 128-bit integer values and to map associated
-     *         data records to shards. As a result of this hashing mechanism, all
-     *         data records with the same partition key will map to the same shard
-     *         within the stream.
-     */
-    public String getPartitionKey() {
-        return partitionKey;
-    }
-    
-    /**
-     * Determines which shard in the stream the data record is assigned to.
-     * Partition keys are Unicode strings with a maximum length limit of 256
-     * characters for each key. Amazon Kinesis uses the partition key as
-     * input to a hash function that maps the partition key and associated
-     * data to a specific shard. Specifically, an MD5 hash function is used
-     * to map partition keys to 128-bit integer values and to map associated
-     * data records to shards. As a result of this hashing mechanism, all
-     * data records with the same partition key will map to the same shard
-     * within the stream.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param partitionKey Determines which shard in the stream the data record is assigned to.
-     *         Partition keys are Unicode strings with a maximum length limit of 256
-     *         characters for each key. Amazon Kinesis uses the partition key as
-     *         input to a hash function that maps the partition key and associated
-     *         data to a specific shard. Specifically, an MD5 hash function is used
-     *         to map partition keys to 128-bit integer values and to map associated
-     *         data records to shards. As a result of this hashing mechanism, all
-     *         data records with the same partition key will map to the same shard
-     *         within the stream.
+     * characters for each key. Amazon Kinesis uses the partition key as input
+     * to a hash function that maps the partition key and associated data to a
+     * specific shard. Specifically, an MD5 hash function is used to map
+     * partition keys to 128-bit integer values and to map associated data
+     * records to shards. As a result of this hashing mechanism, all data
+     * records with the same partition key will map to the same shard within the
+     * stream.
+     * </p>
+     * 
+     * @param partitionKey
+     *        Determines which shard in the stream the data record is assigned
+     *        to. Partition keys are Unicode strings with a maximum length limit
+     *        of 256 characters for each key. Amazon Kinesis uses the partition
+     *        key as input to a hash function that maps the partition key and
+     *        associated data to a specific shard. Specifically, an MD5 hash
+     *        function is used to map partition keys to 128-bit integer values
+     *        and to map associated data records to shards. As a result of this
+     *        hashing mechanism, all data records with the same partition key
+     *        will map to the same shard within the stream.
      */
     public void setPartitionKey(String partitionKey) {
         this.partitionKey = partitionKey;
     }
-    
+
     /**
+     * <p>
      * Determines which shard in the stream the data record is assigned to.
      * Partition keys are Unicode strings with a maximum length limit of 256
-     * characters for each key. Amazon Kinesis uses the partition key as
-     * input to a hash function that maps the partition key and associated
-     * data to a specific shard. Specifically, an MD5 hash function is used
-     * to map partition keys to 128-bit integer values and to map associated
-     * data records to shards. As a result of this hashing mechanism, all
-     * data records with the same partition key will map to the same shard
-     * within the stream.
+     * characters for each key. Amazon Kinesis uses the partition key as input
+     * to a hash function that maps the partition key and associated data to a
+     * specific shard. Specifically, an MD5 hash function is used to map
+     * partition keys to 128-bit integer values and to map associated data
+     * records to shards. As a result of this hashing mechanism, all data
+     * records with the same partition key will map to the same shard within the
+     * stream.
+     * </p>
+     * 
+     * @return Determines which shard in the stream the data record is assigned
+     *         to. Partition keys are Unicode strings with a maximum length
+     *         limit of 256 characters for each key. Amazon Kinesis uses the
+     *         partition key as input to a hash function that maps the partition
+     *         key and associated data to a specific shard. Specifically, an MD5
+     *         hash function is used to map partition keys to 128-bit integer
+     *         values and to map associated data records to shards. As a result
+     *         of this hashing mechanism, all data records with the same
+     *         partition key will map to the same shard within the stream.
+     */
+    public String getPartitionKey() {
+        return this.partitionKey;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param partitionKey Determines which shard in the stream the data record is assigned to.
-     *         Partition keys are Unicode strings with a maximum length limit of 256
-     *         characters for each key. Amazon Kinesis uses the partition key as
-     *         input to a hash function that maps the partition key and associated
-     *         data to a specific shard. Specifically, an MD5 hash function is used
-     *         to map partition keys to 128-bit integer values and to map associated
-     *         data records to shards. As a result of this hashing mechanism, all
-     *         data records with the same partition key will map to the same shard
-     *         within the stream.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Determines which shard in the stream the data record is assigned to.
+     * Partition keys are Unicode strings with a maximum length limit of 256
+     * characters for each key. Amazon Kinesis uses the partition key as input
+     * to a hash function that maps the partition key and associated data to a
+     * specific shard. Specifically, an MD5 hash function is used to map
+     * partition keys to 128-bit integer values and to map associated data
+     * records to shards. As a result of this hashing mechanism, all data
+     * records with the same partition key will map to the same shard within the
+     * stream.
+     * </p>
+     * 
+     * @param partitionKey
+     *        Determines which shard in the stream the data record is assigned
+     *        to. Partition keys are Unicode strings with a maximum length limit
+     *        of 256 characters for each key. Amazon Kinesis uses the partition
+     *        key as input to a hash function that maps the partition key and
+     *        associated data to a specific shard. Specifically, an MD5 hash
+     *        function is used to map partition keys to 128-bit integer values
+     *        and to map associated data records to shards. As a result of this
+     *        hashing mechanism, all data records with the same partition key
+     *        will map to the same shard within the stream.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutRecordRequest withPartitionKey(String partitionKey) {
-        this.partitionKey = partitionKey;
+        setPartitionKey(partitionKey);
         return this;
     }
 
     /**
-     * The hash value used to explicitly determine the shard the data record
-     * is assigned to by overriding the partition key hash.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>0|([1-9]\d{0,38})<br/>
-     *
-     * @return The hash value used to explicitly determine the shard the data record
-     *         is assigned to by overriding the partition key hash.
-     */
-    public String getExplicitHashKey() {
-        return explicitHashKey;
-    }
-    
-    /**
-     * The hash value used to explicitly determine the shard the data record
-     * is assigned to by overriding the partition key hash.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>0|([1-9]\d{0,38})<br/>
-     *
-     * @param explicitHashKey The hash value used to explicitly determine the shard the data record
-     *         is assigned to by overriding the partition key hash.
+     * The hash value used to explicitly determine the shard the data record is
+     * assigned to by overriding the partition key hash.
+     * </p>
+     * 
+     * @param explicitHashKey
+     *        The hash value used to explicitly determine the shard the data
+     *        record is assigned to by overriding the partition key hash.
      */
     public void setExplicitHashKey(String explicitHashKey) {
         this.explicitHashKey = explicitHashKey;
     }
-    
+
     /**
-     * The hash value used to explicitly determine the shard the data record
-     * is assigned to by overriding the partition key hash.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The hash value used to explicitly determine the shard the data record is
+     * assigned to by overriding the partition key hash.
+     * </p>
+     * 
+     * @return The hash value used to explicitly determine the shard the data
+     *         record is assigned to by overriding the partition key hash.
+     */
+    public String getExplicitHashKey() {
+        return this.explicitHashKey;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>0|([1-9]\d{0,38})<br/>
-     *
-     * @param explicitHashKey The hash value used to explicitly determine the shard the data record
-     *         is assigned to by overriding the partition key hash.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The hash value used to explicitly determine the shard the data record is
+     * assigned to by overriding the partition key hash.
+     * </p>
+     * 
+     * @param explicitHashKey
+     *        The hash value used to explicitly determine the shard the data
+     *        record is assigned to by overriding the partition key hash.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutRecordRequest withExplicitHashKey(String explicitHashKey) {
-        this.explicitHashKey = explicitHashKey;
+        setExplicitHashKey(explicitHashKey);
         return this;
     }
 
     /**
-     * Guarantees strictly increasing sequence numbers, for puts from the
-     * same client and to the same partition key. Usage: set the
-     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
-     * sequence number of record <i>n-1</i> (as returned in the result when
-     * putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
-     *
-     * @return Guarantees strictly increasing sequence numbers, for puts from the
-     *         same client and to the same partition key. Usage: set the
-     *         <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
-     *         sequence number of record <i>n-1</i> (as returned in the result when
-     *         putting record <i>n-1</i>). If this parameter is not set, records will
-     *         be coarsely ordered based on arrival time.
-     */
-    public String getSequenceNumberForOrdering() {
-        return sequenceNumberForOrdering;
-    }
-    
-    /**
-     * Guarantees strictly increasing sequence numbers, for puts from the
-     * same client and to the same partition key. Usage: set the
-     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
-     * sequence number of record <i>n-1</i> (as returned in the result when
-     * putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
-     *
-     * @param sequenceNumberForOrdering Guarantees strictly increasing sequence numbers, for puts from the
-     *         same client and to the same partition key. Usage: set the
-     *         <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
-     *         sequence number of record <i>n-1</i> (as returned in the result when
-     *         putting record <i>n-1</i>). If this parameter is not set, records will
-     *         be coarsely ordered based on arrival time.
+     * Guarantees strictly increasing sequence numbers, for puts from the same
+     * client and to the same partition key. Usage: set the
+     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence
+     * number of record <i>n-1</i> (as returned in the result when putting
+     * record <i>n-1</i>). If this parameter is not set, records will be
+     * coarsely ordered based on arrival time.
+     * </p>
+     * 
+     * @param sequenceNumberForOrdering
+     *        Guarantees strictly increasing sequence numbers, for puts from the
+     *        same client and to the same partition key. Usage: set the
+     *        <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
+     *        sequence number of record <i>n-1</i> (as returned in the result
+     *        when putting record <i>n-1</i>). If this parameter is not set,
+     *        records will be coarsely ordered based on arrival time.
      */
     public void setSequenceNumberForOrdering(String sequenceNumberForOrdering) {
         this.sequenceNumberForOrdering = sequenceNumberForOrdering;
     }
-    
+
     /**
-     * Guarantees strictly increasing sequence numbers, for puts from the
-     * same client and to the same partition key. Usage: set the
-     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
-     * sequence number of record <i>n-1</i> (as returned in the result when
-     * putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
-     *
-     * @param sequenceNumberForOrdering Guarantees strictly increasing sequence numbers, for puts from the
-     *         same client and to the same partition key. Usage: set the
+     * Guarantees strictly increasing sequence numbers, for puts from the same
+     * client and to the same partition key. Usage: set the
+     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence
+     * number of record <i>n-1</i> (as returned in the result when putting
+     * record <i>n-1</i>). If this parameter is not set, records will be
+     * coarsely ordered based on arrival time.
+     * </p>
+     * 
+     * @return Guarantees strictly increasing sequence numbers, for puts from
+     *         the same client and to the same partition key. Usage: set the
      *         <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
-     *         sequence number of record <i>n-1</i> (as returned in the result when
-     *         putting record <i>n-1</i>). If this parameter is not set, records will
-     *         be coarsely ordered based on arrival time.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         sequence number of record <i>n-1</i> (as returned in the result
+     *         when putting record <i>n-1</i>). If this parameter is not set,
+     *         records will be coarsely ordered based on arrival time.
      */
-    public PutRecordRequest withSequenceNumberForOrdering(String sequenceNumberForOrdering) {
-        this.sequenceNumberForOrdering = sequenceNumberForOrdering;
+    public String getSequenceNumberForOrdering() {
+        return this.sequenceNumberForOrdering;
+    }
+
+    /**
+     * <p>
+     * Guarantees strictly increasing sequence numbers, for puts from the same
+     * client and to the same partition key. Usage: set the
+     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence
+     * number of record <i>n-1</i> (as returned in the result when putting
+     * record <i>n-1</i>). If this parameter is not set, records will be
+     * coarsely ordered based on arrival time.
+     * </p>
+     * 
+     * @param sequenceNumberForOrdering
+     *        Guarantees strictly increasing sequence numbers, for puts from the
+     *        same client and to the same partition key. Usage: set the
+     *        <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
+     *        sequence number of record <i>n-1</i> (as returned in the result
+     *        when putting record <i>n-1</i>). If this parameter is not set,
+     *        records will be coarsely ordered based on arrival time.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public PutRecordRequest withSequenceNumberForOrdering(
+            String sequenceNumberForOrdering) {
+        setSequenceNumberForOrdering(sequenceNumberForOrdering);
         return this;
     }
 
@@ -469,54 +389,88 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStreamName() != null) sb.append("StreamName: " + getStreamName() + ",");
-        if (getData() != null) sb.append("Data: " + getData() + ",");
-        if (getPartitionKey() != null) sb.append("PartitionKey: " + getPartitionKey() + ",");
-        if (getExplicitHashKey() != null) sb.append("ExplicitHashKey: " + getExplicitHashKey() + ",");
-        if (getSequenceNumberForOrdering() != null) sb.append("SequenceNumberForOrdering: " + getSequenceNumberForOrdering() );
+        if (getStreamName() != null)
+            sb.append("StreamName: " + getStreamName() + ",");
+        if (getData() != null)
+            sb.append("Data: " + getData() + ",");
+        if (getPartitionKey() != null)
+            sb.append("PartitionKey: " + getPartitionKey() + ",");
+        if (getExplicitHashKey() != null)
+            sb.append("ExplicitHashKey: " + getExplicitHashKey() + ",");
+        if (getSequenceNumberForOrdering() != null)
+            sb.append("SequenceNumberForOrdering: "
+                    + getSequenceNumberForOrdering());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PutRecordRequest == false)
+            return false;
+        PutRecordRequest other = (PutRecordRequest) obj;
+        if (other.getStreamName() == null ^ this.getStreamName() == null)
+            return false;
+        if (other.getStreamName() != null
+                && other.getStreamName().equals(this.getStreamName()) == false)
+            return false;
+        if (other.getData() == null ^ this.getData() == null)
+            return false;
+        if (other.getData() != null
+                && other.getData().equals(this.getData()) == false)
+            return false;
+        if (other.getPartitionKey() == null ^ this.getPartitionKey() == null)
+            return false;
+        if (other.getPartitionKey() != null
+                && other.getPartitionKey().equals(this.getPartitionKey()) == false)
+            return false;
+        if (other.getExplicitHashKey() == null
+                ^ this.getExplicitHashKey() == null)
+            return false;
+        if (other.getExplicitHashKey() != null
+                && other.getExplicitHashKey().equals(this.getExplicitHashKey()) == false)
+            return false;
+        if (other.getSequenceNumberForOrdering() == null
+                ^ this.getSequenceNumberForOrdering() == null)
+            return false;
+        if (other.getSequenceNumberForOrdering() != null
+                && other.getSequenceNumberForOrdering().equals(
+                        this.getSequenceNumberForOrdering()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode()); 
-        hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode()); 
-        hashCode = prime * hashCode + ((getPartitionKey() == null) ? 0 : getPartitionKey().hashCode()); 
-        hashCode = prime * hashCode + ((getExplicitHashKey() == null) ? 0 : getExplicitHashKey().hashCode()); 
-        hashCode = prime * hashCode + ((getSequenceNumberForOrdering() == null) ? 0 : getSequenceNumberForOrdering().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
+        hashCode = prime * hashCode
+                + ((getData() == null) ? 0 : getData().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPartitionKey() == null) ? 0 : getPartitionKey()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getExplicitHashKey() == null) ? 0 : getExplicitHashKey()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSequenceNumberForOrdering() == null) ? 0
+                        : getSequenceNumberForOrdering().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof PutRecordRequest == false) return false;
-        PutRecordRequest other = (PutRecordRequest)obj;
-        
-        if (other.getStreamName() == null ^ this.getStreamName() == null) return false;
-        if (other.getStreamName() != null && other.getStreamName().equals(this.getStreamName()) == false) return false; 
-        if (other.getData() == null ^ this.getData() == null) return false;
-        if (other.getData() != null && other.getData().equals(this.getData()) == false) return false; 
-        if (other.getPartitionKey() == null ^ this.getPartitionKey() == null) return false;
-        if (other.getPartitionKey() != null && other.getPartitionKey().equals(this.getPartitionKey()) == false) return false; 
-        if (other.getExplicitHashKey() == null ^ this.getExplicitHashKey() == null) return false;
-        if (other.getExplicitHashKey() != null && other.getExplicitHashKey().equals(this.getExplicitHashKey()) == false) return false; 
-        if (other.getSequenceNumberForOrdering() == null ^ this.getSequenceNumberForOrdering() == null) return false;
-        if (other.getSequenceNumberForOrdering() != null && other.getSequenceNumberForOrdering().equals(this.getSequenceNumberForOrdering()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public PutRecordRequest clone() {
-        
-            return (PutRecordRequest) super.clone();
+        return (PutRecordRequest) super.clone();
     }
-
 }
-    

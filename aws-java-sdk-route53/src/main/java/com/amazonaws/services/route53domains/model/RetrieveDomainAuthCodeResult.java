@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
@@ -24,52 +25,65 @@ import java.io.Serializable;
 public class RetrieveDomainAuthCodeResult implements Serializable, Cloneable {
 
     /**
-     * The authorization code for the domain. <p>Type: String
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
+     * The authorization code for the domain.
+     * </p>
+     * <p>
+     * Type: String
+     * </p>
      */
     private String authCode;
 
     /**
-     * The authorization code for the domain. <p>Type: String
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     *
-     * @return The authorization code for the domain. <p>Type: String
-     */
-    public String getAuthCode() {
-        return authCode;
-    }
-    
-    /**
-     * The authorization code for the domain. <p>Type: String
+     * The authorization code for the domain.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     *
-     * @param authCode The authorization code for the domain. <p>Type: String
+     * Type: String
+     * </p>
+     * 
+     * @param authCode
+     *        The authorization code for the domain.</p>
+     *        <p>
+     *        Type: String
      */
     public void setAuthCode(String authCode) {
         this.authCode = authCode;
     }
-    
+
     /**
-     * The authorization code for the domain. <p>Type: String
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The authorization code for the domain.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     *
-     * @param authCode The authorization code for the domain. <p>Type: String
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Type: String
+     * </p>
+     * 
+     * @return The authorization code for the domain.</p>
+     *         <p>
+     *         Type: String
+     */
+    public String getAuthCode() {
+        return this.authCode;
+    }
+
+    /**
+     * <p>
+     * The authorization code for the domain.
+     * </p>
+     * <p>
+     * Type: String
+     * </p>
+     * 
+     * @param authCode
+     *        The authorization code for the domain.</p>
+     *        <p>
+     *        Type: String
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public RetrieveDomainAuthCodeResult withAuthCode(String authCode) {
-        this.authCode = authCode;
+        setAuthCode(authCode);
         return this;
     }
 
@@ -85,46 +99,48 @@ public class RetrieveDomainAuthCodeResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAuthCode() != null) sb.append("AuthCode: " + getAuthCode() );
+        if (getAuthCode() != null)
+            sb.append("AuthCode: " + getAuthCode());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RetrieveDomainAuthCodeResult == false)
+            return false;
+        RetrieveDomainAuthCodeResult other = (RetrieveDomainAuthCodeResult) obj;
+        if (other.getAuthCode() == null ^ this.getAuthCode() == null)
+            return false;
+        if (other.getAuthCode() != null
+                && other.getAuthCode().equals(this.getAuthCode()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAuthCode() == null) ? 0 : getAuthCode().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getAuthCode() == null) ? 0 : getAuthCode().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof RetrieveDomainAuthCodeResult == false) return false;
-        RetrieveDomainAuthCodeResult other = (RetrieveDomainAuthCodeResult)obj;
-        
-        if (other.getAuthCode() == null ^ this.getAuthCode() == null) return false;
-        if (other.getAuthCode() != null && other.getAuthCode().equals(this.getAuthCode()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public RetrieveDomainAuthCodeResult clone() {
         try {
             return (RetrieveDomainAuthCodeResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

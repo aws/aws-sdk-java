@@ -35,29 +35,21 @@ public class LogGroup implements Serializable, Cloneable {
     private Long storedBytes;
 
     /**
-     * Sets the value of the LogGroupName property for this object.
-     * 
      * @param logGroupName
-     *        The new value for the LogGroupName property for this object.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
-     * 
-     * @return The value of the LogGroupName property for this object.
+     * @return
      */
     public String getLogGroupName() {
         return this.logGroupName;
     }
 
     /**
-     * Sets the value of the LogGroupName property for this object.
-     * 
      * @param logGroupName
-     *        The new value for the LogGroupName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -67,29 +59,21 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the CreationTime property for this object.
-     * 
      * @param creationTime
-     *        The new value for the CreationTime property for this object.
      */
     public void setCreationTime(Long creationTime) {
         this.creationTime = creationTime;
     }
 
     /**
-     * Returns the value of the CreationTime property for this object.
-     * 
-     * @return The value of the CreationTime property for this object.
+     * @return
      */
     public Long getCreationTime() {
         return this.creationTime;
     }
 
     /**
-     * Sets the value of the CreationTime property for this object.
-     * 
      * @param creationTime
-     *        The new value for the CreationTime property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,29 +83,21 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the RetentionInDays property for this object.
-     * 
      * @param retentionInDays
-     *        The new value for the RetentionInDays property for this object.
      */
     public void setRetentionInDays(Integer retentionInDays) {
         this.retentionInDays = retentionInDays;
     }
 
     /**
-     * Returns the value of the RetentionInDays property for this object.
-     * 
-     * @return The value of the RetentionInDays property for this object.
+     * @return
      */
     public Integer getRetentionInDays() {
         return this.retentionInDays;
     }
 
     /**
-     * Sets the value of the RetentionInDays property for this object.
-     * 
      * @param retentionInDays
-     *        The new value for the RetentionInDays property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -131,29 +107,21 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the MetricFilterCount property for this object.
-     * 
      * @param metricFilterCount
-     *        The new value for the MetricFilterCount property for this object.
      */
     public void setMetricFilterCount(Integer metricFilterCount) {
         this.metricFilterCount = metricFilterCount;
     }
 
     /**
-     * Returns the value of the MetricFilterCount property for this object.
-     * 
-     * @return The value of the MetricFilterCount property for this object.
+     * @return
      */
     public Integer getMetricFilterCount() {
         return this.metricFilterCount;
     }
 
     /**
-     * Sets the value of the MetricFilterCount property for this object.
-     * 
      * @param metricFilterCount
-     *        The new value for the MetricFilterCount property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -163,29 +131,21 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Arn property for this object.
-     * 
      * @param arn
-     *        The new value for the Arn property for this object.
      */
     public void setArn(String arn) {
         this.arn = arn;
     }
 
     /**
-     * Returns the value of the Arn property for this object.
-     * 
-     * @return The value of the Arn property for this object.
+     * @return
      */
     public String getArn() {
         return this.arn;
     }
 
     /**
-     * Sets the value of the Arn property for this object.
-     * 
      * @param arn
-     *        The new value for the Arn property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -195,29 +155,21 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the StoredBytes property for this object.
-     * 
      * @param storedBytes
-     *        The new value for the StoredBytes property for this object.
      */
     public void setStoredBytes(Long storedBytes) {
         this.storedBytes = storedBytes;
     }
 
     /**
-     * Returns the value of the StoredBytes property for this object.
-     * 
-     * @return The value of the StoredBytes property for this object.
+     * @return
      */
     public Long getStoredBytes() {
         return this.storedBytes;
     }
 
     /**
-     * Sets the value of the StoredBytes property for this object.
-     * 
      * @param storedBytes
-     *        The new value for the StoredBytes property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

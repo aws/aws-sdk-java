@@ -33,8 +33,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateKeyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Policy to be attached to the key. This is required and delegates back
-     * to the account. The key is the root of trust.
+     * Policy to attach to the key. This is required and delegates back to
+     * the account. The key is the root of trust. The policy size limit is 32
+     * KiB (32768 bytes).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
@@ -63,38 +64,43 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements Seriali
     private String keyUsage;
 
     /**
-     * Policy to be attached to the key. This is required and delegates back
-     * to the account. The key is the root of trust.
+     * Policy to attach to the key. This is required and delegates back to
+     * the account. The key is the root of trust. The policy size limit is 32
+     * KiB (32768 bytes).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return Policy to be attached to the key. This is required and delegates back
-     *         to the account. The key is the root of trust.
+     * @return Policy to attach to the key. This is required and delegates back to
+     *         the account. The key is the root of trust. The policy size limit is 32
+     *         KiB (32768 bytes).
      */
     public String getPolicy() {
         return policy;
     }
     
     /**
-     * Policy to be attached to the key. This is required and delegates back
-     * to the account. The key is the root of trust.
+     * Policy to attach to the key. This is required and delegates back to
+     * the account. The key is the root of trust. The policy size limit is 32
+     * KiB (32768 bytes).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param policy Policy to be attached to the key. This is required and delegates back
-     *         to the account. The key is the root of trust.
+     * @param policy Policy to attach to the key. This is required and delegates back to
+     *         the account. The key is the root of trust. The policy size limit is 32
+     *         KiB (32768 bytes).
      */
     public void setPolicy(String policy) {
         this.policy = policy;
     }
     
     /**
-     * Policy to be attached to the key. This is required and delegates back
-     * to the account. The key is the root of trust.
+     * Policy to attach to the key. This is required and delegates back to
+     * the account. The key is the root of trust. The policy size limit is 32
+     * KiB (32768 bytes).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -102,8 +108,9 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param policy Policy to be attached to the key. This is required and delegates back
-     *         to the account. The key is the root of trust.
+     * @param policy Policy to attach to the key. This is required and delegates back to
+     *         the account. The key is the root of trust. The policy size limit is 32
+     *         KiB (32768 bytes).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -21,7 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kms.AWSKMS#disableKey(DisableKeyRequest) DisableKey operation}.
  * <p>
- * Marks a key as disabled, thereby preventing its use.
+ * Sets the state of a master key to disabled, thereby preventing its use
+ * for cryptographic operations. For more information about how key state
+ * affects the use of a master key, go to
+ * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"> How Key State Affects the Use of a Customer Master Key </a>
+ * in the <i>AWS Key Management Service Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.kms.AWSKMS#disableKey(DisableKeyRequest)

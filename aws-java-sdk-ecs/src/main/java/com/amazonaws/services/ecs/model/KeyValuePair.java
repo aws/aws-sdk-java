@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
@@ -24,92 +25,105 @@ import java.io.Serializable;
 public class KeyValuePair implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the key value pair. For environment variables, this is the
      * name of the environment variable.
+     * </p>
      */
     private String name;
-
     /**
-     * The value of the key value pair. For environment variables, this is
-     * the value of the environment variable.
+     * <p>
+     * The value of the key value pair. For environment variables, this is the
+     * value of the environment variable.
+     * </p>
      */
     private String value;
 
     /**
+     * <p>
      * The name of the key value pair. For environment variables, this is the
      * name of the environment variable.
-     *
-     * @return The name of the key value pair. For environment variables, this is the
-     *         name of the environment variable.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * The name of the key value pair. For environment variables, this is the
-     * name of the environment variable.
-     *
-     * @param name The name of the key value pair. For environment variables, this is the
-     *         name of the environment variable.
+     * </p>
+     * 
+     * @param name
+     *        The name of the key value pair. For environment variables, this is
+     *        the name of the environment variable.
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
+     * <p>
      * The name of the key value pair. For environment variables, this is the
      * name of the environment variable.
+     * </p>
+     * 
+     * @return The name of the key value pair. For environment variables, this
+     *         is the name of the environment variable.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param name The name of the key value pair. For environment variables, this is the
-     *         name of the environment variable.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the key value pair. For environment variables, this is the
+     * name of the environment variable.
+     * </p>
+     * 
+     * @param name
+     *        The name of the key value pair. For environment variables, this is
+     *        the name of the environment variable.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public KeyValuePair withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
-     * The value of the key value pair. For environment variables, this is
-     * the value of the environment variable.
-     *
-     * @return The value of the key value pair. For environment variables, this is
-     *         the value of the environment variable.
-     */
-    public String getValue() {
-        return value;
-    }
-    
-    /**
-     * The value of the key value pair. For environment variables, this is
-     * the value of the environment variable.
-     *
-     * @param value The value of the key value pair. For environment variables, this is
-     *         the value of the environment variable.
+     * <p>
+     * The value of the key value pair. For environment variables, this is the
+     * value of the environment variable.
+     * </p>
+     * 
+     * @param value
+     *        The value of the key value pair. For environment variables, this
+     *        is the value of the environment variable.
      */
     public void setValue(String value) {
         this.value = value;
     }
-    
+
     /**
-     * The value of the key value pair. For environment variables, this is
-     * the value of the environment variable.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param value The value of the key value pair. For environment variables, this is
-     *         the value of the environment variable.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The value of the key value pair. For environment variables, this is the
+     * value of the environment variable.
+     * </p>
+     * 
+     * @return The value of the key value pair. For environment variables, this
+     *         is the value of the environment variable.
+     */
+    public String getValue() {
+        return this.value;
+    }
+
+    /**
+     * <p>
+     * The value of the key value pair. For environment variables, this is the
+     * value of the environment variable.
+     * </p>
+     * 
+     * @param value
+     *        The value of the key value pair. For environment variables, this
+     *        is the value of the environment variable.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public KeyValuePair withValue(String value) {
-        this.value = value;
+        setValue(value);
         return this;
     }
 
@@ -125,50 +139,57 @@ public class KeyValuePair implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getValue() != null) sb.append("Value: " + getValue() );
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getValue() != null)
+            sb.append("Value: " + getValue());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof KeyValuePair == false)
+            return false;
+        KeyValuePair other = (KeyValuePair) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getValue() == null ^ this.getValue() == null)
+            return false;
+        if (other.getValue() != null
+                && other.getValue().equals(this.getValue()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode
+                + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof KeyValuePair == false) return false;
-        KeyValuePair other = (KeyValuePair)obj;
-        
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getValue() == null ^ this.getValue() == null) return false;
-        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public KeyValuePair clone() {
         try {
             return (KeyValuePair) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

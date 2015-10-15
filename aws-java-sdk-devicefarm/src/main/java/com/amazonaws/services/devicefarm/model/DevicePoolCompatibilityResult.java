@@ -39,29 +39,21 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
     private java.util.List<IncompatibilityMessage> incompatibilityMessages;
 
     /**
-     * Sets the value of the Device property for this object.
-     * 
      * @param device
-     *        The new value for the Device property for this object.
      */
     public void setDevice(Device device) {
         this.device = device;
     }
 
     /**
-     * Returns the value of the Device property for this object.
-     * 
-     * @return The value of the Device property for this object.
+     * @return
      */
     public Device getDevice() {
         return this.device;
     }
 
     /**
-     * Sets the value of the Device property for this object.
-     * 
      * @param device
-     *        The new value for the Device property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

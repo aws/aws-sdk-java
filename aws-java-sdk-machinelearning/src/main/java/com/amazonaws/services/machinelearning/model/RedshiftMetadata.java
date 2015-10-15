@@ -37,29 +37,21 @@ public class RedshiftMetadata implements Serializable, Cloneable {
     private String selectSqlQuery;
 
     /**
-     * Sets the value of the RedshiftDatabase property for this object.
-     * 
      * @param redshiftDatabase
-     *        The new value for the RedshiftDatabase property for this object.
      */
     public void setRedshiftDatabase(RedshiftDatabase redshiftDatabase) {
         this.redshiftDatabase = redshiftDatabase;
     }
 
     /**
-     * Returns the value of the RedshiftDatabase property for this object.
-     * 
-     * @return The value of the RedshiftDatabase property for this object.
+     * @return
      */
     public RedshiftDatabase getRedshiftDatabase() {
         return this.redshiftDatabase;
     }
 
     /**
-     * Sets the value of the RedshiftDatabase property for this object.
-     * 
      * @param redshiftDatabase
-     *        The new value for the RedshiftDatabase property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -70,29 +62,21 @@ public class RedshiftMetadata implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the DatabaseUserName property for this object.
-     * 
      * @param databaseUserName
-     *        The new value for the DatabaseUserName property for this object.
      */
     public void setDatabaseUserName(String databaseUserName) {
         this.databaseUserName = databaseUserName;
     }
 
     /**
-     * Returns the value of the DatabaseUserName property for this object.
-     * 
-     * @return The value of the DatabaseUserName property for this object.
+     * @return
      */
     public String getDatabaseUserName() {
         return this.databaseUserName;
     }
 
     /**
-     * Sets the value of the DatabaseUserName property for this object.
-     * 
      * @param databaseUserName
-     *        The new value for the DatabaseUserName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

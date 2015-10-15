@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A grant token provided as part of the request is invalid.
+ * The request was rejected because a grant token provided as part of the
+ * request is invalid.
  * </p>
  */        
 public class InvalidGrantTokenException extends AmazonServiceException {

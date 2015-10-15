@@ -30,29 +30,21 @@ public class RedshiftDatabase implements Serializable, Cloneable {
     private String clusterIdentifier;
 
     /**
-     * Sets the value of the DatabaseName property for this object.
-     * 
      * @param databaseName
-     *        The new value for the DatabaseName property for this object.
      */
     public void setDatabaseName(String databaseName) {
         this.databaseName = databaseName;
     }
 
     /**
-     * Returns the value of the DatabaseName property for this object.
-     * 
-     * @return The value of the DatabaseName property for this object.
+     * @return
      */
     public String getDatabaseName() {
         return this.databaseName;
     }
 
     /**
-     * Sets the value of the DatabaseName property for this object.
-     * 
      * @param databaseName
-     *        The new value for the DatabaseName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -62,29 +54,21 @@ public class RedshiftDatabase implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ClusterIdentifier property for this object.
-     * 
      * @param clusterIdentifier
-     *        The new value for the ClusterIdentifier property for this object.
      */
     public void setClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;
     }
 
     /**
-     * Returns the value of the ClusterIdentifier property for this object.
-     * 
-     * @return The value of the ClusterIdentifier property for this object.
+     * @return
      */
     public String getClusterIdentifier() {
         return this.clusterIdentifier;
     }
 
     /**
-     * Sets the value of the ClusterIdentifier property for this object.
-     * 
      * @param clusterIdentifier
-     *        The new value for the ClusterIdentifier property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

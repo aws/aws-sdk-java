@@ -27,29 +27,21 @@ public class GetRunResult implements Serializable, Cloneable {
     private Run run;
 
     /**
-     * Sets the value of the Run property for this object.
-     * 
      * @param run
-     *        The new value for the Run property for this object.
      */
     public void setRun(Run run) {
         this.run = run;
     }
 
     /**
-     * Returns the value of the Run property for this object.
-     * 
-     * @return The value of the Run property for this object.
+     * @return
      */
     public Run getRun() {
         return this.run;
     }
 
     /**
-     * Sets the value of the Run property for this object.
-     * 
      * @param run
-     *        The new value for the Run property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

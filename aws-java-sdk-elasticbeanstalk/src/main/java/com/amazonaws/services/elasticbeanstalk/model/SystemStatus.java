@@ -37,29 +37,21 @@ public class SystemStatus implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Double> loadAverage;
 
     /**
-     * Sets the value of the CPUUtilization property for this object.
-     * 
      * @param cPUUtilization
-     *        The new value for the CPUUtilization property for this object.
      */
     public void setCPUUtilization(CPUUtilization cPUUtilization) {
         this.cPUUtilization = cPUUtilization;
     }
 
     /**
-     * Returns the value of the CPUUtilization property for this object.
-     * 
-     * @return The value of the CPUUtilization property for this object.
+     * @return
      */
     public CPUUtilization getCPUUtilization() {
         return this.cPUUtilization;
     }
 
     /**
-     * Sets the value of the CPUUtilization property for this object.
-     * 
      * @param cPUUtilization
-     *        The new value for the CPUUtilization property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

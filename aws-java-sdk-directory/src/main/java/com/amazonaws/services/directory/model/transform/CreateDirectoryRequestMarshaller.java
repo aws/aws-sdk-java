@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.directory.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,80 +40,77 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Create Directory Request Marshaller
+ * CreateDirectoryRequest Marshaller
  */
-public class CreateDirectoryRequestMarshaller implements Marshaller<Request<CreateDirectoryRequest>, CreateDirectoryRequest> {
+public class CreateDirectoryRequestMarshaller implements
+        Marshaller<Request<CreateDirectoryRequest>, CreateDirectoryRequest> {
 
-    public Request<CreateDirectoryRequest> marshall(CreateDirectoryRequest createDirectoryRequest) {
+    public Request<CreateDirectoryRequest> marshall(
+            CreateDirectoryRequest createDirectoryRequest) {
+
         if (createDirectoryRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDirectoryRequest> request = new DefaultRequest<CreateDirectoryRequest>(createDirectoryRequest, "AWSDirectoryService");
-        String target = "DirectoryService_20150416.CreateDirectory";
-        request.addHeader("X-Amz-Target", target);
+        Request<CreateDirectoryRequest> request = new DefaultRequest<CreateDirectoryRequest>(
+                createDirectoryRequest, "AWSDirectoryService");
+        request.addHeader("X-Amz-Target",
+                "DirectoryService_20150416.CreateDirectory");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (createDirectoryRequest.getName() != null) {
                 jsonWriter.key("Name").value(createDirectoryRequest.getName());
             }
+
             if (createDirectoryRequest.getShortName() != null) {
-                jsonWriter.key("ShortName").value(createDirectoryRequest.getShortName());
+                jsonWriter.key("ShortName").value(
+                        createDirectoryRequest.getShortName());
             }
+
             if (createDirectoryRequest.getPassword() != null) {
-                jsonWriter.key("Password").value(createDirectoryRequest.getPassword());
+                jsonWriter.key("Password").value(
+                        createDirectoryRequest.getPassword());
             }
+
             if (createDirectoryRequest.getDescription() != null) {
-                jsonWriter.key("Description").value(createDirectoryRequest.getDescription());
+                jsonWriter.key("Description").value(
+                        createDirectoryRequest.getDescription());
             }
+
             if (createDirectoryRequest.getSize() != null) {
                 jsonWriter.key("Size").value(createDirectoryRequest.getSize());
             }
-            DirectoryVpcSettings vpcSettings = createDirectoryRequest.getVpcSettings();
-            if (vpcSettings != null) {
 
+            if (createDirectoryRequest.getVpcSettings() != null) {
                 jsonWriter.key("VpcSettings");
-                jsonWriter.object();
-
-                if (vpcSettings.getVpcId() != null) {
-                    jsonWriter.key("VpcId").value(vpcSettings.getVpcId());
-                }
-
-                com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(vpcSettings.getSubnetIds());
-                if (subnetIdsList != null && !(subnetIdsList.isAutoConstruct() && subnetIdsList.isEmpty())) {
-
-                    jsonWriter.key("SubnetIds");
-                    jsonWriter.array();
-
-                    for (String subnetIdsListValue : subnetIdsList) {
-                        if (subnetIdsListValue != null) {
-                            jsonWriter.value(subnetIdsListValue);
-                        }
-                    }
-                    jsonWriter.endArray();
-                }
-                jsonWriter.endObject();
+                DirectoryVpcSettingsJsonMarshaller.getInstance().marshall(
+                        createDirectoryRequest.getVpcSettings(), jsonWriter);
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

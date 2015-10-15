@@ -27,29 +27,21 @@ public class GetSuiteResult implements Serializable, Cloneable {
     private Suite suite;
 
     /**
-     * Sets the value of the Suite property for this object.
-     * 
      * @param suite
-     *        The new value for the Suite property for this object.
      */
     public void setSuite(Suite suite) {
         this.suite = suite;
     }
 
     /**
-     * Returns the value of the Suite property for this object.
-     * 
-     * @return The value of the Suite property for this object.
+     * @return
      */
     public Suite getSuite() {
         return this.suite;
     }
 
     /**
-     * Sets the value of the Suite property for this object.
-     * 
      * @param suite
-     *        The new value for the Suite property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

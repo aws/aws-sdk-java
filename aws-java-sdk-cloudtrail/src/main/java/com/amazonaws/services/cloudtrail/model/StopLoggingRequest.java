@@ -1,92 +1,94 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudtrail.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.cloudtrail.AWSCloudTrail#stopLogging(StopLoggingRequest) StopLogging operation}.
  * <p>
- * Suspends the recording of AWS API calls and log file delivery for the
- * specified trail. Under most circumstances, there is no need to use
- * this action. You can update a trail without stopping it first. This
- * action is the only way to stop recording.
+ * Passes the request to CloudTrail to stop logging AWS API calls for the
+ * specified account.
  * </p>
- *
- * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#stopLogging(StopLoggingRequest)
  */
-public class StopLoggingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class StopLoggingRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * Specifies the name or the CloudTrail ARN of the trail for which
-     * CloudTrail will stop logging AWS API calls. The format of a trail ARN
-     * is
+     * CloudTrail will stop logging AWS API calls. The format of a trail ARN is
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * </p>
      */
     private String name;
 
     /**
+     * <p>
      * Specifies the name or the CloudTrail ARN of the trail for which
-     * CloudTrail will stop logging AWS API calls. The format of a trail ARN
-     * is
+     * CloudTrail will stop logging AWS API calls. The format of a trail ARN is
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
-     *
-     * @return Specifies the name or the CloudTrail ARN of the trail for which
-     *         CloudTrail will stop logging AWS API calls. The format of a trail ARN
-     *         is
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * Specifies the name or the CloudTrail ARN of the trail for which
-     * CloudTrail will stop logging AWS API calls. The format of a trail ARN
-     * is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
-     *
-     * @param name Specifies the name or the CloudTrail ARN of the trail for which
-     *         CloudTrail will stop logging AWS API calls. The format of a trail ARN
-     *         is
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * </p>
+     * 
+     * @param name
+     *        Specifies the name or the CloudTrail ARN of the trail for which
+     *        CloudTrail will stop logging AWS API calls. The format of a trail
+     *        ARN is
+     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        .
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
-     * Specifies the name or the CloudTrail ARN of the trail for which
-     * CloudTrail will stop logging AWS API calls. The format of a trail ARN
-     * is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param name Specifies the name or the CloudTrail ARN of the trail for which
-     *         CloudTrail will stop logging AWS API calls. The format of a trail ARN
-     *         is
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies the name or the CloudTrail ARN of the trail for which
+     * CloudTrail will stop logging AWS API calls. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * </p>
+     * 
+     * @return Specifies the name or the CloudTrail ARN of the trail for which
+     *         CloudTrail will stop logging AWS API calls. The format of a trail
+     *         ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         .
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * Specifies the name or the CloudTrail ARN of the trail for which
+     * CloudTrail will stop logging AWS API calls. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * </p>
+     * 
+     * @param name
+     *        Specifies the name or the CloudTrail ARN of the trail for which
+     *        CloudTrail will stop logging AWS API calls. The format of a trail
+     *        ARN is
+     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public StopLoggingRequest withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
@@ -102,38 +104,42 @@ public class StopLoggingRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() );
+        if (getName() != null)
+            sb.append("Name: " + getName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof StopLoggingRequest == false)
+            return false;
+        StopLoggingRequest other = (StopLoggingRequest) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof StopLoggingRequest == false) return false;
-        StopLoggingRequest other = (StopLoggingRequest)obj;
-        
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public StopLoggingRequest clone() {
-        
-            return (StopLoggingRequest) super.clone();
+        return (StopLoggingRequest) super.clone();
     }
-
 }
-    

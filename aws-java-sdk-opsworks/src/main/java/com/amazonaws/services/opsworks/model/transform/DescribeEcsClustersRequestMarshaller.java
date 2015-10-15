@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,34 +40,41 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Describe Ecs Clusters Request Marshaller
+ * DescribeEcsClustersRequest Marshaller
  */
-public class DescribeEcsClustersRequestMarshaller implements Marshaller<Request<DescribeEcsClustersRequest>, DescribeEcsClustersRequest> {
+public class DescribeEcsClustersRequestMarshaller
+        implements
+        Marshaller<Request<DescribeEcsClustersRequest>, DescribeEcsClustersRequest> {
 
-    public Request<DescribeEcsClustersRequest> marshall(DescribeEcsClustersRequest describeEcsClustersRequest) {
+    public Request<DescribeEcsClustersRequest> marshall(
+            DescribeEcsClustersRequest describeEcsClustersRequest) {
+
         if (describeEcsClustersRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeEcsClustersRequest> request = new DefaultRequest<DescribeEcsClustersRequest>(describeEcsClustersRequest, "AWSOpsWorks");
-        String target = "OpsWorks_20130218.DescribeEcsClusters";
-        request.addHeader("X-Amz-Target", target);
+        Request<DescribeEcsClustersRequest> request = new DefaultRequest<DescribeEcsClustersRequest>(
+                describeEcsClustersRequest, "AWSOpsWorks");
+        request.addHeader("X-Amz-Target",
+                "OpsWorks_20130218.DescribeEcsClusters");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
+            jsonWriter.object();
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> ecsClusterArnsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeEcsClustersRequest.getEcsClusterArns());
-            if (ecsClusterArnsList != null && !(ecsClusterArnsList.isAutoConstruct() && ecsClusterArnsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> ecsClusterArnsList = (com.amazonaws.internal.SdkInternalList<String>) describeEcsClustersRequest
+                    .getEcsClusterArns();
+            if (!ecsClusterArnsList.isEmpty()
+                    || !ecsClusterArnsList.isAutoConstruct()) {
                 jsonWriter.key("EcsClusterArns");
                 jsonWriter.array();
-
                 for (String ecsClusterArnsListValue : ecsClusterArnsList) {
                     if (ecsClusterArnsListValue != null) {
                         jsonWriter.value(ecsClusterArnsListValue);
@@ -74,27 +82,36 @@ public class DescribeEcsClustersRequestMarshaller implements Marshaller<Request<
                 }
                 jsonWriter.endArray();
             }
+
             if (describeEcsClustersRequest.getStackId() != null) {
-                jsonWriter.key("StackId").value(describeEcsClustersRequest.getStackId());
+                jsonWriter.key("StackId").value(
+                        describeEcsClustersRequest.getStackId());
             }
+
             if (describeEcsClustersRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(describeEcsClustersRequest.getNextToken());
+                jsonWriter.key("NextToken").value(
+                        describeEcsClustersRequest.getNextToken());
             }
+
             if (describeEcsClustersRequest.getMaxResults() != null) {
-                jsonWriter.key("MaxResults").value(describeEcsClustersRequest.getMaxResults());
+                jsonWriter.key("MaxResults").value(
+                        describeEcsClustersRequest.getMaxResults());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

@@ -35,29 +35,21 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     private Long creationTime;
 
     /**
-     * Sets the value of the FilterName property for this object.
-     * 
      * @param filterName
-     *        The new value for the FilterName property for this object.
      */
     public void setFilterName(String filterName) {
         this.filterName = filterName;
     }
 
     /**
-     * Returns the value of the FilterName property for this object.
-     * 
-     * @return The value of the FilterName property for this object.
+     * @return
      */
     public String getFilterName() {
         return this.filterName;
     }
 
     /**
-     * Sets the value of the FilterName property for this object.
-     * 
      * @param filterName
-     *        The new value for the FilterName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -67,29 +59,21 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the LogGroupName property for this object.
-     * 
      * @param logGroupName
-     *        The new value for the LogGroupName property for this object.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
-     * 
-     * @return The value of the LogGroupName property for this object.
+     * @return
      */
     public String getLogGroupName() {
         return this.logGroupName;
     }
 
     /**
-     * Sets the value of the LogGroupName property for this object.
-     * 
      * @param logGroupName
-     *        The new value for the LogGroupName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,29 +83,21 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the FilterPattern property for this object.
-     * 
      * @param filterPattern
-     *        The new value for the FilterPattern property for this object.
      */
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
     }
 
     /**
-     * Returns the value of the FilterPattern property for this object.
-     * 
-     * @return The value of the FilterPattern property for this object.
+     * @return
      */
     public String getFilterPattern() {
         return this.filterPattern;
     }
 
     /**
-     * Sets the value of the FilterPattern property for this object.
-     * 
      * @param filterPattern
-     *        The new value for the FilterPattern property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -131,29 +107,21 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the DestinationArn property for this object.
-     * 
      * @param destinationArn
-     *        The new value for the DestinationArn property for this object.
      */
     public void setDestinationArn(String destinationArn) {
         this.destinationArn = destinationArn;
     }
 
     /**
-     * Returns the value of the DestinationArn property for this object.
-     * 
-     * @return The value of the DestinationArn property for this object.
+     * @return
      */
     public String getDestinationArn() {
         return this.destinationArn;
     }
 
     /**
-     * Sets the value of the DestinationArn property for this object.
-     * 
      * @param destinationArn
-     *        The new value for the DestinationArn property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -163,29 +131,21 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the RoleArn property for this object.
-     * 
      * @param roleArn
-     *        The new value for the RoleArn property for this object.
      */
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
 
     /**
-     * Returns the value of the RoleArn property for this object.
-     * 
-     * @return The value of the RoleArn property for this object.
+     * @return
      */
     public String getRoleArn() {
         return this.roleArn;
     }
 
     /**
-     * Sets the value of the RoleArn property for this object.
-     * 
      * @param roleArn
-     *        The new value for the RoleArn property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -195,29 +155,21 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the CreationTime property for this object.
-     * 
      * @param creationTime
-     *        The new value for the CreationTime property for this object.
      */
     public void setCreationTime(Long creationTime) {
         this.creationTime = creationTime;
     }
 
     /**
-     * Returns the value of the CreationTime property for this object.
-     * 
-     * @return The value of the CreationTime property for this object.
+     * @return
      */
     public Long getCreationTime() {
         return this.creationTime;
     }
 
     /**
-     * Sets the value of the CreationTime property for this object.
-     * 
      * @param creationTime
-     *        The new value for the CreationTime property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

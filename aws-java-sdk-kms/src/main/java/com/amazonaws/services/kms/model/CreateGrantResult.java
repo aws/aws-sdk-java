@@ -22,9 +22,10 @@ import java.io.Serializable;
 public class CreateGrantResult implements Serializable, Cloneable {
 
     /**
-     * For more information, see <a
+     * The grant token. <p>For more information about using grant tokens, see
+     * <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>.
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8192<br/>
@@ -32,8 +33,9 @@ public class CreateGrantResult implements Serializable, Cloneable {
     private String grantToken;
 
     /**
-     * Unique grant identifier. You can use the <i>GrantId</i> value to
-     * revoke a grant.
+     * The unique identifier for the grant. <p>You can use the
+     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or
+     * <a>RevokeGrant</a> operation.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -41,50 +43,56 @@ public class CreateGrantResult implements Serializable, Cloneable {
     private String grantId;
 
     /**
-     * For more information, see <a
+     * The grant token. <p>For more information about using grant tokens, see
+     * <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>.
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8192<br/>
      *
-     * @return For more information, see <a
+     * @return The grant token. <p>For more information about using grant tokens, see
+     *         <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     *         Tokens</a>.
+     *         Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
     public String getGrantToken() {
         return grantToken;
     }
     
     /**
-     * For more information, see <a
+     * The grant token. <p>For more information about using grant tokens, see
+     * <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>.
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8192<br/>
      *
-     * @param grantToken For more information, see <a
+     * @param grantToken The grant token. <p>For more information about using grant tokens, see
+     *         <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     *         Tokens</a>.
+     *         Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
     public void setGrantToken(String grantToken) {
         this.grantToken = grantToken;
     }
     
     /**
-     * For more information, see <a
+     * The grant token. <p>For more information about using grant tokens, see
+     * <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>.
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8192<br/>
      *
-     * @param grantToken For more information, see <a
+     * @param grantToken The grant token. <p>For more information about using grant tokens, see
+     *         <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     *         Tokens</a>.
+     *         Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -95,44 +103,50 @@ public class CreateGrantResult implements Serializable, Cloneable {
     }
 
     /**
-     * Unique grant identifier. You can use the <i>GrantId</i> value to
-     * revoke a grant.
+     * The unique identifier for the grant. <p>You can use the
+     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or
+     * <a>RevokeGrant</a> operation.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @return Unique grant identifier. You can use the <i>GrantId</i> value to
-     *         revoke a grant.
+     * @return The unique identifier for the grant. <p>You can use the
+     *         <code>GrantId</code> in a subsequent <a>RetireGrant</a> or
+     *         <a>RevokeGrant</a> operation.
      */
     public String getGrantId() {
         return grantId;
     }
     
     /**
-     * Unique grant identifier. You can use the <i>GrantId</i> value to
-     * revoke a grant.
+     * The unique identifier for the grant. <p>You can use the
+     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or
+     * <a>RevokeGrant</a> operation.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @param grantId Unique grant identifier. You can use the <i>GrantId</i> value to
-     *         revoke a grant.
+     * @param grantId The unique identifier for the grant. <p>You can use the
+     *         <code>GrantId</code> in a subsequent <a>RetireGrant</a> or
+     *         <a>RevokeGrant</a> operation.
      */
     public void setGrantId(String grantId) {
         this.grantId = grantId;
     }
     
     /**
-     * Unique grant identifier. You can use the <i>GrantId</i> value to
-     * revoke a grant.
+     * The unique identifier for the grant. <p>You can use the
+     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or
+     * <a>RevokeGrant</a> operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @param grantId Unique grant identifier. You can use the <i>GrantId</i> value to
-     *         revoke a grant.
+     * @param grantId The unique identifier for the grant. <p>You can use the
+     *         <code>GrantId</code> in a subsequent <a>RetireGrant</a> or
+     *         <a>RevokeGrant</a> operation.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

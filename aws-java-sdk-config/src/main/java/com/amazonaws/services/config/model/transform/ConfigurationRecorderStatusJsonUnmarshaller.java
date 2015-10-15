@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Configuration Recorder Status JSON Unmarshaller
+ * ConfigurationRecorderStatus JSON Unmarshaller
  */
-public class ConfigurationRecorderStatusJsonUnmarshaller implements Unmarshaller<ConfigurationRecorderStatus, JsonUnmarshallerContext> {
+public class ConfigurationRecorderStatusJsonUnmarshaller implements
+        Unmarshaller<ConfigurationRecorderStatus, JsonUnmarshallerContext> {
 
-    public ConfigurationRecorderStatus unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public ConfigurationRecorderStatus unmarshall(
+            JsonUnmarshallerContext context) throws Exception {
         ConfigurationRecorderStatus configurationRecorderStatus = new ConfigurationRecorderStatus();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,61 +40,82 @@ public class ConfigurationRecorderStatusJsonUnmarshaller implements Unmarshaller
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    configurationRecorderStatus.setName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastStartTime", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastStartTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    configurationRecorderStatus
+                            .setLastStartTime(DateJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastStopTime", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastStopTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    configurationRecorderStatus
+                            .setLastStopTime(DateJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("recording", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setRecording(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    configurationRecorderStatus
+                            .setRecording(BooleanJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    configurationRecorderStatus
+                            .setLastStatus(StringJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("lastErrorCode", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastErrorCode(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    configurationRecorderStatus
+                            .setLastErrorCode(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastErrorMessage", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastErrorMessage(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    configurationRecorderStatus
+                            .setLastErrorMessage(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastStatusChangeTime", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastStatusChangeTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    configurationRecorderStatus
+                            .setLastStatusChangeTime(DateJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return configurationRecorderStatus;
     }
 
     private static ConfigurationRecorderStatusJsonUnmarshaller instance;
+
     public static ConfigurationRecorderStatusJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new ConfigurationRecorderStatusJsonUnmarshaller();
+        if (instance == null)
+            instance = new ConfigurationRecorderStatusJsonUnmarshaller();
         return instance;
     }
 }
-    

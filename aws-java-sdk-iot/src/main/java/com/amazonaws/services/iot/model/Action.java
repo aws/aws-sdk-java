@@ -336,29 +336,21 @@ public class Action implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Firehose property for this object.
-     * 
      * @param firehose
-     *        The new value for the Firehose property for this object.
      */
     public void setFirehose(FirehoseAction firehose) {
         this.firehose = firehose;
     }
 
     /**
-     * Returns the value of the Firehose property for this object.
-     * 
-     * @return The value of the Firehose property for this object.
+     * @return
      */
     public FirehoseAction getFirehose() {
         return this.firehose;
     }
 
     /**
-     * Sets the value of the Firehose property for this object.
-     * 
      * @param firehose
-     *        The new value for the Firehose property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

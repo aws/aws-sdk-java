@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Step Summary JSON Unmarshaller
+ * StepSummary JSON Unmarshaller
  */
-public class StepSummaryJsonUnmarshaller implements Unmarshaller<StepSummary, JsonUnmarshallerContext> {
+public class StepSummaryJsonUnmarshaller implements
+        Unmarshaller<StepSummary, JsonUnmarshallerContext> {
 
-    public StepSummary unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public StepSummary unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         StepSummary stepSummary = new StepSummary();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,49 +40,60 @@ public class StepSummaryJsonUnmarshaller implements Unmarshaller<StepSummary, Js
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    stepSummary.setId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    stepSummary.setId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    stepSummary.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    stepSummary.setName(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Config", targetDepth)) {
                     context.nextToken();
-                    stepSummary.setConfig(HadoopStepConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                    stepSummary.setConfig(HadoopStepConfigJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ActionOnFailure", targetDepth)) {
                     context.nextToken();
-                    stepSummary.setActionOnFailure(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    stepSummary.setActionOnFailure(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    stepSummary.setStatus(StepStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                    stepSummary.setStatus(StepStatusJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return stepSummary;
     }
 
     private static StepSummaryJsonUnmarshaller instance;
+
     public static StepSummaryJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new StepSummaryJsonUnmarshaller();
+        if (instance == null)
+            instance = new StepSummaryJsonUnmarshaller();
         return instance;
     }
 }
-    

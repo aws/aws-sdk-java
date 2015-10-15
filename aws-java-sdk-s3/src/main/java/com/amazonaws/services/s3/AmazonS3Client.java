@@ -1027,17 +1027,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
     }
 
-
-    /**
-     * Performs a head bucket operation on the requested bucket name. This is
-     * done to check if the bucket exists and the user has permissions to access
-     * it.
-     *
-     * @param headBucketRequest The request containing the bucket name.
-     * @throws AmazonClientException
-     * @throws AmazonServiceException
-     */
-    protected HeadBucketResult headBucket(HeadBucketRequest headBucketRequest)
+    @Override
+    public HeadBucketResult headBucket(HeadBucketRequest headBucketRequest)
             throws AmazonClientException, AmazonServiceException {
 
         String bucketName = headBucketRequest.getBucketName();
@@ -1260,9 +1251,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException {
+        rejectNull(putObjectRequest, "The PutObjectRequest parameter must be specified when uploading an object");
         final File file = putObjectRequest.getFile();
         final InputStream isOrig = putObjectRequest.getInputStream();
-        rejectNull(putObjectRequest, "The PutObjectRequest parameter must be specified when uploading an object");
         final String bucketName = putObjectRequest.getBucketName();
         final String key = putObjectRequest.getKey();
         ObjectMetadata metadata = putObjectRequest.getMetadata();

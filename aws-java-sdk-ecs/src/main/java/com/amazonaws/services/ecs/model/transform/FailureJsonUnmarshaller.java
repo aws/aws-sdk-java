@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,7 +28,8 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Failure JSON Unmarshaller
  */
-public class FailureJsonUnmarshaller implements Unmarshaller<Failure, JsonUnmarshallerContext> {
+public class FailureJsonUnmarshaller implements
+        Unmarshaller<Failure, JsonUnmarshallerContext> {
 
     public Failure unmarshall(JsonUnmarshallerContext context) throws Exception {
         Failure failure = new Failure();
@@ -38,37 +39,45 @@ public class FailureJsonUnmarshaller implements Unmarshaller<Failure, JsonUnmars
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    failure.setArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    failure.setArn(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
                     context.nextToken();
-                    failure.setReason(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    failure.setReason(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return failure;
     }
 
     private static FailureJsonUnmarshaller instance;
+
     public static FailureJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new FailureJsonUnmarshaller();
+        if (instance == null)
+            instance = new FailureJsonUnmarshaller();
         return instance;
     }
 }
-    

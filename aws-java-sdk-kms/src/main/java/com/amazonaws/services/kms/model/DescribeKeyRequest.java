@@ -45,6 +45,16 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements Seria
     private String keyId;
 
     /**
+     * A list of grant tokens. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10<br/>
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> grantTokens;
+
+    /**
      * A unique identifier for the customer master key. This value can be a
      * globally unique identifier, a fully specified ARN to either an alias
      * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
@@ -135,6 +145,107 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * A list of grant tokens. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10<br/>
+     *
+     * @return A list of grant tokens. <p>For more information, go to <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     */
+    public java.util.List<String> getGrantTokens() {
+        if (grantTokens == null) {
+              grantTokens = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              grantTokens.setAutoConstruct(true);
+        }
+        return grantTokens;
+    }
+    
+    /**
+     * A list of grant tokens. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10<br/>
+     *
+     * @param grantTokens A list of grant tokens. <p>For more information, go to <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     */
+    public void setGrantTokens(java.util.Collection<String> grantTokens) {
+        if (grantTokens == null) {
+            this.grantTokens = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> grantTokensCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(grantTokens.size());
+        grantTokensCopy.addAll(grantTokens);
+        this.grantTokens = grantTokensCopy;
+    }
+    
+    /**
+     * A list of grant tokens. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGrantTokens(java.util.Collection)} or {@link
+     * #withGrantTokens(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10<br/>
+     *
+     * @param grantTokens A list of grant tokens. <p>For more information, go to <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeKeyRequest withGrantTokens(String... grantTokens) {
+        if (getGrantTokens() == null) setGrantTokens(new java.util.ArrayList<String>(grantTokens.length));
+        for (String value : grantTokens) {
+            getGrantTokens().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of grant tokens. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10<br/>
+     *
+     * @param grantTokens A list of grant tokens. <p>For more information, go to <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeKeyRequest withGrantTokens(java.util.Collection<String> grantTokens) {
+        if (grantTokens == null) {
+            this.grantTokens = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> grantTokensCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(grantTokens.size());
+            grantTokensCopy.addAll(grantTokens);
+            this.grantTokens = grantTokensCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -146,7 +257,8 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getKeyId() != null) sb.append("KeyId: " + getKeyId() );
+        if (getKeyId() != null) sb.append("KeyId: " + getKeyId() + ",");
+        if (getGrantTokens() != null) sb.append("GrantTokens: " + getGrantTokens() );
         sb.append("}");
         return sb.toString();
     }
@@ -157,6 +269,7 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements Seria
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode()); 
+        hashCode = prime * hashCode + ((getGrantTokens() == null) ? 0 : getGrantTokens().hashCode()); 
         return hashCode;
     }
     
@@ -170,6 +283,8 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements Seria
         
         if (other.getKeyId() == null ^ this.getKeyId() == null) return false;
         if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false) return false; 
+        if (other.getGrantTokens() == null ^ this.getGrantTokens() == null) return false;
+        if (other.getGrantTokens() != null && other.getGrantTokens().equals(this.getGrantTokens()) == false) return false; 
         return true;
     }
     

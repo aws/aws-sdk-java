@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,89 +40,68 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Add Instance Groups Request Marshaller
+ * AddInstanceGroupsRequest Marshaller
  */
-public class AddInstanceGroupsRequestMarshaller implements Marshaller<Request<AddInstanceGroupsRequest>, AddInstanceGroupsRequest> {
+public class AddInstanceGroupsRequestMarshaller implements
+        Marshaller<Request<AddInstanceGroupsRequest>, AddInstanceGroupsRequest> {
 
-    public Request<AddInstanceGroupsRequest> marshall(AddInstanceGroupsRequest addInstanceGroupsRequest) {
+    public Request<AddInstanceGroupsRequest> marshall(
+            AddInstanceGroupsRequest addInstanceGroupsRequest) {
+
         if (addInstanceGroupsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<AddInstanceGroupsRequest> request = new DefaultRequest<AddInstanceGroupsRequest>(addInstanceGroupsRequest, "AmazonElasticMapReduce");
-        String target = "ElasticMapReduce.AddInstanceGroups";
-        request.addHeader("X-Amz-Target", target);
+        Request<AddInstanceGroupsRequest> request = new DefaultRequest<AddInstanceGroupsRequest>(
+                addInstanceGroupsRequest, "AmazonElasticMapReduce");
+        request.addHeader("X-Amz-Target", "ElasticMapReduce.AddInstanceGroups");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
+            jsonWriter.object();
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroupsList = (com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>)(addInstanceGroupsRequest.getInstanceGroups());
-            if (instanceGroupsList != null && !(instanceGroupsList.isAutoConstruct() && instanceGroupsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<InstanceGroupConfig> instanceGroupsList = (com.amazonaws.internal.SdkInternalList<InstanceGroupConfig>) addInstanceGroupsRequest
+                    .getInstanceGroups();
+            if (!instanceGroupsList.isEmpty()
+                    || !instanceGroupsList.isAutoConstruct()) {
                 jsonWriter.key("InstanceGroups");
                 jsonWriter.array();
-
                 for (InstanceGroupConfig instanceGroupsListValue : instanceGroupsList) {
                     if (instanceGroupsListValue != null) {
-                        jsonWriter.object();
-                        if (instanceGroupsListValue.getName() != null) {
-                            jsonWriter.key("Name").value(instanceGroupsListValue.getName());
-                        }
-                        if (instanceGroupsListValue.getMarket() != null) {
-                            jsonWriter.key("Market").value(instanceGroupsListValue.getMarket());
-                        }
-                        if (instanceGroupsListValue.getInstanceRole() != null) {
-                            jsonWriter.key("InstanceRole").value(instanceGroupsListValue.getInstanceRole());
-                        }
-                        if (instanceGroupsListValue.getBidPrice() != null) {
-                            jsonWriter.key("BidPrice").value(instanceGroupsListValue.getBidPrice());
-                        }
-                        if (instanceGroupsListValue.getInstanceType() != null) {
-                            jsonWriter.key("InstanceType").value(instanceGroupsListValue.getInstanceType());
-                        }
-                        if (instanceGroupsListValue.getInstanceCount() != null) {
-                            jsonWriter.key("InstanceCount").value(instanceGroupsListValue.getInstanceCount());
-                        }
 
-                        com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>)(instanceGroupsListValue.getConfigurations());
-                        if (configurationsList != null && !(configurationsList.isAutoConstruct() && configurationsList.isEmpty())) {
-
-                            jsonWriter.key("Configurations");
-                            jsonWriter.array();
-
-                            for (Configuration configurationsListValue : configurationsList) {
-                                if (configurationsListValue != null) {
-                                    ConfigurationJsonMarshaller.getInstance().marshall(configurationsListValue, jsonWriter);
-                                }
-                            }
-                            jsonWriter.endArray();
-                        }
-                        jsonWriter.endObject();
+                        InstanceGroupConfigJsonMarshaller.getInstance()
+                                .marshall(instanceGroupsListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
+
             if (addInstanceGroupsRequest.getJobFlowId() != null) {
-                jsonWriter.key("JobFlowId").value(addInstanceGroupsRequest.getJobFlowId());
+                jsonWriter.key("JobFlowId").value(
+                        addInstanceGroupsRequest.getJobFlowId());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

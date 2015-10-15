@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.datapipeline.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,49 +40,64 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Report Task Runner Heartbeat Request Marshaller
+ * ReportTaskRunnerHeartbeatRequest Marshaller
  */
-public class ReportTaskRunnerHeartbeatRequestMarshaller implements Marshaller<Request<ReportTaskRunnerHeartbeatRequest>, ReportTaskRunnerHeartbeatRequest> {
+public class ReportTaskRunnerHeartbeatRequestMarshaller
+        implements
+        Marshaller<Request<ReportTaskRunnerHeartbeatRequest>, ReportTaskRunnerHeartbeatRequest> {
 
-    public Request<ReportTaskRunnerHeartbeatRequest> marshall(ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest) {
+    public Request<ReportTaskRunnerHeartbeatRequest> marshall(
+            ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest) {
+
         if (reportTaskRunnerHeartbeatRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<ReportTaskRunnerHeartbeatRequest> request = new DefaultRequest<ReportTaskRunnerHeartbeatRequest>(reportTaskRunnerHeartbeatRequest, "DataPipeline");
-        String target = "DataPipeline.ReportTaskRunnerHeartbeat";
-        request.addHeader("X-Amz-Target", target);
+        Request<ReportTaskRunnerHeartbeatRequest> request = new DefaultRequest<ReportTaskRunnerHeartbeatRequest>(
+                reportTaskRunnerHeartbeatRequest, "DataPipeline");
+        request.addHeader("X-Amz-Target",
+                "DataPipeline.ReportTaskRunnerHeartbeat");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (reportTaskRunnerHeartbeatRequest.getTaskrunnerId() != null) {
-                jsonWriter.key("taskrunnerId").value(reportTaskRunnerHeartbeatRequest.getTaskrunnerId());
+                jsonWriter.key("taskrunnerId").value(
+                        reportTaskRunnerHeartbeatRequest.getTaskrunnerId());
             }
+
             if (reportTaskRunnerHeartbeatRequest.getWorkerGroup() != null) {
-                jsonWriter.key("workerGroup").value(reportTaskRunnerHeartbeatRequest.getWorkerGroup());
+                jsonWriter.key("workerGroup").value(
+                        reportTaskRunnerHeartbeatRequest.getWorkerGroup());
             }
+
             if (reportTaskRunnerHeartbeatRequest.getHostname() != null) {
-                jsonWriter.key("hostname").value(reportTaskRunnerHeartbeatRequest.getHostname());
+                jsonWriter.key("hostname").value(
+                        reportTaskRunnerHeartbeatRequest.getHostname());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

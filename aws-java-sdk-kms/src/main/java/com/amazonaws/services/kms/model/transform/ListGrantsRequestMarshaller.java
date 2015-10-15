@@ -61,14 +61,14 @@ public class ListGrantsRequestMarshaller implements Marshaller<Request<ListGrant
 
           jsonWriter.object();
           
-            if (listGrantsRequest.getKeyId() != null) {
-                jsonWriter.key("KeyId").value(listGrantsRequest.getKeyId());
-            }
             if (listGrantsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(listGrantsRequest.getLimit());
             }
             if (listGrantsRequest.getMarker() != null) {
                 jsonWriter.key("Marker").value(listGrantsRequest.getMarker());
+            }
+            if (listGrantsRequest.getKeyId() != null) {
+                jsonWriter.key("KeyId").value(listGrantsRequest.getKeyId());
             }
 
           jsonWriter.endObject();

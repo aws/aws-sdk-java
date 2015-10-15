@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,115 +16,110 @@ package com.amazonaws.services.opsworks;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
+
 import com.amazonaws.services.opsworks.model.*;
 
 /**
- * Interface for accessing AWSOpsWorks.
- * AWS OpsWorks <p>
- * Welcome to the <i>AWS OpsWorks API Reference</i> . This guide provides
- * descriptions, syntax, and usage examples about AWS OpsWorks actions
- * and data types, including common parameters and error codes.
+ * Interface for accessing AWS OpsWorks.
+ * <p>
+ * <fullname>AWS OpsWorks</fullname>
+ * <p>
+ * Welcome to the <i>AWS OpsWorks API Reference</i>. This guide provides
+ * descriptions, syntax, and usage examples about AWS OpsWorks actions and data
+ * types, including common parameters and error codes.
  * </p>
  * <p>
- * AWS OpsWorks is an application management service that provides an
- * integrated experience for overseeing the complete application
- * lifecycle. For information about this product, go to the
- * <a href="http://aws.amazon.com/opsworks/"> AWS OpsWorks </a>
- * details page.
+ * AWS OpsWorks is an application management service that provides an integrated
+ * experience for overseeing the complete application lifecycle. For information
+ * about this product, go to the <a href="http://aws.amazon.com/opsworks/">AWS
+ * OpsWorks</a> details page.
  * </p>
  * <p>
  * <b>SDKs and CLI</b>
  * </p>
  * <p>
- * The most common way to use the AWS OpsWorks API is by using the AWS
- * Command Line Interface (CLI) or by using one of the AWS SDKs to
- * implement applications in your preferred language. For more
- * information, see:
+ * The most common way to use the AWS OpsWorks API is by using the AWS Command
+ * Line Interface (CLI) or by using one of the AWS SDKs to implement
+ * applications in your preferred language. For more information, see:
  * </p>
- * 
  * <ul>
- * <li>
- * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html"> AWS CLI </a>
- * </li>
- * <li>
- * <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html"> AWS SDK for Java </a>
- * </li>
- * <li>
- * <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm"> AWS SDK for .NET </a>
- * </li>
- * <li>
- * <a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html"> AWS SDK for PHP 2 </a>
- * </li>
- * <li>
- * <a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html"> AWS SDK for Ruby </a>
- * </li>
- * <li>
- * <a href="http://aws.amazon.com/documentation/sdkforjavascript/"> AWS SDK for Node.js </a>
- * </li>
- * <li>
- * <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html"> AWS SDK for Python(Boto) </a>
- * </li>
- * 
+ * <li><a href=
+ * "http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
+ * CLI</a></li>
+ * <li><a href=
+ * "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html"
+ * >AWS SDK for Java</a></li>
+ * <li><a href=
+ * "http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm"
+ * >AWS SDK for .NET</a></li>
+ * <li><a href=
+ * "http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html"
+ * >AWS SDK for PHP 2</a></li>
+ * <li><a href=
+ * "http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html">AWS
+ * SDK for Ruby</a></li>
+ * <li><a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK
+ * for Node.js</a></li>
+ * <li><a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK
+ * for Python(Boto)</a></li>
  * </ul>
  * <p>
  * <b>Endpoints</b>
  * </p>
  * <p>
- * AWS OpsWorks supports only one endpoint,
- * opsworks.us-east-1.amazonaws.com (HTTPS), so you must connect to that
- * endpoint. You can then use the API to direct AWS OpsWorks to create
- * stacks in any AWS Region.
+ * AWS OpsWorks supports only one endpoint, opsworks.us-east-1.amazonaws.com
+ * (HTTPS), so you must connect to that endpoint. You can then use the API to
+ * direct AWS OpsWorks to create stacks in any AWS Region.
  * </p>
  * <p>
  * <b>Chef Versions</b>
  * </p>
  * <p>
- * When you call CreateStack, CloneStack, or UpdateStack we recommend you
- * use the <code>ConfigurationManager</code> parameter to specify the
- * Chef version. The recommended value for Linux stacks, which is also
- * the default value, is currently 11.10. Windows stacks use Chef 12.2.
- * For more information, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"> Chef Versions </a>
- * .
+ * When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we
+ * recommend you use the <code>ConfigurationManager</code> parameter to specify
+ * the Chef version. The recommended value for Linux stacks, which is also the
+ * default value, is currently 11.10. Windows stacks use Chef 12.2. For more
+ * information, see <a href=
+ * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"
+ * >Chef Versions</a>.
  * </p>
- * <p>
- * <b>NOTE:</b>You can also specify Chef 11.4 or Chef 0.9 for your Linux
- * stack. However, Chef 0.9 has been deprecated. We do not recommend
- * using Chef 0.9 for new stacks, and we recommend migrating your
- * existing Chef 0.9 stacks to Chef 11.10 as soon as possible.
- * </p>
+ * <note>You can also specify Chef 11.4 or Chef 0.9 for your Linux stack.
+ * However, Chef 0.9 has been deprecated. We do not recommend using Chef 0.9 for
+ * new stacks, and we recommend migrating your existing Chef 0.9 stacks to Chef
+ * 11.10 as soon as possible.</note>
  */
 public interface AWSOpsWorks {
 
     /**
-     * Overrides the default endpoint for this client ("https://opsworks.us-east-1.amazonaws.com").
-     * Callers can use this method to control which AWS region they want to work with.
+     * Overrides the default endpoint for this client
+     * ("https://opsworks.us-east-1.amazonaws.com"). Callers can use this method
+     * to control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "opsworks.us-east-1.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://opsworks.us-east-1.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
+     * Callers can pass in just the endpoint (ex:
+     * "opsworks.us-east-1.amazonaws.com") or a full URL, including the protocol
+     * (ex: "https://opsworks.us-east-1.amazonaws.com"). If the protocol is not
+     * specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * a complete list of all available endpoints for all AWS services, see: <a
+     * href=
+     * "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912"
+     * > http://developer.amazonwebservices.com/connect/entry.jspa?externalID=
+     * 3912</a>
      * <p>
-     * <b>This method is not threadsafe. An endpoint should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit or retrying.</b>
+     * <b>This method is not threadsafe. An endpoint should be configured when
+     * the client is created and before any service requests are made. Changing
+     * it afterwards creates inevitable race conditions for any service requests
+     * in transit or retrying.</b>
      *
      * @param endpoint
-     *            The endpoint (ex: "opsworks.us-east-1.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://opsworks.us-east-1.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
+     *        The endpoint (ex: "opsworks.us-east-1.amazonaws.com") or a full
+     *        URL, including the protocol (ex:
+     *        "https://opsworks.us-east-1.amazonaws.com") of the region specific
+     *        AWS endpoint this client will communicate with.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
+    void setEndpoint(String endpoint);
 
     /**
      * An alternative to {@link AWSOpsWorks#setEndpoint(String)}, sets the
@@ -141,2443 +136,1757 @@ public interface AWSOpsWorks {
      * transit or retrying.</b>
      *
      * @param region
-     *            The region this client will communicate with. See
-     *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
-     *            accessing a given region.
-     * @throws java.lang.IllegalArgumentException
-     *             If the given region is null, or if this service isn't
-     *             available in the given region. See
-     *             {@link Region#isServiceSupported(String)}
+     *        The region this client will communicate with. See
+     *        {@link Region#getRegion(com.amazonaws.regions.Regions)} for
+     *        accessing a given region. Must not be null and must be a region
+     *        where the service is available.
+     *
      * @see Region#getRegion(com.amazonaws.regions.Regions)
-     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#createClient(Class,
+     *      com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#isServiceSupported(String)
      */
-    public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-    
-    /**
-     * <p>
-     * Deregisters an Amazon RDS instance.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deregisterRdsDbInstanceRequest Container for the necessary
-     *           parameters to execute the DeregisterRdsDbInstance service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deregisterRdsDbInstance(DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void setRegion(Region region);
 
     /**
      * <p>
-     * Registers an Amazon RDS instance with a stack.
+     * Assign a registered instance to a layer.
      * </p>
+     * <ul>
+     * <li>You can assign registered on-premises instances to any layer type.</li>
+     * <li>You can assign registered Amazon EC2 instances only to custom layers.
+     * </li>
+     * <li>You cannot use this action with instances that were created with AWS
+     * OpsWorks.</li>
+     * </ul>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an AWS Identity and
+     * Access Management (IAM) user must have a Manage permissions level for the
+     * stack or an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param registerRdsDbInstanceRequest Container for the necessary
-     *           parameters to execute the RegisterRdsDbInstance service method on
-     *           AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param assignInstanceRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void registerRdsDbInstance(RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void assignInstance(AssignInstanceRequest assignInstanceRequest);
 
     /**
      * <p>
-     * Updates a user's SSH public key.
+     * Assigns one of the stack's registered Amazon EBS volumes to a specified
+     * instance. The volume must first be registered with the stack by calling
+     * <a>RegisterVolume</a>. After you register the volume, you must call
+     * <a>UpdateVolume</a> to specify a mount point before calling
+     * <code>AssignVolume</code>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have self-management enabled or an attached policy that explicitly
-     * grants permissions. For more information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param updateMyUserProfileRequest Container for the necessary
-     *           parameters to execute the UpdateMyUserProfile service method on
-     *           AWSOpsWorks.
      * 
-     * 
+     * @param assignVolumeRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateMyUserProfile(UpdateMyUserProfileRequest updateMyUserProfileRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deregisters an Amazon EBS volume. The volume can then be registered
-     * by another stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deregisterVolumeRequest Container for the necessary parameters
-     *           to execute the DeregisterVolume service method on AWSOpsWorks.
-     * 
-     * 
+     *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a resource was not found.
      */
-    public void deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Specifies a user's permissions. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html"> Security and Permissions </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param setPermissionRequest Container for the necessary parameters to
-     *           execute the SetPermission service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setPermission(SetPermissionRequest setPermissionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Requests a description of a set of instances.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeInstancesRequest Container for the necessary parameters
-     *           to execute the DescribeInstances service method on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeInstances service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeInstancesResult describeInstances(DescribeInstancesRequest describeInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deregisters a specified Amazon ECS cluster from a stack. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> </a>
-     * .
-     * </p>
-     *
-     * @param deregisterEcsClusterRequest Container for the necessary
-     *           parameters to execute the DeregisterEcsCluster service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deregisterEcsCluster(DeregisterEcsClusterRequest deregisterEcsClusterRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes the permissions for a specified stack.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describePermissionsRequest Container for the necessary
-     *           parameters to execute the DescribePermissions service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribePermissions service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribePermissionsResult describePermissions(DescribePermissionsRequest describePermissionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a specified instance, which terminates the associated Amazon
-     * EC2 instance. You must stop an instance before you can delete it.
-     * </p>
-     * <p>
-     * For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html"> Deleting Instances </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deleteInstanceRequest Container for the necessary parameters to
-     *           execute the DeleteInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteInstance(DeleteInstanceRequest deleteInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a clone of a specified stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html"> Clone a Stack </a>
-     * . By default, all parameters are set to the values used by the parent
-     * stack.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param cloneStackRequest Container for the necessary parameters to
-     *           execute the CloneStack service method on AWSOpsWorks.
-     * 
-     * @return The response from the CloneStack service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CloneStackResult cloneStack(CloneStackRequest cloneStackRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Detaches a specified Elastic Load Balancing instance from its layer.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param detachElasticLoadBalancerRequest Container for the necessary
-     *           parameters to execute the DetachElasticLoadBalancer service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void detachElasticLoadBalancer(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Stops a specified instance. When you stop a standard instance, the
-     * data disappears and must be reinstalled when you restart the instance.
-     * You can stop an Amazon EBS-backed instance without losing data. For
-     * more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"> Starting, Stopping, and Rebooting Instances </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param stopInstanceRequest Container for the necessary parameters to
-     *           execute the StopInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void stopInstance(StopInstanceRequest stopInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates a specified app.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Deploy or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateAppRequest Container for the necessary parameters to
-     *           execute the UpdateApp service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateApp(UpdateAppRequest updateAppRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes Amazon RDS instances.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeRdsDbInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeRdsDbInstances service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeRdsDbInstances service method,
-     *         as returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeRdsDbInstancesResult describeRdsDbInstances(DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes the results of specified commands.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeCommandsRequest Container for the necessary parameters
-     *           to execute the DescribeCommands service method on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeCommands service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeCommandsResult describeCommands(DescribeCommandsRequest describeCommandsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void assignVolume(AssignVolumeRequest assignVolumeRequest);
 
     /**
      * <p>
      * Associates one of the stack's registered Elastic IP addresses with a
-     * specified instance. The address must first be registered with the
-     * stack by calling RegisterElasticIp. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
+     * specified instance. The address must first be registered with the stack
+     * by calling <a>RegisterElasticIp</a>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param associateElasticIpRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void associateElasticIp(AssociateElasticIpRequest associateElasticIpRequest);
+
+    /**
+     * <p>
+     * Attaches an Elastic Load Balancing load balancer to a specified layer.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html"
+     * >Elastic Load Balancing</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You must create the Elastic Load Balancing instance separately, by using
+     * the Elastic Load Balancing console, API, or CLI. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html"
+     * > Elastic Load Balancing Developer Guide</a>.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param attachElasticLoadBalancerRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void attachElasticLoadBalancer(
+            AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest);
+
+    /**
+     * <p>
+     * Creates a clone of a specified stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html"
+     * >Clone a Stack</a>. By default, all parameters are set to the values used
+     * by the parent stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param cloneStackRequest
+     * @return Result of the CloneStack operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    CloneStackResult cloneStack(CloneStackRequest cloneStackRequest);
+
+    /**
+     * <p>
+     * Creates an app for a specified stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html"
+     * >Creating Apps</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param createAppRequest
+     * @return Result of the CreateApp operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    CreateAppResult createApp(CreateAppRequest createAppRequest);
+
+    /**
+     * <p>
+     * Runs deployment or stack commands. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html"
+     * >Deploying Apps</a> and <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html"
+     * >Run Stack Commands</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Deploy or Manage permissions level for the stack, or an attached policy
      * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param associateElasticIpRequest Container for the necessary
-     *           parameters to execute the AssociateElasticIp service method on
-     *           AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param createDeploymentRequest
+     * @return Result of the CreateDeployment operation returned by the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void associateElasticIp(AssociateElasticIpRequest associateElasticIpRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    CreateDeploymentResult createDeployment(
+            CreateDeploymentRequest createDeploymentRequest);
 
     /**
      * <p>
-     * Unassigns an assigned Amazon EBS volume. The volume remains
-     * registered with the stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
+     * Creates an instance in a specified stack. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
+     * >Adding an Instance to a Layer</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param unassignVolumeRequest Container for the necessary parameters to
-     *           execute the UnassignVolume service method on AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param createInstanceRequest
+     * @return Result of the CreateInstance operation returned by the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void unassignVolume(UnassignVolumeRequest unassignVolumeRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    CreateInstanceResult createInstance(
+            CreateInstanceRequest createInstanceRequest);
 
     /**
      * <p>
-     * Describe an instance's RAID arrays.
+     * Creates a layer. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html"
+     * >How to Create a Layer</a>.
      * </p>
+     * <note>
      * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
+     * You should use <b>CreateLayer</b> for noncustom layer types such as PHP
+     * App Server only if the stack does not have an existing layer of that
+     * type. A stack can have at most one instance of each noncustom layer; if
+     * you attempt to create a second instance, <b>CreateLayer</b> fails. A
+     * stack can have an arbitrary number of custom layers, so you can call
+     * <b>CreateLayer</b> as many times as you like for that layer type.
      * </p>
+     * </note>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeRaidArraysRequest Container for the necessary
-     *           parameters to execute the DescribeRaidArrays service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the DescribeRaidArrays service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param createLayerRequest
+     * @return Result of the CreateLayer operation returned by the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeRaidArraysResult describeRaidArrays(DescribeRaidArraysRequest describeRaidArraysRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    CreateLayerResult createLayer(CreateLayerRequest createLayerRequest);
 
     /**
      * <p>
-     * Gets a generated host name for the specified layer, based on the
-     * current host name theme.
+     * Creates a new stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html"
+     * >Create a New Stack</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param getHostnameSuggestionRequest Container for the necessary
-     *           parameters to execute the GetHostnameSuggestion service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the GetHostnameSuggestion service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param createStackRequest
+     * @return Result of the CreateStack operation returned by the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
      */
-    public GetHostnameSuggestionResult getHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Specify the load-based auto scaling configuration for a specified
-     * layer. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"> Managing Load with Time-based and Load-based Instances </a>
-     * .
-     * </p>
-     * <p>
-     * <b>NOTE:</b> To use load-based auto scaling, you must create a set of
-     * load-based auto scaling instances. Load-based auto scaling operates
-     * only on the instances from that set, so you must ensure that you have
-     * created enough instances to handle the maximum anticipated load.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param setLoadBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the SetLoadBasedAutoScaling service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes an instance's Amazon EBS volumes.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeVolumesRequest Container for the necessary parameters
-     *           to execute the DescribeVolumes service method on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeVolumes service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeVolumesResult describeVolumes(DescribeVolumesRequest describeVolumesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes Amazon ECS clusters that are registered with a stack. If
-     * you specify only a stack ID, you can use the <code>MaxResults</code>
-     * and <code>NextToken</code> parameters to paginate the response.
-     * However, AWS OpsWorks currently supports only one cluster per layer,
-     * so the result set has a maximum of one element.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack or an
-     * attached policy that explicitly grants permission. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeEcsClustersRequest Container for the necessary
-     *           parameters to execute the DescribeEcsClusters service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeEcsClusters service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeEcsClustersResult describeEcsClusters(DescribeEcsClustersRequest describeEcsClustersRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Assigns one of the stack's registered Amazon EBS volumes to a
-     * specified instance. The volume must first be registered with the stack
-     * by calling RegisterVolume. After you register the volume, you must
-     * call UpdateVolume to specify a mount point before calling
-     * <code>AssignVolume</code> . For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param assignVolumeRequest Container for the necessary parameters to
-     *           execute the AssignVolume service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void assignVolume(AssignVolumeRequest assignVolumeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Unassigns a registered instance from all of it's layers. The instance
-     * remains in the stack as an unassigned instance and can be assigned to
-     * another layer, as needed. You cannot use this action with instances
-     * that were created with AWS OpsWorks.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param unassignInstanceRequest Container for the necessary parameters
-     *           to execute the UnassignInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void unassignInstance(UnassignInstanceRequest unassignInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * <b>NOTE:</b>This action can be used only with Windows stacks.
-     * </p>
-     * <p>
-     * Grants RDP access to a Windows instance for a specified time period.
-     * </p>
-     *
-     * @param grantAccessRequest Container for the necessary parameters to
-     *           execute the GrantAccess service method on AWSOpsWorks.
-     * 
-     * @return The response from the GrantAccess service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GrantAccessResult grantAccess(GrantAccessRequest grantAccessRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes AWS OpsWorks service errors.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeServiceErrorsRequest Container for the necessary
-     *           parameters to execute the DescribeServiceErrors service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeServiceErrors service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeServiceErrorsResult describeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates a registered Elastic IP address's name. For more information,
-     * see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateElasticIpRequest Container for the necessary parameters
-     *           to execute the UpdateElasticIp service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates a specified layer.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateLayerRequest Container for the necessary parameters to
-     *           execute the UpdateLayer service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateLayer(UpdateLayerRequest updateLayerRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Starts a specified instance. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"> Starting, Stopping, and Rebooting Instances </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param startInstanceRequest Container for the necessary parameters to
-     *           execute the StartInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void startInstance(StartInstanceRequest startInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Registers a specified Amazon ECS cluster with a stack. You can
-     * register only one cluster with a stack. A cluster can be registered
-     * with only one stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param registerEcsClusterRequest Container for the necessary
-     *           parameters to execute the RegisterEcsCluster service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the RegisterEcsCluster service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RegisterEcsClusterResult registerEcsCluster(RegisterEcsClusterRequest registerEcsClusterRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a layer. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html"> How to Create a Layer </a>
-     * .
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You should use CreateLayer for noncustom layer types
-     * such as PHP App Server only if the stack does not have an existing
-     * layer of that type. A stack can have at most one instance of each
-     * noncustom layer; if you attempt to create a second instance,
-     * CreateLayer fails. A stack can have an arbitrary number of custom
-     * layers, so you can call CreateLayer as many times as you like for that
-     * layer type.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param createLayerRequest Container for the necessary parameters to
-     *           execute the CreateLayer service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateLayer service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateLayerResult createLayer(CreateLayerRequest createLayerRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Disassociates an Elastic IP address from its instance. The address
-     * remains registered with the stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param disassociateElasticIpRequest Container for the necessary
-     *           parameters to execute the DisassociateElasticIp service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void disassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a specified stack. You must first delete all instances,
-     * layers, and apps or deregister registered instances. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html"> Shut Down a Stack </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deleteStackRequest Container for the necessary parameters to
-     *           execute the DeleteStack service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteStack(DeleteStackRequest deleteStackRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes the available AWS OpsWorks agent versions. You must specify
-     * a stack ID or a configuration manager.
-     * <code>DescribeAgentVersions</code> returns a list of available agent
-     * versions for the specified stack or configuration manager.
-     * </p>
-     *
-     * @param describeAgentVersionsRequest Container for the necessary
-     *           parameters to execute the DescribeAgentVersions service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeAgentVersions service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeAgentVersionsResult describeAgentVersions(DescribeAgentVersionsRequest describeAgentVersionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Starts a stack's instances.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param startStackRequest Container for the necessary parameters to
-     *           execute the StartStack service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void startStack(StartStackRequest startStackRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Registers an Amazon EBS volume with a specified stack. A volume can
-     * be registered with only one stack at a time. If the volume is already
-     * registered, you must first deregister it by calling DeregisterVolume.
-     * For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param registerVolumeRequest Container for the necessary parameters to
-     *           execute the RegisterVolume service method on AWSOpsWorks.
-     * 
-     * @return The response from the RegisterVolume service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RegisterVolumeResult registerVolume(RegisterVolumeRequest registerVolumeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates an Amazon RDS instance.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateRdsDbInstanceRequest Container for the necessary
-     *           parameters to execute the UpdateRdsDbInstance service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateRdsDbInstance(UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Registers instances with a specified stack that were created outside
-     * of AWS OpsWorks.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>We do not recommend using this action to register
-     * instances. The complete registration operation has two primary steps,
-     * installing the AWS OpsWorks agent on the instance and registering the
-     * instance with the stack. RegisterInstance handles only the second
-     * step. You should instead use the AWS CLI register command, which
-     * performs the entire registration operation. For more information, see
-     * Registering an Instance with an AWS OpsWorks Stack.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param registerInstanceRequest Container for the necessary parameters
-     *           to execute the RegisterInstance service method on AWSOpsWorks.
-     * 
-     * @return The response from the RegisterInstance service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RegisterInstanceResult registerInstance(RegisterInstanceRequest registerInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates a specified user profile.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateUserProfileRequest Container for the necessary parameters
-     *           to execute the UpdateUserProfile service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Reboots a specified instance. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"> Starting, Stopping, and Rebooting Instances </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param rebootInstanceRequest Container for the necessary parameters to
-     *           execute the RebootInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html"> Create a New Stack </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param createStackRequest Container for the necessary parameters to
-     *           execute the CreateStack service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateStack service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateStackResult createStack(CreateStackRequest createStackRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates an instance in a specified stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> Adding an Instance to a Layer </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param createInstanceRequest Container for the necessary parameters to
-     *           execute the CreateInstance service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateInstance service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateInstanceResult createInstance(CreateInstanceRequest createInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a specified app.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deleteAppRequest Container for the necessary parameters to
-     *           execute the DeleteApp service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteApp(DeleteAppRequest deleteAppRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Requests a description of a stack's provisioning parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeStackProvisioningParametersRequest Container for the
-     *           necessary parameters to execute the
-     *           DescribeStackProvisioningParameters service method on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeStackProvisioningParameters
-     *         service method, as returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeStackProvisioningParametersResult describeStackProvisioningParameters(DescribeStackProvisioningParametersRequest describeStackProvisioningParametersRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deregisters a specified Elastic IP address. The address can then be
-     * registered by another stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deregisterElasticIpRequest Container for the necessary
-     *           parameters to execute the DeregisterElasticIp service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Attaches an Elastic Load Balancing load balancer to a specified
-     * layer. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html"> Elastic Load Balancing </a>
-     * .
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must create the Elastic Load Balancing instance
-     * separately, by using the Elastic Load Balancing console, API, or CLI.
-     * For more information, see Elastic Load Balancing Developer Guide.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param attachElasticLoadBalancerRequest Container for the necessary
-     *           parameters to execute the AttachElasticLoadBalancer service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void attachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates a specified stack.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateStackRequest Container for the necessary parameters to
-     *           execute the UpdateStack service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateStack(UpdateStackRequest updateStackRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    CreateStackResult createStack(CreateStackRequest createStackRequest);
 
     /**
      * <p>
      * Creates a new user profile.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param createUserProfileRequest Container for the necessary parameters
-     *           to execute the CreateUserProfile service method on AWSOpsWorks.
      * 
-     * @return The response from the CreateUserProfile service method, as
-     *         returned by AWSOpsWorks.
-     * 
+     * @param createUserProfileRequest
+     * @return Result of the CreateUserProfile operation returned by the
+     *         service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
      */
-    public CreateUserProfileResult createUserProfile(CreateUserProfileRequest createUserProfileRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    CreateUserProfileResult createUserProfile(
+            CreateUserProfileRequest createUserProfileRequest);
 
     /**
      * <p>
-     * Requests a description of one or more layers in a specified stack.
+     * Deletes a specified app.
      * </p>
      * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeLayersRequest Container for the necessary parameters to
-     *           execute the DescribeLayers service method on AWSOpsWorks.
      * 
-     * @return The response from the DescribeLayers service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param deleteAppRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeLayersResult describeLayers(DescribeLayersRequest describeLayersRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void deleteApp(DeleteAppRequest deleteAppRequest);
 
     /**
      * <p>
-     * Describes load-based auto scaling configurations for specified
-     * layers.
+     * Deletes a specified instance, which terminates the associated Amazon EC2
+     * instance. You must stop an instance before you can delete it.
      * </p>
      * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html"
+     * >Deleting Instances</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeLoadBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the DescribeLoadBasedAutoScaling service method
-     *           on AWSOpsWorks.
      * 
-     * @return The response from the DescribeLoadBasedAutoScaling service
-     *         method, as returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param deleteInstanceRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Assign a registered instance to a layer.
-     * </p>
-     * 
-     * <ul>
-     * <li>You can assign registered on-premises instances to any layer
-     * type.</li>
-     * <li>You can assign registered Amazon EC2 instances only to custom
-     * layers.</li>
-     * <li>You cannot use this action with instances that were created with
-     * AWS OpsWorks.</li>
-     * 
-     * </ul>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an AWS Identity and
-     * Access Management (IAM) user must have a Manage permissions level for
-     * the stack or an attached policy that explicitly grants permissions.
-     * For more information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param assignInstanceRequest Container for the necessary parameters to
-     *           execute the AssignInstance service method on AWSOpsWorks.
-     * 
-     * 
+     *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a resource was not found.
      */
-    public void assignInstance(AssignInstanceRequest assignInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes a stack's Elastic Load Balancing instances.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeElasticLoadBalancersRequest Container for the necessary
-     *           parameters to execute the DescribeElasticLoadBalancers service method
-     *           on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeElasticLoadBalancers service
-     *         method, as returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeElasticLoadBalancersResult describeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deregister a registered Amazon EC2 or on-premises instance. This
-     * action removes the instance from the stack and returns it to your
-     * control. This action can not be used with instances that were created
-     * with AWS OpsWorks.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deregisterInstanceRequest Container for the necessary
-     *           parameters to execute the DeregisterInstance service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deregisterInstance(DeregisterInstanceRequest deregisterInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void deleteInstance(DeleteInstanceRequest deleteInstanceRequest);
 
     /**
      * <p>
      * Deletes a specified layer. You must first stop and then delete all
      * associated instances or unassign registered instances. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html"> How to Delete a Layer </a>
-     * .
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html"
+     * >How to Delete a Layer</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param deleteLayerRequest Container for the necessary parameters to
-     *           execute the DeleteLayer service method on AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param deleteLayerRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void deleteLayer(DeleteLayerRequest deleteLayerRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void deleteLayer(DeleteLayerRequest deleteLayerRequest);
 
     /**
      * <p>
-     * Specify the time-based auto scaling configuration for a specified
-     * instance. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"> Managing Load with Time-based and Load-based Instances </a>
-     * .
+     * Deletes a specified stack. You must first delete all instances, layers,
+     * and apps or deregister registered instances. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html"
+     * >Shut Down a Stack</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param setTimeBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the SetTimeBasedAutoScaling service method on
-     *           AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param deleteStackRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes a user's SSH information.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have self-management enabled or an attached policy that explicitly
-     * grants permissions. For more information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeMyUserProfileRequest Container for the necessary
-     *           parameters to execute the DescribeMyUserProfile service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeMyUserProfile service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeMyUserProfileResult describeMyUserProfile(DescribeMyUserProfileRequest describeMyUserProfileRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates an app for a specified stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html"> Creating Apps </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param createAppRequest Container for the necessary parameters to
-     *           execute the CreateApp service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateApp service method, as returned by
-     *         AWSOpsWorks.
-     * 
+     *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a resource was not found.
      */
-    public CreateAppResult createApp(CreateAppRequest createAppRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates an Amazon EBS volume's name or mount point. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateVolumeRequest Container for the necessary parameters to
-     *           execute the UpdateVolume service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateVolume(UpdateVolumeRequest updateVolumeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes time-based auto scaling configurations for specified
-     * instances.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeTimeBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the DescribeTimeBasedAutoScaling service method
-     *           on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeTimeBasedAutoScaling service
-     *         method, as returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void deleteStack(DeleteStackRequest deleteStackRequest);
 
     /**
      * <p>
      * Deletes a user profile.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param deleteUserProfileRequest Container for the necessary parameters
-     *           to execute the DeleteUserProfile service method on AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param deleteUserProfileRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest);
 
     /**
      * <p>
-     * Describe specified users.
+     * Deregisters a specified Amazon ECS cluster from a stack. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete"
+     * > Resource Management</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * ></a>.
      * </p>
-     *
-     * @param describeUserProfilesRequest Container for the necessary
-     *           parameters to execute the DescribeUserProfiles service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the DescribeUserProfiles service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param deregisterEcsClusterRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeUserProfilesResult describeUserProfiles(DescribeUserProfilesRequest describeUserProfilesRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void deregisterEcsCluster(
+            DeregisterEcsClusterRequest deregisterEcsClusterRequest);
 
     /**
      * <p>
-     * Updates a specified instance.
+     * Deregisters a specified Elastic IP address. The address can then be
+     * registered by another stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param updateInstanceRequest Container for the necessary parameters to
-     *           execute the UpdateInstance service method on AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param deregisterElasticIpRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void updateInstance(UpdateInstanceRequest updateInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void deregisterElasticIp(
+            DeregisterElasticIpRequest deregisterElasticIpRequest);
+
+    /**
+     * <p>
+     * Deregister a registered Amazon EC2 or on-premises instance. This action
+     * removes the instance from the stack and returns it to your control. This
+     * action can not be used with instances that were created with AWS
+     * OpsWorks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param deregisterInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void deregisterInstance(DeregisterInstanceRequest deregisterInstanceRequest);
+
+    /**
+     * <p>
+     * Deregisters an Amazon RDS instance.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param deregisterRdsDbInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void deregisterRdsDbInstance(
+            DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest);
+
+    /**
+     * <p>
+     * Deregisters an Amazon EBS volume. The volume can then be registered by
+     * another stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param deregisterVolumeRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest);
+
+    /**
+     * <p>
+     * Describes the available AWS OpsWorks agent versions. You must specify a
+     * stack ID or a configuration manager. <code>DescribeAgentVersions</code>
+     * returns a list of available agent versions for the specified stack or
+     * configuration manager.
+     * </p>
+     * 
+     * @param describeAgentVersionsRequest
+     * @return Result of the DescribeAgentVersions operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeAgentVersionsResult describeAgentVersions(
+            DescribeAgentVersionsRequest describeAgentVersionsRequest);
+
+    /**
+     * <p>
+     * Requests a description of a specified set of apps.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeAppsRequest
+     * @return Result of the DescribeApps operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeAppsResult describeApps(DescribeAppsRequest describeAppsRequest);
+
+    /**
+     * <p>
+     * Describes the results of specified commands.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeCommandsRequest
+     * @return Result of the DescribeCommands operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeCommandsResult describeCommands(
+            DescribeCommandsRequest describeCommandsRequest);
 
     /**
      * <p>
      * Requests a description of a specified set of deployments.
      * </p>
+     * <note>
      * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
+     * You must specify at least one of the parameters.
      * </p>
+     * </note>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeDeploymentsRequest Container for the necessary
-     *           parameters to execute the DescribeDeployments service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the DescribeDeployments service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeDeploymentsRequest
+     * @return Result of the DescribeDeployments operation returned by the
+     *         service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeDeploymentsResult describeDeployments(DescribeDeploymentsRequest describeDeploymentsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeDeploymentsResult describeDeployments(
+            DescribeDeploymentsRequest describeDeploymentsRequest);
 
     /**
      * <p>
-     * Registers an Elastic IP address with a specified stack. An address
-     * can be registered with only one stack at a time. If the address is
-     * already registered, you must first deregister it by calling
-     * DeregisterElasticIp. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
+     * Describes Amazon ECS clusters that are registered with a stack. If you
+     * specify only a stack ID, you can use the <code>MaxResults</code> and
+     * <code>NextToken</code> parameters to paginate the response. However, AWS
+     * OpsWorks currently supports only one cluster per layer, so the result set
+     * has a maximum of one element.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack or an attached
+     * policy that explicitly grants permission. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param registerElasticIpRequest Container for the necessary parameters
-     *           to execute the RegisterElasticIp service method on AWSOpsWorks.
      * 
-     * @return The response from the RegisterElasticIp service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeEcsClustersRequest
+     * @return Result of the DescribeEcsClusters operation returned by the
+     *         service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public RegisterElasticIpResult registerElasticIp(RegisterElasticIpRequest registerElasticIpRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeEcsClustersResult describeEcsClusters(
+            DescribeEcsClustersRequest describeEcsClustersRequest);
 
     /**
      * <p>
-     * Describes
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP addresses </a>
-     * .
+     * Describes <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
+     * >Elastic IP addresses</a>.
      * </p>
+     * <note>
      * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
+     * You must specify at least one of the parameters.
      * </p>
+     * </note>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeElasticIpsRequest Container for the necessary
-     *           parameters to execute the DescribeElasticIps service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the DescribeElasticIps service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeElasticIpsRequest
+     * @return Result of the DescribeElasticIps operation returned by the
+     *         service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeElasticIpsResult describeElasticIps(DescribeElasticIpsRequest describeElasticIpsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeElasticIpsResult describeElasticIps(
+            DescribeElasticIpsRequest describeElasticIpsRequest);
+
+    /**
+     * <p>
+     * Describes a stack's Elastic Load Balancing instances.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeElasticLoadBalancersRequest
+     * @return Result of the DescribeElasticLoadBalancers operation returned by
+     *         the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeElasticLoadBalancersResult describeElasticLoadBalancers(
+            DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest);
+
+    /**
+     * <p>
+     * Requests a description of a set of instances.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeInstancesRequest
+     * @return Result of the DescribeInstances operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeInstancesResult describeInstances(
+            DescribeInstancesRequest describeInstancesRequest);
+
+    /**
+     * <p>
+     * Requests a description of one or more layers in a specified stack.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeLayersRequest
+     * @return Result of the DescribeLayers operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeLayersResult describeLayers(
+            DescribeLayersRequest describeLayersRequest);
+
+    /**
+     * <p>
+     * Describes load-based auto scaling configurations for specified layers.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeLoadBasedAutoScalingRequest
+     * @return Result of the DescribeLoadBasedAutoScaling operation returned by
+     *         the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScaling(
+            DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest);
+
+    /**
+     * <p>
+     * Describes a user's SSH information.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have
+     * self-management enabled or an attached policy that explicitly grants
+     * permissions. For more information on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeMyUserProfileRequest
+     * @return Result of the DescribeMyUserProfile operation returned by the
+     *         service.
+     */
+    DescribeMyUserProfileResult describeMyUserProfile(
+            DescribeMyUserProfileRequest describeMyUserProfileRequest);
+
+    /**
+     * <p>
+     * Describes the permissions for a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describePermissionsRequest
+     * @return Result of the DescribePermissions operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribePermissionsResult describePermissions(
+            DescribePermissionsRequest describePermissionsRequest);
+
+    /**
+     * <p>
+     * Describe an instance's RAID arrays.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeRaidArraysRequest
+     * @return Result of the DescribeRaidArrays operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeRaidArraysResult describeRaidArrays(
+            DescribeRaidArraysRequest describeRaidArraysRequest);
+
+    /**
+     * <p>
+     * Describes Amazon RDS instances.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeRdsDbInstancesRequest
+     * @return Result of the DescribeRdsDbInstances operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeRdsDbInstancesResult describeRdsDbInstances(
+            DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest);
+
+    /**
+     * <p>
+     * Describes AWS OpsWorks service errors.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeServiceErrorsRequest
+     * @return Result of the DescribeServiceErrors operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeServiceErrorsResult describeServiceErrors(
+            DescribeServiceErrorsRequest describeServiceErrorsRequest);
+
+    /**
+     * <p>
+     * Requests a description of a stack's provisioning parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeStackProvisioningParametersRequest
+     * @return Result of the DescribeStackProvisioningParameters operation
+     *         returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeStackProvisioningParametersResult describeStackProvisioningParameters(
+            DescribeStackProvisioningParametersRequest describeStackProvisioningParametersRequest);
+
+    /**
+     * <p>
+     * Describes the number of layers and apps in a specified stack, and the
+     * number of instances in each state, such as <code>running_setup</code> or
+     * <code>online</code>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeStackSummaryRequest
+     * @return Result of the DescribeStackSummary operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeStackSummaryResult describeStackSummary(
+            DescribeStackSummaryRequest describeStackSummaryRequest);
 
     /**
      * <p>
      * Requests a description of one or more stacks.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeStacksRequest Container for the necessary parameters to
-     *           execute the DescribeStacks service method on AWSOpsWorks.
      * 
-     * @return The response from the DescribeStacks service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeStacksRequest
+     * @return Result of the DescribeStacks operation returned by the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeStacksResult describeStacks(DescribeStacksRequest describeStacksRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeStacksResult describeStacks(
+            DescribeStacksRequest describeStacksRequest);
 
     /**
      * <p>
-     * Requests a description of a specified set of apps.
+     * Describes time-based auto scaling configurations for specified instances.
      * </p>
+     * <note>
      * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
+     * You must specify at least one of the parameters.
      * </p>
+     * </note>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeAppsRequest Container for the necessary parameters to
-     *           execute the DescribeApps service method on AWSOpsWorks.
      * 
-     * @return The response from the DescribeApps service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeTimeBasedAutoScalingRequest
+     * @return Result of the DescribeTimeBasedAutoScaling operation returned by
+     *         the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeAppsResult describeApps(DescribeAppsRequest describeAppsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScaling(
+            DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest);
 
     /**
      * <p>
-     * Describes the number of layers and apps in a specified stack, and the
-     * number of instances in each state, such as <code>running_setup</code>
-     * or <code>online</code> .
+     * Describe specified users.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeStackSummaryRequest Container for the necessary
-     *           parameters to execute the DescribeStackSummary service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the DescribeStackSummary service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeUserProfilesRequest
+     * @return Result of the DescribeUserProfiles operation returned by the
+     *         service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeStackSummaryResult describeStackSummary(DescribeStackSummaryRequest describeStackSummaryRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeUserProfilesResult describeUserProfiles(
+            DescribeUserProfilesRequest describeUserProfilesRequest);
+
+    /**
+     * <p>
+     * Describes an instance's Amazon EBS volumes.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeVolumesRequest
+     * @return Result of the DescribeVolumes operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    DescribeVolumesResult describeVolumes(
+            DescribeVolumesRequest describeVolumesRequest);
+
+    /**
+     * <p>
+     * Detaches a specified Elastic Load Balancing instance from its layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param detachElasticLoadBalancerRequest
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void detachElasticLoadBalancer(
+            DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest);
+
+    /**
+     * <p>
+     * Disassociates an Elastic IP address from its instance. The address
+     * remains registered with the stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param disassociateElasticIpRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void disassociateElasticIp(
+            DisassociateElasticIpRequest disassociateElasticIpRequest);
+
+    /**
+     * <p>
+     * Gets a generated host name for the specified layer, based on the current
+     * host name theme.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param getHostnameSuggestionRequest
+     * @return Result of the GetHostnameSuggestion operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    GetHostnameSuggestionResult getHostnameSuggestion(
+            GetHostnameSuggestionRequest getHostnameSuggestionRequest);
+
+    /**
+     * <note>This action can be used only with Windows stacks.</note>
+     * <p>
+     * Grants RDP access to a Windows instance for a specified time period.
+     * </p>
+     * 
+     * @param grantAccessRequest
+     * @return Result of the GrantAccess operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    GrantAccessResult grantAccess(GrantAccessRequest grantAccessRequest);
+
+    /**
+     * <p>
+     * Reboots a specified instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"
+     * >Starting, Stopping, and Rebooting Instances</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param rebootInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void rebootInstance(RebootInstanceRequest rebootInstanceRequest);
+
+    /**
+     * <p>
+     * Registers a specified Amazon ECS cluster with a stack. You can register
+     * only one cluster with a stack. A cluster can be registered with only one
+     * stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html"
+     * > Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * > Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param registerEcsClusterRequest
+     * @return Result of the RegisterEcsCluster operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    RegisterEcsClusterResult registerEcsCluster(
+            RegisterEcsClusterRequest registerEcsClusterRequest);
+
+    /**
+     * <p>
+     * Registers an Elastic IP address with a specified stack. An address can be
+     * registered with only one stack at a time. If the address is already
+     * registered, you must first deregister it by calling
+     * <a>DeregisterElasticIp</a>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param registerElasticIpRequest
+     * @return Result of the RegisterElasticIp operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    RegisterElasticIpResult registerElasticIp(
+            RegisterElasticIpRequest registerElasticIpRequest);
+
+    /**
+     * <p>
+     * Registers instances with a specified stack that were created outside of
+     * AWS OpsWorks.
+     * </p>
+     * <note>We do not recommend using this action to register instances. The
+     * complete registration operation has two primary steps, installing the AWS
+     * OpsWorks agent on the instance and registering the instance with the
+     * stack. <code>RegisterInstance</code> handles only the second step. You
+     * should instead use the AWS CLI <code>register</code> command, which
+     * performs the entire registration operation. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"
+     * > Registering an Instance with an AWS OpsWorks Stack</a>.</note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param registerInstanceRequest
+     * @return Result of the RegisterInstance operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    RegisterInstanceResult registerInstance(
+            RegisterInstanceRequest registerInstanceRequest);
+
+    /**
+     * <p>
+     * Registers an Amazon RDS instance with a stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param registerRdsDbInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void registerRdsDbInstance(
+            RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest);
+
+    /**
+     * <p>
+     * Registers an Amazon EBS volume with a specified stack. A volume can be
+     * registered with only one stack at a time. If the volume is already
+     * registered, you must first deregister it by calling
+     * <a>DeregisterVolume</a>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param registerVolumeRequest
+     * @return Result of the RegisterVolume operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    RegisterVolumeResult registerVolume(
+            RegisterVolumeRequest registerVolumeRequest);
+
+    /**
+     * <p>
+     * Specify the load-based auto scaling configuration for a specified layer.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"
+     * >Managing Load with Time-based and Load-based Instances</a>.
+     * </p>
+     * <note>
+     * <p>
+     * To use load-based auto scaling, you must create a set of load-based auto
+     * scaling instances. Load-based auto scaling operates only on the instances
+     * from that set, so you must ensure that you have created enough instances
+     * to handle the maximum anticipated load.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param setLoadBasedAutoScalingRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void setLoadBasedAutoScaling(
+            SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest);
+
+    /**
+     * <p>
+     * Specifies a user's permissions. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html"
+     * >Security and Permissions</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param setPermissionRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void setPermission(SetPermissionRequest setPermissionRequest);
+
+    /**
+     * <p>
+     * Specify the time-based auto scaling configuration for a specified
+     * instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"
+     * >Managing Load with Time-based and Load-based Instances</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param setTimeBasedAutoScalingRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void setTimeBasedAutoScaling(
+            SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest);
+
+    /**
+     * <p>
+     * Starts a specified instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"
+     * >Starting, Stopping, and Rebooting Instances</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param startInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void startInstance(StartInstanceRequest startInstanceRequest);
+
+    /**
+     * <p>
+     * Starts a stack's instances.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param startStackRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void startStack(StartStackRequest startStackRequest);
+
+    /**
+     * <p>
+     * Stops a specified instance. When you stop a standard instance, the data
+     * disappears and must be reinstalled when you restart the instance. You can
+     * stop an Amazon EBS-backed instance without losing data. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"
+     * >Starting, Stopping, and Rebooting Instances</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param stopInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void stopInstance(StopInstanceRequest stopInstanceRequest);
 
     /**
      * <p>
      * Stops a specified stack.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param stopStackRequest Container for the necessary parameters to
-     *           execute the StopStack service method on AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param stopStackRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void stopStack(StopStackRequest stopStackRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void stopStack(StopStackRequest stopStackRequest);
 
     /**
      * <p>
-     * Runs deployment or stack commands. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html"> Deploying Apps </a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html"> Run Stack Commands </a>
-     * .
+     * Unassigns a registered instance from all of it's layers. The instance
+     * remains in the stack as an unassigned instance and can be assigned to
+     * another layer, as needed. You cannot use this action with instances that
+     * were created with AWS OpsWorks.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Deploy or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param createDeploymentRequest Container for the necessary parameters
-     *           to execute the CreateDeployment service method on AWSOpsWorks.
      * 
-     * @return The response from the CreateDeployment service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param unassignInstanceRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void unassignInstance(UnassignInstanceRequest unassignInstanceRequest);
+
+    /**
+     * <p>
+     * Unassigns an assigned Amazon EBS volume. The volume remains registered
+     * with the stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param unassignVolumeRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void unassignVolume(UnassignVolumeRequest unassignVolumeRequest);
+
+    /**
+     * <p>
+     * Updates a specified app.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Deploy or Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateAppRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void updateApp(UpdateAppRequest updateAppRequest);
+
+    /**
+     * <p>
+     * Updates a registered Elastic IP address's name. For more information, see
+     * <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateElasticIpRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest);
+
+    /**
+     * <p>
+     * Updates a specified instance.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void updateInstance(UpdateInstanceRequest updateInstanceRequest);
+
+    /**
+     * <p>
+     * Updates a specified layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateLayerRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void updateLayer(UpdateLayerRequest updateLayerRequest);
+
+    /**
+     * <p>
+     * Updates a user's SSH public key.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have
+     * self-management enabled or an attached policy that explicitly grants
+     * permissions. For more information on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateMyUserProfileRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     */
+    void updateMyUserProfile(
+            UpdateMyUserProfileRequest updateMyUserProfileRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon RDS instance.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateRdsDbInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void updateRdsDbInstance(
+            UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest);
+
+    /**
+     * <p>
+     * Updates a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateStackRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void updateStack(UpdateStackRequest updateStackRequest);
+
+    /**
+     * <p>
+     * Updates a specified user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateUserProfileRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon EBS volume's name or mount point. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateVolumeRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    void updateVolume(UpdateVolumeRequest updateVolumeRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held
@@ -2586,24 +1895,25 @@ public interface AWSOpsWorks {
      * client has been shutdown, it should not be used to make any more
      * requests.
      */
-    public void shutdown();
-    
+    void shutdown();
+
     /**
-     * Returns additional metadata for a previously executed successful request, typically used for
-     * debugging issues where a service isn't acting as expected.  This data isn't considered part
-     * of the result data returned by an operation, so it's available through this separate,
-     * diagnostic interface.
+     * Returns additional metadata for a previously executed successful request,
+     * typically used for debugging issues where a service isn't acting as
+     * expected. This data isn't considered part of the result data returned by
+     * an operation, so it's available through this separate, diagnostic
+     * interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you need to access
-     * this extra diagnostic information for an executed request, you should use this method
-     * to retrieve it as soon as possible after executing a request.
+     * Response metadata is only cached for a limited period of time, so if you
+     * need to access this extra diagnostic information for an executed request,
+     * you should use this method to retrieve it as soon as possible after
+     * executing a request.
      *
      * @param request
-     *            The originally executed request.
+     *        The originally executed request.
      *
      * @return The response metadata for the specified request, or null if none
      *         is available.
      */
-    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+    ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 }
-        

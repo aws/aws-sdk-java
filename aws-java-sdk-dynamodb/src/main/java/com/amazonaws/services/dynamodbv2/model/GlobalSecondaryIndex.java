@@ -176,29 +176,21 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Projection property for this object.
-     * 
      * @param projection
-     *        The new value for the Projection property for this object.
      */
     public void setProjection(Projection projection) {
         this.projection = projection;
     }
 
     /**
-     * Returns the value of the Projection property for this object.
-     * 
-     * @return The value of the Projection property for this object.
+     * @return
      */
     public Projection getProjection() {
         return this.projection;
     }
 
     /**
-     * Sets the value of the Projection property for this object.
-     * 
      * @param projection
-     *        The new value for the Projection property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -208,11 +200,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ProvisionedThroughput property for this object.
-     * 
      * @param provisionedThroughput
-     *        The new value for the ProvisionedThroughput property for this
-     *        object.
      */
     public void setProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
@@ -220,20 +208,14 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the ProvisionedThroughput property for this object.
-     * 
-     * @return The value of the ProvisionedThroughput property for this object.
+     * @return
      */
     public ProvisionedThroughput getProvisionedThroughput() {
         return this.provisionedThroughput;
     }
 
     /**
-     * Sets the value of the ProvisionedThroughput property for this object.
-     * 
      * @param provisionedThroughput
-     *        The new value for the ProvisionedThroughput property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

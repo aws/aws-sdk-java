@@ -42,7 +42,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * region. You retrieve data keys already encrypted by calling the
  * GenerateDataKey or GenerateDataKeyWithoutPlaintext function. Data keys
  * don't need to be encrypted again by calling <code>Encrypt</code> .
- * 
  * </p>
  * <p>
  * If you want to encrypt data locally in your application, you can use
@@ -90,9 +89,9 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     private java.util.Map<String,String> encryptionContext;
 
     /**
-     * For more information, see <a
+     * A list of grant tokens. <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>.
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
@@ -334,16 +333,16 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
   }
   
     /**
-     * For more information, see <a
+     * A list of grant tokens. <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>.
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @return For more information, see <a
+     * @return A list of grant tokens. <p>For more information, go to <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     *         Tokens</a>.
+     *         Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
@@ -354,16 +353,16 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * For more information, see <a
+     * A list of grant tokens. <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>.
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens For more information, see <a
+     * @param grantTokens A list of grant tokens. <p>For more information, go to <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     *         Tokens</a>.
+     *         Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
@@ -376,9 +375,9 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * For more information, see <a
+     * A list of grant tokens. <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>.
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setGrantTokens(java.util.Collection)} or {@link
@@ -390,9 +389,9 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens For more information, see <a
+     * @param grantTokens A list of grant tokens. <p>For more information, go to <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     *         Tokens</a>.
+     *         Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -406,18 +405,18 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * For more information, see <a
+     * A list of grant tokens. <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>.
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens For more information, see <a
+     * @param grantTokens A list of grant tokens. <p>For more information, go to <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     *         Tokens</a>.
+     *         Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

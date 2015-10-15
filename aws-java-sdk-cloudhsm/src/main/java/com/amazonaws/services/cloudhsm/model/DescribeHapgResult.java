@@ -146,9 +146,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the HsmsLastActionFailed property for this object.
-     * 
-     * @return The value of the HsmsLastActionFailed property for this object.
+     * @return
      */
     public java.util.List<String> getHsmsLastActionFailed() {
         if (hsmsLastActionFailed == null) {
@@ -158,11 +156,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the HsmsLastActionFailed property for this object.
-     * 
      * @param hsmsLastActionFailed
-     *        The new value for the HsmsLastActionFailed property for this
-     *        object.
      */
     public void setHsmsLastActionFailed(
             java.util.Collection<String> hsmsLastActionFailed) {
@@ -176,7 +170,6 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the HsmsLastActionFailed property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setHsmsLastActionFailed(java.util.Collection)} or
@@ -185,8 +178,6 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param hsmsLastActionFailed
-     *        The new value for the HsmsLastActionFailed property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -203,11 +194,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the HsmsLastActionFailed property for this object.
-     * 
      * @param hsmsLastActionFailed
-     *        The new value for the HsmsLastActionFailed property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -218,9 +205,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the HsmsPendingDeletion property for this object.
-     * 
-     * @return The value of the HsmsPendingDeletion property for this object.
+     * @return
      */
     public java.util.List<String> getHsmsPendingDeletion() {
         if (hsmsPendingDeletion == null) {
@@ -230,11 +215,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the HsmsPendingDeletion property for this object.
-     * 
      * @param hsmsPendingDeletion
-     *        The new value for the HsmsPendingDeletion property for this
-     *        object.
      */
     public void setHsmsPendingDeletion(
             java.util.Collection<String> hsmsPendingDeletion) {
@@ -248,7 +229,6 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the HsmsPendingDeletion property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setHsmsPendingDeletion(java.util.Collection)} or
@@ -257,8 +237,6 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param hsmsPendingDeletion
-     *        The new value for the HsmsPendingDeletion property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -275,11 +253,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the HsmsPendingDeletion property for this object.
-     * 
      * @param hsmsPendingDeletion
-     *        The new value for the HsmsPendingDeletion property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -290,11 +264,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the HsmsPendingRegistration property for this
-     * object.
-     * 
-     * @return The value of the HsmsPendingRegistration property for this
-     *         object.
+     * @return
      */
     public java.util.List<String> getHsmsPendingRegistration() {
         if (hsmsPendingRegistration == null) {
@@ -304,11 +274,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the HsmsPendingRegistration property for this object.
-     * 
      * @param hsmsPendingRegistration
-     *        The new value for the HsmsPendingRegistration property for this
-     *        object.
      */
     public void setHsmsPendingRegistration(
             java.util.Collection<String> hsmsPendingRegistration) {
@@ -322,7 +288,6 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the HsmsPendingRegistration property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setHsmsPendingRegistration(java.util.Collection)} or
@@ -331,8 +296,6 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param hsmsPendingRegistration
-     *        The new value for the HsmsPendingRegistration property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -349,11 +312,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the HsmsPendingRegistration property for this object.
-     * 
      * @param hsmsPendingRegistration
-     *        The new value for the HsmsPendingRegistration property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

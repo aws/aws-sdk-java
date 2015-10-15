@@ -176,29 +176,21 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the ActionRevision property for this object.
-     * 
      * @param actionRevision
-     *        The new value for the ActionRevision property for this object.
      */
     public void setActionRevision(ActionRevision actionRevision) {
         this.actionRevision = actionRevision;
     }
 
     /**
-     * Returns the value of the ActionRevision property for this object.
-     * 
-     * @return The value of the ActionRevision property for this object.
+     * @return
      */
     public ActionRevision getActionRevision() {
         return this.actionRevision;
     }
 
     /**
-     * Sets the value of the ActionRevision property for this object.
-     * 
      * @param actionRevision
-     *        The new value for the ActionRevision property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

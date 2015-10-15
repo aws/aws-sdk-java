@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ecs.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,52 +40,68 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Update Service Request Marshaller
+ * UpdateServiceRequest Marshaller
  */
-public class UpdateServiceRequestMarshaller implements Marshaller<Request<UpdateServiceRequest>, UpdateServiceRequest> {
+public class UpdateServiceRequestMarshaller implements
+        Marshaller<Request<UpdateServiceRequest>, UpdateServiceRequest> {
 
-    public Request<UpdateServiceRequest> marshall(UpdateServiceRequest updateServiceRequest) {
+    public Request<UpdateServiceRequest> marshall(
+            UpdateServiceRequest updateServiceRequest) {
+
         if (updateServiceRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateServiceRequest> request = new DefaultRequest<UpdateServiceRequest>(updateServiceRequest, "AmazonECS");
-        String target = "AmazonEC2ContainerServiceV20141113.UpdateService";
-        request.addHeader("X-Amz-Target", target);
+        Request<UpdateServiceRequest> request = new DefaultRequest<UpdateServiceRequest>(
+                updateServiceRequest, "AmazonECS");
+        request.addHeader("X-Amz-Target",
+                "AmazonEC2ContainerServiceV20141113.UpdateService");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (updateServiceRequest.getCluster() != null) {
-                jsonWriter.key("cluster").value(updateServiceRequest.getCluster());
+                jsonWriter.key("cluster").value(
+                        updateServiceRequest.getCluster());
             }
+
             if (updateServiceRequest.getService() != null) {
-                jsonWriter.key("service").value(updateServiceRequest.getService());
+                jsonWriter.key("service").value(
+                        updateServiceRequest.getService());
             }
+
             if (updateServiceRequest.getDesiredCount() != null) {
-                jsonWriter.key("desiredCount").value(updateServiceRequest.getDesiredCount());
+                jsonWriter.key("desiredCount").value(
+                        updateServiceRequest.getDesiredCount());
             }
+
             if (updateServiceRequest.getTaskDefinition() != null) {
-                jsonWriter.key("taskDefinition").value(updateServiceRequest.getTaskDefinition());
+                jsonWriter.key("taskDefinition").value(
+                        updateServiceRequest.getTaskDefinition());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

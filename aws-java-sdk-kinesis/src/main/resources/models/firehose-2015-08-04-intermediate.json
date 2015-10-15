@@ -54,9 +54,9 @@
         "documentation" : "<p>The resource is already in use and not available for this operation.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncDocumentation" : "/**<p>Creates a delivery stream.</p> <p><a>CreateDeliveryStream</a> is an asynchronous operation that immediately returns. The initial status of the delivery stream is <code>CREATING</code>. After the delivery stream is created, its status is <code>ACTIVE</code> and it now accepts data. Attempts to send data to a delivery stream that is not in the <code>ACTIVE</code> state cause an exception. To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>The name of a delivery stream identifies it. You can't have two delivery streams with the same name in the same region. Two delivery streams in different AWS accounts or different regions in the same AWS account can have the same name.</p> <p>By default, you can create up to 5 delivery streams per region.</p> <p>A delivery stream can only be configured with a single destination, Amazon S3 or Amazon Redshift. For correct <a>CreateDeliveryStream</a> request syntax, specify only one destination configuration parameter: either <code>RedshiftDestinationConfiguration</code> or <code>S3DestinationConfiguration</code></p> <p>As part of <code>S3DestinationConfiguration</code>, optional values <code>BufferingHints</code>, <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code> can be provided. By default, if no <code>BufferingHints</code> value is provided, Amazon Kinesis Firehose buffers data up to 5 MB or for 5 minutes, whichever condition is satisfied first. Note that <code>BufferingHints</code> is a hint, so there are some cases where the service cannot adhere to these conditions strictly; for example, record boundaries are such that the size is a little over or under the configured buffering size. By default, no encryption is performed. We strongly recommend that you enable encryption to ensure secure data storage in Amazon S3.</p> <p>A few notes about <code>RedshiftDestinationConfiguration</code>:</p> <ul> <li>An Amazon Redshift destination requires an S3 bucket as intermediate location, as Amazon Kinesis Firehose first delivers data to S3 and then uses <code>COPY</code> syntax to load data into an Amazon Redshift table. This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter element.</li> <li>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</li> <li>We strongly recommend that the username and password provided is used exclusively for Amazon Kinesis Firehose purposes, and that the permissions for the account are restricted for Amazon Redshift <code>INSERT</code> permissions.</li> </ul> <p>Amazon Kinesis Firehose assumes the IAM role that is configured as part of destinations. The IAM role should allow the Amazon Kinesis Firehose principal to assume the role, and the role should have permissions that allows the service to deliver the data. For more information, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3\">Amazon S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.</p>\n@param createDeliveryStreamRequest Contains the parameters for <a>CreateDeliveryStream</a>.\n@return Result of the CreateDeliveryStream operation returned by the service.\n@throws InvalidArgumentException The specified input parameter has an value that is not valid.\n@throws LimitExceededException You have already reached the limit for a requested resource.\n@throws ResourceInUseException The resource is already in use and not available for this operation.*/",
       "asyncDocumentation" : "/**<p>Creates a delivery stream.</p> <p><a>CreateDeliveryStream</a> is an asynchronous operation that immediately returns. The initial status of the delivery stream is <code>CREATING</code>. After the delivery stream is created, its status is <code>ACTIVE</code> and it now accepts data. Attempts to send data to a delivery stream that is not in the <code>ACTIVE</code> state cause an exception. To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>The name of a delivery stream identifies it. You can't have two delivery streams with the same name in the same region. Two delivery streams in different AWS accounts or different regions in the same AWS account can have the same name.</p> <p>By default, you can create up to 5 delivery streams per region.</p> <p>A delivery stream can only be configured with a single destination, Amazon S3 or Amazon Redshift. For correct <a>CreateDeliveryStream</a> request syntax, specify only one destination configuration parameter: either <code>RedshiftDestinationConfiguration</code> or <code>S3DestinationConfiguration</code></p> <p>As part of <code>S3DestinationConfiguration</code>, optional values <code>BufferingHints</code>, <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code> can be provided. By default, if no <code>BufferingHints</code> value is provided, Amazon Kinesis Firehose buffers data up to 5 MB or for 5 minutes, whichever condition is satisfied first. Note that <code>BufferingHints</code> is a hint, so there are some cases where the service cannot adhere to these conditions strictly; for example, record boundaries are such that the size is a little over or under the configured buffering size. By default, no encryption is performed. We strongly recommend that you enable encryption to ensure secure data storage in Amazon S3.</p> <p>A few notes about <code>RedshiftDestinationConfiguration</code>:</p> <ul> <li>An Amazon Redshift destination requires an S3 bucket as intermediate location, as Amazon Kinesis Firehose first delivers data to S3 and then uses <code>COPY</code> syntax to load data into an Amazon Redshift table. This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter element.</li> <li>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</li> <li>We strongly recommend that the username and password provided is used exclusively for Amazon Kinesis Firehose purposes, and that the permissions for the account are restricted for Amazon Redshift <code>INSERT</code> permissions.</li> </ul> <p>Amazon Kinesis Firehose assumes the IAM role that is configured as part of destinations. The IAM role should allow the Amazon Kinesis Firehose principal to assume the role, and the role should have permissions that allows the service to deliver the data. For more information, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3\">Amazon S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.</p>\n@param createDeliveryStreamRequest Contains the parameters for <a>CreateDeliveryStream</a>.\n@return A Java Future containing the result of the CreateDeliveryStream operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Creates a delivery stream.</p> <p><a>CreateDeliveryStream</a> is an asynchronous operation that immediately returns. The initial status of the delivery stream is <code>CREATING</code>. After the delivery stream is created, its status is <code>ACTIVE</code> and it now accepts data. Attempts to send data to a delivery stream that is not in the <code>ACTIVE</code> state cause an exception. To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>The name of a delivery stream identifies it. You can't have two delivery streams with the same name in the same region. Two delivery streams in different AWS accounts or different regions in the same AWS account can have the same name.</p> <p>By default, you can create up to 5 delivery streams per region.</p> <p>A delivery stream can only be configured with a single destination, Amazon S3 or Amazon Redshift. For correct <a>CreateDeliveryStream</a> request syntax, specify only one destination configuration parameter: either <code>RedshiftDestinationConfiguration</code> or <code>S3DestinationConfiguration</code></p> <p>As part of <code>S3DestinationConfiguration</code>, optional values <code>BufferingHints</code>, <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code> can be provided. By default, if no <code>BufferingHints</code> value is provided, Amazon Kinesis Firehose buffers data up to 5 MB or for 5 minutes, whichever condition is satisfied first. Note that <code>BufferingHints</code> is a hint, so there are some cases where the service cannot adhere to these conditions strictly; for example, record boundaries are such that the size is a little over or under the configured buffering size. By default, no encryption is performed. We strongly recommend that you enable encryption to ensure secure data storage in Amazon S3.</p> <p>A few notes about <code>RedshiftDestinationConfiguration</code>:</p> <ul> <li>An Amazon Redshift destination requires an S3 bucket as intermediate location, as Amazon Kinesis Firehose first delivers data to S3 and then uses <code>COPY</code> syntax to load data into an Amazon Redshift table. This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter element.</li> <li>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</li> <li>We strongly recommend that the username and password provided is used exclusively for Amazon Kinesis Firehose purposes, and that the permissions for the account are restricted for Amazon Redshift <code>INSERT</code> permissions.</li> </ul> <p>Amazon Kinesis Firehose assumes the IAM role that is configured as part of destinations. The IAM role should allow the Amazon Kinesis Firehose principal to assume the role, and the role should have permissions that allows the service to deliver the data. For more information, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3\">Amazon S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.</p>\n@param createDeliveryStreamRequest Contains the parameters for <a>CreateDeliveryStream</a>.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateDeliveryStream operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Creates a delivery stream.</p> <p><a>CreateDeliveryStream</a> is an asynchronous operation that immediately returns. The initial status of the delivery stream is <code>CREATING</code>. After the delivery stream is created, its status is <code>ACTIVE</code> and it now accepts data. Attempts to send data to a delivery stream that is not in the <code>ACTIVE</code> state cause an exception. To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>The name of a delivery stream identifies it. You can't have two delivery streams with the same name in the same region. Two delivery streams in different AWS accounts or different regions in the same AWS account can have the same name.</p> <p>By default, you can create up to 5 delivery streams per region.</p> <p>A delivery stream can only be configured with a single destination, Amazon S3 or Amazon Redshift. For correct <a>CreateDeliveryStream</a> request syntax, specify only one destination configuration parameter: either <code>RedshiftDestinationConfiguration</code> or <code>S3DestinationConfiguration</code></p> <p>As part of <code>S3DestinationConfiguration</code>, optional values <code>BufferingHints</code>, <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code> can be provided. By default, if no <code>BufferingHints</code> value is provided, Amazon Kinesis Firehose buffers data up to 5 MB or for 5 minutes, whichever condition is satisfied first. Note that <code>BufferingHints</code> is a hint, so there are some cases where the service cannot adhere to these conditions strictly; for example, record boundaries are such that the size is a little over or under the configured buffering size. By default, no encryption is performed. We strongly recommend that you enable encryption to ensure secure data storage in Amazon S3.</p> <p>A few notes about <code>RedshiftDestinationConfiguration</code>:</p> <ul> <li>An Amazon Redshift destination requires an S3 bucket as intermediate location, as Amazon Kinesis Firehose first delivers data to S3 and then uses <code>COPY</code> syntax to load data into an Amazon Redshift table. This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter element.</li> <li>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</li> <li>We strongly recommend that the username and password provided is used exclusively for Amazon Kinesis Firehose purposes, and that the permissions for the account are restricted for Amazon Redshift <code>INSERT</code> permissions.</li> </ul> <p>Amazon Kinesis Firehose assumes the IAM role that is configured as part of destinations. The IAM role should allow the Amazon Kinesis Firehose principal to assume the role, and the role should have permissions that allows the service to deliver the data. For more information, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3\">Amazon S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.</p>\n@param createDeliveryStreamRequest Contains the parameters for <a>CreateDeliveryStream</a>.\n@return Result of the CreateDeliveryStream operation returned by the service.\n@throws InvalidArgumentException The specified input parameter has an value that is not valid.\n@throws LimitExceededException You have already reached the limit for a requested resource.\n@throws ResourceInUseException The resource is already in use and not available for this operation.*/",
       "syncReturnType" : "CreateDeliveryStreamResult",
       "asyncReturnType" : "CreateDeliveryStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDeliveryStreamResult>",
@@ -89,9 +89,9 @@
         "documentation" : "<p>The specified resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncDocumentation" : "/**<p>Deletes a delivery stream and its data.</p> <p>You can delete a delivery stream only if it is in <code>ACTIVE</code> or <code>DELETING</code> state, and not in the <code>CREATING</code> state. While the deletion request is in process, the delivery stream is in the <code>DELETING</code> state.</p> <p>To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>While the delivery stream is <code>DELETING</code> state, the service may continue to accept the records, but the service doesn't make any guarantees with respect to delivering the data. Therefore, as a best practice, you should first stop any applications that are sending records before deleting a delivery stream.</p>\n@param deleteDeliveryStreamRequest Contains the parameters for <a>DeleteDeliveryStream</a>.\n@return Result of the DeleteDeliveryStream operation returned by the service.\n@throws ResourceInUseException The resource is already in use and not available for this operation.\n@throws ResourceNotFoundException The specified resource could not be found.*/",
       "asyncDocumentation" : "/**<p>Deletes a delivery stream and its data.</p> <p>You can delete a delivery stream only if it is in <code>ACTIVE</code> or <code>DELETING</code> state, and not in the <code>CREATING</code> state. While the deletion request is in process, the delivery stream is in the <code>DELETING</code> state.</p> <p>To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>While the delivery stream is <code>DELETING</code> state, the service may continue to accept the records, but the service doesn't make any guarantees with respect to delivering the data. Therefore, as a best practice, you should first stop any applications that are sending records before deleting a delivery stream.</p>\n@param deleteDeliveryStreamRequest Contains the parameters for <a>DeleteDeliveryStream</a>.\n@return A Java Future containing the result of the DeleteDeliveryStream operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Deletes a delivery stream and its data.</p> <p>You can delete a delivery stream only if it is in <code>ACTIVE</code> or <code>DELETING</code> state, and not in the <code>CREATING</code> state. While the deletion request is in process, the delivery stream is in the <code>DELETING</code> state.</p> <p>To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>While the delivery stream is <code>DELETING</code> state, the service may continue to accept the records, but the service doesn't make any guarantees with respect to delivering the data. Therefore, as a best practice, you should first stop any applications that are sending records before deleting a delivery stream.</p>\n@param deleteDeliveryStreamRequest Contains the parameters for <a>DeleteDeliveryStream</a>.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteDeliveryStream operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Deletes a delivery stream and its data.</p> <p>You can delete a delivery stream only if it is in <code>ACTIVE</code> or <code>DELETING</code> state, and not in the <code>CREATING</code> state. While the deletion request is in process, the delivery stream is in the <code>DELETING</code> state.</p> <p>To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>While the delivery stream is <code>DELETING</code> state, the service may continue to accept the records, but the service doesn't make any guarantees with respect to delivering the data. Therefore, as a best practice, you should first stop any applications that are sending records before deleting a delivery stream.</p>\n@param deleteDeliveryStreamRequest Contains the parameters for <a>DeleteDeliveryStream</a>.\n@return Result of the DeleteDeliveryStream operation returned by the service.\n@throws ResourceInUseException The resource is already in use and not available for this operation.\n@throws ResourceNotFoundException The specified resource could not be found.*/",
       "syncReturnType" : "DeleteDeliveryStreamResult",
       "asyncReturnType" : "DeleteDeliveryStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDeliveryStreamResult>",
@@ -121,9 +121,9 @@
         "documentation" : "<p>The specified resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncDocumentation" : "/**<p>Describes the specified delivery stream and gets the status. For example, after your delivery stream is created, call <a>DescribeDeliveryStream</a> to see if the delivery stream is <code>ACTIVE</code> and therefore ready for data to be sent to it.</p>\n@param describeDeliveryStreamRequest Contains the parameters for <a>DescribeDeliveryStream</a>.\n@return Result of the DescribeDeliveryStream operation returned by the service.\n@throws ResourceNotFoundException The specified resource could not be found.*/",
       "asyncDocumentation" : "/**<p>Describes the specified delivery stream and gets the status. For example, after your delivery stream is created, call <a>DescribeDeliveryStream</a> to see if the delivery stream is <code>ACTIVE</code> and therefore ready for data to be sent to it.</p>\n@param describeDeliveryStreamRequest Contains the parameters for <a>DescribeDeliveryStream</a>.\n@return A Java Future containing the result of the DescribeDeliveryStream operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Describes the specified delivery stream and gets the status. For example, after your delivery stream is created, call <a>DescribeDeliveryStream</a> to see if the delivery stream is <code>ACTIVE</code> and therefore ready for data to be sent to it.</p>\n@param describeDeliveryStreamRequest Contains the parameters for <a>DescribeDeliveryStream</a>.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeDeliveryStream operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Describes the specified delivery stream and gets the status. For example, after your delivery stream is created, call <a>DescribeDeliveryStream</a> to see if the delivery stream is <code>ACTIVE</code> and therefore ready for data to be sent to it.</p>\n@param describeDeliveryStreamRequest Contains the parameters for <a>DescribeDeliveryStream</a>.\n@return Result of the DescribeDeliveryStream operation returned by the service.\n@throws ResourceNotFoundException The specified resource could not be found.*/",
       "syncReturnType" : "DescribeDeliveryStreamResult",
       "asyncReturnType" : "DescribeDeliveryStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryStreamResult>",
@@ -150,9 +150,9 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "syncDocumentation" : "/**<p>Lists your delivery streams.</p> <p>The number of delivery streams might be too large to return using a single call to <a>ListDeliveryStreams</a>. You can limit the number of delivery streams returned, using the <code>Limit</code> parameter. To determine whether there are more delivery streams to list, check the value of <code>HasMoreDeliveryStreams</code> in the output. If there are more delivery streams to list, you can request them by specifying the name of the last delivery stream returned in the call in the <code>ExclusiveStartDeliveryStreamName</code> parameter of a subsequent call.</p>\n@param listDeliveryStreamsRequest Contains the parameters for <a>ListDeliveryStreams</a>.\n@return Result of the ListDeliveryStreams operation returned by the service.*/",
       "asyncDocumentation" : "/**<p>Lists your delivery streams.</p> <p>The number of delivery streams might be too large to return using a single call to <a>ListDeliveryStreams</a>. You can limit the number of delivery streams returned, using the <code>Limit</code> parameter. To determine whether there are more delivery streams to list, check the value of <code>HasMoreDeliveryStreams</code> in the output. If there are more delivery streams to list, you can request them by specifying the name of the last delivery stream returned in the call in the <code>ExclusiveStartDeliveryStreamName</code> parameter of a subsequent call.</p>\n@param listDeliveryStreamsRequest Contains the parameters for <a>ListDeliveryStreams</a>.\n@return A Java Future containing the result of the ListDeliveryStreams operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Lists your delivery streams.</p> <p>The number of delivery streams might be too large to return using a single call to <a>ListDeliveryStreams</a>. You can limit the number of delivery streams returned, using the <code>Limit</code> parameter. To determine whether there are more delivery streams to list, check the value of <code>HasMoreDeliveryStreams</code> in the output. If there are more delivery streams to list, you can request them by specifying the name of the last delivery stream returned in the call in the <code>ExclusiveStartDeliveryStreamName</code> parameter of a subsequent call.</p>\n@param listDeliveryStreamsRequest Contains the parameters for <a>ListDeliveryStreams</a>.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListDeliveryStreams operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Lists your delivery streams.</p> <p>The number of delivery streams might be too large to return using a single call to <a>ListDeliveryStreams</a>. You can limit the number of delivery streams returned, using the <code>Limit</code> parameter. To determine whether there are more delivery streams to list, check the value of <code>HasMoreDeliveryStreams</code> in the output. If there are more delivery streams to list, you can request them by specifying the name of the last delivery stream returned in the call in the <code>ExclusiveStartDeliveryStreamName</code> parameter of a subsequent call.</p>\n@param listDeliveryStreamsRequest Contains the parameters for <a>ListDeliveryStreams</a>.\n@return Result of the ListDeliveryStreams operation returned by the service.*/",
       "syncReturnType" : "ListDeliveryStreamsResult",
       "asyncReturnType" : "ListDeliveryStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDeliveryStreamsResult>",
@@ -188,9 +188,9 @@
         "documentation" : "<p>The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncDocumentation" : "/**<p>Writes a single data record into an Amazon Kinesis Firehose delivery stream. To write multiple data records into a delivery stream, use <a>PutRecordBatch</a>. Applications using these operations are referred to as producers.</p> <p>By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations for each delivery stream. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>. </p> <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000 KB in size, and any kind of data, for example, a segment from a log file, geographic location data, web site clickstream data, etc.</p> <p>Amazon Kinesis Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\\n</code>) or some other character unique within the data. This allows the consumer application(s) to parse individual data items when reading the data from the destination.</p> <p>Amazon Kinesis Firehose does not maintain data record ordering. If the destination data needs to be re-ordered by the consumer application, the producer should include some form of sequence number in each data record. </p> <p>The <a>PutRecord</a> operation returns a <code>RecordId</code>, which is a unique string assigned to each record. Producer applications can use this ID for purposes such as auditability and investigation.</p> <p>If the <a>PutRecord</a> operation throws a <code>ServiceUnavailableException</code>, back off and retry. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream. </p> <p>Data records sent to Amazon Kinesis Firehose are stored for 24 hours from the time they are added to a delivery stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p>\n@param putRecordRequest Contains the parameters for <a>PutRecord</a>.\n@return Result of the PutRecord operation returned by the service.\n@throws ResourceNotFoundException The specified resource could not be found.\n@throws InvalidArgumentException The specified input parameter has an value that is not valid.\n@throws ServiceUnavailableException The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>.*/",
       "asyncDocumentation" : "/**<p>Writes a single data record into an Amazon Kinesis Firehose delivery stream. To write multiple data records into a delivery stream, use <a>PutRecordBatch</a>. Applications using these operations are referred to as producers.</p> <p>By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations for each delivery stream. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>. </p> <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000 KB in size, and any kind of data, for example, a segment from a log file, geographic location data, web site clickstream data, etc.</p> <p>Amazon Kinesis Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\\n</code>) or some other character unique within the data. This allows the consumer application(s) to parse individual data items when reading the data from the destination.</p> <p>Amazon Kinesis Firehose does not maintain data record ordering. If the destination data needs to be re-ordered by the consumer application, the producer should include some form of sequence number in each data record. </p> <p>The <a>PutRecord</a> operation returns a <code>RecordId</code>, which is a unique string assigned to each record. Producer applications can use this ID for purposes such as auditability and investigation.</p> <p>If the <a>PutRecord</a> operation throws a <code>ServiceUnavailableException</code>, back off and retry. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream. </p> <p>Data records sent to Amazon Kinesis Firehose are stored for 24 hours from the time they are added to a delivery stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p>\n@param putRecordRequest Contains the parameters for <a>PutRecord</a>.\n@return A Java Future containing the result of the PutRecord operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Writes a single data record into an Amazon Kinesis Firehose delivery stream. To write multiple data records into a delivery stream, use <a>PutRecordBatch</a>. Applications using these operations are referred to as producers.</p> <p>By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations for each delivery stream. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>. </p> <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000 KB in size, and any kind of data, for example, a segment from a log file, geographic location data, web site clickstream data, etc.</p> <p>Amazon Kinesis Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\\n</code>) or some other character unique within the data. This allows the consumer application(s) to parse individual data items when reading the data from the destination.</p> <p>Amazon Kinesis Firehose does not maintain data record ordering. If the destination data needs to be re-ordered by the consumer application, the producer should include some form of sequence number in each data record. </p> <p>The <a>PutRecord</a> operation returns a <code>RecordId</code>, which is a unique string assigned to each record. Producer applications can use this ID for purposes such as auditability and investigation.</p> <p>If the <a>PutRecord</a> operation throws a <code>ServiceUnavailableException</code>, back off and retry. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream. </p> <p>Data records sent to Amazon Kinesis Firehose are stored for 24 hours from the time they are added to a delivery stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p>\n@param putRecordRequest Contains the parameters for <a>PutRecord</a>.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the PutRecord operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Writes a single data record into an Amazon Kinesis Firehose delivery stream. To write multiple data records into a delivery stream, use <a>PutRecordBatch</a>. Applications using these operations are referred to as producers.</p> <p>By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations for each delivery stream. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>. </p> <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000 KB in size, and any kind of data, for example, a segment from a log file, geographic location data, web site clickstream data, etc.</p> <p>Amazon Kinesis Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\\n</code>) or some other character unique within the data. This allows the consumer application(s) to parse individual data items when reading the data from the destination.</p> <p>Amazon Kinesis Firehose does not maintain data record ordering. If the destination data needs to be re-ordered by the consumer application, the producer should include some form of sequence number in each data record. </p> <p>The <a>PutRecord</a> operation returns a <code>RecordId</code>, which is a unique string assigned to each record. Producer applications can use this ID for purposes such as auditability and investigation.</p> <p>If the <a>PutRecord</a> operation throws a <code>ServiceUnavailableException</code>, back off and retry. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream. </p> <p>Data records sent to Amazon Kinesis Firehose are stored for 24 hours from the time they are added to a delivery stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p>\n@param putRecordRequest Contains the parameters for <a>PutRecord</a>.\n@return Result of the PutRecord operation returned by the service.\n@throws ResourceNotFoundException The specified resource could not be found.\n@throws InvalidArgumentException The specified input parameter has an value that is not valid.\n@throws ServiceUnavailableException The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>.*/",
       "syncReturnType" : "PutRecordResult",
       "asyncReturnType" : "PutRecordResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordResult>",
@@ -226,9 +226,9 @@
         "documentation" : "<p>The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncDocumentation" : "/**<p>Writes multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records. To write single data records into a delivery stream, use <a>PutRecord</a>. Applications using these operations are referred to as producers.</p> <p>Each <a>PutRecordBatch</a> request supports up to 500 records. Each record in the request can be as large as 1,000 KB (before 64-bit encoding), up to a limit of 4 MB for the entire request. By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations for each delivery stream. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>. </p> <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000 KB in size, and any kind of data, for example, a segment from a log file, geographic location data, web site clickstream data, and so on.</p> <p>Amazon Kinesis Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\\n</code>) or some other character unique within the data. This allows the consumer application(s) to parse individual data items when reading the data from the destination.</p> <p>The <a>PutRecordBatch</a> response includes a count of any failed records, <code>FailedPutCount</code>, and an array of responses, <code>RequestResponses</code>. The <code>FailedPutCount</code> value is a count of records that failed. Each entry in the <code>RequestResponses</code> array gives additional information of the processed record. Each entry in <code>RequestResponses</code> directly correlates with a record in the request array using the same ordering, from the top to the bottom of the request and response. <code>RequestResponses</code> always includes the same number of records as the request array. <code>RequestResponses</code> both successfully and unsuccessfully processed records. Amazon Kinesis Firehose attempts to process all records in each <a>PutRecordBatch</a> request. A single record failure does not stop the processing of subsequent records.</p> <p>A successfully processed record includes a <code>RecordId</code> value, which is a unique value identified for the record. An unsuccessfully processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code> values. <code>ErrorCode</code> reflects the type of error and is one of the following values: <code>ServiceUnavailable</code> or <code>InternalFailure</code>. <code>ErrorMessage</code> provides more detailed information about the error.</p> <p>If <code>FailedPutCount</code> is greater than 0 (zero), retry the request. A retry of the entire batch of records is possible; however, we strongly recommend that you inspect the entire response and resend only those records that failed processing. This minimizes duplicate records and also reduces the total bytes sent (and corresponding charges).</p> <p>If the <a>PutRecordBatch</a> operation throws a <code>ServiceUnavailableException</code>, back off and retry. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream.</p> <p>Data records sent to Amazon Kinesis Firehose are stored for 24 hours from the time they are added to a delivery stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p>\n@param putRecordBatchRequest Contains the parameters for <a>PutRecordBatch</a>.\n@return Result of the PutRecordBatch operation returned by the service.\n@throws ResourceNotFoundException The specified resource could not be found.\n@throws InvalidArgumentException The specified input parameter has an value that is not valid.\n@throws ServiceUnavailableException The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>.*/",
       "asyncDocumentation" : "/**<p>Writes multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records. To write single data records into a delivery stream, use <a>PutRecord</a>. Applications using these operations are referred to as producers.</p> <p>Each <a>PutRecordBatch</a> request supports up to 500 records. Each record in the request can be as large as 1,000 KB (before 64-bit encoding), up to a limit of 4 MB for the entire request. By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations for each delivery stream. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>. </p> <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000 KB in size, and any kind of data, for example, a segment from a log file, geographic location data, web site clickstream data, and so on.</p> <p>Amazon Kinesis Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\\n</code>) or some other character unique within the data. This allows the consumer application(s) to parse individual data items when reading the data from the destination.</p> <p>The <a>PutRecordBatch</a> response includes a count of any failed records, <code>FailedPutCount</code>, and an array of responses, <code>RequestResponses</code>. The <code>FailedPutCount</code> value is a count of records that failed. Each entry in the <code>RequestResponses</code> array gives additional information of the processed record. Each entry in <code>RequestResponses</code> directly correlates with a record in the request array using the same ordering, from the top to the bottom of the request and response. <code>RequestResponses</code> always includes the same number of records as the request array. <code>RequestResponses</code> both successfully and unsuccessfully processed records. Amazon Kinesis Firehose attempts to process all records in each <a>PutRecordBatch</a> request. A single record failure does not stop the processing of subsequent records.</p> <p>A successfully processed record includes a <code>RecordId</code> value, which is a unique value identified for the record. An unsuccessfully processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code> values. <code>ErrorCode</code> reflects the type of error and is one of the following values: <code>ServiceUnavailable</code> or <code>InternalFailure</code>. <code>ErrorMessage</code> provides more detailed information about the error.</p> <p>If <code>FailedPutCount</code> is greater than 0 (zero), retry the request. A retry of the entire batch of records is possible; however, we strongly recommend that you inspect the entire response and resend only those records that failed processing. This minimizes duplicate records and also reduces the total bytes sent (and corresponding charges).</p> <p>If the <a>PutRecordBatch</a> operation throws a <code>ServiceUnavailableException</code>, back off and retry. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream.</p> <p>Data records sent to Amazon Kinesis Firehose are stored for 24 hours from the time they are added to a delivery stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p>\n@param putRecordBatchRequest Contains the parameters for <a>PutRecordBatch</a>.\n@return A Java Future containing the result of the PutRecordBatch operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Writes multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records. To write single data records into a delivery stream, use <a>PutRecord</a>. Applications using these operations are referred to as producers.</p> <p>Each <a>PutRecordBatch</a> request supports up to 500 records. Each record in the request can be as large as 1,000 KB (before 64-bit encoding), up to a limit of 4 MB for the entire request. By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations for each delivery stream. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>. </p> <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000 KB in size, and any kind of data, for example, a segment from a log file, geographic location data, web site clickstream data, and so on.</p> <p>Amazon Kinesis Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\\n</code>) or some other character unique within the data. This allows the consumer application(s) to parse individual data items when reading the data from the destination.</p> <p>The <a>PutRecordBatch</a> response includes a count of any failed records, <code>FailedPutCount</code>, and an array of responses, <code>RequestResponses</code>. The <code>FailedPutCount</code> value is a count of records that failed. Each entry in the <code>RequestResponses</code> array gives additional information of the processed record. Each entry in <code>RequestResponses</code> directly correlates with a record in the request array using the same ordering, from the top to the bottom of the request and response. <code>RequestResponses</code> always includes the same number of records as the request array. <code>RequestResponses</code> both successfully and unsuccessfully processed records. Amazon Kinesis Firehose attempts to process all records in each <a>PutRecordBatch</a> request. A single record failure does not stop the processing of subsequent records.</p> <p>A successfully processed record includes a <code>RecordId</code> value, which is a unique value identified for the record. An unsuccessfully processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code> values. <code>ErrorCode</code> reflects the type of error and is one of the following values: <code>ServiceUnavailable</code> or <code>InternalFailure</code>. <code>ErrorMessage</code> provides more detailed information about the error.</p> <p>If <code>FailedPutCount</code> is greater than 0 (zero), retry the request. A retry of the entire batch of records is possible; however, we strongly recommend that you inspect the entire response and resend only those records that failed processing. This minimizes duplicate records and also reduces the total bytes sent (and corresponding charges).</p> <p>If the <a>PutRecordBatch</a> operation throws a <code>ServiceUnavailableException</code>, back off and retry. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream.</p> <p>Data records sent to Amazon Kinesis Firehose are stored for 24 hours from the time they are added to a delivery stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p>\n@param putRecordBatchRequest Contains the parameters for <a>PutRecordBatch</a>.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the PutRecordBatch operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Writes multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records. To write single data records into a delivery stream, use <a>PutRecord</a>. Applications using these operations are referred to as producers.</p> <p>Each <a>PutRecordBatch</a> request supports up to 500 records. Each record in the request can be as large as 1,000 KB (before 64-bit encoding), up to a limit of 4 MB for the entire request. By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations for each delivery stream. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>. </p> <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000 KB in size, and any kind of data, for example, a segment from a log file, geographic location data, web site clickstream data, and so on.</p> <p>Amazon Kinesis Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\\n</code>) or some other character unique within the data. This allows the consumer application(s) to parse individual data items when reading the data from the destination.</p> <p>The <a>PutRecordBatch</a> response includes a count of any failed records, <code>FailedPutCount</code>, and an array of responses, <code>RequestResponses</code>. The <code>FailedPutCount</code> value is a count of records that failed. Each entry in the <code>RequestResponses</code> array gives additional information of the processed record. Each entry in <code>RequestResponses</code> directly correlates with a record in the request array using the same ordering, from the top to the bottom of the request and response. <code>RequestResponses</code> always includes the same number of records as the request array. <code>RequestResponses</code> both successfully and unsuccessfully processed records. Amazon Kinesis Firehose attempts to process all records in each <a>PutRecordBatch</a> request. A single record failure does not stop the processing of subsequent records.</p> <p>A successfully processed record includes a <code>RecordId</code> value, which is a unique value identified for the record. An unsuccessfully processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code> values. <code>ErrorCode</code> reflects the type of error and is one of the following values: <code>ServiceUnavailable</code> or <code>InternalFailure</code>. <code>ErrorMessage</code> provides more detailed information about the error.</p> <p>If <code>FailedPutCount</code> is greater than 0 (zero), retry the request. A retry of the entire batch of records is possible; however, we strongly recommend that you inspect the entire response and resend only those records that failed processing. This minimizes duplicate records and also reduces the total bytes sent (and corresponding charges).</p> <p>If the <a>PutRecordBatch</a> operation throws a <code>ServiceUnavailableException</code>, back off and retry. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream.</p> <p>Data records sent to Amazon Kinesis Firehose are stored for 24 hours from the time they are added to a delivery stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p>\n@param putRecordBatchRequest Contains the parameters for <a>PutRecordBatch</a>.\n@return Result of the PutRecordBatch operation returned by the service.\n@throws ResourceNotFoundException The specified resource could not be found.\n@throws InvalidArgumentException The specified input parameter has an value that is not valid.\n@throws ServiceUnavailableException The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>.*/",
       "syncReturnType" : "PutRecordBatchResult",
       "asyncReturnType" : "PutRecordBatchResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordBatchResult>",
@@ -267,9 +267,9 @@
         "documentation" : "<p>Another modification has already happened. Fetch <code>VersionId</code> again and use it to update the destination.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncDocumentation" : "/**<p>Updates the specified destination of the specified delivery stream. </p> <p>This operation can be used to change the destination type (for example, to replace the Amazon S3 destination with Amazon Redshift) or change the parameters associated with a given destination (for example, to change the bucket name of the Amazon S3 destination). The update may not occur immediately. The target delivery stream remains active while the configurations are updated, so data writes to the delivery stream can continue during this process. The updated configurations are normally effective within a few minutes. </p> <p>If the destination type is the same, Amazon Kinesis Firehose merges the configuration parameters specified in the <a>UpdateDestination</a> request with the destination configuration that already exists on the delivery stream. If any of the parameters are not specified in the update request, then the existing configuration parameters are retained. For example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is not specified then the existing <a>EncryptionConfiguration</a> is maintained on the destination.</p> <p>If the destination type is not the same, for example, changing the destination from Amazon S3 to Amazon Redshift, Amazon Kinesis Firehose does not merge any parameters. In this case, all parameters must be specified.</p> <p>Amazon Kinesis Firehose uses the <code>CurrentDeliveryStreamVersionId</code> to avoid race conditions and conflicting merges. This is a required field in every request and the service only updates the configuration if the existing configuration matches the <code>VersionId</code>. After the update is applied successfully, the <code>VersionId</code> is updated, which can be retrieved with the <a>DescribeDeliveryStream</a> operation. The new <code>VersionId</code> should be uses to set <code>CurrentDeliveryStreamVersionId</code> in the next <a>UpdateDestination</a> operation.</p>\n@param updateDestinationRequest Contains the parameters for <a>UpdateDestination</a>.\n@return Result of the UpdateDestination operation returned by the service.\n@throws InvalidArgumentException The specified input parameter has an value that is not valid.\n@throws ResourceInUseException The resource is already in use and not available for this operation.\n@throws ResourceNotFoundException The specified resource could not be found.\n@throws ConcurrentModificationException Another modification has already happened. Fetch <code>VersionId</code> again and use it to update the destination.*/",
       "asyncDocumentation" : "/**<p>Updates the specified destination of the specified delivery stream. </p> <p>This operation can be used to change the destination type (for example, to replace the Amazon S3 destination with Amazon Redshift) or change the parameters associated with a given destination (for example, to change the bucket name of the Amazon S3 destination). The update may not occur immediately. The target delivery stream remains active while the configurations are updated, so data writes to the delivery stream can continue during this process. The updated configurations are normally effective within a few minutes. </p> <p>If the destination type is the same, Amazon Kinesis Firehose merges the configuration parameters specified in the <a>UpdateDestination</a> request with the destination configuration that already exists on the delivery stream. If any of the parameters are not specified in the update request, then the existing configuration parameters are retained. For example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is not specified then the existing <a>EncryptionConfiguration</a> is maintained on the destination.</p> <p>If the destination type is not the same, for example, changing the destination from Amazon S3 to Amazon Redshift, Amazon Kinesis Firehose does not merge any parameters. In this case, all parameters must be specified.</p> <p>Amazon Kinesis Firehose uses the <code>CurrentDeliveryStreamVersionId</code> to avoid race conditions and conflicting merges. This is a required field in every request and the service only updates the configuration if the existing configuration matches the <code>VersionId</code>. After the update is applied successfully, the <code>VersionId</code> is updated, which can be retrieved with the <a>DescribeDeliveryStream</a> operation. The new <code>VersionId</code> should be uses to set <code>CurrentDeliveryStreamVersionId</code> in the next <a>UpdateDestination</a> operation.</p>\n@param updateDestinationRequest Contains the parameters for <a>UpdateDestination</a>.\n@return A Java Future containing the result of the UpdateDestination operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Updates the specified destination of the specified delivery stream. </p> <p>This operation can be used to change the destination type (for example, to replace the Amazon S3 destination with Amazon Redshift) or change the parameters associated with a given destination (for example, to change the bucket name of the Amazon S3 destination). The update may not occur immediately. The target delivery stream remains active while the configurations are updated, so data writes to the delivery stream can continue during this process. The updated configurations are normally effective within a few minutes. </p> <p>If the destination type is the same, Amazon Kinesis Firehose merges the configuration parameters specified in the <a>UpdateDestination</a> request with the destination configuration that already exists on the delivery stream. If any of the parameters are not specified in the update request, then the existing configuration parameters are retained. For example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is not specified then the existing <a>EncryptionConfiguration</a> is maintained on the destination.</p> <p>If the destination type is not the same, for example, changing the destination from Amazon S3 to Amazon Redshift, Amazon Kinesis Firehose does not merge any parameters. In this case, all parameters must be specified.</p> <p>Amazon Kinesis Firehose uses the <code>CurrentDeliveryStreamVersionId</code> to avoid race conditions and conflicting merges. This is a required field in every request and the service only updates the configuration if the existing configuration matches the <code>VersionId</code>. After the update is applied successfully, the <code>VersionId</code> is updated, which can be retrieved with the <a>DescribeDeliveryStream</a> operation. The new <code>VersionId</code> should be uses to set <code>CurrentDeliveryStreamVersionId</code> in the next <a>UpdateDestination</a> operation.</p>\n@param updateDestinationRequest Contains the parameters for <a>UpdateDestination</a>.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateDestination operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Updates the specified destination of the specified delivery stream. </p> <p>This operation can be used to change the destination type (for example, to replace the Amazon S3 destination with Amazon Redshift) or change the parameters associated with a given destination (for example, to change the bucket name of the Amazon S3 destination). The update may not occur immediately. The target delivery stream remains active while the configurations are updated, so data writes to the delivery stream can continue during this process. The updated configurations are normally effective within a few minutes. </p> <p>If the destination type is the same, Amazon Kinesis Firehose merges the configuration parameters specified in the <a>UpdateDestination</a> request with the destination configuration that already exists on the delivery stream. If any of the parameters are not specified in the update request, then the existing configuration parameters are retained. For example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is not specified then the existing <a>EncryptionConfiguration</a> is maintained on the destination.</p> <p>If the destination type is not the same, for example, changing the destination from Amazon S3 to Amazon Redshift, Amazon Kinesis Firehose does not merge any parameters. In this case, all parameters must be specified.</p> <p>Amazon Kinesis Firehose uses the <code>CurrentDeliveryStreamVersionId</code> to avoid race conditions and conflicting merges. This is a required field in every request and the service only updates the configuration if the existing configuration matches the <code>VersionId</code>. After the update is applied successfully, the <code>VersionId</code> is updated, which can be retrieved with the <a>DescribeDeliveryStream</a> operation. The new <code>VersionId</code> should be uses to set <code>CurrentDeliveryStreamVersionId</code> in the next <a>UpdateDestination</a> operation.</p>\n@param updateDestinationRequest Contains the parameters for <a>UpdateDestination</a>.\n@return Result of the UpdateDestination operation returned by the service.\n@throws InvalidArgumentException The specified input parameter has an value that is not valid.\n@throws ResourceInUseException The resource is already in use and not available for this operation.\n@throws ResourceNotFoundException The specified resource could not be found.\n@throws ConcurrentModificationException Another modification has already happened. Fetch <code>VersionId</code> again and use it to update the destination.*/",
       "syncReturnType" : "UpdateDestinationResult",
       "asyncReturnType" : "UpdateDestinationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDestinationResult>",
@@ -306,7 +306,7 @@
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -357,7 +357,7 @@
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -408,7 +408,7 @@
           "variableName" : "exclusiveStartDestinationId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -486,7 +486,7 @@
             "variableName" : "exclusiveStartDestinationId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -538,7 +538,7 @@
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -590,7 +590,7 @@
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -660,7 +660,7 @@
     },
     "NoEncryptionConfig" : {
       "c2jName" : "NoEncryptionConfig",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "NoEncryptionConfig",
       "deprecated" : false,
       "required" : null,
@@ -722,7 +722,7 @@
           "variableName" : "deliveryStreamARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -796,7 +796,7 @@
             "variableName" : "deliveryStreamARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -866,7 +866,7 @@
     },
     "DeliveryStreamStatus" : {
       "c2jName" : "DeliveryStreamStatus",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "DeliveryStreamStatus",
       "deprecated" : false,
       "required" : null,
@@ -968,7 +968,7 @@
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1019,7 +1019,7 @@
           "variableName" : "records",
           "variableType" : "java.util.List<Record>",
           "variableDeclarationType" : "java.util.List<Record>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<Record>",
           "variableSetterType" : "java.util.Collection<Record>"
         },
@@ -1048,7 +1048,7 @@
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "Record",
@@ -1056,7 +1056,7 @@
               "variableName" : "member",
               "variableType" : "Record",
               "variableDeclarationType" : "Record",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Record",
               "variableSetterType" : "Record"
             },
@@ -1064,7 +1064,7 @@
               "variableName" : "member",
               "variableType" : "Record",
               "variableDeclarationType" : "Record",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Record",
               "variableSetterType" : "Record"
             },
@@ -1094,10 +1094,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -1161,7 +1161,7 @@
             "variableName" : "records",
             "variableType" : "java.util.List<Record>",
             "variableDeclarationType" : "java.util.List<Record>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<Record>",
             "variableSetterType" : "java.util.Collection<Record>"
           },
@@ -1190,7 +1190,7 @@
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "Record",
@@ -1198,7 +1198,7 @@
                 "variableName" : "member",
                 "variableType" : "Record",
                 "variableDeclarationType" : "Record",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Record",
                 "variableSetterType" : "Record"
               },
@@ -1206,7 +1206,7 @@
                 "variableName" : "member",
                 "variableType" : "Record",
                 "variableDeclarationType" : "Record",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Record",
                 "variableSetterType" : "Record"
               },
@@ -1236,10 +1236,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -1277,7 +1277,7 @@
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1372,7 +1372,7 @@
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1450,7 +1450,7 @@
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1545,7 +1545,7 @@
           "variableName" : "deliveryStreamNames",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -1609,7 +1609,7 @@
           "variableName" : "hasMoreDeliveryStreams",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -1683,7 +1683,7 @@
             "variableName" : "hasMoreDeliveryStreams",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -1735,7 +1735,7 @@
             "variableName" : "deliveryStreamNames",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -1812,7 +1812,7 @@
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1863,7 +1863,7 @@
           "variableName" : "record",
           "variableType" : "Record",
           "variableDeclarationType" : "Record",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Record",
           "variableSetterType" : "Record"
         },
@@ -1941,7 +1941,7 @@
             "variableName" : "record",
             "variableType" : "Record",
             "variableDeclarationType" : "Record",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Record",
             "variableSetterType" : "Record"
           },
@@ -1993,7 +1993,7 @@
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2057,7 +2057,7 @@
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2108,7 +2108,7 @@
           "variableName" : "clusterJDBCURL",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2159,7 +2159,7 @@
           "variableName" : "copyCommand",
           "variableType" : "CopyCommand",
           "variableDeclarationType" : "CopyCommand",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "CopyCommand",
           "variableSetterType" : "CopyCommand"
         },
@@ -2210,7 +2210,7 @@
           "variableName" : "username",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2261,7 +2261,7 @@
           "variableName" : "password",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2312,7 +2312,7 @@
           "variableName" : "s3Configuration",
           "variableType" : "S3DestinationConfiguration",
           "variableDeclarationType" : "S3DestinationConfiguration",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "S3DestinationConfiguration",
           "variableSetterType" : "S3DestinationConfiguration"
         },
@@ -2386,7 +2386,7 @@
             "variableName" : "s3Configuration",
             "variableType" : "S3DestinationConfiguration",
             "variableDeclarationType" : "S3DestinationConfiguration",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "S3DestinationConfiguration",
             "variableSetterType" : "S3DestinationConfiguration"
           },
@@ -2438,7 +2438,7 @@
             "variableName" : "copyCommand",
             "variableType" : "CopyCommand",
             "variableDeclarationType" : "CopyCommand",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "CopyCommand",
             "variableSetterType" : "CopyCommand"
           },
@@ -2490,7 +2490,7 @@
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2542,7 +2542,7 @@
             "variableName" : "password",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2594,7 +2594,7 @@
             "variableName" : "username",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2646,7 +2646,7 @@
             "variableName" : "clusterJDBCURL",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2710,7 +2710,7 @@
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2761,7 +2761,7 @@
           "variableName" : "clusterJDBCURL",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2812,7 +2812,7 @@
           "variableName" : "copyCommand",
           "variableType" : "CopyCommand",
           "variableDeclarationType" : "CopyCommand",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "CopyCommand",
           "variableSetterType" : "CopyCommand"
         },
@@ -2863,7 +2863,7 @@
           "variableName" : "username",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2914,7 +2914,7 @@
           "variableName" : "password",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2965,7 +2965,7 @@
           "variableName" : "s3Update",
           "variableType" : "S3DestinationUpdate",
           "variableDeclarationType" : "S3DestinationUpdate",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "S3DestinationUpdate",
           "variableSetterType" : "S3DestinationUpdate"
         },
@@ -3039,7 +3039,7 @@
             "variableName" : "copyCommand",
             "variableType" : "CopyCommand",
             "variableDeclarationType" : "CopyCommand",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "CopyCommand",
             "variableSetterType" : "CopyCommand"
           },
@@ -3091,7 +3091,7 @@
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3143,7 +3143,7 @@
             "variableName" : "password",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3195,7 +3195,7 @@
             "variableName" : "username",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3247,7 +3247,7 @@
             "variableName" : "clusterJDBCURL",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3299,7 +3299,7 @@
             "variableName" : "s3Update",
             "variableType" : "S3DestinationUpdate",
             "variableDeclarationType" : "S3DestinationUpdate",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "S3DestinationUpdate",
             "variableSetterType" : "S3DestinationUpdate"
           },
@@ -3363,7 +3363,7 @@
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3414,7 +3414,7 @@
           "variableName" : "bucketARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3465,7 +3465,7 @@
           "variableName" : "prefix",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3516,7 +3516,7 @@
           "variableName" : "bufferingHints",
           "variableType" : "BufferingHints",
           "variableDeclarationType" : "BufferingHints",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "BufferingHints",
           "variableSetterType" : "BufferingHints"
         },
@@ -3567,7 +3567,7 @@
           "variableName" : "compressionFormat",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3618,7 +3618,7 @@
           "variableName" : "encryptionConfiguration",
           "variableType" : "EncryptionConfiguration",
           "variableDeclarationType" : "EncryptionConfiguration",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "EncryptionConfiguration",
           "variableSetterType" : "EncryptionConfiguration"
         },
@@ -3692,7 +3692,7 @@
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3744,7 +3744,7 @@
             "variableName" : "bucketARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3796,7 +3796,7 @@
             "variableName" : "bufferingHints",
             "variableType" : "BufferingHints",
             "variableDeclarationType" : "BufferingHints",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "BufferingHints",
             "variableSetterType" : "BufferingHints"
           },
@@ -3848,7 +3848,7 @@
             "variableName" : "prefix",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3900,7 +3900,7 @@
             "variableName" : "encryptionConfiguration",
             "variableType" : "EncryptionConfiguration",
             "variableDeclarationType" : "EncryptionConfiguration",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "EncryptionConfiguration",
             "variableSetterType" : "EncryptionConfiguration"
           },
@@ -3952,7 +3952,7 @@
             "variableName" : "compressionFormat",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4016,7 +4016,7 @@
           "variableName" : "deliveryStreamDescription",
           "variableType" : "DeliveryStreamDescription",
           "variableDeclarationType" : "DeliveryStreamDescription",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "DeliveryStreamDescription",
           "variableSetterType" : "DeliveryStreamDescription"
         },
@@ -4090,7 +4090,7 @@
             "variableName" : "deliveryStreamDescription",
             "variableType" : "DeliveryStreamDescription",
             "variableDeclarationType" : "DeliveryStreamDescription",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "DeliveryStreamDescription",
             "variableSetterType" : "DeliveryStreamDescription"
           },
@@ -4154,7 +4154,7 @@
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4205,7 +4205,7 @@
           "variableName" : "currentDeliveryStreamVersionId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4256,7 +4256,7 @@
           "variableName" : "destinationId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4291,7 +4291,7 @@
         "fluentSetterDocumentation" : "/**<p>The ID of the destination.</p>\n@param destinationId The ID of the destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The ID of the destination.</p>\n@param destinationId The ID of the destination.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "S3DestinationUpdate",
         "c2jName" : "S3DestinationUpdate",
         "c2jShape" : "S3DestinationUpdate",
@@ -4299,7 +4299,7 @@
           "variableName" : "s3DestinationUpdate",
           "variableType" : "S3DestinationUpdate",
           "variableDeclarationType" : "S3DestinationUpdate",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "S3DestinationUpdate",
           "variableSetterType" : "S3DestinationUpdate"
         },
@@ -4307,7 +4307,7 @@
           "variableName" : "s3DestinationUpdate",
           "variableType" : "S3DestinationUpdate",
           "variableDeclarationType" : "S3DestinationUpdate",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "S3DestinationUpdate",
           "variableSetterType" : "S3DestinationUpdate"
         },
@@ -4337,12 +4337,12 @@
         "simple" : false,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the S3DestinationUpdate property for this object.\n@param s3DestinationUpdate The new value for the S3DestinationUpdate property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the S3DestinationUpdate property for this object.\n@return The value of the S3DestinationUpdate property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the S3DestinationUpdate property for this object.\n@param s3DestinationUpdate The new value for the S3DestinationUpdate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the S3DestinationUpdate property for this object.\n@param s3DestinationUpdate The new value for the S3DestinationUpdate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param s3DestinationUpdate */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param s3DestinationUpdate \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param s3DestinationUpdate \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "RedshiftDestinationUpdate",
         "c2jName" : "RedshiftDestinationUpdate",
         "c2jShape" : "RedshiftDestinationUpdate",
@@ -4350,7 +4350,7 @@
           "variableName" : "redshiftDestinationUpdate",
           "variableType" : "RedshiftDestinationUpdate",
           "variableDeclarationType" : "RedshiftDestinationUpdate",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "RedshiftDestinationUpdate",
           "variableSetterType" : "RedshiftDestinationUpdate"
         },
@@ -4358,7 +4358,7 @@
           "variableName" : "redshiftDestinationUpdate",
           "variableType" : "RedshiftDestinationUpdate",
           "variableDeclarationType" : "RedshiftDestinationUpdate",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "RedshiftDestinationUpdate",
           "variableSetterType" : "RedshiftDestinationUpdate"
         },
@@ -4388,10 +4388,10 @@
         "simple" : false,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the RedshiftDestinationUpdate property for this object.\n@param redshiftDestinationUpdate The new value for the RedshiftDestinationUpdate property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the RedshiftDestinationUpdate property for this object.\n@return The value of the RedshiftDestinationUpdate property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the RedshiftDestinationUpdate property for this object.\n@param redshiftDestinationUpdate The new value for the RedshiftDestinationUpdate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the RedshiftDestinationUpdate property for this object.\n@param redshiftDestinationUpdate The new value for the RedshiftDestinationUpdate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param redshiftDestinationUpdate */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param redshiftDestinationUpdate \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param redshiftDestinationUpdate \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -4436,7 +4436,7 @@
             "variableName" : "destinationId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4488,7 +4488,7 @@
             "variableName" : "currentDeliveryStreamVersionId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4540,7 +4540,7 @@
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4576,7 +4576,7 @@
           "varargSetterDocumentation" : "/**<p>The name of the delivery stream.</p>\n@param deliveryStreamName The name of the delivery stream.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "RedshiftDestinationUpdate" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "RedshiftDestinationUpdate",
           "c2jName" : "RedshiftDestinationUpdate",
           "c2jShape" : "RedshiftDestinationUpdate",
@@ -4584,7 +4584,7 @@
             "variableName" : "redshiftDestinationUpdate",
             "variableType" : "RedshiftDestinationUpdate",
             "variableDeclarationType" : "RedshiftDestinationUpdate",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "RedshiftDestinationUpdate",
             "variableSetterType" : "RedshiftDestinationUpdate"
           },
@@ -4592,7 +4592,7 @@
             "variableName" : "redshiftDestinationUpdate",
             "variableType" : "RedshiftDestinationUpdate",
             "variableDeclarationType" : "RedshiftDestinationUpdate",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "RedshiftDestinationUpdate",
             "variableSetterType" : "RedshiftDestinationUpdate"
           },
@@ -4622,13 +4622,13 @@
           "simple" : false,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the RedshiftDestinationUpdate property for this object.\n@param redshiftDestinationUpdate The new value for the RedshiftDestinationUpdate property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the RedshiftDestinationUpdate property for this object.\n@return The value of the RedshiftDestinationUpdate property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the RedshiftDestinationUpdate property for this object.\n@param redshiftDestinationUpdate The new value for the RedshiftDestinationUpdate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the RedshiftDestinationUpdate property for this object.\n@param redshiftDestinationUpdate The new value for the RedshiftDestinationUpdate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param redshiftDestinationUpdate */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param redshiftDestinationUpdate \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param redshiftDestinationUpdate \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "S3DestinationUpdate" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "S3DestinationUpdate",
           "c2jName" : "S3DestinationUpdate",
           "c2jShape" : "S3DestinationUpdate",
@@ -4636,7 +4636,7 @@
             "variableName" : "s3DestinationUpdate",
             "variableType" : "S3DestinationUpdate",
             "variableDeclarationType" : "S3DestinationUpdate",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "S3DestinationUpdate",
             "variableSetterType" : "S3DestinationUpdate"
           },
@@ -4644,7 +4644,7 @@
             "variableName" : "s3DestinationUpdate",
             "variableType" : "S3DestinationUpdate",
             "variableDeclarationType" : "S3DestinationUpdate",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "S3DestinationUpdate",
             "variableSetterType" : "S3DestinationUpdate"
           },
@@ -4674,10 +4674,10 @@
           "simple" : false,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the S3DestinationUpdate property for this object.\n@param s3DestinationUpdate The new value for the S3DestinationUpdate property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the S3DestinationUpdate property for this object.\n@return The value of the S3DestinationUpdate property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the S3DestinationUpdate property for this object.\n@param s3DestinationUpdate The new value for the S3DestinationUpdate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the S3DestinationUpdate property for this object.\n@param s3DestinationUpdate The new value for the S3DestinationUpdate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param s3DestinationUpdate */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param s3DestinationUpdate \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param s3DestinationUpdate \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -4742,7 +4742,7 @@
           "variableName" : "destinationId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4793,7 +4793,7 @@
           "variableName" : "s3DestinationDescription",
           "variableType" : "S3DestinationDescription",
           "variableDeclarationType" : "S3DestinationDescription",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "S3DestinationDescription",
           "variableSetterType" : "S3DestinationDescription"
         },
@@ -4844,7 +4844,7 @@
           "variableName" : "redshiftDestinationDescription",
           "variableType" : "RedshiftDestinationDescription",
           "variableDeclarationType" : "RedshiftDestinationDescription",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "RedshiftDestinationDescription",
           "variableSetterType" : "RedshiftDestinationDescription"
         },
@@ -4918,7 +4918,7 @@
             "variableName" : "redshiftDestinationDescription",
             "variableType" : "RedshiftDestinationDescription",
             "variableDeclarationType" : "RedshiftDestinationDescription",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "RedshiftDestinationDescription",
             "variableSetterType" : "RedshiftDestinationDescription"
           },
@@ -4970,7 +4970,7 @@
             "variableName" : "destinationId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5022,7 +5022,7 @@
             "variableName" : "s3DestinationDescription",
             "variableType" : "S3DestinationDescription",
             "variableDeclarationType" : "S3DestinationDescription",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "S3DestinationDescription",
             "variableSetterType" : "S3DestinationDescription"
           },
@@ -5086,7 +5086,7 @@
           "variableName" : "sizeInMBs",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -5137,7 +5137,7 @@
           "variableName" : "intervalInSeconds",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -5211,7 +5211,7 @@
             "variableName" : "sizeInMBs",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -5263,7 +5263,7 @@
             "variableName" : "intervalInSeconds",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -5327,7 +5327,7 @@
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5378,7 +5378,7 @@
           "variableName" : "s3DestinationConfiguration",
           "variableType" : "S3DestinationConfiguration",
           "variableDeclarationType" : "S3DestinationConfiguration",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "S3DestinationConfiguration",
           "variableSetterType" : "S3DestinationConfiguration"
         },
@@ -5429,7 +5429,7 @@
           "variableName" : "redshiftDestinationConfiguration",
           "variableType" : "RedshiftDestinationConfiguration",
           "variableDeclarationType" : "RedshiftDestinationConfiguration",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "RedshiftDestinationConfiguration",
           "variableSetterType" : "RedshiftDestinationConfiguration"
         },
@@ -5507,7 +5507,7 @@
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5559,7 +5559,7 @@
             "variableName" : "redshiftDestinationConfiguration",
             "variableType" : "RedshiftDestinationConfiguration",
             "variableDeclarationType" : "RedshiftDestinationConfiguration",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "RedshiftDestinationConfiguration",
             "variableSetterType" : "RedshiftDestinationConfiguration"
           },
@@ -5611,7 +5611,7 @@
             "variableName" : "s3DestinationConfiguration",
             "variableType" : "S3DestinationConfiguration",
             "variableDeclarationType" : "S3DestinationConfiguration",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "S3DestinationConfiguration",
             "variableSetterType" : "S3DestinationConfiguration"
           },
@@ -5675,7 +5675,7 @@
           "variableName" : "noEncryptionConfig",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5726,7 +5726,7 @@
           "variableName" : "kMSEncryptionConfig",
           "variableType" : "KMSEncryptionConfig",
           "variableDeclarationType" : "KMSEncryptionConfig",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "KMSEncryptionConfig",
           "variableSetterType" : "KMSEncryptionConfig"
         },
@@ -5800,7 +5800,7 @@
             "variableName" : "kMSEncryptionConfig",
             "variableType" : "KMSEncryptionConfig",
             "variableDeclarationType" : "KMSEncryptionConfig",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "KMSEncryptionConfig",
             "variableSetterType" : "KMSEncryptionConfig"
           },
@@ -5852,7 +5852,7 @@
             "variableName" : "noEncryptionConfig",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5891,7 +5891,7 @@
     },
     "CompressionFormat" : {
       "c2jName" : "CompressionFormat",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "CompressionFormat",
       "deprecated" : false,
       "required" : null,
@@ -5962,7 +5962,7 @@
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6013,7 +6013,7 @@
           "variableName" : "clusterJDBCURL",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6064,7 +6064,7 @@
           "variableName" : "copyCommand",
           "variableType" : "CopyCommand",
           "variableDeclarationType" : "CopyCommand",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "CopyCommand",
           "variableSetterType" : "CopyCommand"
         },
@@ -6115,7 +6115,7 @@
           "variableName" : "username",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6166,7 +6166,7 @@
           "variableName" : "s3DestinationDescription",
           "variableType" : "S3DestinationDescription",
           "variableDeclarationType" : "S3DestinationDescription",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "S3DestinationDescription",
           "variableSetterType" : "S3DestinationDescription"
         },
@@ -6240,7 +6240,7 @@
             "variableName" : "copyCommand",
             "variableType" : "CopyCommand",
             "variableDeclarationType" : "CopyCommand",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "CopyCommand",
             "variableSetterType" : "CopyCommand"
           },
@@ -6292,7 +6292,7 @@
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6344,7 +6344,7 @@
             "variableName" : "username",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6396,7 +6396,7 @@
             "variableName" : "clusterJDBCURL",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6448,7 +6448,7 @@
             "variableName" : "s3DestinationDescription",
             "variableType" : "S3DestinationDescription",
             "variableDeclarationType" : "S3DestinationDescription",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "S3DestinationDescription",
             "variableSetterType" : "S3DestinationDescription"
           },
@@ -6512,7 +6512,7 @@
           "variableName" : "dataTableName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6563,7 +6563,7 @@
           "variableName" : "dataTableColumns",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6614,7 +6614,7 @@
           "variableName" : "copyOptions",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6688,7 +6688,7 @@
             "variableName" : "dataTableColumns",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6740,7 +6740,7 @@
             "variableName" : "copyOptions",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6792,7 +6792,7 @@
             "variableName" : "dataTableName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6856,7 +6856,7 @@
           "variableName" : "aWSKMSKeyARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6930,7 +6930,7 @@
             "variableName" : "aWSKMSKeyARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6994,7 +6994,7 @@
           "variableName" : "data",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -7068,7 +7068,7 @@
             "variableName" : "data",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -7163,7 +7163,7 @@
           "variableName" : "recordId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7214,7 +7214,7 @@
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7265,7 +7265,7 @@
           "variableName" : "errorMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7339,7 +7339,7 @@
             "variableName" : "recordId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7391,7 +7391,7 @@
             "variableName" : "errorMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7443,7 +7443,7 @@
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7538,7 +7538,7 @@
           "variableName" : "failedPutCount",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -7589,7 +7589,7 @@
           "variableName" : "requestResponses",
           "variableType" : "java.util.List<PutRecordBatchResponseEntry>",
           "variableDeclarationType" : "java.util.List<PutRecordBatchResponseEntry>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<PutRecordBatchResponseEntry>",
           "variableSetterType" : "java.util.Collection<PutRecordBatchResponseEntry>"
         },
@@ -7618,7 +7618,7 @@
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "PutRecordBatchResponseEntry",
@@ -7626,7 +7626,7 @@
               "variableName" : "member",
               "variableType" : "PutRecordBatchResponseEntry",
               "variableDeclarationType" : "PutRecordBatchResponseEntry",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "PutRecordBatchResponseEntry",
               "variableSetterType" : "PutRecordBatchResponseEntry"
             },
@@ -7634,7 +7634,7 @@
               "variableName" : "member",
               "variableType" : "PutRecordBatchResponseEntry",
               "variableDeclarationType" : "PutRecordBatchResponseEntry",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "PutRecordBatchResponseEntry",
               "variableSetterType" : "PutRecordBatchResponseEntry"
             },
@@ -7664,10 +7664,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -7727,7 +7727,7 @@
             "variableName" : "requestResponses",
             "variableType" : "java.util.List<PutRecordBatchResponseEntry>",
             "variableDeclarationType" : "java.util.List<PutRecordBatchResponseEntry>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<PutRecordBatchResponseEntry>",
             "variableSetterType" : "java.util.Collection<PutRecordBatchResponseEntry>"
           },
@@ -7756,7 +7756,7 @@
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "PutRecordBatchResponseEntry",
@@ -7764,7 +7764,7 @@
                 "variableName" : "member",
                 "variableType" : "PutRecordBatchResponseEntry",
                 "variableDeclarationType" : "PutRecordBatchResponseEntry",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "PutRecordBatchResponseEntry",
                 "variableSetterType" : "PutRecordBatchResponseEntry"
               },
@@ -7772,7 +7772,7 @@
                 "variableName" : "member",
                 "variableType" : "PutRecordBatchResponseEntry",
                 "variableDeclarationType" : "PutRecordBatchResponseEntry",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "PutRecordBatchResponseEntry",
                 "variableSetterType" : "PutRecordBatchResponseEntry"
               },
@@ -7802,10 +7802,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -7843,7 +7843,7 @@
             "variableName" : "failedPutCount",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -7907,7 +7907,7 @@
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7958,7 +7958,7 @@
           "variableName" : "bucketARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8009,7 +8009,7 @@
           "variableName" : "prefix",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8060,7 +8060,7 @@
           "variableName" : "bufferingHints",
           "variableType" : "BufferingHints",
           "variableDeclarationType" : "BufferingHints",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "BufferingHints",
           "variableSetterType" : "BufferingHints"
         },
@@ -8111,7 +8111,7 @@
           "variableName" : "compressionFormat",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8162,7 +8162,7 @@
           "variableName" : "encryptionConfiguration",
           "variableType" : "EncryptionConfiguration",
           "variableDeclarationType" : "EncryptionConfiguration",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "EncryptionConfiguration",
           "variableSetterType" : "EncryptionConfiguration"
         },
@@ -8236,7 +8236,7 @@
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8288,7 +8288,7 @@
             "variableName" : "bucketARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8340,7 +8340,7 @@
             "variableName" : "bufferingHints",
             "variableType" : "BufferingHints",
             "variableDeclarationType" : "BufferingHints",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "BufferingHints",
             "variableSetterType" : "BufferingHints"
           },
@@ -8392,7 +8392,7 @@
             "variableName" : "prefix",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8444,7 +8444,7 @@
             "variableName" : "encryptionConfiguration",
             "variableType" : "EncryptionConfiguration",
             "variableDeclarationType" : "EncryptionConfiguration",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "EncryptionConfiguration",
             "variableSetterType" : "EncryptionConfiguration"
           },
@@ -8496,7 +8496,7 @@
             "variableName" : "compressionFormat",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8560,7 +8560,7 @@
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8611,7 +8611,7 @@
           "variableName" : "bucketARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8662,7 +8662,7 @@
           "variableName" : "prefix",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8713,7 +8713,7 @@
           "variableName" : "bufferingHints",
           "variableType" : "BufferingHints",
           "variableDeclarationType" : "BufferingHints",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "BufferingHints",
           "variableSetterType" : "BufferingHints"
         },
@@ -8764,7 +8764,7 @@
           "variableName" : "compressionFormat",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8815,7 +8815,7 @@
           "variableName" : "encryptionConfiguration",
           "variableType" : "EncryptionConfiguration",
           "variableDeclarationType" : "EncryptionConfiguration",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "EncryptionConfiguration",
           "variableSetterType" : "EncryptionConfiguration"
         },
@@ -8889,7 +8889,7 @@
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8941,7 +8941,7 @@
             "variableName" : "bucketARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8993,7 +8993,7 @@
             "variableName" : "bufferingHints",
             "variableType" : "BufferingHints",
             "variableDeclarationType" : "BufferingHints",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "BufferingHints",
             "variableSetterType" : "BufferingHints"
           },
@@ -9045,7 +9045,7 @@
             "variableName" : "prefix",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9097,7 +9097,7 @@
             "variableName" : "encryptionConfiguration",
             "variableType" : "EncryptionConfiguration",
             "variableDeclarationType" : "EncryptionConfiguration",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "EncryptionConfiguration",
             "variableSetterType" : "EncryptionConfiguration"
           },
@@ -9149,7 +9149,7 @@
             "variableName" : "compressionFormat",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9213,7 +9213,7 @@
           "variableName" : "recordId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9287,7 +9287,7 @@
             "variableName" : "recordId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9351,7 +9351,7 @@
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9402,7 +9402,7 @@
           "variableName" : "deliveryStreamARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9453,7 +9453,7 @@
           "variableName" : "deliveryStreamStatus",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9504,7 +9504,7 @@
           "variableName" : "versionId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9555,7 +9555,7 @@
           "variableName" : "createTimestamp",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -9606,7 +9606,7 @@
           "variableName" : "lastUpdateTimestamp",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -9657,7 +9657,7 @@
           "variableName" : "destinations",
           "variableType" : "java.util.List<DestinationDescription>",
           "variableDeclarationType" : "java.util.List<DestinationDescription>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<DestinationDescription>",
           "variableSetterType" : "java.util.Collection<DestinationDescription>"
         },
@@ -9686,7 +9686,7 @@
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "DestinationDescription",
@@ -9694,7 +9694,7 @@
               "variableName" : "member",
               "variableType" : "DestinationDescription",
               "variableDeclarationType" : "DestinationDescription",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "DestinationDescription",
               "variableSetterType" : "DestinationDescription"
             },
@@ -9702,7 +9702,7 @@
               "variableName" : "member",
               "variableType" : "DestinationDescription",
               "variableDeclarationType" : "DestinationDescription",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "DestinationDescription",
               "variableSetterType" : "DestinationDescription"
             },
@@ -9732,10 +9732,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -9772,7 +9772,7 @@
           "variableName" : "hasMoreDestinations",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -9846,7 +9846,7 @@
             "variableName" : "createTimestamp",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -9898,7 +9898,7 @@
             "variableName" : "destinations",
             "variableType" : "java.util.List<DestinationDescription>",
             "variableDeclarationType" : "java.util.List<DestinationDescription>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<DestinationDescription>",
             "variableSetterType" : "java.util.Collection<DestinationDescription>"
           },
@@ -9927,7 +9927,7 @@
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "DestinationDescription",
@@ -9935,7 +9935,7 @@
                 "variableName" : "member",
                 "variableType" : "DestinationDescription",
                 "variableDeclarationType" : "DestinationDescription",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "DestinationDescription",
                 "variableSetterType" : "DestinationDescription"
               },
@@ -9943,7 +9943,7 @@
                 "variableName" : "member",
                 "variableType" : "DestinationDescription",
                 "variableDeclarationType" : "DestinationDescription",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "DestinationDescription",
                 "variableSetterType" : "DestinationDescription"
               },
@@ -9973,10 +9973,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -10014,7 +10014,7 @@
             "variableName" : "lastUpdateTimestamp",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -10066,7 +10066,7 @@
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10118,7 +10118,7 @@
             "variableName" : "hasMoreDestinations",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -10170,7 +10170,7 @@
             "variableName" : "versionId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10222,7 +10222,7 @@
             "variableName" : "deliveryStreamARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10274,7 +10274,7 @@
             "variableName" : "deliveryStreamStatus",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10338,7 +10338,7 @@
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -10389,7 +10389,7 @@
           "variableName" : "exclusiveStartDeliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10467,7 +10467,7 @@
             "variableName" : "exclusiveStartDeliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10519,7 +10519,7 @@
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },

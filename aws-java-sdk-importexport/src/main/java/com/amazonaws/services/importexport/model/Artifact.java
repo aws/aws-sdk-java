@@ -28,29 +28,21 @@ public class Artifact implements Serializable, Cloneable {
     private String uRL;
 
     /**
-     * Sets the value of the Description property for this object.
-     * 
      * @param description
-     *        The new value for the Description property for this object.
      */
     public void setDescription(String description) {
         this.description = description;
     }
 
     /**
-     * Returns the value of the Description property for this object.
-     * 
-     * @return The value of the Description property for this object.
+     * @return
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Sets the value of the Description property for this object.
-     * 
      * @param description
-     *        The new value for the Description property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -60,29 +52,21 @@ public class Artifact implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the URL property for this object.
-     * 
      * @param uRL
-     *        The new value for the URL property for this object.
      */
     public void setURL(String uRL) {
         this.uRL = uRL;
     }
 
     /**
-     * Returns the value of the URL property for this object.
-     * 
-     * @return The value of the URL property for this object.
+     * @return
      */
     public String getURL() {
         return this.uRL;
     }
 
     /**
-     * Sets the value of the URL property for this object.
-     * 
      * @param uRL
-     *        The new value for the URL property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

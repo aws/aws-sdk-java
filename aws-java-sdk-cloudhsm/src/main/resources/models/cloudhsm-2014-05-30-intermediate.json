@@ -224,7 +224,7 @@
         "variableName" : "deleteLunaClientRequest",
         "variableType" : "DeleteLunaClientRequest",
         "variableDeclarationType" : "DeleteLunaClientRequest",
-        "documentation" : null,
+        "documentation" : "",
         "simpleType" : "DeleteLunaClientRequest",
         "variableSetterType" : "DeleteLunaClientRequest"
       },
@@ -338,7 +338,7 @@
         "variableName" : "describeLunaClientRequest",
         "variableType" : "DescribeLunaClientRequest",
         "variableDeclarationType" : "DescribeLunaClientRequest",
-        "documentation" : null,
+        "documentation" : "",
         "simpleType" : "DescribeLunaClientRequest",
         "variableSetterType" : "DescribeLunaClientRequest"
       },
@@ -376,7 +376,7 @@
         "variableName" : "getConfigRequest",
         "variableType" : "GetConfigRequest",
         "variableDeclarationType" : "GetConfigRequest",
-        "documentation" : null,
+        "documentation" : "",
         "simpleType" : "GetConfigRequest",
         "variableSetterType" : "GetConfigRequest"
       },
@@ -452,7 +452,7 @@
         "variableName" : "listHapgsRequest",
         "variableType" : "ListHapgsRequest",
         "variableDeclarationType" : "ListHapgsRequest",
-        "documentation" : null,
+        "documentation" : "",
         "simpleType" : "ListHapgsRequest",
         "variableSetterType" : "ListHapgsRequest"
       },
@@ -490,7 +490,7 @@
         "variableName" : "listHsmsRequest",
         "variableType" : "ListHsmsRequest",
         "variableDeclarationType" : "ListHsmsRequest",
-        "documentation" : null,
+        "documentation" : "",
         "simpleType" : "ListHsmsRequest",
         "variableSetterType" : "ListHsmsRequest"
       },
@@ -528,7 +528,7 @@
         "variableName" : "listLunaClientsRequest",
         "variableType" : "ListLunaClientsRequest",
         "variableDeclarationType" : "ListLunaClientsRequest",
-        "documentation" : null,
+        "documentation" : "",
         "simpleType" : "ListLunaClientsRequest",
         "variableSetterType" : "ListLunaClientsRequest"
       },
@@ -566,7 +566,7 @@
         "variableName" : "modifyHapgRequest",
         "variableType" : "ModifyHapgRequest",
         "variableDeclarationType" : "ModifyHapgRequest",
-        "documentation" : null,
+        "documentation" : "",
         "simpleType" : "ModifyHapgRequest",
         "variableSetterType" : "ModifyHapgRequest"
       },
@@ -642,7 +642,7 @@
         "variableName" : "modifyLunaClientRequest",
         "variableType" : "ModifyLunaClientRequest",
         "variableDeclarationType" : "ModifyLunaClientRequest",
-        "documentation" : null,
+        "documentation" : "",
         "simpleType" : "ModifyLunaClientRequest",
         "variableSetterType" : "ModifyLunaClientRequest"
       },
@@ -695,7 +695,7 @@
           "variableName" : "subnetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -746,7 +746,7 @@
           "variableName" : "sshKey",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -797,7 +797,7 @@
           "variableName" : "eniIp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -848,7 +848,7 @@
           "variableName" : "iamRoleArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -899,7 +899,7 @@
           "variableName" : "externalId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -950,7 +950,7 @@
           "variableName" : "subscriptionType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1001,7 +1001,7 @@
           "variableName" : "clientToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1052,7 +1052,7 @@
           "variableName" : "syslogIp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1130,7 +1130,7 @@
             "variableName" : "clientToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1182,7 +1182,7 @@
             "variableName" : "eniIp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1234,7 +1234,7 @@
             "variableName" : "subscriptionType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1286,7 +1286,7 @@
             "variableName" : "iamRoleArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1338,7 +1338,7 @@
             "variableName" : "externalId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1390,7 +1390,7 @@
             "variableName" : "subnetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1442,7 +1442,7 @@
             "variableName" : "sshKey",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1494,7 +1494,7 @@
             "variableName" : "syslogIp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1533,7 +1533,7 @@
     },
     "ListHapgsRequest" : {
       "c2jName" : "ListHapgsRequest",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ListHapgsRequest",
       "deprecated" : false,
       "required" : null,
@@ -1558,7 +1558,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1636,7 +1636,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1700,7 +1700,7 @@
           "variableName" : "label",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1778,7 +1778,7 @@
             "variableName" : "label",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1817,7 +1817,7 @@
     },
     "CloudHsmObjectState" : {
       "c2jName" : "CloudHsmObjectState",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "CloudHsmObjectState",
       "deprecated" : false,
       "required" : null,
@@ -1860,7 +1860,7 @@
     },
     "ClientVersion" : {
       "c2jName" : "ClientVersion",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ClientVersion",
       "deprecated" : false,
       "required" : null,
@@ -1925,7 +1925,7 @@
           "variableName" : "clientArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1999,7 +1999,7 @@
             "variableName" : "clientArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2063,7 +2063,7 @@
           "variableName" : "hsmArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2114,7 +2114,7 @@
           "variableName" : "hsmSerialNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2192,7 +2192,7 @@
             "variableName" : "hsmArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2244,7 +2244,7 @@
             "variableName" : "hsmSerialNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2308,7 +2308,7 @@
           "variableName" : "hsmList",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -2372,7 +2372,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2446,7 +2446,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2498,7 +2498,7 @@
             "variableName" : "hsmList",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -2550,7 +2550,7 @@
     },
     "DeleteLunaClientResult" : {
       "c2jName" : "DeleteLunaClientResponse",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "DeleteLunaClientResult",
       "deprecated" : false,
       "required" : [ "Status" ],
@@ -2575,7 +2575,7 @@
           "variableName" : "status",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2649,7 +2649,7 @@
             "variableName" : "status",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2688,7 +2688,7 @@
     },
     "ListAvailableZonesResult" : {
       "c2jName" : "ListAvailableZonesResponse",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ListAvailableZonesResult",
       "deprecated" : false,
       "required" : null,
@@ -2713,7 +2713,7 @@
           "variableName" : "aZList",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -2800,7 +2800,7 @@
             "variableName" : "aZList",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -2852,7 +2852,7 @@
     },
     "ModifyHapgResult" : {
       "c2jName" : "ModifyHapgResponse",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ModifyHapgResult",
       "deprecated" : false,
       "required" : null,
@@ -2877,7 +2877,7 @@
           "variableName" : "hapgArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2951,7 +2951,7 @@
             "variableName" : "hapgArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3015,7 +3015,7 @@
           "variableName" : "hsmArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3093,7 +3093,7 @@
             "variableName" : "hsmArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3195,7 +3195,7 @@
           "variableName" : "hsmArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3269,7 +3269,7 @@
             "variableName" : "hsmArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3333,7 +3333,7 @@
           "variableName" : "hsmArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3384,7 +3384,7 @@
           "variableName" : "subnetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3435,7 +3435,7 @@
           "variableName" : "eniIp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3486,7 +3486,7 @@
           "variableName" : "iamRoleArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3537,7 +3537,7 @@
           "variableName" : "externalId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3588,7 +3588,7 @@
           "variableName" : "syslogIp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3666,7 +3666,7 @@
             "variableName" : "eniIp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3718,7 +3718,7 @@
             "variableName" : "iamRoleArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3770,7 +3770,7 @@
             "variableName" : "hsmArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3822,7 +3822,7 @@
             "variableName" : "externalId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3874,7 +3874,7 @@
             "variableName" : "subnetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3926,7 +3926,7 @@
             "variableName" : "syslogIp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4021,7 +4021,7 @@
           "variableName" : "status",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4095,7 +4095,7 @@
             "variableName" : "status",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4134,7 +4134,7 @@
     },
     "SubscriptionType" : {
       "c2jName" : "SubscriptionType",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "SubscriptionType",
       "deprecated" : false,
       "required" : null,
@@ -4171,7 +4171,7 @@
     },
     "ListHsmsRequest" : {
       "c2jName" : "ListHsmsRequest",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ListHsmsRequest",
       "deprecated" : false,
       "required" : null,
@@ -4196,7 +4196,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4274,7 +4274,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4338,7 +4338,7 @@
           "variableName" : "hapgArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4416,7 +4416,7 @@
             "variableName" : "hapgArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4480,7 +4480,7 @@
           "variableName" : "label",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4531,7 +4531,7 @@
           "variableName" : "certificate",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4609,7 +4609,7 @@
             "variableName" : "label",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4661,7 +4661,7 @@
             "variableName" : "certificate",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4725,7 +4725,7 @@
           "variableName" : "hsmArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4799,7 +4799,7 @@
             "variableName" : "hsmArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4838,7 +4838,7 @@
     },
     "ListLunaClientsRequest" : {
       "c2jName" : "ListLunaClientsRequest",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ListLunaClientsRequest",
       "deprecated" : false,
       "required" : null,
@@ -4863,7 +4863,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4941,7 +4941,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5011,7 +5011,7 @@
     },
     "DeleteLunaClientRequest" : {
       "c2jName" : "DeleteLunaClientRequest",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "DeleteLunaClientRequest",
       "deprecated" : false,
       "required" : [ "ClientArn" ],
@@ -5036,7 +5036,7 @@
           "variableName" : "clientArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5114,7 +5114,7 @@
             "variableName" : "clientArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5153,7 +5153,7 @@
     },
     "ModifyLunaClientRequest" : {
       "c2jName" : "ModifyLunaClientRequest",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ModifyLunaClientRequest",
       "deprecated" : false,
       "required" : [ "ClientArn", "Certificate" ],
@@ -5178,7 +5178,7 @@
           "variableName" : "clientArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5229,7 +5229,7 @@
           "variableName" : "certificate",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5307,7 +5307,7 @@
             "variableName" : "clientArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5359,7 +5359,7 @@
             "variableName" : "certificate",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5398,7 +5398,7 @@
     },
     "GetConfigRequest" : {
       "c2jName" : "GetConfigRequest",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "GetConfigRequest",
       "deprecated" : false,
       "required" : [ "ClientArn", "ClientVersion", "HapgList" ],
@@ -5423,7 +5423,7 @@
           "variableName" : "clientArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5474,7 +5474,7 @@
           "variableName" : "clientVersion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5525,7 +5525,7 @@
           "variableName" : "hapgList",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -5616,7 +5616,7 @@
             "variableName" : "hapgList",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -5681,7 +5681,7 @@
             "variableName" : "clientArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5733,7 +5733,7 @@
             "variableName" : "clientVersion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5797,7 +5797,7 @@
           "variableName" : "hsmArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5848,7 +5848,7 @@
           "variableName" : "status",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5899,7 +5899,7 @@
           "variableName" : "statusDetails",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5950,7 +5950,7 @@
           "variableName" : "availabilityZone",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6001,7 +6001,7 @@
           "variableName" : "eniId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6052,7 +6052,7 @@
           "variableName" : "eniIp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6103,7 +6103,7 @@
           "variableName" : "subscriptionType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6154,7 +6154,7 @@
           "variableName" : "subscriptionStartDate",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6205,7 +6205,7 @@
           "variableName" : "subscriptionEndDate",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6256,7 +6256,7 @@
           "variableName" : "vpcId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6307,7 +6307,7 @@
           "variableName" : "subnetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6358,7 +6358,7 @@
           "variableName" : "iamRoleArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6409,7 +6409,7 @@
           "variableName" : "serialNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6460,7 +6460,7 @@
           "variableName" : "vendorName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6511,7 +6511,7 @@
           "variableName" : "hsmType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6562,7 +6562,7 @@
           "variableName" : "softwareVersion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6613,7 +6613,7 @@
           "variableName" : "sshPublicKey",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6664,7 +6664,7 @@
           "variableName" : "sshKeyLastUpdated",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6715,7 +6715,7 @@
           "variableName" : "serverCertUri",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6766,7 +6766,7 @@
           "variableName" : "serverCertLastUpdated",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6817,7 +6817,7 @@
           "variableName" : "partitions",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -6904,7 +6904,7 @@
             "variableName" : "partitions",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -6969,7 +6969,7 @@
             "variableName" : "subscriptionType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7021,7 +7021,7 @@
             "variableName" : "sshKeyLastUpdated",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7073,7 +7073,7 @@
             "variableName" : "subscriptionStartDate",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7125,7 +7125,7 @@
             "variableName" : "hsmArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7177,7 +7177,7 @@
             "variableName" : "subscriptionEndDate",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7229,7 +7229,7 @@
             "variableName" : "availabilityZone",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7281,7 +7281,7 @@
             "variableName" : "vpcId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7333,7 +7333,7 @@
             "variableName" : "serialNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7385,7 +7385,7 @@
             "variableName" : "softwareVersion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7437,7 +7437,7 @@
             "variableName" : "status",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7489,7 +7489,7 @@
             "variableName" : "eniIp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7541,7 +7541,7 @@
             "variableName" : "vendorName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7593,7 +7593,7 @@
             "variableName" : "iamRoleArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7645,7 +7645,7 @@
             "variableName" : "sshPublicKey",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7697,7 +7697,7 @@
             "variableName" : "eniId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7749,7 +7749,7 @@
             "variableName" : "serverCertLastUpdated",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7801,7 +7801,7 @@
             "variableName" : "subnetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7853,7 +7853,7 @@
             "variableName" : "statusDetails",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7905,7 +7905,7 @@
             "variableName" : "hsmType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7957,7 +7957,7 @@
             "variableName" : "serverCertUri",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7996,7 +7996,7 @@
     },
     "GetConfigResult" : {
       "c2jName" : "GetConfigResponse",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "GetConfigResult",
       "deprecated" : false,
       "required" : null,
@@ -8021,7 +8021,7 @@
           "variableName" : "configType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8072,7 +8072,7 @@
           "variableName" : "configFile",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8123,7 +8123,7 @@
           "variableName" : "configCred",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8197,7 +8197,7 @@
             "variableName" : "configCred",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8249,7 +8249,7 @@
             "variableName" : "configFile",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8301,7 +8301,7 @@
             "variableName" : "configType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8340,7 +8340,7 @@
     },
     "DescribeLunaClientRequest" : {
       "c2jName" : "DescribeLunaClientRequest",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "DescribeLunaClientRequest",
       "deprecated" : false,
       "required" : null,
@@ -8365,7 +8365,7 @@
           "variableName" : "clientArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8416,7 +8416,7 @@
           "variableName" : "certificateFingerprint",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8494,7 +8494,7 @@
             "variableName" : "clientArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8546,7 +8546,7 @@
             "variableName" : "certificateFingerprint",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8585,7 +8585,7 @@
     },
     "ListLunaClientsResult" : {
       "c2jName" : "ListLunaClientsResponse",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ListLunaClientsResult",
       "deprecated" : false,
       "required" : [ "ClientList" ],
@@ -8610,7 +8610,7 @@
           "variableName" : "clientList",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -8674,7 +8674,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8748,7 +8748,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8800,7 +8800,7 @@
             "variableName" : "clientList",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -8877,7 +8877,7 @@
           "variableName" : "status",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8951,7 +8951,7 @@
             "variableName" : "status",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9015,7 +9015,7 @@
           "variableName" : "hapgArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9093,7 +9093,7 @@
             "variableName" : "hapgArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9132,7 +9132,7 @@
     },
     "ModifyHapgRequest" : {
       "c2jName" : "ModifyHapgRequest",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ModifyHapgRequest",
       "deprecated" : false,
       "required" : [ "HapgArn" ],
@@ -9157,7 +9157,7 @@
           "variableName" : "hapgArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9208,7 +9208,7 @@
           "variableName" : "label",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9259,7 +9259,7 @@
           "variableName" : "partitionSerialList",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -9350,7 +9350,7 @@
             "variableName" : "hapgArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9402,7 +9402,7 @@
             "variableName" : "partitionSerialList",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -9467,7 +9467,7 @@
             "variableName" : "label",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9531,7 +9531,7 @@
           "variableName" : "hapgArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9582,7 +9582,7 @@
           "variableName" : "hapgSerial",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9617,7 +9617,7 @@
         "fluentSetterDocumentation" : "/**<p>The serial number of the high-availability partition group.</p>\n@param hapgSerial The serial number of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The serial number of the high-availability partition group.</p>\n@param hapgSerial The serial number of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "HsmsLastActionFailed",
         "c2jName" : "HsmsLastActionFailed",
         "c2jShape" : "HsmList",
@@ -9625,7 +9625,7 @@
           "variableName" : "hsmsLastActionFailed",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -9633,7 +9633,7 @@
           "variableName" : "hsmsLastActionFailed",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -9676,12 +9676,12 @@
         "simple" : false,
         "list" : true,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the HsmsLastActionFailed property for this object.\n@param hsmsLastActionFailed The new value for the HsmsLastActionFailed property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the HsmsLastActionFailed property for this object.\n@return The value of the HsmsLastActionFailed property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the HsmsLastActionFailed property for this object.\n@param hsmsLastActionFailed The new value for the HsmsLastActionFailed property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the HsmsLastActionFailed property for this object.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsLastActionFailed(java.util.Collection)} or {@link #withHsmsLastActionFailed(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsLastActionFailed The new value for the HsmsLastActionFailed property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param hsmsLastActionFailed */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param hsmsLastActionFailed \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsLastActionFailed(java.util.Collection)} or {@link #withHsmsLastActionFailed(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsLastActionFailed \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "HsmsPendingDeletion",
         "c2jName" : "HsmsPendingDeletion",
         "c2jShape" : "HsmList",
@@ -9689,7 +9689,7 @@
           "variableName" : "hsmsPendingDeletion",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -9697,7 +9697,7 @@
           "variableName" : "hsmsPendingDeletion",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -9740,12 +9740,12 @@
         "simple" : false,
         "list" : true,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the HsmsPendingDeletion property for this object.\n@param hsmsPendingDeletion The new value for the HsmsPendingDeletion property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the HsmsPendingDeletion property for this object.\n@return The value of the HsmsPendingDeletion property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the HsmsPendingDeletion property for this object.\n@param hsmsPendingDeletion The new value for the HsmsPendingDeletion property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the HsmsPendingDeletion property for this object.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingDeletion(java.util.Collection)} or {@link #withHsmsPendingDeletion(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingDeletion The new value for the HsmsPendingDeletion property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param hsmsPendingDeletion */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param hsmsPendingDeletion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingDeletion(java.util.Collection)} or {@link #withHsmsPendingDeletion(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingDeletion \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "HsmsPendingRegistration",
         "c2jName" : "HsmsPendingRegistration",
         "c2jShape" : "HsmList",
@@ -9753,7 +9753,7 @@
           "variableName" : "hsmsPendingRegistration",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -9761,7 +9761,7 @@
           "variableName" : "hsmsPendingRegistration",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -9804,10 +9804,10 @@
         "simple" : false,
         "list" : true,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the HsmsPendingRegistration property for this object.\n@param hsmsPendingRegistration The new value for the HsmsPendingRegistration property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the HsmsPendingRegistration property for this object.\n@return The value of the HsmsPendingRegistration property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the HsmsPendingRegistration property for this object.\n@param hsmsPendingRegistration The new value for the HsmsPendingRegistration property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the HsmsPendingRegistration property for this object.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingRegistration(java.util.Collection)} or {@link #withHsmsPendingRegistration(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingRegistration The new value for the HsmsPendingRegistration property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param hsmsPendingRegistration */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param hsmsPendingRegistration \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingRegistration(java.util.Collection)} or {@link #withHsmsPendingRegistration(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingRegistration \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The label for the high-availability partition group.</p>",
         "name" : "Label",
@@ -9825,7 +9825,7 @@
           "variableName" : "label",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9876,7 +9876,7 @@
           "variableName" : "lastModifiedTimestamp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9927,7 +9927,7 @@
           "variableName" : "partitionSerialList",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -9991,7 +9991,7 @@
           "variableName" : "state",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10065,7 +10065,7 @@
             "variableName" : "hapgArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10117,7 +10117,7 @@
             "variableName" : "state",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10153,7 +10153,7 @@
           "varargSetterDocumentation" : "/**<p>The state of the high-availability partition group.</p>\n@param state The state of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CloudHsmObjectState*/"
         },
         "HsmsLastActionFailed" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "HsmsLastActionFailed",
           "c2jName" : "HsmsLastActionFailed",
           "c2jShape" : "HsmList",
@@ -10161,7 +10161,7 @@
             "variableName" : "hsmsLastActionFailed",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -10169,7 +10169,7 @@
             "variableName" : "hsmsLastActionFailed",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -10212,10 +10212,10 @@
           "simple" : false,
           "list" : true,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the HsmsLastActionFailed property for this object.\n@param hsmsLastActionFailed The new value for the HsmsLastActionFailed property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the HsmsLastActionFailed property for this object.\n@return The value of the HsmsLastActionFailed property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the HsmsLastActionFailed property for this object.\n@param hsmsLastActionFailed The new value for the HsmsLastActionFailed property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the HsmsLastActionFailed property for this object.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsLastActionFailed(java.util.Collection)} or {@link #withHsmsLastActionFailed(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsLastActionFailed The new value for the HsmsLastActionFailed property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param hsmsLastActionFailed */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param hsmsLastActionFailed \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsLastActionFailed(java.util.Collection)} or {@link #withHsmsLastActionFailed(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsLastActionFailed \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "PartitionSerialList" : {
           "documentation" : "<p>The list of partition serial numbers that belong to the high-availability partition group.</p>",
@@ -10234,7 +10234,7 @@
             "variableName" : "partitionSerialList",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -10283,7 +10283,7 @@
           "varargSetterDocumentation" : "/**<p>The list of partition serial numbers that belong to the high-availability partition group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitionSerialList(java.util.Collection)} or {@link #withPartitionSerialList(java.util.Collection)} if you want to override the existing values.</p>\n@param partitionSerialList The list of partition serial numbers that belong to the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "HsmsPendingDeletion" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "HsmsPendingDeletion",
           "c2jName" : "HsmsPendingDeletion",
           "c2jShape" : "HsmList",
@@ -10291,7 +10291,7 @@
             "variableName" : "hsmsPendingDeletion",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -10299,7 +10299,7 @@
             "variableName" : "hsmsPendingDeletion",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -10342,10 +10342,10 @@
           "simple" : false,
           "list" : true,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the HsmsPendingDeletion property for this object.\n@param hsmsPendingDeletion The new value for the HsmsPendingDeletion property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the HsmsPendingDeletion property for this object.\n@return The value of the HsmsPendingDeletion property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the HsmsPendingDeletion property for this object.\n@param hsmsPendingDeletion The new value for the HsmsPendingDeletion property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the HsmsPendingDeletion property for this object.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingDeletion(java.util.Collection)} or {@link #withHsmsPendingDeletion(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingDeletion The new value for the HsmsPendingDeletion property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param hsmsPendingDeletion */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param hsmsPendingDeletion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingDeletion(java.util.Collection)} or {@link #withHsmsPendingDeletion(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingDeletion \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "HapgSerial" : {
           "documentation" : "<p>The serial number of the high-availability partition group.</p>",
@@ -10364,7 +10364,7 @@
             "variableName" : "hapgSerial",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10416,7 +10416,7 @@
             "variableName" : "label",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10468,7 +10468,7 @@
             "variableName" : "lastModifiedTimestamp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10504,7 +10504,7 @@
           "varargSetterDocumentation" : "/**<p>The date and time the high-availability partition group was last modified.</p>\n@param lastModifiedTimestamp The date and time the high-availability partition group was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "HsmsPendingRegistration" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "HsmsPendingRegistration",
           "c2jName" : "HsmsPendingRegistration",
           "c2jShape" : "HsmList",
@@ -10512,7 +10512,7 @@
             "variableName" : "hsmsPendingRegistration",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -10520,7 +10520,7 @@
             "variableName" : "hsmsPendingRegistration",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -10563,16 +10563,16 @@
           "simple" : false,
           "list" : true,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the HsmsPendingRegistration property for this object.\n@param hsmsPendingRegistration The new value for the HsmsPendingRegistration property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the HsmsPendingRegistration property for this object.\n@return The value of the HsmsPendingRegistration property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the HsmsPendingRegistration property for this object.\n@param hsmsPendingRegistration The new value for the HsmsPendingRegistration property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the HsmsPendingRegistration property for this object.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingRegistration(java.util.Collection)} or {@link #withHsmsPendingRegistration(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingRegistration The new value for the HsmsPendingRegistration property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param hsmsPendingRegistration */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param hsmsPendingRegistration \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingRegistration(java.util.Collection)} or {@link #withHsmsPendingRegistration(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingRegistration \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
     "HsmStatus" : {
       "c2jName" : "HsmStatus",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "HsmStatus",
       "deprecated" : false,
       "required" : null,
@@ -10627,7 +10627,7 @@
     },
     "DescribeLunaClientResult" : {
       "c2jName" : "DescribeLunaClientResponse",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "DescribeLunaClientResult",
       "deprecated" : false,
       "required" : null,
@@ -10652,7 +10652,7 @@
           "variableName" : "clientArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10703,7 +10703,7 @@
           "variableName" : "certificate",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10754,7 +10754,7 @@
           "variableName" : "certificateFingerprint",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10805,7 +10805,7 @@
           "variableName" : "lastModifiedTimestamp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10856,7 +10856,7 @@
           "variableName" : "label",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10930,7 +10930,7 @@
             "variableName" : "clientArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10982,7 +10982,7 @@
             "variableName" : "label",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11034,7 +11034,7 @@
             "variableName" : "lastModifiedTimestamp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11086,7 +11086,7 @@
             "variableName" : "certificate",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11138,7 +11138,7 @@
             "variableName" : "certificateFingerprint",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11208,7 +11208,7 @@
     },
     "ModifyLunaClientResult" : {
       "c2jName" : "ModifyLunaClientResponse",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ModifyLunaClientResult",
       "deprecated" : false,
       "required" : null,
@@ -11233,7 +11233,7 @@
           "variableName" : "clientArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11307,7 +11307,7 @@
             "variableName" : "clientArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11346,7 +11346,7 @@
     },
     "ListHapgsResult" : {
       "c2jName" : "ListHapgsResponse",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ListHapgsResult",
       "deprecated" : false,
       "required" : [ "HapgList" ],
@@ -11371,7 +11371,7 @@
           "variableName" : "hapgList",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -11435,7 +11435,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11509,7 +11509,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11561,7 +11561,7 @@
             "variableName" : "hapgList",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -11638,7 +11638,7 @@
           "variableName" : "hapgArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11712,7 +11712,7 @@
             "variableName" : "hapgArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

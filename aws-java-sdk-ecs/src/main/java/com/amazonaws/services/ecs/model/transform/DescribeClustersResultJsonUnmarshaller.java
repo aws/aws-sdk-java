@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Describe Clusters Result JSON Unmarshaller
+ * DescribeClustersResult JSON Unmarshaller
  */
-public class DescribeClustersResultJsonUnmarshaller implements Unmarshaller<DescribeClustersResult, JsonUnmarshallerContext> {
+public class DescribeClustersResultJsonUnmarshaller implements
+        Unmarshaller<DescribeClustersResult, JsonUnmarshallerContext> {
 
-    public DescribeClustersResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public DescribeClustersResult unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         DescribeClustersResult describeClustersResult = new DescribeClustersResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,37 +40,49 @@ public class DescribeClustersResultJsonUnmarshaller implements Unmarshaller<Desc
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusters", targetDepth)) {
                     context.nextToken();
-                    describeClustersResult.setClusters(new ListUnmarshaller<Cluster>(ClusterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeClustersResult
+                            .setClusters(new ListUnmarshaller<Cluster>(
+                                    ClusterJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
                     context.nextToken();
-                    describeClustersResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeClustersResult
+                            .setFailures(new ListUnmarshaller<Failure>(
+                                    FailureJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return describeClustersResult;
     }
 
     private static DescribeClustersResultJsonUnmarshaller instance;
+
     public static DescribeClustersResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new DescribeClustersResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new DescribeClustersResultJsonUnmarshaller();
         return instance;
     }
 }
-    

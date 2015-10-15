@@ -130,6 +130,9 @@ public class CreateGrantRequestMarshaller implements Marshaller<Request<CreateGr
                 }
                 jsonWriter.endArray();
             }
+            if (createGrantRequest.getName() != null) {
+                jsonWriter.key("Name").value(createGrantRequest.getName());
+            }
 
           jsonWriter.endObject();
 

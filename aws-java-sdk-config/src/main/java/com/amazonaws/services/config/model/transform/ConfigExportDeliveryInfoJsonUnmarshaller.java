@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Config Export Delivery Info JSON Unmarshaller
+ * ConfigExportDeliveryInfo JSON Unmarshaller
  */
-public class ConfigExportDeliveryInfoJsonUnmarshaller implements Unmarshaller<ConfigExportDeliveryInfo, JsonUnmarshallerContext> {
+public class ConfigExportDeliveryInfoJsonUnmarshaller implements
+        Unmarshaller<ConfigExportDeliveryInfo, JsonUnmarshallerContext> {
 
-    public ConfigExportDeliveryInfo unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public ConfigExportDeliveryInfo unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         ConfigExportDeliveryInfo configExportDeliveryInfo = new ConfigExportDeliveryInfo();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,53 +40,71 @@ public class ConfigExportDeliveryInfoJsonUnmarshaller implements Unmarshaller<Co
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo.setLastStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    configExportDeliveryInfo
+                            .setLastStatus(StringJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("lastErrorCode", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo.setLastErrorCode(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    configExportDeliveryInfo
+                            .setLastErrorCode(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastErrorMessage", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo.setLastErrorMessage(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    configExportDeliveryInfo
+                            .setLastErrorMessage(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastAttemptTime", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo.setLastAttemptTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    configExportDeliveryInfo
+                            .setLastAttemptTime(DateJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastSuccessfulTime", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo.setLastSuccessfulTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    configExportDeliveryInfo
+                            .setLastSuccessfulTime(DateJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nextDeliveryTime", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo.setNextDeliveryTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    configExportDeliveryInfo
+                            .setNextDeliveryTime(DateJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return configExportDeliveryInfo;
     }
 
     private static ConfigExportDeliveryInfoJsonUnmarshaller instance;
+
     public static ConfigExportDeliveryInfoJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new ConfigExportDeliveryInfoJsonUnmarshaller();
+        if (instance == null)
+            instance = new ConfigExportDeliveryInfoJsonUnmarshaller();
         return instance;
     }
 }
-    

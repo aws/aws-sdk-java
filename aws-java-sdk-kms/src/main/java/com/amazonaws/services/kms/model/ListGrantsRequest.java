@@ -29,6 +29,31 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListGrantsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * When paginating results, specify the maximum number of items to return
+     * in the response. If additional items exist beyond the number you
+     * specify, the <code>Truncated</code> element in the response is set to
+     * true.<p>This value is optional. If you include a value, it must be
+     * between 1 and 100, inclusive. If you do not include a value, it
+     * defaults to 50.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 1000<br/>
+     */
+    private Integer limit;
+
+    /**
+     * Use this parameter only when paginating results and only in a
+     * subsequent request after you've received a response with truncated
+     * results. Set it to the value of <code>NextMarker</code> from the
+     * response you just received.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 320<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     */
+    private String marker;
+
+    /**
      * A unique identifier for the customer master key. This value can be a
      * globally unique identifier or the fully specified ARN to a key. <ul>
      * <li>Key ARN Example -
@@ -42,28 +67,139 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements Serial
     private String keyId;
 
     /**
-     * Specify this parameter only when paginating results to indicate the
-     * maximum number of grants you want listed in the response. If there are
-     * additional grants beyond the maximum you specify, the
-     * <code>Truncated</code> response element will be set to
-     * <code>true.</code>
+     * When paginating results, specify the maximum number of items to return
+     * in the response. If additional items exist beyond the number you
+     * specify, the <code>Truncated</code> element in the response is set to
+     * true.<p>This value is optional. If you include a value, it must be
+     * between 1 and 100, inclusive. If you do not include a value, it
+     * defaults to 50.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
+     *
+     * @return When paginating results, specify the maximum number of items to return
+     *         in the response. If additional items exist beyond the number you
+     *         specify, the <code>Truncated</code> element in the response is set to
+     *         true.<p>This value is optional. If you include a value, it must be
+     *         between 1 and 100, inclusive. If you do not include a value, it
+     *         defaults to 50.
      */
-    private Integer limit;
+    public Integer getLimit() {
+        return limit;
+    }
+    
+    /**
+     * When paginating results, specify the maximum number of items to return
+     * in the response. If additional items exist beyond the number you
+     * specify, the <code>Truncated</code> element in the response is set to
+     * true.<p>This value is optional. If you include a value, it must be
+     * between 1 and 100, inclusive. If you do not include a value, it
+     * defaults to 50.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 1000<br/>
+     *
+     * @param limit When paginating results, specify the maximum number of items to return
+     *         in the response. If additional items exist beyond the number you
+     *         specify, the <code>Truncated</code> element in the response is set to
+     *         true.<p>This value is optional. If you include a value, it must be
+     *         between 1 and 100, inclusive. If you do not include a value, it
+     *         defaults to 50.
+     */
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+    
+    /**
+     * When paginating results, specify the maximum number of items to return
+     * in the response. If additional items exist beyond the number you
+     * specify, the <code>Truncated</code> element in the response is set to
+     * true.<p>This value is optional. If you include a value, it must be
+     * between 1 and 100, inclusive. If you do not include a value, it
+     * defaults to 50.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 1000<br/>
+     *
+     * @param limit When paginating results, specify the maximum number of items to return
+     *         in the response. If additional items exist beyond the number you
+     *         specify, the <code>Truncated</code> element in the response is set to
+     *         true.<p>This value is optional. If you include a value, it must be
+     *         between 1 and 100, inclusive. If you do not include a value, it
+     *         defaults to 50.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ListGrantsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
 
     /**
-     * Use this parameter only when paginating results, and only in a
-     * subsequent request after you've received a response where the results
-     * are truncated. Set it to the value of the <code>NextMarker</code> in
-     * the response you just received.
+     * Use this parameter only when paginating results and only in a
+     * subsequent request after you've received a response with truncated
+     * results. Set it to the value of <code>NextMarker</code> from the
+     * response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     *
+     * @return Use this parameter only when paginating results and only in a
+     *         subsequent request after you've received a response with truncated
+     *         results. Set it to the value of <code>NextMarker</code> from the
+     *         response you just received.
      */
-    private String marker;
+    public String getMarker() {
+        return marker;
+    }
+    
+    /**
+     * Use this parameter only when paginating results and only in a
+     * subsequent request after you've received a response with truncated
+     * results. Set it to the value of <code>NextMarker</code> from the
+     * response you just received.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 320<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     *
+     * @param marker Use this parameter only when paginating results and only in a
+     *         subsequent request after you've received a response with truncated
+     *         results. Set it to the value of <code>NextMarker</code> from the
+     *         response you just received.
+     */
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+    
+    /**
+     * Use this parameter only when paginating results and only in a
+     * subsequent request after you've received a response with truncated
+     * results. Set it to the value of <code>NextMarker</code> from the
+     * response you just received.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 320<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     *
+     * @param marker Use this parameter only when paginating results and only in a
+     *         subsequent request after you've received a response with truncated
+     *         results. Set it to the value of <code>NextMarker</code> from the
+     *         response you just received.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ListGrantsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
 
     /**
      * A unique identifier for the customer master key. This value can be a
@@ -138,135 +274,6 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * Specify this parameter only when paginating results to indicate the
-     * maximum number of grants you want listed in the response. If there are
-     * additional grants beyond the maximum you specify, the
-     * <code>Truncated</code> response element will be set to
-     * <code>true.</code>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1000<br/>
-     *
-     * @return Specify this parameter only when paginating results to indicate the
-     *         maximum number of grants you want listed in the response. If there are
-     *         additional grants beyond the maximum you specify, the
-     *         <code>Truncated</code> response element will be set to
-     *         <code>true.</code>
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-    
-    /**
-     * Specify this parameter only when paginating results to indicate the
-     * maximum number of grants you want listed in the response. If there are
-     * additional grants beyond the maximum you specify, the
-     * <code>Truncated</code> response element will be set to
-     * <code>true.</code>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1000<br/>
-     *
-     * @param limit Specify this parameter only when paginating results to indicate the
-     *         maximum number of grants you want listed in the response. If there are
-     *         additional grants beyond the maximum you specify, the
-     *         <code>Truncated</code> response element will be set to
-     *         <code>true.</code>
-     */
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-    
-    /**
-     * Specify this parameter only when paginating results to indicate the
-     * maximum number of grants you want listed in the response. If there are
-     * additional grants beyond the maximum you specify, the
-     * <code>Truncated</code> response element will be set to
-     * <code>true.</code>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1000<br/>
-     *
-     * @param limit Specify this parameter only when paginating results to indicate the
-     *         maximum number of grants you want listed in the response. If there are
-     *         additional grants beyond the maximum you specify, the
-     *         <code>Truncated</code> response element will be set to
-     *         <code>true.</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ListGrantsRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * Use this parameter only when paginating results, and only in a
-     * subsequent request after you've received a response where the results
-     * are truncated. Set it to the value of the <code>NextMarker</code> in
-     * the response you just received.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
-     *
-     * @return Use this parameter only when paginating results, and only in a
-     *         subsequent request after you've received a response where the results
-     *         are truncated. Set it to the value of the <code>NextMarker</code> in
-     *         the response you just received.
-     */
-    public String getMarker() {
-        return marker;
-    }
-    
-    /**
-     * Use this parameter only when paginating results, and only in a
-     * subsequent request after you've received a response where the results
-     * are truncated. Set it to the value of the <code>NextMarker</code> in
-     * the response you just received.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
-     *
-     * @param marker Use this parameter only when paginating results, and only in a
-     *         subsequent request after you've received a response where the results
-     *         are truncated. Set it to the value of the <code>NextMarker</code> in
-     *         the response you just received.
-     */
-    public void setMarker(String marker) {
-        this.marker = marker;
-    }
-    
-    /**
-     * Use this parameter only when paginating results, and only in a
-     * subsequent request after you've received a response where the results
-     * are truncated. Set it to the value of the <code>NextMarker</code> in
-     * the response you just received.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
-     *
-     * @param marker Use this parameter only when paginating results, and only in a
-     *         subsequent request after you've received a response where the results
-     *         are truncated. Set it to the value of the <code>NextMarker</code> in
-     *         the response you just received.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ListGrantsRequest withMarker(String marker) {
-        this.marker = marker;
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -278,9 +285,9 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements Serial
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getKeyId() != null) sb.append("KeyId: " + getKeyId() + ",");
         if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() );
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (getKeyId() != null) sb.append("KeyId: " + getKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -290,9 +297,9 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements Serial
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode()); 
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -304,12 +311,12 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements Serial
         if (obj instanceof ListGrantsRequest == false) return false;
         ListGrantsRequest other = (ListGrantsRequest)obj;
         
-        if (other.getKeyId() == null ^ this.getKeyId() == null) return false;
-        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false) return false; 
         if (other.getLimit() == null ^ this.getLimit() == null) return false;
         if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false) return false; 
         if (other.getMarker() == null ^ this.getMarker() == null) return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getKeyId() == null ^ this.getKeyId() == null) return false;
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false) return false; 
         return true;
     }
     

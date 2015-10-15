@@ -21,7 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kms.AWSKMS#updateAlias(UpdateAliasRequest) UpdateAlias operation}.
  * <p>
- * Updates an alias to associate it with a different key.
+ * Updates an alias to map it to a different key.
+ * </p>
+ * <p>
+ * An alias is not a property of a key. Therefore, an alias can be mapped
+ * to and unmapped from an existing key without changing the properties
+ * of the key.
  * </p>
  * <p>
  * An alias name can contain only alphanumeric characters, forward
@@ -31,13 +36,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * by Amazon Web Services (AWS).
  * </p>
  * <p>
- * An alias is not a property of a key. Therefore, an alias can be
- * associated with and disassociated from an existing key without
- * changing the properties of the key.
- * </p>
- * <p>
- * Note that you cannot create or update an alias that represents a key
- * in another account.
+ * The alias and the key it is mapped to must be in the same AWS account
+ * and the same region.
  * </p>
  *
  * @see com.amazonaws.services.kms.AWSKMS#updateAlias(UpdateAliasRequest)
@@ -45,9 +45,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateAliasRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * String that contains the name of the alias to be modifed. The name
+     * String that contains the name of the alias to be modified. The name
      * must start with the word "alias" followed by a forward slash (alias/).
-     * Aliases that begin with "alias/AWS" are reserved.
+     * Aliases that begin with "alias/aws" are reserved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -56,12 +56,14 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements Seria
     private String aliasName;
 
     /**
-     * Unique identifier of the customer master key to be associated with the
+     * Unique identifier of the customer master key to be mapped to the
      * alias. This value can be a globally unique identifier or the fully
      * specified ARN of a key. <ul> <li>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      * <li>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</li> </ul>
+     * 12345678-1234-1234-1234-123456789012</li> </ul> <p>You can call
+     * <a>ListAliases</a> to verify that the alias is mapped to the correct
+     * <code>TargetKeyId</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -69,43 +71,43 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements Seria
     private String targetKeyId;
 
     /**
-     * String that contains the name of the alias to be modifed. The name
+     * String that contains the name of the alias to be modified. The name
      * must start with the word "alias" followed by a forward slash (alias/).
-     * Aliases that begin with "alias/AWS" are reserved.
+     * Aliases that begin with "alias/aws" are reserved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
      *
-     * @return String that contains the name of the alias to be modifed. The name
+     * @return String that contains the name of the alias to be modified. The name
      *         must start with the word "alias" followed by a forward slash (alias/).
-     *         Aliases that begin with "alias/AWS" are reserved.
+     *         Aliases that begin with "alias/aws" are reserved.
      */
     public String getAliasName() {
         return aliasName;
     }
     
     /**
-     * String that contains the name of the alias to be modifed. The name
+     * String that contains the name of the alias to be modified. The name
      * must start with the word "alias" followed by a forward slash (alias/).
-     * Aliases that begin with "alias/AWS" are reserved.
+     * Aliases that begin with "alias/aws" are reserved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
      *
-     * @param aliasName String that contains the name of the alias to be modifed. The name
+     * @param aliasName String that contains the name of the alias to be modified. The name
      *         must start with the word "alias" followed by a forward slash (alias/).
-     *         Aliases that begin with "alias/AWS" are reserved.
+     *         Aliases that begin with "alias/aws" are reserved.
      */
     public void setAliasName(String aliasName) {
         this.aliasName = aliasName;
     }
     
     /**
-     * String that contains the name of the alias to be modifed. The name
+     * String that contains the name of the alias to be modified. The name
      * must start with the word "alias" followed by a forward slash (alias/).
-     * Aliases that begin with "alias/AWS" are reserved.
+     * Aliases that begin with "alias/aws" are reserved.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -113,9 +115,9 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
      *
-     * @param aliasName String that contains the name of the alias to be modifed. The name
+     * @param aliasName String that contains the name of the alias to be modified. The name
      *         must start with the word "alias" followed by a forward slash (alias/).
-     *         Aliases that begin with "alias/AWS" are reserved.
+     *         Aliases that begin with "alias/aws" are reserved.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -126,68 +128,80 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Unique identifier of the customer master key to be associated with the
+     * Unique identifier of the customer master key to be mapped to the
      * alias. This value can be a globally unique identifier or the fully
      * specified ARN of a key. <ul> <li>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      * <li>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</li> </ul>
+     * 12345678-1234-1234-1234-123456789012</li> </ul> <p>You can call
+     * <a>ListAliases</a> to verify that the alias is mapped to the correct
+     * <code>TargetKeyId</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Unique identifier of the customer master key to be associated with the
+     * @return Unique identifier of the customer master key to be mapped to the
      *         alias. This value can be a globally unique identifier or the fully
      *         specified ARN of a key. <ul> <li>Key ARN Example -
      *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      *         <li>Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012</li> </ul>
+     *         12345678-1234-1234-1234-123456789012</li> </ul> <p>You can call
+     *         <a>ListAliases</a> to verify that the alias is mapped to the correct
+     *         <code>TargetKeyId</code>.
      */
     public String getTargetKeyId() {
         return targetKeyId;
     }
     
     /**
-     * Unique identifier of the customer master key to be associated with the
+     * Unique identifier of the customer master key to be mapped to the
      * alias. This value can be a globally unique identifier or the fully
      * specified ARN of a key. <ul> <li>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      * <li>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</li> </ul>
+     * 12345678-1234-1234-1234-123456789012</li> </ul> <p>You can call
+     * <a>ListAliases</a> to verify that the alias is mapped to the correct
+     * <code>TargetKeyId</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param targetKeyId Unique identifier of the customer master key to be associated with the
+     * @param targetKeyId Unique identifier of the customer master key to be mapped to the
      *         alias. This value can be a globally unique identifier or the fully
      *         specified ARN of a key. <ul> <li>Key ARN Example -
      *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      *         <li>Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012</li> </ul>
+     *         12345678-1234-1234-1234-123456789012</li> </ul> <p>You can call
+     *         <a>ListAliases</a> to verify that the alias is mapped to the correct
+     *         <code>TargetKeyId</code>.
      */
     public void setTargetKeyId(String targetKeyId) {
         this.targetKeyId = targetKeyId;
     }
     
     /**
-     * Unique identifier of the customer master key to be associated with the
+     * Unique identifier of the customer master key to be mapped to the
      * alias. This value can be a globally unique identifier or the fully
      * specified ARN of a key. <ul> <li>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      * <li>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</li> </ul>
+     * 12345678-1234-1234-1234-123456789012</li> </ul> <p>You can call
+     * <a>ListAliases</a> to verify that the alias is mapped to the correct
+     * <code>TargetKeyId</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param targetKeyId Unique identifier of the customer master key to be associated with the
+     * @param targetKeyId Unique identifier of the customer master key to be mapped to the
      *         alias. This value can be a globally unique identifier or the fully
      *         specified ARN of a key. <ul> <li>Key ARN Example -
      *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      *         <li>Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012</li> </ul>
+     *         12345678-1234-1234-1234-123456789012</li> </ul> <p>You can call
+     *         <a>ListAliases</a> to verify that the alias is mapped to the correct
+     *         <code>TargetKeyId</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

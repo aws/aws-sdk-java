@@ -137,29 +137,21 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Sets the value of the NextToken property for this object.
-     * 
      * @param nextToken
-     *        The new value for the NextToken property for this object.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
-     * Returns the value of the NextToken property for this object.
-     * 
-     * @return The value of the NextToken property for this object.
+     * @return
      */
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
-     * Sets the value of the NextToken property for this object.
-     * 
      * @param nextToken
-     *        The new value for the NextToken property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -169,29 +161,21 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Sets the value of the Limit property for this object.
-     * 
      * @param limit
-     *        The new value for the Limit property for this object.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
     /**
-     * Returns the value of the Limit property for this object.
-     * 
-     * @return The value of the Limit property for this object.
+     * @return
      */
     public Integer getLimit() {
         return this.limit;
     }
 
     /**
-     * Sets the value of the Limit property for this object.
-     * 
      * @param limit
-     *        The new value for the Limit property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

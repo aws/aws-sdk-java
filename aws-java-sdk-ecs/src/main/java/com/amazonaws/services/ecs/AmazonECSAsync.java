@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,375 +14,32 @@
  */
 package com.amazonaws.services.ecs;
 
-import java.util.concurrent.Future;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.handlers.AsyncHandler;
 import com.amazonaws.services.ecs.model.*;
 
 /**
- * Interface for accessing AmazonECS asynchronously.
- * Each asynchronous method will return a Java Future object, and users are also allowed
- * to provide a callback handler.
+ * Interface for accessing Amazon ECS asynchronously. Each asynchronous method
+ * will return a Java Future object representing the asynchronous operation;
+ * overloads which accept an {@code AsyncHandler} can be used to receive
+ * notification when an asynchronous operation completes.
+ * <p>
  * <p>
  * Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast,
- * container management service that makes it easy to run, stop, and
- * manage Docker containers on a cluster of EC2 instances. Amazon ECS
- * lets you launch and stop container-enabled applications with simple
- * API calls, allows you to get the state of your cluster from a
- * centralized service, and gives you access to many familiar Amazon EC2
- * features like security groups, Amazon EBS volumes, and IAM roles.
+ * container management service that makes it easy to run, stop, and manage
+ * Docker containers on a cluster of EC2 instances. Amazon ECS lets you launch
+ * and stop container-enabled applications with simple API calls, allows you to
+ * get the state of your cluster from a centralized service, and gives you
+ * access to many familiar Amazon EC2 features like security groups, Amazon EBS
+ * volumes, and IAM roles.
  * </p>
  * <p>
- * You can use Amazon ECS to schedule the placement of containers across
- * your cluster based on your resource needs, isolation policies, and
- * availability requirements. Amazon EC2 Container Service eliminates the
- * need for you to operate your own cluster management and configuration
- * management systems or worry about scaling your management
- * infrastructure.
+ * You can use Amazon ECS to schedule the placement of containers across your
+ * cluster based on your resource needs, isolation policies, and availability
+ * requirements. Amazon EC2 Container Service eliminates the need for you to
+ * operate your own cluster management and configuration management systems or
+ * worry about scaling your management infrastructure.
  * </p>
  */
 public interface AmazonECSAsync extends AmazonECS {
-    /**
-     * <p>
-     * Deletes the specified cluster. You must deregister all container
-     * instances from this cluster before you may delete it. You can list the
-     * container instances in a cluster with ListContainerInstances and
-     * deregister them with DeregisterContainerInstance.
-     * </p>
-     *
-     * @param deleteClusterRequest Container for the necessary parameters to
-     *           execute the DeleteCluster operation on AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteCluster service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest deleteClusterRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified cluster. You must deregister all container
-     * instances from this cluster before you may delete it. You can list the
-     * container instances in a cluster with ListContainerInstances and
-     * deregister them with DeregisterContainerInstance.
-     * </p>
-     *
-     * @param deleteClusterRequest Container for the necessary parameters to
-     *           execute the DeleteCluster operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteCluster service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest deleteClusterRequest,
-            AsyncHandler<DeleteClusterRequest, DeleteClusterResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
-     * </p>
-     * <p>
-     * Sent to acknowledge that a container changed states.
-     * </p>
-     *
-     * @param submitContainerStateChangeRequest Container for the necessary
-     *           parameters to execute the SubmitContainerStateChange operation on
-     *           AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SubmitContainerStateChange service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<SubmitContainerStateChangeResult> submitContainerStateChangeAsync(SubmitContainerStateChangeRequest submitContainerStateChangeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
-     * </p>
-     * <p>
-     * Sent to acknowledge that a container changed states.
-     * </p>
-     *
-     * @param submitContainerStateChangeRequest Container for the necessary
-     *           parameters to execute the SubmitContainerStateChange operation on
-     *           AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SubmitContainerStateChange service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<SubmitContainerStateChangeResult> submitContainerStateChangeAsync(SubmitContainerStateChangeRequest submitContainerStateChangeRequest,
-            AsyncHandler<SubmitContainerStateChangeRequest, SubmitContainerStateChangeResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a specified service within a cluster.
-     * </p>
-     *
-     * @param deleteServiceRequest Container for the necessary parameters to
-     *           execute the DeleteService operation on AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteServiceResult> deleteServiceAsync(DeleteServiceRequest deleteServiceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a specified service within a cluster.
-     * </p>
-     *
-     * @param deleteServiceRequest Container for the necessary parameters to
-     *           execute the DeleteService operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteServiceResult> deleteServiceAsync(DeleteServiceRequest deleteServiceRequest,
-            AsyncHandler<DeleteServiceRequest, DeleteServiceResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of task definitions that are registered to your
-     * account. You can filter the results by family name with the
-     * <code>familyPrefix</code> parameter or by status with the
-     * <code>status</code> parameter.
-     * </p>
-     *
-     * @param listTaskDefinitionsRequest Container for the necessary
-     *           parameters to execute the ListTaskDefinitions operation on AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTaskDefinitions service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTaskDefinitionsResult> listTaskDefinitionsAsync(ListTaskDefinitionsRequest listTaskDefinitionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of task definitions that are registered to your
-     * account. You can filter the results by family name with the
-     * <code>familyPrefix</code> parameter or by status with the
-     * <code>status</code> parameter.
-     * </p>
-     *
-     * @param listTaskDefinitionsRequest Container for the necessary
-     *           parameters to execute the ListTaskDefinitions operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTaskDefinitions service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTaskDefinitionsResult> listTaskDefinitionsAsync(ListTaskDefinitionsRequest listTaskDefinitionsRequest,
-            AsyncHandler<ListTaskDefinitionsRequest, ListTaskDefinitionsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Start a task using random placement and the default Amazon ECS
-     * scheduler. To use your own scheduler or place a task on a specific
-     * container instance, use <code>StartTask</code> instead.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> The count parameter is limited to 10 tasks per
-     * call.
-     * </p>
-     *
-     * @param runTaskRequest Container for the necessary parameters to
-     *           execute the RunTask operation on AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the RunTask
-     *         service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RunTaskResult> runTaskAsync(RunTaskRequest runTaskRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Start a task using random placement and the default Amazon ECS
-     * scheduler. To use your own scheduler or place a task on a specific
-     * container instance, use <code>StartTask</code> instead.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> The count parameter is limited to 10 tasks per
-     * call.
-     * </p>
-     *
-     * @param runTaskRequest Container for the necessary parameters to
-     *           execute the RunTask operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the RunTask
-     *         service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RunTaskResult> runTaskAsync(RunTaskRequest runTaskRequest,
-            AsyncHandler<RunTaskRequest, RunTaskResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of existing clusters.
-     * </p>
-     *
-     * @param listClustersRequest Container for the necessary parameters to
-     *           execute the ListClusters operation on AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListClusters service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListClustersResult> listClustersAsync(ListClustersRequest listClustersRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of existing clusters.
-     * </p>
-     *
-     * @param listClustersRequest Container for the necessary parameters to
-     *           execute the ListClusters operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListClusters service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListClustersResult> listClustersAsync(ListClustersRequest listClustersRequest,
-            AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
@@ -391,24 +48,13 @@ public interface AmazonECSAsync extends AmazonECS {
      * instance. However, you can create your own cluster with a unique name
      * with the <code>CreateCluster</code> action.
      * </p>
-     *
-     * @param createClusterRequest Container for the necessary parameters to
-     *           execute the CreateCluster operation on AmazonECS.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateCluster service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createClusterRequest
+     * @return A Java Future containing the result of the CreateCluster
+     *         operation returned by the service.
      */
-    public Future<CreateClusterResult> createClusterAsync(CreateClusterRequest createClusterRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateClusterResult> createClusterAsync(
+            CreateClusterRequest createClusterRequest);
 
     /**
      * <p>
@@ -417,626 +63,307 @@ public interface AmazonECSAsync extends AmazonECS {
      * instance. However, you can create your own cluster with a unique name
      * with the <code>CreateCluster</code> action.
      * </p>
-     *
-     * @param createClusterRequest Container for the necessary parameters to
-     *           execute the CreateCluster operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateCluster service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCluster
+     *         operation returned by the service.
      */
-    public Future<CreateClusterResult> createClusterAsync(CreateClusterRequest createClusterRequest,
-            AsyncHandler<CreateClusterRequest, CreateClusterResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateClusterResult> createClusterAsync(
+            CreateClusterRequest createClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, CreateClusterResult> asyncHandler);
 
     /**
-     * <p>
-     * Describes one or more of your clusters.
-     * </p>
+     * Simplified method form for invoking the CreateCluster operation.
      *
-     * @param describeClustersRequest Container for the necessary parameters
-     *           to execute the DescribeClusters operation on AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeClusters service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @see #createClusterAsync(CreateClusterRequest)
      */
-    public Future<DescribeClustersResult> describeClustersAsync(DescribeClustersRequest describeClustersRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateClusterResult> createClusterAsync();
 
     /**
-     * <p>
-     * Describes one or more of your clusters.
-     * </p>
+     * Simplified method form for invoking the CreateCluster operation with an
+     * AsyncHandler.
      *
-     * @param describeClustersRequest Container for the necessary parameters
-     *           to execute the DescribeClusters operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeClusters service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @see #createClusterAsync(CreateClusterRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
      */
-    public Future<DescribeClustersResult> describeClustersAsync(DescribeClustersRequest describeClustersRequest,
-            AsyncHandler<DescribeClustersRequest, DescribeClustersResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deregisters the specified task definition by family and revision.
-     * Upon deregistration, the task definition is marked as
-     * <code>INACTIVE</code> . Existing tasks and services that reference an
-     * <code>INACTIVE</code> task definition continue to run without
-     * disruption. Existing services that reference an <code>INACTIVE</code>
-     * task definition can still scale up or down by modifying the service's
-     * desired count.
-     * </p>
-     * <p>
-     * You cannot use an <code>INACTIVE</code> task definition to run new
-     * tasks or create new services, and you cannot update an existing
-     * service to reference an <code>INACTIVE</code> task definition
-     * (although there may be up to a 10 minute window following
-     * deregistration where these restrictions have not yet taken effect).
-     * </p>
-     *
-     * @param deregisterTaskDefinitionRequest Container for the necessary
-     *           parameters to execute the DeregisterTaskDefinition operation on
-     *           AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeregisterTaskDefinition service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deregisters the specified task definition by family and revision.
-     * Upon deregistration, the task definition is marked as
-     * <code>INACTIVE</code> . Existing tasks and services that reference an
-     * <code>INACTIVE</code> task definition continue to run without
-     * disruption. Existing services that reference an <code>INACTIVE</code>
-     * task definition can still scale up or down by modifying the service's
-     * desired count.
-     * </p>
-     * <p>
-     * You cannot use an <code>INACTIVE</code> task definition to run new
-     * tasks or create new services, and you cannot update an existing
-     * service to reference an <code>INACTIVE</code> task definition
-     * (although there may be up to a 10 minute window following
-     * deregistration where these restrictions have not yet taken effect).
-     * </p>
-     *
-     * @param deregisterTaskDefinitionRequest Container for the necessary
-     *           parameters to execute the DeregisterTaskDefinition operation on
-     *           AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeregisterTaskDefinition service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest,
-            AsyncHandler<DeregisterTaskDefinitionRequest, DeregisterTaskDefinitionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deregisters an Amazon ECS container instance from the specified
-     * cluster. This instance is no longer available to run tasks.
-     * </p>
-     * <p>
-     * If you intend to use the container instance for some other purpose
-     * after deregistration, you should stop all of the tasks running on the
-     * container instance before deregistration to avoid any orphaned tasks
-     * from consuming resources.
-     * </p>
-     * <p>
-     * Deregistering a container instance removes the instance from a
-     * cluster, but it does not terminate the EC2 instance; if you are
-     * finished using the instance, be sure to terminate it in the Amazon EC2
-     * console to stop billing.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> When you terminate a container instance, it is
-     * automatically deregistered from your cluster.
-     * </p>
-     *
-     * @param deregisterContainerInstanceRequest Container for the necessary
-     *           parameters to execute the DeregisterContainerInstance operation on
-     *           AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeregisterContainerInstance service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeregisterContainerInstanceResult> deregisterContainerInstanceAsync(DeregisterContainerInstanceRequest deregisterContainerInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deregisters an Amazon ECS container instance from the specified
-     * cluster. This instance is no longer available to run tasks.
-     * </p>
-     * <p>
-     * If you intend to use the container instance for some other purpose
-     * after deregistration, you should stop all of the tasks running on the
-     * container instance before deregistration to avoid any orphaned tasks
-     * from consuming resources.
-     * </p>
-     * <p>
-     * Deregistering a container instance removes the instance from a
-     * cluster, but it does not terminate the EC2 instance; if you are
-     * finished using the instance, be sure to terminate it in the Amazon EC2
-     * console to stop billing.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> When you terminate a container instance, it is
-     * automatically deregistered from your cluster.
-     * </p>
-     *
-     * @param deregisterContainerInstanceRequest Container for the necessary
-     *           parameters to execute the DeregisterContainerInstance operation on
-     *           AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeregisterContainerInstance service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeregisterContainerInstanceResult> deregisterContainerInstanceAsync(DeregisterContainerInstanceRequest deregisterContainerInstanceRequest,
-            AsyncHandler<DeregisterContainerInstanceRequest, DeregisterContainerInstanceResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of container instances in a specified cluster.
-     * </p>
-     *
-     * @param listContainerInstancesRequest Container for the necessary
-     *           parameters to execute the ListContainerInstances operation on
-     *           AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListContainerInstances service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListContainerInstancesResult> listContainerInstancesAsync(ListContainerInstancesRequest listContainerInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of container instances in a specified cluster.
-     * </p>
-     *
-     * @param listContainerInstancesRequest Container for the necessary
-     *           parameters to execute the ListContainerInstances operation on
-     *           AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListContainerInstances service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListContainerInstancesResult> listContainerInstancesAsync(ListContainerInstancesRequest listContainerInstancesRequest,
-            AsyncHandler<ListContainerInstancesRequest, ListContainerInstancesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the Amazon ECS container agent on a specified container
-     * instance. Updating the Amazon ECS container agent does not interrupt
-     * running tasks or services on the container instance. The process for
-     * updating the agent differs depending on whether your container
-     * instance was launched with the Amazon ECS-optimized AMI or another
-     * operating system.
-     * </p>
-     * <p>
-     * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized
-     * AMI or Amazon Linux with the <code>ecs-init</code> service installed
-     * and running. For help updating the Amazon ECS container agent on other
-     * operating systems, see
-     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"> Manually Updating the Amazon ECS Container Agent </a>
-     * in the <i>Amazon EC2 Container Service Developer Guide</i> .
-     * </p>
-     *
-     * @param updateContainerAgentRequest Container for the necessary
-     *           parameters to execute the UpdateContainerAgent operation on AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateContainerAgent service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateContainerAgentResult> updateContainerAgentAsync(UpdateContainerAgentRequest updateContainerAgentRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the Amazon ECS container agent on a specified container
-     * instance. Updating the Amazon ECS container agent does not interrupt
-     * running tasks or services on the container instance. The process for
-     * updating the agent differs depending on whether your container
-     * instance was launched with the Amazon ECS-optimized AMI or another
-     * operating system.
-     * </p>
-     * <p>
-     * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized
-     * AMI or Amazon Linux with the <code>ecs-init</code> service installed
-     * and running. For help updating the Amazon ECS container agent on other
-     * operating systems, see
-     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"> Manually Updating the Amazon ECS Container Agent </a>
-     * in the <i>Amazon EC2 Container Service Developer Guide</i> .
-     * </p>
-     *
-     * @param updateContainerAgentRequest Container for the necessary
-     *           parameters to execute the UpdateContainerAgent operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateContainerAgent service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateContainerAgentResult> updateContainerAgentAsync(UpdateContainerAgentRequest updateContainerAgentRequest,
-            AsyncHandler<UpdateContainerAgentRequest, UpdateContainerAgentResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes a task definition. You can specify a <code>family</code>
-     * and <code>revision</code> to find information about a specific task
-     * definition, or you can simply specify the family to find the latest
-     * <code>ACTIVE</code> revision in that family.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You can only describe INACTIVE task definitions while an
-     * active task or service references them.
-     * </p>
-     *
-     * @param describeTaskDefinitionRequest Container for the necessary
-     *           parameters to execute the DescribeTaskDefinition operation on
-     *           AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeTaskDefinition service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeTaskDefinitionResult> describeTaskDefinitionAsync(DescribeTaskDefinitionRequest describeTaskDefinitionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes a task definition. You can specify a <code>family</code>
-     * and <code>revision</code> to find information about a specific task
-     * definition, or you can simply specify the family to find the latest
-     * <code>ACTIVE</code> revision in that family.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You can only describe INACTIVE task definitions while an
-     * active task or service references them.
-     * </p>
-     *
-     * @param describeTaskDefinitionRequest Container for the necessary
-     *           parameters to execute the DescribeTaskDefinition operation on
-     *           AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeTaskDefinition service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeTaskDefinitionResult> describeTaskDefinitionAsync(DescribeTaskDefinitionRequest describeTaskDefinitionRequest,
-            AsyncHandler<DescribeTaskDefinitionRequest, DescribeTaskDefinitionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Registers a new task definition from the supplied <code>family</code>
-     * and <code>containerDefinitions</code> . Optionally, you can add data
-     * volumes to your containers with the <code>volumes</code> parameter.
-     * For more information about task definition parameters and defaults,
-     * see
-     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"> Amazon ECS Task Definitions </a>
-     * in the <i>Amazon EC2 Container Service Developer Guide</i> .
-     * </p>
-     *
-     * @param registerTaskDefinitionRequest Container for the necessary
-     *           parameters to execute the RegisterTaskDefinition operation on
-     *           AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RegisterTaskDefinition service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RegisterTaskDefinitionResult> registerTaskDefinitionAsync(RegisterTaskDefinitionRequest registerTaskDefinitionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Registers a new task definition from the supplied <code>family</code>
-     * and <code>containerDefinitions</code> . Optionally, you can add data
-     * volumes to your containers with the <code>volumes</code> parameter.
-     * For more information about task definition parameters and defaults,
-     * see
-     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"> Amazon ECS Task Definitions </a>
-     * in the <i>Amazon EC2 Container Service Developer Guide</i> .
-     * </p>
-     *
-     * @param registerTaskDefinitionRequest Container for the necessary
-     *           parameters to execute the RegisterTaskDefinition operation on
-     *           AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RegisterTaskDefinition service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RegisterTaskDefinitionResult> registerTaskDefinitionAsync(RegisterTaskDefinitionRequest registerTaskDefinitionRequest,
-            AsyncHandler<RegisterTaskDefinitionRequest, RegisterTaskDefinitionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
-     * </p>
-     * <p>
-     * Sent to acknowledge that a task changed states.
-     * </p>
-     *
-     * @param submitTaskStateChangeRequest Container for the necessary
-     *           parameters to execute the SubmitTaskStateChange operation on
-     *           AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SubmitTaskStateChange service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<SubmitTaskStateChangeResult> submitTaskStateChangeAsync(SubmitTaskStateChangeRequest submitTaskStateChangeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
-     * </p>
-     * <p>
-     * Sent to acknowledge that a task changed states.
-     * </p>
-     *
-     * @param submitTaskStateChangeRequest Container for the necessary
-     *           parameters to execute the SubmitTaskStateChange operation on
-     *           AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SubmitTaskStateChange service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<SubmitTaskStateChangeResult> submitTaskStateChangeAsync(SubmitTaskStateChangeRequest submitTaskStateChangeRequest,
-            AsyncHandler<SubmitTaskStateChangeRequest, SubmitTaskStateChangeResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateClusterResult> createClusterAsync(
+            com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, CreateClusterResult> asyncHandler);
 
     /**
      * <p>
      * Runs and maintains a desired number of tasks from a specified task
      * definition. If the number of tasks running in a service drops below
-     * <code>desiredCount</code> , Amazon ECS spawns another instantiation of
-     * the task in the specified cluster.
+     * <code>desiredCount</code>, Amazon ECS spawns another instantiation of the
+     * task in the specified cluster.
      * </p>
-     *
-     * @param createServiceRequest Container for the necessary parameters to
-     *           execute the CreateService operation on AmazonECS.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createServiceRequest
+     * @return A Java Future containing the result of the CreateService
+     *         operation returned by the service.
      */
-    public Future<CreateServiceResult> createServiceAsync(CreateServiceRequest createServiceRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateServiceResult> createServiceAsync(
+            CreateServiceRequest createServiceRequest);
 
     /**
      * <p>
      * Runs and maintains a desired number of tasks from a specified task
      * definition. If the number of tasks running in a service drops below
-     * <code>desiredCount</code> , Amazon ECS spawns another instantiation of
-     * the task in the specified cluster.
+     * <code>desiredCount</code>, Amazon ECS spawns another instantiation of the
+     * task in the specified cluster.
      * </p>
-     *
-     * @param createServiceRequest Container for the necessary parameters to
-     *           execute the CreateService operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createServiceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateService
+     *         operation returned by the service.
      */
-    public Future<CreateServiceResult> createServiceAsync(CreateServiceRequest createServiceRequest,
-            AsyncHandler<CreateServiceRequest, CreateServiceResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateServiceResult> createServiceAsync(
+            CreateServiceRequest createServiceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateServiceRequest, CreateServiceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified cluster. You must deregister all container
+     * instances from this cluster before you may delete it. You can list the
+     * container instances in a cluster with <a>ListContainerInstances</a> and
+     * deregister them with <a>DeregisterContainerInstance</a>.
+     * </p>
+     * 
+     * @param deleteClusterRequest
+     * @return A Java Future containing the result of the DeleteCluster
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(
+            DeleteClusterRequest deleteClusterRequest);
+
+    /**
+     * <p>
+     * Deletes the specified cluster. You must deregister all container
+     * instances from this cluster before you may delete it. You can list the
+     * container instances in a cluster with <a>ListContainerInstances</a> and
+     * deregister them with <a>DeregisterContainerInstance</a>.
+     * </p>
+     * 
+     * @param deleteClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCluster
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(
+            DeleteClusterRequest deleteClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteClusterRequest, DeleteClusterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specified service within a cluster.
+     * </p>
+     * 
+     * @param deleteServiceRequest
+     * @return A Java Future containing the result of the DeleteService
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteServiceResult> deleteServiceAsync(
+            DeleteServiceRequest deleteServiceRequest);
+
+    /**
+     * <p>
+     * Deletes a specified service within a cluster.
+     * </p>
+     * 
+     * @param deleteServiceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteService
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteServiceResult> deleteServiceAsync(
+            DeleteServiceRequest deleteServiceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteServiceRequest, DeleteServiceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deregisters an Amazon ECS container instance from the specified cluster.
+     * This instance is no longer available to run tasks.
+     * </p>
+     * <p>
+     * If you intend to use the container instance for some other purpose after
+     * deregistration, you should stop all of the tasks running on the container
+     * instance before deregistration to avoid any orphaned tasks from consuming
+     * resources.
+     * </p>
+     * <p>
+     * Deregistering a container instance removes the instance from a cluster,
+     * but it does not terminate the EC2 instance; if you are finished using the
+     * instance, be sure to terminate it in the Amazon EC2 console to stop
+     * billing.
+     * </p>
+     * <note>
+     * <p>
+     * When you terminate a container instance, it is automatically deregistered
+     * from your cluster.
+     * </p>
+     * </note>
+     * 
+     * @param deregisterContainerInstanceRequest
+     * @return A Java Future containing the result of the
+     *         DeregisterContainerInstance operation returned by the service.
+     */
+    java.util.concurrent.Future<DeregisterContainerInstanceResult> deregisterContainerInstanceAsync(
+            DeregisterContainerInstanceRequest deregisterContainerInstanceRequest);
+
+    /**
+     * <p>
+     * Deregisters an Amazon ECS container instance from the specified cluster.
+     * This instance is no longer available to run tasks.
+     * </p>
+     * <p>
+     * If you intend to use the container instance for some other purpose after
+     * deregistration, you should stop all of the tasks running on the container
+     * instance before deregistration to avoid any orphaned tasks from consuming
+     * resources.
+     * </p>
+     * <p>
+     * Deregistering a container instance removes the instance from a cluster,
+     * but it does not terminate the EC2 instance; if you are finished using the
+     * instance, be sure to terminate it in the Amazon EC2 console to stop
+     * billing.
+     * </p>
+     * <note>
+     * <p>
+     * When you terminate a container instance, it is automatically deregistered
+     * from your cluster.
+     * </p>
+     * </note>
+     * 
+     * @param deregisterContainerInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeregisterContainerInstance operation returned by the service.
+     */
+    java.util.concurrent.Future<DeregisterContainerInstanceResult> deregisterContainerInstanceAsync(
+            DeregisterContainerInstanceRequest deregisterContainerInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterContainerInstanceRequest, DeregisterContainerInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deregisters the specified task definition by family and revision. Upon
+     * deregistration, the task definition is marked as <code>INACTIVE</code>.
+     * Existing tasks and services that reference an <code>INACTIVE</code> task
+     * definition continue to run without disruption. Existing services that
+     * reference an <code>INACTIVE</code> task definition can still scale up or
+     * down by modifying the service's desired count.
+     * </p>
+     * <p>
+     * You cannot use an <code>INACTIVE</code> task definition to run new tasks
+     * or create new services, and you cannot update an existing service to
+     * reference an <code>INACTIVE</code> task definition (although there may be
+     * up to a 10 minute window following deregistration where these
+     * restrictions have not yet taken effect).
+     * </p>
+     * 
+     * @param deregisterTaskDefinitionRequest
+     * @return A Java Future containing the result of the
+     *         DeregisterTaskDefinition operation returned by the service.
+     */
+    java.util.concurrent.Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(
+            DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest);
+
+    /**
+     * <p>
+     * Deregisters the specified task definition by family and revision. Upon
+     * deregistration, the task definition is marked as <code>INACTIVE</code>.
+     * Existing tasks and services that reference an <code>INACTIVE</code> task
+     * definition continue to run without disruption. Existing services that
+     * reference an <code>INACTIVE</code> task definition can still scale up or
+     * down by modifying the service's desired count.
+     * </p>
+     * <p>
+     * You cannot use an <code>INACTIVE</code> task definition to run new tasks
+     * or create new services, and you cannot update an existing service to
+     * reference an <code>INACTIVE</code> task definition (although there may be
+     * up to a 10 minute window following deregistration where these
+     * restrictions have not yet taken effect).
+     * </p>
+     * 
+     * @param deregisterTaskDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeregisterTaskDefinition operation returned by the service.
+     */
+    java.util.concurrent.Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(
+            DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterTaskDefinitionRequest, DeregisterTaskDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more of your clusters.
+     * </p>
+     * 
+     * @param describeClustersRequest
+     * @return A Java Future containing the result of the DescribeClusters
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync(
+            DescribeClustersRequest describeClustersRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your clusters.
+     * </p>
+     * 
+     * @param describeClustersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeClusters
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync(
+            DescribeClustersRequest describeClustersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeClustersRequest, DescribeClustersResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the DescribeClusters operation.
+     *
+     * @see #describeClustersAsync(DescribeClustersRequest)
+     */
+    java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync();
+
+    /**
+     * Simplified method form for invoking the DescribeClusters operation with
+     * an AsyncHandler.
+     *
+     * @see #describeClustersAsync(DescribeClustersRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync(
+            com.amazonaws.handlers.AsyncHandler<DescribeClustersRequest, DescribeClustersResult> asyncHandler);
 
     /**
      * <p>
@@ -1044,25 +371,13 @@ public interface AmazonECSAsync extends AmazonECS {
      * metadata about registered and remaining resources on each container
      * instance requested.
      * </p>
-     *
-     * @param describeContainerInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeContainerInstances operation on
-     *           AmazonECS.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeContainerInstances service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeContainerInstancesRequest
+     * @return A Java Future containing the result of the
+     *         DescribeContainerInstances operation returned by the service.
      */
-    public Future<DescribeContainerInstancesResult> describeContainerInstancesAsync(DescribeContainerInstancesRequest describeContainerInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeContainerInstancesResult> describeContainerInstancesAsync(
+            DescribeContainerInstancesRequest describeContainerInstancesRequest);
 
     /**
      * <p>
@@ -1070,659 +385,954 @@ public interface AmazonECSAsync extends AmazonECS {
      * metadata about registered and remaining resources on each container
      * instance requested.
      * </p>
-     *
-     * @param describeContainerInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeContainerInstances operation on
-     *           AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeContainerInstances service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeContainerInstancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeContainerInstances operation returned by the service.
      */
-    public Future<DescribeContainerInstancesResult> describeContainerInstancesAsync(DescribeContainerInstancesRequest describeContainerInstancesRequest,
-            AsyncHandler<DescribeContainerInstancesRequest, DescribeContainerInstancesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
-     * </p>
-     * <p>
-     * Registers an EC2 instance into the specified cluster. This instance
-     * becomes available to place containers on.
-     * </p>
-     *
-     * @param registerContainerInstanceRequest Container for the necessary
-     *           parameters to execute the RegisterContainerInstance operation on
-     *           AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RegisterContainerInstance service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RegisterContainerInstanceResult> registerContainerInstanceAsync(RegisterContainerInstanceRequest registerContainerInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
-     * </p>
-     * <p>
-     * Registers an EC2 instance into the specified cluster. This instance
-     * becomes available to place containers on.
-     * </p>
-     *
-     * @param registerContainerInstanceRequest Container for the necessary
-     *           parameters to execute the RegisterContainerInstance operation on
-     *           AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RegisterContainerInstance service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RegisterContainerInstanceResult> registerContainerInstanceAsync(RegisterContainerInstanceRequest registerContainerInstanceRequest,
-            AsyncHandler<RegisterContainerInstanceRequest, RegisterContainerInstanceResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeContainerInstancesResult> describeContainerInstancesAsync(
+            DescribeContainerInstancesRequest describeContainerInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeContainerInstancesRequest, DescribeContainerInstancesResult> asyncHandler);
 
     /**
      * <p>
      * Describes the specified services running in your cluster.
      * </p>
-     *
-     * @param describeServicesRequest Container for the necessary parameters
-     *           to execute the DescribeServices operation on AmazonECS.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeServices service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeServicesRequest
+     * @return A Java Future containing the result of the DescribeServices
+     *         operation returned by the service.
      */
-    public Future<DescribeServicesResult> describeServicesAsync(DescribeServicesRequest describeServicesRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(
+            DescribeServicesRequest describeServicesRequest);
 
     /**
      * <p>
      * Describes the specified services running in your cluster.
      * </p>
-     *
-     * @param describeServicesRequest Container for the necessary parameters
-     *           to execute the DescribeServices operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeServices service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeServicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeServices
+     *         operation returned by the service.
      */
-    public Future<DescribeServicesResult> describeServicesAsync(DescribeServicesRequest describeServicesRequest,
-            AsyncHandler<DescribeServicesRequest, DescribeServicesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(
+            DescribeServicesRequest describeServicesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeServicesRequest, DescribeServicesResult> asyncHandler);
 
     /**
      * <p>
-     * Lists the services that are running in a specified cluster.
+     * Describes a task definition. You can specify a <code>family</code> and
+     * <code>revision</code> to find information about a specific task
+     * definition, or you can simply specify the family to find the latest
+     * <code>ACTIVE</code> revision in that family.
      * </p>
-     *
-     * @param listServicesRequest Container for the necessary parameters to
-     *           execute the ListServices operation on AmazonECS.
+     * <note>
+     * <p>
+     * You can only describe <code>INACTIVE</code> task definitions while an
+     * active task or service references them.
+     * </p>
+     * </note>
      * 
-     * @return A Java Future object containing the response from the
-     *         ListServices service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeTaskDefinitionRequest
+     * @return A Java Future containing the result of the DescribeTaskDefinition
+     *         operation returned by the service.
      */
-    public Future<ListServicesResult> listServicesAsync(ListServicesRequest listServicesRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeTaskDefinitionResult> describeTaskDefinitionAsync(
+            DescribeTaskDefinitionRequest describeTaskDefinitionRequest);
 
     /**
      * <p>
-     * Lists the services that are running in a specified cluster.
+     * Describes a task definition. You can specify a <code>family</code> and
+     * <code>revision</code> to find information about a specific task
+     * definition, or you can simply specify the family to find the latest
+     * <code>ACTIVE</code> revision in that family.
      * </p>
-     *
-     * @param listServicesRequest Container for the necessary parameters to
-     *           execute the ListServices operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
+     * <note>
+     * <p>
+     * You can only describe <code>INACTIVE</code> task definitions while an
+     * active task or service references them.
+     * </p>
+     * </note>
      * 
-     * @return A Java Future object containing the response from the
-     *         ListServices service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeTaskDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTaskDefinition
+     *         operation returned by the service.
      */
-    public Future<ListServicesResult> listServicesAsync(ListServicesRequest listServicesRequest,
-            AsyncHandler<ListServicesRequest, ListServicesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Modify the desired count or task definition used in a service.
-     * </p>
-     * <p>
-     * You can add to or subtract from the number of instantiations of a
-     * task definition in a service by specifying the cluster that the
-     * service is running in and a new <code>desiredCount</code> parameter.
-     * </p>
-     * <p>
-     * You can use <code>UpdateService</code> to modify your task definition
-     * and deploy a new version of your service, one task at a time. If you
-     * modify the task definition with <code>UpdateService</code> , Amazon
-     * ECS spawns a task with the new version of the task definition and then
-     * stops an old task after the new version is running. Because
-     * <code>UpdateService</code> starts a new version of the task before
-     * stopping an old version, your cluster must have capacity to support
-     * one more instantiation of the task when <code>UpdateService</code> is
-     * run. If your cluster cannot support another instantiation of the task
-     * used in your service, you can reduce the desired count of your service
-     * by one before modifying the task definition.
-     * </p>
-     * <p>
-     * When UpdateService replaces a task during an update, the equivalent
-     * of <code>docker stop</code> is issued to the containers running in the
-     * task. This results in a <code>SIGTERM</code> and a 30-second timeout,
-     * after which <code>SIGKILL</code> is sent and the containers are
-     * forcibly stopped. If the container handles the <code>SIGTERM</code>
-     * gracefully and exits within 30 seconds from receiving it, no
-     * <code>SIGKILL</code> is sent.
-     * </p>
-     *
-     * @param updateServiceRequest Container for the necessary parameters to
-     *           execute the UpdateService operation on AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest updateServiceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Modify the desired count or task definition used in a service.
-     * </p>
-     * <p>
-     * You can add to or subtract from the number of instantiations of a
-     * task definition in a service by specifying the cluster that the
-     * service is running in and a new <code>desiredCount</code> parameter.
-     * </p>
-     * <p>
-     * You can use <code>UpdateService</code> to modify your task definition
-     * and deploy a new version of your service, one task at a time. If you
-     * modify the task definition with <code>UpdateService</code> , Amazon
-     * ECS spawns a task with the new version of the task definition and then
-     * stops an old task after the new version is running. Because
-     * <code>UpdateService</code> starts a new version of the task before
-     * stopping an old version, your cluster must have capacity to support
-     * one more instantiation of the task when <code>UpdateService</code> is
-     * run. If your cluster cannot support another instantiation of the task
-     * used in your service, you can reduce the desired count of your service
-     * by one before modifying the task definition.
-     * </p>
-     * <p>
-     * When UpdateService replaces a task during an update, the equivalent
-     * of <code>docker stop</code> is issued to the containers running in the
-     * task. This results in a <code>SIGTERM</code> and a 30-second timeout,
-     * after which <code>SIGKILL</code> is sent and the containers are
-     * forcibly stopped. If the container handles the <code>SIGTERM</code>
-     * gracefully and exits within 30 seconds from receiving it, no
-     * <code>SIGKILL</code> is sent.
-     * </p>
-     *
-     * @param updateServiceRequest Container for the necessary parameters to
-     *           execute the UpdateService operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest updateServiceRequest,
-            AsyncHandler<UpdateServiceRequest, UpdateServiceResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of task definition families that are registered to
-     * your account (which may include task definition families that no
-     * longer have any <code>ACTIVE</code> task definitions). You can filter
-     * the results with the <code>familyPrefix</code> parameter.
-     * </p>
-     *
-     * @param listTaskDefinitionFamiliesRequest Container for the necessary
-     *           parameters to execute the ListTaskDefinitionFamilies operation on
-     *           AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTaskDefinitionFamilies service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of task definition families that are registered to
-     * your account (which may include task definition families that no
-     * longer have any <code>ACTIVE</code> task definitions). You can filter
-     * the results with the <code>familyPrefix</code> parameter.
-     * </p>
-     *
-     * @param listTaskDefinitionFamiliesRequest Container for the necessary
-     *           parameters to execute the ListTaskDefinitionFamilies operation on
-     *           AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTaskDefinitionFamilies service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest,
-            AsyncHandler<ListTaskDefinitionFamiliesRequest, ListTaskDefinitionFamiliesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeTaskDefinitionResult> describeTaskDefinitionAsync(
+            DescribeTaskDefinitionRequest describeTaskDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTaskDefinitionRequest, DescribeTaskDefinitionResult> asyncHandler);
 
     /**
      * <p>
      * Describes a specified task or tasks.
      * </p>
-     *
-     * @param describeTasksRequest Container for the necessary parameters to
-     *           execute the DescribeTasks operation on AmazonECS.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeTasks service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeTasksRequest
+     * @return A Java Future containing the result of the DescribeTasks
+     *         operation returned by the service.
      */
-    public Future<DescribeTasksResult> describeTasksAsync(DescribeTasksRequest describeTasksRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeTasksResult> describeTasksAsync(
+            DescribeTasksRequest describeTasksRequest);
 
     /**
      * <p>
      * Describes a specified task or tasks.
      * </p>
-     *
-     * @param describeTasksRequest Container for the necessary parameters to
-     *           execute the DescribeTasks operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeTasks service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTasks
+     *         operation returned by the service.
      */
-    public Future<DescribeTasksResult> describeTasksAsync(DescribeTasksRequest describeTasksRequest,
-            AsyncHandler<DescribeTasksRequest, DescribeTasksResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeTasksResult> describeTasksAsync(
+            DescribeTasksRequest describeTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTasksRequest, DescribeTasksResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Returns an endpoint for the Amazon EC2 Container Service agent to poll
+     * for updates.
+     * </p>
+     * 
+     * @param discoverPollEndpointRequest
+     * @return A Java Future containing the result of the DiscoverPollEndpoint
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DiscoverPollEndpointResult> discoverPollEndpointAsync(
+            DiscoverPollEndpointRequest discoverPollEndpointRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Returns an endpoint for the Amazon EC2 Container Service agent to poll
+     * for updates.
+     * </p>
+     * 
+     * @param discoverPollEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DiscoverPollEndpoint
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DiscoverPollEndpointResult> discoverPollEndpointAsync(
+            DiscoverPollEndpointRequest discoverPollEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<DiscoverPollEndpointRequest, DiscoverPollEndpointResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the DiscoverPollEndpoint operation.
+     *
+     * @see #discoverPollEndpointAsync(DiscoverPollEndpointRequest)
+     */
+    java.util.concurrent.Future<DiscoverPollEndpointResult> discoverPollEndpointAsync();
+
+    /**
+     * Simplified method form for invoking the DiscoverPollEndpoint operation
+     * with an AsyncHandler.
+     *
+     * @see #discoverPollEndpointAsync(DiscoverPollEndpointRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<DiscoverPollEndpointResult> discoverPollEndpointAsync(
+            com.amazonaws.handlers.AsyncHandler<DiscoverPollEndpointRequest, DiscoverPollEndpointResult> asyncHandler);
 
     /**
      * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
+     * Returns a list of existing clusters.
      * </p>
-     * <p>
-     * Returns an endpoint for the Amazon EC2 Container Service agent to
-     * poll for updates.
-     * </p>
-     *
-     * @param discoverPollEndpointRequest Container for the necessary
-     *           parameters to execute the DiscoverPollEndpoint operation on AmazonECS.
      * 
-     * @return A Java Future object containing the response from the
-     *         DiscoverPollEndpoint service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listClustersRequest
+     * @return A Java Future containing the result of the ListClusters operation
+     *         returned by the service.
      */
-    public Future<DiscoverPollEndpointResult> discoverPollEndpointAsync(DiscoverPollEndpointRequest discoverPollEndpointRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListClustersResult> listClustersAsync(
+            ListClustersRequest listClustersRequest);
 
     /**
      * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
+     * Returns a list of existing clusters.
      * </p>
-     * <p>
-     * Returns an endpoint for the Amazon EC2 Container Service agent to
-     * poll for updates.
-     * </p>
-     *
-     * @param discoverPollEndpointRequest Container for the necessary
-     *           parameters to execute the DiscoverPollEndpoint operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         DiscoverPollEndpoint service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listClustersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListClusters operation
+     *         returned by the service.
      */
-    public Future<DiscoverPollEndpointResult> discoverPollEndpointAsync(DiscoverPollEndpointRequest discoverPollEndpointRequest,
-            AsyncHandler<DiscoverPollEndpointRequest, DiscoverPollEndpointResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListClustersResult> listClustersAsync(
+            ListClustersRequest listClustersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListClusters operation.
+     *
+     * @see #listClustersAsync(ListClustersRequest)
+     */
+    java.util.concurrent.Future<ListClustersResult> listClustersAsync();
+
+    /**
+     * Simplified method form for invoking the ListClusters operation with an
+     * AsyncHandler.
+     *
+     * @see #listClustersAsync(ListClustersRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListClustersResult> listClustersAsync(
+            com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler);
 
     /**
      * <p>
-     * Starts a new task from the specified task definition on the specified
-     * container instance or instances. To use the default Amazon ECS
-     * scheduler to place your task, use <code>RunTask</code> instead.
+     * Returns a list of container instances in a specified cluster.
      * </p>
-     * <p>
-     * <b>IMPORTANT:</b> The list of container instances to start tasks on
-     * is limited to 10.
-     * </p>
-     *
-     * @param startTaskRequest Container for the necessary parameters to
-     *           execute the StartTask operation on AmazonECS.
      * 
-     * @return A Java Future object containing the response from the
-     *         StartTask service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listContainerInstancesRequest
+     * @return A Java Future containing the result of the ListContainerInstances
+     *         operation returned by the service.
      */
-    public Future<StartTaskResult> startTaskAsync(StartTaskRequest startTaskRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListContainerInstancesResult> listContainerInstancesAsync(
+            ListContainerInstancesRequest listContainerInstancesRequest);
 
     /**
      * <p>
-     * Starts a new task from the specified task definition on the specified
-     * container instance or instances. To use the default Amazon ECS
-     * scheduler to place your task, use <code>RunTask</code> instead.
+     * Returns a list of container instances in a specified cluster.
      * </p>
-     * <p>
-     * <b>IMPORTANT:</b> The list of container instances to start tasks on
-     * is limited to 10.
-     * </p>
-     *
-     * @param startTaskRequest Container for the necessary parameters to
-     *           execute the StartTask operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         StartTask service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listContainerInstancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListContainerInstances
+     *         operation returned by the service.
      */
-    public Future<StartTaskResult> startTaskAsync(StartTaskRequest startTaskRequest,
-            AsyncHandler<StartTaskRequest, StartTaskResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListContainerInstancesResult> listContainerInstancesAsync(
+            ListContainerInstancesRequest listContainerInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListContainerInstancesRequest, ListContainerInstancesResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListContainerInstances operation.
+     *
+     * @see #listContainerInstancesAsync(ListContainerInstancesRequest)
+     */
+    java.util.concurrent.Future<ListContainerInstancesResult> listContainerInstancesAsync();
+
+    /**
+     * Simplified method form for invoking the ListContainerInstances operation
+     * with an AsyncHandler.
+     *
+     * @see #listContainerInstancesAsync(ListContainerInstancesRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListContainerInstancesResult> listContainerInstancesAsync(
+            com.amazonaws.handlers.AsyncHandler<ListContainerInstancesRequest, ListContainerInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the services that are running in a specified cluster.
+     * </p>
+     * 
+     * @param listServicesRequest
+     * @return A Java Future containing the result of the ListServices operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<ListServicesResult> listServicesAsync(
+            ListServicesRequest listServicesRequest);
+
+    /**
+     * <p>
+     * Lists the services that are running in a specified cluster.
+     * </p>
+     * 
+     * @param listServicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListServices operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<ListServicesResult> listServicesAsync(
+            ListServicesRequest listServicesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListServicesRequest, ListServicesResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListServices operation.
+     *
+     * @see #listServicesAsync(ListServicesRequest)
+     */
+    java.util.concurrent.Future<ListServicesResult> listServicesAsync();
+
+    /**
+     * Simplified method form for invoking the ListServices operation with an
+     * AsyncHandler.
+     *
+     * @see #listServicesAsync(ListServicesRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListServicesResult> listServicesAsync(
+            com.amazonaws.handlers.AsyncHandler<ListServicesRequest, ListServicesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of task definition families that are registered to your
+     * account (which may include task definition families that no longer have
+     * any <code>ACTIVE</code> task definitions). You can filter the results
+     * with the <code>familyPrefix</code> parameter.
+     * </p>
+     * 
+     * @param listTaskDefinitionFamiliesRequest
+     * @return A Java Future containing the result of the
+     *         ListTaskDefinitionFamilies operation returned by the service.
+     */
+    java.util.concurrent.Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(
+            ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest);
+
+    /**
+     * <p>
+     * Returns a list of task definition families that are registered to your
+     * account (which may include task definition families that no longer have
+     * any <code>ACTIVE</code> task definitions). You can filter the results
+     * with the <code>familyPrefix</code> parameter.
+     * </p>
+     * 
+     * @param listTaskDefinitionFamiliesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ListTaskDefinitionFamilies operation returned by the service.
+     */
+    java.util.concurrent.Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(
+            ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTaskDefinitionFamiliesRequest, ListTaskDefinitionFamiliesResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListTaskDefinitionFamilies
+     * operation.
+     *
+     * @see #listTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest)
+     */
+    java.util.concurrent.Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync();
+
+    /**
+     * Simplified method form for invoking the ListTaskDefinitionFamilies
+     * operation with an AsyncHandler.
+     *
+     * @see #listTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(
+            com.amazonaws.handlers.AsyncHandler<ListTaskDefinitionFamiliesRequest, ListTaskDefinitionFamiliesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of task definitions that are registered to your account.
+     * You can filter the results by family name with the
+     * <code>familyPrefix</code> parameter or by status with the
+     * <code>status</code> parameter.
+     * </p>
+     * 
+     * @param listTaskDefinitionsRequest
+     * @return A Java Future containing the result of the ListTaskDefinitions
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<ListTaskDefinitionsResult> listTaskDefinitionsAsync(
+            ListTaskDefinitionsRequest listTaskDefinitionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of task definitions that are registered to your account.
+     * You can filter the results by family name with the
+     * <code>familyPrefix</code> parameter or by status with the
+     * <code>status</code> parameter.
+     * </p>
+     * 
+     * @param listTaskDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTaskDefinitions
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<ListTaskDefinitionsResult> listTaskDefinitionsAsync(
+            ListTaskDefinitionsRequest listTaskDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTaskDefinitionsRequest, ListTaskDefinitionsResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListTaskDefinitions operation.
+     *
+     * @see #listTaskDefinitionsAsync(ListTaskDefinitionsRequest)
+     */
+    java.util.concurrent.Future<ListTaskDefinitionsResult> listTaskDefinitionsAsync();
+
+    /**
+     * Simplified method form for invoking the ListTaskDefinitions operation
+     * with an AsyncHandler.
+     *
+     * @see #listTaskDefinitionsAsync(ListTaskDefinitionsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListTaskDefinitionsResult> listTaskDefinitionsAsync(
+            com.amazonaws.handlers.AsyncHandler<ListTaskDefinitionsRequest, ListTaskDefinitionsResult> asyncHandler);
 
     /**
      * <p>
      * Returns a list of tasks for a specified cluster. You can filter the
      * results by family name, by a particular container instance, or by the
-     * desired status of the task with the <code>family</code> ,
-     * <code>containerInstance</code> , and <code>desiredStatus</code>
+     * desired status of the task with the <code>family</code>,
+     * <code>containerInstance</code>, and <code>desiredStatus</code>
      * parameters.
      * </p>
-     *
-     * @param listTasksRequest Container for the necessary parameters to
-     *           execute the ListTasks operation on AmazonECS.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListTasks service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listTasksRequest
+     * @return A Java Future containing the result of the ListTasks operation
+     *         returned by the service.
      */
-    public Future<ListTasksResult> listTasksAsync(ListTasksRequest listTasksRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListTasksResult> listTasksAsync(
+            ListTasksRequest listTasksRequest);
 
     /**
      * <p>
      * Returns a list of tasks for a specified cluster. You can filter the
      * results by family name, by a particular container instance, or by the
-     * desired status of the task with the <code>family</code> ,
-     * <code>containerInstance</code> , and <code>desiredStatus</code>
+     * desired status of the task with the <code>family</code>,
+     * <code>containerInstance</code>, and <code>desiredStatus</code>
      * parameters.
      * </p>
-     *
-     * @param listTasksRequest Container for the necessary parameters to
-     *           execute the ListTasks operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListTasks service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTasks operation
+     *         returned by the service.
      */
-    public Future<ListTasksResult> listTasksAsync(ListTasksRequest listTasksRequest,
-            AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListTasksResult> listTasksAsync(
+            ListTasksRequest listTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListTasks operation.
+     *
+     * @see #listTasksAsync(ListTasksRequest)
+     */
+    java.util.concurrent.Future<ListTasksResult> listTasksAsync();
+
+    /**
+     * Simplified method form for invoking the ListTasks operation with an
+     * AsyncHandler.
+     *
+     * @see #listTasksAsync(ListTasksRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListTasksResult> listTasksAsync(
+            com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Registers an EC2 instance into the specified cluster. This instance
+     * becomes available to place containers on.
+     * </p>
+     * 
+     * @param registerContainerInstanceRequest
+     * @return A Java Future containing the result of the
+     *         RegisterContainerInstance operation returned by the service.
+     */
+    java.util.concurrent.Future<RegisterContainerInstanceResult> registerContainerInstanceAsync(
+            RegisterContainerInstanceRequest registerContainerInstanceRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Registers an EC2 instance into the specified cluster. This instance
+     * becomes available to place containers on.
+     * </p>
+     * 
+     * @param registerContainerInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RegisterContainerInstance operation returned by the service.
+     */
+    java.util.concurrent.Future<RegisterContainerInstanceResult> registerContainerInstanceAsync(
+            RegisterContainerInstanceRequest registerContainerInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterContainerInstanceRequest, RegisterContainerInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Registers a new task definition from the supplied <code>family</code> and
+     * <code>containerDefinitions</code>. Optionally, you can add data volumes
+     * to your containers with the <code>volumes</code> parameter. For more
+     * information about task definition parameters and defaults, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param registerTaskDefinitionRequest
+     * @return A Java Future containing the result of the RegisterTaskDefinition
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<RegisterTaskDefinitionResult> registerTaskDefinitionAsync(
+            RegisterTaskDefinitionRequest registerTaskDefinitionRequest);
+
+    /**
+     * <p>
+     * Registers a new task definition from the supplied <code>family</code> and
+     * <code>containerDefinitions</code>. Optionally, you can add data volumes
+     * to your containers with the <code>volumes</code> parameter. For more
+     * information about task definition parameters and defaults, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param registerTaskDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterTaskDefinition
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<RegisterTaskDefinitionResult> registerTaskDefinitionAsync(
+            RegisterTaskDefinitionRequest registerTaskDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterTaskDefinitionRequest, RegisterTaskDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Start a task using random placement and the default Amazon ECS scheduler.
+     * To use your own scheduler or place a task on a specific container
+     * instance, use <code>StartTask</code> instead.
+     * </p>
+     * <important>
+     * <p>
+     * The <code>count</code> parameter is limited to 10 tasks per call.
+     * </p>
+     * </important>
+     * 
+     * @param runTaskRequest
+     * @return A Java Future containing the result of the RunTask operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<RunTaskResult> runTaskAsync(
+            RunTaskRequest runTaskRequest);
+
+    /**
+     * <p>
+     * Start a task using random placement and the default Amazon ECS scheduler.
+     * To use your own scheduler or place a task on a specific container
+     * instance, use <code>StartTask</code> instead.
+     * </p>
+     * <important>
+     * <p>
+     * The <code>count</code> parameter is limited to 10 tasks per call.
+     * </p>
+     * </important>
+     * 
+     * @param runTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RunTask operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<RunTaskResult> runTaskAsync(
+            RunTaskRequest runTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<RunTaskRequest, RunTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a new task from the specified task definition on the specified
+     * container instance or instances. To use the default Amazon ECS scheduler
+     * to place your task, use <code>RunTask</code> instead.
+     * </p>
+     * <important>
+     * <p>
+     * The list of container instances to start tasks on is limited to 10.
+     * </p>
+     * </important>
+     * 
+     * @param startTaskRequest
+     * @return A Java Future containing the result of the StartTask operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<StartTaskResult> startTaskAsync(
+            StartTaskRequest startTaskRequest);
+
+    /**
+     * <p>
+     * Starts a new task from the specified task definition on the specified
+     * container instance or instances. To use the default Amazon ECS scheduler
+     * to place your task, use <code>RunTask</code> instead.
+     * </p>
+     * <important>
+     * <p>
+     * The list of container instances to start tasks on is limited to 10.
+     * </p>
+     * </important>
+     * 
+     * @param startTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartTask operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<StartTaskResult> startTaskAsync(
+            StartTaskRequest startTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartTaskRequest, StartTaskResult> asyncHandler);
 
     /**
      * <p>
      * Stops a running task.
      * </p>
      * <p>
-     * When StopTask is called on a task, the equivalent of <code>docker
-     * stop</code> is issued to the containers running in the task. This
-     * results in a <code>SIGTERM</code> and a 30-second timeout, after which
-     * <code>SIGKILL</code> is sent and the containers are forcibly stopped.
-     * If the container handles the <code>SIGTERM</code> gracefully and exits
-     * within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
+     * When <a>StopTask</a> is called on a task, the equivalent of
+     * <code>docker stop</code> is issued to the containers running in the task.
+     * This results in a <code>SIGTERM</code> and a 30-second timeout, after
+     * which <code>SIGKILL</code> is sent and the containers are forcibly
+     * stopped. If the container handles the <code>SIGTERM</code> gracefully and
+     * exits within 30 seconds from receiving it, no <code>SIGKILL</code> is
+     * sent.
      * </p>
-     *
-     * @param stopTaskRequest Container for the necessary parameters to
-     *           execute the StopTask operation on AmazonECS.
      * 
-     * @return A Java Future object containing the response from the StopTask
-     *         service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param stopTaskRequest
+     * @return A Java Future containing the result of the StopTask operation
+     *         returned by the service.
      */
-    public Future<StopTaskResult> stopTaskAsync(StopTaskRequest stopTaskRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<StopTaskResult> stopTaskAsync(
+            StopTaskRequest stopTaskRequest);
 
     /**
      * <p>
      * Stops a running task.
      * </p>
      * <p>
-     * When StopTask is called on a task, the equivalent of <code>docker
-     * stop</code> is issued to the containers running in the task. This
-     * results in a <code>SIGTERM</code> and a 30-second timeout, after which
-     * <code>SIGKILL</code> is sent and the containers are forcibly stopped.
-     * If the container handles the <code>SIGTERM</code> gracefully and exits
-     * within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
+     * When <a>StopTask</a> is called on a task, the equivalent of
+     * <code>docker stop</code> is issued to the containers running in the task.
+     * This results in a <code>SIGTERM</code> and a 30-second timeout, after
+     * which <code>SIGKILL</code> is sent and the containers are forcibly
+     * stopped. If the container handles the <code>SIGTERM</code> gracefully and
+     * exits within 30 seconds from receiving it, no <code>SIGKILL</code> is
+     * sent.
      * </p>
-     *
-     * @param stopTaskRequest Container for the necessary parameters to
-     *           execute the StopTask operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the StopTask
-     *         service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param stopTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopTask operation
+     *         returned by the service.
      */
-    public Future<StopTaskResult> stopTaskAsync(StopTaskRequest stopTaskRequest,
-            AsyncHandler<StopTaskRequest, StopTaskResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<StopTaskResult> stopTaskAsync(
+            StopTaskRequest stopTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StopTaskRequest, StopTaskResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Sent to acknowledge that a container changed states.
+     * </p>
+     * 
+     * @param submitContainerStateChangeRequest
+     * @return A Java Future containing the result of the
+     *         SubmitContainerStateChange operation returned by the service.
+     */
+    java.util.concurrent.Future<SubmitContainerStateChangeResult> submitContainerStateChangeAsync(
+            SubmitContainerStateChangeRequest submitContainerStateChangeRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Sent to acknowledge that a container changed states.
+     * </p>
+     * 
+     * @param submitContainerStateChangeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         SubmitContainerStateChange operation returned by the service.
+     */
+    java.util.concurrent.Future<SubmitContainerStateChangeResult> submitContainerStateChangeAsync(
+            SubmitContainerStateChangeRequest submitContainerStateChangeRequest,
+            com.amazonaws.handlers.AsyncHandler<SubmitContainerStateChangeRequest, SubmitContainerStateChangeResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the SubmitContainerStateChange
+     * operation.
+     *
+     * @see #submitContainerStateChangeAsync(SubmitContainerStateChangeRequest)
+     */
+    java.util.concurrent.Future<SubmitContainerStateChangeResult> submitContainerStateChangeAsync();
+
+    /**
+     * Simplified method form for invoking the SubmitContainerStateChange
+     * operation with an AsyncHandler.
+     *
+     * @see #submitContainerStateChangeAsync(SubmitContainerStateChangeRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<SubmitContainerStateChangeResult> submitContainerStateChangeAsync(
+            com.amazonaws.handlers.AsyncHandler<SubmitContainerStateChangeRequest, SubmitContainerStateChangeResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Sent to acknowledge that a task changed states.
+     * </p>
+     * 
+     * @param submitTaskStateChangeRequest
+     * @return A Java Future containing the result of the SubmitTaskStateChange
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<SubmitTaskStateChangeResult> submitTaskStateChangeAsync(
+            SubmitTaskStateChangeRequest submitTaskStateChangeRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Sent to acknowledge that a task changed states.
+     * </p>
+     * 
+     * @param submitTaskStateChangeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SubmitTaskStateChange
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<SubmitTaskStateChangeResult> submitTaskStateChangeAsync(
+            SubmitTaskStateChangeRequest submitTaskStateChangeRequest,
+            com.amazonaws.handlers.AsyncHandler<SubmitTaskStateChangeRequest, SubmitTaskStateChangeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the Amazon ECS container agent on a specified container instance.
+     * Updating the Amazon ECS container agent does not interrupt running tasks
+     * or services on the container instance. The process for updating the agent
+     * differs depending on whether your container instance was launched with
+     * the Amazon ECS-optimized AMI or another operating system.
+     * </p>
+     * <p>
+     * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI
+     * or Amazon Linux with the <code>ecs-init</code> service installed and
+     * running. For help updating the Amazon ECS container agent on other
+     * operating systems, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"
+     * >Manually Updating the Amazon ECS Container Agent</a> in the <i>Amazon
+     * EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateContainerAgentRequest
+     * @return A Java Future containing the result of the UpdateContainerAgent
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateContainerAgentResult> updateContainerAgentAsync(
+            UpdateContainerAgentRequest updateContainerAgentRequest);
+
+    /**
+     * <p>
+     * Updates the Amazon ECS container agent on a specified container instance.
+     * Updating the Amazon ECS container agent does not interrupt running tasks
+     * or services on the container instance. The process for updating the agent
+     * differs depending on whether your container instance was launched with
+     * the Amazon ECS-optimized AMI or another operating system.
+     * </p>
+     * <p>
+     * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI
+     * or Amazon Linux with the <code>ecs-init</code> service installed and
+     * running. For help updating the Amazon ECS container agent on other
+     * operating systems, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"
+     * >Manually Updating the Amazon ECS Container Agent</a> in the <i>Amazon
+     * EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateContainerAgentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateContainerAgent
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateContainerAgentResult> updateContainerAgentAsync(
+            UpdateContainerAgentRequest updateContainerAgentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateContainerAgentRequest, UpdateContainerAgentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modify the desired count or task definition used in a service.
+     * </p>
+     * <p>
+     * You can add to or subtract from the number of instantiations of a task
+     * definition in a service by specifying the cluster that the service is
+     * running in and a new <code>desiredCount</code> parameter.
+     * </p>
+     * <p>
+     * You can use <code>UpdateService</code> to modify your task definition and
+     * deploy a new version of your service, one task at a time. If you modify
+     * the task definition with <code>UpdateService</code>, Amazon ECS spawns a
+     * task with the new version of the task definition and then stops an old
+     * task after the new version is running. Because <code>UpdateService</code>
+     * starts a new version of the task before stopping an old version, your
+     * cluster must have capacity to support one more instantiation of the task
+     * when <code>UpdateService</code> is run. If your cluster cannot support
+     * another instantiation of the task used in your service, you can reduce
+     * the desired count of your service by one before modifying the task
+     * definition.
+     * </p>
+     * <p>
+     * When <a>UpdateService</a> replaces a task during an update, the
+     * equivalent of <code>docker stop</code> is issued to the containers
+     * running in the task. This results in a <code>SIGTERM</code> and a
+     * 30-second timeout, after which <code>SIGKILL</code> is sent and the
+     * containers are forcibly stopped. If the container handles the
+     * <code>SIGTERM</code> gracefully and exits within 30 seconds from
+     * receiving it, no <code>SIGKILL</code> is sent.
+     * </p>
+     * 
+     * @param updateServiceRequest
+     * @return A Java Future containing the result of the UpdateService
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(
+            UpdateServiceRequest updateServiceRequest);
+
+    /**
+     * <p>
+     * Modify the desired count or task definition used in a service.
+     * </p>
+     * <p>
+     * You can add to or subtract from the number of instantiations of a task
+     * definition in a service by specifying the cluster that the service is
+     * running in and a new <code>desiredCount</code> parameter.
+     * </p>
+     * <p>
+     * You can use <code>UpdateService</code> to modify your task definition and
+     * deploy a new version of your service, one task at a time. If you modify
+     * the task definition with <code>UpdateService</code>, Amazon ECS spawns a
+     * task with the new version of the task definition and then stops an old
+     * task after the new version is running. Because <code>UpdateService</code>
+     * starts a new version of the task before stopping an old version, your
+     * cluster must have capacity to support one more instantiation of the task
+     * when <code>UpdateService</code> is run. If your cluster cannot support
+     * another instantiation of the task used in your service, you can reduce
+     * the desired count of your service by one before modifying the task
+     * definition.
+     * </p>
+     * <p>
+     * When <a>UpdateService</a> replaces a task during an update, the
+     * equivalent of <code>docker stop</code> is issued to the containers
+     * running in the task. This results in a <code>SIGTERM</code> and a
+     * 30-second timeout, after which <code>SIGKILL</code> is sent and the
+     * containers are forcibly stopped. If the container handles the
+     * <code>SIGTERM</code> gracefully and exits within 30 seconds from
+     * receiving it, no <code>SIGKILL</code> is sent.
+     * </p>
+     * 
+     * @param updateServiceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateService
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(
+            UpdateServiceRequest updateServiceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateServiceRequest, UpdateServiceResult> asyncHandler);
+
 }
-        

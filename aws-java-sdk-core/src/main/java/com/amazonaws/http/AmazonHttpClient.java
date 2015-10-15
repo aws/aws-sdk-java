@@ -35,11 +35,11 @@ import static com.amazonaws.util.AWSRequestMetrics.Field.StatusCode;
 import static com.amazonaws.util.AWSRequestMetrics.Field.ThrottleException;
 import static com.amazonaws.util.IOUtils.closeQuietly;
 
+import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
-import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
@@ -48,8 +48,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import javax.net.ssl.SSLContext;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -65,6 +63,7 @@ import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.entity.BufferedHttpEntity;
 import org.apache.http.pool.ConnPoolControl;
 import org.apache.http.pool.PoolStats;
 import org.apache.http.protocol.BasicHttpContext;
@@ -91,6 +90,8 @@ import com.amazonaws.event.ProgressListener;
 import com.amazonaws.handlers.CredentialsRequestHandler;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.conn.ssl.SdkTLSSocketFactory;
+import com.amazonaws.http.exception.HttpRequestTimeoutException;
+import com.amazonaws.http.timertask.HttpRequestAbortTaskTracker;
 import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.internal.ReleasableInputStream;
 import com.amazonaws.internal.ResettableInputStream;
@@ -159,6 +160,9 @@ public class AmazonHttpClient {
     /** Cache of metadata for recently executed requests for diagnostic purposes */
     private final ResponseMetadataCache responseMetadataCache;
 
+    /** Timer to enforce http request timeouts. */
+    private final HttpRequestTimer httpRequestTimer;
+    
     /**
      * A request metric collector used specifically for this http client; or
      * null if there is none. This collector, if specified, always takes
@@ -207,13 +211,20 @@ public class AmazonHttpClient {
             ClientConfiguration config,
             HttpClient httpClient,
             RequestMetricCollector requestMetricCollector) {
-
         this.config = config;
         this.httpClient = httpClient;
         this.requestMetricCollector = requestMetricCollector;
         this.responseMetadataCache = new ResponseMetadataCache(config.getResponseMetadataCacheSize());
+        this.httpRequestTimer = new HttpRequestTimer(config);
     }
 
+    /**
+     * Package protected for unit-testing
+     */
+    HttpRequestTimer getHttpRequestTimer() {
+        return httpRequestTimer;
+    }
+    
     /**
      * Returns additional response metadata for an executed request. Response
      * metadata isn't considered part of the standard results returned by an
@@ -451,14 +462,23 @@ public class AmazonHttpClient {
         final Map<String, String> originalHeaders =
             new HashMap<String, String>(request.getHeaders());
         // Always mark the input stream before execution.
+        final ExecOneRequestParams p = new ExecOneRequestParams();
         final InputStream originalContent = request.getContent();
-        if (originalContent != null && originalContent.markSupported()) {
+        if (originalContent != null && originalContent.markSupported()
+                && !(originalContent instanceof BufferedInputStream)) {
+            // Mark only once for non-BufferedInputStream
             AmazonWebServiceRequest awsreq = request.getOriginalRequest();
             final int readLimit = awsreq.getRequestClientOptions().getReadLimit();
             originalContent.mark(readLimit);
         }
-        final ExecOneRequestParams p = new ExecOneRequestParams();
         while (true) {
+            if (originalContent instanceof BufferedInputStream && originalContent.markSupported()) {
+                // Mark everytime for BufferedInputStream, since the marker could
+                // have been invalidated
+                AmazonWebServiceRequest awsreq = request.getOriginalRequest();
+                final int readLimit = awsreq.getRequestClientOptions().getReadLimit();
+                originalContent.mark(readLimit);
+            }
             p.initPerRetry();
             if (p.redirectedURI != null) {
                 /*
@@ -720,10 +740,27 @@ public class AmazonHttpClient {
 
         /////////// Send HTTP request ////////////
         final boolean isHeaderReqIdAvail;
+        HttpRequestAbortTaskTracker requestAbortTaskTracker = null;
+        if (httpRequestTimer.isEnabled()){
+            requestAbortTaskTracker = httpRequestTimer.schedule(execParams.apacheRequest);
+        }
+
         try {
             execParams.apacheResponse = httpClient.execute(execParams.apacheRequest, httpContext);
+            if(httpRequestTimer.isEnabled() && !responseHandler.needsConnectionLeftOpen()) {
+                execParams.apacheResponse.setEntity(new BufferedHttpEntity(execParams.apacheResponse.getEntity()));
+            }
             isHeaderReqIdAvail = logHeaderRequestId(execParams.apacheResponse);
+        } catch(IOException ioe) {
+            if (requestAbortTaskTracker != null && requestAbortTaskTracker.httpRequestAborted()) {
+                throw new HttpRequestTimeoutException("Request did not complete before the request timeout configuration.", ioe);
+            } else {
+                throw ioe;
+            }
         } finally {
+            if (requestAbortTaskTracker != null) {
+                requestAbortTaskTracker.cancelTask();
+            }
             awsRequestMetrics.endEvent(HttpRequestTime);
         }
 
@@ -928,6 +965,7 @@ public class AmazonHttpClient {
      * Once a client has been shutdown, it cannot be used to make more requests.
      */
     public void shutdown() {
+        httpRequestTimer.shutdown();
         IdleConnectionReaper.removeConnectionManager(httpClient.getConnectionManager());
         httpClient.getConnectionManager().shutdown();
     }

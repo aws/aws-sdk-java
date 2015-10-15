@@ -49,9 +49,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     private String aPIVersion;
 
     /**
-     * Returns the value of the JobIds property for this object.
-     * 
-     * @return The value of the JobIds property for this object.
+     * @return
      */
     public java.util.List<String> getJobIds() {
         if (jobIds == null) {
@@ -61,10 +59,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the JobIds property for this object.
-     * 
      * @param jobIds
-     *        The new value for the JobIds property for this object.
      */
     public void setJobIds(java.util.Collection<String> jobIds) {
         if (jobIds == null) {
@@ -76,7 +71,6 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the JobIds property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setJobIds(java.util.Collection)} or
@@ -85,7 +79,6 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param jobIds
-     *        The new value for the JobIds property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -101,10 +94,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the JobIds property for this object.
-     * 
      * @param jobIds
-     *        The new value for the JobIds property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -115,29 +105,21 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Name property for this object.
-     * 
      * @param name
-     *        The new value for the Name property for this object.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Returns the value of the Name property for this object.
-     * 
-     * @return The value of the Name property for this object.
+     * @return
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Sets the value of the Name property for this object.
-     * 
      * @param name
-     *        The new value for the Name property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -147,29 +129,21 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Company property for this object.
-     * 
      * @param company
-     *        The new value for the Company property for this object.
      */
     public void setCompany(String company) {
         this.company = company;
     }
 
     /**
-     * Returns the value of the Company property for this object.
-     * 
-     * @return The value of the Company property for this object.
+     * @return
      */
     public String getCompany() {
         return this.company;
     }
 
     /**
-     * Sets the value of the Company property for this object.
-     * 
      * @param company
-     *        The new value for the Company property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -179,29 +153,21 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the PhoneNumber property for this object.
-     * 
      * @param phoneNumber
-     *        The new value for the PhoneNumber property for this object.
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     /**
-     * Returns the value of the PhoneNumber property for this object.
-     * 
-     * @return The value of the PhoneNumber property for this object.
+     * @return
      */
     public String getPhoneNumber() {
         return this.phoneNumber;
     }
 
     /**
-     * Sets the value of the PhoneNumber property for this object.
-     * 
      * @param phoneNumber
-     *        The new value for the PhoneNumber property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -211,29 +177,21 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Country property for this object.
-     * 
      * @param country
-     *        The new value for the Country property for this object.
      */
     public void setCountry(String country) {
         this.country = country;
     }
 
     /**
-     * Returns the value of the Country property for this object.
-     * 
-     * @return The value of the Country property for this object.
+     * @return
      */
     public String getCountry() {
         return this.country;
     }
 
     /**
-     * Sets the value of the Country property for this object.
-     * 
      * @param country
-     *        The new value for the Country property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -243,29 +201,21 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the StateOrProvince property for this object.
-     * 
      * @param stateOrProvince
-     *        The new value for the StateOrProvince property for this object.
      */
     public void setStateOrProvince(String stateOrProvince) {
         this.stateOrProvince = stateOrProvince;
     }
 
     /**
-     * Returns the value of the StateOrProvince property for this object.
-     * 
-     * @return The value of the StateOrProvince property for this object.
+     * @return
      */
     public String getStateOrProvince() {
         return this.stateOrProvince;
     }
 
     /**
-     * Sets the value of the StateOrProvince property for this object.
-     * 
      * @param stateOrProvince
-     *        The new value for the StateOrProvince property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -275,29 +225,21 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the City property for this object.
-     * 
      * @param city
-     *        The new value for the City property for this object.
      */
     public void setCity(String city) {
         this.city = city;
     }
 
     /**
-     * Returns the value of the City property for this object.
-     * 
-     * @return The value of the City property for this object.
+     * @return
      */
     public String getCity() {
         return this.city;
     }
 
     /**
-     * Sets the value of the City property for this object.
-     * 
      * @param city
-     *        The new value for the City property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -307,29 +249,21 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the PostalCode property for this object.
-     * 
      * @param postalCode
-     *        The new value for the PostalCode property for this object.
      */
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
     /**
-     * Returns the value of the PostalCode property for this object.
-     * 
-     * @return The value of the PostalCode property for this object.
+     * @return
      */
     public String getPostalCode() {
         return this.postalCode;
     }
 
     /**
-     * Sets the value of the PostalCode property for this object.
-     * 
      * @param postalCode
-     *        The new value for the PostalCode property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -339,29 +273,21 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Street1 property for this object.
-     * 
      * @param street1
-     *        The new value for the Street1 property for this object.
      */
     public void setStreet1(String street1) {
         this.street1 = street1;
     }
 
     /**
-     * Returns the value of the Street1 property for this object.
-     * 
-     * @return The value of the Street1 property for this object.
+     * @return
      */
     public String getStreet1() {
         return this.street1;
     }
 
     /**
-     * Sets the value of the Street1 property for this object.
-     * 
      * @param street1
-     *        The new value for the Street1 property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -371,29 +297,21 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Street2 property for this object.
-     * 
      * @param street2
-     *        The new value for the Street2 property for this object.
      */
     public void setStreet2(String street2) {
         this.street2 = street2;
     }
 
     /**
-     * Returns the value of the Street2 property for this object.
-     * 
-     * @return The value of the Street2 property for this object.
+     * @return
      */
     public String getStreet2() {
         return this.street2;
     }
 
     /**
-     * Sets the value of the Street2 property for this object.
-     * 
      * @param street2
-     *        The new value for the Street2 property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -403,29 +321,21 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Street3 property for this object.
-     * 
      * @param street3
-     *        The new value for the Street3 property for this object.
      */
     public void setStreet3(String street3) {
         this.street3 = street3;
     }
 
     /**
-     * Returns the value of the Street3 property for this object.
-     * 
-     * @return The value of the Street3 property for this object.
+     * @return
      */
     public String getStreet3() {
         return this.street3;
     }
 
     /**
-     * Sets the value of the Street3 property for this object.
-     * 
      * @param street3
-     *        The new value for the Street3 property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -435,29 +345,21 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the APIVersion property for this object.
-     * 
      * @param aPIVersion
-     *        The new value for the APIVersion property for this object.
      */
     public void setAPIVersion(String aPIVersion) {
         this.aPIVersion = aPIVersion;
     }
 
     /**
-     * Returns the value of the APIVersion property for this object.
-     * 
-     * @return The value of the APIVersion property for this object.
+     * @return
      */
     public String getAPIVersion() {
         return this.aPIVersion;
     }
 
     /**
-     * Sets the value of the APIVersion property for this object.
-     * 
      * @param aPIVersion
-     *        The new value for the APIVersion property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

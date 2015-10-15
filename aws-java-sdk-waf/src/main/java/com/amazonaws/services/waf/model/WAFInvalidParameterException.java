@@ -60,10 +60,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
     }
 
     /**
-     * Sets the value of the Field property for this object.
-     * 
      * @param field
-     *        The new value for the Field property for this object.
      * @see ParameterExceptionField
      */
     public void setField(String field) {
@@ -71,9 +68,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
     }
 
     /**
-     * Returns the value of the Field property for this object.
-     * 
-     * @return The value of the Field property for this object.
+     * @return
      * @see ParameterExceptionField
      */
     public String getField() {
@@ -81,10 +76,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
     }
 
     /**
-     * Sets the value of the Field property for this object.
-     * 
      * @param field
-     *        The new value for the Field property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ParameterExceptionField
@@ -95,10 +87,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
     }
 
     /**
-     * Sets the value of the Field property for this object.
-     * 
      * @param field
-     *        The new value for the Field property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ParameterExceptionField
@@ -108,10 +97,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
     }
 
     /**
-     * Sets the value of the Field property for this object.
-     * 
      * @param field
-     *        The new value for the Field property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ParameterExceptionField
@@ -122,29 +108,21 @@ public class WAFInvalidParameterException extends AmazonServiceException {
     }
 
     /**
-     * Sets the value of the Parameter property for this object.
-     * 
      * @param parameter
-     *        The new value for the Parameter property for this object.
      */
     public void setParameter(String parameter) {
         this.parameter = parameter;
     }
 
     /**
-     * Returns the value of the Parameter property for this object.
-     * 
-     * @return The value of the Parameter property for this object.
+     * @return
      */
     public String getParameter() {
         return this.parameter;
     }
 
     /**
-     * Sets the value of the Parameter property for this object.
-     * 
      * @param parameter
-     *        The new value for the Parameter property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

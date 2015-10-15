@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
@@ -24,47 +25,55 @@ import java.io.Serializable;
 public class DescribeMyUserProfileResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * A <code>UserProfile</code> object that describes the user's SSH
      * information.
+     * </p>
      */
     private SelfUserProfile userProfile;
 
     /**
+     * <p>
      * A <code>UserProfile</code> object that describes the user's SSH
      * information.
-     *
-     * @return A <code>UserProfile</code> object that describes the user's SSH
-     *         information.
-     */
-    public SelfUserProfile getUserProfile() {
-        return userProfile;
-    }
-    
-    /**
-     * A <code>UserProfile</code> object that describes the user's SSH
-     * information.
-     *
-     * @param userProfile A <code>UserProfile</code> object that describes the user's SSH
-     *         information.
+     * </p>
+     * 
+     * @param userProfile
+     *        A <code>UserProfile</code> object that describes the user's SSH
+     *        information.
      */
     public void setUserProfile(SelfUserProfile userProfile) {
         this.userProfile = userProfile;
     }
-    
+
     /**
+     * <p>
      * A <code>UserProfile</code> object that describes the user's SSH
      * information.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param userProfile A <code>UserProfile</code> object that describes the user's SSH
+     * </p>
+     * 
+     * @return A <code>UserProfile</code> object that describes the user's SSH
      *         information.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public DescribeMyUserProfileResult withUserProfile(SelfUserProfile userProfile) {
-        this.userProfile = userProfile;
+    public SelfUserProfile getUserProfile() {
+        return this.userProfile;
+    }
+
+    /**
+     * <p>
+     * A <code>UserProfile</code> object that describes the user's SSH
+     * information.
+     * </p>
+     * 
+     * @param userProfile
+     *        A <code>UserProfile</code> object that describes the user's SSH
+     *        information.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeMyUserProfileResult withUserProfile(
+            SelfUserProfile userProfile) {
+        setUserProfile(userProfile);
         return this;
     }
 
@@ -80,46 +89,49 @@ public class DescribeMyUserProfileResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getUserProfile() != null) sb.append("UserProfile: " + getUserProfile() );
+        if (getUserProfile() != null)
+            sb.append("UserProfile: " + getUserProfile());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeMyUserProfileResult == false)
+            return false;
+        DescribeMyUserProfileResult other = (DescribeMyUserProfileResult) obj;
+        if (other.getUserProfile() == null ^ this.getUserProfile() == null)
+            return false;
+        if (other.getUserProfile() != null
+                && other.getUserProfile().equals(this.getUserProfile()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getUserProfile() == null) ? 0 : getUserProfile().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getUserProfile() == null) ? 0 : getUserProfile().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeMyUserProfileResult == false) return false;
-        DescribeMyUserProfileResult other = (DescribeMyUserProfileResult)obj;
-        
-        if (other.getUserProfile() == null ^ this.getUserProfile() == null) return false;
-        if (other.getUserProfile() != null && other.getUserProfile().equals(this.getUserProfile()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeMyUserProfileResult clone() {
         try {
             return (DescribeMyUserProfileResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

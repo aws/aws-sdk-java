@@ -26,7 +26,8 @@ public enum GrantOperation {
     ReEncryptFrom("ReEncryptFrom"),
     ReEncryptTo("ReEncryptTo"),
     CreateGrant("CreateGrant"),
-    RetireGrant("RetireGrant");
+    RetireGrant("RetireGrant"),
+    DescribeKey("DescribeKey");
 
     private String value;
 
@@ -66,6 +67,8 @@ public enum GrantOperation {
             return GrantOperation.CreateGrant;
         } else if ("RetireGrant".equals(value)) {
             return GrantOperation.RetireGrant;
+        } else if ("DescribeKey".equals(value)) {
+            return GrantOperation.DescribeKey;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

@@ -1,155 +1,159 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#updateVolume(UpdateVolumeRequest) UpdateVolume operation}.
- * <p>
- * Updates an Amazon EBS volume's name or mount point. For more
- * information, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
- * .
- * </p>
- * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must
- * have a Manage permissions level for the stack, or an attached policy
- * that explicitly grants permissions. For more information on user
- * permissions, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
- * .
- * </p>
- *
- * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateVolume(UpdateVolumeRequest)
+ * 
  */
-public class UpdateVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class UpdateVolumeRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * The volume ID.
+     * </p>
      */
     private String volumeId;
-
     /**
+     * <p>
      * The new name.
+     * </p>
      */
     private String name;
-
     /**
+     * <p>
      * The new mount point.
+     * </p>
      */
     private String mountPoint;
 
     /**
+     * <p>
      * The volume ID.
-     *
-     * @return The volume ID.
-     */
-    public String getVolumeId() {
-        return volumeId;
-    }
-    
-    /**
-     * The volume ID.
-     *
-     * @param volumeId The volume ID.
+     * </p>
+     * 
+     * @param volumeId
+     *        The volume ID.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
-    
+
     /**
-     * The volume ID.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param volumeId The volume ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The volume ID.
+     * </p>
+     * 
+     * @return The volume ID.
+     */
+    public String getVolumeId() {
+        return this.volumeId;
+    }
+
+    /**
+     * <p>
+     * The volume ID.
+     * </p>
+     * 
+     * @param volumeId
+     *        The volume ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateVolumeRequest withVolumeId(String volumeId) {
-        this.volumeId = volumeId;
+        setVolumeId(volumeId);
         return this;
     }
 
     /**
+     * <p>
      * The new name.
-     *
-     * @return The new name.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * The new name.
-     *
-     * @param name The new name.
+     * </p>
+     * 
+     * @param name
+     *        The new name.
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
-     * The new name.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param name The new name.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The new name.
+     * </p>
+     * 
+     * @return The new name.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The new name.
+     * </p>
+     * 
+     * @param name
+     *        The new name.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateVolumeRequest withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
+     * <p>
      * The new mount point.
-     *
-     * @return The new mount point.
-     */
-    public String getMountPoint() {
-        return mountPoint;
-    }
-    
-    /**
-     * The new mount point.
-     *
-     * @param mountPoint The new mount point.
+     * </p>
+     * 
+     * @param mountPoint
+     *        The new mount point.
      */
     public void setMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
     }
-    
+
     /**
-     * The new mount point.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param mountPoint The new mount point.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The new mount point.
+     * </p>
+     * 
+     * @return The new mount point.
+     */
+    public String getMountPoint() {
+        return this.mountPoint;
+    }
+
+    /**
+     * <p>
+     * The new mount point.
+     * </p>
+     * 
+     * @param mountPoint
+     *        The new mount point.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateVolumeRequest withMountPoint(String mountPoint) {
-        this.mountPoint = mountPoint;
+        setMountPoint(mountPoint);
         return this;
     }
 
@@ -165,46 +169,60 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements Seri
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getMountPoint() != null) sb.append("MountPoint: " + getMountPoint() );
+        if (getVolumeId() != null)
+            sb.append("VolumeId: " + getVolumeId() + ",");
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getMountPoint() != null)
+            sb.append("MountPoint: " + getMountPoint());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof UpdateVolumeRequest == false)
+            return false;
+        UpdateVolumeRequest other = (UpdateVolumeRequest) obj;
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
+            return false;
+        if (other.getVolumeId() != null
+                && other.getVolumeId().equals(this.getVolumeId()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getMountPoint() == null ^ this.getMountPoint() == null)
+            return false;
+        if (other.getMountPoint() != null
+                && other.getMountPoint().equals(this.getMountPoint()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode()); 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getMountPoint() == null) ? 0 : getMountPoint().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode
+                + ((getMountPoint() == null) ? 0 : getMountPoint().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof UpdateVolumeRequest == false) return false;
-        UpdateVolumeRequest other = (UpdateVolumeRequest)obj;
-        
-        if (other.getVolumeId() == null ^ this.getVolumeId() == null) return false;
-        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false) return false; 
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getMountPoint() == null ^ this.getMountPoint() == null) return false;
-        if (other.getMountPoint() != null && other.getMountPoint().equals(this.getMountPoint()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public UpdateVolumeRequest clone() {
-        
-            return (UpdateVolumeRequest) super.clone();
+        return (UpdateVolumeRequest) super.clone();
     }
-
 }
-    

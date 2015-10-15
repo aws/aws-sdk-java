@@ -29,9 +29,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     private String nextBackwardToken;
 
     /**
-     * Returns the value of the Events property for this object.
-     * 
-     * @return The value of the Events property for this object.
+     * @return
      */
     public java.util.List<OutputLogEvent> getEvents() {
         if (events == null) {
@@ -41,10 +39,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Events property for this object.
-     * 
      * @param events
-     *        The new value for the Events property for this object.
      */
     public void setEvents(java.util.Collection<OutputLogEvent> events) {
         if (events == null) {
@@ -57,7 +52,6 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Events property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setEvents(java.util.Collection)} or
@@ -66,7 +60,6 @@ public class GetLogEventsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param events
-     *        The new value for the Events property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -82,10 +75,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Events property for this object.
-     * 
      * @param events
-     *        The new value for the Events property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -96,29 +86,21 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the NextForwardToken property for this object.
-     * 
      * @param nextForwardToken
-     *        The new value for the NextForwardToken property for this object.
      */
     public void setNextForwardToken(String nextForwardToken) {
         this.nextForwardToken = nextForwardToken;
     }
 
     /**
-     * Returns the value of the NextForwardToken property for this object.
-     * 
-     * @return The value of the NextForwardToken property for this object.
+     * @return
      */
     public String getNextForwardToken() {
         return this.nextForwardToken;
     }
 
     /**
-     * Sets the value of the NextForwardToken property for this object.
-     * 
      * @param nextForwardToken
-     *        The new value for the NextForwardToken property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -128,29 +110,21 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the NextBackwardToken property for this object.
-     * 
      * @param nextBackwardToken
-     *        The new value for the NextBackwardToken property for this object.
      */
     public void setNextBackwardToken(String nextBackwardToken) {
         this.nextBackwardToken = nextBackwardToken;
     }
 
     /**
-     * Returns the value of the NextBackwardToken property for this object.
-     * 
-     * @return The value of the NextBackwardToken property for this object.
+     * @return
      */
     public String getNextBackwardToken() {
         return this.nextBackwardToken;
     }
 
     /**
-     * Sets the value of the NextBackwardToken property for this object.
-     * 
      * @param nextBackwardToken
-     *        The new value for the NextBackwardToken property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -1,263 +1,260 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * A logical container used for storing the configuration changes of an
- * AWS resource.
+ * A logical container used for storing the configuration changes of an AWS
+ * resource.
  * </p>
  */
 public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
-     * The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name "default" when creating the delivery channel. You
-     * cannot change the assigned name.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * The name of the delivery channel. By default, AWS Config automatically
+     * assigns the name "default" when creating the delivery channel. You cannot
+     * change the assigned name.
+     * </p>
      */
     private String name;
-
     /**
-     * The name of the Amazon S3 bucket used to store configuration history
-     * for the delivery channel.
+     * <p>
+     * The name of the Amazon S3 bucket used to store configuration history for
+     * the delivery channel.
+     * </p>
      */
     private String s3BucketName;
-
     /**
+     * <p>
      * The prefix for the specified Amazon S3 bucket.
+     * </p>
      */
     private String s3KeyPrefix;
-
     /**
-     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config
-     * delivers notifications to.
+     * <p>
+     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
+     * notifications to.
+     * </p>
      */
     private String snsTopicARN;
 
-    /**
-     * Options for how AWS Config delivers configuration snapshots to the
-     * Amazon S3 bucket in your delivery channel.
-     */
     private ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties;
 
     /**
-     * The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name "default" when creating the delivery channel. You
-     * cannot change the assigned name.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @return The name of the delivery channel. By default, AWS Config automatically
-     *         assigns the name "default" when creating the delivery channel. You
-     *         cannot change the assigned name.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
      * The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name "default" when creating the delivery channel. You
-     * cannot change the assigned name.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param name The name of the delivery channel. By default, AWS Config automatically
-     *         assigns the name "default" when creating the delivery channel. You
-     *         cannot change the assigned name.
+     * assigns the name "default" when creating the delivery channel. You cannot
+     * change the assigned name.
+     * </p>
+     * 
+     * @param name
+     *        The name of the delivery channel. By default, AWS Config
+     *        automatically assigns the name "default" when creating the
+     *        delivery channel. You cannot change the assigned name.
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
+     * <p>
      * The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name "default" when creating the delivery channel. You
-     * cannot change the assigned name.
+     * assigns the name "default" when creating the delivery channel. You cannot
+     * change the assigned name.
+     * </p>
+     * 
+     * @return The name of the delivery channel. By default, AWS Config
+     *         automatically assigns the name "default" when creating the
+     *         delivery channel. You cannot change the assigned name.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param name The name of the delivery channel. By default, AWS Config automatically
-     *         assigns the name "default" when creating the delivery channel. You
-     *         cannot change the assigned name.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the delivery channel. By default, AWS Config automatically
+     * assigns the name "default" when creating the delivery channel. You cannot
+     * change the assigned name.
+     * </p>
+     * 
+     * @param name
+     *        The name of the delivery channel. By default, AWS Config
+     *        automatically assigns the name "default" when creating the
+     *        delivery channel. You cannot change the assigned name.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DeliveryChannel withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
-     * The name of the Amazon S3 bucket used to store configuration history
-     * for the delivery channel.
-     *
-     * @return The name of the Amazon S3 bucket used to store configuration history
-     *         for the delivery channel.
-     */
-    public String getS3BucketName() {
-        return s3BucketName;
-    }
-    
-    /**
-     * The name of the Amazon S3 bucket used to store configuration history
-     * for the delivery channel.
-     *
-     * @param s3BucketName The name of the Amazon S3 bucket used to store configuration history
-     *         for the delivery channel.
+     * <p>
+     * The name of the Amazon S3 bucket used to store configuration history for
+     * the delivery channel.
+     * </p>
+     * 
+     * @param s3BucketName
+     *        The name of the Amazon S3 bucket used to store configuration
+     *        history for the delivery channel.
      */
     public void setS3BucketName(String s3BucketName) {
         this.s3BucketName = s3BucketName;
     }
-    
+
     /**
-     * The name of the Amazon S3 bucket used to store configuration history
-     * for the delivery channel.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param s3BucketName The name of the Amazon S3 bucket used to store configuration history
-     *         for the delivery channel.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the Amazon S3 bucket used to store configuration history for
+     * the delivery channel.
+     * </p>
+     * 
+     * @return The name of the Amazon S3 bucket used to store configuration
+     *         history for the delivery channel.
+     */
+    public String getS3BucketName() {
+        return this.s3BucketName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon S3 bucket used to store configuration history for
+     * the delivery channel.
+     * </p>
+     * 
+     * @param s3BucketName
+     *        The name of the Amazon S3 bucket used to store configuration
+     *        history for the delivery channel.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DeliveryChannel withS3BucketName(String s3BucketName) {
-        this.s3BucketName = s3BucketName;
+        setS3BucketName(s3BucketName);
         return this;
     }
 
     /**
+     * <p>
      * The prefix for the specified Amazon S3 bucket.
-     *
-     * @return The prefix for the specified Amazon S3 bucket.
-     */
-    public String getS3KeyPrefix() {
-        return s3KeyPrefix;
-    }
-    
-    /**
-     * The prefix for the specified Amazon S3 bucket.
-     *
-     * @param s3KeyPrefix The prefix for the specified Amazon S3 bucket.
+     * </p>
+     * 
+     * @param s3KeyPrefix
+     *        The prefix for the specified Amazon S3 bucket.
      */
     public void setS3KeyPrefix(String s3KeyPrefix) {
         this.s3KeyPrefix = s3KeyPrefix;
     }
-    
+
     /**
-     * The prefix for the specified Amazon S3 bucket.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param s3KeyPrefix The prefix for the specified Amazon S3 bucket.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The prefix for the specified Amazon S3 bucket.
+     * </p>
+     * 
+     * @return The prefix for the specified Amazon S3 bucket.
+     */
+    public String getS3KeyPrefix() {
+        return this.s3KeyPrefix;
+    }
+
+    /**
+     * <p>
+     * The prefix for the specified Amazon S3 bucket.
+     * </p>
+     * 
+     * @param s3KeyPrefix
+     *        The prefix for the specified Amazon S3 bucket.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DeliveryChannel withS3KeyPrefix(String s3KeyPrefix) {
-        this.s3KeyPrefix = s3KeyPrefix;
+        setS3KeyPrefix(s3KeyPrefix);
         return this;
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config
-     * delivers notifications to.
-     *
-     * @return The Amazon Resource Name (ARN) of the SNS topic that AWS Config
-     *         delivers notifications to.
-     */
-    public String getSnsTopicARN() {
-        return snsTopicARN;
-    }
-    
-    /**
-     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config
-     * delivers notifications to.
-     *
-     * @param snsTopicARN The Amazon Resource Name (ARN) of the SNS topic that AWS Config
-     *         delivers notifications to.
+     * <p>
+     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
+     * notifications to.
+     * </p>
+     * 
+     * @param snsTopicARN
+     *        The Amazon Resource Name (ARN) of the SNS topic that AWS Config
+     *        delivers notifications to.
      */
     public void setSnsTopicARN(String snsTopicARN) {
         this.snsTopicARN = snsTopicARN;
     }
-    
+
     /**
-     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config
-     * delivers notifications to.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param snsTopicARN The Amazon Resource Name (ARN) of the SNS topic that AWS Config
+     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
+     * notifications to.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the SNS topic that AWS Config
      *         delivers notifications to.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getSnsTopicARN() {
+        return this.snsTopicARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
+     * notifications to.
+     * </p>
+     * 
+     * @param snsTopicARN
+     *        The Amazon Resource Name (ARN) of the SNS topic that AWS Config
+     *        delivers notifications to.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DeliveryChannel withSnsTopicARN(String snsTopicARN) {
-        this.snsTopicARN = snsTopicARN;
+        setSnsTopicARN(snsTopicARN);
         return this;
     }
 
     /**
-     * Options for how AWS Config delivers configuration snapshots to the
-     * Amazon S3 bucket in your delivery channel.
-     *
-     * @return Options for how AWS Config delivers configuration snapshots to the
-     *         Amazon S3 bucket in your delivery channel.
+     * @param configSnapshotDeliveryProperties
+     */
+    public void setConfigSnapshotDeliveryProperties(
+            ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties) {
+        this.configSnapshotDeliveryProperties = configSnapshotDeliveryProperties;
+    }
+
+    /**
+     * @return
      */
     public ConfigSnapshotDeliveryProperties getConfigSnapshotDeliveryProperties() {
-        return configSnapshotDeliveryProperties;
+        return this.configSnapshotDeliveryProperties;
     }
-    
+
     /**
-     * Options for how AWS Config delivers configuration snapshots to the
-     * Amazon S3 bucket in your delivery channel.
-     *
-     * @param configSnapshotDeliveryProperties Options for how AWS Config delivers configuration snapshots to the
-     *         Amazon S3 bucket in your delivery channel.
+     * @param configSnapshotDeliveryProperties
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public void setConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties) {
-        this.configSnapshotDeliveryProperties = configSnapshotDeliveryProperties;
-    }
-    
-    /**
-     * Options for how AWS Config delivers configuration snapshots to the
-     * Amazon S3 bucket in your delivery channel.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param configSnapshotDeliveryProperties Options for how AWS Config delivers configuration snapshots to the
-     *         Amazon S3 bucket in your delivery channel.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DeliveryChannel withConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties) {
-        this.configSnapshotDeliveryProperties = configSnapshotDeliveryProperties;
+    public DeliveryChannel withConfigSnapshotDeliveryProperties(
+            ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties) {
+        setConfigSnapshotDeliveryProperties(configSnapshotDeliveryProperties);
         return this;
     }
 
@@ -273,62 +270,93 @@ public class DeliveryChannel implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getS3BucketName() != null) sb.append("S3BucketName: " + getS3BucketName() + ",");
-        if (getS3KeyPrefix() != null) sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
-        if (getSnsTopicARN() != null) sb.append("SnsTopicARN: " + getSnsTopicARN() + ",");
-        if (getConfigSnapshotDeliveryProperties() != null) sb.append("ConfigSnapshotDeliveryProperties: " + getConfigSnapshotDeliveryProperties() );
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getS3BucketName() != null)
+            sb.append("S3BucketName: " + getS3BucketName() + ",");
+        if (getS3KeyPrefix() != null)
+            sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
+        if (getSnsTopicARN() != null)
+            sb.append("SnsTopicARN: " + getSnsTopicARN() + ",");
+        if (getConfigSnapshotDeliveryProperties() != null)
+            sb.append("ConfigSnapshotDeliveryProperties: "
+                    + getConfigSnapshotDeliveryProperties());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DeliveryChannel == false)
+            return false;
+        DeliveryChannel other = (DeliveryChannel) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getS3BucketName() == null ^ this.getS3BucketName() == null)
+            return false;
+        if (other.getS3BucketName() != null
+                && other.getS3BucketName().equals(this.getS3BucketName()) == false)
+            return false;
+        if (other.getS3KeyPrefix() == null ^ this.getS3KeyPrefix() == null)
+            return false;
+        if (other.getS3KeyPrefix() != null
+                && other.getS3KeyPrefix().equals(this.getS3KeyPrefix()) == false)
+            return false;
+        if (other.getSnsTopicARN() == null ^ this.getSnsTopicARN() == null)
+            return false;
+        if (other.getSnsTopicARN() != null
+                && other.getSnsTopicARN().equals(this.getSnsTopicARN()) == false)
+            return false;
+        if (other.getConfigSnapshotDeliveryProperties() == null
+                ^ this.getConfigSnapshotDeliveryProperties() == null)
+            return false;
+        if (other.getConfigSnapshotDeliveryProperties() != null
+                && other.getConfigSnapshotDeliveryProperties().equals(
+                        this.getConfigSnapshotDeliveryProperties()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getS3BucketName() == null) ? 0 : getS3BucketName().hashCode()); 
-        hashCode = prime * hashCode + ((getS3KeyPrefix() == null) ? 0 : getS3KeyPrefix().hashCode()); 
-        hashCode = prime * hashCode + ((getSnsTopicARN() == null) ? 0 : getSnsTopicARN().hashCode()); 
-        hashCode = prime * hashCode + ((getConfigSnapshotDeliveryProperties() == null) ? 0 : getConfigSnapshotDeliveryProperties().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getS3BucketName() == null) ? 0 : getS3BucketName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getS3KeyPrefix() == null) ? 0 : getS3KeyPrefix().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSnsTopicARN() == null) ? 0 : getSnsTopicARN().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getConfigSnapshotDeliveryProperties() == null) ? 0
+                        : getConfigSnapshotDeliveryProperties().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DeliveryChannel == false) return false;
-        DeliveryChannel other = (DeliveryChannel)obj;
-        
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getS3BucketName() == null ^ this.getS3BucketName() == null) return false;
-        if (other.getS3BucketName() != null && other.getS3BucketName().equals(this.getS3BucketName()) == false) return false; 
-        if (other.getS3KeyPrefix() == null ^ this.getS3KeyPrefix() == null) return false;
-        if (other.getS3KeyPrefix() != null && other.getS3KeyPrefix().equals(this.getS3KeyPrefix()) == false) return false; 
-        if (other.getSnsTopicARN() == null ^ this.getSnsTopicARN() == null) return false;
-        if (other.getSnsTopicARN() != null && other.getSnsTopicARN().equals(this.getSnsTopicARN()) == false) return false; 
-        if (other.getConfigSnapshotDeliveryProperties() == null ^ this.getConfigSnapshotDeliveryProperties() == null) return false;
-        if (other.getConfigSnapshotDeliveryProperties() != null && other.getConfigSnapshotDeliveryProperties().equals(this.getConfigSnapshotDeliveryProperties()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DeliveryChannel clone() {
         try {
             return (DeliveryChannel) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ecs.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,64 +40,85 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * List Tasks Request Marshaller
+ * ListTasksRequest Marshaller
  */
-public class ListTasksRequestMarshaller implements Marshaller<Request<ListTasksRequest>, ListTasksRequest> {
+public class ListTasksRequestMarshaller implements
+        Marshaller<Request<ListTasksRequest>, ListTasksRequest> {
 
     public Request<ListTasksRequest> marshall(ListTasksRequest listTasksRequest) {
+
         if (listTasksRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<ListTasksRequest> request = new DefaultRequest<ListTasksRequest>(listTasksRequest, "AmazonECS");
-        String target = "AmazonEC2ContainerServiceV20141113.ListTasks";
-        request.addHeader("X-Amz-Target", target);
+        Request<ListTasksRequest> request = new DefaultRequest<ListTasksRequest>(
+                listTasksRequest, "AmazonECS");
+        request.addHeader("X-Amz-Target",
+                "AmazonEC2ContainerServiceV20141113.ListTasks");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (listTasksRequest.getCluster() != null) {
                 jsonWriter.key("cluster").value(listTasksRequest.getCluster());
             }
+
             if (listTasksRequest.getContainerInstance() != null) {
-                jsonWriter.key("containerInstance").value(listTasksRequest.getContainerInstance());
+                jsonWriter.key("containerInstance").value(
+                        listTasksRequest.getContainerInstance());
             }
+
             if (listTasksRequest.getFamily() != null) {
                 jsonWriter.key("family").value(listTasksRequest.getFamily());
             }
+
             if (listTasksRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(listTasksRequest.getNextToken());
+                jsonWriter.key("nextToken").value(
+                        listTasksRequest.getNextToken());
             }
+
             if (listTasksRequest.getMaxResults() != null) {
-                jsonWriter.key("maxResults").value(listTasksRequest.getMaxResults());
+                jsonWriter.key("maxResults").value(
+                        listTasksRequest.getMaxResults());
             }
+
             if (listTasksRequest.getStartedBy() != null) {
-                jsonWriter.key("startedBy").value(listTasksRequest.getStartedBy());
+                jsonWriter.key("startedBy").value(
+                        listTasksRequest.getStartedBy());
             }
+
             if (listTasksRequest.getServiceName() != null) {
-                jsonWriter.key("serviceName").value(listTasksRequest.getServiceName());
+                jsonWriter.key("serviceName").value(
+                        listTasksRequest.getServiceName());
             }
+
             if (listTasksRequest.getDesiredStatus() != null) {
-                jsonWriter.key("desiredStatus").value(listTasksRequest.getDesiredStatus());
+                jsonWriter.key("desiredStatus").value(
+                        listTasksRequest.getDesiredStatus());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

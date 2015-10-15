@@ -743,29 +743,21 @@ public class DataSource implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the RedshiftMetadata property for this object.
-     * 
      * @param redshiftMetadata
-     *        The new value for the RedshiftMetadata property for this object.
      */
     public void setRedshiftMetadata(RedshiftMetadata redshiftMetadata) {
         this.redshiftMetadata = redshiftMetadata;
     }
 
     /**
-     * Returns the value of the RedshiftMetadata property for this object.
-     * 
-     * @return The value of the RedshiftMetadata property for this object.
+     * @return
      */
     public RedshiftMetadata getRedshiftMetadata() {
         return this.redshiftMetadata;
     }
 
     /**
-     * Sets the value of the RedshiftMetadata property for this object.
-     * 
      * @param redshiftMetadata
-     *        The new value for the RedshiftMetadata property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -775,29 +767,21 @@ public class DataSource implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the RDSMetadata property for this object.
-     * 
      * @param rDSMetadata
-     *        The new value for the RDSMetadata property for this object.
      */
     public void setRDSMetadata(RDSMetadata rDSMetadata) {
         this.rDSMetadata = rDSMetadata;
     }
 
     /**
-     * Returns the value of the RDSMetadata property for this object.
-     * 
-     * @return The value of the RDSMetadata property for this object.
+     * @return
      */
     public RDSMetadata getRDSMetadata() {
         return this.rDSMetadata;
     }
 
     /**
-     * Sets the value of the RDSMetadata property for this object.
-     * 
      * @param rDSMetadata
-     *        The new value for the RDSMetadata property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -807,29 +791,21 @@ public class DataSource implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the RoleARN property for this object.
-     * 
      * @param roleARN
-     *        The new value for the RoleARN property for this object.
      */
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
 
     /**
-     * Returns the value of the RoleARN property for this object.
-     * 
-     * @return The value of the RoleARN property for this object.
+     * @return
      */
     public String getRoleARN() {
         return this.roleARN;
     }
 
     /**
-     * Sets the value of the RoleARN property for this object.
-     * 
      * @param roleARN
-     *        The new value for the RoleARN property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

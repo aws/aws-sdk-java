@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,7 +28,8 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Record JSON Unmarshaller
  */
-public class RecordJsonUnmarshaller implements Unmarshaller<Record, JsonUnmarshallerContext> {
+public class RecordJsonUnmarshaller implements
+        Unmarshaller<Record, JsonUnmarshallerContext> {
 
     public Record unmarshall(JsonUnmarshallerContext context) throws Exception {
         Record record = new Record();
@@ -38,45 +39,56 @@ public class RecordJsonUnmarshaller implements Unmarshaller<Record, JsonUnmarsha
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SequenceNumber", targetDepth)) {
                     context.nextToken();
-                    record.setSequenceNumber(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    record.setSequenceNumber(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("ApproximateArrivalTimestamp", targetDepth)) {
+                if (context.testExpression("ApproximateArrivalTimestamp",
+                        targetDepth)) {
                     context.nextToken();
-                    record.setApproximateArrivalTimestamp(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    record.setApproximateArrivalTimestamp(DateJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Data", targetDepth)) {
                     context.nextToken();
-                    record.setData(ByteBufferJsonUnmarshaller.getInstance().unmarshall(context));
+                    record.setData(ByteBufferJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("PartitionKey", targetDepth)) {
                     context.nextToken();
-                    record.setPartitionKey(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    record.setPartitionKey(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return record;
     }
 
     private static RecordJsonUnmarshaller instance;
+
     public static RecordJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new RecordJsonUnmarshaller();
+        if (instance == null)
+            instance = new RecordJsonUnmarshaller();
         return instance;
     }
 }
-    

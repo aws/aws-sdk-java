@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.directory.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,85 +40,59 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Enable Radius Request Marshaller
+ * EnableRadiusRequest Marshaller
  */
-public class EnableRadiusRequestMarshaller implements Marshaller<Request<EnableRadiusRequest>, EnableRadiusRequest> {
+public class EnableRadiusRequestMarshaller implements
+        Marshaller<Request<EnableRadiusRequest>, EnableRadiusRequest> {
 
-    public Request<EnableRadiusRequest> marshall(EnableRadiusRequest enableRadiusRequest) {
+    public Request<EnableRadiusRequest> marshall(
+            EnableRadiusRequest enableRadiusRequest) {
+
         if (enableRadiusRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<EnableRadiusRequest> request = new DefaultRequest<EnableRadiusRequest>(enableRadiusRequest, "AWSDirectoryService");
-        String target = "DirectoryService_20150416.EnableRadius";
-        request.addHeader("X-Amz-Target", target);
+        Request<EnableRadiusRequest> request = new DefaultRequest<EnableRadiusRequest>(
+                enableRadiusRequest, "AWSDirectoryService");
+        request.addHeader("X-Amz-Target",
+                "DirectoryService_20150416.EnableRadius");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (enableRadiusRequest.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(enableRadiusRequest.getDirectoryId());
+                jsonWriter.key("DirectoryId").value(
+                        enableRadiusRequest.getDirectoryId());
             }
-            RadiusSettings radiusSettings = enableRadiusRequest.getRadiusSettings();
-            if (radiusSettings != null) {
 
+            if (enableRadiusRequest.getRadiusSettings() != null) {
                 jsonWriter.key("RadiusSettings");
-                jsonWriter.object();
-
-                com.amazonaws.internal.ListWithAutoConstructFlag<String> radiusServersList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(radiusSettings.getRadiusServers());
-                if (radiusServersList != null && !(radiusServersList.isAutoConstruct() && radiusServersList.isEmpty())) {
-
-                    jsonWriter.key("RadiusServers");
-                    jsonWriter.array();
-
-                    for (String radiusServersListValue : radiusServersList) {
-                        if (radiusServersListValue != null) {
-                            jsonWriter.value(radiusServersListValue);
-                        }
-                    }
-                    jsonWriter.endArray();
-                }
-                if (radiusSettings.getRadiusPort() != null) {
-                    jsonWriter.key("RadiusPort").value(radiusSettings.getRadiusPort());
-                }
-                if (radiusSettings.getRadiusTimeout() != null) {
-                    jsonWriter.key("RadiusTimeout").value(radiusSettings.getRadiusTimeout());
-                }
-                if (radiusSettings.getRadiusRetries() != null) {
-                    jsonWriter.key("RadiusRetries").value(radiusSettings.getRadiusRetries());
-                }
-                if (radiusSettings.getSharedSecret() != null) {
-                    jsonWriter.key("SharedSecret").value(radiusSettings.getSharedSecret());
-                }
-                if (radiusSettings.getAuthenticationProtocol() != null) {
-                    jsonWriter.key("AuthenticationProtocol").value(radiusSettings.getAuthenticationProtocol());
-                }
-                if (radiusSettings.getDisplayLabel() != null) {
-                    jsonWriter.key("DisplayLabel").value(radiusSettings.getDisplayLabel());
-                }
-                if (radiusSettings.isUseSameUsername() != null) {
-                    jsonWriter.key("UseSameUsername").value(radiusSettings.isUseSameUsername());
-                }
-                jsonWriter.endObject();
+                RadiusSettingsJsonMarshaller.getInstance().marshall(
+                        enableRadiusRequest.getRadiusSettings(), jsonWriter);
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

@@ -1,181 +1,180 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addInstanceGroups(AddInstanceGroupsRequest) AddInstanceGroups operation}.
  * <p>
- * AddInstanceGroups adds an instance group to a running cluster.
+ * Input to an AddInstanceGroups call.
  * </p>
- *
- * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addInstanceGroups(AddInstanceGroupsRequest)
  */
-public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * Instance Groups to add.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroups;
-
-    /**
-     * Job flow in which to add the instance groups.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * Instance Groups to add.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InstanceGroupConfig> instanceGroups;
+    /**
+     * <p>
+     * Job flow in which to add the instance groups.
+     * </p>
      */
     private String jobFlowId;
 
     /**
-     * Default constructor for a new AddInstanceGroupsRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for AddInstanceGroupsRequest object. Callers should
+     * use the setter or fluent setter (with...) methods to initialize the
+     * object after creating it.
      */
-    public AddInstanceGroupsRequest() {}
-    
+    public AddInstanceGroupsRequest() {
+    }
+
     /**
-     * Constructs a new AddInstanceGroupsRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new AddInstanceGroupsRequest object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize any additional
+     * object members.
      * 
-     * @param instanceGroups Instance Groups to add.
-     * @param jobFlowId Job flow in which to add the instance groups.
+     * @param instanceGroups
+     *        Instance Groups to add.
+     * @param jobFlowId
+     *        Job flow in which to add the instance groups.
      */
-    public AddInstanceGroupsRequest(java.util.List<InstanceGroupConfig> instanceGroups, String jobFlowId) {
+    public AddInstanceGroupsRequest(
+            java.util.List<InstanceGroupConfig> instanceGroups, String jobFlowId) {
         setInstanceGroups(instanceGroups);
         setJobFlowId(jobFlowId);
     }
 
     /**
+     * <p>
      * Instance Groups to add.
-     *
+     * </p>
+     * 
      * @return Instance Groups to add.
      */
     public java.util.List<InstanceGroupConfig> getInstanceGroups() {
         if (instanceGroups == null) {
-              instanceGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>();
-              instanceGroups.setAutoConstruct(true);
+            instanceGroups = new com.amazonaws.internal.SdkInternalList<InstanceGroupConfig>();
         }
         return instanceGroups;
     }
-    
+
     /**
+     * <p>
      * Instance Groups to add.
-     *
-     * @param instanceGroups Instance Groups to add.
+     * </p>
+     * 
+     * @param instanceGroups
+     *        Instance Groups to add.
      */
-    public void setInstanceGroups(java.util.Collection<InstanceGroupConfig> instanceGroups) {
+    public void setInstanceGroups(
+            java.util.Collection<InstanceGroupConfig> instanceGroups) {
         if (instanceGroups == null) {
             this.instanceGroups = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>(instanceGroups.size());
-        instanceGroupsCopy.addAll(instanceGroups);
-        this.instanceGroups = instanceGroupsCopy;
+
+        this.instanceGroups = new com.amazonaws.internal.SdkInternalList<InstanceGroupConfig>(
+                instanceGroups);
     }
-    
+
     /**
+     * <p>
      * Instance Groups to add.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceGroups(java.util.Collection)} or {@link
-     * #withInstanceGroups(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instanceGroups Instance Groups to add.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setInstanceGroups(java.util.Collection)} or
+     * {@link #withInstanceGroups(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param instanceGroups
+     *        Instance Groups to add.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public AddInstanceGroupsRequest withInstanceGroups(InstanceGroupConfig... instanceGroups) {
-        if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.length));
-        for (InstanceGroupConfig value : instanceGroups) {
-            getInstanceGroups().add(value);
+    public AddInstanceGroupsRequest withInstanceGroups(
+            InstanceGroupConfig... instanceGroups) {
+        if (this.instanceGroups == null) {
+            setInstanceGroups(new com.amazonaws.internal.SdkInternalList<InstanceGroupConfig>(
+                    instanceGroups.length));
+        }
+        for (InstanceGroupConfig ele : instanceGroups) {
+            this.instanceGroups.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * Instance Groups to add.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instanceGroups Instance Groups to add.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param instanceGroups
+     *        Instance Groups to add.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public AddInstanceGroupsRequest withInstanceGroups(java.util.Collection<InstanceGroupConfig> instanceGroups) {
-        if (instanceGroups == null) {
-            this.instanceGroups = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>(instanceGroups.size());
-            instanceGroupsCopy.addAll(instanceGroups);
-            this.instanceGroups = instanceGroupsCopy;
-        }
-
+    public AddInstanceGroupsRequest withInstanceGroups(
+            java.util.Collection<InstanceGroupConfig> instanceGroups) {
+        setInstanceGroups(instanceGroups);
         return this;
     }
 
     /**
-     * Job flow in which to add the instance groups.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return Job flow in which to add the instance groups.
-     */
-    public String getJobFlowId() {
-        return jobFlowId;
-    }
-    
-    /**
      * Job flow in which to add the instance groups.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param jobFlowId Job flow in which to add the instance groups.
+     * </p>
+     * 
+     * @param jobFlowId
+     *        Job flow in which to add the instance groups.
      */
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
     }
-    
+
     /**
+     * <p>
      * Job flow in which to add the instance groups.
+     * </p>
+     * 
+     * @return Job flow in which to add the instance groups.
+     */
+    public String getJobFlowId() {
+        return this.jobFlowId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param jobFlowId Job flow in which to add the instance groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Job flow in which to add the instance groups.
+     * </p>
+     * 
+     * @param jobFlowId
+     *        Job flow in which to add the instance groups.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AddInstanceGroupsRequest withJobFlowId(String jobFlowId) {
-        this.jobFlowId = jobFlowId;
+        setJobFlowId(jobFlowId);
         return this;
     }
 
@@ -191,42 +190,54 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ",");
-        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() );
+        if (getInstanceGroups() != null)
+            sb.append("InstanceGroups: " + getInstanceGroups() + ",");
+        if (getJobFlowId() != null)
+            sb.append("JobFlowId: " + getJobFlowId());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof AddInstanceGroupsRequest == false)
+            return false;
+        AddInstanceGroupsRequest other = (AddInstanceGroupsRequest) obj;
+        if (other.getInstanceGroups() == null
+                ^ this.getInstanceGroups() == null)
+            return false;
+        if (other.getInstanceGroups() != null
+                && other.getInstanceGroups().equals(this.getInstanceGroups()) == false)
+            return false;
+        if (other.getJobFlowId() == null ^ this.getJobFlowId() == null)
+            return false;
+        if (other.getJobFlowId() != null
+                && other.getJobFlowId().equals(this.getJobFlowId()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getInstanceGroups() == null) ? 0 : getInstanceGroups().hashCode()); 
-        hashCode = prime * hashCode + ((getJobFlowId() == null) ? 0 : getJobFlowId().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getInstanceGroups() == null) ? 0 : getInstanceGroups()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getJobFlowId() == null) ? 0 : getJobFlowId().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof AddInstanceGroupsRequest == false) return false;
-        AddInstanceGroupsRequest other = (AddInstanceGroupsRequest)obj;
-        
-        if (other.getInstanceGroups() == null ^ this.getInstanceGroups() == null) return false;
-        if (other.getInstanceGroups() != null && other.getInstanceGroups().equals(this.getInstanceGroups()) == false) return false; 
-        if (other.getJobFlowId() == null ^ this.getJobFlowId() == null) return false;
-        if (other.getJobFlowId() != null && other.getJobFlowId().equals(this.getJobFlowId()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public AddInstanceGroupsRequest clone() {
-        
-            return (AddInstanceGroupsRequest) super.clone();
+        return (AddInstanceGroupsRequest) super.clone();
     }
-
 }
-    

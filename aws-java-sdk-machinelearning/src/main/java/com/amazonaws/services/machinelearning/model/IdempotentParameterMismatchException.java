@@ -42,29 +42,21 @@ public class IdempotentParameterMismatchException extends
     }
 
     /**
-     * Sets the value of the Code property for this object.
-     * 
      * @param code
-     *        The new value for the Code property for this object.
      */
     public void setCode(Integer code) {
         this.code = code;
     }
 
     /**
-     * Returns the value of the Code property for this object.
-     * 
-     * @return The value of the Code property for this object.
+     * @return
      */
     public Integer getCode() {
         return this.code;
     }
 
     /**
-     * Sets the value of the Code property for this object.
-     * 
      * @param code
-     *        The new value for the Code property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

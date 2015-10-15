@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.route53domains.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,64 +40,70 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Update Tags For Domain Request Marshaller
+ * UpdateTagsForDomainRequest Marshaller
  */
-public class UpdateTagsForDomainRequestMarshaller implements Marshaller<Request<UpdateTagsForDomainRequest>, UpdateTagsForDomainRequest> {
+public class UpdateTagsForDomainRequestMarshaller
+        implements
+        Marshaller<Request<UpdateTagsForDomainRequest>, UpdateTagsForDomainRequest> {
 
-    public Request<UpdateTagsForDomainRequest> marshall(UpdateTagsForDomainRequest updateTagsForDomainRequest) {
+    public Request<UpdateTagsForDomainRequest> marshall(
+            UpdateTagsForDomainRequest updateTagsForDomainRequest) {
+
         if (updateTagsForDomainRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateTagsForDomainRequest> request = new DefaultRequest<UpdateTagsForDomainRequest>(updateTagsForDomainRequest, "AmazonRoute53Domains");
-        String target = "Route53Domains_v20140515.UpdateTagsForDomain";
-        request.addHeader("X-Amz-Target", target);
+        Request<UpdateTagsForDomainRequest> request = new DefaultRequest<UpdateTagsForDomainRequest>(
+                updateTagsForDomainRequest, "AmazonRoute53Domains");
+        request.addHeader("X-Amz-Target",
+                "Route53Domains_v20140515.UpdateTagsForDomain");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (updateTagsForDomainRequest.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(updateTagsForDomainRequest.getDomainName());
+                jsonWriter.key("DomainName").value(
+                        updateTagsForDomainRequest.getDomainName());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsToUpdateList = (com.amazonaws.internal.ListWithAutoConstructFlag<Tag>)(updateTagsForDomainRequest.getTagsToUpdate());
-            if (tagsToUpdateList != null && !(tagsToUpdateList.isAutoConstruct() && tagsToUpdateList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<Tag> tagsToUpdateList = (com.amazonaws.internal.SdkInternalList<Tag>) updateTagsForDomainRequest
+                    .getTagsToUpdate();
+            if (!tagsToUpdateList.isEmpty()
+                    || !tagsToUpdateList.isAutoConstruct()) {
                 jsonWriter.key("TagsToUpdate");
                 jsonWriter.array();
-
                 for (Tag tagsToUpdateListValue : tagsToUpdateList) {
                     if (tagsToUpdateListValue != null) {
-                        jsonWriter.object();
-                        if (tagsToUpdateListValue.getKey() != null) {
-                            jsonWriter.key("Key").value(tagsToUpdateListValue.getKey());
-                        }
-                        if (tagsToUpdateListValue.getValue() != null) {
-                            jsonWriter.key("Value").value(tagsToUpdateListValue.getValue());
-                        }
-                        jsonWriter.endObject();
+
+                        TagJsonMarshaller.getInstance().marshall(
+                                tagsToUpdateListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

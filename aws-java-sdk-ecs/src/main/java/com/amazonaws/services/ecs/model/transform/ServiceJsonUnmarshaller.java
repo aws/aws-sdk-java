@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,7 +28,8 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Service JSON Unmarshaller
  */
-public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmarshallerContext> {
+public class ServiceJsonUnmarshaller implements
+        Unmarshaller<Service, JsonUnmarshallerContext> {
 
     public Service unmarshall(JsonUnmarshallerContext context) throws Exception {
         Service service = new Service();
@@ -38,77 +39,98 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("serviceArn", targetDepth)) {
                     context.nextToken();
-                    service.setServiceArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    service.setServiceArn(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("serviceName", targetDepth)) {
                     context.nextToken();
-                    service.setServiceName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    service.setServiceName(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("clusterArn", targetDepth)) {
                     context.nextToken();
-                    service.setClusterArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    service.setClusterArn(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("loadBalancers", targetDepth)) {
                     context.nextToken();
-                    service.setLoadBalancers(new ListUnmarshaller<LoadBalancer>(LoadBalancerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    service.setLoadBalancers(new ListUnmarshaller<LoadBalancer>(
+                            LoadBalancerJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    service.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    service.setStatus(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("desiredCount", targetDepth)) {
                     context.nextToken();
-                    service.setDesiredCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    service.setDesiredCount(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("runningCount", targetDepth)) {
                     context.nextToken();
-                    service.setRunningCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    service.setRunningCount(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pendingCount", targetDepth)) {
                     context.nextToken();
-                    service.setPendingCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    service.setPendingCount(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("taskDefinition", targetDepth)) {
                     context.nextToken();
-                    service.setTaskDefinition(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    service.setTaskDefinition(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("deployments", targetDepth)) {
                     context.nextToken();
-                    service.setDeployments(new ListUnmarshaller<Deployment>(DeploymentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    service.setDeployments(new ListUnmarshaller<Deployment>(
+                            DeploymentJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    service.setRoleArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    service.setRoleArn(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("events", targetDepth)) {
                     context.nextToken();
-                    service.setEvents(new ListUnmarshaller<ServiceEvent>(ServiceEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    service.setEvents(new ListUnmarshaller<ServiceEvent>(
+                            ServiceEventJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return service;
     }
 
     private static ServiceJsonUnmarshaller instance;
+
     public static ServiceJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new ServiceJsonUnmarshaller();
+        if (instance == null)
+            instance = new ServiceJsonUnmarshaller();
         return instance;
     }
 }
-    

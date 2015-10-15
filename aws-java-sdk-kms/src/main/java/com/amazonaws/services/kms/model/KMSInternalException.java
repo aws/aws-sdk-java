@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because an internal exception occurred. This
- * error can be retried.
+ * The request was rejected because an internal exception occurred. The
+ * request can be retried.
  * </p>
  */        
 public class KMSInternalException extends AmazonServiceException {

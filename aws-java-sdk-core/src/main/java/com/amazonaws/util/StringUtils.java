@@ -139,9 +139,9 @@ public class StringUtils {
         buffer.append( originalString );
 
         int indexOf = buffer.indexOf( partToMatch );
-        while ( indexOf != -1 ) {
-            buffer = buffer.replace( indexOf, indexOf + partToMatch.length(), replacement );
-            indexOf = buffer.indexOf( partToMatch, indexOf + replacement.length() );
+        while (indexOf != -1) {
+            buffer = buffer.replace(indexOf, indexOf + partToMatch.length(), replacement);
+            indexOf = buffer.indexOf(partToMatch, indexOf + replacement.length());
         }
 
         return buffer.toString();

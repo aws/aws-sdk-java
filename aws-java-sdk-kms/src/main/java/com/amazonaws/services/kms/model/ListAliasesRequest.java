@@ -29,10 +29,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListAliasesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Specify this parameter when paginating results to indicate the maximum
-     * number of aliases you want in each response. If there are additional
-     * aliases beyond the maximum you specify, the <code>Truncated</code>
-     * response element will be set to <code>true.</code>
+     * When paginating results, specify the maximum number of items to return
+     * in the response. If additional items exist beyond the number you
+     * specify, the <code>Truncated</code> element in the response is set to
+     * true.<p>This value is optional. If you include a value, it must be
+     * between 1 and 100, inclusive. If you do not include a value, it
+     * defaults to 50.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -40,10 +42,10 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
     private Integer limit;
 
     /**
-     * Use this parameter when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>NextMarker</code> element
-     * in the response you just received.
+     * Use this parameter only when paginating results and only in a
+     * subsequent request after you've received a response with truncated
+     * results. Set it to the value of <code>NextMarker</code> from the
+     * response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -52,56 +54,68 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
     private String marker;
 
     /**
-     * Specify this parameter when paginating results to indicate the maximum
-     * number of aliases you want in each response. If there are additional
-     * aliases beyond the maximum you specify, the <code>Truncated</code>
-     * response element will be set to <code>true.</code>
+     * When paginating results, specify the maximum number of items to return
+     * in the response. If additional items exist beyond the number you
+     * specify, the <code>Truncated</code> element in the response is set to
+     * true.<p>This value is optional. If you include a value, it must be
+     * between 1 and 100, inclusive. If you do not include a value, it
+     * defaults to 50.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
-     * @return Specify this parameter when paginating results to indicate the maximum
-     *         number of aliases you want in each response. If there are additional
-     *         aliases beyond the maximum you specify, the <code>Truncated</code>
-     *         response element will be set to <code>true.</code>
+     * @return When paginating results, specify the maximum number of items to return
+     *         in the response. If additional items exist beyond the number you
+     *         specify, the <code>Truncated</code> element in the response is set to
+     *         true.<p>This value is optional. If you include a value, it must be
+     *         between 1 and 100, inclusive. If you do not include a value, it
+     *         defaults to 50.
      */
     public Integer getLimit() {
         return limit;
     }
     
     /**
-     * Specify this parameter when paginating results to indicate the maximum
-     * number of aliases you want in each response. If there are additional
-     * aliases beyond the maximum you specify, the <code>Truncated</code>
-     * response element will be set to <code>true.</code>
+     * When paginating results, specify the maximum number of items to return
+     * in the response. If additional items exist beyond the number you
+     * specify, the <code>Truncated</code> element in the response is set to
+     * true.<p>This value is optional. If you include a value, it must be
+     * between 1 and 100, inclusive. If you do not include a value, it
+     * defaults to 50.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
-     * @param limit Specify this parameter when paginating results to indicate the maximum
-     *         number of aliases you want in each response. If there are additional
-     *         aliases beyond the maximum you specify, the <code>Truncated</code>
-     *         response element will be set to <code>true.</code>
+     * @param limit When paginating results, specify the maximum number of items to return
+     *         in the response. If additional items exist beyond the number you
+     *         specify, the <code>Truncated</code> element in the response is set to
+     *         true.<p>This value is optional. If you include a value, it must be
+     *         between 1 and 100, inclusive. If you do not include a value, it
+     *         defaults to 50.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
     
     /**
-     * Specify this parameter when paginating results to indicate the maximum
-     * number of aliases you want in each response. If there are additional
-     * aliases beyond the maximum you specify, the <code>Truncated</code>
-     * response element will be set to <code>true.</code>
+     * When paginating results, specify the maximum number of items to return
+     * in the response. If additional items exist beyond the number you
+     * specify, the <code>Truncated</code> element in the response is set to
+     * true.<p>This value is optional. If you include a value, it must be
+     * between 1 and 100, inclusive. If you do not include a value, it
+     * defaults to 50.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
-     * @param limit Specify this parameter when paginating results to indicate the maximum
-     *         number of aliases you want in each response. If there are additional
-     *         aliases beyond the maximum you specify, the <code>Truncated</code>
-     *         response element will be set to <code>true.</code>
+     * @param limit When paginating results, specify the maximum number of items to return
+     *         in the response. If additional items exist beyond the number you
+     *         specify, the <code>Truncated</code> element in the response is set to
+     *         true.<p>This value is optional. If you include a value, it must be
+     *         between 1 and 100, inclusive. If you do not include a value, it
+     *         defaults to 50.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -112,48 +126,48 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Use this parameter when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>NextMarker</code> element
-     * in the response you just received.
+     * Use this parameter only when paginating results and only in a
+     * subsequent request after you've received a response with truncated
+     * results. Set it to the value of <code>NextMarker</code> from the
+     * response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
-     * @return Use this parameter when paginating results, and only in a subsequent
-     *         request after you've received a response where the results are
-     *         truncated. Set it to the value of the <code>NextMarker</code> element
-     *         in the response you just received.
+     * @return Use this parameter only when paginating results and only in a
+     *         subsequent request after you've received a response with truncated
+     *         results. Set it to the value of <code>NextMarker</code> from the
+     *         response you just received.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Use this parameter when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>NextMarker</code> element
-     * in the response you just received.
+     * Use this parameter only when paginating results and only in a
+     * subsequent request after you've received a response with truncated
+     * results. Set it to the value of <code>NextMarker</code> from the
+     * response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
-     * @param marker Use this parameter when paginating results, and only in a subsequent
-     *         request after you've received a response where the results are
-     *         truncated. Set it to the value of the <code>NextMarker</code> element
-     *         in the response you just received.
+     * @param marker Use this parameter only when paginating results and only in a
+     *         subsequent request after you've received a response with truncated
+     *         results. Set it to the value of <code>NextMarker</code> from the
+     *         response you just received.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Use this parameter when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>NextMarker</code> element
-     * in the response you just received.
+     * Use this parameter only when paginating results and only in a
+     * subsequent request after you've received a response with truncated
+     * results. Set it to the value of <code>NextMarker</code> from the
+     * response you just received.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -161,10 +175,10 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
-     * @param marker Use this parameter when paginating results, and only in a subsequent
-     *         request after you've received a response where the results are
-     *         truncated. Set it to the value of the <code>NextMarker</code> element
-     *         in the response you just received.
+     * @param marker Use this parameter only when paginating results and only in a
+     *         subsequent request after you've received a response with truncated
+     *         results. Set it to the value of <code>NextMarker</code> from the
+     *         response you just received.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

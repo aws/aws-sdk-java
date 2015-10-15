@@ -35,29 +35,21 @@ public class PollForThirdPartyJobsRequest extends AmazonWebServiceRequest
     private Integer maxBatchSize;
 
     /**
-     * Sets the value of the ActionTypeId property for this object.
-     * 
      * @param actionTypeId
-     *        The new value for the ActionTypeId property for this object.
      */
     public void setActionTypeId(ActionTypeId actionTypeId) {
         this.actionTypeId = actionTypeId;
     }
 
     /**
-     * Returns the value of the ActionTypeId property for this object.
-     * 
-     * @return The value of the ActionTypeId property for this object.
+     * @return
      */
     public ActionTypeId getActionTypeId() {
         return this.actionTypeId;
     }
 
     /**
-     * Sets the value of the ActionTypeId property for this object.
-     * 
      * @param actionTypeId
-     *        The new value for the ActionTypeId property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

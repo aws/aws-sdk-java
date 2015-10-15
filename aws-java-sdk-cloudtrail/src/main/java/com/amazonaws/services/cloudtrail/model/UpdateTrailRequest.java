@@ -1,687 +1,830 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudtrail.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.cloudtrail.AWSCloudTrail#updateTrail(UpdateTrailRequest) UpdateTrail operation}.
  * <p>
- * Updates the settings that specify delivery of log files. Changes to a
- * trail do not require stopping the CloudTrail service. Use this action
- * to designate an existing bucket for log delivery. If the existing
- * bucket has previously been a target for CloudTrail log files, an IAM
- * policy exists for the bucket.
+ * Specifies settings to update for the trail.
  * </p>
- *
- * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#updateTrail(UpdateTrailRequest)
  */
-public class UpdateTrailRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class UpdateTrailRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * Specifies the name of the trail or trail ARN. If <code>Name</code> is
-     * a trail name, the string must meet the following requirements: <ul>
+     * <p>
+     * Specifies the name of the trail or trail ARN. If <code>Name</code> is a
+     * trail name, the string must meet the following requirements:
+     * </p>
+     * <ul>
      * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-)</li> <li>Start with a letter or number,
-     * and end with a letter or number</li> <li>Be between 3 and 128
-     * characters</li> <li>Have no adjacent periods, underscores or dashes.
-     * Names like <code>my-_namespace</code> and <code>my--namespace</code>
-     * are invalid.</li> <li>Not be in IP address format (for example,
-     * 192.168.5.4)</li> </ul> <p>If <code>Name</code> is a trail ARN, it
-     * must be in the format
+     * underscores (_), or dashes (-)</li>
+     * <li>Start with a letter or number, and end with a letter or number</li>
+     * <li>Be between 3 and 128 characters</li>
+     * <li>Have no adjacent periods, underscores or dashes. Names like
+     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li>
+     * <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * </ul>
+     * <p>
+     * If <code>Name</code> is a trail ARN, it must be in the format
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * </p>
      */
     private String name;
-
     /**
-     * Specifies the name of the Amazon S3 bucket designated for publishing
-     * log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
-     * S3 Bucket Naming Requirements</a>.
+     * <p>
+     * Specifies the name of the Amazon S3 bucket designated for publishing log
+     * files. See <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html"
+     * >Amazon S3 Bucket Naming Requirements</a>.
+     * </p>
      */
     private String s3BucketName;
-
     /**
+     * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the
-     * bucket you have designated for log file delivery. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.
+     * bucket you have designated for log file delivery. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html"
+     * >Finding Your CloudTrail Log Files</a>. The maximum length is 200
+     * characters.
+     * </p>
      */
     private String s3KeyPrefix;
-
     /**
+     * <p>
      * Specifies the name of the Amazon SNS topic defined for notification of
      * log file delivery. The maximum length is 256 characters.
+     * </p>
      */
     private String snsTopicName;
-
     /**
+     * <p>
      * Specifies whether the trail is publishing events from global services
      * such as IAM to the log files.
+     * </p>
      */
     private Boolean includeGlobalServiceEvents;
-
     /**
-     * Specifies whether log file validation is enabled. The default is
-     * false. <note>When you disable log file integrity validation, the chain
-     * of digest files is broken after one hour. CloudTrail will not create
-     * digest files for log files that were delivered during a period in
-     * which log file integrity validation was disabled. For example, if you
-     * enable log file integrity validation at noon on January 1, disable it
-     * at noon on January 2, and re-enable it at noon on January 10, digest
-     * files will not be created for the log files delivered from noon on
-     * January 2 to noon on January 10. The same applies whenever you stop
-     * CloudTrail logging or delete a trail.</note>
+     * <p>
+     * Specifies whether log file validation is enabled. The default is false.
+     * </p>
+     * <note>When you disable log file integrity validation, the chain of digest
+     * files is broken after one hour. CloudTrail will not create digest files
+     * for log files that were delivered during a period in which log file
+     * integrity validation was disabled. For example, if you enable log file
+     * integrity validation at noon on January 1, disable it at noon on January
+     * 2, and re-enable it at noon on January 10, digest files will not be
+     * created for the log files delivered from noon on January 2 to noon on
+     * January 10. The same applies whenever you stop CloudTrail logging or
+     * delete a trail.</note>
      */
     private Boolean enableLogFileValidation;
-
     /**
-     * Specifies a log group name using an Amazon Resource Name (ARN), a
-     * unique identifier that represents the log group to which CloudTrail
-     * logs will be delivered. Not required unless you specify
-     * CloudWatchLogsRoleArn.
+     * <p>
+     * Specifies a log group name using an Amazon Resource Name (ARN), a unique
+     * identifier that represents the log group to which CloudTrail logs will be
+     * delivered. Not required unless you specify CloudWatchLogsRoleArn.
+     * </p>
      */
     private String cloudWatchLogsLogGroupArn;
-
     /**
-     * Specifies the role for the CloudWatch Logs endpoint to assume to write
-     * to a user's log group.
+     * <p>
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write to
+     * a user's log group.
+     * </p>
      */
     private String cloudWatchLogsRoleArn;
-
     /**
+     * <p>
      * Specifies the KMS key ID to use to encrypt the logs delivered by
      * CloudTrail. The value can be a an alias name prefixed by "alias/", a
      * fully specified ARN to an alias, a fully specified ARN to a key, or a
-     * globally unique identifier. <p>Examples: <ul>
+     * globally unique identifier.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
      * <li>alias/MyAliasName</li>
      * <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>12345678-1234-1234-1234-123456789012</li> </ul>
+     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012</li>
+     * <li>12345678-1234-1234-1234-123456789012</li>
+     * </ul>
      */
     private String kmsKeyId;
 
     /**
-     * Specifies the name of the trail or trail ARN. If <code>Name</code> is
-     * a trail name, the string must meet the following requirements: <ul>
+     * <p>
+     * Specifies the name of the trail or trail ARN. If <code>Name</code> is a
+     * trail name, the string must meet the following requirements:
+     * </p>
+     * <ul>
      * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-)</li> <li>Start with a letter or number,
-     * and end with a letter or number</li> <li>Be between 3 and 128
-     * characters</li> <li>Have no adjacent periods, underscores or dashes.
-     * Names like <code>my-_namespace</code> and <code>my--namespace</code>
-     * are invalid.</li> <li>Not be in IP address format (for example,
-     * 192.168.5.4)</li> </ul> <p>If <code>Name</code> is a trail ARN, it
-     * must be in the format
+     * underscores (_), or dashes (-)</li>
+     * <li>Start with a letter or number, and end with a letter or number</li>
+     * <li>Be between 3 and 128 characters</li>
+     * <li>Have no adjacent periods, underscores or dashes. Names like
+     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li>
+     * <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * </ul>
+     * <p>
+     * If <code>Name</code> is a trail ARN, it must be in the format
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
-     *
-     * @return Specifies the name of the trail or trail ARN. If <code>Name</code> is
-     *         a trail name, the string must meet the following requirements: <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     *         underscores (_), or dashes (-)</li> <li>Start with a letter or number,
-     *         and end with a letter or number</li> <li>Be between 3 and 128
-     *         characters</li> <li>Have no adjacent periods, underscores or dashes.
-     *         Names like <code>my-_namespace</code> and <code>my--namespace</code>
-     *         are invalid.</li> <li>Not be in IP address format (for example,
-     *         192.168.5.4)</li> </ul> <p>If <code>Name</code> is a trail ARN, it
-     *         must be in the format
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * Specifies the name of the trail or trail ARN. If <code>Name</code> is
-     * a trail name, the string must meet the following requirements: <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-)</li> <li>Start with a letter or number,
-     * and end with a letter or number</li> <li>Be between 3 and 128
-     * characters</li> <li>Have no adjacent periods, underscores or dashes.
-     * Names like <code>my-_namespace</code> and <code>my--namespace</code>
-     * are invalid.</li> <li>Not be in IP address format (for example,
-     * 192.168.5.4)</li> </ul> <p>If <code>Name</code> is a trail ARN, it
-     * must be in the format
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
-     *
-     * @param name Specifies the name of the trail or trail ARN. If <code>Name</code> is
-     *         a trail name, the string must meet the following requirements: <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     *         underscores (_), or dashes (-)</li> <li>Start with a letter or number,
-     *         and end with a letter or number</li> <li>Be between 3 and 128
-     *         characters</li> <li>Have no adjacent periods, underscores or dashes.
-     *         Names like <code>my-_namespace</code> and <code>my--namespace</code>
-     *         are invalid.</li> <li>Not be in IP address format (for example,
-     *         192.168.5.4)</li> </ul> <p>If <code>Name</code> is a trail ARN, it
-     *         must be in the format
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * </p>
+     * 
+     * @param name
+     *        Specifies the name of the trail or trail ARN. If <code>Name</code>
+     *        is a trail name, the string must meet the following
+     *        requirements:</p>
+     *        <ul>
+     *        <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *        (.), underscores (_), or dashes (-)</li>
+     *        <li>Start with a letter or number, and end with a letter or number
+     *        </li>
+     *        <li>Be between 3 and 128 characters</li>
+     *        <li>Have no adjacent periods, underscores or dashes. Names like
+     *        <code>my-_namespace</code> and <code>my--namespace</code> are
+     *        invalid.</li>
+     *        <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *        </ul>
+     *        <p>
+     *        If <code>Name</code> is a trail ARN, it must be in the format
+     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
-     * Specifies the name of the trail or trail ARN. If <code>Name</code> is
-     * a trail name, the string must meet the following requirements: <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-)</li> <li>Start with a letter or number,
-     * and end with a letter or number</li> <li>Be between 3 and 128
-     * characters</li> <li>Have no adjacent periods, underscores or dashes.
-     * Names like <code>my-_namespace</code> and <code>my--namespace</code>
-     * are invalid.</li> <li>Not be in IP address format (for example,
-     * 192.168.5.4)</li> </ul> <p>If <code>Name</code> is a trail ARN, it
-     * must be in the format
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param name Specifies the name of the trail or trail ARN. If <code>Name</code> is
-     *         a trail name, the string must meet the following requirements: <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     *         underscores (_), or dashes (-)</li> <li>Start with a letter or number,
-     *         and end with a letter or number</li> <li>Be between 3 and 128
-     *         characters</li> <li>Have no adjacent periods, underscores or dashes.
-     *         Names like <code>my-_namespace</code> and <code>my--namespace</code>
-     *         are invalid.</li> <li>Not be in IP address format (for example,
-     *         192.168.5.4)</li> </ul> <p>If <code>Name</code> is a trail ARN, it
-     *         must be in the format
+     * Specifies the name of the trail or trail ARN. If <code>Name</code> is a
+     * trail name, the string must meet the following requirements:
+     * </p>
+     * <ul>
+     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-)</li>
+     * <li>Start with a letter or number, and end with a letter or number</li>
+     * <li>Be between 3 and 128 characters</li>
+     * <li>Have no adjacent periods, underscores or dashes. Names like
+     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li>
+     * <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * </ul>
+     * <p>
+     * If <code>Name</code> is a trail ARN, it must be in the format
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * </p>
+     * 
+     * @return Specifies the name of the trail or trail ARN. If
+     *         <code>Name</code> is a trail name, the string must meet the
+     *         following requirements:</p>
+     *         <ul>
+     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)</li>
+     *         <li>Start with a letter or number, and end with a letter or
+     *         number</li>
+     *         <li>Be between 3 and 128 characters</li>
+     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <code>my-_namespace</code> and <code>my--namespace</code> are
+     *         invalid.</li>
+     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         </ul>
+     *         <p>
+     *         If <code>Name</code> is a trail ARN, it must be in the format
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the trail or trail ARN. If <code>Name</code> is a
+     * trail name, the string must meet the following requirements:
+     * </p>
+     * <ul>
+     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-)</li>
+     * <li>Start with a letter or number, and end with a letter or number</li>
+     * <li>Be between 3 and 128 characters</li>
+     * <li>Have no adjacent periods, underscores or dashes. Names like
+     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li>
+     * <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * </ul>
+     * <p>
+     * If <code>Name</code> is a trail ARN, it must be in the format
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * </p>
+     * 
+     * @param name
+     *        Specifies the name of the trail or trail ARN. If <code>Name</code>
+     *        is a trail name, the string must meet the following
+     *        requirements:</p>
+     *        <ul>
+     *        <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *        (.), underscores (_), or dashes (-)</li>
+     *        <li>Start with a letter or number, and end with a letter or number
+     *        </li>
+     *        <li>Be between 3 and 128 characters</li>
+     *        <li>Have no adjacent periods, underscores or dashes. Names like
+     *        <code>my-_namespace</code> and <code>my--namespace</code> are
+     *        invalid.</li>
+     *        <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *        </ul>
+     *        <p>
+     *        If <code>Name</code> is a trail ARN, it must be in the format
+     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateTrailRequest withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
-     * Specifies the name of the Amazon S3 bucket designated for publishing
-     * log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
-     * S3 Bucket Naming Requirements</a>.
-     *
-     * @return Specifies the name of the Amazon S3 bucket designated for publishing
-     *         log files. See <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
-     *         S3 Bucket Naming Requirements</a>.
-     */
-    public String getS3BucketName() {
-        return s3BucketName;
-    }
-    
-    /**
-     * Specifies the name of the Amazon S3 bucket designated for publishing
-     * log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
-     * S3 Bucket Naming Requirements</a>.
-     *
-     * @param s3BucketName Specifies the name of the Amazon S3 bucket designated for publishing
-     *         log files. See <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
-     *         S3 Bucket Naming Requirements</a>.
+     * <p>
+     * Specifies the name of the Amazon S3 bucket designated for publishing log
+     * files. See <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html"
+     * >Amazon S3 Bucket Naming Requirements</a>.
+     * </p>
+     * 
+     * @param s3BucketName
+     *        Specifies the name of the Amazon S3 bucket designated for
+     *        publishing log files. See <a href=
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html"
+     *        >Amazon S3 Bucket Naming Requirements</a>.
      */
     public void setS3BucketName(String s3BucketName) {
         this.s3BucketName = s3BucketName;
     }
-    
+
     /**
-     * Specifies the name of the Amazon S3 bucket designated for publishing
-     * log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
-     * S3 Bucket Naming Requirements</a>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param s3BucketName Specifies the name of the Amazon S3 bucket designated for publishing
-     *         log files. See <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
-     *         S3 Bucket Naming Requirements</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies the name of the Amazon S3 bucket designated for publishing log
+     * files. See <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html"
+     * >Amazon S3 Bucket Naming Requirements</a>.
+     * </p>
+     * 
+     * @return Specifies the name of the Amazon S3 bucket designated for
+     *         publishing log files. See <a href=
+     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html"
+     *         >Amazon S3 Bucket Naming Requirements</a>.
+     */
+    public String getS3BucketName() {
+        return this.s3BucketName;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the Amazon S3 bucket designated for publishing log
+     * files. See <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html"
+     * >Amazon S3 Bucket Naming Requirements</a>.
+     * </p>
+     * 
+     * @param s3BucketName
+     *        Specifies the name of the Amazon S3 bucket designated for
+     *        publishing log files. See <a href=
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html"
+     *        >Amazon S3 Bucket Naming Requirements</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateTrailRequest withS3BucketName(String s3BucketName) {
-        this.s3BucketName = s3BucketName;
+        setS3BucketName(s3BucketName);
         return this;
     }
 
     /**
+     * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the
-     * bucket you have designated for log file delivery. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.
-     *
-     * @return Specifies the Amazon S3 key prefix that comes after the name of the
-     *         bucket you have designated for log file delivery. For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     *         Your CloudTrail Log Files</a>. The maximum length is 200 characters.
-     */
-    public String getS3KeyPrefix() {
-        return s3KeyPrefix;
-    }
-    
-    /**
-     * Specifies the Amazon S3 key prefix that comes after the name of the
-     * bucket you have designated for log file delivery. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.
-     *
-     * @param s3KeyPrefix Specifies the Amazon S3 key prefix that comes after the name of the
-     *         bucket you have designated for log file delivery. For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     *         Your CloudTrail Log Files</a>. The maximum length is 200 characters.
+     * bucket you have designated for log file delivery. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html"
+     * >Finding Your CloudTrail Log Files</a>. The maximum length is 200
+     * characters.
+     * </p>
+     * 
+     * @param s3KeyPrefix
+     *        Specifies the Amazon S3 key prefix that comes after the name of
+     *        the bucket you have designated for log file delivery. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html"
+     *        >Finding Your CloudTrail Log Files</a>. The maximum length is 200
+     *        characters.
      */
     public void setS3KeyPrefix(String s3KeyPrefix) {
         this.s3KeyPrefix = s3KeyPrefix;
     }
-    
+
     /**
-     * Specifies the Amazon S3 key prefix that comes after the name of the
-     * bucket you have designated for log file delivery. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param s3KeyPrefix Specifies the Amazon S3 key prefix that comes after the name of the
-     *         bucket you have designated for log file delivery. For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     *         Your CloudTrail Log Files</a>. The maximum length is 200 characters.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies the Amazon S3 key prefix that comes after the name of the
+     * bucket you have designated for log file delivery. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html"
+     * >Finding Your CloudTrail Log Files</a>. The maximum length is 200
+     * characters.
+     * </p>
+     * 
+     * @return Specifies the Amazon S3 key prefix that comes after the name of
+     *         the bucket you have designated for log file delivery. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html"
+     *         >Finding Your CloudTrail Log Files</a>. The maximum length is 200
+     *         characters.
+     */
+    public String getS3KeyPrefix() {
+        return this.s3KeyPrefix;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon S3 key prefix that comes after the name of the
+     * bucket you have designated for log file delivery. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html"
+     * >Finding Your CloudTrail Log Files</a>. The maximum length is 200
+     * characters.
+     * </p>
+     * 
+     * @param s3KeyPrefix
+     *        Specifies the Amazon S3 key prefix that comes after the name of
+     *        the bucket you have designated for log file delivery. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html"
+     *        >Finding Your CloudTrail Log Files</a>. The maximum length is 200
+     *        characters.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateTrailRequest withS3KeyPrefix(String s3KeyPrefix) {
-        this.s3KeyPrefix = s3KeyPrefix;
+        setS3KeyPrefix(s3KeyPrefix);
         return this;
     }
 
     /**
+     * <p>
      * Specifies the name of the Amazon SNS topic defined for notification of
      * log file delivery. The maximum length is 256 characters.
-     *
-     * @return Specifies the name of the Amazon SNS topic defined for notification of
-     *         log file delivery. The maximum length is 256 characters.
-     */
-    public String getSnsTopicName() {
-        return snsTopicName;
-    }
-    
-    /**
-     * Specifies the name of the Amazon SNS topic defined for notification of
-     * log file delivery. The maximum length is 256 characters.
-     *
-     * @param snsTopicName Specifies the name of the Amazon SNS topic defined for notification of
-     *         log file delivery. The maximum length is 256 characters.
+     * </p>
+     * 
+     * @param snsTopicName
+     *        Specifies the name of the Amazon SNS topic defined for
+     *        notification of log file delivery. The maximum length is 256
+     *        characters.
      */
     public void setSnsTopicName(String snsTopicName) {
         this.snsTopicName = snsTopicName;
     }
-    
+
     /**
+     * <p>
      * Specifies the name of the Amazon SNS topic defined for notification of
      * log file delivery. The maximum length is 256 characters.
+     * </p>
+     * 
+     * @return Specifies the name of the Amazon SNS topic defined for
+     *         notification of log file delivery. The maximum length is 256
+     *         characters.
+     */
+    public String getSnsTopicName() {
+        return this.snsTopicName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param snsTopicName Specifies the name of the Amazon SNS topic defined for notification of
-     *         log file delivery. The maximum length is 256 characters.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies the name of the Amazon SNS topic defined for notification of
+     * log file delivery. The maximum length is 256 characters.
+     * </p>
+     * 
+     * @param snsTopicName
+     *        Specifies the name of the Amazon SNS topic defined for
+     *        notification of log file delivery. The maximum length is 256
+     *        characters.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateTrailRequest withSnsTopicName(String snsTopicName) {
-        this.snsTopicName = snsTopicName;
+        setSnsTopicName(snsTopicName);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether the trail is publishing events from global services
      * such as IAM to the log files.
-     *
-     * @return Specifies whether the trail is publishing events from global services
-     *         such as IAM to the log files.
-     */
-    public Boolean isIncludeGlobalServiceEvents() {
-        return includeGlobalServiceEvents;
-    }
-    
-    /**
-     * Specifies whether the trail is publishing events from global services
-     * such as IAM to the log files.
-     *
-     * @param includeGlobalServiceEvents Specifies whether the trail is publishing events from global services
-     *         such as IAM to the log files.
+     * </p>
+     * 
+     * @param includeGlobalServiceEvents
+     *        Specifies whether the trail is publishing events from global
+     *        services such as IAM to the log files.
      */
     public void setIncludeGlobalServiceEvents(Boolean includeGlobalServiceEvents) {
         this.includeGlobalServiceEvents = includeGlobalServiceEvents;
     }
-    
+
     /**
+     * <p>
      * Specifies whether the trail is publishing events from global services
      * such as IAM to the log files.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param includeGlobalServiceEvents Specifies whether the trail is publishing events from global services
-     *         such as IAM to the log files.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return Specifies whether the trail is publishing events from global
+     *         services such as IAM to the log files.
      */
-    public UpdateTrailRequest withIncludeGlobalServiceEvents(Boolean includeGlobalServiceEvents) {
-        this.includeGlobalServiceEvents = includeGlobalServiceEvents;
+    public Boolean getIncludeGlobalServiceEvents() {
+        return this.includeGlobalServiceEvents;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is publishing events from global services
+     * such as IAM to the log files.
+     * </p>
+     * 
+     * @param includeGlobalServiceEvents
+     *        Specifies whether the trail is publishing events from global
+     *        services such as IAM to the log files.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateTrailRequest withIncludeGlobalServiceEvents(
+            Boolean includeGlobalServiceEvents) {
+        setIncludeGlobalServiceEvents(includeGlobalServiceEvents);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether the trail is publishing events from global services
      * such as IAM to the log files.
-     *
-     * @return Specifies whether the trail is publishing events from global services
-     *         such as IAM to the log files.
+     * </p>
+     * 
+     * @return Specifies whether the trail is publishing events from global
+     *         services such as IAM to the log files.
      */
-    public Boolean getIncludeGlobalServiceEvents() {
-        return includeGlobalServiceEvents;
+    public Boolean isIncludeGlobalServiceEvents() {
+        return this.includeGlobalServiceEvents;
     }
 
     /**
-     * Specifies whether log file validation is enabled. The default is
-     * false. <note>When you disable log file integrity validation, the chain
-     * of digest files is broken after one hour. CloudTrail will not create
-     * digest files for log files that were delivered during a period in
-     * which log file integrity validation was disabled. For example, if you
-     * enable log file integrity validation at noon on January 1, disable it
-     * at noon on January 2, and re-enable it at noon on January 10, digest
-     * files will not be created for the log files delivered from noon on
-     * January 2 to noon on January 10. The same applies whenever you stop
-     * CloudTrail logging or delete a trail.</note>
-     *
-     * @return Specifies whether log file validation is enabled. The default is
-     *         false. <note>When you disable log file integrity validation, the chain
-     *         of digest files is broken after one hour. CloudTrail will not create
-     *         digest files for log files that were delivered during a period in
-     *         which log file integrity validation was disabled. For example, if you
-     *         enable log file integrity validation at noon on January 1, disable it
-     *         at noon on January 2, and re-enable it at noon on January 10, digest
-     *         files will not be created for the log files delivered from noon on
-     *         January 2 to noon on January 10. The same applies whenever you stop
-     *         CloudTrail logging or delete a trail.</note>
-     */
-    public Boolean isEnableLogFileValidation() {
-        return enableLogFileValidation;
-    }
-    
-    /**
-     * Specifies whether log file validation is enabled. The default is
-     * false. <note>When you disable log file integrity validation, the chain
-     * of digest files is broken after one hour. CloudTrail will not create
-     * digest files for log files that were delivered during a period in
-     * which log file integrity validation was disabled. For example, if you
-     * enable log file integrity validation at noon on January 1, disable it
-     * at noon on January 2, and re-enable it at noon on January 10, digest
-     * files will not be created for the log files delivered from noon on
-     * January 2 to noon on January 10. The same applies whenever you stop
-     * CloudTrail logging or delete a trail.</note>
-     *
-     * @param enableLogFileValidation Specifies whether log file validation is enabled. The default is
-     *         false. <note>When you disable log file integrity validation, the chain
-     *         of digest files is broken after one hour. CloudTrail will not create
-     *         digest files for log files that were delivered during a period in
-     *         which log file integrity validation was disabled. For example, if you
-     *         enable log file integrity validation at noon on January 1, disable it
-     *         at noon on January 2, and re-enable it at noon on January 10, digest
-     *         files will not be created for the log files delivered from noon on
-     *         January 2 to noon on January 10. The same applies whenever you stop
-     *         CloudTrail logging or delete a trail.</note>
+     * <p>
+     * Specifies whether log file validation is enabled. The default is false.
+     * </p>
+     * <note>When you disable log file integrity validation, the chain of digest
+     * files is broken after one hour. CloudTrail will not create digest files
+     * for log files that were delivered during a period in which log file
+     * integrity validation was disabled. For example, if you enable log file
+     * integrity validation at noon on January 1, disable it at noon on January
+     * 2, and re-enable it at noon on January 10, digest files will not be
+     * created for the log files delivered from noon on January 2 to noon on
+     * January 10. The same applies whenever you stop CloudTrail logging or
+     * delete a trail.</note>
+     * 
+     * @param enableLogFileValidation
+     *        Specifies whether log file validation is enabled. The default is
+     *        false.</p> <note>When you disable log file integrity validation,
+     *        the chain of digest files is broken after one hour. CloudTrail
+     *        will not create digest files for log files that were delivered
+     *        during a period in which log file integrity validation was
+     *        disabled. For example, if you enable log file integrity validation
+     *        at noon on January 1, disable it at noon on January 2, and
+     *        re-enable it at noon on January 10, digest files will not be
+     *        created for the log files delivered from noon on January 2 to noon
+     *        on January 10. The same applies whenever you stop CloudTrail
+     *        logging or delete a trail.
      */
     public void setEnableLogFileValidation(Boolean enableLogFileValidation) {
         this.enableLogFileValidation = enableLogFileValidation;
     }
-    
+
     /**
-     * Specifies whether log file validation is enabled. The default is
-     * false. <note>When you disable log file integrity validation, the chain
-     * of digest files is broken after one hour. CloudTrail will not create
-     * digest files for log files that were delivered during a period in
-     * which log file integrity validation was disabled. For example, if you
-     * enable log file integrity validation at noon on January 1, disable it
-     * at noon on January 2, and re-enable it at noon on January 10, digest
-     * files will not be created for the log files delivered from noon on
-     * January 2 to noon on January 10. The same applies whenever you stop
-     * CloudTrail logging or delete a trail.</note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param enableLogFileValidation Specifies whether log file validation is enabled. The default is
-     *         false. <note>When you disable log file integrity validation, the chain
-     *         of digest files is broken after one hour. CloudTrail will not create
-     *         digest files for log files that were delivered during a period in
-     *         which log file integrity validation was disabled. For example, if you
-     *         enable log file integrity validation at noon on January 1, disable it
-     *         at noon on January 2, and re-enable it at noon on January 10, digest
-     *         files will not be created for the log files delivered from noon on
-     *         January 2 to noon on January 10. The same applies whenever you stop
-     *         CloudTrail logging or delete a trail.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies whether log file validation is enabled. The default is false.
+     * </p>
+     * <note>When you disable log file integrity validation, the chain of digest
+     * files is broken after one hour. CloudTrail will not create digest files
+     * for log files that were delivered during a period in which log file
+     * integrity validation was disabled. For example, if you enable log file
+     * integrity validation at noon on January 1, disable it at noon on January
+     * 2, and re-enable it at noon on January 10, digest files will not be
+     * created for the log files delivered from noon on January 2 to noon on
+     * January 10. The same applies whenever you stop CloudTrail logging or
+     * delete a trail.</note>
+     * 
+     * @return Specifies whether log file validation is enabled. The default is
+     *         false.</p> <note>When you disable log file integrity validation,
+     *         the chain of digest files is broken after one hour. CloudTrail
+     *         will not create digest files for log files that were delivered
+     *         during a period in which log file integrity validation was
+     *         disabled. For example, if you enable log file integrity
+     *         validation at noon on January 1, disable it at noon on January 2,
+     *         and re-enable it at noon on January 10, digest files will not be
+     *         created for the log files delivered from noon on January 2 to
+     *         noon on January 10. The same applies whenever you stop CloudTrail
+     *         logging or delete a trail.
      */
-    public UpdateTrailRequest withEnableLogFileValidation(Boolean enableLogFileValidation) {
-        this.enableLogFileValidation = enableLogFileValidation;
+    public Boolean getEnableLogFileValidation() {
+        return this.enableLogFileValidation;
+    }
+
+    /**
+     * <p>
+     * Specifies whether log file validation is enabled. The default is false.
+     * </p>
+     * <note>When you disable log file integrity validation, the chain of digest
+     * files is broken after one hour. CloudTrail will not create digest files
+     * for log files that were delivered during a period in which log file
+     * integrity validation was disabled. For example, if you enable log file
+     * integrity validation at noon on January 1, disable it at noon on January
+     * 2, and re-enable it at noon on January 10, digest files will not be
+     * created for the log files delivered from noon on January 2 to noon on
+     * January 10. The same applies whenever you stop CloudTrail logging or
+     * delete a trail.</note>
+     * 
+     * @param enableLogFileValidation
+     *        Specifies whether log file validation is enabled. The default is
+     *        false.</p> <note>When you disable log file integrity validation,
+     *        the chain of digest files is broken after one hour. CloudTrail
+     *        will not create digest files for log files that were delivered
+     *        during a period in which log file integrity validation was
+     *        disabled. For example, if you enable log file integrity validation
+     *        at noon on January 1, disable it at noon on January 2, and
+     *        re-enable it at noon on January 10, digest files will not be
+     *        created for the log files delivered from noon on January 2 to noon
+     *        on January 10. The same applies whenever you stop CloudTrail
+     *        logging or delete a trail.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateTrailRequest withEnableLogFileValidation(
+            Boolean enableLogFileValidation) {
+        setEnableLogFileValidation(enableLogFileValidation);
         return this;
     }
 
     /**
-     * Specifies whether log file validation is enabled. The default is
-     * false. <note>When you disable log file integrity validation, the chain
-     * of digest files is broken after one hour. CloudTrail will not create
-     * digest files for log files that were delivered during a period in
-     * which log file integrity validation was disabled. For example, if you
-     * enable log file integrity validation at noon on January 1, disable it
-     * at noon on January 2, and re-enable it at noon on January 10, digest
-     * files will not be created for the log files delivered from noon on
-     * January 2 to noon on January 10. The same applies whenever you stop
-     * CloudTrail logging or delete a trail.</note>
-     *
+     * <p>
+     * Specifies whether log file validation is enabled. The default is false.
+     * </p>
+     * <note>When you disable log file integrity validation, the chain of digest
+     * files is broken after one hour. CloudTrail will not create digest files
+     * for log files that were delivered during a period in which log file
+     * integrity validation was disabled. For example, if you enable log file
+     * integrity validation at noon on January 1, disable it at noon on January
+     * 2, and re-enable it at noon on January 10, digest files will not be
+     * created for the log files delivered from noon on January 2 to noon on
+     * January 10. The same applies whenever you stop CloudTrail logging or
+     * delete a trail.</note>
+     * 
      * @return Specifies whether log file validation is enabled. The default is
-     *         false. <note>When you disable log file integrity validation, the chain
-     *         of digest files is broken after one hour. CloudTrail will not create
-     *         digest files for log files that were delivered during a period in
-     *         which log file integrity validation was disabled. For example, if you
-     *         enable log file integrity validation at noon on January 1, disable it
-     *         at noon on January 2, and re-enable it at noon on January 10, digest
-     *         files will not be created for the log files delivered from noon on
-     *         January 2 to noon on January 10. The same applies whenever you stop
-     *         CloudTrail logging or delete a trail.</note>
+     *         false.</p> <note>When you disable log file integrity validation,
+     *         the chain of digest files is broken after one hour. CloudTrail
+     *         will not create digest files for log files that were delivered
+     *         during a period in which log file integrity validation was
+     *         disabled. For example, if you enable log file integrity
+     *         validation at noon on January 1, disable it at noon on January 2,
+     *         and re-enable it at noon on January 10, digest files will not be
+     *         created for the log files delivered from noon on January 2 to
+     *         noon on January 10. The same applies whenever you stop CloudTrail
+     *         logging or delete a trail.
      */
-    public Boolean getEnableLogFileValidation() {
-        return enableLogFileValidation;
+    public Boolean isEnableLogFileValidation() {
+        return this.enableLogFileValidation;
     }
 
     /**
-     * Specifies a log group name using an Amazon Resource Name (ARN), a
-     * unique identifier that represents the log group to which CloudTrail
-     * logs will be delivered. Not required unless you specify
-     * CloudWatchLogsRoleArn.
-     *
-     * @return Specifies a log group name using an Amazon Resource Name (ARN), a
-     *         unique identifier that represents the log group to which CloudTrail
-     *         logs will be delivered. Not required unless you specify
-     *         CloudWatchLogsRoleArn.
-     */
-    public String getCloudWatchLogsLogGroupArn() {
-        return cloudWatchLogsLogGroupArn;
-    }
-    
-    /**
-     * Specifies a log group name using an Amazon Resource Name (ARN), a
-     * unique identifier that represents the log group to which CloudTrail
-     * logs will be delivered. Not required unless you specify
-     * CloudWatchLogsRoleArn.
-     *
-     * @param cloudWatchLogsLogGroupArn Specifies a log group name using an Amazon Resource Name (ARN), a
-     *         unique identifier that represents the log group to which CloudTrail
-     *         logs will be delivered. Not required unless you specify
-     *         CloudWatchLogsRoleArn.
+     * <p>
+     * Specifies a log group name using an Amazon Resource Name (ARN), a unique
+     * identifier that represents the log group to which CloudTrail logs will be
+     * delivered. Not required unless you specify CloudWatchLogsRoleArn.
+     * </p>
+     * 
+     * @param cloudWatchLogsLogGroupArn
+     *        Specifies a log group name using an Amazon Resource Name (ARN), a
+     *        unique identifier that represents the log group to which
+     *        CloudTrail logs will be delivered. Not required unless you specify
+     *        CloudWatchLogsRoleArn.
      */
     public void setCloudWatchLogsLogGroupArn(String cloudWatchLogsLogGroupArn) {
         this.cloudWatchLogsLogGroupArn = cloudWatchLogsLogGroupArn;
     }
-    
+
     /**
-     * Specifies a log group name using an Amazon Resource Name (ARN), a
-     * unique identifier that represents the log group to which CloudTrail
-     * logs will be delivered. Not required unless you specify
-     * CloudWatchLogsRoleArn.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cloudWatchLogsLogGroupArn Specifies a log group name using an Amazon Resource Name (ARN), a
-     *         unique identifier that represents the log group to which CloudTrail
-     *         logs will be delivered. Not required unless you specify
-     *         CloudWatchLogsRoleArn.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies a log group name using an Amazon Resource Name (ARN), a unique
+     * identifier that represents the log group to which CloudTrail logs will be
+     * delivered. Not required unless you specify CloudWatchLogsRoleArn.
+     * </p>
+     * 
+     * @return Specifies a log group name using an Amazon Resource Name (ARN), a
+     *         unique identifier that represents the log group to which
+     *         CloudTrail logs will be delivered. Not required unless you
+     *         specify CloudWatchLogsRoleArn.
      */
-    public UpdateTrailRequest withCloudWatchLogsLogGroupArn(String cloudWatchLogsLogGroupArn) {
-        this.cloudWatchLogsLogGroupArn = cloudWatchLogsLogGroupArn;
+    public String getCloudWatchLogsLogGroupArn() {
+        return this.cloudWatchLogsLogGroupArn;
+    }
+
+    /**
+     * <p>
+     * Specifies a log group name using an Amazon Resource Name (ARN), a unique
+     * identifier that represents the log group to which CloudTrail logs will be
+     * delivered. Not required unless you specify CloudWatchLogsRoleArn.
+     * </p>
+     * 
+     * @param cloudWatchLogsLogGroupArn
+     *        Specifies a log group name using an Amazon Resource Name (ARN), a
+     *        unique identifier that represents the log group to which
+     *        CloudTrail logs will be delivered. Not required unless you specify
+     *        CloudWatchLogsRoleArn.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateTrailRequest withCloudWatchLogsLogGroupArn(
+            String cloudWatchLogsLogGroupArn) {
+        setCloudWatchLogsLogGroupArn(cloudWatchLogsLogGroupArn);
         return this;
     }
 
     /**
-     * Specifies the role for the CloudWatch Logs endpoint to assume to write
-     * to a user's log group.
-     *
-     * @return Specifies the role for the CloudWatch Logs endpoint to assume to write
-     *         to a user's log group.
-     */
-    public String getCloudWatchLogsRoleArn() {
-        return cloudWatchLogsRoleArn;
-    }
-    
-    /**
-     * Specifies the role for the CloudWatch Logs endpoint to assume to write
-     * to a user's log group.
-     *
-     * @param cloudWatchLogsRoleArn Specifies the role for the CloudWatch Logs endpoint to assume to write
-     *         to a user's log group.
+     * <p>
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write to
+     * a user's log group.
+     * </p>
+     * 
+     * @param cloudWatchLogsRoleArn
+     *        Specifies the role for the CloudWatch Logs endpoint to assume to
+     *        write to a user's log group.
      */
     public void setCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
         this.cloudWatchLogsRoleArn = cloudWatchLogsRoleArn;
     }
-    
+
     /**
-     * Specifies the role for the CloudWatch Logs endpoint to assume to write
-     * to a user's log group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cloudWatchLogsRoleArn Specifies the role for the CloudWatch Logs endpoint to assume to write
-     *         to a user's log group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write to
+     * a user's log group.
+     * </p>
+     * 
+     * @return Specifies the role for the CloudWatch Logs endpoint to assume to
+     *         write to a user's log group.
      */
-    public UpdateTrailRequest withCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
-        this.cloudWatchLogsRoleArn = cloudWatchLogsRoleArn;
+    public String getCloudWatchLogsRoleArn() {
+        return this.cloudWatchLogsRoleArn;
+    }
+
+    /**
+     * <p>
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write to
+     * a user's log group.
+     * </p>
+     * 
+     * @param cloudWatchLogsRoleArn
+     *        Specifies the role for the CloudWatch Logs endpoint to assume to
+     *        write to a user's log group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateTrailRequest withCloudWatchLogsRoleArn(
+            String cloudWatchLogsRoleArn) {
+        setCloudWatchLogsRoleArn(cloudWatchLogsRoleArn);
         return this;
     }
 
     /**
+     * <p>
      * Specifies the KMS key ID to use to encrypt the logs delivered by
      * CloudTrail. The value can be a an alias name prefixed by "alias/", a
      * fully specified ARN to an alias, a fully specified ARN to a key, or a
-     * globally unique identifier. <p>Examples: <ul>
+     * globally unique identifier.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
      * <li>alias/MyAliasName</li>
      * <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>12345678-1234-1234-1234-123456789012</li> </ul>
-     *
-     * @return Specifies the KMS key ID to use to encrypt the logs delivered by
-     *         CloudTrail. The value can be a an alias name prefixed by "alias/", a
-     *         fully specified ARN to an alias, a fully specified ARN to a key, or a
-     *         globally unique identifier. <p>Examples: <ul>
-     *         <li>alias/MyAliasName</li>
-     *         <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *         <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     *         <li>12345678-1234-1234-1234-123456789012</li> </ul>
-     */
-    public String getKmsKeyId() {
-        return kmsKeyId;
-    }
-    
-    /**
-     * Specifies the KMS key ID to use to encrypt the logs delivered by
-     * CloudTrail. The value can be a an alias name prefixed by "alias/", a
-     * fully specified ARN to an alias, a fully specified ARN to a key, or a
-     * globally unique identifier. <p>Examples: <ul>
-     * <li>alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>12345678-1234-1234-1234-123456789012</li> </ul>
-     *
-     * @param kmsKeyId Specifies the KMS key ID to use to encrypt the logs delivered by
-     *         CloudTrail. The value can be a an alias name prefixed by "alias/", a
-     *         fully specified ARN to an alias, a fully specified ARN to a key, or a
-     *         globally unique identifier. <p>Examples: <ul>
-     *         <li>alias/MyAliasName</li>
-     *         <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *         <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     *         <li>12345678-1234-1234-1234-123456789012</li> </ul>
+     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012</li>
+     * <li>12345678-1234-1234-1234-123456789012</li>
+     * </ul>
+     * 
+     * @param kmsKeyId
+     *        Specifies the KMS key ID to use to encrypt the logs delivered by
+     *        CloudTrail. The value can be a an alias name prefixed by "alias/",
+     *        a fully specified ARN to an alias, a fully specified ARN to a key,
+     *        or a globally unique identifier.</p>
+     *        <p>
+     *        Examples:
+     *        </p>
+     *        <ul>
+     *        <li>alias/MyAliasName</li>
+     *        <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
+     *        <li>
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
+     *        123456789012</li>
+     *        <li>12345678-1234-1234-1234-123456789012</li>
      */
     public void setKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
     }
-    
+
     /**
+     * <p>
      * Specifies the KMS key ID to use to encrypt the logs delivered by
      * CloudTrail. The value can be a an alias name prefixed by "alias/", a
      * fully specified ARN to an alias, a fully specified ARN to a key, or a
-     * globally unique identifier. <p>Examples: <ul>
+     * globally unique identifier.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
      * <li>alias/MyAliasName</li>
      * <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>12345678-1234-1234-1234-123456789012</li> </ul>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param kmsKeyId Specifies the KMS key ID to use to encrypt the logs delivered by
-     *         CloudTrail. The value can be a an alias name prefixed by "alias/", a
-     *         fully specified ARN to an alias, a fully specified ARN to a key, or a
-     *         globally unique identifier. <p>Examples: <ul>
+     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012</li>
+     * <li>12345678-1234-1234-1234-123456789012</li>
+     * </ul>
+     * 
+     * @return Specifies the KMS key ID to use to encrypt the logs delivered by
+     *         CloudTrail. The value can be a an alias name prefixed by
+     *         "alias/", a fully specified ARN to an alias, a fully specified
+     *         ARN to a key, or a globally unique identifier.</p>
+     *         <p>
+     *         Examples:
+     *         </p>
+     *         <ul>
      *         <li>alias/MyAliasName</li>
      *         <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *         <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     *         <li>12345678-1234-1234-1234-123456789012</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         <li>
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234
+     *         -123456789012</li>
+     *         <li>12345678-1234-1234-1234-123456789012</li>
+     */
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key ID to use to encrypt the logs delivered by
+     * CloudTrail. The value can be a an alias name prefixed by "alias/", a
+     * fully specified ARN to an alias, a fully specified ARN to a key, or a
+     * globally unique identifier.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>alias/MyAliasName</li>
+     * <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
+     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012</li>
+     * <li>12345678-1234-1234-1234-123456789012</li>
+     * </ul>
+     * 
+     * @param kmsKeyId
+     *        Specifies the KMS key ID to use to encrypt the logs delivered by
+     *        CloudTrail. The value can be a an alias name prefixed by "alias/",
+     *        a fully specified ARN to an alias, a fully specified ARN to a key,
+     *        or a globally unique identifier.</p>
+     *        <p>
+     *        Examples:
+     *        </p>
+     *        <ul>
+     *        <li>alias/MyAliasName</li>
+     *        <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
+     *        <li>
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
+     *        123456789012</li>
+     *        <li>12345678-1234-1234-1234-123456789012</li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateTrailRequest withKmsKeyId(String kmsKeyId) {
-        this.kmsKeyId = kmsKeyId;
+        setKmsKeyId(kmsKeyId);
         return this;
     }
 
@@ -697,70 +840,139 @@ public class UpdateTrailRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getS3BucketName() != null) sb.append("S3BucketName: " + getS3BucketName() + ",");
-        if (getS3KeyPrefix() != null) sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
-        if (getSnsTopicName() != null) sb.append("SnsTopicName: " + getSnsTopicName() + ",");
-        if (isIncludeGlobalServiceEvents() != null) sb.append("IncludeGlobalServiceEvents: " + isIncludeGlobalServiceEvents() + ",");
-        if (isEnableLogFileValidation() != null) sb.append("EnableLogFileValidation: " + isEnableLogFileValidation() + ",");
-        if (getCloudWatchLogsLogGroupArn() != null) sb.append("CloudWatchLogsLogGroupArn: " + getCloudWatchLogsLogGroupArn() + ",");
-        if (getCloudWatchLogsRoleArn() != null) sb.append("CloudWatchLogsRoleArn: " + getCloudWatchLogsRoleArn() + ",");
-        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getS3BucketName() != null)
+            sb.append("S3BucketName: " + getS3BucketName() + ",");
+        if (getS3KeyPrefix() != null)
+            sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
+        if (getSnsTopicName() != null)
+            sb.append("SnsTopicName: " + getSnsTopicName() + ",");
+        if (getIncludeGlobalServiceEvents() != null)
+            sb.append("IncludeGlobalServiceEvents: "
+                    + getIncludeGlobalServiceEvents() + ",");
+        if (getEnableLogFileValidation() != null)
+            sb.append("EnableLogFileValidation: "
+                    + getEnableLogFileValidation() + ",");
+        if (getCloudWatchLogsLogGroupArn() != null)
+            sb.append("CloudWatchLogsLogGroupArn: "
+                    + getCloudWatchLogsLogGroupArn() + ",");
+        if (getCloudWatchLogsRoleArn() != null)
+            sb.append("CloudWatchLogsRoleArn: " + getCloudWatchLogsRoleArn()
+                    + ",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: " + getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof UpdateTrailRequest == false)
+            return false;
+        UpdateTrailRequest other = (UpdateTrailRequest) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getS3BucketName() == null ^ this.getS3BucketName() == null)
+            return false;
+        if (other.getS3BucketName() != null
+                && other.getS3BucketName().equals(this.getS3BucketName()) == false)
+            return false;
+        if (other.getS3KeyPrefix() == null ^ this.getS3KeyPrefix() == null)
+            return false;
+        if (other.getS3KeyPrefix() != null
+                && other.getS3KeyPrefix().equals(this.getS3KeyPrefix()) == false)
+            return false;
+        if (other.getSnsTopicName() == null ^ this.getSnsTopicName() == null)
+            return false;
+        if (other.getSnsTopicName() != null
+                && other.getSnsTopicName().equals(this.getSnsTopicName()) == false)
+            return false;
+        if (other.getIncludeGlobalServiceEvents() == null
+                ^ this.getIncludeGlobalServiceEvents() == null)
+            return false;
+        if (other.getIncludeGlobalServiceEvents() != null
+                && other.getIncludeGlobalServiceEvents().equals(
+                        this.getIncludeGlobalServiceEvents()) == false)
+            return false;
+        if (other.getEnableLogFileValidation() == null
+                ^ this.getEnableLogFileValidation() == null)
+            return false;
+        if (other.getEnableLogFileValidation() != null
+                && other.getEnableLogFileValidation().equals(
+                        this.getEnableLogFileValidation()) == false)
+            return false;
+        if (other.getCloudWatchLogsLogGroupArn() == null
+                ^ this.getCloudWatchLogsLogGroupArn() == null)
+            return false;
+        if (other.getCloudWatchLogsLogGroupArn() != null
+                && other.getCloudWatchLogsLogGroupArn().equals(
+                        this.getCloudWatchLogsLogGroupArn()) == false)
+            return false;
+        if (other.getCloudWatchLogsRoleArn() == null
+                ^ this.getCloudWatchLogsRoleArn() == null)
+            return false;
+        if (other.getCloudWatchLogsRoleArn() != null
+                && other.getCloudWatchLogsRoleArn().equals(
+                        this.getCloudWatchLogsRoleArn()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null
+                && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getS3BucketName() == null) ? 0 : getS3BucketName().hashCode()); 
-        hashCode = prime * hashCode + ((getS3KeyPrefix() == null) ? 0 : getS3KeyPrefix().hashCode()); 
-        hashCode = prime * hashCode + ((getSnsTopicName() == null) ? 0 : getSnsTopicName().hashCode()); 
-        hashCode = prime * hashCode + ((isIncludeGlobalServiceEvents() == null) ? 0 : isIncludeGlobalServiceEvents().hashCode()); 
-        hashCode = prime * hashCode + ((isEnableLogFileValidation() == null) ? 0 : isEnableLogFileValidation().hashCode()); 
-        hashCode = prime * hashCode + ((getCloudWatchLogsLogGroupArn() == null) ? 0 : getCloudWatchLogsLogGroupArn().hashCode()); 
-        hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode()); 
-        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getS3BucketName() == null) ? 0 : getS3BucketName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getS3KeyPrefix() == null) ? 0 : getS3KeyPrefix().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSnsTopicName() == null) ? 0 : getSnsTopicName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIncludeGlobalServiceEvents() == null) ? 0
+                        : getIncludeGlobalServiceEvents().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEnableLogFileValidation() == null) ? 0
+                        : getEnableLogFileValidation().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudWatchLogsLogGroupArn() == null) ? 0
+                        : getCloudWatchLogsLogGroupArn().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudWatchLogsRoleArn() == null) ? 0
+                        : getCloudWatchLogsRoleArn().hashCode());
+        hashCode = prime * hashCode
+                + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof UpdateTrailRequest == false) return false;
-        UpdateTrailRequest other = (UpdateTrailRequest)obj;
-        
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getS3BucketName() == null ^ this.getS3BucketName() == null) return false;
-        if (other.getS3BucketName() != null && other.getS3BucketName().equals(this.getS3BucketName()) == false) return false; 
-        if (other.getS3KeyPrefix() == null ^ this.getS3KeyPrefix() == null) return false;
-        if (other.getS3KeyPrefix() != null && other.getS3KeyPrefix().equals(this.getS3KeyPrefix()) == false) return false; 
-        if (other.getSnsTopicName() == null ^ this.getSnsTopicName() == null) return false;
-        if (other.getSnsTopicName() != null && other.getSnsTopicName().equals(this.getSnsTopicName()) == false) return false; 
-        if (other.isIncludeGlobalServiceEvents() == null ^ this.isIncludeGlobalServiceEvents() == null) return false;
-        if (other.isIncludeGlobalServiceEvents() != null && other.isIncludeGlobalServiceEvents().equals(this.isIncludeGlobalServiceEvents()) == false) return false; 
-        if (other.isEnableLogFileValidation() == null ^ this.isEnableLogFileValidation() == null) return false;
-        if (other.isEnableLogFileValidation() != null && other.isEnableLogFileValidation().equals(this.isEnableLogFileValidation()) == false) return false; 
-        if (other.getCloudWatchLogsLogGroupArn() == null ^ this.getCloudWatchLogsLogGroupArn() == null) return false;
-        if (other.getCloudWatchLogsLogGroupArn() != null && other.getCloudWatchLogsLogGroupArn().equals(this.getCloudWatchLogsLogGroupArn()) == false) return false; 
-        if (other.getCloudWatchLogsRoleArn() == null ^ this.getCloudWatchLogsRoleArn() == null) return false;
-        if (other.getCloudWatchLogsRoleArn() != null && other.getCloudWatchLogsRoleArn().equals(this.getCloudWatchLogsRoleArn()) == false) return false; 
-        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
-        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public UpdateTrailRequest clone() {
-        
-            return (UpdateTrailRequest) super.clone();
+        return (UpdateTrailRequest) super.clone();
     }
-
 }
-    

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,52 +16,56 @@ package com.amazonaws.services.directory;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
+
 import com.amazonaws.services.directory.model.*;
 
 /**
- * Interface for accessing AWSDirectoryService.
- * AWS Directory Service <p>
- * This is the <i>AWS Directory Service API Reference</i> . This guide
- * provides detailed information about AWS Directory Service operations,
- * data types, parameters, and errors.
+ * Interface for accessing Directory Service.
+ * <p>
+ * <fullname>AWS Directory Service</fullname>
+ * <p>
+ * This is the <i>AWS Directory Service API Reference</i>. This guide provides
+ * detailed information about AWS Directory Service operations, data types,
+ * parameters, and errors.
  * </p>
  */
 public interface AWSDirectoryService {
 
     /**
-     * Overrides the default endpoint for this client ("https://ds.us-east-1.amazonaws.com").
-     * Callers can use this method to control which AWS region they want to work with.
+     * Overrides the default endpoint for this client
+     * ("https://ds.us-east-1.amazonaws.com"). Callers can use this method to
+     * control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "ds.us-east-1.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://ds.us-east-1.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * Callers can pass in just the endpoint (ex: "ds.us-east-1.amazonaws.com")
+     * or a full URL, including the protocol (ex:
+     * "https://ds.us-east-1.amazonaws.com"). If the protocol is not specified
+     * here, the default protocol from this client's {@link ClientConfiguration}
+     * will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * a complete list of all available endpoints for all AWS services, see: <a
+     * href=
+     * "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912"
+     * > http://developer.amazonwebservices.com/connect/entry.jspa?externalID=
+     * 3912</a>
      * <p>
-     * <b>This method is not threadsafe. An endpoint should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit or retrying.</b>
+     * <b>This method is not threadsafe. An endpoint should be configured when
+     * the client is created and before any service requests are made. Changing
+     * it afterwards creates inevitable race conditions for any service requests
+     * in transit or retrying.</b>
      *
      * @param endpoint
-     *            The endpoint (ex: "ds.us-east-1.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://ds.us-east-1.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
+     *        The endpoint (ex: "ds.us-east-1.amazonaws.com") or a full URL,
+     *        including the protocol (ex: "https://ds.us-east-1.amazonaws.com")
+     *        of the region specific AWS endpoint this client will communicate
+     *        with.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
+    void setEndpoint(String endpoint);
 
     /**
-     * An alternative to {@link AWSDirectoryService#setEndpoint(String)}, sets the
-     * regional endpoint for this client's service calls. Callers can use this
-     * method to control which AWS region they want to work with.
+     * An alternative to {@link AWSDirectoryService#setEndpoint(String)}, sets
+     * the regional endpoint for this client's service calls. Callers can use
+     * this method to control which AWS region they want to work with.
      * <p>
      * By default, all service endpoints in all regions use the https protocol.
      * To use http instead, specify it in the {@link ClientConfiguration}
@@ -73,222 +77,119 @@ public interface AWSDirectoryService {
      * transit or retrying.</b>
      *
      * @param region
-     *            The region this client will communicate with. See
-     *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
-     *            accessing a given region.
-     * @throws java.lang.IllegalArgumentException
-     *             If the given region is null, or if this service isn't
-     *             available in the given region. See
-     *             {@link Region#isServiceSupported(String)}
+     *        The region this client will communicate with. See
+     *        {@link Region#getRegion(com.amazonaws.regions.Regions)} for
+     *        accessing a given region. Must not be null and must be a region
+     *        where the service is available.
+     *
      * @see Region#getRegion(com.amazonaws.regions.Regions)
-     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#createClient(Class,
+     *      com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#isServiceSupported(String)
      */
-    public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-    
-    /**
-     * <p>
-     * Obtains information about the directory snapshots that belong to this
-     * account.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> request and response parameters. If more results are
-     * available, the <i>DescribeSnapshots.NextToken</i> member contains a
-     * token that you pass in the next call to DescribeSnapshots to retrieve
-     * the next set of items.
-     * </p>
-     * <p>
-     * You can also specify a maximum number of return results with the
-     * <i>Limit</i> parameter.
-     * </p>
-     *
-     * @param describeSnapshotsRequest Container for the necessary parameters
-     *           to execute the DescribeSnapshots service method on
-     *           AWSDirectoryService.
-     * 
-     * @return The response from the DescribeSnapshots service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws InvalidParameterException
-     * @throws InvalidNextTokenException
-     * @throws EntityDoesNotExistException
-     * @throws ServiceException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates an alias for a directory and assigns the alias to the
-     * directory. The alias is used to construct the access URL for the
-     * directory, such as <code>http://<alias>.awsapps.com</code> .
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> After an alias has been created, it cannot be
-     * deleted or reused, so this operation should only be used when
-     * absolutely necessary.
-     * </p>
-     *
-     * @param createAliasRequest Container for the necessary parameters to
-     *           execute the CreateAlias service method on AWSDirectoryService.
-     * 
-     * @return The response from the CreateAlias service method, as returned
-     *         by AWSDirectoryService.
-     * 
-     * @throws InvalidParameterException
-     * @throws EntityDoesNotExistException
-     * @throws ServiceException
-     * @throws EntityAlreadyExistsException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a directory snapshot.
-     * </p>
-     *
-     * @param deleteSnapshotRequest Container for the necessary parameters to
-     *           execute the DeleteSnapshot service method on AWSDirectoryService.
-     * 
-     * @return The response from the DeleteSnapshot service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws InvalidParameterException
-     * @throws EntityDoesNotExistException
-     * @throws ServiceException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteSnapshotResult deleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the Remote Authentication Dial In User Service (RADIUS)
-     * server information for an AD Connector directory.
-     * </p>
-     *
-     * @param updateRadiusRequest Container for the necessary parameters to
-     *           execute the UpdateRadius service method on AWSDirectoryService.
-     * 
-     * @return The response from the UpdateRadius service method, as returned
-     *         by AWSDirectoryService.
-     * 
-     * @throws InvalidParameterException
-     * @throws EntityDoesNotExistException
-     * @throws ServiceException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateRadiusResult updateRadius(UpdateRadiusRequest updateRadiusRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Obtains information about the directories that belong to this
-     * account.
-     * </p>
-     * <p>
-     * You can retrieve information about specific directories by passing
-     * the directory identifiers in the <i>DirectoryIds</i> parameter.
-     * Otherwise, all directories that belong to the current account are
-     * returned.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> request and response parameters. If more results are
-     * available, the <i>DescribeDirectoriesResult.NextToken</i> member
-     * contains a token that you pass in the next call to DescribeDirectories
-     * to retrieve the next set of items.
-     * </p>
-     * <p>
-     * You can also specify a maximum number of return results with the
-     * <i>Limit</i> parameter.
-     * </p>
-     *
-     * @param describeDirectoriesRequest Container for the necessary
-     *           parameters to execute the DescribeDirectories service method on
-     *           AWSDirectoryService.
-     * 
-     * @return The response from the DescribeDirectories service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws InvalidParameterException
-     * @throws InvalidNextTokenException
-     * @throws EntityDoesNotExistException
-     * @throws ServiceException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDirectoriesResult describeDirectories(DescribeDirectoriesRequest describeDirectoriesRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void setRegion(Region region);
 
     /**
      * <p>
      * Creates an AD Connector to connect an on-premises directory.
      * </p>
-     *
-     * @param connectDirectoryRequest Container for the necessary parameters
-     *           to execute the ConnectDirectory service method on AWSDirectoryService.
      * 
-     * @return The response from the ConnectDirectory service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws InvalidParameterException
+     * @param connectDirectoryRequest
+     *        Contains the inputs for the <a>ConnectDirectory</a> operation.
+     * @return Result of the ConnectDirectory operation returned by the service.
      * @throws DirectoryLimitExceededException
-     * @throws ServiceException
+     *         The maximum number of directories in the region has been reached.
+     *         You can use the <a>GetDirectoryLimits</a> operation to determine
+     *         your directory limits in the region.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
      */
-    public ConnectDirectoryResult connectDirectory(ConnectDirectoryRequest connectDirectoryRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ConnectDirectoryResult connectDirectory(
+            ConnectDirectoryRequest connectDirectoryRequest);
+
+    /**
+     * <p>
+     * Creates an alias for a directory and assigns the alias to the directory.
+     * The alias is used to construct the access URL for the directory, such as
+     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+     * </p>
+     * <important>
+     * <p>
+     * After an alias has been created, it cannot be deleted or reused, so this
+     * operation should only be used when absolutely necessary.
+     * </p>
+     * </important>
+     * 
+     * @param createAliasRequest
+     *        Contains the inputs for the <a>CreateAlias</a> operation.
+     * @return Result of the CreateAlias operation returned by the service.
+     * @throws EntityAlreadyExistsException
+     *         The specified entity already exists.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     */
+    CreateAliasResult createAlias(CreateAliasRequest createAliasRequest);
+
+    /**
+     * <p>
+     * Creates a computer account in the specified directory, and joins the
+     * computer to the directory.
+     * </p>
+     * 
+     * @param createComputerRequest
+     *        Contains the inputs for the <a>CreateComputer</a> operation.
+     * @return Result of the CreateComputer operation returned by the service.
+     * @throws AuthenticationFailedException
+     *         An authentication error occurred.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws EntityAlreadyExistsException
+     *         The specified entity already exists.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     */
+    CreateComputerResult createComputer(
+            CreateComputerRequest createComputerRequest);
+
+    /**
+     * <p>
+     * Creates a Simple AD directory.
+     * </p>
+     * 
+     * @param createDirectoryRequest
+     *        Contains the inputs for the <a>CreateDirectory</a> operation.
+     * @return Result of the CreateDirectory operation returned by the service.
+     * @throws DirectoryLimitExceededException
+     *         The maximum number of directories in the region has been reached.
+     *         You can use the <a>GetDirectoryLimits</a> operation to determine
+     *         your directory limits in the region.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     */
+    CreateDirectoryResult createDirectory(
+            CreateDirectoryRequest createDirectoryRequest);
 
     /**
      * <p>
@@ -297,226 +198,280 @@ public interface AWSDirectoryService {
      * <p>
      * You cannot take snapshots of extended or connected directories.
      * </p>
-     *
-     * @param createSnapshotRequest Container for the necessary parameters to
-     *           execute the CreateSnapshot service method on AWSDirectoryService.
      * 
-     * @return The response from the CreateSnapshot service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws InvalidParameterException
+     * @param createSnapshotRequest
+     *        Contains the inputs for the <a>CreateSnapshot</a> operation.
+     * @return Result of the CreateSnapshot operation returned by the service.
      * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
      * @throws SnapshotLimitExceededException
-     * @throws ServiceException
+     *         The maximum number of manual snapshots for the directory has been
+     *         reached. You can use the <a>GetSnapshotLimits</a> operation to
+     *         determine the snapshot limits for a directory.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
      */
-    public CreateSnapshotResult createSnapshot(CreateSnapshotRequest createSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    CreateSnapshotResult createSnapshot(
+            CreateSnapshotRequest createSnapshotRequest);
 
     /**
      * <p>
      * Deletes an AWS Directory Service directory.
      * </p>
-     *
-     * @param deleteDirectoryRequest Container for the necessary parameters
-     *           to execute the DeleteDirectory service method on AWSDirectoryService.
      * 
-     * @return The response from the DeleteDirectory service method, as
-     *         returned by AWSDirectoryService.
-     * 
+     * @param deleteDirectoryRequest
+     *        Contains the inputs for the <a>DeleteDirectory</a> operation.
+     * @return Result of the DeleteDirectory operation returned by the service.
      * @throws EntityDoesNotExistException
-     * @throws ServiceException
+     *         The specified entity could not be found.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
      */
-    public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest deleteDirectoryRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DeleteDirectoryResult deleteDirectory(
+            DeleteDirectoryRequest deleteDirectoryRequest);
 
     /**
      * <p>
-     * Obtains directory limit information for the current region.
+     * Deletes a directory snapshot.
      * </p>
-     *
-     * @param getDirectoryLimitsRequest Container for the necessary
-     *           parameters to execute the GetDirectoryLimits service method on
-     *           AWSDirectoryService.
      * 
-     * @return The response from the GetDirectoryLimits service method, as
-     *         returned by AWSDirectoryService.
-     * 
+     * @param deleteSnapshotRequest
+     *        Contains the inputs for the <a>DeleteSnapshot</a> operation.
+     * @return Result of the DeleteSnapshot operation returned by the service.
      * @throws EntityDoesNotExistException
-     * @throws ServiceException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
      */
-    public GetDirectoryLimitsResult getDirectoryLimits(GetDirectoryLimitsRequest getDirectoryLimitsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DeleteSnapshotResult deleteSnapshot(
+            DeleteSnapshotRequest deleteSnapshotRequest);
+
+    /**
+     * <p>
+     * Obtains information about the directories that belong to this account.
+     * </p>
+     * <p>
+     * You can retrieve information about specific directories by passing the
+     * directory identifiers in the <i>DirectoryIds</i> parameter. Otherwise,
+     * all directories that belong to the current account are returned.
+     * </p>
+     * <p>
+     * This operation supports pagination with the use of the <i>NextToken</i>
+     * request and response parameters. If more results are available, the
+     * <i>DescribeDirectoriesResult.NextToken</i> member contains a token that
+     * you pass in the next call to <a>DescribeDirectories</a> to retrieve the
+     * next set of items.
+     * </p>
+     * <p>
+     * You can also specify a maximum number of return results with the
+     * <i>Limit</i> parameter.
+     * </p>
+     * 
+     * @param describeDirectoriesRequest
+     *        Contains the inputs for the <a>DescribeDirectories</a> operation.
+     * @return Result of the DescribeDirectories operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     */
+    DescribeDirectoriesResult describeDirectories(
+            DescribeDirectoriesRequest describeDirectoriesRequest);
+
+    /**
+     * Simplified method form for invoking the DescribeDirectories operation.
+     *
+     * @see #describeDirectories(DescribeDirectoriesRequest)
+     */
+    DescribeDirectoriesResult describeDirectories();
+
+    /**
+     * <p>
+     * Obtains information about the directory snapshots that belong to this
+     * account.
+     * </p>
+     * <p>
+     * This operation supports pagination with the use of the <i>NextToken</i>
+     * request and response parameters. If more results are available, the
+     * <i>DescribeSnapshots.NextToken</i> member contains a token that you pass
+     * in the next call to <a>DescribeSnapshots</a> to retrieve the next set of
+     * items.
+     * </p>
+     * <p>
+     * You can also specify a maximum number of return results with the
+     * <i>Limit</i> parameter.
+     * </p>
+     * 
+     * @param describeSnapshotsRequest
+     *        Contains the inputs for the <a>DescribeSnapshots</a> operation.
+     * @return Result of the DescribeSnapshots operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     */
+    DescribeSnapshotsResult describeSnapshots(
+            DescribeSnapshotsRequest describeSnapshotsRequest);
+
+    /**
+     * Simplified method form for invoking the DescribeSnapshots operation.
+     *
+     * @see #describeSnapshots(DescribeSnapshotsRequest)
+     */
+    DescribeSnapshotsResult describeSnapshots();
+
+    /**
+     * <p>
+     * Disables multi-factor authentication (MFA) with Remote Authentication
+     * Dial In User Service (RADIUS) for an AD Connector directory.
+     * </p>
+     * 
+     * @param disableRadiusRequest
+     *        Contains the inputs for the <a>DisableRadius</a> operation.
+     * @return Result of the DisableRadius operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     */
+    DisableRadiusResult disableRadius(DisableRadiusRequest disableRadiusRequest);
 
     /**
      * <p>
      * Disables single-sign on for a directory.
      * </p>
-     *
-     * @param disableSsoRequest Container for the necessary parameters to
-     *           execute the DisableSso service method on AWSDirectoryService.
      * 
-     * @return The response from the DisableSso service method, as returned
-     *         by AWSDirectoryService.
-     * 
+     * @param disableSsoRequest
+     *        Contains the inputs for the <a>DisableSso</a> operation.
+     * @return Result of the DisableSso operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
      * @throws InsufficientPermissionsException
-     * @throws EntityDoesNotExistException
-     * @throws ServiceException
+     *         The account does not have sufficient permission to perform the
+     *         operation.
      * @throws AuthenticationFailedException
+     *         An authentication error occurred.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
      */
-    public DisableSsoResult disableSso(DisableSsoRequest disableSsoRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DisableSsoResult disableSso(DisableSsoRequest disableSsoRequest);
 
     /**
      * <p>
-     * Enables multi-factor authentication (MFA) with Remote Authentication
-     * Dial In User Service (RADIUS) for an AD Connector directory.
+     * Enables multi-factor authentication (MFA) with Remote Authentication Dial
+     * In User Service (RADIUS) for an AD Connector directory.
      * </p>
-     *
-     * @param enableRadiusRequest Container for the necessary parameters to
-     *           execute the EnableRadius service method on AWSDirectoryService.
      * 
-     * @return The response from the EnableRadius service method, as returned
-     *         by AWSDirectoryService.
-     * 
+     * @param enableRadiusRequest
+     *        Contains the inputs for the <a>EnableRadius</a> operation.
+     * @return Result of the EnableRadius operation returned by the service.
      * @throws InvalidParameterException
-     * @throws EntityDoesNotExistException
-     * @throws ServiceException
+     *         One or more parameters are not valid.
      * @throws EntityAlreadyExistsException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public EnableRadiusResult enableRadius(EnableRadiusRequest enableRadiusRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a computer account in the specified directory, and joins the
-     * computer to the directory.
-     * </p>
-     *
-     * @param createComputerRequest Container for the necessary parameters to
-     *           execute the CreateComputer service method on AWSDirectoryService.
-     * 
-     * @return The response from the CreateComputer service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws UnsupportedOperationException
-     * @throws InvalidParameterException
+     *         The specified entity already exists.
      * @throws EntityDoesNotExistException
-     * @throws ServiceException
-     * @throws DirectoryUnavailableException
-     * @throws AuthenticationFailedException
-     * @throws EntityAlreadyExistsException
+     *         The specified entity could not be found.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
      */
-    public CreateComputerResult createComputer(CreateComputerRequest createComputerRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    EnableRadiusResult enableRadius(EnableRadiusRequest enableRadiusRequest);
 
     /**
      * <p>
      * Enables single-sign on for a directory.
      * </p>
-     *
-     * @param enableSsoRequest Container for the necessary parameters to
-     *           execute the EnableSso service method on AWSDirectoryService.
      * 
-     * @return The response from the EnableSso service method, as returned by
-     *         AWSDirectoryService.
-     * 
-     * @throws InsufficientPermissionsException
+     * @param enableSsoRequest
+     *        Contains the inputs for the <a>EnableSso</a> operation.
+     * @return Result of the EnableSso operation returned by the service.
      * @throws EntityDoesNotExistException
-     * @throws ServiceException
+     *         The specified entity could not be found.
+     * @throws InsufficientPermissionsException
+     *         The account does not have sufficient permission to perform the
+     *         operation.
      * @throws AuthenticationFailedException
+     *         An authentication error occurred.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
      */
-    public EnableSsoResult enableSso(EnableSsoRequest enableSsoRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    EnableSsoResult enableSso(EnableSsoRequest enableSsoRequest);
 
     /**
      * <p>
-     * Creates a Simple AD directory.
+     * Obtains directory limit information for the current region.
      * </p>
-     *
-     * @param createDirectoryRequest Container for the necessary parameters
-     *           to execute the CreateDirectory service method on AWSDirectoryService.
      * 
-     * @return The response from the CreateDirectory service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws InvalidParameterException
-     * @throws DirectoryLimitExceededException
-     * @throws ServiceException
+     * @param getDirectoryLimitsRequest
+     *        Contains the inputs for the <a>GetDirectoryLimits</a> operation.
+     * @return Result of the GetDirectoryLimits operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
      */
-    public CreateDirectoryResult createDirectory(CreateDirectoryRequest createDirectoryRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    GetDirectoryLimitsResult getDirectoryLimits(
+            GetDirectoryLimitsRequest getDirectoryLimitsRequest);
+
+    /**
+     * Simplified method form for invoking the GetDirectoryLimits operation.
+     *
+     * @see #getDirectoryLimits(GetDirectoryLimitsRequest)
+     */
+    GetDirectoryLimitsResult getDirectoryLimits();
+
+    /**
+     * <p>
+     * Obtains the manual snapshot limits for a directory.
+     * </p>
+     * 
+     * @param getSnapshotLimitsRequest
+     *        Contains the inputs for the <a>GetSnapshotLimits</a> operation.
+     * @return Result of the GetSnapshotLimits operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     */
+    GetSnapshotLimitsResult getSnapshotLimits(
+            GetSnapshotLimitsRequest getSnapshotLimitsRequest);
 
     /**
      * <p>
@@ -527,190 +482,50 @@ public interface AWSDirectoryService {
      * directory after the snapshot date are overwritten.
      * </p>
      * <p>
-     * This action returns as soon as the restore operation is initiated.
-     * You can monitor the progress of the restore operation by calling the
-     * DescribeDirectories operation with the directory identifier. When the
-     * <b>DirectoryDescription.Stage</b> value changes to <code>Active</code>
-     * , the restore operation is complete.
+     * This action returns as soon as the restore operation is initiated. You
+     * can monitor the progress of the restore operation by calling the
+     * <a>DescribeDirectories</a> operation with the directory identifier. When
+     * the <b>DirectoryDescription.Stage</b> value changes to
+     * <code>Active</code>, the restore operation is complete.
      * </p>
-     *
-     * @param restoreFromSnapshotRequest Container for the necessary
-     *           parameters to execute the RestoreFromSnapshot service method on
-     *           AWSDirectoryService.
      * 
-     * @return The response from the RestoreFromSnapshot service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws InvalidParameterException
+     * @param restoreFromSnapshotRequest
+     *        An object representing the inputs for the
+     *        <a>RestoreFromSnapshot</a> operation.
+     * @return Result of the RestoreFromSnapshot operation returned by the
+     *         service.
      * @throws EntityDoesNotExistException
-     * @throws ServiceException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
      */
-    public RestoreFromSnapshotResult restoreFromSnapshot(RestoreFromSnapshotRequest restoreFromSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    RestoreFromSnapshotResult restoreFromSnapshot(
+            RestoreFromSnapshotRequest restoreFromSnapshotRequest);
 
     /**
      * <p>
-     * Disables multi-factor authentication (MFA) with Remote Authentication
-     * Dial In User Service (RADIUS) for an AD Connector directory.
-     * </p>
-     *
-     * @param disableRadiusRequest Container for the necessary parameters to
-     *           execute the DisableRadius service method on AWSDirectoryService.
-     * 
-     * @return The response from the DisableRadius service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws EntityDoesNotExistException
-     * @throws ServiceException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DisableRadiusResult disableRadius(DisableRadiusRequest disableRadiusRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Obtains the manual snapshot limits for a directory.
-     * </p>
-     *
-     * @param getSnapshotLimitsRequest Container for the necessary parameters
-     *           to execute the GetSnapshotLimits service method on
-     *           AWSDirectoryService.
-     * 
-     * @return The response from the GetSnapshotLimits service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws EntityDoesNotExistException
-     * @throws ServiceException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetSnapshotLimitsResult getSnapshotLimits(GetSnapshotLimitsRequest getSnapshotLimitsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Obtains information about the directory snapshots that belong to this
-     * account.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> request and response parameters. If more results are
-     * available, the <i>DescribeSnapshots.NextToken</i> member contains a
-     * token that you pass in the next call to DescribeSnapshots to retrieve
-     * the next set of items.
-     * </p>
-     * <p>
-     * You can also specify a maximum number of return results with the
-     * <i>Limit</i> parameter.
+     * Updates the Remote Authentication Dial In User Service (RADIUS) server
+     * information for an AD Connector directory.
      * </p>
      * 
-     * @return The response from the DescribeSnapshots service method, as
-     *         returned by AWSDirectoryService.
-     * 
+     * @param updateRadiusRequest
+     *        Contains the inputs for the <a>UpdateRadius</a> operation.
+     * @return Result of the UpdateRadius operation returned by the service.
      * @throws InvalidParameterException
-     * @throws InvalidNextTokenException
+     *         One or more parameters are not valid.
      * @throws EntityDoesNotExistException
-     * @throws ServiceException
+     *         The specified entity could not be found.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeSnapshotsResult describeSnapshots() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Obtains information about the directories that belong to this
-     * account.
-     * </p>
-     * <p>
-     * You can retrieve information about specific directories by passing
-     * the directory identifiers in the <i>DirectoryIds</i> parameter.
-     * Otherwise, all directories that belong to the current account are
-     * returned.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> request and response parameters. If more results are
-     * available, the <i>DescribeDirectoriesResult.NextToken</i> member
-     * contains a token that you pass in the next call to DescribeDirectories
-     * to retrieve the next set of items.
-     * </p>
-     * <p>
-     * You can also specify a maximum number of return results with the
-     * <i>Limit</i> parameter.
-     * </p>
-     * 
-     * @return The response from the DescribeDirectories service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws InvalidParameterException
-     * @throws InvalidNextTokenException
-     * @throws EntityDoesNotExistException
+     *         A client exception has occurred.
      * @throws ServiceException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         An exception has occurred in AWS Directory Service.
      */
-    public DescribeDirectoriesResult describeDirectories() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Obtains directory limit information for the current region.
-     * </p>
-     * 
-     * @return The response from the GetDirectoryLimits service method, as
-     *         returned by AWSDirectoryService.
-     * 
-     * @throws EntityDoesNotExistException
-     * @throws ServiceException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSDirectoryService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetDirectoryLimitsResult getDirectoryLimits() throws AmazonServiceException, AmazonClientException;
-    
+    UpdateRadiusResult updateRadius(UpdateRadiusRequest updateRadiusRequest);
+
     /**
      * Shuts down this client object, releasing any resources that might be held
      * open. This is an optional method, and callers are not expected to call
@@ -718,24 +533,25 @@ public interface AWSDirectoryService {
      * client has been shutdown, it should not be used to make any more
      * requests.
      */
-    public void shutdown();
-    
+    void shutdown();
+
     /**
-     * Returns additional metadata for a previously executed successful request, typically used for
-     * debugging issues where a service isn't acting as expected.  This data isn't considered part
-     * of the result data returned by an operation, so it's available through this separate,
-     * diagnostic interface.
+     * Returns additional metadata for a previously executed successful request,
+     * typically used for debugging issues where a service isn't acting as
+     * expected. This data isn't considered part of the result data returned by
+     * an operation, so it's available through this separate, diagnostic
+     * interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you need to access
-     * this extra diagnostic information for an executed request, you should use this method
-     * to retrieve it as soon as possible after executing a request.
+     * Response metadata is only cached for a limited period of time, so if you
+     * need to access this extra diagnostic information for an executed request,
+     * you should use this method to retrieve it as soon as possible after
+     * executing a request.
      *
      * @param request
-     *            The originally executed request.
+     *        The originally executed request.
      *
      * @return The response metadata for the specified request, or null if none
      *         is available.
      */
-    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+    ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 }
-        

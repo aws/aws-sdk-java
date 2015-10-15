@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,9 +28,11 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Connection JSON Unmarshaller
  */
-public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, JsonUnmarshallerContext> {
+public class ConnectionJsonUnmarshaller implements
+        Unmarshaller<Connection, JsonUnmarshallerContext> {
 
-    public Connection unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public Connection unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         Connection connection = new Connection();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,65 +40,80 @@ public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, Json
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ownerAccount", targetDepth)) {
                     context.nextToken();
-                    connection.setOwnerAccount(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    connection.setOwnerAccount(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("connectionId", targetDepth)) {
                     context.nextToken();
-                    connection.setConnectionId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    connection.setConnectionId(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("connectionName", targetDepth)) {
                     context.nextToken();
-                    connection.setConnectionName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    connection.setConnectionName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("connectionState", targetDepth)) {
                     context.nextToken();
-                    connection.setConnectionState(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    connection.setConnectionState(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
                     context.nextToken();
-                    connection.setRegion(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    connection.setRegion(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
-                    connection.setLocation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    connection.setLocation(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("bandwidth", targetDepth)) {
                     context.nextToken();
-                    connection.setBandwidth(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    connection.setBandwidth(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vlan", targetDepth)) {
                     context.nextToken();
-                    connection.setVlan(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    connection.setVlan(IntegerJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("partnerName", targetDepth)) {
                     context.nextToken();
-                    connection.setPartnerName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    connection.setPartnerName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return connection;
     }
 
     private static ConnectionJsonUnmarshaller instance;
+
     public static ConnectionJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new ConnectionJsonUnmarshaller();
+        if (instance == null)
+            instance = new ConnectionJsonUnmarshaller();
         return instance;
     }
 }
-    

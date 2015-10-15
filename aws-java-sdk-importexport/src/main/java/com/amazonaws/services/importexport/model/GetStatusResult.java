@@ -55,29 +55,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Artifact> artifactList;
 
     /**
-     * Sets the value of the JobId property for this object.
-     * 
      * @param jobId
-     *        The new value for the JobId property for this object.
      */
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
 
     /**
-     * Returns the value of the JobId property for this object.
-     * 
-     * @return The value of the JobId property for this object.
+     * @return
      */
     public String getJobId() {
         return this.jobId;
     }
 
     /**
-     * Sets the value of the JobId property for this object.
-     * 
      * @param jobId
-     *        The new value for the JobId property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -87,10 +79,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @see JobType
      */
     public void setJobType(String jobType) {
@@ -98,9 +87,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the JobType property for this object.
-     * 
-     * @return The value of the JobType property for this object.
+     * @return
      * @see JobType
      */
     public String getJobType() {
@@ -108,10 +95,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType
@@ -122,10 +106,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType
@@ -135,10 +116,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType
@@ -149,29 +127,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the LocationCode property for this object.
-     * 
      * @param locationCode
-     *        The new value for the LocationCode property for this object.
      */
     public void setLocationCode(String locationCode) {
         this.locationCode = locationCode;
     }
 
     /**
-     * Returns the value of the LocationCode property for this object.
-     * 
-     * @return The value of the LocationCode property for this object.
+     * @return
      */
     public String getLocationCode() {
         return this.locationCode;
     }
 
     /**
-     * Sets the value of the LocationCode property for this object.
-     * 
      * @param locationCode
-     *        The new value for the LocationCode property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -181,29 +151,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the LocationMessage property for this object.
-     * 
      * @param locationMessage
-     *        The new value for the LocationMessage property for this object.
      */
     public void setLocationMessage(String locationMessage) {
         this.locationMessage = locationMessage;
     }
 
     /**
-     * Returns the value of the LocationMessage property for this object.
-     * 
-     * @return The value of the LocationMessage property for this object.
+     * @return
      */
     public String getLocationMessage() {
         return this.locationMessage;
     }
 
     /**
-     * Sets the value of the LocationMessage property for this object.
-     * 
      * @param locationMessage
-     *        The new value for the LocationMessage property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -213,29 +175,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ProgressCode property for this object.
-     * 
      * @param progressCode
-     *        The new value for the ProgressCode property for this object.
      */
     public void setProgressCode(String progressCode) {
         this.progressCode = progressCode;
     }
 
     /**
-     * Returns the value of the ProgressCode property for this object.
-     * 
-     * @return The value of the ProgressCode property for this object.
+     * @return
      */
     public String getProgressCode() {
         return this.progressCode;
     }
 
     /**
-     * Sets the value of the ProgressCode property for this object.
-     * 
      * @param progressCode
-     *        The new value for the ProgressCode property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -245,29 +199,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ProgressMessage property for this object.
-     * 
      * @param progressMessage
-     *        The new value for the ProgressMessage property for this object.
      */
     public void setProgressMessage(String progressMessage) {
         this.progressMessage = progressMessage;
     }
 
     /**
-     * Returns the value of the ProgressMessage property for this object.
-     * 
-     * @return The value of the ProgressMessage property for this object.
+     * @return
      */
     public String getProgressMessage() {
         return this.progressMessage;
     }
 
     /**
-     * Sets the value of the ProgressMessage property for this object.
-     * 
      * @param progressMessage
-     *        The new value for the ProgressMessage property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -277,29 +223,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Carrier property for this object.
-     * 
      * @param carrier
-     *        The new value for the Carrier property for this object.
      */
     public void setCarrier(String carrier) {
         this.carrier = carrier;
     }
 
     /**
-     * Returns the value of the Carrier property for this object.
-     * 
-     * @return The value of the Carrier property for this object.
+     * @return
      */
     public String getCarrier() {
         return this.carrier;
     }
 
     /**
-     * Sets the value of the Carrier property for this object.
-     * 
      * @param carrier
-     *        The new value for the Carrier property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -309,29 +247,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the TrackingNumber property for this object.
-     * 
      * @param trackingNumber
-     *        The new value for the TrackingNumber property for this object.
      */
     public void setTrackingNumber(String trackingNumber) {
         this.trackingNumber = trackingNumber;
     }
 
     /**
-     * Returns the value of the TrackingNumber property for this object.
-     * 
-     * @return The value of the TrackingNumber property for this object.
+     * @return
      */
     public String getTrackingNumber() {
         return this.trackingNumber;
     }
 
     /**
-     * Sets the value of the TrackingNumber property for this object.
-     * 
      * @param trackingNumber
-     *        The new value for the TrackingNumber property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -341,29 +271,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the LogBucket property for this object.
-     * 
      * @param logBucket
-     *        The new value for the LogBucket property for this object.
      */
     public void setLogBucket(String logBucket) {
         this.logBucket = logBucket;
     }
 
     /**
-     * Returns the value of the LogBucket property for this object.
-     * 
-     * @return The value of the LogBucket property for this object.
+     * @return
      */
     public String getLogBucket() {
         return this.logBucket;
     }
 
     /**
-     * Sets the value of the LogBucket property for this object.
-     * 
      * @param logBucket
-     *        The new value for the LogBucket property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -373,29 +295,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the LogKey property for this object.
-     * 
      * @param logKey
-     *        The new value for the LogKey property for this object.
      */
     public void setLogKey(String logKey) {
         this.logKey = logKey;
     }
 
     /**
-     * Returns the value of the LogKey property for this object.
-     * 
-     * @return The value of the LogKey property for this object.
+     * @return
      */
     public String getLogKey() {
         return this.logKey;
     }
 
     /**
-     * Sets the value of the LogKey property for this object.
-     * 
      * @param logKey
-     *        The new value for the LogKey property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -405,29 +319,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ErrorCount property for this object.
-     * 
      * @param errorCount
-     *        The new value for the ErrorCount property for this object.
      */
     public void setErrorCount(Integer errorCount) {
         this.errorCount = errorCount;
     }
 
     /**
-     * Returns the value of the ErrorCount property for this object.
-     * 
-     * @return The value of the ErrorCount property for this object.
+     * @return
      */
     public Integer getErrorCount() {
         return this.errorCount;
     }
 
     /**
-     * Sets the value of the ErrorCount property for this object.
-     * 
      * @param errorCount
-     *        The new value for the ErrorCount property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -437,29 +343,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Signature property for this object.
-     * 
      * @param signature
-     *        The new value for the Signature property for this object.
      */
     public void setSignature(String signature) {
         this.signature = signature;
     }
 
     /**
-     * Returns the value of the Signature property for this object.
-     * 
-     * @return The value of the Signature property for this object.
+     * @return
      */
     public String getSignature() {
         return this.signature;
     }
 
     /**
-     * Sets the value of the Signature property for this object.
-     * 
      * @param signature
-     *        The new value for the Signature property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -469,31 +367,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the SignatureFileContents property for this object.
-     * 
      * @param signatureFileContents
-     *        The new value for the SignatureFileContents property for this
-     *        object.
      */
     public void setSignatureFileContents(String signatureFileContents) {
         this.signatureFileContents = signatureFileContents;
     }
 
     /**
-     * Returns the value of the SignatureFileContents property for this object.
-     * 
-     * @return The value of the SignatureFileContents property for this object.
+     * @return
      */
     public String getSignatureFileContents() {
         return this.signatureFileContents;
     }
 
     /**
-     * Sets the value of the SignatureFileContents property for this object.
-     * 
      * @param signatureFileContents
-     *        The new value for the SignatureFileContents property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -504,29 +392,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the CurrentManifest property for this object.
-     * 
      * @param currentManifest
-     *        The new value for the CurrentManifest property for this object.
      */
     public void setCurrentManifest(String currentManifest) {
         this.currentManifest = currentManifest;
     }
 
     /**
-     * Returns the value of the CurrentManifest property for this object.
-     * 
-     * @return The value of the CurrentManifest property for this object.
+     * @return
      */
     public String getCurrentManifest() {
         return this.currentManifest;
     }
 
     /**
-     * Sets the value of the CurrentManifest property for this object.
-     * 
      * @param currentManifest
-     *        The new value for the CurrentManifest property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -536,29 +416,21 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the CreationDate property for this object.
-     * 
      * @param creationDate
-     *        The new value for the CreationDate property for this object.
      */
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
 
     /**
-     * Returns the value of the CreationDate property for this object.
-     * 
-     * @return The value of the CreationDate property for this object.
+     * @return
      */
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
 
     /**
-     * Sets the value of the CreationDate property for this object.
-     * 
      * @param creationDate
-     *        The new value for the CreationDate property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -568,9 +440,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the ArtifactList property for this object.
-     * 
-     * @return The value of the ArtifactList property for this object.
+     * @return
      */
     public java.util.List<Artifact> getArtifactList() {
         if (artifactList == null) {
@@ -580,10 +450,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ArtifactList property for this object.
-     * 
      * @param artifactList
-     *        The new value for the ArtifactList property for this object.
      */
     public void setArtifactList(java.util.Collection<Artifact> artifactList) {
         if (artifactList == null) {
@@ -596,7 +463,6 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ArtifactList property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setArtifactList(java.util.Collection)} or
@@ -605,7 +471,6 @@ public class GetStatusResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param artifactList
-     *        The new value for the ArtifactList property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -621,10 +486,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ArtifactList property for this object.
-     * 
      * @param artifactList
-     *        The new value for the ArtifactList property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

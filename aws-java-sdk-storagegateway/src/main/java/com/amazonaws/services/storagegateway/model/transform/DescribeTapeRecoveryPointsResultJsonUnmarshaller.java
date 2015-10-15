@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Describe Tape Recovery Points Result JSON Unmarshaller
+ * DescribeTapeRecoveryPointsResult JSON Unmarshaller
  */
-public class DescribeTapeRecoveryPointsResultJsonUnmarshaller implements Unmarshaller<DescribeTapeRecoveryPointsResult, JsonUnmarshallerContext> {
+public class DescribeTapeRecoveryPointsResultJsonUnmarshaller implements
+        Unmarshaller<DescribeTapeRecoveryPointsResult, JsonUnmarshallerContext> {
 
-    public DescribeTapeRecoveryPointsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public DescribeTapeRecoveryPointsResult unmarshall(
+            JsonUnmarshallerContext context) throws Exception {
         DescribeTapeRecoveryPointsResult describeTapeRecoveryPointsResult = new DescribeTapeRecoveryPointsResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,41 +40,55 @@ public class DescribeTapeRecoveryPointsResultJsonUnmarshaller implements Unmarsh
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
-                    describeTapeRecoveryPointsResult.setGatewayARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    describeTapeRecoveryPointsResult
+                            .setGatewayARN(StringJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
                 }
-                if (context.testExpression("TapeRecoveryPointInfos", targetDepth)) {
+                if (context.testExpression("TapeRecoveryPointInfos",
+                        targetDepth)) {
                     context.nextToken();
-                    describeTapeRecoveryPointsResult.setTapeRecoveryPointInfos(new ListUnmarshaller<TapeRecoveryPointInfo>(TapeRecoveryPointInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTapeRecoveryPointsResult
+                            .setTapeRecoveryPointInfos(new ListUnmarshaller<TapeRecoveryPointInfo>(
+                                    TapeRecoveryPointInfoJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();
-                    describeTapeRecoveryPointsResult.setMarker(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    describeTapeRecoveryPointsResult
+                            .setMarker(StringJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return describeTapeRecoveryPointsResult;
     }
 
     private static DescribeTapeRecoveryPointsResultJsonUnmarshaller instance;
+
     public static DescribeTapeRecoveryPointsResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new DescribeTapeRecoveryPointsResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new DescribeTapeRecoveryPointsResultJsonUnmarshaller();
         return instance;
     }
 }
-    

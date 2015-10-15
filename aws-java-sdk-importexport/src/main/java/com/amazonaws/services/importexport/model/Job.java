@@ -31,29 +31,21 @@ public class Job implements Serializable, Cloneable {
     private String jobType;
 
     /**
-     * Sets the value of the JobId property for this object.
-     * 
      * @param jobId
-     *        The new value for the JobId property for this object.
      */
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
 
     /**
-     * Returns the value of the JobId property for this object.
-     * 
-     * @return The value of the JobId property for this object.
+     * @return
      */
     public String getJobId() {
         return this.jobId;
     }
 
     /**
-     * Sets the value of the JobId property for this object.
-     * 
      * @param jobId
-     *        The new value for the JobId property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -63,29 +55,21 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the CreationDate property for this object.
-     * 
      * @param creationDate
-     *        The new value for the CreationDate property for this object.
      */
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
 
     /**
-     * Returns the value of the CreationDate property for this object.
-     * 
-     * @return The value of the CreationDate property for this object.
+     * @return
      */
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
 
     /**
-     * Sets the value of the CreationDate property for this object.
-     * 
      * @param creationDate
-     *        The new value for the CreationDate property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -95,29 +79,21 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the IsCanceled property for this object.
-     * 
      * @param isCanceled
-     *        The new value for the IsCanceled property for this object.
      */
     public void setIsCanceled(Boolean isCanceled) {
         this.isCanceled = isCanceled;
     }
 
     /**
-     * Returns the value of the IsCanceled property for this object.
-     * 
-     * @return The value of the IsCanceled property for this object.
+     * @return
      */
     public Boolean getIsCanceled() {
         return this.isCanceled;
     }
 
     /**
-     * Sets the value of the IsCanceled property for this object.
-     * 
      * @param isCanceled
-     *        The new value for the IsCanceled property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -127,19 +103,14 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the IsCanceled property for this object.
-     * 
-     * @return The value of the IsCanceled property for this object.
+     * @return
      */
     public Boolean isCanceled() {
         return this.isCanceled;
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @see JobType
      */
     public void setJobType(String jobType) {
@@ -147,9 +118,7 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the JobType property for this object.
-     * 
-     * @return The value of the JobType property for this object.
+     * @return
      * @see JobType
      */
     public String getJobType() {
@@ -157,10 +126,7 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType
@@ -171,10 +137,7 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType
@@ -184,10 +147,7 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType

@@ -798,29 +798,21 @@ public class Device implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Resolution property for this object.
-     * 
      * @param resolution
-     *        The new value for the Resolution property for this object.
      */
     public void setResolution(Resolution resolution) {
         this.resolution = resolution;
     }
 
     /**
-     * Returns the value of the Resolution property for this object.
-     * 
-     * @return The value of the Resolution property for this object.
+     * @return
      */
     public Resolution getResolution() {
         return this.resolution;
     }
 
     /**
-     * Sets the value of the Resolution property for this object.
-     * 
      * @param resolution
-     *        The new value for the Resolution property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

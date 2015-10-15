@@ -140,29 +140,21 @@ public class PutThirdPartyJobFailureResultRequest extends
     }
 
     /**
-     * Sets the value of the FailureDetails property for this object.
-     * 
      * @param failureDetails
-     *        The new value for the FailureDetails property for this object.
      */
     public void setFailureDetails(FailureDetails failureDetails) {
         this.failureDetails = failureDetails;
     }
 
     /**
-     * Returns the value of the FailureDetails property for this object.
-     * 
-     * @return The value of the FailureDetails property for this object.
+     * @return
      */
     public FailureDetails getFailureDetails() {
         return this.failureDetails;
     }
 
     /**
-     * Sets the value of the FailureDetails property for this object.
-     * 
      * @param failureDetails
-     *        The new value for the FailureDetails property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

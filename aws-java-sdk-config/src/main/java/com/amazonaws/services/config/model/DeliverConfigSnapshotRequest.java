@@ -1,99 +1,77 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.config.AmazonConfig#deliverConfigSnapshot(DeliverConfigSnapshotRequest) DeliverConfigSnapshot operation}.
  * <p>
- * Schedules delivery of a configuration snapshot to the Amazon S3 bucket
- * in the specified delivery channel. After the delivery has started, AWS
- * Config sends following notifications using an Amazon SNS topic that
- * you have specified.
+ * The input for the <a>DeliverConfigSnapshot</a> action.
  * </p>
- * 
- * <ul>
- * <li>Notification of starting the delivery.</li>
- * <li>Notification of delivery completed, if the delivery was
- * successfully completed.</li>
- * <li>Notification of delivery failure, if the delivery failed to
- * complete.</li>
- * 
- * </ul>
- *
- * @see com.amazonaws.services.config.AmazonConfig#deliverConfigSnapshot(DeliverConfigSnapshotRequest)
  */
-public class DeliverConfigSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DeliverConfigSnapshotRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
-     * The name of the delivery channel through which the snapshot is
-     * delivered.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * The name of the delivery channel through which the snapshot is delivered.
+     * </p>
      */
     private String deliveryChannelName;
 
     /**
-     * The name of the delivery channel through which the snapshot is
-     * delivered.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @return The name of the delivery channel through which the snapshot is
-     *         delivered.
-     */
-    public String getDeliveryChannelName() {
-        return deliveryChannelName;
-    }
-    
-    /**
-     * The name of the delivery channel through which the snapshot is
-     * delivered.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param deliveryChannelName The name of the delivery channel through which the snapshot is
-     *         delivered.
+     * The name of the delivery channel through which the snapshot is delivered.
+     * </p>
+     * 
+     * @param deliveryChannelName
+     *        The name of the delivery channel through which the snapshot is
+     *        delivered.
      */
     public void setDeliveryChannelName(String deliveryChannelName) {
         this.deliveryChannelName = deliveryChannelName;
     }
-    
+
     /**
-     * The name of the delivery channel through which the snapshot is
-     * delivered.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param deliveryChannelName The name of the delivery channel through which the snapshot is
+     * The name of the delivery channel through which the snapshot is delivered.
+     * </p>
+     * 
+     * @return The name of the delivery channel through which the snapshot is
      *         delivered.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public DeliverConfigSnapshotRequest withDeliveryChannelName(String deliveryChannelName) {
-        this.deliveryChannelName = deliveryChannelName;
+    public String getDeliveryChannelName() {
+        return this.deliveryChannelName;
+    }
+
+    /**
+     * <p>
+     * The name of the delivery channel through which the snapshot is delivered.
+     * </p>
+     * 
+     * @param deliveryChannelName
+     *        The name of the delivery channel through which the snapshot is
+     *        delivered.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DeliverConfigSnapshotRequest withDeliveryChannelName(
+            String deliveryChannelName) {
+        setDeliveryChannelName(deliveryChannelName);
         return this;
     }
 
@@ -109,38 +87,46 @@ public class DeliverConfigSnapshotRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDeliveryChannelName() != null) sb.append("DeliveryChannelName: " + getDeliveryChannelName() );
+        if (getDeliveryChannelName() != null)
+            sb.append("DeliveryChannelName: " + getDeliveryChannelName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DeliverConfigSnapshotRequest == false)
+            return false;
+        DeliverConfigSnapshotRequest other = (DeliverConfigSnapshotRequest) obj;
+        if (other.getDeliveryChannelName() == null
+                ^ this.getDeliveryChannelName() == null)
+            return false;
+        if (other.getDeliveryChannelName() != null
+                && other.getDeliveryChannelName().equals(
+                        this.getDeliveryChannelName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDeliveryChannelName() == null) ? 0 : getDeliveryChannelName().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDeliveryChannelName() == null) ? 0
+                        : getDeliveryChannelName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DeliverConfigSnapshotRequest == false) return false;
-        DeliverConfigSnapshotRequest other = (DeliverConfigSnapshotRequest)obj;
-        
-        if (other.getDeliveryChannelName() == null ^ this.getDeliveryChannelName() == null) return false;
-        if (other.getDeliveryChannelName() != null && other.getDeliveryChannelName().equals(this.getDeliveryChannelName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DeliverConfigSnapshotRequest clone() {
-        
-            return (DeliverConfigSnapshotRequest) super.clone();
+        return (DeliverConfigSnapshotRequest) super.clone();
     }
-
 }
-    

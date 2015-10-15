@@ -28,8 +28,8 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNames;
 
     /**
-     * If <code>Truncated</code> is true, this value is present and contains
-     * the value to use for the <code>Marker</code> request parameter in a
+     * When <code>Truncated</code> is true, this value is present and
+     * contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
@@ -40,9 +40,9 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
 
     /**
      * A flag that indicates whether there are more items in the list. If
-     * your results were truncated, you can make a subsequent pagination
-     * request using the <code>Marker</code> request parameter to retrieve
-     * more policies in the list.
+     * your results were truncated, you can use the <code>Marker</code>
+     * parameter to make a subsequent pagination request to retrieve more
+     * items in the list.
      */
     private Boolean truncated;
 
@@ -128,16 +128,16 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>Truncated</code> is true, this value is present and contains
-     * the value to use for the <code>Marker</code> request parameter in a
+     * When <code>Truncated</code> is true, this value is present and
+     * contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
-     * @return If <code>Truncated</code> is true, this value is present and contains
-     *         the value to use for the <code>Marker</code> request parameter in a
+     * @return When <code>Truncated</code> is true, this value is present and
+     *         contains the value to use for the <code>Marker</code> parameter in a
      *         subsequent pagination request.
      */
     public String getNextMarker() {
@@ -145,16 +145,16 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
     }
     
     /**
-     * If <code>Truncated</code> is true, this value is present and contains
-     * the value to use for the <code>Marker</code> request parameter in a
+     * When <code>Truncated</code> is true, this value is present and
+     * contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
-     * @param nextMarker If <code>Truncated</code> is true, this value is present and contains
-     *         the value to use for the <code>Marker</code> request parameter in a
+     * @param nextMarker When <code>Truncated</code> is true, this value is present and
+     *         contains the value to use for the <code>Marker</code> parameter in a
      *         subsequent pagination request.
      */
     public void setNextMarker(String nextMarker) {
@@ -162,8 +162,8 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
     }
     
     /**
-     * If <code>Truncated</code> is true, this value is present and contains
-     * the value to use for the <code>Marker</code> request parameter in a
+     * When <code>Truncated</code> is true, this value is present and
+     * contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -172,8 +172,8 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
-     * @param nextMarker If <code>Truncated</code> is true, this value is present and contains
-     *         the value to use for the <code>Marker</code> request parameter in a
+     * @param nextMarker When <code>Truncated</code> is true, this value is present and
+     *         contains the value to use for the <code>Marker</code> parameter in a
      *         subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -186,14 +186,14 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
 
     /**
      * A flag that indicates whether there are more items in the list. If
-     * your results were truncated, you can make a subsequent pagination
-     * request using the <code>Marker</code> request parameter to retrieve
-     * more policies in the list.
+     * your results were truncated, you can use the <code>Marker</code>
+     * parameter to make a subsequent pagination request to retrieve more
+     * items in the list.
      *
      * @return A flag that indicates whether there are more items in the list. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to retrieve
-     *         more policies in the list.
+     *         your results were truncated, you can use the <code>Marker</code>
+     *         parameter to make a subsequent pagination request to retrieve more
+     *         items in the list.
      */
     public Boolean isTruncated() {
         return truncated;
@@ -201,14 +201,14 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
     
     /**
      * A flag that indicates whether there are more items in the list. If
-     * your results were truncated, you can make a subsequent pagination
-     * request using the <code>Marker</code> request parameter to retrieve
-     * more policies in the list.
+     * your results were truncated, you can use the <code>Marker</code>
+     * parameter to make a subsequent pagination request to retrieve more
+     * items in the list.
      *
      * @param truncated A flag that indicates whether there are more items in the list. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to retrieve
-     *         more policies in the list.
+     *         your results were truncated, you can use the <code>Marker</code>
+     *         parameter to make a subsequent pagination request to retrieve more
+     *         items in the list.
      */
     public void setTruncated(Boolean truncated) {
         this.truncated = truncated;
@@ -216,16 +216,16 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
     
     /**
      * A flag that indicates whether there are more items in the list. If
-     * your results were truncated, you can make a subsequent pagination
-     * request using the <code>Marker</code> request parameter to retrieve
-     * more policies in the list.
+     * your results were truncated, you can use the <code>Marker</code>
+     * parameter to make a subsequent pagination request to retrieve more
+     * items in the list.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param truncated A flag that indicates whether there are more items in the list. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to retrieve
-     *         more policies in the list.
+     *         your results were truncated, you can use the <code>Marker</code>
+     *         parameter to make a subsequent pagination request to retrieve more
+     *         items in the list.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -237,14 +237,14 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
 
     /**
      * A flag that indicates whether there are more items in the list. If
-     * your results were truncated, you can make a subsequent pagination
-     * request using the <code>Marker</code> request parameter to retrieve
-     * more policies in the list.
+     * your results were truncated, you can use the <code>Marker</code>
+     * parameter to make a subsequent pagination request to retrieve more
+     * items in the list.
      *
      * @return A flag that indicates whether there are more items in the list. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to retrieve
-     *         more policies in the list.
+     *         your results were truncated, you can use the <code>Marker</code>
+     *         parameter to make a subsequent pagination request to retrieve more
+     *         items in the list.
      */
     public Boolean getTruncated() {
         return truncated;

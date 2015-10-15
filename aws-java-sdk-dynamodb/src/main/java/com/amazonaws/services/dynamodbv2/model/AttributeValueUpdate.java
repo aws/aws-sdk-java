@@ -417,29 +417,21 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Value property for this object.
-     * 
      * @param value
-     *        The new value for the Value property for this object.
      */
     public void setValue(AttributeValue value) {
         this.value = value;
     }
 
     /**
-     * Returns the value of the Value property for this object.
-     * 
-     * @return The value of the Value property for this object.
+     * @return
      */
     public AttributeValue getValue() {
         return this.value;
     }
 
     /**
-     * Sets the value of the Value property for this object.
-     * 
      * @param value
-     *        The new value for the Value property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

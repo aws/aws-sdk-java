@@ -73,6 +73,8 @@ import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
+import com.amazonaws.services.s3.model.HeadBucketRequest;
+import com.amazonaws.services.s3.model.HeadBucketResult;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketsRequest;
@@ -957,6 +959,27 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     public boolean doesBucketExist(String bucketName)
         throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Performs a head bucket operation on the requested bucket name. This operation is useful to
+     * determine if a bucket exists and you have permission to access it.
+     *
+     * @param headBucketRequest
+     *            The request containing the bucket name.
+     * @return This method returns a {@link HeadBucketResult} if the bucket exists and you have
+     *         permission to access it. Otherwise, the method will throw an
+     *         {@link AmazonServiceException} with status code {@code '404 Not Found'} if the bucket
+     *         does not exist, {@code '403 Forbidden'} if the user does not have access to the
+     *         bucket, or {@code '301 Moved Permanently'} if the bucket is in a different region
+     *         than the client is configured with
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the request or handling
+     *             the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the request.
+     */
+    public HeadBucketResult headBucket(HeadBucketRequest headBucketRequest)
+            throws AmazonClientException, AmazonServiceException;
 
     /**
      * <p>

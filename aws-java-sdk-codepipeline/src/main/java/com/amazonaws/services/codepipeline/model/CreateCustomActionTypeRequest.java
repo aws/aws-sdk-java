@@ -238,29 +238,21 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Sets the value of the Settings property for this object.
-     * 
      * @param settings
-     *        The new value for the Settings property for this object.
      */
     public void setSettings(ActionTypeSettings settings) {
         this.settings = settings;
     }
 
     /**
-     * Returns the value of the Settings property for this object.
-     * 
-     * @return The value of the Settings property for this object.
+     * @return
      */
     public ActionTypeSettings getSettings() {
         return this.settings;
     }
 
     /**
-     * Sets the value of the Settings property for this object.
-     * 
      * @param settings
-     *        The new value for the Settings property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -345,31 +337,21 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Sets the value of the InputArtifactDetails property for this object.
-     * 
      * @param inputArtifactDetails
-     *        The new value for the InputArtifactDetails property for this
-     *        object.
      */
     public void setInputArtifactDetails(ArtifactDetails inputArtifactDetails) {
         this.inputArtifactDetails = inputArtifactDetails;
     }
 
     /**
-     * Returns the value of the InputArtifactDetails property for this object.
-     * 
-     * @return The value of the InputArtifactDetails property for this object.
+     * @return
      */
     public ArtifactDetails getInputArtifactDetails() {
         return this.inputArtifactDetails;
     }
 
     /**
-     * Sets the value of the InputArtifactDetails property for this object.
-     * 
      * @param inputArtifactDetails
-     *        The new value for the InputArtifactDetails property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -380,31 +362,21 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Sets the value of the OutputArtifactDetails property for this object.
-     * 
      * @param outputArtifactDetails
-     *        The new value for the OutputArtifactDetails property for this
-     *        object.
      */
     public void setOutputArtifactDetails(ArtifactDetails outputArtifactDetails) {
         this.outputArtifactDetails = outputArtifactDetails;
     }
 
     /**
-     * Returns the value of the OutputArtifactDetails property for this object.
-     * 
-     * @return The value of the OutputArtifactDetails property for this object.
+     * @return
      */
     public ArtifactDetails getOutputArtifactDetails() {
         return this.outputArtifactDetails;
     }
 
     /**
-     * Sets the value of the OutputArtifactDetails property for this object.
-     * 
      * @param outputArtifactDetails
-     *        The new value for the OutputArtifactDetails property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

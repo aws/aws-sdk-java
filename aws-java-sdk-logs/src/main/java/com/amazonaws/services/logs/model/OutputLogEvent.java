@@ -29,29 +29,21 @@ public class OutputLogEvent implements Serializable, Cloneable {
     private Long ingestionTime;
 
     /**
-     * Sets the value of the Timestamp property for this object.
-     * 
      * @param timestamp
-     *        The new value for the Timestamp property for this object.
      */
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
 
     /**
-     * Returns the value of the Timestamp property for this object.
-     * 
-     * @return The value of the Timestamp property for this object.
+     * @return
      */
     public Long getTimestamp() {
         return this.timestamp;
     }
 
     /**
-     * Sets the value of the Timestamp property for this object.
-     * 
      * @param timestamp
-     *        The new value for the Timestamp property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -61,29 +53,21 @@ public class OutputLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Message property for this object.
-     * 
      * @param message
-     *        The new value for the Message property for this object.
      */
     public void setMessage(String message) {
         this.message = message;
     }
 
     /**
-     * Returns the value of the Message property for this object.
-     * 
-     * @return The value of the Message property for this object.
+     * @return
      */
     public String getMessage() {
         return this.message;
     }
 
     /**
-     * Sets the value of the Message property for this object.
-     * 
      * @param message
-     *        The new value for the Message property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -93,29 +77,21 @@ public class OutputLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the IngestionTime property for this object.
-     * 
      * @param ingestionTime
-     *        The new value for the IngestionTime property for this object.
      */
     public void setIngestionTime(Long ingestionTime) {
         this.ingestionTime = ingestionTime;
     }
 
     /**
-     * Returns the value of the IngestionTime property for this object.
-     * 
-     * @return The value of the IngestionTime property for this object.
+     * @return
      */
     public Long getIngestionTime() {
         return this.ingestionTime;
     }
 
     /**
-     * Sets the value of the IngestionTime property for this object.
-     * 
      * @param ingestionTime
-     *        The new value for the IngestionTime property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

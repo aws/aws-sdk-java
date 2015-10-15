@@ -1,80 +1,71 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#deleteLayer(DeleteLayerRequest) DeleteLayer operation}.
- * <p>
- * Deletes a specified layer. You must first stop and then delete all
- * associated instances or unassign registered instances. For more
- * information, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html"> How to Delete a Layer </a>
- * .
- * </p>
- * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must
- * have a Manage permissions level for the stack, or an attached policy
- * that explicitly grants permissions. For more information on user
- * permissions, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
- * .
- * </p>
- *
- * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteLayer(DeleteLayerRequest)
+ * 
  */
-public class DeleteLayerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DeleteLayerRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * The layer ID.
+     * </p>
      */
     private String layerId;
 
     /**
+     * <p>
      * The layer ID.
-     *
-     * @return The layer ID.
-     */
-    public String getLayerId() {
-        return layerId;
-    }
-    
-    /**
-     * The layer ID.
-     *
-     * @param layerId The layer ID.
+     * </p>
+     * 
+     * @param layerId
+     *        The layer ID.
      */
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
-    
+
     /**
-     * The layer ID.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param layerId The layer ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The layer ID.
+     * </p>
+     * 
+     * @return The layer ID.
+     */
+    public String getLayerId() {
+        return this.layerId;
+    }
+
+    /**
+     * <p>
+     * The layer ID.
+     * </p>
+     * 
+     * @param layerId
+     *        The layer ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DeleteLayerRequest withLayerId(String layerId) {
-        this.layerId = layerId;
+        setLayerId(layerId);
         return this;
     }
 
@@ -90,38 +81,42 @@ public class DeleteLayerRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() );
+        if (getLayerId() != null)
+            sb.append("LayerId: " + getLayerId());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DeleteLayerRequest == false)
+            return false;
+        DeleteLayerRequest other = (DeleteLayerRequest) obj;
+        if (other.getLayerId() == null ^ this.getLayerId() == null)
+            return false;
+        if (other.getLayerId() != null
+                && other.getLayerId().equals(this.getLayerId()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getLayerId() == null) ? 0 : getLayerId().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getLayerId() == null) ? 0 : getLayerId().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DeleteLayerRequest == false) return false;
-        DeleteLayerRequest other = (DeleteLayerRequest)obj;
-        
-        if (other.getLayerId() == null ^ this.getLayerId() == null) return false;
-        if (other.getLayerId() != null && other.getLayerId().equals(this.getLayerId()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DeleteLayerRequest clone() {
-        
-            return (DeleteLayerRequest) super.clone();
+        return (DeleteLayerRequest) super.clone();
     }
-
 }
-    

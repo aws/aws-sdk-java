@@ -70,6 +70,8 @@ import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
+import com.amazonaws.services.s3.model.HeadBucketRequest;
+import com.amazonaws.services.s3.model.HeadBucketResult;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketsRequest;
@@ -233,6 +235,12 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public boolean doesBucketExist(String bucketName)
+            throws AmazonClientException, AmazonServiceException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public HeadBucketResult headBucket(HeadBucketRequest headBucketRequest)
             throws AmazonClientException, AmazonServiceException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }

@@ -27,29 +27,21 @@ public class GetJobResult implements Serializable, Cloneable {
     private Job job;
 
     /**
-     * Sets the value of the Job property for this object.
-     * 
      * @param job
-     *        The new value for the Job property for this object.
      */
     public void setJob(Job job) {
         this.job = job;
     }
 
     /**
-     * Returns the value of the Job property for this object.
-     * 
-     * @return The value of the Job property for this object.
+     * @return
      */
     public Job getJob() {
         return this.job;
     }
 
     /**
-     * Sets the value of the Job property for this object.
-     * 
      * @param job
-     *        The new value for the Job property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

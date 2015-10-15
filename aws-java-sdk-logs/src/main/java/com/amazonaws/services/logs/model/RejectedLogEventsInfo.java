@@ -29,33 +29,21 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
     private Integer expiredLogEventEndIndex;
 
     /**
-     * Sets the value of the TooNewLogEventStartIndex property for this object.
-     * 
      * @param tooNewLogEventStartIndex
-     *        The new value for the TooNewLogEventStartIndex property for this
-     *        object.
      */
     public void setTooNewLogEventStartIndex(Integer tooNewLogEventStartIndex) {
         this.tooNewLogEventStartIndex = tooNewLogEventStartIndex;
     }
 
     /**
-     * Returns the value of the TooNewLogEventStartIndex property for this
-     * object.
-     * 
-     * @return The value of the TooNewLogEventStartIndex property for this
-     *         object.
+     * @return
      */
     public Integer getTooNewLogEventStartIndex() {
         return this.tooNewLogEventStartIndex;
     }
 
     /**
-     * Sets the value of the TooNewLogEventStartIndex property for this object.
-     * 
      * @param tooNewLogEventStartIndex
-     *        The new value for the TooNewLogEventStartIndex property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -66,31 +54,21 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the TooOldLogEventEndIndex property for this object.
-     * 
      * @param tooOldLogEventEndIndex
-     *        The new value for the TooOldLogEventEndIndex property for this
-     *        object.
      */
     public void setTooOldLogEventEndIndex(Integer tooOldLogEventEndIndex) {
         this.tooOldLogEventEndIndex = tooOldLogEventEndIndex;
     }
 
     /**
-     * Returns the value of the TooOldLogEventEndIndex property for this object.
-     * 
-     * @return The value of the TooOldLogEventEndIndex property for this object.
+     * @return
      */
     public Integer getTooOldLogEventEndIndex() {
         return this.tooOldLogEventEndIndex;
     }
 
     /**
-     * Sets the value of the TooOldLogEventEndIndex property for this object.
-     * 
      * @param tooOldLogEventEndIndex
-     *        The new value for the TooOldLogEventEndIndex property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -101,33 +79,21 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ExpiredLogEventEndIndex property for this object.
-     * 
      * @param expiredLogEventEndIndex
-     *        The new value for the ExpiredLogEventEndIndex property for this
-     *        object.
      */
     public void setExpiredLogEventEndIndex(Integer expiredLogEventEndIndex) {
         this.expiredLogEventEndIndex = expiredLogEventEndIndex;
     }
 
     /**
-     * Returns the value of the ExpiredLogEventEndIndex property for this
-     * object.
-     * 
-     * @return The value of the ExpiredLogEventEndIndex property for this
-     *         object.
+     * @return
      */
     public Integer getExpiredLogEventEndIndex() {
         return this.expiredLogEventEndIndex;
     }
 
     /**
-     * Sets the value of the ExpiredLogEventEndIndex property for this object.
-     * 
      * @param expiredLogEventEndIndex
-     *        The new value for the ExpiredLogEventEndIndex property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

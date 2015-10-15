@@ -25,29 +25,21 @@ public class PutDestinationResult implements Serializable, Cloneable {
     private Destination destination;
 
     /**
-     * Sets the value of the Destination property for this object.
-     * 
      * @param destination
-     *        The new value for the Destination property for this object.
      */
     public void setDestination(Destination destination) {
         this.destination = destination;
     }
 
     /**
-     * Returns the value of the Destination property for this object.
-     * 
-     * @return The value of the Destination property for this object.
+     * @return
      */
     public Destination getDestination() {
         return this.destination;
     }
 
     /**
-     * Sets the value of the Destination property for this object.
-     * 
      * @param destination
-     *        The new value for the Destination property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

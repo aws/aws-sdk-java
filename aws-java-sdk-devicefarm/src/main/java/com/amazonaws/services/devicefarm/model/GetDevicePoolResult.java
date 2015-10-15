@@ -27,29 +27,21 @@ public class GetDevicePoolResult implements Serializable, Cloneable {
     private DevicePool devicePool;
 
     /**
-     * Sets the value of the DevicePool property for this object.
-     * 
      * @param devicePool
-     *        The new value for the DevicePool property for this object.
      */
     public void setDevicePool(DevicePool devicePool) {
         this.devicePool = devicePool;
     }
 
     /**
-     * Returns the value of the DevicePool property for this object.
-     * 
-     * @return The value of the DevicePool property for this object.
+     * @return
      */
     public DevicePool getDevicePool() {
         return this.devicePool;
     }
 
     /**
-     * Sets the value of the DevicePool property for this object.
-     * 
      * @param devicePool
-     *        The new value for the DevicePool property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

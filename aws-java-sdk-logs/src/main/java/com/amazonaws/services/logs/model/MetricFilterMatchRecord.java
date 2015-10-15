@@ -29,29 +29,21 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalMap<String, String> extractedValues;
 
     /**
-     * Sets the value of the EventNumber property for this object.
-     * 
      * @param eventNumber
-     *        The new value for the EventNumber property for this object.
      */
     public void setEventNumber(Long eventNumber) {
         this.eventNumber = eventNumber;
     }
 
     /**
-     * Returns the value of the EventNumber property for this object.
-     * 
-     * @return The value of the EventNumber property for this object.
+     * @return
      */
     public Long getEventNumber() {
         return this.eventNumber;
     }
 
     /**
-     * Sets the value of the EventNumber property for this object.
-     * 
      * @param eventNumber
-     *        The new value for the EventNumber property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -61,29 +53,21 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the EventMessage property for this object.
-     * 
      * @param eventMessage
-     *        The new value for the EventMessage property for this object.
      */
     public void setEventMessage(String eventMessage) {
         this.eventMessage = eventMessage;
     }
 
     /**
-     * Returns the value of the EventMessage property for this object.
-     * 
-     * @return The value of the EventMessage property for this object.
+     * @return
      */
     public String getEventMessage() {
         return this.eventMessage;
     }
 
     /**
-     * Sets the value of the EventMessage property for this object.
-     * 
      * @param eventMessage
-     *        The new value for the EventMessage property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -93,9 +77,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the ExtractedValues property for this object.
-     * 
-     * @return The value of the ExtractedValues property for this object.
+     * @return
      */
     public java.util.Map<String, String> getExtractedValues() {
         if (extractedValues == null) {
@@ -105,10 +87,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ExtractedValues property for this object.
-     * 
      * @param extractedValues
-     *        The new value for the ExtractedValues property for this object.
      */
     public void setExtractedValues(java.util.Map<String, String> extractedValues) {
         this.extractedValues = extractedValues == null ? null
@@ -117,10 +96,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ExtractedValues property for this object.
-     * 
      * @param extractedValues
-     *        The new value for the ExtractedValues property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

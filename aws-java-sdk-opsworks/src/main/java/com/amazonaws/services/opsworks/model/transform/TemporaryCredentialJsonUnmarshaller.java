@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Temporary Credential JSON Unmarshaller
+ * TemporaryCredential JSON Unmarshaller
  */
-public class TemporaryCredentialJsonUnmarshaller implements Unmarshaller<TemporaryCredential, JsonUnmarshallerContext> {
+public class TemporaryCredentialJsonUnmarshaller implements
+        Unmarshaller<TemporaryCredential, JsonUnmarshallerContext> {
 
-    public TemporaryCredential unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public TemporaryCredential unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         TemporaryCredential temporaryCredential = new TemporaryCredential();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,45 +40,56 @@ public class TemporaryCredentialJsonUnmarshaller implements Unmarshaller<Tempora
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
-                    temporaryCredential.setUsername(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    temporaryCredential.setUsername(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
                     context.nextToken();
-                    temporaryCredential.setPassword(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    temporaryCredential.setPassword(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ValidForInMinutes", targetDepth)) {
                     context.nextToken();
-                    temporaryCredential.setValidForInMinutes(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    temporaryCredential
+                            .setValidForInMinutes(IntegerJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    temporaryCredential.setInstanceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    temporaryCredential.setInstanceId(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return temporaryCredential;
     }
 
     private static TemporaryCredentialJsonUnmarshaller instance;
+
     public static TemporaryCredentialJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new TemporaryCredentialJsonUnmarshaller();
+        if (instance == null)
+            instance = new TemporaryCredentialJsonUnmarshaller();
         return instance;
     }
 }
-    

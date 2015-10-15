@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,9 +28,11 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Container JSON Unmarshaller
  */
-public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUnmarshallerContext> {
+public class ContainerJsonUnmarshaller implements
+        Unmarshaller<Container, JsonUnmarshallerContext> {
 
-    public Container unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public Container unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         Container container = new Container();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,57 +40,72 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containerArn", targetDepth)) {
                     context.nextToken();
-                    container.setContainerArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    container.setContainerArn(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("taskArn", targetDepth)) {
                     context.nextToken();
-                    container.setTaskArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    container.setTaskArn(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    container.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    container.setName(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
-                    container.setLastStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    container.setLastStatus(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("exitCode", targetDepth)) {
                     context.nextToken();
-                    container.setExitCode(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    container.setExitCode(IntegerJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
                     context.nextToken();
-                    container.setReason(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    container.setReason(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("networkBindings", targetDepth)) {
                     context.nextToken();
-                    container.setNetworkBindings(new ListUnmarshaller<NetworkBinding>(NetworkBindingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    container
+                            .setNetworkBindings(new ListUnmarshaller<NetworkBinding>(
+                                    NetworkBindingJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return container;
     }
 
     private static ContainerJsonUnmarshaller instance;
+
     public static ContainerJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new ContainerJsonUnmarshaller();
+        if (instance == null)
+            instance = new ContainerJsonUnmarshaller();
         return instance;
     }
 }
-    

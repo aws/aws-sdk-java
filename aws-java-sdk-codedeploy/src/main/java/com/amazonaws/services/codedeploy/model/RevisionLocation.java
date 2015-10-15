@@ -147,29 +147,21 @@ public class RevisionLocation implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the S3Location property for this object.
-     * 
      * @param s3Location
-     *        The new value for the S3Location property for this object.
      */
     public void setS3Location(S3Location s3Location) {
         this.s3Location = s3Location;
     }
 
     /**
-     * Returns the value of the S3Location property for this object.
-     * 
-     * @return The value of the S3Location property for this object.
+     * @return
      */
     public S3Location getS3Location() {
         return this.s3Location;
     }
 
     /**
-     * Sets the value of the S3Location property for this object.
-     * 
      * @param s3Location
-     *        The new value for the S3Location property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -179,29 +171,21 @@ public class RevisionLocation implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the GitHubLocation property for this object.
-     * 
      * @param gitHubLocation
-     *        The new value for the GitHubLocation property for this object.
      */
     public void setGitHubLocation(GitHubLocation gitHubLocation) {
         this.gitHubLocation = gitHubLocation;
     }
 
     /**
-     * Returns the value of the GitHubLocation property for this object.
-     * 
-     * @return The value of the GitHubLocation property for this object.
+     * @return
      */
     public GitHubLocation getGitHubLocation() {
         return this.gitHubLocation;
     }
 
     /**
-     * Sets the value of the GitHubLocation property for this object.
-     * 
      * @param gitHubLocation
-     *        The new value for the GitHubLocation property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

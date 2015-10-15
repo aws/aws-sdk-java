@@ -27,29 +27,21 @@ public class PutLogEventsResult implements Serializable, Cloneable {
     private RejectedLogEventsInfo rejectedLogEventsInfo;
 
     /**
-     * Sets the value of the NextSequenceToken property for this object.
-     * 
      * @param nextSequenceToken
-     *        The new value for the NextSequenceToken property for this object.
      */
     public void setNextSequenceToken(String nextSequenceToken) {
         this.nextSequenceToken = nextSequenceToken;
     }
 
     /**
-     * Returns the value of the NextSequenceToken property for this object.
-     * 
-     * @return The value of the NextSequenceToken property for this object.
+     * @return
      */
     public String getNextSequenceToken() {
         return this.nextSequenceToken;
     }
 
     /**
-     * Sets the value of the NextSequenceToken property for this object.
-     * 
      * @param nextSequenceToken
-     *        The new value for the NextSequenceToken property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -59,11 +51,7 @@ public class PutLogEventsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the RejectedLogEventsInfo property for this object.
-     * 
      * @param rejectedLogEventsInfo
-     *        The new value for the RejectedLogEventsInfo property for this
-     *        object.
      */
     public void setRejectedLogEventsInfo(
             RejectedLogEventsInfo rejectedLogEventsInfo) {
@@ -71,20 +59,14 @@ public class PutLogEventsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the RejectedLogEventsInfo property for this object.
-     * 
-     * @return The value of the RejectedLogEventsInfo property for this object.
+     * @return
      */
     public RejectedLogEventsInfo getRejectedLogEventsInfo() {
         return this.rejectedLogEventsInfo;
     }
 
     /**
-     * Sets the value of the RejectedLogEventsInfo property for this object.
-     * 
      * @param rejectedLogEventsInfo
-     *        The new value for the RejectedLogEventsInfo property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

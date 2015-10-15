@@ -1,364 +1,413 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#createDeployment(CreateDeploymentRequest) CreateDeployment operation}.
- * <p>
- * Runs deployment or stack commands. For more information, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html"> Deploying Apps </a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html"> Run Stack Commands </a>
- * .
- * </p>
- * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must
- * have a Deploy or Manage permissions level for the stack, or an
- * attached policy that explicitly grants permissions. For more
- * information on user permissions, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
- * .
- * </p>
- *
- * @see com.amazonaws.services.opsworks.AWSOpsWorks#createDeployment(CreateDeploymentRequest)
+ * 
  */
-public class CreateDeploymentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * The stack ID.
+     * </p>
      */
     private String stackId;
-
     /**
-     * The app ID. This parameter is required for app deployments, but not
-     * for other deployment commands.
+     * <p>
+     * The app ID. This parameter is required for app deployments, but not for
+     * other deployment commands.
+     * </p>
      */
     private String appId;
-
     /**
+     * <p>
      * The instance IDs for the deployment targets.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
-
+    private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
+     * <p>
      * A <code>DeploymentCommand</code> object that specifies the deployment
      * command and any associated arguments.
+     * </p>
      */
     private DeploymentCommand command;
-
     /**
+     * <p>
      * A user-defined comment.
+     * </p>
      */
     private String comment;
-
     /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration Attributes</a>.
+     * <p>
+     * A string that contains user-defined, custom JSON. It is used to override
+     * the corresponding default stack configuration JSON values. The string
+     * should be in the following format and must escape characters such as '"':
+     * </p>
+     * <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     * </p>
+     * <p>
+     * For more information on custom JSON, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
+     * </p>
      */
     private String customJson;
 
     /**
+     * <p>
      * The stack ID.
-     *
-     * @return The stack ID.
-     */
-    public String getStackId() {
-        return stackId;
-    }
-    
-    /**
-     * The stack ID.
-     *
-     * @param stackId The stack ID.
+     * </p>
+     * 
+     * @param stackId
+     *        The stack ID.
      */
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
-    
+
     /**
-     * The stack ID.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stackId The stack ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The stack ID.
+     * </p>
+     * 
+     * @return The stack ID.
+     */
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    /**
+     * <p>
+     * The stack ID.
+     * </p>
+     * 
+     * @param stackId
+     *        The stack ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateDeploymentRequest withStackId(String stackId) {
-        this.stackId = stackId;
+        setStackId(stackId);
         return this;
     }
 
     /**
-     * The app ID. This parameter is required for app deployments, but not
-     * for other deployment commands.
-     *
-     * @return The app ID. This parameter is required for app deployments, but not
-     *         for other deployment commands.
-     */
-    public String getAppId() {
-        return appId;
-    }
-    
-    /**
-     * The app ID. This parameter is required for app deployments, but not
-     * for other deployment commands.
-     *
-     * @param appId The app ID. This parameter is required for app deployments, but not
-     *         for other deployment commands.
+     * <p>
+     * The app ID. This parameter is required for app deployments, but not for
+     * other deployment commands.
+     * </p>
+     * 
+     * @param appId
+     *        The app ID. This parameter is required for app deployments, but
+     *        not for other deployment commands.
      */
     public void setAppId(String appId) {
         this.appId = appId;
     }
-    
+
     /**
-     * The app ID. This parameter is required for app deployments, but not
-     * for other deployment commands.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param appId The app ID. This parameter is required for app deployments, but not
-     *         for other deployment commands.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The app ID. This parameter is required for app deployments, but not for
+     * other deployment commands.
+     * </p>
+     * 
+     * @return The app ID. This parameter is required for app deployments, but
+     *         not for other deployment commands.
+     */
+    public String getAppId() {
+        return this.appId;
+    }
+
+    /**
+     * <p>
+     * The app ID. This parameter is required for app deployments, but not for
+     * other deployment commands.
+     * </p>
+     * 
+     * @param appId
+     *        The app ID. This parameter is required for app deployments, but
+     *        not for other deployment commands.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateDeploymentRequest withAppId(String appId) {
-        this.appId = appId;
+        setAppId(appId);
         return this;
     }
 
     /**
+     * <p>
      * The instance IDs for the deployment targets.
-     *
+     * </p>
+     * 
      * @return The instance IDs for the deployment targets.
      */
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
-              instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              instanceIds.setAutoConstruct(true);
+            instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return instanceIds;
     }
-    
+
     /**
+     * <p>
      * The instance IDs for the deployment targets.
-     *
-     * @param instanceIds The instance IDs for the deployment targets.
+     * </p>
+     * 
+     * @param instanceIds
+     *        The instance IDs for the deployment targets.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
-        instanceIdsCopy.addAll(instanceIds);
-        this.instanceIds = instanceIdsCopy;
+
+        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(
+                instanceIds);
     }
-    
+
     /**
+     * <p>
      * The instance IDs for the deployment targets.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceIds(java.util.Collection)} or {@link
-     * #withInstanceIds(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instanceIds The instance IDs for the deployment targets.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setInstanceIds(java.util.Collection)} or
+     * {@link #withInstanceIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param instanceIds
+     *        The instance IDs for the deployment targets.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateDeploymentRequest withInstanceIds(String... instanceIds) {
-        if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
-        for (String value : instanceIds) {
-            getInstanceIds().add(value);
+        if (this.instanceIds == null) {
+            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
+                    instanceIds.length));
+        }
+        for (String ele : instanceIds) {
+            this.instanceIds.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The instance IDs for the deployment targets.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instanceIds The instance IDs for the deployment targets.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The instance IDs for the deployment targets.
+     * </p>
+     * 
+     * @param instanceIds
+     *        The instance IDs for the deployment targets.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public CreateDeploymentRequest withInstanceIds(java.util.Collection<String> instanceIds) {
-        if (instanceIds == null) {
-            this.instanceIds = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
-            instanceIdsCopy.addAll(instanceIds);
-            this.instanceIds = instanceIdsCopy;
-        }
-
+    public CreateDeploymentRequest withInstanceIds(
+            java.util.Collection<String> instanceIds) {
+        setInstanceIds(instanceIds);
         return this;
     }
 
     /**
+     * <p>
      * A <code>DeploymentCommand</code> object that specifies the deployment
      * command and any associated arguments.
-     *
-     * @return A <code>DeploymentCommand</code> object that specifies the deployment
-     *         command and any associated arguments.
-     */
-    public DeploymentCommand getCommand() {
-        return command;
-    }
-    
-    /**
-     * A <code>DeploymentCommand</code> object that specifies the deployment
-     * command and any associated arguments.
-     *
-     * @param command A <code>DeploymentCommand</code> object that specifies the deployment
-     *         command and any associated arguments.
+     * </p>
+     * 
+     * @param command
+     *        A <code>DeploymentCommand</code> object that specifies the
+     *        deployment command and any associated arguments.
      */
     public void setCommand(DeploymentCommand command) {
         this.command = command;
     }
-    
+
     /**
+     * <p>
      * A <code>DeploymentCommand</code> object that specifies the deployment
      * command and any associated arguments.
+     * </p>
+     * 
+     * @return A <code>DeploymentCommand</code> object that specifies the
+     *         deployment command and any associated arguments.
+     */
+    public DeploymentCommand getCommand() {
+        return this.command;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param command A <code>DeploymentCommand</code> object that specifies the deployment
-     *         command and any associated arguments.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A <code>DeploymentCommand</code> object that specifies the deployment
+     * command and any associated arguments.
+     * </p>
+     * 
+     * @param command
+     *        A <code>DeploymentCommand</code> object that specifies the
+     *        deployment command and any associated arguments.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateDeploymentRequest withCommand(DeploymentCommand command) {
-        this.command = command;
+        setCommand(command);
         return this;
     }
 
     /**
+     * <p>
      * A user-defined comment.
-     *
-     * @return A user-defined comment.
-     */
-    public String getComment() {
-        return comment;
-    }
-    
-    /**
-     * A user-defined comment.
-     *
-     * @param comment A user-defined comment.
+     * </p>
+     * 
+     * @param comment
+     *        A user-defined comment.
      */
     public void setComment(String comment) {
         this.comment = comment;
     }
-    
+
     /**
-     * A user-defined comment.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param comment A user-defined comment.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A user-defined comment.
+     * </p>
+     * 
+     * @return A user-defined comment.
+     */
+    public String getComment() {
+        return this.comment;
+    }
+
+    /**
+     * <p>
+     * A user-defined comment.
+     * </p>
+     * 
+     * @param comment
+     *        A user-defined comment.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateDeploymentRequest withComment(String comment) {
-        this.comment = comment;
+        setComment(comment);
         return this;
     }
 
     /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration Attributes</a>.
-     *
-     * @return A string that contains user-defined, custom JSON. It is used to
-     *         override the corresponding default stack configuration JSON values.
-     *         The string should be in the following format and must escape
-     *         characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration Attributes</a>.
-     */
-    public String getCustomJson() {
-        return customJson;
-    }
-    
-    /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration Attributes</a>.
-     *
-     * @param customJson A string that contains user-defined, custom JSON. It is used to
-     *         override the corresponding default stack configuration JSON values.
-     *         The string should be in the following format and must escape
-     *         characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration Attributes</a>.
+     * <p>
+     * A string that contains user-defined, custom JSON. It is used to override
+     * the corresponding default stack configuration JSON values. The string
+     * should be in the following format and must escape characters such as '"':
+     * </p>
+     * <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     * </p>
+     * <p>
+     * For more information on custom JSON, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
+     * </p>
+     * 
+     * @param customJson
+     *        A string that contains user-defined, custom JSON. It is used to
+     *        override the corresponding default stack configuration JSON
+     *        values. The string should be in the following format and must
+     *        escape characters such as '"':</p>
+     *        <p>
+     *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     *        </p>
+     *        <p>
+     *        For more information on custom JSON, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     *        >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
     }
-    
+
     /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration Attributes</a>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param customJson A string that contains user-defined, custom JSON. It is used to
-     *         override the corresponding default stack configuration JSON values.
-     *         The string should be in the following format and must escape
-     *         characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration Attributes</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A string that contains user-defined, custom JSON. It is used to override
+     * the corresponding default stack configuration JSON values. The string
+     * should be in the following format and must escape characters such as '"':
+     * </p>
+     * <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     * </p>
+     * <p>
+     * For more information on custom JSON, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
+     * </p>
+     * 
+     * @return A string that contains user-defined, custom JSON. It is used to
+     *         override the corresponding default stack configuration JSON
+     *         values. The string should be in the following format and must
+     *         escape characters such as '"':</p>
+     *         <p>
+     *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     *         </p>
+     *         <p>
+     *         For more information on custom JSON, see <a href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     *         >Use Custom JSON to Modify the Stack Configuration
+     *         Attributes</a>.
+     */
+    public String getCustomJson() {
+        return this.customJson;
+    }
+
+    /**
+     * <p>
+     * A string that contains user-defined, custom JSON. It is used to override
+     * the corresponding default stack configuration JSON values. The string
+     * should be in the following format and must escape characters such as '"':
+     * </p>
+     * <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     * </p>
+     * <p>
+     * For more information on custom JSON, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
+     * </p>
+     * 
+     * @param customJson
+     *        A string that contains user-defined, custom JSON. It is used to
+     *        override the corresponding default stack configuration JSON
+     *        values. The string should be in the following format and must
+     *        escape characters such as '"':</p>
+     *        <p>
+     *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     *        </p>
+     *        <p>
+     *        For more information on custom JSON, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     *        >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateDeploymentRequest withCustomJson(String customJson) {
-        this.customJson = customJson;
+        setCustomJson(customJson);
         return this;
     }
 
@@ -374,58 +423,88 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
-        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");
-        if (getCommand() != null) sb.append("Command: " + getCommand() + ",");
-        if (getComment() != null) sb.append("Comment: " + getComment() + ",");
-        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() );
+        if (getStackId() != null)
+            sb.append("StackId: " + getStackId() + ",");
+        if (getAppId() != null)
+            sb.append("AppId: " + getAppId() + ",");
+        if (getInstanceIds() != null)
+            sb.append("InstanceIds: " + getInstanceIds() + ",");
+        if (getCommand() != null)
+            sb.append("Command: " + getCommand() + ",");
+        if (getComment() != null)
+            sb.append("Comment: " + getComment() + ",");
+        if (getCustomJson() != null)
+            sb.append("CustomJson: " + getCustomJson());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateDeploymentRequest == false)
+            return false;
+        CreateDeploymentRequest other = (CreateDeploymentRequest) obj;
+        if (other.getStackId() == null ^ this.getStackId() == null)
+            return false;
+        if (other.getStackId() != null
+                && other.getStackId().equals(this.getStackId()) == false)
+            return false;
+        if (other.getAppId() == null ^ this.getAppId() == null)
+            return false;
+        if (other.getAppId() != null
+                && other.getAppId().equals(this.getAppId()) == false)
+            return false;
+        if (other.getInstanceIds() == null ^ this.getInstanceIds() == null)
+            return false;
+        if (other.getInstanceIds() != null
+                && other.getInstanceIds().equals(this.getInstanceIds()) == false)
+            return false;
+        if (other.getCommand() == null ^ this.getCommand() == null)
+            return false;
+        if (other.getCommand() != null
+                && other.getCommand().equals(this.getCommand()) == false)
+            return false;
+        if (other.getComment() == null ^ this.getComment() == null)
+            return false;
+        if (other.getComment() != null
+                && other.getComment().equals(this.getComment()) == false)
+            return false;
+        if (other.getCustomJson() == null ^ this.getCustomJson() == null)
+            return false;
+        if (other.getCustomJson() != null
+                && other.getCustomJson().equals(this.getCustomJson()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
-        hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode()); 
-        hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode()); 
-        hashCode = prime * hashCode + ((getCommand() == null) ? 0 : getCommand().hashCode()); 
-        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode()); 
-        hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode
+                + ((getAppId() == null) ? 0 : getAppId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
+        hashCode = prime * hashCode
+                + ((getCommand() == null) ? 0 : getCommand().hashCode());
+        hashCode = prime * hashCode
+                + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode
+                + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateDeploymentRequest == false) return false;
-        CreateDeploymentRequest other = (CreateDeploymentRequest)obj;
-        
-        if (other.getStackId() == null ^ this.getStackId() == null) return false;
-        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
-        if (other.getAppId() == null ^ this.getAppId() == null) return false;
-        if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false) return false; 
-        if (other.getInstanceIds() == null ^ this.getInstanceIds() == null) return false;
-        if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false) return false; 
-        if (other.getCommand() == null ^ this.getCommand() == null) return false;
-        if (other.getCommand() != null && other.getCommand().equals(this.getCommand()) == false) return false; 
-        if (other.getComment() == null ^ this.getComment() == null) return false;
-        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false) return false; 
-        if (other.getCustomJson() == null ^ this.getCustomJson() == null) return false;
-        if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateDeploymentRequest clone() {
-        
-            return (CreateDeploymentRequest) super.clone();
+        return (CreateDeploymentRequest) super.clone();
     }
-
 }
-    

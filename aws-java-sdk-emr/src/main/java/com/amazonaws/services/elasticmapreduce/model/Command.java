@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
@@ -24,156 +25,170 @@ import java.io.Serializable;
 public class Command implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the command.
+     * </p>
      */
     private String name;
-
     /**
+     * <p>
      * The Amazon S3 location of the command script.
+     * </p>
      */
     private String scriptPath;
-
     /**
+     * <p>
      * Arguments for Amazon EMR to pass to the command for execution.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> args;
+    private com.amazonaws.internal.SdkInternalList<String> args;
 
     /**
+     * <p>
      * The name of the command.
-     *
-     * @return The name of the command.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * The name of the command.
-     *
-     * @param name The name of the command.
+     * </p>
+     * 
+     * @param name
+     *        The name of the command.
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
-     * The name of the command.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param name The name of the command.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the command.
+     * </p>
+     * 
+     * @return The name of the command.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the command.
+     * </p>
+     * 
+     * @param name
+     *        The name of the command.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Command withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
+     * <p>
      * The Amazon S3 location of the command script.
-     *
-     * @return The Amazon S3 location of the command script.
-     */
-    public String getScriptPath() {
-        return scriptPath;
-    }
-    
-    /**
-     * The Amazon S3 location of the command script.
-     *
-     * @param scriptPath The Amazon S3 location of the command script.
+     * </p>
+     * 
+     * @param scriptPath
+     *        The Amazon S3 location of the command script.
      */
     public void setScriptPath(String scriptPath) {
         this.scriptPath = scriptPath;
     }
-    
+
     /**
-     * The Amazon S3 location of the command script.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param scriptPath The Amazon S3 location of the command script.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon S3 location of the command script.
+     * </p>
+     * 
+     * @return The Amazon S3 location of the command script.
+     */
+    public String getScriptPath() {
+        return this.scriptPath;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location of the command script.
+     * </p>
+     * 
+     * @param scriptPath
+     *        The Amazon S3 location of the command script.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Command withScriptPath(String scriptPath) {
-        this.scriptPath = scriptPath;
+        setScriptPath(scriptPath);
         return this;
     }
 
     /**
+     * <p>
      * Arguments for Amazon EMR to pass to the command for execution.
-     *
+     * </p>
+     * 
      * @return Arguments for Amazon EMR to pass to the command for execution.
      */
     public java.util.List<String> getArgs() {
         if (args == null) {
-              args = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              args.setAutoConstruct(true);
+            args = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return args;
     }
-    
+
     /**
+     * <p>
      * Arguments for Amazon EMR to pass to the command for execution.
-     *
-     * @param args Arguments for Amazon EMR to pass to the command for execution.
+     * </p>
+     * 
+     * @param args
+     *        Arguments for Amazon EMR to pass to the command for execution.
      */
     public void setArgs(java.util.Collection<String> args) {
         if (args == null) {
             this.args = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> argsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(args.size());
-        argsCopy.addAll(args);
-        this.args = argsCopy;
+
+        this.args = new com.amazonaws.internal.SdkInternalList<String>(args);
     }
-    
+
     /**
+     * <p>
      * Arguments for Amazon EMR to pass to the command for execution.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setArgs(java.util.Collection)} or {@link
-     * #withArgs(java.util.Collection)} if you want to override the existing
-     * values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param args Arguments for Amazon EMR to pass to the command for execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setArgs(java.util.Collection)} or
+     * {@link #withArgs(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param args
+     *        Arguments for Amazon EMR to pass to the command for execution.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Command withArgs(String... args) {
-        if (getArgs() == null) setArgs(new java.util.ArrayList<String>(args.length));
-        for (String value : args) {
-            getArgs().add(value);
+        if (this.args == null) {
+            setArgs(new com.amazonaws.internal.SdkInternalList<String>(
+                    args.length));
+        }
+        for (String ele : args) {
+            this.args.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * Arguments for Amazon EMR to pass to the command for execution.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param args Arguments for Amazon EMR to pass to the command for execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Arguments for Amazon EMR to pass to the command for execution.
+     * </p>
+     * 
+     * @param args
+     *        Arguments for Amazon EMR to pass to the command for execution.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Command withArgs(java.util.Collection<String> args) {
-        if (args == null) {
-            this.args = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> argsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(args.size());
-            argsCopy.addAll(args);
-            this.args = argsCopy;
-        }
-
+        setArgs(args);
         return this;
     }
 
@@ -189,54 +204,66 @@ public class Command implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getScriptPath() != null) sb.append("ScriptPath: " + getScriptPath() + ",");
-        if (getArgs() != null) sb.append("Args: " + getArgs() );
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getScriptPath() != null)
+            sb.append("ScriptPath: " + getScriptPath() + ",");
+        if (getArgs() != null)
+            sb.append("Args: " + getArgs());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof Command == false)
+            return false;
+        Command other = (Command) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getScriptPath() == null ^ this.getScriptPath() == null)
+            return false;
+        if (other.getScriptPath() != null
+                && other.getScriptPath().equals(this.getScriptPath()) == false)
+            return false;
+        if (other.getArgs() == null ^ this.getArgs() == null)
+            return false;
+        if (other.getArgs() != null
+                && other.getArgs().equals(this.getArgs()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getScriptPath() == null) ? 0 : getScriptPath().hashCode()); 
-        hashCode = prime * hashCode + ((getArgs() == null) ? 0 : getArgs().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode
+                + ((getScriptPath() == null) ? 0 : getScriptPath().hashCode());
+        hashCode = prime * hashCode
+                + ((getArgs() == null) ? 0 : getArgs().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof Command == false) return false;
-        Command other = (Command)obj;
-        
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getScriptPath() == null ^ this.getScriptPath() == null) return false;
-        if (other.getScriptPath() != null && other.getScriptPath().equals(this.getScriptPath()) == false) return false; 
-        if (other.getArgs() == null ^ this.getArgs() == null) return false;
-        if (other.getArgs() != null && other.getArgs().equals(this.getArgs()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public Command clone() {
         try {
             return (Command) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

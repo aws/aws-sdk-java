@@ -148,29 +148,21 @@ public class PutItemResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ConsumedCapacity property for this object.
-     * 
      * @param consumedCapacity
-     *        The new value for the ConsumedCapacity property for this object.
      */
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
     }
 
     /**
-     * Returns the value of the ConsumedCapacity property for this object.
-     * 
-     * @return The value of the ConsumedCapacity property for this object.
+     * @return
      */
     public ConsumedCapacity getConsumedCapacity() {
         return this.consumedCapacity;
     }
 
     /**
-     * Sets the value of the ConsumedCapacity property for this object.
-     * 
      * @param consumedCapacity
-     *        The new value for the ConsumedCapacity property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

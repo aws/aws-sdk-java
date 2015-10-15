@@ -1,24 +1,25 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.route53domains.model;
 
 /**
- * Operation Type
+ * 
  */
 public enum OperationType {
-    
+
     REGISTER_DOMAIN("REGISTER_DOMAIN"),
     DELETE_DOMAIN("DELETE_DOMAIN"),
     TRANSFER_IN_DOMAIN("TRANSFER_IN_DOMAIN"),
@@ -42,30 +43,29 @@ public enum OperationType {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return OperationType corresponding to the value
      */
     public static OperationType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("REGISTER_DOMAIN".equals(value)) {
-            return OperationType.REGISTER_DOMAIN;
+            return REGISTER_DOMAIN;
         } else if ("DELETE_DOMAIN".equals(value)) {
-            return OperationType.DELETE_DOMAIN;
+            return DELETE_DOMAIN;
         } else if ("TRANSFER_IN_DOMAIN".equals(value)) {
-            return OperationType.TRANSFER_IN_DOMAIN;
+            return TRANSFER_IN_DOMAIN;
         } else if ("UPDATE_DOMAIN_CONTACT".equals(value)) {
-            return OperationType.UPDATE_DOMAIN_CONTACT;
+            return UPDATE_DOMAIN_CONTACT;
         } else if ("UPDATE_NAMESERVER".equals(value)) {
-            return OperationType.UPDATE_NAMESERVER;
+            return UPDATE_NAMESERVER;
         } else if ("CHANGE_PRIVACY_PROTECTION".equals(value)) {
-            return OperationType.CHANGE_PRIVACY_PROTECTION;
+            return CHANGE_PRIVACY_PROTECTION;
         } else if ("DOMAIN_LOCK".equals(value)) {
-            return OperationType.DOMAIN_LOCK;
+            return DOMAIN_LOCK;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

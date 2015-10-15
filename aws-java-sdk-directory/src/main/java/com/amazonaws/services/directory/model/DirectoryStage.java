@@ -1,24 +1,25 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.directory.model;
 
 /**
- * Directory Stage
+ * 
  */
 public enum DirectoryStage {
-    
+
     Requested("Requested"),
     Creating("Creating"),
     Created("Created"),
@@ -46,38 +47,37 @@ public enum DirectoryStage {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return DirectoryStage corresponding to the value
      */
     public static DirectoryStage fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("Requested".equals(value)) {
-            return DirectoryStage.Requested;
+            return Requested;
         } else if ("Creating".equals(value)) {
-            return DirectoryStage.Creating;
+            return Creating;
         } else if ("Created".equals(value)) {
-            return DirectoryStage.Created;
+            return Created;
         } else if ("Active".equals(value)) {
-            return DirectoryStage.Active;
+            return Active;
         } else if ("Inoperable".equals(value)) {
-            return DirectoryStage.Inoperable;
+            return Inoperable;
         } else if ("Impaired".equals(value)) {
-            return DirectoryStage.Impaired;
+            return Impaired;
         } else if ("Restoring".equals(value)) {
-            return DirectoryStage.Restoring;
+            return Restoring;
         } else if ("RestoreFailed".equals(value)) {
-            return DirectoryStage.RestoreFailed;
+            return RestoreFailed;
         } else if ("Deleting".equals(value)) {
-            return DirectoryStage.Deleting;
+            return Deleting;
         } else if ("Deleted".equals(value)) {
-            return DirectoryStage.Deleted;
+            return Deleted;
         } else if ("Failed".equals(value)) {
-            return DirectoryStage.Failed;
+            return Failed;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

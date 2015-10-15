@@ -313,29 +313,21 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the DefaultAction property for this object.
-     * 
      * @param defaultAction
-     *        The new value for the DefaultAction property for this object.
      */
     public void setDefaultAction(WafAction defaultAction) {
         this.defaultAction = defaultAction;
     }
 
     /**
-     * Returns the value of the DefaultAction property for this object.
-     * 
-     * @return The value of the DefaultAction property for this object.
+     * @return
      */
     public WafAction getDefaultAction() {
         return this.defaultAction;
     }
 
     /**
-     * Sets the value of the DefaultAction property for this object.
-     * 
      * @param defaultAction
-     *        The new value for the DefaultAction property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

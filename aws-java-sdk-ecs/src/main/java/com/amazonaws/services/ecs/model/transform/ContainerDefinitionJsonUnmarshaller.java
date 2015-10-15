@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Container Definition JSON Unmarshaller
+ * ContainerDefinition JSON Unmarshaller
  */
-public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<ContainerDefinition, JsonUnmarshallerContext> {
+public class ContainerDefinitionJsonUnmarshaller implements
+        Unmarshaller<ContainerDefinition, JsonUnmarshallerContext> {
 
-    public ContainerDefinition unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public ContainerDefinition unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         ContainerDefinition containerDefinition = new ContainerDefinition();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,129 +40,192 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition.setName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("image", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setImage(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition.setImage(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setCpu(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition.setCpu(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("memory", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setMemory(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition.setMemory(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("links", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setLinks(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition.setLinks(new ListUnmarshaller<String>(
+                            StringJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("portMappings", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setPortMappings(new ListUnmarshaller<PortMapping>(PortMappingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setPortMappings(new ListUnmarshaller<PortMapping>(
+                                    PortMappingJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("essential", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setEssential(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition.setEssential(BooleanJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("entryPoint", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setEntryPoint(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setEntryPoint(new ListUnmarshaller<String>(
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("command", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setCommand(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setCommand(new ListUnmarshaller<String>(
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("environment", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setEnvironment(new ListUnmarshaller<KeyValuePair>(
+                                    KeyValuePairJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("mountPoints", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setMountPoints(new ListUnmarshaller<MountPoint>(MountPointJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setMountPoints(new ListUnmarshaller<MountPoint>(
+                                    MountPointJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("volumesFrom", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setVolumesFrom(new ListUnmarshaller<VolumeFrom>(VolumeFromJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setVolumesFrom(new ListUnmarshaller<VolumeFrom>(
+                                    VolumeFromJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("hostname", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setHostname(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition.setHostname(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("user", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setUser(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition.setUser(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("workingDirectory", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setWorkingDirectory(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition
+                            .setWorkingDirectory(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("disableNetworking", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setDisableNetworking(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition
+                            .setDisableNetworking(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("privileged", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setPrivileged(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition.setPrivileged(BooleanJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("readonlyRootFilesystem", targetDepth)) {
+                if (context.testExpression("readonlyRootFilesystem",
+                        targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setReadonlyRootFilesystem(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition
+                            .setReadonlyRootFilesystem(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dnsServers", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setDnsServers(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setDnsServers(new ListUnmarshaller<String>(
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("dnsSearchDomains", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setDnsSearchDomains(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setDnsSearchDomains(new ListUnmarshaller<String>(
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("extraHosts", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setExtraHosts(new ListUnmarshaller<HostEntry>(HostEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setExtraHosts(new ListUnmarshaller<HostEntry>(
+                                    HostEntryJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
-                if (context.testExpression("dockerSecurityOptions", targetDepth)) {
+                if (context
+                        .testExpression("dockerSecurityOptions", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setDockerSecurityOptions(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setDockerSecurityOptions(new ListUnmarshaller<String>(
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("dockerLabels", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setDockerLabels(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setDockerLabels(new MapUnmarshaller<String, String>(
+                                    StringJsonUnmarshaller.getInstance(),
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("ulimits", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setUlimits(new ListUnmarshaller<Ulimit>(UlimitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDefinition
+                            .setUlimits(new ListUnmarshaller<Ulimit>(
+                                    UlimitJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("logConfiguration", targetDepth)) {
                     context.nextToken();
-                    containerDefinition.setLogConfiguration(LogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                    containerDefinition
+                            .setLogConfiguration(LogConfigurationJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return containerDefinition;
     }
 
     private static ContainerDefinitionJsonUnmarshaller instance;
+
     public static ContainerDefinitionJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new ContainerDefinitionJsonUnmarshaller();
+        if (instance == null)
+            instance = new ContainerDefinitionJsonUnmarshaller();
         return instance;
     }
 }
-    

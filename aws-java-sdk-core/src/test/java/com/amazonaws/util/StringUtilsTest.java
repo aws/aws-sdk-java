@@ -59,10 +59,23 @@ public class StringUtilsTest {
     public void testUTF8Charset() {
         assertEquals(UTF8.displayName(), "UTF-8");
     }
-    
+
+    /**
+     * @see https://github.com/aws/aws-sdk-java/pull/517
+     */
+    @Test(timeout = 10 * 1000)
+    public void replace_ReplacementStringContainsMatchString_DoesNotCauseInfiniteLoop() {
+        assertEquals("aabc", StringUtils.replace("abc", "a", "aa"));
+    }
+
     @Test
-    public void testReplace() {
-        assertEquals("123\\\\456", StringUtils.replace("123\\456", "\\", "\\\\"));
+    public void replace_EmptyReplacementString_RemovesAllOccurencesOfMatchString() {
+        assertEquals("bbb", StringUtils.replace("ababab", "a", ""));
+    }
+
+    @Test
+    public void replace_MatchNotFound_ReturnsOriginalString() {
+        assertEquals("abc", StringUtils.replace("abc", "d", "e"));
     }
 
 }

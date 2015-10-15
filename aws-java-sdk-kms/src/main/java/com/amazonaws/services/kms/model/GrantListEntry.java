@@ -18,13 +18,22 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about each entry in the grant list.
+ * Contains information about an entry in a list of grants.
  * </p>
  */
 public class GrantListEntry implements Serializable, Cloneable {
 
     /**
-     * Unique grant identifier.
+     * The unique identifier for the customer master key (CMK) to which the
+     * grant applies.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     */
+    private String keyId;
+
+    /**
+     * The unique identifier for the grant.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -32,7 +41,23 @@ public class GrantListEntry implements Serializable, Cloneable {
     private String grantId;
 
     /**
-     * The principal that receives the grant permission.
+     * The friendly name that identifies the grant. If a name was provided in
+     * the <a>CreateGrant</a> request, that name is returned. Otherwise this
+     * value is null.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
+     */
+    private String name;
+
+    /**
+     * The date and time when the grant was created.
+     */
+    private java.util.Date creationDate;
+
+    /**
+     * The principal that receives the grant's permissions.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -40,7 +65,7 @@ public class GrantListEntry implements Serializable, Cloneable {
     private String granteePrincipal;
 
     /**
-     * The principal that can retire the account.
+     * The principal that can retire the grant.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -48,7 +73,7 @@ public class GrantListEntry implements Serializable, Cloneable {
     private String retiringPrincipal;
 
     /**
-     * The account under which the grant was issued.
+     * The AWS account under which the grant was issued.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -56,53 +81,96 @@ public class GrantListEntry implements Serializable, Cloneable {
     private String issuingAccount;
 
     /**
-     * List of operations permitted by the grant. This can be any combination
-     * of one or more of the following values: <ol> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * The list of operations permitted by the grant.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> operations;
 
     /**
-     * Specifies the conditions under which the actions specified by the
-     * <code>Operations</code> parameter are allowed.
+     * The conditions under which the grant's operations are allowed.
      */
     private GrantConstraints constraints;
 
     /**
-     * Unique grant identifier.
+     * The unique identifier for the customer master key (CMK) to which the
+     * grant applies.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     *
+     * @return The unique identifier for the customer master key (CMK) to which the
+     *         grant applies.
+     */
+    public String getKeyId() {
+        return keyId;
+    }
+    
+    /**
+     * The unique identifier for the customer master key (CMK) to which the
+     * grant applies.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     *
+     * @param keyId The unique identifier for the customer master key (CMK) to which the
+     *         grant applies.
+     */
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
+    }
+    
+    /**
+     * The unique identifier for the customer master key (CMK) to which the
+     * grant applies.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     *
+     * @param keyId The unique identifier for the customer master key (CMK) to which the
+     *         grant applies.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GrantListEntry withKeyId(String keyId) {
+        this.keyId = keyId;
+        return this;
+    }
+
+    /**
+     * The unique identifier for the grant.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @return Unique grant identifier.
+     * @return The unique identifier for the grant.
      */
     public String getGrantId() {
         return grantId;
     }
     
     /**
-     * Unique grant identifier.
+     * The unique identifier for the grant.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @param grantId Unique grant identifier.
+     * @param grantId The unique identifier for the grant.
      */
     public void setGrantId(String grantId) {
         this.grantId = grantId;
     }
     
     /**
-     * Unique grant identifier.
+     * The unique identifier for the grant.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @param grantId Unique grant identifier.
+     * @param grantId The unique identifier for the grant.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -113,38 +181,128 @@ public class GrantListEntry implements Serializable, Cloneable {
     }
 
     /**
-     * The principal that receives the grant permission.
+     * The friendly name that identifies the grant. If a name was provided in
+     * the <a>CreateGrant</a> request, that name is returned. Otherwise this
+     * value is null.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
+     *
+     * @return The friendly name that identifies the grant. If a name was provided in
+     *         the <a>CreateGrant</a> request, that name is returned. Otherwise this
+     *         value is null.
+     */
+    public String getName() {
+        return name;
+    }
+    
+    /**
+     * The friendly name that identifies the grant. If a name was provided in
+     * the <a>CreateGrant</a> request, that name is returned. Otherwise this
+     * value is null.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
+     *
+     * @param name The friendly name that identifies the grant. If a name was provided in
+     *         the <a>CreateGrant</a> request, that name is returned. Otherwise this
+     *         value is null.
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    /**
+     * The friendly name that identifies the grant. If a name was provided in
+     * the <a>CreateGrant</a> request, that name is returned. Otherwise this
+     * value is null.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
+     *
+     * @param name The friendly name that identifies the grant. If a name was provided in
+     *         the <a>CreateGrant</a> request, that name is returned. Otherwise this
+     *         value is null.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GrantListEntry withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * The date and time when the grant was created.
+     *
+     * @return The date and time when the grant was created.
+     */
+    public java.util.Date getCreationDate() {
+        return creationDate;
+    }
+    
+    /**
+     * The date and time when the grant was created.
+     *
+     * @param creationDate The date and time when the grant was created.
+     */
+    public void setCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+    }
+    
+    /**
+     * The date and time when the grant was created.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param creationDate The date and time when the grant was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GrantListEntry withCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+        return this;
+    }
+
+    /**
+     * The principal that receives the grant's permissions.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The principal that receives the grant permission.
+     * @return The principal that receives the grant's permissions.
      */
     public String getGranteePrincipal() {
         return granteePrincipal;
     }
     
     /**
-     * The principal that receives the grant permission.
+     * The principal that receives the grant's permissions.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param granteePrincipal The principal that receives the grant permission.
+     * @param granteePrincipal The principal that receives the grant's permissions.
      */
     public void setGranteePrincipal(String granteePrincipal) {
         this.granteePrincipal = granteePrincipal;
     }
     
     /**
-     * The principal that receives the grant permission.
+     * The principal that receives the grant's permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param granteePrincipal The principal that receives the grant permission.
+     * @param granteePrincipal The principal that receives the grant's permissions.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -155,38 +313,38 @@ public class GrantListEntry implements Serializable, Cloneable {
     }
 
     /**
-     * The principal that can retire the account.
+     * The principal that can retire the grant.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The principal that can retire the account.
+     * @return The principal that can retire the grant.
      */
     public String getRetiringPrincipal() {
         return retiringPrincipal;
     }
     
     /**
-     * The principal that can retire the account.
+     * The principal that can retire the grant.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param retiringPrincipal The principal that can retire the account.
+     * @param retiringPrincipal The principal that can retire the grant.
      */
     public void setRetiringPrincipal(String retiringPrincipal) {
         this.retiringPrincipal = retiringPrincipal;
     }
     
     /**
-     * The principal that can retire the account.
+     * The principal that can retire the grant.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param retiringPrincipal The principal that can retire the account.
+     * @param retiringPrincipal The principal that can retire the grant.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -197,38 +355,38 @@ public class GrantListEntry implements Serializable, Cloneable {
     }
 
     /**
-     * The account under which the grant was issued.
+     * The AWS account under which the grant was issued.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The account under which the grant was issued.
+     * @return The AWS account under which the grant was issued.
      */
     public String getIssuingAccount() {
         return issuingAccount;
     }
     
     /**
-     * The account under which the grant was issued.
+     * The AWS account under which the grant was issued.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param issuingAccount The account under which the grant was issued.
+     * @param issuingAccount The AWS account under which the grant was issued.
      */
     public void setIssuingAccount(String issuingAccount) {
         this.issuingAccount = issuingAccount;
     }
     
     /**
-     * The account under which the grant was issued.
+     * The AWS account under which the grant was issued.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param issuingAccount The account under which the grant was issued.
+     * @param issuingAccount The AWS account under which the grant was issued.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -239,17 +397,9 @@ public class GrantListEntry implements Serializable, Cloneable {
     }
 
     /**
-     * List of operations permitted by the grant. This can be any combination
-     * of one or more of the following values: <ol> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * The list of operations permitted by the grant.
      *
-     * @return List of operations permitted by the grant. This can be any combination
-     *         of one or more of the following values: <ol> <li>Decrypt</li>
-     *         <li>Encrypt</li> <li>GenerateDataKey</li>
-     *         <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     *         <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * @return The list of operations permitted by the grant.
      */
     public java.util.List<String> getOperations() {
         if (operations == null) {
@@ -260,17 +410,9 @@ public class GrantListEntry implements Serializable, Cloneable {
     }
     
     /**
-     * List of operations permitted by the grant. This can be any combination
-     * of one or more of the following values: <ol> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * The list of operations permitted by the grant.
      *
-     * @param operations List of operations permitted by the grant. This can be any combination
-     *         of one or more of the following values: <ol> <li>Decrypt</li>
-     *         <li>Encrypt</li> <li>GenerateDataKey</li>
-     *         <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     *         <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * @param operations The list of operations permitted by the grant.
      */
     public void setOperations(java.util.Collection<String> operations) {
         if (operations == null) {
@@ -283,11 +425,7 @@ public class GrantListEntry implements Serializable, Cloneable {
     }
     
     /**
-     * List of operations permitted by the grant. This can be any combination
-     * of one or more of the following values: <ol> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * The list of operations permitted by the grant.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setOperations(java.util.Collection)} or {@link
@@ -296,11 +434,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param operations List of operations permitted by the grant. This can be any combination
-     *         of one or more of the following values: <ol> <li>Decrypt</li>
-     *         <li>Encrypt</li> <li>GenerateDataKey</li>
-     *         <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     *         <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * @param operations The list of operations permitted by the grant.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -314,19 +448,11 @@ public class GrantListEntry implements Serializable, Cloneable {
     }
     
     /**
-     * List of operations permitted by the grant. This can be any combination
-     * of one or more of the following values: <ol> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * The list of operations permitted by the grant.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param operations List of operations permitted by the grant. This can be any combination
-     *         of one or more of the following values: <ol> <li>Decrypt</li>
-     *         <li>Encrypt</li> <li>GenerateDataKey</li>
-     *         <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     *         <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * @param operations The list of operations permitted by the grant.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -344,19 +470,11 @@ public class GrantListEntry implements Serializable, Cloneable {
     }
 
     /**
-     * List of operations permitted by the grant. This can be any combination
-     * of one or more of the following values: <ol> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * The list of operations permitted by the grant.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param operations List of operations permitted by the grant. This can be any combination
-     *         of one or more of the following values: <ol> <li>Decrypt</li>
-     *         <li>Encrypt</li> <li>GenerateDataKey</li>
-     *         <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     *         <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * @param operations The list of operations permitted by the grant.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -375,35 +493,29 @@ public class GrantListEntry implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies the conditions under which the actions specified by the
-     * <code>Operations</code> parameter are allowed.
+     * The conditions under which the grant's operations are allowed.
      *
-     * @return Specifies the conditions under which the actions specified by the
-     *         <code>Operations</code> parameter are allowed.
+     * @return The conditions under which the grant's operations are allowed.
      */
     public GrantConstraints getConstraints() {
         return constraints;
     }
     
     /**
-     * Specifies the conditions under which the actions specified by the
-     * <code>Operations</code> parameter are allowed.
+     * The conditions under which the grant's operations are allowed.
      *
-     * @param constraints Specifies the conditions under which the actions specified by the
-     *         <code>Operations</code> parameter are allowed.
+     * @param constraints The conditions under which the grant's operations are allowed.
      */
     public void setConstraints(GrantConstraints constraints) {
         this.constraints = constraints;
     }
     
     /**
-     * Specifies the conditions under which the actions specified by the
-     * <code>Operations</code> parameter are allowed.
+     * The conditions under which the grant's operations are allowed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param constraints Specifies the conditions under which the actions specified by the
-     *         <code>Operations</code> parameter are allowed.
+     * @param constraints The conditions under which the grant's operations are allowed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -425,7 +537,10 @@ public class GrantListEntry implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getKeyId() != null) sb.append("KeyId: " + getKeyId() + ",");
         if (getGrantId() != null) sb.append("GrantId: " + getGrantId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");
         if (getGranteePrincipal() != null) sb.append("GranteePrincipal: " + getGranteePrincipal() + ",");
         if (getRetiringPrincipal() != null) sb.append("RetiringPrincipal: " + getRetiringPrincipal() + ",");
         if (getIssuingAccount() != null) sb.append("IssuingAccount: " + getIssuingAccount() + ",");
@@ -440,7 +555,10 @@ public class GrantListEntry implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
         
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode()); 
         hashCode = prime * hashCode + ((getGrantId() == null) ? 0 : getGrantId().hashCode()); 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode()); 
         hashCode = prime * hashCode + ((getGranteePrincipal() == null) ? 0 : getGranteePrincipal().hashCode()); 
         hashCode = prime * hashCode + ((getRetiringPrincipal() == null) ? 0 : getRetiringPrincipal().hashCode()); 
         hashCode = prime * hashCode + ((getIssuingAccount() == null) ? 0 : getIssuingAccount().hashCode()); 
@@ -457,8 +575,14 @@ public class GrantListEntry implements Serializable, Cloneable {
         if (obj instanceof GrantListEntry == false) return false;
         GrantListEntry other = (GrantListEntry)obj;
         
+        if (other.getKeyId() == null ^ this.getKeyId() == null) return false;
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false) return false; 
         if (other.getGrantId() == null ^ this.getGrantId() == null) return false;
         if (other.getGrantId() != null && other.getGrantId().equals(this.getGrantId()) == false) return false; 
+        if (other.getName() == null ^ this.getName() == null) return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getCreationDate() == null ^ this.getCreationDate() == null) return false;
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false) return false; 
         if (other.getGranteePrincipal() == null ^ this.getGranteePrincipal() == null) return false;
         if (other.getGranteePrincipal() != null && other.getGranteePrincipal().equals(this.getGranteePrincipal()) == false) return false; 
         if (other.getRetiringPrincipal() == null ^ this.getRetiringPrincipal() == null) return false;

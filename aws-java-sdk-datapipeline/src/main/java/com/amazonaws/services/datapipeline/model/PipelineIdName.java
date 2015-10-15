@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
@@ -24,117 +25,98 @@ import java.io.Serializable;
 public class PipelineIdName implements Serializable, Cloneable {
 
     /**
-     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is
-     * a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * </p>
      */
     private String id;
-
     /**
-     * The name of the pipeline.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The name of the pipeline.
+     * </p>
      */
     private String name;
 
     /**
-     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is
-     * a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The ID of the pipeline that was assigned by AWS Data Pipeline. This is
-     *         a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
-     */
-    public String getId() {
-        return id;
-    }
-    
-    /**
-     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is
-     * a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param id The ID of the pipeline that was assigned by AWS Data Pipeline. This is
-     *         a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the pipeline that was assigned by AWS Data Pipeline.
+     *        This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      */
     public void setId(String id) {
         this.id = id;
     }
-    
+
     /**
-     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is
-     * a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * </p>
+     * 
+     * @return The ID of the pipeline that was assigned by AWS Data Pipeline.
+     *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     */
+    public String getId() {
+        return this.id;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param id The ID of the pipeline that was assigned by AWS Data Pipeline. This is
-     *         a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the pipeline that was assigned by AWS Data Pipeline.
+     *        This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PipelineIdName withId(String id) {
-        this.id = id;
+        setId(id);
         return this;
     }
 
     /**
-     * The name of the pipeline.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The name of the pipeline.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
      * The name of the pipeline.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param name The name of the pipeline.
+     * </p>
+     * 
+     * @param name
+     *        The name of the pipeline.
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
+     * <p>
      * The name of the pipeline.
+     * </p>
+     * 
+     * @return The name of the pipeline.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param name The name of the pipeline.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the pipeline.
+     * </p>
+     * 
+     * @param name
+     *        The name of the pipeline.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PipelineIdName withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
@@ -150,50 +132,57 @@ public class PipelineIdName implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ",");
-        if (getName() != null) sb.append("Name: " + getName() );
+        if (getId() != null)
+            sb.append("Id: " + getId() + ",");
+        if (getName() != null)
+            sb.append("Name: " + getName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PipelineIdName == false)
+            return false;
+        PipelineIdName other = (PipelineIdName) obj;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null
+                && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof PipelineIdName == false) return false;
-        PipelineIdName other = (PipelineIdName)obj;
-        
-        if (other.getId() == null ^ this.getId() == null) return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public PipelineIdName clone() {
         try {
             return (PipelineIdName) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

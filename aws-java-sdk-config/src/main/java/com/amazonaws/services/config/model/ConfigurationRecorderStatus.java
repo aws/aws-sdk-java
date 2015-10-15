@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
@@ -24,367 +25,404 @@ import java.io.Serializable;
 public class ConfigurationRecorderStatus implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the configuration recorder.
+     * </p>
      */
     private String name;
-
     /**
+     * <p>
      * The time the recorder was last started.
+     * </p>
      */
     private java.util.Date lastStartTime;
-
     /**
+     * <p>
      * The time the recorder was last stopped.
+     * </p>
      */
     private java.util.Date lastStopTime;
-
     /**
+     * <p>
      * Specifies whether the recorder is currently recording or not.
+     * </p>
      */
     private Boolean recording;
-
     /**
-     * The last (previous) status of the recorder.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Success, Failure
+     * The last (previous) status of the recorder.
+     * </p>
      */
     private String lastStatus;
-
     /**
+     * <p>
      * The error code indicating that the recording failed.
+     * </p>
      */
     private String lastErrorCode;
-
     /**
+     * <p>
      * The message indicating that the recording failed due to an error.
+     * </p>
      */
     private String lastErrorMessage;
-
     /**
+     * <p>
      * The time when the status was last changed.
+     * </p>
      */
     private java.util.Date lastStatusChangeTime;
 
     /**
+     * <p>
      * The name of the configuration recorder.
-     *
-     * @return The name of the configuration recorder.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * The name of the configuration recorder.
-     *
-     * @param name The name of the configuration recorder.
+     * </p>
+     * 
+     * @param name
+     *        The name of the configuration recorder.
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
-     * The name of the configuration recorder.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param name The name of the configuration recorder.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the configuration recorder.
+     * </p>
+     * 
+     * @return The name of the configuration recorder.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the configuration recorder.
+     * </p>
+     * 
+     * @param name
+     *        The name of the configuration recorder.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ConfigurationRecorderStatus withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
+     * <p>
      * The time the recorder was last started.
-     *
-     * @return The time the recorder was last started.
-     */
-    public java.util.Date getLastStartTime() {
-        return lastStartTime;
-    }
-    
-    /**
-     * The time the recorder was last started.
-     *
-     * @param lastStartTime The time the recorder was last started.
+     * </p>
+     * 
+     * @param lastStartTime
+     *        The time the recorder was last started.
      */
     public void setLastStartTime(java.util.Date lastStartTime) {
         this.lastStartTime = lastStartTime;
     }
-    
+
     /**
-     * The time the recorder was last started.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param lastStartTime The time the recorder was last started.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The time the recorder was last started.
+     * </p>
+     * 
+     * @return The time the recorder was last started.
      */
-    public ConfigurationRecorderStatus withLastStartTime(java.util.Date lastStartTime) {
-        this.lastStartTime = lastStartTime;
+    public java.util.Date getLastStartTime() {
+        return this.lastStartTime;
+    }
+
+    /**
+     * <p>
+     * The time the recorder was last started.
+     * </p>
+     * 
+     * @param lastStartTime
+     *        The time the recorder was last started.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ConfigurationRecorderStatus withLastStartTime(
+            java.util.Date lastStartTime) {
+        setLastStartTime(lastStartTime);
         return this;
     }
 
     /**
+     * <p>
      * The time the recorder was last stopped.
-     *
-     * @return The time the recorder was last stopped.
-     */
-    public java.util.Date getLastStopTime() {
-        return lastStopTime;
-    }
-    
-    /**
-     * The time the recorder was last stopped.
-     *
-     * @param lastStopTime The time the recorder was last stopped.
+     * </p>
+     * 
+     * @param lastStopTime
+     *        The time the recorder was last stopped.
      */
     public void setLastStopTime(java.util.Date lastStopTime) {
         this.lastStopTime = lastStopTime;
     }
-    
+
     /**
-     * The time the recorder was last stopped.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param lastStopTime The time the recorder was last stopped.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The time the recorder was last stopped.
+     * </p>
+     * 
+     * @return The time the recorder was last stopped.
      */
-    public ConfigurationRecorderStatus withLastStopTime(java.util.Date lastStopTime) {
-        this.lastStopTime = lastStopTime;
+    public java.util.Date getLastStopTime() {
+        return this.lastStopTime;
+    }
+
+    /**
+     * <p>
+     * The time the recorder was last stopped.
+     * </p>
+     * 
+     * @param lastStopTime
+     *        The time the recorder was last stopped.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ConfigurationRecorderStatus withLastStopTime(
+            java.util.Date lastStopTime) {
+        setLastStopTime(lastStopTime);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether the recorder is currently recording or not.
-     *
-     * @return Specifies whether the recorder is currently recording or not.
-     */
-    public Boolean isRecording() {
-        return recording;
-    }
-    
-    /**
-     * Specifies whether the recorder is currently recording or not.
-     *
-     * @param recording Specifies whether the recorder is currently recording or not.
+     * </p>
+     * 
+     * @param recording
+     *        Specifies whether the recorder is currently recording or not.
      */
     public void setRecording(Boolean recording) {
         this.recording = recording;
     }
-    
+
     /**
-     * Specifies whether the recorder is currently recording or not.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param recording Specifies whether the recorder is currently recording or not.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies whether the recorder is currently recording or not.
+     * </p>
+     * 
+     * @return Specifies whether the recorder is currently recording or not.
+     */
+    public Boolean getRecording() {
+        return this.recording;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the recorder is currently recording or not.
+     * </p>
+     * 
+     * @param recording
+     *        Specifies whether the recorder is currently recording or not.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ConfigurationRecorderStatus withRecording(Boolean recording) {
-        this.recording = recording;
+        setRecording(recording);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether the recorder is currently recording or not.
-     *
+     * </p>
+     * 
      * @return Specifies whether the recorder is currently recording or not.
      */
-    public Boolean getRecording() {
-        return recording;
+    public Boolean isRecording() {
+        return this.recording;
     }
 
     /**
-     * The last (previous) status of the recorder.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Success, Failure
-     *
-     * @return The last (previous) status of the recorder.
-     *
-     * @see RecorderStatus
-     */
-    public String getLastStatus() {
-        return lastStatus;
-    }
-    
-    /**
      * The last (previous) status of the recorder.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Success, Failure
-     *
-     * @param lastStatus The last (previous) status of the recorder.
-     *
+     * </p>
+     * 
+     * @param lastStatus
+     *        The last (previous) status of the recorder.
      * @see RecorderStatus
      */
     public void setLastStatus(String lastStatus) {
         this.lastStatus = lastStatus;
     }
-    
+
     /**
+     * <p>
      * The last (previous) status of the recorder.
+     * </p>
+     * 
+     * @return The last (previous) status of the recorder.
+     * @see RecorderStatus
+     */
+    public String getLastStatus() {
+        return this.lastStatus;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Success, Failure
-     *
-     * @param lastStatus The last (previous) status of the recorder.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The last (previous) status of the recorder.
+     * </p>
+     * 
+     * @param lastStatus
+     *        The last (previous) status of the recorder.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see RecorderStatus
      */
     public ConfigurationRecorderStatus withLastStatus(String lastStatus) {
-        this.lastStatus = lastStatus;
+        setLastStatus(lastStatus);
         return this;
     }
 
     /**
-     * The last (previous) status of the recorder.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Success, Failure
-     *
-     * @param lastStatus The last (previous) status of the recorder.
-     *
+     * The last (previous) status of the recorder.
+     * </p>
+     * 
+     * @param lastStatus
+     *        The last (previous) status of the recorder.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see RecorderStatus
      */
     public void setLastStatus(RecorderStatus lastStatus) {
         this.lastStatus = lastStatus.toString();
     }
-    
+
     /**
+     * <p>
      * The last (previous) status of the recorder.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Success, Failure
-     *
-     * @param lastStatus The last (previous) status of the recorder.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param lastStatus
+     *        The last (previous) status of the recorder.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see RecorderStatus
      */
     public ConfigurationRecorderStatus withLastStatus(RecorderStatus lastStatus) {
-        this.lastStatus = lastStatus.toString();
+        setLastStatus(lastStatus);
         return this;
     }
 
     /**
+     * <p>
      * The error code indicating that the recording failed.
-     *
-     * @return The error code indicating that the recording failed.
-     */
-    public String getLastErrorCode() {
-        return lastErrorCode;
-    }
-    
-    /**
-     * The error code indicating that the recording failed.
-     *
-     * @param lastErrorCode The error code indicating that the recording failed.
+     * </p>
+     * 
+     * @param lastErrorCode
+     *        The error code indicating that the recording failed.
      */
     public void setLastErrorCode(String lastErrorCode) {
         this.lastErrorCode = lastErrorCode;
     }
-    
+
     /**
-     * The error code indicating that the recording failed.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param lastErrorCode The error code indicating that the recording failed.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The error code indicating that the recording failed.
+     * </p>
+     * 
+     * @return The error code indicating that the recording failed.
+     */
+    public String getLastErrorCode() {
+        return this.lastErrorCode;
+    }
+
+    /**
+     * <p>
+     * The error code indicating that the recording failed.
+     * </p>
+     * 
+     * @param lastErrorCode
+     *        The error code indicating that the recording failed.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ConfigurationRecorderStatus withLastErrorCode(String lastErrorCode) {
-        this.lastErrorCode = lastErrorCode;
+        setLastErrorCode(lastErrorCode);
         return this;
     }
 
     /**
+     * <p>
      * The message indicating that the recording failed due to an error.
-     *
-     * @return The message indicating that the recording failed due to an error.
-     */
-    public String getLastErrorMessage() {
-        return lastErrorMessage;
-    }
-    
-    /**
-     * The message indicating that the recording failed due to an error.
-     *
-     * @param lastErrorMessage The message indicating that the recording failed due to an error.
+     * </p>
+     * 
+     * @param lastErrorMessage
+     *        The message indicating that the recording failed due to an error.
      */
     public void setLastErrorMessage(String lastErrorMessage) {
         this.lastErrorMessage = lastErrorMessage;
     }
-    
+
     /**
-     * The message indicating that the recording failed due to an error.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param lastErrorMessage The message indicating that the recording failed due to an error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The message indicating that the recording failed due to an error.
+     * </p>
+     * 
+     * @return The message indicating that the recording failed due to an error.
      */
-    public ConfigurationRecorderStatus withLastErrorMessage(String lastErrorMessage) {
-        this.lastErrorMessage = lastErrorMessage;
+    public String getLastErrorMessage() {
+        return this.lastErrorMessage;
+    }
+
+    /**
+     * <p>
+     * The message indicating that the recording failed due to an error.
+     * </p>
+     * 
+     * @param lastErrorMessage
+     *        The message indicating that the recording failed due to an error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ConfigurationRecorderStatus withLastErrorMessage(
+            String lastErrorMessage) {
+        setLastErrorMessage(lastErrorMessage);
         return this;
     }
 
     /**
+     * <p>
      * The time when the status was last changed.
-     *
-     * @return The time when the status was last changed.
-     */
-    public java.util.Date getLastStatusChangeTime() {
-        return lastStatusChangeTime;
-    }
-    
-    /**
-     * The time when the status was last changed.
-     *
-     * @param lastStatusChangeTime The time when the status was last changed.
+     * </p>
+     * 
+     * @param lastStatusChangeTime
+     *        The time when the status was last changed.
      */
     public void setLastStatusChangeTime(java.util.Date lastStatusChangeTime) {
         this.lastStatusChangeTime = lastStatusChangeTime;
     }
-    
+
     /**
-     * The time when the status was last changed.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param lastStatusChangeTime The time when the status was last changed.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The time when the status was last changed.
+     * </p>
+     * 
+     * @return The time when the status was last changed.
      */
-    public ConfigurationRecorderStatus withLastStatusChangeTime(java.util.Date lastStatusChangeTime) {
-        this.lastStatusChangeTime = lastStatusChangeTime;
+    public java.util.Date getLastStatusChangeTime() {
+        return this.lastStatusChangeTime;
+    }
+
+    /**
+     * <p>
+     * The time when the status was last changed.
+     * </p>
+     * 
+     * @param lastStatusChangeTime
+     *        The time when the status was last changed.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ConfigurationRecorderStatus withLastStatusChangeTime(
+            java.util.Date lastStatusChangeTime) {
+        setLastStatusChangeTime(lastStatusChangeTime);
         return this;
     }
 
@@ -400,74 +438,125 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getLastStartTime() != null) sb.append("LastStartTime: " + getLastStartTime() + ",");
-        if (getLastStopTime() != null) sb.append("LastStopTime: " + getLastStopTime() + ",");
-        if (isRecording() != null) sb.append("Recording: " + isRecording() + ",");
-        if (getLastStatus() != null) sb.append("LastStatus: " + getLastStatus() + ",");
-        if (getLastErrorCode() != null) sb.append("LastErrorCode: " + getLastErrorCode() + ",");
-        if (getLastErrorMessage() != null) sb.append("LastErrorMessage: " + getLastErrorMessage() + ",");
-        if (getLastStatusChangeTime() != null) sb.append("LastStatusChangeTime: " + getLastStatusChangeTime() );
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getLastStartTime() != null)
+            sb.append("LastStartTime: " + getLastStartTime() + ",");
+        if (getLastStopTime() != null)
+            sb.append("LastStopTime: " + getLastStopTime() + ",");
+        if (getRecording() != null)
+            sb.append("Recording: " + getRecording() + ",");
+        if (getLastStatus() != null)
+            sb.append("LastStatus: " + getLastStatus() + ",");
+        if (getLastErrorCode() != null)
+            sb.append("LastErrorCode: " + getLastErrorCode() + ",");
+        if (getLastErrorMessage() != null)
+            sb.append("LastErrorMessage: " + getLastErrorMessage() + ",");
+        if (getLastStatusChangeTime() != null)
+            sb.append("LastStatusChangeTime: " + getLastStatusChangeTime());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ConfigurationRecorderStatus == false)
+            return false;
+        ConfigurationRecorderStatus other = (ConfigurationRecorderStatus) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getLastStartTime() == null ^ this.getLastStartTime() == null)
+            return false;
+        if (other.getLastStartTime() != null
+                && other.getLastStartTime().equals(this.getLastStartTime()) == false)
+            return false;
+        if (other.getLastStopTime() == null ^ this.getLastStopTime() == null)
+            return false;
+        if (other.getLastStopTime() != null
+                && other.getLastStopTime().equals(this.getLastStopTime()) == false)
+            return false;
+        if (other.getRecording() == null ^ this.getRecording() == null)
+            return false;
+        if (other.getRecording() != null
+                && other.getRecording().equals(this.getRecording()) == false)
+            return false;
+        if (other.getLastStatus() == null ^ this.getLastStatus() == null)
+            return false;
+        if (other.getLastStatus() != null
+                && other.getLastStatus().equals(this.getLastStatus()) == false)
+            return false;
+        if (other.getLastErrorCode() == null ^ this.getLastErrorCode() == null)
+            return false;
+        if (other.getLastErrorCode() != null
+                && other.getLastErrorCode().equals(this.getLastErrorCode()) == false)
+            return false;
+        if (other.getLastErrorMessage() == null
+                ^ this.getLastErrorMessage() == null)
+            return false;
+        if (other.getLastErrorMessage() != null
+                && other.getLastErrorMessage().equals(
+                        this.getLastErrorMessage()) == false)
+            return false;
+        if (other.getLastStatusChangeTime() == null
+                ^ this.getLastStatusChangeTime() == null)
+            return false;
+        if (other.getLastStatusChangeTime() != null
+                && other.getLastStatusChangeTime().equals(
+                        this.getLastStatusChangeTime()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getLastStartTime() == null) ? 0 : getLastStartTime().hashCode()); 
-        hashCode = prime * hashCode + ((getLastStopTime() == null) ? 0 : getLastStopTime().hashCode()); 
-        hashCode = prime * hashCode + ((isRecording() == null) ? 0 : isRecording().hashCode()); 
-        hashCode = prime * hashCode + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getLastErrorCode() == null) ? 0 : getLastErrorCode().hashCode()); 
-        hashCode = prime * hashCode + ((getLastErrorMessage() == null) ? 0 : getLastErrorMessage().hashCode()); 
-        hashCode = prime * hashCode + ((getLastStatusChangeTime() == null) ? 0 : getLastStatusChangeTime().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLastStartTime() == null) ? 0 : getLastStartTime()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLastStopTime() == null) ? 0 : getLastStopTime()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getRecording() == null) ? 0 : getRecording().hashCode());
+        hashCode = prime * hashCode
+                + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLastErrorCode() == null) ? 0 : getLastErrorCode()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLastErrorMessage() == null) ? 0 : getLastErrorMessage()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLastStatusChangeTime() == null) ? 0
+                        : getLastStatusChangeTime().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ConfigurationRecorderStatus == false) return false;
-        ConfigurationRecorderStatus other = (ConfigurationRecorderStatus)obj;
-        
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getLastStartTime() == null ^ this.getLastStartTime() == null) return false;
-        if (other.getLastStartTime() != null && other.getLastStartTime().equals(this.getLastStartTime()) == false) return false; 
-        if (other.getLastStopTime() == null ^ this.getLastStopTime() == null) return false;
-        if (other.getLastStopTime() != null && other.getLastStopTime().equals(this.getLastStopTime()) == false) return false; 
-        if (other.isRecording() == null ^ this.isRecording() == null) return false;
-        if (other.isRecording() != null && other.isRecording().equals(this.isRecording()) == false) return false; 
-        if (other.getLastStatus() == null ^ this.getLastStatus() == null) return false;
-        if (other.getLastStatus() != null && other.getLastStatus().equals(this.getLastStatus()) == false) return false; 
-        if (other.getLastErrorCode() == null ^ this.getLastErrorCode() == null) return false;
-        if (other.getLastErrorCode() != null && other.getLastErrorCode().equals(this.getLastErrorCode()) == false) return false; 
-        if (other.getLastErrorMessage() == null ^ this.getLastErrorMessage() == null) return false;
-        if (other.getLastErrorMessage() != null && other.getLastErrorMessage().equals(this.getLastErrorMessage()) == false) return false; 
-        if (other.getLastStatusChangeTime() == null ^ this.getLastStatusChangeTime() == null) return false;
-        if (other.getLastStatusChangeTime() != null && other.getLastStatusChangeTime().equals(this.getLastStatusChangeTime()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ConfigurationRecorderStatus clone() {
         try {
             return (ConfigurationRecorderStatus) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

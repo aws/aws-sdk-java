@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because the key was disabled, not found, or
- * otherwise not available.
+ * The request was rejected because the key was not available. The
+ * request can be retried.
  * </p>
  */        
 public class KeyUnavailableException extends AmazonServiceException {

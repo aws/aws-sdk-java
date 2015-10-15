@@ -1,241 +1,246 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeCommands(DescribeCommandsRequest) DescribeCommands operation}.
- * <p>
- * Describes the results of specified commands.
- * </p>
- * <p>
- * <b>NOTE:</b> You must specify at least one of the parameters.
- * </p>
- * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must
- * have a Show, Deploy, or Manage permissions level for the stack, or an
- * attached policy that explicitly grants permissions. For more
- * information on user permissions, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
- * .
- * </p>
- *
- * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeCommands(DescribeCommandsRequest)
+ * 
  */
-public class DescribeCommandsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeCommandsRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * The deployment ID. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the commands
      * associated with the specified deployment.
+     * </p>
      */
     private String deploymentId;
-
     /**
+     * <p>
      * The instance ID. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the commands
      * associated with the specified instance.
+     * </p>
      */
     private String instanceId;
-
     /**
+     * <p>
      * An array of command IDs. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the specified
      * commands. Otherwise, it returns a description of every command.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> commandIds;
+    private com.amazonaws.internal.SdkInternalList<String> commandIds;
 
     /**
+     * <p>
      * The deployment ID. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the commands
      * associated with the specified deployment.
-     *
-     * @return The deployment ID. If you include this parameter,
-     *         <code>DescribeCommands</code> returns a description of the commands
-     *         associated with the specified deployment.
-     */
-    public String getDeploymentId() {
-        return deploymentId;
-    }
-    
-    /**
-     * The deployment ID. If you include this parameter,
-     * <code>DescribeCommands</code> returns a description of the commands
-     * associated with the specified deployment.
-     *
-     * @param deploymentId The deployment ID. If you include this parameter,
-     *         <code>DescribeCommands</code> returns a description of the commands
-     *         associated with the specified deployment.
+     * </p>
+     * 
+     * @param deploymentId
+     *        The deployment ID. If you include this parameter,
+     *        <code>DescribeCommands</code> returns a description of the
+     *        commands associated with the specified deployment.
      */
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
-    
+
     /**
+     * <p>
      * The deployment ID. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the commands
      * associated with the specified deployment.
+     * </p>
+     * 
+     * @return The deployment ID. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the
+     *         commands associated with the specified deployment.
+     */
+    public String getDeploymentId() {
+        return this.deploymentId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param deploymentId The deployment ID. If you include this parameter,
-     *         <code>DescribeCommands</code> returns a description of the commands
-     *         associated with the specified deployment.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The deployment ID. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the commands
+     * associated with the specified deployment.
+     * </p>
+     * 
+     * @param deploymentId
+     *        The deployment ID. If you include this parameter,
+     *        <code>DescribeCommands</code> returns a description of the
+     *        commands associated with the specified deployment.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeCommandsRequest withDeploymentId(String deploymentId) {
-        this.deploymentId = deploymentId;
+        setDeploymentId(deploymentId);
         return this;
     }
 
     /**
+     * <p>
      * The instance ID. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the commands
      * associated with the specified instance.
-     *
-     * @return The instance ID. If you include this parameter,
-     *         <code>DescribeCommands</code> returns a description of the commands
-     *         associated with the specified instance.
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-    
-    /**
-     * The instance ID. If you include this parameter,
-     * <code>DescribeCommands</code> returns a description of the commands
-     * associated with the specified instance.
-     *
-     * @param instanceId The instance ID. If you include this parameter,
-     *         <code>DescribeCommands</code> returns a description of the commands
-     *         associated with the specified instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The instance ID. If you include this parameter,
+     *        <code>DescribeCommands</code> returns a description of the
+     *        commands associated with the specified instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
-    
+
     /**
+     * <p>
      * The instance ID. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the commands
      * associated with the specified instance.
+     * </p>
+     * 
+     * @return The instance ID. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the
+     *         commands associated with the specified instance.
+     */
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instanceId The instance ID. If you include this parameter,
-     *         <code>DescribeCommands</code> returns a description of the commands
-     *         associated with the specified instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The instance ID. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the commands
+     * associated with the specified instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The instance ID. If you include this parameter,
+     *        <code>DescribeCommands</code> returns a description of the
+     *        commands associated with the specified instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeCommandsRequest withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+        setInstanceId(instanceId);
         return this;
     }
 
     /**
+     * <p>
      * An array of command IDs. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the specified
      * commands. Otherwise, it returns a description of every command.
-     *
+     * </p>
+     * 
      * @return An array of command IDs. If you include this parameter,
-     *         <code>DescribeCommands</code> returns a description of the specified
-     *         commands. Otherwise, it returns a description of every command.
+     *         <code>DescribeCommands</code> returns a description of the
+     *         specified commands. Otherwise, it returns a description of every
+     *         command.
      */
     public java.util.List<String> getCommandIds() {
         if (commandIds == null) {
-              commandIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              commandIds.setAutoConstruct(true);
+            commandIds = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return commandIds;
     }
-    
+
     /**
+     * <p>
      * An array of command IDs. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the specified
      * commands. Otherwise, it returns a description of every command.
-     *
-     * @param commandIds An array of command IDs. If you include this parameter,
-     *         <code>DescribeCommands</code> returns a description of the specified
-     *         commands. Otherwise, it returns a description of every command.
+     * </p>
+     * 
+     * @param commandIds
+     *        An array of command IDs. If you include this parameter,
+     *        <code>DescribeCommands</code> returns a description of the
+     *        specified commands. Otherwise, it returns a description of every
+     *        command.
      */
     public void setCommandIds(java.util.Collection<String> commandIds) {
         if (commandIds == null) {
             this.commandIds = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> commandIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(commandIds.size());
-        commandIdsCopy.addAll(commandIds);
-        this.commandIds = commandIdsCopy;
+
+        this.commandIds = new com.amazonaws.internal.SdkInternalList<String>(
+                commandIds);
     }
-    
+
     /**
+     * <p>
      * An array of command IDs. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the specified
      * commands. Otherwise, it returns a description of every command.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCommandIds(java.util.Collection)} or {@link
-     * #withCommandIds(java.util.Collection)} if you want to override the
+     * any). Use {@link #setCommandIds(java.util.Collection)} or
+     * {@link #withCommandIds(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param commandIds An array of command IDs. If you include this parameter,
-     *         <code>DescribeCommands</code> returns a description of the specified
-     *         commands. Otherwise, it returns a description of every command.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param commandIds
+     *        An array of command IDs. If you include this parameter,
+     *        <code>DescribeCommands</code> returns a description of the
+     *        specified commands. Otherwise, it returns a description of every
+     *        command.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeCommandsRequest withCommandIds(String... commandIds) {
-        if (getCommandIds() == null) setCommandIds(new java.util.ArrayList<String>(commandIds.length));
-        for (String value : commandIds) {
-            getCommandIds().add(value);
+        if (this.commandIds == null) {
+            setCommandIds(new com.amazonaws.internal.SdkInternalList<String>(
+                    commandIds.length));
+        }
+        for (String ele : commandIds) {
+            this.commandIds.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * An array of command IDs. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the specified
      * commands. Otherwise, it returns a description of every command.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param commandIds An array of command IDs. If you include this parameter,
-     *         <code>DescribeCommands</code> returns a description of the specified
-     *         commands. Otherwise, it returns a description of every command.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param commandIds
+     *        An array of command IDs. If you include this parameter,
+     *        <code>DescribeCommands</code> returns a description of the
+     *        specified commands. Otherwise, it returns a description of every
+     *        command.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeCommandsRequest withCommandIds(java.util.Collection<String> commandIds) {
-        if (commandIds == null) {
-            this.commandIds = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> commandIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(commandIds.size());
-            commandIdsCopy.addAll(commandIds);
-            this.commandIds = commandIdsCopy;
-        }
-
+    public DescribeCommandsRequest withCommandIds(
+            java.util.Collection<String> commandIds) {
+        setCommandIds(commandIds);
         return this;
     }
 
@@ -251,46 +256,62 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDeploymentId() != null) sb.append("DeploymentId: " + getDeploymentId() + ",");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
-        if (getCommandIds() != null) sb.append("CommandIds: " + getCommandIds() );
+        if (getDeploymentId() != null)
+            sb.append("DeploymentId: " + getDeploymentId() + ",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getCommandIds() != null)
+            sb.append("CommandIds: " + getCommandIds());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeCommandsRequest == false)
+            return false;
+        DescribeCommandsRequest other = (DescribeCommandsRequest) obj;
+        if (other.getDeploymentId() == null ^ this.getDeploymentId() == null)
+            return false;
+        if (other.getDeploymentId() != null
+                && other.getDeploymentId().equals(this.getDeploymentId()) == false)
+            return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null
+                && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
+        if (other.getCommandIds() == null ^ this.getCommandIds() == null)
+            return false;
+        if (other.getCommandIds() != null
+                && other.getCommandIds().equals(this.getCommandIds()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode()); 
-        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
-        hashCode = prime * hashCode + ((getCommandIds() == null) ? 0 : getCommandIds().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDeploymentId() == null) ? 0 : getDeploymentId()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode
+                + ((getCommandIds() == null) ? 0 : getCommandIds().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeCommandsRequest == false) return false;
-        DescribeCommandsRequest other = (DescribeCommandsRequest)obj;
-        
-        if (other.getDeploymentId() == null ^ this.getDeploymentId() == null) return false;
-        if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false) return false; 
-        if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
-        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
-        if (other.getCommandIds() == null ^ this.getCommandIds() == null) return false;
-        if (other.getCommandIds() != null && other.getCommandIds().equals(this.getCommandIds()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeCommandsRequest clone() {
-        
-            return (DescribeCommandsRequest) super.clone();
+        return (DescribeCommandsRequest) super.clone();
     }
-
 }
-    

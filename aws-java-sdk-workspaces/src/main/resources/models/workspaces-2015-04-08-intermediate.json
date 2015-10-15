@@ -273,7 +273,7 @@
           "variableName" : "directoryId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -324,7 +324,7 @@
           "variableName" : "userName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -375,7 +375,7 @@
           "variableName" : "bundleId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -426,7 +426,7 @@
           "variableName" : "volumeEncryptionKey",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -477,7 +477,7 @@
           "variableName" : "userVolumeEncryptionEnabled",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -528,7 +528,7 @@
           "variableName" : "rootVolumeEncryptionEnabled",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -602,7 +602,7 @@
             "variableName" : "volumeEncryptionKey",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -654,7 +654,7 @@
             "variableName" : "directoryId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -706,7 +706,7 @@
             "variableName" : "userVolumeEncryptionEnabled",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -758,7 +758,7 @@
             "variableName" : "bundleId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -810,7 +810,7 @@
             "variableName" : "userName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -862,7 +862,7 @@
             "variableName" : "rootVolumeEncryptionEnabled",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -926,7 +926,7 @@
           "variableName" : "failedRequests",
           "variableType" : "java.util.List<FailedWorkspaceChangeRequest>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<FailedWorkspaceChangeRequest>",
           "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
         },
@@ -955,7 +955,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "FailedWorkspaceChangeRequest",
@@ -963,7 +963,7 @@
               "variableName" : "member",
               "variableType" : "FailedWorkspaceChangeRequest",
               "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "FailedWorkspaceChangeRequest",
               "variableSetterType" : "FailedWorkspaceChangeRequest"
             },
@@ -971,7 +971,7 @@
               "variableName" : "member",
               "variableType" : "FailedWorkspaceChangeRequest",
               "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "FailedWorkspaceChangeRequest",
               "variableSetterType" : "FailedWorkspaceChangeRequest"
             },
@@ -1001,10 +1001,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -1064,7 +1064,7 @@
             "variableName" : "failedRequests",
             "variableType" : "java.util.List<FailedWorkspaceChangeRequest>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<FailedWorkspaceChangeRequest>",
             "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
           },
@@ -1093,7 +1093,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "FailedWorkspaceChangeRequest",
@@ -1101,7 +1101,7 @@
                 "variableName" : "member",
                 "variableType" : "FailedWorkspaceChangeRequest",
                 "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "FailedWorkspaceChangeRequest",
                 "variableSetterType" : "FailedWorkspaceChangeRequest"
               },
@@ -1109,7 +1109,7 @@
                 "variableName" : "member",
                 "variableType" : "FailedWorkspaceChangeRequest",
                 "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "FailedWorkspaceChangeRequest",
                 "variableSetterType" : "FailedWorkspaceChangeRequest"
               },
@@ -1139,10 +1139,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -1192,7 +1192,7 @@
           "variableName" : "failedRequests",
           "variableType" : "java.util.List<FailedWorkspaceChangeRequest>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<FailedWorkspaceChangeRequest>",
           "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
         },
@@ -1221,7 +1221,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "FailedWorkspaceChangeRequest",
@@ -1229,7 +1229,7 @@
               "variableName" : "member",
               "variableType" : "FailedWorkspaceChangeRequest",
               "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "FailedWorkspaceChangeRequest",
               "variableSetterType" : "FailedWorkspaceChangeRequest"
             },
@@ -1237,7 +1237,7 @@
               "variableName" : "member",
               "variableType" : "FailedWorkspaceChangeRequest",
               "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "FailedWorkspaceChangeRequest",
               "variableSetterType" : "FailedWorkspaceChangeRequest"
             },
@@ -1267,10 +1267,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -1330,7 +1330,7 @@
             "variableName" : "failedRequests",
             "variableType" : "java.util.List<FailedWorkspaceChangeRequest>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<FailedWorkspaceChangeRequest>",
             "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
           },
@@ -1359,7 +1359,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "FailedWorkspaceChangeRequest",
@@ -1367,7 +1367,7 @@
                 "variableName" : "member",
                 "variableType" : "FailedWorkspaceChangeRequest",
                 "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "FailedWorkspaceChangeRequest",
                 "variableSetterType" : "FailedWorkspaceChangeRequest"
               },
@@ -1375,7 +1375,7 @@
                 "variableName" : "member",
                 "variableType" : "FailedWorkspaceChangeRequest",
                 "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "FailedWorkspaceChangeRequest",
                 "variableSetterType" : "FailedWorkspaceChangeRequest"
               },
@@ -1405,10 +1405,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -1458,7 +1458,7 @@
           "variableName" : "workspaceId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1509,7 +1509,7 @@
           "variableName" : "directoryId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1560,7 +1560,7 @@
           "variableName" : "userName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1611,7 +1611,7 @@
           "variableName" : "ipAddress",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1662,7 +1662,7 @@
           "variableName" : "state",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1713,7 +1713,7 @@
           "variableName" : "bundleId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1764,7 +1764,7 @@
           "variableName" : "subnetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1815,7 +1815,7 @@
           "variableName" : "errorMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1866,7 +1866,7 @@
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1917,7 +1917,7 @@
           "variableName" : "computerName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1968,7 +1968,7 @@
           "variableName" : "volumeEncryptionKey",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2019,7 +2019,7 @@
           "variableName" : "userVolumeEncryptionEnabled",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -2070,7 +2070,7 @@
           "variableName" : "rootVolumeEncryptionEnabled",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -2144,7 +2144,7 @@
             "variableName" : "userVolumeEncryptionEnabled",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -2196,7 +2196,7 @@
             "variableName" : "userName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2248,7 +2248,7 @@
             "variableName" : "ipAddress",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2300,7 +2300,7 @@
             "variableName" : "bundleId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2352,7 +2352,7 @@
             "variableName" : "rootVolumeEncryptionEnabled",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -2404,7 +2404,7 @@
             "variableName" : "computerName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2456,7 +2456,7 @@
             "variableName" : "volumeEncryptionKey",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2508,7 +2508,7 @@
             "variableName" : "directoryId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2560,7 +2560,7 @@
             "variableName" : "state",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2612,7 +2612,7 @@
             "variableName" : "errorMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2664,7 +2664,7 @@
             "variableName" : "subnetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2716,7 +2716,7 @@
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2768,7 +2768,7 @@
             "variableName" : "workspaceId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2832,7 +2832,7 @@
           "variableName" : "workspaceId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2906,7 +2906,7 @@
             "variableName" : "workspaceId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2970,7 +2970,7 @@
           "variableName" : "terminateWorkspaceRequests",
           "variableType" : "java.util.List<TerminateRequest>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<TerminateRequest>",
           "variableSetterType" : "java.util.Collection<TerminateRequest>"
         },
@@ -2999,7 +2999,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "TerminateRequest",
@@ -3007,7 +3007,7 @@
               "variableName" : "member",
               "variableType" : "TerminateRequest",
               "variableDeclarationType" : "TerminateRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "TerminateRequest",
               "variableSetterType" : "TerminateRequest"
             },
@@ -3015,7 +3015,7 @@
               "variableName" : "member",
               "variableType" : "TerminateRequest",
               "variableDeclarationType" : "TerminateRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "TerminateRequest",
               "variableSetterType" : "TerminateRequest"
             },
@@ -3045,10 +3045,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -3112,7 +3112,7 @@
             "variableName" : "terminateWorkspaceRequests",
             "variableType" : "java.util.List<TerminateRequest>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<TerminateRequest>",
             "variableSetterType" : "java.util.Collection<TerminateRequest>"
           },
@@ -3141,7 +3141,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "TerminateRequest",
@@ -3149,7 +3149,7 @@
                 "variableName" : "member",
                 "variableType" : "TerminateRequest",
                 "variableDeclarationType" : "TerminateRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "TerminateRequest",
                 "variableSetterType" : "TerminateRequest"
               },
@@ -3157,7 +3157,7 @@
                 "variableName" : "member",
                 "variableType" : "TerminateRequest",
                 "variableDeclarationType" : "TerminateRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "TerminateRequest",
                 "variableSetterType" : "TerminateRequest"
               },
@@ -3187,10 +3187,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -3240,7 +3240,7 @@
           "variableName" : "rebootWorkspaceRequests",
           "variableType" : "java.util.List<RebootRequest>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<RebootRequest>",
           "variableSetterType" : "java.util.Collection<RebootRequest>"
         },
@@ -3269,7 +3269,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "RebootRequest",
@@ -3277,7 +3277,7 @@
               "variableName" : "member",
               "variableType" : "RebootRequest",
               "variableDeclarationType" : "RebootRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "RebootRequest",
               "variableSetterType" : "RebootRequest"
             },
@@ -3285,7 +3285,7 @@
               "variableName" : "member",
               "variableType" : "RebootRequest",
               "variableDeclarationType" : "RebootRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "RebootRequest",
               "variableSetterType" : "RebootRequest"
             },
@@ -3315,10 +3315,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -3382,7 +3382,7 @@
             "variableName" : "rebootWorkspaceRequests",
             "variableType" : "java.util.List<RebootRequest>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<RebootRequest>",
             "variableSetterType" : "java.util.Collection<RebootRequest>"
           },
@@ -3411,7 +3411,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "RebootRequest",
@@ -3419,7 +3419,7 @@
                 "variableName" : "member",
                 "variableType" : "RebootRequest",
                 "variableDeclarationType" : "RebootRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "RebootRequest",
                 "variableSetterType" : "RebootRequest"
               },
@@ -3427,7 +3427,7 @@
                 "variableName" : "member",
                 "variableType" : "RebootRequest",
                 "variableDeclarationType" : "RebootRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "RebootRequest",
                 "variableSetterType" : "RebootRequest"
               },
@@ -3457,10 +3457,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -3510,7 +3510,7 @@
           "variableName" : "rebuildWorkspaceRequests",
           "variableType" : "java.util.List<RebuildRequest>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<RebuildRequest>",
           "variableSetterType" : "java.util.Collection<RebuildRequest>"
         },
@@ -3539,7 +3539,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "RebuildRequest",
@@ -3547,7 +3547,7 @@
               "variableName" : "member",
               "variableType" : "RebuildRequest",
               "variableDeclarationType" : "RebuildRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "RebuildRequest",
               "variableSetterType" : "RebuildRequest"
             },
@@ -3555,7 +3555,7 @@
               "variableName" : "member",
               "variableType" : "RebuildRequest",
               "variableDeclarationType" : "RebuildRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "RebuildRequest",
               "variableSetterType" : "RebuildRequest"
             },
@@ -3585,10 +3585,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -3652,7 +3652,7 @@
             "variableName" : "rebuildWorkspaceRequests",
             "variableType" : "java.util.List<RebuildRequest>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<RebuildRequest>",
             "variableSetterType" : "java.util.Collection<RebuildRequest>"
           },
@@ -3681,7 +3681,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "RebuildRequest",
@@ -3689,7 +3689,7 @@
                 "variableName" : "member",
                 "variableType" : "RebuildRequest",
                 "variableDeclarationType" : "RebuildRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "RebuildRequest",
                 "variableSetterType" : "RebuildRequest"
               },
@@ -3697,7 +3697,7 @@
                 "variableName" : "member",
                 "variableType" : "RebuildRequest",
                 "variableDeclarationType" : "RebuildRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "RebuildRequest",
                 "variableSetterType" : "RebuildRequest"
               },
@@ -3727,10 +3727,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -3780,7 +3780,7 @@
           "variableName" : "enableWorkDocs",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -3831,7 +3831,7 @@
           "variableName" : "enableInternetAccess",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -3882,7 +3882,7 @@
           "variableName" : "defaultOu",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3933,7 +3933,7 @@
           "variableName" : "customSecurityGroupId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3984,7 +3984,7 @@
           "variableName" : "userEnabledAsLocalAdministrator",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -4058,7 +4058,7 @@
             "variableName" : "userEnabledAsLocalAdministrator",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -4110,7 +4110,7 @@
             "variableName" : "customSecurityGroupId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4162,7 +4162,7 @@
             "variableName" : "enableInternetAccess",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -4214,7 +4214,7 @@
             "variableName" : "enableWorkDocs",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -4266,7 +4266,7 @@
             "variableName" : "defaultOu",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4330,7 +4330,7 @@
           "variableName" : "failedRequests",
           "variableType" : "java.util.List<FailedWorkspaceChangeRequest>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<FailedWorkspaceChangeRequest>",
           "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
         },
@@ -4359,7 +4359,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "FailedWorkspaceChangeRequest",
@@ -4367,7 +4367,7 @@
               "variableName" : "member",
               "variableType" : "FailedWorkspaceChangeRequest",
               "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "FailedWorkspaceChangeRequest",
               "variableSetterType" : "FailedWorkspaceChangeRequest"
             },
@@ -4375,7 +4375,7 @@
               "variableName" : "member",
               "variableType" : "FailedWorkspaceChangeRequest",
               "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "FailedWorkspaceChangeRequest",
               "variableSetterType" : "FailedWorkspaceChangeRequest"
             },
@@ -4405,10 +4405,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -4468,7 +4468,7 @@
             "variableName" : "failedRequests",
             "variableType" : "java.util.List<FailedWorkspaceChangeRequest>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<FailedWorkspaceChangeRequest>",
             "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
           },
@@ -4497,7 +4497,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "FailedWorkspaceChangeRequest",
@@ -4505,7 +4505,7 @@
                 "variableName" : "member",
                 "variableType" : "FailedWorkspaceChangeRequest",
                 "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "FailedWorkspaceChangeRequest",
                 "variableSetterType" : "FailedWorkspaceChangeRequest"
               },
@@ -4513,7 +4513,7 @@
                 "variableName" : "member",
                 "variableType" : "FailedWorkspaceChangeRequest",
                 "variableDeclarationType" : "FailedWorkspaceChangeRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "FailedWorkspaceChangeRequest",
                 "variableSetterType" : "FailedWorkspaceChangeRequest"
               },
@@ -4543,10 +4543,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -4596,7 +4596,7 @@
           "variableName" : "bundles",
           "variableType" : "java.util.List<WorkspaceBundle>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<WorkspaceBundle>",
           "variableSetterType" : "java.util.Collection<WorkspaceBundle>"
         },
@@ -4625,7 +4625,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "WorkspaceBundle",
@@ -4633,7 +4633,7 @@
               "variableName" : "member",
               "variableType" : "WorkspaceBundle",
               "variableDeclarationType" : "WorkspaceBundle",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "WorkspaceBundle",
               "variableSetterType" : "WorkspaceBundle"
             },
@@ -4641,7 +4641,7 @@
               "variableName" : "member",
               "variableType" : "WorkspaceBundle",
               "variableDeclarationType" : "WorkspaceBundle",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "WorkspaceBundle",
               "variableSetterType" : "WorkspaceBundle"
             },
@@ -4671,10 +4671,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -4711,7 +4711,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4785,7 +4785,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4837,7 +4837,7 @@
             "variableName" : "bundles",
             "variableType" : "java.util.List<WorkspaceBundle>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<WorkspaceBundle>",
             "variableSetterType" : "java.util.Collection<WorkspaceBundle>"
           },
@@ -4866,7 +4866,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "WorkspaceBundle",
@@ -4874,7 +4874,7 @@
                 "variableName" : "member",
                 "variableType" : "WorkspaceBundle",
                 "variableDeclarationType" : "WorkspaceBundle",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "WorkspaceBundle",
                 "variableSetterType" : "WorkspaceBundle"
               },
@@ -4882,7 +4882,7 @@
                 "variableName" : "member",
                 "variableType" : "WorkspaceBundle",
                 "variableDeclarationType" : "WorkspaceBundle",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "WorkspaceBundle",
                 "variableSetterType" : "WorkspaceBundle"
               },
@@ -4912,10 +4912,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -4940,7 +4940,7 @@
     },
     "WorkspaceDirectoryState" : {
       "c2jName" : "WorkspaceDirectoryState",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "WorkspaceDirectoryState",
       "deprecated" : false,
       "required" : null,
@@ -5014,7 +5014,7 @@
           "variableName" : "directories",
           "variableType" : "java.util.List<WorkspaceDirectory>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<WorkspaceDirectory>",
           "variableSetterType" : "java.util.Collection<WorkspaceDirectory>"
         },
@@ -5043,7 +5043,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "WorkspaceDirectory",
@@ -5051,7 +5051,7 @@
               "variableName" : "member",
               "variableType" : "WorkspaceDirectory",
               "variableDeclarationType" : "WorkspaceDirectory",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "WorkspaceDirectory",
               "variableSetterType" : "WorkspaceDirectory"
             },
@@ -5059,7 +5059,7 @@
               "variableName" : "member",
               "variableType" : "WorkspaceDirectory",
               "variableDeclarationType" : "WorkspaceDirectory",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "WorkspaceDirectory",
               "variableSetterType" : "WorkspaceDirectory"
             },
@@ -5089,10 +5089,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -5129,7 +5129,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5203,7 +5203,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5255,7 +5255,7 @@
             "variableName" : "directories",
             "variableType" : "java.util.List<WorkspaceDirectory>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<WorkspaceDirectory>",
             "variableSetterType" : "java.util.Collection<WorkspaceDirectory>"
           },
@@ -5284,7 +5284,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "WorkspaceDirectory",
@@ -5292,7 +5292,7 @@
                 "variableName" : "member",
                 "variableType" : "WorkspaceDirectory",
                 "variableDeclarationType" : "WorkspaceDirectory",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "WorkspaceDirectory",
                 "variableSetterType" : "WorkspaceDirectory"
               },
@@ -5300,7 +5300,7 @@
                 "variableName" : "member",
                 "variableType" : "WorkspaceDirectory",
                 "variableDeclarationType" : "WorkspaceDirectory",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "WorkspaceDirectory",
                 "variableSetterType" : "WorkspaceDirectory"
               },
@@ -5330,10 +5330,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -5383,7 +5383,7 @@
           "variableName" : "failedRequests",
           "variableType" : "java.util.List<FailedCreateWorkspaceRequest>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<FailedCreateWorkspaceRequest>",
           "variableSetterType" : "java.util.Collection<FailedCreateWorkspaceRequest>"
         },
@@ -5412,7 +5412,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "FailedCreateWorkspaceRequest",
@@ -5420,7 +5420,7 @@
               "variableName" : "member",
               "variableType" : "FailedCreateWorkspaceRequest",
               "variableDeclarationType" : "FailedCreateWorkspaceRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "FailedCreateWorkspaceRequest",
               "variableSetterType" : "FailedCreateWorkspaceRequest"
             },
@@ -5428,7 +5428,7 @@
               "variableName" : "member",
               "variableType" : "FailedCreateWorkspaceRequest",
               "variableDeclarationType" : "FailedCreateWorkspaceRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "FailedCreateWorkspaceRequest",
               "variableSetterType" : "FailedCreateWorkspaceRequest"
             },
@@ -5458,10 +5458,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -5498,7 +5498,7 @@
           "variableName" : "pendingRequests",
           "variableType" : "java.util.List<Workspace>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<Workspace>",
           "variableSetterType" : "java.util.Collection<Workspace>"
         },
@@ -5527,7 +5527,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "Workspace",
@@ -5535,7 +5535,7 @@
               "variableName" : "member",
               "variableType" : "Workspace",
               "variableDeclarationType" : "Workspace",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Workspace",
               "variableSetterType" : "Workspace"
             },
@@ -5543,7 +5543,7 @@
               "variableName" : "member",
               "variableType" : "Workspace",
               "variableDeclarationType" : "Workspace",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Workspace",
               "variableSetterType" : "Workspace"
             },
@@ -5573,10 +5573,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -5636,7 +5636,7 @@
             "variableName" : "pendingRequests",
             "variableType" : "java.util.List<Workspace>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<Workspace>",
             "variableSetterType" : "java.util.Collection<Workspace>"
           },
@@ -5665,7 +5665,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "Workspace",
@@ -5673,7 +5673,7 @@
                 "variableName" : "member",
                 "variableType" : "Workspace",
                 "variableDeclarationType" : "Workspace",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Workspace",
                 "variableSetterType" : "Workspace"
               },
@@ -5681,7 +5681,7 @@
                 "variableName" : "member",
                 "variableType" : "Workspace",
                 "variableDeclarationType" : "Workspace",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Workspace",
                 "variableSetterType" : "Workspace"
               },
@@ -5711,10 +5711,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -5752,7 +5752,7 @@
             "variableName" : "failedRequests",
             "variableType" : "java.util.List<FailedCreateWorkspaceRequest>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<FailedCreateWorkspaceRequest>",
             "variableSetterType" : "java.util.Collection<FailedCreateWorkspaceRequest>"
           },
@@ -5781,7 +5781,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "FailedCreateWorkspaceRequest",
@@ -5789,7 +5789,7 @@
                 "variableName" : "member",
                 "variableType" : "FailedCreateWorkspaceRequest",
                 "variableDeclarationType" : "FailedCreateWorkspaceRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "FailedCreateWorkspaceRequest",
                 "variableSetterType" : "FailedCreateWorkspaceRequest"
               },
@@ -5797,7 +5797,7 @@
                 "variableName" : "member",
                 "variableType" : "FailedCreateWorkspaceRequest",
                 "variableDeclarationType" : "FailedCreateWorkspaceRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "FailedCreateWorkspaceRequest",
                 "variableSetterType" : "FailedCreateWorkspaceRequest"
               },
@@ -5827,10 +5827,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -5880,7 +5880,7 @@
           "variableName" : "workspaceId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5931,7 +5931,7 @@
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5982,7 +5982,7 @@
           "variableName" : "errorMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6056,7 +6056,7 @@
             "variableName" : "errorMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6108,7 +6108,7 @@
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6160,7 +6160,7 @@
             "variableName" : "workspaceId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6224,7 +6224,7 @@
           "variableName" : "capacity",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6298,7 +6298,7 @@
             "variableName" : "capacity",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6362,7 +6362,7 @@
           "variableName" : "workspaceRequest",
           "variableType" : "WorkspaceRequest",
           "variableDeclarationType" : "WorkspaceRequest",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "WorkspaceRequest",
           "variableSetterType" : "WorkspaceRequest"
         },
@@ -6413,7 +6413,7 @@
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6464,7 +6464,7 @@
           "variableName" : "errorMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6538,7 +6538,7 @@
             "variableName" : "workspaceRequest",
             "variableType" : "WorkspaceRequest",
             "variableDeclarationType" : "WorkspaceRequest",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "WorkspaceRequest",
             "variableSetterType" : "WorkspaceRequest"
           },
@@ -6590,7 +6590,7 @@
             "variableName" : "errorMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6642,7 +6642,7 @@
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6706,7 +6706,7 @@
           "variableName" : "bundleIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -6770,7 +6770,7 @@
           "variableName" : "owner",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6821,7 +6821,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6899,7 +6899,7 @@
             "variableName" : "owner",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6951,7 +6951,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7003,7 +7003,7 @@
             "variableName" : "bundleIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -7055,7 +7055,7 @@
     },
     "WorkspaceState" : {
       "c2jName" : "WorkspaceState",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "WorkspaceState",
       "deprecated" : false,
       "required" : null,
@@ -7144,7 +7144,7 @@
           "variableName" : "workspaces",
           "variableType" : "java.util.List<Workspace>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<Workspace>",
           "variableSetterType" : "java.util.Collection<Workspace>"
         },
@@ -7173,7 +7173,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "Workspace",
@@ -7181,7 +7181,7 @@
               "variableName" : "member",
               "variableType" : "Workspace",
               "variableDeclarationType" : "Workspace",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Workspace",
               "variableSetterType" : "Workspace"
             },
@@ -7189,7 +7189,7 @@
               "variableName" : "member",
               "variableType" : "Workspace",
               "variableDeclarationType" : "Workspace",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Workspace",
               "variableSetterType" : "Workspace"
             },
@@ -7219,10 +7219,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -7259,7 +7259,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7333,7 +7333,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7385,7 +7385,7 @@
             "variableName" : "workspaces",
             "variableType" : "java.util.List<Workspace>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<Workspace>",
             "variableSetterType" : "java.util.Collection<Workspace>"
           },
@@ -7414,7 +7414,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "Workspace",
@@ -7422,7 +7422,7 @@
                 "variableName" : "member",
                 "variableType" : "Workspace",
                 "variableDeclarationType" : "Workspace",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Workspace",
                 "variableSetterType" : "Workspace"
               },
@@ -7430,7 +7430,7 @@
                 "variableName" : "member",
                 "variableType" : "Workspace",
                 "variableDeclarationType" : "Workspace",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Workspace",
                 "variableSetterType" : "Workspace"
               },
@@ -7460,10 +7460,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -7513,7 +7513,7 @@
           "variableName" : "resourceId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7584,7 +7584,7 @@
             "variableName" : "resourceId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7679,7 +7679,7 @@
           "variableName" : "workspaces",
           "variableType" : "java.util.List<WorkspaceRequest>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<WorkspaceRequest>",
           "variableSetterType" : "java.util.Collection<WorkspaceRequest>"
         },
@@ -7708,7 +7708,7 @@
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "WorkspaceRequest",
@@ -7716,7 +7716,7 @@
               "variableName" : "member",
               "variableType" : "WorkspaceRequest",
               "variableDeclarationType" : "WorkspaceRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "WorkspaceRequest",
               "variableSetterType" : "WorkspaceRequest"
             },
@@ -7724,7 +7724,7 @@
               "variableName" : "member",
               "variableType" : "WorkspaceRequest",
               "variableDeclarationType" : "WorkspaceRequest",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "WorkspaceRequest",
               "variableSetterType" : "WorkspaceRequest"
             },
@@ -7754,10 +7754,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -7821,7 +7821,7 @@
             "variableName" : "workspaces",
             "variableType" : "java.util.List<WorkspaceRequest>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<WorkspaceRequest>",
             "variableSetterType" : "java.util.Collection<WorkspaceRequest>"
           },
@@ -7850,7 +7850,7 @@
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "WorkspaceRequest",
@@ -7858,7 +7858,7 @@
                 "variableName" : "member",
                 "variableType" : "WorkspaceRequest",
                 "variableDeclarationType" : "WorkspaceRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "WorkspaceRequest",
                 "variableSetterType" : "WorkspaceRequest"
               },
@@ -7866,7 +7866,7 @@
                 "variableName" : "member",
                 "variableType" : "WorkspaceRequest",
                 "variableDeclarationType" : "WorkspaceRequest",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "WorkspaceRequest",
                 "variableSetterType" : "WorkspaceRequest"
               },
@@ -7896,10 +7896,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -7949,7 +7949,7 @@
           "variableName" : "workspaceId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8023,7 +8023,7 @@
             "variableName" : "workspaceId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8062,7 +8062,7 @@
     },
     "WorkspaceDirectoryType" : {
       "c2jName" : "WorkspaceDirectoryType",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "WorkspaceDirectoryType",
       "deprecated" : false,
       "required" : null,
@@ -8158,7 +8158,7 @@
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8232,7 +8232,7 @@
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8296,7 +8296,7 @@
           "variableName" : "directoryIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -8360,7 +8360,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8438,7 +8438,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8490,7 +8490,7 @@
             "variableName" : "directoryIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -8567,7 +8567,7 @@
           "variableName" : "bundleId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8618,7 +8618,7 @@
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8669,7 +8669,7 @@
           "variableName" : "owner",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8720,7 +8720,7 @@
           "variableName" : "description",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8771,7 +8771,7 @@
           "variableName" : "userStorage",
           "variableType" : "UserStorage",
           "variableDeclarationType" : "UserStorage",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "UserStorage",
           "variableSetterType" : "UserStorage"
         },
@@ -8822,7 +8822,7 @@
           "variableName" : "computeType",
           "variableType" : "ComputeType",
           "variableDeclarationType" : "ComputeType",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "ComputeType",
           "variableSetterType" : "ComputeType"
         },
@@ -8896,7 +8896,7 @@
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8948,7 +8948,7 @@
             "variableName" : "userStorage",
             "variableType" : "UserStorage",
             "variableDeclarationType" : "UserStorage",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "UserStorage",
             "variableSetterType" : "UserStorage"
           },
@@ -9000,7 +9000,7 @@
             "variableName" : "owner",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9052,7 +9052,7 @@
             "variableName" : "description",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9104,7 +9104,7 @@
             "variableName" : "computeType",
             "variableType" : "ComputeType",
             "variableDeclarationType" : "ComputeType",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "ComputeType",
             "variableSetterType" : "ComputeType"
           },
@@ -9156,7 +9156,7 @@
             "variableName" : "bundleId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9220,7 +9220,7 @@
           "variableName" : "directoryId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9271,7 +9271,7 @@
           "variableName" : "alias",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9322,7 +9322,7 @@
           "variableName" : "directoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9373,7 +9373,7 @@
           "variableName" : "registrationCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9424,7 +9424,7 @@
           "variableName" : "subnetIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -9488,7 +9488,7 @@
           "variableName" : "dnsIpAddresses",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -9552,7 +9552,7 @@
           "variableName" : "customerUserName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9603,7 +9603,7 @@
           "variableName" : "iamRoleId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9654,7 +9654,7 @@
           "variableName" : "directoryType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9705,7 +9705,7 @@
           "variableName" : "workspaceSecurityGroupId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9756,7 +9756,7 @@
           "variableName" : "state",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9807,7 +9807,7 @@
           "variableName" : "workspaceCreationProperties",
           "variableType" : "DefaultWorkspaceCreationProperties",
           "variableDeclarationType" : "DefaultWorkspaceCreationProperties",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "DefaultWorkspaceCreationProperties",
           "variableSetterType" : "DefaultWorkspaceCreationProperties"
         },
@@ -9881,7 +9881,7 @@
             "variableName" : "directoryType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9933,7 +9933,7 @@
             "variableName" : "registrationCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9985,7 +9985,7 @@
             "variableName" : "directoryId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10037,7 +10037,7 @@
             "variableName" : "state",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10089,7 +10089,7 @@
             "variableName" : "alias",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10141,7 +10141,7 @@
             "variableName" : "subnetIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -10206,7 +10206,7 @@
             "variableName" : "dnsIpAddresses",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -10271,7 +10271,7 @@
             "variableName" : "customerUserName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10323,7 +10323,7 @@
             "variableName" : "directoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10375,7 +10375,7 @@
             "variableName" : "workspaceCreationProperties",
             "variableType" : "DefaultWorkspaceCreationProperties",
             "variableDeclarationType" : "DefaultWorkspaceCreationProperties",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "DefaultWorkspaceCreationProperties",
             "variableSetterType" : "DefaultWorkspaceCreationProperties"
           },
@@ -10427,7 +10427,7 @@
             "variableName" : "workspaceSecurityGroupId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10479,7 +10479,7 @@
             "variableName" : "iamRoleId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10543,7 +10543,7 @@
           "variableName" : "workspaceIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -10607,7 +10607,7 @@
           "variableName" : "directoryId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10658,7 +10658,7 @@
           "variableName" : "userName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10709,7 +10709,7 @@
           "variableName" : "bundleId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10760,7 +10760,7 @@
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -10811,7 +10811,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10889,7 +10889,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10941,7 +10941,7 @@
             "variableName" : "workspaceIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -11006,7 +11006,7 @@
             "variableName" : "directoryId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11058,7 +11058,7 @@
             "variableName" : "bundleId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11110,7 +11110,7 @@
             "variableName" : "userName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11162,7 +11162,7 @@
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -11201,7 +11201,7 @@
     },
     "Compute" : {
       "c2jName" : "Compute",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "Compute",
       "deprecated" : false,
       "required" : null,
@@ -11269,7 +11269,7 @@
           "variableName" : "workspaceId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11343,7 +11343,7 @@
             "variableName" : "workspaceId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

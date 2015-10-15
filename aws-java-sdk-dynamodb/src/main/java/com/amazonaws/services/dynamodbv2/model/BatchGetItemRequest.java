@@ -1668,11 +1668,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the ReturnConsumedCapacity property for this object.
-     * 
      * @param returnConsumedCapacity
-     *        The new value for the ReturnConsumedCapacity property for this
-     *        object.
      * @see ReturnConsumedCapacity
      */
     public void setReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -1680,9 +1676,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns the value of the ReturnConsumedCapacity property for this object.
-     * 
-     * @return The value of the ReturnConsumedCapacity property for this object.
+     * @return
      * @see ReturnConsumedCapacity
      */
     public String getReturnConsumedCapacity() {
@@ -1690,11 +1684,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the ReturnConsumedCapacity property for this object.
-     * 
      * @param returnConsumedCapacity
-     *        The new value for the ReturnConsumedCapacity property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnConsumedCapacity
@@ -1706,11 +1696,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the ReturnConsumedCapacity property for this object.
-     * 
      * @param returnConsumedCapacity
-     *        The new value for the ReturnConsumedCapacity property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnConsumedCapacity
@@ -1721,11 +1707,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the ReturnConsumedCapacity property for this object.
-     * 
      * @param returnConsumedCapacity
-     *        The new value for the ReturnConsumedCapacity property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnConsumedCapacity

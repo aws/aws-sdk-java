@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
@@ -19,502 +20,517 @@ import java.io.Serializable;
 /**
  * <p>
  * Describes a load-based auto scaling upscaling or downscaling threshold
- * configuration, which specifies when AWS OpsWorks starts or stops
- * load-based instances.
+ * configuration, which specifies when AWS OpsWorks starts or stops load-based
+ * instances.
  * </p>
  */
 public class AutoScalingThresholds implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The number of instances to add or remove when the load exceeds a
      * threshold.
+     * </p>
      */
     private Integer instanceCount;
-
     /**
+     * <p>
      * The amount of time, in minutes, that the load must exceed a threshold
      * before more instances are added or removed.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
+     * </p>
      */
     private Integer thresholdsWaitTime;
-
     /**
+     * <p>
      * The amount of time (in minutes) after a scaling event occurs that AWS
      * OpsWorks should ignore metrics and suppress additional scaling events.
-     * For example, AWS OpsWorks adds new instances following an upscaling
-     * event but the instances won't start reducing the load until they have
-     * been booted and configured. There is no point in raising additional
-     * scaling events during that operation, which typically takes several
-     * minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS
-     * OpsWorks to suppress scaling events long enough to get the new
-     * instances online.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
+     * For example, AWS OpsWorks adds new instances following an upscaling event
+     * but the instances won't start reducing the load until they have been
+     * booted and configured. There is no point in raising additional scaling
+     * events during that operation, which typically takes several minutes.
+     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to
+     * suppress scaling events long enough to get the new instances online.
+     * </p>
      */
     private Integer ignoreMetricsTime;
-
     /**
+     * <p>
      * The CPU utilization threshold, as a percent of the available CPU.
+     * </p>
      */
     private Double cpuThreshold;
-
     /**
-     * The memory utilization threshold, as a percent of the available
-     * memory.
+     * <p>
+     * The memory utilization threshold, as a percent of the available memory.
+     * </p>
      */
     private Double memoryThreshold;
-
     /**
-     * The load threshold. For more information about how load is computed,
-     * see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     * <p>
+     * The load threshold. For more information about how load is computed, see
+     * <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      * (computing)</a>.
+     * </p>
      */
     private Double loadThreshold;
-
     /**
+     * <p>
      * Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case
-     * sensitive and must be in the same region as the stack. <note>To use
-     * custom alarms, you must update your service role to allow
-     * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
-     * OpsWorks update the role for you when you first use this feature or
-     * you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * sensitive and must be in the same region as the stack.
+     * </p>
+     * <note>To use custom alarms, you must update your service role to allow
+     * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks
+     * update the role for you when you first use this feature or you can edit
+     * the role manually. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
+     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.</note>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> alarms;
+    private com.amazonaws.internal.SdkInternalList<String> alarms;
 
     /**
+     * <p>
      * The number of instances to add or remove when the load exceeds a
      * threshold.
-     *
-     * @return The number of instances to add or remove when the load exceeds a
-     *         threshold.
-     */
-    public Integer getInstanceCount() {
-        return instanceCount;
-    }
-    
-    /**
-     * The number of instances to add or remove when the load exceeds a
-     * threshold.
-     *
-     * @param instanceCount The number of instances to add or remove when the load exceeds a
-     *         threshold.
+     * </p>
+     * 
+     * @param instanceCount
+     *        The number of instances to add or remove when the load exceeds a
+     *        threshold.
      */
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
-    
+
     /**
+     * <p>
      * The number of instances to add or remove when the load exceeds a
      * threshold.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instanceCount The number of instances to add or remove when the load exceeds a
+     * </p>
+     * 
+     * @return The number of instances to add or remove when the load exceeds a
      *         threshold.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public Integer getInstanceCount() {
+        return this.instanceCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances to add or remove when the load exceeds a
+     * threshold.
+     * </p>
+     * 
+     * @param instanceCount
+     *        The number of instances to add or remove when the load exceeds a
+     *        threshold.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AutoScalingThresholds withInstanceCount(Integer instanceCount) {
-        this.instanceCount = instanceCount;
+        setInstanceCount(instanceCount);
         return this;
     }
 
     /**
+     * <p>
      * The amount of time, in minutes, that the load must exceed a threshold
      * before more instances are added or removed.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
-     *
-     * @return The amount of time, in minutes, that the load must exceed a threshold
-     *         before more instances are added or removed.
-     */
-    public Integer getThresholdsWaitTime() {
-        return thresholdsWaitTime;
-    }
-    
-    /**
-     * The amount of time, in minutes, that the load must exceed a threshold
-     * before more instances are added or removed.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
-     *
-     * @param thresholdsWaitTime The amount of time, in minutes, that the load must exceed a threshold
-     *         before more instances are added or removed.
+     * </p>
+     * 
+     * @param thresholdsWaitTime
+     *        The amount of time, in minutes, that the load must exceed a
+     *        threshold before more instances are added or removed.
      */
     public void setThresholdsWaitTime(Integer thresholdsWaitTime) {
         this.thresholdsWaitTime = thresholdsWaitTime;
     }
-    
+
     /**
+     * <p>
      * The amount of time, in minutes, that the load must exceed a threshold
      * before more instances are added or removed.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
-     *
-     * @param thresholdsWaitTime The amount of time, in minutes, that the load must exceed a threshold
-     *         before more instances are added or removed.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The amount of time, in minutes, that the load must exceed a
+     *         threshold before more instances are added or removed.
      */
-    public AutoScalingThresholds withThresholdsWaitTime(Integer thresholdsWaitTime) {
-        this.thresholdsWaitTime = thresholdsWaitTime;
+    public Integer getThresholdsWaitTime() {
+        return this.thresholdsWaitTime;
+    }
+
+    /**
+     * <p>
+     * The amount of time, in minutes, that the load must exceed a threshold
+     * before more instances are added or removed.
+     * </p>
+     * 
+     * @param thresholdsWaitTime
+     *        The amount of time, in minutes, that the load must exceed a
+     *        threshold before more instances are added or removed.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public AutoScalingThresholds withThresholdsWaitTime(
+            Integer thresholdsWaitTime) {
+        setThresholdsWaitTime(thresholdsWaitTime);
         return this;
     }
 
     /**
+     * <p>
      * The amount of time (in minutes) after a scaling event occurs that AWS
      * OpsWorks should ignore metrics and suppress additional scaling events.
-     * For example, AWS OpsWorks adds new instances following an upscaling
-     * event but the instances won't start reducing the load until they have
-     * been booted and configured. There is no point in raising additional
-     * scaling events during that operation, which typically takes several
-     * minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS
-     * OpsWorks to suppress scaling events long enough to get the new
-     * instances online.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
-     *
-     * @return The amount of time (in minutes) after a scaling event occurs that AWS
-     *         OpsWorks should ignore metrics and suppress additional scaling events.
-     *         For example, AWS OpsWorks adds new instances following an upscaling
-     *         event but the instances won't start reducing the load until they have
-     *         been booted and configured. There is no point in raising additional
-     *         scaling events during that operation, which typically takes several
-     *         minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS
-     *         OpsWorks to suppress scaling events long enough to get the new
-     *         instances online.
-     */
-    public Integer getIgnoreMetricsTime() {
-        return ignoreMetricsTime;
-    }
-    
-    /**
-     * The amount of time (in minutes) after a scaling event occurs that AWS
-     * OpsWorks should ignore metrics and suppress additional scaling events.
-     * For example, AWS OpsWorks adds new instances following an upscaling
-     * event but the instances won't start reducing the load until they have
-     * been booted and configured. There is no point in raising additional
-     * scaling events during that operation, which typically takes several
-     * minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS
-     * OpsWorks to suppress scaling events long enough to get the new
-     * instances online.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
-     *
-     * @param ignoreMetricsTime The amount of time (in minutes) after a scaling event occurs that AWS
-     *         OpsWorks should ignore metrics and suppress additional scaling events.
-     *         For example, AWS OpsWorks adds new instances following an upscaling
-     *         event but the instances won't start reducing the load until they have
-     *         been booted and configured. There is no point in raising additional
-     *         scaling events during that operation, which typically takes several
-     *         minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS
-     *         OpsWorks to suppress scaling events long enough to get the new
-     *         instances online.
+     * For example, AWS OpsWorks adds new instances following an upscaling event
+     * but the instances won't start reducing the load until they have been
+     * booted and configured. There is no point in raising additional scaling
+     * events during that operation, which typically takes several minutes.
+     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to
+     * suppress scaling events long enough to get the new instances online.
+     * </p>
+     * 
+     * @param ignoreMetricsTime
+     *        The amount of time (in minutes) after a scaling event occurs that
+     *        AWS OpsWorks should ignore metrics and suppress additional scaling
+     *        events. For example, AWS OpsWorks adds new instances following an
+     *        upscaling event but the instances won't start reducing the load
+     *        until they have been booted and configured. There is no point in
+     *        raising additional scaling events during that operation, which
+     *        typically takes several minutes. <code>IgnoreMetricsTime</code>
+     *        allows you to direct AWS OpsWorks to suppress scaling events long
+     *        enough to get the new instances online.
      */
     public void setIgnoreMetricsTime(Integer ignoreMetricsTime) {
         this.ignoreMetricsTime = ignoreMetricsTime;
     }
-    
+
     /**
+     * <p>
      * The amount of time (in minutes) after a scaling event occurs that AWS
      * OpsWorks should ignore metrics and suppress additional scaling events.
-     * For example, AWS OpsWorks adds new instances following an upscaling
-     * event but the instances won't start reducing the load until they have
-     * been booted and configured. There is no point in raising additional
-     * scaling events during that operation, which typically takes several
-     * minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS
-     * OpsWorks to suppress scaling events long enough to get the new
-     * instances online.
+     * For example, AWS OpsWorks adds new instances following an upscaling event
+     * but the instances won't start reducing the load until they have been
+     * booted and configured. There is no point in raising additional scaling
+     * events during that operation, which typically takes several minutes.
+     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to
+     * suppress scaling events long enough to get the new instances online.
+     * </p>
+     * 
+     * @return The amount of time (in minutes) after a scaling event occurs that
+     *         AWS OpsWorks should ignore metrics and suppress additional
+     *         scaling events. For example, AWS OpsWorks adds new instances
+     *         following an upscaling event but the instances won't start
+     *         reducing the load until they have been booted and configured.
+     *         There is no point in raising additional scaling events during
+     *         that operation, which typically takes several minutes.
+     *         <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks
+     *         to suppress scaling events long enough to get the new instances
+     *         online.
+     */
+    public Integer getIgnoreMetricsTime() {
+        return this.ignoreMetricsTime;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
-     *
-     * @param ignoreMetricsTime The amount of time (in minutes) after a scaling event occurs that AWS
-     *         OpsWorks should ignore metrics and suppress additional scaling events.
-     *         For example, AWS OpsWorks adds new instances following an upscaling
-     *         event but the instances won't start reducing the load until they have
-     *         been booted and configured. There is no point in raising additional
-     *         scaling events during that operation, which typically takes several
-     *         minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS
-     *         OpsWorks to suppress scaling events long enough to get the new
-     *         instances online.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The amount of time (in minutes) after a scaling event occurs that AWS
+     * OpsWorks should ignore metrics and suppress additional scaling events.
+     * For example, AWS OpsWorks adds new instances following an upscaling event
+     * but the instances won't start reducing the load until they have been
+     * booted and configured. There is no point in raising additional scaling
+     * events during that operation, which typically takes several minutes.
+     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to
+     * suppress scaling events long enough to get the new instances online.
+     * </p>
+     * 
+     * @param ignoreMetricsTime
+     *        The amount of time (in minutes) after a scaling event occurs that
+     *        AWS OpsWorks should ignore metrics and suppress additional scaling
+     *        events. For example, AWS OpsWorks adds new instances following an
+     *        upscaling event but the instances won't start reducing the load
+     *        until they have been booted and configured. There is no point in
+     *        raising additional scaling events during that operation, which
+     *        typically takes several minutes. <code>IgnoreMetricsTime</code>
+     *        allows you to direct AWS OpsWorks to suppress scaling events long
+     *        enough to get the new instances online.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AutoScalingThresholds withIgnoreMetricsTime(Integer ignoreMetricsTime) {
-        this.ignoreMetricsTime = ignoreMetricsTime;
+        setIgnoreMetricsTime(ignoreMetricsTime);
         return this;
     }
 
     /**
+     * <p>
      * The CPU utilization threshold, as a percent of the available CPU.
-     *
-     * @return The CPU utilization threshold, as a percent of the available CPU.
-     */
-    public Double getCpuThreshold() {
-        return cpuThreshold;
-    }
-    
-    /**
-     * The CPU utilization threshold, as a percent of the available CPU.
-     *
-     * @param cpuThreshold The CPU utilization threshold, as a percent of the available CPU.
+     * </p>
+     * 
+     * @param cpuThreshold
+     *        The CPU utilization threshold, as a percent of the available CPU.
      */
     public void setCpuThreshold(Double cpuThreshold) {
         this.cpuThreshold = cpuThreshold;
     }
-    
+
     /**
-     * The CPU utilization threshold, as a percent of the available CPU.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cpuThreshold The CPU utilization threshold, as a percent of the available CPU.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The CPU utilization threshold, as a percent of the available CPU.
+     * </p>
+     * 
+     * @return The CPU utilization threshold, as a percent of the available CPU.
+     */
+    public Double getCpuThreshold() {
+        return this.cpuThreshold;
+    }
+
+    /**
+     * <p>
+     * The CPU utilization threshold, as a percent of the available CPU.
+     * </p>
+     * 
+     * @param cpuThreshold
+     *        The CPU utilization threshold, as a percent of the available CPU.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AutoScalingThresholds withCpuThreshold(Double cpuThreshold) {
-        this.cpuThreshold = cpuThreshold;
+        setCpuThreshold(cpuThreshold);
         return this;
     }
 
     /**
-     * The memory utilization threshold, as a percent of the available
-     * memory.
-     *
-     * @return The memory utilization threshold, as a percent of the available
-     *         memory.
-     */
-    public Double getMemoryThreshold() {
-        return memoryThreshold;
-    }
-    
-    /**
-     * The memory utilization threshold, as a percent of the available
-     * memory.
-     *
-     * @param memoryThreshold The memory utilization threshold, as a percent of the available
-     *         memory.
+     * <p>
+     * The memory utilization threshold, as a percent of the available memory.
+     * </p>
+     * 
+     * @param memoryThreshold
+     *        The memory utilization threshold, as a percent of the available
+     *        memory.
      */
     public void setMemoryThreshold(Double memoryThreshold) {
         this.memoryThreshold = memoryThreshold;
     }
-    
+
     /**
-     * The memory utilization threshold, as a percent of the available
-     * memory.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param memoryThreshold The memory utilization threshold, as a percent of the available
+     * The memory utilization threshold, as a percent of the available memory.
+     * </p>
+     * 
+     * @return The memory utilization threshold, as a percent of the available
      *         memory.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public Double getMemoryThreshold() {
+        return this.memoryThreshold;
+    }
+
+    /**
+     * <p>
+     * The memory utilization threshold, as a percent of the available memory.
+     * </p>
+     * 
+     * @param memoryThreshold
+     *        The memory utilization threshold, as a percent of the available
+     *        memory.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AutoScalingThresholds withMemoryThreshold(Double memoryThreshold) {
-        this.memoryThreshold = memoryThreshold;
+        setMemoryThreshold(memoryThreshold);
         return this;
     }
 
     /**
-     * The load threshold. For more information about how load is computed,
-     * see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     * <p>
+     * The load threshold. For more information about how load is computed, see
+     * <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      * (computing)</a>.
-     *
-     * @return The load threshold. For more information about how load is computed,
-     *         see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
-     *         (computing)</a>.
-     */
-    public Double getLoadThreshold() {
-        return loadThreshold;
-    }
-    
-    /**
-     * The load threshold. For more information about how load is computed,
-     * see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
-     * (computing)</a>.
-     *
-     * @param loadThreshold The load threshold. For more information about how load is computed,
-     *         see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
-     *         (computing)</a>.
+     * </p>
+     * 
+     * @param loadThreshold
+     *        The load threshold. For more information about how load is
+     *        computed, see <a
+     *        href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     *        (computing)</a>.
      */
     public void setLoadThreshold(Double loadThreshold) {
         this.loadThreshold = loadThreshold;
     }
-    
+
     /**
-     * The load threshold. For more information about how load is computed,
-     * see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
-     * (computing)</a>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param loadThreshold The load threshold. For more information about how load is computed,
-     *         see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     * The load threshold. For more information about how load is computed, see
+     * <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     * (computing)</a>.
+     * </p>
+     * 
+     * @return The load threshold. For more information about how load is
+     *         computed, see <a
+     *         href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      *         (computing)</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public Double getLoadThreshold() {
+        return this.loadThreshold;
+    }
+
+    /**
+     * <p>
+     * The load threshold. For more information about how load is computed, see
+     * <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     * (computing)</a>.
+     * </p>
+     * 
+     * @param loadThreshold
+     *        The load threshold. For more information about how load is
+     *        computed, see <a
+     *        href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     *        (computing)</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AutoScalingThresholds withLoadThreshold(Double loadThreshold) {
-        this.loadThreshold = loadThreshold;
+        setLoadThreshold(loadThreshold);
         return this;
     }
 
     /**
+     * <p>
      * Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case
-     * sensitive and must be in the same region as the stack. <note>To use
-     * custom alarms, you must update your service role to allow
-     * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
-     * OpsWorks update the role for you when you first use this feature or
-     * you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</note>
-     *
-     * @return Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
-     *         parameter takes a list of up to five alarm names, which are case
-     *         sensitive and must be in the same region as the stack. <note>To use
-     *         custom alarms, you must update your service role to allow
-     *         <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
-     *         OpsWorks update the role for you when you first use this feature or
-     *         you can edit the role manually. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     *         AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * sensitive and must be in the same region as the stack.
+     * </p>
+     * <note>To use custom alarms, you must update your service role to allow
+     * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks
+     * update the role for you when you first use this feature or you can edit
+     * the role manually. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
+     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * 
+     * @return Custom Cloudwatch auto scaling alarms, to be used as thresholds.
+     *         This parameter takes a list of up to five alarm names, which are
+     *         case sensitive and must be in the same region as the stack.</p>
+     *         <note>To use custom alarms, you must update your service role to
+     *         allow <code>cloudwatch:DescribeAlarms</code>. You can either have
+     *         AWS OpsWorks update the role for you when you first use this
+     *         feature or you can edit the role manually. For more information,
+     *         see <a href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
+     *         >Allowing AWS OpsWorks to Act on Your Behalf</a>.
      */
     public java.util.List<String> getAlarms() {
         if (alarms == null) {
-              alarms = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              alarms.setAutoConstruct(true);
+            alarms = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return alarms;
     }
-    
+
     /**
+     * <p>
      * Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case
-     * sensitive and must be in the same region as the stack. <note>To use
-     * custom alarms, you must update your service role to allow
-     * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
-     * OpsWorks update the role for you when you first use this feature or
-     * you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</note>
-     *
-     * @param alarms Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
-     *         parameter takes a list of up to five alarm names, which are case
-     *         sensitive and must be in the same region as the stack. <note>To use
-     *         custom alarms, you must update your service role to allow
-     *         <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
-     *         OpsWorks update the role for you when you first use this feature or
-     *         you can edit the role manually. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     *         AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * sensitive and must be in the same region as the stack.
+     * </p>
+     * <note>To use custom alarms, you must update your service role to allow
+     * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks
+     * update the role for you when you first use this feature or you can edit
+     * the role manually. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
+     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * 
+     * @param alarms
+     *        Custom Cloudwatch auto scaling alarms, to be used as thresholds.
+     *        This parameter takes a list of up to five alarm names, which are
+     *        case sensitive and must be in the same region as the stack.</p>
+     *        <note>To use custom alarms, you must update your service role to
+     *        allow <code>cloudwatch:DescribeAlarms</code>. You can either have
+     *        AWS OpsWorks update the role for you when you first use this
+     *        feature or you can edit the role manually. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
+     *        >Allowing AWS OpsWorks to Act on Your Behalf</a>.
      */
     public void setAlarms(java.util.Collection<String> alarms) {
         if (alarms == null) {
             this.alarms = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(alarms.size());
-        alarmsCopy.addAll(alarms);
-        this.alarms = alarmsCopy;
+
+        this.alarms = new com.amazonaws.internal.SdkInternalList<String>(alarms);
     }
-    
+
     /**
+     * <p>
      * Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case
-     * sensitive and must be in the same region as the stack. <note>To use
-     * custom alarms, you must update your service role to allow
-     * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
-     * OpsWorks update the role for you when you first use this feature or
-     * you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * sensitive and must be in the same region as the stack.
+     * </p>
+     * <note>To use custom alarms, you must update your service role to allow
+     * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks
+     * update the role for you when you first use this feature or you can edit
+     * the role manually. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
+     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.</note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAlarms(java.util.Collection)} or {@link
-     * #withAlarms(java.util.Collection)} if you want to override the
+     * any). Use {@link #setAlarms(java.util.Collection)} or
+     * {@link #withAlarms(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param alarms Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
-     *         parameter takes a list of up to five alarm names, which are case
-     *         sensitive and must be in the same region as the stack. <note>To use
-     *         custom alarms, you must update your service role to allow
-     *         <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
-     *         OpsWorks update the role for you when you first use this feature or
-     *         you can edit the role manually. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     *         AWS OpsWorks to Act on Your Behalf</a>.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param alarms
+     *        Custom Cloudwatch auto scaling alarms, to be used as thresholds.
+     *        This parameter takes a list of up to five alarm names, which are
+     *        case sensitive and must be in the same region as the stack.</p>
+     *        <note>To use custom alarms, you must update your service role to
+     *        allow <code>cloudwatch:DescribeAlarms</code>. You can either have
+     *        AWS OpsWorks update the role for you when you first use this
+     *        feature or you can edit the role manually. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
+     *        >Allowing AWS OpsWorks to Act on Your Behalf</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AutoScalingThresholds withAlarms(String... alarms) {
-        if (getAlarms() == null) setAlarms(new java.util.ArrayList<String>(alarms.length));
-        for (String value : alarms) {
-            getAlarms().add(value);
+        if (this.alarms == null) {
+            setAlarms(new com.amazonaws.internal.SdkInternalList<String>(
+                    alarms.length));
+        }
+        for (String ele : alarms) {
+            this.alarms.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case
-     * sensitive and must be in the same region as the stack. <note>To use
-     * custom alarms, you must update your service role to allow
-     * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
-     * OpsWorks update the role for you when you first use this feature or
-     * you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</note>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param alarms Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
-     *         parameter takes a list of up to five alarm names, which are case
-     *         sensitive and must be in the same region as the stack. <note>To use
-     *         custom alarms, you must update your service role to allow
-     *         <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
-     *         OpsWorks update the role for you when you first use this feature or
-     *         you can edit the role manually. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     *         AWS OpsWorks to Act on Your Behalf</a>.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * sensitive and must be in the same region as the stack.
+     * </p>
+     * <note>To use custom alarms, you must update your service role to allow
+     * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks
+     * update the role for you when you first use this feature or you can edit
+     * the role manually. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
+     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * 
+     * @param alarms
+     *        Custom Cloudwatch auto scaling alarms, to be used as thresholds.
+     *        This parameter takes a list of up to five alarm names, which are
+     *        case sensitive and must be in the same region as the stack.</p>
+     *        <note>To use custom alarms, you must update your service role to
+     *        allow <code>cloudwatch:DescribeAlarms</code>. You can either have
+     *        AWS OpsWorks update the role for you when you first use this
+     *        feature or you can edit the role manually. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
+     *        >Allowing AWS OpsWorks to Act on Your Behalf</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AutoScalingThresholds withAlarms(java.util.Collection<String> alarms) {
-        if (alarms == null) {
-            this.alarms = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(alarms.size());
-            alarmsCopy.addAll(alarms);
-            this.alarms = alarmsCopy;
-        }
-
+        setAlarms(alarms);
         return this;
     }
 
@@ -530,70 +546,119 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");
-        if (getThresholdsWaitTime() != null) sb.append("ThresholdsWaitTime: " + getThresholdsWaitTime() + ",");
-        if (getIgnoreMetricsTime() != null) sb.append("IgnoreMetricsTime: " + getIgnoreMetricsTime() + ",");
-        if (getCpuThreshold() != null) sb.append("CpuThreshold: " + getCpuThreshold() + ",");
-        if (getMemoryThreshold() != null) sb.append("MemoryThreshold: " + getMemoryThreshold() + ",");
-        if (getLoadThreshold() != null) sb.append("LoadThreshold: " + getLoadThreshold() + ",");
-        if (getAlarms() != null) sb.append("Alarms: " + getAlarms() );
+        if (getInstanceCount() != null)
+            sb.append("InstanceCount: " + getInstanceCount() + ",");
+        if (getThresholdsWaitTime() != null)
+            sb.append("ThresholdsWaitTime: " + getThresholdsWaitTime() + ",");
+        if (getIgnoreMetricsTime() != null)
+            sb.append("IgnoreMetricsTime: " + getIgnoreMetricsTime() + ",");
+        if (getCpuThreshold() != null)
+            sb.append("CpuThreshold: " + getCpuThreshold() + ",");
+        if (getMemoryThreshold() != null)
+            sb.append("MemoryThreshold: " + getMemoryThreshold() + ",");
+        if (getLoadThreshold() != null)
+            sb.append("LoadThreshold: " + getLoadThreshold() + ",");
+        if (getAlarms() != null)
+            sb.append("Alarms: " + getAlarms());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof AutoScalingThresholds == false)
+            return false;
+        AutoScalingThresholds other = (AutoScalingThresholds) obj;
+        if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
+            return false;
+        if (other.getInstanceCount() != null
+                && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+            return false;
+        if (other.getThresholdsWaitTime() == null
+                ^ this.getThresholdsWaitTime() == null)
+            return false;
+        if (other.getThresholdsWaitTime() != null
+                && other.getThresholdsWaitTime().equals(
+                        this.getThresholdsWaitTime()) == false)
+            return false;
+        if (other.getIgnoreMetricsTime() == null
+                ^ this.getIgnoreMetricsTime() == null)
+            return false;
+        if (other.getIgnoreMetricsTime() != null
+                && other.getIgnoreMetricsTime().equals(
+                        this.getIgnoreMetricsTime()) == false)
+            return false;
+        if (other.getCpuThreshold() == null ^ this.getCpuThreshold() == null)
+            return false;
+        if (other.getCpuThreshold() != null
+                && other.getCpuThreshold().equals(this.getCpuThreshold()) == false)
+            return false;
+        if (other.getMemoryThreshold() == null
+                ^ this.getMemoryThreshold() == null)
+            return false;
+        if (other.getMemoryThreshold() != null
+                && other.getMemoryThreshold().equals(this.getMemoryThreshold()) == false)
+            return false;
+        if (other.getLoadThreshold() == null ^ this.getLoadThreshold() == null)
+            return false;
+        if (other.getLoadThreshold() != null
+                && other.getLoadThreshold().equals(this.getLoadThreshold()) == false)
+            return false;
+        if (other.getAlarms() == null ^ this.getAlarms() == null)
+            return false;
+        if (other.getAlarms() != null
+                && other.getAlarms().equals(this.getAlarms()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode()); 
-        hashCode = prime * hashCode + ((getThresholdsWaitTime() == null) ? 0 : getThresholdsWaitTime().hashCode()); 
-        hashCode = prime * hashCode + ((getIgnoreMetricsTime() == null) ? 0 : getIgnoreMetricsTime().hashCode()); 
-        hashCode = prime * hashCode + ((getCpuThreshold() == null) ? 0 : getCpuThreshold().hashCode()); 
-        hashCode = prime * hashCode + ((getMemoryThreshold() == null) ? 0 : getMemoryThreshold().hashCode()); 
-        hashCode = prime * hashCode + ((getLoadThreshold() == null) ? 0 : getLoadThreshold().hashCode()); 
-        hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getInstanceCount() == null) ? 0 : getInstanceCount()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getThresholdsWaitTime() == null) ? 0
+                        : getThresholdsWaitTime().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIgnoreMetricsTime() == null) ? 0
+                        : getIgnoreMetricsTime().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCpuThreshold() == null) ? 0 : getCpuThreshold()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getMemoryThreshold() == null) ? 0 : getMemoryThreshold()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLoadThreshold() == null) ? 0 : getLoadThreshold()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof AutoScalingThresholds == false) return false;
-        AutoScalingThresholds other = (AutoScalingThresholds)obj;
-        
-        if (other.getInstanceCount() == null ^ this.getInstanceCount() == null) return false;
-        if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false) return false; 
-        if (other.getThresholdsWaitTime() == null ^ this.getThresholdsWaitTime() == null) return false;
-        if (other.getThresholdsWaitTime() != null && other.getThresholdsWaitTime().equals(this.getThresholdsWaitTime()) == false) return false; 
-        if (other.getIgnoreMetricsTime() == null ^ this.getIgnoreMetricsTime() == null) return false;
-        if (other.getIgnoreMetricsTime() != null && other.getIgnoreMetricsTime().equals(this.getIgnoreMetricsTime()) == false) return false; 
-        if (other.getCpuThreshold() == null ^ this.getCpuThreshold() == null) return false;
-        if (other.getCpuThreshold() != null && other.getCpuThreshold().equals(this.getCpuThreshold()) == false) return false; 
-        if (other.getMemoryThreshold() == null ^ this.getMemoryThreshold() == null) return false;
-        if (other.getMemoryThreshold() != null && other.getMemoryThreshold().equals(this.getMemoryThreshold()) == false) return false; 
-        if (other.getLoadThreshold() == null ^ this.getLoadThreshold() == null) return false;
-        if (other.getLoadThreshold() != null && other.getLoadThreshold().equals(this.getLoadThreshold()) == false) return false; 
-        if (other.getAlarms() == null ^ this.getAlarms() == null) return false;
-        if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public AutoScalingThresholds clone() {
         try {
             return (AutoScalingThresholds) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

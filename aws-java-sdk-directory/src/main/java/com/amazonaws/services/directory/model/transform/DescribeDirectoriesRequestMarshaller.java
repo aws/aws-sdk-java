@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.directory.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,34 +40,41 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Describe Directories Request Marshaller
+ * DescribeDirectoriesRequest Marshaller
  */
-public class DescribeDirectoriesRequestMarshaller implements Marshaller<Request<DescribeDirectoriesRequest>, DescribeDirectoriesRequest> {
+public class DescribeDirectoriesRequestMarshaller
+        implements
+        Marshaller<Request<DescribeDirectoriesRequest>, DescribeDirectoriesRequest> {
 
-    public Request<DescribeDirectoriesRequest> marshall(DescribeDirectoriesRequest describeDirectoriesRequest) {
+    public Request<DescribeDirectoriesRequest> marshall(
+            DescribeDirectoriesRequest describeDirectoriesRequest) {
+
         if (describeDirectoriesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeDirectoriesRequest> request = new DefaultRequest<DescribeDirectoriesRequest>(describeDirectoriesRequest, "AWSDirectoryService");
-        String target = "DirectoryService_20150416.DescribeDirectories";
-        request.addHeader("X-Amz-Target", target);
+        Request<DescribeDirectoriesRequest> request = new DefaultRequest<DescribeDirectoriesRequest>(
+                describeDirectoriesRequest, "AWSDirectoryService");
+        request.addHeader("X-Amz-Target",
+                "DirectoryService_20150416.DescribeDirectories");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
+            jsonWriter.object();
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> directoryIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeDirectoriesRequest.getDirectoryIds());
-            if (directoryIdsList != null && !(directoryIdsList.isAutoConstruct() && directoryIdsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> directoryIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeDirectoriesRequest
+                    .getDirectoryIds();
+            if (!directoryIdsList.isEmpty()
+                    || !directoryIdsList.isAutoConstruct()) {
                 jsonWriter.key("DirectoryIds");
                 jsonWriter.array();
-
                 for (String directoryIdsListValue : directoryIdsList) {
                     if (directoryIdsListValue != null) {
                         jsonWriter.value(directoryIdsListValue);
@@ -74,24 +82,31 @@ public class DescribeDirectoriesRequestMarshaller implements Marshaller<Request<
                 }
                 jsonWriter.endArray();
             }
+
             if (describeDirectoriesRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(describeDirectoriesRequest.getNextToken());
+                jsonWriter.key("NextToken").value(
+                        describeDirectoriesRequest.getNextToken());
             }
+
             if (describeDirectoriesRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(describeDirectoriesRequest.getLimit());
+                jsonWriter.key("Limit").value(
+                        describeDirectoriesRequest.getLimit());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

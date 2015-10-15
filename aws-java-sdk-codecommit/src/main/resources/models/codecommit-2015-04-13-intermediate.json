@@ -644,7 +644,7 @@
           "variableName" : "accountId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -695,7 +695,7 @@
           "variableName" : "repositoryId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -746,7 +746,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -797,7 +797,7 @@
           "variableName" : "repositoryDescription",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -848,7 +848,7 @@
           "variableName" : "defaultBranch",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -899,7 +899,7 @@
           "variableName" : "lastModifiedDate",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -950,7 +950,7 @@
           "variableName" : "creationDate",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -1001,7 +1001,7 @@
           "variableName" : "cloneUrlHttp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1052,7 +1052,7 @@
           "variableName" : "cloneUrlSsh",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1103,7 +1103,7 @@
           "variableName" : "arn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1177,7 +1177,7 @@
             "variableName" : "repositoryDescription",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1229,7 +1229,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1281,7 +1281,7 @@
             "variableName" : "defaultBranch",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1333,7 +1333,7 @@
             "variableName" : "accountId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1385,7 +1385,7 @@
             "variableName" : "cloneUrlSsh",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1437,7 +1437,7 @@
             "variableName" : "lastModifiedDate",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -1489,7 +1489,7 @@
             "variableName" : "repositoryId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1541,7 +1541,7 @@
             "variableName" : "creationDate",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -1593,7 +1593,7 @@
             "variableName" : "arn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1645,7 +1645,7 @@
             "variableName" : "cloneUrlHttp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1709,7 +1709,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1760,7 +1760,7 @@
           "variableName" : "branchName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1811,7 +1811,7 @@
           "variableName" : "commitId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1889,7 +1889,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1941,7 +1941,7 @@
             "variableName" : "branchName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1993,7 +1993,7 @@
             "variableName" : "commitId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2057,7 +2057,7 @@
           "variableName" : "repositoryMetadata",
           "variableType" : "RepositoryMetadata",
           "variableDeclarationType" : "RepositoryMetadata",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "RepositoryMetadata",
           "variableSetterType" : "RepositoryMetadata"
         },
@@ -2131,7 +2131,7 @@
             "variableName" : "repositoryMetadata",
             "variableType" : "RepositoryMetadata",
             "variableDeclarationType" : "RepositoryMetadata",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "RepositoryMetadata",
             "variableSetterType" : "RepositoryMetadata"
           },
@@ -2195,7 +2195,7 @@
           "variableName" : "repositoryNames",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -2228,9 +2228,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2286,7 +2286,7 @@
             "variableName" : "repositoryNames",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -2319,9 +2319,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2363,7 +2363,7 @@
           "variableName" : "branchName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2414,7 +2414,7 @@
           "variableName" : "commitId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2488,7 +2488,7 @@
             "variableName" : "branchName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2540,7 +2540,7 @@
             "variableName" : "commitId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2635,7 +2635,7 @@
           "variableName" : "repositories",
           "variableType" : "java.util.List<RepositoryNameIdPair>",
           "variableDeclarationType" : "java.util.List<RepositoryNameIdPair>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<RepositoryNameIdPair>",
           "variableSetterType" : "java.util.Collection<RepositoryNameIdPair>"
         },
@@ -2664,7 +2664,7 @@
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "RepositoryNameIdPair",
@@ -2672,7 +2672,7 @@
               "variableName" : "member",
               "variableType" : "RepositoryNameIdPair",
               "variableDeclarationType" : "RepositoryNameIdPair",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "RepositoryNameIdPair",
               "variableSetterType" : "RepositoryNameIdPair"
             },
@@ -2680,7 +2680,7 @@
               "variableName" : "member",
               "variableType" : "RepositoryNameIdPair",
               "variableDeclarationType" : "RepositoryNameIdPair",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "RepositoryNameIdPair",
               "variableSetterType" : "RepositoryNameIdPair"
             },
@@ -2710,18 +2710,18 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "RepositoryNameIdPair",
           "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<RepositoryNameIdPair>",
-          "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>"
+          "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2750,7 +2750,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2824,7 +2824,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2876,7 +2876,7 @@
             "variableName" : "repositories",
             "variableType" : "java.util.List<RepositoryNameIdPair>",
             "variableDeclarationType" : "java.util.List<RepositoryNameIdPair>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<RepositoryNameIdPair>",
             "variableSetterType" : "java.util.Collection<RepositoryNameIdPair>"
           },
@@ -2905,7 +2905,7 @@
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "RepositoryNameIdPair",
@@ -2913,7 +2913,7 @@
                 "variableName" : "member",
                 "variableType" : "RepositoryNameIdPair",
                 "variableDeclarationType" : "RepositoryNameIdPair",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "RepositoryNameIdPair",
                 "variableSetterType" : "RepositoryNameIdPair"
               },
@@ -2921,7 +2921,7 @@
                 "variableName" : "member",
                 "variableType" : "RepositoryNameIdPair",
                 "variableDeclarationType" : "RepositoryNameIdPair",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "RepositoryNameIdPair",
                 "variableSetterType" : "RepositoryNameIdPair"
               },
@@ -2951,18 +2951,18 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "RepositoryNameIdPair",
             "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<RepositoryNameIdPair>",
-            "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>"
+            "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3097,7 +3097,7 @@
           "variableName" : "repositories",
           "variableType" : "java.util.List<RepositoryMetadata>",
           "variableDeclarationType" : "java.util.List<RepositoryMetadata>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<RepositoryMetadata>",
           "variableSetterType" : "java.util.Collection<RepositoryMetadata>"
         },
@@ -3126,7 +3126,7 @@
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "RepositoryMetadata",
@@ -3134,7 +3134,7 @@
               "variableName" : "member",
               "variableType" : "RepositoryMetadata",
               "variableDeclarationType" : "RepositoryMetadata",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "RepositoryMetadata",
               "variableSetterType" : "RepositoryMetadata"
             },
@@ -3142,7 +3142,7 @@
               "variableName" : "member",
               "variableType" : "RepositoryMetadata",
               "variableDeclarationType" : "RepositoryMetadata",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "RepositoryMetadata",
               "variableSetterType" : "RepositoryMetadata"
             },
@@ -3172,18 +3172,18 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "RepositoryMetadata",
           "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<RepositoryMetadata>",
-          "templateImplType" : "java.util.ArrayList<RepositoryMetadata>"
+          "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3212,7 +3212,7 @@
           "variableName" : "repositoriesNotFound",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -3245,9 +3245,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3299,7 +3299,7 @@
             "variableName" : "repositories",
             "variableType" : "java.util.List<RepositoryMetadata>",
             "variableDeclarationType" : "java.util.List<RepositoryMetadata>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<RepositoryMetadata>",
             "variableSetterType" : "java.util.Collection<RepositoryMetadata>"
           },
@@ -3328,7 +3328,7 @@
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "RepositoryMetadata",
@@ -3336,7 +3336,7 @@
                 "variableName" : "member",
                 "variableType" : "RepositoryMetadata",
                 "variableDeclarationType" : "RepositoryMetadata",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "RepositoryMetadata",
                 "variableSetterType" : "RepositoryMetadata"
               },
@@ -3344,7 +3344,7 @@
                 "variableName" : "member",
                 "variableType" : "RepositoryMetadata",
                 "variableDeclarationType" : "RepositoryMetadata",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "RepositoryMetadata",
                 "variableSetterType" : "RepositoryMetadata"
               },
@@ -3374,18 +3374,18 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "RepositoryMetadata",
             "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<RepositoryMetadata>",
-            "templateImplType" : "java.util.ArrayList<RepositoryMetadata>"
+            "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3415,7 +3415,7 @@
             "variableName" : "repositoriesNotFound",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -3448,9 +3448,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3492,7 +3492,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3570,7 +3570,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3696,7 +3696,7 @@
           "variableName" : "repositoryMetadata",
           "variableType" : "RepositoryMetadata",
           "variableDeclarationType" : "RepositoryMetadata",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "RepositoryMetadata",
           "variableSetterType" : "RepositoryMetadata"
         },
@@ -3770,7 +3770,7 @@
             "variableName" : "repositoryMetadata",
             "variableType" : "RepositoryMetadata",
             "variableDeclarationType" : "RepositoryMetadata",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "RepositoryMetadata",
             "variableSetterType" : "RepositoryMetadata"
           },
@@ -3865,7 +3865,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3916,7 +3916,7 @@
           "variableName" : "sortBy",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3967,7 +3967,7 @@
           "variableName" : "order",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4045,7 +4045,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4097,7 +4097,7 @@
             "variableName" : "sortBy",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4149,7 +4149,7 @@
             "variableName" : "order",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4213,7 +4213,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4264,7 +4264,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4342,7 +4342,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4394,7 +4394,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4433,7 +4433,7 @@
     },
     "OrderEnum" : {
       "c2jName" : "OrderEnum",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "OrderEnum",
       "deprecated" : false,
       "required" : null,
@@ -4684,7 +4684,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4735,7 +4735,7 @@
           "variableName" : "repositoryDescription",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4813,7 +4813,7 @@
             "variableName" : "repositoryDescription",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4865,7 +4865,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4904,7 +4904,7 @@
     },
     "SortByEnum" : {
       "c2jName" : "SortByEnum",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "SortByEnum",
       "deprecated" : false,
       "required" : null,
@@ -4969,7 +4969,7 @@
           "variableName" : "branches",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -5002,9 +5002,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5033,7 +5033,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5107,7 +5107,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5159,7 +5159,7 @@
             "variableName" : "branches",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -5192,9 +5192,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5236,7 +5236,7 @@
           "variableName" : "branch",
           "variableType" : "BranchInfo",
           "variableDeclarationType" : "BranchInfo",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "BranchInfo",
           "variableSetterType" : "BranchInfo"
         },
@@ -5310,7 +5310,7 @@
             "variableName" : "branch",
             "variableType" : "BranchInfo",
             "variableDeclarationType" : "BranchInfo",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "BranchInfo",
             "variableSetterType" : "BranchInfo"
           },
@@ -5405,7 +5405,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5483,7 +5483,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5609,7 +5609,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5660,7 +5660,7 @@
           "variableName" : "repositoryDescription",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5738,7 +5738,7 @@
             "variableName" : "repositoryDescription",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5790,7 +5790,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5916,7 +5916,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5967,7 +5967,7 @@
           "variableName" : "defaultBranchName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6045,7 +6045,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6097,7 +6097,7 @@
             "variableName" : "defaultBranchName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6176,7 +6176,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "RepositoryName",
         "c2jName" : "repositoryName",
         "c2jShape" : "RepositoryName",
@@ -6184,7 +6184,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6192,7 +6192,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6222,10 +6222,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the RepositoryName property for this object.\n@return The value of the RepositoryName property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param repositoryName */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The ID associated with the repository name.</p>",
         "name" : "RepositoryId",
@@ -6243,7 +6243,7 @@
           "variableName" : "repositoryId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6301,7 +6301,7 @@
       },
       "membersAsMap" : {
         "RepositoryName" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "RepositoryName",
           "c2jName" : "repositoryName",
           "c2jShape" : "RepositoryName",
@@ -6309,7 +6309,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6317,7 +6317,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6347,10 +6347,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the RepositoryName property for this object.\n@return The value of the RepositoryName property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param repositoryName */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "RepositoryId" : {
           "documentation" : "<p>The ID associated with the repository name.</p>",
@@ -6369,7 +6369,7 @@
             "variableName" : "repositoryId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6510,7 +6510,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "RepositoryName",
         "c2jName" : "repositoryName",
         "c2jShape" : "RepositoryName",
@@ -6518,7 +6518,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6526,7 +6526,7 @@
           "variableName" : "repositoryName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6556,10 +6556,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the RepositoryName property for this object.\n@return The value of the RepositoryName property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param repositoryName */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The name of the branch for which you want to retrieve information.</p>",
         "name" : "BranchName",
@@ -6577,7 +6577,7 @@
           "variableName" : "branchName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6639,7 +6639,7 @@
       },
       "membersAsMap" : {
         "RepositoryName" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "RepositoryName",
           "c2jName" : "repositoryName",
           "c2jShape" : "RepositoryName",
@@ -6647,7 +6647,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6655,7 +6655,7 @@
             "variableName" : "repositoryName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6685,10 +6685,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the RepositoryName property for this object.\n@return The value of the RepositoryName property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the RepositoryName property for this object.\n@param repositoryName The new value for the RepositoryName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param repositoryName */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "BranchName" : {
           "documentation" : "<p>The name of the branch for which you want to retrieve information.</p>",
@@ -6707,7 +6707,7 @@
             "variableName" : "branchName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6786,7 +6786,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "OldName",
         "c2jName" : "oldName",
         "c2jShape" : "RepositoryName",
@@ -6794,7 +6794,7 @@
           "variableName" : "oldName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6802,7 +6802,7 @@
           "variableName" : "oldName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6832,12 +6832,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the OldName property for this object.\n@param oldName The new value for the OldName property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the OldName property for this object.\n@return The value of the OldName property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the OldName property for this object.\n@param oldName The new value for the OldName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the OldName property for this object.\n@param oldName The new value for the OldName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param oldName */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param oldName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param oldName \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "NewName",
         "c2jName" : "newName",
         "c2jShape" : "RepositoryName",
@@ -6845,7 +6845,7 @@
           "variableName" : "newName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6853,7 +6853,7 @@
           "variableName" : "newName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6883,10 +6883,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the NewName property for this object.\n@param newName The new value for the NewName property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the NewName property for this object.\n@return The value of the NewName property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the NewName property for this object.\n@param newName The new value for the NewName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the NewName property for this object.\n@param newName The new value for the NewName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param newName */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param newName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param newName \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -6915,7 +6915,7 @@
       },
       "membersAsMap" : {
         "NewName" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "NewName",
           "c2jName" : "newName",
           "c2jShape" : "RepositoryName",
@@ -6923,7 +6923,7 @@
             "variableName" : "newName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6931,7 +6931,7 @@
             "variableName" : "newName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6961,13 +6961,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the NewName property for this object.\n@param newName The new value for the NewName property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the NewName property for this object.\n@return The value of the NewName property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the NewName property for this object.\n@param newName The new value for the NewName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the NewName property for this object.\n@param newName The new value for the NewName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param newName */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param newName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param newName \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "OldName" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "OldName",
           "c2jName" : "oldName",
           "c2jShape" : "RepositoryName",
@@ -6975,7 +6975,7 @@
             "variableName" : "oldName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6983,7 +6983,7 @@
             "variableName" : "oldName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7013,10 +7013,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the OldName property for this object.\n@param oldName The new value for the OldName property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the OldName property for this object.\n@return The value of the OldName property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the OldName property for this object.\n@param oldName The new value for the OldName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the OldName property for this object.\n@param oldName The new value for the OldName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param oldName */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param oldName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param oldName \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -7047,7 +7047,7 @@
           "variableName" : "repositoryId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7121,7 +7121,7 @@
             "variableName" : "repositoryId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

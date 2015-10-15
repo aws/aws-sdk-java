@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
@@ -24,955 +25,1042 @@ import java.io.Serializable;
 public class Cluster implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The unique identifier for the cluster.
+     * </p>
      */
     private String id;
-
     /**
+     * <p>
      * The name of the cluster.
+     * </p>
      */
     private String name;
-
     /**
+     * <p>
      * The current status details about the cluster.
+     * </p>
      */
     private ClusterStatus status;
 
-    /**
-     * Provides information about the EC2 instances in a cluster grouped by
-     * category. For example, key name, subnet ID, IAM instance profile, and
-     * so on.
-     */
     private Ec2InstanceAttributes ec2InstanceAttributes;
-
     /**
+     * <p>
      * The path to the Amazon S3 location where logs for this cluster are
      * stored.
+     * </p>
      */
     private String logUri;
-
     /**
+     * <p>
      * The AMI version requested for this cluster.
+     * </p>
      */
     private String requestedAmiVersion;
-
     /**
+     * <p>
      * The AMI version running on this cluster.
+     * </p>
      */
     private String runningAmiVersion;
-
     /**
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and
-     * 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     * <p>
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
+     * AMIs, use amiVersion instead instead of ReleaseLabel.
+     * </p>
      */
     private String releaseLabel;
-
     /**
+     * <p>
      * Specifies whether the cluster should terminate after completing all
      * steps.
+     * </p>
      */
     private Boolean autoTerminate;
-
     /**
+     * <p>
      * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     * instances from being terminated by an API call or user intervention,
-     * or in the event of a cluster error.
+     * instances from being terminated by an API call or user intervention, or
+     * in the event of a cluster error.
+     * </p>
      */
     private Boolean terminationProtected;
-
     /**
+     * <p>
      * Indicates whether the job flow is visible to all IAM users of the AWS
      * account associated with the job flow. If this value is set to
-     * <code>true</code>, all IAM users of that AWS account can view and
-     * manage the job flow if they have the proper policy permissions set. If
-     * this value is <code>false</code>, only the IAM user that created the
-     * cluster can view and manage it. This value can be changed using the
+     * <code>true</code>, all IAM users of that AWS account can view and manage
+     * the job flow if they have the proper policy permissions set. If this
+     * value is <code>false</code>, only the IAM user that created the cluster
+     * can view and manage it. This value can be changed using the
      * <a>SetVisibleToAllUsers</a> action.
+     * </p>
      */
     private Boolean visibleToAllUsers;
-
     /**
+     * <p>
      * The applications installed on this cluster.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Application> applications;
-
+    private com.amazonaws.internal.SdkInternalList<Application> applications;
     /**
+     * <p>
      * A list of tags associated with a cluster.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
-
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
-     * The IAM role that will be assumed by the Amazon EMR service to access
-     * AWS resources on your behalf.
+     * <p>
+     * The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * resources on your behalf.
+     * </p>
      */
     private String serviceRole;
-
     /**
+     * <p>
      * An approximation of the cost of the job flow, represented in
      * m1.small/hours. This value is incremented one time for every hour an
      * m1.small instance runs. Larger instances are weighted more, so an EC2
      * instance that is roughly four times more expensive would result in the
-     * normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
+     * normalized instance hours being incremented by four. This result is only
+     * an approximation and does not reflect the actual billing rate.
+     * </p>
      */
     private Integer normalizedInstanceHours;
-
     /**
+     * <p>
      * The public DNS name of the master EC2 instance.
+     * </p>
      */
     private String masterPublicDnsName;
+    /**
+     * <note>
+     * <p>
+     * Amazon EMR releases 4.x or later.
+     * </p>
+     * </note>
+     * <p>
+     * The list of Configurations supplied to the EMR cluster.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
 
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     * Configurations supplied to the EMR cluster.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurations;
-
-    /**
+     * <p>
      * The unique identifier for the cluster.
-     *
-     * @return The unique identifier for the cluster.
-     */
-    public String getId() {
-        return id;
-    }
-    
-    /**
-     * The unique identifier for the cluster.
-     *
-     * @param id The unique identifier for the cluster.
+     * </p>
+     * 
+     * @param id
+     *        The unique identifier for the cluster.
      */
     public void setId(String id) {
         this.id = id;
     }
-    
+
     /**
-     * The unique identifier for the cluster.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param id The unique identifier for the cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The unique identifier for the cluster.
+     * </p>
+     * 
+     * @return The unique identifier for the cluster.
+     */
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the cluster.
+     * </p>
+     * 
+     * @param id
+     *        The unique identifier for the cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withId(String id) {
-        this.id = id;
+        setId(id);
         return this;
     }
 
     /**
+     * <p>
      * The name of the cluster.
-     *
-     * @return The name of the cluster.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * The name of the cluster.
-     *
-     * @param name The name of the cluster.
+     * </p>
+     * 
+     * @param name
+     *        The name of the cluster.
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
-     * The name of the cluster.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param name The name of the cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the cluster.
+     * </p>
+     * 
+     * @return The name of the cluster.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the cluster.
+     * </p>
+     * 
+     * @param name
+     *        The name of the cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
+     * <p>
      * The current status details about the cluster.
-     *
-     * @return The current status details about the cluster.
-     */
-    public ClusterStatus getStatus() {
-        return status;
-    }
-    
-    /**
-     * The current status details about the cluster.
-     *
-     * @param status The current status details about the cluster.
+     * </p>
+     * 
+     * @param status
+     *        The current status details about the cluster.
      */
     public void setStatus(ClusterStatus status) {
         this.status = status;
     }
-    
+
     /**
-     * The current status details about the cluster.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param status The current status details about the cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The current status details about the cluster.
+     * </p>
+     * 
+     * @return The current status details about the cluster.
+     */
+    public ClusterStatus getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The current status details about the cluster.
+     * </p>
+     * 
+     * @param status
+     *        The current status details about the cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withStatus(ClusterStatus status) {
-        this.status = status;
+        setStatus(status);
         return this;
     }
 
     /**
-     * Provides information about the EC2 instances in a cluster grouped by
-     * category. For example, key name, subnet ID, IAM instance profile, and
-     * so on.
-     *
-     * @return Provides information about the EC2 instances in a cluster grouped by
-     *         category. For example, key name, subnet ID, IAM instance profile, and
-     *         so on.
+     * @param ec2InstanceAttributes
+     */
+    public void setEc2InstanceAttributes(
+            Ec2InstanceAttributes ec2InstanceAttributes) {
+        this.ec2InstanceAttributes = ec2InstanceAttributes;
+    }
+
+    /**
+     * @return
      */
     public Ec2InstanceAttributes getEc2InstanceAttributes() {
-        return ec2InstanceAttributes;
+        return this.ec2InstanceAttributes;
     }
-    
+
     /**
-     * Provides information about the EC2 instances in a cluster grouped by
-     * category. For example, key name, subnet ID, IAM instance profile, and
-     * so on.
-     *
-     * @param ec2InstanceAttributes Provides information about the EC2 instances in a cluster grouped by
-     *         category. For example, key name, subnet ID, IAM instance profile, and
-     *         so on.
+     * @param ec2InstanceAttributes
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public void setEc2InstanceAttributes(Ec2InstanceAttributes ec2InstanceAttributes) {
-        this.ec2InstanceAttributes = ec2InstanceAttributes;
-    }
-    
-    /**
-     * Provides information about the EC2 instances in a cluster grouped by
-     * category. For example, key name, subnet ID, IAM instance profile, and
-     * so on.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param ec2InstanceAttributes Provides information about the EC2 instances in a cluster grouped by
-     *         category. For example, key name, subnet ID, IAM instance profile, and
-     *         so on.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public Cluster withEc2InstanceAttributes(Ec2InstanceAttributes ec2InstanceAttributes) {
-        this.ec2InstanceAttributes = ec2InstanceAttributes;
+    public Cluster withEc2InstanceAttributes(
+            Ec2InstanceAttributes ec2InstanceAttributes) {
+        setEc2InstanceAttributes(ec2InstanceAttributes);
         return this;
     }
 
     /**
+     * <p>
      * The path to the Amazon S3 location where logs for this cluster are
      * stored.
-     *
-     * @return The path to the Amazon S3 location where logs for this cluster are
-     *         stored.
-     */
-    public String getLogUri() {
-        return logUri;
-    }
-    
-    /**
-     * The path to the Amazon S3 location where logs for this cluster are
-     * stored.
-     *
-     * @param logUri The path to the Amazon S3 location where logs for this cluster are
-     *         stored.
+     * </p>
+     * 
+     * @param logUri
+     *        The path to the Amazon S3 location where logs for this cluster are
+     *        stored.
      */
     public void setLogUri(String logUri) {
         this.logUri = logUri;
     }
-    
+
     /**
+     * <p>
      * The path to the Amazon S3 location where logs for this cluster are
      * stored.
+     * </p>
+     * 
+     * @return The path to the Amazon S3 location where logs for this cluster
+     *         are stored.
+     */
+    public String getLogUri() {
+        return this.logUri;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param logUri The path to the Amazon S3 location where logs for this cluster are
-     *         stored.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The path to the Amazon S3 location where logs for this cluster are
+     * stored.
+     * </p>
+     * 
+     * @param logUri
+     *        The path to the Amazon S3 location where logs for this cluster are
+     *        stored.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withLogUri(String logUri) {
-        this.logUri = logUri;
+        setLogUri(logUri);
         return this;
     }
 
     /**
+     * <p>
      * The AMI version requested for this cluster.
-     *
-     * @return The AMI version requested for this cluster.
-     */
-    public String getRequestedAmiVersion() {
-        return requestedAmiVersion;
-    }
-    
-    /**
-     * The AMI version requested for this cluster.
-     *
-     * @param requestedAmiVersion The AMI version requested for this cluster.
+     * </p>
+     * 
+     * @param requestedAmiVersion
+     *        The AMI version requested for this cluster.
      */
     public void setRequestedAmiVersion(String requestedAmiVersion) {
         this.requestedAmiVersion = requestedAmiVersion;
     }
-    
+
     /**
-     * The AMI version requested for this cluster.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param requestedAmiVersion The AMI version requested for this cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The AMI version requested for this cluster.
+     * </p>
+     * 
+     * @return The AMI version requested for this cluster.
+     */
+    public String getRequestedAmiVersion() {
+        return this.requestedAmiVersion;
+    }
+
+    /**
+     * <p>
+     * The AMI version requested for this cluster.
+     * </p>
+     * 
+     * @param requestedAmiVersion
+     *        The AMI version requested for this cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withRequestedAmiVersion(String requestedAmiVersion) {
-        this.requestedAmiVersion = requestedAmiVersion;
+        setRequestedAmiVersion(requestedAmiVersion);
         return this;
     }
 
     /**
+     * <p>
      * The AMI version running on this cluster.
-     *
-     * @return The AMI version running on this cluster.
-     */
-    public String getRunningAmiVersion() {
-        return runningAmiVersion;
-    }
-    
-    /**
-     * The AMI version running on this cluster.
-     *
-     * @param runningAmiVersion The AMI version running on this cluster.
+     * </p>
+     * 
+     * @param runningAmiVersion
+     *        The AMI version running on this cluster.
      */
     public void setRunningAmiVersion(String runningAmiVersion) {
         this.runningAmiVersion = runningAmiVersion;
     }
-    
+
     /**
-     * The AMI version running on this cluster.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param runningAmiVersion The AMI version running on this cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The AMI version running on this cluster.
+     * </p>
+     * 
+     * @return The AMI version running on this cluster.
+     */
+    public String getRunningAmiVersion() {
+        return this.runningAmiVersion;
+    }
+
+    /**
+     * <p>
+     * The AMI version running on this cluster.
+     * </p>
+     * 
+     * @param runningAmiVersion
+     *        The AMI version running on this cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withRunningAmiVersion(String runningAmiVersion) {
-        this.runningAmiVersion = runningAmiVersion;
+        setRunningAmiVersion(runningAmiVersion);
         return this;
     }
 
     /**
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and
-     * 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
-     *
-     * @return The release label for the Amazon EMR release. For Amazon EMR 3.x and
-     *         2.x AMIs, use amiVersion instead instead of ReleaseLabel.
-     */
-    public String getReleaseLabel() {
-        return releaseLabel;
-    }
-    
-    /**
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and
-     * 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
-     *
-     * @param releaseLabel The release label for the Amazon EMR release. For Amazon EMR 3.x and
-     *         2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     * <p>
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
+     * AMIs, use amiVersion instead instead of ReleaseLabel.
+     * </p>
+     * 
+     * @param releaseLabel
+     *        The release label for the Amazon EMR release. For Amazon EMR 3.x
+     *        and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
      */
     public void setReleaseLabel(String releaseLabel) {
         this.releaseLabel = releaseLabel;
     }
-    
+
     /**
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and
-     * 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param releaseLabel The release label for the Amazon EMR release. For Amazon EMR 3.x and
-     *         2.x AMIs, use amiVersion instead instead of ReleaseLabel.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
+     * AMIs, use amiVersion instead instead of ReleaseLabel.
+     * </p>
+     * 
+     * @return The release label for the Amazon EMR release. For Amazon EMR 3.x
+     *         and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     */
+    public String getReleaseLabel() {
+        return this.releaseLabel;
+    }
+
+    /**
+     * <p>
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
+     * AMIs, use amiVersion instead instead of ReleaseLabel.
+     * </p>
+     * 
+     * @param releaseLabel
+     *        The release label for the Amazon EMR release. For Amazon EMR 3.x
+     *        and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withReleaseLabel(String releaseLabel) {
-        this.releaseLabel = releaseLabel;
+        setReleaseLabel(releaseLabel);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether the cluster should terminate after completing all
      * steps.
-     *
-     * @return Specifies whether the cluster should terminate after completing all
-     *         steps.
-     */
-    public Boolean isAutoTerminate() {
-        return autoTerminate;
-    }
-    
-    /**
-     * Specifies whether the cluster should terminate after completing all
-     * steps.
-     *
-     * @param autoTerminate Specifies whether the cluster should terminate after completing all
-     *         steps.
+     * </p>
+     * 
+     * @param autoTerminate
+     *        Specifies whether the cluster should terminate after completing
+     *        all steps.
      */
     public void setAutoTerminate(Boolean autoTerminate) {
         this.autoTerminate = autoTerminate;
     }
-    
+
     /**
+     * <p>
      * Specifies whether the cluster should terminate after completing all
      * steps.
+     * </p>
+     * 
+     * @return Specifies whether the cluster should terminate after completing
+     *         all steps.
+     */
+    public Boolean getAutoTerminate() {
+        return this.autoTerminate;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param autoTerminate Specifies whether the cluster should terminate after completing all
-     *         steps.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies whether the cluster should terminate after completing all
+     * steps.
+     * </p>
+     * 
+     * @param autoTerminate
+     *        Specifies whether the cluster should terminate after completing
+     *        all steps.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withAutoTerminate(Boolean autoTerminate) {
-        this.autoTerminate = autoTerminate;
+        setAutoTerminate(autoTerminate);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether the cluster should terminate after completing all
      * steps.
-     *
-     * @return Specifies whether the cluster should terminate after completing all
-     *         steps.
+     * </p>
+     * 
+     * @return Specifies whether the cluster should terminate after completing
+     *         all steps.
      */
-    public Boolean getAutoTerminate() {
-        return autoTerminate;
+    public Boolean isAutoTerminate() {
+        return this.autoTerminate;
     }
 
     /**
+     * <p>
      * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     * instances from being terminated by an API call or user intervention,
-     * or in the event of a cluster error.
-     *
-     * @return Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     *         instances from being terminated by an API call or user intervention,
-     *         or in the event of a cluster error.
-     */
-    public Boolean isTerminationProtected() {
-        return terminationProtected;
-    }
-    
-    /**
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     * instances from being terminated by an API call or user intervention,
-     * or in the event of a cluster error.
-     *
-     * @param terminationProtected Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     *         instances from being terminated by an API call or user intervention,
-     *         or in the event of a cluster error.
+     * instances from being terminated by an API call or user intervention, or
+     * in the event of a cluster error.
+     * </p>
+     * 
+     * @param terminationProtected
+     *        Indicates whether Amazon EMR will lock the cluster to prevent the
+     *        EC2 instances from being terminated by an API call or user
+     *        intervention, or in the event of a cluster error.
      */
     public void setTerminationProtected(Boolean terminationProtected) {
         this.terminationProtected = terminationProtected;
     }
-    
+
     /**
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     * instances from being terminated by an API call or user intervention,
-     * or in the event of a cluster error.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param terminationProtected Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     *         instances from being terminated by an API call or user intervention,
-     *         or in the event of a cluster error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
+     * instances from being terminated by an API call or user intervention, or
+     * in the event of a cluster error.
+     * </p>
+     * 
+     * @return Indicates whether Amazon EMR will lock the cluster to prevent the
+     *         EC2 instances from being terminated by an API call or user
+     *         intervention, or in the event of a cluster error.
+     */
+    public Boolean getTerminationProtected() {
+        return this.terminationProtected;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
+     * instances from being terminated by an API call or user intervention, or
+     * in the event of a cluster error.
+     * </p>
+     * 
+     * @param terminationProtected
+     *        Indicates whether Amazon EMR will lock the cluster to prevent the
+     *        EC2 instances from being terminated by an API call or user
+     *        intervention, or in the event of a cluster error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withTerminationProtected(Boolean terminationProtected) {
-        this.terminationProtected = terminationProtected;
+        setTerminationProtected(terminationProtected);
         return this;
     }
 
     /**
+     * <p>
      * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     * instances from being terminated by an API call or user intervention,
-     * or in the event of a cluster error.
-     *
-     * @return Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     *         instances from being terminated by an API call or user intervention,
-     *         or in the event of a cluster error.
+     * instances from being terminated by an API call or user intervention, or
+     * in the event of a cluster error.
+     * </p>
+     * 
+     * @return Indicates whether Amazon EMR will lock the cluster to prevent the
+     *         EC2 instances from being terminated by an API call or user
+     *         intervention, or in the event of a cluster error.
      */
-    public Boolean getTerminationProtected() {
-        return terminationProtected;
+    public Boolean isTerminationProtected() {
+        return this.terminationProtected;
     }
 
     /**
+     * <p>
      * Indicates whether the job flow is visible to all IAM users of the AWS
      * account associated with the job flow. If this value is set to
-     * <code>true</code>, all IAM users of that AWS account can view and
-     * manage the job flow if they have the proper policy permissions set. If
-     * this value is <code>false</code>, only the IAM user that created the
-     * cluster can view and manage it. This value can be changed using the
+     * <code>true</code>, all IAM users of that AWS account can view and manage
+     * the job flow if they have the proper policy permissions set. If this
+     * value is <code>false</code>, only the IAM user that created the cluster
+     * can view and manage it. This value can be changed using the
      * <a>SetVisibleToAllUsers</a> action.
-     *
-     * @return Indicates whether the job flow is visible to all IAM users of the AWS
-     *         account associated with the job flow. If this value is set to
-     *         <code>true</code>, all IAM users of that AWS account can view and
-     *         manage the job flow if they have the proper policy permissions set. If
-     *         this value is <code>false</code>, only the IAM user that created the
-     *         cluster can view and manage it. This value can be changed using the
-     *         <a>SetVisibleToAllUsers</a> action.
-     */
-    public Boolean isVisibleToAllUsers() {
-        return visibleToAllUsers;
-    }
-    
-    /**
-     * Indicates whether the job flow is visible to all IAM users of the AWS
-     * account associated with the job flow. If this value is set to
-     * <code>true</code>, all IAM users of that AWS account can view and
-     * manage the job flow if they have the proper policy permissions set. If
-     * this value is <code>false</code>, only the IAM user that created the
-     * cluster can view and manage it. This value can be changed using the
-     * <a>SetVisibleToAllUsers</a> action.
-     *
-     * @param visibleToAllUsers Indicates whether the job flow is visible to all IAM users of the AWS
-     *         account associated with the job flow. If this value is set to
-     *         <code>true</code>, all IAM users of that AWS account can view and
-     *         manage the job flow if they have the proper policy permissions set. If
-     *         this value is <code>false</code>, only the IAM user that created the
-     *         cluster can view and manage it. This value can be changed using the
-     *         <a>SetVisibleToAllUsers</a> action.
+     * </p>
+     * 
+     * @param visibleToAllUsers
+     *        Indicates whether the job flow is visible to all IAM users of the
+     *        AWS account associated with the job flow. If this value is set to
+     *        <code>true</code>, all IAM users of that AWS account can view and
+     *        manage the job flow if they have the proper policy permissions
+     *        set. If this value is <code>false</code>, only the IAM user that
+     *        created the cluster can view and manage it. This value can be
+     *        changed using the <a>SetVisibleToAllUsers</a> action.
      */
     public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
         this.visibleToAllUsers = visibleToAllUsers;
     }
-    
+
     /**
+     * <p>
      * Indicates whether the job flow is visible to all IAM users of the AWS
      * account associated with the job flow. If this value is set to
-     * <code>true</code>, all IAM users of that AWS account can view and
-     * manage the job flow if they have the proper policy permissions set. If
-     * this value is <code>false</code>, only the IAM user that created the
-     * cluster can view and manage it. This value can be changed using the
+     * <code>true</code>, all IAM users of that AWS account can view and manage
+     * the job flow if they have the proper policy permissions set. If this
+     * value is <code>false</code>, only the IAM user that created the cluster
+     * can view and manage it. This value can be changed using the
      * <a>SetVisibleToAllUsers</a> action.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param visibleToAllUsers Indicates whether the job flow is visible to all IAM users of the AWS
-     *         account associated with the job flow. If this value is set to
+     * </p>
+     * 
+     * @return Indicates whether the job flow is visible to all IAM users of the
+     *         AWS account associated with the job flow. If this value is set to
      *         <code>true</code>, all IAM users of that AWS account can view and
-     *         manage the job flow if they have the proper policy permissions set. If
-     *         this value is <code>false</code>, only the IAM user that created the
-     *         cluster can view and manage it. This value can be changed using the
-     *         <a>SetVisibleToAllUsers</a> action.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         manage the job flow if they have the proper policy permissions
+     *         set. If this value is <code>false</code>, only the IAM user that
+     *         created the cluster can view and manage it. This value can be
+     *         changed using the <a>SetVisibleToAllUsers</a> action.
+     */
+    public Boolean getVisibleToAllUsers() {
+        return this.visibleToAllUsers;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job flow is visible to all IAM users of the AWS
+     * account associated with the job flow. If this value is set to
+     * <code>true</code>, all IAM users of that AWS account can view and manage
+     * the job flow if they have the proper policy permissions set. If this
+     * value is <code>false</code>, only the IAM user that created the cluster
+     * can view and manage it. This value can be changed using the
+     * <a>SetVisibleToAllUsers</a> action.
+     * </p>
+     * 
+     * @param visibleToAllUsers
+     *        Indicates whether the job flow is visible to all IAM users of the
+     *        AWS account associated with the job flow. If this value is set to
+     *        <code>true</code>, all IAM users of that AWS account can view and
+     *        manage the job flow if they have the proper policy permissions
+     *        set. If this value is <code>false</code>, only the IAM user that
+     *        created the cluster can view and manage it. This value can be
+     *        changed using the <a>SetVisibleToAllUsers</a> action.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withVisibleToAllUsers(Boolean visibleToAllUsers) {
-        this.visibleToAllUsers = visibleToAllUsers;
+        setVisibleToAllUsers(visibleToAllUsers);
         return this;
     }
 
     /**
+     * <p>
      * Indicates whether the job flow is visible to all IAM users of the AWS
      * account associated with the job flow. If this value is set to
-     * <code>true</code>, all IAM users of that AWS account can view and
-     * manage the job flow if they have the proper policy permissions set. If
-     * this value is <code>false</code>, only the IAM user that created the
-     * cluster can view and manage it. This value can be changed using the
+     * <code>true</code>, all IAM users of that AWS account can view and manage
+     * the job flow if they have the proper policy permissions set. If this
+     * value is <code>false</code>, only the IAM user that created the cluster
+     * can view and manage it. This value can be changed using the
      * <a>SetVisibleToAllUsers</a> action.
-     *
-     * @return Indicates whether the job flow is visible to all IAM users of the AWS
-     *         account associated with the job flow. If this value is set to
+     * </p>
+     * 
+     * @return Indicates whether the job flow is visible to all IAM users of the
+     *         AWS account associated with the job flow. If this value is set to
      *         <code>true</code>, all IAM users of that AWS account can view and
-     *         manage the job flow if they have the proper policy permissions set. If
-     *         this value is <code>false</code>, only the IAM user that created the
-     *         cluster can view and manage it. This value can be changed using the
-     *         <a>SetVisibleToAllUsers</a> action.
+     *         manage the job flow if they have the proper policy permissions
+     *         set. If this value is <code>false</code>, only the IAM user that
+     *         created the cluster can view and manage it. This value can be
+     *         changed using the <a>SetVisibleToAllUsers</a> action.
      */
-    public Boolean getVisibleToAllUsers() {
-        return visibleToAllUsers;
+    public Boolean isVisibleToAllUsers() {
+        return this.visibleToAllUsers;
     }
 
     /**
+     * <p>
      * The applications installed on this cluster.
-     *
+     * </p>
+     * 
      * @return The applications installed on this cluster.
      */
     public java.util.List<Application> getApplications() {
         if (applications == null) {
-              applications = new com.amazonaws.internal.ListWithAutoConstructFlag<Application>();
-              applications.setAutoConstruct(true);
+            applications = new com.amazonaws.internal.SdkInternalList<Application>();
         }
         return applications;
     }
-    
+
     /**
+     * <p>
      * The applications installed on this cluster.
-     *
-     * @param applications The applications installed on this cluster.
+     * </p>
+     * 
+     * @param applications
+     *        The applications installed on this cluster.
      */
     public void setApplications(java.util.Collection<Application> applications) {
         if (applications == null) {
             this.applications = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Application> applicationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Application>(applications.size());
-        applicationsCopy.addAll(applications);
-        this.applications = applicationsCopy;
+
+        this.applications = new com.amazonaws.internal.SdkInternalList<Application>(
+                applications);
     }
-    
+
     /**
+     * <p>
      * The applications installed on this cluster.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setApplications(java.util.Collection)} or {@link
-     * #withApplications(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param applications The applications installed on this cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setApplications(java.util.Collection)} or
+     * {@link #withApplications(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param applications
+     *        The applications installed on this cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withApplications(Application... applications) {
-        if (getApplications() == null) setApplications(new java.util.ArrayList<Application>(applications.length));
-        for (Application value : applications) {
-            getApplications().add(value);
+        if (this.applications == null) {
+            setApplications(new com.amazonaws.internal.SdkInternalList<Application>(
+                    applications.length));
+        }
+        for (Application ele : applications) {
+            this.applications.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The applications installed on this cluster.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param applications The applications installed on this cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The applications installed on this cluster.
+     * </p>
+     * 
+     * @param applications
+     *        The applications installed on this cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public Cluster withApplications(java.util.Collection<Application> applications) {
-        if (applications == null) {
-            this.applications = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Application> applicationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Application>(applications.size());
-            applicationsCopy.addAll(applications);
-            this.applications = applicationsCopy;
-        }
-
+    public Cluster withApplications(
+            java.util.Collection<Application> applications) {
+        setApplications(applications);
         return this;
     }
 
     /**
+     * <p>
      * A list of tags associated with a cluster.
-     *
+     * </p>
+     * 
      * @return A list of tags associated with a cluster.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
-              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
-              tags.setAutoConstruct(true);
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
         }
         return tags;
     }
-    
+
     /**
+     * <p>
      * A list of tags associated with a cluster.
-     *
-     * @param tags A list of tags associated with a cluster.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags associated with a cluster.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
-        tagsCopy.addAll(tags);
-        this.tags = tagsCopy;
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
     }
-    
+
     /**
+     * <p>
      * A list of tags associated with a cluster.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or {@link
-     * #withTags(java.util.Collection)} if you want to override the existing
-     * values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tags A list of tags associated with a cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags associated with a cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
-        for (Tag value : tags) {
-            getTags().add(value);
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * A list of tags associated with a cluster.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tags A list of tags associated with a cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A list of tags associated with a cluster.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags associated with a cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withTags(java.util.Collection<Tag> tags) {
-        if (tags == null) {
-            this.tags = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
-            tagsCopy.addAll(tags);
-            this.tags = tagsCopy;
-        }
-
+        setTags(tags);
         return this;
     }
 
     /**
-     * The IAM role that will be assumed by the Amazon EMR service to access
-     * AWS resources on your behalf.
-     *
-     * @return The IAM role that will be assumed by the Amazon EMR service to access
-     *         AWS resources on your behalf.
-     */
-    public String getServiceRole() {
-        return serviceRole;
-    }
-    
-    /**
-     * The IAM role that will be assumed by the Amazon EMR service to access
-     * AWS resources on your behalf.
-     *
-     * @param serviceRole The IAM role that will be assumed by the Amazon EMR service to access
-     *         AWS resources on your behalf.
+     * <p>
+     * The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * resources on your behalf.
+     * </p>
+     * 
+     * @param serviceRole
+     *        The IAM role that will be assumed by the Amazon EMR service to
+     *        access AWS resources on your behalf.
      */
     public void setServiceRole(String serviceRole) {
         this.serviceRole = serviceRole;
     }
-    
+
     /**
-     * The IAM role that will be assumed by the Amazon EMR service to access
-     * AWS resources on your behalf.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param serviceRole The IAM role that will be assumed by the Amazon EMR service to access
-     *         AWS resources on your behalf.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * resources on your behalf.
+     * </p>
+     * 
+     * @return The IAM role that will be assumed by the Amazon EMR service to
+     *         access AWS resources on your behalf.
+     */
+    public String getServiceRole() {
+        return this.serviceRole;
+    }
+
+    /**
+     * <p>
+     * The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * resources on your behalf.
+     * </p>
+     * 
+     * @param serviceRole
+     *        The IAM role that will be assumed by the Amazon EMR service to
+     *        access AWS resources on your behalf.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withServiceRole(String serviceRole) {
-        this.serviceRole = serviceRole;
+        setServiceRole(serviceRole);
         return this;
     }
 
     /**
+     * <p>
      * An approximation of the cost of the job flow, represented in
      * m1.small/hours. This value is incremented one time for every hour an
      * m1.small instance runs. Larger instances are weighted more, so an EC2
      * instance that is roughly four times more expensive would result in the
-     * normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
-     *
-     * @return An approximation of the cost of the job flow, represented in
-     *         m1.small/hours. This value is incremented one time for every hour an
-     *         m1.small instance runs. Larger instances are weighted more, so an EC2
-     *         instance that is roughly four times more expensive would result in the
-     *         normalized instance hours being incremented by four. This result is
-     *         only an approximation and does not reflect the actual billing rate.
-     */
-    public Integer getNormalizedInstanceHours() {
-        return normalizedInstanceHours;
-    }
-    
-    /**
-     * An approximation of the cost of the job flow, represented in
-     * m1.small/hours. This value is incremented one time for every hour an
-     * m1.small instance runs. Larger instances are weighted more, so an EC2
-     * instance that is roughly four times more expensive would result in the
-     * normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
-     *
-     * @param normalizedInstanceHours An approximation of the cost of the job flow, represented in
-     *         m1.small/hours. This value is incremented one time for every hour an
-     *         m1.small instance runs. Larger instances are weighted more, so an EC2
-     *         instance that is roughly four times more expensive would result in the
-     *         normalized instance hours being incremented by four. This result is
-     *         only an approximation and does not reflect the actual billing rate.
+     * normalized instance hours being incremented by four. This result is only
+     * an approximation and does not reflect the actual billing rate.
+     * </p>
+     * 
+     * @param normalizedInstanceHours
+     *        An approximation of the cost of the job flow, represented in
+     *        m1.small/hours. This value is incremented one time for every hour
+     *        an m1.small instance runs. Larger instances are weighted more, so
+     *        an EC2 instance that is roughly four times more expensive would
+     *        result in the normalized instance hours being incremented by four.
+     *        This result is only an approximation and does not reflect the
+     *        actual billing rate.
      */
     public void setNormalizedInstanceHours(Integer normalizedInstanceHours) {
         this.normalizedInstanceHours = normalizedInstanceHours;
     }
-    
+
     /**
+     * <p>
      * An approximation of the cost of the job flow, represented in
      * m1.small/hours. This value is incremented one time for every hour an
      * m1.small instance runs. Larger instances are weighted more, so an EC2
      * instance that is roughly four times more expensive would result in the
-     * normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
+     * normalized instance hours being incremented by four. This result is only
+     * an approximation and does not reflect the actual billing rate.
+     * </p>
+     * 
+     * @return An approximation of the cost of the job flow, represented in
+     *         m1.small/hours. This value is incremented one time for every hour
+     *         an m1.small instance runs. Larger instances are weighted more, so
+     *         an EC2 instance that is roughly four times more expensive would
+     *         result in the normalized instance hours being incremented by
+     *         four. This result is only an approximation and does not reflect
+     *         the actual billing rate.
+     */
+    public Integer getNormalizedInstanceHours() {
+        return this.normalizedInstanceHours;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param normalizedInstanceHours An approximation of the cost of the job flow, represented in
-     *         m1.small/hours. This value is incremented one time for every hour an
-     *         m1.small instance runs. Larger instances are weighted more, so an EC2
-     *         instance that is roughly four times more expensive would result in the
-     *         normalized instance hours being incremented by four. This result is
-     *         only an approximation and does not reflect the actual billing rate.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * An approximation of the cost of the job flow, represented in
+     * m1.small/hours. This value is incremented one time for every hour an
+     * m1.small instance runs. Larger instances are weighted more, so an EC2
+     * instance that is roughly four times more expensive would result in the
+     * normalized instance hours being incremented by four. This result is only
+     * an approximation and does not reflect the actual billing rate.
+     * </p>
+     * 
+     * @param normalizedInstanceHours
+     *        An approximation of the cost of the job flow, represented in
+     *        m1.small/hours. This value is incremented one time for every hour
+     *        an m1.small instance runs. Larger instances are weighted more, so
+     *        an EC2 instance that is roughly four times more expensive would
+     *        result in the normalized instance hours being incremented by four.
+     *        This result is only an approximation and does not reflect the
+     *        actual billing rate.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withNormalizedInstanceHours(Integer normalizedInstanceHours) {
-        this.normalizedInstanceHours = normalizedInstanceHours;
+        setNormalizedInstanceHours(normalizedInstanceHours);
         return this;
     }
 
     /**
+     * <p>
      * The public DNS name of the master EC2 instance.
-     *
-     * @return The public DNS name of the master EC2 instance.
-     */
-    public String getMasterPublicDnsName() {
-        return masterPublicDnsName;
-    }
-    
-    /**
-     * The public DNS name of the master EC2 instance.
-     *
-     * @param masterPublicDnsName The public DNS name of the master EC2 instance.
+     * </p>
+     * 
+     * @param masterPublicDnsName
+     *        The public DNS name of the master EC2 instance.
      */
     public void setMasterPublicDnsName(String masterPublicDnsName) {
         this.masterPublicDnsName = masterPublicDnsName;
     }
-    
+
     /**
-     * The public DNS name of the master EC2 instance.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param masterPublicDnsName The public DNS name of the master EC2 instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The public DNS name of the master EC2 instance.
+     * </p>
+     * 
+     * @return The public DNS name of the master EC2 instance.
+     */
+    public String getMasterPublicDnsName() {
+        return this.masterPublicDnsName;
+    }
+
+    /**
+     * <p>
+     * The public DNS name of the master EC2 instance.
+     * </p>
+     * 
+     * @param masterPublicDnsName
+     *        The public DNS name of the master EC2 instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withMasterPublicDnsName(String masterPublicDnsName) {
-        this.masterPublicDnsName = masterPublicDnsName;
+        setMasterPublicDnsName(masterPublicDnsName);
         return this;
     }
 
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     * Configurations supplied to the EMR cluster.
-     *
-     * @return <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     *         Configurations supplied to the EMR cluster.
+     * <note>
+     * <p>
+     * Amazon EMR releases 4.x or later.
+     * </p>
+     * </note>
+     * <p>
+     * The list of Configurations supplied to the EMR cluster.
+     * </p>
+     * 
+     * @return Amazon EMR releases 4.x or later.</p></note>
      */
     public java.util.List<Configuration> getConfigurations() {
         if (configurations == null) {
-              configurations = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>();
-              configurations.setAutoConstruct(true);
+            configurations = new com.amazonaws.internal.SdkInternalList<Configuration>();
         }
         return configurations;
     }
-    
+
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     * Configurations supplied to the EMR cluster.
-     *
-     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     *         Configurations supplied to the EMR cluster.
+     * <note>
+     * <p>
+     * Amazon EMR releases 4.x or later.
+     * </p>
+     * </note>
+     * <p>
+     * The list of Configurations supplied to the EMR cluster.
+     * </p>
+     * 
+     * @param configurations
+     *        Amazon EMR releases 4.x or later.</p></note>
      */
-    public void setConfigurations(java.util.Collection<Configuration> configurations) {
+    public void setConfigurations(
+            java.util.Collection<Configuration> configurations) {
         if (configurations == null) {
             this.configurations = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>(configurations.size());
-        configurationsCopy.addAll(configurations);
-        this.configurations = configurationsCopy;
+
+        this.configurations = new com.amazonaws.internal.SdkInternalList<Configuration>(
+                configurations);
     }
-    
+
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     * Configurations supplied to the EMR cluster.
+     * <note>
+     * <p>
+     * Amazon EMR releases 4.x or later.
+     * </p>
+     * </note>
+     * <p>
+     * The list of Configurations supplied to the EMR cluster.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConfigurations(java.util.Collection)} or {@link
-     * #withConfigurations(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     *         Configurations supplied to the EMR cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setConfigurations(java.util.Collection)} or
+     * {@link #withConfigurations(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param configurations
+     *        Amazon EMR releases 4.x or later.</p></note>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Cluster withConfigurations(Configuration... configurations) {
-        if (getConfigurations() == null) setConfigurations(new java.util.ArrayList<Configuration>(configurations.length));
-        for (Configuration value : configurations) {
-            getConfigurations().add(value);
+        if (this.configurations == null) {
+            setConfigurations(new com.amazonaws.internal.SdkInternalList<Configuration>(
+                    configurations.length));
+        }
+        for (Configuration ele : configurations) {
+            this.configurations.add(ele);
         }
         return this;
     }
-    
-    /**
-     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     * Configurations supplied to the EMR cluster.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     *         Configurations supplied to the EMR cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public Cluster withConfigurations(java.util.Collection<Configuration> configurations) {
-        if (configurations == null) {
-            this.configurations = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>(configurations.size());
-            configurationsCopy.addAll(configurations);
-            this.configurations = configurationsCopy;
-        }
 
+    /**
+     * <note>
+     * <p>
+     * Amazon EMR releases 4.x or later.
+     * </p>
+     * </note>
+     * <p>
+     * The list of Configurations supplied to the EMR cluster.
+     * </p>
+     * 
+     * @param configurations
+     *        Amazon EMR releases 4.x or later.</p></note>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Cluster withConfigurations(
+            java.util.Collection<Configuration> configurations) {
+        setConfigurations(configurations);
         return this;
     }
 
@@ -988,110 +1076,233 @@ public class Cluster implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ",");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
-        if (getEc2InstanceAttributes() != null) sb.append("Ec2InstanceAttributes: " + getEc2InstanceAttributes() + ",");
-        if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ",");
-        if (getRequestedAmiVersion() != null) sb.append("RequestedAmiVersion: " + getRequestedAmiVersion() + ",");
-        if (getRunningAmiVersion() != null) sb.append("RunningAmiVersion: " + getRunningAmiVersion() + ",");
-        if (getReleaseLabel() != null) sb.append("ReleaseLabel: " + getReleaseLabel() + ",");
-        if (isAutoTerminate() != null) sb.append("AutoTerminate: " + isAutoTerminate() + ",");
-        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ",");
-        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");
-        if (getApplications() != null) sb.append("Applications: " + getApplications() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
-        if (getServiceRole() != null) sb.append("ServiceRole: " + getServiceRole() + ",");
-        if (getNormalizedInstanceHours() != null) sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() + ",");
-        if (getMasterPublicDnsName() != null) sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ",");
-        if (getConfigurations() != null) sb.append("Configurations: " + getConfigurations() );
+        if (getId() != null)
+            sb.append("Id: " + getId() + ",");
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus() + ",");
+        if (getEc2InstanceAttributes() != null)
+            sb.append("Ec2InstanceAttributes: " + getEc2InstanceAttributes()
+                    + ",");
+        if (getLogUri() != null)
+            sb.append("LogUri: " + getLogUri() + ",");
+        if (getRequestedAmiVersion() != null)
+            sb.append("RequestedAmiVersion: " + getRequestedAmiVersion() + ",");
+        if (getRunningAmiVersion() != null)
+            sb.append("RunningAmiVersion: " + getRunningAmiVersion() + ",");
+        if (getReleaseLabel() != null)
+            sb.append("ReleaseLabel: " + getReleaseLabel() + ",");
+        if (getAutoTerminate() != null)
+            sb.append("AutoTerminate: " + getAutoTerminate() + ",");
+        if (getTerminationProtected() != null)
+            sb.append("TerminationProtected: " + getTerminationProtected()
+                    + ",");
+        if (getVisibleToAllUsers() != null)
+            sb.append("VisibleToAllUsers: " + getVisibleToAllUsers() + ",");
+        if (getApplications() != null)
+            sb.append("Applications: " + getApplications() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags() + ",");
+        if (getServiceRole() != null)
+            sb.append("ServiceRole: " + getServiceRole() + ",");
+        if (getNormalizedInstanceHours() != null)
+            sb.append("NormalizedInstanceHours: "
+                    + getNormalizedInstanceHours() + ",");
+        if (getMasterPublicDnsName() != null)
+            sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ",");
+        if (getConfigurations() != null)
+            sb.append("Configurations: " + getConfigurations());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof Cluster == false)
+            return false;
+        Cluster other = (Cluster) obj;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null
+                && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null
+                && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getEc2InstanceAttributes() == null
+                ^ this.getEc2InstanceAttributes() == null)
+            return false;
+        if (other.getEc2InstanceAttributes() != null
+                && other.getEc2InstanceAttributes().equals(
+                        this.getEc2InstanceAttributes()) == false)
+            return false;
+        if (other.getLogUri() == null ^ this.getLogUri() == null)
+            return false;
+        if (other.getLogUri() != null
+                && other.getLogUri().equals(this.getLogUri()) == false)
+            return false;
+        if (other.getRequestedAmiVersion() == null
+                ^ this.getRequestedAmiVersion() == null)
+            return false;
+        if (other.getRequestedAmiVersion() != null
+                && other.getRequestedAmiVersion().equals(
+                        this.getRequestedAmiVersion()) == false)
+            return false;
+        if (other.getRunningAmiVersion() == null
+                ^ this.getRunningAmiVersion() == null)
+            return false;
+        if (other.getRunningAmiVersion() != null
+                && other.getRunningAmiVersion().equals(
+                        this.getRunningAmiVersion()) == false)
+            return false;
+        if (other.getReleaseLabel() == null ^ this.getReleaseLabel() == null)
+            return false;
+        if (other.getReleaseLabel() != null
+                && other.getReleaseLabel().equals(this.getReleaseLabel()) == false)
+            return false;
+        if (other.getAutoTerminate() == null ^ this.getAutoTerminate() == null)
+            return false;
+        if (other.getAutoTerminate() != null
+                && other.getAutoTerminate().equals(this.getAutoTerminate()) == false)
+            return false;
+        if (other.getTerminationProtected() == null
+                ^ this.getTerminationProtected() == null)
+            return false;
+        if (other.getTerminationProtected() != null
+                && other.getTerminationProtected().equals(
+                        this.getTerminationProtected()) == false)
+            return false;
+        if (other.getVisibleToAllUsers() == null
+                ^ this.getVisibleToAllUsers() == null)
+            return false;
+        if (other.getVisibleToAllUsers() != null
+                && other.getVisibleToAllUsers().equals(
+                        this.getVisibleToAllUsers()) == false)
+            return false;
+        if (other.getApplications() == null ^ this.getApplications() == null)
+            return false;
+        if (other.getApplications() != null
+                && other.getApplications().equals(this.getApplications()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null
+                && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getServiceRole() == null ^ this.getServiceRole() == null)
+            return false;
+        if (other.getServiceRole() != null
+                && other.getServiceRole().equals(this.getServiceRole()) == false)
+            return false;
+        if (other.getNormalizedInstanceHours() == null
+                ^ this.getNormalizedInstanceHours() == null)
+            return false;
+        if (other.getNormalizedInstanceHours() != null
+                && other.getNormalizedInstanceHours().equals(
+                        this.getNormalizedInstanceHours()) == false)
+            return false;
+        if (other.getMasterPublicDnsName() == null
+                ^ this.getMasterPublicDnsName() == null)
+            return false;
+        if (other.getMasterPublicDnsName() != null
+                && other.getMasterPublicDnsName().equals(
+                        this.getMasterPublicDnsName()) == false)
+            return false;
+        if (other.getConfigurations() == null
+                ^ this.getConfigurations() == null)
+            return false;
+        if (other.getConfigurations() != null
+                && other.getConfigurations().equals(this.getConfigurations()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getEc2InstanceAttributes() == null) ? 0 : getEc2InstanceAttributes().hashCode()); 
-        hashCode = prime * hashCode + ((getLogUri() == null) ? 0 : getLogUri().hashCode()); 
-        hashCode = prime * hashCode + ((getRequestedAmiVersion() == null) ? 0 : getRequestedAmiVersion().hashCode()); 
-        hashCode = prime * hashCode + ((getRunningAmiVersion() == null) ? 0 : getRunningAmiVersion().hashCode()); 
-        hashCode = prime * hashCode + ((getReleaseLabel() == null) ? 0 : getReleaseLabel().hashCode()); 
-        hashCode = prime * hashCode + ((isAutoTerminate() == null) ? 0 : isAutoTerminate().hashCode()); 
-        hashCode = prime * hashCode + ((isTerminationProtected() == null) ? 0 : isTerminationProtected().hashCode()); 
-        hashCode = prime * hashCode + ((isVisibleToAllUsers() == null) ? 0 : isVisibleToAllUsers().hashCode()); 
-        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode()); 
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
-        hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode()); 
-        hashCode = prime * hashCode + ((getNormalizedInstanceHours() == null) ? 0 : getNormalizedInstanceHours().hashCode()); 
-        hashCode = prime * hashCode + ((getMasterPublicDnsName() == null) ? 0 : getMasterPublicDnsName().hashCode()); 
-        hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode
+                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEc2InstanceAttributes() == null) ? 0
+                        : getEc2InstanceAttributes().hashCode());
+        hashCode = prime * hashCode
+                + ((getLogUri() == null) ? 0 : getLogUri().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRequestedAmiVersion() == null) ? 0
+                        : getRequestedAmiVersion().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRunningAmiVersion() == null) ? 0
+                        : getRunningAmiVersion().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReleaseLabel() == null) ? 0 : getReleaseLabel()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAutoTerminate() == null) ? 0 : getAutoTerminate()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTerminationProtected() == null) ? 0
+                        : getTerminationProtected().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVisibleToAllUsers() == null) ? 0
+                        : getVisibleToAllUsers().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getApplications() == null) ? 0 : getApplications()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNormalizedInstanceHours() == null) ? 0
+                        : getNormalizedInstanceHours().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getMasterPublicDnsName() == null) ? 0
+                        : getMasterPublicDnsName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getConfigurations() == null) ? 0 : getConfigurations()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof Cluster == false) return false;
-        Cluster other = (Cluster)obj;
-        
-        if (other.getId() == null ^ this.getId() == null) return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getStatus() == null ^ this.getStatus() == null) return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
-        if (other.getEc2InstanceAttributes() == null ^ this.getEc2InstanceAttributes() == null) return false;
-        if (other.getEc2InstanceAttributes() != null && other.getEc2InstanceAttributes().equals(this.getEc2InstanceAttributes()) == false) return false; 
-        if (other.getLogUri() == null ^ this.getLogUri() == null) return false;
-        if (other.getLogUri() != null && other.getLogUri().equals(this.getLogUri()) == false) return false; 
-        if (other.getRequestedAmiVersion() == null ^ this.getRequestedAmiVersion() == null) return false;
-        if (other.getRequestedAmiVersion() != null && other.getRequestedAmiVersion().equals(this.getRequestedAmiVersion()) == false) return false; 
-        if (other.getRunningAmiVersion() == null ^ this.getRunningAmiVersion() == null) return false;
-        if (other.getRunningAmiVersion() != null && other.getRunningAmiVersion().equals(this.getRunningAmiVersion()) == false) return false; 
-        if (other.getReleaseLabel() == null ^ this.getReleaseLabel() == null) return false;
-        if (other.getReleaseLabel() != null && other.getReleaseLabel().equals(this.getReleaseLabel()) == false) return false; 
-        if (other.isAutoTerminate() == null ^ this.isAutoTerminate() == null) return false;
-        if (other.isAutoTerminate() != null && other.isAutoTerminate().equals(this.isAutoTerminate()) == false) return false; 
-        if (other.isTerminationProtected() == null ^ this.isTerminationProtected() == null) return false;
-        if (other.isTerminationProtected() != null && other.isTerminationProtected().equals(this.isTerminationProtected()) == false) return false; 
-        if (other.isVisibleToAllUsers() == null ^ this.isVisibleToAllUsers() == null) return false;
-        if (other.isVisibleToAllUsers() != null && other.isVisibleToAllUsers().equals(this.isVisibleToAllUsers()) == false) return false; 
-        if (other.getApplications() == null ^ this.getApplications() == null) return false;
-        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false) return false; 
-        if (other.getTags() == null ^ this.getTags() == null) return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
-        if (other.getServiceRole() == null ^ this.getServiceRole() == null) return false;
-        if (other.getServiceRole() != null && other.getServiceRole().equals(this.getServiceRole()) == false) return false; 
-        if (other.getNormalizedInstanceHours() == null ^ this.getNormalizedInstanceHours() == null) return false;
-        if (other.getNormalizedInstanceHours() != null && other.getNormalizedInstanceHours().equals(this.getNormalizedInstanceHours()) == false) return false; 
-        if (other.getMasterPublicDnsName() == null ^ this.getMasterPublicDnsName() == null) return false;
-        if (other.getMasterPublicDnsName() != null && other.getMasterPublicDnsName().equals(this.getMasterPublicDnsName()) == false) return false; 
-        if (other.getConfigurations() == null ^ this.getConfigurations() == null) return false;
-        if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public Cluster clone() {
         try {
             return (Cluster) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

@@ -210,29 +210,21 @@ public class Rule implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the MetricName property for this object.
-     * 
      * @param metricName
-     *        The new value for the MetricName property for this object.
      */
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
 
     /**
-     * Returns the value of the MetricName property for this object.
-     * 
-     * @return The value of the MetricName property for this object.
+     * @return
      */
     public String getMetricName() {
         return this.metricName;
     }
 
     /**
-     * Sets the value of the MetricName property for this object.
-     * 
      * @param metricName
-     *        The new value for the MetricName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

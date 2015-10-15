@@ -95,29 +95,21 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Sets the value of the RetentionInDays property for this object.
-     * 
      * @param retentionInDays
-     *        The new value for the RetentionInDays property for this object.
      */
     public void setRetentionInDays(Integer retentionInDays) {
         this.retentionInDays = retentionInDays;
     }
 
     /**
-     * Returns the value of the RetentionInDays property for this object.
-     * 
-     * @return The value of the RetentionInDays property for this object.
+     * @return
      */
     public Integer getRetentionInDays() {
         return this.retentionInDays;
     }
 
     /**
-     * Sets the value of the RetentionInDays property for this object.
-     * 
      * @param retentionInDays
-     *        The new value for the RetentionInDays property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
