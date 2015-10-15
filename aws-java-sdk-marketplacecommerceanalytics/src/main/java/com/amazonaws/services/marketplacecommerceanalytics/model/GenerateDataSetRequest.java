@@ -37,10 +37,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
     private String snsTopicArn;
 
     /**
-     * Sets the value of the DataSetType property for this object.
-     * 
      * @param dataSetType
-     *        The new value for the DataSetType property for this object.
      * @see DataSetType
      */
     public void setDataSetType(String dataSetType) {
@@ -48,9 +45,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns the value of the DataSetType property for this object.
-     * 
-     * @return The value of the DataSetType property for this object.
+     * @return
      * @see DataSetType
      */
     public String getDataSetType() {
@@ -58,10 +53,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the DataSetType property for this object.
-     * 
      * @param dataSetType
-     *        The new value for the DataSetType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DataSetType
@@ -72,10 +64,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the DataSetType property for this object.
-     * 
      * @param dataSetType
-     *        The new value for the DataSetType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DataSetType
@@ -85,10 +74,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the DataSetType property for this object.
-     * 
      * @param dataSetType
-     *        The new value for the DataSetType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DataSetType
@@ -99,31 +85,21 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the DataSetPublicationDate property for this object.
-     * 
      * @param dataSetPublicationDate
-     *        The new value for the DataSetPublicationDate property for this
-     *        object.
      */
     public void setDataSetPublicationDate(java.util.Date dataSetPublicationDate) {
         this.dataSetPublicationDate = dataSetPublicationDate;
     }
 
     /**
-     * Returns the value of the DataSetPublicationDate property for this object.
-     * 
-     * @return The value of the DataSetPublicationDate property for this object.
+     * @return
      */
     public java.util.Date getDataSetPublicationDate() {
         return this.dataSetPublicationDate;
     }
 
     /**
-     * Sets the value of the DataSetPublicationDate property for this object.
-     * 
      * @param dataSetPublicationDate
-     *        The new value for the DataSetPublicationDate property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -134,29 +110,21 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the RoleNameArn property for this object.
-     * 
      * @param roleNameArn
-     *        The new value for the RoleNameArn property for this object.
      */
     public void setRoleNameArn(String roleNameArn) {
         this.roleNameArn = roleNameArn;
     }
 
     /**
-     * Returns the value of the RoleNameArn property for this object.
-     * 
-     * @return The value of the RoleNameArn property for this object.
+     * @return
      */
     public String getRoleNameArn() {
         return this.roleNameArn;
     }
 
     /**
-     * Sets the value of the RoleNameArn property for this object.
-     * 
      * @param roleNameArn
-     *        The new value for the RoleNameArn property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -166,33 +134,21 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the DestinationS3BucketName property for this object.
-     * 
      * @param destinationS3BucketName
-     *        The new value for the DestinationS3BucketName property for this
-     *        object.
      */
     public void setDestinationS3BucketName(String destinationS3BucketName) {
         this.destinationS3BucketName = destinationS3BucketName;
     }
 
     /**
-     * Returns the value of the DestinationS3BucketName property for this
-     * object.
-     * 
-     * @return The value of the DestinationS3BucketName property for this
-     *         object.
+     * @return
      */
     public String getDestinationS3BucketName() {
         return this.destinationS3BucketName;
     }
 
     /**
-     * Sets the value of the DestinationS3BucketName property for this object.
-     * 
      * @param destinationS3BucketName
-     *        The new value for the DestinationS3BucketName property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -203,31 +159,21 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the DestinationS3Prefix property for this object.
-     * 
      * @param destinationS3Prefix
-     *        The new value for the DestinationS3Prefix property for this
-     *        object.
      */
     public void setDestinationS3Prefix(String destinationS3Prefix) {
         this.destinationS3Prefix = destinationS3Prefix;
     }
 
     /**
-     * Returns the value of the DestinationS3Prefix property for this object.
-     * 
-     * @return The value of the DestinationS3Prefix property for this object.
+     * @return
      */
     public String getDestinationS3Prefix() {
         return this.destinationS3Prefix;
     }
 
     /**
-     * Sets the value of the DestinationS3Prefix property for this object.
-     * 
      * @param destinationS3Prefix
-     *        The new value for the DestinationS3Prefix property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -238,29 +184,21 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the SnsTopicArn property for this object.
-     * 
      * @param snsTopicArn
-     *        The new value for the SnsTopicArn property for this object.
      */
     public void setSnsTopicArn(String snsTopicArn) {
         this.snsTopicArn = snsTopicArn;
     }
 
     /**
-     * Returns the value of the SnsTopicArn property for this object.
-     * 
-     * @return The value of the SnsTopicArn property for this object.
+     * @return
      */
     public String getSnsTopicArn() {
         return this.snsTopicArn;
     }
 
     /**
-     * Sets the value of the SnsTopicArn property for this object.
-     * 
      * @param snsTopicArn
-     *        The new value for the SnsTopicArn property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

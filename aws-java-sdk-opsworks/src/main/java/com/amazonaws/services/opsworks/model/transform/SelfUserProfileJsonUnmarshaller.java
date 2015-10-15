@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Self User Profile JSON Unmarshaller
+ * SelfUserProfile JSON Unmarshaller
  */
-public class SelfUserProfileJsonUnmarshaller implements Unmarshaller<SelfUserProfile, JsonUnmarshallerContext> {
+public class SelfUserProfileJsonUnmarshaller implements
+        Unmarshaller<SelfUserProfile, JsonUnmarshallerContext> {
 
-    public SelfUserProfile unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public SelfUserProfile unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         SelfUserProfile selfUserProfile = new SelfUserProfile();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,45 +40,55 @@ public class SelfUserProfileJsonUnmarshaller implements Unmarshaller<SelfUserPro
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IamUserArn", targetDepth)) {
                     context.nextToken();
-                    selfUserProfile.setIamUserArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    selfUserProfile.setIamUserArn(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    selfUserProfile.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    selfUserProfile.setName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SshUsername", targetDepth)) {
                     context.nextToken();
-                    selfUserProfile.setSshUsername(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    selfUserProfile.setSshUsername(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SshPublicKey", targetDepth)) {
                     context.nextToken();
-                    selfUserProfile.setSshPublicKey(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    selfUserProfile.setSshPublicKey(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return selfUserProfile;
     }
 
     private static SelfUserProfileJsonUnmarshaller instance;
+
     public static SelfUserProfileJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new SelfUserProfileJsonUnmarshaller();
+        if (instance == null)
+            instance = new SelfUserProfileJsonUnmarshaller();
         return instance;
     }
 }
-    

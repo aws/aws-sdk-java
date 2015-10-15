@@ -118,29 +118,21 @@ public class WebACLUpdate implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ActivatedRule property for this object.
-     * 
      * @param activatedRule
-     *        The new value for the ActivatedRule property for this object.
      */
     public void setActivatedRule(ActivatedRule activatedRule) {
         this.activatedRule = activatedRule;
     }
 
     /**
-     * Returns the value of the ActivatedRule property for this object.
-     * 
-     * @return The value of the ActivatedRule property for this object.
+     * @return
      */
     public ActivatedRule getActivatedRule() {
         return this.activatedRule;
     }
 
     /**
-     * Sets the value of the ActivatedRule property for this object.
-     * 
      * @param activatedRule
-     *        The new value for the ActivatedRule property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -1,24 +1,25 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.route53domains.model;
 
 /**
- * Country Code
+ * 
  */
 public enum CountryCode {
-    
+
     AD("AD"),
     AE("AE"),
     AF("AF"),
@@ -264,474 +265,473 @@ public enum CountryCode {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return CountryCode corresponding to the value
      */
     public static CountryCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("AD".equals(value)) {
-            return CountryCode.AD;
+            return AD;
         } else if ("AE".equals(value)) {
-            return CountryCode.AE;
+            return AE;
         } else if ("AF".equals(value)) {
-            return CountryCode.AF;
+            return AF;
         } else if ("AG".equals(value)) {
-            return CountryCode.AG;
+            return AG;
         } else if ("AI".equals(value)) {
-            return CountryCode.AI;
+            return AI;
         } else if ("AL".equals(value)) {
-            return CountryCode.AL;
+            return AL;
         } else if ("AM".equals(value)) {
-            return CountryCode.AM;
+            return AM;
         } else if ("AN".equals(value)) {
-            return CountryCode.AN;
+            return AN;
         } else if ("AO".equals(value)) {
-            return CountryCode.AO;
+            return AO;
         } else if ("AQ".equals(value)) {
-            return CountryCode.AQ;
+            return AQ;
         } else if ("AR".equals(value)) {
-            return CountryCode.AR;
+            return AR;
         } else if ("AS".equals(value)) {
-            return CountryCode.AS;
+            return AS;
         } else if ("AT".equals(value)) {
-            return CountryCode.AT;
+            return AT;
         } else if ("AU".equals(value)) {
-            return CountryCode.AU;
+            return AU;
         } else if ("AW".equals(value)) {
-            return CountryCode.AW;
+            return AW;
         } else if ("AZ".equals(value)) {
-            return CountryCode.AZ;
+            return AZ;
         } else if ("BA".equals(value)) {
-            return CountryCode.BA;
+            return BA;
         } else if ("BB".equals(value)) {
-            return CountryCode.BB;
+            return BB;
         } else if ("BD".equals(value)) {
-            return CountryCode.BD;
+            return BD;
         } else if ("BE".equals(value)) {
-            return CountryCode.BE;
+            return BE;
         } else if ("BF".equals(value)) {
-            return CountryCode.BF;
+            return BF;
         } else if ("BG".equals(value)) {
-            return CountryCode.BG;
+            return BG;
         } else if ("BH".equals(value)) {
-            return CountryCode.BH;
+            return BH;
         } else if ("BI".equals(value)) {
-            return CountryCode.BI;
+            return BI;
         } else if ("BJ".equals(value)) {
-            return CountryCode.BJ;
+            return BJ;
         } else if ("BL".equals(value)) {
-            return CountryCode.BL;
+            return BL;
         } else if ("BM".equals(value)) {
-            return CountryCode.BM;
+            return BM;
         } else if ("BN".equals(value)) {
-            return CountryCode.BN;
+            return BN;
         } else if ("BO".equals(value)) {
-            return CountryCode.BO;
+            return BO;
         } else if ("BR".equals(value)) {
-            return CountryCode.BR;
+            return BR;
         } else if ("BS".equals(value)) {
-            return CountryCode.BS;
+            return BS;
         } else if ("BT".equals(value)) {
-            return CountryCode.BT;
+            return BT;
         } else if ("BW".equals(value)) {
-            return CountryCode.BW;
+            return BW;
         } else if ("BY".equals(value)) {
-            return CountryCode.BY;
+            return BY;
         } else if ("BZ".equals(value)) {
-            return CountryCode.BZ;
+            return BZ;
         } else if ("CA".equals(value)) {
-            return CountryCode.CA;
+            return CA;
         } else if ("CC".equals(value)) {
-            return CountryCode.CC;
+            return CC;
         } else if ("CD".equals(value)) {
-            return CountryCode.CD;
+            return CD;
         } else if ("CF".equals(value)) {
-            return CountryCode.CF;
+            return CF;
         } else if ("CG".equals(value)) {
-            return CountryCode.CG;
+            return CG;
         } else if ("CH".equals(value)) {
-            return CountryCode.CH;
+            return CH;
         } else if ("CI".equals(value)) {
-            return CountryCode.CI;
+            return CI;
         } else if ("CK".equals(value)) {
-            return CountryCode.CK;
+            return CK;
         } else if ("CL".equals(value)) {
-            return CountryCode.CL;
+            return CL;
         } else if ("CM".equals(value)) {
-            return CountryCode.CM;
+            return CM;
         } else if ("CN".equals(value)) {
-            return CountryCode.CN;
+            return CN;
         } else if ("CO".equals(value)) {
-            return CountryCode.CO;
+            return CO;
         } else if ("CR".equals(value)) {
-            return CountryCode.CR;
+            return CR;
         } else if ("CU".equals(value)) {
-            return CountryCode.CU;
+            return CU;
         } else if ("CV".equals(value)) {
-            return CountryCode.CV;
+            return CV;
         } else if ("CX".equals(value)) {
-            return CountryCode.CX;
+            return CX;
         } else if ("CY".equals(value)) {
-            return CountryCode.CY;
+            return CY;
         } else if ("CZ".equals(value)) {
-            return CountryCode.CZ;
+            return CZ;
         } else if ("DE".equals(value)) {
-            return CountryCode.DE;
+            return DE;
         } else if ("DJ".equals(value)) {
-            return CountryCode.DJ;
+            return DJ;
         } else if ("DK".equals(value)) {
-            return CountryCode.DK;
+            return DK;
         } else if ("DM".equals(value)) {
-            return CountryCode.DM;
+            return DM;
         } else if ("DO".equals(value)) {
-            return CountryCode.DO;
+            return DO;
         } else if ("DZ".equals(value)) {
-            return CountryCode.DZ;
+            return DZ;
         } else if ("EC".equals(value)) {
-            return CountryCode.EC;
+            return EC;
         } else if ("EE".equals(value)) {
-            return CountryCode.EE;
+            return EE;
         } else if ("EG".equals(value)) {
-            return CountryCode.EG;
+            return EG;
         } else if ("ER".equals(value)) {
-            return CountryCode.ER;
+            return ER;
         } else if ("ES".equals(value)) {
-            return CountryCode.ES;
+            return ES;
         } else if ("ET".equals(value)) {
-            return CountryCode.ET;
+            return ET;
         } else if ("FI".equals(value)) {
-            return CountryCode.FI;
+            return FI;
         } else if ("FJ".equals(value)) {
-            return CountryCode.FJ;
+            return FJ;
         } else if ("FK".equals(value)) {
-            return CountryCode.FK;
+            return FK;
         } else if ("FM".equals(value)) {
-            return CountryCode.FM;
+            return FM;
         } else if ("FO".equals(value)) {
-            return CountryCode.FO;
+            return FO;
         } else if ("FR".equals(value)) {
-            return CountryCode.FR;
+            return FR;
         } else if ("GA".equals(value)) {
-            return CountryCode.GA;
+            return GA;
         } else if ("GB".equals(value)) {
-            return CountryCode.GB;
+            return GB;
         } else if ("GD".equals(value)) {
-            return CountryCode.GD;
+            return GD;
         } else if ("GE".equals(value)) {
-            return CountryCode.GE;
+            return GE;
         } else if ("GH".equals(value)) {
-            return CountryCode.GH;
+            return GH;
         } else if ("GI".equals(value)) {
-            return CountryCode.GI;
+            return GI;
         } else if ("GL".equals(value)) {
-            return CountryCode.GL;
+            return GL;
         } else if ("GM".equals(value)) {
-            return CountryCode.GM;
+            return GM;
         } else if ("GN".equals(value)) {
-            return CountryCode.GN;
+            return GN;
         } else if ("GQ".equals(value)) {
-            return CountryCode.GQ;
+            return GQ;
         } else if ("GR".equals(value)) {
-            return CountryCode.GR;
+            return GR;
         } else if ("GT".equals(value)) {
-            return CountryCode.GT;
+            return GT;
         } else if ("GU".equals(value)) {
-            return CountryCode.GU;
+            return GU;
         } else if ("GW".equals(value)) {
-            return CountryCode.GW;
+            return GW;
         } else if ("GY".equals(value)) {
-            return CountryCode.GY;
+            return GY;
         } else if ("HK".equals(value)) {
-            return CountryCode.HK;
+            return HK;
         } else if ("HN".equals(value)) {
-            return CountryCode.HN;
+            return HN;
         } else if ("HR".equals(value)) {
-            return CountryCode.HR;
+            return HR;
         } else if ("HT".equals(value)) {
-            return CountryCode.HT;
+            return HT;
         } else if ("HU".equals(value)) {
-            return CountryCode.HU;
+            return HU;
         } else if ("ID".equals(value)) {
-            return CountryCode.ID;
+            return ID;
         } else if ("IE".equals(value)) {
-            return CountryCode.IE;
+            return IE;
         } else if ("IL".equals(value)) {
-            return CountryCode.IL;
+            return IL;
         } else if ("IM".equals(value)) {
-            return CountryCode.IM;
+            return IM;
         } else if ("IN".equals(value)) {
-            return CountryCode.IN;
+            return IN;
         } else if ("IQ".equals(value)) {
-            return CountryCode.IQ;
+            return IQ;
         } else if ("IR".equals(value)) {
-            return CountryCode.IR;
+            return IR;
         } else if ("IS".equals(value)) {
-            return CountryCode.IS;
+            return IS;
         } else if ("IT".equals(value)) {
-            return CountryCode.IT;
+            return IT;
         } else if ("JM".equals(value)) {
-            return CountryCode.JM;
+            return JM;
         } else if ("JO".equals(value)) {
-            return CountryCode.JO;
+            return JO;
         } else if ("JP".equals(value)) {
-            return CountryCode.JP;
+            return JP;
         } else if ("KE".equals(value)) {
-            return CountryCode.KE;
+            return KE;
         } else if ("KG".equals(value)) {
-            return CountryCode.KG;
+            return KG;
         } else if ("KH".equals(value)) {
-            return CountryCode.KH;
+            return KH;
         } else if ("KI".equals(value)) {
-            return CountryCode.KI;
+            return KI;
         } else if ("KM".equals(value)) {
-            return CountryCode.KM;
+            return KM;
         } else if ("KN".equals(value)) {
-            return CountryCode.KN;
+            return KN;
         } else if ("KP".equals(value)) {
-            return CountryCode.KP;
+            return KP;
         } else if ("KR".equals(value)) {
-            return CountryCode.KR;
+            return KR;
         } else if ("KW".equals(value)) {
-            return CountryCode.KW;
+            return KW;
         } else if ("KY".equals(value)) {
-            return CountryCode.KY;
+            return KY;
         } else if ("KZ".equals(value)) {
-            return CountryCode.KZ;
+            return KZ;
         } else if ("LA".equals(value)) {
-            return CountryCode.LA;
+            return LA;
         } else if ("LB".equals(value)) {
-            return CountryCode.LB;
+            return LB;
         } else if ("LC".equals(value)) {
-            return CountryCode.LC;
+            return LC;
         } else if ("LI".equals(value)) {
-            return CountryCode.LI;
+            return LI;
         } else if ("LK".equals(value)) {
-            return CountryCode.LK;
+            return LK;
         } else if ("LR".equals(value)) {
-            return CountryCode.LR;
+            return LR;
         } else if ("LS".equals(value)) {
-            return CountryCode.LS;
+            return LS;
         } else if ("LT".equals(value)) {
-            return CountryCode.LT;
+            return LT;
         } else if ("LU".equals(value)) {
-            return CountryCode.LU;
+            return LU;
         } else if ("LV".equals(value)) {
-            return CountryCode.LV;
+            return LV;
         } else if ("LY".equals(value)) {
-            return CountryCode.LY;
+            return LY;
         } else if ("MA".equals(value)) {
-            return CountryCode.MA;
+            return MA;
         } else if ("MC".equals(value)) {
-            return CountryCode.MC;
+            return MC;
         } else if ("MD".equals(value)) {
-            return CountryCode.MD;
+            return MD;
         } else if ("ME".equals(value)) {
-            return CountryCode.ME;
+            return ME;
         } else if ("MF".equals(value)) {
-            return CountryCode.MF;
+            return MF;
         } else if ("MG".equals(value)) {
-            return CountryCode.MG;
+            return MG;
         } else if ("MH".equals(value)) {
-            return CountryCode.MH;
+            return MH;
         } else if ("MK".equals(value)) {
-            return CountryCode.MK;
+            return MK;
         } else if ("ML".equals(value)) {
-            return CountryCode.ML;
+            return ML;
         } else if ("MM".equals(value)) {
-            return CountryCode.MM;
+            return MM;
         } else if ("MN".equals(value)) {
-            return CountryCode.MN;
+            return MN;
         } else if ("MO".equals(value)) {
-            return CountryCode.MO;
+            return MO;
         } else if ("MP".equals(value)) {
-            return CountryCode.MP;
+            return MP;
         } else if ("MR".equals(value)) {
-            return CountryCode.MR;
+            return MR;
         } else if ("MS".equals(value)) {
-            return CountryCode.MS;
+            return MS;
         } else if ("MT".equals(value)) {
-            return CountryCode.MT;
+            return MT;
         } else if ("MU".equals(value)) {
-            return CountryCode.MU;
+            return MU;
         } else if ("MV".equals(value)) {
-            return CountryCode.MV;
+            return MV;
         } else if ("MW".equals(value)) {
-            return CountryCode.MW;
+            return MW;
         } else if ("MX".equals(value)) {
-            return CountryCode.MX;
+            return MX;
         } else if ("MY".equals(value)) {
-            return CountryCode.MY;
+            return MY;
         } else if ("MZ".equals(value)) {
-            return CountryCode.MZ;
+            return MZ;
         } else if ("NA".equals(value)) {
-            return CountryCode.NA;
+            return NA;
         } else if ("NC".equals(value)) {
-            return CountryCode.NC;
+            return NC;
         } else if ("NE".equals(value)) {
-            return CountryCode.NE;
+            return NE;
         } else if ("NG".equals(value)) {
-            return CountryCode.NG;
+            return NG;
         } else if ("NI".equals(value)) {
-            return CountryCode.NI;
+            return NI;
         } else if ("NL".equals(value)) {
-            return CountryCode.NL;
+            return NL;
         } else if ("NO".equals(value)) {
-            return CountryCode.NO;
+            return NO;
         } else if ("NP".equals(value)) {
-            return CountryCode.NP;
+            return NP;
         } else if ("NR".equals(value)) {
-            return CountryCode.NR;
+            return NR;
         } else if ("NU".equals(value)) {
-            return CountryCode.NU;
+            return NU;
         } else if ("NZ".equals(value)) {
-            return CountryCode.NZ;
+            return NZ;
         } else if ("OM".equals(value)) {
-            return CountryCode.OM;
+            return OM;
         } else if ("PA".equals(value)) {
-            return CountryCode.PA;
+            return PA;
         } else if ("PE".equals(value)) {
-            return CountryCode.PE;
+            return PE;
         } else if ("PF".equals(value)) {
-            return CountryCode.PF;
+            return PF;
         } else if ("PG".equals(value)) {
-            return CountryCode.PG;
+            return PG;
         } else if ("PH".equals(value)) {
-            return CountryCode.PH;
+            return PH;
         } else if ("PK".equals(value)) {
-            return CountryCode.PK;
+            return PK;
         } else if ("PL".equals(value)) {
-            return CountryCode.PL;
+            return PL;
         } else if ("PM".equals(value)) {
-            return CountryCode.PM;
+            return PM;
         } else if ("PN".equals(value)) {
-            return CountryCode.PN;
+            return PN;
         } else if ("PR".equals(value)) {
-            return CountryCode.PR;
+            return PR;
         } else if ("PT".equals(value)) {
-            return CountryCode.PT;
+            return PT;
         } else if ("PW".equals(value)) {
-            return CountryCode.PW;
+            return PW;
         } else if ("PY".equals(value)) {
-            return CountryCode.PY;
+            return PY;
         } else if ("QA".equals(value)) {
-            return CountryCode.QA;
+            return QA;
         } else if ("RO".equals(value)) {
-            return CountryCode.RO;
+            return RO;
         } else if ("RS".equals(value)) {
-            return CountryCode.RS;
+            return RS;
         } else if ("RU".equals(value)) {
-            return CountryCode.RU;
+            return RU;
         } else if ("RW".equals(value)) {
-            return CountryCode.RW;
+            return RW;
         } else if ("SA".equals(value)) {
-            return CountryCode.SA;
+            return SA;
         } else if ("SB".equals(value)) {
-            return CountryCode.SB;
+            return SB;
         } else if ("SC".equals(value)) {
-            return CountryCode.SC;
+            return SC;
         } else if ("SD".equals(value)) {
-            return CountryCode.SD;
+            return SD;
         } else if ("SE".equals(value)) {
-            return CountryCode.SE;
+            return SE;
         } else if ("SG".equals(value)) {
-            return CountryCode.SG;
+            return SG;
         } else if ("SH".equals(value)) {
-            return CountryCode.SH;
+            return SH;
         } else if ("SI".equals(value)) {
-            return CountryCode.SI;
+            return SI;
         } else if ("SK".equals(value)) {
-            return CountryCode.SK;
+            return SK;
         } else if ("SL".equals(value)) {
-            return CountryCode.SL;
+            return SL;
         } else if ("SM".equals(value)) {
-            return CountryCode.SM;
+            return SM;
         } else if ("SN".equals(value)) {
-            return CountryCode.SN;
+            return SN;
         } else if ("SO".equals(value)) {
-            return CountryCode.SO;
+            return SO;
         } else if ("SR".equals(value)) {
-            return CountryCode.SR;
+            return SR;
         } else if ("ST".equals(value)) {
-            return CountryCode.ST;
+            return ST;
         } else if ("SV".equals(value)) {
-            return CountryCode.SV;
+            return SV;
         } else if ("SY".equals(value)) {
-            return CountryCode.SY;
+            return SY;
         } else if ("SZ".equals(value)) {
-            return CountryCode.SZ;
+            return SZ;
         } else if ("TC".equals(value)) {
-            return CountryCode.TC;
+            return TC;
         } else if ("TD".equals(value)) {
-            return CountryCode.TD;
+            return TD;
         } else if ("TG".equals(value)) {
-            return CountryCode.TG;
+            return TG;
         } else if ("TH".equals(value)) {
-            return CountryCode.TH;
+            return TH;
         } else if ("TJ".equals(value)) {
-            return CountryCode.TJ;
+            return TJ;
         } else if ("TK".equals(value)) {
-            return CountryCode.TK;
+            return TK;
         } else if ("TL".equals(value)) {
-            return CountryCode.TL;
+            return TL;
         } else if ("TM".equals(value)) {
-            return CountryCode.TM;
+            return TM;
         } else if ("TN".equals(value)) {
-            return CountryCode.TN;
+            return TN;
         } else if ("TO".equals(value)) {
-            return CountryCode.TO;
+            return TO;
         } else if ("TR".equals(value)) {
-            return CountryCode.TR;
+            return TR;
         } else if ("TT".equals(value)) {
-            return CountryCode.TT;
+            return TT;
         } else if ("TV".equals(value)) {
-            return CountryCode.TV;
+            return TV;
         } else if ("TW".equals(value)) {
-            return CountryCode.TW;
+            return TW;
         } else if ("TZ".equals(value)) {
-            return CountryCode.TZ;
+            return TZ;
         } else if ("UA".equals(value)) {
-            return CountryCode.UA;
+            return UA;
         } else if ("UG".equals(value)) {
-            return CountryCode.UG;
+            return UG;
         } else if ("US".equals(value)) {
-            return CountryCode.US;
+            return US;
         } else if ("UY".equals(value)) {
-            return CountryCode.UY;
+            return UY;
         } else if ("UZ".equals(value)) {
-            return CountryCode.UZ;
+            return UZ;
         } else if ("VA".equals(value)) {
-            return CountryCode.VA;
+            return VA;
         } else if ("VC".equals(value)) {
-            return CountryCode.VC;
+            return VC;
         } else if ("VE".equals(value)) {
-            return CountryCode.VE;
+            return VE;
         } else if ("VG".equals(value)) {
-            return CountryCode.VG;
+            return VG;
         } else if ("VI".equals(value)) {
-            return CountryCode.VI;
+            return VI;
         } else if ("VN".equals(value)) {
-            return CountryCode.VN;
+            return VN;
         } else if ("VU".equals(value)) {
-            return CountryCode.VU;
+            return VU;
         } else if ("WF".equals(value)) {
-            return CountryCode.WF;
+            return WF;
         } else if ("WS".equals(value)) {
-            return CountryCode.WS;
+            return WS;
         } else if ("YE".equals(value)) {
-            return CountryCode.YE;
+            return YE;
         } else if ("YT".equals(value)) {
-            return CountryCode.YT;
+            return YT;
         } else if ("ZA".equals(value)) {
-            return CountryCode.ZA;
+            return ZA;
         } else if ("ZM".equals(value)) {
-            return CountryCode.ZM;
+            return ZM;
         } else if ("ZW".equals(value)) {
-            return CountryCode.ZW;
+            return ZW;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

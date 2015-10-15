@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kms.AWSKMS#createAlias(CreateAliasRequest) CreateAlias operation}.
  * <p>
- * Creates a display name for a customer master key. An alias can be
- * used to identify a key and should be unique. The console enforces a
+ * Creates a display name for a customer master key. An alias can be used
+ * to identify a key and should be unique. The console enforces a
  * one-to-one mapping between the alias and a key. An alias name can
  * contain only alphanumeric characters, forward slashes (/), underscores
  * (_), and dashes (-). An alias must start with the word "alias"
@@ -31,11 +31,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Services (AWS).
  * </p>
  * <p>
- * To associate an alias with a different key, call UpdateAlias.
+ * The alias and the key it is mapped to must be in the same AWS account
+ * and the same region.
  * </p>
  * <p>
- * Note that you cannot create or update an alias that represents a key
- * in another account.
+ * To map an alias to a different key, call UpdateAlias.
  * </p>
  *
  * @see com.amazonaws.services.kms.AWSKMS#createAlias(CreateAliasRequest)

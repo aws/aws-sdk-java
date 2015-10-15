@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ecs.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,85 +40,95 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Submit Container State Change Request Marshaller
+ * SubmitContainerStateChangeRequest Marshaller
  */
-public class SubmitContainerStateChangeRequestMarshaller implements Marshaller<Request<SubmitContainerStateChangeRequest>, SubmitContainerStateChangeRequest> {
+public class SubmitContainerStateChangeRequestMarshaller
+        implements
+        Marshaller<Request<SubmitContainerStateChangeRequest>, SubmitContainerStateChangeRequest> {
 
-    public Request<SubmitContainerStateChangeRequest> marshall(SubmitContainerStateChangeRequest submitContainerStateChangeRequest) {
+    public Request<SubmitContainerStateChangeRequest> marshall(
+            SubmitContainerStateChangeRequest submitContainerStateChangeRequest) {
+
         if (submitContainerStateChangeRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<SubmitContainerStateChangeRequest> request = new DefaultRequest<SubmitContainerStateChangeRequest>(submitContainerStateChangeRequest, "AmazonECS");
-        String target = "AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange";
-        request.addHeader("X-Amz-Target", target);
+        Request<SubmitContainerStateChangeRequest> request = new DefaultRequest<SubmitContainerStateChangeRequest>(
+                submitContainerStateChangeRequest, "AmazonECS");
+        request.addHeader("X-Amz-Target",
+                "AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (submitContainerStateChangeRequest.getCluster() != null) {
-                jsonWriter.key("cluster").value(submitContainerStateChangeRequest.getCluster());
+                jsonWriter.key("cluster").value(
+                        submitContainerStateChangeRequest.getCluster());
             }
+
             if (submitContainerStateChangeRequest.getTask() != null) {
-                jsonWriter.key("task").value(submitContainerStateChangeRequest.getTask());
+                jsonWriter.key("task").value(
+                        submitContainerStateChangeRequest.getTask());
             }
+
             if (submitContainerStateChangeRequest.getContainerName() != null) {
-                jsonWriter.key("containerName").value(submitContainerStateChangeRequest.getContainerName());
+                jsonWriter.key("containerName").value(
+                        submitContainerStateChangeRequest.getContainerName());
             }
+
             if (submitContainerStateChangeRequest.getStatus() != null) {
-                jsonWriter.key("status").value(submitContainerStateChangeRequest.getStatus());
+                jsonWriter.key("status").value(
+                        submitContainerStateChangeRequest.getStatus());
             }
+
             if (submitContainerStateChangeRequest.getExitCode() != null) {
-                jsonWriter.key("exitCode").value(submitContainerStateChangeRequest.getExitCode());
+                jsonWriter.key("exitCode").value(
+                        submitContainerStateChangeRequest.getExitCode());
             }
+
             if (submitContainerStateChangeRequest.getReason() != null) {
-                jsonWriter.key("reason").value(submitContainerStateChangeRequest.getReason());
+                jsonWriter.key("reason").value(
+                        submitContainerStateChangeRequest.getReason());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<NetworkBinding> networkBindingsList = (com.amazonaws.internal.ListWithAutoConstructFlag<NetworkBinding>)(submitContainerStateChangeRequest.getNetworkBindings());
-            if (networkBindingsList != null && !(networkBindingsList.isAutoConstruct() && networkBindingsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<NetworkBinding> networkBindingsList = (com.amazonaws.internal.SdkInternalList<NetworkBinding>) submitContainerStateChangeRequest
+                    .getNetworkBindings();
+            if (!networkBindingsList.isEmpty()
+                    || !networkBindingsList.isAutoConstruct()) {
                 jsonWriter.key("networkBindings");
                 jsonWriter.array();
-
                 for (NetworkBinding networkBindingsListValue : networkBindingsList) {
                     if (networkBindingsListValue != null) {
-                        jsonWriter.object();
-                        if (networkBindingsListValue.getBindIP() != null) {
-                            jsonWriter.key("bindIP").value(networkBindingsListValue.getBindIP());
-                        }
-                        if (networkBindingsListValue.getContainerPort() != null) {
-                            jsonWriter.key("containerPort").value(networkBindingsListValue.getContainerPort());
-                        }
-                        if (networkBindingsListValue.getHostPort() != null) {
-                            jsonWriter.key("hostPort").value(networkBindingsListValue.getHostPort());
-                        }
-                        if (networkBindingsListValue.getProtocol() != null) {
-                            jsonWriter.key("protocol").value(networkBindingsListValue.getProtocol());
-                        }
-                        jsonWriter.endObject();
+
+                        NetworkBindingJsonMarshaller.getInstance().marshall(
+                                networkBindingsListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

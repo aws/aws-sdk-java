@@ -1,523 +1,563 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.kinesis.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output for DescribeStream.
+ * Represents the output for <a>DescribeStream</a>.
  * </p>
  */
 public class StreamDescription implements Serializable, Cloneable {
 
     /**
-     * The name of the stream being described.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     * The name of the stream being described.
+     * </p>
      */
     private String streamName;
-
     /**
+     * <p>
      * The Amazon Resource Name (ARN) for the stream being described.
+     * </p>
      */
     private String streamARN;
-
     /**
-     * The current status of the stream being described. <p>The stream status
-     * is one of the following states: <ul> <li><code>CREATING</code> - The
-     * stream is being created. Amazon Kinesis immediately returns and sets
-     * <code>StreamStatus</code> to <code>CREATING</code>.</li>
-     * <li><code>DELETING</code> - The stream is being deleted. The specified
-     * stream is in the <code>DELETING</code> state until Amazon Kinesis
-     * completes the deletion.</li> <li><code>ACTIVE</code> - The stream
-     * exists and is ready for read and write operations or deletion. You
-     * should perform read and write operations only on an
-     * <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in
-     * the stream are being merged or split. Read and write operations
-     * continue to work while the stream is in the <code>UPDATING</code>
-     * state.</li> </ul>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, DELETING, ACTIVE, UPDATING
+     * The current status of the stream being described.
+     * </p>
+     * <p>
+     * The stream status is one of the following states:
+     * </p>
+     * <ul>
+     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * immediately returns and sets <code>StreamStatus</code> to
+     * <code>CREATING</code>.</li>
+     * <li> <code>DELETING</code> - The stream is being deleted. The specified
+     * stream is in the <code>DELETING</code> state until Amazon Kinesis
+     * completes the deletion.</li>
+     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * write operations or deletion. You should perform read and write
+     * operations only on an <code>ACTIVE</code> stream.</li>
+     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * split. Read and write operations continue to work while the stream is in
+     * the <code>UPDATING</code> state.</li>
+     * </ul>
      */
     private String streamStatus;
-
     /**
+     * <p>
      * The shards that comprise the stream.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Shard> shards;
-
+    private com.amazonaws.internal.SdkInternalList<Shard> shards;
     /**
-     * If set to <code>true</code>, more shards in the stream are available
-     * to describe.
+     * <p>
+     * If set to <code>true</code>, more shards in the stream are available to
+     * describe.
+     * </p>
      */
     private Boolean hasMoreShards;
-
     /**
-     * The current retention period, in hours.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>24 - 168<br/>
+     * The current retention period, in hours.
+     * </p>
      */
     private Integer retentionPeriodHours;
 
     /**
-     * The name of the stream being described.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @return The name of the stream being described.
-     */
-    public String getStreamName() {
-        return streamName;
-    }
-    
-    /**
      * The name of the stream being described.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param streamName The name of the stream being described.
+     * </p>
+     * 
+     * @param streamName
+     *        The name of the stream being described.
      */
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
-    
+
     /**
+     * <p>
      * The name of the stream being described.
+     * </p>
+     * 
+     * @return The name of the stream being described.
+     */
+    public String getStreamName() {
+        return this.streamName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param streamName The name of the stream being described.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the stream being described.
+     * </p>
+     * 
+     * @param streamName
+     *        The name of the stream being described.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public StreamDescription withStreamName(String streamName) {
-        this.streamName = streamName;
+        setStreamName(streamName);
         return this;
     }
 
     /**
+     * <p>
      * The Amazon Resource Name (ARN) for the stream being described.
-     *
-     * @return The Amazon Resource Name (ARN) for the stream being described.
-     */
-    public String getStreamARN() {
-        return streamARN;
-    }
-    
-    /**
-     * The Amazon Resource Name (ARN) for the stream being described.
-     *
-     * @param streamARN The Amazon Resource Name (ARN) for the stream being described.
+     * </p>
+     * 
+     * @param streamARN
+     *        The Amazon Resource Name (ARN) for the stream being described.
      */
     public void setStreamARN(String streamARN) {
         this.streamARN = streamARN;
     }
-    
+
     /**
-     * The Amazon Resource Name (ARN) for the stream being described.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param streamARN The Amazon Resource Name (ARN) for the stream being described.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon Resource Name (ARN) for the stream being described.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the stream being described.
+     */
+    public String getStreamARN() {
+        return this.streamARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the stream being described.
+     * </p>
+     * 
+     * @param streamARN
+     *        The Amazon Resource Name (ARN) for the stream being described.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public StreamDescription withStreamARN(String streamARN) {
-        this.streamARN = streamARN;
+        setStreamARN(streamARN);
         return this;
     }
 
     /**
-     * The current status of the stream being described. <p>The stream status
-     * is one of the following states: <ul> <li><code>CREATING</code> - The
-     * stream is being created. Amazon Kinesis immediately returns and sets
-     * <code>StreamStatus</code> to <code>CREATING</code>.</li>
-     * <li><code>DELETING</code> - The stream is being deleted. The specified
-     * stream is in the <code>DELETING</code> state until Amazon Kinesis
-     * completes the deletion.</li> <li><code>ACTIVE</code> - The stream
-     * exists and is ready for read and write operations or deletion. You
-     * should perform read and write operations only on an
-     * <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in
-     * the stream are being merged or split. Read and write operations
-     * continue to work while the stream is in the <code>UPDATING</code>
-     * state.</li> </ul>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, DELETING, ACTIVE, UPDATING
-     *
-     * @return The current status of the stream being described. <p>The stream status
-     *         is one of the following states: <ul> <li><code>CREATING</code> - The
-     *         stream is being created. Amazon Kinesis immediately returns and sets
-     *         <code>StreamStatus</code> to <code>CREATING</code>.</li>
-     *         <li><code>DELETING</code> - The stream is being deleted. The specified
-     *         stream is in the <code>DELETING</code> state until Amazon Kinesis
-     *         completes the deletion.</li> <li><code>ACTIVE</code> - The stream
-     *         exists and is ready for read and write operations or deletion. You
-     *         should perform read and write operations only on an
-     *         <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in
-     *         the stream are being merged or split. Read and write operations
-     *         continue to work while the stream is in the <code>UPDATING</code>
-     *         state.</li> </ul>
-     *
-     * @see StreamStatus
-     */
-    public String getStreamStatus() {
-        return streamStatus;
-    }
-    
-    /**
-     * The current status of the stream being described. <p>The stream status
-     * is one of the following states: <ul> <li><code>CREATING</code> - The
-     * stream is being created. Amazon Kinesis immediately returns and sets
-     * <code>StreamStatus</code> to <code>CREATING</code>.</li>
-     * <li><code>DELETING</code> - The stream is being deleted. The specified
-     * stream is in the <code>DELETING</code> state until Amazon Kinesis
-     * completes the deletion.</li> <li><code>ACTIVE</code> - The stream
-     * exists and is ready for read and write operations or deletion. You
-     * should perform read and write operations only on an
-     * <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in
-     * the stream are being merged or split. Read and write operations
-     * continue to work while the stream is in the <code>UPDATING</code>
-     * state.</li> </ul>
+     * The current status of the stream being described.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, DELETING, ACTIVE, UPDATING
-     *
-     * @param streamStatus The current status of the stream being described. <p>The stream status
-     *         is one of the following states: <ul> <li><code>CREATING</code> - The
-     *         stream is being created. Amazon Kinesis immediately returns and sets
-     *         <code>StreamStatus</code> to <code>CREATING</code>.</li>
-     *         <li><code>DELETING</code> - The stream is being deleted. The specified
-     *         stream is in the <code>DELETING</code> state until Amazon Kinesis
-     *         completes the deletion.</li> <li><code>ACTIVE</code> - The stream
-     *         exists and is ready for read and write operations or deletion. You
-     *         should perform read and write operations only on an
-     *         <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in
-     *         the stream are being merged or split. Read and write operations
-     *         continue to work while the stream is in the <code>UPDATING</code>
-     *         state.</li> </ul>
-     *
+     * The stream status is one of the following states:
+     * </p>
+     * <ul>
+     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * immediately returns and sets <code>StreamStatus</code> to
+     * <code>CREATING</code>.</li>
+     * <li> <code>DELETING</code> - The stream is being deleted. The specified
+     * stream is in the <code>DELETING</code> state until Amazon Kinesis
+     * completes the deletion.</li>
+     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * write operations or deletion. You should perform read and write
+     * operations only on an <code>ACTIVE</code> stream.</li>
+     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * split. Read and write operations continue to work while the stream is in
+     * the <code>UPDATING</code> state.</li>
+     * </ul>
+     * 
+     * @param streamStatus
+     *        The current status of the stream being described.</p>
+     *        <p>
+     *        The stream status is one of the following states:
+     *        </p>
+     *        <ul>
+     *        <li> <code>CREATING</code> - The stream is being created. Amazon
+     *        Kinesis immediately returns and sets <code>StreamStatus</code> to
+     *        <code>CREATING</code>.</li>
+     *        <li> <code>DELETING</code> - The stream is being deleted. The
+     *        specified stream is in the <code>DELETING</code> state until
+     *        Amazon Kinesis completes the deletion.</li>
+     *        <li> <code>ACTIVE</code> - The stream exists and is ready for read
+     *        and write operations or deletion. You should perform read and
+     *        write operations only on an <code>ACTIVE</code> stream.</li>
+     *        <li> <code>UPDATING</code> - Shards in the stream are being merged
+     *        or split. Read and write operations continue to work while the
+     *        stream is in the <code>UPDATING</code> state.</li>
      * @see StreamStatus
      */
     public void setStreamStatus(String streamStatus) {
         this.streamStatus = streamStatus;
     }
-    
+
     /**
-     * The current status of the stream being described. <p>The stream status
-     * is one of the following states: <ul> <li><code>CREATING</code> - The
-     * stream is being created. Amazon Kinesis immediately returns and sets
-     * <code>StreamStatus</code> to <code>CREATING</code>.</li>
-     * <li><code>DELETING</code> - The stream is being deleted. The specified
+     * <p>
+     * The current status of the stream being described.
+     * </p>
+     * <p>
+     * The stream status is one of the following states:
+     * </p>
+     * <ul>
+     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * immediately returns and sets <code>StreamStatus</code> to
+     * <code>CREATING</code>.</li>
+     * <li> <code>DELETING</code> - The stream is being deleted. The specified
      * stream is in the <code>DELETING</code> state until Amazon Kinesis
-     * completes the deletion.</li> <li><code>ACTIVE</code> - The stream
-     * exists and is ready for read and write operations or deletion. You
-     * should perform read and write operations only on an
-     * <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in
-     * the stream are being merged or split. Read and write operations
-     * continue to work while the stream is in the <code>UPDATING</code>
-     * state.</li> </ul>
+     * completes the deletion.</li>
+     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * write operations or deletion. You should perform read and write
+     * operations only on an <code>ACTIVE</code> stream.</li>
+     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * split. Read and write operations continue to work while the stream is in
+     * the <code>UPDATING</code> state.</li>
+     * </ul>
+     * 
+     * @return The current status of the stream being described.</p>
+     *         <p>
+     *         The stream status is one of the following states:
+     *         </p>
+     *         <ul>
+     *         <li> <code>CREATING</code> - The stream is being created. Amazon
+     *         Kinesis immediately returns and sets <code>StreamStatus</code> to
+     *         <code>CREATING</code>.</li>
+     *         <li> <code>DELETING</code> - The stream is being deleted. The
+     *         specified stream is in the <code>DELETING</code> state until
+     *         Amazon Kinesis completes the deletion.</li>
+     *         <li> <code>ACTIVE</code> - The stream exists and is ready for read
+     *         and write operations or deletion. You should perform read and
+     *         write operations only on an <code>ACTIVE</code> stream.</li>
+     *         <li> <code>UPDATING</code> - Shards in the stream are being merged
+     *         or split. Read and write operations continue to work while the
+     *         stream is in the <code>UPDATING</code> state.</li>
+     * @see StreamStatus
+     */
+    public String getStreamStatus() {
+        return this.streamStatus;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The current status of the stream being described.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, DELETING, ACTIVE, UPDATING
-     *
-     * @param streamStatus The current status of the stream being described. <p>The stream status
-     *         is one of the following states: <ul> <li><code>CREATING</code> - The
-     *         stream is being created. Amazon Kinesis immediately returns and sets
-     *         <code>StreamStatus</code> to <code>CREATING</code>.</li>
-     *         <li><code>DELETING</code> - The stream is being deleted. The specified
-     *         stream is in the <code>DELETING</code> state until Amazon Kinesis
-     *         completes the deletion.</li> <li><code>ACTIVE</code> - The stream
-     *         exists and is ready for read and write operations or deletion. You
-     *         should perform read and write operations only on an
-     *         <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in
-     *         the stream are being merged or split. Read and write operations
-     *         continue to work while the stream is in the <code>UPDATING</code>
-     *         state.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The stream status is one of the following states:
+     * </p>
+     * <ul>
+     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * immediately returns and sets <code>StreamStatus</code> to
+     * <code>CREATING</code>.</li>
+     * <li> <code>DELETING</code> - The stream is being deleted. The specified
+     * stream is in the <code>DELETING</code> state until Amazon Kinesis
+     * completes the deletion.</li>
+     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * write operations or deletion. You should perform read and write
+     * operations only on an <code>ACTIVE</code> stream.</li>
+     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * split. Read and write operations continue to work while the stream is in
+     * the <code>UPDATING</code> state.</li>
+     * </ul>
+     * 
+     * @param streamStatus
+     *        The current status of the stream being described.</p>
+     *        <p>
+     *        The stream status is one of the following states:
+     *        </p>
+     *        <ul>
+     *        <li> <code>CREATING</code> - The stream is being created. Amazon
+     *        Kinesis immediately returns and sets <code>StreamStatus</code> to
+     *        <code>CREATING</code>.</li>
+     *        <li> <code>DELETING</code> - The stream is being deleted. The
+     *        specified stream is in the <code>DELETING</code> state until
+     *        Amazon Kinesis completes the deletion.</li>
+     *        <li> <code>ACTIVE</code> - The stream exists and is ready for read
+     *        and write operations or deletion. You should perform read and
+     *        write operations only on an <code>ACTIVE</code> stream.</li>
+     *        <li> <code>UPDATING</code> - Shards in the stream are being merged
+     *        or split. Read and write operations continue to work while the
+     *        stream is in the <code>UPDATING</code> state.</li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StreamStatus
      */
     public StreamDescription withStreamStatus(String streamStatus) {
-        this.streamStatus = streamStatus;
+        setStreamStatus(streamStatus);
         return this;
     }
 
     /**
-     * The current status of the stream being described. <p>The stream status
-     * is one of the following states: <ul> <li><code>CREATING</code> - The
-     * stream is being created. Amazon Kinesis immediately returns and sets
-     * <code>StreamStatus</code> to <code>CREATING</code>.</li>
-     * <li><code>DELETING</code> - The stream is being deleted. The specified
-     * stream is in the <code>DELETING</code> state until Amazon Kinesis
-     * completes the deletion.</li> <li><code>ACTIVE</code> - The stream
-     * exists and is ready for read and write operations or deletion. You
-     * should perform read and write operations only on an
-     * <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in
-     * the stream are being merged or split. Read and write operations
-     * continue to work while the stream is in the <code>UPDATING</code>
-     * state.</li> </ul>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, DELETING, ACTIVE, UPDATING
-     *
-     * @param streamStatus The current status of the stream being described. <p>The stream status
-     *         is one of the following states: <ul> <li><code>CREATING</code> - The
-     *         stream is being created. Amazon Kinesis immediately returns and sets
-     *         <code>StreamStatus</code> to <code>CREATING</code>.</li>
-     *         <li><code>DELETING</code> - The stream is being deleted. The specified
-     *         stream is in the <code>DELETING</code> state until Amazon Kinesis
-     *         completes the deletion.</li> <li><code>ACTIVE</code> - The stream
-     *         exists and is ready for read and write operations or deletion. You
-     *         should perform read and write operations only on an
-     *         <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in
-     *         the stream are being merged or split. Read and write operations
-     *         continue to work while the stream is in the <code>UPDATING</code>
-     *         state.</li> </ul>
-     *
+     * The current status of the stream being described.
+     * </p>
+     * <p>
+     * The stream status is one of the following states:
+     * </p>
+     * <ul>
+     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * immediately returns and sets <code>StreamStatus</code> to
+     * <code>CREATING</code>.</li>
+     * <li> <code>DELETING</code> - The stream is being deleted. The specified
+     * stream is in the <code>DELETING</code> state until Amazon Kinesis
+     * completes the deletion.</li>
+     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * write operations or deletion. You should perform read and write
+     * operations only on an <code>ACTIVE</code> stream.</li>
+     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * split. Read and write operations continue to work while the stream is in
+     * the <code>UPDATING</code> state.</li>
+     * </ul>
+     * 
+     * @param streamStatus
+     *        The current status of the stream being described.</p>
+     *        <p>
+     *        The stream status is one of the following states:
+     *        </p>
+     *        <ul>
+     *        <li> <code>CREATING</code> - The stream is being created. Amazon
+     *        Kinesis immediately returns and sets <code>StreamStatus</code> to
+     *        <code>CREATING</code>.</li>
+     *        <li> <code>DELETING</code> - The stream is being deleted. The
+     *        specified stream is in the <code>DELETING</code> state until
+     *        Amazon Kinesis completes the deletion.</li>
+     *        <li> <code>ACTIVE</code> - The stream exists and is ready for read
+     *        and write operations or deletion. You should perform read and
+     *        write operations only on an <code>ACTIVE</code> stream.</li>
+     *        <li> <code>UPDATING</code> - Shards in the stream are being merged
+     *        or split. Read and write operations continue to work while the
+     *        stream is in the <code>UPDATING</code> state.</li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StreamStatus
      */
     public void setStreamStatus(StreamStatus streamStatus) {
         this.streamStatus = streamStatus.toString();
     }
-    
+
     /**
-     * The current status of the stream being described. <p>The stream status
-     * is one of the following states: <ul> <li><code>CREATING</code> - The
-     * stream is being created. Amazon Kinesis immediately returns and sets
-     * <code>StreamStatus</code> to <code>CREATING</code>.</li>
-     * <li><code>DELETING</code> - The stream is being deleted. The specified
+     * <p>
+     * The current status of the stream being described.
+     * </p>
+     * <p>
+     * The stream status is one of the following states:
+     * </p>
+     * <ul>
+     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * immediately returns and sets <code>StreamStatus</code> to
+     * <code>CREATING</code>.</li>
+     * <li> <code>DELETING</code> - The stream is being deleted. The specified
      * stream is in the <code>DELETING</code> state until Amazon Kinesis
-     * completes the deletion.</li> <li><code>ACTIVE</code> - The stream
-     * exists and is ready for read and write operations or deletion. You
-     * should perform read and write operations only on an
-     * <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in
-     * the stream are being merged or split. Read and write operations
-     * continue to work while the stream is in the <code>UPDATING</code>
-     * state.</li> </ul>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, DELETING, ACTIVE, UPDATING
-     *
-     * @param streamStatus The current status of the stream being described. <p>The stream status
-     *         is one of the following states: <ul> <li><code>CREATING</code> - The
-     *         stream is being created. Amazon Kinesis immediately returns and sets
-     *         <code>StreamStatus</code> to <code>CREATING</code>.</li>
-     *         <li><code>DELETING</code> - The stream is being deleted. The specified
-     *         stream is in the <code>DELETING</code> state until Amazon Kinesis
-     *         completes the deletion.</li> <li><code>ACTIVE</code> - The stream
-     *         exists and is ready for read and write operations or deletion. You
-     *         should perform read and write operations only on an
-     *         <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in
-     *         the stream are being merged or split. Read and write operations
-     *         continue to work while the stream is in the <code>UPDATING</code>
-     *         state.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * completes the deletion.</li>
+     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * write operations or deletion. You should perform read and write
+     * operations only on an <code>ACTIVE</code> stream.</li>
+     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * split. Read and write operations continue to work while the stream is in
+     * the <code>UPDATING</code> state.</li>
+     * </ul>
+     * 
+     * @param streamStatus
+     *        The current status of the stream being described.</p>
+     *        <p>
+     *        The stream status is one of the following states:
+     *        </p>
+     *        <ul>
+     *        <li> <code>CREATING</code> - The stream is being created. Amazon
+     *        Kinesis immediately returns and sets <code>StreamStatus</code> to
+     *        <code>CREATING</code>.</li>
+     *        <li> <code>DELETING</code> - The stream is being deleted. The
+     *        specified stream is in the <code>DELETING</code> state until
+     *        Amazon Kinesis completes the deletion.</li>
+     *        <li> <code>ACTIVE</code> - The stream exists and is ready for read
+     *        and write operations or deletion. You should perform read and
+     *        write operations only on an <code>ACTIVE</code> stream.</li>
+     *        <li> <code>UPDATING</code> - Shards in the stream are being merged
+     *        or split. Read and write operations continue to work while the
+     *        stream is in the <code>UPDATING</code> state.</li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StreamStatus
      */
     public StreamDescription withStreamStatus(StreamStatus streamStatus) {
-        this.streamStatus = streamStatus.toString();
+        setStreamStatus(streamStatus);
         return this;
     }
 
     /**
+     * <p>
      * The shards that comprise the stream.
-     *
+     * </p>
+     * 
      * @return The shards that comprise the stream.
      */
     public java.util.List<Shard> getShards() {
         if (shards == null) {
-              shards = new com.amazonaws.internal.ListWithAutoConstructFlag<Shard>();
-              shards.setAutoConstruct(true);
+            shards = new com.amazonaws.internal.SdkInternalList<Shard>();
         }
         return shards;
     }
-    
+
     /**
+     * <p>
      * The shards that comprise the stream.
-     *
-     * @param shards The shards that comprise the stream.
+     * </p>
+     * 
+     * @param shards
+     *        The shards that comprise the stream.
      */
     public void setShards(java.util.Collection<Shard> shards) {
         if (shards == null) {
             this.shards = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Shard> shardsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Shard>(shards.size());
-        shardsCopy.addAll(shards);
-        this.shards = shardsCopy;
+
+        this.shards = new com.amazonaws.internal.SdkInternalList<Shard>(shards);
     }
-    
+
     /**
+     * <p>
      * The shards that comprise the stream.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setShards(java.util.Collection)} or {@link
-     * #withShards(java.util.Collection)} if you want to override the
+     * any). Use {@link #setShards(java.util.Collection)} or
+     * {@link #withShards(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param shards The shards that comprise the stream.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param shards
+     *        The shards that comprise the stream.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public StreamDescription withShards(Shard... shards) {
-        if (getShards() == null) setShards(new java.util.ArrayList<Shard>(shards.length));
-        for (Shard value : shards) {
-            getShards().add(value);
+        if (this.shards == null) {
+            setShards(new com.amazonaws.internal.SdkInternalList<Shard>(
+                    shards.length));
+        }
+        for (Shard ele : shards) {
+            this.shards.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The shards that comprise the stream.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param shards The shards that comprise the stream.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The shards that comprise the stream.
+     * </p>
+     * 
+     * @param shards
+     *        The shards that comprise the stream.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public StreamDescription withShards(java.util.Collection<Shard> shards) {
-        if (shards == null) {
-            this.shards = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Shard> shardsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Shard>(shards.size());
-            shardsCopy.addAll(shards);
-            this.shards = shardsCopy;
-        }
-
+        setShards(shards);
         return this;
     }
 
     /**
-     * If set to <code>true</code>, more shards in the stream are available
-     * to describe.
-     *
-     * @return If set to <code>true</code>, more shards in the stream are available
-     *         to describe.
-     */
-    public Boolean isHasMoreShards() {
-        return hasMoreShards;
-    }
-    
-    /**
-     * If set to <code>true</code>, more shards in the stream are available
-     * to describe.
-     *
-     * @param hasMoreShards If set to <code>true</code>, more shards in the stream are available
-     *         to describe.
+     * <p>
+     * If set to <code>true</code>, more shards in the stream are available to
+     * describe.
+     * </p>
+     * 
+     * @param hasMoreShards
+     *        If set to <code>true</code>, more shards in the stream are
+     *        available to describe.
      */
     public void setHasMoreShards(Boolean hasMoreShards) {
         this.hasMoreShards = hasMoreShards;
     }
-    
+
     /**
-     * If set to <code>true</code>, more shards in the stream are available
-     * to describe.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param hasMoreShards If set to <code>true</code>, more shards in the stream are available
-     *         to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * If set to <code>true</code>, more shards in the stream are available to
+     * describe.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, more shards in the stream are
+     *         available to describe.
+     */
+    public Boolean getHasMoreShards() {
+        return this.hasMoreShards;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, more shards in the stream are available to
+     * describe.
+     * </p>
+     * 
+     * @param hasMoreShards
+     *        If set to <code>true</code>, more shards in the stream are
+     *        available to describe.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public StreamDescription withHasMoreShards(Boolean hasMoreShards) {
-        this.hasMoreShards = hasMoreShards;
+        setHasMoreShards(hasMoreShards);
         return this;
     }
 
     /**
-     * If set to <code>true</code>, more shards in the stream are available
-     * to describe.
-     *
-     * @return If set to <code>true</code>, more shards in the stream are available
-     *         to describe.
+     * <p>
+     * If set to <code>true</code>, more shards in the stream are available to
+     * describe.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, more shards in the stream are
+     *         available to describe.
      */
-    public Boolean getHasMoreShards() {
-        return hasMoreShards;
+    public Boolean isHasMoreShards() {
+        return this.hasMoreShards;
     }
 
     /**
-     * The current retention period, in hours.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>24 - 168<br/>
-     *
-     * @return The current retention period, in hours.
-     */
-    public Integer getRetentionPeriodHours() {
-        return retentionPeriodHours;
-    }
-    
-    /**
      * The current retention period, in hours.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>24 - 168<br/>
-     *
-     * @param retentionPeriodHours The current retention period, in hours.
+     * </p>
+     * 
+     * @param retentionPeriodHours
+     *        The current retention period, in hours.
      */
     public void setRetentionPeriodHours(Integer retentionPeriodHours) {
         this.retentionPeriodHours = retentionPeriodHours;
     }
-    
+
     /**
+     * <p>
      * The current retention period, in hours.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>24 - 168<br/>
-     *
-     * @param retentionPeriodHours The current retention period, in hours.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The current retention period, in hours.
      */
-    public StreamDescription withRetentionPeriodHours(Integer retentionPeriodHours) {
-        this.retentionPeriodHours = retentionPeriodHours;
+    public Integer getRetentionPeriodHours() {
+        return this.retentionPeriodHours;
+    }
+
+    /**
+     * <p>
+     * The current retention period, in hours.
+     * </p>
+     * 
+     * @param retentionPeriodHours
+     *        The current retention period, in hours.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public StreamDescription withRetentionPeriodHours(
+            Integer retentionPeriodHours) {
+        setRetentionPeriodHours(retentionPeriodHours);
         return this;
     }
 
@@ -533,66 +573,101 @@ public class StreamDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStreamName() != null) sb.append("StreamName: " + getStreamName() + ",");
-        if (getStreamARN() != null) sb.append("StreamARN: " + getStreamARN() + ",");
-        if (getStreamStatus() != null) sb.append("StreamStatus: " + getStreamStatus() + ",");
-        if (getShards() != null) sb.append("Shards: " + getShards() + ",");
-        if (isHasMoreShards() != null) sb.append("HasMoreShards: " + isHasMoreShards() + ",");
-        if (getRetentionPeriodHours() != null) sb.append("RetentionPeriodHours: " + getRetentionPeriodHours() );
+        if (getStreamName() != null)
+            sb.append("StreamName: " + getStreamName() + ",");
+        if (getStreamARN() != null)
+            sb.append("StreamARN: " + getStreamARN() + ",");
+        if (getStreamStatus() != null)
+            sb.append("StreamStatus: " + getStreamStatus() + ",");
+        if (getShards() != null)
+            sb.append("Shards: " + getShards() + ",");
+        if (getHasMoreShards() != null)
+            sb.append("HasMoreShards: " + getHasMoreShards() + ",");
+        if (getRetentionPeriodHours() != null)
+            sb.append("RetentionPeriodHours: " + getRetentionPeriodHours());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof StreamDescription == false)
+            return false;
+        StreamDescription other = (StreamDescription) obj;
+        if (other.getStreamName() == null ^ this.getStreamName() == null)
+            return false;
+        if (other.getStreamName() != null
+                && other.getStreamName().equals(this.getStreamName()) == false)
+            return false;
+        if (other.getStreamARN() == null ^ this.getStreamARN() == null)
+            return false;
+        if (other.getStreamARN() != null
+                && other.getStreamARN().equals(this.getStreamARN()) == false)
+            return false;
+        if (other.getStreamStatus() == null ^ this.getStreamStatus() == null)
+            return false;
+        if (other.getStreamStatus() != null
+                && other.getStreamStatus().equals(this.getStreamStatus()) == false)
+            return false;
+        if (other.getShards() == null ^ this.getShards() == null)
+            return false;
+        if (other.getShards() != null
+                && other.getShards().equals(this.getShards()) == false)
+            return false;
+        if (other.getHasMoreShards() == null ^ this.getHasMoreShards() == null)
+            return false;
+        if (other.getHasMoreShards() != null
+                && other.getHasMoreShards().equals(this.getHasMoreShards()) == false)
+            return false;
+        if (other.getRetentionPeriodHours() == null
+                ^ this.getRetentionPeriodHours() == null)
+            return false;
+        if (other.getRetentionPeriodHours() != null
+                && other.getRetentionPeriodHours().equals(
+                        this.getRetentionPeriodHours()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode()); 
-        hashCode = prime * hashCode + ((getStreamARN() == null) ? 0 : getStreamARN().hashCode()); 
-        hashCode = prime * hashCode + ((getStreamStatus() == null) ? 0 : getStreamStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getShards() == null) ? 0 : getShards().hashCode()); 
-        hashCode = prime * hashCode + ((isHasMoreShards() == null) ? 0 : isHasMoreShards().hashCode()); 
-        hashCode = prime * hashCode + ((getRetentionPeriodHours() == null) ? 0 : getRetentionPeriodHours().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
+        hashCode = prime * hashCode
+                + ((getStreamARN() == null) ? 0 : getStreamARN().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStreamStatus() == null) ? 0 : getStreamStatus()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getShards() == null) ? 0 : getShards().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getHasMoreShards() == null) ? 0 : getHasMoreShards()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRetentionPeriodHours() == null) ? 0
+                        : getRetentionPeriodHours().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof StreamDescription == false) return false;
-        StreamDescription other = (StreamDescription)obj;
-        
-        if (other.getStreamName() == null ^ this.getStreamName() == null) return false;
-        if (other.getStreamName() != null && other.getStreamName().equals(this.getStreamName()) == false) return false; 
-        if (other.getStreamARN() == null ^ this.getStreamARN() == null) return false;
-        if (other.getStreamARN() != null && other.getStreamARN().equals(this.getStreamARN()) == false) return false; 
-        if (other.getStreamStatus() == null ^ this.getStreamStatus() == null) return false;
-        if (other.getStreamStatus() != null && other.getStreamStatus().equals(this.getStreamStatus()) == false) return false; 
-        if (other.getShards() == null ^ this.getShards() == null) return false;
-        if (other.getShards() != null && other.getShards().equals(this.getShards()) == false) return false; 
-        if (other.isHasMoreShards() == null ^ this.isHasMoreShards() == null) return false;
-        if (other.isHasMoreShards() != null && other.isHasMoreShards().equals(this.isHasMoreShards()) == false) return false; 
-        if (other.getRetentionPeriodHours() == null ^ this.getRetentionPeriodHours() == null) return false;
-        if (other.getRetentionPeriodHours() != null && other.getRetentionPeriodHours().equals(this.getRetentionPeriodHours()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public StreamDescription clone() {
         try {
             return (StreamDescription) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

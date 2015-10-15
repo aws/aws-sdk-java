@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.config.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,34 +40,41 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Describe Config Rule Evaluation Status Request Marshaller
+ * DescribeConfigRuleEvaluationStatusRequest Marshaller
  */
-public class DescribeConfigRuleEvaluationStatusRequestMarshaller implements Marshaller<Request<DescribeConfigRuleEvaluationStatusRequest>, DescribeConfigRuleEvaluationStatusRequest> {
+public class DescribeConfigRuleEvaluationStatusRequestMarshaller
+        implements
+        Marshaller<Request<DescribeConfigRuleEvaluationStatusRequest>, DescribeConfigRuleEvaluationStatusRequest> {
 
-    public Request<DescribeConfigRuleEvaluationStatusRequest> marshall(DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest) {
+    public Request<DescribeConfigRuleEvaluationStatusRequest> marshall(
+            DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest) {
+
         if (describeConfigRuleEvaluationStatusRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeConfigRuleEvaluationStatusRequest> request = new DefaultRequest<DescribeConfigRuleEvaluationStatusRequest>(describeConfigRuleEvaluationStatusRequest, "AmazonConfig");
-        String target = "StarlingDoveService.DescribeConfigRuleEvaluationStatus";
-        request.addHeader("X-Amz-Target", target);
+        Request<DescribeConfigRuleEvaluationStatusRequest> request = new DefaultRequest<DescribeConfigRuleEvaluationStatusRequest>(
+                describeConfigRuleEvaluationStatusRequest, "AmazonConfig");
+        request.addHeader("X-Amz-Target",
+                "StarlingDoveService.DescribeConfigRuleEvaluationStatus");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
+            jsonWriter.object();
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> configRuleNamesList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeConfigRuleEvaluationStatusRequest.getConfigRuleNames());
-            if (configRuleNamesList != null && !(configRuleNamesList.isAutoConstruct() && configRuleNamesList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> configRuleNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeConfigRuleEvaluationStatusRequest
+                    .getConfigRuleNames();
+            if (!configRuleNamesList.isEmpty()
+                    || !configRuleNamesList.isAutoConstruct()) {
                 jsonWriter.key("ConfigRuleNames");
                 jsonWriter.array();
-
                 for (String configRuleNamesListValue : configRuleNamesList) {
                     if (configRuleNamesListValue != null) {
                         jsonWriter.value(configRuleNamesListValue);
@@ -75,17 +83,20 @@ public class DescribeConfigRuleEvaluationStatusRequestMarshaller implements Mars
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

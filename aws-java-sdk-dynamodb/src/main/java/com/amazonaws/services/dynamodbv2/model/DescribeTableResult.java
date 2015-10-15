@@ -27,29 +27,21 @@ public class DescribeTableResult implements Serializable, Cloneable {
     private TableDescription table;
 
     /**
-     * Sets the value of the Table property for this object.
-     * 
      * @param table
-     *        The new value for the Table property for this object.
      */
     public void setTable(TableDescription table) {
         this.table = table;
     }
 
     /**
-     * Returns the value of the Table property for this object.
-     * 
-     * @return The value of the Table property for this object.
+     * @return
      */
     public TableDescription getTable() {
         return this.table;
     }
 
     /**
-     * Sets the value of the Table property for this object.
-     * 
      * @param table
-     *        The new value for the Table property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

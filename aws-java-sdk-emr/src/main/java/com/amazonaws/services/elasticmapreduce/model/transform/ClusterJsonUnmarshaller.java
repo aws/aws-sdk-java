@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,7 +28,8 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Cluster JSON Unmarshaller
  */
-public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmarshallerContext> {
+public class ClusterJsonUnmarshaller implements
+        Unmarshaller<Cluster, JsonUnmarshallerContext> {
 
     public Cluster unmarshall(JsonUnmarshallerContext context) throws Exception {
         Cluster cluster = new Cluster();
@@ -38,97 +39,125 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    cluster.setId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    cluster.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setName(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    cluster.setStatus(ClusterStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setStatus(ClusterStatusJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("Ec2InstanceAttributes", targetDepth)) {
+                if (context
+                        .testExpression("Ec2InstanceAttributes", targetDepth)) {
                     context.nextToken();
-                    cluster.setEc2InstanceAttributes(Ec2InstanceAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setEc2InstanceAttributes(Ec2InstanceAttributesJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
                     context.nextToken();
-                    cluster.setLogUri(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setLogUri(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("RequestedAmiVersion", targetDepth)) {
                     context.nextToken();
-                    cluster.setRequestedAmiVersion(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setRequestedAmiVersion(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RunningAmiVersion", targetDepth)) {
                     context.nextToken();
-                    cluster.setRunningAmiVersion(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setRunningAmiVersion(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReleaseLabel", targetDepth)) {
                     context.nextToken();
-                    cluster.setReleaseLabel(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setReleaseLabel(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoTerminate", targetDepth)) {
                     context.nextToken();
-                    cluster.setAutoTerminate(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setAutoTerminate(BooleanJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TerminationProtected", targetDepth)) {
                     context.nextToken();
-                    cluster.setTerminationProtected(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setTerminationProtected(BooleanJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisibleToAllUsers", targetDepth)) {
                     context.nextToken();
-                    cluster.setVisibleToAllUsers(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setVisibleToAllUsers(BooleanJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Applications", targetDepth)) {
                     context.nextToken();
-                    cluster.setApplications(new ListUnmarshaller<Application>(ApplicationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    cluster.setApplications(new ListUnmarshaller<Application>(
+                            ApplicationJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    cluster.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    cluster.setTags(new ListUnmarshaller<Tag>(
+                            TagJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
                     context.nextToken();
-                    cluster.setServiceRole(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setServiceRole(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
-                if (context.testExpression("NormalizedInstanceHours", targetDepth)) {
+                if (context.testExpression("NormalizedInstanceHours",
+                        targetDepth)) {
                     context.nextToken();
-                    cluster.setNormalizedInstanceHours(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setNormalizedInstanceHours(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MasterPublicDnsName", targetDepth)) {
                     context.nextToken();
-                    cluster.setMasterPublicDnsName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setMasterPublicDnsName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Configurations", targetDepth)) {
                     context.nextToken();
-                    cluster.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    cluster.setConfigurations(new ListUnmarshaller<Configuration>(
+                            ConfigurationJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return cluster;
     }
 
     private static ClusterJsonUnmarshaller instance;
+
     public static ClusterJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new ClusterJsonUnmarshaller();
+        if (instance == null)
+            instance = new ClusterJsonUnmarshaller();
         return instance;
     }
 }
-    

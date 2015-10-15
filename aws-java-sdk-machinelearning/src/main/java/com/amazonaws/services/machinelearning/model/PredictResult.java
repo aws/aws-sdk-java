@@ -25,29 +25,21 @@ public class PredictResult implements Serializable, Cloneable {
     private Prediction prediction;
 
     /**
-     * Sets the value of the Prediction property for this object.
-     * 
      * @param prediction
-     *        The new value for the Prediction property for this object.
      */
     public void setPrediction(Prediction prediction) {
         this.prediction = prediction;
     }
 
     /**
-     * Returns the value of the Prediction property for this object.
-     * 
-     * @return The value of the Prediction property for this object.
+     * @return
      */
     public Prediction getPrediction() {
         return this.prediction;
     }
 
     /**
-     * Sets the value of the Prediction property for this object.
-     * 
      * @param prediction
-     *        The new value for the Prediction property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

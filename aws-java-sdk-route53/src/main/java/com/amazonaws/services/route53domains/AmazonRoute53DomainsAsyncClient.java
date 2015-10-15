@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,1875 +14,939 @@
  */
 package com.amazonaws.services.route53domains;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.handlers.AsyncHandler;
-import com.amazonaws.ClientConfiguration;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
-
 import com.amazonaws.services.route53domains.model.*;
 
 /**
- * Asynchronous client for accessing AmazonRoute53Domains.
- * All asynchronous calls made using this client are non-blocking. Callers could either
- * process the result and handle the exceptions in the worker thread by providing a callback handler
- * when making the call, or use the returned Future object to check the result of the call in the calling thread.
- * 
+ * Interface for accessing Amazon Route 53 Domains asynchronously. Each
+ * asynchronous method will return a Java Future object representing the
+ * asynchronous operation; overloads which accept an {@code AsyncHandler} can be
+ * used to receive notification when an asynchronous operation completes.
  */
 public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
         implements AmazonRoute53DomainsAsync {
 
-    /**
-     * Executor service for executing asynchronous requests.
-     */
-    private final ExecutorService executorService;
-
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
+    private final java.util.concurrent.ExecutorService executorService;
+
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonRoute53Domains.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * Route 53 Domains. A credentials provider chain will be used that searches
+     * for credentials in this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Credential profiles file at the default location (~/.aws/credentials)
+     * shared by all AWS SDKs and the AWS CLI</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
-     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * 50 threads (to match the default maximum number of concurrent connections
+     * to the service).
      *
-     * @see DefaultAWSCredentialsProviderChain
+     * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonRoute53DomainsAsyncClient() {
-        this(new DefaultAWSCredentialsProviderChain());
+        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonRoute53Domains.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * Route 53 Domains. A credentials provider chain will be used that searches
+     * for credentials in this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Credential profiles file at the default location (~/.aws/credentials)
+     * shared by all AWS SDKs and the AWS CLI</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
-     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * a number of threads equal to the maximum number of concurrent connections
+     * configured via {@code ClientConfiguration.getMaxConnections()}.
      *
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AmazonRoute53Domains
-     *                       (ex: proxy settings, retry counts, etc.).
-     *
-     * @see DefaultAWSCredentialsProviderChain
-     */
-    public AmazonRoute53DomainsAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonRoute53Domains using the specified AWS account credentials.
-     * Default client settings will be used, and a fixed size thread pool will be
-     * created for executing the asynchronous tasks.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentials The AWS credentials (access key ID and secret key) to use
-     *                       when authenticating with AWS services.
-     */
-    public AmazonRoute53DomainsAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonRoute53Domains using the specified AWS account credentials
-     * and executor service.  Default client settings will be used.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentials
-     *            The AWS credentials (access key ID and secret key) to use
-     *            when authenticating with AWS services.
-     * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
-     */
-    public AmazonRoute53DomainsAsyncClient(AWSCredentials awsCredentials, ExecutorService executorService) {
-        super(awsCredentials);
-        this.executorService = executorService;
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonRoute53Domains using the specified AWS account credentials,
-     * executor service, and client configuration options.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentials
-     *            The AWS credentials (access key ID and secret key) to use
-     *            when authenticating with AWS services.
      * @param clientConfiguration
-     *            Client configuration options (ex: max retry limit, proxy
-     *            settings, etc).
-     * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
+     *        The client configuration options controlling how this client
+     *        connects to Amazon Route 53 Domains (ex: proxy settings, retry
+     *        counts, etc).
+     *
+     * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AmazonRoute53DomainsAsyncClient(AWSCredentials awsCredentials,
-                ClientConfiguration clientConfiguration, ExecutorService executorService) {
+    public AmazonRoute53DomainsAsyncClient(
+            com.amazonaws.ClientConfiguration clientConfiguration) {
+        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(),
+                clientConfiguration, java.util.concurrent.Executors
+                        .newFixedThreadPool(clientConfiguration
+                                .getMaxConnections()));
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * Route 53 Domains using the specified AWS account credentials.
+     * <p>
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * 50 threads (to match the default maximum number of concurrent connections
+     * to the service).
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     */
+    public AmazonRoute53DomainsAsyncClient(
+            com.amazonaws.auth.AWSCredentials awsCredentials) {
+        this(awsCredentials, java.util.concurrent.Executors
+                .newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * Route 53 Domains using the specified AWS account credentials and executor
+     * service. Default client settings will be used.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @param executorService
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
+     */
+    public AmazonRoute53DomainsAsyncClient(
+            com.amazonaws.auth.AWSCredentials awsCredentials,
+            java.util.concurrent.ExecutorService executorService) {
+
+        this(awsCredentials, new com.amazonaws.ClientConfiguration(),
+                executorService);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * Route 53 Domains using the specified AWS account credentials, executor
+     * service, and client configuration options.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @param clientConfiguration
+     *        Client configuration options (ex: max retry limit, proxy settings,
+     *        etc).
+     * @param executorService
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
+     */
+    public AmazonRoute53DomainsAsyncClient(
+            com.amazonaws.auth.AWSCredentials awsCredentials,
+            com.amazonaws.ClientConfiguration clientConfiguration,
+            java.util.concurrent.ExecutorService executorService) {
+
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonRoute53Domains using the specified AWS account credentials provider.
-     * Default client settings will be used, and a fixed size thread pool will be
-     * created for executing the asynchronous tasks.
-     *
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * Route 53 Domains using the specified AWS account credentials provider.
+     * Default client settings will be used.
      * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * 50 threads (to match the default maximum number of concurrent connections
+     * to the service).
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AmazonRoute53DomainsAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    public AmazonRoute53DomainsAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, java.util.concurrent.Executors
+                .newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonRoute53Domains using the specified AWS account credentials provider
-     * and executor service.  Default client settings will be used.
-     *
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * Route 53 Domains using the provided AWS account credentials provider and
+     * client configuration options.
      * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * a number of threads equal to the maximum number of concurrent connections
+     * configured via {@code ClientConfiguration.getMaxConnections()}.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
-     */
-    public AmazonRoute53DomainsAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
-        this(awsCredentialsProvider, new ClientConfiguration(), executorService);
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonRoute53Domains using the specified AWS account credentials
-     * provider and client configuration options.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
      * @param clientConfiguration
-     *            Client configuration options (ex: max retry limit, proxy
-     *            settings, etc).
+     *        Client configuration options (ex: max retry limit, proxy settings,
+     *        etc).
+     *
+     * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AmazonRoute53DomainsAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
-                ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    public AmazonRoute53DomainsAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
+            com.amazonaws.ClientConfiguration clientConfiguration) {
+
+        this(awsCredentialsProvider, clientConfiguration,
+                java.util.concurrent.Executors
+                        .newFixedThreadPool(clientConfiguration
+                                .getMaxConnections()));
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonRoute53Domains using the specified AWS account credentials
-     * provider, executor service, and client configuration options.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * Route 53 Domains using the specified AWS account credentials provider and
+     * executor service. Default client settings will be used.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param clientConfiguration
-     *            Client configuration options (ex: max retry limit, proxy
-     *            settings, etc).
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
      * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
      */
-    public AmazonRoute53DomainsAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
-                ClientConfiguration clientConfiguration, ExecutorService executorService) {
+    public AmazonRoute53DomainsAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
+            java.util.concurrent.ExecutorService executorService) {
+
+        this(awsCredentialsProvider, new com.amazonaws.ClientConfiguration(),
+                executorService);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * Route 53 Domains using the specified AWS account credentials provider,
+     * executor service, and client configuration options.
+     *
+     * @param awsCredentialsProvider
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        Client configuration options (ex: max retry limit, proxy settings,
+     *        etc).
+     * @param executorService
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
+     */
+    public AmazonRoute53DomainsAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
+            com.amazonaws.ClientConfiguration clientConfiguration,
+            java.util.concurrent.ExecutorService executorService) {
+
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
 
     /**
-     * Returns the executor service used by this async client to execute
+     * Returns the executor service used by this client to execute async
      * requests.
      *
-     * @return The executor service used by this async client to execute
+     * @return The executor service used by this client to execute async
      *         requests.
      */
-    public ExecutorService getExecutorService() {
+    public java.util.concurrent.ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckDomainAvailabilityResult> checkDomainAvailabilityAsync(
+            CheckDomainAvailabilityRequest request) {
+
+        return checkDomainAvailabilityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckDomainAvailabilityResult> checkDomainAvailabilityAsync(
+            final CheckDomainAvailabilityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CheckDomainAvailabilityRequest, CheckDomainAvailabilityResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CheckDomainAvailabilityResult>() {
+                    @Override
+                    public CheckDomainAvailabilityResult call()
+                            throws Exception {
+                        CheckDomainAvailabilityResult result;
+
+                        try {
+                            result = checkDomainAvailability(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTagsForDomainResult> deleteTagsForDomainAsync(
+            DeleteTagsForDomainRequest request) {
+
+        return deleteTagsForDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTagsForDomainResult> deleteTagsForDomainAsync(
+            final DeleteTagsForDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTagsForDomainRequest, DeleteTagsForDomainResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteTagsForDomainResult>() {
+                    @Override
+                    public DeleteTagsForDomainResult call() throws Exception {
+                        DeleteTagsForDomainResult result;
+
+                        try {
+                            result = deleteTagsForDomain(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableDomainAutoRenewResult> disableDomainAutoRenewAsync(
+            DisableDomainAutoRenewRequest request) {
+
+        return disableDomainAutoRenewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableDomainAutoRenewResult> disableDomainAutoRenewAsync(
+            final DisableDomainAutoRenewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableDomainAutoRenewRequest, DisableDomainAutoRenewResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DisableDomainAutoRenewResult>() {
+                    @Override
+                    public DisableDomainAutoRenewResult call() throws Exception {
+                        DisableDomainAutoRenewResult result;
+
+                        try {
+                            result = disableDomainAutoRenew(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableDomainTransferLockResult> disableDomainTransferLockAsync(
+            DisableDomainTransferLockRequest request) {
+
+        return disableDomainTransferLockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableDomainTransferLockResult> disableDomainTransferLockAsync(
+            final DisableDomainTransferLockRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableDomainTransferLockRequest, DisableDomainTransferLockResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DisableDomainTransferLockResult>() {
+                    @Override
+                    public DisableDomainTransferLockResult call()
+                            throws Exception {
+                        DisableDomainTransferLockResult result;
+
+                        try {
+                            result = disableDomainTransferLock(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableDomainAutoRenewResult> enableDomainAutoRenewAsync(
+            EnableDomainAutoRenewRequest request) {
+
+        return enableDomainAutoRenewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableDomainAutoRenewResult> enableDomainAutoRenewAsync(
+            final EnableDomainAutoRenewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableDomainAutoRenewRequest, EnableDomainAutoRenewResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<EnableDomainAutoRenewResult>() {
+                    @Override
+                    public EnableDomainAutoRenewResult call() throws Exception {
+                        EnableDomainAutoRenewResult result;
+
+                        try {
+                            result = enableDomainAutoRenew(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableDomainTransferLockResult> enableDomainTransferLockAsync(
+            EnableDomainTransferLockRequest request) {
+
+        return enableDomainTransferLockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableDomainTransferLockResult> enableDomainTransferLockAsync(
+            final EnableDomainTransferLockRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableDomainTransferLockRequest, EnableDomainTransferLockResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<EnableDomainTransferLockResult>() {
+                    @Override
+                    public EnableDomainTransferLockResult call()
+                            throws Exception {
+                        EnableDomainTransferLockResult result;
+
+                        try {
+                            result = enableDomainTransferLock(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainDetailResult> getDomainDetailAsync(
+            GetDomainDetailRequest request) {
+
+        return getDomainDetailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainDetailResult> getDomainDetailAsync(
+            final GetDomainDetailRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDomainDetailRequest, GetDomainDetailResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetDomainDetailResult>() {
+                    @Override
+                    public GetDomainDetailResult call() throws Exception {
+                        GetDomainDetailResult result;
+
+                        try {
+                            result = getDomainDetail(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOperationDetailResult> getOperationDetailAsync(
+            GetOperationDetailRequest request) {
+
+        return getOperationDetailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOperationDetailResult> getOperationDetailAsync(
+            final GetOperationDetailRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetOperationDetailRequest, GetOperationDetailResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetOperationDetailResult>() {
+                    @Override
+                    public GetOperationDetailResult call() throws Exception {
+                        GetOperationDetailResult result;
+
+                        try {
+                            result = getOperationDetail(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(
+            ListDomainsRequest request) {
+
+        return listDomainsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(
+            final ListDomainsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListDomainsResult>() {
+                    @Override
+                    public ListDomainsResult call() throws Exception {
+                        ListDomainsResult result;
+
+                        try {
+                            result = listDomains(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the ListDomains operation.
+     *
+     * @see #listDomainsAsync(ListDomainsRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync() {
+
+        return listDomainsAsync(new ListDomainsRequest());
+    }
+
+    /**
+     * Simplified method form for invoking the ListDomains operation with an
+     * AsyncHandler.
+     *
+     * @see #listDomainsAsync(ListDomainsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(
+            com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler) {
+
+        return listDomainsAsync(new ListDomainsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOperationsResult> listOperationsAsync(
+            ListOperationsRequest request) {
+
+        return listOperationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOperationsResult> listOperationsAsync(
+            final ListOperationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOperationsRequest, ListOperationsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListOperationsResult>() {
+                    @Override
+                    public ListOperationsResult call() throws Exception {
+                        ListOperationsResult result;
+
+                        try {
+                            result = listOperations(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the ListOperations operation.
+     *
+     * @see #listOperationsAsync(ListOperationsRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ListOperationsResult> listOperationsAsync() {
+
+        return listOperationsAsync(new ListOperationsRequest());
+    }
+
+    /**
+     * Simplified method form for invoking the ListOperations operation with an
+     * AsyncHandler.
+     *
+     * @see #listOperationsAsync(ListOperationsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<ListOperationsResult> listOperationsAsync(
+            com.amazonaws.handlers.AsyncHandler<ListOperationsRequest, ListOperationsResult> asyncHandler) {
+
+        return listOperationsAsync(new ListOperationsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForDomainResult> listTagsForDomainAsync(
+            ListTagsForDomainRequest request) {
+
+        return listTagsForDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForDomainResult> listTagsForDomainAsync(
+            final ListTagsForDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForDomainRequest, ListTagsForDomainResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListTagsForDomainResult>() {
+                    @Override
+                    public ListTagsForDomainResult call() throws Exception {
+                        ListTagsForDomainResult result;
+
+                        try {
+                            result = listTagsForDomain(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterDomainResult> registerDomainAsync(
+            RegisterDomainRequest request) {
+
+        return registerDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterDomainResult> registerDomainAsync(
+            final RegisterDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterDomainRequest, RegisterDomainResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<RegisterDomainResult>() {
+                    @Override
+                    public RegisterDomainResult call() throws Exception {
+                        RegisterDomainResult result;
+
+                        try {
+                            result = registerDomain(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetrieveDomainAuthCodeResult> retrieveDomainAuthCodeAsync(
+            RetrieveDomainAuthCodeRequest request) {
+
+        return retrieveDomainAuthCodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetrieveDomainAuthCodeResult> retrieveDomainAuthCodeAsync(
+            final RetrieveDomainAuthCodeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RetrieveDomainAuthCodeRequest, RetrieveDomainAuthCodeResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<RetrieveDomainAuthCodeResult>() {
+                    @Override
+                    public RetrieveDomainAuthCodeResult call() throws Exception {
+                        RetrieveDomainAuthCodeResult result;
+
+                        try {
+                            result = retrieveDomainAuthCode(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferDomainResult> transferDomainAsync(
+            TransferDomainRequest request) {
+
+        return transferDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferDomainResult> transferDomainAsync(
+            final TransferDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TransferDomainRequest, TransferDomainResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<TransferDomainResult>() {
+                    @Override
+                    public TransferDomainResult call() throws Exception {
+                        TransferDomainResult result;
+
+                        try {
+                            result = transferDomain(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainContactResult> updateDomainContactAsync(
+            UpdateDomainContactRequest request) {
+
+        return updateDomainContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainContactResult> updateDomainContactAsync(
+            final UpdateDomainContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDomainContactRequest, UpdateDomainContactResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateDomainContactResult>() {
+                    @Override
+                    public UpdateDomainContactResult call() throws Exception {
+                        UpdateDomainContactResult result;
+
+                        try {
+                            result = updateDomainContact(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainContactPrivacyResult> updateDomainContactPrivacyAsync(
+            UpdateDomainContactPrivacyRequest request) {
+
+        return updateDomainContactPrivacyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainContactPrivacyResult> updateDomainContactPrivacyAsync(
+            final UpdateDomainContactPrivacyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDomainContactPrivacyRequest, UpdateDomainContactPrivacyResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateDomainContactPrivacyResult>() {
+                    @Override
+                    public UpdateDomainContactPrivacyResult call()
+                            throws Exception {
+                        UpdateDomainContactPrivacyResult result;
+
+                        try {
+                            result = updateDomainContactPrivacy(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainNameserversResult> updateDomainNameserversAsync(
+            UpdateDomainNameserversRequest request) {
+
+        return updateDomainNameserversAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainNameserversResult> updateDomainNameserversAsync(
+            final UpdateDomainNameserversRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDomainNameserversRequest, UpdateDomainNameserversResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateDomainNameserversResult>() {
+                    @Override
+                    public UpdateDomainNameserversResult call()
+                            throws Exception {
+                        UpdateDomainNameserversResult result;
+
+                        try {
+                            result = updateDomainNameservers(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagsForDomainResult> updateTagsForDomainAsync(
+            UpdateTagsForDomainRequest request) {
+
+        return updateTagsForDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagsForDomainResult> updateTagsForDomainAsync(
+            final UpdateTagsForDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTagsForDomainRequest, UpdateTagsForDomainResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateTagsForDomainResult>() {
+                    @Override
+                    public UpdateTagsForDomainResult call() throws Exception {
+                        UpdateTagsForDomainResult result;
+
+                        try {
+                            result = updateTagsForDomain(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     /**
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() followed by
-     * getExecutorService().awaitTermination() prior to calling this method.
+     * call {@code getExecutorService().shutdown()} followed by
+     * {@code getExecutorService().awaitTermination()} prior to calling this
+     * method.
      */
     @Override
     public void shutdown() {
         super.shutdown();
         executorService.shutdownNow();
     }
-            
-    /**
-     * <p>
-     * This operation checks the availability of one domain name. You can
-     * access this API without authenticating. Note that if the availability
-     * status of a domain is pending, you must submit another request to
-     * determine the availability of the domain name.
-     * </p>
-     *
-     * @param checkDomainAvailabilityRequest Container for the necessary
-     *           parameters to execute the CheckDomainAvailability operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CheckDomainAvailability service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CheckDomainAvailabilityResult> checkDomainAvailabilityAsync(final CheckDomainAvailabilityRequest checkDomainAvailabilityRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CheckDomainAvailabilityResult>() {
-            public CheckDomainAvailabilityResult call() throws Exception {
-                return checkDomainAvailability(checkDomainAvailabilityRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation checks the availability of one domain name. You can
-     * access this API without authenticating. Note that if the availability
-     * status of a domain is pending, you must submit another request to
-     * determine the availability of the domain name.
-     * </p>
-     *
-     * @param checkDomainAvailabilityRequest Container for the necessary
-     *           parameters to execute the CheckDomainAvailability operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CheckDomainAvailability service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CheckDomainAvailabilityResult> checkDomainAvailabilityAsync(
-            final CheckDomainAvailabilityRequest checkDomainAvailabilityRequest,
-            final AsyncHandler<CheckDomainAvailabilityRequest, CheckDomainAvailabilityResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CheckDomainAvailabilityResult>() {
-            public CheckDomainAvailabilityResult call() throws Exception {
-              CheckDomainAvailabilityResult result;
-                try {
-                result = checkDomainAvailability(checkDomainAvailabilityRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(checkDomainAvailabilityRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation updates the contact information for a particular
-     * domain. Information for at least one contact (registrant,
-     * administrator, or technical) must be supplied for update.
-     * </p>
-     * <p>
-     * If the update is successful, this method returns an operation ID that
-     * you can use to track the progress and completion of the action. If the
-     * request is not completed successfully, the domain registrant will be
-     * notified by email.
-     * </p>
-     *
-     * @param updateDomainContactRequest Container for the necessary
-     *           parameters to execute the UpdateDomainContact operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateDomainContact service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateDomainContactResult> updateDomainContactAsync(final UpdateDomainContactRequest updateDomainContactRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UpdateDomainContactResult>() {
-            public UpdateDomainContactResult call() throws Exception {
-                return updateDomainContact(updateDomainContactRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation updates the contact information for a particular
-     * domain. Information for at least one contact (registrant,
-     * administrator, or technical) must be supplied for update.
-     * </p>
-     * <p>
-     * If the update is successful, this method returns an operation ID that
-     * you can use to track the progress and completion of the action. If the
-     * request is not completed successfully, the domain registrant will be
-     * notified by email.
-     * </p>
-     *
-     * @param updateDomainContactRequest Container for the necessary
-     *           parameters to execute the UpdateDomainContact operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateDomainContact service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateDomainContactResult> updateDomainContactAsync(
-            final UpdateDomainContactRequest updateDomainContactRequest,
-            final AsyncHandler<UpdateDomainContactRequest, UpdateDomainContactResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UpdateDomainContactResult>() {
-            public UpdateDomainContactResult call() throws Exception {
-              UpdateDomainContactResult result;
-                try {
-                result = updateDomainContact(updateDomainContactRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(updateDomainContactRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation configures Amazon Route 53 to automatically renew the
-     * specified domain before the domain registration expires. The cost of
-     * renewing your domain registration is billed to your AWS account.
-     * </p>
-     * <p>
-     * The period during which you can renew a domain name varies by TLD.
-     * For a list of TLDs and their renewal policies, see
-     * <a href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times"> "Renewal, restoration, and deletion times" </a>
-     * on the website for our registrar partner, Gandi. Route 53 requires
-     * that you renew before the end of the renewal period that is listed on
-     * the Gandi website so we can complete processing before the deadline.
-     * </p>
-     *
-     * @param enableDomainAutoRenewRequest Container for the necessary
-     *           parameters to execute the EnableDomainAutoRenew operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         EnableDomainAutoRenew service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EnableDomainAutoRenewResult> enableDomainAutoRenewAsync(final EnableDomainAutoRenewRequest enableDomainAutoRenewRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EnableDomainAutoRenewResult>() {
-            public EnableDomainAutoRenewResult call() throws Exception {
-                return enableDomainAutoRenew(enableDomainAutoRenewRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation configures Amazon Route 53 to automatically renew the
-     * specified domain before the domain registration expires. The cost of
-     * renewing your domain registration is billed to your AWS account.
-     * </p>
-     * <p>
-     * The period during which you can renew a domain name varies by TLD.
-     * For a list of TLDs and their renewal policies, see
-     * <a href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times"> "Renewal, restoration, and deletion times" </a>
-     * on the website for our registrar partner, Gandi. Route 53 requires
-     * that you renew before the end of the renewal period that is listed on
-     * the Gandi website so we can complete processing before the deadline.
-     * </p>
-     *
-     * @param enableDomainAutoRenewRequest Container for the necessary
-     *           parameters to execute the EnableDomainAutoRenew operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         EnableDomainAutoRenew service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EnableDomainAutoRenewResult> enableDomainAutoRenewAsync(
-            final EnableDomainAutoRenewRequest enableDomainAutoRenewRequest,
-            final AsyncHandler<EnableDomainAutoRenewRequest, EnableDomainAutoRenewResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EnableDomainAutoRenewResult>() {
-            public EnableDomainAutoRenewResult call() throws Exception {
-              EnableDomainAutoRenewResult result;
-                try {
-                result = enableDomainAutoRenew(enableDomainAutoRenewRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(enableDomainAutoRenewRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation returns the operation IDs of operations that are not
-     * yet complete.
-     * </p>
-     *
-     * @param listOperationsRequest Container for the necessary parameters to
-     *           execute the ListOperations operation on AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListOperations service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListOperationsResult> listOperationsAsync(final ListOperationsRequest listOperationsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListOperationsResult>() {
-            public ListOperationsResult call() throws Exception {
-                return listOperations(listOperationsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation returns the operation IDs of operations that are not
-     * yet complete.
-     * </p>
-     *
-     * @param listOperationsRequest Container for the necessary parameters to
-     *           execute the ListOperations operation on AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListOperations service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListOperationsResult> listOperationsAsync(
-            final ListOperationsRequest listOperationsRequest,
-            final AsyncHandler<ListOperationsRequest, ListOperationsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListOperationsResult>() {
-            public ListOperationsResult call() throws Exception {
-              ListOperationsResult result;
-                try {
-                result = listOperations(listOperationsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listOperationsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation returns all the domain names registered with Amazon
-     * Route 53 for the current AWS account.
-     * </p>
-     *
-     * @param listDomainsRequest Container for the necessary parameters to
-     *           execute the ListDomains operation on AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListDomains service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListDomainsResult> listDomainsAsync(final ListDomainsRequest listDomainsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListDomainsResult>() {
-            public ListDomainsResult call() throws Exception {
-                return listDomains(listDomainsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation returns all the domain names registered with Amazon
-     * Route 53 for the current AWS account.
-     * </p>
-     *
-     * @param listDomainsRequest Container for the necessary parameters to
-     *           execute the ListDomains operation on AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListDomains service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListDomainsResult> listDomainsAsync(
-            final ListDomainsRequest listDomainsRequest,
-            final AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListDomainsResult>() {
-            public ListDomainsResult call() throws Exception {
-              ListDomainsResult result;
-                try {
-                result = listDomains(listDomainsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listDomainsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation returns the current status of an operation that is not
-     * completed.
-     * </p>
-     *
-     * @param getOperationDetailRequest Container for the necessary
-     *           parameters to execute the GetOperationDetail operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetOperationDetail service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetOperationDetailResult> getOperationDetailAsync(final GetOperationDetailRequest getOperationDetailRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetOperationDetailResult>() {
-            public GetOperationDetailResult call() throws Exception {
-                return getOperationDetail(getOperationDetailRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation returns the current status of an operation that is not
-     * completed.
-     * </p>
-     *
-     * @param getOperationDetailRequest Container for the necessary
-     *           parameters to execute the GetOperationDetail operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetOperationDetail service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetOperationDetailResult> getOperationDetailAsync(
-            final GetOperationDetailRequest getOperationDetailRequest,
-            final AsyncHandler<GetOperationDetailRequest, GetOperationDetailResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetOperationDetailResult>() {
-            public GetOperationDetailResult call() throws Exception {
-              GetOperationDetailResult result;
-                try {
-                result = getOperationDetail(getOperationDetailRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getOperationDetailRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation removes the transfer lock on the domain (specifically
-     * the <code>clientTransferProhibited</code> status) to allow domain
-     * transfers. We recommend you refrain from performing this action unless
-     * you intend to transfer the domain to a different registrar. Successful
-     * submission returns an operation ID that you can use to track the
-     * progress and completion of the action. If the request is not completed
-     * successfully, the domain registrant will be notified by email.
-     * </p>
-     *
-     * @param disableDomainTransferLockRequest Container for the necessary
-     *           parameters to execute the DisableDomainTransferLock operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DisableDomainTransferLock service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DisableDomainTransferLockResult> disableDomainTransferLockAsync(final DisableDomainTransferLockRequest disableDomainTransferLockRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DisableDomainTransferLockResult>() {
-            public DisableDomainTransferLockResult call() throws Exception {
-                return disableDomainTransferLock(disableDomainTransferLockRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation removes the transfer lock on the domain (specifically
-     * the <code>clientTransferProhibited</code> status) to allow domain
-     * transfers. We recommend you refrain from performing this action unless
-     * you intend to transfer the domain to a different registrar. Successful
-     * submission returns an operation ID that you can use to track the
-     * progress and completion of the action. If the request is not completed
-     * successfully, the domain registrant will be notified by email.
-     * </p>
-     *
-     * @param disableDomainTransferLockRequest Container for the necessary
-     *           parameters to execute the DisableDomainTransferLock operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DisableDomainTransferLock service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DisableDomainTransferLockResult> disableDomainTransferLockAsync(
-            final DisableDomainTransferLockRequest disableDomainTransferLockRequest,
-            final AsyncHandler<DisableDomainTransferLockRequest, DisableDomainTransferLockResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DisableDomainTransferLockResult>() {
-            public DisableDomainTransferLockResult call() throws Exception {
-              DisableDomainTransferLockResult result;
-                try {
-                result = disableDomainTransferLock(disableDomainTransferLockRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(disableDomainTransferLockRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation sets the transfer lock on the domain (specifically the
-     * <code>clientTransferProhibited</code> status) to prevent domain
-     * transfers. Successful submission returns an operation ID that you can
-     * use to track the progress and completion of the action. If the request
-     * is not completed successfully, the domain registrant will be notified
-     * by email.
-     * </p>
-     *
-     * @param enableDomainTransferLockRequest Container for the necessary
-     *           parameters to execute the EnableDomainTransferLock operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         EnableDomainTransferLock service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EnableDomainTransferLockResult> enableDomainTransferLockAsync(final EnableDomainTransferLockRequest enableDomainTransferLockRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EnableDomainTransferLockResult>() {
-            public EnableDomainTransferLockResult call() throws Exception {
-                return enableDomainTransferLock(enableDomainTransferLockRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation sets the transfer lock on the domain (specifically the
-     * <code>clientTransferProhibited</code> status) to prevent domain
-     * transfers. Successful submission returns an operation ID that you can
-     * use to track the progress and completion of the action. If the request
-     * is not completed successfully, the domain registrant will be notified
-     * by email.
-     * </p>
-     *
-     * @param enableDomainTransferLockRequest Container for the necessary
-     *           parameters to execute the EnableDomainTransferLock operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         EnableDomainTransferLock service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EnableDomainTransferLockResult> enableDomainTransferLockAsync(
-            final EnableDomainTransferLockRequest enableDomainTransferLockRequest,
-            final AsyncHandler<EnableDomainTransferLockRequest, EnableDomainTransferLockResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EnableDomainTransferLockResult>() {
-            public EnableDomainTransferLockResult call() throws Exception {
-              EnableDomainTransferLockResult result;
-                try {
-                result = enableDomainTransferLock(enableDomainTransferLockRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(enableDomainTransferLockRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation replaces the current set of name servers for the
-     * domain with the specified set of name servers. If you use Amazon Route
-     * 53 as your DNS service, specify the four name servers in the
-     * delegation set for the hosted zone for the domain.
-     * </p>
-     * <p>
-     * If successful, this operation returns an operation ID that you can
-     * use to track the progress and completion of the action. If the request
-     * is not completed successfully, the domain registrant will be notified
-     * by email.
-     * </p>
-     *
-     * @param updateDomainNameserversRequest Container for the necessary
-     *           parameters to execute the UpdateDomainNameservers operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateDomainNameservers service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateDomainNameserversResult> updateDomainNameserversAsync(final UpdateDomainNameserversRequest updateDomainNameserversRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UpdateDomainNameserversResult>() {
-            public UpdateDomainNameserversResult call() throws Exception {
-                return updateDomainNameservers(updateDomainNameserversRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation replaces the current set of name servers for the
-     * domain with the specified set of name servers. If you use Amazon Route
-     * 53 as your DNS service, specify the four name servers in the
-     * delegation set for the hosted zone for the domain.
-     * </p>
-     * <p>
-     * If successful, this operation returns an operation ID that you can
-     * use to track the progress and completion of the action. If the request
-     * is not completed successfully, the domain registrant will be notified
-     * by email.
-     * </p>
-     *
-     * @param updateDomainNameserversRequest Container for the necessary
-     *           parameters to execute the UpdateDomainNameservers operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateDomainNameservers service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateDomainNameserversResult> updateDomainNameserversAsync(
-            final UpdateDomainNameserversRequest updateDomainNameserversRequest,
-            final AsyncHandler<UpdateDomainNameserversRequest, UpdateDomainNameserversResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UpdateDomainNameserversResult>() {
-            public UpdateDomainNameserversResult call() throws Exception {
-              UpdateDomainNameserversResult result;
-                try {
-                result = updateDomainNameservers(updateDomainNameserversRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(updateDomainNameserversRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation disables automatic renewal of domain registration for
-     * the specified domain.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Caution! Amazon Route 53 doesn't have a manual renewal
-     * process, so if you disable automatic renewal, registration for the
-     * domain will not be renewed when the expiration date passes, and you
-     * will lose control of the domain name.
-     * </p>
-     *
-     * @param disableDomainAutoRenewRequest Container for the necessary
-     *           parameters to execute the DisableDomainAutoRenew operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DisableDomainAutoRenew service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DisableDomainAutoRenewResult> disableDomainAutoRenewAsync(final DisableDomainAutoRenewRequest disableDomainAutoRenewRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DisableDomainAutoRenewResult>() {
-            public DisableDomainAutoRenewResult call() throws Exception {
-                return disableDomainAutoRenew(disableDomainAutoRenewRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation disables automatic renewal of domain registration for
-     * the specified domain.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Caution! Amazon Route 53 doesn't have a manual renewal
-     * process, so if you disable automatic renewal, registration for the
-     * domain will not be renewed when the expiration date passes, and you
-     * will lose control of the domain name.
-     * </p>
-     *
-     * @param disableDomainAutoRenewRequest Container for the necessary
-     *           parameters to execute the DisableDomainAutoRenew operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DisableDomainAutoRenew service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DisableDomainAutoRenewResult> disableDomainAutoRenewAsync(
-            final DisableDomainAutoRenewRequest disableDomainAutoRenewRequest,
-            final AsyncHandler<DisableDomainAutoRenewRequest, DisableDomainAutoRenewResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DisableDomainAutoRenewResult>() {
-            public DisableDomainAutoRenewResult call() throws Exception {
-              DisableDomainAutoRenewResult result;
-                try {
-                result = disableDomainAutoRenew(disableDomainAutoRenewRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(disableDomainAutoRenewRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation registers a domain. Domains are registered by the AWS
-     * registrar partner, Gandi. For some top-level domains (TLDs), this
-     * operation requires extra parameters.
-     * </p>
-     * <p>
-     * When you register a domain, Amazon Route 53 does the following:
-     * </p>
-     * 
-     * <ul>
-     * <li>Creates a Amazon Route 53 hosted zone that has the same name as
-     * the domain. Amazon Route 53 assigns four name servers to your hosted
-     * zone and automatically updates your domain registration with the names
-     * of these name servers.</li>
-     * <li>Enables autorenew, so your domain registration will renew
-     * automatically each year. We'll notify you in advance of the renewal
-     * date so you can choose whether to renew the registration.</li>
-     * <li>Optionally enables privacy protection, so WHOIS queries return
-     * contact information for our registrar partner, Gandi, instead of the
-     * information you entered for registrant, admin, and tech contacts.</li>
-     * <li>If registration is successful, returns an operation ID that you
-     * can use to track the progress and completion of the action. If the
-     * request is not completed successfully, the domain registrant is
-     * notified by email.</li>
-     * <li>Charges your AWS account an amount based on the top-level domain.
-     * For more information, see
-     * <a href="http://aws.amazon.com/route53/pricing/"> Amazon Route 53 Pricing </a>
-     * .</li>
-     * 
-     * </ul>
-     *
-     * @param registerDomainRequest Container for the necessary parameters to
-     *           execute the RegisterDomain operation on AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RegisterDomain service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RegisterDomainResult> registerDomainAsync(final RegisterDomainRequest registerDomainRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<RegisterDomainResult>() {
-            public RegisterDomainResult call() throws Exception {
-                return registerDomain(registerDomainRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation registers a domain. Domains are registered by the AWS
-     * registrar partner, Gandi. For some top-level domains (TLDs), this
-     * operation requires extra parameters.
-     * </p>
-     * <p>
-     * When you register a domain, Amazon Route 53 does the following:
-     * </p>
-     * 
-     * <ul>
-     * <li>Creates a Amazon Route 53 hosted zone that has the same name as
-     * the domain. Amazon Route 53 assigns four name servers to your hosted
-     * zone and automatically updates your domain registration with the names
-     * of these name servers.</li>
-     * <li>Enables autorenew, so your domain registration will renew
-     * automatically each year. We'll notify you in advance of the renewal
-     * date so you can choose whether to renew the registration.</li>
-     * <li>Optionally enables privacy protection, so WHOIS queries return
-     * contact information for our registrar partner, Gandi, instead of the
-     * information you entered for registrant, admin, and tech contacts.</li>
-     * <li>If registration is successful, returns an operation ID that you
-     * can use to track the progress and completion of the action. If the
-     * request is not completed successfully, the domain registrant is
-     * notified by email.</li>
-     * <li>Charges your AWS account an amount based on the top-level domain.
-     * For more information, see
-     * <a href="http://aws.amazon.com/route53/pricing/"> Amazon Route 53 Pricing </a>
-     * .</li>
-     * 
-     * </ul>
-     *
-     * @param registerDomainRequest Container for the necessary parameters to
-     *           execute the RegisterDomain operation on AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RegisterDomain service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RegisterDomainResult> registerDomainAsync(
-            final RegisterDomainRequest registerDomainRequest,
-            final AsyncHandler<RegisterDomainRequest, RegisterDomainResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<RegisterDomainResult>() {
-            public RegisterDomainResult call() throws Exception {
-              RegisterDomainResult result;
-                try {
-                result = registerDomain(registerDomainRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(registerDomainRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation returns detailed information about the domain. The
-     * domain's contact information is also returned as part of the output.
-     * </p>
-     *
-     * @param getDomainDetailRequest Container for the necessary parameters
-     *           to execute the GetDomainDetail operation on AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetDomainDetail service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetDomainDetailResult> getDomainDetailAsync(final GetDomainDetailRequest getDomainDetailRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetDomainDetailResult>() {
-            public GetDomainDetailResult call() throws Exception {
-                return getDomainDetail(getDomainDetailRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation returns detailed information about the domain. The
-     * domain's contact information is also returned as part of the output.
-     * </p>
-     *
-     * @param getDomainDetailRequest Container for the necessary parameters
-     *           to execute the GetDomainDetail operation on AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetDomainDetail service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetDomainDetailResult> getDomainDetailAsync(
-            final GetDomainDetailRequest getDomainDetailRequest,
-            final AsyncHandler<GetDomainDetailRequest, GetDomainDetailResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetDomainDetailResult>() {
-            public GetDomainDetailResult call() throws Exception {
-              GetDomainDetailResult result;
-                try {
-                result = getDomainDetail(getDomainDetailRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getDomainDetailRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation adds or updates tags for a specified domain.
-     * </p>
-     * <p>
-     * All tag operations are eventually consistent; subsequent operations
-     * may not immediately represent all issued operations.
-     * </p>
-     *
-     * @param updateTagsForDomainRequest Container for the necessary
-     *           parameters to execute the UpdateTagsForDomain operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateTagsForDomain service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateTagsForDomainResult> updateTagsForDomainAsync(final UpdateTagsForDomainRequest updateTagsForDomainRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UpdateTagsForDomainResult>() {
-            public UpdateTagsForDomainResult call() throws Exception {
-                return updateTagsForDomain(updateTagsForDomainRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation adds or updates tags for a specified domain.
-     * </p>
-     * <p>
-     * All tag operations are eventually consistent; subsequent operations
-     * may not immediately represent all issued operations.
-     * </p>
-     *
-     * @param updateTagsForDomainRequest Container for the necessary
-     *           parameters to execute the UpdateTagsForDomain operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateTagsForDomain service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateTagsForDomainResult> updateTagsForDomainAsync(
-            final UpdateTagsForDomainRequest updateTagsForDomainRequest,
-            final AsyncHandler<UpdateTagsForDomainRequest, UpdateTagsForDomainResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UpdateTagsForDomainResult>() {
-            public UpdateTagsForDomainResult call() throws Exception {
-              UpdateTagsForDomainResult result;
-                try {
-                result = updateTagsForDomain(updateTagsForDomainRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(updateTagsForDomainRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation returns the AuthCode for the domain. To transfer a
-     * domain to another registrar, you provide this value to the new
-     * registrar.
-     * </p>
-     *
-     * @param retrieveDomainAuthCodeRequest Container for the necessary
-     *           parameters to execute the RetrieveDomainAuthCode operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RetrieveDomainAuthCode service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RetrieveDomainAuthCodeResult> retrieveDomainAuthCodeAsync(final RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<RetrieveDomainAuthCodeResult>() {
-            public RetrieveDomainAuthCodeResult call() throws Exception {
-                return retrieveDomainAuthCode(retrieveDomainAuthCodeRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation returns the AuthCode for the domain. To transfer a
-     * domain to another registrar, you provide this value to the new
-     * registrar.
-     * </p>
-     *
-     * @param retrieveDomainAuthCodeRequest Container for the necessary
-     *           parameters to execute the RetrieveDomainAuthCode operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RetrieveDomainAuthCode service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RetrieveDomainAuthCodeResult> retrieveDomainAuthCodeAsync(
-            final RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest,
-            final AsyncHandler<RetrieveDomainAuthCodeRequest, RetrieveDomainAuthCodeResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<RetrieveDomainAuthCodeResult>() {
-            public RetrieveDomainAuthCodeResult call() throws Exception {
-              RetrieveDomainAuthCodeResult result;
-                try {
-                result = retrieveDomainAuthCode(retrieveDomainAuthCodeRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(retrieveDomainAuthCodeRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation transfers a domain from another registrar to Amazon
-     * Route 53. When the transfer is complete, the domain is registered with
-     * the AWS registrar partner, Gandi.
-     * </p>
-     * <p>
-     * For transfer requirements, a detailed procedure, and information
-     * about viewing the status of a domain transfer, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html"> Transferring Registration for a Domain to Amazon Route 53 </a>
-     * in the Amazon Route 53 Developer Guide.
-     * </p>
-     * <p>
-     * If the registrar for your domain is also the DNS service provider for
-     * the domain, we highly recommend that you consider transferring your
-     * DNS service to Amazon Route 53 or to another DNS service provider
-     * before you transfer your registration. Some registrars provide free
-     * DNS service when you purchase a domain registration. When you transfer
-     * the registration, the previous registrar will not renew your domain
-     * registration and could end your DNS service at any time.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Caution! If the registrar for your domain is also the DNS
-     * service provider for the domain and you don't transfer DNS service to
-     * another provider, your website, email, and the web applications
-     * associated with the domain might become unavailable.
-     * </p>
-     * <p>
-     * If the transfer is successful, this method returns an operation ID
-     * that you can use to track the progress and completion of the action.
-     * If the transfer doesn't complete successfully, the domain registrant
-     * will be notified by email.
-     * </p>
-     *
-     * @param transferDomainRequest Container for the necessary parameters to
-     *           execute the TransferDomain operation on AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         TransferDomain service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<TransferDomainResult> transferDomainAsync(final TransferDomainRequest transferDomainRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<TransferDomainResult>() {
-            public TransferDomainResult call() throws Exception {
-                return transferDomain(transferDomainRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation transfers a domain from another registrar to Amazon
-     * Route 53. When the transfer is complete, the domain is registered with
-     * the AWS registrar partner, Gandi.
-     * </p>
-     * <p>
-     * For transfer requirements, a detailed procedure, and information
-     * about viewing the status of a domain transfer, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html"> Transferring Registration for a Domain to Amazon Route 53 </a>
-     * in the Amazon Route 53 Developer Guide.
-     * </p>
-     * <p>
-     * If the registrar for your domain is also the DNS service provider for
-     * the domain, we highly recommend that you consider transferring your
-     * DNS service to Amazon Route 53 or to another DNS service provider
-     * before you transfer your registration. Some registrars provide free
-     * DNS service when you purchase a domain registration. When you transfer
-     * the registration, the previous registrar will not renew your domain
-     * registration and could end your DNS service at any time.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Caution! If the registrar for your domain is also the DNS
-     * service provider for the domain and you don't transfer DNS service to
-     * another provider, your website, email, and the web applications
-     * associated with the domain might become unavailable.
-     * </p>
-     * <p>
-     * If the transfer is successful, this method returns an operation ID
-     * that you can use to track the progress and completion of the action.
-     * If the transfer doesn't complete successfully, the domain registrant
-     * will be notified by email.
-     * </p>
-     *
-     * @param transferDomainRequest Container for the necessary parameters to
-     *           execute the TransferDomain operation on AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         TransferDomain service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<TransferDomainResult> transferDomainAsync(
-            final TransferDomainRequest transferDomainRequest,
-            final AsyncHandler<TransferDomainRequest, TransferDomainResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<TransferDomainResult>() {
-            public TransferDomainResult call() throws Exception {
-              TransferDomainResult result;
-                try {
-                result = transferDomain(transferDomainRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(transferDomainRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation updates the specified domain contact's privacy
-     * setting. When the privacy option is enabled, personal information such
-     * as postal or email address is hidden from the results of a public
-     * WHOIS query. The privacy services are provided by the AWS registrar,
-     * Gandi. For more information, see the
-     * <a href="http://www.gandi.net/domain/whois/?currency=USD&lang=en"> Gandi privacy features </a>
-     * .
-     * </p>
-     * <p>
-     * This operation only affects the privacy of the specified contact type
-     * (registrant, administrator, or tech). Successful acceptance returns an
-     * operation ID that you can use with GetOperationDetail to track the
-     * progress and completion of the action. If the request is not completed
-     * successfully, the domain registrant will be notified by email.
-     * </p>
-     *
-     * @param updateDomainContactPrivacyRequest Container for the necessary
-     *           parameters to execute the UpdateDomainContactPrivacy operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateDomainContactPrivacy service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateDomainContactPrivacyResult> updateDomainContactPrivacyAsync(final UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UpdateDomainContactPrivacyResult>() {
-            public UpdateDomainContactPrivacyResult call() throws Exception {
-                return updateDomainContactPrivacy(updateDomainContactPrivacyRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation updates the specified domain contact's privacy
-     * setting. When the privacy option is enabled, personal information such
-     * as postal or email address is hidden from the results of a public
-     * WHOIS query. The privacy services are provided by the AWS registrar,
-     * Gandi. For more information, see the
-     * <a href="http://www.gandi.net/domain/whois/?currency=USD&lang=en"> Gandi privacy features </a>
-     * .
-     * </p>
-     * <p>
-     * This operation only affects the privacy of the specified contact type
-     * (registrant, administrator, or tech). Successful acceptance returns an
-     * operation ID that you can use with GetOperationDetail to track the
-     * progress and completion of the action. If the request is not completed
-     * successfully, the domain registrant will be notified by email.
-     * </p>
-     *
-     * @param updateDomainContactPrivacyRequest Container for the necessary
-     *           parameters to execute the UpdateDomainContactPrivacy operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateDomainContactPrivacy service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateDomainContactPrivacyResult> updateDomainContactPrivacyAsync(
-            final UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest,
-            final AsyncHandler<UpdateDomainContactPrivacyRequest, UpdateDomainContactPrivacyResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UpdateDomainContactPrivacyResult>() {
-            public UpdateDomainContactPrivacyResult call() throws Exception {
-              UpdateDomainContactPrivacyResult result;
-                try {
-                result = updateDomainContactPrivacy(updateDomainContactPrivacyRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(updateDomainContactPrivacyRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation returns all of the tags that are associated with the
-     * specified domain.
-     * </p>
-     * <p>
-     * All tag operations are eventually consistent; subsequent operations
-     * may not immediately represent all issued operations.
-     * </p>
-     *
-     * @param listTagsForDomainRequest Container for the necessary parameters
-     *           to execute the ListTagsForDomain operation on AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTagsForDomain service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTagsForDomainResult> listTagsForDomainAsync(final ListTagsForDomainRequest listTagsForDomainRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListTagsForDomainResult>() {
-            public ListTagsForDomainResult call() throws Exception {
-                return listTagsForDomain(listTagsForDomainRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation returns all of the tags that are associated with the
-     * specified domain.
-     * </p>
-     * <p>
-     * All tag operations are eventually consistent; subsequent operations
-     * may not immediately represent all issued operations.
-     * </p>
-     *
-     * @param listTagsForDomainRequest Container for the necessary parameters
-     *           to execute the ListTagsForDomain operation on AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTagsForDomain service method, as returned by AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTagsForDomainResult> listTagsForDomainAsync(
-            final ListTagsForDomainRequest listTagsForDomainRequest,
-            final AsyncHandler<ListTagsForDomainRequest, ListTagsForDomainResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListTagsForDomainResult>() {
-            public ListTagsForDomainResult call() throws Exception {
-              ListTagsForDomainResult result;
-                try {
-                result = listTagsForDomain(listTagsForDomainRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listTagsForDomainRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This operation deletes the specified tags for a domain.
-     * </p>
-     * <p>
-     * All tag operations are eventually consistent; subsequent operations
-     * may not immediately represent all issued operations.
-     * </p>
-     *
-     * @param deleteTagsForDomainRequest Container for the necessary
-     *           parameters to execute the DeleteTagsForDomain operation on
-     *           AmazonRoute53Domains.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteTagsForDomain service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteTagsForDomainResult> deleteTagsForDomainAsync(final DeleteTagsForDomainRequest deleteTagsForDomainRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeleteTagsForDomainResult>() {
-            public DeleteTagsForDomainResult call() throws Exception {
-                return deleteTagsForDomain(deleteTagsForDomainRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This operation deletes the specified tags for a domain.
-     * </p>
-     * <p>
-     * All tag operations are eventually consistent; subsequent operations
-     * may not immediately represent all issued operations.
-     * </p>
-     *
-     * @param deleteTagsForDomainRequest Container for the necessary
-     *           parameters to execute the DeleteTagsForDomain operation on
-     *           AmazonRoute53Domains.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteTagsForDomain service method, as returned by
-     *         AmazonRoute53Domains.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteTagsForDomainResult> deleteTagsForDomainAsync(
-            final DeleteTagsForDomainRequest deleteTagsForDomainRequest,
-            final AsyncHandler<DeleteTagsForDomainRequest, DeleteTagsForDomainResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeleteTagsForDomainResult>() {
-            public DeleteTagsForDomainResult call() throws Exception {
-              DeleteTagsForDomainResult result;
-                try {
-                result = deleteTagsForDomain(deleteTagsForDomainRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteTagsForDomainRequest, result);
-                 return result;
-        }
-    });
-    }
-    
 }
-        

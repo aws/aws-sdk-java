@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
@@ -24,36 +25,38 @@ import java.io.Serializable;
 public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
 
     /**
-     * Location of the script to run during a bootstrap action. Can be either
-     * a location in Amazon S3 or on a local file system.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * Location of the script to run during a bootstrap action. Can be either a
+     * location in Amazon S3 or on a local file system.
+     * </p>
      */
     private String path;
+    /**
+     * <p>
+     * A list of command line arguments to pass to the bootstrap action script.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> args;
 
     /**
-     * A list of command line arguments to pass to the bootstrap action
-     * script.
+     * Default constructor for ScriptBootstrapActionConfig object. Callers
+     * should use the setter or fluent setter (with...) methods to initialize
+     * the object after creating it.
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> args;
+    public ScriptBootstrapActionConfig() {
+    }
 
     /**
-     * Default constructor for a new ScriptBootstrapActionConfig object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
-     */
-    public ScriptBootstrapActionConfig() {}
-    
-    /**
-     * Constructs a new ScriptBootstrapActionConfig object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new ScriptBootstrapActionConfig object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param path Location of the script to run during a bootstrap action.
-     * Can be either a location in Amazon S3 or on a local file system.
-     * @param args A list of command line arguments to pass to the bootstrap
-     * action script.
+     * @param path
+     *        Location of the script to run during a bootstrap action. Can be
+     *        either a location in Amazon S3 or on a local file system.
+     * @param args
+     *        A list of command line arguments to pass to the bootstrap action
+     *        script.
      */
     public ScriptBootstrapActionConfig(String path, java.util.List<String> args) {
         setPath(path);
@@ -61,134 +64,124 @@ public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Location of the script to run during a bootstrap action. Can be either
-     * a location in Amazon S3 or on a local file system.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return Location of the script to run during a bootstrap action. Can be either
-     *         a location in Amazon S3 or on a local file system.
-     */
-    public String getPath() {
-        return path;
-    }
-    
-    /**
-     * Location of the script to run during a bootstrap action. Can be either
-     * a location in Amazon S3 or on a local file system.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param path Location of the script to run during a bootstrap action. Can be either
-     *         a location in Amazon S3 or on a local file system.
+     * Location of the script to run during a bootstrap action. Can be either a
+     * location in Amazon S3 or on a local file system.
+     * </p>
+     * 
+     * @param path
+     *        Location of the script to run during a bootstrap action. Can be
+     *        either a location in Amazon S3 or on a local file system.
      */
     public void setPath(String path) {
         this.path = path;
     }
-    
+
     /**
-     * Location of the script to run during a bootstrap action. Can be either
-     * a location in Amazon S3 or on a local file system.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * Location of the script to run during a bootstrap action. Can be either a
+     * location in Amazon S3 or on a local file system.
+     * </p>
+     * 
+     * @return Location of the script to run during a bootstrap action. Can be
+     *         either a location in Amazon S3 or on a local file system.
+     */
+    public String getPath() {
+        return this.path;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param path Location of the script to run during a bootstrap action. Can be either
-     *         a location in Amazon S3 or on a local file system.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Location of the script to run during a bootstrap action. Can be either a
+     * location in Amazon S3 or on a local file system.
+     * </p>
+     * 
+     * @param path
+     *        Location of the script to run during a bootstrap action. Can be
+     *        either a location in Amazon S3 or on a local file system.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ScriptBootstrapActionConfig withPath(String path) {
-        this.path = path;
+        setPath(path);
         return this;
     }
 
     /**
-     * A list of command line arguments to pass to the bootstrap action
-     * script.
-     *
+     * <p>
+     * A list of command line arguments to pass to the bootstrap action script.
+     * </p>
+     * 
      * @return A list of command line arguments to pass to the bootstrap action
      *         script.
      */
     public java.util.List<String> getArgs() {
         if (args == null) {
-              args = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              args.setAutoConstruct(true);
+            args = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return args;
     }
-    
+
     /**
-     * A list of command line arguments to pass to the bootstrap action
-     * script.
-     *
-     * @param args A list of command line arguments to pass to the bootstrap action
-     *         script.
+     * <p>
+     * A list of command line arguments to pass to the bootstrap action script.
+     * </p>
+     * 
+     * @param args
+     *        A list of command line arguments to pass to the bootstrap action
+     *        script.
      */
     public void setArgs(java.util.Collection<String> args) {
         if (args == null) {
             this.args = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> argsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(args.size());
-        argsCopy.addAll(args);
-        this.args = argsCopy;
+
+        this.args = new com.amazonaws.internal.SdkInternalList<String>(args);
     }
-    
+
     /**
-     * A list of command line arguments to pass to the bootstrap action
-     * script.
+     * <p>
+     * A list of command line arguments to pass to the bootstrap action script.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setArgs(java.util.Collection)} or {@link
-     * #withArgs(java.util.Collection)} if you want to override the existing
-     * values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param args A list of command line arguments to pass to the bootstrap action
-     *         script.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setArgs(java.util.Collection)} or
+     * {@link #withArgs(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param args
+     *        A list of command line arguments to pass to the bootstrap action
+     *        script.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ScriptBootstrapActionConfig withArgs(String... args) {
-        if (getArgs() == null) setArgs(new java.util.ArrayList<String>(args.length));
-        for (String value : args) {
-            getArgs().add(value);
+        if (this.args == null) {
+            setArgs(new com.amazonaws.internal.SdkInternalList<String>(
+                    args.length));
+        }
+        for (String ele : args) {
+            this.args.add(ele);
         }
         return this;
     }
-    
-    /**
-     * A list of command line arguments to pass to the bootstrap action
-     * script.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param args A list of command line arguments to pass to the bootstrap action
-     *         script.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ScriptBootstrapActionConfig withArgs(java.util.Collection<String> args) {
-        if (args == null) {
-            this.args = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> argsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(args.size());
-            argsCopy.addAll(args);
-            this.args = argsCopy;
-        }
 
+    /**
+     * <p>
+     * A list of command line arguments to pass to the bootstrap action script.
+     * </p>
+     * 
+     * @param args
+     *        A list of command line arguments to pass to the bootstrap action
+     *        script.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ScriptBootstrapActionConfig withArgs(
+            java.util.Collection<String> args) {
+        setArgs(args);
         return this;
     }
 
@@ -204,50 +197,57 @@ public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");
-        if (getArgs() != null) sb.append("Args: " + getArgs() );
+        if (getPath() != null)
+            sb.append("Path: " + getPath() + ",");
+        if (getArgs() != null)
+            sb.append("Args: " + getArgs());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ScriptBootstrapActionConfig == false)
+            return false;
+        ScriptBootstrapActionConfig other = (ScriptBootstrapActionConfig) obj;
+        if (other.getPath() == null ^ this.getPath() == null)
+            return false;
+        if (other.getPath() != null
+                && other.getPath().equals(this.getPath()) == false)
+            return false;
+        if (other.getArgs() == null ^ this.getArgs() == null)
+            return false;
+        if (other.getArgs() != null
+                && other.getArgs().equals(this.getArgs()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode()); 
-        hashCode = prime * hashCode + ((getArgs() == null) ? 0 : getArgs().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode
+                + ((getArgs() == null) ? 0 : getArgs().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ScriptBootstrapActionConfig == false) return false;
-        ScriptBootstrapActionConfig other = (ScriptBootstrapActionConfig)obj;
-        
-        if (other.getPath() == null ^ this.getPath() == null) return false;
-        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false) return false; 
-        if (other.getArgs() == null ^ this.getArgs() == null) return false;
-        if (other.getArgs() != null && other.getArgs().equals(this.getArgs()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ScriptBootstrapActionConfig clone() {
         try {
             return (ScriptBootstrapActionConfig) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

@@ -1,24 +1,25 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 /**
- * Layer Attributes Keys
+ * 
  */
 public enum LayerAttributesKeys {
-    
+
     EcsClusterArn("EcsClusterArn"),
     EnableHaproxyStats("EnableHaproxyStats"),
     HaproxyStatsUrl("HaproxyStatsUrl"),
@@ -60,66 +61,65 @@ public enum LayerAttributesKeys {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return LayerAttributesKeys corresponding to the value
      */
     public static LayerAttributesKeys fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("EcsClusterArn".equals(value)) {
-            return LayerAttributesKeys.EcsClusterArn;
+            return EcsClusterArn;
         } else if ("EnableHaproxyStats".equals(value)) {
-            return LayerAttributesKeys.EnableHaproxyStats;
+            return EnableHaproxyStats;
         } else if ("HaproxyStatsUrl".equals(value)) {
-            return LayerAttributesKeys.HaproxyStatsUrl;
+            return HaproxyStatsUrl;
         } else if ("HaproxyStatsUser".equals(value)) {
-            return LayerAttributesKeys.HaproxyStatsUser;
+            return HaproxyStatsUser;
         } else if ("HaproxyStatsPassword".equals(value)) {
-            return LayerAttributesKeys.HaproxyStatsPassword;
+            return HaproxyStatsPassword;
         } else if ("HaproxyHealthCheckUrl".equals(value)) {
-            return LayerAttributesKeys.HaproxyHealthCheckUrl;
+            return HaproxyHealthCheckUrl;
         } else if ("HaproxyHealthCheckMethod".equals(value)) {
-            return LayerAttributesKeys.HaproxyHealthCheckMethod;
+            return HaproxyHealthCheckMethod;
         } else if ("MysqlRootPassword".equals(value)) {
-            return LayerAttributesKeys.MysqlRootPassword;
+            return MysqlRootPassword;
         } else if ("MysqlRootPasswordUbiquitous".equals(value)) {
-            return LayerAttributesKeys.MysqlRootPasswordUbiquitous;
+            return MysqlRootPasswordUbiquitous;
         } else if ("GangliaUrl".equals(value)) {
-            return LayerAttributesKeys.GangliaUrl;
+            return GangliaUrl;
         } else if ("GangliaUser".equals(value)) {
-            return LayerAttributesKeys.GangliaUser;
+            return GangliaUser;
         } else if ("GangliaPassword".equals(value)) {
-            return LayerAttributesKeys.GangliaPassword;
+            return GangliaPassword;
         } else if ("MemcachedMemory".equals(value)) {
-            return LayerAttributesKeys.MemcachedMemory;
+            return MemcachedMemory;
         } else if ("NodejsVersion".equals(value)) {
-            return LayerAttributesKeys.NodejsVersion;
+            return NodejsVersion;
         } else if ("RubyVersion".equals(value)) {
-            return LayerAttributesKeys.RubyVersion;
+            return RubyVersion;
         } else if ("RubygemsVersion".equals(value)) {
-            return LayerAttributesKeys.RubygemsVersion;
+            return RubygemsVersion;
         } else if ("ManageBundler".equals(value)) {
-            return LayerAttributesKeys.ManageBundler;
+            return ManageBundler;
         } else if ("BundlerVersion".equals(value)) {
-            return LayerAttributesKeys.BundlerVersion;
+            return BundlerVersion;
         } else if ("RailsStack".equals(value)) {
-            return LayerAttributesKeys.RailsStack;
+            return RailsStack;
         } else if ("PassengerVersion".equals(value)) {
-            return LayerAttributesKeys.PassengerVersion;
+            return PassengerVersion;
         } else if ("Jvm".equals(value)) {
-            return LayerAttributesKeys.Jvm;
+            return Jvm;
         } else if ("JvmVersion".equals(value)) {
-            return LayerAttributesKeys.JvmVersion;
+            return JvmVersion;
         } else if ("JvmOptions".equals(value)) {
-            return LayerAttributesKeys.JvmOptions;
+            return JvmOptions;
         } else if ("JavaAppServer".equals(value)) {
-            return LayerAttributesKeys.JavaAppServer;
+            return JavaAppServer;
         } else if ("JavaAppServerVersion".equals(value)) {
-            return LayerAttributesKeys.JavaAppServerVersion;
+            return JavaAppServerVersion;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

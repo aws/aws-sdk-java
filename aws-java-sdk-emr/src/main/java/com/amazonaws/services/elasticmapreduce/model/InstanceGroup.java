@@ -1,612 +1,634 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * This entity represents an instance group, which is a group of
- * instances that have common purpose. For example, CORE instance group
- * is used for HDFS.
+ * This entity represents an instance group, which is a group of instances that
+ * have common purpose. For example, CORE instance group is used for HDFS.
  * </p>
  */
 public class InstanceGroup implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The identifier of the instance group.
+     * </p>
      */
     private String id;
-
     /**
+     * <p>
      * The name of the instance group.
+     * </p>
      */
     private String name;
-
     /**
-     * The marketplace to provision instances for this group. Valid values
-     * are ON_DEMAND or SPOT.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ON_DEMAND, SPOT
+     * The marketplace to provision instances for this group. Valid values are
+     * ON_DEMAND or SPOT.
+     * </p>
      */
     private String market;
-
     /**
-     * The type of the instance group. Valid values are MASTER, CORE or TASK.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>MASTER, CORE, TASK
+     * The type of the instance group. Valid values are MASTER, CORE or TASK.
+     * </p>
      */
     private String instanceGroupType;
-
     /**
-     * The bid price for each EC2 instance in the instance group when
-     * launching nodes as Spot Instances, expressed in USD.
+     * <p>
+     * The bid price for each EC2 instance in the instance group when launching
+     * nodes as Spot Instances, expressed in USD.
+     * </p>
      */
     private String bidPrice;
-
     /**
-     * The EC2 instance type for all instances in the instance group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The EC2 instance type for all instances in the instance group.
+     * </p>
      */
     private String instanceType;
-
     /**
+     * <p>
      * The target number of instances for the instance group.
+     * </p>
      */
     private Integer requestedInstanceCount;
-
     /**
+     * <p>
      * The number of instances currently running in this instance group.
+     * </p>
      */
     private Integer runningInstanceCount;
-
     /**
+     * <p>
      * The current status of the instance group.
+     * </p>
      */
     private InstanceGroupStatus status;
-
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can
-     * specify a separate configuration for each instance group (master,
+     * <note>
+     * <p>
+     * Amazon EMR releases 4.x or later.
+     * </p>
+     * </note>
+     * <p>
+     * The list of configurations supplied for an EMR cluster instance group.
+     * You can specify a separate configuration for each instance group (master,
      * core, and task).
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurations;
+    private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
 
     /**
+     * <p>
      * The identifier of the instance group.
-     *
-     * @return The identifier of the instance group.
-     */
-    public String getId() {
-        return id;
-    }
-    
-    /**
-     * The identifier of the instance group.
-     *
-     * @param id The identifier of the instance group.
+     * </p>
+     * 
+     * @param id
+     *        The identifier of the instance group.
      */
     public void setId(String id) {
         this.id = id;
     }
-    
+
     /**
-     * The identifier of the instance group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param id The identifier of the instance group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier of the instance group.
+     * </p>
+     * 
+     * @return The identifier of the instance group.
+     */
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The identifier of the instance group.
+     * </p>
+     * 
+     * @param id
+     *        The identifier of the instance group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceGroup withId(String id) {
-        this.id = id;
+        setId(id);
         return this;
     }
 
     /**
+     * <p>
      * The name of the instance group.
-     *
-     * @return The name of the instance group.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * The name of the instance group.
-     *
-     * @param name The name of the instance group.
+     * </p>
+     * 
+     * @param name
+     *        The name of the instance group.
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
-     * The name of the instance group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param name The name of the instance group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the instance group.
+     * </p>
+     * 
+     * @return The name of the instance group.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the instance group.
+     * </p>
+     * 
+     * @param name
+     *        The name of the instance group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceGroup withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
-     * The marketplace to provision instances for this group. Valid values
-     * are ON_DEMAND or SPOT.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ON_DEMAND, SPOT
-     *
-     * @return The marketplace to provision instances for this group. Valid values
-     *         are ON_DEMAND or SPOT.
-     *
-     * @see MarketType
-     */
-    public String getMarket() {
-        return market;
-    }
-    
-    /**
-     * The marketplace to provision instances for this group. Valid values
-     * are ON_DEMAND or SPOT.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ON_DEMAND, SPOT
-     *
-     * @param market The marketplace to provision instances for this group. Valid values
-     *         are ON_DEMAND or SPOT.
-     *
+     * The marketplace to provision instances for this group. Valid values are
+     * ON_DEMAND or SPOT.
+     * </p>
+     * 
+     * @param market
+     *        The marketplace to provision instances for this group. Valid
+     *        values are ON_DEMAND or SPOT.
      * @see MarketType
      */
     public void setMarket(String market) {
         this.market = market;
     }
-    
+
     /**
-     * The marketplace to provision instances for this group. Valid values
-     * are ON_DEMAND or SPOT.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The marketplace to provision instances for this group. Valid values are
+     * ON_DEMAND or SPOT.
+     * </p>
+     * 
+     * @return The marketplace to provision instances for this group. Valid
+     *         values are ON_DEMAND or SPOT.
+     * @see MarketType
+     */
+    public String getMarket() {
+        return this.market;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ON_DEMAND, SPOT
-     *
-     * @param market The marketplace to provision instances for this group. Valid values
-     *         are ON_DEMAND or SPOT.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The marketplace to provision instances for this group. Valid values are
+     * ON_DEMAND or SPOT.
+     * </p>
+     * 
+     * @param market
+     *        The marketplace to provision instances for this group. Valid
+     *        values are ON_DEMAND or SPOT.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see MarketType
      */
     public InstanceGroup withMarket(String market) {
-        this.market = market;
+        setMarket(market);
         return this;
     }
 
     /**
-     * The marketplace to provision instances for this group. Valid values
-     * are ON_DEMAND or SPOT.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ON_DEMAND, SPOT
-     *
-     * @param market The marketplace to provision instances for this group. Valid values
-     *         are ON_DEMAND or SPOT.
-     *
+     * The marketplace to provision instances for this group. Valid values are
+     * ON_DEMAND or SPOT.
+     * </p>
+     * 
+     * @param market
+     *        The marketplace to provision instances for this group. Valid
+     *        values are ON_DEMAND or SPOT.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see MarketType
      */
     public void setMarket(MarketType market) {
         this.market = market.toString();
     }
-    
+
     /**
-     * The marketplace to provision instances for this group. Valid values
-     * are ON_DEMAND or SPOT.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ON_DEMAND, SPOT
-     *
-     * @param market The marketplace to provision instances for this group. Valid values
-     *         are ON_DEMAND or SPOT.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The marketplace to provision instances for this group. Valid values are
+     * ON_DEMAND or SPOT.
+     * </p>
+     * 
+     * @param market
+     *        The marketplace to provision instances for this group. Valid
+     *        values are ON_DEMAND or SPOT.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see MarketType
      */
     public InstanceGroup withMarket(MarketType market) {
-        this.market = market.toString();
+        setMarket(market);
         return this;
     }
 
     /**
-     * The type of the instance group. Valid values are MASTER, CORE or TASK.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>MASTER, CORE, TASK
-     *
-     * @return The type of the instance group. Valid values are MASTER, CORE or TASK.
-     *
-     * @see InstanceGroupType
-     */
-    public String getInstanceGroupType() {
-        return instanceGroupType;
-    }
-    
-    /**
      * The type of the instance group. Valid values are MASTER, CORE or TASK.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>MASTER, CORE, TASK
-     *
-     * @param instanceGroupType The type of the instance group. Valid values are MASTER, CORE or TASK.
-     *
+     * </p>
+     * 
+     * @param instanceGroupType
+     *        The type of the instance group. Valid values are MASTER, CORE or
+     *        TASK.
      * @see InstanceGroupType
      */
     public void setInstanceGroupType(String instanceGroupType) {
         this.instanceGroupType = instanceGroupType;
     }
-    
+
     /**
+     * <p>
      * The type of the instance group. Valid values are MASTER, CORE or TASK.
+     * </p>
+     * 
+     * @return The type of the instance group. Valid values are MASTER, CORE or
+     *         TASK.
+     * @see InstanceGroupType
+     */
+    public String getInstanceGroupType() {
+        return this.instanceGroupType;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>MASTER, CORE, TASK
-     *
-     * @param instanceGroupType The type of the instance group. Valid values are MASTER, CORE or TASK.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The type of the instance group. Valid values are MASTER, CORE or TASK.
+     * </p>
+     * 
+     * @param instanceGroupType
+     *        The type of the instance group. Valid values are MASTER, CORE or
+     *        TASK.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see InstanceGroupType
      */
     public InstanceGroup withInstanceGroupType(String instanceGroupType) {
-        this.instanceGroupType = instanceGroupType;
+        setInstanceGroupType(instanceGroupType);
         return this;
     }
 
     /**
-     * The type of the instance group. Valid values are MASTER, CORE or TASK.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>MASTER, CORE, TASK
-     *
-     * @param instanceGroupType The type of the instance group. Valid values are MASTER, CORE or TASK.
-     *
+     * The type of the instance group. Valid values are MASTER, CORE or TASK.
+     * </p>
+     * 
+     * @param instanceGroupType
+     *        The type of the instance group. Valid values are MASTER, CORE or
+     *        TASK.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see InstanceGroupType
      */
     public void setInstanceGroupType(InstanceGroupType instanceGroupType) {
         this.instanceGroupType = instanceGroupType.toString();
     }
-    
+
     /**
+     * <p>
      * The type of the instance group. Valid values are MASTER, CORE or TASK.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>MASTER, CORE, TASK
-     *
-     * @param instanceGroupType The type of the instance group. Valid values are MASTER, CORE or TASK.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param instanceGroupType
+     *        The type of the instance group. Valid values are MASTER, CORE or
+     *        TASK.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see InstanceGroupType
      */
-    public InstanceGroup withInstanceGroupType(InstanceGroupType instanceGroupType) {
-        this.instanceGroupType = instanceGroupType.toString();
+    public InstanceGroup withInstanceGroupType(
+            InstanceGroupType instanceGroupType) {
+        setInstanceGroupType(instanceGroupType);
         return this;
     }
 
     /**
-     * The bid price for each EC2 instance in the instance group when
-     * launching nodes as Spot Instances, expressed in USD.
-     *
-     * @return The bid price for each EC2 instance in the instance group when
-     *         launching nodes as Spot Instances, expressed in USD.
-     */
-    public String getBidPrice() {
-        return bidPrice;
-    }
-    
-    /**
-     * The bid price for each EC2 instance in the instance group when
-     * launching nodes as Spot Instances, expressed in USD.
-     *
-     * @param bidPrice The bid price for each EC2 instance in the instance group when
-     *         launching nodes as Spot Instances, expressed in USD.
+     * <p>
+     * The bid price for each EC2 instance in the instance group when launching
+     * nodes as Spot Instances, expressed in USD.
+     * </p>
+     * 
+     * @param bidPrice
+     *        The bid price for each EC2 instance in the instance group when
+     *        launching nodes as Spot Instances, expressed in USD.
      */
     public void setBidPrice(String bidPrice) {
         this.bidPrice = bidPrice;
     }
-    
+
     /**
-     * The bid price for each EC2 instance in the instance group when
-     * launching nodes as Spot Instances, expressed in USD.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param bidPrice The bid price for each EC2 instance in the instance group when
+     * The bid price for each EC2 instance in the instance group when launching
+     * nodes as Spot Instances, expressed in USD.
+     * </p>
+     * 
+     * @return The bid price for each EC2 instance in the instance group when
      *         launching nodes as Spot Instances, expressed in USD.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getBidPrice() {
+        return this.bidPrice;
+    }
+
+    /**
+     * <p>
+     * The bid price for each EC2 instance in the instance group when launching
+     * nodes as Spot Instances, expressed in USD.
+     * </p>
+     * 
+     * @param bidPrice
+     *        The bid price for each EC2 instance in the instance group when
+     *        launching nodes as Spot Instances, expressed in USD.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceGroup withBidPrice(String bidPrice) {
-        this.bidPrice = bidPrice;
+        setBidPrice(bidPrice);
         return this;
     }
 
     /**
-     * The EC2 instance type for all instances in the instance group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The EC2 instance type for all instances in the instance group.
-     */
-    public String getInstanceType() {
-        return instanceType;
-    }
-    
-    /**
      * The EC2 instance type for all instances in the instance group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param instanceType The EC2 instance type for all instances in the instance group.
+     * </p>
+     * 
+     * @param instanceType
+     *        The EC2 instance type for all instances in the instance group.
      */
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
-    
+
     /**
+     * <p>
      * The EC2 instance type for all instances in the instance group.
+     * </p>
+     * 
+     * @return The EC2 instance type for all instances in the instance group.
+     */
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param instanceType The EC2 instance type for all instances in the instance group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The EC2 instance type for all instances in the instance group.
+     * </p>
+     * 
+     * @param instanceType
+     *        The EC2 instance type for all instances in the instance group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceGroup withInstanceType(String instanceType) {
-        this.instanceType = instanceType;
+        setInstanceType(instanceType);
         return this;
     }
 
     /**
+     * <p>
      * The target number of instances for the instance group.
-     *
-     * @return The target number of instances for the instance group.
-     */
-    public Integer getRequestedInstanceCount() {
-        return requestedInstanceCount;
-    }
-    
-    /**
-     * The target number of instances for the instance group.
-     *
-     * @param requestedInstanceCount The target number of instances for the instance group.
+     * </p>
+     * 
+     * @param requestedInstanceCount
+     *        The target number of instances for the instance group.
      */
     public void setRequestedInstanceCount(Integer requestedInstanceCount) {
         this.requestedInstanceCount = requestedInstanceCount;
     }
-    
+
     /**
-     * The target number of instances for the instance group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param requestedInstanceCount The target number of instances for the instance group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The target number of instances for the instance group.
+     * </p>
+     * 
+     * @return The target number of instances for the instance group.
      */
-    public InstanceGroup withRequestedInstanceCount(Integer requestedInstanceCount) {
-        this.requestedInstanceCount = requestedInstanceCount;
+    public Integer getRequestedInstanceCount() {
+        return this.requestedInstanceCount;
+    }
+
+    /**
+     * <p>
+     * The target number of instances for the instance group.
+     * </p>
+     * 
+     * @param requestedInstanceCount
+     *        The target number of instances for the instance group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public InstanceGroup withRequestedInstanceCount(
+            Integer requestedInstanceCount) {
+        setRequestedInstanceCount(requestedInstanceCount);
         return this;
     }
 
     /**
+     * <p>
      * The number of instances currently running in this instance group.
-     *
-     * @return The number of instances currently running in this instance group.
-     */
-    public Integer getRunningInstanceCount() {
-        return runningInstanceCount;
-    }
-    
-    /**
-     * The number of instances currently running in this instance group.
-     *
-     * @param runningInstanceCount The number of instances currently running in this instance group.
+     * </p>
+     * 
+     * @param runningInstanceCount
+     *        The number of instances currently running in this instance group.
      */
     public void setRunningInstanceCount(Integer runningInstanceCount) {
         this.runningInstanceCount = runningInstanceCount;
     }
-    
+
     /**
-     * The number of instances currently running in this instance group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param runningInstanceCount The number of instances currently running in this instance group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The number of instances currently running in this instance group.
+     * </p>
+     * 
+     * @return The number of instances currently running in this instance group.
+     */
+    public Integer getRunningInstanceCount() {
+        return this.runningInstanceCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances currently running in this instance group.
+     * </p>
+     * 
+     * @param runningInstanceCount
+     *        The number of instances currently running in this instance group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceGroup withRunningInstanceCount(Integer runningInstanceCount) {
-        this.runningInstanceCount = runningInstanceCount;
+        setRunningInstanceCount(runningInstanceCount);
         return this;
     }
 
     /**
+     * <p>
      * The current status of the instance group.
-     *
-     * @return The current status of the instance group.
-     */
-    public InstanceGroupStatus getStatus() {
-        return status;
-    }
-    
-    /**
-     * The current status of the instance group.
-     *
-     * @param status The current status of the instance group.
+     * </p>
+     * 
+     * @param status
+     *        The current status of the instance group.
      */
     public void setStatus(InstanceGroupStatus status) {
         this.status = status;
     }
-    
+
     /**
-     * The current status of the instance group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param status The current status of the instance group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The current status of the instance group.
+     * </p>
+     * 
+     * @return The current status of the instance group.
+     */
+    public InstanceGroupStatus getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The current status of the instance group.
+     * </p>
+     * 
+     * @param status
+     *        The current status of the instance group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceGroup withStatus(InstanceGroupStatus status) {
-        this.status = status;
+        setStatus(status);
         return this;
     }
 
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can
-     * specify a separate configuration for each instance group (master,
+     * <note>
+     * <p>
+     * Amazon EMR releases 4.x or later.
+     * </p>
+     * </note>
+     * <p>
+     * The list of configurations supplied for an EMR cluster instance group.
+     * You can specify a separate configuration for each instance group (master,
      * core, and task).
-     *
-     * @return <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     *         configurations supplied for an EMR cluster instance group. You can
-     *         specify a separate configuration for each instance group (master,
-     *         core, and task).
+     * </p>
+     * 
+     * @return Amazon EMR releases 4.x or later.</p></note>
      */
     public java.util.List<Configuration> getConfigurations() {
         if (configurations == null) {
-              configurations = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>();
-              configurations.setAutoConstruct(true);
+            configurations = new com.amazonaws.internal.SdkInternalList<Configuration>();
         }
         return configurations;
     }
-    
+
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can
-     * specify a separate configuration for each instance group (master,
+     * <note>
+     * <p>
+     * Amazon EMR releases 4.x or later.
+     * </p>
+     * </note>
+     * <p>
+     * The list of configurations supplied for an EMR cluster instance group.
+     * You can specify a separate configuration for each instance group (master,
      * core, and task).
-     *
-     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     *         configurations supplied for an EMR cluster instance group. You can
-     *         specify a separate configuration for each instance group (master,
-     *         core, and task).
+     * </p>
+     * 
+     * @param configurations
+     *        Amazon EMR releases 4.x or later.</p></note>
      */
-    public void setConfigurations(java.util.Collection<Configuration> configurations) {
+    public void setConfigurations(
+            java.util.Collection<Configuration> configurations) {
         if (configurations == null) {
             this.configurations = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>(configurations.size());
-        configurationsCopy.addAll(configurations);
-        this.configurations = configurationsCopy;
+
+        this.configurations = new com.amazonaws.internal.SdkInternalList<Configuration>(
+                configurations);
     }
-    
+
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can
-     * specify a separate configuration for each instance group (master,
+     * <note>
+     * <p>
+     * Amazon EMR releases 4.x or later.
+     * </p>
+     * </note>
+     * <p>
+     * The list of configurations supplied for an EMR cluster instance group.
+     * You can specify a separate configuration for each instance group (master,
      * core, and task).
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConfigurations(java.util.Collection)} or {@link
-     * #withConfigurations(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     *         configurations supplied for an EMR cluster instance group. You can
-     *         specify a separate configuration for each instance group (master,
-     *         core, and task).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setConfigurations(java.util.Collection)} or
+     * {@link #withConfigurations(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param configurations
+     *        Amazon EMR releases 4.x or later.</p></note>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceGroup withConfigurations(Configuration... configurations) {
-        if (getConfigurations() == null) setConfigurations(new java.util.ArrayList<Configuration>(configurations.length));
-        for (Configuration value : configurations) {
-            getConfigurations().add(value);
+        if (this.configurations == null) {
+            setConfigurations(new com.amazonaws.internal.SdkInternalList<Configuration>(
+                    configurations.length));
+        }
+        for (Configuration ele : configurations) {
+            this.configurations.add(ele);
         }
         return this;
     }
-    
-    /**
-     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can
-     * specify a separate configuration for each instance group (master,
-     * core, and task).
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
-     *         configurations supplied for an EMR cluster instance group. You can
-     *         specify a separate configuration for each instance group (master,
-     *         core, and task).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public InstanceGroup withConfigurations(java.util.Collection<Configuration> configurations) {
-        if (configurations == null) {
-            this.configurations = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>(configurations.size());
-            configurationsCopy.addAll(configurations);
-            this.configurations = configurationsCopy;
-        }
 
+    /**
+     * <note>
+     * <p>
+     * Amazon EMR releases 4.x or later.
+     * </p>
+     * </note>
+     * <p>
+     * The list of configurations supplied for an EMR cluster instance group.
+     * You can specify a separate configuration for each instance group (master,
+     * core, and task).
+     * </p>
+     * 
+     * @param configurations
+     *        Amazon EMR releases 4.x or later.</p></note>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public InstanceGroup withConfigurations(
+            java.util.Collection<Configuration> configurations) {
+        setConfigurations(configurations);
         return this;
     }
 
@@ -622,82 +644,148 @@ public class InstanceGroup implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ",");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getMarket() != null) sb.append("Market: " + getMarket() + ",");
-        if (getInstanceGroupType() != null) sb.append("InstanceGroupType: " + getInstanceGroupType() + ",");
-        if (getBidPrice() != null) sb.append("BidPrice: " + getBidPrice() + ",");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
-        if (getRequestedInstanceCount() != null) sb.append("RequestedInstanceCount: " + getRequestedInstanceCount() + ",");
-        if (getRunningInstanceCount() != null) sb.append("RunningInstanceCount: " + getRunningInstanceCount() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
-        if (getConfigurations() != null) sb.append("Configurations: " + getConfigurations() );
+        if (getId() != null)
+            sb.append("Id: " + getId() + ",");
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getMarket() != null)
+            sb.append("Market: " + getMarket() + ",");
+        if (getInstanceGroupType() != null)
+            sb.append("InstanceGroupType: " + getInstanceGroupType() + ",");
+        if (getBidPrice() != null)
+            sb.append("BidPrice: " + getBidPrice() + ",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getRequestedInstanceCount() != null)
+            sb.append("RequestedInstanceCount: " + getRequestedInstanceCount()
+                    + ",");
+        if (getRunningInstanceCount() != null)
+            sb.append("RunningInstanceCount: " + getRunningInstanceCount()
+                    + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus() + ",");
+        if (getConfigurations() != null)
+            sb.append("Configurations: " + getConfigurations());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof InstanceGroup == false)
+            return false;
+        InstanceGroup other = (InstanceGroup) obj;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null
+                && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getMarket() == null ^ this.getMarket() == null)
+            return false;
+        if (other.getMarket() != null
+                && other.getMarket().equals(this.getMarket()) == false)
+            return false;
+        if (other.getInstanceGroupType() == null
+                ^ this.getInstanceGroupType() == null)
+            return false;
+        if (other.getInstanceGroupType() != null
+                && other.getInstanceGroupType().equals(
+                        this.getInstanceGroupType()) == false)
+            return false;
+        if (other.getBidPrice() == null ^ this.getBidPrice() == null)
+            return false;
+        if (other.getBidPrice() != null
+                && other.getBidPrice().equals(this.getBidPrice()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null
+                && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getRequestedInstanceCount() == null
+                ^ this.getRequestedInstanceCount() == null)
+            return false;
+        if (other.getRequestedInstanceCount() != null
+                && other.getRequestedInstanceCount().equals(
+                        this.getRequestedInstanceCount()) == false)
+            return false;
+        if (other.getRunningInstanceCount() == null
+                ^ this.getRunningInstanceCount() == null)
+            return false;
+        if (other.getRunningInstanceCount() != null
+                && other.getRunningInstanceCount().equals(
+                        this.getRunningInstanceCount()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null
+                && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getConfigurations() == null
+                ^ this.getConfigurations() == null)
+            return false;
+        if (other.getConfigurations() != null
+                && other.getConfigurations().equals(this.getConfigurations()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getMarket() == null) ? 0 : getMarket().hashCode()); 
-        hashCode = prime * hashCode + ((getInstanceGroupType() == null) ? 0 : getInstanceGroupType().hashCode()); 
-        hashCode = prime * hashCode + ((getBidPrice() == null) ? 0 : getBidPrice().hashCode()); 
-        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
-        hashCode = prime * hashCode + ((getRequestedInstanceCount() == null) ? 0 : getRequestedInstanceCount().hashCode()); 
-        hashCode = prime * hashCode + ((getRunningInstanceCount() == null) ? 0 : getRunningInstanceCount().hashCode()); 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode
+                + ((getMarket() == null) ? 0 : getMarket().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInstanceGroupType() == null) ? 0
+                        : getInstanceGroupType().hashCode());
+        hashCode = prime * hashCode
+                + ((getBidPrice() == null) ? 0 : getBidPrice().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInstanceType() == null) ? 0 : getInstanceType()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRequestedInstanceCount() == null) ? 0
+                        : getRequestedInstanceCount().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRunningInstanceCount() == null) ? 0
+                        : getRunningInstanceCount().hashCode());
+        hashCode = prime * hashCode
+                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getConfigurations() == null) ? 0 : getConfigurations()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof InstanceGroup == false) return false;
-        InstanceGroup other = (InstanceGroup)obj;
-        
-        if (other.getId() == null ^ this.getId() == null) return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getMarket() == null ^ this.getMarket() == null) return false;
-        if (other.getMarket() != null && other.getMarket().equals(this.getMarket()) == false) return false; 
-        if (other.getInstanceGroupType() == null ^ this.getInstanceGroupType() == null) return false;
-        if (other.getInstanceGroupType() != null && other.getInstanceGroupType().equals(this.getInstanceGroupType()) == false) return false; 
-        if (other.getBidPrice() == null ^ this.getBidPrice() == null) return false;
-        if (other.getBidPrice() != null && other.getBidPrice().equals(this.getBidPrice()) == false) return false; 
-        if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
-        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
-        if (other.getRequestedInstanceCount() == null ^ this.getRequestedInstanceCount() == null) return false;
-        if (other.getRequestedInstanceCount() != null && other.getRequestedInstanceCount().equals(this.getRequestedInstanceCount()) == false) return false; 
-        if (other.getRunningInstanceCount() == null ^ this.getRunningInstanceCount() == null) return false;
-        if (other.getRunningInstanceCount() != null && other.getRunningInstanceCount().equals(this.getRunningInstanceCount()) == false) return false; 
-        if (other.getStatus() == null ^ this.getStatus() == null) return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
-        if (other.getConfigurations() == null ^ this.getConfigurations() == null) return false;
-        if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public InstanceGroup clone() {
         try {
             return (InstanceGroup) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

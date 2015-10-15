@@ -149,29 +149,21 @@ public class PutThirdPartyJobSuccessResultRequest extends
     }
 
     /**
-     * Sets the value of the CurrentRevision property for this object.
-     * 
      * @param currentRevision
-     *        The new value for the CurrentRevision property for this object.
      */
     public void setCurrentRevision(CurrentRevision currentRevision) {
         this.currentRevision = currentRevision;
     }
 
     /**
-     * Returns the value of the CurrentRevision property for this object.
-     * 
-     * @return The value of the CurrentRevision property for this object.
+     * @return
      */
     public CurrentRevision getCurrentRevision() {
         return this.currentRevision;
     }
 
     /**
-     * Sets the value of the CurrentRevision property for this object.
-     * 
      * @param currentRevision
-     *        The new value for the CurrentRevision property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -227,29 +219,21 @@ public class PutThirdPartyJobSuccessResultRequest extends
     }
 
     /**
-     * Sets the value of the ExecutionDetails property for this object.
-     * 
      * @param executionDetails
-     *        The new value for the ExecutionDetails property for this object.
      */
     public void setExecutionDetails(ExecutionDetails executionDetails) {
         this.executionDetails = executionDetails;
     }
 
     /**
-     * Returns the value of the ExecutionDetails property for this object.
-     * 
-     * @return The value of the ExecutionDetails property for this object.
+     * @return
      */
     public ExecutionDetails getExecutionDetails() {
         return this.executionDetails;
     }
 
     /**
-     * Sets the value of the ExecutionDetails property for this object.
-     * 
      * @param executionDetails
-     *        The new value for the ExecutionDetails property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

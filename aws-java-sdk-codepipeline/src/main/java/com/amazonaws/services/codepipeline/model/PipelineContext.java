@@ -130,29 +130,21 @@ public class PipelineContext implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Action property for this object.
-     * 
      * @param action
-     *        The new value for the Action property for this object.
      */
     public void setAction(ActionContext action) {
         this.action = action;
     }
 
     /**
-     * Returns the value of the Action property for this object.
-     * 
-     * @return The value of the Action property for this object.
+     * @return
      */
     public ActionContext getAction() {
         return this.action;
     }
 
     /**
-     * Sets the value of the Action property for this object.
-     * 
      * @param action
-     *        The new value for the Action property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

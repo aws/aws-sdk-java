@@ -339,29 +339,21 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ApplicationMetrics property for this object.
-     * 
      * @param applicationMetrics
-     *        The new value for the ApplicationMetrics property for this object.
      */
     public void setApplicationMetrics(ApplicationMetrics applicationMetrics) {
         this.applicationMetrics = applicationMetrics;
     }
 
     /**
-     * Returns the value of the ApplicationMetrics property for this object.
-     * 
-     * @return The value of the ApplicationMetrics property for this object.
+     * @return
      */
     public ApplicationMetrics getApplicationMetrics() {
         return this.applicationMetrics;
     }
 
     /**
-     * Sets the value of the ApplicationMetrics property for this object.
-     * 
      * @param applicationMetrics
-     *        The new value for the ApplicationMetrics property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -372,29 +364,21 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the System property for this object.
-     * 
      * @param system
-     *        The new value for the System property for this object.
      */
     public void setSystem(SystemStatus system) {
         this.system = system;
     }
 
     /**
-     * Returns the value of the System property for this object.
-     * 
-     * @return The value of the System property for this object.
+     * @return
      */
     public SystemStatus getSystem() {
         return this.system;
     }
 
     /**
-     * Sets the value of the System property for this object.
-     * 
      * @param system
-     *        The new value for the System property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

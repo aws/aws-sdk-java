@@ -1,23 +1,24 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 
 /**
- * Create Cachedi S C S I Volume Result
+ * 
  */
 public class CreateCachediSCSIVolumeResult implements Serializable, Cloneable {
 
@@ -26,86 +27,50 @@ public class CreateCachediSCSIVolumeResult implements Serializable, Cloneable {
     private String targetARN;
 
     /**
-     * Returns the value of the VolumeARN property for this object.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @return The value of the VolumeARN property for this object.
-     */
-    public String getVolumeARN() {
-        return volumeARN;
-    }
-    
-    /**
-     * Sets the value of the VolumeARN property for this object.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @param volumeARN The new value for the VolumeARN property for this object.
+     * @param volumeARN
      */
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
-    
+
     /**
-     * Sets the value of the VolumeARN property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @param volumeARN The new value for the VolumeARN property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * @return
+     */
+    public String getVolumeARN() {
+        return this.volumeARN;
+    }
+
+    /**
+     * @param volumeARN
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateCachediSCSIVolumeResult withVolumeARN(String volumeARN) {
-        this.volumeARN = volumeARN;
+        setVolumeARN(volumeARN);
         return this;
     }
 
     /**
-     * Returns the value of the TargetARN property for this object.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 800<br/>
-     *
-     * @return The value of the TargetARN property for this object.
-     */
-    public String getTargetARN() {
-        return targetARN;
-    }
-    
-    /**
-     * Sets the value of the TargetARN property for this object.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 800<br/>
-     *
-     * @param targetARN The new value for the TargetARN property for this object.
+     * @param targetARN
      */
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
-    
+
     /**
-     * Sets the value of the TargetARN property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 800<br/>
-     *
-     * @param targetARN The new value for the TargetARN property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * @return
+     */
+    public String getTargetARN() {
+        return this.targetARN;
+    }
+
+    /**
+     * @param targetARN
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateCachediSCSIVolumeResult withTargetARN(String targetARN) {
-        this.targetARN = targetARN;
+        setTargetARN(targetARN);
         return this;
     }
 
@@ -121,50 +86,57 @@ public class CreateCachediSCSIVolumeResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");
-        if (getTargetARN() != null) sb.append("TargetARN: " + getTargetARN() );
+        if (getVolumeARN() != null)
+            sb.append("VolumeARN: " + getVolumeARN() + ",");
+        if (getTargetARN() != null)
+            sb.append("TargetARN: " + getTargetARN());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateCachediSCSIVolumeResult == false)
+            return false;
+        CreateCachediSCSIVolumeResult other = (CreateCachediSCSIVolumeResult) obj;
+        if (other.getVolumeARN() == null ^ this.getVolumeARN() == null)
+            return false;
+        if (other.getVolumeARN() != null
+                && other.getVolumeARN().equals(this.getVolumeARN()) == false)
+            return false;
+        if (other.getTargetARN() == null ^ this.getTargetARN() == null)
+            return false;
+        if (other.getTargetARN() != null
+                && other.getTargetARN().equals(this.getTargetARN()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode()); 
-        hashCode = prime * hashCode + ((getTargetARN() == null) ? 0 : getTargetARN().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
+        hashCode = prime * hashCode
+                + ((getTargetARN() == null) ? 0 : getTargetARN().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateCachediSCSIVolumeResult == false) return false;
-        CreateCachediSCSIVolumeResult other = (CreateCachediSCSIVolumeResult)obj;
-        
-        if (other.getVolumeARN() == null ^ this.getVolumeARN() == null) return false;
-        if (other.getVolumeARN() != null && other.getVolumeARN().equals(this.getVolumeARN()) == false) return false; 
-        if (other.getTargetARN() == null ^ this.getTargetARN() == null) return false;
-        if (other.getTargetARN() != null && other.getTargetARN().equals(this.getTargetARN()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateCachediSCSIVolumeResult clone() {
         try {
             return (CreateCachediSCSIVolumeResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

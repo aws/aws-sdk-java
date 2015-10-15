@@ -207,7 +207,7 @@
           "variableName" : "streamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -258,7 +258,7 @@
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -309,7 +309,7 @@
           "variableName" : "exclusiveStartShardId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -387,7 +387,7 @@
             "variableName" : "exclusiveStartShardId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -439,7 +439,7 @@
             "variableName" : "streamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -491,7 +491,7 @@
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -555,7 +555,7 @@
           "variableName" : "startingSequenceNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -606,7 +606,7 @@
           "variableName" : "endingSequenceNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -680,7 +680,7 @@
             "variableName" : "startingSequenceNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -732,7 +732,7 @@
             "variableName" : "endingSequenceNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -771,7 +771,7 @@
     },
     "ShardIteratorType" : {
       "c2jName" : "ShardIteratorType",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "ShardIteratorType",
       "deprecated" : false,
       "required" : null,
@@ -817,7 +817,7 @@
     },
     "StreamViewType" : {
       "c2jName" : "StreamViewType",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "StreamViewType",
       "deprecated" : false,
       "required" : null,
@@ -888,7 +888,7 @@
           "variableName" : "shardId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -939,7 +939,7 @@
           "variableName" : "sequenceNumberRange",
           "variableType" : "SequenceNumberRange",
           "variableDeclarationType" : "SequenceNumberRange",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "SequenceNumberRange",
           "variableSetterType" : "SequenceNumberRange"
         },
@@ -990,7 +990,7 @@
           "variableName" : "parentShardId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1064,7 +1064,7 @@
             "variableName" : "parentShardId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1116,7 +1116,7 @@
             "variableName" : "sequenceNumberRange",
             "variableType" : "SequenceNumberRange",
             "variableDeclarationType" : "SequenceNumberRange",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "SequenceNumberRange",
             "variableSetterType" : "SequenceNumberRange"
           },
@@ -1168,7 +1168,7 @@
             "variableName" : "shardId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1263,7 +1263,7 @@
           "variableName" : "s",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1314,7 +1314,7 @@
           "variableName" : "n",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1365,7 +1365,7 @@
           "variableName" : "b",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -1416,7 +1416,7 @@
           "variableName" : "sS",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -1480,7 +1480,7 @@
           "variableName" : "nS",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -1544,7 +1544,7 @@
           "variableName" : "bS",
           "variableType" : "java.util.List<java.nio.ByteBuffer>",
           "variableDeclarationType" : "java.util.List<java.nio.ByteBuffer>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "ByteBuffer>",
           "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>"
         },
@@ -1608,7 +1608,7 @@
           "variableName" : "m",
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Map<String,AttributeValue>",
           "variableSetterType" : "java.util.Map<String,AttributeValue>"
         },
@@ -1641,7 +1641,7 @@
           "valueType" : "AttributeValue",
           "valueLocationName" : "value",
           "valueModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Value",
             "c2jName" : "value",
             "c2jShape" : "AttributeValue",
@@ -1649,7 +1649,7 @@
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "AttributeValue",
               "variableSetterType" : "AttributeValue"
             },
@@ -1657,7 +1657,7 @@
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "AttributeValue",
               "variableSetterType" : "AttributeValue"
             },
@@ -1687,16 +1687,16 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Value property for this object.\n@return The value of the Value property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param value */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -1724,7 +1724,7 @@
           "variableName" : "l",
           "variableType" : "java.util.List<AttributeValue>",
           "variableDeclarationType" : "java.util.List<AttributeValue>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<AttributeValue>",
           "variableSetterType" : "java.util.Collection<AttributeValue>"
         },
@@ -1753,7 +1753,7 @@
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "AttributeValue",
@@ -1761,7 +1761,7 @@
               "variableName" : "member",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "AttributeValue",
               "variableSetterType" : "AttributeValue"
             },
@@ -1769,7 +1769,7 @@
               "variableName" : "member",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "AttributeValue",
               "variableSetterType" : "AttributeValue"
             },
@@ -1799,10 +1799,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -1839,7 +1839,7 @@
           "variableName" : "nULLValue",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -1890,7 +1890,7 @@
           "variableName" : "bOOL",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -1964,7 +1964,7 @@
             "variableName" : "sS",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -2029,7 +2029,7 @@
             "variableName" : "bS",
             "variableType" : "java.util.List<java.nio.ByteBuffer>",
             "variableDeclarationType" : "java.util.List<java.nio.ByteBuffer>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "ByteBuffer>",
             "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>"
           },
@@ -2094,7 +2094,7 @@
             "variableName" : "b",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -2146,7 +2146,7 @@
             "variableName" : "s",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2198,7 +2198,7 @@
             "variableName" : "l",
             "variableType" : "java.util.List<AttributeValue>",
             "variableDeclarationType" : "java.util.List<AttributeValue>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<AttributeValue>",
             "variableSetterType" : "java.util.Collection<AttributeValue>"
           },
@@ -2227,7 +2227,7 @@
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "AttributeValue",
@@ -2235,7 +2235,7 @@
                 "variableName" : "member",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "AttributeValue",
                 "variableSetterType" : "AttributeValue"
               },
@@ -2243,7 +2243,7 @@
                 "variableName" : "member",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "AttributeValue",
                 "variableSetterType" : "AttributeValue"
               },
@@ -2273,10 +2273,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -2314,7 +2314,7 @@
             "variableName" : "m",
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Map<String,AttributeValue>",
             "variableSetterType" : "java.util.Map<String,AttributeValue>"
           },
@@ -2347,7 +2347,7 @@
             "valueType" : "AttributeValue",
             "valueLocationName" : "value",
             "valueModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Value",
               "c2jName" : "value",
               "c2jShape" : "AttributeValue",
@@ -2355,7 +2355,7 @@
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "AttributeValue",
                 "variableSetterType" : "AttributeValue"
               },
@@ -2363,7 +2363,7 @@
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "AttributeValue",
                 "variableSetterType" : "AttributeValue"
               },
@@ -2393,16 +2393,16 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Value property for this object.\n@return The value of the Value property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param value */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -2431,7 +2431,7 @@
             "variableName" : "nS",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -2496,7 +2496,7 @@
             "variableName" : "n",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2548,7 +2548,7 @@
             "variableName" : "nULLValue",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -2600,7 +2600,7 @@
             "variableName" : "bOOL",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -2639,7 +2639,7 @@
     },
     "KeyType" : {
       "c2jName" : "KeyType",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "KeyType",
       "deprecated" : false,
       "required" : null,
@@ -2704,7 +2704,7 @@
           "variableName" : "streamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2755,7 +2755,7 @@
           "variableName" : "streamLabel",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2806,7 +2806,7 @@
           "variableName" : "streamStatus",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2857,7 +2857,7 @@
           "variableName" : "streamViewType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2908,7 +2908,7 @@
           "variableName" : "creationRequestDateTime",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -2959,7 +2959,7 @@
           "variableName" : "tableName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3010,7 +3010,7 @@
           "variableName" : "keySchema",
           "variableType" : "java.util.List<KeySchemaElement>",
           "variableDeclarationType" : "java.util.List<KeySchemaElement>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<KeySchemaElement>",
           "variableSetterType" : "java.util.Collection<KeySchemaElement>"
         },
@@ -3039,7 +3039,7 @@
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "KeySchemaElement",
@@ -3047,7 +3047,7 @@
               "variableName" : "member",
               "variableType" : "KeySchemaElement",
               "variableDeclarationType" : "KeySchemaElement",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "KeySchemaElement",
               "variableSetterType" : "KeySchemaElement"
             },
@@ -3055,7 +3055,7 @@
               "variableName" : "member",
               "variableType" : "KeySchemaElement",
               "variableDeclarationType" : "KeySchemaElement",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "KeySchemaElement",
               "variableSetterType" : "KeySchemaElement"
             },
@@ -3085,10 +3085,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -3125,7 +3125,7 @@
           "variableName" : "shards",
           "variableType" : "java.util.List<Shard>",
           "variableDeclarationType" : "java.util.List<Shard>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<Shard>",
           "variableSetterType" : "java.util.Collection<Shard>"
         },
@@ -3154,7 +3154,7 @@
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "Shard",
@@ -3162,7 +3162,7 @@
               "variableName" : "member",
               "variableType" : "Shard",
               "variableDeclarationType" : "Shard",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Shard",
               "variableSetterType" : "Shard"
             },
@@ -3170,7 +3170,7 @@
               "variableName" : "member",
               "variableType" : "Shard",
               "variableDeclarationType" : "Shard",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Shard",
               "variableSetterType" : "Shard"
             },
@@ -3200,10 +3200,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -3240,7 +3240,7 @@
           "variableName" : "lastEvaluatedShardId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3314,7 +3314,7 @@
             "variableName" : "streamLabel",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3366,7 +3366,7 @@
             "variableName" : "shards",
             "variableType" : "java.util.List<Shard>",
             "variableDeclarationType" : "java.util.List<Shard>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<Shard>",
             "variableSetterType" : "java.util.Collection<Shard>"
           },
@@ -3395,7 +3395,7 @@
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "Shard",
@@ -3403,7 +3403,7 @@
                 "variableName" : "member",
                 "variableType" : "Shard",
                 "variableDeclarationType" : "Shard",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Shard",
                 "variableSetterType" : "Shard"
               },
@@ -3411,7 +3411,7 @@
                 "variableName" : "member",
                 "variableType" : "Shard",
                 "variableDeclarationType" : "Shard",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Shard",
                 "variableSetterType" : "Shard"
               },
@@ -3441,10 +3441,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -3482,7 +3482,7 @@
             "variableName" : "tableName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3534,7 +3534,7 @@
             "variableName" : "keySchema",
             "variableType" : "java.util.List<KeySchemaElement>",
             "variableDeclarationType" : "java.util.List<KeySchemaElement>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<KeySchemaElement>",
             "variableSetterType" : "java.util.Collection<KeySchemaElement>"
           },
@@ -3563,7 +3563,7 @@
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "KeySchemaElement",
@@ -3571,7 +3571,7 @@
                 "variableName" : "member",
                 "variableType" : "KeySchemaElement",
                 "variableDeclarationType" : "KeySchemaElement",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "KeySchemaElement",
                 "variableSetterType" : "KeySchemaElement"
               },
@@ -3579,7 +3579,7 @@
                 "variableName" : "member",
                 "variableType" : "KeySchemaElement",
                 "variableDeclarationType" : "KeySchemaElement",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "KeySchemaElement",
                 "variableSetterType" : "KeySchemaElement"
               },
@@ -3609,10 +3609,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -3650,7 +3650,7 @@
             "variableName" : "streamViewType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3702,7 +3702,7 @@
             "variableName" : "streamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3754,7 +3754,7 @@
             "variableName" : "creationRequestDateTime",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -3806,7 +3806,7 @@
             "variableName" : "lastEvaluatedShardId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3858,7 +3858,7 @@
             "variableName" : "streamStatus",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3953,7 +3953,7 @@
           "variableName" : "shardIterator",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4004,7 +4004,7 @@
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -4082,7 +4082,7 @@
             "variableName" : "shardIterator",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4134,7 +4134,7 @@
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -4198,7 +4198,7 @@
           "variableName" : "records",
           "variableType" : "java.util.List<Record>",
           "variableDeclarationType" : "java.util.List<Record>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<Record>",
           "variableSetterType" : "java.util.Collection<Record>"
         },
@@ -4227,7 +4227,7 @@
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "Record",
@@ -4235,7 +4235,7 @@
               "variableName" : "member",
               "variableType" : "Record",
               "variableDeclarationType" : "Record",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Record",
               "variableSetterType" : "Record"
             },
@@ -4243,7 +4243,7 @@
               "variableName" : "member",
               "variableType" : "Record",
               "variableDeclarationType" : "Record",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Record",
               "variableSetterType" : "Record"
             },
@@ -4273,10 +4273,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -4313,7 +4313,7 @@
           "variableName" : "nextShardIterator",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4387,7 +4387,7 @@
             "variableName" : "nextShardIterator",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4439,7 +4439,7 @@
             "variableName" : "records",
             "variableType" : "java.util.List<Record>",
             "variableDeclarationType" : "java.util.List<Record>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<Record>",
             "variableSetterType" : "java.util.Collection<Record>"
           },
@@ -4468,7 +4468,7 @@
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "Record",
@@ -4476,7 +4476,7 @@
                 "variableName" : "member",
                 "variableType" : "Record",
                 "variableDeclarationType" : "Record",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Record",
                 "variableSetterType" : "Record"
               },
@@ -4484,7 +4484,7 @@
                 "variableName" : "member",
                 "variableType" : "Record",
                 "variableDeclarationType" : "Record",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Record",
                 "variableSetterType" : "Record"
               },
@@ -4514,10 +4514,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -4567,7 +4567,7 @@
           "variableName" : "streamDescription",
           "variableType" : "StreamDescription",
           "variableDeclarationType" : "StreamDescription",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "StreamDescription",
           "variableSetterType" : "StreamDescription"
         },
@@ -4641,7 +4641,7 @@
             "variableName" : "streamDescription",
             "variableType" : "StreamDescription",
             "variableDeclarationType" : "StreamDescription",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "StreamDescription",
             "variableSetterType" : "StreamDescription"
           },
@@ -4705,7 +4705,7 @@
           "variableName" : "tableName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4756,7 +4756,7 @@
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -4807,7 +4807,7 @@
           "variableName" : "exclusiveStartStreamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4885,7 +4885,7 @@
             "variableName" : "tableName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4937,7 +4937,7 @@
             "variableName" : "exclusiveStartStreamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4989,7 +4989,7 @@
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -5053,7 +5053,7 @@
           "variableName" : "streams",
           "variableType" : "java.util.List<Stream>",
           "variableDeclarationType" : "java.util.List<Stream>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "List<Stream>",
           "variableSetterType" : "java.util.Collection<Stream>"
         },
@@ -5082,7 +5082,7 @@
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Member",
             "c2jName" : "member",
             "c2jShape" : "Stream",
@@ -5090,7 +5090,7 @@
               "variableName" : "member",
               "variableType" : "Stream",
               "variableDeclarationType" : "Stream",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Stream",
               "variableSetterType" : "Stream"
             },
@@ -5098,7 +5098,7 @@
               "variableName" : "member",
               "variableType" : "Stream",
               "variableDeclarationType" : "Stream",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "Stream",
               "variableSetterType" : "Stream"
             },
@@ -5128,10 +5128,10 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
@@ -5168,7 +5168,7 @@
           "variableName" : "lastEvaluatedStreamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5242,7 +5242,7 @@
             "variableName" : "lastEvaluatedStreamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5294,7 +5294,7 @@
             "variableName" : "streams",
             "variableType" : "java.util.List<Stream>",
             "variableDeclarationType" : "java.util.List<Stream>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "List<Stream>",
             "variableSetterType" : "java.util.Collection<Stream>"
           },
@@ -5323,7 +5323,7 @@
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Member",
               "c2jName" : "member",
               "c2jShape" : "Stream",
@@ -5331,7 +5331,7 @@
                 "variableName" : "member",
                 "variableType" : "Stream",
                 "variableDeclarationType" : "Stream",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Stream",
                 "variableSetterType" : "Stream"
               },
@@ -5339,7 +5339,7 @@
                 "variableName" : "member",
                 "variableType" : "Stream",
                 "variableDeclarationType" : "Stream",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "Stream",
                 "variableSetterType" : "Stream"
               },
@@ -5369,10 +5369,10 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Member property for this object.\n@return The value of the Member property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Member property for this object.\n@param member The new value for the Member property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
@@ -5422,7 +5422,7 @@
           "variableName" : "streamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5473,7 +5473,7 @@
           "variableName" : "shardId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5524,7 +5524,7 @@
           "variableName" : "shardIteratorType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5575,7 +5575,7 @@
           "variableName" : "sequenceNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5653,7 +5653,7 @@
             "variableName" : "shardIteratorType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5705,7 +5705,7 @@
             "variableName" : "shardId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5757,7 +5757,7 @@
             "variableName" : "sequenceNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5809,7 +5809,7 @@
             "variableName" : "streamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5873,7 +5873,7 @@
           "variableName" : "shardIterator",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5947,7 +5947,7 @@
             "variableName" : "shardIterator",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6011,7 +6011,7 @@
           "variableName" : "attributeName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6062,7 +6062,7 @@
           "variableName" : "keyType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6136,7 +6136,7 @@
             "variableName" : "keyType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6188,7 +6188,7 @@
             "variableName" : "attributeName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6252,7 +6252,7 @@
           "variableName" : "eventID",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6303,7 +6303,7 @@
           "variableName" : "eventName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6354,7 +6354,7 @@
           "variableName" : "eventVersion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6405,7 +6405,7 @@
           "variableName" : "eventSource",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6456,7 +6456,7 @@
           "variableName" : "awsRegion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6507,7 +6507,7 @@
           "variableName" : "dynamodb",
           "variableType" : "StreamRecord",
           "variableDeclarationType" : "StreamRecord",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "StreamRecord",
           "variableSetterType" : "StreamRecord"
         },
@@ -6581,7 +6581,7 @@
             "variableName" : "eventName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6633,7 +6633,7 @@
             "variableName" : "dynamodb",
             "variableType" : "StreamRecord",
             "variableDeclarationType" : "StreamRecord",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "StreamRecord",
             "variableSetterType" : "StreamRecord"
           },
@@ -6685,7 +6685,7 @@
             "variableName" : "eventSource",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6737,7 +6737,7 @@
             "variableName" : "eventVersion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6789,7 +6789,7 @@
             "variableName" : "eventID",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6841,7 +6841,7 @@
             "variableName" : "awsRegion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6905,7 +6905,7 @@
           "variableName" : "streamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6956,7 +6956,7 @@
           "variableName" : "tableName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7007,7 +7007,7 @@
           "variableName" : "streamLabel",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7081,7 +7081,7 @@
             "variableName" : "streamLabel",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7133,7 +7133,7 @@
             "variableName" : "tableName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7185,7 +7185,7 @@
             "variableName" : "streamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7280,7 +7280,7 @@
           "variableName" : "keys",
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Map<String,AttributeValue>",
           "variableSetterType" : "java.util.Map<String,AttributeValue>"
         },
@@ -7313,7 +7313,7 @@
           "valueType" : "AttributeValue",
           "valueLocationName" : "value",
           "valueModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Value",
             "c2jName" : "value",
             "c2jShape" : "AttributeValue",
@@ -7321,7 +7321,7 @@
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "AttributeValue",
               "variableSetterType" : "AttributeValue"
             },
@@ -7329,7 +7329,7 @@
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "AttributeValue",
               "variableSetterType" : "AttributeValue"
             },
@@ -7359,16 +7359,16 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Value property for this object.\n@return The value of the Value property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param value */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7396,7 +7396,7 @@
           "variableName" : "newImage",
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Map<String,AttributeValue>",
           "variableSetterType" : "java.util.Map<String,AttributeValue>"
         },
@@ -7429,7 +7429,7 @@
           "valueType" : "AttributeValue",
           "valueLocationName" : "value",
           "valueModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Value",
             "c2jName" : "value",
             "c2jShape" : "AttributeValue",
@@ -7437,7 +7437,7 @@
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "AttributeValue",
               "variableSetterType" : "AttributeValue"
             },
@@ -7445,7 +7445,7 @@
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "AttributeValue",
               "variableSetterType" : "AttributeValue"
             },
@@ -7475,16 +7475,16 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Value property for this object.\n@return The value of the Value property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param value */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7512,7 +7512,7 @@
           "variableName" : "oldImage",
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Map<String,AttributeValue>",
           "variableSetterType" : "java.util.Map<String,AttributeValue>"
         },
@@ -7545,7 +7545,7 @@
           "valueType" : "AttributeValue",
           "valueLocationName" : "value",
           "valueModel" : {
-            "documentation" : null,
+            "documentation" : "",
             "name" : "Value",
             "c2jName" : "value",
             "c2jShape" : "AttributeValue",
@@ -7553,7 +7553,7 @@
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "AttributeValue",
               "variableSetterType" : "AttributeValue"
             },
@@ -7561,7 +7561,7 @@
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
-              "documentation" : null,
+              "documentation" : "",
               "simpleType" : "AttributeValue",
               "variableSetterType" : "AttributeValue"
             },
@@ -7591,16 +7591,16 @@
             "simple" : false,
             "list" : false,
             "map" : false,
-            "setterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.*/",
-            "getterDocumentation" : "/**Returns the value of the Value property for this object.\n@return The value of the Value property for this object.*/",
-            "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "setterDocumentation" : "/**\n@param value */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7628,7 +7628,7 @@
           "variableName" : "sequenceNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7679,7 +7679,7 @@
           "variableName" : "sizeBytes",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -7730,7 +7730,7 @@
           "variableName" : "streamViewType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7804,7 +7804,7 @@
             "variableName" : "newImage",
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Map<String,AttributeValue>",
             "variableSetterType" : "java.util.Map<String,AttributeValue>"
           },
@@ -7837,7 +7837,7 @@
             "valueType" : "AttributeValue",
             "valueLocationName" : "value",
             "valueModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Value",
               "c2jName" : "value",
               "c2jShape" : "AttributeValue",
@@ -7845,7 +7845,7 @@
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "AttributeValue",
                 "variableSetterType" : "AttributeValue"
               },
@@ -7853,7 +7853,7 @@
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "AttributeValue",
                 "variableSetterType" : "AttributeValue"
               },
@@ -7883,16 +7883,16 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Value property for this object.\n@return The value of the Value property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param value */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7921,7 +7921,7 @@
             "variableName" : "sizeBytes",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -7973,7 +7973,7 @@
             "variableName" : "streamViewType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8025,7 +8025,7 @@
             "variableName" : "sequenceNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8077,7 +8077,7 @@
             "variableName" : "oldImage",
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Map<String,AttributeValue>",
             "variableSetterType" : "java.util.Map<String,AttributeValue>"
           },
@@ -8110,7 +8110,7 @@
             "valueType" : "AttributeValue",
             "valueLocationName" : "value",
             "valueModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Value",
               "c2jName" : "value",
               "c2jShape" : "AttributeValue",
@@ -8118,7 +8118,7 @@
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "AttributeValue",
                 "variableSetterType" : "AttributeValue"
               },
@@ -8126,7 +8126,7 @@
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "AttributeValue",
                 "variableSetterType" : "AttributeValue"
               },
@@ -8156,16 +8156,16 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Value property for this object.\n@return The value of the Value property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param value */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8194,7 +8194,7 @@
             "variableName" : "keys",
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Map<String,AttributeValue>",
             "variableSetterType" : "java.util.Map<String,AttributeValue>"
           },
@@ -8227,7 +8227,7 @@
             "valueType" : "AttributeValue",
             "valueLocationName" : "value",
             "valueModel" : {
-              "documentation" : null,
+              "documentation" : "",
               "name" : "Value",
               "c2jName" : "value",
               "c2jShape" : "AttributeValue",
@@ -8235,7 +8235,7 @@
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "AttributeValue",
                 "variableSetterType" : "AttributeValue"
               },
@@ -8243,7 +8243,7 @@
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
-                "documentation" : null,
+                "documentation" : "",
                 "simpleType" : "AttributeValue",
                 "variableSetterType" : "AttributeValue"
               },
@@ -8273,16 +8273,16 @@
               "simple" : false,
               "list" : false,
               "map" : false,
-              "setterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.*/",
-              "getterDocumentation" : "/**Returns the value of the Value property for this object.\n@return The value of the Value property for this object.*/",
-              "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "setterDocumentation" : "/**\n@param value */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8360,7 +8360,7 @@
     },
     "OperationType" : {
       "c2jName" : "OperationType",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "OperationType",
       "deprecated" : false,
       "required" : null,
@@ -8403,7 +8403,7 @@
     },
     "StreamStatus" : {
       "c2jName" : "StreamStatus",
-      "documentation" : null,
+      "documentation" : "",
       "shapeName" : "StreamStatus",
       "deprecated" : false,
       "required" : null,

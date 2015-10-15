@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.datapipeline.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,148 +40,102 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Validate Pipeline Definition Request Marshaller
+ * ValidatePipelineDefinitionRequest Marshaller
  */
-public class ValidatePipelineDefinitionRequestMarshaller implements Marshaller<Request<ValidatePipelineDefinitionRequest>, ValidatePipelineDefinitionRequest> {
+public class ValidatePipelineDefinitionRequestMarshaller
+        implements
+        Marshaller<Request<ValidatePipelineDefinitionRequest>, ValidatePipelineDefinitionRequest> {
 
-    public Request<ValidatePipelineDefinitionRequest> marshall(ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest) {
+    public Request<ValidatePipelineDefinitionRequest> marshall(
+            ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest) {
+
         if (validatePipelineDefinitionRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<ValidatePipelineDefinitionRequest> request = new DefaultRequest<ValidatePipelineDefinitionRequest>(validatePipelineDefinitionRequest, "DataPipeline");
-        String target = "DataPipeline.ValidatePipelineDefinition";
-        request.addHeader("X-Amz-Target", target);
+        Request<ValidatePipelineDefinitionRequest> request = new DefaultRequest<ValidatePipelineDefinitionRequest>(
+                validatePipelineDefinitionRequest, "DataPipeline");
+        request.addHeader("X-Amz-Target",
+                "DataPipeline.ValidatePipelineDefinition");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (validatePipelineDefinitionRequest.getPipelineId() != null) {
-                jsonWriter.key("pipelineId").value(validatePipelineDefinitionRequest.getPipelineId());
+                jsonWriter.key("pipelineId").value(
+                        validatePipelineDefinitionRequest.getPipelineId());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject> pipelineObjectsList = (com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject>)(validatePipelineDefinitionRequest.getPipelineObjects());
-            if (pipelineObjectsList != null && !(pipelineObjectsList.isAutoConstruct() && pipelineObjectsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<PipelineObject> pipelineObjectsList = (com.amazonaws.internal.SdkInternalList<PipelineObject>) validatePipelineDefinitionRequest
+                    .getPipelineObjects();
+            if (!pipelineObjectsList.isEmpty()
+                    || !pipelineObjectsList.isAutoConstruct()) {
                 jsonWriter.key("pipelineObjects");
                 jsonWriter.array();
-
                 for (PipelineObject pipelineObjectsListValue : pipelineObjectsList) {
                     if (pipelineObjectsListValue != null) {
-                        jsonWriter.object();
-                        if (pipelineObjectsListValue.getId() != null) {
-                            jsonWriter.key("id").value(pipelineObjectsListValue.getId());
-                        }
-                        if (pipelineObjectsListValue.getName() != null) {
-                            jsonWriter.key("name").value(pipelineObjectsListValue.getName());
-                        }
 
-                        com.amazonaws.internal.ListWithAutoConstructFlag<Field> fieldsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Field>)(pipelineObjectsListValue.getFields());
-                        if (fieldsList != null && !(fieldsList.isAutoConstruct() && fieldsList.isEmpty())) {
-
-                            jsonWriter.key("fields");
-                            jsonWriter.array();
-
-                            for (Field fieldsListValue : fieldsList) {
-                                if (fieldsListValue != null) {
-                                    jsonWriter.object();
-                                    if (fieldsListValue.getKey() != null) {
-                                        jsonWriter.key("key").value(fieldsListValue.getKey());
-                                    }
-                                    if (fieldsListValue.getStringValue() != null) {
-                                        jsonWriter.key("stringValue").value(fieldsListValue.getStringValue());
-                                    }
-                                    if (fieldsListValue.getRefValue() != null) {
-                                        jsonWriter.key("refValue").value(fieldsListValue.getRefValue());
-                                    }
-                                    jsonWriter.endObject();
-                                }
-                            }
-                            jsonWriter.endArray();
-                        }
-                        jsonWriter.endObject();
+                        PipelineObjectJsonMarshaller.getInstance().marshall(
+                                pipelineObjectsListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<ParameterObject> parameterObjectsList = (com.amazonaws.internal.ListWithAutoConstructFlag<ParameterObject>)(validatePipelineDefinitionRequest.getParameterObjects());
-            if (parameterObjectsList != null && !(parameterObjectsList.isAutoConstruct() && parameterObjectsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<ParameterObject> parameterObjectsList = (com.amazonaws.internal.SdkInternalList<ParameterObject>) validatePipelineDefinitionRequest
+                    .getParameterObjects();
+            if (!parameterObjectsList.isEmpty()
+                    || !parameterObjectsList.isAutoConstruct()) {
                 jsonWriter.key("parameterObjects");
                 jsonWriter.array();
-
                 for (ParameterObject parameterObjectsListValue : parameterObjectsList) {
                     if (parameterObjectsListValue != null) {
-                        jsonWriter.object();
-                        if (parameterObjectsListValue.getId() != null) {
-                            jsonWriter.key("id").value(parameterObjectsListValue.getId());
-                        }
 
-                        com.amazonaws.internal.ListWithAutoConstructFlag<ParameterAttribute> attributesList = (com.amazonaws.internal.ListWithAutoConstructFlag<ParameterAttribute>)(parameterObjectsListValue.getAttributes());
-                        if (attributesList != null && !(attributesList.isAutoConstruct() && attributesList.isEmpty())) {
-
-                            jsonWriter.key("attributes");
-                            jsonWriter.array();
-
-                            for (ParameterAttribute attributesListValue : attributesList) {
-                                if (attributesListValue != null) {
-                                    jsonWriter.object();
-                                    if (attributesListValue.getKey() != null) {
-                                        jsonWriter.key("key").value(attributesListValue.getKey());
-                                    }
-                                    if (attributesListValue.getStringValue() != null) {
-                                        jsonWriter.key("stringValue").value(attributesListValue.getStringValue());
-                                    }
-                                    jsonWriter.endObject();
-                                }
-                            }
-                            jsonWriter.endArray();
-                        }
-                        jsonWriter.endObject();
+                        ParameterObjectJsonMarshaller.getInstance().marshall(
+                                parameterObjectsListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue> parameterValuesList = (com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue>)(validatePipelineDefinitionRequest.getParameterValues());
-            if (parameterValuesList != null && !(parameterValuesList.isAutoConstruct() && parameterValuesList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<ParameterValue> parameterValuesList = (com.amazonaws.internal.SdkInternalList<ParameterValue>) validatePipelineDefinitionRequest
+                    .getParameterValues();
+            if (!parameterValuesList.isEmpty()
+                    || !parameterValuesList.isAutoConstruct()) {
                 jsonWriter.key("parameterValues");
                 jsonWriter.array();
-
                 for (ParameterValue parameterValuesListValue : parameterValuesList) {
                     if (parameterValuesListValue != null) {
-                        jsonWriter.object();
-                        if (parameterValuesListValue.getId() != null) {
-                            jsonWriter.key("id").value(parameterValuesListValue.getId());
-                        }
-                        if (parameterValuesListValue.getStringValue() != null) {
-                            jsonWriter.key("stringValue").value(parameterValuesListValue.getStringValue());
-                        }
-                        jsonWriter.endObject();
+
+                        ParameterValueJsonMarshaller.getInstance().marshall(
+                                parameterValuesListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

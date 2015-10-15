@@ -1,250 +1,251 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeDeployments(DescribeDeploymentsRequest) DescribeDeployments operation}.
- * <p>
- * Requests a description of a specified set of deployments.
- * </p>
- * <p>
- * <b>NOTE:</b> You must specify at least one of the parameters.
- * </p>
- * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must
- * have a Show, Deploy, or Manage permissions level for the stack, or an
- * attached policy that explicitly grants permissions. For more
- * information on user permissions, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
- * .
- * </p>
- *
- * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeDeployments(DescribeDeploymentsRequest)
+ * 
  */
-public class DescribeDeploymentsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeDeploymentsRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The stack ID. If you include this parameter,
      * <code>DescribeDeployments</code> returns a description of the commands
      * associated with the specified stack.
+     * </p>
      */
     private String stackId;
-
     /**
+     * <p>
      * The app ID. If you include this parameter,
      * <code>DescribeDeployments</code> returns a description of the commands
      * associated with the specified app.
+     * </p>
      */
     private String appId;
-
     /**
+     * <p>
      * An array of deployment IDs to be described. If you include this
-     * parameter, <code>DescribeDeployments</code> returns a description of
-     * the specified deployments. Otherwise, it returns a description of
-     * every deployment.
+     * parameter, <code>DescribeDeployments</code> returns a description of the
+     * specified deployments. Otherwise, it returns a description of every
+     * deployment.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> deploymentIds;
+    private com.amazonaws.internal.SdkInternalList<String> deploymentIds;
 
     /**
+     * <p>
      * The stack ID. If you include this parameter,
      * <code>DescribeDeployments</code> returns a description of the commands
      * associated with the specified stack.
-     *
-     * @return The stack ID. If you include this parameter,
-     *         <code>DescribeDeployments</code> returns a description of the commands
-     *         associated with the specified stack.
-     */
-    public String getStackId() {
-        return stackId;
-    }
-    
-    /**
-     * The stack ID. If you include this parameter,
-     * <code>DescribeDeployments</code> returns a description of the commands
-     * associated with the specified stack.
-     *
-     * @param stackId The stack ID. If you include this parameter,
-     *         <code>DescribeDeployments</code> returns a description of the commands
-     *         associated with the specified stack.
+     * </p>
+     * 
+     * @param stackId
+     *        The stack ID. If you include this parameter,
+     *        <code>DescribeDeployments</code> returns a description of the
+     *        commands associated with the specified stack.
      */
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
-    
+
     /**
+     * <p>
      * The stack ID. If you include this parameter,
      * <code>DescribeDeployments</code> returns a description of the commands
      * associated with the specified stack.
+     * </p>
+     * 
+     * @return The stack ID. If you include this parameter,
+     *         <code>DescribeDeployments</code> returns a description of the
+     *         commands associated with the specified stack.
+     */
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stackId The stack ID. If you include this parameter,
-     *         <code>DescribeDeployments</code> returns a description of the commands
-     *         associated with the specified stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The stack ID. If you include this parameter,
+     * <code>DescribeDeployments</code> returns a description of the commands
+     * associated with the specified stack.
+     * </p>
+     * 
+     * @param stackId
+     *        The stack ID. If you include this parameter,
+     *        <code>DescribeDeployments</code> returns a description of the
+     *        commands associated with the specified stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeDeploymentsRequest withStackId(String stackId) {
-        this.stackId = stackId;
+        setStackId(stackId);
         return this;
     }
 
     /**
+     * <p>
      * The app ID. If you include this parameter,
      * <code>DescribeDeployments</code> returns a description of the commands
      * associated with the specified app.
-     *
-     * @return The app ID. If you include this parameter,
-     *         <code>DescribeDeployments</code> returns a description of the commands
-     *         associated with the specified app.
-     */
-    public String getAppId() {
-        return appId;
-    }
-    
-    /**
-     * The app ID. If you include this parameter,
-     * <code>DescribeDeployments</code> returns a description of the commands
-     * associated with the specified app.
-     *
-     * @param appId The app ID. If you include this parameter,
-     *         <code>DescribeDeployments</code> returns a description of the commands
-     *         associated with the specified app.
+     * </p>
+     * 
+     * @param appId
+     *        The app ID. If you include this parameter,
+     *        <code>DescribeDeployments</code> returns a description of the
+     *        commands associated with the specified app.
      */
     public void setAppId(String appId) {
         this.appId = appId;
     }
-    
+
     /**
+     * <p>
      * The app ID. If you include this parameter,
      * <code>DescribeDeployments</code> returns a description of the commands
      * associated with the specified app.
+     * </p>
+     * 
+     * @return The app ID. If you include this parameter,
+     *         <code>DescribeDeployments</code> returns a description of the
+     *         commands associated with the specified app.
+     */
+    public String getAppId() {
+        return this.appId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param appId The app ID. If you include this parameter,
-     *         <code>DescribeDeployments</code> returns a description of the commands
-     *         associated with the specified app.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The app ID. If you include this parameter,
+     * <code>DescribeDeployments</code> returns a description of the commands
+     * associated with the specified app.
+     * </p>
+     * 
+     * @param appId
+     *        The app ID. If you include this parameter,
+     *        <code>DescribeDeployments</code> returns a description of the
+     *        commands associated with the specified app.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeDeploymentsRequest withAppId(String appId) {
-        this.appId = appId;
+        setAppId(appId);
         return this;
     }
 
     /**
+     * <p>
      * An array of deployment IDs to be described. If you include this
-     * parameter, <code>DescribeDeployments</code> returns a description of
-     * the specified deployments. Otherwise, it returns a description of
-     * every deployment.
-     *
+     * parameter, <code>DescribeDeployments</code> returns a description of the
+     * specified deployments. Otherwise, it returns a description of every
+     * deployment.
+     * </p>
+     * 
      * @return An array of deployment IDs to be described. If you include this
-     *         parameter, <code>DescribeDeployments</code> returns a description of
-     *         the specified deployments. Otherwise, it returns a description of
-     *         every deployment.
+     *         parameter, <code>DescribeDeployments</code> returns a description
+     *         of the specified deployments. Otherwise, it returns a description
+     *         of every deployment.
      */
     public java.util.List<String> getDeploymentIds() {
         if (deploymentIds == null) {
-              deploymentIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              deploymentIds.setAutoConstruct(true);
+            deploymentIds = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return deploymentIds;
     }
-    
+
     /**
+     * <p>
      * An array of deployment IDs to be described. If you include this
-     * parameter, <code>DescribeDeployments</code> returns a description of
-     * the specified deployments. Otherwise, it returns a description of
-     * every deployment.
-     *
-     * @param deploymentIds An array of deployment IDs to be described. If you include this
-     *         parameter, <code>DescribeDeployments</code> returns a description of
-     *         the specified deployments. Otherwise, it returns a description of
-     *         every deployment.
+     * parameter, <code>DescribeDeployments</code> returns a description of the
+     * specified deployments. Otherwise, it returns a description of every
+     * deployment.
+     * </p>
+     * 
+     * @param deploymentIds
+     *        An array of deployment IDs to be described. If you include this
+     *        parameter, <code>DescribeDeployments</code> returns a description
+     *        of the specified deployments. Otherwise, it returns a description
+     *        of every deployment.
      */
     public void setDeploymentIds(java.util.Collection<String> deploymentIds) {
         if (deploymentIds == null) {
             this.deploymentIds = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> deploymentIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(deploymentIds.size());
-        deploymentIdsCopy.addAll(deploymentIds);
-        this.deploymentIds = deploymentIdsCopy;
+
+        this.deploymentIds = new com.amazonaws.internal.SdkInternalList<String>(
+                deploymentIds);
     }
-    
+
     /**
+     * <p>
      * An array of deployment IDs to be described. If you include this
-     * parameter, <code>DescribeDeployments</code> returns a description of
-     * the specified deployments. Otherwise, it returns a description of
-     * every deployment.
+     * parameter, <code>DescribeDeployments</code> returns a description of the
+     * specified deployments. Otherwise, it returns a description of every
+     * deployment.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDeploymentIds(java.util.Collection)} or {@link
-     * #withDeploymentIds(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param deploymentIds An array of deployment IDs to be described. If you include this
-     *         parameter, <code>DescribeDeployments</code> returns a description of
-     *         the specified deployments. Otherwise, it returns a description of
-     *         every deployment.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setDeploymentIds(java.util.Collection)} or
+     * {@link #withDeploymentIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param deploymentIds
+     *        An array of deployment IDs to be described. If you include this
+     *        parameter, <code>DescribeDeployments</code> returns a description
+     *        of the specified deployments. Otherwise, it returns a description
+     *        of every deployment.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeDeploymentsRequest withDeploymentIds(String... deploymentIds) {
-        if (getDeploymentIds() == null) setDeploymentIds(new java.util.ArrayList<String>(deploymentIds.length));
-        for (String value : deploymentIds) {
-            getDeploymentIds().add(value);
+        if (this.deploymentIds == null) {
+            setDeploymentIds(new com.amazonaws.internal.SdkInternalList<String>(
+                    deploymentIds.length));
+        }
+        for (String ele : deploymentIds) {
+            this.deploymentIds.add(ele);
         }
         return this;
     }
-    
-    /**
-     * An array of deployment IDs to be described. If you include this
-     * parameter, <code>DescribeDeployments</code> returns a description of
-     * the specified deployments. Otherwise, it returns a description of
-     * every deployment.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param deploymentIds An array of deployment IDs to be described. If you include this
-     *         parameter, <code>DescribeDeployments</code> returns a description of
-     *         the specified deployments. Otherwise, it returns a description of
-     *         every deployment.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribeDeploymentsRequest withDeploymentIds(java.util.Collection<String> deploymentIds) {
-        if (deploymentIds == null) {
-            this.deploymentIds = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> deploymentIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(deploymentIds.size());
-            deploymentIdsCopy.addAll(deploymentIds);
-            this.deploymentIds = deploymentIdsCopy;
-        }
 
+    /**
+     * <p>
+     * An array of deployment IDs to be described. If you include this
+     * parameter, <code>DescribeDeployments</code> returns a description of the
+     * specified deployments. Otherwise, it returns a description of every
+     * deployment.
+     * </p>
+     * 
+     * @param deploymentIds
+     *        An array of deployment IDs to be described. If you include this
+     *        parameter, <code>DescribeDeployments</code> returns a description
+     *        of the specified deployments. Otherwise, it returns a description
+     *        of every deployment.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeDeploymentsRequest withDeploymentIds(
+            java.util.Collection<String> deploymentIds) {
+        setDeploymentIds(deploymentIds);
         return this;
     }
 
@@ -260,46 +261,62 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
-        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");
-        if (getDeploymentIds() != null) sb.append("DeploymentIds: " + getDeploymentIds() );
+        if (getStackId() != null)
+            sb.append("StackId: " + getStackId() + ",");
+        if (getAppId() != null)
+            sb.append("AppId: " + getAppId() + ",");
+        if (getDeploymentIds() != null)
+            sb.append("DeploymentIds: " + getDeploymentIds());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeDeploymentsRequest == false)
+            return false;
+        DescribeDeploymentsRequest other = (DescribeDeploymentsRequest) obj;
+        if (other.getStackId() == null ^ this.getStackId() == null)
+            return false;
+        if (other.getStackId() != null
+                && other.getStackId().equals(this.getStackId()) == false)
+            return false;
+        if (other.getAppId() == null ^ this.getAppId() == null)
+            return false;
+        if (other.getAppId() != null
+                && other.getAppId().equals(this.getAppId()) == false)
+            return false;
+        if (other.getDeploymentIds() == null ^ this.getDeploymentIds() == null)
+            return false;
+        if (other.getDeploymentIds() != null
+                && other.getDeploymentIds().equals(this.getDeploymentIds()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
-        hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode()); 
-        hashCode = prime * hashCode + ((getDeploymentIds() == null) ? 0 : getDeploymentIds().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode
+                + ((getAppId() == null) ? 0 : getAppId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDeploymentIds() == null) ? 0 : getDeploymentIds()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeDeploymentsRequest == false) return false;
-        DescribeDeploymentsRequest other = (DescribeDeploymentsRequest)obj;
-        
-        if (other.getStackId() == null ^ this.getStackId() == null) return false;
-        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
-        if (other.getAppId() == null ^ this.getAppId() == null) return false;
-        if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false) return false; 
-        if (other.getDeploymentIds() == null ^ this.getDeploymentIds() == null) return false;
-        if (other.getDeploymentIds() != null && other.getDeploymentIds().equals(this.getDeploymentIds()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeDeploymentsRequest clone() {
-        
-            return (DescribeDeploymentsRequest) super.clone();
+        return (DescribeDeploymentsRequest) super.clone();
     }
-
 }
-    

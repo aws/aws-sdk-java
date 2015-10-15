@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Volume Configuration JSON Unmarshaller
+ * VolumeConfiguration JSON Unmarshaller
  */
-public class VolumeConfigurationJsonUnmarshaller implements Unmarshaller<VolumeConfiguration, JsonUnmarshallerContext> {
+public class VolumeConfigurationJsonUnmarshaller implements
+        Unmarshaller<VolumeConfiguration, JsonUnmarshallerContext> {
 
-    public VolumeConfiguration unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public VolumeConfiguration unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         VolumeConfiguration volumeConfiguration = new VolumeConfiguration();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,53 +40,66 @@ public class VolumeConfigurationJsonUnmarshaller implements Unmarshaller<VolumeC
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MountPoint", targetDepth)) {
                     context.nextToken();
-                    volumeConfiguration.setMountPoint(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volumeConfiguration.setMountPoint(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RaidLevel", targetDepth)) {
                     context.nextToken();
-                    volumeConfiguration.setRaidLevel(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    volumeConfiguration.setRaidLevel(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NumberOfDisks", targetDepth)) {
                     context.nextToken();
-                    volumeConfiguration.setNumberOfDisks(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    volumeConfiguration
+                            .setNumberOfDisks(IntegerJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
                     context.nextToken();
-                    volumeConfiguration.setSize(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    volumeConfiguration.setSize(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
                     context.nextToken();
-                    volumeConfiguration.setVolumeType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volumeConfiguration.setVolumeType(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Iops", targetDepth)) {
                     context.nextToken();
-                    volumeConfiguration.setIops(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    volumeConfiguration.setIops(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return volumeConfiguration;
     }
 
     private static VolumeConfigurationJsonUnmarshaller instance;
+
     public static VolumeConfigurationJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new VolumeConfigurationJsonUnmarshaller();
+        if (instance == null)
+            instance = new VolumeConfigurationJsonUnmarshaller();
         return instance;
     }
 }
-    

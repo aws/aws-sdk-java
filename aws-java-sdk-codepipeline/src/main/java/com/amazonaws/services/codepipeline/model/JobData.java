@@ -55,29 +55,21 @@ public class JobData implements Serializable, Cloneable {
     private EncryptionKey encryptionKey;
 
     /**
-     * Sets the value of the ActionTypeId property for this object.
-     * 
      * @param actionTypeId
-     *        The new value for the ActionTypeId property for this object.
      */
     public void setActionTypeId(ActionTypeId actionTypeId) {
         this.actionTypeId = actionTypeId;
     }
 
     /**
-     * Returns the value of the ActionTypeId property for this object.
-     * 
-     * @return The value of the ActionTypeId property for this object.
+     * @return
      */
     public ActionTypeId getActionTypeId() {
         return this.actionTypeId;
     }
 
     /**
-     * Sets the value of the ActionTypeId property for this object.
-     * 
      * @param actionTypeId
-     *        The new value for the ActionTypeId property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -87,31 +79,21 @@ public class JobData implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ActionConfiguration property for this object.
-     * 
      * @param actionConfiguration
-     *        The new value for the ActionConfiguration property for this
-     *        object.
      */
     public void setActionConfiguration(ActionConfiguration actionConfiguration) {
         this.actionConfiguration = actionConfiguration;
     }
 
     /**
-     * Returns the value of the ActionConfiguration property for this object.
-     * 
-     * @return The value of the ActionConfiguration property for this object.
+     * @return
      */
     public ActionConfiguration getActionConfiguration() {
         return this.actionConfiguration;
     }
 
     /**
-     * Sets the value of the ActionConfiguration property for this object.
-     * 
      * @param actionConfiguration
-     *        The new value for the ActionConfiguration property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -122,29 +104,21 @@ public class JobData implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the PipelineContext property for this object.
-     * 
      * @param pipelineContext
-     *        The new value for the PipelineContext property for this object.
      */
     public void setPipelineContext(PipelineContext pipelineContext) {
         this.pipelineContext = pipelineContext;
     }
 
     /**
-     * Returns the value of the PipelineContext property for this object.
-     * 
-     * @return The value of the PipelineContext property for this object.
+     * @return
      */
     public PipelineContext getPipelineContext() {
         return this.pipelineContext;
     }
 
     /**
-     * Sets the value of the PipelineContext property for this object.
-     * 
      * @param pipelineContext
-     *        The new value for the PipelineContext property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -298,31 +272,21 @@ public class JobData implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ArtifactCredentials property for this object.
-     * 
      * @param artifactCredentials
-     *        The new value for the ArtifactCredentials property for this
-     *        object.
      */
     public void setArtifactCredentials(AWSSessionCredentials artifactCredentials) {
         this.artifactCredentials = artifactCredentials;
     }
 
     /**
-     * Returns the value of the ArtifactCredentials property for this object.
-     * 
-     * @return The value of the ArtifactCredentials property for this object.
+     * @return
      */
     public AWSSessionCredentials getArtifactCredentials() {
         return this.artifactCredentials;
     }
 
     /**
-     * Sets the value of the ArtifactCredentials property for this object.
-     * 
      * @param artifactCredentials
-     *        The new value for the ArtifactCredentials property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -377,29 +341,21 @@ public class JobData implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the EncryptionKey property for this object.
-     * 
      * @param encryptionKey
-     *        The new value for the EncryptionKey property for this object.
      */
     public void setEncryptionKey(EncryptionKey encryptionKey) {
         this.encryptionKey = encryptionKey;
     }
 
     /**
-     * Returns the value of the EncryptionKey property for this object.
-     * 
-     * @return The value of the EncryptionKey property for this object.
+     * @return
      */
     public EncryptionKey getEncryptionKey() {
         return this.encryptionKey;
     }
 
     /**
-     * Sets the value of the EncryptionKey property for this object.
-     * 
      * @param encryptionKey
-     *        The new value for the EncryptionKey property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

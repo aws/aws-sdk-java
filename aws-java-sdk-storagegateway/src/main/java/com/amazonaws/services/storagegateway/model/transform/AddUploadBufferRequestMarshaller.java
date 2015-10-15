@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.storagegateway.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,38 +40,44 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Add Upload Buffer Request Marshaller
+ * AddUploadBufferRequest Marshaller
  */
-public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddUploadBufferRequest>, AddUploadBufferRequest> {
+public class AddUploadBufferRequestMarshaller implements
+        Marshaller<Request<AddUploadBufferRequest>, AddUploadBufferRequest> {
 
-    public Request<AddUploadBufferRequest> marshall(AddUploadBufferRequest addUploadBufferRequest) {
+    public Request<AddUploadBufferRequest> marshall(
+            AddUploadBufferRequest addUploadBufferRequest) {
+
         if (addUploadBufferRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<AddUploadBufferRequest> request = new DefaultRequest<AddUploadBufferRequest>(addUploadBufferRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20130630.AddUploadBuffer";
-        request.addHeader("X-Amz-Target", target);
+        Request<AddUploadBufferRequest> request = new DefaultRequest<AddUploadBufferRequest>(
+                addUploadBufferRequest, "AWSStorageGateway");
+        request.addHeader("X-Amz-Target",
+                "StorageGateway_20130630.AddUploadBuffer");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (addUploadBufferRequest.getGatewayARN() != null) {
-                jsonWriter.key("GatewayARN").value(addUploadBufferRequest.getGatewayARN());
+                jsonWriter.key("GatewayARN").value(
+                        addUploadBufferRequest.getGatewayARN());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(addUploadBufferRequest.getDiskIds());
-            if (diskIdsList != null && !(diskIdsList.isAutoConstruct() && diskIdsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> diskIdsList = (com.amazonaws.internal.SdkInternalList<String>) addUploadBufferRequest
+                    .getDiskIds();
+            if (!diskIdsList.isEmpty() || !diskIdsList.isAutoConstruct()) {
                 jsonWriter.key("DiskIds");
                 jsonWriter.array();
-
                 for (String diskIdsListValue : diskIdsList) {
                     if (diskIdsListValue != null) {
                         jsonWriter.value(diskIdsListValue);
@@ -79,17 +86,20 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

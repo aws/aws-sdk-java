@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Operation Summary JSON Unmarshaller
+ * OperationSummary JSON Unmarshaller
  */
-public class OperationSummaryJsonUnmarshaller implements Unmarshaller<OperationSummary, JsonUnmarshallerContext> {
+public class OperationSummaryJsonUnmarshaller implements
+        Unmarshaller<OperationSummary, JsonUnmarshallerContext> {
 
-    public OperationSummary unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public OperationSummary unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         OperationSummary operationSummary = new OperationSummary();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,45 +40,55 @@ public class OperationSummaryJsonUnmarshaller implements Unmarshaller<OperationS
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OperationId", targetDepth)) {
                     context.nextToken();
-                    operationSummary.setOperationId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    operationSummary.setOperationId(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    operationSummary.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    operationSummary.setStatus(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    operationSummary.setType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    operationSummary.setType(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SubmittedDate", targetDepth)) {
                     context.nextToken();
-                    operationSummary.setSubmittedDate(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    operationSummary.setSubmittedDate(DateJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return operationSummary;
     }
 
     private static OperationSummaryJsonUnmarshaller instance;
+
     public static OperationSummaryJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new OperationSummaryJsonUnmarshaller();
+        if (instance == null)
+            instance = new OperationSummaryJsonUnmarshaller();
         return instance;
     }
 }
-    

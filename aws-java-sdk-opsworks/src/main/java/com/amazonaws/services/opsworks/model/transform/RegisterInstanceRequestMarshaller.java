@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,72 +40,84 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Register Instance Request Marshaller
+ * RegisterInstanceRequest Marshaller
  */
-public class RegisterInstanceRequestMarshaller implements Marshaller<Request<RegisterInstanceRequest>, RegisterInstanceRequest> {
+public class RegisterInstanceRequestMarshaller implements
+        Marshaller<Request<RegisterInstanceRequest>, RegisterInstanceRequest> {
 
-    public Request<RegisterInstanceRequest> marshall(RegisterInstanceRequest registerInstanceRequest) {
+    public Request<RegisterInstanceRequest> marshall(
+            RegisterInstanceRequest registerInstanceRequest) {
+
         if (registerInstanceRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterInstanceRequest> request = new DefaultRequest<RegisterInstanceRequest>(registerInstanceRequest, "AWSOpsWorks");
-        String target = "OpsWorks_20130218.RegisterInstance";
-        request.addHeader("X-Amz-Target", target);
+        Request<RegisterInstanceRequest> request = new DefaultRequest<RegisterInstanceRequest>(
+                registerInstanceRequest, "AWSOpsWorks");
+        request.addHeader("X-Amz-Target", "OpsWorks_20130218.RegisterInstance");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (registerInstanceRequest.getStackId() != null) {
-                jsonWriter.key("StackId").value(registerInstanceRequest.getStackId());
+                jsonWriter.key("StackId").value(
+                        registerInstanceRequest.getStackId());
             }
+
             if (registerInstanceRequest.getHostname() != null) {
-                jsonWriter.key("Hostname").value(registerInstanceRequest.getHostname());
+                jsonWriter.key("Hostname").value(
+                        registerInstanceRequest.getHostname());
             }
+
             if (registerInstanceRequest.getPublicIp() != null) {
-                jsonWriter.key("PublicIp").value(registerInstanceRequest.getPublicIp());
+                jsonWriter.key("PublicIp").value(
+                        registerInstanceRequest.getPublicIp());
             }
+
             if (registerInstanceRequest.getPrivateIp() != null) {
-                jsonWriter.key("PrivateIp").value(registerInstanceRequest.getPrivateIp());
+                jsonWriter.key("PrivateIp").value(
+                        registerInstanceRequest.getPrivateIp());
             }
+
             if (registerInstanceRequest.getRsaPublicKey() != null) {
-                jsonWriter.key("RsaPublicKey").value(registerInstanceRequest.getRsaPublicKey());
+                jsonWriter.key("RsaPublicKey").value(
+                        registerInstanceRequest.getRsaPublicKey());
             }
+
             if (registerInstanceRequest.getRsaPublicKeyFingerprint() != null) {
-                jsonWriter.key("RsaPublicKeyFingerprint").value(registerInstanceRequest.getRsaPublicKeyFingerprint());
+                jsonWriter.key("RsaPublicKeyFingerprint").value(
+                        registerInstanceRequest.getRsaPublicKeyFingerprint());
             }
-            InstanceIdentity instanceIdentity = registerInstanceRequest.getInstanceIdentity();
-            if (instanceIdentity != null) {
 
+            if (registerInstanceRequest.getInstanceIdentity() != null) {
                 jsonWriter.key("InstanceIdentity");
-                jsonWriter.object();
-
-                if (instanceIdentity.getDocument() != null) {
-                    jsonWriter.key("Document").value(instanceIdentity.getDocument());
-                }
-                if (instanceIdentity.getSignature() != null) {
-                    jsonWriter.key("Signature").value(instanceIdentity.getSignature());
-                }
-                jsonWriter.endObject();
+                InstanceIdentityJsonMarshaller.getInstance().marshall(
+                        registerInstanceRequest.getInstanceIdentity(),
+                        jsonWriter);
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

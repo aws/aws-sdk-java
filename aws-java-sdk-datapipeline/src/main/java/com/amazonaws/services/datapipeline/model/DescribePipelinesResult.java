@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
@@ -24,80 +25,86 @@ import java.io.Serializable;
 public class DescribePipelinesResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * An array of descriptions for the specified pipelines.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription> pipelineDescriptionList;
+    private com.amazonaws.internal.SdkInternalList<PipelineDescription> pipelineDescriptionList;
 
     /**
+     * <p>
      * An array of descriptions for the specified pipelines.
-     *
+     * </p>
+     * 
      * @return An array of descriptions for the specified pipelines.
      */
     public java.util.List<PipelineDescription> getPipelineDescriptionList() {
         if (pipelineDescriptionList == null) {
-              pipelineDescriptionList = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription>();
-              pipelineDescriptionList.setAutoConstruct(true);
+            pipelineDescriptionList = new com.amazonaws.internal.SdkInternalList<PipelineDescription>();
         }
         return pipelineDescriptionList;
     }
-    
+
     /**
+     * <p>
      * An array of descriptions for the specified pipelines.
-     *
-     * @param pipelineDescriptionList An array of descriptions for the specified pipelines.
+     * </p>
+     * 
+     * @param pipelineDescriptionList
+     *        An array of descriptions for the specified pipelines.
      */
-    public void setPipelineDescriptionList(java.util.Collection<PipelineDescription> pipelineDescriptionList) {
+    public void setPipelineDescriptionList(
+            java.util.Collection<PipelineDescription> pipelineDescriptionList) {
         if (pipelineDescriptionList == null) {
             this.pipelineDescriptionList = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription> pipelineDescriptionListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription>(pipelineDescriptionList.size());
-        pipelineDescriptionListCopy.addAll(pipelineDescriptionList);
-        this.pipelineDescriptionList = pipelineDescriptionListCopy;
+
+        this.pipelineDescriptionList = new com.amazonaws.internal.SdkInternalList<PipelineDescription>(
+                pipelineDescriptionList);
     }
-    
+
     /**
+     * <p>
      * An array of descriptions for the specified pipelines.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPipelineDescriptionList(java.util.Collection)} or
-     * {@link #withPipelineDescriptionList(java.util.Collection)} if you want
-     * to override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param pipelineDescriptionList An array of descriptions for the specified pipelines.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * {@link #withPipelineDescriptionList(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param pipelineDescriptionList
+     *        An array of descriptions for the specified pipelines.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribePipelinesResult withPipelineDescriptionList(PipelineDescription... pipelineDescriptionList) {
-        if (getPipelineDescriptionList() == null) setPipelineDescriptionList(new java.util.ArrayList<PipelineDescription>(pipelineDescriptionList.length));
-        for (PipelineDescription value : pipelineDescriptionList) {
-            getPipelineDescriptionList().add(value);
+    public DescribePipelinesResult withPipelineDescriptionList(
+            PipelineDescription... pipelineDescriptionList) {
+        if (this.pipelineDescriptionList == null) {
+            setPipelineDescriptionList(new com.amazonaws.internal.SdkInternalList<PipelineDescription>(
+                    pipelineDescriptionList.length));
+        }
+        for (PipelineDescription ele : pipelineDescriptionList) {
+            this.pipelineDescriptionList.add(ele);
         }
         return this;
     }
-    
-    /**
-     * An array of descriptions for the specified pipelines.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param pipelineDescriptionList An array of descriptions for the specified pipelines.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribePipelinesResult withPipelineDescriptionList(java.util.Collection<PipelineDescription> pipelineDescriptionList) {
-        if (pipelineDescriptionList == null) {
-            this.pipelineDescriptionList = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription> pipelineDescriptionListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription>(pipelineDescriptionList.size());
-            pipelineDescriptionListCopy.addAll(pipelineDescriptionList);
-            this.pipelineDescriptionList = pipelineDescriptionListCopy;
-        }
 
+    /**
+     * <p>
+     * An array of descriptions for the specified pipelines.
+     * </p>
+     * 
+     * @param pipelineDescriptionList
+     *        An array of descriptions for the specified pipelines.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribePipelinesResult withPipelineDescriptionList(
+            java.util.Collection<PipelineDescription> pipelineDescriptionList) {
+        setPipelineDescriptionList(pipelineDescriptionList);
         return this;
     }
 
@@ -113,46 +120,53 @@ public class DescribePipelinesResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPipelineDescriptionList() != null) sb.append("PipelineDescriptionList: " + getPipelineDescriptionList() );
+        if (getPipelineDescriptionList() != null)
+            sb.append("PipelineDescriptionList: "
+                    + getPipelineDescriptionList());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribePipelinesResult == false)
+            return false;
+        DescribePipelinesResult other = (DescribePipelinesResult) obj;
+        if (other.getPipelineDescriptionList() == null
+                ^ this.getPipelineDescriptionList() == null)
+            return false;
+        if (other.getPipelineDescriptionList() != null
+                && other.getPipelineDescriptionList().equals(
+                        this.getPipelineDescriptionList()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getPipelineDescriptionList() == null) ? 0 : getPipelineDescriptionList().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getPipelineDescriptionList() == null) ? 0
+                        : getPipelineDescriptionList().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribePipelinesResult == false) return false;
-        DescribePipelinesResult other = (DescribePipelinesResult)obj;
-        
-        if (other.getPipelineDescriptionList() == null ^ this.getPipelineDescriptionList() == null) return false;
-        if (other.getPipelineDescriptionList() != null && other.getPipelineDescriptionList().equals(this.getPipelineDescriptionList()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribePipelinesResult clone() {
         try {
             return (DescribePipelinesResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

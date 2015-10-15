@@ -42,29 +42,21 @@ public class FileSystemAlreadyExistsException extends AmazonServiceException {
     }
 
     /**
-     * Sets the value of the ErrorCode property for this object.
-     * 
      * @param errorCode
-     *        The new value for the ErrorCode property for this object.
      */
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
 
     /**
-     * Returns the value of the ErrorCode property for this object.
-     * 
-     * @return The value of the ErrorCode property for this object.
+     * @return
      */
     public String getErrorCode() {
         return this.errorCode;
     }
 
     /**
-     * Sets the value of the ErrorCode property for this object.
-     * 
      * @param errorCode
-     *        The new value for the ErrorCode property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -74,29 +66,21 @@ public class FileSystemAlreadyExistsException extends AmazonServiceException {
     }
 
     /**
-     * Sets the value of the FileSystemId property for this object.
-     * 
      * @param fileSystemId
-     *        The new value for the FileSystemId property for this object.
      */
     public void setFileSystemId(String fileSystemId) {
         this.fileSystemId = fileSystemId;
     }
 
     /**
-     * Returns the value of the FileSystemId property for this object.
-     * 
-     * @return The value of the FileSystemId property for this object.
+     * @return
      */
     public String getFileSystemId() {
         return this.fileSystemId;
     }
 
     /**
-     * Sets the value of the FileSystemId property for this object.
-     * 
      * @param fileSystemId
-     *        The new value for the FileSystemId property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

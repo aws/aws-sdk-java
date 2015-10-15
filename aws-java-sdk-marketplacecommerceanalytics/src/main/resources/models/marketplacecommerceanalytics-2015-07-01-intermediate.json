@@ -35,8 +35,8 @@
         "variableType" : "GenerateDataSetRequest",
         "variableDeclarationType" : "GenerateDataSetRequest",
         "documentation" : "Container for the parameters to the GenerateDataSet operation.",
-        "variableSetterType" : "GenerateDataSetRequest",
-        "simpleType" : "GenerateDataSetRequest"
+        "simpleType" : "GenerateDataSetRequest",
+        "variableSetterType" : "GenerateDataSetRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -71,7 +71,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "DataSetRequestId",
         "c2jName" : "dataSetRequestId",
         "c2jShape" : "DataSetRequestId",
@@ -79,17 +79,17 @@
           "variableName" : "dataSetRequestId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "dataSetRequestId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -117,10 +117,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the DataSetRequestId property for this object.\n@return The value of the DataSetRequestId property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param dataSetRequestId */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param dataSetRequestId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param dataSetRequestId \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -128,8 +128,8 @@
         "variableType" : "GenerateDataSetResult",
         "variableDeclarationType" : "GenerateDataSetResult",
         "documentation" : null,
-        "variableSetterType" : "GenerateDataSetResult",
-        "simpleType" : "GenerateDataSetResult"
+        "simpleType" : "GenerateDataSetResult",
+        "variableSetterType" : "GenerateDataSetResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -145,7 +145,7 @@
       },
       "membersAsMap" : {
         "DataSetRequestId" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "DataSetRequestId",
           "c2jName" : "dataSetRequestId",
           "c2jShape" : "DataSetRequestId",
@@ -153,17 +153,17 @@
             "variableName" : "dataSetRequestId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "dataSetRequestId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -191,10 +191,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the DataSetRequestId property for this object.\n@return The value of the DataSetRequestId property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param dataSetRequestId */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param dataSetRequestId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param dataSetRequestId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -209,7 +209,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "DataSetType",
         "c2jName" : "dataSetType",
         "c2jShape" : "DataSetType",
@@ -217,17 +217,17 @@
           "variableName" : "dataSetType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "dataSetType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -255,12 +255,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@see DataSetType*/",
-        "getterDocumentation" : "/**Returns the value of the DataSetType property for this object.\n@return The value of the DataSetType property for this object.\n@see DataSetType*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
-        "varargSetterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/"
+        "setterDocumentation" : "/**\n@param dataSetType \n@see DataSetType*/",
+        "getterDocumentation" : "/**\n@return \n@see DataSetType*/",
+        "fluentSetterDocumentation" : "/**\n@param dataSetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
+        "varargSetterDocumentation" : "/**\n@param dataSetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/"
       }, {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "DataSetPublicationDate",
         "c2jName" : "dataSetPublicationDate",
         "c2jShape" : "DataSetPublicationDate",
@@ -268,17 +268,17 @@
           "variableName" : "dataSetPublicationDate",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
-          "documentation" : null,
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "dataSetPublicationDate",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
-          "documentation" : null,
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -306,12 +306,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the DataSetPublicationDate property for this object.\n@return The value of the DataSetPublicationDate property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param dataSetPublicationDate */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param dataSetPublicationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param dataSetPublicationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "RoleNameArn",
         "c2jName" : "roleNameArn",
         "c2jShape" : "RoleNameArn",
@@ -319,17 +319,17 @@
           "variableName" : "roleNameArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleNameArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -357,12 +357,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the RoleNameArn property for this object.\n@return The value of the RoleNameArn property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param roleNameArn */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param roleNameArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param roleNameArn \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "DestinationS3BucketName",
         "c2jName" : "destinationS3BucketName",
         "c2jShape" : "DestinationS3BucketName",
@@ -370,17 +370,17 @@
           "variableName" : "destinationS3BucketName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "destinationS3BucketName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -408,12 +408,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the DestinationS3BucketName property for this object.\n@return The value of the DestinationS3BucketName property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param destinationS3BucketName */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param destinationS3BucketName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param destinationS3BucketName \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "DestinationS3Prefix",
         "c2jName" : "destinationS3Prefix",
         "c2jShape" : "DestinationS3Prefix",
@@ -421,17 +421,17 @@
           "variableName" : "destinationS3Prefix",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "destinationS3Prefix",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -459,12 +459,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the DestinationS3Prefix property for this object.\n@return The value of the DestinationS3Prefix property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param destinationS3Prefix */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param destinationS3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param destinationS3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : null,
+        "documentation" : "",
         "name" : "SnsTopicArn",
         "c2jName" : "snsTopicArn",
         "c2jShape" : "SnsTopicArn",
@@ -472,17 +472,17 @@
           "variableName" : "snsTopicArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "snsTopicArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -510,10 +510,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.*/",
-        "getterDocumentation" : "/**Returns the value of the SnsTopicArn property for this object.\n@return The value of the SnsTopicArn property for this object.*/",
-        "fluentSetterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**\n@param snsTopicArn */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param snsTopicArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param snsTopicArn \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -521,8 +521,8 @@
         "variableType" : "GenerateDataSetRequest",
         "variableDeclarationType" : "GenerateDataSetRequest",
         "documentation" : null,
-        "variableSetterType" : "GenerateDataSetRequest",
-        "simpleType" : "GenerateDataSetRequest"
+        "simpleType" : "GenerateDataSetRequest",
+        "variableSetterType" : "GenerateDataSetRequest"
       },
       "marshaller" : {
         "action" : "GenerateDataSet",
@@ -542,7 +542,7 @@
       },
       "membersAsMap" : {
         "DestinationS3Prefix" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "DestinationS3Prefix",
           "c2jName" : "destinationS3Prefix",
           "c2jShape" : "DestinationS3Prefix",
@@ -550,17 +550,17 @@
             "variableName" : "destinationS3Prefix",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "destinationS3Prefix",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -588,13 +588,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the DestinationS3Prefix property for this object.\n@return The value of the DestinationS3Prefix property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param destinationS3Prefix */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param destinationS3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param destinationS3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "DataSetPublicationDate" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "DataSetPublicationDate",
           "c2jName" : "dataSetPublicationDate",
           "c2jShape" : "DataSetPublicationDate",
@@ -602,17 +602,17 @@
             "variableName" : "dataSetPublicationDate",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
-            "documentation" : null,
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "dataSetPublicationDate",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
-            "documentation" : null,
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -640,13 +640,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the DataSetPublicationDate property for this object.\n@return The value of the DataSetPublicationDate property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param dataSetPublicationDate */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param dataSetPublicationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param dataSetPublicationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SnsTopicArn" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "SnsTopicArn",
           "c2jName" : "snsTopicArn",
           "c2jShape" : "SnsTopicArn",
@@ -654,17 +654,17 @@
             "variableName" : "snsTopicArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "snsTopicArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -692,13 +692,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the SnsTopicArn property for this object.\n@return The value of the SnsTopicArn property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param snsTopicArn */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param snsTopicArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param snsTopicArn \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "DestinationS3BucketName" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "DestinationS3BucketName",
           "c2jName" : "destinationS3BucketName",
           "c2jShape" : "DestinationS3BucketName",
@@ -706,17 +706,17 @@
             "variableName" : "destinationS3BucketName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "destinationS3BucketName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -744,13 +744,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the DestinationS3BucketName property for this object.\n@return The value of the DestinationS3BucketName property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param destinationS3BucketName */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param destinationS3BucketName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param destinationS3BucketName \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "DataSetType" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "DataSetType",
           "c2jName" : "dataSetType",
           "c2jShape" : "DataSetType",
@@ -758,17 +758,17 @@
             "variableName" : "dataSetType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "dataSetType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -796,13 +796,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@see DataSetType*/",
-          "getterDocumentation" : "/**Returns the value of the DataSetType property for this object.\n@return The value of the DataSetType property for this object.\n@see DataSetType*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
-          "varargSetterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/"
+          "setterDocumentation" : "/**\n@param dataSetType \n@see DataSetType*/",
+          "getterDocumentation" : "/**\n@return \n@see DataSetType*/",
+          "fluentSetterDocumentation" : "/**\n@param dataSetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
+          "varargSetterDocumentation" : "/**\n@param dataSetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/"
         },
         "RoleNameArn" : {
-          "documentation" : null,
+          "documentation" : "",
           "name" : "RoleNameArn",
           "c2jName" : "roleNameArn",
           "c2jShape" : "RoleNameArn",
@@ -810,17 +810,17 @@
             "variableName" : "roleNameArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleNameArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -848,10 +848,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.*/",
-          "getterDocumentation" : "/**Returns the value of the RoleNameArn property for this object.\n@return The value of the RoleNameArn property for this object.*/",
-          "fluentSetterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**\n@param roleNameArn */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param roleNameArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param roleNameArn \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -872,8 +872,8 @@
         "variableType" : "MarketplaceCommerceAnalyticsException",
         "variableDeclarationType" : "MarketplaceCommerceAnalyticsException",
         "documentation" : null,
-        "variableSetterType" : "MarketplaceCommerceAnalyticsException",
-        "simpleType" : "MarketplaceCommerceAnalyticsException"
+        "simpleType" : "MarketplaceCommerceAnalyticsException",
+        "variableSetterType" : "MarketplaceCommerceAnalyticsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -951,8 +951,8 @@
         "variableType" : "DataSetType",
         "variableDeclarationType" : "DataSetType",
         "documentation" : null,
-        "variableSetterType" : "DataSetType",
-        "simpleType" : "DataSetType"
+        "simpleType" : "DataSetType",
+        "variableSetterType" : "DataSetType"
       },
       "marshaller" : null,
       "unmarshaller" : {

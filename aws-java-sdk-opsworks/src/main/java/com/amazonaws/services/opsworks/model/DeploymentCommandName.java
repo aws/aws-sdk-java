@@ -1,24 +1,25 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 /**
- * Deployment Command Name
+ * 
  */
 public enum DeploymentCommandName {
-    
+
     Install_dependencies("install_dependencies"),
     Update_dependencies("update_dependencies"),
     Update_custom_cookbooks("update_custom_cookbooks"),
@@ -47,40 +48,39 @@ public enum DeploymentCommandName {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return DeploymentCommandName corresponding to the value
      */
     public static DeploymentCommandName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("install_dependencies".equals(value)) {
-            return DeploymentCommandName.Install_dependencies;
+            return Install_dependencies;
         } else if ("update_dependencies".equals(value)) {
-            return DeploymentCommandName.Update_dependencies;
+            return Update_dependencies;
         } else if ("update_custom_cookbooks".equals(value)) {
-            return DeploymentCommandName.Update_custom_cookbooks;
+            return Update_custom_cookbooks;
         } else if ("execute_recipes".equals(value)) {
-            return DeploymentCommandName.Execute_recipes;
+            return Execute_recipes;
         } else if ("configure".equals(value)) {
-            return DeploymentCommandName.Configure;
+            return Configure;
         } else if ("setup".equals(value)) {
-            return DeploymentCommandName.Setup;
+            return Setup;
         } else if ("deploy".equals(value)) {
-            return DeploymentCommandName.Deploy;
+            return Deploy;
         } else if ("rollback".equals(value)) {
-            return DeploymentCommandName.Rollback;
+            return Rollback;
         } else if ("start".equals(value)) {
-            return DeploymentCommandName.Start;
+            return Start;
         } else if ("stop".equals(value)) {
-            return DeploymentCommandName.Stop;
+            return Stop;
         } else if ("restart".equals(value)) {
-            return DeploymentCommandName.Restart;
+            return Restart;
         } else if ("undeploy".equals(value)) {
-            return DeploymentCommandName.Undeploy;
+            return Undeploy;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

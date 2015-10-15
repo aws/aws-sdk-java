@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Instances Count JSON Unmarshaller
+ * InstancesCount JSON Unmarshaller
  */
-public class InstancesCountJsonUnmarshaller implements Unmarshaller<InstancesCount, JsonUnmarshallerContext> {
+public class InstancesCountJsonUnmarshaller implements
+        Unmarshaller<InstancesCount, JsonUnmarshallerContext> {
 
-    public InstancesCount unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public InstancesCount unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         InstancesCount instancesCount = new InstancesCount();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,105 +40,130 @@ public class InstancesCountJsonUnmarshaller implements Unmarshaller<InstancesCou
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Assigning", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setAssigning(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setAssigning(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Booting", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setBooting(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setBooting(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConnectionLost", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setConnectionLost(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setConnectionLost(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Deregistering", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setDeregistering(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setDeregistering(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Online", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setOnline(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setOnline(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Pending", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setPending(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setPending(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Rebooting", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setRebooting(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setRebooting(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Registered", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setRegistered(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setRegistered(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Registering", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setRegistering(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setRegistering(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Requested", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setRequested(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setRequested(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RunningSetup", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setRunningSetup(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setRunningSetup(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SetupFailed", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setSetupFailed(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setSetupFailed(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ShuttingDown", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setShuttingDown(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setShuttingDown(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartFailed", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setStartFailed(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setStartFailed(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Stopped", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setStopped(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setStopped(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Stopping", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setStopping(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setStopping(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Terminated", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setTerminated(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setTerminated(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Terminating", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setTerminating(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setTerminating(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Unassigning", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setUnassigning(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    instancesCount.setUnassigning(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return instancesCount;
     }
 
     private static InstancesCountJsonUnmarshaller instance;
+
     public static InstancesCountJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new InstancesCountJsonUnmarshaller();
+        if (instance == null)
+            instance = new InstancesCountJsonUnmarshaller();
         return instance;
     }
 }
-    

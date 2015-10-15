@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
@@ -24,291 +25,299 @@ import java.io.Serializable;
 public class Tape implements Serializable, Cloneable {
 
     /**
-     * The Amazon Resource Name (ARN) of the virtual tape.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
+     * The Amazon Resource Name (ARN) of the virtual tape.
+     * </p>
      */
     private String tapeARN;
-
     /**
-     * The barcode that identifies a specific virtual tape.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>7 - 16<br/>
-     * <b>Pattern: </b>^[A-Z0-9]*$<br/>
+     * The barcode that identifies a specific virtual tape.
+     * </p>
      */
     private String tapeBarcode;
-
     /**
+     * <p>
      * The size, in bytes, of the virtual tape.
+     * </p>
      */
     private Long tapeSizeInBytes;
-
     /**
+     * <p>
      * The current state of the virtual tape.
+     * </p>
      */
     private String tapeStatus;
-
     /**
-     * The virtual tape library (VTL) device that the virtual tape is
-     * associated with.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
+     * The virtual tape library (VTL) device that the virtual tape is associated
+     * with.
+     * </p>
      */
     private String vTLDevice;
-
     /**
+     * <p>
      * For archiving virtual tapes, indicates how much data remains to be
-     * uploaded before archiving is complete. <p>Range: 0 (not started) to
-     * 100 (complete).
+     * uploaded before archiving is complete.
+     * </p>
+     * <p>
+     * Range: 0 (not started) to 100 (complete).
+     * </p>
      */
     private Double progress;
 
     /**
-     * The Amazon Resource Name (ARN) of the virtual tape.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @return The Amazon Resource Name (ARN) of the virtual tape.
-     */
-    public String getTapeARN() {
-        return tapeARN;
-    }
-    
-    /**
      * The Amazon Resource Name (ARN) of the virtual tape.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape.
+     * </p>
+     * 
+     * @param tapeARN
+     *        The Amazon Resource Name (ARN) of the virtual tape.
      */
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
     }
-    
+
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the virtual tape.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the virtual tape.
+     */
+    public String getTapeARN() {
+        return this.tapeARN;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon Resource Name (ARN) of the virtual tape.
+     * </p>
+     * 
+     * @param tapeARN
+     *        The Amazon Resource Name (ARN) of the virtual tape.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Tape withTapeARN(String tapeARN) {
-        this.tapeARN = tapeARN;
+        setTapeARN(tapeARN);
         return this;
     }
 
     /**
-     * The barcode that identifies a specific virtual tape.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>7 - 16<br/>
-     * <b>Pattern: </b>^[A-Z0-9]*$<br/>
-     *
-     * @return The barcode that identifies a specific virtual tape.
-     */
-    public String getTapeBarcode() {
-        return tapeBarcode;
-    }
-    
-    /**
      * The barcode that identifies a specific virtual tape.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>7 - 16<br/>
-     * <b>Pattern: </b>^[A-Z0-9]*$<br/>
-     *
-     * @param tapeBarcode The barcode that identifies a specific virtual tape.
+     * </p>
+     * 
+     * @param tapeBarcode
+     *        The barcode that identifies a specific virtual tape.
      */
     public void setTapeBarcode(String tapeBarcode) {
         this.tapeBarcode = tapeBarcode;
     }
-    
+
     /**
+     * <p>
      * The barcode that identifies a specific virtual tape.
+     * </p>
+     * 
+     * @return The barcode that identifies a specific virtual tape.
+     */
+    public String getTapeBarcode() {
+        return this.tapeBarcode;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>7 - 16<br/>
-     * <b>Pattern: </b>^[A-Z0-9]*$<br/>
-     *
-     * @param tapeBarcode The barcode that identifies a specific virtual tape.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The barcode that identifies a specific virtual tape.
+     * </p>
+     * 
+     * @param tapeBarcode
+     *        The barcode that identifies a specific virtual tape.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Tape withTapeBarcode(String tapeBarcode) {
-        this.tapeBarcode = tapeBarcode;
+        setTapeBarcode(tapeBarcode);
         return this;
     }
 
     /**
+     * <p>
      * The size, in bytes, of the virtual tape.
-     *
-     * @return The size, in bytes, of the virtual tape.
-     */
-    public Long getTapeSizeInBytes() {
-        return tapeSizeInBytes;
-    }
-    
-    /**
-     * The size, in bytes, of the virtual tape.
-     *
-     * @param tapeSizeInBytes The size, in bytes, of the virtual tape.
+     * </p>
+     * 
+     * @param tapeSizeInBytes
+     *        The size, in bytes, of the virtual tape.
      */
     public void setTapeSizeInBytes(Long tapeSizeInBytes) {
         this.tapeSizeInBytes = tapeSizeInBytes;
     }
-    
+
     /**
-     * The size, in bytes, of the virtual tape.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tapeSizeInBytes The size, in bytes, of the virtual tape.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The size, in bytes, of the virtual tape.
+     * </p>
+     * 
+     * @return The size, in bytes, of the virtual tape.
+     */
+    public Long getTapeSizeInBytes() {
+        return this.tapeSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of the virtual tape.
+     * </p>
+     * 
+     * @param tapeSizeInBytes
+     *        The size, in bytes, of the virtual tape.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Tape withTapeSizeInBytes(Long tapeSizeInBytes) {
-        this.tapeSizeInBytes = tapeSizeInBytes;
+        setTapeSizeInBytes(tapeSizeInBytes);
         return this;
     }
 
     /**
+     * <p>
      * The current state of the virtual tape.
-     *
-     * @return The current state of the virtual tape.
-     */
-    public String getTapeStatus() {
-        return tapeStatus;
-    }
-    
-    /**
-     * The current state of the virtual tape.
-     *
-     * @param tapeStatus The current state of the virtual tape.
+     * </p>
+     * 
+     * @param tapeStatus
+     *        The current state of the virtual tape.
      */
     public void setTapeStatus(String tapeStatus) {
         this.tapeStatus = tapeStatus;
     }
-    
+
     /**
-     * The current state of the virtual tape.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tapeStatus The current state of the virtual tape.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The current state of the virtual tape.
+     * </p>
+     * 
+     * @return The current state of the virtual tape.
+     */
+    public String getTapeStatus() {
+        return this.tapeStatus;
+    }
+
+    /**
+     * <p>
+     * The current state of the virtual tape.
+     * </p>
+     * 
+     * @param tapeStatus
+     *        The current state of the virtual tape.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Tape withTapeStatus(String tapeStatus) {
-        this.tapeStatus = tapeStatus;
+        setTapeStatus(tapeStatus);
         return this;
     }
 
     /**
-     * The virtual tape library (VTL) device that the virtual tape is
-     * associated with.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @return The virtual tape library (VTL) device that the virtual tape is
-     *         associated with.
-     */
-    public String getVTLDevice() {
-        return vTLDevice;
-    }
-    
-    /**
-     * The virtual tape library (VTL) device that the virtual tape is
-     * associated with.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @param vTLDevice The virtual tape library (VTL) device that the virtual tape is
-     *         associated with.
+     * The virtual tape library (VTL) device that the virtual tape is associated
+     * with.
+     * </p>
+     * 
+     * @param vTLDevice
+     *        The virtual tape library (VTL) device that the virtual tape is
+     *        associated with.
      */
     public void setVTLDevice(String vTLDevice) {
         this.vTLDevice = vTLDevice;
     }
-    
+
     /**
-     * The virtual tape library (VTL) device that the virtual tape is
-     * associated with.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @param vTLDevice The virtual tape library (VTL) device that the virtual tape is
+     * The virtual tape library (VTL) device that the virtual tape is associated
+     * with.
+     * </p>
+     * 
+     * @return The virtual tape library (VTL) device that the virtual tape is
      *         associated with.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getVTLDevice() {
+        return this.vTLDevice;
+    }
+
+    /**
+     * <p>
+     * The virtual tape library (VTL) device that the virtual tape is associated
+     * with.
+     * </p>
+     * 
+     * @param vTLDevice
+     *        The virtual tape library (VTL) device that the virtual tape is
+     *        associated with.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Tape withVTLDevice(String vTLDevice) {
-        this.vTLDevice = vTLDevice;
+        setVTLDevice(vTLDevice);
         return this;
     }
 
     /**
+     * <p>
      * For archiving virtual tapes, indicates how much data remains to be
-     * uploaded before archiving is complete. <p>Range: 0 (not started) to
-     * 100 (complete).
-     *
-     * @return For archiving virtual tapes, indicates how much data remains to be
-     *         uploaded before archiving is complete. <p>Range: 0 (not started) to
-     *         100 (complete).
-     */
-    public Double getProgress() {
-        return progress;
-    }
-    
-    /**
-     * For archiving virtual tapes, indicates how much data remains to be
-     * uploaded before archiving is complete. <p>Range: 0 (not started) to
-     * 100 (complete).
-     *
-     * @param progress For archiving virtual tapes, indicates how much data remains to be
-     *         uploaded before archiving is complete. <p>Range: 0 (not started) to
-     *         100 (complete).
+     * uploaded before archiving is complete.
+     * </p>
+     * <p>
+     * Range: 0 (not started) to 100 (complete).
+     * </p>
+     * 
+     * @param progress
+     *        For archiving virtual tapes, indicates how much data remains to be
+     *        uploaded before archiving is complete.</p>
+     *        <p>
+     *        Range: 0 (not started) to 100 (complete).
      */
     public void setProgress(Double progress) {
         this.progress = progress;
     }
-    
+
     /**
-     * For archiving virtual tapes, indicates how much data remains to be
-     * uploaded before archiving is complete. <p>Range: 0 (not started) to
-     * 100 (complete).
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param progress For archiving virtual tapes, indicates how much data remains to be
-     *         uploaded before archiving is complete. <p>Range: 0 (not started) to
-     *         100 (complete).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * For archiving virtual tapes, indicates how much data remains to be
+     * uploaded before archiving is complete.
+     * </p>
+     * <p>
+     * Range: 0 (not started) to 100 (complete).
+     * </p>
+     * 
+     * @return For archiving virtual tapes, indicates how much data remains to
+     *         be uploaded before archiving is complete.</p>
+     *         <p>
+     *         Range: 0 (not started) to 100 (complete).
+     */
+    public Double getProgress() {
+        return this.progress;
+    }
+
+    /**
+     * <p>
+     * For archiving virtual tapes, indicates how much data remains to be
+     * uploaded before archiving is complete.
+     * </p>
+     * <p>
+     * Range: 0 (not started) to 100 (complete).
+     * </p>
+     * 
+     * @param progress
+     *        For archiving virtual tapes, indicates how much data remains to be
+     *        uploaded before archiving is complete.</p>
+     *        <p>
+     *        Range: 0 (not started) to 100 (complete).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Tape withProgress(Double progress) {
-        this.progress = progress;
+        setProgress(progress);
         return this;
     }
 
@@ -324,66 +333,97 @@ public class Tape implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTapeARN() != null) sb.append("TapeARN: " + getTapeARN() + ",");
-        if (getTapeBarcode() != null) sb.append("TapeBarcode: " + getTapeBarcode() + ",");
-        if (getTapeSizeInBytes() != null) sb.append("TapeSizeInBytes: " + getTapeSizeInBytes() + ",");
-        if (getTapeStatus() != null) sb.append("TapeStatus: " + getTapeStatus() + ",");
-        if (getVTLDevice() != null) sb.append("VTLDevice: " + getVTLDevice() + ",");
-        if (getProgress() != null) sb.append("Progress: " + getProgress() );
+        if (getTapeARN() != null)
+            sb.append("TapeARN: " + getTapeARN() + ",");
+        if (getTapeBarcode() != null)
+            sb.append("TapeBarcode: " + getTapeBarcode() + ",");
+        if (getTapeSizeInBytes() != null)
+            sb.append("TapeSizeInBytes: " + getTapeSizeInBytes() + ",");
+        if (getTapeStatus() != null)
+            sb.append("TapeStatus: " + getTapeStatus() + ",");
+        if (getVTLDevice() != null)
+            sb.append("VTLDevice: " + getVTLDevice() + ",");
+        if (getProgress() != null)
+            sb.append("Progress: " + getProgress());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof Tape == false)
+            return false;
+        Tape other = (Tape) obj;
+        if (other.getTapeARN() == null ^ this.getTapeARN() == null)
+            return false;
+        if (other.getTapeARN() != null
+                && other.getTapeARN().equals(this.getTapeARN()) == false)
+            return false;
+        if (other.getTapeBarcode() == null ^ this.getTapeBarcode() == null)
+            return false;
+        if (other.getTapeBarcode() != null
+                && other.getTapeBarcode().equals(this.getTapeBarcode()) == false)
+            return false;
+        if (other.getTapeSizeInBytes() == null
+                ^ this.getTapeSizeInBytes() == null)
+            return false;
+        if (other.getTapeSizeInBytes() != null
+                && other.getTapeSizeInBytes().equals(this.getTapeSizeInBytes()) == false)
+            return false;
+        if (other.getTapeStatus() == null ^ this.getTapeStatus() == null)
+            return false;
+        if (other.getTapeStatus() != null
+                && other.getTapeStatus().equals(this.getTapeStatus()) == false)
+            return false;
+        if (other.getVTLDevice() == null ^ this.getVTLDevice() == null)
+            return false;
+        if (other.getVTLDevice() != null
+                && other.getVTLDevice().equals(this.getVTLDevice()) == false)
+            return false;
+        if (other.getProgress() == null ^ this.getProgress() == null)
+            return false;
+        if (other.getProgress() != null
+                && other.getProgress().equals(this.getProgress()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getTapeARN() == null) ? 0 : getTapeARN().hashCode()); 
-        hashCode = prime * hashCode + ((getTapeBarcode() == null) ? 0 : getTapeBarcode().hashCode()); 
-        hashCode = prime * hashCode + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes().hashCode()); 
-        hashCode = prime * hashCode + ((getTapeStatus() == null) ? 0 : getTapeStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getVTLDevice() == null) ? 0 : getVTLDevice().hashCode()); 
-        hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getTapeARN() == null) ? 0 : getTapeARN().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTapeBarcode() == null) ? 0 : getTapeBarcode().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getTapeStatus() == null) ? 0 : getTapeStatus().hashCode());
+        hashCode = prime * hashCode
+                + ((getVTLDevice() == null) ? 0 : getVTLDevice().hashCode());
+        hashCode = prime * hashCode
+                + ((getProgress() == null) ? 0 : getProgress().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof Tape == false) return false;
-        Tape other = (Tape)obj;
-        
-        if (other.getTapeARN() == null ^ this.getTapeARN() == null) return false;
-        if (other.getTapeARN() != null && other.getTapeARN().equals(this.getTapeARN()) == false) return false; 
-        if (other.getTapeBarcode() == null ^ this.getTapeBarcode() == null) return false;
-        if (other.getTapeBarcode() != null && other.getTapeBarcode().equals(this.getTapeBarcode()) == false) return false; 
-        if (other.getTapeSizeInBytes() == null ^ this.getTapeSizeInBytes() == null) return false;
-        if (other.getTapeSizeInBytes() != null && other.getTapeSizeInBytes().equals(this.getTapeSizeInBytes()) == false) return false; 
-        if (other.getTapeStatus() == null ^ this.getTapeStatus() == null) return false;
-        if (other.getTapeStatus() != null && other.getTapeStatus().equals(this.getTapeStatus()) == false) return false; 
-        if (other.getVTLDevice() == null ^ this.getVTLDevice() == null) return false;
-        if (other.getVTLDevice() != null && other.getVTLDevice().equals(this.getVTLDevice()) == false) return false; 
-        if (other.getProgress() == null ^ this.getProgress() == null) return false;
-        if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public Tape clone() {
         try {
             return (Tape) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

@@ -25,29 +25,21 @@ public class GenerateDataSetResult implements Serializable, Cloneable {
     private String dataSetRequestId;
 
     /**
-     * Sets the value of the DataSetRequestId property for this object.
-     * 
      * @param dataSetRequestId
-     *        The new value for the DataSetRequestId property for this object.
      */
     public void setDataSetRequestId(String dataSetRequestId) {
         this.dataSetRequestId = dataSetRequestId;
     }
 
     /**
-     * Returns the value of the DataSetRequestId property for this object.
-     * 
-     * @return The value of the DataSetRequestId property for this object.
+     * @return
      */
     public String getDataSetRequestId() {
         return this.dataSetRequestId;
     }
 
     /**
-     * Sets the value of the DataSetRequestId property for this object.
-     * 
      * @param dataSetRequestId
-     *        The new value for the DataSetRequestId property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -1,106 +1,117 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#describeStep(DescribeStepRequest) DescribeStep operation}.
  * <p>
- * Provides more detail about the cluster step.
+ * This input determines which step to describe.
  * </p>
- *
- * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#describeStep(DescribeStepRequest)
  */
-public class DescribeStepRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeStepRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * The identifier of the cluster with steps to describe.
+     * </p>
      */
     private String clusterId;
-
     /**
+     * <p>
      * The identifier of the step to describe.
+     * </p>
      */
     private String stepId;
 
     /**
+     * <p>
      * The identifier of the cluster with steps to describe.
-     *
-     * @return The identifier of the cluster with steps to describe.
-     */
-    public String getClusterId() {
-        return clusterId;
-    }
-    
-    /**
-     * The identifier of the cluster with steps to describe.
-     *
-     * @param clusterId The identifier of the cluster with steps to describe.
+     * </p>
+     * 
+     * @param clusterId
+     *        The identifier of the cluster with steps to describe.
      */
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
-    
+
     /**
-     * The identifier of the cluster with steps to describe.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param clusterId The identifier of the cluster with steps to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier of the cluster with steps to describe.
+     * </p>
+     * 
+     * @return The identifier of the cluster with steps to describe.
+     */
+    public String getClusterId() {
+        return this.clusterId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the cluster with steps to describe.
+     * </p>
+     * 
+     * @param clusterId
+     *        The identifier of the cluster with steps to describe.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeStepRequest withClusterId(String clusterId) {
-        this.clusterId = clusterId;
+        setClusterId(clusterId);
         return this;
     }
 
     /**
+     * <p>
      * The identifier of the step to describe.
-     *
-     * @return The identifier of the step to describe.
-     */
-    public String getStepId() {
-        return stepId;
-    }
-    
-    /**
-     * The identifier of the step to describe.
-     *
-     * @param stepId The identifier of the step to describe.
+     * </p>
+     * 
+     * @param stepId
+     *        The identifier of the step to describe.
      */
     public void setStepId(String stepId) {
         this.stepId = stepId;
     }
-    
+
     /**
-     * The identifier of the step to describe.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stepId The identifier of the step to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier of the step to describe.
+     * </p>
+     * 
+     * @return The identifier of the step to describe.
+     */
+    public String getStepId() {
+        return this.stepId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the step to describe.
+     * </p>
+     * 
+     * @param stepId
+     *        The identifier of the step to describe.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeStepRequest withStepId(String stepId) {
-        this.stepId = stepId;
+        setStepId(stepId);
         return this;
     }
 
@@ -116,42 +127,51 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements Seri
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getClusterId() != null) sb.append("ClusterId: " + getClusterId() + ",");
-        if (getStepId() != null) sb.append("StepId: " + getStepId() );
+        if (getClusterId() != null)
+            sb.append("ClusterId: " + getClusterId() + ",");
+        if (getStepId() != null)
+            sb.append("StepId: " + getStepId());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeStepRequest == false)
+            return false;
+        DescribeStepRequest other = (DescribeStepRequest) obj;
+        if (other.getClusterId() == null ^ this.getClusterId() == null)
+            return false;
+        if (other.getClusterId() != null
+                && other.getClusterId().equals(this.getClusterId()) == false)
+            return false;
+        if (other.getStepId() == null ^ this.getStepId() == null)
+            return false;
+        if (other.getStepId() != null
+                && other.getStepId().equals(this.getStepId()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode()); 
-        hashCode = prime * hashCode + ((getStepId() == null) ? 0 : getStepId().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
+        hashCode = prime * hashCode
+                + ((getStepId() == null) ? 0 : getStepId().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeStepRequest == false) return false;
-        DescribeStepRequest other = (DescribeStepRequest)obj;
-        
-        if (other.getClusterId() == null ^ this.getClusterId() == null) return false;
-        if (other.getClusterId() != null && other.getClusterId().equals(this.getClusterId()) == false) return false; 
-        if (other.getStepId() == null ^ this.getStepId() == null) return false;
-        if (other.getStepId() != null && other.getStepId().equals(this.getStepId()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeStepRequest clone() {
-        
-            return (DescribeStepRequest) super.clone();
+        return (DescribeStepRequest) super.clone();
     }
-
 }
-    

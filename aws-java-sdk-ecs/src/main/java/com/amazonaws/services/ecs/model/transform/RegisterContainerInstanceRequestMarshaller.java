@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ecs.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,134 +40,111 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Register Container Instance Request Marshaller
+ * RegisterContainerInstanceRequest Marshaller
  */
-public class RegisterContainerInstanceRequestMarshaller implements Marshaller<Request<RegisterContainerInstanceRequest>, RegisterContainerInstanceRequest> {
+public class RegisterContainerInstanceRequestMarshaller
+        implements
+        Marshaller<Request<RegisterContainerInstanceRequest>, RegisterContainerInstanceRequest> {
 
-    public Request<RegisterContainerInstanceRequest> marshall(RegisterContainerInstanceRequest registerContainerInstanceRequest) {
+    public Request<RegisterContainerInstanceRequest> marshall(
+            RegisterContainerInstanceRequest registerContainerInstanceRequest) {
+
         if (registerContainerInstanceRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterContainerInstanceRequest> request = new DefaultRequest<RegisterContainerInstanceRequest>(registerContainerInstanceRequest, "AmazonECS");
-        String target = "AmazonEC2ContainerServiceV20141113.RegisterContainerInstance";
-        request.addHeader("X-Amz-Target", target);
+        Request<RegisterContainerInstanceRequest> request = new DefaultRequest<RegisterContainerInstanceRequest>(
+                registerContainerInstanceRequest, "AmazonECS");
+        request.addHeader("X-Amz-Target",
+                "AmazonEC2ContainerServiceV20141113.RegisterContainerInstance");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (registerContainerInstanceRequest.getCluster() != null) {
-                jsonWriter.key("cluster").value(registerContainerInstanceRequest.getCluster());
+                jsonWriter.key("cluster").value(
+                        registerContainerInstanceRequest.getCluster());
             }
+
             if (registerContainerInstanceRequest.getInstanceIdentityDocument() != null) {
-                jsonWriter.key("instanceIdentityDocument").value(registerContainerInstanceRequest.getInstanceIdentityDocument());
-            }
-            if (registerContainerInstanceRequest.getInstanceIdentityDocumentSignature() != null) {
-                jsonWriter.key("instanceIdentityDocumentSignature").value(registerContainerInstanceRequest.getInstanceIdentityDocumentSignature());
+                jsonWriter.key("instanceIdentityDocument").value(
+                        registerContainerInstanceRequest
+                                .getInstanceIdentityDocument());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<Resource> totalResourcesList = (com.amazonaws.internal.ListWithAutoConstructFlag<Resource>)(registerContainerInstanceRequest.getTotalResources());
-            if (totalResourcesList != null && !(totalResourcesList.isAutoConstruct() && totalResourcesList.isEmpty())) {
+            if (registerContainerInstanceRequest
+                    .getInstanceIdentityDocumentSignature() != null) {
+                jsonWriter.key("instanceIdentityDocumentSignature").value(
+                        registerContainerInstanceRequest
+                                .getInstanceIdentityDocumentSignature());
+            }
 
+            com.amazonaws.internal.SdkInternalList<Resource> totalResourcesList = (com.amazonaws.internal.SdkInternalList<Resource>) registerContainerInstanceRequest
+                    .getTotalResources();
+            if (!totalResourcesList.isEmpty()
+                    || !totalResourcesList.isAutoConstruct()) {
                 jsonWriter.key("totalResources");
                 jsonWriter.array();
-
                 for (Resource totalResourcesListValue : totalResourcesList) {
                     if (totalResourcesListValue != null) {
-                        jsonWriter.object();
-                        if (totalResourcesListValue.getName() != null) {
-                            jsonWriter.key("name").value(totalResourcesListValue.getName());
-                        }
-                        if (totalResourcesListValue.getType() != null) {
-                            jsonWriter.key("type").value(totalResourcesListValue.getType());
-                        }
-                        if (totalResourcesListValue.getDoubleValue() != null) {
-                            jsonWriter.key("doubleValue").value(totalResourcesListValue.getDoubleValue());
-                        }
-                        if (totalResourcesListValue.getLongValue() != null) {
-                            jsonWriter.key("longValue").value(totalResourcesListValue.getLongValue());
-                        }
-                        if (totalResourcesListValue.getIntegerValue() != null) {
-                            jsonWriter.key("integerValue").value(totalResourcesListValue.getIntegerValue());
-                        }
 
-                        com.amazonaws.internal.ListWithAutoConstructFlag<String> stringSetValueList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(totalResourcesListValue.getStringSetValue());
-                        if (stringSetValueList != null && !(stringSetValueList.isAutoConstruct() && stringSetValueList.isEmpty())) {
-
-                            jsonWriter.key("stringSetValue");
-                            jsonWriter.array();
-
-                            for (String stringSetValueListValue : stringSetValueList) {
-                                if (stringSetValueListValue != null) {
-                                    jsonWriter.value(stringSetValueListValue);
-                                }
-                            }
-                            jsonWriter.endArray();
-                        }
-                        jsonWriter.endObject();
+                        ResourceJsonMarshaller.getInstance().marshall(
+                                totalResourcesListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
-            VersionInfo versionInfo = registerContainerInstanceRequest.getVersionInfo();
-            if (versionInfo != null) {
 
+            if (registerContainerInstanceRequest.getVersionInfo() != null) {
                 jsonWriter.key("versionInfo");
-                jsonWriter.object();
-
-                if (versionInfo.getAgentVersion() != null) {
-                    jsonWriter.key("agentVersion").value(versionInfo.getAgentVersion());
-                }
-                if (versionInfo.getAgentHash() != null) {
-                    jsonWriter.key("agentHash").value(versionInfo.getAgentHash());
-                }
-                if (versionInfo.getDockerVersion() != null) {
-                    jsonWriter.key("dockerVersion").value(versionInfo.getDockerVersion());
-                }
-                jsonWriter.endObject();
+                VersionInfoJsonMarshaller.getInstance().marshall(
+                        registerContainerInstanceRequest.getVersionInfo(),
+                        jsonWriter);
             }
+
             if (registerContainerInstanceRequest.getContainerInstanceArn() != null) {
-                jsonWriter.key("containerInstanceArn").value(registerContainerInstanceRequest.getContainerInstanceArn());
+                jsonWriter.key("containerInstanceArn").value(
+                        registerContainerInstanceRequest
+                                .getContainerInstanceArn());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesList = (com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>)(registerContainerInstanceRequest.getAttributes());
-            if (attributesList != null && !(attributesList.isAutoConstruct() && attributesList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<Attribute> attributesList = (com.amazonaws.internal.SdkInternalList<Attribute>) registerContainerInstanceRequest
+                    .getAttributes();
+            if (!attributesList.isEmpty() || !attributesList.isAutoConstruct()) {
                 jsonWriter.key("attributes");
                 jsonWriter.array();
-
                 for (Attribute attributesListValue : attributesList) {
                     if (attributesListValue != null) {
-                        jsonWriter.object();
-                        if (attributesListValue.getName() != null) {
-                            jsonWriter.key("name").value(attributesListValue.getName());
-                        }
-                        if (attributesListValue.getValue() != null) {
-                            jsonWriter.key("value").value(attributesListValue.getValue());
-                        }
-                        jsonWriter.endObject();
+
+                        AttributeJsonMarshaller.getInstance().marshall(
+                                attributesListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

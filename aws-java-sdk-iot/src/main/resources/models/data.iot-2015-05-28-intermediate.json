@@ -255,7 +255,7 @@
           "variableName" : "topic",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -306,7 +306,7 @@
           "variableName" : "qos",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -357,7 +357,7 @@
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -435,7 +435,7 @@
             "variableName" : "qos",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -487,7 +487,7 @@
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -539,7 +539,7 @@
             "variableName" : "topic",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -727,7 +727,7 @@
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -805,7 +805,7 @@
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -869,7 +869,7 @@
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -943,7 +943,7 @@
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -1193,7 +1193,7 @@
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -1267,7 +1267,7 @@
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -1331,7 +1331,7 @@
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -1405,7 +1405,7 @@
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -1469,7 +1469,7 @@
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1520,7 +1520,7 @@
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -1598,7 +1598,7 @@
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -1650,7 +1650,7 @@
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1714,7 +1714,7 @@
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : null,
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1792,7 +1792,7 @@
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : null,
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

@@ -27,29 +27,21 @@ public class DeleteTableResult implements Serializable, Cloneable {
     private TableDescription tableDescription;
 
     /**
-     * Sets the value of the TableDescription property for this object.
-     * 
      * @param tableDescription
-     *        The new value for the TableDescription property for this object.
      */
     public void setTableDescription(TableDescription tableDescription) {
         this.tableDescription = tableDescription;
     }
 
     /**
-     * Returns the value of the TableDescription property for this object.
-     * 
-     * @return The value of the TableDescription property for this object.
+     * @return
      */
     public TableDescription getTableDescription() {
         return this.tableDescription;
     }
 
     /**
-     * Sets the value of the TableDescription property for this object.
-     * 
      * @param tableDescription
-     *        The new value for the TableDescription property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

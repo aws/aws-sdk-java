@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudtrail.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,67 +40,92 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Update Trail Request Marshaller
+ * UpdateTrailRequest Marshaller
  */
-public class UpdateTrailRequestMarshaller implements Marshaller<Request<UpdateTrailRequest>, UpdateTrailRequest> {
+public class UpdateTrailRequestMarshaller implements
+        Marshaller<Request<UpdateTrailRequest>, UpdateTrailRequest> {
 
-    public Request<UpdateTrailRequest> marshall(UpdateTrailRequest updateTrailRequest) {
+    public Request<UpdateTrailRequest> marshall(
+            UpdateTrailRequest updateTrailRequest) {
+
         if (updateTrailRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateTrailRequest> request = new DefaultRequest<UpdateTrailRequest>(updateTrailRequest, "AWSCloudTrail");
-        String target = "CloudTrail_20131101.UpdateTrail";
-        request.addHeader("X-Amz-Target", target);
+        Request<UpdateTrailRequest> request = new DefaultRequest<UpdateTrailRequest>(
+                updateTrailRequest, "AWSCloudTrail");
+        request.addHeader("X-Amz-Target",
+                "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateTrail");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (updateTrailRequest.getName() != null) {
                 jsonWriter.key("Name").value(updateTrailRequest.getName());
             }
+
             if (updateTrailRequest.getS3BucketName() != null) {
-                jsonWriter.key("S3BucketName").value(updateTrailRequest.getS3BucketName());
+                jsonWriter.key("S3BucketName").value(
+                        updateTrailRequest.getS3BucketName());
             }
+
             if (updateTrailRequest.getS3KeyPrefix() != null) {
-                jsonWriter.key("S3KeyPrefix").value(updateTrailRequest.getS3KeyPrefix());
+                jsonWriter.key("S3KeyPrefix").value(
+                        updateTrailRequest.getS3KeyPrefix());
             }
+
             if (updateTrailRequest.getSnsTopicName() != null) {
-                jsonWriter.key("SnsTopicName").value(updateTrailRequest.getSnsTopicName());
+                jsonWriter.key("SnsTopicName").value(
+                        updateTrailRequest.getSnsTopicName());
             }
-            if (updateTrailRequest.isIncludeGlobalServiceEvents() != null) {
-                jsonWriter.key("IncludeGlobalServiceEvents").value(updateTrailRequest.isIncludeGlobalServiceEvents());
+
+            if (updateTrailRequest.getIncludeGlobalServiceEvents() != null) {
+                jsonWriter.key("IncludeGlobalServiceEvents").value(
+                        updateTrailRequest.getIncludeGlobalServiceEvents());
             }
-            if (updateTrailRequest.isEnableLogFileValidation() != null) {
-                jsonWriter.key("EnableLogFileValidation").value(updateTrailRequest.isEnableLogFileValidation());
+
+            if (updateTrailRequest.getEnableLogFileValidation() != null) {
+                jsonWriter.key("EnableLogFileValidation").value(
+                        updateTrailRequest.getEnableLogFileValidation());
             }
+
             if (updateTrailRequest.getCloudWatchLogsLogGroupArn() != null) {
-                jsonWriter.key("CloudWatchLogsLogGroupArn").value(updateTrailRequest.getCloudWatchLogsLogGroupArn());
+                jsonWriter.key("CloudWatchLogsLogGroupArn").value(
+                        updateTrailRequest.getCloudWatchLogsLogGroupArn());
             }
+
             if (updateTrailRequest.getCloudWatchLogsRoleArn() != null) {
-                jsonWriter.key("CloudWatchLogsRoleArn").value(updateTrailRequest.getCloudWatchLogsRoleArn());
+                jsonWriter.key("CloudWatchLogsRoleArn").value(
+                        updateTrailRequest.getCloudWatchLogsRoleArn());
             }
+
             if (updateTrailRequest.getKmsKeyId() != null) {
-                jsonWriter.key("KmsKeyId").value(updateTrailRequest.getKmsKeyId());
+                jsonWriter.key("KmsKeyId").value(
+                        updateTrailRequest.getKmsKeyId());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

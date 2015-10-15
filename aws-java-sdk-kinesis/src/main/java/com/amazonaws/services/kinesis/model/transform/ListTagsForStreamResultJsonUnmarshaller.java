@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * List Tags For Stream Result JSON Unmarshaller
+ * ListTagsForStreamResult JSON Unmarshaller
  */
-public class ListTagsForStreamResultJsonUnmarshaller implements Unmarshaller<ListTagsForStreamResult, JsonUnmarshallerContext> {
+public class ListTagsForStreamResultJsonUnmarshaller implements
+        Unmarshaller<ListTagsForStreamResult, JsonUnmarshallerContext> {
 
-    public ListTagsForStreamResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public ListTagsForStreamResult unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         ListTagsForStreamResult listTagsForStreamResult = new ListTagsForStreamResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,37 +40,47 @@ public class ListTagsForStreamResultJsonUnmarshaller implements Unmarshaller<Lis
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    listTagsForStreamResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listTagsForStreamResult.setTags(new ListUnmarshaller<Tag>(
+                            TagJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("HasMoreTags", targetDepth)) {
                     context.nextToken();
-                    listTagsForStreamResult.setHasMoreTags(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    listTagsForStreamResult
+                            .setHasMoreTags(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return listTagsForStreamResult;
     }
 
     private static ListTagsForStreamResultJsonUnmarshaller instance;
+
     public static ListTagsForStreamResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new ListTagsForStreamResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new ListTagsForStreamResultJsonUnmarshaller();
         return instance;
     }
 }
-    

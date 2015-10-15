@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,9 +28,11 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Permission JSON Unmarshaller
  */
-public class PermissionJsonUnmarshaller implements Unmarshaller<Permission, JsonUnmarshallerContext> {
+public class PermissionJsonUnmarshaller implements
+        Unmarshaller<Permission, JsonUnmarshallerContext> {
 
-    public Permission unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public Permission unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         Permission permission = new Permission();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,49 +40,60 @@ public class PermissionJsonUnmarshaller implements Unmarshaller<Permission, Json
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    permission.setStackId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    permission.setStackId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("IamUserArn", targetDepth)) {
                     context.nextToken();
-                    permission.setIamUserArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    permission.setIamUserArn(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AllowSsh", targetDepth)) {
                     context.nextToken();
-                    permission.setAllowSsh(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    permission.setAllowSsh(BooleanJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AllowSudo", targetDepth)) {
                     context.nextToken();
-                    permission.setAllowSudo(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    permission.setAllowSudo(BooleanJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Level", targetDepth)) {
                     context.nextToken();
-                    permission.setLevel(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    permission.setLevel(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return permission;
     }
 
     private static PermissionJsonUnmarshaller instance;
+
     public static PermissionJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new PermissionJsonUnmarshaller();
+        if (instance == null)
+            instance = new PermissionJsonUnmarshaller();
         return instance;
     }
 }
-    

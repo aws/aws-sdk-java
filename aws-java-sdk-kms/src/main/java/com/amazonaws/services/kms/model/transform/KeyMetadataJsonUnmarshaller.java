@@ -73,6 +73,14 @@ public class KeyMetadataJsonUnmarshaller implements Unmarshaller<KeyMetadata, Js
                     context.nextToken();
                     keyMetadata.setKeyUsage(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("KeyState", targetDepth)) {
+                    context.nextToken();
+                    keyMetadata.setKeyState(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DeletionDate", targetDepth)) {
+                    context.nextToken();
+                    keyMetadata.setDeletionDate(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

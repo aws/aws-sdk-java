@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
@@ -24,40 +25,47 @@ import java.io.Serializable;
 public class RegisterElasticIpResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The Elastic IP address.
+     * </p>
      */
     private String elasticIp;
 
     /**
+     * <p>
      * The Elastic IP address.
-     *
-     * @return The Elastic IP address.
-     */
-    public String getElasticIp() {
-        return elasticIp;
-    }
-    
-    /**
-     * The Elastic IP address.
-     *
-     * @param elasticIp The Elastic IP address.
+     * </p>
+     * 
+     * @param elasticIp
+     *        The Elastic IP address.
      */
     public void setElasticIp(String elasticIp) {
         this.elasticIp = elasticIp;
     }
-    
+
     /**
-     * The Elastic IP address.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param elasticIp The Elastic IP address.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Elastic IP address.
+     * </p>
+     * 
+     * @return The Elastic IP address.
+     */
+    public String getElasticIp() {
+        return this.elasticIp;
+    }
+
+    /**
+     * <p>
+     * The Elastic IP address.
+     * </p>
+     * 
+     * @param elasticIp
+     *        The Elastic IP address.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public RegisterElasticIpResult withElasticIp(String elasticIp) {
-        this.elasticIp = elasticIp;
+        setElasticIp(elasticIp);
         return this;
     }
 
@@ -73,46 +81,48 @@ public class RegisterElasticIpResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() );
+        if (getElasticIp() != null)
+            sb.append("ElasticIp: " + getElasticIp());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RegisterElasticIpResult == false)
+            return false;
+        RegisterElasticIpResult other = (RegisterElasticIpResult) obj;
+        if (other.getElasticIp() == null ^ this.getElasticIp() == null)
+            return false;
+        if (other.getElasticIp() != null
+                && other.getElasticIp().equals(this.getElasticIp()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof RegisterElasticIpResult == false) return false;
-        RegisterElasticIpResult other = (RegisterElasticIpResult)obj;
-        
-        if (other.getElasticIp() == null ^ this.getElasticIp() == null) return false;
-        if (other.getElasticIp() != null && other.getElasticIp().equals(this.getElasticIp()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public RegisterElasticIpResult clone() {
         try {
             return (RegisterElasticIpResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

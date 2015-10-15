@@ -1,113 +1,120 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * Contains the response to a <code>DescribeElasticLoadBalancers</code>
- * request.
+ * Contains the response to a <code>DescribeElasticLoadBalancers</code> request.
  * </p>
  */
-public class DescribeElasticLoadBalancersResult implements Serializable, Cloneable {
+public class DescribeElasticLoadBalancersResult implements Serializable,
+        Cloneable {
 
     /**
+     * <p>
      * A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer> elasticLoadBalancers;
+    private com.amazonaws.internal.SdkInternalList<ElasticLoadBalancer> elasticLoadBalancers;
 
     /**
+     * <p>
      * A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.
-     *
-     * @return A list of <code>ElasticLoadBalancer</code> objects that describe the
-     *         specified Elastic Load Balancing instances.
+     * </p>
+     * 
+     * @return A list of <code>ElasticLoadBalancer</code> objects that describe
+     *         the specified Elastic Load Balancing instances.
      */
     public java.util.List<ElasticLoadBalancer> getElasticLoadBalancers() {
         if (elasticLoadBalancers == null) {
-              elasticLoadBalancers = new com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer>();
-              elasticLoadBalancers.setAutoConstruct(true);
+            elasticLoadBalancers = new com.amazonaws.internal.SdkInternalList<ElasticLoadBalancer>();
         }
         return elasticLoadBalancers;
     }
-    
+
     /**
+     * <p>
      * A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.
-     *
-     * @param elasticLoadBalancers A list of <code>ElasticLoadBalancer</code> objects that describe the
-     *         specified Elastic Load Balancing instances.
+     * </p>
+     * 
+     * @param elasticLoadBalancers
+     *        A list of <code>ElasticLoadBalancer</code> objects that describe
+     *        the specified Elastic Load Balancing instances.
      */
-    public void setElasticLoadBalancers(java.util.Collection<ElasticLoadBalancer> elasticLoadBalancers) {
+    public void setElasticLoadBalancers(
+            java.util.Collection<ElasticLoadBalancer> elasticLoadBalancers) {
         if (elasticLoadBalancers == null) {
             this.elasticLoadBalancers = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer> elasticLoadBalancersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer>(elasticLoadBalancers.size());
-        elasticLoadBalancersCopy.addAll(elasticLoadBalancers);
-        this.elasticLoadBalancers = elasticLoadBalancersCopy;
+
+        this.elasticLoadBalancers = new com.amazonaws.internal.SdkInternalList<ElasticLoadBalancer>(
+                elasticLoadBalancers);
     }
-    
+
     /**
+     * <p>
      * A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setElasticLoadBalancers(java.util.Collection)} or
      * {@link #withElasticLoadBalancers(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param elasticLoadBalancers A list of <code>ElasticLoadBalancer</code> objects that describe the
-     *         specified Elastic Load Balancing instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param elasticLoadBalancers
+     *        A list of <code>ElasticLoadBalancer</code> objects that describe
+     *        the specified Elastic Load Balancing instances.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeElasticLoadBalancersResult withElasticLoadBalancers(ElasticLoadBalancer... elasticLoadBalancers) {
-        if (getElasticLoadBalancers() == null) setElasticLoadBalancers(new java.util.ArrayList<ElasticLoadBalancer>(elasticLoadBalancers.length));
-        for (ElasticLoadBalancer value : elasticLoadBalancers) {
-            getElasticLoadBalancers().add(value);
+    public DescribeElasticLoadBalancersResult withElasticLoadBalancers(
+            ElasticLoadBalancer... elasticLoadBalancers) {
+        if (this.elasticLoadBalancers == null) {
+            setElasticLoadBalancers(new com.amazonaws.internal.SdkInternalList<ElasticLoadBalancer>(
+                    elasticLoadBalancers.length));
+        }
+        for (ElasticLoadBalancer ele : elasticLoadBalancers) {
+            this.elasticLoadBalancers.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param elasticLoadBalancers A list of <code>ElasticLoadBalancer</code> objects that describe the
-     *         specified Elastic Load Balancing instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param elasticLoadBalancers
+     *        A list of <code>ElasticLoadBalancer</code> objects that describe
+     *        the specified Elastic Load Balancing instances.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeElasticLoadBalancersResult withElasticLoadBalancers(java.util.Collection<ElasticLoadBalancer> elasticLoadBalancers) {
-        if (elasticLoadBalancers == null) {
-            this.elasticLoadBalancers = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer> elasticLoadBalancersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer>(elasticLoadBalancers.size());
-            elasticLoadBalancersCopy.addAll(elasticLoadBalancers);
-            this.elasticLoadBalancers = elasticLoadBalancersCopy;
-        }
-
+    public DescribeElasticLoadBalancersResult withElasticLoadBalancers(
+            java.util.Collection<ElasticLoadBalancer> elasticLoadBalancers) {
+        setElasticLoadBalancers(elasticLoadBalancers);
         return this;
     }
 
@@ -123,46 +130,52 @@ public class DescribeElasticLoadBalancersResult implements Serializable, Cloneab
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getElasticLoadBalancers() != null) sb.append("ElasticLoadBalancers: " + getElasticLoadBalancers() );
+        if (getElasticLoadBalancers() != null)
+            sb.append("ElasticLoadBalancers: " + getElasticLoadBalancers());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeElasticLoadBalancersResult == false)
+            return false;
+        DescribeElasticLoadBalancersResult other = (DescribeElasticLoadBalancersResult) obj;
+        if (other.getElasticLoadBalancers() == null
+                ^ this.getElasticLoadBalancers() == null)
+            return false;
+        if (other.getElasticLoadBalancers() != null
+                && other.getElasticLoadBalancers().equals(
+                        this.getElasticLoadBalancers()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getElasticLoadBalancers() == null) ? 0 : getElasticLoadBalancers().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getElasticLoadBalancers() == null) ? 0
+                        : getElasticLoadBalancers().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeElasticLoadBalancersResult == false) return false;
-        DescribeElasticLoadBalancersResult other = (DescribeElasticLoadBalancersResult)obj;
-        
-        if (other.getElasticLoadBalancers() == null ^ this.getElasticLoadBalancers() == null) return false;
-        if (other.getElasticLoadBalancers() != null && other.getElasticLoadBalancers().equals(this.getElasticLoadBalancers()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeElasticLoadBalancersResult clone() {
         try {
             return (DescribeElasticLoadBalancersResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

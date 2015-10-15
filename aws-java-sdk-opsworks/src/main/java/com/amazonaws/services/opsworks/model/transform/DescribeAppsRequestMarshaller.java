@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,38 +40,43 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Describe Apps Request Marshaller
+ * DescribeAppsRequest Marshaller
  */
-public class DescribeAppsRequestMarshaller implements Marshaller<Request<DescribeAppsRequest>, DescribeAppsRequest> {
+public class DescribeAppsRequestMarshaller implements
+        Marshaller<Request<DescribeAppsRequest>, DescribeAppsRequest> {
 
-    public Request<DescribeAppsRequest> marshall(DescribeAppsRequest describeAppsRequest) {
+    public Request<DescribeAppsRequest> marshall(
+            DescribeAppsRequest describeAppsRequest) {
+
         if (describeAppsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeAppsRequest> request = new DefaultRequest<DescribeAppsRequest>(describeAppsRequest, "AWSOpsWorks");
-        String target = "OpsWorks_20130218.DescribeApps";
-        request.addHeader("X-Amz-Target", target);
+        Request<DescribeAppsRequest> request = new DefaultRequest<DescribeAppsRequest>(
+                describeAppsRequest, "AWSOpsWorks");
+        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DescribeApps");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (describeAppsRequest.getStackId() != null) {
-                jsonWriter.key("StackId").value(describeAppsRequest.getStackId());
+                jsonWriter.key("StackId").value(
+                        describeAppsRequest.getStackId());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> appIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeAppsRequest.getAppIds());
-            if (appIdsList != null && !(appIdsList.isAutoConstruct() && appIdsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> appIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeAppsRequest
+                    .getAppIds();
+            if (!appIdsList.isEmpty() || !appIdsList.isAutoConstruct()) {
                 jsonWriter.key("AppIds");
                 jsonWriter.array();
-
                 for (String appIdsListValue : appIdsList) {
                     if (appIdsListValue != null) {
                         jsonWriter.value(appIdsListValue);
@@ -79,17 +85,20 @@ public class DescribeAppsRequestMarshaller implements Marshaller<Request<Describ
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

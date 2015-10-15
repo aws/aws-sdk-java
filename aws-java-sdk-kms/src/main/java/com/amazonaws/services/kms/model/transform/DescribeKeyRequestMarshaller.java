@@ -65,6 +65,20 @@ public class DescribeKeyRequestMarshaller implements Marshaller<Request<Describe
                 jsonWriter.key("KeyId").value(describeKeyRequest.getKeyId());
             }
 
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> grantTokensList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeKeyRequest.getGrantTokens());
+            if (grantTokensList != null && !(grantTokensList.isAutoConstruct() && grantTokensList.isEmpty())) {
+
+                jsonWriter.key("GrantTokens");
+                jsonWriter.array();
+
+                for (String grantTokensListValue : grantTokensList) {
+                    if (grantTokensListValue != null) {
+                        jsonWriter.value(grantTokensListValue);
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
           jsonWriter.endObject();
 
           String snippet = stringWriter.toString();

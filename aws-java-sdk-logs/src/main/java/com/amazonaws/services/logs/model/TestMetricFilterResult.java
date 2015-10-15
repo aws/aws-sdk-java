@@ -25,9 +25,7 @@ public class TestMetricFilterResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord> matches;
 
     /**
-     * Returns the value of the Matches property for this object.
-     * 
-     * @return The value of the Matches property for this object.
+     * @return
      */
     public java.util.List<MetricFilterMatchRecord> getMatches() {
         if (matches == null) {
@@ -37,10 +35,7 @@ public class TestMetricFilterResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Matches property for this object.
-     * 
      * @param matches
-     *        The new value for the Matches property for this object.
      */
     public void setMatches(java.util.Collection<MetricFilterMatchRecord> matches) {
         if (matches == null) {
@@ -53,7 +48,6 @@ public class TestMetricFilterResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Matches property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setMatches(java.util.Collection)} or
@@ -62,7 +56,6 @@ public class TestMetricFilterResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param matches
-     *        The new value for the Matches property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -79,10 +72,7 @@ public class TestMetricFilterResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Matches property for this object.
-     * 
      * @param matches
-     *        The new value for the Matches property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

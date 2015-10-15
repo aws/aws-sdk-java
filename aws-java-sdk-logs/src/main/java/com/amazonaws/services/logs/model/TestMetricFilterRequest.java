@@ -33,29 +33,21 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> logEventMessages;
 
     /**
-     * Sets the value of the FilterPattern property for this object.
-     * 
      * @param filterPattern
-     *        The new value for the FilterPattern property for this object.
      */
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
     }
 
     /**
-     * Returns the value of the FilterPattern property for this object.
-     * 
-     * @return The value of the FilterPattern property for this object.
+     * @return
      */
     public String getFilterPattern() {
         return this.filterPattern;
     }
 
     /**
-     * Sets the value of the FilterPattern property for this object.
-     * 
      * @param filterPattern
-     *        The new value for the FilterPattern property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

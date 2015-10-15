@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,59 +16,61 @@ package com.amazonaws.services.ecs;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
+
 import com.amazonaws.services.ecs.model.*;
 
 /**
- * Interface for accessing AmazonECS.
+ * Interface for accessing Amazon ECS.
+ * <p>
  * <p>
  * Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast,
- * container management service that makes it easy to run, stop, and
- * manage Docker containers on a cluster of EC2 instances. Amazon ECS
- * lets you launch and stop container-enabled applications with simple
- * API calls, allows you to get the state of your cluster from a
- * centralized service, and gives you access to many familiar Amazon EC2
- * features like security groups, Amazon EBS volumes, and IAM roles.
+ * container management service that makes it easy to run, stop, and manage
+ * Docker containers on a cluster of EC2 instances. Amazon ECS lets you launch
+ * and stop container-enabled applications with simple API calls, allows you to
+ * get the state of your cluster from a centralized service, and gives you
+ * access to many familiar Amazon EC2 features like security groups, Amazon EBS
+ * volumes, and IAM roles.
  * </p>
  * <p>
- * You can use Amazon ECS to schedule the placement of containers across
- * your cluster based on your resource needs, isolation policies, and
- * availability requirements. Amazon EC2 Container Service eliminates the
- * need for you to operate your own cluster management and configuration
- * management systems or worry about scaling your management
- * infrastructure.
+ * You can use Amazon ECS to schedule the placement of containers across your
+ * cluster based on your resource needs, isolation policies, and availability
+ * requirements. Amazon EC2 Container Service eliminates the need for you to
+ * operate your own cluster management and configuration management systems or
+ * worry about scaling your management infrastructure.
  * </p>
  */
 public interface AmazonECS {
 
     /**
-     * Overrides the default endpoint for this client ("https://ecs.us-east-1.amazonaws.com").
-     * Callers can use this method to control which AWS region they want to work with.
+     * Overrides the default endpoint for this client
+     * ("https://ecs.us-east-1.amazonaws.com"). Callers can use this method to
+     * control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "ecs.us-east-1.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://ecs.us-east-1.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * Callers can pass in just the endpoint (ex: "ecs.us-east-1.amazonaws.com")
+     * or a full URL, including the protocol (ex:
+     * "https://ecs.us-east-1.amazonaws.com"). If the protocol is not specified
+     * here, the default protocol from this client's {@link ClientConfiguration}
+     * will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * a complete list of all available endpoints for all AWS services, see: <a
+     * href=
+     * "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912"
+     * > http://developer.amazonwebservices.com/connect/entry.jspa?externalID=
+     * 3912</a>
      * <p>
-     * <b>This method is not threadsafe. An endpoint should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit or retrying.</b>
+     * <b>This method is not threadsafe. An endpoint should be configured when
+     * the client is created and before any service requests are made. Changing
+     * it afterwards creates inevitable race conditions for any service requests
+     * in transit or retrying.</b>
      *
      * @param endpoint
-     *            The endpoint (ex: "ecs.us-east-1.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://ecs.us-east-1.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
+     *        The endpoint (ex: "ecs.us-east-1.amazonaws.com") or a full URL,
+     *        including the protocol (ex: "https://ecs.us-east-1.amazonaws.com")
+     *        of the region specific AWS endpoint this client will communicate
+     *        with.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
+    void setEndpoint(String endpoint);
 
     /**
      * An alternative to {@link AmazonECS#setEndpoint(String)}, sets the
@@ -85,196 +87,17 @@ public interface AmazonECS {
      * transit or retrying.</b>
      *
      * @param region
-     *            The region this client will communicate with. See
-     *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
-     *            accessing a given region.
-     * @throws java.lang.IllegalArgumentException
-     *             If the given region is null, or if this service isn't
-     *             available in the given region. See
-     *             {@link Region#isServiceSupported(String)}
+     *        The region this client will communicate with. See
+     *        {@link Region#getRegion(com.amazonaws.regions.Regions)} for
+     *        accessing a given region. Must not be null and must be a region
+     *        where the service is available.
+     *
      * @see Region#getRegion(com.amazonaws.regions.Regions)
-     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#createClient(Class,
+     *      com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#isServiceSupported(String)
      */
-    public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-    
-    /**
-     * <p>
-     * Deletes the specified cluster. You must deregister all container
-     * instances from this cluster before you may delete it. You can list the
-     * container instances in a cluster with ListContainerInstances and
-     * deregister them with DeregisterContainerInstance.
-     * </p>
-     *
-     * @param deleteClusterRequest Container for the necessary parameters to
-     *           execute the DeleteCluster service method on AmazonECS.
-     * 
-     * @return The response from the DeleteCluster service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterContainsContainerInstancesException
-     * @throws ClusterNotFoundException
-     * @throws ServerException
-     * @throws ClientException
-     * @throws ClusterContainsServicesException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteClusterResult deleteCluster(DeleteClusterRequest deleteClusterRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
-     * </p>
-     * <p>
-     * Sent to acknowledge that a container changed states.
-     * </p>
-     *
-     * @param submitContainerStateChangeRequest Container for the necessary
-     *           parameters to execute the SubmitContainerStateChange service method on
-     *           AmazonECS.
-     * 
-     * @return The response from the SubmitContainerStateChange service
-     *         method, as returned by AmazonECS.
-     * 
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public SubmitContainerStateChangeResult submitContainerStateChange(SubmitContainerStateChangeRequest submitContainerStateChangeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a specified service within a cluster.
-     * </p>
-     *
-     * @param deleteServiceRequest Container for the necessary parameters to
-     *           execute the DeleteService service method on AmazonECS.
-     * 
-     * @return The response from the DeleteService service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
-     * @throws ServerException
-     * @throws ClientException
-     * @throws ServiceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of task definitions that are registered to your
-     * account. You can filter the results by family name with the
-     * <code>familyPrefix</code> parameter or by status with the
-     * <code>status</code> parameter.
-     * </p>
-     *
-     * @param listTaskDefinitionsRequest Container for the necessary
-     *           parameters to execute the ListTaskDefinitions service method on
-     *           AmazonECS.
-     * 
-     * @return The response from the ListTaskDefinitions service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListTaskDefinitionsResult listTaskDefinitions(ListTaskDefinitionsRequest listTaskDefinitionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Start a task using random placement and the default Amazon ECS
-     * scheduler. To use your own scheduler or place a task on a specific
-     * container instance, use <code>StartTask</code> instead.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> The count parameter is limited to 10 tasks per
-     * call.
-     * </p>
-     *
-     * @param runTaskRequest Container for the necessary parameters to
-     *           execute the RunTask service method on AmazonECS.
-     * 
-     * @return The response from the RunTask service method, as returned by
-     *         AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RunTaskResult runTask(RunTaskRequest runTaskRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of existing clusters.
-     * </p>
-     *
-     * @param listClustersRequest Container for the necessary parameters to
-     *           execute the ListClusters service method on AmazonECS.
-     * 
-     * @return The response from the ListClusters service method, as returned
-     *         by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListClustersResult listClusters(ListClustersRequest listClustersRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void setRegion(Region region);
 
     /**
      * <p>
@@ -283,337 +106,227 @@ public interface AmazonECS {
      * instance. However, you can create your own cluster with a unique name
      * with the <code>CreateCluster</code> action.
      * </p>
-     *
-     * @param createClusterRequest Container for the necessary parameters to
-     *           execute the CreateCluster service method on AmazonECS.
      * 
-     * @return The response from the CreateCluster service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
+     * @param createClusterRequest
+     * @return Result of the CreateCluster operation returned by the service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
      */
-    public CreateClusterResult createCluster(CreateClusterRequest createClusterRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    CreateClusterResult createCluster(CreateClusterRequest createClusterRequest);
 
     /**
-     * <p>
-     * Describes one or more of your clusters.
-     * </p>
+     * Simplified method form for invoking the CreateCluster operation.
      *
-     * @param describeClustersRequest Container for the necessary parameters
-     *           to execute the DescribeClusters service method on AmazonECS.
-     * 
-     * @return The response from the DescribeClusters service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @see #createCluster(CreateClusterRequest)
      */
-    public DescribeClustersResult describeClusters(DescribeClustersRequest describeClustersRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deregisters the specified task definition by family and revision.
-     * Upon deregistration, the task definition is marked as
-     * <code>INACTIVE</code> . Existing tasks and services that reference an
-     * <code>INACTIVE</code> task definition continue to run without
-     * disruption. Existing services that reference an <code>INACTIVE</code>
-     * task definition can still scale up or down by modifying the service's
-     * desired count.
-     * </p>
-     * <p>
-     * You cannot use an <code>INACTIVE</code> task definition to run new
-     * tasks or create new services, and you cannot update an existing
-     * service to reference an <code>INACTIVE</code> task definition
-     * (although there may be up to a 10 minute window following
-     * deregistration where these restrictions have not yet taken effect).
-     * </p>
-     *
-     * @param deregisterTaskDefinitionRequest Container for the necessary
-     *           parameters to execute the DeregisterTaskDefinition service method on
-     *           AmazonECS.
-     * 
-     * @return The response from the DeregisterTaskDefinition service method,
-     *         as returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeregisterTaskDefinitionResult deregisterTaskDefinition(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deregisters an Amazon ECS container instance from the specified
-     * cluster. This instance is no longer available to run tasks.
-     * </p>
-     * <p>
-     * If you intend to use the container instance for some other purpose
-     * after deregistration, you should stop all of the tasks running on the
-     * container instance before deregistration to avoid any orphaned tasks
-     * from consuming resources.
-     * </p>
-     * <p>
-     * Deregistering a container instance removes the instance from a
-     * cluster, but it does not terminate the EC2 instance; if you are
-     * finished using the instance, be sure to terminate it in the Amazon EC2
-     * console to stop billing.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> When you terminate a container instance, it is
-     * automatically deregistered from your cluster.
-     * </p>
-     *
-     * @param deregisterContainerInstanceRequest Container for the necessary
-     *           parameters to execute the DeregisterContainerInstance service method
-     *           on AmazonECS.
-     * 
-     * @return The response from the DeregisterContainerInstance service
-     *         method, as returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeregisterContainerInstanceResult deregisterContainerInstance(DeregisterContainerInstanceRequest deregisterContainerInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of container instances in a specified cluster.
-     * </p>
-     *
-     * @param listContainerInstancesRequest Container for the necessary
-     *           parameters to execute the ListContainerInstances service method on
-     *           AmazonECS.
-     * 
-     * @return The response from the ListContainerInstances service method,
-     *         as returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListContainerInstancesResult listContainerInstances(ListContainerInstancesRequest listContainerInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the Amazon ECS container agent on a specified container
-     * instance. Updating the Amazon ECS container agent does not interrupt
-     * running tasks or services on the container instance. The process for
-     * updating the agent differs depending on whether your container
-     * instance was launched with the Amazon ECS-optimized AMI or another
-     * operating system.
-     * </p>
-     * <p>
-     * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized
-     * AMI or Amazon Linux with the <code>ecs-init</code> service installed
-     * and running. For help updating the Amazon ECS container agent on other
-     * operating systems, see
-     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"> Manually Updating the Amazon ECS Container Agent </a>
-     * in the <i>Amazon EC2 Container Service Developer Guide</i> .
-     * </p>
-     *
-     * @param updateContainerAgentRequest Container for the necessary
-     *           parameters to execute the UpdateContainerAgent service method on
-     *           AmazonECS.
-     * 
-     * @return The response from the UpdateContainerAgent service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
-     * @throws ServerException
-     * @throws NoUpdateAvailableException
-     * @throws ClientException
-     * @throws MissingVersionException
-     * @throws UpdateInProgressException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateContainerAgentResult updateContainerAgent(UpdateContainerAgentRequest updateContainerAgentRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes a task definition. You can specify a <code>family</code>
-     * and <code>revision</code> to find information about a specific task
-     * definition, or you can simply specify the family to find the latest
-     * <code>ACTIVE</code> revision in that family.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You can only describe INACTIVE task definitions while an
-     * active task or service references them.
-     * </p>
-     *
-     * @param describeTaskDefinitionRequest Container for the necessary
-     *           parameters to execute the DescribeTaskDefinition service method on
-     *           AmazonECS.
-     * 
-     * @return The response from the DescribeTaskDefinition service method,
-     *         as returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeTaskDefinitionResult describeTaskDefinition(DescribeTaskDefinitionRequest describeTaskDefinitionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Registers a new task definition from the supplied <code>family</code>
-     * and <code>containerDefinitions</code> . Optionally, you can add data
-     * volumes to your containers with the <code>volumes</code> parameter.
-     * For more information about task definition parameters and defaults,
-     * see
-     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"> Amazon ECS Task Definitions </a>
-     * in the <i>Amazon EC2 Container Service Developer Guide</i> .
-     * </p>
-     *
-     * @param registerTaskDefinitionRequest Container for the necessary
-     *           parameters to execute the RegisterTaskDefinition service method on
-     *           AmazonECS.
-     * 
-     * @return The response from the RegisterTaskDefinition service method,
-     *         as returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RegisterTaskDefinitionResult registerTaskDefinition(RegisterTaskDefinitionRequest registerTaskDefinitionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
-     * </p>
-     * <p>
-     * Sent to acknowledge that a task changed states.
-     * </p>
-     *
-     * @param submitTaskStateChangeRequest Container for the necessary
-     *           parameters to execute the SubmitTaskStateChange service method on
-     *           AmazonECS.
-     * 
-     * @return The response from the SubmitTaskStateChange service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public SubmitTaskStateChangeResult submitTaskStateChange(SubmitTaskStateChangeRequest submitTaskStateChangeRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    CreateClusterResult createCluster();
 
     /**
      * <p>
      * Runs and maintains a desired number of tasks from a specified task
      * definition. If the number of tasks running in a service drops below
-     * <code>desiredCount</code> , Amazon ECS spawns another instantiation of
-     * the task in the specified cluster.
+     * <code>desiredCount</code>, Amazon ECS spawns another instantiation of the
+     * task in the specified cluster.
      * </p>
-     *
-     * @param createServiceRequest Container for the necessary parameters to
-     *           execute the CreateService service method on AmazonECS.
      * 
-     * @return The response from the CreateService service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
+     * @param createServiceRequest
+     * @return Result of the CreateService operation returned by the service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
      */
-    public CreateServiceResult createService(CreateServiceRequest createServiceRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    CreateServiceResult createService(CreateServiceRequest createServiceRequest);
+
+    /**
+     * <p>
+     * Deletes the specified cluster. You must deregister all container
+     * instances from this cluster before you may delete it. You can list the
+     * container instances in a cluster with <a>ListContainerInstances</a> and
+     * deregister them with <a>DeregisterContainerInstance</a>.
+     * </p>
+     * 
+     * @param deleteClusterRequest
+     * @return Result of the DeleteCluster operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
+     * @throws ClusterContainsContainerInstancesException
+     *         You cannot delete a cluster that has registered container
+     *         instances. You must first deregister the container instances
+     *         before you can delete the cluster. For more information, see
+     *         <a>DeregisterContainerInstance</a>.
+     * @throws ClusterContainsServicesException
+     *         You cannot delete a cluster that contains services. You must
+     *         first update the service to reduce its desired task count to 0
+     *         and then delete the service. For more information, see
+     *         <a>UpdateService</a> and <a>DeleteService</a>.
+     */
+    DeleteClusterResult deleteCluster(DeleteClusterRequest deleteClusterRequest);
+
+    /**
+     * <p>
+     * Deletes a specified service within a cluster.
+     * </p>
+     * 
+     * @param deleteServiceRequest
+     * @return Result of the DeleteService operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
+     * @throws ServiceNotFoundException
+     *         The specified service could not be found. You can view your
+     *         available services with <a>ListServices</a>. Amazon ECS services
+     *         are cluster-specific and region-specific.
+     */
+    DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest);
+
+    /**
+     * <p>
+     * Deregisters an Amazon ECS container instance from the specified cluster.
+     * This instance is no longer available to run tasks.
+     * </p>
+     * <p>
+     * If you intend to use the container instance for some other purpose after
+     * deregistration, you should stop all of the tasks running on the container
+     * instance before deregistration to avoid any orphaned tasks from consuming
+     * resources.
+     * </p>
+     * <p>
+     * Deregistering a container instance removes the instance from a cluster,
+     * but it does not terminate the EC2 instance; if you are finished using the
+     * instance, be sure to terminate it in the Amazon EC2 console to stop
+     * billing.
+     * </p>
+     * <note>
+     * <p>
+     * When you terminate a container instance, it is automatically deregistered
+     * from your cluster.
+     * </p>
+     * </note>
+     * 
+     * @param deregisterContainerInstanceRequest
+     * @return Result of the DeregisterContainerInstance operation returned by
+     *         the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
+     */
+    DeregisterContainerInstanceResult deregisterContainerInstance(
+            DeregisterContainerInstanceRequest deregisterContainerInstanceRequest);
+
+    /**
+     * <p>
+     * Deregisters the specified task definition by family and revision. Upon
+     * deregistration, the task definition is marked as <code>INACTIVE</code>.
+     * Existing tasks and services that reference an <code>INACTIVE</code> task
+     * definition continue to run without disruption. Existing services that
+     * reference an <code>INACTIVE</code> task definition can still scale up or
+     * down by modifying the service's desired count.
+     * </p>
+     * <p>
+     * You cannot use an <code>INACTIVE</code> task definition to run new tasks
+     * or create new services, and you cannot update an existing service to
+     * reference an <code>INACTIVE</code> task definition (although there may be
+     * up to a 10 minute window following deregistration where these
+     * restrictions have not yet taken effect).
+     * </p>
+     * 
+     * @param deregisterTaskDefinitionRequest
+     * @return Result of the DeregisterTaskDefinition operation returned by the
+     *         service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     */
+    DeregisterTaskDefinitionResult deregisterTaskDefinition(
+            DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your clusters.
+     * </p>
+     * 
+     * @param describeClustersRequest
+     * @return Result of the DescribeClusters operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     */
+    DescribeClustersResult describeClusters(
+            DescribeClustersRequest describeClustersRequest);
+
+    /**
+     * Simplified method form for invoking the DescribeClusters operation.
+     *
+     * @see #describeClusters(DescribeClustersRequest)
+     */
+    DescribeClustersResult describeClusters();
 
     /**
      * <p>
@@ -621,603 +334,659 @@ public interface AmazonECS {
      * metadata about registered and remaining resources on each container
      * instance requested.
      * </p>
-     *
-     * @param describeContainerInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeContainerInstances service method on
-     *           AmazonECS.
      * 
-     * @return The response from the DescribeContainerInstances service
-     *         method, as returned by AmazonECS.
-     * 
+     * @param describeContainerInstancesRequest
+     * @return Result of the DescribeContainerInstances operation returned by
+     *         the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
      * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
      * @throws ClusterNotFoundException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
      */
-    public DescribeContainerInstancesResult describeContainerInstances(DescribeContainerInstancesRequest describeContainerInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
-     * </p>
-     * <p>
-     * Registers an EC2 instance into the specified cluster. This instance
-     * becomes available to place containers on.
-     * </p>
-     *
-     * @param registerContainerInstanceRequest Container for the necessary
-     *           parameters to execute the RegisterContainerInstance service method on
-     *           AmazonECS.
-     * 
-     * @return The response from the RegisterContainerInstance service
-     *         method, as returned by AmazonECS.
-     * 
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RegisterContainerInstanceResult registerContainerInstance(RegisterContainerInstanceRequest registerContainerInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeContainerInstancesResult describeContainerInstances(
+            DescribeContainerInstancesRequest describeContainerInstancesRequest);
 
     /**
      * <p>
      * Describes the specified services running in your cluster.
      * </p>
-     *
-     * @param describeServicesRequest Container for the necessary parameters
-     *           to execute the DescribeServices service method on AmazonECS.
      * 
-     * @return The response from the DescribeServices service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
+     * @param describeServicesRequest
+     * @return Result of the DescribeServices operation returned by the service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
      */
-    public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeServicesResult describeServices(
+            DescribeServicesRequest describeServicesRequest);
 
     /**
      * <p>
-     * Lists the services that are running in a specified cluster.
+     * Describes a task definition. You can specify a <code>family</code> and
+     * <code>revision</code> to find information about a specific task
+     * definition, or you can simply specify the family to find the latest
+     * <code>ACTIVE</code> revision in that family.
      * </p>
-     *
-     * @param listServicesRequest Container for the necessary parameters to
-     *           execute the ListServices service method on AmazonECS.
+     * <note>
+     * <p>
+     * You can only describe <code>INACTIVE</code> task definitions while an
+     * active task or service references them.
+     * </p>
+     * </note>
      * 
-     * @return The response from the ListServices service method, as returned
-     *         by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
+     * @param describeTaskDefinitionRequest
+     * @return Result of the DescribeTaskDefinition operation returned by the
+     *         service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListServicesResult listServices(ListServicesRequest listServicesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Modify the desired count or task definition used in a service.
-     * </p>
-     * <p>
-     * You can add to or subtract from the number of instantiations of a
-     * task definition in a service by specifying the cluster that the
-     * service is running in and a new <code>desiredCount</code> parameter.
-     * </p>
-     * <p>
-     * You can use <code>UpdateService</code> to modify your task definition
-     * and deploy a new version of your service, one task at a time. If you
-     * modify the task definition with <code>UpdateService</code> , Amazon
-     * ECS spawns a task with the new version of the task definition and then
-     * stops an old task after the new version is running. Because
-     * <code>UpdateService</code> starts a new version of the task before
-     * stopping an old version, your cluster must have capacity to support
-     * one more instantiation of the task when <code>UpdateService</code> is
-     * run. If your cluster cannot support another instantiation of the task
-     * used in your service, you can reduce the desired count of your service
-     * by one before modifying the task definition.
-     * </p>
-     * <p>
-     * When UpdateService replaces a task during an update, the equivalent
-     * of <code>docker stop</code> is issued to the containers running in the
-     * task. This results in a <code>SIGTERM</code> and a 30-second timeout,
-     * after which <code>SIGKILL</code> is sent and the containers are
-     * forcibly stopped. If the container handles the <code>SIGTERM</code>
-     * gracefully and exits within 30 seconds from receiving it, no
-     * <code>SIGKILL</code> is sent.
-     * </p>
-     *
-     * @param updateServiceRequest Container for the necessary parameters to
-     *           execute the UpdateService service method on AmazonECS.
-     * 
-     * @return The response from the UpdateService service method, as
-     *         returned by AmazonECS.
-     * 
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
      * @throws InvalidParameterException
-     * @throws ServiceNotActiveException
-     * @throws ClusterNotFoundException
-     * @throws ServerException
-     * @throws ClientException
-     * @throws ServiceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
      */
-    public UpdateServiceResult updateService(UpdateServiceRequest updateServiceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of task definition families that are registered to
-     * your account (which may include task definition families that no
-     * longer have any <code>ACTIVE</code> task definitions). You can filter
-     * the results with the <code>familyPrefix</code> parameter.
-     * </p>
-     *
-     * @param listTaskDefinitionFamiliesRequest Container for the necessary
-     *           parameters to execute the ListTaskDefinitionFamilies service method on
-     *           AmazonECS.
-     * 
-     * @return The response from the ListTaskDefinitionFamilies service
-     *         method, as returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeTaskDefinitionResult describeTaskDefinition(
+            DescribeTaskDefinitionRequest describeTaskDefinitionRequest);
 
     /**
      * <p>
      * Describes a specified task or tasks.
      * </p>
-     *
-     * @param describeTasksRequest Container for the necessary parameters to
-     *           execute the DescribeTasks service method on AmazonECS.
      * 
-     * @return The response from the DescribeTasks service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
+     * @param describeTasksRequest
+     * @return Result of the DescribeTasks operation returned by the service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
      */
-    public DescribeTasksResult describeTasks(DescribeTasksRequest describeTasksRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeTasksResult describeTasks(DescribeTasksRequest describeTasksRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Returns an endpoint for the Amazon EC2 Container Service agent to poll
+     * for updates.
+     * </p>
+     * 
+     * @param discoverPollEndpointRequest
+     * @return Result of the DiscoverPollEndpoint operation returned by the
+     *         service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     */
+    DiscoverPollEndpointResult discoverPollEndpoint(
+            DiscoverPollEndpointRequest discoverPollEndpointRequest);
+
+    /**
+     * Simplified method form for invoking the DiscoverPollEndpoint operation.
+     *
+     * @see #discoverPollEndpoint(DiscoverPollEndpointRequest)
+     */
+    DiscoverPollEndpointResult discoverPollEndpoint();
 
     /**
      * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
+     * Returns a list of existing clusters.
      * </p>
-     * <p>
-     * Returns an endpoint for the Amazon EC2 Container Service agent to
-     * poll for updates.
-     * </p>
-     *
-     * @param discoverPollEndpointRequest Container for the necessary
-     *           parameters to execute the DiscoverPollEndpoint service method on
-     *           AmazonECS.
      * 
-     * @return The response from the DiscoverPollEndpoint service method, as
-     *         returned by AmazonECS.
-     * 
+     * @param listClustersRequest
+     * @return Result of the ListClusters operation returned by the service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
      */
-    public DiscoverPollEndpointResult discoverPollEndpoint(DiscoverPollEndpointRequest discoverPollEndpointRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListClustersResult listClusters(ListClustersRequest listClustersRequest);
+
+    /**
+     * Simplified method form for invoking the ListClusters operation.
+     *
+     * @see #listClusters(ListClustersRequest)
+     */
+    ListClustersResult listClusters();
 
     /**
      * <p>
-     * Starts a new task from the specified task definition on the specified
-     * container instance or instances. To use the default Amazon ECS
-     * scheduler to place your task, use <code>RunTask</code> instead.
+     * Returns a list of container instances in a specified cluster.
      * </p>
-     * <p>
-     * <b>IMPORTANT:</b> The list of container instances to start tasks on
-     * is limited to 10.
-     * </p>
-     *
-     * @param startTaskRequest Container for the necessary parameters to
-     *           execute the StartTask service method on AmazonECS.
      * 
-     * @return The response from the StartTask service method, as returned by
-     *         AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
+     * @param listContainerInstancesRequest
+     * @return Result of the ListContainerInstances operation returned by the
+     *         service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
      */
-    public StartTaskResult startTask(StartTaskRequest startTaskRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListContainerInstancesResult listContainerInstances(
+            ListContainerInstancesRequest listContainerInstancesRequest);
+
+    /**
+     * Simplified method form for invoking the ListContainerInstances operation.
+     *
+     * @see #listContainerInstances(ListContainerInstancesRequest)
+     */
+    ListContainerInstancesResult listContainerInstances();
+
+    /**
+     * <p>
+     * Lists the services that are running in a specified cluster.
+     * </p>
+     * 
+     * @param listServicesRequest
+     * @return Result of the ListServices operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
+     */
+    ListServicesResult listServices(ListServicesRequest listServicesRequest);
+
+    /**
+     * Simplified method form for invoking the ListServices operation.
+     *
+     * @see #listServices(ListServicesRequest)
+     */
+    ListServicesResult listServices();
+
+    /**
+     * <p>
+     * Returns a list of task definition families that are registered to your
+     * account (which may include task definition families that no longer have
+     * any <code>ACTIVE</code> task definitions). You can filter the results
+     * with the <code>familyPrefix</code> parameter.
+     * </p>
+     * 
+     * @param listTaskDefinitionFamiliesRequest
+     * @return Result of the ListTaskDefinitionFamilies operation returned by
+     *         the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     */
+    ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(
+            ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest);
+
+    /**
+     * Simplified method form for invoking the ListTaskDefinitionFamilies
+     * operation.
+     *
+     * @see #listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest)
+     */
+    ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies();
+
+    /**
+     * <p>
+     * Returns a list of task definitions that are registered to your account.
+     * You can filter the results by family name with the
+     * <code>familyPrefix</code> parameter or by status with the
+     * <code>status</code> parameter.
+     * </p>
+     * 
+     * @param listTaskDefinitionsRequest
+     * @return Result of the ListTaskDefinitions operation returned by the
+     *         service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     */
+    ListTaskDefinitionsResult listTaskDefinitions(
+            ListTaskDefinitionsRequest listTaskDefinitionsRequest);
+
+    /**
+     * Simplified method form for invoking the ListTaskDefinitions operation.
+     *
+     * @see #listTaskDefinitions(ListTaskDefinitionsRequest)
+     */
+    ListTaskDefinitionsResult listTaskDefinitions();
 
     /**
      * <p>
      * Returns a list of tasks for a specified cluster. You can filter the
      * results by family name, by a particular container instance, or by the
-     * desired status of the task with the <code>family</code> ,
-     * <code>containerInstance</code> , and <code>desiredStatus</code>
+     * desired status of the task with the <code>family</code>,
+     * <code>containerInstance</code>, and <code>desiredStatus</code>
      * parameters.
      * </p>
-     *
-     * @param listTasksRequest Container for the necessary parameters to
-     *           execute the ListTasks service method on AmazonECS.
      * 
-     * @return The response from the ListTasks service method, as returned by
-     *         AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
+     * @param listTasksRequest
+     * @return Result of the ListTasks operation returned by the service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
      * @throws ServiceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The specified service could not be found. You can view your
+     *         available services with <a>ListServices</a>. Amazon ECS services
+     *         are cluster-specific and region-specific.
      */
-    public ListTasksResult listTasks(ListTasksRequest listTasksRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListTasksResult listTasks(ListTasksRequest listTasksRequest);
+
+    /**
+     * Simplified method form for invoking the ListTasks operation.
+     *
+     * @see #listTasks(ListTasksRequest)
+     */
+    ListTasksResult listTasks();
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Registers an EC2 instance into the specified cluster. This instance
+     * becomes available to place containers on.
+     * </p>
+     * 
+     * @param registerContainerInstanceRequest
+     * @return Result of the RegisterContainerInstance operation returned by the
+     *         service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     */
+    RegisterContainerInstanceResult registerContainerInstance(
+            RegisterContainerInstanceRequest registerContainerInstanceRequest);
+
+    /**
+     * <p>
+     * Registers a new task definition from the supplied <code>family</code> and
+     * <code>containerDefinitions</code>. Optionally, you can add data volumes
+     * to your containers with the <code>volumes</code> parameter. For more
+     * information about task definition parameters and defaults, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param registerTaskDefinitionRequest
+     * @return Result of the RegisterTaskDefinition operation returned by the
+     *         service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     */
+    RegisterTaskDefinitionResult registerTaskDefinition(
+            RegisterTaskDefinitionRequest registerTaskDefinitionRequest);
+
+    /**
+     * <p>
+     * Start a task using random placement and the default Amazon ECS scheduler.
+     * To use your own scheduler or place a task on a specific container
+     * instance, use <code>StartTask</code> instead.
+     * </p>
+     * <important>
+     * <p>
+     * The <code>count</code> parameter is limited to 10 tasks per call.
+     * </p>
+     * </important>
+     * 
+     * @param runTaskRequest
+     * @return Result of the RunTask operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
+     */
+    RunTaskResult runTask(RunTaskRequest runTaskRequest);
+
+    /**
+     * <p>
+     * Starts a new task from the specified task definition on the specified
+     * container instance or instances. To use the default Amazon ECS scheduler
+     * to place your task, use <code>RunTask</code> instead.
+     * </p>
+     * <important>
+     * <p>
+     * The list of container instances to start tasks on is limited to 10.
+     * </p>
+     * </important>
+     * 
+     * @param startTaskRequest
+     * @return Result of the StartTask operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
+     */
+    StartTaskResult startTask(StartTaskRequest startTaskRequest);
 
     /**
      * <p>
      * Stops a running task.
      * </p>
      * <p>
-     * When StopTask is called on a task, the equivalent of <code>docker
-     * stop</code> is issued to the containers running in the task. This
-     * results in a <code>SIGTERM</code> and a 30-second timeout, after which
-     * <code>SIGKILL</code> is sent and the containers are forcibly stopped.
-     * If the container handles the <code>SIGTERM</code> gracefully and exits
-     * within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
+     * When <a>StopTask</a> is called on a task, the equivalent of
+     * <code>docker stop</code> is issued to the containers running in the task.
+     * This results in a <code>SIGTERM</code> and a 30-second timeout, after
+     * which <code>SIGKILL</code> is sent and the containers are forcibly
+     * stopped. If the container handles the <code>SIGTERM</code> gracefully and
+     * exits within 30 seconds from receiving it, no <code>SIGKILL</code> is
+     * sent.
      * </p>
-     *
-     * @param stopTaskRequest Container for the necessary parameters to
-     *           execute the StopTask service method on AmazonECS.
      * 
-     * @return The response from the StopTask service method, as returned by
-     *         AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
+     * @param stopTaskRequest
+     * @return Result of the StopTask operation returned by the service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
      */
-    public StopTaskResult stopTask(StopTaskRequest stopTaskRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    StopTaskResult stopTask(StopTaskRequest stopTaskRequest);
 
     /**
+     * <note>
      * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
      * </p>
+     * </note>
      * <p>
      * Sent to acknowledge that a container changed states.
      * </p>
      * 
-     * @return The response from the SubmitContainerStateChange service
-     *         method, as returned by AmazonECS.
-     * 
+     * @param submitContainerStateChangeRequest
+     * @return Result of the SubmitContainerStateChange operation returned by
+     *         the service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
      */
-    public SubmitContainerStateChangeResult submitContainerStateChange() throws AmazonServiceException, AmazonClientException;
-    
+    SubmitContainerStateChangeResult submitContainerStateChange(
+            SubmitContainerStateChangeRequest submitContainerStateChangeRequest);
+
     /**
+     * Simplified method form for invoking the SubmitContainerStateChange
+     * operation.
+     *
+     * @see #submitContainerStateChange(SubmitContainerStateChangeRequest)
+     */
+    SubmitContainerStateChangeResult submitContainerStateChange();
+
+    /**
+     * <note>
      * <p>
-     * Returns a list of task definitions that are registered to your
-     * account. You can filter the results by family name with the
-     * <code>familyPrefix</code> parameter or by status with the
-     * <code>status</code> parameter.
+     * This action is only used by the Amazon EC2 Container Service agent, and
+     * it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Sent to acknowledge that a task changed states.
      * </p>
      * 
-     * @return The response from the ListTaskDefinitions service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
+     * @param submitTaskStateChangeRequest
+     * @return Result of the SubmitTaskStateChange operation returned by the
+     *         service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
      */
-    public ListTaskDefinitionsResult listTaskDefinitions() throws AmazonServiceException, AmazonClientException;
-    
+    SubmitTaskStateChangeResult submitTaskStateChange(
+            SubmitTaskStateChangeRequest submitTaskStateChangeRequest);
+
     /**
      * <p>
-     * Returns a list of existing clusters.
+     * Updates the Amazon ECS container agent on a specified container instance.
+     * Updating the Amazon ECS container agent does not interrupt running tasks
+     * or services on the container instance. The process for updating the agent
+     * differs depending on whether your container instance was launched with
+     * the Amazon ECS-optimized AMI or another operating system.
      * </p>
-     * 
-     * @return The response from the ListClusters service method, as returned
-     *         by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListClustersResult listClusters() throws AmazonServiceException, AmazonClientException;
-    
-    /**
      * <p>
-     * Creates a new Amazon ECS cluster. By default, your account receives a
-     * <code>default</code> cluster when you launch your first container
-     * instance. However, you can create your own cluster with a unique name
-     * with the <code>CreateCluster</code> action.
+     * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI
+     * or Amazon Linux with the <code>ecs-init</code> service installed and
+     * running. For help updating the Amazon ECS container agent on other
+     * operating systems, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"
+     * >Manually Updating the Amazon ECS Container Agent</a> in the <i>Amazon
+     * EC2 Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The response from the CreateCluster service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
+     * @param updateContainerAgentRequest
+     * @return Result of the UpdateContainerAgent operation returned by the
+     *         service.
      * @throws ServerException
+     *         These errors are usually caused by a server issue.
      * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateClusterResult createCluster() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Describes one or more of your clusters.
-     * </p>
-     * 
-     * @return The response from the DescribeClusters service method, as
-     *         returned by AmazonECS.
-     * 
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
      * @throws InvalidParameterException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeClustersResult describeClusters() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Returns a list of container instances in a specified cluster.
-     * </p>
-     * 
-     * @return The response from the ListContainerInstances service method,
-     *         as returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
      * @throws ClusterNotFoundException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
+     * @throws UpdateInProgressException
+     *         There is already a current Amazon ECS container agent update in
+     *         progress on the specified container instance. If the container
+     *         agent becomes disconnected while it is in a transitional stage,
+     *         such as <code>PENDING</code> or <code>STAGING</code>, the update
+     *         process can get stuck in that state. However, when the agent
+     *         reconnects, it resumes where it stopped previously.
+     * @throws NoUpdateAvailableException
+     *         There is no update available for this Amazon ECS container agent.
+     *         This could be because the agent is already running the latest
+     *         version, or it is so old that there is no update path to the
+     *         current version.
+     * @throws MissingVersionException
+     *         Amazon ECS is unable to determine the current version of the
+     *         Amazon ECS container agent on the container instance and does not
+     *         have enough information to proceed with an update. This could be
+     *         because the agent running on the container instance is an older
+     *         or custom version that does not use our version information.
      */
-    public ListContainerInstancesResult listContainerInstances() throws AmazonServiceException, AmazonClientException;
-    
+    UpdateContainerAgentResult updateContainerAgent(
+            UpdateContainerAgentRequest updateContainerAgentRequest);
+
     /**
      * <p>
-     * Lists the services that are running in a specified cluster.
+     * Modify the desired count or task definition used in a service.
+     * </p>
+     * <p>
+     * You can add to or subtract from the number of instantiations of a task
+     * definition in a service by specifying the cluster that the service is
+     * running in and a new <code>desiredCount</code> parameter.
+     * </p>
+     * <p>
+     * You can use <code>UpdateService</code> to modify your task definition and
+     * deploy a new version of your service, one task at a time. If you modify
+     * the task definition with <code>UpdateService</code>, Amazon ECS spawns a
+     * task with the new version of the task definition and then stops an old
+     * task after the new version is running. Because <code>UpdateService</code>
+     * starts a new version of the task before stopping an old version, your
+     * cluster must have capacity to support one more instantiation of the task
+     * when <code>UpdateService</code> is run. If your cluster cannot support
+     * another instantiation of the task used in your service, you can reduce
+     * the desired count of your service by one before modifying the task
+     * definition.
+     * </p>
+     * <p>
+     * When <a>UpdateService</a> replaces a task during an update, the
+     * equivalent of <code>docker stop</code> is issued to the containers
+     * running in the task. This results in a <code>SIGTERM</code> and a
+     * 30-second timeout, after which <code>SIGKILL</code> is sent and the
+     * containers are forcibly stopped. If the container handles the
+     * <code>SIGTERM</code> gracefully and exits within 30 seconds from
+     * receiving it, no <code>SIGKILL</code> is sent.
      * </p>
      * 
-     * @return The response from the ListServices service method, as returned
-     *         by AmazonECS.
-     * 
+     * @param updateServiceRequest
+     * @return Result of the UpdateService operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using
+     *         an action or resource on behalf of a user that doesn't have
+     *         permission to use the action or resource, or specifying an
+     *         identifier that is not valid.
      * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available
+     *         parameters for the API request.
      * @throws ClusterNotFoundException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListServicesResult listServices() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Returns a list of task definition families that are registered to
-     * your account (which may include task definition families that no
-     * longer have any <code>ACTIVE</code> task definitions). You can filter
-     * the results with the <code>familyPrefix</code> parameter.
-     * </p>
-     * 
-     * @return The response from the ListTaskDefinitionFamilies service
-     *         method, as returned by AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
-     * Service agent, and it is not intended for use outside of the agent.
-     * </p>
-     * <p>
-     * Returns an endpoint for the Amazon EC2 Container Service agent to
-     * poll for updates.
-     * </p>
-     * 
-     * @return The response from the DiscoverPollEndpoint service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DiscoverPollEndpointResult discoverPollEndpoint() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Returns a list of tasks for a specified cluster. You can filter the
-     * results by family name, by a particular container instance, or by the
-     * desired status of the task with the <code>family</code> ,
-     * <code>containerInstance</code> , and <code>desiredStatus</code>
-     * parameters.
-     * </p>
-     * 
-     * @return The response from the ListTasks service method, as returned by
-     *         AmazonECS.
-     * 
-     * @throws InvalidParameterException
-     * @throws ClusterNotFoundException
-     * @throws ServerException
-     * @throws ClientException
+     *         The specified cluster could not be found. You can view your
+     *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
+     *         are region-specific.
      * @throws ServiceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The specified service could not be found. You can view your
+     *         available services with <a>ListServices</a>. Amazon ECS services
+     *         are cluster-specific and region-specific.
+     * @throws ServiceNotActiveException
+     *         The specified service is not active. You cannot update a service
+     *         that is not active. If you have previously deleted a service, you
+     *         can re-create it with <a>CreateService</a>.
      */
-    public ListTasksResult listTasks() throws AmazonServiceException, AmazonClientException;
-    
+    UpdateServiceResult updateService(UpdateServiceRequest updateServiceRequest);
+
     /**
      * Shuts down this client object, releasing any resources that might be held
      * open. This is an optional method, and callers are not expected to call
@@ -1225,24 +994,25 @@ public interface AmazonECS {
      * client has been shutdown, it should not be used to make any more
      * requests.
      */
-    public void shutdown();
-    
+    void shutdown();
+
     /**
-     * Returns additional metadata for a previously executed successful request, typically used for
-     * debugging issues where a service isn't acting as expected.  This data isn't considered part
-     * of the result data returned by an operation, so it's available through this separate,
-     * diagnostic interface.
+     * Returns additional metadata for a previously executed successful request,
+     * typically used for debugging issues where a service isn't acting as
+     * expected. This data isn't considered part of the result data returned by
+     * an operation, so it's available through this separate, diagnostic
+     * interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you need to access
-     * this extra diagnostic information for an executed request, you should use this method
-     * to retrieve it as soon as possible after executing a request.
+     * Response metadata is only cached for a limited period of time, so if you
+     * need to access this extra diagnostic information for an executed request,
+     * you should use this method to retrieve it as soon as possible after
+     * executing a request.
      *
      * @param request
-     *            The originally executed request.
+     *        The originally executed request.
      *
      * @return The response metadata for the specified request, or null if none
      *         is available.
      */
-    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+    ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 }
-        

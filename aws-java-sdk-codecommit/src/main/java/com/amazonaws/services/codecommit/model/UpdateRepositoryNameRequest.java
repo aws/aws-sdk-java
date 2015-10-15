@@ -31,29 +31,21 @@ public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
     private String newName;
 
     /**
-     * Sets the value of the OldName property for this object.
-     * 
      * @param oldName
-     *        The new value for the OldName property for this object.
      */
     public void setOldName(String oldName) {
         this.oldName = oldName;
     }
 
     /**
-     * Returns the value of the OldName property for this object.
-     * 
-     * @return The value of the OldName property for this object.
+     * @return
      */
     public String getOldName() {
         return this.oldName;
     }
 
     /**
-     * Sets the value of the OldName property for this object.
-     * 
      * @param oldName
-     *        The new value for the OldName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -63,29 +55,21 @@ public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Sets the value of the NewName property for this object.
-     * 
      * @param newName
-     *        The new value for the NewName property for this object.
      */
     public void setNewName(String newName) {
         this.newName = newName;
     }
 
     /**
-     * Returns the value of the NewName property for this object.
-     * 
-     * @return The value of the NewName property for this object.
+     * @return
      */
     public String getNewName() {
         return this.newName;
     }
 
     /**
-     * Sets the value of the NewName property for this object.
-     * 
      * @param newName
-     *        The new value for the NewName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

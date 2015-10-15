@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,9 +28,11 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Instance JSON Unmarshaller
  */
-public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnmarshallerContext> {
+public class InstanceJsonUnmarshaller implements
+        Unmarshaller<Instance, JsonUnmarshallerContext> {
 
-    public Instance unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public Instance unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         Instance instance = new Instance();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,57 +40,70 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    instance.setId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    instance.setId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceId", targetDepth)) {
                     context.nextToken();
-                    instance.setEc2InstanceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    instance.setEc2InstanceId(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PublicDnsName", targetDepth)) {
                     context.nextToken();
-                    instance.setPublicDnsName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    instance.setPublicDnsName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PublicIpAddress", targetDepth)) {
                     context.nextToken();
-                    instance.setPublicIpAddress(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    instance.setPublicIpAddress(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PrivateDnsName", targetDepth)) {
                     context.nextToken();
-                    instance.setPrivateDnsName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    instance.setPrivateDnsName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PrivateIpAddress", targetDepth)) {
                     context.nextToken();
-                    instance.setPrivateIpAddress(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    instance.setPrivateIpAddress(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    instance.setStatus(InstanceStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                    instance.setStatus(InstanceStatusJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return instance;
     }
 
     private static InstanceJsonUnmarshaller instance;
+
     public static InstanceJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new InstanceJsonUnmarshaller();
+        if (instance == null)
+            instance = new InstanceJsonUnmarshaller();
         return instance;
     }
 }
-    

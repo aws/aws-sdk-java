@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
@@ -24,297 +25,301 @@ import java.io.Serializable;
 public class DirectoryLimits implements Serializable, Cloneable {
 
     /**
-     * The maximum number of cloud directories allowed in the region.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
+     * The maximum number of cloud directories allowed in the region.
+     * </p>
      */
     private Integer cloudOnlyDirectoriesLimit;
-
     /**
-     * The current number of cloud directories in the region.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
+     * The current number of cloud directories in the region.
+     * </p>
      */
     private Integer cloudOnlyDirectoriesCurrentCount;
-
     /**
+     * <p>
      * Indicates if the cloud directory limit has been reached.
+     * </p>
      */
     private Boolean cloudOnlyDirectoriesLimitReached;
-
     /**
-     * The maximum number of connected directories allowed in the region.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
+     * The maximum number of connected directories allowed in the region.
+     * </p>
      */
     private Integer connectedDirectoriesLimit;
-
     /**
-     * The current number of connected directories in the region.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
+     * The current number of connected directories in the region.
+     * </p>
      */
     private Integer connectedDirectoriesCurrentCount;
-
     /**
+     * <p>
      * Indicates if the connected directory limit has been reached.
+     * </p>
      */
     private Boolean connectedDirectoriesLimitReached;
 
     /**
-     * The maximum number of cloud directories allowed in the region.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @return The maximum number of cloud directories allowed in the region.
-     */
-    public Integer getCloudOnlyDirectoriesLimit() {
-        return cloudOnlyDirectoriesLimit;
-    }
-    
-    /**
      * The maximum number of cloud directories allowed in the region.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param cloudOnlyDirectoriesLimit The maximum number of cloud directories allowed in the region.
+     * </p>
+     * 
+     * @param cloudOnlyDirectoriesLimit
+     *        The maximum number of cloud directories allowed in the region.
      */
     public void setCloudOnlyDirectoriesLimit(Integer cloudOnlyDirectoriesLimit) {
         this.cloudOnlyDirectoriesLimit = cloudOnlyDirectoriesLimit;
     }
-    
+
     /**
+     * <p>
      * The maximum number of cloud directories allowed in the region.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param cloudOnlyDirectoriesLimit The maximum number of cloud directories allowed in the region.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The maximum number of cloud directories allowed in the region.
      */
-    public DirectoryLimits withCloudOnlyDirectoriesLimit(Integer cloudOnlyDirectoriesLimit) {
-        this.cloudOnlyDirectoriesLimit = cloudOnlyDirectoriesLimit;
+    public Integer getCloudOnlyDirectoriesLimit() {
+        return this.cloudOnlyDirectoriesLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of cloud directories allowed in the region.
+     * </p>
+     * 
+     * @param cloudOnlyDirectoriesLimit
+     *        The maximum number of cloud directories allowed in the region.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DirectoryLimits withCloudOnlyDirectoriesLimit(
+            Integer cloudOnlyDirectoriesLimit) {
+        setCloudOnlyDirectoriesLimit(cloudOnlyDirectoriesLimit);
         return this;
     }
 
     /**
-     * The current number of cloud directories in the region.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
+     * The current number of cloud directories in the region.
+     * </p>
+     * 
+     * @param cloudOnlyDirectoriesCurrentCount
+     *        The current number of cloud directories in the region.
+     */
+    public void setCloudOnlyDirectoriesCurrentCount(
+            Integer cloudOnlyDirectoriesCurrentCount) {
+        this.cloudOnlyDirectoriesCurrentCount = cloudOnlyDirectoriesCurrentCount;
+    }
+
+    /**
+     * <p>
+     * The current number of cloud directories in the region.
+     * </p>
+     * 
      * @return The current number of cloud directories in the region.
      */
     public Integer getCloudOnlyDirectoriesCurrentCount() {
-        return cloudOnlyDirectoriesCurrentCount;
+        return this.cloudOnlyDirectoriesCurrentCount;
     }
-    
+
     /**
+     * <p>
      * The current number of cloud directories in the region.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param cloudOnlyDirectoriesCurrentCount The current number of cloud directories in the region.
+     * </p>
+     * 
+     * @param cloudOnlyDirectoriesCurrentCount
+     *        The current number of cloud directories in the region.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public void setCloudOnlyDirectoriesCurrentCount(Integer cloudOnlyDirectoriesCurrentCount) {
-        this.cloudOnlyDirectoriesCurrentCount = cloudOnlyDirectoriesCurrentCount;
-    }
-    
-    /**
-     * The current number of cloud directories in the region.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param cloudOnlyDirectoriesCurrentCount The current number of cloud directories in the region.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DirectoryLimits withCloudOnlyDirectoriesCurrentCount(Integer cloudOnlyDirectoriesCurrentCount) {
-        this.cloudOnlyDirectoriesCurrentCount = cloudOnlyDirectoriesCurrentCount;
+    public DirectoryLimits withCloudOnlyDirectoriesCurrentCount(
+            Integer cloudOnlyDirectoriesCurrentCount) {
+        setCloudOnlyDirectoriesCurrentCount(cloudOnlyDirectoriesCurrentCount);
         return this;
     }
 
     /**
-     * Indicates if the cloud directory limit has been reached.
-     *
-     * @return Indicates if the cloud directory limit has been reached.
-     */
-    public Boolean isCloudOnlyDirectoriesLimitReached() {
-        return cloudOnlyDirectoriesLimitReached;
-    }
-    
-    /**
-     * Indicates if the cloud directory limit has been reached.
-     *
-     * @param cloudOnlyDirectoriesLimitReached Indicates if the cloud directory limit has been reached.
-     */
-    public void setCloudOnlyDirectoriesLimitReached(Boolean cloudOnlyDirectoriesLimitReached) {
-        this.cloudOnlyDirectoriesLimitReached = cloudOnlyDirectoriesLimitReached;
-    }
-    
-    /**
-     * Indicates if the cloud directory limit has been reached.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cloudOnlyDirectoriesLimitReached Indicates if the cloud directory limit has been reached.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Indicates if the cloud directory limit has been reached.
+     * </p>
+     * 
+     * @param cloudOnlyDirectoriesLimitReached
+     *        Indicates if the cloud directory limit has been reached.
      */
-    public DirectoryLimits withCloudOnlyDirectoriesLimitReached(Boolean cloudOnlyDirectoriesLimitReached) {
+    public void setCloudOnlyDirectoriesLimitReached(
+            Boolean cloudOnlyDirectoriesLimitReached) {
         this.cloudOnlyDirectoriesLimitReached = cloudOnlyDirectoriesLimitReached;
-        return this;
     }
 
     /**
+     * <p>
      * Indicates if the cloud directory limit has been reached.
-     *
+     * </p>
+     * 
      * @return Indicates if the cloud directory limit has been reached.
      */
     public Boolean getCloudOnlyDirectoriesLimitReached() {
-        return cloudOnlyDirectoriesLimitReached;
+        return this.cloudOnlyDirectoriesLimitReached;
     }
 
     /**
-     * The maximum number of connected directories allowed in the region.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @return The maximum number of connected directories allowed in the region.
+     * Indicates if the cloud directory limit has been reached.
+     * </p>
+     * 
+     * @param cloudOnlyDirectoriesLimitReached
+     *        Indicates if the cloud directory limit has been reached.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public Integer getConnectedDirectoriesLimit() {
-        return connectedDirectoriesLimit;
+    public DirectoryLimits withCloudOnlyDirectoriesLimitReached(
+            Boolean cloudOnlyDirectoriesLimitReached) {
+        setCloudOnlyDirectoriesLimitReached(cloudOnlyDirectoriesLimitReached);
+        return this;
     }
-    
+
     /**
-     * The maximum number of connected directories allowed in the region.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param connectedDirectoriesLimit The maximum number of connected directories allowed in the region.
+     * Indicates if the cloud directory limit has been reached.
+     * </p>
+     * 
+     * @return Indicates if the cloud directory limit has been reached.
+     */
+    public Boolean isCloudOnlyDirectoriesLimitReached() {
+        return this.cloudOnlyDirectoriesLimitReached;
+    }
+
+    /**
+     * <p>
+     * The maximum number of connected directories allowed in the region.
+     * </p>
+     * 
+     * @param connectedDirectoriesLimit
+     *        The maximum number of connected directories allowed in the region.
      */
     public void setConnectedDirectoriesLimit(Integer connectedDirectoriesLimit) {
         this.connectedDirectoriesLimit = connectedDirectoriesLimit;
     }
-    
+
     /**
+     * <p>
      * The maximum number of connected directories allowed in the region.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param connectedDirectoriesLimit The maximum number of connected directories allowed in the region.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The maximum number of connected directories allowed in the
+     *         region.
      */
-    public DirectoryLimits withConnectedDirectoriesLimit(Integer connectedDirectoriesLimit) {
-        this.connectedDirectoriesLimit = connectedDirectoriesLimit;
+    public Integer getConnectedDirectoriesLimit() {
+        return this.connectedDirectoriesLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of connected directories allowed in the region.
+     * </p>
+     * 
+     * @param connectedDirectoriesLimit
+     *        The maximum number of connected directories allowed in the region.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DirectoryLimits withConnectedDirectoriesLimit(
+            Integer connectedDirectoriesLimit) {
+        setConnectedDirectoriesLimit(connectedDirectoriesLimit);
         return this;
     }
 
     /**
-     * The current number of connected directories in the region.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
+     * The current number of connected directories in the region.
+     * </p>
+     * 
+     * @param connectedDirectoriesCurrentCount
+     *        The current number of connected directories in the region.
+     */
+    public void setConnectedDirectoriesCurrentCount(
+            Integer connectedDirectoriesCurrentCount) {
+        this.connectedDirectoriesCurrentCount = connectedDirectoriesCurrentCount;
+    }
+
+    /**
+     * <p>
+     * The current number of connected directories in the region.
+     * </p>
+     * 
      * @return The current number of connected directories in the region.
      */
     public Integer getConnectedDirectoriesCurrentCount() {
-        return connectedDirectoriesCurrentCount;
+        return this.connectedDirectoriesCurrentCount;
     }
-    
+
     /**
+     * <p>
      * The current number of connected directories in the region.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param connectedDirectoriesCurrentCount The current number of connected directories in the region.
+     * </p>
+     * 
+     * @param connectedDirectoriesCurrentCount
+     *        The current number of connected directories in the region.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public void setConnectedDirectoriesCurrentCount(Integer connectedDirectoriesCurrentCount) {
-        this.connectedDirectoriesCurrentCount = connectedDirectoriesCurrentCount;
-    }
-    
-    /**
-     * The current number of connected directories in the region.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param connectedDirectoriesCurrentCount The current number of connected directories in the region.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DirectoryLimits withConnectedDirectoriesCurrentCount(Integer connectedDirectoriesCurrentCount) {
-        this.connectedDirectoriesCurrentCount = connectedDirectoriesCurrentCount;
+    public DirectoryLimits withConnectedDirectoriesCurrentCount(
+            Integer connectedDirectoriesCurrentCount) {
+        setConnectedDirectoriesCurrentCount(connectedDirectoriesCurrentCount);
         return this;
     }
 
     /**
-     * Indicates if the connected directory limit has been reached.
-     *
-     * @return Indicates if the connected directory limit has been reached.
-     */
-    public Boolean isConnectedDirectoriesLimitReached() {
-        return connectedDirectoriesLimitReached;
-    }
-    
-    /**
-     * Indicates if the connected directory limit has been reached.
-     *
-     * @param connectedDirectoriesLimitReached Indicates if the connected directory limit has been reached.
-     */
-    public void setConnectedDirectoriesLimitReached(Boolean connectedDirectoriesLimitReached) {
-        this.connectedDirectoriesLimitReached = connectedDirectoriesLimitReached;
-    }
-    
-    /**
-     * Indicates if the connected directory limit has been reached.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param connectedDirectoriesLimitReached Indicates if the connected directory limit has been reached.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Indicates if the connected directory limit has been reached.
+     * </p>
+     * 
+     * @param connectedDirectoriesLimitReached
+     *        Indicates if the connected directory limit has been reached.
      */
-    public DirectoryLimits withConnectedDirectoriesLimitReached(Boolean connectedDirectoriesLimitReached) {
+    public void setConnectedDirectoriesLimitReached(
+            Boolean connectedDirectoriesLimitReached) {
         this.connectedDirectoriesLimitReached = connectedDirectoriesLimitReached;
-        return this;
     }
 
     /**
+     * <p>
      * Indicates if the connected directory limit has been reached.
-     *
+     * </p>
+     * 
      * @return Indicates if the connected directory limit has been reached.
      */
     public Boolean getConnectedDirectoriesLimitReached() {
-        return connectedDirectoriesLimitReached;
+        return this.connectedDirectoriesLimitReached;
+    }
+
+    /**
+     * <p>
+     * Indicates if the connected directory limit has been reached.
+     * </p>
+     * 
+     * @param connectedDirectoriesLimitReached
+     *        Indicates if the connected directory limit has been reached.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DirectoryLimits withConnectedDirectoriesLimitReached(
+            Boolean connectedDirectoriesLimitReached) {
+        setConnectedDirectoriesLimitReached(connectedDirectoriesLimitReached);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if the connected directory limit has been reached.
+     * </p>
+     * 
+     * @return Indicates if the connected directory limit has been reached.
+     */
+    public Boolean isConnectedDirectoriesLimitReached() {
+        return this.connectedDirectoriesLimitReached;
     }
 
     /**
@@ -329,66 +334,123 @@ public class DirectoryLimits implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCloudOnlyDirectoriesLimit() != null) sb.append("CloudOnlyDirectoriesLimit: " + getCloudOnlyDirectoriesLimit() + ",");
-        if (getCloudOnlyDirectoriesCurrentCount() != null) sb.append("CloudOnlyDirectoriesCurrentCount: " + getCloudOnlyDirectoriesCurrentCount() + ",");
-        if (isCloudOnlyDirectoriesLimitReached() != null) sb.append("CloudOnlyDirectoriesLimitReached: " + isCloudOnlyDirectoriesLimitReached() + ",");
-        if (getConnectedDirectoriesLimit() != null) sb.append("ConnectedDirectoriesLimit: " + getConnectedDirectoriesLimit() + ",");
-        if (getConnectedDirectoriesCurrentCount() != null) sb.append("ConnectedDirectoriesCurrentCount: " + getConnectedDirectoriesCurrentCount() + ",");
-        if (isConnectedDirectoriesLimitReached() != null) sb.append("ConnectedDirectoriesLimitReached: " + isConnectedDirectoriesLimitReached() );
+        if (getCloudOnlyDirectoriesLimit() != null)
+            sb.append("CloudOnlyDirectoriesLimit: "
+                    + getCloudOnlyDirectoriesLimit() + ",");
+        if (getCloudOnlyDirectoriesCurrentCount() != null)
+            sb.append("CloudOnlyDirectoriesCurrentCount: "
+                    + getCloudOnlyDirectoriesCurrentCount() + ",");
+        if (getCloudOnlyDirectoriesLimitReached() != null)
+            sb.append("CloudOnlyDirectoriesLimitReached: "
+                    + getCloudOnlyDirectoriesLimitReached() + ",");
+        if (getConnectedDirectoriesLimit() != null)
+            sb.append("ConnectedDirectoriesLimit: "
+                    + getConnectedDirectoriesLimit() + ",");
+        if (getConnectedDirectoriesCurrentCount() != null)
+            sb.append("ConnectedDirectoriesCurrentCount: "
+                    + getConnectedDirectoriesCurrentCount() + ",");
+        if (getConnectedDirectoriesLimitReached() != null)
+            sb.append("ConnectedDirectoriesLimitReached: "
+                    + getConnectedDirectoriesLimitReached());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DirectoryLimits == false)
+            return false;
+        DirectoryLimits other = (DirectoryLimits) obj;
+        if (other.getCloudOnlyDirectoriesLimit() == null
+                ^ this.getCloudOnlyDirectoriesLimit() == null)
+            return false;
+        if (other.getCloudOnlyDirectoriesLimit() != null
+                && other.getCloudOnlyDirectoriesLimit().equals(
+                        this.getCloudOnlyDirectoriesLimit()) == false)
+            return false;
+        if (other.getCloudOnlyDirectoriesCurrentCount() == null
+                ^ this.getCloudOnlyDirectoriesCurrentCount() == null)
+            return false;
+        if (other.getCloudOnlyDirectoriesCurrentCount() != null
+                && other.getCloudOnlyDirectoriesCurrentCount().equals(
+                        this.getCloudOnlyDirectoriesCurrentCount()) == false)
+            return false;
+        if (other.getCloudOnlyDirectoriesLimitReached() == null
+                ^ this.getCloudOnlyDirectoriesLimitReached() == null)
+            return false;
+        if (other.getCloudOnlyDirectoriesLimitReached() != null
+                && other.getCloudOnlyDirectoriesLimitReached().equals(
+                        this.getCloudOnlyDirectoriesLimitReached()) == false)
+            return false;
+        if (other.getConnectedDirectoriesLimit() == null
+                ^ this.getConnectedDirectoriesLimit() == null)
+            return false;
+        if (other.getConnectedDirectoriesLimit() != null
+                && other.getConnectedDirectoriesLimit().equals(
+                        this.getConnectedDirectoriesLimit()) == false)
+            return false;
+        if (other.getConnectedDirectoriesCurrentCount() == null
+                ^ this.getConnectedDirectoriesCurrentCount() == null)
+            return false;
+        if (other.getConnectedDirectoriesCurrentCount() != null
+                && other.getConnectedDirectoriesCurrentCount().equals(
+                        this.getConnectedDirectoriesCurrentCount()) == false)
+            return false;
+        if (other.getConnectedDirectoriesLimitReached() == null
+                ^ this.getConnectedDirectoriesLimitReached() == null)
+            return false;
+        if (other.getConnectedDirectoriesLimitReached() != null
+                && other.getConnectedDirectoriesLimitReached().equals(
+                        this.getConnectedDirectoriesLimitReached()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getCloudOnlyDirectoriesLimit() == null) ? 0 : getCloudOnlyDirectoriesLimit().hashCode()); 
-        hashCode = prime * hashCode + ((getCloudOnlyDirectoriesCurrentCount() == null) ? 0 : getCloudOnlyDirectoriesCurrentCount().hashCode()); 
-        hashCode = prime * hashCode + ((isCloudOnlyDirectoriesLimitReached() == null) ? 0 : isCloudOnlyDirectoriesLimitReached().hashCode()); 
-        hashCode = prime * hashCode + ((getConnectedDirectoriesLimit() == null) ? 0 : getConnectedDirectoriesLimit().hashCode()); 
-        hashCode = prime * hashCode + ((getConnectedDirectoriesCurrentCount() == null) ? 0 : getConnectedDirectoriesCurrentCount().hashCode()); 
-        hashCode = prime * hashCode + ((isConnectedDirectoriesLimitReached() == null) ? 0 : isConnectedDirectoriesLimitReached().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getCloudOnlyDirectoriesLimit() == null) ? 0
+                        : getCloudOnlyDirectoriesLimit().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudOnlyDirectoriesCurrentCount() == null) ? 0
+                        : getCloudOnlyDirectoriesCurrentCount().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudOnlyDirectoriesLimitReached() == null) ? 0
+                        : getCloudOnlyDirectoriesLimitReached().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getConnectedDirectoriesLimit() == null) ? 0
+                        : getConnectedDirectoriesLimit().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getConnectedDirectoriesCurrentCount() == null) ? 0
+                        : getConnectedDirectoriesCurrentCount().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getConnectedDirectoriesLimitReached() == null) ? 0
+                        : getConnectedDirectoriesLimitReached().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DirectoryLimits == false) return false;
-        DirectoryLimits other = (DirectoryLimits)obj;
-        
-        if (other.getCloudOnlyDirectoriesLimit() == null ^ this.getCloudOnlyDirectoriesLimit() == null) return false;
-        if (other.getCloudOnlyDirectoriesLimit() != null && other.getCloudOnlyDirectoriesLimit().equals(this.getCloudOnlyDirectoriesLimit()) == false) return false; 
-        if (other.getCloudOnlyDirectoriesCurrentCount() == null ^ this.getCloudOnlyDirectoriesCurrentCount() == null) return false;
-        if (other.getCloudOnlyDirectoriesCurrentCount() != null && other.getCloudOnlyDirectoriesCurrentCount().equals(this.getCloudOnlyDirectoriesCurrentCount()) == false) return false; 
-        if (other.isCloudOnlyDirectoriesLimitReached() == null ^ this.isCloudOnlyDirectoriesLimitReached() == null) return false;
-        if (other.isCloudOnlyDirectoriesLimitReached() != null && other.isCloudOnlyDirectoriesLimitReached().equals(this.isCloudOnlyDirectoriesLimitReached()) == false) return false; 
-        if (other.getConnectedDirectoriesLimit() == null ^ this.getConnectedDirectoriesLimit() == null) return false;
-        if (other.getConnectedDirectoriesLimit() != null && other.getConnectedDirectoriesLimit().equals(this.getConnectedDirectoriesLimit()) == false) return false; 
-        if (other.getConnectedDirectoriesCurrentCount() == null ^ this.getConnectedDirectoriesCurrentCount() == null) return false;
-        if (other.getConnectedDirectoriesCurrentCount() != null && other.getConnectedDirectoriesCurrentCount().equals(this.getConnectedDirectoriesCurrentCount()) == false) return false; 
-        if (other.isConnectedDirectoriesLimitReached() == null ^ this.isConnectedDirectoriesLimitReached() == null) return false;
-        if (other.isConnectedDirectoriesLimitReached() != null && other.isConnectedDirectoriesLimitReached().equals(this.isConnectedDirectoriesLimitReached()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DirectoryLimits clone() {
         try {
             return (DirectoryLimits) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

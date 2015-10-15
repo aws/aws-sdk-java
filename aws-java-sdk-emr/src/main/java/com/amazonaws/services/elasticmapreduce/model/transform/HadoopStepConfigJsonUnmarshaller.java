@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Hadoop Step Config JSON Unmarshaller
+ * HadoopStepConfig JSON Unmarshaller
  */
-public class HadoopStepConfigJsonUnmarshaller implements Unmarshaller<HadoopStepConfig, JsonUnmarshallerContext> {
+public class HadoopStepConfigJsonUnmarshaller implements
+        Unmarshaller<HadoopStepConfig, JsonUnmarshallerContext> {
 
-    public HadoopStepConfig unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public HadoopStepConfig unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         HadoopStepConfig hadoopStepConfig = new HadoopStepConfig();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,45 +40,59 @@ public class HadoopStepConfigJsonUnmarshaller implements Unmarshaller<HadoopStep
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Jar", targetDepth)) {
                     context.nextToken();
-                    hadoopStepConfig.setJar(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    hadoopStepConfig.setJar(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Properties", targetDepth)) {
                     context.nextToken();
-                    hadoopStepConfig.setProperties(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    hadoopStepConfig
+                            .setProperties(new MapUnmarshaller<String, String>(
+                                    StringJsonUnmarshaller.getInstance(),
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("MainClass", targetDepth)) {
                     context.nextToken();
-                    hadoopStepConfig.setMainClass(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    hadoopStepConfig.setMainClass(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Args", targetDepth)) {
                     context.nextToken();
-                    hadoopStepConfig.setArgs(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    hadoopStepConfig.setArgs(new ListUnmarshaller<String>(
+                            StringJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return hadoopStepConfig;
     }
 
     private static HadoopStepConfigJsonUnmarshaller instance;
+
     public static HadoopStepConfigJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new HadoopStepConfigJsonUnmarshaller();
+        if (instance == null)
+            instance = new HadoopStepConfigJsonUnmarshaller();
         return instance;
     }
 }
-    

@@ -29,29 +29,21 @@ public class MetricTransformation implements Serializable, Cloneable {
     private String metricValue;
 
     /**
-     * Sets the value of the MetricName property for this object.
-     * 
      * @param metricName
-     *        The new value for the MetricName property for this object.
      */
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
 
     /**
-     * Returns the value of the MetricName property for this object.
-     * 
-     * @return The value of the MetricName property for this object.
+     * @return
      */
     public String getMetricName() {
         return this.metricName;
     }
 
     /**
-     * Sets the value of the MetricName property for this object.
-     * 
      * @param metricName
-     *        The new value for the MetricName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -61,29 +53,21 @@ public class MetricTransformation implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the MetricNamespace property for this object.
-     * 
      * @param metricNamespace
-     *        The new value for the MetricNamespace property for this object.
      */
     public void setMetricNamespace(String metricNamespace) {
         this.metricNamespace = metricNamespace;
     }
 
     /**
-     * Returns the value of the MetricNamespace property for this object.
-     * 
-     * @return The value of the MetricNamespace property for this object.
+     * @return
      */
     public String getMetricNamespace() {
         return this.metricNamespace;
     }
 
     /**
-     * Sets the value of the MetricNamespace property for this object.
-     * 
      * @param metricNamespace
-     *        The new value for the MetricNamespace property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -93,29 +77,21 @@ public class MetricTransformation implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the MetricValue property for this object.
-     * 
      * @param metricValue
-     *        The new value for the MetricValue property for this object.
      */
     public void setMetricValue(String metricValue) {
         this.metricValue = metricValue;
     }
 
     /**
-     * Returns the value of the MetricValue property for this object.
-     * 
-     * @return The value of the MetricValue property for this object.
+     * @return
      */
     public String getMetricValue() {
         return this.metricValue;
     }
 
     /**
-     * Sets the value of the MetricValue property for this object.
-     * 
      * @param metricValue
-     *        The new value for the MetricValue property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -1,760 +1,823 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * An EC2 instance that is running the Amazon ECS agent and has been
- * registered with a cluster.
+ * An EC2 instance that is running the Amazon ECS agent and has been registered
+ * with a cluster.
  * </p>
  */
 public class ContainerInstance implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the container instance. The ARN
-     * contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the region
+     * of the container instance, the AWS account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the
+     * container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id
+     * </i>:container-instance/<i>container_instance_ID</i>.
+     * </p>
      */
     private String containerInstanceArn;
-
     /**
+     * <p>
      * The EC2 instance ID of the container instance.
+     * </p>
      */
     private String ec2InstanceId;
-
     /**
+     * <p>
      * The version information for the Amazon ECS container agent and Docker
      * daemon running on the container instance.
+     * </p>
      */
     private VersionInfo versionInfo;
-
     /**
-     * The remaining resources of the container instance that are available
-     * for new tasks.
+     * <p>
+     * The remaining resources of the container instance that are available for
+     * new tasks.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Resource> remainingResources;
-
+    private com.amazonaws.internal.SdkInternalList<Resource> remainingResources;
     /**
+     * <p>
      * The registered resources on the container instance that are in use by
      * current tasks.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Resource> registeredResources;
-
+    private com.amazonaws.internal.SdkInternalList<Resource> registeredResources;
     /**
+     * <p>
      * The status of the container instance. The valid values are
      * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
      * indicates that the container instance can accept tasks.
+     * </p>
      */
     private String status;
-
     /**
+     * <p>
      * This parameter returns <code>true</code> if the agent is actually
-     * connected to Amazon ECS. Registered instances with an agent that may
-     * be unhealthy or stopped return <code>false</code>, and instances
-     * without a connected agent cannot accept placement requests.
+     * connected to Amazon ECS. Registered instances with an agent that may be
+     * unhealthy or stopped return <code>false</code>, and instances without a
+     * connected agent cannot accept placement requests.
+     * </p>
      */
     private Boolean agentConnected;
-
     /**
+     * <p>
      * The number of tasks on the container instance that are in the
      * <code>RUNNING</code> status.
+     * </p>
      */
     private Integer runningTasksCount;
-
     /**
+     * <p>
      * The number of tasks on the container instance that are in the
      * <code>PENDING</code> status.
+     * </p>
      */
     private Integer pendingTasksCount;
-
     /**
-     * The status of the most recent agent update. If an update has never
-     * been requested, this value is <code>NULL</code>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
+     * The status of the most recent agent update. If an update has never been
+     * requested, this value is <code>NULL</code>.
+     * </p>
      */
     private String agentUpdateStatus;
+    /**
+     * <p>
+     * The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Attribute> attributes;
 
     /**
-     * The attributes set for the container instance by the Amazon ECS
-     * container agent at instance registration.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributes;
-
-    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the container instance. The ARN
-     * contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
-     *
-     * @return The Amazon Resource Name (ARN) of the container instance. The ARN
-     *         contains the <code>arn:aws:ecs</code> namespace, followed by the
-     *         region of the container instance, the AWS account ID of the container
-     *         instance owner, the <code>container-instance</code> namespace, and
-     *         then the container instance ID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
-     */
-    public String getContainerInstanceArn() {
-        return containerInstanceArn;
-    }
-    
-    /**
-     * The Amazon Resource Name (ARN) of the container instance. The ARN
-     * contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
-     *
-     * @param containerInstanceArn The Amazon Resource Name (ARN) of the container instance. The ARN
-     *         contains the <code>arn:aws:ecs</code> namespace, followed by the
-     *         region of the container instance, the AWS account ID of the container
-     *         instance owner, the <code>container-instance</code> namespace, and
-     *         then the container instance ID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the region
+     * of the container instance, the AWS account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the
+     * container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id
+     * </i>:container-instance/<i>container_instance_ID</i>.
+     * </p>
+     * 
+     * @param containerInstanceArn
+     *        The Amazon Resource Name (ARN) of the container instance. The ARN
+     *        contains the <code>arn:aws:ecs</code> namespace, followed by the
+     *        region of the container instance, the AWS account ID of the
+     *        container instance owner, the <code>container-instance</code>
+     *        namespace, and then the container instance ID. For example,
+     *        arn:aws
+     *        :ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/
+     *        <i>container_instance_ID</i>.
      */
     public void setContainerInstanceArn(String containerInstanceArn) {
         this.containerInstanceArn = containerInstanceArn;
     }
-    
+
     /**
-     * The Amazon Resource Name (ARN) of the container instance. The ARN
-     * contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param containerInstanceArn The Amazon Resource Name (ARN) of the container instance. The ARN
+     * The Amazon Resource Name (ARN) of the container instance. The ARN
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the region
+     * of the container instance, the AWS account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the
+     * container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id
+     * </i>:container-instance/<i>container_instance_ID</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the container instance. The ARN
      *         contains the <code>arn:aws:ecs</code> namespace, followed by the
-     *         region of the container instance, the AWS account ID of the container
-     *         instance owner, the <code>container-instance</code> namespace, and
-     *         then the container instance ID. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         region of the container instance, the AWS account ID of the
+     *         container instance owner, the <code>container-instance</code>
+     *         namespace, and then the container instance ID. For example,
+     *         arn:aws
+     *         :ecs:<i>region</i>:<i>aws_account_id</i>:container-instance
+     *         /<i>container_instance_ID</i>.
      */
-    public ContainerInstance withContainerInstanceArn(String containerInstanceArn) {
-        this.containerInstanceArn = containerInstanceArn;
+    public String getContainerInstanceArn() {
+        return this.containerInstanceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the container instance. The ARN
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the region
+     * of the container instance, the AWS account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the
+     * container instance ID. For example,
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id
+     * </i>:container-instance/<i>container_instance_ID</i>.
+     * </p>
+     * 
+     * @param containerInstanceArn
+     *        The Amazon Resource Name (ARN) of the container instance. The ARN
+     *        contains the <code>arn:aws:ecs</code> namespace, followed by the
+     *        region of the container instance, the AWS account ID of the
+     *        container instance owner, the <code>container-instance</code>
+     *        namespace, and then the container instance ID. For example,
+     *        arn:aws
+     *        :ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/
+     *        <i>container_instance_ID</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ContainerInstance withContainerInstanceArn(
+            String containerInstanceArn) {
+        setContainerInstanceArn(containerInstanceArn);
         return this;
     }
 
     /**
+     * <p>
      * The EC2 instance ID of the container instance.
-     *
-     * @return The EC2 instance ID of the container instance.
-     */
-    public String getEc2InstanceId() {
-        return ec2InstanceId;
-    }
-    
-    /**
-     * The EC2 instance ID of the container instance.
-     *
-     * @param ec2InstanceId The EC2 instance ID of the container instance.
+     * </p>
+     * 
+     * @param ec2InstanceId
+     *        The EC2 instance ID of the container instance.
      */
     public void setEc2InstanceId(String ec2InstanceId) {
         this.ec2InstanceId = ec2InstanceId;
     }
-    
+
     /**
-     * The EC2 instance ID of the container instance.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param ec2InstanceId The EC2 instance ID of the container instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The EC2 instance ID of the container instance.
+     * </p>
+     * 
+     * @return The EC2 instance ID of the container instance.
+     */
+    public String getEc2InstanceId() {
+        return this.ec2InstanceId;
+    }
+
+    /**
+     * <p>
+     * The EC2 instance ID of the container instance.
+     * </p>
+     * 
+     * @param ec2InstanceId
+     *        The EC2 instance ID of the container instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ContainerInstance withEc2InstanceId(String ec2InstanceId) {
-        this.ec2InstanceId = ec2InstanceId;
+        setEc2InstanceId(ec2InstanceId);
         return this;
     }
 
     /**
+     * <p>
      * The version information for the Amazon ECS container agent and Docker
      * daemon running on the container instance.
-     *
-     * @return The version information for the Amazon ECS container agent and Docker
-     *         daemon running on the container instance.
-     */
-    public VersionInfo getVersionInfo() {
-        return versionInfo;
-    }
-    
-    /**
-     * The version information for the Amazon ECS container agent and Docker
-     * daemon running on the container instance.
-     *
-     * @param versionInfo The version information for the Amazon ECS container agent and Docker
-     *         daemon running on the container instance.
+     * </p>
+     * 
+     * @param versionInfo
+     *        The version information for the Amazon ECS container agent and
+     *        Docker daemon running on the container instance.
      */
     public void setVersionInfo(VersionInfo versionInfo) {
         this.versionInfo = versionInfo;
     }
-    
+
     /**
+     * <p>
      * The version information for the Amazon ECS container agent and Docker
      * daemon running on the container instance.
+     * </p>
+     * 
+     * @return The version information for the Amazon ECS container agent and
+     *         Docker daemon running on the container instance.
+     */
+    public VersionInfo getVersionInfo() {
+        return this.versionInfo;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param versionInfo The version information for the Amazon ECS container agent and Docker
-     *         daemon running on the container instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The version information for the Amazon ECS container agent and Docker
+     * daemon running on the container instance.
+     * </p>
+     * 
+     * @param versionInfo
+     *        The version information for the Amazon ECS container agent and
+     *        Docker daemon running on the container instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ContainerInstance withVersionInfo(VersionInfo versionInfo) {
-        this.versionInfo = versionInfo;
+        setVersionInfo(versionInfo);
         return this;
     }
 
     /**
-     * The remaining resources of the container instance that are available
-     * for new tasks.
-     *
-     * @return The remaining resources of the container instance that are available
-     *         for new tasks.
+     * <p>
+     * The remaining resources of the container instance that are available for
+     * new tasks.
+     * </p>
+     * 
+     * @return The remaining resources of the container instance that are
+     *         available for new tasks.
      */
     public java.util.List<Resource> getRemainingResources() {
         if (remainingResources == null) {
-              remainingResources = new com.amazonaws.internal.ListWithAutoConstructFlag<Resource>();
-              remainingResources.setAutoConstruct(true);
+            remainingResources = new com.amazonaws.internal.SdkInternalList<Resource>();
         }
         return remainingResources;
     }
-    
+
     /**
-     * The remaining resources of the container instance that are available
-     * for new tasks.
-     *
-     * @param remainingResources The remaining resources of the container instance that are available
-     *         for new tasks.
+     * <p>
+     * The remaining resources of the container instance that are available for
+     * new tasks.
+     * </p>
+     * 
+     * @param remainingResources
+     *        The remaining resources of the container instance that are
+     *        available for new tasks.
      */
-    public void setRemainingResources(java.util.Collection<Resource> remainingResources) {
+    public void setRemainingResources(
+            java.util.Collection<Resource> remainingResources) {
         if (remainingResources == null) {
             this.remainingResources = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Resource> remainingResourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Resource>(remainingResources.size());
-        remainingResourcesCopy.addAll(remainingResources);
-        this.remainingResources = remainingResourcesCopy;
+
+        this.remainingResources = new com.amazonaws.internal.SdkInternalList<Resource>(
+                remainingResources);
     }
-    
+
     /**
-     * The remaining resources of the container instance that are available
-     * for new tasks.
+     * <p>
+     * The remaining resources of the container instance that are available for
+     * new tasks.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setRemainingResources(java.util.Collection)} or
      * {@link #withRemainingResources(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param remainingResources The remaining resources of the container instance that are available
-     *         for new tasks.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param remainingResources
+     *        The remaining resources of the container instance that are
+     *        available for new tasks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ContainerInstance withRemainingResources(Resource... remainingResources) {
-        if (getRemainingResources() == null) setRemainingResources(new java.util.ArrayList<Resource>(remainingResources.length));
-        for (Resource value : remainingResources) {
-            getRemainingResources().add(value);
+    public ContainerInstance withRemainingResources(
+            Resource... remainingResources) {
+        if (this.remainingResources == null) {
+            setRemainingResources(new com.amazonaws.internal.SdkInternalList<Resource>(
+                    remainingResources.length));
         }
-        return this;
-    }
-    
-    /**
-     * The remaining resources of the container instance that are available
-     * for new tasks.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param remainingResources The remaining resources of the container instance that are available
-     *         for new tasks.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ContainerInstance withRemainingResources(java.util.Collection<Resource> remainingResources) {
-        if (remainingResources == null) {
-            this.remainingResources = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Resource> remainingResourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Resource>(remainingResources.size());
-            remainingResourcesCopy.addAll(remainingResources);
-            this.remainingResources = remainingResourcesCopy;
+        for (Resource ele : remainingResources) {
+            this.remainingResources.add(ele);
         }
-
         return this;
     }
 
     /**
+     * <p>
+     * The remaining resources of the container instance that are available for
+     * new tasks.
+     * </p>
+     * 
+     * @param remainingResources
+     *        The remaining resources of the container instance that are
+     *        available for new tasks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ContainerInstance withRemainingResources(
+            java.util.Collection<Resource> remainingResources) {
+        setRemainingResources(remainingResources);
+        return this;
+    }
+
+    /**
+     * <p>
      * The registered resources on the container instance that are in use by
      * current tasks.
-     *
-     * @return The registered resources on the container instance that are in use by
-     *         current tasks.
+     * </p>
+     * 
+     * @return The registered resources on the container instance that are in
+     *         use by current tasks.
      */
     public java.util.List<Resource> getRegisteredResources() {
         if (registeredResources == null) {
-              registeredResources = new com.amazonaws.internal.ListWithAutoConstructFlag<Resource>();
-              registeredResources.setAutoConstruct(true);
+            registeredResources = new com.amazonaws.internal.SdkInternalList<Resource>();
         }
         return registeredResources;
     }
-    
+
     /**
+     * <p>
      * The registered resources on the container instance that are in use by
      * current tasks.
-     *
-     * @param registeredResources The registered resources on the container instance that are in use by
-     *         current tasks.
+     * </p>
+     * 
+     * @param registeredResources
+     *        The registered resources on the container instance that are in use
+     *        by current tasks.
      */
-    public void setRegisteredResources(java.util.Collection<Resource> registeredResources) {
+    public void setRegisteredResources(
+            java.util.Collection<Resource> registeredResources) {
         if (registeredResources == null) {
             this.registeredResources = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Resource> registeredResourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Resource>(registeredResources.size());
-        registeredResourcesCopy.addAll(registeredResources);
-        this.registeredResources = registeredResourcesCopy;
+
+        this.registeredResources = new com.amazonaws.internal.SdkInternalList<Resource>(
+                registeredResources);
     }
-    
+
     /**
+     * <p>
      * The registered resources on the container instance that are in use by
      * current tasks.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setRegisteredResources(java.util.Collection)} or
      * {@link #withRegisteredResources(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param registeredResources The registered resources on the container instance that are in use by
-     *         current tasks.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param registeredResources
+     *        The registered resources on the container instance that are in use
+     *        by current tasks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ContainerInstance withRegisteredResources(Resource... registeredResources) {
-        if (getRegisteredResources() == null) setRegisteredResources(new java.util.ArrayList<Resource>(registeredResources.length));
-        for (Resource value : registeredResources) {
-            getRegisteredResources().add(value);
+    public ContainerInstance withRegisteredResources(
+            Resource... registeredResources) {
+        if (this.registeredResources == null) {
+            setRegisteredResources(new com.amazonaws.internal.SdkInternalList<Resource>(
+                    registeredResources.length));
+        }
+        for (Resource ele : registeredResources) {
+            this.registeredResources.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The registered resources on the container instance that are in use by
      * current tasks.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param registeredResources The registered resources on the container instance that are in use by
-     *         current tasks.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param registeredResources
+     *        The registered resources on the container instance that are in use
+     *        by current tasks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ContainerInstance withRegisteredResources(java.util.Collection<Resource> registeredResources) {
-        if (registeredResources == null) {
-            this.registeredResources = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Resource> registeredResourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Resource>(registeredResources.size());
-            registeredResourcesCopy.addAll(registeredResources);
-            this.registeredResources = registeredResourcesCopy;
-        }
-
+    public ContainerInstance withRegisteredResources(
+            java.util.Collection<Resource> registeredResources) {
+        setRegisteredResources(registeredResources);
         return this;
     }
 
     /**
+     * <p>
      * The status of the container instance. The valid values are
      * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
      * indicates that the container instance can accept tasks.
-     *
+     * </p>
+     * 
+     * @param status
+     *        The status of the container instance. The valid values are
+     *        <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
+     *        indicates that the container instance can accept tasks.
+     */
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the container instance. The valid values are
+     * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
+     * indicates that the container instance can accept tasks.
+     * </p>
+     * 
      * @return The status of the container instance. The valid values are
      *         <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
      *         indicates that the container instance can accept tasks.
      */
     public String getStatus() {
-        return status;
+        return this.status;
     }
-    
+
     /**
-     * The status of the container instance. The valid values are
-     * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
-     * indicates that the container instance can accept tasks.
-     *
-     * @param status The status of the container instance. The valid values are
-     *         <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
-     *         indicates that the container instance can accept tasks.
-     */
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    
-    /**
-     * The status of the container instance. The valid values are
-     * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
-     * indicates that the container instance can accept tasks.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param status The status of the container instance. The valid values are
-     *         <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
-     *         indicates that the container instance can accept tasks.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The status of the container instance. The valid values are
+     * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
+     * indicates that the container instance can accept tasks.
+     * </p>
+     * 
+     * @param status
+     *        The status of the container instance. The valid values are
+     *        <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
+     *        indicates that the container instance can accept tasks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ContainerInstance withStatus(String status) {
-        this.status = status;
+        setStatus(status);
         return this;
     }
 
     /**
+     * <p>
      * This parameter returns <code>true</code> if the agent is actually
-     * connected to Amazon ECS. Registered instances with an agent that may
-     * be unhealthy or stopped return <code>false</code>, and instances
-     * without a connected agent cannot accept placement requests.
-     *
-     * @return This parameter returns <code>true</code> if the agent is actually
-     *         connected to Amazon ECS. Registered instances with an agent that may
-     *         be unhealthy or stopped return <code>false</code>, and instances
-     *         without a connected agent cannot accept placement requests.
-     */
-    public Boolean isAgentConnected() {
-        return agentConnected;
-    }
-    
-    /**
-     * This parameter returns <code>true</code> if the agent is actually
-     * connected to Amazon ECS. Registered instances with an agent that may
-     * be unhealthy or stopped return <code>false</code>, and instances
-     * without a connected agent cannot accept placement requests.
-     *
-     * @param agentConnected This parameter returns <code>true</code> if the agent is actually
-     *         connected to Amazon ECS. Registered instances with an agent that may
-     *         be unhealthy or stopped return <code>false</code>, and instances
-     *         without a connected agent cannot accept placement requests.
+     * connected to Amazon ECS. Registered instances with an agent that may be
+     * unhealthy or stopped return <code>false</code>, and instances without a
+     * connected agent cannot accept placement requests.
+     * </p>
+     * 
+     * @param agentConnected
+     *        This parameter returns <code>true</code> if the agent is actually
+     *        connected to Amazon ECS. Registered instances with an agent that
+     *        may be unhealthy or stopped return <code>false</code>, and
+     *        instances without a connected agent cannot accept placement
+     *        requests.
      */
     public void setAgentConnected(Boolean agentConnected) {
         this.agentConnected = agentConnected;
     }
-    
+
     /**
-     * This parameter returns <code>true</code> if the agent is actually
-     * connected to Amazon ECS. Registered instances with an agent that may
-     * be unhealthy or stopped return <code>false</code>, and instances
-     * without a connected agent cannot accept placement requests.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param agentConnected This parameter returns <code>true</code> if the agent is actually
-     *         connected to Amazon ECS. Registered instances with an agent that may
-     *         be unhealthy or stopped return <code>false</code>, and instances
-     *         without a connected agent cannot accept placement requests.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * This parameter returns <code>true</code> if the agent is actually
+     * connected to Amazon ECS. Registered instances with an agent that may be
+     * unhealthy or stopped return <code>false</code>, and instances without a
+     * connected agent cannot accept placement requests.
+     * </p>
+     * 
+     * @return This parameter returns <code>true</code> if the agent is actually
+     *         connected to Amazon ECS. Registered instances with an agent that
+     *         may be unhealthy or stopped return <code>false</code>, and
+     *         instances without a connected agent cannot accept placement
+     *         requests.
+     */
+    public Boolean getAgentConnected() {
+        return this.agentConnected;
+    }
+
+    /**
+     * <p>
+     * This parameter returns <code>true</code> if the agent is actually
+     * connected to Amazon ECS. Registered instances with an agent that may be
+     * unhealthy or stopped return <code>false</code>, and instances without a
+     * connected agent cannot accept placement requests.
+     * </p>
+     * 
+     * @param agentConnected
+     *        This parameter returns <code>true</code> if the agent is actually
+     *        connected to Amazon ECS. Registered instances with an agent that
+     *        may be unhealthy or stopped return <code>false</code>, and
+     *        instances without a connected agent cannot accept placement
+     *        requests.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ContainerInstance withAgentConnected(Boolean agentConnected) {
-        this.agentConnected = agentConnected;
+        setAgentConnected(agentConnected);
         return this;
     }
 
     /**
+     * <p>
      * This parameter returns <code>true</code> if the agent is actually
-     * connected to Amazon ECS. Registered instances with an agent that may
-     * be unhealthy or stopped return <code>false</code>, and instances
-     * without a connected agent cannot accept placement requests.
-     *
+     * connected to Amazon ECS. Registered instances with an agent that may be
+     * unhealthy or stopped return <code>false</code>, and instances without a
+     * connected agent cannot accept placement requests.
+     * </p>
+     * 
      * @return This parameter returns <code>true</code> if the agent is actually
-     *         connected to Amazon ECS. Registered instances with an agent that may
-     *         be unhealthy or stopped return <code>false</code>, and instances
-     *         without a connected agent cannot accept placement requests.
+     *         connected to Amazon ECS. Registered instances with an agent that
+     *         may be unhealthy or stopped return <code>false</code>, and
+     *         instances without a connected agent cannot accept placement
+     *         requests.
      */
-    public Boolean getAgentConnected() {
-        return agentConnected;
+    public Boolean isAgentConnected() {
+        return this.agentConnected;
     }
 
     /**
+     * <p>
      * The number of tasks on the container instance that are in the
      * <code>RUNNING</code> status.
-     *
-     * @return The number of tasks on the container instance that are in the
-     *         <code>RUNNING</code> status.
-     */
-    public Integer getRunningTasksCount() {
-        return runningTasksCount;
-    }
-    
-    /**
-     * The number of tasks on the container instance that are in the
-     * <code>RUNNING</code> status.
-     *
-     * @param runningTasksCount The number of tasks on the container instance that are in the
-     *         <code>RUNNING</code> status.
+     * </p>
+     * 
+     * @param runningTasksCount
+     *        The number of tasks on the container instance that are in the
+     *        <code>RUNNING</code> status.
      */
     public void setRunningTasksCount(Integer runningTasksCount) {
         this.runningTasksCount = runningTasksCount;
     }
-    
+
     /**
+     * <p>
      * The number of tasks on the container instance that are in the
      * <code>RUNNING</code> status.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param runningTasksCount The number of tasks on the container instance that are in the
+     * </p>
+     * 
+     * @return The number of tasks on the container instance that are in the
      *         <code>RUNNING</code> status.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public Integer getRunningTasksCount() {
+        return this.runningTasksCount;
+    }
+
+    /**
+     * <p>
+     * The number of tasks on the container instance that are in the
+     * <code>RUNNING</code> status.
+     * </p>
+     * 
+     * @param runningTasksCount
+     *        The number of tasks on the container instance that are in the
+     *        <code>RUNNING</code> status.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ContainerInstance withRunningTasksCount(Integer runningTasksCount) {
-        this.runningTasksCount = runningTasksCount;
+        setRunningTasksCount(runningTasksCount);
         return this;
     }
 
     /**
+     * <p>
      * The number of tasks on the container instance that are in the
      * <code>PENDING</code> status.
-     *
-     * @return The number of tasks on the container instance that are in the
-     *         <code>PENDING</code> status.
-     */
-    public Integer getPendingTasksCount() {
-        return pendingTasksCount;
-    }
-    
-    /**
-     * The number of tasks on the container instance that are in the
-     * <code>PENDING</code> status.
-     *
-     * @param pendingTasksCount The number of tasks on the container instance that are in the
-     *         <code>PENDING</code> status.
+     * </p>
+     * 
+     * @param pendingTasksCount
+     *        The number of tasks on the container instance that are in the
+     *        <code>PENDING</code> status.
      */
     public void setPendingTasksCount(Integer pendingTasksCount) {
         this.pendingTasksCount = pendingTasksCount;
     }
-    
+
     /**
+     * <p>
      * The number of tasks on the container instance that are in the
      * <code>PENDING</code> status.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param pendingTasksCount The number of tasks on the container instance that are in the
+     * </p>
+     * 
+     * @return The number of tasks on the container instance that are in the
      *         <code>PENDING</code> status.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public Integer getPendingTasksCount() {
+        return this.pendingTasksCount;
+    }
+
+    /**
+     * <p>
+     * The number of tasks on the container instance that are in the
+     * <code>PENDING</code> status.
+     * </p>
+     * 
+     * @param pendingTasksCount
+     *        The number of tasks on the container instance that are in the
+     *        <code>PENDING</code> status.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ContainerInstance withPendingTasksCount(Integer pendingTasksCount) {
-        this.pendingTasksCount = pendingTasksCount;
+        setPendingTasksCount(pendingTasksCount);
         return this;
     }
 
     /**
-     * The status of the most recent agent update. If an update has never
-     * been requested, this value is <code>NULL</code>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
-     *
-     * @return The status of the most recent agent update. If an update has never
-     *         been requested, this value is <code>NULL</code>.
-     *
-     * @see AgentUpdateStatus
-     */
-    public String getAgentUpdateStatus() {
-        return agentUpdateStatus;
-    }
-    
-    /**
-     * The status of the most recent agent update. If an update has never
-     * been requested, this value is <code>NULL</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
-     *
-     * @param agentUpdateStatus The status of the most recent agent update. If an update has never
-     *         been requested, this value is <code>NULL</code>.
-     *
+     * The status of the most recent agent update. If an update has never been
+     * requested, this value is <code>NULL</code>.
+     * </p>
+     * 
+     * @param agentUpdateStatus
+     *        The status of the most recent agent update. If an update has never
+     *        been requested, this value is <code>NULL</code>.
      * @see AgentUpdateStatus
      */
     public void setAgentUpdateStatus(String agentUpdateStatus) {
         this.agentUpdateStatus = agentUpdateStatus;
     }
-    
+
     /**
-     * The status of the most recent agent update. If an update has never
-     * been requested, this value is <code>NULL</code>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The status of the most recent agent update. If an update has never been
+     * requested, this value is <code>NULL</code>.
+     * </p>
+     * 
+     * @return The status of the most recent agent update. If an update has
+     *         never been requested, this value is <code>NULL</code>.
+     * @see AgentUpdateStatus
+     */
+    public String getAgentUpdateStatus() {
+        return this.agentUpdateStatus;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
-     *
-     * @param agentUpdateStatus The status of the most recent agent update. If an update has never
-     *         been requested, this value is <code>NULL</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The status of the most recent agent update. If an update has never been
+     * requested, this value is <code>NULL</code>.
+     * </p>
+     * 
+     * @param agentUpdateStatus
+     *        The status of the most recent agent update. If an update has never
+     *        been requested, this value is <code>NULL</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see AgentUpdateStatus
      */
     public ContainerInstance withAgentUpdateStatus(String agentUpdateStatus) {
-        this.agentUpdateStatus = agentUpdateStatus;
+        setAgentUpdateStatus(agentUpdateStatus);
         return this;
     }
 
     /**
-     * The status of the most recent agent update. If an update has never
-     * been requested, this value is <code>NULL</code>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
-     *
-     * @param agentUpdateStatus The status of the most recent agent update. If an update has never
-     *         been requested, this value is <code>NULL</code>.
-     *
+     * The status of the most recent agent update. If an update has never been
+     * requested, this value is <code>NULL</code>.
+     * </p>
+     * 
+     * @param agentUpdateStatus
+     *        The status of the most recent agent update. If an update has never
+     *        been requested, this value is <code>NULL</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see AgentUpdateStatus
      */
     public void setAgentUpdateStatus(AgentUpdateStatus agentUpdateStatus) {
         this.agentUpdateStatus = agentUpdateStatus.toString();
     }
-    
+
     /**
-     * The status of the most recent agent update. If an update has never
-     * been requested, this value is <code>NULL</code>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
-     *
-     * @param agentUpdateStatus The status of the most recent agent update. If an update has never
-     *         been requested, this value is <code>NULL</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The status of the most recent agent update. If an update has never been
+     * requested, this value is <code>NULL</code>.
+     * </p>
+     * 
+     * @param agentUpdateStatus
+     *        The status of the most recent agent update. If an update has never
+     *        been requested, this value is <code>NULL</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see AgentUpdateStatus
      */
-    public ContainerInstance withAgentUpdateStatus(AgentUpdateStatus agentUpdateStatus) {
-        this.agentUpdateStatus = agentUpdateStatus.toString();
+    public ContainerInstance withAgentUpdateStatus(
+            AgentUpdateStatus agentUpdateStatus) {
+        setAgentUpdateStatus(agentUpdateStatus);
         return this;
     }
 
     /**
-     * The attributes set for the container instance by the Amazon ECS
-     * container agent at instance registration.
-     *
+     * <p>
+     * The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.
+     * </p>
+     * 
      * @return The attributes set for the container instance by the Amazon ECS
      *         container agent at instance registration.
      */
     public java.util.List<Attribute> getAttributes() {
         if (attributes == null) {
-              attributes = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>();
-              attributes.setAutoConstruct(true);
+            attributes = new com.amazonaws.internal.SdkInternalList<Attribute>();
         }
         return attributes;
     }
-    
+
     /**
-     * The attributes set for the container instance by the Amazon ECS
-     * container agent at instance registration.
-     *
-     * @param attributes The attributes set for the container instance by the Amazon ECS
-     *         container agent at instance registration.
+     * <p>
+     * The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.
+     * </p>
+     * 
+     * @param attributes
+     *        The attributes set for the container instance by the Amazon ECS
+     *        container agent at instance registration.
      */
     public void setAttributes(java.util.Collection<Attribute> attributes) {
         if (attributes == null) {
             this.attributes = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
-        attributesCopy.addAll(attributes);
-        this.attributes = attributesCopy;
+
+        this.attributes = new com.amazonaws.internal.SdkInternalList<Attribute>(
+                attributes);
     }
-    
+
     /**
-     * The attributes set for the container instance by the Amazon ECS
-     * container agent at instance registration.
+     * <p>
+     * The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttributes(java.util.Collection)} or {@link
-     * #withAttributes(java.util.Collection)} if you want to override the
+     * any). Use {@link #setAttributes(java.util.Collection)} or
+     * {@link #withAttributes(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param attributes The attributes set for the container instance by the Amazon ECS
-     *         container agent at instance registration.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param attributes
+     *        The attributes set for the container instance by the Amazon ECS
+     *        container agent at instance registration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ContainerInstance withAttributes(Attribute... attributes) {
-        if (getAttributes() == null) setAttributes(new java.util.ArrayList<Attribute>(attributes.length));
-        for (Attribute value : attributes) {
-            getAttributes().add(value);
+        if (this.attributes == null) {
+            setAttributes(new com.amazonaws.internal.SdkInternalList<Attribute>(
+                    attributes.length));
+        }
+        for (Attribute ele : attributes) {
+            this.attributes.add(ele);
         }
         return this;
     }
-    
-    /**
-     * The attributes set for the container instance by the Amazon ECS
-     * container agent at instance registration.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param attributes The attributes set for the container instance by the Amazon ECS
-     *         container agent at instance registration.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ContainerInstance withAttributes(java.util.Collection<Attribute> attributes) {
-        if (attributes == null) {
-            this.attributes = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
-            attributesCopy.addAll(attributes);
-            this.attributes = attributesCopy;
-        }
 
+    /**
+     * <p>
+     * The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.
+     * </p>
+     * 
+     * @param attributes
+     *        The attributes set for the container instance by the Amazon ECS
+     *        container agent at instance registration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ContainerInstance withAttributes(
+            java.util.Collection<Attribute> attributes) {
+        setAttributes(attributes);
         return this;
     }
 
@@ -770,86 +833,169 @@ public class ContainerInstance implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getContainerInstanceArn() != null) sb.append("ContainerInstanceArn: " + getContainerInstanceArn() + ",");
-        if (getEc2InstanceId() != null) sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
-        if (getVersionInfo() != null) sb.append("VersionInfo: " + getVersionInfo() + ",");
-        if (getRemainingResources() != null) sb.append("RemainingResources: " + getRemainingResources() + ",");
-        if (getRegisteredResources() != null) sb.append("RegisteredResources: " + getRegisteredResources() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
-        if (isAgentConnected() != null) sb.append("AgentConnected: " + isAgentConnected() + ",");
-        if (getRunningTasksCount() != null) sb.append("RunningTasksCount: " + getRunningTasksCount() + ",");
-        if (getPendingTasksCount() != null) sb.append("PendingTasksCount: " + getPendingTasksCount() + ",");
-        if (getAgentUpdateStatus() != null) sb.append("AgentUpdateStatus: " + getAgentUpdateStatus() + ",");
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
+        if (getContainerInstanceArn() != null)
+            sb.append("ContainerInstanceArn: " + getContainerInstanceArn()
+                    + ",");
+        if (getEc2InstanceId() != null)
+            sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+        if (getVersionInfo() != null)
+            sb.append("VersionInfo: " + getVersionInfo() + ",");
+        if (getRemainingResources() != null)
+            sb.append("RemainingResources: " + getRemainingResources() + ",");
+        if (getRegisteredResources() != null)
+            sb.append("RegisteredResources: " + getRegisteredResources() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus() + ",");
+        if (getAgentConnected() != null)
+            sb.append("AgentConnected: " + getAgentConnected() + ",");
+        if (getRunningTasksCount() != null)
+            sb.append("RunningTasksCount: " + getRunningTasksCount() + ",");
+        if (getPendingTasksCount() != null)
+            sb.append("PendingTasksCount: " + getPendingTasksCount() + ",");
+        if (getAgentUpdateStatus() != null)
+            sb.append("AgentUpdateStatus: " + getAgentUpdateStatus() + ",");
+        if (getAttributes() != null)
+            sb.append("Attributes: " + getAttributes());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ContainerInstance == false)
+            return false;
+        ContainerInstance other = (ContainerInstance) obj;
+        if (other.getContainerInstanceArn() == null
+                ^ this.getContainerInstanceArn() == null)
+            return false;
+        if (other.getContainerInstanceArn() != null
+                && other.getContainerInstanceArn().equals(
+                        this.getContainerInstanceArn()) == false)
+            return false;
+        if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null)
+            return false;
+        if (other.getEc2InstanceId() != null
+                && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false)
+            return false;
+        if (other.getVersionInfo() == null ^ this.getVersionInfo() == null)
+            return false;
+        if (other.getVersionInfo() != null
+                && other.getVersionInfo().equals(this.getVersionInfo()) == false)
+            return false;
+        if (other.getRemainingResources() == null
+                ^ this.getRemainingResources() == null)
+            return false;
+        if (other.getRemainingResources() != null
+                && other.getRemainingResources().equals(
+                        this.getRemainingResources()) == false)
+            return false;
+        if (other.getRegisteredResources() == null
+                ^ this.getRegisteredResources() == null)
+            return false;
+        if (other.getRegisteredResources() != null
+                && other.getRegisteredResources().equals(
+                        this.getRegisteredResources()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null
+                && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getAgentConnected() == null
+                ^ this.getAgentConnected() == null)
+            return false;
+        if (other.getAgentConnected() != null
+                && other.getAgentConnected().equals(this.getAgentConnected()) == false)
+            return false;
+        if (other.getRunningTasksCount() == null
+                ^ this.getRunningTasksCount() == null)
+            return false;
+        if (other.getRunningTasksCount() != null
+                && other.getRunningTasksCount().equals(
+                        this.getRunningTasksCount()) == false)
+            return false;
+        if (other.getPendingTasksCount() == null
+                ^ this.getPendingTasksCount() == null)
+            return false;
+        if (other.getPendingTasksCount() != null
+                && other.getPendingTasksCount().equals(
+                        this.getPendingTasksCount()) == false)
+            return false;
+        if (other.getAgentUpdateStatus() == null
+                ^ this.getAgentUpdateStatus() == null)
+            return false;
+        if (other.getAgentUpdateStatus() != null
+                && other.getAgentUpdateStatus().equals(
+                        this.getAgentUpdateStatus()) == false)
+            return false;
+        if (other.getAttributes() == null ^ this.getAttributes() == null)
+            return false;
+        if (other.getAttributes() != null
+                && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getContainerInstanceArn() == null) ? 0 : getContainerInstanceArn().hashCode()); 
-        hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode()); 
-        hashCode = prime * hashCode + ((getVersionInfo() == null) ? 0 : getVersionInfo().hashCode()); 
-        hashCode = prime * hashCode + ((getRemainingResources() == null) ? 0 : getRemainingResources().hashCode()); 
-        hashCode = prime * hashCode + ((getRegisteredResources() == null) ? 0 : getRegisteredResources().hashCode()); 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
-        hashCode = prime * hashCode + ((isAgentConnected() == null) ? 0 : isAgentConnected().hashCode()); 
-        hashCode = prime * hashCode + ((getRunningTasksCount() == null) ? 0 : getRunningTasksCount().hashCode()); 
-        hashCode = prime * hashCode + ((getPendingTasksCount() == null) ? 0 : getPendingTasksCount().hashCode()); 
-        hashCode = prime * hashCode + ((getAgentUpdateStatus() == null) ? 0 : getAgentUpdateStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getContainerInstanceArn() == null) ? 0
+                        : getContainerInstanceArn().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVersionInfo() == null) ? 0 : getVersionInfo().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRemainingResources() == null) ? 0
+                        : getRemainingResources().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRegisteredResources() == null) ? 0
+                        : getRegisteredResources().hashCode());
+        hashCode = prime * hashCode
+                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAgentConnected() == null) ? 0 : getAgentConnected()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRunningTasksCount() == null) ? 0
+                        : getRunningTasksCount().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPendingTasksCount() == null) ? 0
+                        : getPendingTasksCount().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAgentUpdateStatus() == null) ? 0
+                        : getAgentUpdateStatus().hashCode());
+        hashCode = prime * hashCode
+                + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ContainerInstance == false) return false;
-        ContainerInstance other = (ContainerInstance)obj;
-        
-        if (other.getContainerInstanceArn() == null ^ this.getContainerInstanceArn() == null) return false;
-        if (other.getContainerInstanceArn() != null && other.getContainerInstanceArn().equals(this.getContainerInstanceArn()) == false) return false; 
-        if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null) return false;
-        if (other.getEc2InstanceId() != null && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false) return false; 
-        if (other.getVersionInfo() == null ^ this.getVersionInfo() == null) return false;
-        if (other.getVersionInfo() != null && other.getVersionInfo().equals(this.getVersionInfo()) == false) return false; 
-        if (other.getRemainingResources() == null ^ this.getRemainingResources() == null) return false;
-        if (other.getRemainingResources() != null && other.getRemainingResources().equals(this.getRemainingResources()) == false) return false; 
-        if (other.getRegisteredResources() == null ^ this.getRegisteredResources() == null) return false;
-        if (other.getRegisteredResources() != null && other.getRegisteredResources().equals(this.getRegisteredResources()) == false) return false; 
-        if (other.getStatus() == null ^ this.getStatus() == null) return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
-        if (other.isAgentConnected() == null ^ this.isAgentConnected() == null) return false;
-        if (other.isAgentConnected() != null && other.isAgentConnected().equals(this.isAgentConnected()) == false) return false; 
-        if (other.getRunningTasksCount() == null ^ this.getRunningTasksCount() == null) return false;
-        if (other.getRunningTasksCount() != null && other.getRunningTasksCount().equals(this.getRunningTasksCount()) == false) return false; 
-        if (other.getPendingTasksCount() == null ^ this.getPendingTasksCount() == null) return false;
-        if (other.getPendingTasksCount() != null && other.getPendingTasksCount().equals(this.getPendingTasksCount()) == false) return false; 
-        if (other.getAgentUpdateStatus() == null ^ this.getAgentUpdateStatus() == null) return false;
-        if (other.getAgentUpdateStatus() != null && other.getAgentUpdateStatus().equals(this.getAgentUpdateStatus()) == false) return false; 
-        if (other.getAttributes() == null ^ this.getAttributes() == null) return false;
-        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ContainerInstance clone() {
         try {
             return (ContainerInstance) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

@@ -27,9 +27,7 @@ public class ListJobsResult implements Serializable, Cloneable {
     private Boolean isTruncated;
 
     /**
-     * Returns the value of the Jobs property for this object.
-     * 
-     * @return The value of the Jobs property for this object.
+     * @return
      */
     public java.util.List<Job> getJobs() {
         if (jobs == null) {
@@ -39,10 +37,7 @@ public class ListJobsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Jobs property for this object.
-     * 
      * @param jobs
-     *        The new value for the Jobs property for this object.
      */
     public void setJobs(java.util.Collection<Job> jobs) {
         if (jobs == null) {
@@ -54,7 +49,6 @@ public class ListJobsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Jobs property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setJobs(java.util.Collection)} or
@@ -63,7 +57,6 @@ public class ListJobsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param jobs
-     *        The new value for the Jobs property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -78,10 +71,7 @@ public class ListJobsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Jobs property for this object.
-     * 
      * @param jobs
-     *        The new value for the Jobs property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -91,29 +81,21 @@ public class ListJobsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the IsTruncated property for this object.
-     * 
      * @param isTruncated
-     *        The new value for the IsTruncated property for this object.
      */
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
 
     /**
-     * Returns the value of the IsTruncated property for this object.
-     * 
-     * @return The value of the IsTruncated property for this object.
+     * @return
      */
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
 
     /**
-     * Sets the value of the IsTruncated property for this object.
-     * 
      * @param isTruncated
-     *        The new value for the IsTruncated property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -123,9 +105,7 @@ public class ListJobsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the IsTruncated property for this object.
-     * 
-     * @return The value of the IsTruncated property for this object.
+     * @return
      */
     public Boolean isTruncated() {
         return this.isTruncated;

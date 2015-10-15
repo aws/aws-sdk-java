@@ -1,241 +1,246 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeInstances(DescribeInstancesRequest) DescribeInstances operation}.
- * <p>
- * Requests a description of a set of instances.
- * </p>
- * <p>
- * <b>NOTE:</b> You must specify at least one of the parameters.
- * </p>
- * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must
- * have a Show, Deploy, or Manage permissions level for the stack, or an
- * attached policy that explicitly grants permissions. For more
- * information on user permissions, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
- * .
- * </p>
- *
- * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeInstances(DescribeInstancesRequest)
+ * 
  */
-public class DescribeInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * A stack ID. If you use this parameter, <code>DescribeInstances</code>
      * returns descriptions of the instances associated with the specified
      * stack.
+     * </p>
      */
     private String stackId;
-
     /**
+     * <p>
      * A layer ID. If you use this parameter, <code>DescribeInstances</code>
      * returns descriptions of the instances associated with the specified
      * layer.
+     * </p>
      */
     private String layerId;
-
     /**
+     * <p>
      * An array of instance IDs to be described. If you use this parameter,
      * <code>DescribeInstances</code> returns a description of the specified
      * instances. Otherwise, it returns a description of every instance.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
+    private com.amazonaws.internal.SdkInternalList<String> instanceIds;
 
     /**
+     * <p>
      * A stack ID. If you use this parameter, <code>DescribeInstances</code>
      * returns descriptions of the instances associated with the specified
      * stack.
-     *
-     * @return A stack ID. If you use this parameter, <code>DescribeInstances</code>
-     *         returns descriptions of the instances associated with the specified
-     *         stack.
-     */
-    public String getStackId() {
-        return stackId;
-    }
-    
-    /**
-     * A stack ID. If you use this parameter, <code>DescribeInstances</code>
-     * returns descriptions of the instances associated with the specified
-     * stack.
-     *
-     * @param stackId A stack ID. If you use this parameter, <code>DescribeInstances</code>
-     *         returns descriptions of the instances associated with the specified
-     *         stack.
+     * </p>
+     * 
+     * @param stackId
+     *        A stack ID. If you use this parameter,
+     *        <code>DescribeInstances</code> returns descriptions of the
+     *        instances associated with the specified stack.
      */
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
-    
+
     /**
+     * <p>
      * A stack ID. If you use this parameter, <code>DescribeInstances</code>
      * returns descriptions of the instances associated with the specified
      * stack.
+     * </p>
+     * 
+     * @return A stack ID. If you use this parameter,
+     *         <code>DescribeInstances</code> returns descriptions of the
+     *         instances associated with the specified stack.
+     */
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stackId A stack ID. If you use this parameter, <code>DescribeInstances</code>
-     *         returns descriptions of the instances associated with the specified
-     *         stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A stack ID. If you use this parameter, <code>DescribeInstances</code>
+     * returns descriptions of the instances associated with the specified
+     * stack.
+     * </p>
+     * 
+     * @param stackId
+     *        A stack ID. If you use this parameter,
+     *        <code>DescribeInstances</code> returns descriptions of the
+     *        instances associated with the specified stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeInstancesRequest withStackId(String stackId) {
-        this.stackId = stackId;
+        setStackId(stackId);
         return this;
     }
 
     /**
+     * <p>
      * A layer ID. If you use this parameter, <code>DescribeInstances</code>
      * returns descriptions of the instances associated with the specified
      * layer.
-     *
-     * @return A layer ID. If you use this parameter, <code>DescribeInstances</code>
-     *         returns descriptions of the instances associated with the specified
-     *         layer.
-     */
-    public String getLayerId() {
-        return layerId;
-    }
-    
-    /**
-     * A layer ID. If you use this parameter, <code>DescribeInstances</code>
-     * returns descriptions of the instances associated with the specified
-     * layer.
-     *
-     * @param layerId A layer ID. If you use this parameter, <code>DescribeInstances</code>
-     *         returns descriptions of the instances associated with the specified
-     *         layer.
+     * </p>
+     * 
+     * @param layerId
+     *        A layer ID. If you use this parameter,
+     *        <code>DescribeInstances</code> returns descriptions of the
+     *        instances associated with the specified layer.
      */
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
-    
+
     /**
+     * <p>
      * A layer ID. If you use this parameter, <code>DescribeInstances</code>
      * returns descriptions of the instances associated with the specified
      * layer.
+     * </p>
+     * 
+     * @return A layer ID. If you use this parameter,
+     *         <code>DescribeInstances</code> returns descriptions of the
+     *         instances associated with the specified layer.
+     */
+    public String getLayerId() {
+        return this.layerId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param layerId A layer ID. If you use this parameter, <code>DescribeInstances</code>
-     *         returns descriptions of the instances associated with the specified
-     *         layer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A layer ID. If you use this parameter, <code>DescribeInstances</code>
+     * returns descriptions of the instances associated with the specified
+     * layer.
+     * </p>
+     * 
+     * @param layerId
+     *        A layer ID. If you use this parameter,
+     *        <code>DescribeInstances</code> returns descriptions of the
+     *        instances associated with the specified layer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeInstancesRequest withLayerId(String layerId) {
-        this.layerId = layerId;
+        setLayerId(layerId);
         return this;
     }
 
     /**
+     * <p>
      * An array of instance IDs to be described. If you use this parameter,
      * <code>DescribeInstances</code> returns a description of the specified
      * instances. Otherwise, it returns a description of every instance.
-     *
-     * @return An array of instance IDs to be described. If you use this parameter,
-     *         <code>DescribeInstances</code> returns a description of the specified
-     *         instances. Otherwise, it returns a description of every instance.
+     * </p>
+     * 
+     * @return An array of instance IDs to be described. If you use this
+     *         parameter, <code>DescribeInstances</code> returns a description
+     *         of the specified instances. Otherwise, it returns a description
+     *         of every instance.
      */
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
-              instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              instanceIds.setAutoConstruct(true);
+            instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return instanceIds;
     }
-    
+
     /**
+     * <p>
      * An array of instance IDs to be described. If you use this parameter,
      * <code>DescribeInstances</code> returns a description of the specified
      * instances. Otherwise, it returns a description of every instance.
-     *
-     * @param instanceIds An array of instance IDs to be described. If you use this parameter,
-     *         <code>DescribeInstances</code> returns a description of the specified
-     *         instances. Otherwise, it returns a description of every instance.
+     * </p>
+     * 
+     * @param instanceIds
+     *        An array of instance IDs to be described. If you use this
+     *        parameter, <code>DescribeInstances</code> returns a description of
+     *        the specified instances. Otherwise, it returns a description of
+     *        every instance.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
-        instanceIdsCopy.addAll(instanceIds);
-        this.instanceIds = instanceIdsCopy;
+
+        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(
+                instanceIds);
     }
-    
+
     /**
+     * <p>
      * An array of instance IDs to be described. If you use this parameter,
      * <code>DescribeInstances</code> returns a description of the specified
      * instances. Otherwise, it returns a description of every instance.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceIds(java.util.Collection)} or {@link
-     * #withInstanceIds(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instanceIds An array of instance IDs to be described. If you use this parameter,
-     *         <code>DescribeInstances</code> returns a description of the specified
-     *         instances. Otherwise, it returns a description of every instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setInstanceIds(java.util.Collection)} or
+     * {@link #withInstanceIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param instanceIds
+     *        An array of instance IDs to be described. If you use this
+     *        parameter, <code>DescribeInstances</code> returns a description of
+     *        the specified instances. Otherwise, it returns a description of
+     *        every instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeInstancesRequest withInstanceIds(String... instanceIds) {
-        if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
-        for (String value : instanceIds) {
-            getInstanceIds().add(value);
+        if (this.instanceIds == null) {
+            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
+                    instanceIds.length));
+        }
+        for (String ele : instanceIds) {
+            this.instanceIds.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * An array of instance IDs to be described. If you use this parameter,
      * <code>DescribeInstances</code> returns a description of the specified
      * instances. Otherwise, it returns a description of every instance.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instanceIds An array of instance IDs to be described. If you use this parameter,
-     *         <code>DescribeInstances</code> returns a description of the specified
-     *         instances. Otherwise, it returns a description of every instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param instanceIds
+     *        An array of instance IDs to be described. If you use this
+     *        parameter, <code>DescribeInstances</code> returns a description of
+     *        the specified instances. Otherwise, it returns a description of
+     *        every instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
-        if (instanceIds == null) {
-            this.instanceIds = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
-            instanceIdsCopy.addAll(instanceIds);
-            this.instanceIds = instanceIdsCopy;
-        }
-
+    public DescribeInstancesRequest withInstanceIds(
+            java.util.Collection<String> instanceIds) {
+        setInstanceIds(instanceIds);
         return this;
     }
 
@@ -251,46 +256,61 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
-        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() );
+        if (getStackId() != null)
+            sb.append("StackId: " + getStackId() + ",");
+        if (getLayerId() != null)
+            sb.append("LayerId: " + getLayerId() + ",");
+        if (getInstanceIds() != null)
+            sb.append("InstanceIds: " + getInstanceIds());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeInstancesRequest == false)
+            return false;
+        DescribeInstancesRequest other = (DescribeInstancesRequest) obj;
+        if (other.getStackId() == null ^ this.getStackId() == null)
+            return false;
+        if (other.getStackId() != null
+                && other.getStackId().equals(this.getStackId()) == false)
+            return false;
+        if (other.getLayerId() == null ^ this.getLayerId() == null)
+            return false;
+        if (other.getLayerId() != null
+                && other.getLayerId().equals(this.getLayerId()) == false)
+            return false;
+        if (other.getInstanceIds() == null ^ this.getInstanceIds() == null)
+            return false;
+        if (other.getInstanceIds() != null
+                && other.getInstanceIds().equals(this.getInstanceIds()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
-        hashCode = prime * hashCode + ((getLayerId() == null) ? 0 : getLayerId().hashCode()); 
-        hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode
+                + ((getLayerId() == null) ? 0 : getLayerId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeInstancesRequest == false) return false;
-        DescribeInstancesRequest other = (DescribeInstancesRequest)obj;
-        
-        if (other.getStackId() == null ^ this.getStackId() == null) return false;
-        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
-        if (other.getLayerId() == null ^ this.getLayerId() == null) return false;
-        if (other.getLayerId() != null && other.getLayerId().equals(this.getLayerId()) == false) return false; 
-        if (other.getInstanceIds() == null ^ this.getInstanceIds() == null) return false;
-        if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeInstancesRequest clone() {
-        
-            return (DescribeInstancesRequest) super.clone();
+        return (DescribeInstancesRequest) super.clone();
     }
-
 }
-    

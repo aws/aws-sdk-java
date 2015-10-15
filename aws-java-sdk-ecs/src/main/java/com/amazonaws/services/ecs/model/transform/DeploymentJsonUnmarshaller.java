@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,9 +28,11 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Deployment JSON Unmarshaller
  */
-public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, JsonUnmarshallerContext> {
+public class DeploymentJsonUnmarshaller implements
+        Unmarshaller<Deployment, JsonUnmarshallerContext> {
 
-    public Deployment unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public Deployment unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         Deployment deployment = new Deployment();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,61 +40,75 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    deployment.setId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    deployment.setId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    deployment.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    deployment.setStatus(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("taskDefinition", targetDepth)) {
                     context.nextToken();
-                    deployment.setTaskDefinition(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    deployment.setTaskDefinition(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("desiredCount", targetDepth)) {
                     context.nextToken();
-                    deployment.setDesiredCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    deployment.setDesiredCount(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pendingCount", targetDepth)) {
                     context.nextToken();
-                    deployment.setPendingCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    deployment.setPendingCount(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("runningCount", targetDepth)) {
                     context.nextToken();
-                    deployment.setRunningCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    deployment.setRunningCount(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    deployment.setCreatedAt(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    deployment.setCreatedAt(DateJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    deployment.setUpdatedAt(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    deployment.setUpdatedAt(DateJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return deployment;
     }
 
     private static DeploymentJsonUnmarshaller instance;
+
     public static DeploymentJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new DeploymentJsonUnmarshaller();
+        if (instance == null)
+            instance = new DeploymentJsonUnmarshaller();
         return instance;
     }
 }
-    

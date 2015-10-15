@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kms.AWSKMS#deleteAlias(DeleteAliasRequest) DeleteAlias operation}.
  * <p>
- * Deletes the specified alias. To associate an alias with a different
- * key, call UpdateAlias.
+ * Deletes the specified alias. To map an alias to a different key, call
+ * UpdateAlias.
  * </p>
  *
  * @see com.amazonaws.services.kms.AWSKMS#deleteAlias(DeleteAliasRequest)

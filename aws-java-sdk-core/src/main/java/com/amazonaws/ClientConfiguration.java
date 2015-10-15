@@ -37,6 +37,9 @@ public class ClientConfiguration {
     /** The default timeout for reading from a connected socket. */
     public static final int DEFAULT_SOCKET_TIMEOUT = 50 * 1000;
 
+    /** The default timeout for a request. This is disabled by default, being vended as an opt-in setting. */
+    public static final int DEFAULT_REQUEST_TIMEOUT = 0;
+    
     /** The default max connection pool size. */
     public static final int DEFAULT_MAX_CONNECTIONS = 50;
 
@@ -159,6 +162,14 @@ public class ClientConfiguration {
     private int connectionTimeout = DEFAULT_CONNECTION_TIMEOUT;
 
     /**
+     * The amount of time to wait (in milliseconds) for a request
+     * to complete before giving up and timing out. A value of 0 means
+     * infinity. Consider setting this if a harder guarantee is required on the maximum amount of time a request will take 
+     * for non-streaming operations, and are willing to spin up a background thread to enforce it.
+     */
+    private int requestTimeout = DEFAULT_REQUEST_TIMEOUT;
+    
+    /**
      * Optional size hint (in bytes) for the low level TCP send buffer. This is
      * an advanced option for advanced users who want to tune low level TCP
      * parameters to try and squeeze out more performance.
@@ -257,6 +268,7 @@ public class ClientConfiguration {
         this.proxyWorkstation            = other.proxyWorkstation;
         this.preemptiveBasicProxyAuth    = other.preemptiveBasicProxyAuth;
         this.socketTimeout               = other.socketTimeout;
+        this.requestTimeout              = other.requestTimeout;
         this.userAgent                   = other.userAgent;
         this.useReaper                   = other.useReaper;
         this.useGzip                     = other.useGzip;
@@ -812,6 +824,49 @@ public class ClientConfiguration {
         return this;
     }
 
+    /**
+     * Returns the amount of time to wait (in milliseconds) for the request
+     * to complete before giving up and timing out. A non-positive value
+     * means infinity.
+     *
+     * @return The amount of time to wait (in milliseconds) for the request to complete
+     *         before giving up and timing out.
+     */
+    public int getRequestTimeout() {
+        return requestTimeout;
+    }
+
+    /**
+     * Sets the amount of time to wait (in milliseconds) for the request
+     * to complete before giving up and timing out. A non-positive value
+     * means infinity.
+     *
+     * @param requestTimeout
+     *            The amount of time to wait (in milliseconds) for the request to complete
+     *            before giving up and timing out.
+     */
+    public void setRequestTimeout(int requestTimeout) {
+        this.requestTimeout = requestTimeout;
+    }
+
+    /**
+     * Sets the amount of time to wait (in milliseconds) for the request
+     * to complete before giving up and timing out. A non-positive value
+     * means infinity.
+     * Returns the updated ClientConfiguration object so that additional method calls
+     * may be chained together. 
+     *
+     * @param requestTimeout
+     *            The amount of time to wait (in milliseconds) for the request to complete
+     *            before giving up and timing out.
+     *
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withRequestTimeout(int requestTimeout) {
+        setRequestTimeout(requestTimeout);
+        return this;
+    }
+    
     /**
      * Checks if the {@link IdleConnectionReaper} is to be started
      *

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,155 +14,153 @@
  */
 package com.amazonaws.services.opsworks;
 
+import org.w3c.dom.*;
+
 import java.net.*;
 import java.util.*;
+import java.util.Map.Entry;
 
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
-import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
 import com.amazonaws.metrics.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.services.opsworks.model.transform.*;
 
 /**
- * Client for accessing AWSOpsWorks.  All service calls made
- * using this client are blocking, and will not return until the service call
- * completes.
+ * Client for accessing AWS OpsWorks. All service calls made using this client
+ * are blocking, and will not return until the service call completes.
  * <p>
- * AWS OpsWorks <p>
- * Welcome to the <i>AWS OpsWorks API Reference</i> . This guide provides
- * descriptions, syntax, and usage examples about AWS OpsWorks actions
- * and data types, including common parameters and error codes.
+ * <fullname>AWS OpsWorks</fullname>
+ * <p>
+ * Welcome to the <i>AWS OpsWorks API Reference</i>. This guide provides
+ * descriptions, syntax, and usage examples about AWS OpsWorks actions and data
+ * types, including common parameters and error codes.
  * </p>
  * <p>
- * AWS OpsWorks is an application management service that provides an
- * integrated experience for overseeing the complete application
- * lifecycle. For information about this product, go to the
- * <a href="http://aws.amazon.com/opsworks/"> AWS OpsWorks </a>
- * details page.
+ * AWS OpsWorks is an application management service that provides an integrated
+ * experience for overseeing the complete application lifecycle. For information
+ * about this product, go to the <a href="http://aws.amazon.com/opsworks/">AWS
+ * OpsWorks</a> details page.
  * </p>
  * <p>
  * <b>SDKs and CLI</b>
  * </p>
  * <p>
- * The most common way to use the AWS OpsWorks API is by using the AWS
- * Command Line Interface (CLI) or by using one of the AWS SDKs to
- * implement applications in your preferred language. For more
- * information, see:
+ * The most common way to use the AWS OpsWorks API is by using the AWS Command
+ * Line Interface (CLI) or by using one of the AWS SDKs to implement
+ * applications in your preferred language. For more information, see:
  * </p>
- * 
  * <ul>
- * <li>
- * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html"> AWS CLI </a>
- * </li>
- * <li>
- * <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html"> AWS SDK for Java </a>
- * </li>
- * <li>
- * <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm"> AWS SDK for .NET </a>
- * </li>
- * <li>
- * <a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html"> AWS SDK for PHP 2 </a>
- * </li>
- * <li>
- * <a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html"> AWS SDK for Ruby </a>
- * </li>
- * <li>
- * <a href="http://aws.amazon.com/documentation/sdkforjavascript/"> AWS SDK for Node.js </a>
- * </li>
- * <li>
- * <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html"> AWS SDK for Python(Boto) </a>
- * </li>
- * 
+ * <li><a href=
+ * "http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
+ * CLI</a></li>
+ * <li><a href=
+ * "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html"
+ * >AWS SDK for Java</a></li>
+ * <li><a href=
+ * "http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm"
+ * >AWS SDK for .NET</a></li>
+ * <li><a href=
+ * "http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html"
+ * >AWS SDK for PHP 2</a></li>
+ * <li><a href=
+ * "http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html">AWS
+ * SDK for Ruby</a></li>
+ * <li><a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK
+ * for Node.js</a></li>
+ * <li><a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK
+ * for Python(Boto)</a></li>
  * </ul>
  * <p>
  * <b>Endpoints</b>
  * </p>
  * <p>
- * AWS OpsWorks supports only one endpoint,
- * opsworks.us-east-1.amazonaws.com (HTTPS), so you must connect to that
- * endpoint. You can then use the API to direct AWS OpsWorks to create
- * stacks in any AWS Region.
+ * AWS OpsWorks supports only one endpoint, opsworks.us-east-1.amazonaws.com
+ * (HTTPS), so you must connect to that endpoint. You can then use the API to
+ * direct AWS OpsWorks to create stacks in any AWS Region.
  * </p>
  * <p>
  * <b>Chef Versions</b>
  * </p>
  * <p>
- * When you call CreateStack, CloneStack, or UpdateStack we recommend you
- * use the <code>ConfigurationManager</code> parameter to specify the
- * Chef version. The recommended value for Linux stacks, which is also
- * the default value, is currently 11.10. Windows stacks use Chef 12.2.
- * For more information, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"> Chef Versions </a>
- * .
+ * When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we
+ * recommend you use the <code>ConfigurationManager</code> parameter to specify
+ * the Chef version. The recommended value for Linux stacks, which is also the
+ * default value, is currently 11.10. Windows stacks use Chef 12.2. For more
+ * information, see <a href=
+ * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"
+ * >Chef Versions</a>.
  * </p>
- * <p>
- * <b>NOTE:</b>You can also specify Chef 11.4 or Chef 0.9 for your Linux
- * stack. However, Chef 0.9 has been deprecated. We do not recommend
- * using Chef 0.9 for new stacks, and we recommend migrating your
- * existing Chef 0.9 stacks to Chef 11.10 as soon as possible.
- * </p>
+ * <note>You can also specify Chef 11.4 or Chef 0.9 for your Linux stack.
+ * However, Chef 0.9 has been deprecated. We do not recommend using Chef 0.9 for
+ * new stacks, and we recommend migrating your existing Chef 0.9 stacks to Chef
+ * 11.10 as soon as possible.</note>
  */
-public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsWorks {
-
+public class AWSOpsWorksClient extends AmazonWebServiceClient implements
+        AWSOpsWorks {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSOpsWorks.class);
 
-    /**
-     * List of exception unmarshallers for all AWSOpsWorks exceptions.
-     */
-    protected List<JsonErrorUnmarshaller> jsonErrorUnmarshallers;
+    /** Default signing name for the service. */
+    private static final String DEFAULT_SIGNING_NAME = "opsworks";
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSOpsWorks.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * List of exception unmarshallers for all AWS OpsWorks exceptions.
+     */
+    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+
+    /**
+     * Constructs a new client to invoke service methods on AWS OpsWorks. A
+     * credentials provider chain will be used that searches for credentials in
+     * this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
      *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSOpsWorksClient() {
-        this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
+        this(new DefaultAWSCredentialsProviderChain(),
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSOpsWorks.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Constructs a new client to invoke service methods on AWS OpsWorks. A
+     * credentials provider chain will be used that searches for credentials in
+     * this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
      *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AWSOpsWorks
-     *                       (ex: proxy settings, retry counts, etc.).
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to AWS OpsWorks (ex: proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
      */
@@ -171,2608 +169,754 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSOpsWorks using the specified AWS account credentials.
-     * 
-     * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Constructs a new client to invoke service methods on AWS OpsWorks using
+     * the specified AWS account credentials.
      *
-     * @param awsCredentials The AWS credentials (access key ID and secret key) to use
-     *                       when authenticating with AWS services.
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
      */
     public AWSOpsWorksClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, new ClientConfiguration());
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .defaultConfig());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSOpsWorks using the specified AWS account credentials
-     * and client configuration options.
-     * 
-     * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Constructs a new client to invoke service methods on AWS OpsWorks using
+     * the specified AWS account credentials and client configuration options.
      *
-     * @param awsCredentials The AWS credentials (access key ID and secret key) to use
-     *                       when authenticating with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AWSOpsWorks
-     *                       (ex: proxy settings, retry counts, etc.).
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to AWS OpsWorks (ex: proxy settings, retry counts, etc.).
      */
-    public AWSOpsWorksClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
-        super(adjustClientConfiguration(clientConfiguration));
-        
-        this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
-        
+    public AWSOpsWorksClient(AWSCredentials awsCredentials,
+            ClientConfiguration clientConfiguration) {
+        super(clientConfiguration);
+        this.awsCredentialsProvider = new StaticCredentialsProvider(
+                awsCredentials);
         init();
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSOpsWorks using the specified AWS account credentials provider.
-     * 
+     * Constructs a new client to invoke service methods on AWS OpsWorks using
+     * the specified AWS account credentials provider.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
      */
     public AWSOpsWorksClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, new ClientConfiguration());
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSOpsWorks using the specified AWS account credentials
-     * provider and client configuration options.
-     * 
+     * Constructs a new client to invoke service methods on AWS OpsWorks using
+     * the specified AWS account credentials provider and client configuration
+     * options.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AWSOpsWorks
-     *                       (ex: proxy settings, retry counts, etc.).
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to AWS OpsWorks (ex: proxy settings, retry counts, etc.).
      */
-    public AWSOpsWorksClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+    public AWSOpsWorksClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSOpsWorks using the specified AWS account credentials
-     * provider, client configuration options and request metric collector.
-     * 
+     * Constructs a new client to invoke service methods on AWS OpsWorks using
+     * the specified AWS account credentials provider, client configuration
+     * options, and request metric collector.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AWSOpsWorks
-     *                       (ex: proxy settings, retry counts, etc.).
-     * @param requestMetricCollector optional request metric collector
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to AWS OpsWorks (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector
+     *        optional request metric collector
      */
     public AWSOpsWorksClient(AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(adjustClientConfiguration(clientConfiguration), requestMetricCollector);
-        
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
-        
         init();
     }
 
     private void init() {
-        jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
-        jsonErrorUnmarshallers.add(new ValidationExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
-        
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
-        
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.opsworks.model.ValidationException.class,
+                        "ValidationException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.opsworks.model.ResourceNotFoundException.class,
+                        "ResourceNotFoundException"));
+        jsonErrorUnmarshallers
+                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("opsworks.us-east-1.amazonaws.com");
-        
+        setEndpoint("https://opsworks.us-east-1.amazonaws.com");
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
-                "/com/amazonaws/services/opsworks/request.handlers"));
-        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
-                "/com/amazonaws/services/opsworks/request.handler2s"));
-    }
-
-    private static ClientConfiguration adjustClientConfiguration(ClientConfiguration orig) {
-        ClientConfiguration config = orig;
-        
-        return config;
+        requestHandler2s
+                .addAll(chainFactory
+                        .newRequestHandlerChain("/com/amazonaws/services/opsworks/request.handlers"));
+        requestHandler2s
+                .addAll(chainFactory
+                        .newRequestHandler2Chain("/com/amazonaws/services/opsworks/request.handler2s"));
     }
 
     /**
      * <p>
-     * Deregisters an Amazon RDS instance.
+     * Assign a registered instance to a layer.
      * </p>
+     * <ul>
+     * <li>You can assign registered on-premises instances to any layer type.</li>
+     * <li>You can assign registered Amazon EC2 instances only to custom layers.
+     * </li>
+     * <li>You cannot use this action with instances that were created with AWS
+     * OpsWorks.</li>
+     * </ul>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an AWS Identity and
+     * Access Management (IAM) user must have a Manage permissions level for the
+     * stack or an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param deregisterRdsDbInstanceRequest Container for the necessary
-     *           parameters to execute the DeregisterRdsDbInstance service method on
-     *           AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param assignInstanceRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void deregisterRdsDbInstance(DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(deregisterRdsDbInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void assignInstance(AssignInstanceRequest assignInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(assignInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeregisterRdsDbInstanceRequest> request = null;
-        
+        Request<AssignInstanceRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterRdsDbInstanceRequestMarshaller().marshall(super.beforeMarshalling(deregisterRdsDbInstanceRequest));
+                request = new AssignInstanceRequestMarshaller()
+                        .marshall(assignInstanceRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Registers an Amazon RDS instance with a stack.
+     * Assigns one of the stack's registered Amazon EBS volumes to a specified
+     * instance. The volume must first be registered with the stack by calling
+     * <a>RegisterVolume</a>. After you register the volume, you must call
+     * <a>UpdateVolume</a> to specify a mount point before calling
+     * <code>AssignVolume</code>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param registerRdsDbInstanceRequest Container for the necessary
-     *           parameters to execute the RegisterRdsDbInstance service method on
-     *           AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param assignVolumeRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void registerRdsDbInstance(RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(registerRdsDbInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void assignVolume(AssignVolumeRequest assignVolumeRequest) {
+        ExecutionContext executionContext = createExecutionContext(assignVolumeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RegisterRdsDbInstanceRequest> request = null;
-        
+        Request<AssignVolumeRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterRdsDbInstanceRequestMarshaller().marshall(super.beforeMarshalling(registerRdsDbInstanceRequest));
+                request = new AssignVolumeRequestMarshaller()
+                        .marshall(assignVolumeRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Updates a user's SSH public key.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have self-management enabled or an attached policy that explicitly
-     * grants permissions. For more information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateMyUserProfileRequest Container for the necessary
-     *           parameters to execute the UpdateMyUserProfile service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateMyUserProfile(UpdateMyUserProfileRequest updateMyUserProfileRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateMyUserProfileRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateMyUserProfileRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateMyUserProfileRequestMarshaller().marshall(super.beforeMarshalling(updateMyUserProfileRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Deregisters an Amazon EBS volume. The volume can then be registered
-     * by another stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deregisterVolumeRequest Container for the necessary parameters
-     *           to execute the DeregisterVolume service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest) {
-        ExecutionContext executionContext = createExecutionContext(deregisterVolumeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeregisterVolumeRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeregisterVolumeRequestMarshaller().marshall(super.beforeMarshalling(deregisterVolumeRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Specifies a user's permissions. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html"> Security and Permissions </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param setPermissionRequest Container for the necessary parameters to
-     *           execute the SetPermission service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setPermission(SetPermissionRequest setPermissionRequest) {
-        ExecutionContext executionContext = createExecutionContext(setPermissionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<SetPermissionRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new SetPermissionRequestMarshaller().marshall(super.beforeMarshalling(setPermissionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Requests a description of a set of instances.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeInstancesRequest Container for the necessary parameters
-     *           to execute the DescribeInstances service method on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeInstances service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeInstancesResult describeInstances(DescribeInstancesRequest describeInstancesRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeInstancesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeInstancesRequest> request = null;
-        Response<DescribeInstancesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeInstancesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeInstancesResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeInstancesResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeInstancesResult> responseHandler =
-                new JsonResponseHandler<DescribeInstancesResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Deregisters a specified Amazon ECS cluster from a stack. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> </a>
-     * .
-     * </p>
-     *
-     * @param deregisterEcsClusterRequest Container for the necessary
-     *           parameters to execute the DeregisterEcsCluster service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deregisterEcsCluster(DeregisterEcsClusterRequest deregisterEcsClusterRequest) {
-        ExecutionContext executionContext = createExecutionContext(deregisterEcsClusterRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeregisterEcsClusterRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeregisterEcsClusterRequestMarshaller().marshall(super.beforeMarshalling(deregisterEcsClusterRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Describes the permissions for a specified stack.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describePermissionsRequest Container for the necessary
-     *           parameters to execute the DescribePermissions service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribePermissions service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribePermissionsResult describePermissions(DescribePermissionsRequest describePermissionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describePermissionsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribePermissionsRequest> request = null;
-        Response<DescribePermissionsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribePermissionsRequestMarshaller().marshall(super.beforeMarshalling(describePermissionsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribePermissionsResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribePermissionsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribePermissionsResult> responseHandler =
-                new JsonResponseHandler<DescribePermissionsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Deletes a specified instance, which terminates the associated Amazon
-     * EC2 instance. You must stop an instance before you can delete it.
-     * </p>
-     * <p>
-     * For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html"> Deleting Instances </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deleteInstanceRequest Container for the necessary parameters to
-     *           execute the DeleteInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteInstanceRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteInstanceRequestMarshaller().marshall(super.beforeMarshalling(deleteInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Creates a clone of a specified stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html"> Clone a Stack </a>
-     * . By default, all parameters are set to the values used by the parent
-     * stack.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param cloneStackRequest Container for the necessary parameters to
-     *           execute the CloneStack service method on AWSOpsWorks.
-     * 
-     * @return The response from the CloneStack service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CloneStackResult cloneStack(CloneStackRequest cloneStackRequest) {
-        ExecutionContext executionContext = createExecutionContext(cloneStackRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CloneStackRequest> request = null;
-        Response<CloneStackResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CloneStackRequestMarshaller().marshall(super.beforeMarshalling(cloneStackRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<CloneStackResult, JsonUnmarshallerContext> unmarshaller =
-                new CloneStackResultJsonUnmarshaller();
-            JsonResponseHandler<CloneStackResult> responseHandler =
-                new JsonResponseHandler<CloneStackResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Detaches a specified Elastic Load Balancing instance from its layer.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param detachElasticLoadBalancerRequest Container for the necessary
-     *           parameters to execute the DetachElasticLoadBalancer service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void detachElasticLoadBalancer(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) {
-        ExecutionContext executionContext = createExecutionContext(detachElasticLoadBalancerRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DetachElasticLoadBalancerRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DetachElasticLoadBalancerRequestMarshaller().marshall(super.beforeMarshalling(detachElasticLoadBalancerRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Stops a specified instance. When you stop a standard instance, the
-     * data disappears and must be reinstalled when you restart the instance.
-     * You can stop an Amazon EBS-backed instance without losing data. For
-     * more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"> Starting, Stopping, and Rebooting Instances </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param stopInstanceRequest Container for the necessary parameters to
-     *           execute the StopInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void stopInstance(StopInstanceRequest stopInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(stopInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<StopInstanceRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new StopInstanceRequestMarshaller().marshall(super.beforeMarshalling(stopInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Updates a specified app.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Deploy or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateAppRequest Container for the necessary parameters to
-     *           execute the UpdateApp service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateApp(UpdateAppRequest updateAppRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateAppRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateAppRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateAppRequestMarshaller().marshall(super.beforeMarshalling(updateAppRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Describes Amazon RDS instances.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeRdsDbInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeRdsDbInstances service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeRdsDbInstances service method,
-     *         as returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeRdsDbInstancesResult describeRdsDbInstances(DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeRdsDbInstancesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeRdsDbInstancesRequest> request = null;
-        Response<DescribeRdsDbInstancesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeRdsDbInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeRdsDbInstancesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeRdsDbInstancesResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeRdsDbInstancesResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeRdsDbInstancesResult> responseHandler =
-                new JsonResponseHandler<DescribeRdsDbInstancesResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Describes the results of specified commands.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeCommandsRequest Container for the necessary parameters
-     *           to execute the DescribeCommands service method on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeCommands service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeCommandsResult describeCommands(DescribeCommandsRequest describeCommandsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeCommandsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeCommandsRequest> request = null;
-        Response<DescribeCommandsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeCommandsRequestMarshaller().marshall(super.beforeMarshalling(describeCommandsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeCommandsResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeCommandsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeCommandsResult> responseHandler =
-                new JsonResponseHandler<DescribeCommandsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
      * Associates one of the stack's registered Elastic IP addresses with a
-     * specified instance. The address must first be registered with the
-     * stack by calling RegisterElasticIp. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
+     * specified instance. The address must first be registered with the stack
+     * by calling <a>RegisterElasticIp</a>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param associateElasticIpRequest Container for the necessary
-     *           parameters to execute the AssociateElasticIp service method on
-     *           AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param associateElasticIpRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void associateElasticIp(AssociateElasticIpRequest associateElasticIpRequest) {
+    @Override
+    public void associateElasticIp(
+            AssociateElasticIpRequest associateElasticIpRequest) {
         ExecutionContext executionContext = createExecutionContext(associateElasticIpRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AssociateElasticIpRequest> request = null;
-        
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateElasticIpRequestMarshaller().marshall(super.beforeMarshalling(associateElasticIpRequest));
+                request = new AssociateElasticIpRequestMarshaller()
+                        .marshall(associateElasticIpRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Unassigns an assigned Amazon EBS volume. The volume remains
-     * registered with the stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
+     * Attaches an Elastic Load Balancing load balancer to a specified layer.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html"
+     * >Elastic Load Balancing</a>.
      * </p>
+     * <note>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * You must create the Elastic Load Balancing instance separately, by using
+     * the Elastic Load Balancing console, API, or CLI. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html"
+     * > Elastic Load Balancing Developer Guide</a>.
      * </p>
-     *
-     * @param unassignVolumeRequest Container for the necessary parameters to
-     *           execute the UnassignVolume service method on AWSOpsWorks.
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param attachElasticLoadBalancerRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void unassignVolume(UnassignVolumeRequest unassignVolumeRequest) {
-        ExecutionContext executionContext = createExecutionContext(unassignVolumeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void attachElasticLoadBalancer(
+            AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) {
+        ExecutionContext executionContext = createExecutionContext(attachElasticLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UnassignVolumeRequest> request = null;
-        
+        Request<AttachElasticLoadBalancerRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnassignVolumeRequestMarshaller().marshall(super.beforeMarshalling(unassignVolumeRequest));
+                request = new AttachElasticLoadBalancerRequestMarshaller()
+                        .marshall(attachElasticLoadBalancerRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Describe an instance's RAID arrays.
+     * Creates a clone of a specified stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html"
+     * >Clone a Stack</a>. By default, all parameters are set to the values used
+     * by the parent stack.
      * </p>
      * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeRaidArraysRequest Container for the necessary
-     *           parameters to execute the DescribeRaidArrays service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the DescribeRaidArrays service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param cloneStackRequest
+     * @return Result of the CloneStack operation returned by the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeRaidArraysResult describeRaidArrays(DescribeRaidArraysRequest describeRaidArraysRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeRaidArraysRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public CloneStackResult cloneStack(CloneStackRequest cloneStackRequest) {
+        ExecutionContext executionContext = createExecutionContext(cloneStackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeRaidArraysRequest> request = null;
-        Response<DescribeRaidArraysResult> response = null;
-        
+        Request<CloneStackRequest> request = null;
+        Response<CloneStackResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRaidArraysRequestMarshaller().marshall(super.beforeMarshalling(describeRaidArraysRequest));
+                request = new CloneStackRequestMarshaller()
+                        .marshall(cloneStackRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<DescribeRaidArraysResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeRaidArraysResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeRaidArraysResult> responseHandler =
-                new JsonResponseHandler<DescribeRaidArraysResult>(unmarshaller);
-
+            JsonResponseHandler<CloneStackResult> responseHandler = new JsonResponseHandler<CloneStackResult>(
+                    new CloneStackResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Gets a generated host name for the specified layer, based on the
-     * current host name theme.
+     * Creates an app for a specified stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html"
+     * >Creating Apps</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param getHostnameSuggestionRequest Container for the necessary
-     *           parameters to execute the GetHostnameSuggestion service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the GetHostnameSuggestion service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param createAppRequest
+     * @return Result of the CreateApp operation returned by the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public GetHostnameSuggestionResult getHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest) {
-        ExecutionContext executionContext = createExecutionContext(getHostnameSuggestionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public CreateAppResult createApp(CreateAppRequest createAppRequest) {
+        ExecutionContext executionContext = createExecutionContext(createAppRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetHostnameSuggestionRequest> request = null;
-        Response<GetHostnameSuggestionResult> response = null;
-        
+        Request<CreateAppRequest> request = null;
+        Response<CreateAppResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetHostnameSuggestionRequestMarshaller().marshall(super.beforeMarshalling(getHostnameSuggestionRequest));
+                request = new CreateAppRequestMarshaller()
+                        .marshall(createAppRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<GetHostnameSuggestionResult, JsonUnmarshallerContext> unmarshaller =
-                new GetHostnameSuggestionResultJsonUnmarshaller();
-            JsonResponseHandler<GetHostnameSuggestionResult> responseHandler =
-                new JsonResponseHandler<GetHostnameSuggestionResult>(unmarshaller);
-
+            JsonResponseHandler<CreateAppResult> responseHandler = new JsonResponseHandler<CreateAppResult>(
+                    new CreateAppResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Specify the load-based auto scaling configuration for a specified
-     * layer. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"> Managing Load with Time-based and Load-based Instances </a>
-     * .
+     * Runs deployment or stack commands. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html"
+     * >Deploying Apps</a> and <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html"
+     * >Run Stack Commands</a>.
      * </p>
      * <p>
-     * <b>NOTE:</b> To use load-based auto scaling, you must create a set of
-     * load-based auto scaling instances. Load-based auto scaling operates
-     * only on the instances from that set, so you must ensure that you have
-     * created enough instances to handle the maximum anticipated load.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Deploy or Manage permissions level for the stack, or an attached policy
      * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param setLoadBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the SetLoadBasedAutoScaling service method on
-     *           AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param createDeploymentRequest
+     * @return Result of the CreateDeployment operation returned by the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) {
-        ExecutionContext executionContext = createExecutionContext(setLoadBasedAutoScalingRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public CreateDeploymentResult createDeployment(
+            CreateDeploymentRequest createDeploymentRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDeploymentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<SetLoadBasedAutoScalingRequest> request = null;
-        
+        Request<CreateDeploymentRequest> request = null;
+        Response<CreateDeploymentResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetLoadBasedAutoScalingRequestMarshaller().marshall(super.beforeMarshalling(setLoadBasedAutoScalingRequest));
+                request = new CreateDeploymentRequestMarshaller()
+                        .marshall(createDeploymentRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Describes an instance's Amazon EBS volumes.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeVolumesRequest Container for the necessary parameters
-     *           to execute the DescribeVolumes service method on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeVolumes service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeVolumesResult describeVolumes(DescribeVolumesRequest describeVolumesRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeVolumesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeVolumesRequest> request = null;
-        Response<DescribeVolumesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeVolumesRequestMarshaller().marshall(super.beforeMarshalling(describeVolumesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeVolumesResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeVolumesResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeVolumesResult> responseHandler =
-                new JsonResponseHandler<DescribeVolumesResult>(unmarshaller);
-
+            JsonResponseHandler<CreateDeploymentResult> responseHandler = new JsonResponseHandler<CreateDeploymentResult>(
+                    new CreateDeploymentResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Describes Amazon ECS clusters that are registered with a stack. If
-     * you specify only a stack ID, you can use the <code>MaxResults</code>
-     * and <code>NextToken</code> parameters to paginate the response.
-     * However, AWS OpsWorks currently supports only one cluster per layer,
-     * so the result set has a maximum of one element.
+     * Creates an instance in a specified stack. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
+     * >Adding an Instance to a Layer</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack or an
-     * attached policy that explicitly grants permission. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeEcsClustersRequest Container for the necessary
-     *           parameters to execute the DescribeEcsClusters service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the DescribeEcsClusters service method, as
-     *         returned by AWSOpsWorks.
-     * 
+     * @param createInstanceRequest
+     * @return Result of the CreateInstance operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a resource was not found.
      */
-    public DescribeEcsClustersResult describeEcsClusters(DescribeEcsClustersRequest describeEcsClustersRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeEcsClustersRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeEcsClustersRequest> request = null;
-        Response<DescribeEcsClustersResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeEcsClustersRequestMarshaller().marshall(super.beforeMarshalling(describeEcsClustersRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeEcsClustersResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeEcsClustersResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeEcsClustersResult> responseHandler =
-                new JsonResponseHandler<DescribeEcsClustersResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Assigns one of the stack's registered Amazon EBS volumes to a
-     * specified instance. The volume must first be registered with the stack
-     * by calling RegisterVolume. After you register the volume, you must
-     * call UpdateVolume to specify a mount point before calling
-     * <code>AssignVolume</code> . For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param assignVolumeRequest Container for the necessary parameters to
-     *           execute the AssignVolume service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void assignVolume(AssignVolumeRequest assignVolumeRequest) {
-        ExecutionContext executionContext = createExecutionContext(assignVolumeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<AssignVolumeRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new AssignVolumeRequestMarshaller().marshall(super.beforeMarshalling(assignVolumeRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Unassigns a registered instance from all of it's layers. The instance
-     * remains in the stack as an unassigned instance and can be assigned to
-     * another layer, as needed. You cannot use this action with instances
-     * that were created with AWS OpsWorks.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param unassignInstanceRequest Container for the necessary parameters
-     *           to execute the UnassignInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void unassignInstance(UnassignInstanceRequest unassignInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(unassignInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UnassignInstanceRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UnassignInstanceRequestMarshaller().marshall(super.beforeMarshalling(unassignInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * <b>NOTE:</b>This action can be used only with Windows stacks.
-     * </p>
-     * <p>
-     * Grants RDP access to a Windows instance for a specified time period.
-     * </p>
-     *
-     * @param grantAccessRequest Container for the necessary parameters to
-     *           execute the GrantAccess service method on AWSOpsWorks.
-     * 
-     * @return The response from the GrantAccess service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GrantAccessResult grantAccess(GrantAccessRequest grantAccessRequest) {
-        ExecutionContext executionContext = createExecutionContext(grantAccessRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GrantAccessRequest> request = null;
-        Response<GrantAccessResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GrantAccessRequestMarshaller().marshall(super.beforeMarshalling(grantAccessRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<GrantAccessResult, JsonUnmarshallerContext> unmarshaller =
-                new GrantAccessResultJsonUnmarshaller();
-            JsonResponseHandler<GrantAccessResult> responseHandler =
-                new JsonResponseHandler<GrantAccessResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Describes AWS OpsWorks service errors.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeServiceErrorsRequest Container for the necessary
-     *           parameters to execute the DescribeServiceErrors service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeServiceErrors service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeServiceErrorsResult describeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeServiceErrorsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeServiceErrorsRequest> request = null;
-        Response<DescribeServiceErrorsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeServiceErrorsRequestMarshaller().marshall(super.beforeMarshalling(describeServiceErrorsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeServiceErrorsResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeServiceErrorsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeServiceErrorsResult> responseHandler =
-                new JsonResponseHandler<DescribeServiceErrorsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Updates a registered Elastic IP address's name. For more information,
-     * see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateElasticIpRequest Container for the necessary parameters
-     *           to execute the UpdateElasticIp service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateElasticIpRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateElasticIpRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateElasticIpRequestMarshaller().marshall(super.beforeMarshalling(updateElasticIpRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Updates a specified layer.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateLayerRequest Container for the necessary parameters to
-     *           execute the UpdateLayer service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateLayer(UpdateLayerRequest updateLayerRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateLayerRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateLayerRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateLayerRequestMarshaller().marshall(super.beforeMarshalling(updateLayerRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Starts a specified instance. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"> Starting, Stopping, and Rebooting Instances </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param startInstanceRequest Container for the necessary parameters to
-     *           execute the StartInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void startInstance(StartInstanceRequest startInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(startInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<StartInstanceRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new StartInstanceRequestMarshaller().marshall(super.beforeMarshalling(startInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Registers a specified Amazon ECS cluster with a stack. You can
-     * register only one cluster with a stack. A cluster can be registered
-     * with only one stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param registerEcsClusterRequest Container for the necessary
-     *           parameters to execute the RegisterEcsCluster service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the RegisterEcsCluster service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RegisterEcsClusterResult registerEcsCluster(RegisterEcsClusterRequest registerEcsClusterRequest) {
-        ExecutionContext executionContext = createExecutionContext(registerEcsClusterRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RegisterEcsClusterRequest> request = null;
-        Response<RegisterEcsClusterResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RegisterEcsClusterRequestMarshaller().marshall(super.beforeMarshalling(registerEcsClusterRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<RegisterEcsClusterResult, JsonUnmarshallerContext> unmarshaller =
-                new RegisterEcsClusterResultJsonUnmarshaller();
-            JsonResponseHandler<RegisterEcsClusterResult> responseHandler =
-                new JsonResponseHandler<RegisterEcsClusterResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Creates a layer. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html"> How to Create a Layer </a>
-     * .
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You should use CreateLayer for noncustom layer types
-     * such as PHP App Server only if the stack does not have an existing
-     * layer of that type. A stack can have at most one instance of each
-     * noncustom layer; if you attempt to create a second instance,
-     * CreateLayer fails. A stack can have an arbitrary number of custom
-     * layers, so you can call CreateLayer as many times as you like for that
-     * layer type.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param createLayerRequest Container for the necessary parameters to
-     *           execute the CreateLayer service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateLayer service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateLayerResult createLayer(CreateLayerRequest createLayerRequest) {
-        ExecutionContext executionContext = createExecutionContext(createLayerRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateLayerRequest> request = null;
-        Response<CreateLayerResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateLayerRequestMarshaller().marshall(super.beforeMarshalling(createLayerRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<CreateLayerResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateLayerResultJsonUnmarshaller();
-            JsonResponseHandler<CreateLayerResult> responseHandler =
-                new JsonResponseHandler<CreateLayerResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Disassociates an Elastic IP address from its instance. The address
-     * remains registered with the stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param disassociateElasticIpRequest Container for the necessary
-     *           parameters to execute the DisassociateElasticIp service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void disassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest) {
-        ExecutionContext executionContext = createExecutionContext(disassociateElasticIpRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DisassociateElasticIpRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DisassociateElasticIpRequestMarshaller().marshall(super.beforeMarshalling(disassociateElasticIpRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Deletes a specified stack. You must first delete all instances,
-     * layers, and apps or deregister registered instances. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html"> Shut Down a Stack </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deleteStackRequest Container for the necessary parameters to
-     *           execute the DeleteStack service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteStack(DeleteStackRequest deleteStackRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteStackRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteStackRequestMarshaller().marshall(super.beforeMarshalling(deleteStackRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Describes the available AWS OpsWorks agent versions. You must specify
-     * a stack ID or a configuration manager.
-     * <code>DescribeAgentVersions</code> returns a list of available agent
-     * versions for the specified stack or configuration manager.
-     * </p>
-     *
-     * @param describeAgentVersionsRequest Container for the necessary
-     *           parameters to execute the DescribeAgentVersions service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeAgentVersions service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeAgentVersionsResult describeAgentVersions(DescribeAgentVersionsRequest describeAgentVersionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeAgentVersionsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeAgentVersionsRequest> request = null;
-        Response<DescribeAgentVersionsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeAgentVersionsRequestMarshaller().marshall(super.beforeMarshalling(describeAgentVersionsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeAgentVersionsResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeAgentVersionsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeAgentVersionsResult> responseHandler =
-                new JsonResponseHandler<DescribeAgentVersionsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Starts a stack's instances.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param startStackRequest Container for the necessary parameters to
-     *           execute the StartStack service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void startStack(StartStackRequest startStackRequest) {
-        ExecutionContext executionContext = createExecutionContext(startStackRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<StartStackRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new StartStackRequestMarshaller().marshall(super.beforeMarshalling(startStackRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Registers an Amazon EBS volume with a specified stack. A volume can
-     * be registered with only one stack at a time. If the volume is already
-     * registered, you must first deregister it by calling DeregisterVolume.
-     * For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param registerVolumeRequest Container for the necessary parameters to
-     *           execute the RegisterVolume service method on AWSOpsWorks.
-     * 
-     * @return The response from the RegisterVolume service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RegisterVolumeResult registerVolume(RegisterVolumeRequest registerVolumeRequest) {
-        ExecutionContext executionContext = createExecutionContext(registerVolumeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RegisterVolumeRequest> request = null;
-        Response<RegisterVolumeResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RegisterVolumeRequestMarshaller().marshall(super.beforeMarshalling(registerVolumeRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<RegisterVolumeResult, JsonUnmarshallerContext> unmarshaller =
-                new RegisterVolumeResultJsonUnmarshaller();
-            JsonResponseHandler<RegisterVolumeResult> responseHandler =
-                new JsonResponseHandler<RegisterVolumeResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Updates an Amazon RDS instance.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateRdsDbInstanceRequest Container for the necessary
-     *           parameters to execute the UpdateRdsDbInstance service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateRdsDbInstance(UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateRdsDbInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateRdsDbInstanceRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateRdsDbInstanceRequestMarshaller().marshall(super.beforeMarshalling(updateRdsDbInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Registers instances with a specified stack that were created outside
-     * of AWS OpsWorks.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>We do not recommend using this action to register
-     * instances. The complete registration operation has two primary steps,
-     * installing the AWS OpsWorks agent on the instance and registering the
-     * instance with the stack. RegisterInstance handles only the second
-     * step. You should instead use the AWS CLI register command, which
-     * performs the entire registration operation. For more information, see
-     * Registering an Instance with an AWS OpsWorks Stack.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param registerInstanceRequest Container for the necessary parameters
-     *           to execute the RegisterInstance service method on AWSOpsWorks.
-     * 
-     * @return The response from the RegisterInstance service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RegisterInstanceResult registerInstance(RegisterInstanceRequest registerInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(registerInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RegisterInstanceRequest> request = null;
-        Response<RegisterInstanceResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RegisterInstanceRequestMarshaller().marshall(super.beforeMarshalling(registerInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<RegisterInstanceResult, JsonUnmarshallerContext> unmarshaller =
-                new RegisterInstanceResultJsonUnmarshaller();
-            JsonResponseHandler<RegisterInstanceResult> responseHandler =
-                new JsonResponseHandler<RegisterInstanceResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Updates a specified user profile.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateUserProfileRequest Container for the necessary parameters
-     *           to execute the UpdateUserProfile service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateUserProfileRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateUserProfileRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateUserProfileRequestMarshaller().marshall(super.beforeMarshalling(updateUserProfileRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Reboots a specified instance. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"> Starting, Stopping, and Rebooting Instances </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param rebootInstanceRequest Container for the necessary parameters to
-     *           execute the RebootInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(rebootInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RebootInstanceRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RebootInstanceRequestMarshaller().marshall(super.beforeMarshalling(rebootInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Creates a new stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html"> Create a New Stack </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param createStackRequest Container for the necessary parameters to
-     *           execute the CreateStack service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateStack service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateStackResult createStack(CreateStackRequest createStackRequest) {
-        ExecutionContext executionContext = createExecutionContext(createStackRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateStackRequest> request = null;
-        Response<CreateStackResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateStackRequestMarshaller().marshall(super.beforeMarshalling(createStackRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<CreateStackResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateStackResultJsonUnmarshaller();
-            JsonResponseHandler<CreateStackResult> responseHandler =
-                new JsonResponseHandler<CreateStackResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Creates an instance in a specified stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> Adding an Instance to a Layer </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param createInstanceRequest Container for the necessary parameters to
-     *           execute the CreateInstance service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateInstance service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateInstanceResult createInstance(CreateInstanceRequest createInstanceRequest) {
+    @Override
+    public CreateInstanceResult createInstance(
+            CreateInstanceRequest createInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(createInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateInstanceRequest> request = null;
         Response<CreateInstanceResult> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateInstanceRequestMarshaller().marshall(super.beforeMarshalling(createInstanceRequest));
+                request = new CreateInstanceRequestMarshaller()
+                        .marshall(createInstanceRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<CreateInstanceResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateInstanceResultJsonUnmarshaller();
-            JsonResponseHandler<CreateInstanceResult> responseHandler =
-                new JsonResponseHandler<CreateInstanceResult>(unmarshaller);
-
+            JsonResponseHandler<CreateInstanceResult> responseHandler = new JsonResponseHandler<CreateInstanceResult>(
+                    new CreateInstanceResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a layer. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html"
+     * >How to Create a Layer</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You should use <b>CreateLayer</b> for noncustom layer types such as PHP
+     * App Server only if the stack does not have an existing layer of that
+     * type. A stack can have at most one instance of each noncustom layer; if
+     * you attempt to create a second instance, <b>CreateLayer</b> fails. A
+     * stack can have an arbitrary number of custom layers, so you can call
+     * <b>CreateLayer</b> as many times as you like for that layer type.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param createLayerRequest
+     * @return Result of the CreateLayer operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public CreateLayerResult createLayer(CreateLayerRequest createLayerRequest) {
+        ExecutionContext executionContext = createExecutionContext(createLayerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLayerRequest> request = null;
+        Response<CreateLayerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLayerRequestMarshaller()
+                        .marshall(createLayerRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<CreateLayerResult> responseHandler = new JsonResponseHandler<CreateLayerResult>(
+                    new CreateLayerResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html"
+     * >Create a New Stack</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param createStackRequest
+     * @return Result of the CreateStack operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     */
+    @Override
+    public CreateStackResult createStack(CreateStackRequest createStackRequest) {
+        ExecutionContext executionContext = createExecutionContext(createStackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateStackRequest> request = null;
+        Response<CreateStackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateStackRequestMarshaller()
+                        .marshall(createStackRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<CreateStackResult> responseHandler = new JsonResponseHandler<CreateStackResult>(
+                    new CreateStackResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param createUserProfileRequest
+     * @return Result of the CreateUserProfile operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     */
+    @Override
+    public CreateUserProfileResult createUserProfile(
+            CreateUserProfileRequest createUserProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(createUserProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUserProfileRequest> request = null;
+        Response<CreateUserProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUserProfileRequestMarshaller()
+                        .marshall(createUserProfileRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<CreateUserProfileResult> responseHandler = new JsonResponseHandler<CreateUserProfileResult>(
+                    new CreateUserProfileResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
@@ -2781,1017 +925,212 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Deletes a specified app.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param deleteAppRequest Container for the necessary parameters to
-     *           execute the DeleteApp service method on AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param deleteAppRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
+    @Override
     public void deleteApp(DeleteAppRequest deleteAppRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAppRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAppRequest> request = null;
-        
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAppRequestMarshaller().marshall(super.beforeMarshalling(deleteAppRequest));
+                request = new DeleteAppRequestMarshaller()
+                        .marshall(deleteAppRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Requests a description of a stack's provisioning parameters.
+     * Deletes a specified instance, which terminates the associated Amazon EC2
+     * instance. You must stop an instance before you can delete it.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html"
+     * >Deleting Instances</a>.
      * </p>
-     *
-     * @param describeStackProvisioningParametersRequest Container for the
-     *           necessary parameters to execute the
-     *           DescribeStackProvisioningParameters service method on AWSOpsWorks.
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
      * 
-     * @return The response from the DescribeStackProvisioningParameters
-     *         service method, as returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param deleteInstanceRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeStackProvisioningParametersResult describeStackProvisioningParameters(DescribeStackProvisioningParametersRequest describeStackProvisioningParametersRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeStackProvisioningParametersRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void deleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeStackProvisioningParametersRequest> request = null;
-        Response<DescribeStackProvisioningParametersResult> response = null;
-        
+        Request<DeleteInstanceRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStackProvisioningParametersRequestMarshaller().marshall(super.beforeMarshalling(describeStackProvisioningParametersRequest));
+                request = new DeleteInstanceRequestMarshaller()
+                        .marshall(deleteInstanceRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<DescribeStackProvisioningParametersResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeStackProvisioningParametersResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeStackProvisioningParametersResult> responseHandler =
-                new JsonResponseHandler<DescribeStackProvisioningParametersResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Deregisters a specified Elastic IP address. The address can then be
-     * registered by another stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deregisterElasticIpRequest Container for the necessary
-     *           parameters to execute the DeregisterElasticIp service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest) {
-        ExecutionContext executionContext = createExecutionContext(deregisterElasticIpRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeregisterElasticIpRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeregisterElasticIpRequestMarshaller().marshall(super.beforeMarshalling(deregisterElasticIpRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Attaches an Elastic Load Balancing load balancer to a specified
-     * layer. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html"> Elastic Load Balancing </a>
-     * .
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must create the Elastic Load Balancing instance
-     * separately, by using the Elastic Load Balancing console, API, or CLI.
-     * For more information, see Elastic Load Balancing Developer Guide.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param attachElasticLoadBalancerRequest Container for the necessary
-     *           parameters to execute the AttachElasticLoadBalancer service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void attachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) {
-        ExecutionContext executionContext = createExecutionContext(attachElasticLoadBalancerRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<AttachElasticLoadBalancerRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new AttachElasticLoadBalancerRequestMarshaller().marshall(super.beforeMarshalling(attachElasticLoadBalancerRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Updates a specified stack.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateStackRequest Container for the necessary parameters to
-     *           execute the UpdateStack service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateStack(UpdateStackRequest updateStackRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateStackRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateStackRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateStackRequestMarshaller().marshall(super.beforeMarshalling(updateStackRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Creates a new user profile.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param createUserProfileRequest Container for the necessary parameters
-     *           to execute the CreateUserProfile service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateUserProfile service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateUserProfileResult createUserProfile(CreateUserProfileRequest createUserProfileRequest) {
-        ExecutionContext executionContext = createExecutionContext(createUserProfileRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateUserProfileRequest> request = null;
-        Response<CreateUserProfileResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateUserProfileRequestMarshaller().marshall(super.beforeMarshalling(createUserProfileRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<CreateUserProfileResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateUserProfileResultJsonUnmarshaller();
-            JsonResponseHandler<CreateUserProfileResult> responseHandler =
-                new JsonResponseHandler<CreateUserProfileResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
-    /**
-     * <p>
-     * Requests a description of one or more layers in a specified stack.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeLayersRequest Container for the necessary parameters to
-     *           execute the DescribeLayers service method on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeLayers service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeLayersResult describeLayers(DescribeLayersRequest describeLayersRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeLayersRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeLayersRequest> request = null;
-        Response<DescribeLayersResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeLayersRequestMarshaller().marshall(super.beforeMarshalling(describeLayersRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeLayersResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeLayersResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeLayersResult> responseHandler =
-                new JsonResponseHandler<DescribeLayersResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Describes load-based auto scaling configurations for specified
-     * layers.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeLoadBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the DescribeLoadBasedAutoScaling service method
-     *           on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeLoadBasedAutoScaling service
-     *         method, as returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeLoadBasedAutoScalingRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeLoadBasedAutoScalingRequest> request = null;
-        Response<DescribeLoadBasedAutoScalingResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeLoadBasedAutoScalingRequestMarshaller().marshall(super.beforeMarshalling(describeLoadBasedAutoScalingRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeLoadBasedAutoScalingResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeLoadBasedAutoScalingResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeLoadBasedAutoScalingResult> responseHandler =
-                new JsonResponseHandler<DescribeLoadBasedAutoScalingResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Assign a registered instance to a layer.
-     * </p>
-     * 
-     * <ul>
-     * <li>You can assign registered on-premises instances to any layer
-     * type.</li>
-     * <li>You can assign registered Amazon EC2 instances only to custom
-     * layers.</li>
-     * <li>You cannot use this action with instances that were created with
-     * AWS OpsWorks.</li>
-     * 
-     * </ul>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an AWS Identity and
-     * Access Management (IAM) user must have a Manage permissions level for
-     * the stack or an attached policy that explicitly grants permissions.
-     * For more information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param assignInstanceRequest Container for the necessary parameters to
-     *           execute the AssignInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void assignInstance(AssignInstanceRequest assignInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(assignInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<AssignInstanceRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new AssignInstanceRequestMarshaller().marshall(super.beforeMarshalling(assignInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Describes a stack's Elastic Load Balancing instances.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeElasticLoadBalancersRequest Container for the necessary
-     *           parameters to execute the DescribeElasticLoadBalancers service method
-     *           on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeElasticLoadBalancers service
-     *         method, as returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeElasticLoadBalancersResult describeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeElasticLoadBalancersRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeElasticLoadBalancersRequest> request = null;
-        Response<DescribeElasticLoadBalancersResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeElasticLoadBalancersRequestMarshaller().marshall(super.beforeMarshalling(describeElasticLoadBalancersRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeElasticLoadBalancersResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeElasticLoadBalancersResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeElasticLoadBalancersResult> responseHandler =
-                new JsonResponseHandler<DescribeElasticLoadBalancersResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Deregister a registered Amazon EC2 or on-premises instance. This
-     * action removes the instance from the stack and returns it to your
-     * control. This action can not be used with instances that were created
-     * with AWS OpsWorks.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deregisterInstanceRequest Container for the necessary
-     *           parameters to execute the DeregisterInstance service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deregisterInstance(DeregisterInstanceRequest deregisterInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(deregisterInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeregisterInstanceRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeregisterInstanceRequestMarshaller().marshall(super.beforeMarshalling(deregisterInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
     /**
      * <p>
      * Deletes a specified layer. You must first stop and then delete all
      * associated instances or unassign registered instances. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html"> How to Delete a Layer </a>
-     * .
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html"
+     * >How to Delete a Layer</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param deleteLayerRequest Container for the necessary parameters to
-     *           execute the DeleteLayer service method on AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param deleteLayerRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
+    @Override
     public void deleteLayer(DeleteLayerRequest deleteLayerRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteLayerRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteLayerRequest> request = null;
-        
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLayerRequestMarshaller().marshall(super.beforeMarshalling(deleteLayerRequest));
+                request = new DeleteLayerRequestMarshaller()
+                        .marshall(deleteLayerRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Specify the time-based auto scaling configuration for a specified
-     * instance. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"> Managing Load with Time-based and Load-based Instances </a>
-     * .
+     * Deletes a specified stack. You must first delete all instances, layers,
+     * and apps or deregister registered instances. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html"
+     * >Shut Down a Stack</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param setTimeBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the SetTimeBasedAutoScaling service method on
-     *           AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param deleteStackRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) {
-        ExecutionContext executionContext = createExecutionContext(setTimeBasedAutoScalingRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void deleteStack(DeleteStackRequest deleteStackRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<SetTimeBasedAutoScalingRequest> request = null;
-        
+        Request<DeleteStackRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetTimeBasedAutoScalingRequestMarshaller().marshall(super.beforeMarshalling(setTimeBasedAutoScalingRequest));
+                request = new DeleteStackRequestMarshaller()
+                        .marshall(deleteStackRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Describes a user's SSH information.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have self-management enabled or an attached policy that explicitly
-     * grants permissions. For more information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeMyUserProfileRequest Container for the necessary
-     *           parameters to execute the DescribeMyUserProfile service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeMyUserProfile service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeMyUserProfileResult describeMyUserProfile(DescribeMyUserProfileRequest describeMyUserProfileRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeMyUserProfileRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeMyUserProfileRequest> request = null;
-        Response<DescribeMyUserProfileResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeMyUserProfileRequestMarshaller().marshall(super.beforeMarshalling(describeMyUserProfileRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
 
-            Unmarshaller<DescribeMyUserProfileResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeMyUserProfileResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeMyUserProfileResult> responseHandler =
-                new JsonResponseHandler<DescribeMyUserProfileResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Creates an app for a specified stack. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html"> Creating Apps </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param createAppRequest Container for the necessary parameters to
-     *           execute the CreateApp service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateApp service method, as returned by
-     *         AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateAppResult createApp(CreateAppRequest createAppRequest) {
-        ExecutionContext executionContext = createExecutionContext(createAppRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateAppRequest> request = null;
-        Response<CreateAppResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateAppRequestMarshaller().marshall(super.beforeMarshalling(createAppRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<CreateAppResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateAppResultJsonUnmarshaller();
-            JsonResponseHandler<CreateAppResult> responseHandler =
-                new JsonResponseHandler<CreateAppResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Updates an Amazon EBS volume's name or mount point. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateVolumeRequest Container for the necessary parameters to
-     *           execute the UpdateVolume service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateVolume(UpdateVolumeRequest updateVolumeRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateVolumeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateVolumeRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateVolumeRequestMarshaller().marshall(super.beforeMarshalling(updateVolumeRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Describes time-based auto scaling configurations for specified
-     * instances.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeTimeBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the DescribeTimeBasedAutoScaling service method
-     *           on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeTimeBasedAutoScaling service
-     *         method, as returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeTimeBasedAutoScalingRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeTimeBasedAutoScalingRequest> request = null;
-        Response<DescribeTimeBasedAutoScalingResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeTimeBasedAutoScalingRequestMarshaller().marshall(super.beforeMarshalling(describeTimeBasedAutoScalingRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeTimeBasedAutoScalingResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeTimeBasedAutoScalingResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeTimeBasedAutoScalingResult> responseHandler =
-                new JsonResponseHandler<DescribeTimeBasedAutoScalingResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
@@ -3800,362 +1139,1289 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Deletes a user profile.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param deleteUserProfileRequest Container for the necessary parameters
-     *           to execute the DeleteUserProfile service method on AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param deleteUserProfileRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest) {
+    @Override
+    public void deleteUserProfile(
+            DeleteUserProfileRequest deleteUserProfileRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteUserProfileRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteUserProfileRequest> request = null;
-        
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserProfileRequestMarshaller().marshall(super.beforeMarshalling(deleteUserProfileRequest));
+                request = new DeleteUserProfileRequestMarshaller()
+                        .marshall(deleteUserProfileRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Describe specified users.
+     * Deregisters a specified Amazon ECS cluster from a stack. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete"
+     * > Resource Management</a>.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * ></a>.
      * </p>
-     *
-     * @param describeUserProfilesRequest Container for the necessary
-     *           parameters to execute the DescribeUserProfiles service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the DescribeUserProfiles service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param deregisterEcsClusterRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeUserProfilesResult describeUserProfiles(DescribeUserProfilesRequest describeUserProfilesRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeUserProfilesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void deregisterEcsCluster(
+            DeregisterEcsClusterRequest deregisterEcsClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterEcsClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeUserProfilesRequest> request = null;
-        Response<DescribeUserProfilesResult> response = null;
-        
+        Request<DeregisterEcsClusterRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUserProfilesRequestMarshaller().marshall(super.beforeMarshalling(describeUserProfilesRequest));
+                request = new DeregisterEcsClusterRequestMarshaller()
+                        .marshall(deregisterEcsClusterRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<DescribeUserProfilesResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeUserProfilesResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeUserProfilesResult> responseHandler =
-                new JsonResponseHandler<DescribeUserProfilesResult>(unmarshaller);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deregisters a specified Elastic IP address. The address can then be
+     * registered by another stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param deregisterElasticIpRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void deregisterElasticIp(
+            DeregisterElasticIpRequest deregisterElasticIpRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterElasticIpRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterElasticIpRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterElasticIpRequestMarshaller()
+                        .marshall(deregisterElasticIpRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deregister a registered Amazon EC2 or on-premises instance. This action
+     * removes the instance from the stack and returns it to your control. This
+     * action can not be used with instances that were created with AWS
+     * OpsWorks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param deregisterInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void deregisterInstance(
+            DeregisterInstanceRequest deregisterInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterInstanceRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterInstanceRequestMarshaller()
+                        .marshall(deregisterInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deregisters an Amazon RDS instance.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param deregisterRdsDbInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void deregisterRdsDbInstance(
+            DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterRdsDbInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterRdsDbInstanceRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterRdsDbInstanceRequestMarshaller()
+                        .marshall(deregisterRdsDbInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deregisters an Amazon EBS volume. The volume can then be registered by
+     * another stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param deregisterVolumeRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterVolumeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterVolumeRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterVolumeRequestMarshaller()
+                        .marshall(deregisterVolumeRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the available AWS OpsWorks agent versions. You must specify a
+     * stack ID or a configuration manager. <code>DescribeAgentVersions</code>
+     * returns a list of available agent versions for the specified stack or
+     * configuration manager.
+     * </p>
+     * 
+     * @param describeAgentVersionsRequest
+     * @return Result of the DescribeAgentVersions operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeAgentVersionsResult describeAgentVersions(
+            DescribeAgentVersionsRequest describeAgentVersionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeAgentVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAgentVersionsRequest> request = null;
+        Response<DescribeAgentVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAgentVersionsRequestMarshaller()
+                        .marshall(describeAgentVersionsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeAgentVersionsResult> responseHandler = new JsonResponseHandler<DescribeAgentVersionsResult>(
+                    new DescribeAgentVersionsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Updates a specified instance.
+     * Requests a description of a specified set of apps.
      * </p>
+     * <note>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * You must specify at least one of the parameters.
      * </p>
-     *
-     * @param updateInstanceRequest Container for the necessary parameters to
-     *           execute the UpdateInstance service method on AWSOpsWorks.
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeAppsRequest
+     * @return Result of the DescribeApps operation returned by the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public void updateInstance(UpdateInstanceRequest updateInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public DescribeAppsResult describeApps(
+            DescribeAppsRequest describeAppsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeAppsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateInstanceRequest> request = null;
-        
+        Request<DescribeAppsRequest> request = null;
+        Response<DescribeAppsResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateInstanceRequestMarshaller().marshall(super.beforeMarshalling(updateInstanceRequest));
+                request = new DescribeAppsRequestMarshaller()
+                        .marshall(describeAppsRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
+            JsonResponseHandler<DescribeAppsResult> responseHandler = new JsonResponseHandler<DescribeAppsResult>(
+                    new DescribeAppsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
+    /**
+     * <p>
+     * Describes the results of specified commands.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeCommandsRequest
+     * @return Result of the DescribeCommands operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeCommandsResult describeCommands(
+            DescribeCommandsRequest describeCommandsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCommandsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCommandsRequest> request = null;
+        Response<DescribeCommandsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCommandsRequestMarshaller()
+                        .marshall(describeCommandsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeCommandsResult> responseHandler = new JsonResponseHandler<DescribeCommandsResult>(
+                    new DescribeCommandsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
     /**
      * <p>
      * Requests a description of a specified set of deployments.
      * </p>
+     * <note>
      * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
+     * You must specify at least one of the parameters.
      * </p>
+     * </note>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeDeploymentsRequest Container for the necessary
-     *           parameters to execute the DescribeDeployments service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the DescribeDeployments service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeDeploymentsRequest
+     * @return Result of the DescribeDeployments operation returned by the
+     *         service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeDeploymentsResult describeDeployments(DescribeDeploymentsRequest describeDeploymentsRequest) {
+    @Override
+    public DescribeDeploymentsResult describeDeployments(
+            DescribeDeploymentsRequest describeDeploymentsRequest) {
         ExecutionContext executionContext = createExecutionContext(describeDeploymentsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeDeploymentsRequest> request = null;
         Response<DescribeDeploymentsResult> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDeploymentsRequestMarshaller().marshall(super.beforeMarshalling(describeDeploymentsRequest));
+                request = new DescribeDeploymentsRequestMarshaller()
+                        .marshall(describeDeploymentsRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<DescribeDeploymentsResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeDeploymentsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeDeploymentsResult> responseHandler =
-                new JsonResponseHandler<DescribeDeploymentsResult>(unmarshaller);
-
+            JsonResponseHandler<DescribeDeploymentsResult> responseHandler = new JsonResponseHandler<DescribeDeploymentsResult>(
+                    new DescribeDeploymentsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Registers an Elastic IP address with a specified stack. An address
-     * can be registered with only one stack at a time. If the address is
-     * already registered, you must first deregister it by calling
-     * DeregisterElasticIp. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
+     * Describes Amazon ECS clusters that are registered with a stack. If you
+     * specify only a stack ID, you can use the <code>MaxResults</code> and
+     * <code>NextToken</code> parameters to paginate the response. However, AWS
+     * OpsWorks currently supports only one cluster per layer, so the result set
+     * has a maximum of one element.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack or an attached
+     * policy that explicitly grants permission. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param registerElasticIpRequest Container for the necessary parameters
-     *           to execute the RegisterElasticIp service method on AWSOpsWorks.
      * 
-     * @return The response from the RegisterElasticIp service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeEcsClustersRequest
+     * @return Result of the DescribeEcsClusters operation returned by the
+     *         service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public RegisterElasticIpResult registerElasticIp(RegisterElasticIpRequest registerElasticIpRequest) {
-        ExecutionContext executionContext = createExecutionContext(registerElasticIpRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public DescribeEcsClustersResult describeEcsClusters(
+            DescribeEcsClustersRequest describeEcsClustersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEcsClustersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RegisterElasticIpRequest> request = null;
-        Response<RegisterElasticIpResult> response = null;
-        
+        Request<DescribeEcsClustersRequest> request = null;
+        Response<DescribeEcsClustersResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterElasticIpRequestMarshaller().marshall(super.beforeMarshalling(registerElasticIpRequest));
+                request = new DescribeEcsClustersRequestMarshaller()
+                        .marshall(describeEcsClustersRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<RegisterElasticIpResult, JsonUnmarshallerContext> unmarshaller =
-                new RegisterElasticIpResultJsonUnmarshaller();
-            JsonResponseHandler<RegisterElasticIpResult> responseHandler =
-                new JsonResponseHandler<RegisterElasticIpResult>(unmarshaller);
-
+            JsonResponseHandler<DescribeEcsClustersResult> responseHandler = new JsonResponseHandler<DescribeEcsClustersResult>(
+                    new DescribeEcsClustersResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Describes
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP addresses </a>
-     * .
+     * Describes <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
+     * >Elastic IP addresses</a>.
      * </p>
+     * <note>
      * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
+     * You must specify at least one of the parameters.
      * </p>
+     * </note>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeElasticIpsRequest Container for the necessary
-     *           parameters to execute the DescribeElasticIps service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the DescribeElasticIps service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeElasticIpsRequest
+     * @return Result of the DescribeElasticIps operation returned by the
+     *         service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeElasticIpsResult describeElasticIps(DescribeElasticIpsRequest describeElasticIpsRequest) {
+    @Override
+    public DescribeElasticIpsResult describeElasticIps(
+            DescribeElasticIpsRequest describeElasticIpsRequest) {
         ExecutionContext executionContext = createExecutionContext(describeElasticIpsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeElasticIpsRequest> request = null;
         Response<DescribeElasticIpsResult> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticIpsRequestMarshaller().marshall(super.beforeMarshalling(describeElasticIpsRequest));
+                request = new DescribeElasticIpsRequestMarshaller()
+                        .marshall(describeElasticIpsRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<DescribeElasticIpsResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeElasticIpsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeElasticIpsResult> responseHandler =
-                new JsonResponseHandler<DescribeElasticIpsResult>(unmarshaller);
-
+            JsonResponseHandler<DescribeElasticIpsResult> responseHandler = new JsonResponseHandler<DescribeElasticIpsResult>(
+                    new DescribeElasticIpsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a stack's Elastic Load Balancing instances.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeElasticLoadBalancersRequest
+     * @return Result of the DescribeElasticLoadBalancers operation returned by
+     *         the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeElasticLoadBalancersResult describeElasticLoadBalancers(
+            DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeElasticLoadBalancersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeElasticLoadBalancersRequest> request = null;
+        Response<DescribeElasticLoadBalancersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeElasticLoadBalancersRequestMarshaller()
+                        .marshall(describeElasticLoadBalancersRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeElasticLoadBalancersResult> responseHandler = new JsonResponseHandler<DescribeElasticLoadBalancersResult>(
+                    new DescribeElasticLoadBalancersResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Requests a description of a set of instances.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeInstancesRequest
+     * @return Result of the DescribeInstances operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeInstancesResult describeInstances(
+            DescribeInstancesRequest describeInstancesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstancesRequest> request = null;
+        Response<DescribeInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstancesRequestMarshaller()
+                        .marshall(describeInstancesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeInstancesResult> responseHandler = new JsonResponseHandler<DescribeInstancesResult>(
+                    new DescribeInstancesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Requests a description of one or more layers in a specified stack.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeLayersRequest
+     * @return Result of the DescribeLayers operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeLayersResult describeLayers(
+            DescribeLayersRequest describeLayersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeLayersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeLayersRequest> request = null;
+        Response<DescribeLayersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeLayersRequestMarshaller()
+                        .marshall(describeLayersRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeLayersResult> responseHandler = new JsonResponseHandler<DescribeLayersResult>(
+                    new DescribeLayersResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes load-based auto scaling configurations for specified layers.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeLoadBasedAutoScalingRequest
+     * @return Result of the DescribeLoadBasedAutoScaling operation returned by
+     *         the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScaling(
+            DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeLoadBasedAutoScalingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeLoadBasedAutoScalingRequest> request = null;
+        Response<DescribeLoadBasedAutoScalingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeLoadBasedAutoScalingRequestMarshaller()
+                        .marshall(describeLoadBasedAutoScalingRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeLoadBasedAutoScalingResult> responseHandler = new JsonResponseHandler<DescribeLoadBasedAutoScalingResult>(
+                    new DescribeLoadBasedAutoScalingResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a user's SSH information.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have
+     * self-management enabled or an attached policy that explicitly grants
+     * permissions. For more information on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeMyUserProfileRequest
+     * @return Result of the DescribeMyUserProfile operation returned by the
+     *         service.
+     */
+    @Override
+    public DescribeMyUserProfileResult describeMyUserProfile(
+            DescribeMyUserProfileRequest describeMyUserProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeMyUserProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMyUserProfileRequest> request = null;
+        Response<DescribeMyUserProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMyUserProfileRequestMarshaller()
+                        .marshall(describeMyUserProfileRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeMyUserProfileResult> responseHandler = new JsonResponseHandler<DescribeMyUserProfileResult>(
+                    new DescribeMyUserProfileResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the permissions for a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describePermissionsRequest
+     * @return Result of the DescribePermissions operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribePermissionsResult describePermissions(
+            DescribePermissionsRequest describePermissionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePermissionsRequest> request = null;
+        Response<DescribePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePermissionsRequestMarshaller()
+                        .marshall(describePermissionsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribePermissionsResult> responseHandler = new JsonResponseHandler<DescribePermissionsResult>(
+                    new DescribePermissionsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describe an instance's RAID arrays.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeRaidArraysRequest
+     * @return Result of the DescribeRaidArrays operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeRaidArraysResult describeRaidArrays(
+            DescribeRaidArraysRequest describeRaidArraysRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeRaidArraysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRaidArraysRequest> request = null;
+        Response<DescribeRaidArraysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRaidArraysRequestMarshaller()
+                        .marshall(describeRaidArraysRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeRaidArraysResult> responseHandler = new JsonResponseHandler<DescribeRaidArraysResult>(
+                    new DescribeRaidArraysResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes Amazon RDS instances.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeRdsDbInstancesRequest
+     * @return Result of the DescribeRdsDbInstances operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeRdsDbInstancesResult describeRdsDbInstances(
+            DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeRdsDbInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRdsDbInstancesRequest> request = null;
+        Response<DescribeRdsDbInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRdsDbInstancesRequestMarshaller()
+                        .marshall(describeRdsDbInstancesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeRdsDbInstancesResult> responseHandler = new JsonResponseHandler<DescribeRdsDbInstancesResult>(
+                    new DescribeRdsDbInstancesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes AWS OpsWorks service errors.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeServiceErrorsRequest
+     * @return Result of the DescribeServiceErrors operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeServiceErrorsResult describeServiceErrors(
+            DescribeServiceErrorsRequest describeServiceErrorsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeServiceErrorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeServiceErrorsRequest> request = null;
+        Response<DescribeServiceErrorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeServiceErrorsRequestMarshaller()
+                        .marshall(describeServiceErrorsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeServiceErrorsResult> responseHandler = new JsonResponseHandler<DescribeServiceErrorsResult>(
+                    new DescribeServiceErrorsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Requests a description of a stack's provisioning parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeStackProvisioningParametersRequest
+     * @return Result of the DescribeStackProvisioningParameters operation
+     *         returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeStackProvisioningParametersResult describeStackProvisioningParameters(
+            DescribeStackProvisioningParametersRequest describeStackProvisioningParametersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeStackProvisioningParametersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStackProvisioningParametersRequest> request = null;
+        Response<DescribeStackProvisioningParametersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStackProvisioningParametersRequestMarshaller()
+                        .marshall(describeStackProvisioningParametersRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeStackProvisioningParametersResult> responseHandler = new JsonResponseHandler<DescribeStackProvisioningParametersResult>(
+                    new DescribeStackProvisioningParametersResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the number of layers and apps in a specified stack, and the
+     * number of instances in each state, such as <code>running_setup</code> or
+     * <code>online</code>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeStackSummaryRequest
+     * @return Result of the DescribeStackSummary operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeStackSummaryResult describeStackSummary(
+            DescribeStackSummaryRequest describeStackSummaryRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeStackSummaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStackSummaryRequest> request = null;
+        Response<DescribeStackSummaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStackSummaryRequestMarshaller()
+                        .marshall(describeStackSummaryRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeStackSummaryResult> responseHandler = new JsonResponseHandler<DescribeStackSummaryResult>(
+                    new DescribeStackSummaryResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
@@ -4164,187 +2430,1100 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Requests a description of one or more stacks.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeStacksRequest Container for the necessary parameters to
-     *           execute the DescribeStacks service method on AWSOpsWorks.
      * 
-     * @return The response from the DescribeStacks service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeStacksRequest
+     * @return Result of the DescribeStacks operation returned by the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeStacksResult describeStacks(DescribeStacksRequest describeStacksRequest) {
+    @Override
+    public DescribeStacksResult describeStacks(
+            DescribeStacksRequest describeStacksRequest) {
         ExecutionContext executionContext = createExecutionContext(describeStacksRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeStacksRequest> request = null;
         Response<DescribeStacksResult> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStacksRequestMarshaller().marshall(super.beforeMarshalling(describeStacksRequest));
+                request = new DescribeStacksRequestMarshaller()
+                        .marshall(describeStacksRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<DescribeStacksResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeStacksResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeStacksResult> responseHandler =
-                new JsonResponseHandler<DescribeStacksResult>(unmarshaller);
-
+            JsonResponseHandler<DescribeStacksResult> responseHandler = new JsonResponseHandler<DescribeStacksResult>(
+                    new DescribeStacksResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Requests a description of a specified set of apps.
+     * Describes time-based auto scaling configurations for specified instances.
      * </p>
+     * <note>
      * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
+     * You must specify at least one of the parameters.
      * </p>
+     * </note>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeAppsRequest Container for the necessary parameters to
-     *           execute the DescribeApps service method on AWSOpsWorks.
      * 
-     * @return The response from the DescribeApps service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeTimeBasedAutoScalingRequest
+     * @return Result of the DescribeTimeBasedAutoScaling operation returned by
+     *         the service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeAppsResult describeApps(DescribeAppsRequest describeAppsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeAppsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScaling(
+            DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeTimeBasedAutoScalingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeAppsRequest> request = null;
-        Response<DescribeAppsResult> response = null;
-        
+        Request<DescribeTimeBasedAutoScalingRequest> request = null;
+        Response<DescribeTimeBasedAutoScalingResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAppsRequestMarshaller().marshall(super.beforeMarshalling(describeAppsRequest));
+                request = new DescribeTimeBasedAutoScalingRequestMarshaller()
+                        .marshall(describeTimeBasedAutoScalingRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<DescribeAppsResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeAppsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeAppsResult> responseHandler =
-                new JsonResponseHandler<DescribeAppsResult>(unmarshaller);
-
+            JsonResponseHandler<DescribeTimeBasedAutoScalingResult> responseHandler = new JsonResponseHandler<DescribeTimeBasedAutoScalingResult>(
+                    new DescribeTimeBasedAutoScalingResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Describes the number of layers and apps in a specified stack, and the
-     * number of instances in each state, such as <code>running_setup</code>
-     * or <code>online</code> .
+     * Describe specified users.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param describeStackSummaryRequest Container for the necessary
-     *           parameters to execute the DescribeStackSummary service method on
-     *           AWSOpsWorks.
      * 
-     * @return The response from the DescribeStackSummary service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param describeUserProfilesRequest
+     * @return Result of the DescribeUserProfiles operation returned by the
+     *         service.
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public DescribeStackSummaryResult describeStackSummary(DescribeStackSummaryRequest describeStackSummaryRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeStackSummaryRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public DescribeUserProfilesResult describeUserProfiles(
+            DescribeUserProfilesRequest describeUserProfilesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeUserProfilesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeStackSummaryRequest> request = null;
-        Response<DescribeStackSummaryResult> response = null;
-        
+        Request<DescribeUserProfilesRequest> request = null;
+        Response<DescribeUserProfilesResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStackSummaryRequestMarshaller().marshall(super.beforeMarshalling(describeStackSummaryRequest));
+                request = new DescribeUserProfilesRequestMarshaller()
+                        .marshall(describeUserProfilesRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<DescribeStackSummaryResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeStackSummaryResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeStackSummaryResult> responseHandler =
-                new JsonResponseHandler<DescribeStackSummaryResult>(unmarshaller);
-
+            JsonResponseHandler<DescribeUserProfilesResult> responseHandler = new JsonResponseHandler<DescribeUserProfilesResult>(
+                    new DescribeUserProfilesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes an instance's Amazon EBS volumes.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the parameters.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Show, Deploy, or Manage permissions level for the stack, or an attached
+     * policy that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param describeVolumesRequest
+     * @return Result of the DescribeVolumes operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public DescribeVolumesResult describeVolumes(
+            DescribeVolumesRequest describeVolumesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeVolumesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVolumesRequest> request = null;
+        Response<DescribeVolumesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVolumesRequestMarshaller()
+                        .marshall(describeVolumesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeVolumesResult> responseHandler = new JsonResponseHandler<DescribeVolumesResult>(
+                    new DescribeVolumesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Detaches a specified Elastic Load Balancing instance from its layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param detachElasticLoadBalancerRequest
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void detachElasticLoadBalancer(
+            DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) {
+        ExecutionContext executionContext = createExecutionContext(detachElasticLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetachElasticLoadBalancerRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetachElasticLoadBalancerRequestMarshaller()
+                        .marshall(detachElasticLoadBalancerRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates an Elastic IP address from its instance. The address
+     * remains registered with the stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param disassociateElasticIpRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void disassociateElasticIp(
+            DisassociateElasticIpRequest disassociateElasticIpRequest) {
+        ExecutionContext executionContext = createExecutionContext(disassociateElasticIpRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateElasticIpRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateElasticIpRequestMarshaller()
+                        .marshall(disassociateElasticIpRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a generated host name for the specified layer, based on the current
+     * host name theme.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param getHostnameSuggestionRequest
+     * @return Result of the GetHostnameSuggestion operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public GetHostnameSuggestionResult getHostnameSuggestion(
+            GetHostnameSuggestionRequest getHostnameSuggestionRequest) {
+        ExecutionContext executionContext = createExecutionContext(getHostnameSuggestionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetHostnameSuggestionRequest> request = null;
+        Response<GetHostnameSuggestionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetHostnameSuggestionRequestMarshaller()
+                        .marshall(getHostnameSuggestionRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<GetHostnameSuggestionResult> responseHandler = new JsonResponseHandler<GetHostnameSuggestionResult>(
+                    new GetHostnameSuggestionResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>This action can be used only with Windows stacks.</note>
+     * <p>
+     * Grants RDP access to a Windows instance for a specified time period.
+     * </p>
+     * 
+     * @param grantAccessRequest
+     * @return Result of the GrantAccess operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public GrantAccessResult grantAccess(GrantAccessRequest grantAccessRequest) {
+        ExecutionContext executionContext = createExecutionContext(grantAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GrantAccessRequest> request = null;
+        Response<GrantAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GrantAccessRequestMarshaller()
+                        .marshall(grantAccessRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<GrantAccessResult> responseHandler = new JsonResponseHandler<GrantAccessResult>(
+                    new GrantAccessResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Reboots a specified instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"
+     * >Starting, Stopping, and Rebooting Instances</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param rebootInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(rebootInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RebootInstanceRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RebootInstanceRequestMarshaller()
+                        .marshall(rebootInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers a specified Amazon ECS cluster with a stack. You can register
+     * only one cluster with a stack. A cluster can be registered with only one
+     * stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html"
+     * > Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * > Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param registerEcsClusterRequest
+     * @return Result of the RegisterEcsCluster operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public RegisterEcsClusterResult registerEcsCluster(
+            RegisterEcsClusterRequest registerEcsClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerEcsClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterEcsClusterRequest> request = null;
+        Response<RegisterEcsClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterEcsClusterRequestMarshaller()
+                        .marshall(registerEcsClusterRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<RegisterEcsClusterResult> responseHandler = new JsonResponseHandler<RegisterEcsClusterResult>(
+                    new RegisterEcsClusterResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers an Elastic IP address with a specified stack. An address can be
+     * registered with only one stack at a time. If the address is already
+     * registered, you must first deregister it by calling
+     * <a>DeregisterElasticIp</a>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param registerElasticIpRequest
+     * @return Result of the RegisterElasticIp operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public RegisterElasticIpResult registerElasticIp(
+            RegisterElasticIpRequest registerElasticIpRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerElasticIpRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterElasticIpRequest> request = null;
+        Response<RegisterElasticIpResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterElasticIpRequestMarshaller()
+                        .marshall(registerElasticIpRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<RegisterElasticIpResult> responseHandler = new JsonResponseHandler<RegisterElasticIpResult>(
+                    new RegisterElasticIpResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers instances with a specified stack that were created outside of
+     * AWS OpsWorks.
+     * </p>
+     * <note>We do not recommend using this action to register instances. The
+     * complete registration operation has two primary steps, installing the AWS
+     * OpsWorks agent on the instance and registering the instance with the
+     * stack. <code>RegisterInstance</code> handles only the second step. You
+     * should instead use the AWS CLI <code>register</code> command, which
+     * performs the entire registration operation. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"
+     * > Registering an Instance with an AWS OpsWorks Stack</a>.</note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param registerInstanceRequest
+     * @return Result of the RegisterInstance operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public RegisterInstanceResult registerInstance(
+            RegisterInstanceRequest registerInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterInstanceRequest> request = null;
+        Response<RegisterInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterInstanceRequestMarshaller()
+                        .marshall(registerInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<RegisterInstanceResult> responseHandler = new JsonResponseHandler<RegisterInstanceResult>(
+                    new RegisterInstanceResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers an Amazon RDS instance with a stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param registerRdsDbInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void registerRdsDbInstance(
+            RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerRdsDbInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterRdsDbInstanceRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterRdsDbInstanceRequestMarshaller()
+                        .marshall(registerRdsDbInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers an Amazon EBS volume with a specified stack. A volume can be
+     * registered with only one stack at a time. If the volume is already
+     * registered, you must first deregister it by calling
+     * <a>DeregisterVolume</a>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param registerVolumeRequest
+     * @return Result of the RegisterVolume operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public RegisterVolumeResult registerVolume(
+            RegisterVolumeRequest registerVolumeRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerVolumeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterVolumeRequest> request = null;
+        Response<RegisterVolumeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterVolumeRequestMarshaller()
+                        .marshall(registerVolumeRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<RegisterVolumeResult> responseHandler = new JsonResponseHandler<RegisterVolumeResult>(
+                    new RegisterVolumeResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Specify the load-based auto scaling configuration for a specified layer.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"
+     * >Managing Load with Time-based and Load-based Instances</a>.
+     * </p>
+     * <note>
+     * <p>
+     * To use load-based auto scaling, you must create a set of load-based auto
+     * scaling instances. Load-based auto scaling operates only on the instances
+     * from that set, so you must ensure that you have created enough instances
+     * to handle the maximum anticipated load.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param setLoadBasedAutoScalingRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void setLoadBasedAutoScaling(
+            SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) {
+        ExecutionContext executionContext = createExecutionContext(setLoadBasedAutoScalingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetLoadBasedAutoScalingRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetLoadBasedAutoScalingRequestMarshaller()
+                        .marshall(setLoadBasedAutoScalingRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Specifies a user's permissions. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html"
+     * >Security and Permissions</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param setPermissionRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void setPermission(SetPermissionRequest setPermissionRequest) {
+        ExecutionContext executionContext = createExecutionContext(setPermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetPermissionRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetPermissionRequestMarshaller()
+                        .marshall(setPermissionRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Specify the time-based auto scaling configuration for a specified
+     * instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"
+     * >Managing Load with Time-based and Load-based Instances</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param setTimeBasedAutoScalingRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void setTimeBasedAutoScaling(
+            SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) {
+        ExecutionContext executionContext = createExecutionContext(setTimeBasedAutoScalingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetTimeBasedAutoScalingRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetTimeBasedAutoScalingRequestMarshaller()
+                        .marshall(setTimeBasedAutoScalingRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a specified instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"
+     * >Starting, Stopping, and Rebooting Instances</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param startInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void startInstance(StartInstanceRequest startInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(startInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartInstanceRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartInstanceRequestMarshaller()
+                        .marshall(startInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a stack's instances.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param startStackRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void startStack(StartStackRequest startStackRequest) {
+        ExecutionContext executionContext = createExecutionContext(startStackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartStackRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartStackRequestMarshaller()
+                        .marshall(startStackRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a specified instance. When you stop a standard instance, the data
+     * disappears and must be reinstalled when you restart the instance. You can
+     * stop an Amazon EBS-backed instance without losing data. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"
+     * >Starting, Stopping, and Rebooting Instances</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param stopInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void stopInstance(StopInstanceRequest stopInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(stopInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopInstanceRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopInstanceRequestMarshaller()
+                        .marshall(stopInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
@@ -4353,154 +3532,644 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Stops a specified stack.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param stopStackRequest Container for the necessary parameters to
-     *           execute the StopStack service method on AWSOpsWorks.
      * 
-     * 
-     * @throws ResourceNotFoundException
+     * @param stopStackRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
+    @Override
     public void stopStack(StopStackRequest stopStackRequest) {
         ExecutionContext executionContext = createExecutionContext(stopStackRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StopStackRequest> request = null;
-        
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopStackRequestMarshaller().marshall(super.beforeMarshalling(stopStackRequest));
+                request = new StopStackRequestMarshaller()
+                        .marshall(stopStackRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Runs deployment or stack commands. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html"> Deploying Apps </a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html"> Run Stack Commands </a>
-     * .
+     * Unassigns a registered instance from all of it's layers. The instance
+     * remains in the stack as an unassigned instance and can be assigned to
+     * another layer, as needed. You cannot use this action with instances that
+     * were created with AWS OpsWorks.
      * </p>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Deploy or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
      * </p>
-     *
-     * @param createDeploymentRequest Container for the necessary parameters
-     *           to execute the CreateDeployment service method on AWSOpsWorks.
      * 
-     * @return The response from the CreateDeployment service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
+     * @param unassignInstanceRequest
      * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
      */
-    public CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest) {
-        ExecutionContext executionContext = createExecutionContext(createDeploymentRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void unassignInstance(UnassignInstanceRequest unassignInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(unassignInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateDeploymentRequest> request = null;
-        Response<CreateDeploymentResult> response = null;
-        
+        Request<UnassignInstanceRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeploymentRequestMarshaller().marshall(super.beforeMarshalling(createDeploymentRequest));
+                request = new UnassignInstanceRequestMarshaller()
+                        .marshall(unassignInstanceRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<CreateDeploymentResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateDeploymentResultJsonUnmarshaller();
-            JsonResponseHandler<CreateDeploymentResult> responseHandler =
-                new JsonResponseHandler<CreateDeploymentResult>(unmarshaller);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
+    /**
+     * <p>
+     * Unassigns an assigned Amazon EBS volume. The volume remains registered
+     * with the stack. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param unassignVolumeRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
     @Override
-    public void setEndpoint(String endpoint) {
-        super.setEndpoint(endpoint);
-    }
+    public void unassignVolume(UnassignVolumeRequest unassignVolumeRequest) {
+        ExecutionContext executionContext = createExecutionContext(unassignVolumeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UnassignVolumeRequest> request = null;
+        Response<Void> response = null;
 
-    @Override
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        super.setEndpoint(endpoint, serviceName, regionId);
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UnassignVolumeRequestMarshaller()
+                        .marshall(unassignVolumeRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
-     * Returns additional metadata for a previously executed successful, request, typically used for
-     * debugging issues where a service isn't acting as expected.  This data isn't considered part
-     * of the result data returned by an operation, so it's available through this separate,
-     * diagnostic interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you need to access
-     * this extra diagnostic information for an executed request, you should use this method
-     * to retrieve it as soon as possible after executing the request.
+     * Updates a specified app.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Deploy or Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateAppRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void updateApp(UpdateAppRequest updateAppRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateAppRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAppRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAppRequestMarshaller()
+                        .marshall(updateAppRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a registered Elastic IP address's name. For more information, see
+     * <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateElasticIpRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateElasticIpRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateElasticIpRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateElasticIpRequestMarshaller()
+                        .marshall(updateElasticIpRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a specified instance.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void updateInstance(UpdateInstanceRequest updateInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInstanceRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInstanceRequestMarshaller()
+                        .marshall(updateInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a specified layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateLayerRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void updateLayer(UpdateLayerRequest updateLayerRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateLayerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLayerRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLayerRequestMarshaller()
+                        .marshall(updateLayerRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a user's SSH public key.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have
+     * self-management enabled or an attached policy that explicitly grants
+     * permissions. For more information on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateMyUserProfileRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     */
+    @Override
+    public void updateMyUserProfile(
+            UpdateMyUserProfileRequest updateMyUserProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateMyUserProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMyUserProfileRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMyUserProfileRequestMarshaller()
+                        .marshall(updateMyUserProfileRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an Amazon RDS instance.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateRdsDbInstanceRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void updateRdsDbInstance(
+            UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateRdsDbInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRdsDbInstanceRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRdsDbInstanceRequestMarshaller()
+                        .marshall(updateRdsDbInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateStackRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void updateStack(UpdateStackRequest updateStackRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateStackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateStackRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateStackRequestMarshaller()
+                        .marshall(updateStackRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a specified user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have an
+     * attached policy that explicitly grants permissions. For more information
+     * on user permissions, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateUserProfileRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void updateUserProfile(
+            UpdateUserProfileRequest updateUserProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateUserProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateUserProfileRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateUserProfileRequestMarshaller()
+                        .marshall(updateUserProfileRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an Amazon EBS volume's name or mount point. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+     * >Resource Management</a>.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b>: To use this action, an IAM user must have a
+     * Manage permissions level for the stack, or an attached policy that
+     * explicitly grants permissions. For more information on user permissions,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>.
+     * </p>
+     * 
+     * @param updateVolumeRequest
+     * @throws ValidationException
+     *         Indicates that a request was invalid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     */
+    @Override
+    public void updateVolume(UpdateVolumeRequest updateVolumeRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateVolumeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVolumeRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVolumeRequestMarshaller()
+                        .marshall(updateVolumeRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Returns additional metadata for a previously executed successful,
+     * request, typically used for debugging issues where a service isn't acting
+     * as expected. This data isn't considered part of the result data returned
+     * by an operation, so it's available through this separate, diagnostic
+     * interface.
+     * <p>
+     * Response metadata is only cached for a limited period of time, so if you
+     * need to access this extra diagnostic information for an executed request,
+     * you should use this method to retrieve it as soon as possible after
+     * executing the request.
      *
      * @param request
-     *            The originally executed request
+     *        The originally executed request
      *
      * @return The response metadata for the specified request, or null if none
      *         is available.
      */
-    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request) {
+    public ResponseMetadata getCachedResponseMetadata(
+            AmazonWebServiceRequest request) {
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         AWSCredentials credentials;
         awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
         try {
@@ -4510,15 +4179,18 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
 
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
+        if (originalRequest != null
+                && originalRequest.getRequestCredentials() != null) {
             credentials = originalRequest.getRequestCredentials();
         }
 
         executionContext.setCredentials(credentials);
-        JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(jsonErrorUnmarshallers);
-        Response<X> result = client.execute(request, responseHandler,
-                errorResponseHandler, executionContext);
-        return result;
+
+        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
+                jsonErrorUnmarshallers);
+
+        return client.execute(request, responseHandler, errorResponseHandler,
+                executionContext);
     }
+
 }
-        

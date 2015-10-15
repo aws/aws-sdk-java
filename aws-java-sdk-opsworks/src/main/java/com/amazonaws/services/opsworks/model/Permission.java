@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
@@ -24,273 +25,357 @@ import java.io.Serializable;
 public class Permission implements Serializable, Cloneable {
 
     /**
+     * <p>
      * A stack ID.
+     * </p>
      */
     private String stackId;
-
     /**
-     * The Amazon Resource Name (ARN) for an AWS Identity and Access
-     * Management (IAM) role. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
+     * <p>
+     * The Amazon Resource Name (ARN) for an AWS Identity and Access Management
+     * (IAM) role. For more information about IAM ARNs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
      */
     private String iamUserArn;
-
     /**
+     * <p>
      * Whether the user can use SSH.
+     * </p>
      */
     private Boolean allowSsh;
-
     /**
+     * <p>
      * Whether the user can use <b>sudo</b>.
+     * </p>
      */
     private Boolean allowSudo;
-
     /**
-     * The user's permission level, which must be the following: <ul> <li>
-     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
-     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
-     * <code>iam_only</code> </li> </ul> <p>For more information on the
-     * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     * User Permissions</a>
+     * <p>
+     * The user's permission level, which must be the following:
+     * </p>
+     * <ul>
+     * <li> <code>deny</code></li>
+     * <li> <code>show</code></li>
+     * <li> <code>deploy</code></li>
+     * <li> <code>manage</code></li>
+     * <li> <code>iam_only</code></li>
+     * </ul>
+     * <p>
+     * For more information on the permissions associated with these levels, see
+     * <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>
+     * </p>
      */
     private String level;
 
     /**
+     * <p>
      * A stack ID.
-     *
-     * @return A stack ID.
-     */
-    public String getStackId() {
-        return stackId;
-    }
-    
-    /**
-     * A stack ID.
-     *
-     * @param stackId A stack ID.
+     * </p>
+     * 
+     * @param stackId
+     *        A stack ID.
      */
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
-    
+
     /**
-     * A stack ID.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stackId A stack ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A stack ID.
+     * </p>
+     * 
+     * @return A stack ID.
+     */
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    /**
+     * <p>
+     * A stack ID.
+     * </p>
+     * 
+     * @param stackId
+     *        A stack ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Permission withStackId(String stackId) {
-        this.stackId = stackId;
+        setStackId(stackId);
         return this;
     }
 
     /**
-     * The Amazon Resource Name (ARN) for an AWS Identity and Access
-     * Management (IAM) role. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
-     *
-     * @return The Amazon Resource Name (ARN) for an AWS Identity and Access
-     *         Management (IAM) role. For more information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>.
-     */
-    public String getIamUserArn() {
-        return iamUserArn;
-    }
-    
-    /**
-     * The Amazon Resource Name (ARN) for an AWS Identity and Access
-     * Management (IAM) role. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
-     *
-     * @param iamUserArn The Amazon Resource Name (ARN) for an AWS Identity and Access
-     *         Management (IAM) role. For more information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>.
+     * <p>
+     * The Amazon Resource Name (ARN) for an AWS Identity and Access Management
+     * (IAM) role. For more information about IAM ARNs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
+     * 
+     * @param iamUserArn
+     *        The Amazon Resource Name (ARN) for an AWS Identity and Access
+     *        Management (IAM) role. For more information about IAM ARNs, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >Using Identifiers</a>.
      */
     public void setIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
     }
-    
+
     /**
-     * The Amazon Resource Name (ARN) for an AWS Identity and Access
-     * Management (IAM) role. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param iamUserArn The Amazon Resource Name (ARN) for an AWS Identity and Access
-     *         Management (IAM) role. For more information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon Resource Name (ARN) for an AWS Identity and Access Management
+     * (IAM) role. For more information about IAM ARNs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for an AWS Identity and Access
+     *         Management (IAM) role. For more information about IAM ARNs, see
+     *         <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *         >Using Identifiers</a>.
+     */
+    public String getIamUserArn() {
+        return this.iamUserArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for an AWS Identity and Access Management
+     * (IAM) role. For more information about IAM ARNs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
+     * 
+     * @param iamUserArn
+     *        The Amazon Resource Name (ARN) for an AWS Identity and Access
+     *        Management (IAM) role. For more information about IAM ARNs, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >Using Identifiers</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Permission withIamUserArn(String iamUserArn) {
-        this.iamUserArn = iamUserArn;
+        setIamUserArn(iamUserArn);
         return this;
     }
 
     /**
+     * <p>
      * Whether the user can use SSH.
-     *
-     * @return Whether the user can use SSH.
-     */
-    public Boolean isAllowSsh() {
-        return allowSsh;
-    }
-    
-    /**
-     * Whether the user can use SSH.
-     *
-     * @param allowSsh Whether the user can use SSH.
+     * </p>
+     * 
+     * @param allowSsh
+     *        Whether the user can use SSH.
      */
     public void setAllowSsh(Boolean allowSsh) {
         this.allowSsh = allowSsh;
     }
-    
+
     /**
-     * Whether the user can use SSH.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param allowSsh Whether the user can use SSH.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Whether the user can use SSH.
+     * </p>
+     * 
+     * @return Whether the user can use SSH.
+     */
+    public Boolean getAllowSsh() {
+        return this.allowSsh;
+    }
+
+    /**
+     * <p>
+     * Whether the user can use SSH.
+     * </p>
+     * 
+     * @param allowSsh
+     *        Whether the user can use SSH.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Permission withAllowSsh(Boolean allowSsh) {
-        this.allowSsh = allowSsh;
+        setAllowSsh(allowSsh);
         return this;
     }
 
     /**
+     * <p>
      * Whether the user can use SSH.
-     *
+     * </p>
+     * 
      * @return Whether the user can use SSH.
      */
-    public Boolean getAllowSsh() {
-        return allowSsh;
+    public Boolean isAllowSsh() {
+        return this.allowSsh;
     }
 
     /**
+     * <p>
      * Whether the user can use <b>sudo</b>.
-     *
-     * @return Whether the user can use <b>sudo</b>.
-     */
-    public Boolean isAllowSudo() {
-        return allowSudo;
-    }
-    
-    /**
-     * Whether the user can use <b>sudo</b>.
-     *
-     * @param allowSudo Whether the user can use <b>sudo</b>.
+     * </p>
+     * 
+     * @param allowSudo
+     *        Whether the user can use <b>sudo</b>.
      */
     public void setAllowSudo(Boolean allowSudo) {
         this.allowSudo = allowSudo;
     }
-    
+
     /**
-     * Whether the user can use <b>sudo</b>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param allowSudo Whether the user can use <b>sudo</b>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Whether the user can use <b>sudo</b>.
+     * </p>
+     * 
+     * @return Whether the user can use <b>sudo</b>.
+     */
+    public Boolean getAllowSudo() {
+        return this.allowSudo;
+    }
+
+    /**
+     * <p>
+     * Whether the user can use <b>sudo</b>.
+     * </p>
+     * 
+     * @param allowSudo
+     *        Whether the user can use <b>sudo</b>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Permission withAllowSudo(Boolean allowSudo) {
-        this.allowSudo = allowSudo;
+        setAllowSudo(allowSudo);
         return this;
     }
 
     /**
+     * <p>
      * Whether the user can use <b>sudo</b>.
-     *
+     * </p>
+     * 
      * @return Whether the user can use <b>sudo</b>.
      */
-    public Boolean getAllowSudo() {
-        return allowSudo;
+    public Boolean isAllowSudo() {
+        return this.allowSudo;
     }
 
     /**
-     * The user's permission level, which must be the following: <ul> <li>
-     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
-     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
-     * <code>iam_only</code> </li> </ul> <p>For more information on the
-     * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     * User Permissions</a>
-     *
-     * @return The user's permission level, which must be the following: <ul> <li>
-     *         <code>deny</code> </li> <li> <code>show</code> </li> <li>
-     *         <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
-     *         <code>iam_only</code> </li> </ul> <p>For more information on the
-     *         permissions associated with these levels, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     *         User Permissions</a>
-     */
-    public String getLevel() {
-        return level;
-    }
-    
-    /**
-     * The user's permission level, which must be the following: <ul> <li>
-     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
-     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
-     * <code>iam_only</code> </li> </ul> <p>For more information on the
-     * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     * User Permissions</a>
-     *
-     * @param level The user's permission level, which must be the following: <ul> <li>
-     *         <code>deny</code> </li> <li> <code>show</code> </li> <li>
-     *         <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
-     *         <code>iam_only</code> </li> </ul> <p>For more information on the
-     *         permissions associated with these levels, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     *         User Permissions</a>
+     * <p>
+     * The user's permission level, which must be the following:
+     * </p>
+     * <ul>
+     * <li> <code>deny</code></li>
+     * <li> <code>show</code></li>
+     * <li> <code>deploy</code></li>
+     * <li> <code>manage</code></li>
+     * <li> <code>iam_only</code></li>
+     * </ul>
+     * <p>
+     * For more information on the permissions associated with these levels, see
+     * <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>
+     * </p>
+     * 
+     * @param level
+     *        The user's permission level, which must be the following:</p>
+     *        <ul>
+     *        <li> <code>deny</code></li>
+     *        <li> <code>show</code></li>
+     *        <li> <code>deploy</code></li>
+     *        <li> <code>manage</code></li>
+     *        <li> <code>iam_only</code></li>
+     *        </ul>
+     *        <p>
+     *        For more information on the permissions associated with these
+     *        levels, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     *        >Managing User Permissions</a>
      */
     public void setLevel(String level) {
         this.level = level;
     }
-    
+
     /**
-     * The user's permission level, which must be the following: <ul> <li>
-     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
-     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
-     * <code>iam_only</code> </li> </ul> <p>For more information on the
-     * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     * User Permissions</a>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param level The user's permission level, which must be the following: <ul> <li>
-     *         <code>deny</code> </li> <li> <code>show</code> </li> <li>
-     *         <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
-     *         <code>iam_only</code> </li> </ul> <p>For more information on the
-     *         permissions associated with these levels, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     *         User Permissions</a>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The user's permission level, which must be the following:
+     * </p>
+     * <ul>
+     * <li> <code>deny</code></li>
+     * <li> <code>show</code></li>
+     * <li> <code>deploy</code></li>
+     * <li> <code>manage</code></li>
+     * <li> <code>iam_only</code></li>
+     * </ul>
+     * <p>
+     * For more information on the permissions associated with these levels, see
+     * <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>
+     * </p>
+     * 
+     * @return The user's permission level, which must be the following:</p>
+     *         <ul>
+     *         <li> <code>deny</code></li>
+     *         <li> <code>show</code></li>
+     *         <li> <code>deploy</code></li>
+     *         <li> <code>manage</code></li>
+     *         <li> <code>iam_only</code></li>
+     *         </ul>
+     *         <p>
+     *         For more information on the permissions associated with these
+     *         levels, see <a href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     *         >Managing User Permissions</a>
+     */
+    public String getLevel() {
+        return this.level;
+    }
+
+    /**
+     * <p>
+     * The user's permission level, which must be the following:
+     * </p>
+     * <ul>
+     * <li> <code>deny</code></li>
+     * <li> <code>show</code></li>
+     * <li> <code>deploy</code></li>
+     * <li> <code>manage</code></li>
+     * <li> <code>iam_only</code></li>
+     * </ul>
+     * <p>
+     * For more information on the permissions associated with these levels, see
+     * <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     * >Managing User Permissions</a>
+     * </p>
+     * 
+     * @param level
+     *        The user's permission level, which must be the following:</p>
+     *        <ul>
+     *        <li> <code>deny</code></li>
+     *        <li> <code>show</code></li>
+     *        <li> <code>deploy</code></li>
+     *        <li> <code>manage</code></li>
+     *        <li> <code>iam_only</code></li>
+     *        </ul>
+     *        <p>
+     *        For more information on the permissions associated with these
+     *        levels, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+     *        >Managing User Permissions</a>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Permission withLevel(String level) {
-        this.level = level;
+        setLevel(level);
         return this;
     }
 
@@ -306,62 +391,84 @@ public class Permission implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
-        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");
-        if (isAllowSsh() != null) sb.append("AllowSsh: " + isAllowSsh() + ",");
-        if (isAllowSudo() != null) sb.append("AllowSudo: " + isAllowSudo() + ",");
-        if (getLevel() != null) sb.append("Level: " + getLevel() );
+        if (getStackId() != null)
+            sb.append("StackId: " + getStackId() + ",");
+        if (getIamUserArn() != null)
+            sb.append("IamUserArn: " + getIamUserArn() + ",");
+        if (getAllowSsh() != null)
+            sb.append("AllowSsh: " + getAllowSsh() + ",");
+        if (getAllowSudo() != null)
+            sb.append("AllowSudo: " + getAllowSudo() + ",");
+        if (getLevel() != null)
+            sb.append("Level: " + getLevel());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof Permission == false)
+            return false;
+        Permission other = (Permission) obj;
+        if (other.getStackId() == null ^ this.getStackId() == null)
+            return false;
+        if (other.getStackId() != null
+                && other.getStackId().equals(this.getStackId()) == false)
+            return false;
+        if (other.getIamUserArn() == null ^ this.getIamUserArn() == null)
+            return false;
+        if (other.getIamUserArn() != null
+                && other.getIamUserArn().equals(this.getIamUserArn()) == false)
+            return false;
+        if (other.getAllowSsh() == null ^ this.getAllowSsh() == null)
+            return false;
+        if (other.getAllowSsh() != null
+                && other.getAllowSsh().equals(this.getAllowSsh()) == false)
+            return false;
+        if (other.getAllowSudo() == null ^ this.getAllowSudo() == null)
+            return false;
+        if (other.getAllowSudo() != null
+                && other.getAllowSudo().equals(this.getAllowSudo()) == false)
+            return false;
+        if (other.getLevel() == null ^ this.getLevel() == null)
+            return false;
+        if (other.getLevel() != null
+                && other.getLevel().equals(this.getLevel()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
-        hashCode = prime * hashCode + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode()); 
-        hashCode = prime * hashCode + ((isAllowSsh() == null) ? 0 : isAllowSsh().hashCode()); 
-        hashCode = prime * hashCode + ((isAllowSudo() == null) ? 0 : isAllowSudo().hashCode()); 
-        hashCode = prime * hashCode + ((getLevel() == null) ? 0 : getLevel().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode
+                + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
+        hashCode = prime * hashCode
+                + ((getAllowSsh() == null) ? 0 : getAllowSsh().hashCode());
+        hashCode = prime * hashCode
+                + ((getAllowSudo() == null) ? 0 : getAllowSudo().hashCode());
+        hashCode = prime * hashCode
+                + ((getLevel() == null) ? 0 : getLevel().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof Permission == false) return false;
-        Permission other = (Permission)obj;
-        
-        if (other.getStackId() == null ^ this.getStackId() == null) return false;
-        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
-        if (other.getIamUserArn() == null ^ this.getIamUserArn() == null) return false;
-        if (other.getIamUserArn() != null && other.getIamUserArn().equals(this.getIamUserArn()) == false) return false; 
-        if (other.isAllowSsh() == null ^ this.isAllowSsh() == null) return false;
-        if (other.isAllowSsh() != null && other.isAllowSsh().equals(this.isAllowSsh()) == false) return false; 
-        if (other.isAllowSudo() == null ^ this.isAllowSudo() == null) return false;
-        if (other.isAllowSudo() != null && other.isAllowSudo().equals(this.isAllowSudo()) == false) return false; 
-        if (other.getLevel() == null ^ this.getLevel() == null) return false;
-        if (other.getLevel() != null && other.getLevel().equals(this.getLevel()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public Permission clone() {
         try {
             return (Permission) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

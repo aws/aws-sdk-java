@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Evaluation Result JSON Unmarshaller
+ * EvaluationResult JSON Unmarshaller
  */
-public class EvaluationResultJsonUnmarshaller implements Unmarshaller<EvaluationResult, JsonUnmarshallerContext> {
+public class EvaluationResultJsonUnmarshaller implements
+        Unmarshaller<EvaluationResult, JsonUnmarshallerContext> {
 
-    public EvaluationResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public EvaluationResult unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         EvaluationResult evaluationResult = new EvaluationResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,53 +40,69 @@ public class EvaluationResultJsonUnmarshaller implements Unmarshaller<Evaluation
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("EvaluationResultIdentifier", targetDepth)) {
+                if (context.testExpression("EvaluationResultIdentifier",
+                        targetDepth)) {
                     context.nextToken();
-                    evaluationResult.setEvaluationResultIdentifier(EvaluationResultIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
+                    evaluationResult
+                            .setEvaluationResultIdentifier(EvaluationResultIdentifierJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ComplianceType", targetDepth)) {
                     context.nextToken();
-                    evaluationResult.setComplianceType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    evaluationResult.setComplianceType(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResultRecordedTime", targetDepth)) {
                     context.nextToken();
-                    evaluationResult.setResultRecordedTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    evaluationResult.setResultRecordedTime(DateJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("ConfigRuleInvokedTime", targetDepth)) {
+                if (context
+                        .testExpression("ConfigRuleInvokedTime", targetDepth)) {
                     context.nextToken();
-                    evaluationResult.setConfigRuleInvokedTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    evaluationResult
+                            .setConfigRuleInvokedTime(DateJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Annotation", targetDepth)) {
                     context.nextToken();
-                    evaluationResult.setAnnotation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    evaluationResult.setAnnotation(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResultToken", targetDepth)) {
                     context.nextToken();
-                    evaluationResult.setResultToken(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    evaluationResult.setResultToken(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return evaluationResult;
     }
 
     private static EvaluationResultJsonUnmarshaller instance;
+
     public static EvaluationResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new EvaluationResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new EvaluationResultJsonUnmarshaller();
         return instance;
     }
 }
-    

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,48 +16,49 @@ package com.amazonaws.services.route53domains;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
+
 import com.amazonaws.services.route53domains.model.*;
 
 /**
- * Interface for accessing AmazonRoute53Domains.
- * 
+ * Interface for accessing Amazon Route 53 Domains.
  */
 public interface AmazonRoute53Domains {
 
     /**
-     * Overrides the default endpoint for this client ("https://route53domains.us-east-1.amazonaws.com").
-     * Callers can use this method to control which AWS region they want to work with.
+     * Overrides the default endpoint for this client
+     * ("https://route53domains.us-east-1.amazonaws.com"). Callers can use this
+     * method to control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "route53domains.us-east-1.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://route53domains.us-east-1.amazonaws.com"). If the
+     * Callers can pass in just the endpoint (ex:
+     * "route53domains.us-east-1.amazonaws.com") or a full URL, including the
+     * protocol (ex: "https://route53domains.us-east-1.amazonaws.com"). If the
      * protocol is not specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * a complete list of all available endpoints for all AWS services, see: <a
+     * href=
+     * "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912"
+     * > http://developer.amazonwebservices.com/connect/entry.jspa?externalID=
+     * 3912</a>
      * <p>
-     * <b>This method is not threadsafe. An endpoint should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit or retrying.</b>
+     * <b>This method is not threadsafe. An endpoint should be configured when
+     * the client is created and before any service requests are made. Changing
+     * it afterwards creates inevitable race conditions for any service requests
+     * in transit or retrying.</b>
      *
      * @param endpoint
-     *            The endpoint (ex: "route53domains.us-east-1.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://route53domains.us-east-1.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
+     *        The endpoint (ex: "route53domains.us-east-1.amazonaws.com") or a
+     *        full URL, including the protocol (ex:
+     *        "https://route53domains.us-east-1.amazonaws.com") of the region
+     *        specific AWS endpoint this client will communicate with.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
+    void setEndpoint(String endpoint);
 
     /**
-     * An alternative to {@link AmazonRoute53Domains#setEndpoint(String)}, sets the
-     * regional endpoint for this client's service calls. Callers can use this
-     * method to control which AWS region they want to work with.
+     * An alternative to {@link AmazonRoute53Domains#setEndpoint(String)}, sets
+     * the regional endpoint for this client's service calls. Callers can use
+     * this method to control which AWS region they want to work with.
      * <p>
      * By default, all service endpoints in all regions use the https protocol.
      * To use http instead, specify it in the {@link ClientConfiguration}
@@ -69,83 +70,126 @@ public interface AmazonRoute53Domains {
      * transit or retrying.</b>
      *
      * @param region
-     *            The region this client will communicate with. See
-     *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
-     *            accessing a given region.
-     * @throws java.lang.IllegalArgumentException
-     *             If the given region is null, or if this service isn't
-     *             available in the given region. See
-     *             {@link Region#isServiceSupported(String)}
+     *        The region this client will communicate with. See
+     *        {@link Region#getRegion(com.amazonaws.regions.Regions)} for
+     *        accessing a given region. Must not be null and must be a region
+     *        where the service is available.
+     *
      * @see Region#getRegion(com.amazonaws.regions.Regions)
-     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#createClient(Class,
+     *      com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#isServiceSupported(String)
      */
-    public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-    
-    /**
-     * <p>
-     * This operation checks the availability of one domain name. You can
-     * access this API without authenticating. Note that if the availability
-     * status of a domain is pending, you must submit another request to
-     * determine the availability of the domain name.
-     * </p>
-     *
-     * @param checkDomainAvailabilityRequest Container for the necessary
-     *           parameters to execute the CheckDomainAvailability service method on
-     *           AmazonRoute53Domains.
-     * 
-     * @return The response from the CheckDomainAvailability service method,
-     *         as returned by AmazonRoute53Domains.
-     * 
-     * @throws UnsupportedTLDException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CheckDomainAvailabilityResult checkDomainAvailability(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void setRegion(Region region);
 
     /**
      * <p>
-     * This operation updates the contact information for a particular
-     * domain. Information for at least one contact (registrant,
-     * administrator, or technical) must be supplied for update.
+     * This operation checks the availability of one domain name. You can access
+     * this API without authenticating. Note that if the availability status of
+     * a domain is pending, you must submit another request to determine the
+     * availability of the domain name.
+     * </p>
+     * 
+     * @param checkDomainAvailabilityRequest
+     *        The CheckDomainAvailability request contains the following
+     *        elements.
+     * @return Result of the CheckDomainAvailability operation returned by the
+     *         service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     */
+    CheckDomainAvailabilityResult checkDomainAvailability(
+            CheckDomainAvailabilityRequest checkDomainAvailabilityRequest);
+
+    /**
+     * <p>
+     * This operation deletes the specified tags for a domain.
      * </p>
      * <p>
-     * If the update is successful, this method returns an operation ID that
-     * you can use to track the progress and completion of the action. If the
-     * request is not completed successfully, the domain registrant will be
-     * notified by email.
+     * All tag operations are eventually consistent; subsequent operations may
+     * not immediately represent all issued operations.
      * </p>
-     *
-     * @param updateDomainContactRequest Container for the necessary
-     *           parameters to execute the UpdateDomainContact service method on
-     *           AmazonRoute53Domains.
      * 
-     * @return The response from the UpdateDomainContact service method, as
-     *         returned by AmazonRoute53Domains.
-     * 
-     * @throws UnsupportedTLDException
+     * @param deleteTagsForDomainRequest
+     *        The DeleteTagsForDomainRequest includes the following elements.
+     * @return Result of the DeleteTagsForDomain operation returned by the
+     *         service.
      * @throws InvalidInputException
-     * @throws DuplicateRequestException
-     * @throws TLDRulesViolationException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
      * @throws OperationLimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
      */
-    public UpdateDomainContactResult updateDomainContact(UpdateDomainContactRequest updateDomainContactRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DeleteTagsForDomainResult deleteTagsForDomain(
+            DeleteTagsForDomainRequest deleteTagsForDomainRequest);
+
+    /**
+     * <p>
+     * This operation disables automatic renewal of domain registration for the
+     * specified domain.
+     * </p>
+     * <note>Caution! Amazon Route 53 doesn't have a manual renewal process, so
+     * if you disable automatic renewal, registration for the domain will not be
+     * renewed when the expiration date passes, and you will lose control of the
+     * domain name.</note>
+     * 
+     * @param disableDomainAutoRenewRequest
+     * @return Result of the DisableDomainAutoRenew operation returned by the
+     *         service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     */
+    DisableDomainAutoRenewResult disableDomainAutoRenew(
+            DisableDomainAutoRenewRequest disableDomainAutoRenewRequest);
+
+    /**
+     * <p>
+     * This operation removes the transfer lock on the domain (specifically the
+     * <code>clientTransferProhibited</code> status) to allow domain transfers.
+     * We recommend you refrain from performing this action unless you intend to
+     * transfer the domain to a different registrar. Successful submission
+     * returns an operation ID that you can use to track the progress and
+     * completion of the action. If the request is not completed successfully,
+     * the domain registrant will be notified by email.
+     * </p>
+     * 
+     * @param disableDomainTransferLockRequest
+     *        The DisableDomainTransferLock request includes the following
+     *        element.
+     * @return Result of the DisableDomainTransferLock operation returned by the
+     *         service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     */
+    DisableDomainTransferLockResult disableDomainTransferLock(
+            DisableDomainTransferLockRequest disableDomainTransferLockRequest);
 
     /**
      * <p>
@@ -154,250 +198,176 @@ public interface AmazonRoute53Domains {
      * renewing your domain registration is billed to your AWS account.
      * </p>
      * <p>
-     * The period during which you can renew a domain name varies by TLD.
-     * For a list of TLDs and their renewal policies, see
-     * <a href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times"> "Renewal, restoration, and deletion times" </a>
-     * on the website for our registrar partner, Gandi. Route 53 requires
-     * that you renew before the end of the renewal period that is listed on
-     * the Gandi website so we can complete processing before the deadline.
+     * The period during which you can renew a domain name varies by TLD. For a
+     * list of TLDs and their renewal policies, see <a href=
+     * "http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times"
+     * >"Renewal, restoration, and deletion times"</a> on the website for our
+     * registrar partner, Gandi. Route 53 requires that you renew before the end
+     * of the renewal period that is listed on the Gandi website so we can
+     * complete processing before the deadline.
      * </p>
-     *
-     * @param enableDomainAutoRenewRequest Container for the necessary
-     *           parameters to execute the EnableDomainAutoRenew service method on
-     *           AmazonRoute53Domains.
      * 
-     * @return The response from the EnableDomainAutoRenew service method, as
-     *         returned by AmazonRoute53Domains.
-     * 
+     * @param enableDomainAutoRenewRequest
+     * @return Result of the EnableDomainAutoRenew operation returned by the
+     *         service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
      * @throws UnsupportedTLDException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Amazon Route 53 does not support this top-level domain.
      */
-    public EnableDomainAutoRenewResult enableDomainAutoRenew(EnableDomainAutoRenewRequest enableDomainAutoRenewRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    EnableDomainAutoRenewResult enableDomainAutoRenew(
+            EnableDomainAutoRenewRequest enableDomainAutoRenewRequest);
 
     /**
      * <p>
-     * This operation returns the operation IDs of operations that are not
-     * yet complete.
+     * This operation sets the transfer lock on the domain (specifically the
+     * <code>clientTransferProhibited</code> status) to prevent domain
+     * transfers. Successful submission returns an operation ID that you can use
+     * to track the progress and completion of the action. If the request is not
+     * completed successfully, the domain registrant will be notified by email.
      * </p>
-     *
-     * @param listOperationsRequest Container for the necessary parameters to
-     *           execute the ListOperations service method on AmazonRoute53Domains.
      * 
-     * @return The response from the ListOperations service method, as
-     *         returned by AmazonRoute53Domains.
-     * 
+     * @param enableDomainTransferLockRequest
+     *        The EnableDomainTransferLock request includes the following
+     *        element.
+     * @return Result of the EnableDomainTransferLock operation returned by the
+     *         service.
      * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
      */
-    public ListOperationsResult listOperations(ListOperationsRequest listOperationsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    EnableDomainTransferLockResult enableDomainTransferLock(
+            EnableDomainTransferLockRequest enableDomainTransferLockRequest);
 
     /**
      * <p>
-     * This operation returns all the domain names registered with Amazon
-     * Route 53 for the current AWS account.
+     * This operation returns detailed information about the domain. The
+     * domain's contact information is also returned as part of the output.
      * </p>
-     *
-     * @param listDomainsRequest Container for the necessary parameters to
-     *           execute the ListDomains service method on AmazonRoute53Domains.
      * 
-     * @return The response from the ListDomains service method, as returned
-     *         by AmazonRoute53Domains.
-     * 
+     * @param getDomainDetailRequest
+     *        The GetDomainDetail request includes the following element.
+     * @return Result of the GetDomainDetail operation returned by the service.
      * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
      */
-    public ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    GetDomainDetailResult getDomainDetail(
+            GetDomainDetailRequest getDomainDetailRequest);
 
     /**
      * <p>
      * This operation returns the current status of an operation that is not
      * completed.
      * </p>
-     *
-     * @param getOperationDetailRequest Container for the necessary
-     *           parameters to execute the GetOperationDetail service method on
-     *           AmazonRoute53Domains.
      * 
-     * @return The response from the GetOperationDetail service method, as
-     *         returned by AmazonRoute53Domains.
-     * 
+     * @param getOperationDetailRequest
+     *        The GetOperationDetail request includes the following element.
+     * @return Result of the GetOperationDetail operation returned by the
+     *         service.
      * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
      */
-    public GetOperationDetailResult getOperationDetail(GetOperationDetailRequest getOperationDetailRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    GetOperationDetailResult getOperationDetail(
+            GetOperationDetailRequest getOperationDetailRequest);
 
     /**
      * <p>
-     * This operation removes the transfer lock on the domain (specifically
-     * the <code>clientTransferProhibited</code> status) to allow domain
-     * transfers. We recommend you refrain from performing this action unless
-     * you intend to transfer the domain to a different registrar. Successful
-     * submission returns an operation ID that you can use to track the
-     * progress and completion of the action. If the request is not completed
-     * successfully, the domain registrant will be notified by email.
+     * This operation returns all the domain names registered with Amazon Route
+     * 53 for the current AWS account.
      * </p>
-     *
-     * @param disableDomainTransferLockRequest Container for the necessary
-     *           parameters to execute the DisableDomainTransferLock service method on
-     *           AmazonRoute53Domains.
      * 
-     * @return The response from the DisableDomainTransferLock service
-     *         method, as returned by AmazonRoute53Domains.
-     * 
-     * @throws UnsupportedTLDException
+     * @param listDomainsRequest
+     *        The ListDomains request includes the following elements.
+     * @return Result of the ListDomains operation returned by the service.
      * @throws InvalidInputException
-     * @throws DuplicateRequestException
-     * @throws TLDRulesViolationException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     */
+    ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest);
+
+    /**
+     * Simplified method form for invoking the ListDomains operation.
+     *
+     * @see #listDomains(ListDomainsRequest)
+     */
+    ListDomainsResult listDomains();
+
+    /**
+     * <p>
+     * This operation returns the operation IDs of operations that are not yet
+     * complete.
+     * </p>
+     * 
+     * @param listOperationsRequest
+     *        The ListOperations request includes the following elements.
+     * @return Result of the ListOperations operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     */
+    ListOperationsResult listOperations(
+            ListOperationsRequest listOperationsRequest);
+
+    /**
+     * Simplified method form for invoking the ListOperations operation.
+     *
+     * @see #listOperations(ListOperationsRequest)
+     */
+    ListOperationsResult listOperations();
+
+    /**
+     * <p>
+     * This operation returns all of the tags that are associated with the
+     * specified domain.
+     * </p>
+     * <p>
+     * All tag operations are eventually consistent; subsequent operations may
+     * not immediately represent all issued operations.
+     * </p>
+     * 
+     * @param listTagsForDomainRequest
+     *        The ListTagsForDomainRequest includes the following elements.
+     * @return Result of the ListTagsForDomain operation returned by the
+     *         service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
      * @throws OperationLimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DisableDomainTransferLockResult disableDomainTransferLock(DisableDomainTransferLockRequest disableDomainTransferLockRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation sets the transfer lock on the domain (specifically the
-     * <code>clientTransferProhibited</code> status) to prevent domain
-     * transfers. Successful submission returns an operation ID that you can
-     * use to track the progress and completion of the action. If the request
-     * is not completed successfully, the domain registrant will be notified
-     * by email.
-     * </p>
-     *
-     * @param enableDomainTransferLockRequest Container for the necessary
-     *           parameters to execute the EnableDomainTransferLock service method on
-     *           AmazonRoute53Domains.
-     * 
-     * @return The response from the EnableDomainTransferLock service method,
-     *         as returned by AmazonRoute53Domains.
-     * 
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
      * @throws UnsupportedTLDException
-     * @throws InvalidInputException
-     * @throws DuplicateRequestException
-     * @throws TLDRulesViolationException
-     * @throws OperationLimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Amazon Route 53 does not support this top-level domain.
      */
-    public EnableDomainTransferLockResult enableDomainTransferLock(EnableDomainTransferLockRequest enableDomainTransferLockRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation replaces the current set of name servers for the
-     * domain with the specified set of name servers. If you use Amazon Route
-     * 53 as your DNS service, specify the four name servers in the
-     * delegation set for the hosted zone for the domain.
-     * </p>
-     * <p>
-     * If successful, this operation returns an operation ID that you can
-     * use to track the progress and completion of the action. If the request
-     * is not completed successfully, the domain registrant will be notified
-     * by email.
-     * </p>
-     *
-     * @param updateDomainNameserversRequest Container for the necessary
-     *           parameters to execute the UpdateDomainNameservers service method on
-     *           AmazonRoute53Domains.
-     * 
-     * @return The response from the UpdateDomainNameservers service method,
-     *         as returned by AmazonRoute53Domains.
-     * 
-     * @throws UnsupportedTLDException
-     * @throws InvalidInputException
-     * @throws DuplicateRequestException
-     * @throws TLDRulesViolationException
-     * @throws OperationLimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateDomainNameserversResult updateDomainNameservers(UpdateDomainNameserversRequest updateDomainNameserversRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation disables automatic renewal of domain registration for
-     * the specified domain.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Caution! Amazon Route 53 doesn't have a manual renewal
-     * process, so if you disable automatic renewal, registration for the
-     * domain will not be renewed when the expiration date passes, and you
-     * will lose control of the domain name.
-     * </p>
-     *
-     * @param disableDomainAutoRenewRequest Container for the necessary
-     *           parameters to execute the DisableDomainAutoRenew service method on
-     *           AmazonRoute53Domains.
-     * 
-     * @return The response from the DisableDomainAutoRenew service method,
-     *         as returned by AmazonRoute53Domains.
-     * 
-     * @throws UnsupportedTLDException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DisableDomainAutoRenewResult disableDomainAutoRenew(DisableDomainAutoRenewRequest disableDomainAutoRenewRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListTagsForDomainResult listTagsForDomain(
+            ListTagsForDomainRequest listTagsForDomainRequest);
 
     /**
      * <p>
@@ -408,205 +378,172 @@ public interface AmazonRoute53Domains {
      * <p>
      * When you register a domain, Amazon Route 53 does the following:
      * </p>
-     * 
      * <ul>
-     * <li>Creates a Amazon Route 53 hosted zone that has the same name as
-     * the domain. Amazon Route 53 assigns four name servers to your hosted
-     * zone and automatically updates your domain registration with the names
-     * of these name servers.</li>
+     * <li>Creates a Amazon Route 53 hosted zone that has the same name as the
+     * domain. Amazon Route 53 assigns four name servers to your hosted zone and
+     * automatically updates your domain registration with the names of these
+     * name servers.</li>
      * <li>Enables autorenew, so your domain registration will renew
-     * automatically each year. We'll notify you in advance of the renewal
-     * date so you can choose whether to renew the registration.</li>
+     * automatically each year. We'll notify you in advance of the renewal date
+     * so you can choose whether to renew the registration.</li>
      * <li>Optionally enables privacy protection, so WHOIS queries return
      * contact information for our registrar partner, Gandi, instead of the
      * information you entered for registrant, admin, and tech contacts.</li>
-     * <li>If registration is successful, returns an operation ID that you
-     * can use to track the progress and completion of the action. If the
-     * request is not completed successfully, the domain registrant is
-     * notified by email.</li>
-     * <li>Charges your AWS account an amount based on the top-level domain.
-     * For more information, see
-     * <a href="http://aws.amazon.com/route53/pricing/"> Amazon Route 53 Pricing </a>
-     * .</li>
-     * 
+     * <li>If registration is successful, returns an operation ID that you can
+     * use to track the progress and completion of the action. If the request is
+     * not completed successfully, the domain registrant is notified by email.</li>
+     * <li>Charges your AWS account an amount based on the top-level domain. For
+     * more information, see <a
+     * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * Pricing</a>.</li>
      * </ul>
-     *
-     * @param registerDomainRequest Container for the necessary parameters to
-     *           execute the RegisterDomain service method on AmazonRoute53Domains.
      * 
-     * @return The response from the RegisterDomain service method, as
-     *         returned by AmazonRoute53Domains.
-     * 
-     * @throws UnsupportedTLDException
+     * @param registerDomainRequest
+     *        The RegisterDomain request includes the following elements.
+     * @return Result of the RegisterDomain operation returned by the service.
      * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
      * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
      * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
      * @throws DomainLimitExceededException
+     *         The number of domains has exceeded the allowed threshold for the
+     *         account.
      * @throws OperationLimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
      */
-    public RegisterDomainResult registerDomain(RegisterDomainRequest registerDomainRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    RegisterDomainResult registerDomain(
+            RegisterDomainRequest registerDomainRequest);
 
     /**
      * <p>
-     * This operation returns detailed information about the domain. The
-     * domain's contact information is also returned as part of the output.
+     * This operation returns the AuthCode for the domain. To transfer a domain
+     * to another registrar, you provide this value to the new registrar.
      * </p>
-     *
-     * @param getDomainDetailRequest Container for the necessary parameters
-     *           to execute the GetDomainDetail service method on AmazonRoute53Domains.
      * 
-     * @return The response from the GetDomainDetail service method, as
-     *         returned by AmazonRoute53Domains.
-     * 
-     * @throws UnsupportedTLDException
+     * @param retrieveDomainAuthCodeRequest
+     *        The RetrieveDomainAuthCode request includes the following element.
+     * @return Result of the RetrieveDomainAuthCode operation returned by the
+     *         service.
      * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
      */
-    public GetDomainDetailResult getDomainDetail(GetDomainDetailRequest getDomainDetailRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    RetrieveDomainAuthCodeResult retrieveDomainAuthCode(
+            RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest);
 
     /**
      * <p>
-     * This operation adds or updates tags for a specified domain.
+     * This operation transfers a domain from another registrar to Amazon Route
+     * 53. When the transfer is complete, the domain is registered with the AWS
+     * registrar partner, Gandi.
      * </p>
      * <p>
-     * All tag operations are eventually consistent; subsequent operations
-     * may not immediately represent all issued operations.
+     * For transfer requirements, a detailed procedure, and information about
+     * viewing the status of a domain transfer, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html"
+     * >Transferring Registration for a Domain to Amazon Route 53</a> in the
+     * Amazon Route 53 Developer Guide.
      * </p>
-     *
-     * @param updateTagsForDomainRequest Container for the necessary
-     *           parameters to execute the UpdateTagsForDomain service method on
-     *           AmazonRoute53Domains.
+     * <p>
+     * If the registrar for your domain is also the DNS service provider for the
+     * domain, we highly recommend that you consider transferring your DNS
+     * service to Amazon Route 53 or to another DNS service provider before you
+     * transfer your registration. Some registrars provide free DNS service when
+     * you purchase a domain registration. When you transfer the registration,
+     * the previous registrar will not renew your domain registration and could
+     * end your DNS service at any time.
+     * </p>
+     * <note>Caution! If the registrar for your domain is also the DNS service
+     * provider for the domain and you don't transfer DNS service to another
+     * provider, your website, email, and the web applications associated with
+     * the domain might become unavailable.</note>
+     * <p>
+     * If the transfer is successful, this method returns an operation ID that
+     * you can use to track the progress and completion of the action. If the
+     * transfer doesn't complete successfully, the domain registrant will be
+     * notified by email.
+     * </p>
      * 
-     * @return The response from the UpdateTagsForDomain service method, as
-     *         returned by AmazonRoute53Domains.
-     * 
-     * @throws UnsupportedTLDException
+     * @param transferDomainRequest
+     *        The TransferDomain request includes the following elements.
+     * @return Result of the TransferDomain operation returned by the service.
      * @throws InvalidInputException
-     * @throws OperationLimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateTagsForDomainResult updateTagsForDomain(UpdateTagsForDomainRequest updateTagsForDomainRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation returns the AuthCode for the domain. To transfer a
-     * domain to another registrar, you provide this value to the new
-     * registrar.
-     * </p>
-     *
-     * @param retrieveDomainAuthCodeRequest Container for the necessary
-     *           parameters to execute the RetrieveDomainAuthCode service method on
-     *           AmazonRoute53Domains.
-     * 
-     * @return The response from the RetrieveDomainAuthCode service method,
-     *         as returned by AmazonRoute53Domains.
-     * 
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
      * @throws UnsupportedTLDException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RetrieveDomainAuthCodeResult retrieveDomainAuthCode(RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation transfers a domain from another registrar to Amazon
-     * Route 53. When the transfer is complete, the domain is registered with
-     * the AWS registrar partner, Gandi.
-     * </p>
-     * <p>
-     * For transfer requirements, a detailed procedure, and information
-     * about viewing the status of a domain transfer, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html"> Transferring Registration for a Domain to Amazon Route 53 </a>
-     * in the Amazon Route 53 Developer Guide.
-     * </p>
-     * <p>
-     * If the registrar for your domain is also the DNS service provider for
-     * the domain, we highly recommend that you consider transferring your
-     * DNS service to Amazon Route 53 or to another DNS service provider
-     * before you transfer your registration. Some registrars provide free
-     * DNS service when you purchase a domain registration. When you transfer
-     * the registration, the previous registrar will not renew your domain
-     * registration and could end your DNS service at any time.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Caution! If the registrar for your domain is also the DNS
-     * service provider for the domain and you don't transfer DNS service to
-     * another provider, your website, email, and the web applications
-     * associated with the domain might become unavailable.
-     * </p>
-     * <p>
-     * If the transfer is successful, this method returns an operation ID
-     * that you can use to track the progress and completion of the action.
-     * If the transfer doesn't complete successfully, the domain registrant
-     * will be notified by email.
-     * </p>
-     *
-     * @param transferDomainRequest Container for the necessary parameters to
-     *           execute the TransferDomain service method on AmazonRoute53Domains.
-     * 
-     * @return The response from the TransferDomain service method, as
-     *         returned by AmazonRoute53Domains.
-     * 
-     * @throws UnsupportedTLDException
-     * @throws InvalidInputException
+     *         Amazon Route 53 does not support this top-level domain.
      * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
      * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
      * @throws DomainLimitExceededException
+     *         The number of domains has exceeded the allowed threshold for the
+     *         account.
      * @throws OperationLimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
      */
-    public TransferDomainResult transferDomain(TransferDomainRequest transferDomainRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    TransferDomainResult transferDomain(
+            TransferDomainRequest transferDomainRequest);
 
     /**
      * <p>
-     * This operation updates the specified domain contact's privacy
-     * setting. When the privacy option is enabled, personal information such
-     * as postal or email address is hidden from the results of a public
-     * WHOIS query. The privacy services are provided by the AWS registrar,
-     * Gandi. For more information, see the
-     * <a href="http://www.gandi.net/domain/whois/?currency=USD&lang=en"> Gandi privacy features </a>
-     * .
+     * This operation updates the contact information for a particular domain.
+     * Information for at least one contact (registrant, administrator, or
+     * technical) must be supplied for update.
+     * </p>
+     * <p>
+     * If the update is successful, this method returns an operation ID that you
+     * can use to track the progress and completion of the action. If the
+     * request is not completed successfully, the domain registrant will be
+     * notified by email.
+     * </p>
+     * 
+     * @param updateDomainContactRequest
+     *        The UpdateDomainContact request includes the following elements.
+     * @return Result of the UpdateDomainContact operation returned by the
+     *         service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     */
+    UpdateDomainContactResult updateDomainContact(
+            UpdateDomainContactRequest updateDomainContactRequest);
+
+    /**
+     * <p>
+     * This operation updates the specified domain contact's privacy setting.
+     * When the privacy option is enabled, personal information such as postal
+     * or email address is hidden from the results of a public WHOIS query. The
+     * privacy services are provided by the AWS registrar, Gandi. For more
+     * information, see the <a
+     * href="http://www.gandi.net/domain/whois/?currency=USD&amp;amp;lang=en"
+     * >Gandi privacy features</a>.
      * </p>
      * <p>
      * This operation only affects the privacy of the specified contact type
@@ -615,136 +552,93 @@ public interface AmazonRoute53Domains {
      * progress and completion of the action. If the request is not completed
      * successfully, the domain registrant will be notified by email.
      * </p>
-     *
-     * @param updateDomainContactPrivacyRequest Container for the necessary
-     *           parameters to execute the UpdateDomainContactPrivacy service method on
-     *           AmazonRoute53Domains.
      * 
-     * @return The response from the UpdateDomainContactPrivacy service
-     *         method, as returned by AmazonRoute53Domains.
-     * 
-     * @throws UnsupportedTLDException
+     * @param updateDomainContactPrivacyRequest
+     *        The UpdateDomainContactPrivacy request includes the following
+     *        elements.
+     * @return Result of the UpdateDomainContactPrivacy operation returned by
+     *         the service.
      * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
      * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
      * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
      * @throws OperationLimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateDomainContactPrivacyResult updateDomainContactPrivacy(UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation returns all of the tags that are associated with the
-     * specified domain.
-     * </p>
-     * <p>
-     * All tag operations are eventually consistent; subsequent operations
-     * may not immediately represent all issued operations.
-     * </p>
-     *
-     * @param listTagsForDomainRequest Container for the necessary parameters
-     *           to execute the ListTagsForDomain service method on
-     *           AmazonRoute53Domains.
-     * 
-     * @return The response from the ListTagsForDomain service method, as
-     *         returned by AmazonRoute53Domains.
-     * 
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
      * @throws UnsupportedTLDException
-     * @throws InvalidInputException
-     * @throws OperationLimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Amazon Route 53 does not support this top-level domain.
      */
-    public ListTagsForDomainResult listTagsForDomain(ListTagsForDomainRequest listTagsForDomainRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    UpdateDomainContactPrivacyResult updateDomainContactPrivacy(
+            UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest);
 
     /**
      * <p>
-     * This operation deletes the specified tags for a domain.
+     * This operation replaces the current set of name servers for the domain
+     * with the specified set of name servers. If you use Amazon Route 53 as
+     * your DNS service, specify the four name servers in the delegation set for
+     * the hosted zone for the domain.
      * </p>
      * <p>
-     * All tag operations are eventually consistent; subsequent operations
-     * may not immediately represent all issued operations.
+     * If successful, this operation returns an operation ID that you can use to
+     * track the progress and completion of the action. If the request is not
+     * completed successfully, the domain registrant will be notified by email.
      * </p>
-     *
-     * @param deleteTagsForDomainRequest Container for the necessary
-     *           parameters to execute the DeleteTagsForDomain service method on
-     *           AmazonRoute53Domains.
      * 
-     * @return The response from the DeleteTagsForDomain service method, as
-     *         returned by AmazonRoute53Domains.
-     * 
+     * @param updateDomainNameserversRequest
+     *        The UpdateDomainNameserver request includes the following
+     *        elements.
+     * @return Result of the UpdateDomainNameservers operation returned by the
+     *         service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
      * @throws UnsupportedTLDException
-     * @throws InvalidInputException
-     * @throws OperationLimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Amazon Route 53 does not support this top-level domain.
      */
-    public DeleteTagsForDomainResult deleteTagsForDomain(DeleteTagsForDomainRequest deleteTagsForDomainRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    UpdateDomainNameserversResult updateDomainNameservers(
+            UpdateDomainNameserversRequest updateDomainNameserversRequest);
 
     /**
      * <p>
-     * This operation returns the operation IDs of operations that are not
-     * yet complete.
+     * This operation adds or updates tags for a specified domain.
      * </p>
-     * 
-     * @return The response from the ListOperations service method, as
-     *         returned by AmazonRoute53Domains.
-     * 
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListOperationsResult listOperations() throws AmazonServiceException, AmazonClientException;
-    
-    /**
      * <p>
-     * This operation returns all the domain names registered with Amazon
-     * Route 53 for the current AWS account.
+     * All tag operations are eventually consistent; subsequent operations may
+     * not immediately represent all issued operations.
      * </p>
      * 
-     * @return The response from the ListDomains service method, as returned
-     *         by AmazonRoute53Domains.
-     * 
+     * @param updateTagsForDomainRequest
+     *        The UpdateTagsForDomainRequest includes the following elements.
+     * @return Result of the UpdateTagsForDomain operation returned by the
+     *         service.
      * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
      */
-    public ListDomainsResult listDomains() throws AmazonServiceException, AmazonClientException;
-    
+    UpdateTagsForDomainResult updateTagsForDomain(
+            UpdateTagsForDomainRequest updateTagsForDomainRequest);
+
     /**
      * Shuts down this client object, releasing any resources that might be held
      * open. This is an optional method, and callers are not expected to call
@@ -752,24 +646,25 @@ public interface AmazonRoute53Domains {
      * client has been shutdown, it should not be used to make any more
      * requests.
      */
-    public void shutdown();
-    
+    void shutdown();
+
     /**
-     * Returns additional metadata for a previously executed successful request, typically used for
-     * debugging issues where a service isn't acting as expected.  This data isn't considered part
-     * of the result data returned by an operation, so it's available through this separate,
-     * diagnostic interface.
+     * Returns additional metadata for a previously executed successful request,
+     * typically used for debugging issues where a service isn't acting as
+     * expected. This data isn't considered part of the result data returned by
+     * an operation, so it's available through this separate, diagnostic
+     * interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you need to access
-     * this extra diagnostic information for an executed request, you should use this method
-     * to retrieve it as soon as possible after executing a request.
+     * Response metadata is only cached for a limited period of time, so if you
+     * need to access this extra diagnostic information for an executed request,
+     * you should use this method to retrieve it as soon as possible after
+     * executing a request.
      *
      * @param request
-     *            The originally executed request.
+     *        The originally executed request.
      *
      * @return The response metadata for the specified request, or null if none
      *         is available.
      */
-    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+    ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 }
-        

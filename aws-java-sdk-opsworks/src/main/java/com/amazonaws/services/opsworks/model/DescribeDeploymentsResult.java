@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
@@ -24,89 +25,93 @@ import java.io.Serializable;
 public class DescribeDeploymentsResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * An array of <code>Deployment</code> objects that describe the
      * deployments.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Deployment> deployments;
+    private com.amazonaws.internal.SdkInternalList<Deployment> deployments;
 
     /**
+     * <p>
      * An array of <code>Deployment</code> objects that describe the
      * deployments.
-     *
+     * </p>
+     * 
      * @return An array of <code>Deployment</code> objects that describe the
      *         deployments.
      */
     public java.util.List<Deployment> getDeployments() {
         if (deployments == null) {
-              deployments = new com.amazonaws.internal.ListWithAutoConstructFlag<Deployment>();
-              deployments.setAutoConstruct(true);
+            deployments = new com.amazonaws.internal.SdkInternalList<Deployment>();
         }
         return deployments;
     }
-    
+
     /**
+     * <p>
      * An array of <code>Deployment</code> objects that describe the
      * deployments.
-     *
-     * @param deployments An array of <code>Deployment</code> objects that describe the
-     *         deployments.
+     * </p>
+     * 
+     * @param deployments
+     *        An array of <code>Deployment</code> objects that describe the
+     *        deployments.
      */
     public void setDeployments(java.util.Collection<Deployment> deployments) {
         if (deployments == null) {
             this.deployments = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Deployment> deploymentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Deployment>(deployments.size());
-        deploymentsCopy.addAll(deployments);
-        this.deployments = deploymentsCopy;
+
+        this.deployments = new com.amazonaws.internal.SdkInternalList<Deployment>(
+                deployments);
     }
-    
+
     /**
+     * <p>
      * An array of <code>Deployment</code> objects that describe the
      * deployments.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDeployments(java.util.Collection)} or {@link
-     * #withDeployments(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param deployments An array of <code>Deployment</code> objects that describe the
-     *         deployments.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setDeployments(java.util.Collection)} or
+     * {@link #withDeployments(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param deployments
+     *        An array of <code>Deployment</code> objects that describe the
+     *        deployments.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeDeploymentsResult withDeployments(Deployment... deployments) {
-        if (getDeployments() == null) setDeployments(new java.util.ArrayList<Deployment>(deployments.length));
-        for (Deployment value : deployments) {
-            getDeployments().add(value);
+        if (this.deployments == null) {
+            setDeployments(new com.amazonaws.internal.SdkInternalList<Deployment>(
+                    deployments.length));
+        }
+        for (Deployment ele : deployments) {
+            this.deployments.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * An array of <code>Deployment</code> objects that describe the
      * deployments.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param deployments An array of <code>Deployment</code> objects that describe the
-     *         deployments.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param deployments
+     *        An array of <code>Deployment</code> objects that describe the
+     *        deployments.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeDeploymentsResult withDeployments(java.util.Collection<Deployment> deployments) {
-        if (deployments == null) {
-            this.deployments = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Deployment> deploymentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Deployment>(deployments.size());
-            deploymentsCopy.addAll(deployments);
-            this.deployments = deploymentsCopy;
-        }
-
+    public DescribeDeploymentsResult withDeployments(
+            java.util.Collection<Deployment> deployments) {
+        setDeployments(deployments);
         return this;
     }
 
@@ -122,46 +127,49 @@ public class DescribeDeploymentsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDeployments() != null) sb.append("Deployments: " + getDeployments() );
+        if (getDeployments() != null)
+            sb.append("Deployments: " + getDeployments());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeDeploymentsResult == false)
+            return false;
+        DescribeDeploymentsResult other = (DescribeDeploymentsResult) obj;
+        if (other.getDeployments() == null ^ this.getDeployments() == null)
+            return false;
+        if (other.getDeployments() != null
+                && other.getDeployments().equals(this.getDeployments()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDeployments() == null) ? 0 : getDeployments().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDeployments() == null) ? 0 : getDeployments().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeDeploymentsResult == false) return false;
-        DescribeDeploymentsResult other = (DescribeDeploymentsResult)obj;
-        
-        if (other.getDeployments() == null ^ this.getDeployments() == null) return false;
-        if (other.getDeployments() != null && other.getDeployments().equals(this.getDeployments()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeDeploymentsResult clone() {
         try {
             return (DescribeDeploymentsResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

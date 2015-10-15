@@ -45,9 +45,21 @@ public class GrantListEntryJsonUnmarshaller implements Unmarshaller<GrantListEnt
             if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("KeyId", targetDepth)) {
+                    context.nextToken();
+                    grantListEntry.setKeyId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("GrantId", targetDepth)) {
                     context.nextToken();
                     grantListEntry.setGrantId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    grantListEntry.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CreationDate", targetDepth)) {
+                    context.nextToken();
+                    grantListEntry.setCreationDate(DateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GranteePrincipal", targetDepth)) {
                     context.nextToken();

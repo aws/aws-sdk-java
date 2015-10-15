@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
@@ -24,205 +25,205 @@ import java.io.Serializable;
 public class QueryObjectsResult implements Serializable, Cloneable {
 
     /**
-     * The identifiers that match the query selectors.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> ids;
-
-    /**
-     * The starting point for the next page of results. To view the next page
-     * of results, call <code>QueryObjects</code> again with this marker
-     * value. If the value is null, there are no more results.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The identifiers that match the query selectors.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> ids;
+    /**
+     * <p>
+     * The starting point for the next page of results. To view the next page of
+     * results, call <code>QueryObjects</code> again with this marker value. If
+     * the value is null, there are no more results.
+     * </p>
      */
     private String marker;
-
     /**
+     * <p>
      * Indicates whether there are more results that can be obtained by a
      * subsequent call.
+     * </p>
      */
     private Boolean hasMoreResults;
 
     /**
+     * <p>
      * The identifiers that match the query selectors.
-     *
+     * </p>
+     * 
      * @return The identifiers that match the query selectors.
      */
     public java.util.List<String> getIds() {
         if (ids == null) {
-              ids = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              ids.setAutoConstruct(true);
+            ids = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return ids;
     }
-    
+
     /**
+     * <p>
      * The identifiers that match the query selectors.
-     *
-     * @param ids The identifiers that match the query selectors.
+     * </p>
+     * 
+     * @param ids
+     *        The identifiers that match the query selectors.
      */
     public void setIds(java.util.Collection<String> ids) {
         if (ids == null) {
             this.ids = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> idsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ids.size());
-        idsCopy.addAll(ids);
-        this.ids = idsCopy;
+
+        this.ids = new com.amazonaws.internal.SdkInternalList<String>(ids);
     }
-    
+
     /**
+     * <p>
      * The identifiers that match the query selectors.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setIds(java.util.Collection)} or {@link
-     * #withIds(java.util.Collection)} if you want to override the existing
-     * values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param ids The identifiers that match the query selectors.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setIds(java.util.Collection)} or
+     * {@link #withIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param ids
+     *        The identifiers that match the query selectors.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public QueryObjectsResult withIds(String... ids) {
-        if (getIds() == null) setIds(new java.util.ArrayList<String>(ids.length));
-        for (String value : ids) {
-            getIds().add(value);
+        if (this.ids == null) {
+            setIds(new com.amazonaws.internal.SdkInternalList<String>(
+                    ids.length));
+        }
+        for (String ele : ids) {
+            this.ids.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The identifiers that match the query selectors.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param ids The identifiers that match the query selectors.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifiers that match the query selectors.
+     * </p>
+     * 
+     * @param ids
+     *        The identifiers that match the query selectors.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public QueryObjectsResult withIds(java.util.Collection<String> ids) {
-        if (ids == null) {
-            this.ids = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> idsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ids.size());
-            idsCopy.addAll(ids);
-            this.ids = idsCopy;
-        }
-
+        setIds(ids);
         return this;
     }
 
     /**
-     * The starting point for the next page of results. To view the next page
-     * of results, call <code>QueryObjects</code> again with this marker
-     * value. If the value is null, there are no more results.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The starting point for the next page of results. To view the next page
-     *         of results, call <code>QueryObjects</code> again with this marker
-     *         value. If the value is null, there are no more results.
-     */
-    public String getMarker() {
-        return marker;
-    }
-    
-    /**
-     * The starting point for the next page of results. To view the next page
-     * of results, call <code>QueryObjects</code> again with this marker
-     * value. If the value is null, there are no more results.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param marker The starting point for the next page of results. To view the next page
-     *         of results, call <code>QueryObjects</code> again with this marker
-     *         value. If the value is null, there are no more results.
+     * The starting point for the next page of results. To view the next page of
+     * results, call <code>QueryObjects</code> again with this marker value. If
+     * the value is null, there are no more results.
+     * </p>
+     * 
+     * @param marker
+     *        The starting point for the next page of results. To view the next
+     *        page of results, call <code>QueryObjects</code> again with this
+     *        marker value. If the value is null, there are no more results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
-    
+
     /**
-     * The starting point for the next page of results. To view the next page
-     * of results, call <code>QueryObjects</code> again with this marker
-     * value. If the value is null, there are no more results.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The starting point for the next page of results. To view the next page of
+     * results, call <code>QueryObjects</code> again with this marker value. If
+     * the value is null, there are no more results.
+     * </p>
+     * 
+     * @return The starting point for the next page of results. To view the next
+     *         page of results, call <code>QueryObjects</code> again with this
+     *         marker value. If the value is null, there are no more results.
+     */
+    public String getMarker() {
+        return this.marker;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param marker The starting point for the next page of results. To view the next page
-     *         of results, call <code>QueryObjects</code> again with this marker
-     *         value. If the value is null, there are no more results.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The starting point for the next page of results. To view the next page of
+     * results, call <code>QueryObjects</code> again with this marker value. If
+     * the value is null, there are no more results.
+     * </p>
+     * 
+     * @param marker
+     *        The starting point for the next page of results. To view the next
+     *        page of results, call <code>QueryObjects</code> again with this
+     *        marker value. If the value is null, there are no more results.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public QueryObjectsResult withMarker(String marker) {
-        this.marker = marker;
+        setMarker(marker);
         return this;
     }
 
     /**
+     * <p>
      * Indicates whether there are more results that can be obtained by a
      * subsequent call.
-     *
-     * @return Indicates whether there are more results that can be obtained by a
-     *         subsequent call.
-     */
-    public Boolean isHasMoreResults() {
-        return hasMoreResults;
-    }
-    
-    /**
-     * Indicates whether there are more results that can be obtained by a
-     * subsequent call.
-     *
-     * @param hasMoreResults Indicates whether there are more results that can be obtained by a
-     *         subsequent call.
+     * </p>
+     * 
+     * @param hasMoreResults
+     *        Indicates whether there are more results that can be obtained by a
+     *        subsequent call.
      */
     public void setHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;
     }
-    
+
     /**
+     * <p>
      * Indicates whether there are more results that can be obtained by a
      * subsequent call.
+     * </p>
+     * 
+     * @return Indicates whether there are more results that can be obtained by
+     *         a subsequent call.
+     */
+    public Boolean getHasMoreResults() {
+        return this.hasMoreResults;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param hasMoreResults Indicates whether there are more results that can be obtained by a
-     *         subsequent call.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Indicates whether there are more results that can be obtained by a
+     * subsequent call.
+     * </p>
+     * 
+     * @param hasMoreResults
+     *        Indicates whether there are more results that can be obtained by a
+     *        subsequent call.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public QueryObjectsResult withHasMoreResults(Boolean hasMoreResults) {
-        this.hasMoreResults = hasMoreResults;
+        setHasMoreResults(hasMoreResults);
         return this;
     }
 
     /**
+     * <p>
      * Indicates whether there are more results that can be obtained by a
      * subsequent call.
-     *
-     * @return Indicates whether there are more results that can be obtained by a
-     *         subsequent call.
+     * </p>
+     * 
+     * @return Indicates whether there are more results that can be obtained by
+     *         a subsequent call.
      */
-    public Boolean getHasMoreResults() {
-        return hasMoreResults;
+    public Boolean isHasMoreResults() {
+        return this.hasMoreResults;
     }
 
     /**
@@ -237,54 +238,69 @@ public class QueryObjectsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIds() != null) sb.append("Ids: " + getIds() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
-        if (isHasMoreResults() != null) sb.append("HasMoreResults: " + isHasMoreResults() );
+        if (getIds() != null)
+            sb.append("Ids: " + getIds() + ",");
+        if (getMarker() != null)
+            sb.append("Marker: " + getMarker() + ",");
+        if (getHasMoreResults() != null)
+            sb.append("HasMoreResults: " + getHasMoreResults());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof QueryObjectsResult == false)
+            return false;
+        QueryObjectsResult other = (QueryObjectsResult) obj;
+        if (other.getIds() == null ^ this.getIds() == null)
+            return false;
+        if (other.getIds() != null
+                && other.getIds().equals(this.getIds()) == false)
+            return false;
+        if (other.getMarker() == null ^ this.getMarker() == null)
+            return false;
+        if (other.getMarker() != null
+                && other.getMarker().equals(this.getMarker()) == false)
+            return false;
+        if (other.getHasMoreResults() == null
+                ^ this.getHasMoreResults() == null)
+            return false;
+        if (other.getHasMoreResults() != null
+                && other.getHasMoreResults().equals(this.getHasMoreResults()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getIds() == null) ? 0 : getIds().hashCode()); 
-        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
-        hashCode = prime * hashCode + ((isHasMoreResults() == null) ? 0 : isHasMoreResults().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getIds() == null) ? 0 : getIds().hashCode());
+        hashCode = prime * hashCode
+                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getHasMoreResults() == null) ? 0 : getHasMoreResults()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof QueryObjectsResult == false) return false;
-        QueryObjectsResult other = (QueryObjectsResult)obj;
-        
-        if (other.getIds() == null ^ this.getIds() == null) return false;
-        if (other.getIds() != null && other.getIds().equals(this.getIds()) == false) return false; 
-        if (other.getMarker() == null ^ this.getMarker() == null) return false;
-        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
-        if (other.isHasMoreResults() == null ^ this.isHasMoreResults() == null) return false;
-        if (other.isHasMoreResults() != null && other.isHasMoreResults().equals(this.isHasMoreResults()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public QueryObjectsResult clone() {
         try {
             return (QueryObjectsResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

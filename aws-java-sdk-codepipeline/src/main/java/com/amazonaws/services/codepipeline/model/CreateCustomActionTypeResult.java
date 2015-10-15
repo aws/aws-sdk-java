@@ -27,29 +27,21 @@ public class CreateCustomActionTypeResult implements Serializable, Cloneable {
     private ActionType actionType;
 
     /**
-     * Sets the value of the ActionType property for this object.
-     * 
      * @param actionType
-     *        The new value for the ActionType property for this object.
      */
     public void setActionType(ActionType actionType) {
         this.actionType = actionType;
     }
 
     /**
-     * Returns the value of the ActionType property for this object.
-     * 
-     * @return The value of the ActionType property for this object.
+     * @return
      */
     public ActionType getActionType() {
         return this.actionType;
     }
 
     /**
-     * Sets the value of the ActionType property for this object.
-     * 
      * @param actionType
-     *        The new value for the ActionType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

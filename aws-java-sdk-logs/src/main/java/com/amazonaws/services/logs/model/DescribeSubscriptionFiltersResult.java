@@ -28,9 +28,7 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
     private String nextToken;
 
     /**
-     * Returns the value of the SubscriptionFilters property for this object.
-     * 
-     * @return The value of the SubscriptionFilters property for this object.
+     * @return
      */
     public java.util.List<SubscriptionFilter> getSubscriptionFilters() {
         if (subscriptionFilters == null) {
@@ -40,11 +38,7 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
     }
 
     /**
-     * Sets the value of the SubscriptionFilters property for this object.
-     * 
      * @param subscriptionFilters
-     *        The new value for the SubscriptionFilters property for this
-     *        object.
      */
     public void setSubscriptionFilters(
             java.util.Collection<SubscriptionFilter> subscriptionFilters) {
@@ -58,7 +52,6 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
     }
 
     /**
-     * Sets the value of the SubscriptionFilters property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setSubscriptionFilters(java.util.Collection)} or
@@ -67,8 +60,6 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
      * </p>
      * 
      * @param subscriptionFilters
-     *        The new value for the SubscriptionFilters property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -85,11 +76,7 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
     }
 
     /**
-     * Sets the value of the SubscriptionFilters property for this object.
-     * 
      * @param subscriptionFilters
-     *        The new value for the SubscriptionFilters property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -100,29 +87,21 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
     }
 
     /**
-     * Sets the value of the NextToken property for this object.
-     * 
      * @param nextToken
-     *        The new value for the NextToken property for this object.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
-     * Returns the value of the NextToken property for this object.
-     * 
-     * @return The value of the NextToken property for this object.
+     * @return
      */
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
-     * Sets the value of the NextToken property for this object.
-     * 
      * @param nextToken
-     *        The new value for the NextToken property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

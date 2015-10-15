@@ -27,29 +27,21 @@ public class GetProjectResult implements Serializable, Cloneable {
     private Project project;
 
     /**
-     * Sets the value of the Project property for this object.
-     * 
      * @param project
-     *        The new value for the Project property for this object.
      */
     public void setProject(Project project) {
         this.project = project;
     }
 
     /**
-     * Returns the value of the Project property for this object.
-     * 
-     * @return The value of the Project property for this object.
+     * @return
      */
     public Project getProject() {
         return this.project;
     }
 
     /**
-     * Sets the value of the Project property for this object.
-     * 
      * @param project
-     *        The new value for the Project property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

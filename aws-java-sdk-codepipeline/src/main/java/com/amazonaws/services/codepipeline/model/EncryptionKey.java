@@ -27,29 +27,21 @@ public class EncryptionKey implements Serializable, Cloneable {
     private String type;
 
     /**
-     * Sets the value of the Id property for this object.
-     * 
      * @param id
-     *        The new value for the Id property for this object.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * Returns the value of the Id property for this object.
-     * 
-     * @return The value of the Id property for this object.
+     * @return
      */
     public String getId() {
         return this.id;
     }
 
     /**
-     * Sets the value of the Id property for this object.
-     * 
      * @param id
-     *        The new value for the Id property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -59,10 +51,7 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Type property for this object.
-     * 
      * @param type
-     *        The new value for the Type property for this object.
      * @see EncryptionKeyType
      */
     public void setType(String type) {
@@ -70,9 +59,7 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the Type property for this object.
-     * 
-     * @return The value of the Type property for this object.
+     * @return
      * @see EncryptionKeyType
      */
     public String getType() {
@@ -80,10 +67,7 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Type property for this object.
-     * 
      * @param type
-     *        The new value for the Type property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EncryptionKeyType
@@ -94,10 +78,7 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Type property for this object.
-     * 
      * @param type
-     *        The new value for the Type property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EncryptionKeyType
@@ -107,10 +88,7 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Type property for this object.
-     * 
      * @param type
-     *        The new value for the Type property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EncryptionKeyType

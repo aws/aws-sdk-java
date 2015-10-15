@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Describe Stacks Result JSON Unmarshaller
+ * DescribeStacksResult JSON Unmarshaller
  */
-public class DescribeStacksResultJsonUnmarshaller implements Unmarshaller<DescribeStacksResult, JsonUnmarshallerContext> {
+public class DescribeStacksResultJsonUnmarshaller implements
+        Unmarshaller<DescribeStacksResult, JsonUnmarshallerContext> {
 
-    public DescribeStacksResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public DescribeStacksResult unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         DescribeStacksResult describeStacksResult = new DescribeStacksResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,33 +40,41 @@ public class DescribeStacksResultJsonUnmarshaller implements Unmarshaller<Descri
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Stacks", targetDepth)) {
                     context.nextToken();
-                    describeStacksResult.setStacks(new ListUnmarshaller<Stack>(StackJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeStacksResult.setStacks(new ListUnmarshaller<Stack>(
+                            StackJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return describeStacksResult;
     }
 
     private static DescribeStacksResultJsonUnmarshaller instance;
+
     public static DescribeStacksResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new DescribeStacksResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new DescribeStacksResultJsonUnmarshaller();
         return instance;
     }
 }
-    

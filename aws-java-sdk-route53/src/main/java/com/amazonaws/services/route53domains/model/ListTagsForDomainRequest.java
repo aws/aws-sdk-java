@@ -1,89 +1,73 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.route53domains.AmazonRoute53Domains#listTagsForDomain(ListTagsForDomainRequest) ListTagsForDomain operation}.
  * <p>
- * This operation returns all of the tags that are associated with the
- * specified domain.
+ * The ListTagsForDomainRequest includes the following elements.
  * </p>
- * <p>
- * All tag operations are eventually consistent; subsequent operations
- * may not immediately represent all issued operations.
- * </p>
- *
- * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#listTagsForDomain(ListTagsForDomainRequest)
  */
-public class ListTagsForDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class ListTagsForDomainRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The domain for which you want to get a list of tags.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_\-.]*<br/>
+     * The domain for which you want to get a list of tags.
+     * </p>
      */
     private String domainName;
 
     /**
-     * The domain for which you want to get a list of tags.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_\-.]*<br/>
-     *
-     * @return The domain for which you want to get a list of tags.
-     */
-    public String getDomainName() {
-        return domainName;
-    }
-    
-    /**
      * The domain for which you want to get a list of tags.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_\-.]*<br/>
-     *
-     * @param domainName The domain for which you want to get a list of tags.
+     * </p>
+     * 
+     * @param domainName
+     *        The domain for which you want to get a list of tags.
      */
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
-    
+
     /**
+     * <p>
      * The domain for which you want to get a list of tags.
+     * </p>
+     * 
+     * @return The domain for which you want to get a list of tags.
+     */
+    public String getDomainName() {
+        return this.domainName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_\-.]*<br/>
-     *
-     * @param domainName The domain for which you want to get a list of tags.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The domain for which you want to get a list of tags.
+     * </p>
+     * 
+     * @param domainName
+     *        The domain for which you want to get a list of tags.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListTagsForDomainRequest withDomainName(String domainName) {
-        this.domainName = domainName;
+        setDomainName(domainName);
         return this;
     }
 
@@ -99,38 +83,42 @@ public class ListTagsForDomainRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() );
+        if (getDomainName() != null)
+            sb.append("DomainName: " + getDomainName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListTagsForDomainRequest == false)
+            return false;
+        ListTagsForDomainRequest other = (ListTagsForDomainRequest) obj;
+        if (other.getDomainName() == null ^ this.getDomainName() == null)
+            return false;
+        if (other.getDomainName() != null
+                && other.getDomainName().equals(this.getDomainName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ListTagsForDomainRequest == false) return false;
-        ListTagsForDomainRequest other = (ListTagsForDomainRequest)obj;
-        
-        if (other.getDomainName() == null ^ this.getDomainName() == null) return false;
-        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ListTagsForDomainRequest clone() {
-        
-            return (ListTagsForDomainRequest) super.clone();
+        return (ListTagsForDomainRequest) super.clone();
     }
-
 }
-    

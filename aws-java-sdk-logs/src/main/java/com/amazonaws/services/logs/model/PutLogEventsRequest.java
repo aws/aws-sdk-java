@@ -149,9 +149,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns the value of the LogEvents property for this object.
-     * 
-     * @return The value of the LogEvents property for this object.
+     * @return
      */
     public java.util.List<InputLogEvent> getLogEvents() {
         if (logEvents == null) {
@@ -161,10 +159,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the LogEvents property for this object.
-     * 
      * @param logEvents
-     *        The new value for the LogEvents property for this object.
      */
     public void setLogEvents(java.util.Collection<InputLogEvent> logEvents) {
         if (logEvents == null) {
@@ -177,7 +172,6 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the LogEvents property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLogEvents(java.util.Collection)} or
@@ -186,7 +180,6 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param logEvents
-     *        The new value for the LogEvents property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -202,10 +195,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the LogEvents property for this object.
-     * 
      * @param logEvents
-     *        The new value for the LogEvents property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

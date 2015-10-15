@@ -1,191 +1,216 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * Contains the results of the DescribeSnapshots operation.
+ * Contains the results of the <a>DescribeSnapshots</a> operation.
  * </p>
  */
 public class DescribeSnapshotsResult implements Serializable, Cloneable {
 
     /**
-     * The list of <a>Snapshot</a> objects that were retrieved. <p>It is
-     * possible that this list contains less than the number of items
-     * specified in the <i>Limit</i> member of the request. This occurs if
-     * there are less than the requested number of items left to retrieve, or
-     * if the limitations of the operation have been exceeded.
+     * <p>
+     * The list of <a>Snapshot</a> objects that were retrieved.
+     * </p>
+     * <p>
+     * It is possible that this list contains less than the number of items
+     * specified in the <i>Limit</i> member of the request. This occurs if there
+     * are less than the requested number of items left to retrieve, or if the
+     * limitations of the operation have been exceeded.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot> snapshots;
-
+    private com.amazonaws.internal.SdkInternalList<Snapshot> snapshots;
     /**
+     * <p>
      * If not null, more results are available. Pass this value in the
-     * <i>NextToken</i> member of a subsequent call to
-     * <a>DescribeSnapshots</a>.
+     * <i>NextToken</i> member of a subsequent call to <a>DescribeSnapshots</a>.
+     * </p>
      */
     private String nextToken;
 
     /**
-     * The list of <a>Snapshot</a> objects that were retrieved. <p>It is
-     * possible that this list contains less than the number of items
-     * specified in the <i>Limit</i> member of the request. This occurs if
-     * there are less than the requested number of items left to retrieve, or
-     * if the limitations of the operation have been exceeded.
-     *
-     * @return The list of <a>Snapshot</a> objects that were retrieved. <p>It is
-     *         possible that this list contains less than the number of items
-     *         specified in the <i>Limit</i> member of the request. This occurs if
-     *         there are less than the requested number of items left to retrieve, or
-     *         if the limitations of the operation have been exceeded.
+     * <p>
+     * The list of <a>Snapshot</a> objects that were retrieved.
+     * </p>
+     * <p>
+     * It is possible that this list contains less than the number of items
+     * specified in the <i>Limit</i> member of the request. This occurs if there
+     * are less than the requested number of items left to retrieve, or if the
+     * limitations of the operation have been exceeded.
+     * </p>
+     * 
+     * @return The list of <a>Snapshot</a> objects that were retrieved.</p>
+     *         <p>
+     *         It is possible that this list contains less than the number of
+     *         items specified in the <i>Limit</i> member of the request. This
+     *         occurs if there are less than the requested number of items left
+     *         to retrieve, or if the limitations of the operation have been
+     *         exceeded.
      */
     public java.util.List<Snapshot> getSnapshots() {
         if (snapshots == null) {
-              snapshots = new com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot>();
-              snapshots.setAutoConstruct(true);
+            snapshots = new com.amazonaws.internal.SdkInternalList<Snapshot>();
         }
         return snapshots;
     }
-    
+
     /**
-     * The list of <a>Snapshot</a> objects that were retrieved. <p>It is
-     * possible that this list contains less than the number of items
-     * specified in the <i>Limit</i> member of the request. This occurs if
-     * there are less than the requested number of items left to retrieve, or
-     * if the limitations of the operation have been exceeded.
-     *
-     * @param snapshots The list of <a>Snapshot</a> objects that were retrieved. <p>It is
-     *         possible that this list contains less than the number of items
-     *         specified in the <i>Limit</i> member of the request. This occurs if
-     *         there are less than the requested number of items left to retrieve, or
-     *         if the limitations of the operation have been exceeded.
+     * <p>
+     * The list of <a>Snapshot</a> objects that were retrieved.
+     * </p>
+     * <p>
+     * It is possible that this list contains less than the number of items
+     * specified in the <i>Limit</i> member of the request. This occurs if there
+     * are less than the requested number of items left to retrieve, or if the
+     * limitations of the operation have been exceeded.
+     * </p>
+     * 
+     * @param snapshots
+     *        The list of <a>Snapshot</a> objects that were retrieved.</p>
+     *        <p>
+     *        It is possible that this list contains less than the number of
+     *        items specified in the <i>Limit</i> member of the request. This
+     *        occurs if there are less than the requested number of items left
+     *        to retrieve, or if the limitations of the operation have been
+     *        exceeded.
      */
     public void setSnapshots(java.util.Collection<Snapshot> snapshots) {
         if (snapshots == null) {
             this.snapshots = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot> snapshotsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot>(snapshots.size());
-        snapshotsCopy.addAll(snapshots);
-        this.snapshots = snapshotsCopy;
+
+        this.snapshots = new com.amazonaws.internal.SdkInternalList<Snapshot>(
+                snapshots);
     }
-    
+
     /**
-     * The list of <a>Snapshot</a> objects that were retrieved. <p>It is
-     * possible that this list contains less than the number of items
-     * specified in the <i>Limit</i> member of the request. This occurs if
-     * there are less than the requested number of items left to retrieve, or
-     * if the limitations of the operation have been exceeded.
+     * <p>
+     * The list of <a>Snapshot</a> objects that were retrieved.
+     * </p>
+     * <p>
+     * It is possible that this list contains less than the number of items
+     * specified in the <i>Limit</i> member of the request. This occurs if there
+     * are less than the requested number of items left to retrieve, or if the
+     * limitations of the operation have been exceeded.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSnapshots(java.util.Collection)} or {@link
-     * #withSnapshots(java.util.Collection)} if you want to override the
+     * any). Use {@link #setSnapshots(java.util.Collection)} or
+     * {@link #withSnapshots(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param snapshots The list of <a>Snapshot</a> objects that were retrieved. <p>It is
-     *         possible that this list contains less than the number of items
-     *         specified in the <i>Limit</i> member of the request. This occurs if
-     *         there are less than the requested number of items left to retrieve, or
-     *         if the limitations of the operation have been exceeded.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param snapshots
+     *        The list of <a>Snapshot</a> objects that were retrieved.</p>
+     *        <p>
+     *        It is possible that this list contains less than the number of
+     *        items specified in the <i>Limit</i> member of the request. This
+     *        occurs if there are less than the requested number of items left
+     *        to retrieve, or if the limitations of the operation have been
+     *        exceeded.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeSnapshotsResult withSnapshots(Snapshot... snapshots) {
-        if (getSnapshots() == null) setSnapshots(new java.util.ArrayList<Snapshot>(snapshots.length));
-        for (Snapshot value : snapshots) {
-            getSnapshots().add(value);
+        if (this.snapshots == null) {
+            setSnapshots(new com.amazonaws.internal.SdkInternalList<Snapshot>(
+                    snapshots.length));
+        }
+        for (Snapshot ele : snapshots) {
+            this.snapshots.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The list of <a>Snapshot</a> objects that were retrieved. <p>It is
-     * possible that this list contains less than the number of items
-     * specified in the <i>Limit</i> member of the request. This occurs if
-     * there are less than the requested number of items left to retrieve, or
-     * if the limitations of the operation have been exceeded.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param snapshots The list of <a>Snapshot</a> objects that were retrieved. <p>It is
-     *         possible that this list contains less than the number of items
-     *         specified in the <i>Limit</i> member of the request. This occurs if
-     *         there are less than the requested number of items left to retrieve, or
-     *         if the limitations of the operation have been exceeded.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The list of <a>Snapshot</a> objects that were retrieved.
+     * </p>
+     * <p>
+     * It is possible that this list contains less than the number of items
+     * specified in the <i>Limit</i> member of the request. This occurs if there
+     * are less than the requested number of items left to retrieve, or if the
+     * limitations of the operation have been exceeded.
+     * </p>
+     * 
+     * @param snapshots
+     *        The list of <a>Snapshot</a> objects that were retrieved.</p>
+     *        <p>
+     *        It is possible that this list contains less than the number of
+     *        items specified in the <i>Limit</i> member of the request. This
+     *        occurs if there are less than the requested number of items left
+     *        to retrieve, or if the limitations of the operation have been
+     *        exceeded.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeSnapshotsResult withSnapshots(java.util.Collection<Snapshot> snapshots) {
-        if (snapshots == null) {
-            this.snapshots = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot> snapshotsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot>(snapshots.size());
-            snapshotsCopy.addAll(snapshots);
-            this.snapshots = snapshotsCopy;
-        }
-
+    public DescribeSnapshotsResult withSnapshots(
+            java.util.Collection<Snapshot> snapshots) {
+        setSnapshots(snapshots);
         return this;
     }
 
     /**
+     * <p>
      * If not null, more results are available. Pass this value in the
-     * <i>NextToken</i> member of a subsequent call to
-     * <a>DescribeSnapshots</a>.
-     *
+     * <i>NextToken</i> member of a subsequent call to <a>DescribeSnapshots</a>.
+     * </p>
+     * 
+     * @param nextToken
+     *        If not null, more results are available. Pass this value in the
+     *        <i>NextToken</i> member of a subsequent call to
+     *        <a>DescribeSnapshots</a>.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * If not null, more results are available. Pass this value in the
+     * <i>NextToken</i> member of a subsequent call to <a>DescribeSnapshots</a>.
+     * </p>
+     * 
      * @return If not null, more results are available. Pass this value in the
      *         <i>NextToken</i> member of a subsequent call to
      *         <a>DescribeSnapshots</a>.
      */
     public String getNextToken() {
-        return nextToken;
+        return this.nextToken;
     }
-    
+
     /**
-     * If not null, more results are available. Pass this value in the
-     * <i>NextToken</i> member of a subsequent call to
-     * <a>DescribeSnapshots</a>.
-     *
-     * @param nextToken If not null, more results are available. Pass this value in the
-     *         <i>NextToken</i> member of a subsequent call to
-     *         <a>DescribeSnapshots</a>.
-     */
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-    
-    /**
-     * If not null, more results are available. Pass this value in the
-     * <i>NextToken</i> member of a subsequent call to
-     * <a>DescribeSnapshots</a>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param nextToken If not null, more results are available. Pass this value in the
-     *         <i>NextToken</i> member of a subsequent call to
-     *         <a>DescribeSnapshots</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * If not null, more results are available. Pass this value in the
+     * <i>NextToken</i> member of a subsequent call to <a>DescribeSnapshots</a>.
+     * </p>
+     * 
+     * @param nextToken
+     *        If not null, more results are available. Pass this value in the
+     *        <i>NextToken</i> member of a subsequent call to
+     *        <a>DescribeSnapshots</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeSnapshotsResult withNextToken(String nextToken) {
-        this.nextToken = nextToken;
+        setNextToken(nextToken);
         return this;
     }
 
@@ -201,50 +226,57 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSnapshots() != null) sb.append("Snapshots: " + getSnapshots() + ",");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
+        if (getSnapshots() != null)
+            sb.append("Snapshots: " + getSnapshots() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeSnapshotsResult == false)
+            return false;
+        DescribeSnapshotsResult other = (DescribeSnapshotsResult) obj;
+        if (other.getSnapshots() == null ^ this.getSnapshots() == null)
+            return false;
+        if (other.getSnapshots() != null
+                && other.getSnapshots().equals(this.getSnapshots()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null
+                && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getSnapshots() == null) ? 0 : getSnapshots().hashCode()); 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getSnapshots() == null) ? 0 : getSnapshots().hashCode());
+        hashCode = prime * hashCode
+                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeSnapshotsResult == false) return false;
-        DescribeSnapshotsResult other = (DescribeSnapshotsResult)obj;
-        
-        if (other.getSnapshots() == null ^ this.getSnapshots() == null) return false;
-        if (other.getSnapshots() != null && other.getSnapshots().equals(this.getSnapshots()) == false) return false; 
-        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeSnapshotsResult clone() {
         try {
             return (DescribeSnapshotsResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

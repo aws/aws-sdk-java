@@ -212,31 +212,21 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the S3DestinationUpdate property for this object.
-     * 
      * @param s3DestinationUpdate
-     *        The new value for the S3DestinationUpdate property for this
-     *        object.
      */
     public void setS3DestinationUpdate(S3DestinationUpdate s3DestinationUpdate) {
         this.s3DestinationUpdate = s3DestinationUpdate;
     }
 
     /**
-     * Returns the value of the S3DestinationUpdate property for this object.
-     * 
-     * @return The value of the S3DestinationUpdate property for this object.
+     * @return
      */
     public S3DestinationUpdate getS3DestinationUpdate() {
         return this.s3DestinationUpdate;
     }
 
     /**
-     * Sets the value of the S3DestinationUpdate property for this object.
-     * 
      * @param s3DestinationUpdate
-     *        The new value for the S3DestinationUpdate property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -247,11 +237,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the RedshiftDestinationUpdate property for this object.
-     * 
      * @param redshiftDestinationUpdate
-     *        The new value for the RedshiftDestinationUpdate property for this
-     *        object.
      */
     public void setRedshiftDestinationUpdate(
             RedshiftDestinationUpdate redshiftDestinationUpdate) {
@@ -259,22 +245,14 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns the value of the RedshiftDestinationUpdate property for this
-     * object.
-     * 
-     * @return The value of the RedshiftDestinationUpdate property for this
-     *         object.
+     * @return
      */
     public RedshiftDestinationUpdate getRedshiftDestinationUpdate() {
         return this.redshiftDestinationUpdate;
     }
 
     /**
-     * Sets the value of the RedshiftDestinationUpdate property for this object.
-     * 
      * @param redshiftDestinationUpdate
-     *        The new value for the RedshiftDestinationUpdate property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

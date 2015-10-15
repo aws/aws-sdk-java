@@ -134,9 +134,7 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the PredictedScores property for this object.
-     * 
-     * @return The value of the PredictedScores property for this object.
+     * @return
      */
     public java.util.Map<String, Float> getPredictedScores() {
         if (predictedScores == null) {
@@ -146,10 +144,7 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the PredictedScores property for this object.
-     * 
      * @param predictedScores
-     *        The new value for the PredictedScores property for this object.
      */
     public void setPredictedScores(java.util.Map<String, Float> predictedScores) {
         this.predictedScores = predictedScores == null ? null
@@ -158,10 +153,7 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the PredictedScores property for this object.
-     * 
      * @param predictedScores
-     *        The new value for the PredictedScores property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -192,9 +184,7 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the Details property for this object.
-     * 
-     * @return The value of the Details property for this object.
+     * @return
      */
     public java.util.Map<String, String> getDetails() {
         if (details == null) {
@@ -204,10 +194,7 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Details property for this object.
-     * 
      * @param details
-     *        The new value for the Details property for this object.
      */
     public void setDetails(java.util.Map<String, String> details) {
         this.details = details == null ? null
@@ -216,10 +203,7 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Details property for this object.
-     * 
      * @param details
-     *        The new value for the Details property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

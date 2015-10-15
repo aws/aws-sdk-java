@@ -88,29 +88,21 @@ public class ActionState implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the CurrentRevision property for this object.
-     * 
      * @param currentRevision
-     *        The new value for the CurrentRevision property for this object.
      */
     public void setCurrentRevision(ActionRevision currentRevision) {
         this.currentRevision = currentRevision;
     }
 
     /**
-     * Returns the value of the CurrentRevision property for this object.
-     * 
-     * @return The value of the CurrentRevision property for this object.
+     * @return
      */
     public ActionRevision getCurrentRevision() {
         return this.currentRevision;
     }
 
     /**
-     * Sets the value of the CurrentRevision property for this object.
-     * 
      * @param currentRevision
-     *        The new value for the CurrentRevision property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -120,29 +112,21 @@ public class ActionState implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the LatestExecution property for this object.
-     * 
      * @param latestExecution
-     *        The new value for the LatestExecution property for this object.
      */
     public void setLatestExecution(ActionExecution latestExecution) {
         this.latestExecution = latestExecution;
     }
 
     /**
-     * Returns the value of the LatestExecution property for this object.
-     * 
-     * @return The value of the LatestExecution property for this object.
+     * @return
      */
     public ActionExecution getLatestExecution() {
         return this.latestExecution;
     }
 
     /**
-     * Sets the value of the LatestExecution property for this object.
-     * 
      * @param latestExecution
-     *        The new value for the LatestExecution property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

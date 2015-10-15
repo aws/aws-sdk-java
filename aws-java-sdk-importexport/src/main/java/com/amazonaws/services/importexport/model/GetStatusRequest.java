@@ -29,29 +29,21 @@ public class GetStatusRequest extends AmazonWebServiceRequest implements
     private String aPIVersion;
 
     /**
-     * Sets the value of the JobId property for this object.
-     * 
      * @param jobId
-     *        The new value for the JobId property for this object.
      */
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
 
     /**
-     * Returns the value of the JobId property for this object.
-     * 
-     * @return The value of the JobId property for this object.
+     * @return
      */
     public String getJobId() {
         return this.jobId;
     }
 
     /**
-     * Sets the value of the JobId property for this object.
-     * 
      * @param jobId
-     *        The new value for the JobId property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -61,29 +53,21 @@ public class GetStatusRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the APIVersion property for this object.
-     * 
      * @param aPIVersion
-     *        The new value for the APIVersion property for this object.
      */
     public void setAPIVersion(String aPIVersion) {
         this.aPIVersion = aPIVersion;
     }
 
     /**
-     * Returns the value of the APIVersion property for this object.
-     * 
-     * @return The value of the APIVersion property for this object.
+     * @return
      */
     public String getAPIVersion() {
         return this.aPIVersion;
     }
 
     /**
-     * Sets the value of the APIVersion property for this object.
-     * 
      * @param aPIVersion
-     *        The new value for the APIVersion property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

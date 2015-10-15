@@ -27,9 +27,7 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
     private String nextToken;
 
     /**
-     * Returns the value of the LogGroups property for this object.
-     * 
-     * @return The value of the LogGroups property for this object.
+     * @return
      */
     public java.util.List<LogGroup> getLogGroups() {
         if (logGroups == null) {
@@ -39,10 +37,7 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the LogGroups property for this object.
-     * 
      * @param logGroups
-     *        The new value for the LogGroups property for this object.
      */
     public void setLogGroups(java.util.Collection<LogGroup> logGroups) {
         if (logGroups == null) {
@@ -55,7 +50,6 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the LogGroups property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLogGroups(java.util.Collection)} or
@@ -64,7 +58,6 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param logGroups
-     *        The new value for the LogGroups property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -80,10 +73,7 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the LogGroups property for this object.
-     * 
      * @param logGroups
-     *        The new value for the LogGroups property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -94,29 +84,21 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the NextToken property for this object.
-     * 
      * @param nextToken
-     *        The new value for the NextToken property for this object.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
-     * Returns the value of the NextToken property for this object.
-     * 
-     * @return The value of the NextToken property for this object.
+     * @return
      */
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
-     * Sets the value of the NextToken property for this object.
-     * 
      * @param nextToken
-     *        The new value for the NextToken property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

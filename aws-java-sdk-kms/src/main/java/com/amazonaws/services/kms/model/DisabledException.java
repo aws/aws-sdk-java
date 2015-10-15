@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A request was rejected because the specified key was marked as
+ * The request was rejected because the specified key was marked as
  * disabled.
  * </p>
  */        

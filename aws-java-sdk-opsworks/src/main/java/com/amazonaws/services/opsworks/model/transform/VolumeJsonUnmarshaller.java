@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,7 +28,8 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Volume JSON Unmarshaller
  */
-public class VolumeJsonUnmarshaller implements Unmarshaller<Volume, JsonUnmarshallerContext> {
+public class VolumeJsonUnmarshaller implements
+        Unmarshaller<Volume, JsonUnmarshallerContext> {
 
     public Volume unmarshall(JsonUnmarshallerContext context) throws Exception {
         Volume volume = new Volume();
@@ -38,81 +39,100 @@ public class VolumeJsonUnmarshaller implements Unmarshaller<Volume, JsonUnmarsha
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeId", targetDepth)) {
                     context.nextToken();
-                    volume.setVolumeId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setVolumeId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Ec2VolumeId", targetDepth)) {
                     context.nextToken();
-                    volume.setEc2VolumeId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setEc2VolumeId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    volume.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setName(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("RaidArrayId", targetDepth)) {
                     context.nextToken();
-                    volume.setRaidArrayId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setRaidArrayId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    volume.setInstanceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setInstanceId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    volume.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setStatus(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
                     context.nextToken();
-                    volume.setSize(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setSize(IntegerJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Device", targetDepth)) {
                     context.nextToken();
-                    volume.setDevice(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setDevice(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("MountPoint", targetDepth)) {
                     context.nextToken();
-                    volume.setMountPoint(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setMountPoint(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
                     context.nextToken();
-                    volume.setRegion(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setRegion(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();
-                    volume.setAvailabilityZone(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setAvailabilityZone(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
                     context.nextToken();
-                    volume.setVolumeType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setVolumeType(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Iops", targetDepth)) {
                     context.nextToken();
-                    volume.setIops(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    volume.setIops(IntegerJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return volume;
     }
 
     private static VolumeJsonUnmarshaller instance;
+
     public static VolumeJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new VolumeJsonUnmarshaller();
+        if (instance == null)
+            instance = new VolumeJsonUnmarshaller();
         return instance;
     }
 }
-    

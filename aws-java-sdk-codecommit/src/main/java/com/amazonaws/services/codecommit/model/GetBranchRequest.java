@@ -35,29 +35,21 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
     private String branchName;
 
     /**
-     * Sets the value of the RepositoryName property for this object.
-     * 
      * @param repositoryName
-     *        The new value for the RepositoryName property for this object.
      */
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
 
     /**
-     * Returns the value of the RepositoryName property for this object.
-     * 
-     * @return The value of the RepositoryName property for this object.
+     * @return
      */
     public String getRepositoryName() {
         return this.repositoryName;
     }
 
     /**
-     * Sets the value of the RepositoryName property for this object.
-     * 
      * @param repositoryName
-     *        The new value for the RepositoryName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

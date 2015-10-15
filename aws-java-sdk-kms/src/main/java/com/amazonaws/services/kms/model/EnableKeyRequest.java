@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kms.AWSKMS#enableKey(EnableKeyRequest) EnableKey operation}.
  * <p>
- * Marks a key as enabled, thereby permitting its use. You can have up
- * to 25 enabled keys at one time.
+ * Marks a key as enabled, thereby permitting its use.
  * </p>
  *
  * @see com.amazonaws.services.kms.AWSKMS#enableKey(EnableKeyRequest)

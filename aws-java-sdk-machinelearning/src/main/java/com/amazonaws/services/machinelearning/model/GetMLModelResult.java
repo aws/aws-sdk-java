@@ -668,29 +668,21 @@ public class GetMLModelResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the SizeInBytes property for this object.
-     * 
      * @param sizeInBytes
-     *        The new value for the SizeInBytes property for this object.
      */
     public void setSizeInBytes(Long sizeInBytes) {
         this.sizeInBytes = sizeInBytes;
     }
 
     /**
-     * Returns the value of the SizeInBytes property for this object.
-     * 
-     * @return The value of the SizeInBytes property for this object.
+     * @return
      */
     public Long getSizeInBytes() {
         return this.sizeInBytes;
     }
 
     /**
-     * Sets the value of the SizeInBytes property for this object.
-     * 
      * @param sizeInBytes
-     *        The new value for the SizeInBytes property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

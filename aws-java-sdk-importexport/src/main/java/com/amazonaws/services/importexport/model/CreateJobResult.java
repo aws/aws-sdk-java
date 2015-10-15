@@ -35,29 +35,21 @@ public class CreateJobResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Artifact> artifactList;
 
     /**
-     * Sets the value of the JobId property for this object.
-     * 
      * @param jobId
-     *        The new value for the JobId property for this object.
      */
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
 
     /**
-     * Returns the value of the JobId property for this object.
-     * 
-     * @return The value of the JobId property for this object.
+     * @return
      */
     public String getJobId() {
         return this.jobId;
     }
 
     /**
-     * Sets the value of the JobId property for this object.
-     * 
      * @param jobId
-     *        The new value for the JobId property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -67,10 +59,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @see JobType
      */
     public void setJobType(String jobType) {
@@ -78,9 +67,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the JobType property for this object.
-     * 
-     * @return The value of the JobType property for this object.
+     * @return
      * @see JobType
      */
     public String getJobType() {
@@ -88,10 +75,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType
@@ -102,10 +86,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType
@@ -115,10 +96,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the JobType property for this object.
-     * 
      * @param jobType
-     *        The new value for the JobType property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobType
@@ -129,29 +107,21 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Signature property for this object.
-     * 
      * @param signature
-     *        The new value for the Signature property for this object.
      */
     public void setSignature(String signature) {
         this.signature = signature;
     }
 
     /**
-     * Returns the value of the Signature property for this object.
-     * 
-     * @return The value of the Signature property for this object.
+     * @return
      */
     public String getSignature() {
         return this.signature;
     }
 
     /**
-     * Sets the value of the Signature property for this object.
-     * 
      * @param signature
-     *        The new value for the Signature property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -161,31 +131,21 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the SignatureFileContents property for this object.
-     * 
      * @param signatureFileContents
-     *        The new value for the SignatureFileContents property for this
-     *        object.
      */
     public void setSignatureFileContents(String signatureFileContents) {
         this.signatureFileContents = signatureFileContents;
     }
 
     /**
-     * Returns the value of the SignatureFileContents property for this object.
-     * 
-     * @return The value of the SignatureFileContents property for this object.
+     * @return
      */
     public String getSignatureFileContents() {
         return this.signatureFileContents;
     }
 
     /**
-     * Sets the value of the SignatureFileContents property for this object.
-     * 
      * @param signatureFileContents
-     *        The new value for the SignatureFileContents property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -196,29 +156,21 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the WarningMessage property for this object.
-     * 
      * @param warningMessage
-     *        The new value for the WarningMessage property for this object.
      */
     public void setWarningMessage(String warningMessage) {
         this.warningMessage = warningMessage;
     }
 
     /**
-     * Returns the value of the WarningMessage property for this object.
-     * 
-     * @return The value of the WarningMessage property for this object.
+     * @return
      */
     public String getWarningMessage() {
         return this.warningMessage;
     }
 
     /**
-     * Sets the value of the WarningMessage property for this object.
-     * 
      * @param warningMessage
-     *        The new value for the WarningMessage property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -228,9 +180,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the ArtifactList property for this object.
-     * 
-     * @return The value of the ArtifactList property for this object.
+     * @return
      */
     public java.util.List<Artifact> getArtifactList() {
         if (artifactList == null) {
@@ -240,10 +190,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ArtifactList property for this object.
-     * 
      * @param artifactList
-     *        The new value for the ArtifactList property for this object.
      */
     public void setArtifactList(java.util.Collection<Artifact> artifactList) {
         if (artifactList == null) {
@@ -256,7 +203,6 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ArtifactList property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setArtifactList(java.util.Collection)} or
@@ -265,7 +211,6 @@ public class CreateJobResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param artifactList
-     *        The new value for the ArtifactList property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -281,10 +226,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the ArtifactList property for this object.
-     * 
      * @param artifactList
-     *        The new value for the ArtifactList property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

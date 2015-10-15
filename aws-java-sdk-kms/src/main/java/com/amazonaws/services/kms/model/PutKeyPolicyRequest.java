@@ -52,7 +52,9 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements Seri
     private String policyName;
 
     /**
-     * The policy, in JSON format, to be attached to the key.
+     * The policy to attach to the key. This is required and delegates back
+     * to the account. The key is the root of trust. The policy size limit is
+     * 32 KiB (32768 bytes).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
@@ -184,33 +186,43 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The policy, in JSON format, to be attached to the key.
+     * The policy to attach to the key. This is required and delegates back
+     * to the account. The key is the root of trust. The policy size limit is
+     * 32 KiB (32768 bytes).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return The policy, in JSON format, to be attached to the key.
+     * @return The policy to attach to the key. This is required and delegates back
+     *         to the account. The key is the root of trust. The policy size limit is
+     *         32 KiB (32768 bytes).
      */
     public String getPolicy() {
         return policy;
     }
     
     /**
-     * The policy, in JSON format, to be attached to the key.
+     * The policy to attach to the key. This is required and delegates back
+     * to the account. The key is the root of trust. The policy size limit is
+     * 32 KiB (32768 bytes).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param policy The policy, in JSON format, to be attached to the key.
+     * @param policy The policy to attach to the key. This is required and delegates back
+     *         to the account. The key is the root of trust. The policy size limit is
+     *         32 KiB (32768 bytes).
      */
     public void setPolicy(String policy) {
         this.policy = policy;
     }
     
     /**
-     * The policy, in JSON format, to be attached to the key.
+     * The policy to attach to the key. This is required and delegates back
+     * to the account. The key is the root of trust. The policy size limit is
+     * 32 KiB (32768 bytes).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -218,7 +230,9 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements Seri
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param policy The policy, in JSON format, to be attached to the key.
+     * @param policy The policy to attach to the key. This is required and delegates back
+     *         to the account. The key is the root of trust. The policy size limit is
+     *         32 KiB (32768 bytes).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

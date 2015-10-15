@@ -74,9 +74,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns the value of the Record property for this object.
-     * 
-     * @return The value of the Record property for this object.
+     * @return
      */
     public java.util.Map<String, String> getRecord() {
         if (record == null) {
@@ -86,10 +84,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Record property for this object.
-     * 
      * @param record
-     *        The new value for the Record property for this object.
      */
     public void setRecord(java.util.Map<String, String> record) {
         this.record = record == null ? null
@@ -98,10 +93,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the Record property for this object.
-     * 
      * @param record
-     *        The new value for the Record property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -131,29 +123,21 @@ public class PredictRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the value of the PredictEndpoint property for this object.
-     * 
      * @param predictEndpoint
-     *        The new value for the PredictEndpoint property for this object.
      */
     public void setPredictEndpoint(String predictEndpoint) {
         this.predictEndpoint = predictEndpoint;
     }
 
     /**
-     * Returns the value of the PredictEndpoint property for this object.
-     * 
-     * @return The value of the PredictEndpoint property for this object.
+     * @return
      */
     public String getPredictEndpoint() {
         return this.predictEndpoint;
     }
 
     /**
-     * Sets the value of the PredictEndpoint property for this object.
-     * 
      * @param predictEndpoint
-     *        The new value for the PredictEndpoint property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

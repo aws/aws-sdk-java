@@ -27,29 +27,21 @@ public class FirehoseAction implements Serializable, Cloneable {
     private String deliveryStreamName;
 
     /**
-     * Sets the value of the RoleArn property for this object.
-     * 
      * @param roleArn
-     *        The new value for the RoleArn property for this object.
      */
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
 
     /**
-     * Returns the value of the RoleArn property for this object.
-     * 
-     * @return The value of the RoleArn property for this object.
+     * @return
      */
     public String getRoleArn() {
         return this.roleArn;
     }
 
     /**
-     * Sets the value of the RoleArn property for this object.
-     * 
      * @param roleArn
-     *        The new value for the RoleArn property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -59,29 +51,21 @@ public class FirehoseAction implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the DeliveryStreamName property for this object.
-     * 
      * @param deliveryStreamName
-     *        The new value for the DeliveryStreamName property for this object.
      */
     public void setDeliveryStreamName(String deliveryStreamName) {
         this.deliveryStreamName = deliveryStreamName;
     }
 
     /**
-     * Returns the value of the DeliveryStreamName property for this object.
-     * 
-     * @return The value of the DeliveryStreamName property for this object.
+     * @return
      */
     public String getDeliveryStreamName() {
         return this.deliveryStreamName;
     }
 
     /**
-     * Sets the value of the DeliveryStreamName property for this object.
-     * 
      * @param deliveryStreamName
-     *        The new value for the DeliveryStreamName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

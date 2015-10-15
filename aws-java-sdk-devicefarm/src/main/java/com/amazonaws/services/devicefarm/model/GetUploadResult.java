@@ -27,29 +27,21 @@ public class GetUploadResult implements Serializable, Cloneable {
     private Upload upload;
 
     /**
-     * Sets the value of the Upload property for this object.
-     * 
      * @param upload
-     *        The new value for the Upload property for this object.
      */
     public void setUpload(Upload upload) {
         this.upload = upload;
     }
 
     /**
-     * Returns the value of the Upload property for this object.
-     * 
-     * @return The value of the Upload property for this object.
+     * @return
      */
     public Upload getUpload() {
         return this.upload;
     }
 
     /**
-     * Sets the value of the Upload property for this object.
-     * 
      * @param upload
-     *        The new value for the Upload property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

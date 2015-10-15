@@ -1,2076 +1,2468 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#cloneStack(CloneStackRequest) CloneStack operation}.
- * <p>
- * Creates a clone of a specified stack. For more information, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html"> Clone a Stack </a>
- * . By default, all parameters are set to the values used by the parent
- * stack.
- * </p>
- * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must
- * have an attached policy that explicitly grants permissions. For more
- * information on user permissions, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
- * .
- * </p>
- *
- * @see com.amazonaws.services.opsworks.AWSOpsWorks#cloneStack(CloneStackRequest)
+ * 
  */
-public class CloneStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CloneStackRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * The source stack ID.
+     * </p>
      */
     private String sourceStackId;
-
     /**
+     * <p>
      * The cloned stack name.
+     * </p>
      */
     private String name;
-
     /**
+     * <p>
      * The cloned stack AWS region, such as "us-east-1". For more information
      * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
+     * </p>
      */
     private String region;
-
     /**
-     * The ID of the VPC that the cloned stack is to be launched into. It
-     * must be in the specified region. All instances are launched into this
-     * VPC, and you cannot change the ID later. <ul> <li>If your account
-     * supports EC2 Classic, the default value is no VPC.</li> <li>If your
-     * account does not support EC2 Classic, the default value is the default
-     * VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
-     * to a default VPC and you have specified either the
-     * <code>DefaultAvailabilityZone</code> or the
+     * <p>
+     * The ID of the VPC that the cloned stack is to be launched into. It must
+     * be in the specified region. All instances are launched into this VPC, and
+     * you cannot change the ID later.
+     * </p>
+     * <ul>
+     * <li>If your account supports EC2 Classic, the default value is no VPC.</li>
+     * <li>If your account does not support EC2 Classic, the default value is
+     * the default VPC for the specified region.</li>
+     * </ul>
+     * <p>
+     * If the VPC ID corresponds to a default VPC and you have specified either
+     * the <code>DefaultAvailabilityZone</code> or the
      * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
      * value of the other parameter. If you specify neither parameter, AWS
-     * OpsWorks sets these parameters to the first valid Availability Zone
-     * for the specified region and the corresponding default VPC subnet ID,
-     * respectively. <p>If you specify a nondefault VPC ID, note the
-     * following: <ul> <li>It must belong to a VPC in your account that is in
-     * the specified region.</li> <li>You must specify a value for
-     * <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
-     * how to use AWS OpsWorks with a VPC, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     * a Stack in a VPC</a>. For more information on default VPC and EC2
-     * Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a>.
+     * OpsWorks sets these parameters to the first valid Availability Zone for
+     * the specified region and the corresponding default VPC subnet ID,
+     * respectively.
+     * </p>
+     * <p>
+     * If you specify a nondefault VPC ID, note the following:
+     * </p>
+     * <ul>
+     * <li>It must belong to a VPC in your account that is in the specified
+     * region.</li>
+     * <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     * </ul>
+     * <p>
+     * For more information on how to use AWS OpsWorks with a VPC, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html"
+     * >Running a Stack in a VPC</a>. For more information on default VPC and
+     * EC2 Classic, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
+     * >Supported Platforms</a>.
+     * </p>
      */
     private String vpcId;
-
     /**
-     * A list of stack attributes and values as key/value pairs to be added
-     * to the cloned stack.
+     * <p>
+     * A list of stack attributes and values as key/value pairs to be added to
+     * the cloned stack.
+     * </p>
      */
-    private java.util.Map<String,String> attributes;
-
+    private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
     /**
-     * The stack AWS Identity and Access Management (IAM) role, which allows
-     * AWS OpsWorks to work with AWS resources on your behalf. You must set
-     * this parameter to the Amazon Resource Name (ARN) for an existing IAM
-     * role. If you create a stack by using the AWS OpsWorks console, it
-     * creates the role for you. You can obtain an existing stack's IAM ARN
-     * programmatically by calling <a>DescribePermissions</a>. For more
-     * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note> <p>You must set this parameter to a valid
-     * service role ARN or the action will fail; there is no default value.
-     * You can specify the source stack's service role ARN, if you prefer,
-     * but you must do so explicitly. </note>
+     * <p>
+     * The stack AWS Identity and Access Management (IAM) role, which allows AWS
+     * OpsWorks to work with AWS resources on your behalf. You must set this
+     * parameter to the Amazon Resource Name (ARN) for an existing IAM role. If
+     * you create a stack by using the AWS OpsWorks console, it creates the role
+     * for you. You can obtain an existing stack's IAM ARN programmatically by
+     * calling <a>DescribePermissions</a>. For more information about IAM ARNs,
+     * see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You must set this parameter to a valid service role ARN or the action
+     * will fail; there is no default value. You can specify the source stack's
+     * service role ARN, if you prefer, but you must do so explicitly.
+     * </p>
+     * </note>
      */
     private String serviceRoleArn;
-
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of an IAM profile that is the default
-     * profile for all of the stack's EC2 instances. For more information
-     * about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
+     * profile for all of the stack's EC2 instances. For more information about
+     * IAM ARNs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
      */
     private String defaultInstanceProfileArn;
-
     /**
-     * The stack's operating system, which must be set to one of the
-     * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
-     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For
-     * more information on how to use custom AMIs with OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</li> </ul> <p>The default option is the parent
-     * stack's operating system. For more information on the supported
-     * operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>. <note>You can specify a different
-     * Linux operating system for the cloned stack, but you cannot change
-     * from Linux to Windows or Windows to Linux.</note>
+     * <p>
+     * The stack's operating system, which must be set to one of the following.
+     * </p>
+     * <ul>
+     * <li>A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2015.03</code>,
+     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
+     * or <code>Ubuntu 14.04 LTS</code>.</li>
+     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
+     * want to use when you create instances. For more information on how to use
+     * custom AMIs with OpsWorks, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     * >Using Custom AMIs</a>.</li>
+     * </ul>
+     * <p>
+     * The default option is the parent stack's operating system. For more
+     * information on the supported operating systems, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
+     * >AWS OpsWorks Operating Systems</a>.
+     * </p>
+     * <note>You can specify a different Linux operating system for the cloned
+     * stack, but you cannot change from Linux to Windows or Windows to
+     * Linux.</note>
      */
     private String defaultOs;
-
     /**
-     * The stack's host name theme, with spaces are replaced by underscores.
-     * The theme is used to generate host names for the stack's instances. By
+     * <p>
+     * The stack's host name theme, with spaces are replaced by underscores. The
+     * theme is used to generate host names for the stack's instances. By
      * default, <code>HostnameTheme</code> is set to
      * <code>Layer_Dependent</code>, which creates host names by appending
-     * integers to the layer's short name. The other themes are: <ul> <li>
-     * <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
-     * <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
-     * <code>Greek_Deities</code> </li> <li>
-     * <code>Legendary_creatures_from_Japan</code> </li> <li>
-     * <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
-     * </li> <li> <code>Scottish_Islands</code> </li> <li>
-     * <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
-     * <p>To obtain a generated host name, call
-     * <code>GetHostNameSuggestion</code>, which returns a host name based on
-     * the current theme.
+     * integers to the layer's short name. The other themes are:
+     * </p>
+     * <ul>
+     * <li> <code>Baked_Goods</code></li>
+     * <li> <code>Clouds</code></li>
+     * <li> <code>Europe_Cities</code></li>
+     * <li> <code>Fruits</code></li>
+     * <li> <code>Greek_Deities</code></li>
+     * <li> <code>Legendary_creatures_from_Japan</code></li>
+     * <li> <code>Planets_and_Moons</code></li>
+     * <li> <code>Roman_Deities</code></li>
+     * <li> <code>Scottish_Islands</code></li>
+     * <li> <code>US_Cities</code></li>
+     * <li> <code>Wild_Cats</code></li>
+     * </ul>
+     * <p>
+     * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
+     * which returns a host name based on the current theme.
+     * </p>
      */
     private String hostnameTheme;
-
     /**
+     * <p>
      * The cloned stack's default Availability Zone, which must be in the
      * specified region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>. If you also specify a value for
      * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
      * more information, see the <code>VpcId</code> parameter description.
+     * </p>
      */
     private String defaultAvailabilityZone;
-
     /**
+     * <p>
      * The stack's default VPC subnet ID. This parameter is required if you
-     * specify a value for the <code>VpcId</code> parameter. All instances
-     * are launched into this subnet unless you specify otherwise when you
-     * create the instance. If you also specify a value for
+     * specify a value for the <code>VpcId</code> parameter. All instances are
+     * launched into this subnet unless you specify otherwise when you create
+     * the instance. If you also specify a value for
      * <code>DefaultAvailabilityZone</code>, the subnet must be in that zone.
      * For information on default values and when this parameter is required,
      * see the <code>VpcId</code> parameter description.
+     * </p>
      */
     private String defaultSubnetId;
-
     /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration Attributes</a>
+     * <p>
+     * A string that contains user-defined, custom JSON. It is used to override
+     * the corresponding default stack configuration JSON values. The string
+     * should be in the following format and must escape characters such as '"':
+     * </p>
+     * <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     * </p>
+     * <p>
+     * For more information on custom JSON, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>
+     * </p>
      */
     private String customJson;
-
     /**
-     * The configuration manager. When you clone a Linux stack we recommend
-     * that you use the configuration manager to specify the Chef version:
-     * 0.9, 11.4, or 11.10. The default value is currently 11.10.
+     * <p>
+     * The configuration manager. When you clone a Linux stack we recommend that
+     * you use the configuration manager to specify the Chef version: 0.9, 11.4,
+     * or 11.10. The default value is currently 11.10.
+     * </p>
      */
     private StackConfigurationManager configurationManager;
-
     /**
-     * A <code>ChefConfiguration</code> object that specifies whether to
-     * enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     * a New Stack</a>.
+     * <p>
+     * A <code>ChefConfiguration</code> object that specifies whether to enable
+     * Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     * >Create a New Stack</a>.
+     * </p>
      */
     private ChefConfiguration chefConfiguration;
-
     /**
+     * <p>
      * Whether to use custom cookbooks.
+     * </p>
      */
     private Boolean useCustomCookbooks;
-
     /**
-     * Whether to associate the AWS OpsWorks built-in security groups with
-     * the stack's layers. <p>AWS OpsWorks provides a standard set of
-     * built-in security groups, one for each layer, which are associated
-     * with layers by default. With <code>UseOpsworksSecurityGroups</code>
-     * you can instead provide your own custom security groups.
-     * <code>UseOpsworksSecurityGroups</code> has the following settings:
-     * <ul> <li>True - AWS OpsWorks automatically associates the appropriate
-     * built-in security group with each layer (default setting). You can
-     * associate additional security groups with a layer after you create it
-     * but you cannot delete the built-in security group. </li> <li>False -
-     * AWS OpsWorks does not associate built-in security groups with layers.
-     * You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
-     * security groups and associate a security group with each layer that
-     * you create. However, you can still manually associate a built-in
-     * security group with a layer on creation; custom security groups are
-     * required only for those layers that need custom settings. </li> </ul>
-     * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     * a New Stack</a>.
+     * <p>
+     * Whether to associate the AWS OpsWorks built-in security groups with the
+     * stack's layers.
+     * </p>
+     * <p>
+     * AWS OpsWorks provides a standard set of built-in security groups, one for
+     * each layer, which are associated with layers by default. With
+     * <code>UseOpsworksSecurityGroups</code> you can instead provide your own
+     * custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+     * following settings:
+     * </p>
+     * <ul>
+     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * security group with each layer (default setting). You can associate
+     * additional security groups with a layer after you create it but you
+     * cannot delete the built-in security group.</li>
+     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon
+     * EC2) security groups and associate a security group with each layer that
+     * you create. However, you can still manually associate a built-in security
+     * group with a layer on creation; custom security groups are required only
+     * for those layers that need custom settings.</li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     * >Create a New Stack</a>.
+     * </p>
      */
     private Boolean useOpsworksSecurityGroups;
 
-    /**
-     * Contains the information required to retrieve an app or cookbook from
-     * a repository. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
-     * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
-     * Recipes and Cookbooks</a>.
-     */
     private Source customCookbooksSource;
-
     /**
+     * <p>
      * A default Amazon EC2 key pair name. The default value is none. If you
      * specify a key pair name, AWS OpsWorks installs the public key on the
-     * instance and you can use the private key with an SSH client to log in
-     * to the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
-     * Using SSH to Communicate with an Instance</a> and <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
-     * Managing SSH Access</a>. You can override this setting by specifying a
-     * different key pair, or no key pair, when you <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-     * create an instance</a>.
+     * instance and you can use the private key with an SSH client to log in to
+     * the instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"
+     * > Using SSH to Communicate with an Instance</a> and <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"
+     * > Managing SSH Access</a>. You can override this setting by specifying a
+     * different key pair, or no key pair, when you <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
+     * > create an instance</a>.
+     * </p>
      */
     private String defaultSshKeyName;
-
     /**
+     * <p>
      * Whether to clone the source stack's permissions.
+     * </p>
      */
     private Boolean clonePermissions;
-
     /**
-     * A list of source stack app IDs to be included in the cloned stack.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> cloneAppIds;
-
-    /**
-     * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
+     * A list of source stack app IDs to be included in the cloned stack.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> cloneAppIds;
+    /**
+     * <p>
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create an
+     * instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
+     * </p>
      */
     private String defaultRootDeviceType;
-
     /**
-     * The default AWS OpsWorks agent version. You have the following
-     * options: <ul> <li>Auto-update - Set this parameter to
-     * <code>LATEST</code>. AWS OpsWorks automatically installs new agent
-     * versions on the stack's instances as soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent
-     * version. To update the agent version, you must edit the stack
-     * configuration and specify a new version. AWS OpsWorks then
-     * automatically installs that version on the stack's instances.</li>
-     * </ul> <p>The default setting is <code>LATEST</code>. To specify an
-     * agent version, you must use the complete version number, not the
-     * abbreviated number shown on the console. For a list of available agent
-     * version numbers, call <a>DescribeAgentVersions</a>. <note>You can also
-     * specify an agent version when you create or update an instance, which
-     * overrides the stack's default setting.</note>
+     * <p>
+     * The default AWS OpsWorks agent version. You have the following options:
+     * </p>
+     * <ul>
+     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * automatically installs new agent versions on the stack's instances as
+     * soon as they are available.</li>
+     * <li>Fixed version - Set this parameter to your preferred agent version.
+     * To update the agent version, you must edit the stack configuration and
+     * specify a new version. AWS OpsWorks then automatically installs that
+     * version on the stack's instances.</li>
+     * </ul>
+     * <p>
+     * The default setting is <code>LATEST</code>. To specify an agent version,
+     * you must use the complete version number, not the abbreviated number
+     * shown on the console. For a list of available agent version numbers, call
+     * <a>DescribeAgentVersions</a>.
+     * </p>
+     * <note>You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.</note>
      */
     private String agentVersion;
 
     /**
+     * <p>
      * The source stack ID.
-     *
-     * @return The source stack ID.
-     */
-    public String getSourceStackId() {
-        return sourceStackId;
-    }
-    
-    /**
-     * The source stack ID.
-     *
-     * @param sourceStackId The source stack ID.
+     * </p>
+     * 
+     * @param sourceStackId
+     *        The source stack ID.
      */
     public void setSourceStackId(String sourceStackId) {
         this.sourceStackId = sourceStackId;
     }
-    
+
     /**
-     * The source stack ID.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param sourceStackId The source stack ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The source stack ID.
+     * </p>
+     * 
+     * @return The source stack ID.
+     */
+    public String getSourceStackId() {
+        return this.sourceStackId;
+    }
+
+    /**
+     * <p>
+     * The source stack ID.
+     * </p>
+     * 
+     * @param sourceStackId
+     *        The source stack ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withSourceStackId(String sourceStackId) {
-        this.sourceStackId = sourceStackId;
+        setSourceStackId(sourceStackId);
         return this;
     }
 
     /**
+     * <p>
      * The cloned stack name.
-     *
-     * @return The cloned stack name.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * The cloned stack name.
-     *
-     * @param name The cloned stack name.
+     * </p>
+     * 
+     * @param name
+     *        The cloned stack name.
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
-     * The cloned stack name.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param name The cloned stack name.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The cloned stack name.
+     * </p>
+     * 
+     * @return The cloned stack name.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The cloned stack name.
+     * </p>
+     * 
+     * @param name
+     *        The cloned stack name.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
+     * <p>
      * The cloned stack AWS region, such as "us-east-1". For more information
      * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
-     *
-     * @return The cloned stack AWS region, such as "us-east-1". For more information
-     *         about AWS regions, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>.
-     */
-    public String getRegion() {
-        return region;
-    }
-    
-    /**
-     * The cloned stack AWS region, such as "us-east-1". For more information
-     * about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
-     *
-     * @param region The cloned stack AWS region, such as "us-east-1". For more information
-     *         about AWS regions, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>.
+     * </p>
+     * 
+     * @param region
+     *        The cloned stack AWS region, such as "us-east-1". For more
+     *        information about AWS regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
+     *        >Regions and Endpoints</a>.
      */
     public void setRegion(String region) {
         this.region = region;
     }
-    
+
     /**
+     * <p>
      * The cloned stack AWS region, such as "us-east-1". For more information
      * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
+     * </p>
+     * 
+     * @return The cloned stack AWS region, such as "us-east-1". For more
+     *         information about AWS regions, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
+     *         >Regions and Endpoints</a>.
+     */
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param region The cloned stack AWS region, such as "us-east-1". For more information
-     *         about AWS regions, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The cloned stack AWS region, such as "us-east-1". For more information
+     * about AWS regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+     * and Endpoints</a>.
+     * </p>
+     * 
+     * @param region
+     *        The cloned stack AWS region, such as "us-east-1". For more
+     *        information about AWS regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
+     *        >Regions and Endpoints</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withRegion(String region) {
-        this.region = region;
+        setRegion(region);
         return this;
     }
 
     /**
-     * The ID of the VPC that the cloned stack is to be launched into. It
-     * must be in the specified region. All instances are launched into this
-     * VPC, and you cannot change the ID later. <ul> <li>If your account
-     * supports EC2 Classic, the default value is no VPC.</li> <li>If your
-     * account does not support EC2 Classic, the default value is the default
-     * VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
-     * to a default VPC and you have specified either the
-     * <code>DefaultAvailabilityZone</code> or the
+     * <p>
+     * The ID of the VPC that the cloned stack is to be launched into. It must
+     * be in the specified region. All instances are launched into this VPC, and
+     * you cannot change the ID later.
+     * </p>
+     * <ul>
+     * <li>If your account supports EC2 Classic, the default value is no VPC.</li>
+     * <li>If your account does not support EC2 Classic, the default value is
+     * the default VPC for the specified region.</li>
+     * </ul>
+     * <p>
+     * If the VPC ID corresponds to a default VPC and you have specified either
+     * the <code>DefaultAvailabilityZone</code> or the
      * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
      * value of the other parameter. If you specify neither parameter, AWS
-     * OpsWorks sets these parameters to the first valid Availability Zone
-     * for the specified region and the corresponding default VPC subnet ID,
-     * respectively. <p>If you specify a nondefault VPC ID, note the
-     * following: <ul> <li>It must belong to a VPC in your account that is in
-     * the specified region.</li> <li>You must specify a value for
-     * <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
-     * how to use AWS OpsWorks with a VPC, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     * a Stack in a VPC</a>. For more information on default VPC and EC2
-     * Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a>.
-     *
-     * @return The ID of the VPC that the cloned stack is to be launched into. It
-     *         must be in the specified region. All instances are launched into this
-     *         VPC, and you cannot change the ID later. <ul> <li>If your account
-     *         supports EC2 Classic, the default value is no VPC.</li> <li>If your
-     *         account does not support EC2 Classic, the default value is the default
-     *         VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
-     *         to a default VPC and you have specified either the
-     *         <code>DefaultAvailabilityZone</code> or the
-     *         <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
-     *         value of the other parameter. If you specify neither parameter, AWS
-     *         OpsWorks sets these parameters to the first valid Availability Zone
-     *         for the specified region and the corresponding default VPC subnet ID,
-     *         respectively. <p>If you specify a nondefault VPC ID, note the
-     *         following: <ul> <li>It must belong to a VPC in your account that is in
-     *         the specified region.</li> <li>You must specify a value for
-     *         <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
-     *         how to use AWS OpsWorks with a VPC, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     *         a Stack in a VPC</a>. For more information on default VPC and EC2
-     *         Classic, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *         Platforms</a>.
-     */
-    public String getVpcId() {
-        return vpcId;
-    }
-    
-    /**
-     * The ID of the VPC that the cloned stack is to be launched into. It
-     * must be in the specified region. All instances are launched into this
-     * VPC, and you cannot change the ID later. <ul> <li>If your account
-     * supports EC2 Classic, the default value is no VPC.</li> <li>If your
-     * account does not support EC2 Classic, the default value is the default
-     * VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
-     * to a default VPC and you have specified either the
-     * <code>DefaultAvailabilityZone</code> or the
-     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
-     * value of the other parameter. If you specify neither parameter, AWS
-     * OpsWorks sets these parameters to the first valid Availability Zone
-     * for the specified region and the corresponding default VPC subnet ID,
-     * respectively. <p>If you specify a nondefault VPC ID, note the
-     * following: <ul> <li>It must belong to a VPC in your account that is in
-     * the specified region.</li> <li>You must specify a value for
-     * <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
-     * how to use AWS OpsWorks with a VPC, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     * a Stack in a VPC</a>. For more information on default VPC and EC2
-     * Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a>.
-     *
-     * @param vpcId The ID of the VPC that the cloned stack is to be launched into. It
-     *         must be in the specified region. All instances are launched into this
-     *         VPC, and you cannot change the ID later. <ul> <li>If your account
-     *         supports EC2 Classic, the default value is no VPC.</li> <li>If your
-     *         account does not support EC2 Classic, the default value is the default
-     *         VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
-     *         to a default VPC and you have specified either the
-     *         <code>DefaultAvailabilityZone</code> or the
-     *         <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
-     *         value of the other parameter. If you specify neither parameter, AWS
-     *         OpsWorks sets these parameters to the first valid Availability Zone
-     *         for the specified region and the corresponding default VPC subnet ID,
-     *         respectively. <p>If you specify a nondefault VPC ID, note the
-     *         following: <ul> <li>It must belong to a VPC in your account that is in
-     *         the specified region.</li> <li>You must specify a value for
-     *         <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
-     *         how to use AWS OpsWorks with a VPC, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     *         a Stack in a VPC</a>. For more information on default VPC and EC2
-     *         Classic, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *         Platforms</a>.
+     * OpsWorks sets these parameters to the first valid Availability Zone for
+     * the specified region and the corresponding default VPC subnet ID,
+     * respectively.
+     * </p>
+     * <p>
+     * If you specify a nondefault VPC ID, note the following:
+     * </p>
+     * <ul>
+     * <li>It must belong to a VPC in your account that is in the specified
+     * region.</li>
+     * <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     * </ul>
+     * <p>
+     * For more information on how to use AWS OpsWorks with a VPC, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html"
+     * >Running a Stack in a VPC</a>. For more information on default VPC and
+     * EC2 Classic, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
+     * >Supported Platforms</a>.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC that the cloned stack is to be launched into. It
+     *        must be in the specified region. All instances are launched into
+     *        this VPC, and you cannot change the ID later.</p>
+     *        <ul>
+     *        <li>If your account supports EC2 Classic, the default value is no
+     *        VPC.</li>
+     *        <li>If your account does not support EC2 Classic, the default
+     *        value is the default VPC for the specified region.</li>
+     *        </ul>
+     *        <p>
+     *        If the VPC ID corresponds to a default VPC and you have specified
+     *        either the <code>DefaultAvailabilityZone</code> or the
+     *        <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers
+     *        the value of the other parameter. If you specify neither
+     *        parameter, AWS OpsWorks sets these parameters to the first valid
+     *        Availability Zone for the specified region and the corresponding
+     *        default VPC subnet ID, respectively.
+     *        </p>
+     *        <p>
+     *        If you specify a nondefault VPC ID, note the following:
+     *        </p>
+     *        <ul>
+     *        <li>It must belong to a VPC in your account that is in the
+     *        specified region.</li>
+     *        <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     *        </ul>
+     *        <p>
+     *        For more information on how to use AWS OpsWorks with a VPC, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html"
+     *        >Running a Stack in a VPC</a>. For more information on default VPC
+     *        and EC2 Classic, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
+     *        >Supported Platforms</a>.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
-    
+
     /**
-     * The ID of the VPC that the cloned stack is to be launched into. It
-     * must be in the specified region. All instances are launched into this
-     * VPC, and you cannot change the ID later. <ul> <li>If your account
-     * supports EC2 Classic, the default value is no VPC.</li> <li>If your
-     * account does not support EC2 Classic, the default value is the default
-     * VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
-     * to a default VPC and you have specified either the
-     * <code>DefaultAvailabilityZone</code> or the
+     * <p>
+     * The ID of the VPC that the cloned stack is to be launched into. It must
+     * be in the specified region. All instances are launched into this VPC, and
+     * you cannot change the ID later.
+     * </p>
+     * <ul>
+     * <li>If your account supports EC2 Classic, the default value is no VPC.</li>
+     * <li>If your account does not support EC2 Classic, the default value is
+     * the default VPC for the specified region.</li>
+     * </ul>
+     * <p>
+     * If the VPC ID corresponds to a default VPC and you have specified either
+     * the <code>DefaultAvailabilityZone</code> or the
      * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
      * value of the other parameter. If you specify neither parameter, AWS
-     * OpsWorks sets these parameters to the first valid Availability Zone
-     * for the specified region and the corresponding default VPC subnet ID,
-     * respectively. <p>If you specify a nondefault VPC ID, note the
-     * following: <ul> <li>It must belong to a VPC in your account that is in
-     * the specified region.</li> <li>You must specify a value for
-     * <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
-     * how to use AWS OpsWorks with a VPC, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     * a Stack in a VPC</a>. For more information on default VPC and EC2
-     * Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a>.
+     * OpsWorks sets these parameters to the first valid Availability Zone for
+     * the specified region and the corresponding default VPC subnet ID,
+     * respectively.
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param vpcId The ID of the VPC that the cloned stack is to be launched into. It
-     *         must be in the specified region. All instances are launched into this
-     *         VPC, and you cannot change the ID later. <ul> <li>If your account
-     *         supports EC2 Classic, the default value is no VPC.</li> <li>If your
-     *         account does not support EC2 Classic, the default value is the default
-     *         VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
-     *         to a default VPC and you have specified either the
-     *         <code>DefaultAvailabilityZone</code> or the
-     *         <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
-     *         value of the other parameter. If you specify neither parameter, AWS
-     *         OpsWorks sets these parameters to the first valid Availability Zone
-     *         for the specified region and the corresponding default VPC subnet ID,
-     *         respectively. <p>If you specify a nondefault VPC ID, note the
-     *         following: <ul> <li>It must belong to a VPC in your account that is in
-     *         the specified region.</li> <li>You must specify a value for
-     *         <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
-     *         how to use AWS OpsWorks with a VPC, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     *         a Stack in a VPC</a>. For more information on default VPC and EC2
-     *         Classic, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *         Platforms</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * If you specify a nondefault VPC ID, note the following:
+     * </p>
+     * <ul>
+     * <li>It must belong to a VPC in your account that is in the specified
+     * region.</li>
+     * <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     * </ul>
+     * <p>
+     * For more information on how to use AWS OpsWorks with a VPC, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html"
+     * >Running a Stack in a VPC</a>. For more information on default VPC and
+     * EC2 Classic, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
+     * >Supported Platforms</a>.
+     * </p>
+     * 
+     * @return The ID of the VPC that the cloned stack is to be launched into.
+     *         It must be in the specified region. All instances are launched
+     *         into this VPC, and you cannot change the ID later.</p>
+     *         <ul>
+     *         <li>If your account supports EC2 Classic, the default value is no
+     *         VPC.</li>
+     *         <li>If your account does not support EC2 Classic, the default
+     *         value is the default VPC for the specified region.</li>
+     *         </ul>
+     *         <p>
+     *         If the VPC ID corresponds to a default VPC and you have specified
+     *         either the <code>DefaultAvailabilityZone</code> or the
+     *         <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers
+     *         the value of the other parameter. If you specify neither
+     *         parameter, AWS OpsWorks sets these parameters to the first valid
+     *         Availability Zone for the specified region and the corresponding
+     *         default VPC subnet ID, respectively.
+     *         </p>
+     *         <p>
+     *         If you specify a nondefault VPC ID, note the following:
+     *         </p>
+     *         <ul>
+     *         <li>It must belong to a VPC in your account that is in the
+     *         specified region.</li>
+     *         <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     *         </ul>
+     *         <p>
+     *         For more information on how to use AWS OpsWorks with a VPC, see
+     *         <a href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html"
+     *         >Running a Stack in a VPC</a>. For more information on default
+     *         VPC and EC2 Classic, see <a href=
+     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
+     *         >Supported Platforms</a>.
+     */
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC that the cloned stack is to be launched into. It must
+     * be in the specified region. All instances are launched into this VPC, and
+     * you cannot change the ID later.
+     * </p>
+     * <ul>
+     * <li>If your account supports EC2 Classic, the default value is no VPC.</li>
+     * <li>If your account does not support EC2 Classic, the default value is
+     * the default VPC for the specified region.</li>
+     * </ul>
+     * <p>
+     * If the VPC ID corresponds to a default VPC and you have specified either
+     * the <code>DefaultAvailabilityZone</code> or the
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
+     * value of the other parameter. If you specify neither parameter, AWS
+     * OpsWorks sets these parameters to the first valid Availability Zone for
+     * the specified region and the corresponding default VPC subnet ID,
+     * respectively.
+     * </p>
+     * <p>
+     * If you specify a nondefault VPC ID, note the following:
+     * </p>
+     * <ul>
+     * <li>It must belong to a VPC in your account that is in the specified
+     * region.</li>
+     * <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     * </ul>
+     * <p>
+     * For more information on how to use AWS OpsWorks with a VPC, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html"
+     * >Running a Stack in a VPC</a>. For more information on default VPC and
+     * EC2 Classic, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
+     * >Supported Platforms</a>.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC that the cloned stack is to be launched into. It
+     *        must be in the specified region. All instances are launched into
+     *        this VPC, and you cannot change the ID later.</p>
+     *        <ul>
+     *        <li>If your account supports EC2 Classic, the default value is no
+     *        VPC.</li>
+     *        <li>If your account does not support EC2 Classic, the default
+     *        value is the default VPC for the specified region.</li>
+     *        </ul>
+     *        <p>
+     *        If the VPC ID corresponds to a default VPC and you have specified
+     *        either the <code>DefaultAvailabilityZone</code> or the
+     *        <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers
+     *        the value of the other parameter. If you specify neither
+     *        parameter, AWS OpsWorks sets these parameters to the first valid
+     *        Availability Zone for the specified region and the corresponding
+     *        default VPC subnet ID, respectively.
+     *        </p>
+     *        <p>
+     *        If you specify a nondefault VPC ID, note the following:
+     *        </p>
+     *        <ul>
+     *        <li>It must belong to a VPC in your account that is in the
+     *        specified region.</li>
+     *        <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     *        </ul>
+     *        <p>
+     *        For more information on how to use AWS OpsWorks with a VPC, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html"
+     *        >Running a Stack in a VPC</a>. For more information on default VPC
+     *        and EC2 Classic, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
+     *        >Supported Platforms</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withVpcId(String vpcId) {
-        this.vpcId = vpcId;
+        setVpcId(vpcId);
         return this;
     }
 
     /**
-     * A list of stack attributes and values as key/value pairs to be added
-     * to the cloned stack.
-     *
-     * @return A list of stack attributes and values as key/value pairs to be added
-     *         to the cloned stack.
+     * <p>
+     * A list of stack attributes and values as key/value pairs to be added to
+     * the cloned stack.
+     * </p>
+     * 
+     * @return A list of stack attributes and values as key/value pairs to be
+     *         added to the cloned stack.
      */
-    public java.util.Map<String,String> getAttributes() {
-        
+    public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
-            attributes = new java.util.HashMap<String,String>();
+            attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         return attributes;
     }
-    
+
     /**
-     * A list of stack attributes and values as key/value pairs to be added
-     * to the cloned stack.
-     *
-     * @param attributes A list of stack attributes and values as key/value pairs to be added
-     *         to the cloned stack.
-     */
-    public void setAttributes(java.util.Map<String,String> attributes) {
-        this.attributes = attributes;
-    }
-    
-    /**
-     * A list of stack attributes and values as key/value pairs to be added
-     * to the cloned stack.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param attributes A list of stack attributes and values as key/value pairs to be added
-     *         to the cloned stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A list of stack attributes and values as key/value pairs to be added to
+     * the cloned stack.
+     * </p>
+     * 
+     * @param attributes
+     *        A list of stack attributes and values as key/value pairs to be
+     *        added to the cloned stack.
      */
-    public CloneStackRequest withAttributes(java.util.Map<String,String> attributes) {
+    public void setAttributes(java.util.Map<String, String> attributes) {
+        this.attributes = attributes == null ? null
+                : new com.amazonaws.internal.SdkInternalMap<String, String>(
+                        attributes);
+    }
+
+    /**
+     * <p>
+     * A list of stack attributes and values as key/value pairs to be added to
+     * the cloned stack.
+     * </p>
+     * 
+     * @param attributes
+     *        A list of stack attributes and values as key/value pairs to be
+     *        added to the cloned stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CloneStackRequest withAttributes(
+            java.util.Map<String, String> attributes) {
         setAttributes(attributes);
         return this;
     }
 
-    /**
-     * A list of stack attributes and values as key/value pairs to be added
-     * to the cloned stack.
-     * <p>
-     * The method adds a new key-value pair into Attributes parameter, and
-     * returns a reference to this object so that method calls can be chained
-     * together.
-     *
-     * @param key The key of the entry to be added into Attributes.
-     * @param value The corresponding value of the entry to be added into Attributes.
-     */
-  public CloneStackRequest addAttributesEntry(String key, String value) {
-    if (null == this.attributes) {
-      this.attributes = new java.util.HashMap<String,String>();
+    public CloneStackRequest addAttributesEntry(String key, String value) {
+        if (null == this.attributes) {
+            this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        if (this.attributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.attributes.put(key, value);
+        return this;
     }
-    if (this.attributes.containsKey(key))
-      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-    this.attributes.put(key, value);
-    return this;
-  }
 
-  /**
-   * Removes all the entries added into Attributes.
-   * <p>
-   * Returns a reference to this object so that method calls can be chained together.
-   */
-  public CloneStackRequest clearAttributesEntries() {
-    this.attributes = null;
-    return this;
-  }
-  
     /**
-     * The stack AWS Identity and Access Management (IAM) role, which allows
-     * AWS OpsWorks to work with AWS resources on your behalf. You must set
-     * this parameter to the Amazon Resource Name (ARN) for an existing IAM
-     * role. If you create a stack by using the AWS OpsWorks console, it
-     * creates the role for you. You can obtain an existing stack's IAM ARN
-     * programmatically by calling <a>DescribePermissions</a>. For more
-     * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note> <p>You must set this parameter to a valid
-     * service role ARN or the action will fail; there is no default value.
-     * You can specify the source stack's service role ARN, if you prefer,
-     * but you must do so explicitly. </note>
-     *
-     * @return The stack AWS Identity and Access Management (IAM) role, which allows
-     *         AWS OpsWorks to work with AWS resources on your behalf. You must set
-     *         this parameter to the Amazon Resource Name (ARN) for an existing IAM
-     *         role. If you create a stack by using the AWS OpsWorks console, it
-     *         creates the role for you. You can obtain an existing stack's IAM ARN
-     *         programmatically by calling <a>DescribePermissions</a>. For more
-     *         information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>. <note> <p>You must set this parameter to a valid
-     *         service role ARN or the action will fail; there is no default value.
-     *         You can specify the source stack's service role ARN, if you prefer,
-     *         but you must do so explicitly. </note>
+     * Removes all the entries added into Attributes. &lt;p> Returns a reference
+     * to this object so that method calls can be chained together.
      */
-    public String getServiceRoleArn() {
-        return serviceRoleArn;
+    public CloneStackRequest clearAttributesEntries() {
+        this.attributes = null;
+        return this;
     }
-    
+
     /**
-     * The stack AWS Identity and Access Management (IAM) role, which allows
-     * AWS OpsWorks to work with AWS resources on your behalf. You must set
-     * this parameter to the Amazon Resource Name (ARN) for an existing IAM
-     * role. If you create a stack by using the AWS OpsWorks console, it
-     * creates the role for you. You can obtain an existing stack's IAM ARN
-     * programmatically by calling <a>DescribePermissions</a>. For more
-     * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note> <p>You must set this parameter to a valid
-     * service role ARN or the action will fail; there is no default value.
-     * You can specify the source stack's service role ARN, if you prefer,
-     * but you must do so explicitly. </note>
-     *
-     * @param serviceRoleArn The stack AWS Identity and Access Management (IAM) role, which allows
-     *         AWS OpsWorks to work with AWS resources on your behalf. You must set
-     *         this parameter to the Amazon Resource Name (ARN) for an existing IAM
-     *         role. If you create a stack by using the AWS OpsWorks console, it
-     *         creates the role for you. You can obtain an existing stack's IAM ARN
-     *         programmatically by calling <a>DescribePermissions</a>. For more
-     *         information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>. <note> <p>You must set this parameter to a valid
-     *         service role ARN or the action will fail; there is no default value.
-     *         You can specify the source stack's service role ARN, if you prefer,
-     *         but you must do so explicitly. </note>
+     * <p>
+     * The stack AWS Identity and Access Management (IAM) role, which allows AWS
+     * OpsWorks to work with AWS resources on your behalf. You must set this
+     * parameter to the Amazon Resource Name (ARN) for an existing IAM role. If
+     * you create a stack by using the AWS OpsWorks console, it creates the role
+     * for you. You can obtain an existing stack's IAM ARN programmatically by
+     * calling <a>DescribePermissions</a>. For more information about IAM ARNs,
+     * see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You must set this parameter to a valid service role ARN or the action
+     * will fail; there is no default value. You can specify the source stack's
+     * service role ARN, if you prefer, but you must do so explicitly.
+     * </p>
+     * </note>
+     * 
+     * @param serviceRoleArn
+     *        The stack AWS Identity and Access Management (IAM) role, which
+     *        allows AWS OpsWorks to work with AWS resources on your behalf. You
+     *        must set this parameter to the Amazon Resource Name (ARN) for an
+     *        existing IAM role. If you create a stack by using the AWS OpsWorks
+     *        console, it creates the role for you. You can obtain an existing
+     *        stack's IAM ARN programmatically by calling
+     *        <a>DescribePermissions</a>. For more information about IAM ARNs,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >Using Identifiers</a>.</p> <note>
+     *        <p>
+     *        You must set this parameter to a valid service role ARN or the
+     *        action will fail; there is no default value. You can specify the
+     *        source stack's service role ARN, if you prefer, but you must do so
+     *        explicitly.
+     *        </p>
      */
     public void setServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
     }
-    
+
     /**
-     * The stack AWS Identity and Access Management (IAM) role, which allows
-     * AWS OpsWorks to work with AWS resources on your behalf. You must set
-     * this parameter to the Amazon Resource Name (ARN) for an existing IAM
-     * role. If you create a stack by using the AWS OpsWorks console, it
-     * creates the role for you. You can obtain an existing stack's IAM ARN
-     * programmatically by calling <a>DescribePermissions</a>. For more
-     * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note> <p>You must set this parameter to a valid
-     * service role ARN or the action will fail; there is no default value.
-     * You can specify the source stack's service role ARN, if you prefer,
-     * but you must do so explicitly. </note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param serviceRoleArn The stack AWS Identity and Access Management (IAM) role, which allows
-     *         AWS OpsWorks to work with AWS resources on your behalf. You must set
-     *         this parameter to the Amazon Resource Name (ARN) for an existing IAM
-     *         role. If you create a stack by using the AWS OpsWorks console, it
-     *         creates the role for you. You can obtain an existing stack's IAM ARN
-     *         programmatically by calling <a>DescribePermissions</a>. For more
-     *         information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>. <note> <p>You must set this parameter to a valid
-     *         service role ARN or the action will fail; there is no default value.
-     *         You can specify the source stack's service role ARN, if you prefer,
-     *         but you must do so explicitly. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The stack AWS Identity and Access Management (IAM) role, which allows AWS
+     * OpsWorks to work with AWS resources on your behalf. You must set this
+     * parameter to the Amazon Resource Name (ARN) for an existing IAM role. If
+     * you create a stack by using the AWS OpsWorks console, it creates the role
+     * for you. You can obtain an existing stack's IAM ARN programmatically by
+     * calling <a>DescribePermissions</a>. For more information about IAM ARNs,
+     * see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You must set this parameter to a valid service role ARN or the action
+     * will fail; there is no default value. You can specify the source stack's
+     * service role ARN, if you prefer, but you must do so explicitly.
+     * </p>
+     * </note>
+     * 
+     * @return The stack AWS Identity and Access Management (IAM) role, which
+     *         allows AWS OpsWorks to work with AWS resources on your behalf.
+     *         You must set this parameter to the Amazon Resource Name (ARN) for
+     *         an existing IAM role. If you create a stack by using the AWS
+     *         OpsWorks console, it creates the role for you. You can obtain an
+     *         existing stack's IAM ARN programmatically by calling
+     *         <a>DescribePermissions</a>. For more information about IAM ARNs,
+     *         see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *         >Using Identifiers</a>.</p> <note>
+     *         <p>
+     *         You must set this parameter to a valid service role ARN or the
+     *         action will fail; there is no default value. You can specify the
+     *         source stack's service role ARN, if you prefer, but you must do
+     *         so explicitly.
+     *         </p>
+     */
+    public String getServiceRoleArn() {
+        return this.serviceRoleArn;
+    }
+
+    /**
+     * <p>
+     * The stack AWS Identity and Access Management (IAM) role, which allows AWS
+     * OpsWorks to work with AWS resources on your behalf. You must set this
+     * parameter to the Amazon Resource Name (ARN) for an existing IAM role. If
+     * you create a stack by using the AWS OpsWorks console, it creates the role
+     * for you. You can obtain an existing stack's IAM ARN programmatically by
+     * calling <a>DescribePermissions</a>. For more information about IAM ARNs,
+     * see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You must set this parameter to a valid service role ARN or the action
+     * will fail; there is no default value. You can specify the source stack's
+     * service role ARN, if you prefer, but you must do so explicitly.
+     * </p>
+     * </note>
+     * 
+     * @param serviceRoleArn
+     *        The stack AWS Identity and Access Management (IAM) role, which
+     *        allows AWS OpsWorks to work with AWS resources on your behalf. You
+     *        must set this parameter to the Amazon Resource Name (ARN) for an
+     *        existing IAM role. If you create a stack by using the AWS OpsWorks
+     *        console, it creates the role for you. You can obtain an existing
+     *        stack's IAM ARN programmatically by calling
+     *        <a>DescribePermissions</a>. For more information about IAM ARNs,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >Using Identifiers</a>.</p> <note>
+     *        <p>
+     *        You must set this parameter to a valid service role ARN or the
+     *        action will fail; there is no default value. You can specify the
+     *        source stack's service role ARN, if you prefer, but you must do so
+     *        explicitly.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withServiceRoleArn(String serviceRoleArn) {
-        this.serviceRoleArn = serviceRoleArn;
+        setServiceRoleArn(serviceRoleArn);
         return this;
     }
 
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of an IAM profile that is the default
-     * profile for all of the stack's EC2 instances. For more information
-     * about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
-     *
-     * @return The Amazon Resource Name (ARN) of an IAM profile that is the default
-     *         profile for all of the stack's EC2 instances. For more information
-     *         about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>.
-     */
-    public String getDefaultInstanceProfileArn() {
-        return defaultInstanceProfileArn;
-    }
-    
-    /**
-     * The Amazon Resource Name (ARN) of an IAM profile that is the default
-     * profile for all of the stack's EC2 instances. For more information
-     * about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
-     *
-     * @param defaultInstanceProfileArn The Amazon Resource Name (ARN) of an IAM profile that is the default
-     *         profile for all of the stack's EC2 instances. For more information
-     *         about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>.
+     * profile for all of the stack's EC2 instances. For more information about
+     * IAM ARNs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
+     * 
+     * @param defaultInstanceProfileArn
+     *        The Amazon Resource Name (ARN) of an IAM profile that is the
+     *        default profile for all of the stack's EC2 instances. For more
+     *        information about IAM ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >Using Identifiers</a>.
      */
     public void setDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
         this.defaultInstanceProfileArn = defaultInstanceProfileArn;
     }
-    
+
     /**
-     * The Amazon Resource Name (ARN) of an IAM profile that is the default
-     * profile for all of the stack's EC2 instances. For more information
-     * about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param defaultInstanceProfileArn The Amazon Resource Name (ARN) of an IAM profile that is the default
-     *         profile for all of the stack's EC2 instances. For more information
-     *         about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon Resource Name (ARN) of an IAM profile that is the default
+     * profile for all of the stack's EC2 instances. For more information about
+     * IAM ARNs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an IAM profile that is the
+     *         default profile for all of the stack's EC2 instances. For more
+     *         information about IAM ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *         >Using Identifiers</a>.
      */
-    public CloneStackRequest withDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
-        this.defaultInstanceProfileArn = defaultInstanceProfileArn;
+    public String getDefaultInstanceProfileArn() {
+        return this.defaultInstanceProfileArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM profile that is the default
+     * profile for all of the stack's EC2 instances. For more information about
+     * IAM ARNs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >Using Identifiers</a>.
+     * </p>
+     * 
+     * @param defaultInstanceProfileArn
+     *        The Amazon Resource Name (ARN) of an IAM profile that is the
+     *        default profile for all of the stack's EC2 instances. For more
+     *        information about IAM ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >Using Identifiers</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CloneStackRequest withDefaultInstanceProfileArn(
+            String defaultInstanceProfileArn) {
+        setDefaultInstanceProfileArn(defaultInstanceProfileArn);
         return this;
     }
 
     /**
-     * The stack's operating system, which must be set to one of the
-     * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
-     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For
-     * more information on how to use custom AMIs with OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</li> </ul> <p>The default option is the parent
-     * stack's operating system. For more information on the supported
-     * operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>. <note>You can specify a different
-     * Linux operating system for the cloned stack, but you cannot change
-     * from Linux to Windows or Windows to Linux.</note>
-     *
-     * @return The stack's operating system, which must be set to one of the
-     *         following. <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
-     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     *         specify the custom AMI you want to use when you create instances. For
-     *         more information on how to use custom AMIs with OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.</li> </ul> <p>The default option is the parent
-     *         stack's operating system. For more information on the supported
-     *         operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     *         OpsWorks Operating Systems</a>. <note>You can specify a different
-     *         Linux operating system for the cloned stack, but you cannot change
-     *         from Linux to Windows or Windows to Linux.</note>
-     */
-    public String getDefaultOs() {
-        return defaultOs;
-    }
-    
-    /**
-     * The stack's operating system, which must be set to one of the
-     * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
-     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For
-     * more information on how to use custom AMIs with OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</li> </ul> <p>The default option is the parent
-     * stack's operating system. For more information on the supported
-     * operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>. <note>You can specify a different
-     * Linux operating system for the cloned stack, but you cannot change
-     * from Linux to Windows or Windows to Linux.</note>
-     *
-     * @param defaultOs The stack's operating system, which must be set to one of the
-     *         following. <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
-     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     *         specify the custom AMI you want to use when you create instances. For
-     *         more information on how to use custom AMIs with OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.</li> </ul> <p>The default option is the parent
-     *         stack's operating system. For more information on the supported
-     *         operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     *         OpsWorks Operating Systems</a>. <note>You can specify a different
-     *         Linux operating system for the cloned stack, but you cannot change
-     *         from Linux to Windows or Windows to Linux.</note>
+     * <p>
+     * The stack's operating system, which must be set to one of the following.
+     * </p>
+     * <ul>
+     * <li>A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2015.03</code>,
+     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
+     * or <code>Ubuntu 14.04 LTS</code>.</li>
+     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
+     * want to use when you create instances. For more information on how to use
+     * custom AMIs with OpsWorks, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     * >Using Custom AMIs</a>.</li>
+     * </ul>
+     * <p>
+     * The default option is the parent stack's operating system. For more
+     * information on the supported operating systems, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
+     * >AWS OpsWorks Operating Systems</a>.
+     * </p>
+     * <note>You can specify a different Linux operating system for the cloned
+     * stack, but you cannot change from Linux to Windows or Windows to
+     * Linux.</note>
+     * 
+     * @param defaultOs
+     *        The stack's operating system, which must be set to one of the
+     *        following.</p>
+     *        <ul>
+     *        <li>A supported Linux operating system: An Amazon Linux version,
+     *        such as <code>Amazon Linux 2015.03</code>,
+     *        <code>Red Hat Enterprise Linux 7</code>,
+     *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+     *        <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *        <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
+     *        you want to use when you create instances. For more information on
+     *        how to use custom AMIs with OpsWorks, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     *        >Using Custom AMIs</a>.</li>
+     *        </ul>
+     *        <p>
+     *        The default option is the parent stack's operating system. For
+     *        more information on the supported operating systems, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
+     *        >AWS OpsWorks Operating Systems</a>.
+     *        </p>
+     *        <note>You can specify a different Linux operating system for the
+     *        cloned stack, but you cannot change from Linux to Windows or
+     *        Windows to Linux.
      */
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
     }
-    
+
     /**
-     * The stack's operating system, which must be set to one of the
-     * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
-     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For
-     * more information on how to use custom AMIs with OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</li> </ul> <p>The default option is the parent
-     * stack's operating system. For more information on the supported
-     * operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>. <note>You can specify a different
-     * Linux operating system for the cloned stack, but you cannot change
-     * from Linux to Windows or Windows to Linux.</note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param defaultOs The stack's operating system, which must be set to one of the
-     *         following. <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
-     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     *         specify the custom AMI you want to use when you create instances. For
-     *         more information on how to use custom AMIs with OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.</li> </ul> <p>The default option is the parent
-     *         stack's operating system. For more information on the supported
-     *         operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     *         OpsWorks Operating Systems</a>. <note>You can specify a different
-     *         Linux operating system for the cloned stack, but you cannot change
-     *         from Linux to Windows or Windows to Linux.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The stack's operating system, which must be set to one of the following.
+     * </p>
+     * <ul>
+     * <li>A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2015.03</code>,
+     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
+     * or <code>Ubuntu 14.04 LTS</code>.</li>
+     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
+     * want to use when you create instances. For more information on how to use
+     * custom AMIs with OpsWorks, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     * >Using Custom AMIs</a>.</li>
+     * </ul>
+     * <p>
+     * The default option is the parent stack's operating system. For more
+     * information on the supported operating systems, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
+     * >AWS OpsWorks Operating Systems</a>.
+     * </p>
+     * <note>You can specify a different Linux operating system for the cloned
+     * stack, but you cannot change from Linux to Windows or Windows to
+     * Linux.</note>
+     * 
+     * @return The stack's operating system, which must be set to one of the
+     *         following.</p>
+     *         <ul>
+     *         <li>A supported Linux operating system: An Amazon Linux version,
+     *         such as <code>Amazon Linux 2015.03</code>,
+     *         <code>Red Hat Enterprise Linux 7</code>,
+     *         <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+     *         <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *         <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
+     *         you want to use when you create instances. For more information
+     *         on how to use custom AMIs with OpsWorks, see <a href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     *         >Using Custom AMIs</a>.</li>
+     *         </ul>
+     *         <p>
+     *         The default option is the parent stack's operating system. For
+     *         more information on the supported operating systems, see <a href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
+     *         >AWS OpsWorks Operating Systems</a>.
+     *         </p>
+     *         <note>You can specify a different Linux operating system for the
+     *         cloned stack, but you cannot change from Linux to Windows or
+     *         Windows to Linux.
+     */
+    public String getDefaultOs() {
+        return this.defaultOs;
+    }
+
+    /**
+     * <p>
+     * The stack's operating system, which must be set to one of the following.
+     * </p>
+     * <ul>
+     * <li>A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2015.03</code>,
+     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
+     * or <code>Ubuntu 14.04 LTS</code>.</li>
+     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
+     * want to use when you create instances. For more information on how to use
+     * custom AMIs with OpsWorks, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     * >Using Custom AMIs</a>.</li>
+     * </ul>
+     * <p>
+     * The default option is the parent stack's operating system. For more
+     * information on the supported operating systems, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
+     * >AWS OpsWorks Operating Systems</a>.
+     * </p>
+     * <note>You can specify a different Linux operating system for the cloned
+     * stack, but you cannot change from Linux to Windows or Windows to
+     * Linux.</note>
+     * 
+     * @param defaultOs
+     *        The stack's operating system, which must be set to one of the
+     *        following.</p>
+     *        <ul>
+     *        <li>A supported Linux operating system: An Amazon Linux version,
+     *        such as <code>Amazon Linux 2015.03</code>,
+     *        <code>Red Hat Enterprise Linux 7</code>,
+     *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+     *        <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *        <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
+     *        you want to use when you create instances. For more information on
+     *        how to use custom AMIs with OpsWorks, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     *        >Using Custom AMIs</a>.</li>
+     *        </ul>
+     *        <p>
+     *        The default option is the parent stack's operating system. For
+     *        more information on the supported operating systems, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
+     *        >AWS OpsWorks Operating Systems</a>.
+     *        </p>
+     *        <note>You can specify a different Linux operating system for the
+     *        cloned stack, but you cannot change from Linux to Windows or
+     *        Windows to Linux.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withDefaultOs(String defaultOs) {
-        this.defaultOs = defaultOs;
+        setDefaultOs(defaultOs);
         return this;
     }
 
     /**
-     * The stack's host name theme, with spaces are replaced by underscores.
-     * The theme is used to generate host names for the stack's instances. By
+     * <p>
+     * The stack's host name theme, with spaces are replaced by underscores. The
+     * theme is used to generate host names for the stack's instances. By
      * default, <code>HostnameTheme</code> is set to
      * <code>Layer_Dependent</code>, which creates host names by appending
-     * integers to the layer's short name. The other themes are: <ul> <li>
-     * <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
-     * <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
-     * <code>Greek_Deities</code> </li> <li>
-     * <code>Legendary_creatures_from_Japan</code> </li> <li>
-     * <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
-     * </li> <li> <code>Scottish_Islands</code> </li> <li>
-     * <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
-     * <p>To obtain a generated host name, call
-     * <code>GetHostNameSuggestion</code>, which returns a host name based on
-     * the current theme.
-     *
-     * @return The stack's host name theme, with spaces are replaced by underscores.
-     *         The theme is used to generate host names for the stack's instances. By
-     *         default, <code>HostnameTheme</code> is set to
-     *         <code>Layer_Dependent</code>, which creates host names by appending
-     *         integers to the layer's short name. The other themes are: <ul> <li>
-     *         <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
-     *         <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
-     *         <code>Greek_Deities</code> </li> <li>
-     *         <code>Legendary_creatures_from_Japan</code> </li> <li>
-     *         <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
-     *         </li> <li> <code>Scottish_Islands</code> </li> <li>
-     *         <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
-     *         <p>To obtain a generated host name, call
-     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
-     *         the current theme.
-     */
-    public String getHostnameTheme() {
-        return hostnameTheme;
-    }
-    
-    /**
-     * The stack's host name theme, with spaces are replaced by underscores.
-     * The theme is used to generate host names for the stack's instances. By
-     * default, <code>HostnameTheme</code> is set to
-     * <code>Layer_Dependent</code>, which creates host names by appending
-     * integers to the layer's short name. The other themes are: <ul> <li>
-     * <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
-     * <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
-     * <code>Greek_Deities</code> </li> <li>
-     * <code>Legendary_creatures_from_Japan</code> </li> <li>
-     * <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
-     * </li> <li> <code>Scottish_Islands</code> </li> <li>
-     * <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
-     * <p>To obtain a generated host name, call
-     * <code>GetHostNameSuggestion</code>, which returns a host name based on
-     * the current theme.
-     *
-     * @param hostnameTheme The stack's host name theme, with spaces are replaced by underscores.
-     *         The theme is used to generate host names for the stack's instances. By
-     *         default, <code>HostnameTheme</code> is set to
-     *         <code>Layer_Dependent</code>, which creates host names by appending
-     *         integers to the layer's short name. The other themes are: <ul> <li>
-     *         <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
-     *         <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
-     *         <code>Greek_Deities</code> </li> <li>
-     *         <code>Legendary_creatures_from_Japan</code> </li> <li>
-     *         <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
-     *         </li> <li> <code>Scottish_Islands</code> </li> <li>
-     *         <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
-     *         <p>To obtain a generated host name, call
-     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
-     *         the current theme.
+     * integers to the layer's short name. The other themes are:
+     * </p>
+     * <ul>
+     * <li> <code>Baked_Goods</code></li>
+     * <li> <code>Clouds</code></li>
+     * <li> <code>Europe_Cities</code></li>
+     * <li> <code>Fruits</code></li>
+     * <li> <code>Greek_Deities</code></li>
+     * <li> <code>Legendary_creatures_from_Japan</code></li>
+     * <li> <code>Planets_and_Moons</code></li>
+     * <li> <code>Roman_Deities</code></li>
+     * <li> <code>Scottish_Islands</code></li>
+     * <li> <code>US_Cities</code></li>
+     * <li> <code>Wild_Cats</code></li>
+     * </ul>
+     * <p>
+     * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
+     * which returns a host name based on the current theme.
+     * </p>
+     * 
+     * @param hostnameTheme
+     *        The stack's host name theme, with spaces are replaced by
+     *        underscores. The theme is used to generate host names for the
+     *        stack's instances. By default, <code>HostnameTheme</code> is set
+     *        to <code>Layer_Dependent</code>, which creates host names by
+     *        appending integers to the layer's short name. The other themes
+     *        are:</p>
+     *        <ul>
+     *        <li> <code>Baked_Goods</code></li>
+     *        <li> <code>Clouds</code></li>
+     *        <li> <code>Europe_Cities</code></li>
+     *        <li> <code>Fruits</code></li>
+     *        <li> <code>Greek_Deities</code></li>
+     *        <li> <code>Legendary_creatures_from_Japan</code></li>
+     *        <li> <code>Planets_and_Moons</code></li>
+     *        <li> <code>Roman_Deities</code></li>
+     *        <li> <code>Scottish_Islands</code></li>
+     *        <li> <code>US_Cities</code></li>
+     *        <li> <code>Wild_Cats</code></li>
+     *        </ul>
+     *        <p>
+     *        To obtain a generated host name, call
+     *        <code>GetHostNameSuggestion</code>, which returns a host name
+     *        based on the current theme.
      */
     public void setHostnameTheme(String hostnameTheme) {
         this.hostnameTheme = hostnameTheme;
     }
-    
+
     /**
-     * The stack's host name theme, with spaces are replaced by underscores.
-     * The theme is used to generate host names for the stack's instances. By
+     * <p>
+     * The stack's host name theme, with spaces are replaced by underscores. The
+     * theme is used to generate host names for the stack's instances. By
      * default, <code>HostnameTheme</code> is set to
      * <code>Layer_Dependent</code>, which creates host names by appending
-     * integers to the layer's short name. The other themes are: <ul> <li>
-     * <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
-     * <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
-     * <code>Greek_Deities</code> </li> <li>
-     * <code>Legendary_creatures_from_Japan</code> </li> <li>
-     * <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
-     * </li> <li> <code>Scottish_Islands</code> </li> <li>
-     * <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
-     * <p>To obtain a generated host name, call
-     * <code>GetHostNameSuggestion</code>, which returns a host name based on
-     * the current theme.
+     * integers to the layer's short name. The other themes are:
+     * </p>
+     * <ul>
+     * <li> <code>Baked_Goods</code></li>
+     * <li> <code>Clouds</code></li>
+     * <li> <code>Europe_Cities</code></li>
+     * <li> <code>Fruits</code></li>
+     * <li> <code>Greek_Deities</code></li>
+     * <li> <code>Legendary_creatures_from_Japan</code></li>
+     * <li> <code>Planets_and_Moons</code></li>
+     * <li> <code>Roman_Deities</code></li>
+     * <li> <code>Scottish_Islands</code></li>
+     * <li> <code>US_Cities</code></li>
+     * <li> <code>Wild_Cats</code></li>
+     * </ul>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param hostnameTheme The stack's host name theme, with spaces are replaced by underscores.
-     *         The theme is used to generate host names for the stack's instances. By
-     *         default, <code>HostnameTheme</code> is set to
-     *         <code>Layer_Dependent</code>, which creates host names by appending
-     *         integers to the layer's short name. The other themes are: <ul> <li>
-     *         <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
-     *         <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
-     *         <code>Greek_Deities</code> </li> <li>
-     *         <code>Legendary_creatures_from_Japan</code> </li> <li>
-     *         <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
-     *         </li> <li> <code>Scottish_Islands</code> </li> <li>
-     *         <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
-     *         <p>To obtain a generated host name, call
-     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
-     *         the current theme.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
+     * which returns a host name based on the current theme.
+     * </p>
+     * 
+     * @return The stack's host name theme, with spaces are replaced by
+     *         underscores. The theme is used to generate host names for the
+     *         stack's instances. By default, <code>HostnameTheme</code> is set
+     *         to <code>Layer_Dependent</code>, which creates host names by
+     *         appending integers to the layer's short name. The other themes
+     *         are:</p>
+     *         <ul>
+     *         <li> <code>Baked_Goods</code></li>
+     *         <li> <code>Clouds</code></li>
+     *         <li> <code>Europe_Cities</code></li>
+     *         <li> <code>Fruits</code></li>
+     *         <li> <code>Greek_Deities</code></li>
+     *         <li> <code>Legendary_creatures_from_Japan</code></li>
+     *         <li> <code>Planets_and_Moons</code></li>
+     *         <li> <code>Roman_Deities</code></li>
+     *         <li> <code>Scottish_Islands</code></li>
+     *         <li> <code>US_Cities</code></li>
+     *         <li> <code>Wild_Cats</code></li>
+     *         </ul>
+     *         <p>
+     *         To obtain a generated host name, call
+     *         <code>GetHostNameSuggestion</code>, which returns a host name
+     *         based on the current theme.
+     */
+    public String getHostnameTheme() {
+        return this.hostnameTheme;
+    }
+
+    /**
+     * <p>
+     * The stack's host name theme, with spaces are replaced by underscores. The
+     * theme is used to generate host names for the stack's instances. By
+     * default, <code>HostnameTheme</code> is set to
+     * <code>Layer_Dependent</code>, which creates host names by appending
+     * integers to the layer's short name. The other themes are:
+     * </p>
+     * <ul>
+     * <li> <code>Baked_Goods</code></li>
+     * <li> <code>Clouds</code></li>
+     * <li> <code>Europe_Cities</code></li>
+     * <li> <code>Fruits</code></li>
+     * <li> <code>Greek_Deities</code></li>
+     * <li> <code>Legendary_creatures_from_Japan</code></li>
+     * <li> <code>Planets_and_Moons</code></li>
+     * <li> <code>Roman_Deities</code></li>
+     * <li> <code>Scottish_Islands</code></li>
+     * <li> <code>US_Cities</code></li>
+     * <li> <code>Wild_Cats</code></li>
+     * </ul>
+     * <p>
+     * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
+     * which returns a host name based on the current theme.
+     * </p>
+     * 
+     * @param hostnameTheme
+     *        The stack's host name theme, with spaces are replaced by
+     *        underscores. The theme is used to generate host names for the
+     *        stack's instances. By default, <code>HostnameTheme</code> is set
+     *        to <code>Layer_Dependent</code>, which creates host names by
+     *        appending integers to the layer's short name. The other themes
+     *        are:</p>
+     *        <ul>
+     *        <li> <code>Baked_Goods</code></li>
+     *        <li> <code>Clouds</code></li>
+     *        <li> <code>Europe_Cities</code></li>
+     *        <li> <code>Fruits</code></li>
+     *        <li> <code>Greek_Deities</code></li>
+     *        <li> <code>Legendary_creatures_from_Japan</code></li>
+     *        <li> <code>Planets_and_Moons</code></li>
+     *        <li> <code>Roman_Deities</code></li>
+     *        <li> <code>Scottish_Islands</code></li>
+     *        <li> <code>US_Cities</code></li>
+     *        <li> <code>Wild_Cats</code></li>
+     *        </ul>
+     *        <p>
+     *        To obtain a generated host name, call
+     *        <code>GetHostNameSuggestion</code>, which returns a host name
+     *        based on the current theme.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withHostnameTheme(String hostnameTheme) {
-        this.hostnameTheme = hostnameTheme;
+        setHostnameTheme(hostnameTheme);
         return this;
     }
 
     /**
+     * <p>
      * The cloned stack's default Availability Zone, which must be in the
      * specified region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>. If you also specify a value for
      * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
      * more information, see the <code>VpcId</code> parameter description.
-     *
-     * @return The cloned stack's default Availability Zone, which must be in the
-     *         specified region. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>. If you also specify a value for
-     *         <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
-     *         more information, see the <code>VpcId</code> parameter description.
-     */
-    public String getDefaultAvailabilityZone() {
-        return defaultAvailabilityZone;
-    }
-    
-    /**
-     * The cloned stack's default Availability Zone, which must be in the
-     * specified region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>. If you also specify a value for
-     * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
-     * more information, see the <code>VpcId</code> parameter description.
-     *
-     * @param defaultAvailabilityZone The cloned stack's default Availability Zone, which must be in the
-     *         specified region. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>. If you also specify a value for
-     *         <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
-     *         more information, see the <code>VpcId</code> parameter description.
+     * </p>
+     * 
+     * @param defaultAvailabilityZone
+     *        The cloned stack's default Availability Zone, which must be in the
+     *        specified region. For more information, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
+     *        >Regions and Endpoints</a>. If you also specify a value for
+     *        <code>DefaultSubnetId</code>, the subnet must be in the same zone.
+     *        For more information, see the <code>VpcId</code> parameter
+     *        description.
      */
     public void setDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
     }
-    
+
     /**
+     * <p>
      * The cloned stack's default Availability Zone, which must be in the
      * specified region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>. If you also specify a value for
      * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
      * more information, see the <code>VpcId</code> parameter description.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param defaultAvailabilityZone The cloned stack's default Availability Zone, which must be in the
-     *         specified region. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>. If you also specify a value for
-     *         <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
-     *         more information, see the <code>VpcId</code> parameter description.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The cloned stack's default Availability Zone, which must be in
+     *         the specified region. For more information, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
+     *         >Regions and Endpoints</a>. If you also specify a value for
+     *         <code>DefaultSubnetId</code>, the subnet must be in the same
+     *         zone. For more information, see the <code>VpcId</code> parameter
+     *         description.
      */
-    public CloneStackRequest withDefaultAvailabilityZone(String defaultAvailabilityZone) {
-        this.defaultAvailabilityZone = defaultAvailabilityZone;
+    public String getDefaultAvailabilityZone() {
+        return this.defaultAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * The cloned stack's default Availability Zone, which must be in the
+     * specified region. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+     * and Endpoints</a>. If you also specify a value for
+     * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     * more information, see the <code>VpcId</code> parameter description.
+     * </p>
+     * 
+     * @param defaultAvailabilityZone
+     *        The cloned stack's default Availability Zone, which must be in the
+     *        specified region. For more information, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
+     *        >Regions and Endpoints</a>. If you also specify a value for
+     *        <code>DefaultSubnetId</code>, the subnet must be in the same zone.
+     *        For more information, see the <code>VpcId</code> parameter
+     *        description.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CloneStackRequest withDefaultAvailabilityZone(
+            String defaultAvailabilityZone) {
+        setDefaultAvailabilityZone(defaultAvailabilityZone);
         return this;
     }
 
     /**
+     * <p>
      * The stack's default VPC subnet ID. This parameter is required if you
-     * specify a value for the <code>VpcId</code> parameter. All instances
-     * are launched into this subnet unless you specify otherwise when you
-     * create the instance. If you also specify a value for
+     * specify a value for the <code>VpcId</code> parameter. All instances are
+     * launched into this subnet unless you specify otherwise when you create
+     * the instance. If you also specify a value for
      * <code>DefaultAvailabilityZone</code>, the subnet must be in that zone.
      * For information on default values and when this parameter is required,
      * see the <code>VpcId</code> parameter description.
-     *
-     * @return The stack's default VPC subnet ID. This parameter is required if you
-     *         specify a value for the <code>VpcId</code> parameter. All instances
-     *         are launched into this subnet unless you specify otherwise when you
-     *         create the instance. If you also specify a value for
-     *         <code>DefaultAvailabilityZone</code>, the subnet must be in that zone.
-     *         For information on default values and when this parameter is required,
-     *         see the <code>VpcId</code> parameter description.
-     */
-    public String getDefaultSubnetId() {
-        return defaultSubnetId;
-    }
-    
-    /**
-     * The stack's default VPC subnet ID. This parameter is required if you
-     * specify a value for the <code>VpcId</code> parameter. All instances
-     * are launched into this subnet unless you specify otherwise when you
-     * create the instance. If you also specify a value for
-     * <code>DefaultAvailabilityZone</code>, the subnet must be in that zone.
-     * For information on default values and when this parameter is required,
-     * see the <code>VpcId</code> parameter description.
-     *
-     * @param defaultSubnetId The stack's default VPC subnet ID. This parameter is required if you
-     *         specify a value for the <code>VpcId</code> parameter. All instances
-     *         are launched into this subnet unless you specify otherwise when you
-     *         create the instance. If you also specify a value for
-     *         <code>DefaultAvailabilityZone</code>, the subnet must be in that zone.
-     *         For information on default values and when this parameter is required,
-     *         see the <code>VpcId</code> parameter description.
+     * </p>
+     * 
+     * @param defaultSubnetId
+     *        The stack's default VPC subnet ID. This parameter is required if
+     *        you specify a value for the <code>VpcId</code> parameter. All
+     *        instances are launched into this subnet unless you specify
+     *        otherwise when you create the instance. If you also specify a
+     *        value for <code>DefaultAvailabilityZone</code>, the subnet must be
+     *        in that zone. For information on default values and when this
+     *        parameter is required, see the <code>VpcId</code> parameter
+     *        description.
      */
     public void setDefaultSubnetId(String defaultSubnetId) {
         this.defaultSubnetId = defaultSubnetId;
     }
-    
+
     /**
+     * <p>
      * The stack's default VPC subnet ID. This parameter is required if you
-     * specify a value for the <code>VpcId</code> parameter. All instances
-     * are launched into this subnet unless you specify otherwise when you
-     * create the instance. If you also specify a value for
+     * specify a value for the <code>VpcId</code> parameter. All instances are
+     * launched into this subnet unless you specify otherwise when you create
+     * the instance. If you also specify a value for
      * <code>DefaultAvailabilityZone</code>, the subnet must be in that zone.
      * For information on default values and when this parameter is required,
      * see the <code>VpcId</code> parameter description.
+     * </p>
+     * 
+     * @return The stack's default VPC subnet ID. This parameter is required if
+     *         you specify a value for the <code>VpcId</code> parameter. All
+     *         instances are launched into this subnet unless you specify
+     *         otherwise when you create the instance. If you also specify a
+     *         value for <code>DefaultAvailabilityZone</code>, the subnet must
+     *         be in that zone. For information on default values and when this
+     *         parameter is required, see the <code>VpcId</code> parameter
+     *         description.
+     */
+    public String getDefaultSubnetId() {
+        return this.defaultSubnetId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param defaultSubnetId The stack's default VPC subnet ID. This parameter is required if you
-     *         specify a value for the <code>VpcId</code> parameter. All instances
-     *         are launched into this subnet unless you specify otherwise when you
-     *         create the instance. If you also specify a value for
-     *         <code>DefaultAvailabilityZone</code>, the subnet must be in that zone.
-     *         For information on default values and when this parameter is required,
-     *         see the <code>VpcId</code> parameter description.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The stack's default VPC subnet ID. This parameter is required if you
+     * specify a value for the <code>VpcId</code> parameter. All instances are
+     * launched into this subnet unless you specify otherwise when you create
+     * the instance. If you also specify a value for
+     * <code>DefaultAvailabilityZone</code>, the subnet must be in that zone.
+     * For information on default values and when this parameter is required,
+     * see the <code>VpcId</code> parameter description.
+     * </p>
+     * 
+     * @param defaultSubnetId
+     *        The stack's default VPC subnet ID. This parameter is required if
+     *        you specify a value for the <code>VpcId</code> parameter. All
+     *        instances are launched into this subnet unless you specify
+     *        otherwise when you create the instance. If you also specify a
+     *        value for <code>DefaultAvailabilityZone</code>, the subnet must be
+     *        in that zone. For information on default values and when this
+     *        parameter is required, see the <code>VpcId</code> parameter
+     *        description.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withDefaultSubnetId(String defaultSubnetId) {
-        this.defaultSubnetId = defaultSubnetId;
+        setDefaultSubnetId(defaultSubnetId);
         return this;
     }
 
     /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration Attributes</a>
-     *
-     * @return A string that contains user-defined, custom JSON. It is used to
-     *         override the corresponding default stack configuration JSON values.
-     *         The string should be in the following format and must escape
-     *         characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration Attributes</a>
-     */
-    public String getCustomJson() {
-        return customJson;
-    }
-    
-    /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration Attributes</a>
-     *
-     * @param customJson A string that contains user-defined, custom JSON. It is used to
-     *         override the corresponding default stack configuration JSON values.
-     *         The string should be in the following format and must escape
-     *         characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration Attributes</a>
+     * <p>
+     * A string that contains user-defined, custom JSON. It is used to override
+     * the corresponding default stack configuration JSON values. The string
+     * should be in the following format and must escape characters such as '"':
+     * </p>
+     * <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     * </p>
+     * <p>
+     * For more information on custom JSON, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>
+     * </p>
+     * 
+     * @param customJson
+     *        A string that contains user-defined, custom JSON. It is used to
+     *        override the corresponding default stack configuration JSON
+     *        values. The string should be in the following format and must
+     *        escape characters such as '"':</p>
+     *        <p>
+     *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     *        </p>
+     *        <p>
+     *        For more information on custom JSON, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     *        >Use Custom JSON to Modify the Stack Configuration Attributes</a>
      */
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
     }
-    
+
     /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration Attributes</a>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param customJson A string that contains user-defined, custom JSON. It is used to
-     *         override the corresponding default stack configuration JSON values.
-     *         The string should be in the following format and must escape
-     *         characters such as '"': <p> <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration Attributes</a>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A string that contains user-defined, custom JSON. It is used to override
+     * the corresponding default stack configuration JSON values. The string
+     * should be in the following format and must escape characters such as '"':
+     * </p>
+     * <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     * </p>
+     * <p>
+     * For more information on custom JSON, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>
+     * </p>
+     * 
+     * @return A string that contains user-defined, custom JSON. It is used to
+     *         override the corresponding default stack configuration JSON
+     *         values. The string should be in the following format and must
+     *         escape characters such as '"':</p>
+     *         <p>
+     *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     *         </p>
+     *         <p>
+     *         For more information on custom JSON, see <a href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     *         >Use Custom JSON to Modify the Stack Configuration Attributes</a>
+     */
+    public String getCustomJson() {
+        return this.customJson;
+    }
+
+    /**
+     * <p>
+     * A string that contains user-defined, custom JSON. It is used to override
+     * the corresponding default stack configuration JSON values. The string
+     * should be in the following format and must escape characters such as '"':
+     * </p>
+     * <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     * </p>
+     * <p>
+     * For more information on custom JSON, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>
+     * </p>
+     * 
+     * @param customJson
+     *        A string that contains user-defined, custom JSON. It is used to
+     *        override the corresponding default stack configuration JSON
+     *        values. The string should be in the following format and must
+     *        escape characters such as '"':</p>
+     *        <p>
+     *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+     *        </p>
+     *        <p>
+     *        For more information on custom JSON, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
+     *        >Use Custom JSON to Modify the Stack Configuration Attributes</a>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withCustomJson(String customJson) {
-        this.customJson = customJson;
+        setCustomJson(customJson);
         return this;
     }
 
     /**
-     * The configuration manager. When you clone a Linux stack we recommend
-     * that you use the configuration manager to specify the Chef version:
-     * 0.9, 11.4, or 11.10. The default value is currently 11.10.
-     *
-     * @return The configuration manager. When you clone a Linux stack we recommend
-     *         that you use the configuration manager to specify the Chef version:
-     *         0.9, 11.4, or 11.10. The default value is currently 11.10.
+     * <p>
+     * The configuration manager. When you clone a Linux stack we recommend that
+     * you use the configuration manager to specify the Chef version: 0.9, 11.4,
+     * or 11.10. The default value is currently 11.10.
+     * </p>
+     * 
+     * @param configurationManager
+     *        The configuration manager. When you clone a Linux stack we
+     *        recommend that you use the configuration manager to specify the
+     *        Chef version: 0.9, 11.4, or 11.10. The default value is currently
+     *        11.10.
+     */
+    public void setConfigurationManager(
+            StackConfigurationManager configurationManager) {
+        this.configurationManager = configurationManager;
+    }
+
+    /**
+     * <p>
+     * The configuration manager. When you clone a Linux stack we recommend that
+     * you use the configuration manager to specify the Chef version: 0.9, 11.4,
+     * or 11.10. The default value is currently 11.10.
+     * </p>
+     * 
+     * @return The configuration manager. When you clone a Linux stack we
+     *         recommend that you use the configuration manager to specify the
+     *         Chef version: 0.9, 11.4, or 11.10. The default value is currently
+     *         11.10.
      */
     public StackConfigurationManager getConfigurationManager() {
-        return configurationManager;
+        return this.configurationManager;
     }
-    
+
     /**
-     * The configuration manager. When you clone a Linux stack we recommend
-     * that you use the configuration manager to specify the Chef version:
-     * 0.9, 11.4, or 11.10. The default value is currently 11.10.
-     *
-     * @param configurationManager The configuration manager. When you clone a Linux stack we recommend
-     *         that you use the configuration manager to specify the Chef version:
-     *         0.9, 11.4, or 11.10. The default value is currently 11.10.
-     */
-    public void setConfigurationManager(StackConfigurationManager configurationManager) {
-        this.configurationManager = configurationManager;
-    }
-    
-    /**
-     * The configuration manager. When you clone a Linux stack we recommend
-     * that you use the configuration manager to specify the Chef version:
-     * 0.9, 11.4, or 11.10. The default value is currently 11.10.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param configurationManager The configuration manager. When you clone a Linux stack we recommend
-     *         that you use the configuration manager to specify the Chef version:
-     *         0.9, 11.4, or 11.10. The default value is currently 11.10.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The configuration manager. When you clone a Linux stack we recommend that
+     * you use the configuration manager to specify the Chef version: 0.9, 11.4,
+     * or 11.10. The default value is currently 11.10.
+     * </p>
+     * 
+     * @param configurationManager
+     *        The configuration manager. When you clone a Linux stack we
+     *        recommend that you use the configuration manager to specify the
+     *        Chef version: 0.9, 11.4, or 11.10. The default value is currently
+     *        11.10.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public CloneStackRequest withConfigurationManager(StackConfigurationManager configurationManager) {
-        this.configurationManager = configurationManager;
+    public CloneStackRequest withConfigurationManager(
+            StackConfigurationManager configurationManager) {
+        setConfigurationManager(configurationManager);
         return this;
     }
 
     /**
-     * A <code>ChefConfiguration</code> object that specifies whether to
-     * enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     * a New Stack</a>.
-     *
-     * @return A <code>ChefConfiguration</code> object that specifies whether to
-     *         enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
-     *         more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     *         a New Stack</a>.
-     */
-    public ChefConfiguration getChefConfiguration() {
-        return chefConfiguration;
-    }
-    
-    /**
-     * A <code>ChefConfiguration</code> object that specifies whether to
-     * enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     * a New Stack</a>.
-     *
-     * @param chefConfiguration A <code>ChefConfiguration</code> object that specifies whether to
-     *         enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
-     *         more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     *         a New Stack</a>.
+     * <p>
+     * A <code>ChefConfiguration</code> object that specifies whether to enable
+     * Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     * >Create a New Stack</a>.
+     * </p>
+     * 
+     * @param chefConfiguration
+     *        A <code>ChefConfiguration</code> object that specifies whether to
+     *        enable Berkshelf and the Berkshelf version on Chef 11.10 stacks.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     *        >Create a New Stack</a>.
      */
     public void setChefConfiguration(ChefConfiguration chefConfiguration) {
         this.chefConfiguration = chefConfiguration;
     }
-    
+
     /**
-     * A <code>ChefConfiguration</code> object that specifies whether to
-     * enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     * a New Stack</a>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param chefConfiguration A <code>ChefConfiguration</code> object that specifies whether to
-     *         enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
-     *         more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     *         a New Stack</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A <code>ChefConfiguration</code> object that specifies whether to enable
+     * Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     * >Create a New Stack</a>.
+     * </p>
+     * 
+     * @return A <code>ChefConfiguration</code> object that specifies whether to
+     *         enable Berkshelf and the Berkshelf version on Chef 11.10 stacks.
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     *         >Create a New Stack</a>.
      */
-    public CloneStackRequest withChefConfiguration(ChefConfiguration chefConfiguration) {
-        this.chefConfiguration = chefConfiguration;
+    public ChefConfiguration getChefConfiguration() {
+        return this.chefConfiguration;
+    }
+
+    /**
+     * <p>
+     * A <code>ChefConfiguration</code> object that specifies whether to enable
+     * Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     * >Create a New Stack</a>.
+     * </p>
+     * 
+     * @param chefConfiguration
+     *        A <code>ChefConfiguration</code> object that specifies whether to
+     *        enable Berkshelf and the Berkshelf version on Chef 11.10 stacks.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     *        >Create a New Stack</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CloneStackRequest withChefConfiguration(
+            ChefConfiguration chefConfiguration) {
+        setChefConfiguration(chefConfiguration);
         return this;
     }
 
     /**
+     * <p>
      * Whether to use custom cookbooks.
-     *
-     * @return Whether to use custom cookbooks.
-     */
-    public Boolean isUseCustomCookbooks() {
-        return useCustomCookbooks;
-    }
-    
-    /**
-     * Whether to use custom cookbooks.
-     *
-     * @param useCustomCookbooks Whether to use custom cookbooks.
+     * </p>
+     * 
+     * @param useCustomCookbooks
+     *        Whether to use custom cookbooks.
      */
     public void setUseCustomCookbooks(Boolean useCustomCookbooks) {
         this.useCustomCookbooks = useCustomCookbooks;
     }
-    
+
     /**
-     * Whether to use custom cookbooks.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param useCustomCookbooks Whether to use custom cookbooks.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Whether to use custom cookbooks.
+     * </p>
+     * 
+     * @return Whether to use custom cookbooks.
+     */
+    public Boolean getUseCustomCookbooks() {
+        return this.useCustomCookbooks;
+    }
+
+    /**
+     * <p>
+     * Whether to use custom cookbooks.
+     * </p>
+     * 
+     * @param useCustomCookbooks
+     *        Whether to use custom cookbooks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withUseCustomCookbooks(Boolean useCustomCookbooks) {
-        this.useCustomCookbooks = useCustomCookbooks;
+        setUseCustomCookbooks(useCustomCookbooks);
         return this;
     }
 
     /**
+     * <p>
      * Whether to use custom cookbooks.
-     *
+     * </p>
+     * 
      * @return Whether to use custom cookbooks.
      */
-    public Boolean getUseCustomCookbooks() {
-        return useCustomCookbooks;
+    public Boolean isUseCustomCookbooks() {
+        return this.useCustomCookbooks;
     }
 
     /**
-     * Whether to associate the AWS OpsWorks built-in security groups with
-     * the stack's layers. <p>AWS OpsWorks provides a standard set of
-     * built-in security groups, one for each layer, which are associated
-     * with layers by default. With <code>UseOpsworksSecurityGroups</code>
-     * you can instead provide your own custom security groups.
-     * <code>UseOpsworksSecurityGroups</code> has the following settings:
-     * <ul> <li>True - AWS OpsWorks automatically associates the appropriate
-     * built-in security group with each layer (default setting). You can
-     * associate additional security groups with a layer after you create it
-     * but you cannot delete the built-in security group. </li> <li>False -
-     * AWS OpsWorks does not associate built-in security groups with layers.
-     * You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
-     * security groups and associate a security group with each layer that
-     * you create. However, you can still manually associate a built-in
-     * security group with a layer on creation; custom security groups are
-     * required only for those layers that need custom settings. </li> </ul>
-     * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     * a New Stack</a>.
-     *
-     * @return Whether to associate the AWS OpsWorks built-in security groups with
-     *         the stack's layers. <p>AWS OpsWorks provides a standard set of
-     *         built-in security groups, one for each layer, which are associated
-     *         with layers by default. With <code>UseOpsworksSecurityGroups</code>
-     *         you can instead provide your own custom security groups.
-     *         <code>UseOpsworksSecurityGroups</code> has the following settings:
-     *         <ul> <li>True - AWS OpsWorks automatically associates the appropriate
-     *         built-in security group with each layer (default setting). You can
-     *         associate additional security groups with a layer after you create it
-     *         but you cannot delete the built-in security group. </li> <li>False -
-     *         AWS OpsWorks does not associate built-in security groups with layers.
-     *         You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
-     *         security groups and associate a security group with each layer that
-     *         you create. However, you can still manually associate a built-in
-     *         security group with a layer on creation; custom security groups are
-     *         required only for those layers that need custom settings. </li> </ul>
-     *         <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     *         a New Stack</a>.
-     */
-    public Boolean isUseOpsworksSecurityGroups() {
-        return useOpsworksSecurityGroups;
-    }
-    
-    /**
-     * Whether to associate the AWS OpsWorks built-in security groups with
-     * the stack's layers. <p>AWS OpsWorks provides a standard set of
-     * built-in security groups, one for each layer, which are associated
-     * with layers by default. With <code>UseOpsworksSecurityGroups</code>
-     * you can instead provide your own custom security groups.
-     * <code>UseOpsworksSecurityGroups</code> has the following settings:
-     * <ul> <li>True - AWS OpsWorks automatically associates the appropriate
-     * built-in security group with each layer (default setting). You can
-     * associate additional security groups with a layer after you create it
-     * but you cannot delete the built-in security group. </li> <li>False -
-     * AWS OpsWorks does not associate built-in security groups with layers.
-     * You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
-     * security groups and associate a security group with each layer that
-     * you create. However, you can still manually associate a built-in
-     * security group with a layer on creation; custom security groups are
-     * required only for those layers that need custom settings. </li> </ul>
-     * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     * a New Stack</a>.
-     *
-     * @param useOpsworksSecurityGroups Whether to associate the AWS OpsWorks built-in security groups with
-     *         the stack's layers. <p>AWS OpsWorks provides a standard set of
-     *         built-in security groups, one for each layer, which are associated
-     *         with layers by default. With <code>UseOpsworksSecurityGroups</code>
-     *         you can instead provide your own custom security groups.
-     *         <code>UseOpsworksSecurityGroups</code> has the following settings:
-     *         <ul> <li>True - AWS OpsWorks automatically associates the appropriate
-     *         built-in security group with each layer (default setting). You can
-     *         associate additional security groups with a layer after you create it
-     *         but you cannot delete the built-in security group. </li> <li>False -
-     *         AWS OpsWorks does not associate built-in security groups with layers.
-     *         You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
-     *         security groups and associate a security group with each layer that
-     *         you create. However, you can still manually associate a built-in
-     *         security group with a layer on creation; custom security groups are
-     *         required only for those layers that need custom settings. </li> </ul>
-     *         <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     *         a New Stack</a>.
+     * <p>
+     * Whether to associate the AWS OpsWorks built-in security groups with the
+     * stack's layers.
+     * </p>
+     * <p>
+     * AWS OpsWorks provides a standard set of built-in security groups, one for
+     * each layer, which are associated with layers by default. With
+     * <code>UseOpsworksSecurityGroups</code> you can instead provide your own
+     * custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+     * following settings:
+     * </p>
+     * <ul>
+     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * security group with each layer (default setting). You can associate
+     * additional security groups with a layer after you create it but you
+     * cannot delete the built-in security group.</li>
+     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon
+     * EC2) security groups and associate a security group with each layer that
+     * you create. However, you can still manually associate a built-in security
+     * group with a layer on creation; custom security groups are required only
+     * for those layers that need custom settings.</li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     * >Create a New Stack</a>.
+     * </p>
+     * 
+     * @param useOpsworksSecurityGroups
+     *        Whether to associate the AWS OpsWorks built-in security groups
+     *        with the stack's layers.</p>
+     *        <p>
+     *        AWS OpsWorks provides a standard set of built-in security groups,
+     *        one for each layer, which are associated with layers by default.
+     *        With <code>UseOpsworksSecurityGroups</code> you can instead
+     *        provide your own custom security groups.
+     *        <code>UseOpsworksSecurityGroups</code> has the following settings:
+     *        </p>
+     *        <ul>
+     *        <li>True - AWS OpsWorks automatically associates the appropriate
+     *        built-in security group with each layer (default setting). You can
+     *        associate additional security groups with a layer after you create
+     *        it but you cannot delete the built-in security group.</li>
+     *        <li>False - AWS OpsWorks does not associate built-in security
+     *        groups with layers. You must create appropriate Amazon Elastic
+     *        Compute Cloud (Amazon EC2) security groups and associate a
+     *        security group with each layer that you create. However, you can
+     *        still manually associate a built-in security group with a layer on
+     *        creation; custom security groups are required only for those
+     *        layers that need custom settings.</li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     *        >Create a New Stack</a>.
      */
     public void setUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
         this.useOpsworksSecurityGroups = useOpsworksSecurityGroups;
     }
-    
+
     /**
-     * Whether to associate the AWS OpsWorks built-in security groups with
-     * the stack's layers. <p>AWS OpsWorks provides a standard set of
-     * built-in security groups, one for each layer, which are associated
-     * with layers by default. With <code>UseOpsworksSecurityGroups</code>
-     * you can instead provide your own custom security groups.
-     * <code>UseOpsworksSecurityGroups</code> has the following settings:
-     * <ul> <li>True - AWS OpsWorks automatically associates the appropriate
-     * built-in security group with each layer (default setting). You can
-     * associate additional security groups with a layer after you create it
-     * but you cannot delete the built-in security group. </li> <li>False -
-     * AWS OpsWorks does not associate built-in security groups with layers.
-     * You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
-     * security groups and associate a security group with each layer that
-     * you create. However, you can still manually associate a built-in
-     * security group with a layer on creation; custom security groups are
-     * required only for those layers that need custom settings. </li> </ul>
-     * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     * a New Stack</a>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param useOpsworksSecurityGroups Whether to associate the AWS OpsWorks built-in security groups with
-     *         the stack's layers. <p>AWS OpsWorks provides a standard set of
-     *         built-in security groups, one for each layer, which are associated
-     *         with layers by default. With <code>UseOpsworksSecurityGroups</code>
-     *         you can instead provide your own custom security groups.
-     *         <code>UseOpsworksSecurityGroups</code> has the following settings:
-     *         <ul> <li>True - AWS OpsWorks automatically associates the appropriate
-     *         built-in security group with each layer (default setting). You can
-     *         associate additional security groups with a layer after you create it
-     *         but you cannot delete the built-in security group. </li> <li>False -
-     *         AWS OpsWorks does not associate built-in security groups with layers.
-     *         You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
-     *         security groups and associate a security group with each layer that
-     *         you create. However, you can still manually associate a built-in
-     *         security group with a layer on creation; custom security groups are
-     *         required only for those layers that need custom settings. </li> </ul>
-     *         <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     *         a New Stack</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Whether to associate the AWS OpsWorks built-in security groups with the
+     * stack's layers.
+     * </p>
+     * <p>
+     * AWS OpsWorks provides a standard set of built-in security groups, one for
+     * each layer, which are associated with layers by default. With
+     * <code>UseOpsworksSecurityGroups</code> you can instead provide your own
+     * custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+     * following settings:
+     * </p>
+     * <ul>
+     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * security group with each layer (default setting). You can associate
+     * additional security groups with a layer after you create it but you
+     * cannot delete the built-in security group.</li>
+     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon
+     * EC2) security groups and associate a security group with each layer that
+     * you create. However, you can still manually associate a built-in security
+     * group with a layer on creation; custom security groups are required only
+     * for those layers that need custom settings.</li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     * >Create a New Stack</a>.
+     * </p>
+     * 
+     * @return Whether to associate the AWS OpsWorks built-in security groups
+     *         with the stack's layers.</p>
+     *         <p>
+     *         AWS OpsWorks provides a standard set of built-in security groups,
+     *         one for each layer, which are associated with layers by default.
+     *         With <code>UseOpsworksSecurityGroups</code> you can instead
+     *         provide your own custom security groups.
+     *         <code>UseOpsworksSecurityGroups</code> has the following
+     *         settings:
+     *         </p>
+     *         <ul>
+     *         <li>True - AWS OpsWorks automatically associates the appropriate
+     *         built-in security group with each layer (default setting). You
+     *         can associate additional security groups with a layer after you
+     *         create it but you cannot delete the built-in security group.</li>
+     *         <li>False - AWS OpsWorks does not associate built-in security
+     *         groups with layers. You must create appropriate Amazon Elastic
+     *         Compute Cloud (Amazon EC2) security groups and associate a
+     *         security group with each layer that you create. However, you can
+     *         still manually associate a built-in security group with a layer
+     *         on creation; custom security groups are required only for those
+     *         layers that need custom settings.</li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     *         >Create a New Stack</a>.
      */
-    public CloneStackRequest withUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
-        this.useOpsworksSecurityGroups = useOpsworksSecurityGroups;
+    public Boolean getUseOpsworksSecurityGroups() {
+        return this.useOpsworksSecurityGroups;
+    }
+
+    /**
+     * <p>
+     * Whether to associate the AWS OpsWorks built-in security groups with the
+     * stack's layers.
+     * </p>
+     * <p>
+     * AWS OpsWorks provides a standard set of built-in security groups, one for
+     * each layer, which are associated with layers by default. With
+     * <code>UseOpsworksSecurityGroups</code> you can instead provide your own
+     * custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+     * following settings:
+     * </p>
+     * <ul>
+     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * security group with each layer (default setting). You can associate
+     * additional security groups with a layer after you create it but you
+     * cannot delete the built-in security group.</li>
+     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon
+     * EC2) security groups and associate a security group with each layer that
+     * you create. However, you can still manually associate a built-in security
+     * group with a layer on creation; custom security groups are required only
+     * for those layers that need custom settings.</li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     * >Create a New Stack</a>.
+     * </p>
+     * 
+     * @param useOpsworksSecurityGroups
+     *        Whether to associate the AWS OpsWorks built-in security groups
+     *        with the stack's layers.</p>
+     *        <p>
+     *        AWS OpsWorks provides a standard set of built-in security groups,
+     *        one for each layer, which are associated with layers by default.
+     *        With <code>UseOpsworksSecurityGroups</code> you can instead
+     *        provide your own custom security groups.
+     *        <code>UseOpsworksSecurityGroups</code> has the following settings:
+     *        </p>
+     *        <ul>
+     *        <li>True - AWS OpsWorks automatically associates the appropriate
+     *        built-in security group with each layer (default setting). You can
+     *        associate additional security groups with a layer after you create
+     *        it but you cannot delete the built-in security group.</li>
+     *        <li>False - AWS OpsWorks does not associate built-in security
+     *        groups with layers. You must create appropriate Amazon Elastic
+     *        Compute Cloud (Amazon EC2) security groups and associate a
+     *        security group with each layer that you create. However, you can
+     *        still manually associate a built-in security group with a layer on
+     *        creation; custom security groups are required only for those
+     *        layers that need custom settings.</li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     *        >Create a New Stack</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CloneStackRequest withUseOpsworksSecurityGroups(
+            Boolean useOpsworksSecurityGroups) {
+        setUseOpsworksSecurityGroups(useOpsworksSecurityGroups);
         return this;
     }
 
     /**
-     * Whether to associate the AWS OpsWorks built-in security groups with
-     * the stack's layers. <p>AWS OpsWorks provides a standard set of
-     * built-in security groups, one for each layer, which are associated
-     * with layers by default. With <code>UseOpsworksSecurityGroups</code>
-     * you can instead provide your own custom security groups.
-     * <code>UseOpsworksSecurityGroups</code> has the following settings:
-     * <ul> <li>True - AWS OpsWorks automatically associates the appropriate
-     * built-in security group with each layer (default setting). You can
-     * associate additional security groups with a layer after you create it
-     * but you cannot delete the built-in security group. </li> <li>False -
-     * AWS OpsWorks does not associate built-in security groups with layers.
-     * You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
-     * security groups and associate a security group with each layer that
-     * you create. However, you can still manually associate a built-in
-     * security group with a layer on creation; custom security groups are
-     * required only for those layers that need custom settings. </li> </ul>
-     * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     * a New Stack</a>.
-     *
-     * @return Whether to associate the AWS OpsWorks built-in security groups with
-     *         the stack's layers. <p>AWS OpsWorks provides a standard set of
-     *         built-in security groups, one for each layer, which are associated
-     *         with layers by default. With <code>UseOpsworksSecurityGroups</code>
-     *         you can instead provide your own custom security groups.
-     *         <code>UseOpsworksSecurityGroups</code> has the following settings:
-     *         <ul> <li>True - AWS OpsWorks automatically associates the appropriate
-     *         built-in security group with each layer (default setting). You can
-     *         associate additional security groups with a layer after you create it
-     *         but you cannot delete the built-in security group. </li> <li>False -
-     *         AWS OpsWorks does not associate built-in security groups with layers.
-     *         You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
-     *         security groups and associate a security group with each layer that
-     *         you create. However, you can still manually associate a built-in
-     *         security group with a layer on creation; custom security groups are
-     *         required only for those layers that need custom settings. </li> </ul>
-     *         <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
-     *         a New Stack</a>.
+     * <p>
+     * Whether to associate the AWS OpsWorks built-in security groups with the
+     * stack's layers.
+     * </p>
+     * <p>
+     * AWS OpsWorks provides a standard set of built-in security groups, one for
+     * each layer, which are associated with layers by default. With
+     * <code>UseOpsworksSecurityGroups</code> you can instead provide your own
+     * custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+     * following settings:
+     * </p>
+     * <ul>
+     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * security group with each layer (default setting). You can associate
+     * additional security groups with a layer after you create it but you
+     * cannot delete the built-in security group.</li>
+     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon
+     * EC2) security groups and associate a security group with each layer that
+     * you create. However, you can still manually associate a built-in security
+     * group with a layer on creation; custom security groups are required only
+     * for those layers that need custom settings.</li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     * >Create a New Stack</a>.
+     * </p>
+     * 
+     * @return Whether to associate the AWS OpsWorks built-in security groups
+     *         with the stack's layers.</p>
+     *         <p>
+     *         AWS OpsWorks provides a standard set of built-in security groups,
+     *         one for each layer, which are associated with layers by default.
+     *         With <code>UseOpsworksSecurityGroups</code> you can instead
+     *         provide your own custom security groups.
+     *         <code>UseOpsworksSecurityGroups</code> has the following
+     *         settings:
+     *         </p>
+     *         <ul>
+     *         <li>True - AWS OpsWorks automatically associates the appropriate
+     *         built-in security group with each layer (default setting). You
+     *         can associate additional security groups with a layer after you
+     *         create it but you cannot delete the built-in security group.</li>
+     *         <li>False - AWS OpsWorks does not associate built-in security
+     *         groups with layers. You must create appropriate Amazon Elastic
+     *         Compute Cloud (Amazon EC2) security groups and associate a
+     *         security group with each layer that you create. However, you can
+     *         still manually associate a built-in security group with a layer
+     *         on creation; custom security groups are required only for those
+     *         layers that need custom settings.</li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
+     *         >Create a New Stack</a>.
      */
-    public Boolean getUseOpsworksSecurityGroups() {
-        return useOpsworksSecurityGroups;
+    public Boolean isUseOpsworksSecurityGroups() {
+        return this.useOpsworksSecurityGroups;
     }
 
     /**
-     * Contains the information required to retrieve an app or cookbook from
-     * a repository. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
-     * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
-     * Recipes and Cookbooks</a>.
-     *
-     * @return Contains the information required to retrieve an app or cookbook from
-     *         a repository. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
-     *         Apps</a> or <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
-     *         Recipes and Cookbooks</a>.
-     */
-    public Source getCustomCookbooksSource() {
-        return customCookbooksSource;
-    }
-    
-    /**
-     * Contains the information required to retrieve an app or cookbook from
-     * a repository. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
-     * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
-     * Recipes and Cookbooks</a>.
-     *
-     * @param customCookbooksSource Contains the information required to retrieve an app or cookbook from
-     *         a repository. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
-     *         Apps</a> or <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
-     *         Recipes and Cookbooks</a>.
+     * @param customCookbooksSource
      */
     public void setCustomCookbooksSource(Source customCookbooksSource) {
         this.customCookbooksSource = customCookbooksSource;
     }
-    
+
     /**
-     * Contains the information required to retrieve an app or cookbook from
-     * a repository. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
-     * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
-     * Recipes and Cookbooks</a>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param customCookbooksSource Contains the information required to retrieve an app or cookbook from
-     *         a repository. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
-     *         Apps</a> or <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
-     *         Recipes and Cookbooks</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * @return
      */
-    public CloneStackRequest withCustomCookbooksSource(Source customCookbooksSource) {
-        this.customCookbooksSource = customCookbooksSource;
+    public Source getCustomCookbooksSource() {
+        return this.customCookbooksSource;
+    }
+
+    /**
+     * @param customCookbooksSource
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CloneStackRequest withCustomCookbooksSource(
+            Source customCookbooksSource) {
+        setCustomCookbooksSource(customCookbooksSource);
         return this;
     }
 
     /**
+     * <p>
      * A default Amazon EC2 key pair name. The default value is none. If you
      * specify a key pair name, AWS OpsWorks installs the public key on the
-     * instance and you can use the private key with an SSH client to log in
-     * to the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
-     * Using SSH to Communicate with an Instance</a> and <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
-     * Managing SSH Access</a>. You can override this setting by specifying a
-     * different key pair, or no key pair, when you <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-     * create an instance</a>.
-     *
-     * @return A default Amazon EC2 key pair name. The default value is none. If you
-     *         specify a key pair name, AWS OpsWorks installs the public key on the
-     *         instance and you can use the private key with an SSH client to log in
-     *         to the instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
-     *         Using SSH to Communicate with an Instance</a> and <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
-     *         Managing SSH Access</a>. You can override this setting by specifying a
-     *         different key pair, or no key pair, when you <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-     *         create an instance</a>.
-     */
-    public String getDefaultSshKeyName() {
-        return defaultSshKeyName;
-    }
-    
-    /**
-     * A default Amazon EC2 key pair name. The default value is none. If you
-     * specify a key pair name, AWS OpsWorks installs the public key on the
-     * instance and you can use the private key with an SSH client to log in
-     * to the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
-     * Using SSH to Communicate with an Instance</a> and <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
-     * Managing SSH Access</a>. You can override this setting by specifying a
-     * different key pair, or no key pair, when you <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-     * create an instance</a>.
-     *
-     * @param defaultSshKeyName A default Amazon EC2 key pair name. The default value is none. If you
-     *         specify a key pair name, AWS OpsWorks installs the public key on the
-     *         instance and you can use the private key with an SSH client to log in
-     *         to the instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
-     *         Using SSH to Communicate with an Instance</a> and <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
-     *         Managing SSH Access</a>. You can override this setting by specifying a
-     *         different key pair, or no key pair, when you <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-     *         create an instance</a>.
+     * instance and you can use the private key with an SSH client to log in to
+     * the instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"
+     * > Using SSH to Communicate with an Instance</a> and <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"
+     * > Managing SSH Access</a>. You can override this setting by specifying a
+     * different key pair, or no key pair, when you <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
+     * > create an instance</a>.
+     * </p>
+     * 
+     * @param defaultSshKeyName
+     *        A default Amazon EC2 key pair name. The default value is none. If
+     *        you specify a key pair name, AWS OpsWorks installs the public key
+     *        on the instance and you can use the private key with an SSH client
+     *        to log in to the instance. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"
+     *        > Using SSH to Communicate with an Instance</a> and <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"
+     *        > Managing SSH Access</a>. You can override this setting by
+     *        specifying a different key pair, or no key pair, when you <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
+     *        > create an instance</a>.
      */
     public void setDefaultSshKeyName(String defaultSshKeyName) {
         this.defaultSshKeyName = defaultSshKeyName;
     }
-    
+
     /**
+     * <p>
      * A default Amazon EC2 key pair name. The default value is none. If you
      * specify a key pair name, AWS OpsWorks installs the public key on the
-     * instance and you can use the private key with an SSH client to log in
-     * to the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
-     * Using SSH to Communicate with an Instance</a> and <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
-     * Managing SSH Access</a>. You can override this setting by specifying a
-     * different key pair, or no key pair, when you <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-     * create an instance</a>.
+     * instance and you can use the private key with an SSH client to log in to
+     * the instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"
+     * > Using SSH to Communicate with an Instance</a> and <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"
+     * > Managing SSH Access</a>. You can override this setting by specifying a
+     * different key pair, or no key pair, when you <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
+     * > create an instance</a>.
+     * </p>
+     * 
+     * @return A default Amazon EC2 key pair name. The default value is none. If
+     *         you specify a key pair name, AWS OpsWorks installs the public key
+     *         on the instance and you can use the private key with an SSH
+     *         client to log in to the instance. For more information, see <a
+     *         href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"
+     *         > Using SSH to Communicate with an Instance</a> and <a href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"
+     *         > Managing SSH Access</a>. You can override this setting by
+     *         specifying a different key pair, or no key pair, when you <a
+     *         href=
+     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
+     *         > create an instance</a>.
+     */
+    public String getDefaultSshKeyName() {
+        return this.defaultSshKeyName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param defaultSshKeyName A default Amazon EC2 key pair name. The default value is none. If you
-     *         specify a key pair name, AWS OpsWorks installs the public key on the
-     *         instance and you can use the private key with an SSH client to log in
-     *         to the instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
-     *         Using SSH to Communicate with an Instance</a> and <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
-     *         Managing SSH Access</a>. You can override this setting by specifying a
-     *         different key pair, or no key pair, when you <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-     *         create an instance</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A default Amazon EC2 key pair name. The default value is none. If you
+     * specify a key pair name, AWS OpsWorks installs the public key on the
+     * instance and you can use the private key with an SSH client to log in to
+     * the instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"
+     * > Using SSH to Communicate with an Instance</a> and <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"
+     * > Managing SSH Access</a>. You can override this setting by specifying a
+     * different key pair, or no key pair, when you <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
+     * > create an instance</a>.
+     * </p>
+     * 
+     * @param defaultSshKeyName
+     *        A default Amazon EC2 key pair name. The default value is none. If
+     *        you specify a key pair name, AWS OpsWorks installs the public key
+     *        on the instance and you can use the private key with an SSH client
+     *        to log in to the instance. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"
+     *        > Using SSH to Communicate with an Instance</a> and <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"
+     *        > Managing SSH Access</a>. You can override this setting by
+     *        specifying a different key pair, or no key pair, when you <a href=
+     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
+     *        > create an instance</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withDefaultSshKeyName(String defaultSshKeyName) {
-        this.defaultSshKeyName = defaultSshKeyName;
+        setDefaultSshKeyName(defaultSshKeyName);
         return this;
     }
 
     /**
+     * <p>
      * Whether to clone the source stack's permissions.
-     *
-     * @return Whether to clone the source stack's permissions.
-     */
-    public Boolean isClonePermissions() {
-        return clonePermissions;
-    }
-    
-    /**
-     * Whether to clone the source stack's permissions.
-     *
-     * @param clonePermissions Whether to clone the source stack's permissions.
+     * </p>
+     * 
+     * @param clonePermissions
+     *        Whether to clone the source stack's permissions.
      */
     public void setClonePermissions(Boolean clonePermissions) {
         this.clonePermissions = clonePermissions;
     }
-    
+
     /**
-     * Whether to clone the source stack's permissions.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param clonePermissions Whether to clone the source stack's permissions.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Whether to clone the source stack's permissions.
+     * </p>
+     * 
+     * @return Whether to clone the source stack's permissions.
+     */
+    public Boolean getClonePermissions() {
+        return this.clonePermissions;
+    }
+
+    /**
+     * <p>
+     * Whether to clone the source stack's permissions.
+     * </p>
+     * 
+     * @param clonePermissions
+     *        Whether to clone the source stack's permissions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withClonePermissions(Boolean clonePermissions) {
-        this.clonePermissions = clonePermissions;
+        setClonePermissions(clonePermissions);
         return this;
     }
 
     /**
+     * <p>
      * Whether to clone the source stack's permissions.
-     *
+     * </p>
+     * 
      * @return Whether to clone the source stack's permissions.
      */
-    public Boolean getClonePermissions() {
-        return clonePermissions;
+    public Boolean isClonePermissions() {
+        return this.clonePermissions;
     }
 
     /**
+     * <p>
      * A list of source stack app IDs to be included in the cloned stack.
-     *
-     * @return A list of source stack app IDs to be included in the cloned stack.
+     * </p>
+     * 
+     * @return A list of source stack app IDs to be included in the cloned
+     *         stack.
      */
     public java.util.List<String> getCloneAppIds() {
         if (cloneAppIds == null) {
-              cloneAppIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              cloneAppIds.setAutoConstruct(true);
+            cloneAppIds = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return cloneAppIds;
     }
-    
+
     /**
+     * <p>
      * A list of source stack app IDs to be included in the cloned stack.
-     *
-     * @param cloneAppIds A list of source stack app IDs to be included in the cloned stack.
+     * </p>
+     * 
+     * @param cloneAppIds
+     *        A list of source stack app IDs to be included in the cloned stack.
      */
     public void setCloneAppIds(java.util.Collection<String> cloneAppIds) {
         if (cloneAppIds == null) {
             this.cloneAppIds = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> cloneAppIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cloneAppIds.size());
-        cloneAppIdsCopy.addAll(cloneAppIds);
-        this.cloneAppIds = cloneAppIdsCopy;
+
+        this.cloneAppIds = new com.amazonaws.internal.SdkInternalList<String>(
+                cloneAppIds);
     }
-    
+
     /**
+     * <p>
      * A list of source stack app IDs to be included in the cloned stack.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCloneAppIds(java.util.Collection)} or {@link
-     * #withCloneAppIds(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cloneAppIds A list of source stack app IDs to be included in the cloned stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setCloneAppIds(java.util.Collection)} or
+     * {@link #withCloneAppIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param cloneAppIds
+     *        A list of source stack app IDs to be included in the cloned stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withCloneAppIds(String... cloneAppIds) {
-        if (getCloneAppIds() == null) setCloneAppIds(new java.util.ArrayList<String>(cloneAppIds.length));
-        for (String value : cloneAppIds) {
-            getCloneAppIds().add(value);
+        if (this.cloneAppIds == null) {
+            setCloneAppIds(new com.amazonaws.internal.SdkInternalList<String>(
+                    cloneAppIds.length));
+        }
+        for (String ele : cloneAppIds) {
+            this.cloneAppIds.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * A list of source stack app IDs to be included in the cloned stack.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cloneAppIds A list of source stack app IDs to be included in the cloned stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param cloneAppIds
+     *        A list of source stack app IDs to be included in the cloned stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public CloneStackRequest withCloneAppIds(java.util.Collection<String> cloneAppIds) {
-        if (cloneAppIds == null) {
-            this.cloneAppIds = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> cloneAppIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cloneAppIds.size());
-            cloneAppIdsCopy.addAll(cloneAppIds);
-            this.cloneAppIds = cloneAppIdsCopy;
-        }
-
+    public CloneStackRequest withCloneAppIds(
+            java.util.Collection<String> cloneAppIds) {
+        setCloneAppIds(cloneAppIds);
         return this;
     }
 
     /**
-     * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
-     *
-     * @return The default root device type. This value is used by default for all
-     *         instances in the cloned stack, but you can override it when you create
-     *         an instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     *         for the Root Device</a>.
-     *
-     * @see RootDeviceType
-     */
-    public String getDefaultRootDeviceType() {
-        return defaultRootDeviceType;
-    }
-    
-    /**
      * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
-     *
-     * @param defaultRootDeviceType The default root device type. This value is used by default for all
-     *         instances in the cloned stack, but you can override it when you create
-     *         an instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     *         for the Root Device</a>.
-     *
+     * instances in the cloned stack, but you can override it when you create an
+     * instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
+     * </p>
+     * 
+     * @param defaultRootDeviceType
+     *        The default root device type. This value is used by default for
+     *        all instances in the cloned stack, but you can override it when
+     *        you create an instance. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
     public void setDefaultRootDeviceType(String defaultRootDeviceType) {
         this.defaultRootDeviceType = defaultRootDeviceType;
     }
-    
+
     /**
+     * <p>
      * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
-     *
-     * @param defaultRootDeviceType The default root device type. This value is used by default for all
-     *         instances in the cloned stack, but you can override it when you create
-     *         an instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     *         for the Root Device</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * instances in the cloned stack, but you can override it when you create an
+     * instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
+     * </p>
+     * 
+     * @return The default root device type. This value is used by default for
+     *         all instances in the cloned stack, but you can override it when
+     *         you create an instance. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *         >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
-    public CloneStackRequest withDefaultRootDeviceType(String defaultRootDeviceType) {
-        this.defaultRootDeviceType = defaultRootDeviceType;
+    public String getDefaultRootDeviceType() {
+        return this.defaultRootDeviceType;
+    }
+
+    /**
+     * <p>
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create an
+     * instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
+     * </p>
+     * 
+     * @param defaultRootDeviceType
+     *        The default root device type. This value is used by default for
+     *        all instances in the cloned stack, but you can override it when
+     *        you create an instance. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        >Storage for the Root Device</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see RootDeviceType
+     */
+    public CloneStackRequest withDefaultRootDeviceType(
+            String defaultRootDeviceType) {
+        setDefaultRootDeviceType(defaultRootDeviceType);
         return this;
     }
 
     /**
-     * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
-     *
-     * @param defaultRootDeviceType The default root device type. This value is used by default for all
-     *         instances in the cloned stack, but you can override it when you create
-     *         an instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     *         for the Root Device</a>.
-     *
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create an
+     * instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
+     * </p>
+     * 
+     * @param defaultRootDeviceType
+     *        The default root device type. This value is used by default for
+     *        all instances in the cloned stack, but you can override it when
+     *        you create an instance. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        >Storage for the Root Device</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see RootDeviceType
      */
     public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
         this.defaultRootDeviceType = defaultRootDeviceType.toString();
     }
-    
+
     /**
+     * <p>
      * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
-     *
-     * @param defaultRootDeviceType The default root device type. This value is used by default for all
-     *         instances in the cloned stack, but you can override it when you create
-     *         an instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     *         for the Root Device</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * instances in the cloned stack, but you can override it when you create an
+     * instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
+     * </p>
+     * 
+     * @param defaultRootDeviceType
+     *        The default root device type. This value is used by default for
+     *        all instances in the cloned stack, but you can override it when
+     *        you create an instance. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        >Storage for the Root Device</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see RootDeviceType
      */
-    public CloneStackRequest withDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
-        this.defaultRootDeviceType = defaultRootDeviceType.toString();
+    public CloneStackRequest withDefaultRootDeviceType(
+            RootDeviceType defaultRootDeviceType) {
+        setDefaultRootDeviceType(defaultRootDeviceType);
         return this;
     }
 
     /**
-     * The default AWS OpsWorks agent version. You have the following
-     * options: <ul> <li>Auto-update - Set this parameter to
-     * <code>LATEST</code>. AWS OpsWorks automatically installs new agent
-     * versions on the stack's instances as soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent
-     * version. To update the agent version, you must edit the stack
-     * configuration and specify a new version. AWS OpsWorks then
-     * automatically installs that version on the stack's instances.</li>
-     * </ul> <p>The default setting is <code>LATEST</code>. To specify an
-     * agent version, you must use the complete version number, not the
-     * abbreviated number shown on the console. For a list of available agent
-     * version numbers, call <a>DescribeAgentVersions</a>. <note>You can also
-     * specify an agent version when you create or update an instance, which
-     * overrides the stack's default setting.</note>
-     *
-     * @return The default AWS OpsWorks agent version. You have the following
-     *         options: <ul> <li>Auto-update - Set this parameter to
-     *         <code>LATEST</code>. AWS OpsWorks automatically installs new agent
-     *         versions on the stack's instances as soon as they are available.</li>
-     *         <li>Fixed version - Set this parameter to your preferred agent
-     *         version. To update the agent version, you must edit the stack
-     *         configuration and specify a new version. AWS OpsWorks then
-     *         automatically installs that version on the stack's instances.</li>
-     *         </ul> <p>The default setting is <code>LATEST</code>. To specify an
-     *         agent version, you must use the complete version number, not the
-     *         abbreviated number shown on the console. For a list of available agent
-     *         version numbers, call <a>DescribeAgentVersions</a>. <note>You can also
-     *         specify an agent version when you create or update an instance, which
-     *         overrides the stack's default setting.</note>
-     */
-    public String getAgentVersion() {
-        return agentVersion;
-    }
-    
-    /**
-     * The default AWS OpsWorks agent version. You have the following
-     * options: <ul> <li>Auto-update - Set this parameter to
-     * <code>LATEST</code>. AWS OpsWorks automatically installs new agent
-     * versions on the stack's instances as soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent
-     * version. To update the agent version, you must edit the stack
-     * configuration and specify a new version. AWS OpsWorks then
-     * automatically installs that version on the stack's instances.</li>
-     * </ul> <p>The default setting is <code>LATEST</code>. To specify an
-     * agent version, you must use the complete version number, not the
-     * abbreviated number shown on the console. For a list of available agent
-     * version numbers, call <a>DescribeAgentVersions</a>. <note>You can also
-     * specify an agent version when you create or update an instance, which
-     * overrides the stack's default setting.</note>
-     *
-     * @param agentVersion The default AWS OpsWorks agent version. You have the following
-     *         options: <ul> <li>Auto-update - Set this parameter to
-     *         <code>LATEST</code>. AWS OpsWorks automatically installs new agent
-     *         versions on the stack's instances as soon as they are available.</li>
-     *         <li>Fixed version - Set this parameter to your preferred agent
-     *         version. To update the agent version, you must edit the stack
-     *         configuration and specify a new version. AWS OpsWorks then
-     *         automatically installs that version on the stack's instances.</li>
-     *         </ul> <p>The default setting is <code>LATEST</code>. To specify an
-     *         agent version, you must use the complete version number, not the
-     *         abbreviated number shown on the console. For a list of available agent
-     *         version numbers, call <a>DescribeAgentVersions</a>. <note>You can also
-     *         specify an agent version when you create or update an instance, which
-     *         overrides the stack's default setting.</note>
+     * <p>
+     * The default AWS OpsWorks agent version. You have the following options:
+     * </p>
+     * <ul>
+     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * automatically installs new agent versions on the stack's instances as
+     * soon as they are available.</li>
+     * <li>Fixed version - Set this parameter to your preferred agent version.
+     * To update the agent version, you must edit the stack configuration and
+     * specify a new version. AWS OpsWorks then automatically installs that
+     * version on the stack's instances.</li>
+     * </ul>
+     * <p>
+     * The default setting is <code>LATEST</code>. To specify an agent version,
+     * you must use the complete version number, not the abbreviated number
+     * shown on the console. For a list of available agent version numbers, call
+     * <a>DescribeAgentVersions</a>.
+     * </p>
+     * <note>You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.</note>
+     * 
+     * @param agentVersion
+     *        The default AWS OpsWorks agent version. You have the following
+     *        options:</p>
+     *        <ul>
+     *        <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS
+     *        OpsWorks automatically installs new agent versions on the stack's
+     *        instances as soon as they are available.</li>
+     *        <li>Fixed version - Set this parameter to your preferred agent
+     *        version. To update the agent version, you must edit the stack
+     *        configuration and specify a new version. AWS OpsWorks then
+     *        automatically installs that version on the stack's instances.</li>
+     *        </ul>
+     *        <p>
+     *        The default setting is <code>LATEST</code>. To specify an agent
+     *        version, you must use the complete version number, not the
+     *        abbreviated number shown on the console. For a list of available
+     *        agent version numbers, call <a>DescribeAgentVersions</a>.
+     *        </p>
+     *        <note>You can also specify an agent version when you create or
+     *        update an instance, which overrides the stack's default setting.
      */
     public void setAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
     }
-    
+
     /**
-     * The default AWS OpsWorks agent version. You have the following
-     * options: <ul> <li>Auto-update - Set this parameter to
-     * <code>LATEST</code>. AWS OpsWorks automatically installs new agent
-     * versions on the stack's instances as soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent
-     * version. To update the agent version, you must edit the stack
-     * configuration and specify a new version. AWS OpsWorks then
-     * automatically installs that version on the stack's instances.</li>
-     * </ul> <p>The default setting is <code>LATEST</code>. To specify an
-     * agent version, you must use the complete version number, not the
-     * abbreviated number shown on the console. For a list of available agent
-     * version numbers, call <a>DescribeAgentVersions</a>. <note>You can also
-     * specify an agent version when you create or update an instance, which
-     * overrides the stack's default setting.</note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param agentVersion The default AWS OpsWorks agent version. You have the following
-     *         options: <ul> <li>Auto-update - Set this parameter to
-     *         <code>LATEST</code>. AWS OpsWorks automatically installs new agent
-     *         versions on the stack's instances as soon as they are available.</li>
+     * The default AWS OpsWorks agent version. You have the following options:
+     * </p>
+     * <ul>
+     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * automatically installs new agent versions on the stack's instances as
+     * soon as they are available.</li>
+     * <li>Fixed version - Set this parameter to your preferred agent version.
+     * To update the agent version, you must edit the stack configuration and
+     * specify a new version. AWS OpsWorks then automatically installs that
+     * version on the stack's instances.</li>
+     * </ul>
+     * <p>
+     * The default setting is <code>LATEST</code>. To specify an agent version,
+     * you must use the complete version number, not the abbreviated number
+     * shown on the console. For a list of available agent version numbers, call
+     * <a>DescribeAgentVersions</a>.
+     * </p>
+     * <note>You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.</note>
+     * 
+     * @return The default AWS OpsWorks agent version. You have the following
+     *         options:</p>
+     *         <ul>
+     *         <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS
+     *         OpsWorks automatically installs new agent versions on the stack's
+     *         instances as soon as they are available.</li>
      *         <li>Fixed version - Set this parameter to your preferred agent
      *         version. To update the agent version, you must edit the stack
      *         configuration and specify a new version. AWS OpsWorks then
      *         automatically installs that version on the stack's instances.</li>
-     *         </ul> <p>The default setting is <code>LATEST</code>. To specify an
-     *         agent version, you must use the complete version number, not the
-     *         abbreviated number shown on the console. For a list of available agent
-     *         version numbers, call <a>DescribeAgentVersions</a>. <note>You can also
-     *         specify an agent version when you create or update an instance, which
-     *         overrides the stack's default setting.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         </ul>
+     *         <p>
+     *         The default setting is <code>LATEST</code>. To specify an agent
+     *         version, you must use the complete version number, not the
+     *         abbreviated number shown on the console. For a list of available
+     *         agent version numbers, call <a>DescribeAgentVersions</a>.
+     *         </p>
+     *         <note>You can also specify an agent version when you create or
+     *         update an instance, which overrides the stack's default setting.
+     */
+    public String getAgentVersion() {
+        return this.agentVersion;
+    }
+
+    /**
+     * <p>
+     * The default AWS OpsWorks agent version. You have the following options:
+     * </p>
+     * <ul>
+     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * automatically installs new agent versions on the stack's instances as
+     * soon as they are available.</li>
+     * <li>Fixed version - Set this parameter to your preferred agent version.
+     * To update the agent version, you must edit the stack configuration and
+     * specify a new version. AWS OpsWorks then automatically installs that
+     * version on the stack's instances.</li>
+     * </ul>
+     * <p>
+     * The default setting is <code>LATEST</code>. To specify an agent version,
+     * you must use the complete version number, not the abbreviated number
+     * shown on the console. For a list of available agent version numbers, call
+     * <a>DescribeAgentVersions</a>.
+     * </p>
+     * <note>You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.</note>
+     * 
+     * @param agentVersion
+     *        The default AWS OpsWorks agent version. You have the following
+     *        options:</p>
+     *        <ul>
+     *        <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS
+     *        OpsWorks automatically installs new agent versions on the stack's
+     *        instances as soon as they are available.</li>
+     *        <li>Fixed version - Set this parameter to your preferred agent
+     *        version. To update the agent version, you must edit the stack
+     *        configuration and specify a new version. AWS OpsWorks then
+     *        automatically installs that version on the stack's instances.</li>
+     *        </ul>
+     *        <p>
+     *        The default setting is <code>LATEST</code>. To specify an agent
+     *        version, you must use the complete version number, not the
+     *        abbreviated number shown on the console. For a list of available
+     *        agent version numbers, call <a>DescribeAgentVersions</a>.
+     *        </p>
+     *        <note>You can also specify an agent version when you create or
+     *        update an instance, which overrides the stack's default setting.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CloneStackRequest withAgentVersion(String agentVersion) {
-        this.agentVersion = agentVersion;
+        setAgentVersion(agentVersion);
         return this;
     }
 
@@ -2086,122 +2478,290 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSourceStackId() != null) sb.append("SourceStackId: " + getSourceStackId() + ",");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");
-        if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
-        if (getDefaultInstanceProfileArn() != null) sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ",");
-        if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ",");
-        if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");
-        if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");
-        if (getDefaultSubnetId() != null) sb.append("DefaultSubnetId: " + getDefaultSubnetId() + ",");
-        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");
-        if (getConfigurationManager() != null) sb.append("ConfigurationManager: " + getConfigurationManager() + ",");
-        if (getChefConfiguration() != null) sb.append("ChefConfiguration: " + getChefConfiguration() + ",");
-        if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");
-        if (isUseOpsworksSecurityGroups() != null) sb.append("UseOpsworksSecurityGroups: " + isUseOpsworksSecurityGroups() + ",");
-        if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");
-        if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");
-        if (isClonePermissions() != null) sb.append("ClonePermissions: " + isClonePermissions() + ",");
-        if (getCloneAppIds() != null) sb.append("CloneAppIds: " + getCloneAppIds() + ",");
-        if (getDefaultRootDeviceType() != null) sb.append("DefaultRootDeviceType: " + getDefaultRootDeviceType() + ",");
-        if (getAgentVersion() != null) sb.append("AgentVersion: " + getAgentVersion() );
+        if (getSourceStackId() != null)
+            sb.append("SourceStackId: " + getSourceStackId() + ",");
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getRegion() != null)
+            sb.append("Region: " + getRegion() + ",");
+        if (getVpcId() != null)
+            sb.append("VpcId: " + getVpcId() + ",");
+        if (getAttributes() != null)
+            sb.append("Attributes: " + getAttributes() + ",");
+        if (getServiceRoleArn() != null)
+            sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
+        if (getDefaultInstanceProfileArn() != null)
+            sb.append("DefaultInstanceProfileArn: "
+                    + getDefaultInstanceProfileArn() + ",");
+        if (getDefaultOs() != null)
+            sb.append("DefaultOs: " + getDefaultOs() + ",");
+        if (getHostnameTheme() != null)
+            sb.append("HostnameTheme: " + getHostnameTheme() + ",");
+        if (getDefaultAvailabilityZone() != null)
+            sb.append("DefaultAvailabilityZone: "
+                    + getDefaultAvailabilityZone() + ",");
+        if (getDefaultSubnetId() != null)
+            sb.append("DefaultSubnetId: " + getDefaultSubnetId() + ",");
+        if (getCustomJson() != null)
+            sb.append("CustomJson: " + getCustomJson() + ",");
+        if (getConfigurationManager() != null)
+            sb.append("ConfigurationManager: " + getConfigurationManager()
+                    + ",");
+        if (getChefConfiguration() != null)
+            sb.append("ChefConfiguration: " + getChefConfiguration() + ",");
+        if (getUseCustomCookbooks() != null)
+            sb.append("UseCustomCookbooks: " + getUseCustomCookbooks() + ",");
+        if (getUseOpsworksSecurityGroups() != null)
+            sb.append("UseOpsworksSecurityGroups: "
+                    + getUseOpsworksSecurityGroups() + ",");
+        if (getCustomCookbooksSource() != null)
+            sb.append("CustomCookbooksSource: " + getCustomCookbooksSource()
+                    + ",");
+        if (getDefaultSshKeyName() != null)
+            sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");
+        if (getClonePermissions() != null)
+            sb.append("ClonePermissions: " + getClonePermissions() + ",");
+        if (getCloneAppIds() != null)
+            sb.append("CloneAppIds: " + getCloneAppIds() + ",");
+        if (getDefaultRootDeviceType() != null)
+            sb.append("DefaultRootDeviceType: " + getDefaultRootDeviceType()
+                    + ",");
+        if (getAgentVersion() != null)
+            sb.append("AgentVersion: " + getAgentVersion());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CloneStackRequest == false)
+            return false;
+        CloneStackRequest other = (CloneStackRequest) obj;
+        if (other.getSourceStackId() == null ^ this.getSourceStackId() == null)
+            return false;
+        if (other.getSourceStackId() != null
+                && other.getSourceStackId().equals(this.getSourceStackId()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getRegion() == null ^ this.getRegion() == null)
+            return false;
+        if (other.getRegion() != null
+                && other.getRegion().equals(this.getRegion()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null
+                && other.getVpcId().equals(this.getVpcId()) == false)
+            return false;
+        if (other.getAttributes() == null ^ this.getAttributes() == null)
+            return false;
+        if (other.getAttributes() != null
+                && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
+        if (other.getServiceRoleArn() == null
+                ^ this.getServiceRoleArn() == null)
+            return false;
+        if (other.getServiceRoleArn() != null
+                && other.getServiceRoleArn().equals(this.getServiceRoleArn()) == false)
+            return false;
+        if (other.getDefaultInstanceProfileArn() == null
+                ^ this.getDefaultInstanceProfileArn() == null)
+            return false;
+        if (other.getDefaultInstanceProfileArn() != null
+                && other.getDefaultInstanceProfileArn().equals(
+                        this.getDefaultInstanceProfileArn()) == false)
+            return false;
+        if (other.getDefaultOs() == null ^ this.getDefaultOs() == null)
+            return false;
+        if (other.getDefaultOs() != null
+                && other.getDefaultOs().equals(this.getDefaultOs()) == false)
+            return false;
+        if (other.getHostnameTheme() == null ^ this.getHostnameTheme() == null)
+            return false;
+        if (other.getHostnameTheme() != null
+                && other.getHostnameTheme().equals(this.getHostnameTheme()) == false)
+            return false;
+        if (other.getDefaultAvailabilityZone() == null
+                ^ this.getDefaultAvailabilityZone() == null)
+            return false;
+        if (other.getDefaultAvailabilityZone() != null
+                && other.getDefaultAvailabilityZone().equals(
+                        this.getDefaultAvailabilityZone()) == false)
+            return false;
+        if (other.getDefaultSubnetId() == null
+                ^ this.getDefaultSubnetId() == null)
+            return false;
+        if (other.getDefaultSubnetId() != null
+                && other.getDefaultSubnetId().equals(this.getDefaultSubnetId()) == false)
+            return false;
+        if (other.getCustomJson() == null ^ this.getCustomJson() == null)
+            return false;
+        if (other.getCustomJson() != null
+                && other.getCustomJson().equals(this.getCustomJson()) == false)
+            return false;
+        if (other.getConfigurationManager() == null
+                ^ this.getConfigurationManager() == null)
+            return false;
+        if (other.getConfigurationManager() != null
+                && other.getConfigurationManager().equals(
+                        this.getConfigurationManager()) == false)
+            return false;
+        if (other.getChefConfiguration() == null
+                ^ this.getChefConfiguration() == null)
+            return false;
+        if (other.getChefConfiguration() != null
+                && other.getChefConfiguration().equals(
+                        this.getChefConfiguration()) == false)
+            return false;
+        if (other.getUseCustomCookbooks() == null
+                ^ this.getUseCustomCookbooks() == null)
+            return false;
+        if (other.getUseCustomCookbooks() != null
+                && other.getUseCustomCookbooks().equals(
+                        this.getUseCustomCookbooks()) == false)
+            return false;
+        if (other.getUseOpsworksSecurityGroups() == null
+                ^ this.getUseOpsworksSecurityGroups() == null)
+            return false;
+        if (other.getUseOpsworksSecurityGroups() != null
+                && other.getUseOpsworksSecurityGroups().equals(
+                        this.getUseOpsworksSecurityGroups()) == false)
+            return false;
+        if (other.getCustomCookbooksSource() == null
+                ^ this.getCustomCookbooksSource() == null)
+            return false;
+        if (other.getCustomCookbooksSource() != null
+                && other.getCustomCookbooksSource().equals(
+                        this.getCustomCookbooksSource()) == false)
+            return false;
+        if (other.getDefaultSshKeyName() == null
+                ^ this.getDefaultSshKeyName() == null)
+            return false;
+        if (other.getDefaultSshKeyName() != null
+                && other.getDefaultSshKeyName().equals(
+                        this.getDefaultSshKeyName()) == false)
+            return false;
+        if (other.getClonePermissions() == null
+                ^ this.getClonePermissions() == null)
+            return false;
+        if (other.getClonePermissions() != null
+                && other.getClonePermissions().equals(
+                        this.getClonePermissions()) == false)
+            return false;
+        if (other.getCloneAppIds() == null ^ this.getCloneAppIds() == null)
+            return false;
+        if (other.getCloneAppIds() != null
+                && other.getCloneAppIds().equals(this.getCloneAppIds()) == false)
+            return false;
+        if (other.getDefaultRootDeviceType() == null
+                ^ this.getDefaultRootDeviceType() == null)
+            return false;
+        if (other.getDefaultRootDeviceType() != null
+                && other.getDefaultRootDeviceType().equals(
+                        this.getDefaultRootDeviceType()) == false)
+            return false;
+        if (other.getAgentVersion() == null ^ this.getAgentVersion() == null)
+            return false;
+        if (other.getAgentVersion() != null
+                && other.getAgentVersion().equals(this.getAgentVersion()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getSourceStackId() == null) ? 0 : getSourceStackId().hashCode()); 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode()); 
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
-        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode()); 
-        hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultInstanceProfileArn() == null) ? 0 : getDefaultInstanceProfileArn().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultOs() == null) ? 0 : getDefaultOs().hashCode()); 
-        hashCode = prime * hashCode + ((getHostnameTheme() == null) ? 0 : getHostnameTheme().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultAvailabilityZone() == null) ? 0 : getDefaultAvailabilityZone().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultSubnetId() == null) ? 0 : getDefaultSubnetId().hashCode()); 
-        hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode()); 
-        hashCode = prime * hashCode + ((getConfigurationManager() == null) ? 0 : getConfigurationManager().hashCode()); 
-        hashCode = prime * hashCode + ((getChefConfiguration() == null) ? 0 : getChefConfiguration().hashCode()); 
-        hashCode = prime * hashCode + ((isUseCustomCookbooks() == null) ? 0 : isUseCustomCookbooks().hashCode()); 
-        hashCode = prime * hashCode + ((isUseOpsworksSecurityGroups() == null) ? 0 : isUseOpsworksSecurityGroups().hashCode()); 
-        hashCode = prime * hashCode + ((getCustomCookbooksSource() == null) ? 0 : getCustomCookbooksSource().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultSshKeyName() == null) ? 0 : getDefaultSshKeyName().hashCode()); 
-        hashCode = prime * hashCode + ((isClonePermissions() == null) ? 0 : isClonePermissions().hashCode()); 
-        hashCode = prime * hashCode + ((getCloneAppIds() == null) ? 0 : getCloneAppIds().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultRootDeviceType() == null) ? 0 : getDefaultRootDeviceType().hashCode()); 
-        hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getSourceStackId() == null) ? 0 : getSourceStackId()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode
+                + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode
+                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode
+                + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultInstanceProfileArn() == null) ? 0
+                        : getDefaultInstanceProfileArn().hashCode());
+        hashCode = prime * hashCode
+                + ((getDefaultOs() == null) ? 0 : getDefaultOs().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getHostnameTheme() == null) ? 0 : getHostnameTheme()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultAvailabilityZone() == null) ? 0
+                        : getDefaultAvailabilityZone().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultSubnetId() == null) ? 0 : getDefaultSubnetId()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getConfigurationManager() == null) ? 0
+                        : getConfigurationManager().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getChefConfiguration() == null) ? 0
+                        : getChefConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getUseCustomCookbooks() == null) ? 0
+                        : getUseCustomCookbooks().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getUseOpsworksSecurityGroups() == null) ? 0
+                        : getUseOpsworksSecurityGroups().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCustomCookbooksSource() == null) ? 0
+                        : getCustomCookbooksSource().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultSshKeyName() == null) ? 0
+                        : getDefaultSshKeyName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getClonePermissions() == null) ? 0 : getClonePermissions()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloneAppIds() == null) ? 0 : getCloneAppIds().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultRootDeviceType() == null) ? 0
+                        : getDefaultRootDeviceType().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAgentVersion() == null) ? 0 : getAgentVersion()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CloneStackRequest == false) return false;
-        CloneStackRequest other = (CloneStackRequest)obj;
-        
-        if (other.getSourceStackId() == null ^ this.getSourceStackId() == null) return false;
-        if (other.getSourceStackId() != null && other.getSourceStackId().equals(this.getSourceStackId()) == false) return false; 
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getRegion() == null ^ this.getRegion() == null) return false;
-        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false) return false; 
-        if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
-        if (other.getAttributes() == null ^ this.getAttributes() == null) return false;
-        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false) return false; 
-        if (other.getServiceRoleArn() == null ^ this.getServiceRoleArn() == null) return false;
-        if (other.getServiceRoleArn() != null && other.getServiceRoleArn().equals(this.getServiceRoleArn()) == false) return false; 
-        if (other.getDefaultInstanceProfileArn() == null ^ this.getDefaultInstanceProfileArn() == null) return false;
-        if (other.getDefaultInstanceProfileArn() != null && other.getDefaultInstanceProfileArn().equals(this.getDefaultInstanceProfileArn()) == false) return false; 
-        if (other.getDefaultOs() == null ^ this.getDefaultOs() == null) return false;
-        if (other.getDefaultOs() != null && other.getDefaultOs().equals(this.getDefaultOs()) == false) return false; 
-        if (other.getHostnameTheme() == null ^ this.getHostnameTheme() == null) return false;
-        if (other.getHostnameTheme() != null && other.getHostnameTheme().equals(this.getHostnameTheme()) == false) return false; 
-        if (other.getDefaultAvailabilityZone() == null ^ this.getDefaultAvailabilityZone() == null) return false;
-        if (other.getDefaultAvailabilityZone() != null && other.getDefaultAvailabilityZone().equals(this.getDefaultAvailabilityZone()) == false) return false; 
-        if (other.getDefaultSubnetId() == null ^ this.getDefaultSubnetId() == null) return false;
-        if (other.getDefaultSubnetId() != null && other.getDefaultSubnetId().equals(this.getDefaultSubnetId()) == false) return false; 
-        if (other.getCustomJson() == null ^ this.getCustomJson() == null) return false;
-        if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false) return false; 
-        if (other.getConfigurationManager() == null ^ this.getConfigurationManager() == null) return false;
-        if (other.getConfigurationManager() != null && other.getConfigurationManager().equals(this.getConfigurationManager()) == false) return false; 
-        if (other.getChefConfiguration() == null ^ this.getChefConfiguration() == null) return false;
-        if (other.getChefConfiguration() != null && other.getChefConfiguration().equals(this.getChefConfiguration()) == false) return false; 
-        if (other.isUseCustomCookbooks() == null ^ this.isUseCustomCookbooks() == null) return false;
-        if (other.isUseCustomCookbooks() != null && other.isUseCustomCookbooks().equals(this.isUseCustomCookbooks()) == false) return false; 
-        if (other.isUseOpsworksSecurityGroups() == null ^ this.isUseOpsworksSecurityGroups() == null) return false;
-        if (other.isUseOpsworksSecurityGroups() != null && other.isUseOpsworksSecurityGroups().equals(this.isUseOpsworksSecurityGroups()) == false) return false; 
-        if (other.getCustomCookbooksSource() == null ^ this.getCustomCookbooksSource() == null) return false;
-        if (other.getCustomCookbooksSource() != null && other.getCustomCookbooksSource().equals(this.getCustomCookbooksSource()) == false) return false; 
-        if (other.getDefaultSshKeyName() == null ^ this.getDefaultSshKeyName() == null) return false;
-        if (other.getDefaultSshKeyName() != null && other.getDefaultSshKeyName().equals(this.getDefaultSshKeyName()) == false) return false; 
-        if (other.isClonePermissions() == null ^ this.isClonePermissions() == null) return false;
-        if (other.isClonePermissions() != null && other.isClonePermissions().equals(this.isClonePermissions()) == false) return false; 
-        if (other.getCloneAppIds() == null ^ this.getCloneAppIds() == null) return false;
-        if (other.getCloneAppIds() != null && other.getCloneAppIds().equals(this.getCloneAppIds()) == false) return false; 
-        if (other.getDefaultRootDeviceType() == null ^ this.getDefaultRootDeviceType() == null) return false;
-        if (other.getDefaultRootDeviceType() != null && other.getDefaultRootDeviceType().equals(this.getDefaultRootDeviceType()) == false) return false; 
-        if (other.getAgentVersion() == null ^ this.getAgentVersion() == null) return false;
-        if (other.getAgentVersion() != null && other.getAgentVersion().equals(this.getAgentVersion()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CloneStackRequest clone() {
-        
-            return (CloneStackRequest) super.clone();
+        return (CloneStackRequest) super.clone();
     }
-
 }
-    

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Recording Group JSON Unmarshaller
+ * RecordingGroup JSON Unmarshaller
  */
-public class RecordingGroupJsonUnmarshaller implements Unmarshaller<RecordingGroup, JsonUnmarshallerContext> {
+public class RecordingGroupJsonUnmarshaller implements
+        Unmarshaller<RecordingGroup, JsonUnmarshallerContext> {
 
-    public RecordingGroup unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public RecordingGroup unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         RecordingGroup recordingGroup = new RecordingGroup();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,37 +40,47 @@ public class RecordingGroupJsonUnmarshaller implements Unmarshaller<RecordingGro
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("allSupported", targetDepth)) {
                     context.nextToken();
-                    recordingGroup.setAllSupported(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    recordingGroup.setAllSupported(BooleanJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceTypes", targetDepth)) {
                     context.nextToken();
-                    recordingGroup.setResourceTypes(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    recordingGroup
+                            .setResourceTypes(new ListUnmarshaller<String>(
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return recordingGroup;
     }
 
     private static RecordingGroupJsonUnmarshaller instance;
+
     public static RecordingGroupJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new RecordingGroupJsonUnmarshaller();
+        if (instance == null)
+            instance = new RecordingGroupJsonUnmarshaller();
         return instance;
     }
 }
-    

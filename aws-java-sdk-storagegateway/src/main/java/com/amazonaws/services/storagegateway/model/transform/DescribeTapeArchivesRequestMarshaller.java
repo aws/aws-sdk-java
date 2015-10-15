@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.storagegateway.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,34 +40,40 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Describe Tape Archives Request Marshaller
+ * DescribeTapeArchivesRequest Marshaller
  */
-public class DescribeTapeArchivesRequestMarshaller implements Marshaller<Request<DescribeTapeArchivesRequest>, DescribeTapeArchivesRequest> {
+public class DescribeTapeArchivesRequestMarshaller
+        implements
+        Marshaller<Request<DescribeTapeArchivesRequest>, DescribeTapeArchivesRequest> {
 
-    public Request<DescribeTapeArchivesRequest> marshall(DescribeTapeArchivesRequest describeTapeArchivesRequest) {
+    public Request<DescribeTapeArchivesRequest> marshall(
+            DescribeTapeArchivesRequest describeTapeArchivesRequest) {
+
         if (describeTapeArchivesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTapeArchivesRequest> request = new DefaultRequest<DescribeTapeArchivesRequest>(describeTapeArchivesRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20130630.DescribeTapeArchives";
-        request.addHeader("X-Amz-Target", target);
+        Request<DescribeTapeArchivesRequest> request = new DefaultRequest<DescribeTapeArchivesRequest>(
+                describeTapeArchivesRequest, "AWSStorageGateway");
+        request.addHeader("X-Amz-Target",
+                "StorageGateway_20130630.DescribeTapeArchives");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
+            jsonWriter.object();
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> tapeARNsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeTapeArchivesRequest.getTapeARNs());
-            if (tapeARNsList != null && !(tapeARNsList.isAutoConstruct() && tapeARNsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> tapeARNsList = (com.amazonaws.internal.SdkInternalList<String>) describeTapeArchivesRequest
+                    .getTapeARNs();
+            if (!tapeARNsList.isEmpty() || !tapeARNsList.isAutoConstruct()) {
                 jsonWriter.key("TapeARNs");
                 jsonWriter.array();
-
                 for (String tapeARNsListValue : tapeARNsList) {
                     if (tapeARNsListValue != null) {
                         jsonWriter.value(tapeARNsListValue);
@@ -74,24 +81,31 @@ public class DescribeTapeArchivesRequestMarshaller implements Marshaller<Request
                 }
                 jsonWriter.endArray();
             }
+
             if (describeTapeArchivesRequest.getMarker() != null) {
-                jsonWriter.key("Marker").value(describeTapeArchivesRequest.getMarker());
+                jsonWriter.key("Marker").value(
+                        describeTapeArchivesRequest.getMarker());
             }
+
             if (describeTapeArchivesRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(describeTapeArchivesRequest.getLimit());
+                jsonWriter.key("Limit").value(
+                        describeTapeArchivesRequest.getLimit());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

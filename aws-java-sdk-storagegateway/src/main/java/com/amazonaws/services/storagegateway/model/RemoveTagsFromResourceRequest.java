@@ -1,174 +1,170 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#removeTagsFromResource(RemoveTagsFromResourceRequest) RemoveTagsFromResource operation}.
  * <p>
- * This operation removes one or more tags from the specified resource.
+ * RemoveTagsFromResourceInput
  * </p>
- *
- * @see com.amazonaws.services.storagegateway.AWSStorageGateway#removeTagsFromResource(RemoveTagsFromResourceRequest)
  */
-public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the resource you want to remove the
      * tags from.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
+     * </p>
      */
     private String resourceARN;
-
     /**
+     * <p>
      * The keys of the tags you want to remove from the specified resource. A
      * tag is composed of a key/value pair.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagKeys;
+    private com.amazonaws.internal.SdkInternalList<String> tagKeys;
 
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the resource you want to remove the
      * tags from.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @return The Amazon Resource Name (ARN) of the resource you want to remove the
-     *         tags from.
-     */
-    public String getResourceARN() {
-        return resourceARN;
-    }
-    
-    /**
-     * The Amazon Resource Name (ARN) of the resource you want to remove the
-     * tags from.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @param resourceARN The Amazon Resource Name (ARN) of the resource you want to remove the
-     *         tags from.
+     * </p>
+     * 
+     * @param resourceARN
+     *        The Amazon Resource Name (ARN) of the resource you want to remove
+     *        the tags from.
      */
     public void setResourceARN(String resourceARN) {
         this.resourceARN = resourceARN;
     }
-    
+
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the resource you want to remove the
      * tags from.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the resource you want to remove
+     *         the tags from.
+     */
+    public String getResourceARN() {
+        return this.resourceARN;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     *
-     * @param resourceARN The Amazon Resource Name (ARN) of the resource you want to remove the
-     *         tags from.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon Resource Name (ARN) of the resource you want to remove the
+     * tags from.
+     * </p>
+     * 
+     * @param resourceARN
+     *        The Amazon Resource Name (ARN) of the resource you want to remove
+     *        the tags from.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public RemoveTagsFromResourceRequest withResourceARN(String resourceARN) {
-        this.resourceARN = resourceARN;
+        setResourceARN(resourceARN);
         return this;
     }
 
     /**
+     * <p>
      * The keys of the tags you want to remove from the specified resource. A
      * tag is composed of a key/value pair.
-     *
-     * @return The keys of the tags you want to remove from the specified resource. A
-     *         tag is composed of a key/value pair.
+     * </p>
+     * 
+     * @return The keys of the tags you want to remove from the specified
+     *         resource. A tag is composed of a key/value pair.
      */
     public java.util.List<String> getTagKeys() {
         if (tagKeys == null) {
-              tagKeys = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              tagKeys.setAutoConstruct(true);
+            tagKeys = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return tagKeys;
     }
-    
+
     /**
+     * <p>
      * The keys of the tags you want to remove from the specified resource. A
      * tag is composed of a key/value pair.
-     *
-     * @param tagKeys The keys of the tags you want to remove from the specified resource. A
-     *         tag is composed of a key/value pair.
+     * </p>
+     * 
+     * @param tagKeys
+     *        The keys of the tags you want to remove from the specified
+     *        resource. A tag is composed of a key/value pair.
      */
     public void setTagKeys(java.util.Collection<String> tagKeys) {
         if (tagKeys == null) {
             this.tagKeys = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> tagKeysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagKeys.size());
-        tagKeysCopy.addAll(tagKeys);
-        this.tagKeys = tagKeysCopy;
+
+        this.tagKeys = new com.amazonaws.internal.SdkInternalList<String>(
+                tagKeys);
     }
-    
+
     /**
+     * <p>
      * The keys of the tags you want to remove from the specified resource. A
      * tag is composed of a key/value pair.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagKeys(java.util.Collection)} or {@link
-     * #withTagKeys(java.util.Collection)} if you want to override the
+     * any). Use {@link #setTagKeys(java.util.Collection)} or
+     * {@link #withTagKeys(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tagKeys The keys of the tags you want to remove from the specified resource. A
-     *         tag is composed of a key/value pair.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param tagKeys
+     *        The keys of the tags you want to remove from the specified
+     *        resource. A tag is composed of a key/value pair.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public RemoveTagsFromResourceRequest withTagKeys(String... tagKeys) {
-        if (getTagKeys() == null) setTagKeys(new java.util.ArrayList<String>(tagKeys.length));
-        for (String value : tagKeys) {
-            getTagKeys().add(value);
+        if (this.tagKeys == null) {
+            setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(
+                    tagKeys.length));
+        }
+        for (String ele : tagKeys) {
+            this.tagKeys.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The keys of the tags you want to remove from the specified resource. A
      * tag is composed of a key/value pair.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tagKeys The keys of the tags you want to remove from the specified resource. A
-     *         tag is composed of a key/value pair.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param tagKeys
+     *        The keys of the tags you want to remove from the specified
+     *        resource. A tag is composed of a key/value pair.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public RemoveTagsFromResourceRequest withTagKeys(java.util.Collection<String> tagKeys) {
-        if (tagKeys == null) {
-            this.tagKeys = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> tagKeysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagKeys.size());
-            tagKeysCopy.addAll(tagKeys);
-            this.tagKeys = tagKeysCopy;
-        }
-
+    public RemoveTagsFromResourceRequest withTagKeys(
+            java.util.Collection<String> tagKeys) {
+        setTagKeys(tagKeys);
         return this;
     }
 
@@ -184,42 +180,52 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getResourceARN() != null) sb.append("ResourceARN: " + getResourceARN() + ",");
-        if (getTagKeys() != null) sb.append("TagKeys: " + getTagKeys() );
+        if (getResourceARN() != null)
+            sb.append("ResourceARN: " + getResourceARN() + ",");
+        if (getTagKeys() != null)
+            sb.append("TagKeys: " + getTagKeys());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RemoveTagsFromResourceRequest == false)
+            return false;
+        RemoveTagsFromResourceRequest other = (RemoveTagsFromResourceRequest) obj;
+        if (other.getResourceARN() == null ^ this.getResourceARN() == null)
+            return false;
+        if (other.getResourceARN() != null
+                && other.getResourceARN().equals(this.getResourceARN()) == false)
+            return false;
+        if (other.getTagKeys() == null ^ this.getTagKeys() == null)
+            return false;
+        if (other.getTagKeys() != null
+                && other.getTagKeys().equals(this.getTagKeys()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode()); 
-        hashCode = prime * hashCode + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
+        hashCode = prime * hashCode
+                + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof RemoveTagsFromResourceRequest == false) return false;
-        RemoveTagsFromResourceRequest other = (RemoveTagsFromResourceRequest)obj;
-        
-        if (other.getResourceARN() == null ^ this.getResourceARN() == null) return false;
-        if (other.getResourceARN() != null && other.getResourceARN().equals(this.getResourceARN()) == false) return false; 
-        if (other.getTagKeys() == null ^ this.getTagKeys() == null) return false;
-        if (other.getTagKeys() != null && other.getTagKeys().equals(this.getTagKeys()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public RemoveTagsFromResourceRequest clone() {
-        
-            return (RemoveTagsFromResourceRequest) super.clone();
+        return (RemoveTagsFromResourceRequest) super.clone();
     }
-
 }
-    

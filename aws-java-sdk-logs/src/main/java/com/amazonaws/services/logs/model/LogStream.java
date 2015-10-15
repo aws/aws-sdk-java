@@ -41,29 +41,21 @@ public class LogStream implements Serializable, Cloneable {
     private Long storedBytes;
 
     /**
-     * Sets the value of the LogStreamName property for this object.
-     * 
      * @param logStreamName
-     *        The new value for the LogStreamName property for this object.
      */
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
 
     /**
-     * Returns the value of the LogStreamName property for this object.
-     * 
-     * @return The value of the LogStreamName property for this object.
+     * @return
      */
     public String getLogStreamName() {
         return this.logStreamName;
     }
 
     /**
-     * Sets the value of the LogStreamName property for this object.
-     * 
      * @param logStreamName
-     *        The new value for the LogStreamName property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -73,29 +65,21 @@ public class LogStream implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the CreationTime property for this object.
-     * 
      * @param creationTime
-     *        The new value for the CreationTime property for this object.
      */
     public void setCreationTime(Long creationTime) {
         this.creationTime = creationTime;
     }
 
     /**
-     * Returns the value of the CreationTime property for this object.
-     * 
-     * @return The value of the CreationTime property for this object.
+     * @return
      */
     public Long getCreationTime() {
         return this.creationTime;
     }
 
     /**
-     * Sets the value of the CreationTime property for this object.
-     * 
      * @param creationTime
-     *        The new value for the CreationTime property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -105,31 +89,21 @@ public class LogStream implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the FirstEventTimestamp property for this object.
-     * 
      * @param firstEventTimestamp
-     *        The new value for the FirstEventTimestamp property for this
-     *        object.
      */
     public void setFirstEventTimestamp(Long firstEventTimestamp) {
         this.firstEventTimestamp = firstEventTimestamp;
     }
 
     /**
-     * Returns the value of the FirstEventTimestamp property for this object.
-     * 
-     * @return The value of the FirstEventTimestamp property for this object.
+     * @return
      */
     public Long getFirstEventTimestamp() {
         return this.firstEventTimestamp;
     }
 
     /**
-     * Sets the value of the FirstEventTimestamp property for this object.
-     * 
      * @param firstEventTimestamp
-     *        The new value for the FirstEventTimestamp property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -139,29 +113,21 @@ public class LogStream implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the LastEventTimestamp property for this object.
-     * 
      * @param lastEventTimestamp
-     *        The new value for the LastEventTimestamp property for this object.
      */
     public void setLastEventTimestamp(Long lastEventTimestamp) {
         this.lastEventTimestamp = lastEventTimestamp;
     }
 
     /**
-     * Returns the value of the LastEventTimestamp property for this object.
-     * 
-     * @return The value of the LastEventTimestamp property for this object.
+     * @return
      */
     public Long getLastEventTimestamp() {
         return this.lastEventTimestamp;
     }
 
     /**
-     * Sets the value of the LastEventTimestamp property for this object.
-     * 
      * @param lastEventTimestamp
-     *        The new value for the LastEventTimestamp property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -171,29 +137,21 @@ public class LogStream implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the LastIngestionTime property for this object.
-     * 
      * @param lastIngestionTime
-     *        The new value for the LastIngestionTime property for this object.
      */
     public void setLastIngestionTime(Long lastIngestionTime) {
         this.lastIngestionTime = lastIngestionTime;
     }
 
     /**
-     * Returns the value of the LastIngestionTime property for this object.
-     * 
-     * @return The value of the LastIngestionTime property for this object.
+     * @return
      */
     public Long getLastIngestionTime() {
         return this.lastIngestionTime;
     }
 
     /**
-     * Sets the value of the LastIngestionTime property for this object.
-     * 
      * @param lastIngestionTime
-     *        The new value for the LastIngestionTime property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -203,31 +161,21 @@ public class LogStream implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the UploadSequenceToken property for this object.
-     * 
      * @param uploadSequenceToken
-     *        The new value for the UploadSequenceToken property for this
-     *        object.
      */
     public void setUploadSequenceToken(String uploadSequenceToken) {
         this.uploadSequenceToken = uploadSequenceToken;
     }
 
     /**
-     * Returns the value of the UploadSequenceToken property for this object.
-     * 
-     * @return The value of the UploadSequenceToken property for this object.
+     * @return
      */
     public String getUploadSequenceToken() {
         return this.uploadSequenceToken;
     }
 
     /**
-     * Sets the value of the UploadSequenceToken property for this object.
-     * 
      * @param uploadSequenceToken
-     *        The new value for the UploadSequenceToken property for this
-     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -237,29 +185,21 @@ public class LogStream implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the Arn property for this object.
-     * 
      * @param arn
-     *        The new value for the Arn property for this object.
      */
     public void setArn(String arn) {
         this.arn = arn;
     }
 
     /**
-     * Returns the value of the Arn property for this object.
-     * 
-     * @return The value of the Arn property for this object.
+     * @return
      */
     public String getArn() {
         return this.arn;
     }
 
     /**
-     * Sets the value of the Arn property for this object.
-     * 
      * @param arn
-     *        The new value for the Arn property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -269,29 +209,21 @@ public class LogStream implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the value of the StoredBytes property for this object.
-     * 
      * @param storedBytes
-     *        The new value for the StoredBytes property for this object.
      */
     public void setStoredBytes(Long storedBytes) {
         this.storedBytes = storedBytes;
     }
 
     /**
-     * Returns the value of the StoredBytes property for this object.
-     * 
-     * @return The value of the StoredBytes property for this object.
+     * @return
      */
     public Long getStoredBytes() {
         return this.storedBytes;
     }
 
     /**
-     * Sets the value of the StoredBytes property for this object.
-     * 
      * @param storedBytes
-     *        The new value for the StoredBytes property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

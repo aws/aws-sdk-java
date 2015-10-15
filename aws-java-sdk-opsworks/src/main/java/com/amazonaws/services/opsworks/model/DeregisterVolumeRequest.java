@@ -1,93 +1,85 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#deregisterVolume(DeregisterVolumeRequest) DeregisterVolume operation}.
- * <p>
- * Deregisters an Amazon EBS volume. The volume can then be registered by
- * another stack. For more information, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
- * .
- * </p>
- * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must
- * have a Manage permissions level for the stack, or an attached policy
- * that explicitly grants permissions. For more information on user
- * permissions, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
- * .
- * </p>
- *
- * @see com.amazonaws.services.opsworks.AWSOpsWorks#deregisterVolume(DeregisterVolumeRequest)
+ * 
  */
-public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
-     * assigned to the instance when you registered the volume with the
-     * stack, not the Amazon EC2 volume ID.
+     * <p>
+     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned
+     * to the instance when you registered the volume with the stack, not the
+     * Amazon EC2 volume ID.
+     * </p>
      */
     private String volumeId;
 
     /**
-     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
-     * assigned to the instance when you registered the volume with the
-     * stack, not the Amazon EC2 volume ID.
-     *
+     * <p>
+     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned
+     * to the instance when you registered the volume with the stack, not the
+     * Amazon EC2 volume ID.
+     * </p>
+     * 
+     * @param volumeId
+     *        The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
+     *        assigned to the instance when you registered the volume with the
+     *        stack, not the Amazon EC2 volume ID.
+     */
+    public void setVolumeId(String volumeId) {
+        this.volumeId = volumeId;
+    }
+
+    /**
+     * <p>
+     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned
+     * to the instance when you registered the volume with the stack, not the
+     * Amazon EC2 volume ID.
+     * </p>
+     * 
      * @return The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
      *         assigned to the instance when you registered the volume with the
      *         stack, not the Amazon EC2 volume ID.
      */
     public String getVolumeId() {
-        return volumeId;
+        return this.volumeId;
     }
-    
+
     /**
-     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
-     * assigned to the instance when you registered the volume with the
-     * stack, not the Amazon EC2 volume ID.
-     *
-     * @param volumeId The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
-     *         assigned to the instance when you registered the volume with the
-     *         stack, not the Amazon EC2 volume ID.
-     */
-    public void setVolumeId(String volumeId) {
-        this.volumeId = volumeId;
-    }
-    
-    /**
-     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
-     * assigned to the instance when you registered the volume with the
-     * stack, not the Amazon EC2 volume ID.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param volumeId The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
-     *         assigned to the instance when you registered the volume with the
-     *         stack, not the Amazon EC2 volume ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned
+     * to the instance when you registered the volume with the stack, not the
+     * Amazon EC2 volume ID.
+     * </p>
+     * 
+     * @param volumeId
+     *        The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
+     *        assigned to the instance when you registered the volume with the
+     *        stack, not the Amazon EC2 volume ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DeregisterVolumeRequest withVolumeId(String volumeId) {
-        this.volumeId = volumeId;
+        setVolumeId(volumeId);
         return this;
     }
 
@@ -103,38 +95,42 @@ public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() );
+        if (getVolumeId() != null)
+            sb.append("VolumeId: " + getVolumeId());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DeregisterVolumeRequest == false)
+            return false;
+        DeregisterVolumeRequest other = (DeregisterVolumeRequest) obj;
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
+            return false;
+        if (other.getVolumeId() != null
+                && other.getVolumeId().equals(this.getVolumeId()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DeregisterVolumeRequest == false) return false;
-        DeregisterVolumeRequest other = (DeregisterVolumeRequest)obj;
-        
-        if (other.getVolumeId() == null ^ this.getVolumeId() == null) return false;
-        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DeregisterVolumeRequest clone() {
-        
-            return (DeregisterVolumeRequest) super.clone();
+        return (DeregisterVolumeRequest) super.clone();
     }
-
 }
-    

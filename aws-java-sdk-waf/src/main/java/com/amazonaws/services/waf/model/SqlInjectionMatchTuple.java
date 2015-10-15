@@ -110,29 +110,21 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
     private String textTransformation;
 
     /**
-     * Sets the value of the FieldToMatch property for this object.
-     * 
      * @param fieldToMatch
-     *        The new value for the FieldToMatch property for this object.
      */
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
         this.fieldToMatch = fieldToMatch;
     }
 
     /**
-     * Returns the value of the FieldToMatch property for this object.
-     * 
-     * @return The value of the FieldToMatch property for this object.
+     * @return
      */
     public FieldToMatch getFieldToMatch() {
         return this.fieldToMatch;
     }
 
     /**
-     * Sets the value of the FieldToMatch property for this object.
-     * 
      * @param fieldToMatch
-     *        The new value for the FieldToMatch property for this object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

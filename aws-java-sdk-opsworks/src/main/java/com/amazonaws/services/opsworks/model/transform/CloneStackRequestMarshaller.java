@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.opsworks.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,146 +40,148 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Clone Stack Request Marshaller
+ * CloneStackRequest Marshaller
  */
-public class CloneStackRequestMarshaller implements Marshaller<Request<CloneStackRequest>, CloneStackRequest> {
+public class CloneStackRequestMarshaller implements
+        Marshaller<Request<CloneStackRequest>, CloneStackRequest> {
 
-    public Request<CloneStackRequest> marshall(CloneStackRequest cloneStackRequest) {
+    public Request<CloneStackRequest> marshall(
+            CloneStackRequest cloneStackRequest) {
+
         if (cloneStackRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<CloneStackRequest> request = new DefaultRequest<CloneStackRequest>(cloneStackRequest, "AWSOpsWorks");
-        String target = "OpsWorks_20130218.CloneStack";
-        request.addHeader("X-Amz-Target", target);
+        Request<CloneStackRequest> request = new DefaultRequest<CloneStackRequest>(
+                cloneStackRequest, "AWSOpsWorks");
+        request.addHeader("X-Amz-Target", "OpsWorks_20130218.CloneStack");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (cloneStackRequest.getSourceStackId() != null) {
-                jsonWriter.key("SourceStackId").value(cloneStackRequest.getSourceStackId());
+                jsonWriter.key("SourceStackId").value(
+                        cloneStackRequest.getSourceStackId());
             }
+
             if (cloneStackRequest.getName() != null) {
                 jsonWriter.key("Name").value(cloneStackRequest.getName());
             }
+
             if (cloneStackRequest.getRegion() != null) {
                 jsonWriter.key("Region").value(cloneStackRequest.getRegion());
             }
+
             if (cloneStackRequest.getVpcId() != null) {
                 jsonWriter.key("VpcId").value(cloneStackRequest.getVpcId());
             }
-            if (cloneStackRequest.getAttributes() != null) {
+
+            com.amazonaws.internal.SdkInternalMap<String, String> attributesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) cloneStackRequest
+                    .getAttributes();
+            if (!attributesMap.isEmpty() || !attributesMap.isAutoConstruct()) {
                 jsonWriter.key("Attributes");
                 jsonWriter.object();
-                for (Map.Entry<String, String> attributesListValue : cloneStackRequest.getAttributes().entrySet()) {
-                    if (attributesListValue.getValue() != null) {
-                        jsonWriter.key(attributesListValue.getKey());
 
-                        jsonWriter.value(attributesListValue.getValue());
+                for (Map.Entry<String, String> attributesMapValue : attributesMap
+                        .entrySet()) {
+                    if (attributesMapValue.getValue() != null) {
+                        jsonWriter.key(attributesMapValue.getKey());
+
+                        jsonWriter.value(attributesMapValue.getValue());
                     }
                 }
                 jsonWriter.endObject();
             }
+
             if (cloneStackRequest.getServiceRoleArn() != null) {
-                jsonWriter.key("ServiceRoleArn").value(cloneStackRequest.getServiceRoleArn());
+                jsonWriter.key("ServiceRoleArn").value(
+                        cloneStackRequest.getServiceRoleArn());
             }
+
             if (cloneStackRequest.getDefaultInstanceProfileArn() != null) {
-                jsonWriter.key("DefaultInstanceProfileArn").value(cloneStackRequest.getDefaultInstanceProfileArn());
+                jsonWriter.key("DefaultInstanceProfileArn").value(
+                        cloneStackRequest.getDefaultInstanceProfileArn());
             }
+
             if (cloneStackRequest.getDefaultOs() != null) {
-                jsonWriter.key("DefaultOs").value(cloneStackRequest.getDefaultOs());
+                jsonWriter.key("DefaultOs").value(
+                        cloneStackRequest.getDefaultOs());
             }
+
             if (cloneStackRequest.getHostnameTheme() != null) {
-                jsonWriter.key("HostnameTheme").value(cloneStackRequest.getHostnameTheme());
+                jsonWriter.key("HostnameTheme").value(
+                        cloneStackRequest.getHostnameTheme());
             }
+
             if (cloneStackRequest.getDefaultAvailabilityZone() != null) {
-                jsonWriter.key("DefaultAvailabilityZone").value(cloneStackRequest.getDefaultAvailabilityZone());
+                jsonWriter.key("DefaultAvailabilityZone").value(
+                        cloneStackRequest.getDefaultAvailabilityZone());
             }
+
             if (cloneStackRequest.getDefaultSubnetId() != null) {
-                jsonWriter.key("DefaultSubnetId").value(cloneStackRequest.getDefaultSubnetId());
+                jsonWriter.key("DefaultSubnetId").value(
+                        cloneStackRequest.getDefaultSubnetId());
             }
+
             if (cloneStackRequest.getCustomJson() != null) {
-                jsonWriter.key("CustomJson").value(cloneStackRequest.getCustomJson());
+                jsonWriter.key("CustomJson").value(
+                        cloneStackRequest.getCustomJson());
             }
-            StackConfigurationManager configurationManager = cloneStackRequest.getConfigurationManager();
-            if (configurationManager != null) {
 
+            if (cloneStackRequest.getConfigurationManager() != null) {
                 jsonWriter.key("ConfigurationManager");
-                jsonWriter.object();
-
-                if (configurationManager.getName() != null) {
-                    jsonWriter.key("Name").value(configurationManager.getName());
-                }
-                if (configurationManager.getVersion() != null) {
-                    jsonWriter.key("Version").value(configurationManager.getVersion());
-                }
-                jsonWriter.endObject();
+                StackConfigurationManagerJsonMarshaller.getInstance()
+                        .marshall(cloneStackRequest.getConfigurationManager(),
+                                jsonWriter);
             }
-            ChefConfiguration chefConfiguration = cloneStackRequest.getChefConfiguration();
-            if (chefConfiguration != null) {
 
+            if (cloneStackRequest.getChefConfiguration() != null) {
                 jsonWriter.key("ChefConfiguration");
-                jsonWriter.object();
+                ChefConfigurationJsonMarshaller.getInstance().marshall(
+                        cloneStackRequest.getChefConfiguration(), jsonWriter);
+            }
 
-                if (chefConfiguration.isManageBerkshelf() != null) {
-                    jsonWriter.key("ManageBerkshelf").value(chefConfiguration.isManageBerkshelf());
-                }
-                if (chefConfiguration.getBerkshelfVersion() != null) {
-                    jsonWriter.key("BerkshelfVersion").value(chefConfiguration.getBerkshelfVersion());
-                }
-                jsonWriter.endObject();
+            if (cloneStackRequest.getUseCustomCookbooks() != null) {
+                jsonWriter.key("UseCustomCookbooks").value(
+                        cloneStackRequest.getUseCustomCookbooks());
             }
-            if (cloneStackRequest.isUseCustomCookbooks() != null) {
-                jsonWriter.key("UseCustomCookbooks").value(cloneStackRequest.isUseCustomCookbooks());
-            }
-            if (cloneStackRequest.isUseOpsworksSecurityGroups() != null) {
-                jsonWriter.key("UseOpsworksSecurityGroups").value(cloneStackRequest.isUseOpsworksSecurityGroups());
-            }
-            Source customCookbooksSource = cloneStackRequest.getCustomCookbooksSource();
-            if (customCookbooksSource != null) {
 
+            if (cloneStackRequest.getUseOpsworksSecurityGroups() != null) {
+                jsonWriter.key("UseOpsworksSecurityGroups").value(
+                        cloneStackRequest.getUseOpsworksSecurityGroups());
+            }
+
+            if (cloneStackRequest.getCustomCookbooksSource() != null) {
                 jsonWriter.key("CustomCookbooksSource");
-                jsonWriter.object();
-
-                if (customCookbooksSource.getType() != null) {
-                    jsonWriter.key("Type").value(customCookbooksSource.getType());
-                }
-                if (customCookbooksSource.getUrl() != null) {
-                    jsonWriter.key("Url").value(customCookbooksSource.getUrl());
-                }
-                if (customCookbooksSource.getUsername() != null) {
-                    jsonWriter.key("Username").value(customCookbooksSource.getUsername());
-                }
-                if (customCookbooksSource.getPassword() != null) {
-                    jsonWriter.key("Password").value(customCookbooksSource.getPassword());
-                }
-                if (customCookbooksSource.getSshKey() != null) {
-                    jsonWriter.key("SshKey").value(customCookbooksSource.getSshKey());
-                }
-                if (customCookbooksSource.getRevision() != null) {
-                    jsonWriter.key("Revision").value(customCookbooksSource.getRevision());
-                }
-                jsonWriter.endObject();
+                SourceJsonMarshaller.getInstance().marshall(
+                        cloneStackRequest.getCustomCookbooksSource(),
+                        jsonWriter);
             }
+
             if (cloneStackRequest.getDefaultSshKeyName() != null) {
-                jsonWriter.key("DefaultSshKeyName").value(cloneStackRequest.getDefaultSshKeyName());
-            }
-            if (cloneStackRequest.isClonePermissions() != null) {
-                jsonWriter.key("ClonePermissions").value(cloneStackRequest.isClonePermissions());
+                jsonWriter.key("DefaultSshKeyName").value(
+                        cloneStackRequest.getDefaultSshKeyName());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> cloneAppIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(cloneStackRequest.getCloneAppIds());
-            if (cloneAppIdsList != null && !(cloneAppIdsList.isAutoConstruct() && cloneAppIdsList.isEmpty())) {
+            if (cloneStackRequest.getClonePermissions() != null) {
+                jsonWriter.key("ClonePermissions").value(
+                        cloneStackRequest.getClonePermissions());
+            }
 
+            com.amazonaws.internal.SdkInternalList<String> cloneAppIdsList = (com.amazonaws.internal.SdkInternalList<String>) cloneStackRequest
+                    .getCloneAppIds();
+            if (!cloneAppIdsList.isEmpty()
+                    || !cloneAppIdsList.isAutoConstruct()) {
                 jsonWriter.key("CloneAppIds");
                 jsonWriter.array();
-
                 for (String cloneAppIdsListValue : cloneAppIdsList) {
                     if (cloneAppIdsListValue != null) {
                         jsonWriter.value(cloneAppIdsListValue);
@@ -186,24 +189,31 @@ public class CloneStackRequestMarshaller implements Marshaller<Request<CloneStac
                 }
                 jsonWriter.endArray();
             }
+
             if (cloneStackRequest.getDefaultRootDeviceType() != null) {
-                jsonWriter.key("DefaultRootDeviceType").value(cloneStackRequest.getDefaultRootDeviceType());
+                jsonWriter.key("DefaultRootDeviceType").value(
+                        cloneStackRequest.getDefaultRootDeviceType());
             }
+
             if (cloneStackRequest.getAgentVersion() != null) {
-                jsonWriter.key("AgentVersion").value(cloneStackRequest.getAgentVersion());
+                jsonWriter.key("AgentVersion").value(
+                        cloneStackRequest.getAgentVersion());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }
