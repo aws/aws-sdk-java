@@ -18,6 +18,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.fail;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -84,6 +86,19 @@ public class ClientConfigurationTest {
         assertSame("custom dns resolver set via fluent API",
                 resolver,
                 config.getDnsResolver());
+    }
+    
+    @Test
+    public void useExpectContinueConfiguration() throws Exception {
+        ClientConfiguration config = new ClientConfiguration();
+        assertTrue("Default for use expect continue should be 'true'",
+                    config.isUseExpectContinue());
+        
+        config.withUseExpectContinue(false);
+        
+        assertFalse("use expect continue was set to 'false'",
+                config.isUseExpectContinue());
+
     }
 
 }
