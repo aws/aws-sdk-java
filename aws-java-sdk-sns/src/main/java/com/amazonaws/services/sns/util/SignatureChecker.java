@@ -20,8 +20,11 @@ import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
 import java.security.Signature;
 import java.security.SignatureException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
@@ -52,6 +55,8 @@ public class SignatureChecker {
     private final String SUBJECT = "Subject";
     private final String TOPIC = "TopicArn";
     private final String TOKEN = "Token";
+    private final Set<String> INTERESTING_FIELDS = new HashSet<String>(Arrays.asList(TYPE, SUBSCRIBE_TYPE, MESSAGE,
+            TIMESTAMP, SIGNATURE, SIGNATURE_VERSION, MESSAGE_ID, SUBJECT, TOPIC, TOKEN));
 
     /**
      * Validates the signature on a Simple Notification Service message. No
@@ -157,10 +162,14 @@ public class SignatureChecker {
         Map<String, String> parsed = new HashMap<String, String>();
         JsonFactory jf = new JsonFactory();
         try {
-            JsonParser parser = jf.createJsonParser(jsonmessage);
+            JsonParser parser = jf.createParser(jsonmessage);
             parser.nextToken(); //shift past the START_OBJECT that begins the JSON
             while (parser.nextToken() != JsonToken.END_OBJECT) {
                 String fieldname = parser.getCurrentName();
+                if (!INTERESTING_FIELDS.contains(fieldname)) {
+                    parser.skipChildren();
+                    continue;
+                }
                 parser.nextToken(); // move to value, or START_OBJECT/START_ARRAY
                 String value;
                 if (parser.getCurrentToken() == JsonToken.START_ARRAY)
