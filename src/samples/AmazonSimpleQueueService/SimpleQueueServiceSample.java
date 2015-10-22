@@ -110,8 +110,8 @@ public class SimpleQueueServiceSample {
 
             // Delete a message
             System.out.println("Deleting a message.\n");
-            String messageRecieptHandle = messages.get(0).getReceiptHandle();
-            sqs.deleteMessage(new DeleteMessageRequest(myQueueUrl, messageRecieptHandle));
+            String messageReceiptHandle = messages.get(0).getReceiptHandle();
+            sqs.deleteMessage(new DeleteMessageRequest(myQueueUrl, messageReceiptHandle));
 
             // Delete a queue
             System.out.println("Deleting the test queue.\n");
