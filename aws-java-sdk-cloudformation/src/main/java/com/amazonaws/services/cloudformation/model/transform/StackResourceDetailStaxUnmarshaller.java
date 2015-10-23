@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,60 +27,89 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Stack Resource Detail StAX Unmarshaller
+ * StackResourceDetail StAX Unmarshaller
  */
-public class StackResourceDetailStaxUnmarshaller implements Unmarshaller<StackResourceDetail, StaxUnmarshallerContext> {
+public class StackResourceDetailStaxUnmarshaller implements
+        Unmarshaller<StackResourceDetail, StaxUnmarshallerContext> {
 
-    public StackResourceDetail unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public StackResourceDetail unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         StackResourceDetail stackResourceDetail = new StackResourceDetail();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return stackResourceDetail;
+            if (xmlEvent.isEndDocument())
+                return stackResourceDetail;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("StackName", targetDepth)) {
-                    stackResourceDetail.setStackName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceDetail.setStackName(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("StackId", targetDepth)) {
-                    stackResourceDetail.setStackId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceDetail.setStackId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("LogicalResourceId", targetDepth)) {
-                    stackResourceDetail.setLogicalResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceDetail
+                            .setLogicalResourceId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("PhysicalResourceId", targetDepth)) {
-                    stackResourceDetail.setPhysicalResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceDetail
+                            .setPhysicalResourceId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ResourceType", targetDepth)) {
-                    stackResourceDetail.setResourceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceDetail.setResourceType(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("LastUpdatedTimestamp", targetDepth)) {
-                    stackResourceDetail.setLastUpdatedTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceDetail
+                            .setLastUpdatedTimestamp(DateStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ResourceStatus", targetDepth)) {
-                    stackResourceDetail.setResourceStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceDetail
+                            .setResourceStatus(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ResourceStatusReason", targetDepth)) {
-                    stackResourceDetail.setResourceStatusReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceDetail
+                            .setResourceStatusReason(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Description", targetDepth)) {
-                    stackResourceDetail.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceDetail.setDescription(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Metadata", targetDepth)) {
-                    stackResourceDetail.setMetadata(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceDetail.setMetadata(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -92,9 +121,10 @@ public class StackResourceDetailStaxUnmarshaller implements Unmarshaller<StackRe
     }
 
     private static StackResourceDetailStaxUnmarshaller instance;
+
     public static StackResourceDetailStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new StackResourceDetailStaxUnmarshaller();
+        if (instance == null)
+            instance = new StackResourceDetailStaxUnmarshaller();
         return instance;
     }
 }
-    

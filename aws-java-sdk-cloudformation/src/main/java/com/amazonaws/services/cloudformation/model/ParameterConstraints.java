@@ -1,106 +1,110 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * A set of criteria that AWS CloudFormation uses to validate parameter
- * values. Although other constraints might be defined in the stack
- * template, AWS CloudFormation returns only the
- * <code>AllowedValues</code> property.
+ * A set of criteria that AWS CloudFormation uses to validate parameter values.
+ * Although other constraints might be defined in the stack template, AWS
+ * CloudFormation returns only the <code>AllowedValues</code> property.
  * </p>
  */
 public class ParameterConstraints implements Serializable, Cloneable {
 
     /**
+     * <p>
      * A list of values that are permitted for a parameter.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> allowedValues;
+    private com.amazonaws.internal.SdkInternalList<String> allowedValues;
 
     /**
+     * <p>
      * A list of values that are permitted for a parameter.
-     *
+     * </p>
+     * 
      * @return A list of values that are permitted for a parameter.
      */
     public java.util.List<String> getAllowedValues() {
         if (allowedValues == null) {
-              allowedValues = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              allowedValues.setAutoConstruct(true);
+            allowedValues = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return allowedValues;
     }
-    
+
     /**
+     * <p>
      * A list of values that are permitted for a parameter.
-     *
-     * @param allowedValues A list of values that are permitted for a parameter.
+     * </p>
+     * 
+     * @param allowedValues
+     *        A list of values that are permitted for a parameter.
      */
     public void setAllowedValues(java.util.Collection<String> allowedValues) {
         if (allowedValues == null) {
             this.allowedValues = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> allowedValuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(allowedValues.size());
-        allowedValuesCopy.addAll(allowedValues);
-        this.allowedValues = allowedValuesCopy;
+
+        this.allowedValues = new com.amazonaws.internal.SdkInternalList<String>(
+                allowedValues);
     }
-    
+
     /**
+     * <p>
      * A list of values that are permitted for a parameter.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAllowedValues(java.util.Collection)} or {@link
-     * #withAllowedValues(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param allowedValues A list of values that are permitted for a parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setAllowedValues(java.util.Collection)} or
+     * {@link #withAllowedValues(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param allowedValues
+     *        A list of values that are permitted for a parameter.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ParameterConstraints withAllowedValues(String... allowedValues) {
-        if (getAllowedValues() == null) setAllowedValues(new java.util.ArrayList<String>(allowedValues.length));
-        for (String value : allowedValues) {
-            getAllowedValues().add(value);
+        if (this.allowedValues == null) {
+            setAllowedValues(new com.amazonaws.internal.SdkInternalList<String>(
+                    allowedValues.length));
+        }
+        for (String ele : allowedValues) {
+            this.allowedValues.add(ele);
         }
         return this;
     }
-    
-    /**
-     * A list of values that are permitted for a parameter.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param allowedValues A list of values that are permitted for a parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ParameterConstraints withAllowedValues(java.util.Collection<String> allowedValues) {
-        if (allowedValues == null) {
-            this.allowedValues = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> allowedValuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(allowedValues.size());
-            allowedValuesCopy.addAll(allowedValues);
-            this.allowedValues = allowedValuesCopy;
-        }
 
+    /**
+     * <p>
+     * A list of values that are permitted for a parameter.
+     * </p>
+     * 
+     * @param allowedValues
+     *        A list of values that are permitted for a parameter.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ParameterConstraints withAllowedValues(
+            java.util.Collection<String> allowedValues) {
+        setAllowedValues(allowedValues);
         return this;
     }
 
@@ -116,46 +120,50 @@ public class ParameterConstraints implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAllowedValues() != null) sb.append("AllowedValues: " + getAllowedValues() );
+        if (getAllowedValues() != null)
+            sb.append("AllowedValues: " + getAllowedValues());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ParameterConstraints == false)
+            return false;
+        ParameterConstraints other = (ParameterConstraints) obj;
+        if (other.getAllowedValues() == null ^ this.getAllowedValues() == null)
+            return false;
+        if (other.getAllowedValues() != null
+                && other.getAllowedValues().equals(this.getAllowedValues()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAllowedValues() == null) ? 0 : getAllowedValues().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getAllowedValues() == null) ? 0 : getAllowedValues()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ParameterConstraints == false) return false;
-        ParameterConstraints other = (ParameterConstraints)obj;
-        
-        if (other.getAllowedValues() == null ^ this.getAllowedValues() == null) return false;
-        if (other.getAllowedValues() != null && other.getAllowedValues().equals(this.getAllowedValues()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ParameterConstraints clone() {
         try {
             return (ParameterConstraints) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

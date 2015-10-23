@@ -24,6 +24,7 @@ public enum PolicySourceType {
     Role("role"),
     AwsManaged("aws-managed"),
     UserManaged("user-managed"),
+    Resource("resource"),
     None("none");
 
     private String value;
@@ -58,6 +59,8 @@ public enum PolicySourceType {
             return PolicySourceType.AwsManaged;
         } else if ("user-managed".equals(value)) {
             return PolicySourceType.UserManaged;
+        } else if ("resource".equals(value)) {
+            return PolicySourceType.Resource;
         } else if ("none".equals(value)) {
             return PolicySourceType.None;
         } else {

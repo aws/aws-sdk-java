@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
@@ -19,43 +20,52 @@ import java.io.Serializable;
 /**
  * 
  */
-public class TerminateInstanceInAutoScalingGroupResult implements Serializable, Cloneable {
+public class TerminateInstanceInAutoScalingGroupResult implements Serializable,
+        Cloneable {
 
     /**
+     * <p>
      * A scaling activity.
+     * </p>
      */
     private Activity activity;
 
     /**
+     * <p>
      * A scaling activity.
-     *
-     * @return A scaling activity.
-     */
-    public Activity getActivity() {
-        return activity;
-    }
-    
-    /**
-     * A scaling activity.
-     *
-     * @param activity A scaling activity.
+     * </p>
+     * 
+     * @param activity
+     *        A scaling activity.
      */
     public void setActivity(Activity activity) {
         this.activity = activity;
     }
-    
+
     /**
-     * A scaling activity.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param activity A scaling activity.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A scaling activity.
+     * </p>
+     * 
+     * @return A scaling activity.
      */
-    public TerminateInstanceInAutoScalingGroupResult withActivity(Activity activity) {
-        this.activity = activity;
+    public Activity getActivity() {
+        return this.activity;
+    }
+
+    /**
+     * <p>
+     * A scaling activity.
+     * </p>
+     * 
+     * @param activity
+     *        A scaling activity.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public TerminateInstanceInAutoScalingGroupResult withActivity(
+            Activity activity) {
+        setActivity(activity);
         return this;
     }
 
@@ -71,46 +81,48 @@ public class TerminateInstanceInAutoScalingGroupResult implements Serializable, 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getActivity() != null) sb.append("Activity: " + getActivity() );
+        if (getActivity() != null)
+            sb.append("Activity: " + getActivity());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof TerminateInstanceInAutoScalingGroupResult == false)
+            return false;
+        TerminateInstanceInAutoScalingGroupResult other = (TerminateInstanceInAutoScalingGroupResult) obj;
+        if (other.getActivity() == null ^ this.getActivity() == null)
+            return false;
+        if (other.getActivity() != null
+                && other.getActivity().equals(this.getActivity()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getActivity() == null) ? 0 : getActivity().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getActivity() == null) ? 0 : getActivity().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof TerminateInstanceInAutoScalingGroupResult == false) return false;
-        TerminateInstanceInAutoScalingGroupResult other = (TerminateInstanceInAutoScalingGroupResult)obj;
-        
-        if (other.getActivity() == null ^ this.getActivity() == null) return false;
-        if (other.getActivity() != null && other.getActivity().equals(this.getActivity()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public TerminateInstanceInAutoScalingGroupResult clone() {
         try {
             return (TerminateInstanceInAutoScalingGroupResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

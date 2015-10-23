@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
@@ -24,237 +25,242 @@ import java.io.Serializable;
 public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
-     * The name of the virtual device, <code>ephemeral0</code> to
-     * <code>ephemeral3</code>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The name of the virtual device (for example, <code>ephemeral0</code>).
+     * </p>
      */
     private String virtualName;
-
     /**
+     * <p>
      * The device name exposed to the EC2 instance (for example,
      * <code>/dev/sdh</code> or <code>xvdh</code>).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * </p>
      */
     private String deviceName;
-
     /**
+     * <p>
      * The information about the Amazon EBS volume.
+     * </p>
      */
     private Ebs ebs;
-
     /**
-     * Suppresses a device mapping. <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. Auto Scaling
-     * launches a replacement instance if the instance fails the health
-     * check.
+     * <p>
+     * Suppresses a device mapping.
+     * </p>
+     * <p>
+     * If this parameter is true for the root device, the instance might fail
+     * the EC2 health check. Auto Scaling launches a replacement instance if the
+     * instance fails the health check.
+     * </p>
      */
     private Boolean noDevice;
 
     /**
-     * The name of the virtual device, <code>ephemeral0</code> to
-     * <code>ephemeral3</code>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The name of the virtual device, <code>ephemeral0</code> to
-     *         <code>ephemeral3</code>.
-     */
-    public String getVirtualName() {
-        return virtualName;
-    }
-    
-    /**
-     * The name of the virtual device, <code>ephemeral0</code> to
-     * <code>ephemeral3</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param virtualName The name of the virtual device, <code>ephemeral0</code> to
-     *         <code>ephemeral3</code>.
+     * The name of the virtual device (for example, <code>ephemeral0</code>).
+     * </p>
+     * 
+     * @param virtualName
+     *        The name of the virtual device (for example,
+     *        <code>ephemeral0</code>).
      */
     public void setVirtualName(String virtualName) {
         this.virtualName = virtualName;
     }
-    
+
     /**
-     * The name of the virtual device, <code>ephemeral0</code> to
-     * <code>ephemeral3</code>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The name of the virtual device (for example, <code>ephemeral0</code>).
+     * </p>
+     * 
+     * @return The name of the virtual device (for example,
+     *         <code>ephemeral0</code>).
+     */
+    public String getVirtualName() {
+        return this.virtualName;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param virtualName The name of the virtual device, <code>ephemeral0</code> to
-     *         <code>ephemeral3</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the virtual device (for example, <code>ephemeral0</code>).
+     * </p>
+     * 
+     * @param virtualName
+     *        The name of the virtual device (for example,
+     *        <code>ephemeral0</code>).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public BlockDeviceMapping withVirtualName(String virtualName) {
-        this.virtualName = virtualName;
+        setVirtualName(virtualName);
         return this;
     }
 
     /**
+     * <p>
      * The device name exposed to the EC2 instance (for example,
      * <code>/dev/sdh</code> or <code>xvdh</code>).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The device name exposed to the EC2 instance (for example,
-     *         <code>/dev/sdh</code> or <code>xvdh</code>).
-     */
-    public String getDeviceName() {
-        return deviceName;
-    }
-    
-    /**
-     * The device name exposed to the EC2 instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param deviceName The device name exposed to the EC2 instance (for example,
-     *         <code>/dev/sdh</code> or <code>xvdh</code>).
+     * </p>
+     * 
+     * @param deviceName
+     *        The device name exposed to the EC2 instance (for example,
+     *        <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
-    
+
     /**
+     * <p>
      * The device name exposed to the EC2 instance (for example,
      * <code>/dev/sdh</code> or <code>xvdh</code>).
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param deviceName The device name exposed to the EC2 instance (for example,
+     * </p>
+     * 
+     * @return The device name exposed to the EC2 instance (for example,
      *         <code>/dev/sdh</code> or <code>xvdh</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getDeviceName() {
+        return this.deviceName;
+    }
+
+    /**
+     * <p>
+     * The device name exposed to the EC2 instance (for example,
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
+     * </p>
+     * 
+     * @param deviceName
+     *        The device name exposed to the EC2 instance (for example,
+     *        <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public BlockDeviceMapping withDeviceName(String deviceName) {
-        this.deviceName = deviceName;
+        setDeviceName(deviceName);
         return this;
     }
 
     /**
+     * <p>
      * The information about the Amazon EBS volume.
-     *
-     * @return The information about the Amazon EBS volume.
-     */
-    public Ebs getEbs() {
-        return ebs;
-    }
-    
-    /**
-     * The information about the Amazon EBS volume.
-     *
-     * @param ebs The information about the Amazon EBS volume.
+     * </p>
+     * 
+     * @param ebs
+     *        The information about the Amazon EBS volume.
      */
     public void setEbs(Ebs ebs) {
         this.ebs = ebs;
     }
-    
+
     /**
-     * The information about the Amazon EBS volume.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param ebs The information about the Amazon EBS volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The information about the Amazon EBS volume.
+     * </p>
+     * 
+     * @return The information about the Amazon EBS volume.
+     */
+    public Ebs getEbs() {
+        return this.ebs;
+    }
+
+    /**
+     * <p>
+     * The information about the Amazon EBS volume.
+     * </p>
+     * 
+     * @param ebs
+     *        The information about the Amazon EBS volume.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public BlockDeviceMapping withEbs(Ebs ebs) {
-        this.ebs = ebs;
+        setEbs(ebs);
         return this;
     }
 
     /**
-     * Suppresses a device mapping. <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. Auto Scaling
-     * launches a replacement instance if the instance fails the health
-     * check.
-     *
-     * @return Suppresses a device mapping. <p>If this parameter is true for the root
-     *         device, the instance might fail the EC2 health check. Auto Scaling
-     *         launches a replacement instance if the instance fails the health
-     *         check.
-     */
-    public Boolean isNoDevice() {
-        return noDevice;
-    }
-    
-    /**
-     * Suppresses a device mapping. <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. Auto Scaling
-     * launches a replacement instance if the instance fails the health
-     * check.
-     *
-     * @param noDevice Suppresses a device mapping. <p>If this parameter is true for the root
-     *         device, the instance might fail the EC2 health check. Auto Scaling
-     *         launches a replacement instance if the instance fails the health
-     *         check.
+     * <p>
+     * Suppresses a device mapping.
+     * </p>
+     * <p>
+     * If this parameter is true for the root device, the instance might fail
+     * the EC2 health check. Auto Scaling launches a replacement instance if the
+     * instance fails the health check.
+     * </p>
+     * 
+     * @param noDevice
+     *        Suppresses a device mapping.</p>
+     *        <p>
+     *        If this parameter is true for the root device, the instance might
+     *        fail the EC2 health check. Auto Scaling launches a replacement
+     *        instance if the instance fails the health check.
      */
     public void setNoDevice(Boolean noDevice) {
         this.noDevice = noDevice;
     }
-    
+
     /**
-     * Suppresses a device mapping. <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. Auto Scaling
-     * launches a replacement instance if the instance fails the health
-     * check.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param noDevice Suppresses a device mapping. <p>If this parameter is true for the root
-     *         device, the instance might fail the EC2 health check. Auto Scaling
-     *         launches a replacement instance if the instance fails the health
-     *         check.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Suppresses a device mapping.
+     * </p>
+     * <p>
+     * If this parameter is true for the root device, the instance might fail
+     * the EC2 health check. Auto Scaling launches a replacement instance if the
+     * instance fails the health check.
+     * </p>
+     * 
+     * @return Suppresses a device mapping.</p>
+     *         <p>
+     *         If this parameter is true for the root device, the instance might
+     *         fail the EC2 health check. Auto Scaling launches a replacement
+     *         instance if the instance fails the health check.
+     */
+    public Boolean getNoDevice() {
+        return this.noDevice;
+    }
+
+    /**
+     * <p>
+     * Suppresses a device mapping.
+     * </p>
+     * <p>
+     * If this parameter is true for the root device, the instance might fail
+     * the EC2 health check. Auto Scaling launches a replacement instance if the
+     * instance fails the health check.
+     * </p>
+     * 
+     * @param noDevice
+     *        Suppresses a device mapping.</p>
+     *        <p>
+     *        If this parameter is true for the root device, the instance might
+     *        fail the EC2 health check. Auto Scaling launches a replacement
+     *        instance if the instance fails the health check.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public BlockDeviceMapping withNoDevice(Boolean noDevice) {
-        this.noDevice = noDevice;
+        setNoDevice(noDevice);
         return this;
     }
 
     /**
-     * Suppresses a device mapping. <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. Auto Scaling
-     * launches a replacement instance if the instance fails the health
-     * check.
-     *
-     * @return Suppresses a device mapping. <p>If this parameter is true for the root
-     *         device, the instance might fail the EC2 health check. Auto Scaling
-     *         launches a replacement instance if the instance fails the health
-     *         check.
+     * <p>
+     * Suppresses a device mapping.
+     * </p>
+     * <p>
+     * If this parameter is true for the root device, the instance might fail
+     * the EC2 health check. Auto Scaling launches a replacement instance if the
+     * instance fails the health check.
+     * </p>
+     * 
+     * @return Suppresses a device mapping.</p>
+     *         <p>
+     *         If this parameter is true for the root device, the instance might
+     *         fail the EC2 health check. Auto Scaling launches a replacement
+     *         instance if the instance fails the health check.
      */
-    public Boolean getNoDevice() {
-        return noDevice;
+    public Boolean isNoDevice() {
+        return this.noDevice;
     }
 
     /**
@@ -269,58 +275,76 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVirtualName() != null) sb.append("VirtualName: " + getVirtualName() + ",");
-        if (getDeviceName() != null) sb.append("DeviceName: " + getDeviceName() + ",");
-        if (getEbs() != null) sb.append("Ebs: " + getEbs() + ",");
-        if (isNoDevice() != null) sb.append("NoDevice: " + isNoDevice() );
+        if (getVirtualName() != null)
+            sb.append("VirtualName: " + getVirtualName() + ",");
+        if (getDeviceName() != null)
+            sb.append("DeviceName: " + getDeviceName() + ",");
+        if (getEbs() != null)
+            sb.append("Ebs: " + getEbs() + ",");
+        if (getNoDevice() != null)
+            sb.append("NoDevice: " + getNoDevice());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof BlockDeviceMapping == false)
+            return false;
+        BlockDeviceMapping other = (BlockDeviceMapping) obj;
+        if (other.getVirtualName() == null ^ this.getVirtualName() == null)
+            return false;
+        if (other.getVirtualName() != null
+                && other.getVirtualName().equals(this.getVirtualName()) == false)
+            return false;
+        if (other.getDeviceName() == null ^ this.getDeviceName() == null)
+            return false;
+        if (other.getDeviceName() != null
+                && other.getDeviceName().equals(this.getDeviceName()) == false)
+            return false;
+        if (other.getEbs() == null ^ this.getEbs() == null)
+            return false;
+        if (other.getEbs() != null
+                && other.getEbs().equals(this.getEbs()) == false)
+            return false;
+        if (other.getNoDevice() == null ^ this.getNoDevice() == null)
+            return false;
+        if (other.getNoDevice() != null
+                && other.getNoDevice().equals(this.getNoDevice()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode()); 
-        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode()); 
-        hashCode = prime * hashCode + ((getEbs() == null) ? 0 : getEbs().hashCode()); 
-        hashCode = prime * hashCode + ((isNoDevice() == null) ? 0 : isNoDevice().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode());
+        hashCode = prime * hashCode
+                + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
+        hashCode = prime * hashCode
+                + ((getEbs() == null) ? 0 : getEbs().hashCode());
+        hashCode = prime * hashCode
+                + ((getNoDevice() == null) ? 0 : getNoDevice().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof BlockDeviceMapping == false) return false;
-        BlockDeviceMapping other = (BlockDeviceMapping)obj;
-        
-        if (other.getVirtualName() == null ^ this.getVirtualName() == null) return false;
-        if (other.getVirtualName() != null && other.getVirtualName().equals(this.getVirtualName()) == false) return false; 
-        if (other.getDeviceName() == null ^ this.getDeviceName() == null) return false;
-        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false) return false; 
-        if (other.getEbs() == null ^ this.getEbs() == null) return false;
-        if (other.getEbs() != null && other.getEbs().equals(this.getEbs()) == false) return false; 
-        if (other.isNoDevice() == null ^ this.isNoDevice() == null) return false;
-        if (other.isNoDevice() != null && other.isNoDevice().equals(this.isNoDevice()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public BlockDeviceMapping clone() {
         try {
             return (BlockDeviceMapping) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,22 +27,27 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Complete Lifecycle Action Result StAX Unmarshaller
+ * CompleteLifecycleActionResult StAX Unmarshaller
  */
-public class CompleteLifecycleActionResultStaxUnmarshaller implements Unmarshaller<CompleteLifecycleActionResult, StaxUnmarshallerContext> {
+public class CompleteLifecycleActionResultStaxUnmarshaller implements
+        Unmarshaller<CompleteLifecycleActionResult, StaxUnmarshallerContext> {
 
-    public CompleteLifecycleActionResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public CompleteLifecycleActionResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         CompleteLifecycleActionResult completeLifecycleActionResult = new CompleteLifecycleActionResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return completeLifecycleActionResult;
+            if (xmlEvent.isEndDocument())
+                return completeLifecycleActionResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return completeLifecycleActionResult;
@@ -52,9 +57,10 @@ public class CompleteLifecycleActionResultStaxUnmarshaller implements Unmarshall
     }
 
     private static CompleteLifecycleActionResultStaxUnmarshaller instance;
+
     public static CompleteLifecycleActionResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new CompleteLifecycleActionResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new CompleteLifecycleActionResultStaxUnmarshaller();
         return instance;
     }
 }
-    

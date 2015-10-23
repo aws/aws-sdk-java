@@ -68,6 +68,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "codecommit";
 
+    /** The region metadata service name for computing region endpoints. */
+    private static final String DEFAULT_ENDPOINT_PREFIX = "codecommit";
+
     /**
      * List of exception unmarshallers for all CodeCommit exceptions.
      */
@@ -322,6 +325,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         // calling this.setEndPoint(...) will also modify the signer accordingly
         setEndpoint("https://codecommit.us-east-1.amazonaws.com");
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
+        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

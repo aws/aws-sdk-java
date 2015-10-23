@@ -37,7 +37,7 @@ public class Statement implements Serializable, Cloneable {
      * The type of the policy.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, resource, none
      */
     private String sourcePolicyType;
 
@@ -90,7 +90,7 @@ public class Statement implements Serializable, Cloneable {
      * The type of the policy.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, resource, none
      *
      * @return The type of the policy.
      *
@@ -104,7 +104,7 @@ public class Statement implements Serializable, Cloneable {
      * The type of the policy.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, resource, none
      *
      * @param sourcePolicyType The type of the policy.
      *
@@ -120,7 +120,7 @@ public class Statement implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, resource, none
      *
      * @param sourcePolicyType The type of the policy.
      *
@@ -138,7 +138,7 @@ public class Statement implements Serializable, Cloneable {
      * The type of the policy.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, resource, none
      *
      * @param sourcePolicyType The type of the policy.
      *
@@ -154,7 +154,7 @@ public class Statement implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, resource, none
      *
      * @param sourcePolicyType The type of the policy.
      *

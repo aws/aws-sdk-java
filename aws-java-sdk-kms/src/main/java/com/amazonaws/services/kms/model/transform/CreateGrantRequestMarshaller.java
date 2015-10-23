@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.kms.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,44 +40,52 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Create Grant Request Marshaller
+ * CreateGrantRequest Marshaller
  */
-public class CreateGrantRequestMarshaller implements Marshaller<Request<CreateGrantRequest>, CreateGrantRequest> {
+public class CreateGrantRequestMarshaller implements
+        Marshaller<Request<CreateGrantRequest>, CreateGrantRequest> {
 
-    public Request<CreateGrantRequest> marshall(CreateGrantRequest createGrantRequest) {
+    public Request<CreateGrantRequest> marshall(
+            CreateGrantRequest createGrantRequest) {
+
         if (createGrantRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateGrantRequest> request = new DefaultRequest<CreateGrantRequest>(createGrantRequest, "AWSKMS");
-        String target = "TrentService.CreateGrant";
-        request.addHeader("X-Amz-Target", target);
+        Request<CreateGrantRequest> request = new DefaultRequest<CreateGrantRequest>(
+                createGrantRequest, "AWSKMS");
+        request.addHeader("X-Amz-Target", "TrentService.CreateGrant");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (createGrantRequest.getKeyId() != null) {
                 jsonWriter.key("KeyId").value(createGrantRequest.getKeyId());
             }
+
             if (createGrantRequest.getGranteePrincipal() != null) {
-                jsonWriter.key("GranteePrincipal").value(createGrantRequest.getGranteePrincipal());
+                jsonWriter.key("GranteePrincipal").value(
+                        createGrantRequest.getGranteePrincipal());
             }
+
             if (createGrantRequest.getRetiringPrincipal() != null) {
-                jsonWriter.key("RetiringPrincipal").value(createGrantRequest.getRetiringPrincipal());
+                jsonWriter.key("RetiringPrincipal").value(
+                        createGrantRequest.getRetiringPrincipal());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> operationsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(createGrantRequest.getOperations());
-            if (operationsList != null && !(operationsList.isAutoConstruct() && operationsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> operationsList = (com.amazonaws.internal.SdkInternalList<String>) createGrantRequest
+                    .getOperations();
+            if (!operationsList.isEmpty() || !operationsList.isAutoConstruct()) {
                 jsonWriter.key("Operations");
                 jsonWriter.array();
-
                 for (String operationsListValue : operationsList) {
                     if (operationsListValue != null) {
                         jsonWriter.value(operationsListValue);
@@ -84,45 +93,19 @@ public class CreateGrantRequestMarshaller implements Marshaller<Request<CreateGr
                 }
                 jsonWriter.endArray();
             }
-            GrantConstraints constraints = createGrantRequest.getConstraints();
-            if (constraints != null) {
 
+            if (createGrantRequest.getConstraints() != null) {
                 jsonWriter.key("Constraints");
-                jsonWriter.object();
-
-                if (constraints.getEncryptionContextSubset() != null && !constraints.getEncryptionContextSubset().isEmpty()) {
-                    jsonWriter.key("EncryptionContextSubset");
-                    jsonWriter.object();
-                    for (Map.Entry<String, String> encryptionContextSubsetListValue : constraints.getEncryptionContextSubset().entrySet()) {
-                        if (encryptionContextSubsetListValue.getValue() != null) {
-                            jsonWriter.key(encryptionContextSubsetListValue.getKey());
-
-                            jsonWriter.value(encryptionContextSubsetListValue.getValue());
-                        }
-                    }
-                    jsonWriter.endObject();
-                }
-                if (constraints.getEncryptionContextEquals() != null && !constraints.getEncryptionContextEquals().isEmpty()) {
-                    jsonWriter.key("EncryptionContextEquals");
-                    jsonWriter.object();
-                    for (Map.Entry<String, String> encryptionContextEqualsListValue : constraints.getEncryptionContextEquals().entrySet()) {
-                        if (encryptionContextEqualsListValue.getValue() != null) {
-                            jsonWriter.key(encryptionContextEqualsListValue.getKey());
-
-                            jsonWriter.value(encryptionContextEqualsListValue.getValue());
-                        }
-                    }
-                    jsonWriter.endObject();
-                }
-                jsonWriter.endObject();
+                GrantConstraintsJsonMarshaller.getInstance().marshall(
+                        createGrantRequest.getConstraints(), jsonWriter);
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> grantTokensList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(createGrantRequest.getGrantTokens());
-            if (grantTokensList != null && !(grantTokensList.isAutoConstruct() && grantTokensList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> grantTokensList = (com.amazonaws.internal.SdkInternalList<String>) createGrantRequest
+                    .getGrantTokens();
+            if (!grantTokensList.isEmpty()
+                    || !grantTokensList.isAutoConstruct()) {
                 jsonWriter.key("GrantTokens");
                 jsonWriter.array();
-
                 for (String grantTokensListValue : grantTokensList) {
                     if (grantTokensListValue != null) {
                         jsonWriter.value(grantTokensListValue);
@@ -130,21 +113,25 @@ public class CreateGrantRequestMarshaller implements Marshaller<Request<CreateGr
                 }
                 jsonWriter.endArray();
             }
+
             if (createGrantRequest.getName() != null) {
                 jsonWriter.key("Name").value(createGrantRequest.getName());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

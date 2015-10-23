@@ -69,6 +69,7 @@ public class RetryUtils {
         return "RequestTimeTooSkewed".equals(errorCode)
                 || "RequestExpired".equals(errorCode)
                 || "InvalidSignatureException".equals(errorCode)
-                || "SignatureDoesNotMatch".equals(errorCode);
+                || "SignatureDoesNotMatch".equals(errorCode)
+                || "AuthFailure".equals(errorCode);
     }
 }

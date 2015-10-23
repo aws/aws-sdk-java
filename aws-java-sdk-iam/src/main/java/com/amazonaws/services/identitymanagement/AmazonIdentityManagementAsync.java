@@ -1597,12 +1597,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Simulate a set of IAM policies against a list of API actions and AWS
-     * resources to determine the policies' effective permissions. The
-     * policies are provided as a list of strings.
+     * Simulate how a set of IAM policies and optionally a resource-based
+     * policy works with a list of API actions and AWS resources to determine
+     * the policies' effective permissions. The policies are provided as
+     * strings.
      * </p>
      * <p>
-     * The simulation does not perform the API actions, it only checks the
+     * The simulation does not perform the API actions; it only checks the
      * authorization to determine if the simulated policies allow or deny the
      * actions.
      * </p>
@@ -1612,15 +1613,45 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * <p>
      * Context keys are variables maintained by AWS and its services that
-     * provide details about the context of an API query request, and can be
-     * evaluated by using the <code>Condition</code> element of an IAM
-     * policy. To get the list of context keys required by the policies to
-     * simulate them correctly, use GetContextKeysForCustomPolicy.
+     * provide details about the context of an API query request. You can use
+     * the <code>Condition</code> element of an IAM policy to evaluate
+     * context keys. To get the list of context keys that the policies
+     * require for correct simulation, use GetContextKeysForCustomPolicy.
      * </p>
      * <p>
-     * If the output is long, you can paginate the results using the
-     * <code>MaxItems</code> and <code>Marker</code> parameters.
+     * If the output is long, you can use <code>MaxItems</code> and
+     * <code>Marker</code> parameters to paginate the results.
      * </p>
+     * Example This example specifies a policy by string and supplies a
+     * ContextEntry to use for the context key that the policy references.
+     * Note that all parameters are shown in unencoded form here for clarity
+     * but must be URL encoded to be included as a part of a real HTML
+     * request. The results show that the policy allows s3:ListBucket access
+     * to the S3 bucket named teambucket.
+     * https://iam.amazonaws.com/Action=SimulateCustomPolicy
+     * &ActionNames.member.1=s3:ListBucket
+     * &ResourceArns.member.1=arn:aws:s3:::teambucket
+     * &ContextEntries.member.1.ContextKeyName=aws:MultiFactorAuthPresent
+     * &ContextEntries.member.1.ContextKeyType=boolean
+     * &ContextEntries.member.1.ContextKeyValues.member.1=true
+     * &PolicyInputList.member.1={' "Version":"2012-10-17", "Statement":{
+     * "Effect":"Allow", "Action":"s3:ListBucket",
+     * "Resource":"arn:aws:s3:::teambucket",
+     * "Condition":{"Bool":{"aws:MultiFactorAuthPresent":"true"}} } }
+     * &Version=2010-05-08 &AUTHPARAMS <SimulateCustomPolicyResponse
+     * xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
+     * <SimulateCustomPolicyResult> <IsTruncated>false</IsTruncated>
+     * <EvaluationResults> <member> <MatchedStatements> <member>
+     * <SourcePolicyId>PolicyInputList.1</SourcePolicyId> <EndPosition>
+     * <Column>4</Column> <Line>8</Line> </EndPosition> <StartPosition>
+     * <Column>16</Column> <Line>3</Line> </StartPosition> </member>
+     * </MatchedStatements> <MissingContextValues/>
+     * <EvalResourceName>arn:aws:s3:::teambucket</EvalResourceName>
+     * <EvalDecision>allowed</EvalDecision>
+     * <EvalActionName>s3:ListBucket</EvalActionName> </member>
+     * </EvaluationResults> </SimulateCustomPolicyResult> <ResponseMetadata>
+     * <RequestId>1cdb5b0a-4c15-11e5-b121-bd8c7EXAMPLE</RequestId>
+     * </ResponseMetadata> </SimulateCustomPolicyResponse>
      *
      * @param simulateCustomPolicyRequest Container for the necessary
      *           parameters to execute the SimulateCustomPolicy operation on
@@ -1644,12 +1675,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Simulate a set of IAM policies against a list of API actions and AWS
-     * resources to determine the policies' effective permissions. The
-     * policies are provided as a list of strings.
+     * Simulate how a set of IAM policies and optionally a resource-based
+     * policy works with a list of API actions and AWS resources to determine
+     * the policies' effective permissions. The policies are provided as
+     * strings.
      * </p>
      * <p>
-     * The simulation does not perform the API actions, it only checks the
+     * The simulation does not perform the API actions; it only checks the
      * authorization to determine if the simulated policies allow or deny the
      * actions.
      * </p>
@@ -1659,15 +1691,45 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * <p>
      * Context keys are variables maintained by AWS and its services that
-     * provide details about the context of an API query request, and can be
-     * evaluated by using the <code>Condition</code> element of an IAM
-     * policy. To get the list of context keys required by the policies to
-     * simulate them correctly, use GetContextKeysForCustomPolicy.
+     * provide details about the context of an API query request. You can use
+     * the <code>Condition</code> element of an IAM policy to evaluate
+     * context keys. To get the list of context keys that the policies
+     * require for correct simulation, use GetContextKeysForCustomPolicy.
      * </p>
      * <p>
-     * If the output is long, you can paginate the results using the
-     * <code>MaxItems</code> and <code>Marker</code> parameters.
+     * If the output is long, you can use <code>MaxItems</code> and
+     * <code>Marker</code> parameters to paginate the results.
      * </p>
+     * Example This example specifies a policy by string and supplies a
+     * ContextEntry to use for the context key that the policy references.
+     * Note that all parameters are shown in unencoded form here for clarity
+     * but must be URL encoded to be included as a part of a real HTML
+     * request. The results show that the policy allows s3:ListBucket access
+     * to the S3 bucket named teambucket.
+     * https://iam.amazonaws.com/Action=SimulateCustomPolicy
+     * &ActionNames.member.1=s3:ListBucket
+     * &ResourceArns.member.1=arn:aws:s3:::teambucket
+     * &ContextEntries.member.1.ContextKeyName=aws:MultiFactorAuthPresent
+     * &ContextEntries.member.1.ContextKeyType=boolean
+     * &ContextEntries.member.1.ContextKeyValues.member.1=true
+     * &PolicyInputList.member.1={' "Version":"2012-10-17", "Statement":{
+     * "Effect":"Allow", "Action":"s3:ListBucket",
+     * "Resource":"arn:aws:s3:::teambucket",
+     * "Condition":{"Bool":{"aws:MultiFactorAuthPresent":"true"}} } }
+     * &Version=2010-05-08 &AUTHPARAMS <SimulateCustomPolicyResponse
+     * xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
+     * <SimulateCustomPolicyResult> <IsTruncated>false</IsTruncated>
+     * <EvaluationResults> <member> <MatchedStatements> <member>
+     * <SourcePolicyId>PolicyInputList.1</SourcePolicyId> <EndPosition>
+     * <Column>4</Column> <Line>8</Line> </EndPosition> <StartPosition>
+     * <Column>16</Column> <Line>3</Line> </StartPosition> </member>
+     * </MatchedStatements> <MissingContextValues/>
+     * <EvalResourceName>arn:aws:s3:::teambucket</EvalResourceName>
+     * <EvalDecision>allowed</EvalDecision>
+     * <EvalActionName>s3:ListBucket</EvalActionName> </member>
+     * </EvaluationResults> </SimulateCustomPolicyResult> <ResponseMetadata>
+     * <RequestId>1cdb5b0a-4c15-11e5-b121-bd8c7EXAMPLE</RequestId>
+     * </ResponseMetadata> </SimulateCustomPolicyResponse>
      *
      * @param simulateCustomPolicyRequest Container for the necessary
      *           parameters to execute the SimulateCustomPolicy operation on
@@ -7057,17 +7119,21 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Simulate the set of IAM policies attached to an IAM entity against a
-     * list of API actions and AWS resources to determine the policies'
-     * effective permissions. The entity can be an IAM user, group, or role.
-     * If you specify a user, then the simulation also includes all of the
-     * policies attached to groups that the user is a member of.
+     * Simulate how a set of IAM policies attached to an IAM entity works
+     * with a list of API actions and AWS resources to determine the
+     * policies' effective permissions. The entity can be an IAM user, group,
+     * or role. If you specify a user, then the simulation also includes all
+     * of the policies that are attached to groups that the user belongs to .
      * </p>
      * <p>
      * You can optionally include a list of one or more additional policies
      * specified as strings to include in the simulation. If you want to
      * simulate only policies specified as strings, use SimulateCustomPolicy
      * instead.
+     * </p>
+     * <p>
+     * You can also optionally include one resource-based policy to be
+     * evaluated with each of the resources included in the simulation.
      * </p>
      * <p>
      * The simulation does not perform the API actions, it only checks the
@@ -7082,15 +7148,61 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * <p>
      * Context keys are variables maintained by AWS and its services that
-     * provide details about the context of an API query request, and can be
-     * evaluated by using the <code>Condition</code> element of an IAM
-     * policy. To get the list of context keys required by the policies to
-     * simulate them correctly, use GetContextKeysForPrincipalPolicy.
+     * provide details about the context of an API query request. You can use
+     * the <code>Condition</code> element of an IAM policy to evaluate
+     * context keys. To get the list of context keys that the policies
+     * require for correct simulation, use GetContextKeysForPrincipalPolicy.
      * </p>
      * <p>
-     * If the output is long, you can paginate the results using the
-     * <code>MaxItems</code> and <code>Marker</code> parameters.
+     * If the output is long, you can use the <code>MaxItems</code> and
+     * <code>Marker</code> parameters to paginate the results.
      * </p>
+     * Example This example simulates calling the Amazon S3 APIs GetObject,
+     * PutObject, and DeleteObject for a specific S3 bucket. The simulation
+     * includes all policies that are attached to the user Jill. In this
+     * example, the user Jill has only the managed policy
+     * "AmazonS3ReadOnlyAccess" attached. Note that all parameters are shown
+     * in unencoded form here for clarity but must be URL encoded to be
+     * included as a part of a real HTML request. In the results, the
+     * simulation shows that Jill can add new files to the bucket because of
+     * the additional policy specified as a string parameter. In addition,
+     * she can read from the bucket because of the managed policy attached to
+     * the user. However, she cannot delete anything from the S3 bucket
+     * because of the default implicitDeny.
+     * https://iam.amazonaws.com/Action=SimulatePrincipalPolicy
+     * &ActionNames.member.1=s3:PutObject &ActionNames.member.2=s3:GetObject
+     * &ActionNames.member.3=s3:DeleteObject
+     * &ResourceArns.member.1="arn:aws:s3:::my-test-bucket"
+     * &PolicySourceArn=arn:aws:iam:::user/Jill &PolicyInputList.member.1='{
+     * "Version":"2012-10-17", "Statement":{ "Effect":"Allow",
+     * "Action":"s3:PutObject", "Resource":"arn:aws:s3:::my-test-bucket" } }'
+     * &Version=2010-05-08 &AUTHPARAMS <SimulatePrincipalPolicyResponse
+     * xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
+     * <SimulatePrincipalPolicyResult> <IsTruncated>false</IsTruncated>
+     * <EvaluationResults> <member> <MatchedStatements> <member>
+     * <SourcePolicyId>PolicyInputList.1</SourcePolicyId> <EndPosition>
+     * <Column>2</Column> <Line>8</Line> </EndPosition> <StartPosition>
+     * <Column>14</Column> <Line>3</Line> </StartPosition> </member>
+     * </MatchedStatements> <MissingContextValues/>
+     * <EvalResourceName>arn:aws:s3:::my-test-bucket</EvalResourceName>
+     * <EvalDecision>allowed</EvalDecision>
+     * <EvalActionName>s3:PutObject</EvalActionName> </member> <member>
+     * <MatchedStatements> <member>
+     * <SourcePolicyId>AmazonS3ReadOnlyAccess</SourcePolicyId> <EndPosition>
+     * <Column>6</Column> <Line>11</Line> </EndPosition> <StartPosition>
+     * <Column>17</Column> <Line>3</Line> </StartPosition> </member>
+     * </MatchedStatements> <MissingContextValues/>
+     * <EvalResourceName>arn:aws:s3:::my-test-bucket</EvalResourceName>
+     * <EvalDecision>allowed</EvalDecision>
+     * <EvalActionName>s3:GetObject</EvalActionName> </member> <member>
+     * <MatchedStatements/> <MissingContextValues/>
+     * <EvalResourceName>arn:aws:s3:::my-test-bucket</EvalResourceName>
+     * <EvalDecision>implicitDeny</EvalDecision>
+     * <EvalActionName>s3:DeleteObject</EvalActionName> </member>
+     * </EvaluationResults> </SimulatePrincipalPolicyResult>
+     * <ResponseMetadata>
+     * <RequestId>004d7059-4c14-11e5-b121-bd8c7EXAMPLE</RequestId>
+     * </ResponseMetadata> </SimulatePrincipalPolicyResponse>
      *
      * @param simulatePrincipalPolicyRequest Container for the necessary
      *           parameters to execute the SimulatePrincipalPolicy operation on
@@ -7114,17 +7226,21 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Simulate the set of IAM policies attached to an IAM entity against a
-     * list of API actions and AWS resources to determine the policies'
-     * effective permissions. The entity can be an IAM user, group, or role.
-     * If you specify a user, then the simulation also includes all of the
-     * policies attached to groups that the user is a member of.
+     * Simulate how a set of IAM policies attached to an IAM entity works
+     * with a list of API actions and AWS resources to determine the
+     * policies' effective permissions. The entity can be an IAM user, group,
+     * or role. If you specify a user, then the simulation also includes all
+     * of the policies that are attached to groups that the user belongs to .
      * </p>
      * <p>
      * You can optionally include a list of one or more additional policies
      * specified as strings to include in the simulation. If you want to
      * simulate only policies specified as strings, use SimulateCustomPolicy
      * instead.
+     * </p>
+     * <p>
+     * You can also optionally include one resource-based policy to be
+     * evaluated with each of the resources included in the simulation.
      * </p>
      * <p>
      * The simulation does not perform the API actions, it only checks the
@@ -7139,15 +7255,61 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * <p>
      * Context keys are variables maintained by AWS and its services that
-     * provide details about the context of an API query request, and can be
-     * evaluated by using the <code>Condition</code> element of an IAM
-     * policy. To get the list of context keys required by the policies to
-     * simulate them correctly, use GetContextKeysForPrincipalPolicy.
+     * provide details about the context of an API query request. You can use
+     * the <code>Condition</code> element of an IAM policy to evaluate
+     * context keys. To get the list of context keys that the policies
+     * require for correct simulation, use GetContextKeysForPrincipalPolicy.
      * </p>
      * <p>
-     * If the output is long, you can paginate the results using the
-     * <code>MaxItems</code> and <code>Marker</code> parameters.
+     * If the output is long, you can use the <code>MaxItems</code> and
+     * <code>Marker</code> parameters to paginate the results.
      * </p>
+     * Example This example simulates calling the Amazon S3 APIs GetObject,
+     * PutObject, and DeleteObject for a specific S3 bucket. The simulation
+     * includes all policies that are attached to the user Jill. In this
+     * example, the user Jill has only the managed policy
+     * "AmazonS3ReadOnlyAccess" attached. Note that all parameters are shown
+     * in unencoded form here for clarity but must be URL encoded to be
+     * included as a part of a real HTML request. In the results, the
+     * simulation shows that Jill can add new files to the bucket because of
+     * the additional policy specified as a string parameter. In addition,
+     * she can read from the bucket because of the managed policy attached to
+     * the user. However, she cannot delete anything from the S3 bucket
+     * because of the default implicitDeny.
+     * https://iam.amazonaws.com/Action=SimulatePrincipalPolicy
+     * &ActionNames.member.1=s3:PutObject &ActionNames.member.2=s3:GetObject
+     * &ActionNames.member.3=s3:DeleteObject
+     * &ResourceArns.member.1="arn:aws:s3:::my-test-bucket"
+     * &PolicySourceArn=arn:aws:iam:::user/Jill &PolicyInputList.member.1='{
+     * "Version":"2012-10-17", "Statement":{ "Effect":"Allow",
+     * "Action":"s3:PutObject", "Resource":"arn:aws:s3:::my-test-bucket" } }'
+     * &Version=2010-05-08 &AUTHPARAMS <SimulatePrincipalPolicyResponse
+     * xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
+     * <SimulatePrincipalPolicyResult> <IsTruncated>false</IsTruncated>
+     * <EvaluationResults> <member> <MatchedStatements> <member>
+     * <SourcePolicyId>PolicyInputList.1</SourcePolicyId> <EndPosition>
+     * <Column>2</Column> <Line>8</Line> </EndPosition> <StartPosition>
+     * <Column>14</Column> <Line>3</Line> </StartPosition> </member>
+     * </MatchedStatements> <MissingContextValues/>
+     * <EvalResourceName>arn:aws:s3:::my-test-bucket</EvalResourceName>
+     * <EvalDecision>allowed</EvalDecision>
+     * <EvalActionName>s3:PutObject</EvalActionName> </member> <member>
+     * <MatchedStatements> <member>
+     * <SourcePolicyId>AmazonS3ReadOnlyAccess</SourcePolicyId> <EndPosition>
+     * <Column>6</Column> <Line>11</Line> </EndPosition> <StartPosition>
+     * <Column>17</Column> <Line>3</Line> </StartPosition> </member>
+     * </MatchedStatements> <MissingContextValues/>
+     * <EvalResourceName>arn:aws:s3:::my-test-bucket</EvalResourceName>
+     * <EvalDecision>allowed</EvalDecision>
+     * <EvalActionName>s3:GetObject</EvalActionName> </member> <member>
+     * <MatchedStatements/> <MissingContextValues/>
+     * <EvalResourceName>arn:aws:s3:::my-test-bucket</EvalResourceName>
+     * <EvalDecision>implicitDeny</EvalDecision>
+     * <EvalActionName>s3:DeleteObject</EvalActionName> </member>
+     * </EvaluationResults> </SimulatePrincipalPolicyResult>
+     * <ResponseMetadata>
+     * <RequestId>004d7059-4c14-11e5-b121-bd8c7EXAMPLE</RequestId>
+     * </ResponseMetadata> </SimulatePrincipalPolicyResponse>
      *
      * @param simulatePrincipalPolicyRequest Container for the necessary
      *           parameters to execute the SimulatePrincipalPolicy operation on

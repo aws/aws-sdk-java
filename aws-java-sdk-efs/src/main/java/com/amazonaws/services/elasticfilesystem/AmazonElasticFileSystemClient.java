@@ -53,6 +53,9 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "elasticfilesystem";
 
+    /** The region metadata service name for computing region endpoints. */
+    private static final String DEFAULT_ENDPOINT_PREFIX = "elasticfilesystem";
+
     /**
      * List of exception unmarshallers for all EFS exceptions.
      */
@@ -288,6 +291,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         // calling this.setEndPoint(...) will also modify the signer accordingly
         setEndpoint("https://elasticfilesystem.us-east-1.amazonaws.com");
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
+        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

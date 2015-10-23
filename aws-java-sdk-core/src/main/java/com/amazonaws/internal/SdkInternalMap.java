@@ -111,4 +111,20 @@ public class SdkInternalMap<K,V> implements Map<K,V>, Serializable {
     public Set<Map.Entry<K, V>> entrySet() {
         return map.entrySet();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (map == null ) return o == null;
+        if (!(o instanceof Map<?,?>)) return false;
+        
+        Map<?, ?> that = (Map<?, ?>) o;
+
+        return map.equals(that);
+    }
+
+    @Override
+    public int hashCode() {
+        return map == null ? 0 : map.hashCode();
+    }
 }

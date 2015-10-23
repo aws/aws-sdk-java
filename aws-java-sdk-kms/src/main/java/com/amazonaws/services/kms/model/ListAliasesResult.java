@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.kms.model;
 
 import java.io.Serializable;
@@ -22,223 +23,220 @@ import java.io.Serializable;
 public class ListAliasesResult implements Serializable, Cloneable {
 
     /**
-     * A list of key aliases in the user's account.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<AliasListEntry> aliases;
-
-    /**
-     * When <code>Truncated</code> is true, this value is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * subsequent pagination request.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * A list of key aliases in the user's account.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AliasListEntry> aliases;
+    /**
+     * <p>
+     * When <code>Truncated</code> is true, this value is present and contains
+     * the value to use for the <code>Marker</code> parameter in a subsequent
+     * pagination request.
+     * </p>
      */
     private String nextMarker;
-
     /**
-     * A flag that indicates whether there are more items in the list. If
-     * your results were truncated, you can use the <code>Marker</code>
-     * parameter to make a subsequent pagination request to retrieve more
-     * items in the list.
+     * <p>
+     * A flag that indicates whether there are more items in the list. If your
+     * results were truncated, you can use the <code>Marker</code> parameter to
+     * make a subsequent pagination request to retrieve more items in the list.
+     * </p>
      */
     private Boolean truncated;
 
     /**
+     * <p>
      * A list of key aliases in the user's account.
-     *
+     * </p>
+     * 
      * @return A list of key aliases in the user's account.
      */
     public java.util.List<AliasListEntry> getAliases() {
         if (aliases == null) {
-              aliases = new com.amazonaws.internal.ListWithAutoConstructFlag<AliasListEntry>();
-              aliases.setAutoConstruct(true);
+            aliases = new com.amazonaws.internal.SdkInternalList<AliasListEntry>();
         }
         return aliases;
     }
-    
+
     /**
+     * <p>
      * A list of key aliases in the user's account.
-     *
-     * @param aliases A list of key aliases in the user's account.
+     * </p>
+     * 
+     * @param aliases
+     *        A list of key aliases in the user's account.
      */
     public void setAliases(java.util.Collection<AliasListEntry> aliases) {
         if (aliases == null) {
             this.aliases = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<AliasListEntry> aliasesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AliasListEntry>(aliases.size());
-        aliasesCopy.addAll(aliases);
-        this.aliases = aliasesCopy;
+
+        this.aliases = new com.amazonaws.internal.SdkInternalList<AliasListEntry>(
+                aliases);
     }
-    
+
     /**
+     * <p>
      * A list of key aliases in the user's account.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAliases(java.util.Collection)} or {@link
-     * #withAliases(java.util.Collection)} if you want to override the
+     * any). Use {@link #setAliases(java.util.Collection)} or
+     * {@link #withAliases(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param aliases A list of key aliases in the user's account.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param aliases
+     *        A list of key aliases in the user's account.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListAliasesResult withAliases(AliasListEntry... aliases) {
-        if (getAliases() == null) setAliases(new java.util.ArrayList<AliasListEntry>(aliases.length));
-        for (AliasListEntry value : aliases) {
-            getAliases().add(value);
+        if (this.aliases == null) {
+            setAliases(new com.amazonaws.internal.SdkInternalList<AliasListEntry>(
+                    aliases.length));
+        }
+        for (AliasListEntry ele : aliases) {
+            this.aliases.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * A list of key aliases in the user's account.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param aliases A list of key aliases in the user's account.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param aliases
+     *        A list of key aliases in the user's account.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ListAliasesResult withAliases(java.util.Collection<AliasListEntry> aliases) {
-        if (aliases == null) {
-            this.aliases = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<AliasListEntry> aliasesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AliasListEntry>(aliases.size());
-            aliasesCopy.addAll(aliases);
-            this.aliases = aliasesCopy;
-        }
-
+    public ListAliasesResult withAliases(
+            java.util.Collection<AliasListEntry> aliases) {
+        setAliases(aliases);
         return this;
     }
 
     /**
-     * When <code>Truncated</code> is true, this value is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * subsequent pagination request.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
-     *
-     * @return When <code>Truncated</code> is true, this value is present and
-     *         contains the value to use for the <code>Marker</code> parameter in a
-     *         subsequent pagination request.
-     */
-    public String getNextMarker() {
-        return nextMarker;
-    }
-    
-    /**
-     * When <code>Truncated</code> is true, this value is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * subsequent pagination request.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
-     *
-     * @param nextMarker When <code>Truncated</code> is true, this value is present and
-     *         contains the value to use for the <code>Marker</code> parameter in a
-     *         subsequent pagination request.
+     * When <code>Truncated</code> is true, this value is present and contains
+     * the value to use for the <code>Marker</code> parameter in a subsequent
+     * pagination request.
+     * </p>
+     * 
+     * @param nextMarker
+     *        When <code>Truncated</code> is true, this value is present and
+     *        contains the value to use for the <code>Marker</code> parameter in
+     *        a subsequent pagination request.
      */
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
-    
+
     /**
-     * When <code>Truncated</code> is true, this value is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * subsequent pagination request.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * When <code>Truncated</code> is true, this value is present and contains
+     * the value to use for the <code>Marker</code> parameter in a subsequent
+     * pagination request.
+     * </p>
+     * 
+     * @return When <code>Truncated</code> is true, this value is present and
+     *         contains the value to use for the <code>Marker</code> parameter
+     *         in a subsequent pagination request.
+     */
+    public String getNextMarker() {
+        return this.nextMarker;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
-     *
-     * @param nextMarker When <code>Truncated</code> is true, this value is present and
-     *         contains the value to use for the <code>Marker</code> parameter in a
-     *         subsequent pagination request.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * When <code>Truncated</code> is true, this value is present and contains
+     * the value to use for the <code>Marker</code> parameter in a subsequent
+     * pagination request.
+     * </p>
+     * 
+     * @param nextMarker
+     *        When <code>Truncated</code> is true, this value is present and
+     *        contains the value to use for the <code>Marker</code> parameter in
+     *        a subsequent pagination request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListAliasesResult withNextMarker(String nextMarker) {
-        this.nextMarker = nextMarker;
+        setNextMarker(nextMarker);
         return this;
     }
 
     /**
-     * A flag that indicates whether there are more items in the list. If
-     * your results were truncated, you can use the <code>Marker</code>
-     * parameter to make a subsequent pagination request to retrieve more
-     * items in the list.
-     *
-     * @return A flag that indicates whether there are more items in the list. If
-     *         your results were truncated, you can use the <code>Marker</code>
-     *         parameter to make a subsequent pagination request to retrieve more
-     *         items in the list.
-     */
-    public Boolean isTruncated() {
-        return truncated;
-    }
-    
-    /**
-     * A flag that indicates whether there are more items in the list. If
-     * your results were truncated, you can use the <code>Marker</code>
-     * parameter to make a subsequent pagination request to retrieve more
-     * items in the list.
-     *
-     * @param truncated A flag that indicates whether there are more items in the list. If
-     *         your results were truncated, you can use the <code>Marker</code>
-     *         parameter to make a subsequent pagination request to retrieve more
-     *         items in the list.
+     * <p>
+     * A flag that indicates whether there are more items in the list. If your
+     * results were truncated, you can use the <code>Marker</code> parameter to
+     * make a subsequent pagination request to retrieve more items in the list.
+     * </p>
+     * 
+     * @param truncated
+     *        A flag that indicates whether there are more items in the list. If
+     *        your results were truncated, you can use the <code>Marker</code>
+     *        parameter to make a subsequent pagination request to retrieve more
+     *        items in the list.
      */
     public void setTruncated(Boolean truncated) {
         this.truncated = truncated;
     }
-    
+
     /**
-     * A flag that indicates whether there are more items in the list. If
-     * your results were truncated, you can use the <code>Marker</code>
-     * parameter to make a subsequent pagination request to retrieve more
-     * items in the list.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param truncated A flag that indicates whether there are more items in the list. If
-     *         your results were truncated, you can use the <code>Marker</code>
-     *         parameter to make a subsequent pagination request to retrieve more
-     *         items in the list.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A flag that indicates whether there are more items in the list. If your
+     * results were truncated, you can use the <code>Marker</code> parameter to
+     * make a subsequent pagination request to retrieve more items in the list.
+     * </p>
+     * 
+     * @return A flag that indicates whether there are more items in the list.
+     *         If your results were truncated, you can use the
+     *         <code>Marker</code> parameter to make a subsequent pagination
+     *         request to retrieve more items in the list.
+     */
+    public Boolean getTruncated() {
+        return this.truncated;
+    }
+
+    /**
+     * <p>
+     * A flag that indicates whether there are more items in the list. If your
+     * results were truncated, you can use the <code>Marker</code> parameter to
+     * make a subsequent pagination request to retrieve more items in the list.
+     * </p>
+     * 
+     * @param truncated
+     *        A flag that indicates whether there are more items in the list. If
+     *        your results were truncated, you can use the <code>Marker</code>
+     *        parameter to make a subsequent pagination request to retrieve more
+     *        items in the list.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListAliasesResult withTruncated(Boolean truncated) {
-        this.truncated = truncated;
+        setTruncated(truncated);
         return this;
     }
 
     /**
-     * A flag that indicates whether there are more items in the list. If
-     * your results were truncated, you can use the <code>Marker</code>
-     * parameter to make a subsequent pagination request to retrieve more
-     * items in the list.
-     *
-     * @return A flag that indicates whether there are more items in the list. If
-     *         your results were truncated, you can use the <code>Marker</code>
-     *         parameter to make a subsequent pagination request to retrieve more
-     *         items in the list.
+     * <p>
+     * A flag that indicates whether there are more items in the list. If your
+     * results were truncated, you can use the <code>Marker</code> parameter to
+     * make a subsequent pagination request to retrieve more items in the list.
+     * </p>
+     * 
+     * @return A flag that indicates whether there are more items in the list.
+     *         If your results were truncated, you can use the
+     *         <code>Marker</code> parameter to make a subsequent pagination
+     *         request to retrieve more items in the list.
      */
-    public Boolean getTruncated() {
-        return truncated;
+    public Boolean isTruncated() {
+        return this.truncated;
     }
 
     /**
@@ -253,54 +251,66 @@ public class ListAliasesResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ",");
-        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ",");
-        if (isTruncated() != null) sb.append("Truncated: " + isTruncated() );
+        if (getAliases() != null)
+            sb.append("Aliases: " + getAliases() + ",");
+        if (getNextMarker() != null)
+            sb.append("NextMarker: " + getNextMarker() + ",");
+        if (getTruncated() != null)
+            sb.append("Truncated: " + getTruncated());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListAliasesResult == false)
+            return false;
+        ListAliasesResult other = (ListAliasesResult) obj;
+        if (other.getAliases() == null ^ this.getAliases() == null)
+            return false;
+        if (other.getAliases() != null
+                && other.getAliases().equals(this.getAliases()) == false)
+            return false;
+        if (other.getNextMarker() == null ^ this.getNextMarker() == null)
+            return false;
+        if (other.getNextMarker() != null
+                && other.getNextMarker().equals(this.getNextMarker()) == false)
+            return false;
+        if (other.getTruncated() == null ^ this.getTruncated() == null)
+            return false;
+        if (other.getTruncated() != null
+                && other.getTruncated().equals(this.getTruncated()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode()); 
-        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode()); 
-        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getAliases() == null) ? 0 : getAliases().hashCode());
+        hashCode = prime * hashCode
+                + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
+        hashCode = prime * hashCode
+                + ((getTruncated() == null) ? 0 : getTruncated().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ListAliasesResult == false) return false;
-        ListAliasesResult other = (ListAliasesResult)obj;
-        
-        if (other.getAliases() == null ^ this.getAliases() == null) return false;
-        if (other.getAliases() != null && other.getAliases().equals(this.getAliases()) == false) return false; 
-        if (other.getNextMarker() == null ^ this.getNextMarker() == null) return false;
-        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false) return false; 
-        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
-        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ListAliasesResult clone() {
         try {
             return (ListAliasesResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

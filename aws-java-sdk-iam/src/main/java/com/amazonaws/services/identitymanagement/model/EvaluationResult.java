@@ -74,6 +74,18 @@ public class EvaluationResult implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> missingContextValues;
 
     /**
+     * Additional details about the results of the evaluation decision. When
+     * there are both IAM policies and resource policies, this parameter
+     * explains how each set of policies contributes to the final evaluation
+     * decision. When simulating cross-account access to a resource, both the
+     * resource-based policy and the caller's IAM policy must grant access.
+     * See <ulink
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * IAM Roles Differ from Resource-based Policies</ulink>
+     */
+    private java.util.Map<String,String> evalDecisionDetails;
+
+    /**
      * The name of the API action tested on the indicated resource.
      * <p>
      * <b>Constraints:</b><br/>
@@ -482,6 +494,122 @@ public class EvaluationResult implements Serializable, Cloneable {
     }
 
     /**
+     * Additional details about the results of the evaluation decision. When
+     * there are both IAM policies and resource policies, this parameter
+     * explains how each set of policies contributes to the final evaluation
+     * decision. When simulating cross-account access to a resource, both the
+     * resource-based policy and the caller's IAM policy must grant access.
+     * See <ulink
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * IAM Roles Differ from Resource-based Policies</ulink>
+     *
+     * @return Additional details about the results of the evaluation decision. When
+     *         there are both IAM policies and resource policies, this parameter
+     *         explains how each set of policies contributes to the final evaluation
+     *         decision. When simulating cross-account access to a resource, both the
+     *         resource-based policy and the caller's IAM policy must grant access.
+     *         See <ulink
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     *         IAM Roles Differ from Resource-based Policies</ulink>
+     */
+    public java.util.Map<String,String> getEvalDecisionDetails() {
+        
+        if (evalDecisionDetails == null) {
+            evalDecisionDetails = new java.util.HashMap<String,String>();
+        }
+        return evalDecisionDetails;
+    }
+    
+    /**
+     * Additional details about the results of the evaluation decision. When
+     * there are both IAM policies and resource policies, this parameter
+     * explains how each set of policies contributes to the final evaluation
+     * decision. When simulating cross-account access to a resource, both the
+     * resource-based policy and the caller's IAM policy must grant access.
+     * See <ulink
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * IAM Roles Differ from Resource-based Policies</ulink>
+     *
+     * @param evalDecisionDetails Additional details about the results of the evaluation decision. When
+     *         there are both IAM policies and resource policies, this parameter
+     *         explains how each set of policies contributes to the final evaluation
+     *         decision. When simulating cross-account access to a resource, both the
+     *         resource-based policy and the caller's IAM policy must grant access.
+     *         See <ulink
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     *         IAM Roles Differ from Resource-based Policies</ulink>
+     */
+    public void setEvalDecisionDetails(java.util.Map<String,String> evalDecisionDetails) {
+        this.evalDecisionDetails = evalDecisionDetails;
+    }
+    
+    /**
+     * Additional details about the results of the evaluation decision. When
+     * there are both IAM policies and resource policies, this parameter
+     * explains how each set of policies contributes to the final evaluation
+     * decision. When simulating cross-account access to a resource, both the
+     * resource-based policy and the caller's IAM policy must grant access.
+     * See <ulink
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * IAM Roles Differ from Resource-based Policies</ulink>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param evalDecisionDetails Additional details about the results of the evaluation decision. When
+     *         there are both IAM policies and resource policies, this parameter
+     *         explains how each set of policies contributes to the final evaluation
+     *         decision. When simulating cross-account access to a resource, both the
+     *         resource-based policy and the caller's IAM policy must grant access.
+     *         See <ulink
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     *         IAM Roles Differ from Resource-based Policies</ulink>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public EvaluationResult withEvalDecisionDetails(java.util.Map<String,String> evalDecisionDetails) {
+        setEvalDecisionDetails(evalDecisionDetails);
+        return this;
+    }
+
+    /**
+     * Additional details about the results of the evaluation decision. When
+     * there are both IAM policies and resource policies, this parameter
+     * explains how each set of policies contributes to the final evaluation
+     * decision. When simulating cross-account access to a resource, both the
+     * resource-based policy and the caller's IAM policy must grant access.
+     * See <ulink
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * IAM Roles Differ from Resource-based Policies</ulink>
+     * <p>
+     * The method adds a new key-value pair into EvalDecisionDetails
+     * parameter, and returns a reference to this object so that method calls
+     * can be chained together.
+     *
+     * @param key The key of the entry to be added into EvalDecisionDetails.
+     * @param value The corresponding value of the entry to be added into EvalDecisionDetails.
+     */
+  public EvaluationResult addEvalDecisionDetailsEntry(String key, String value) {
+    if (null == this.evalDecisionDetails) {
+      this.evalDecisionDetails = new java.util.HashMap<String,String>();
+    }
+    if (this.evalDecisionDetails.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.evalDecisionDetails.put(key, value);
+    return this;
+  }
+
+  /**
+   * Removes all the entries added into EvalDecisionDetails.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public EvaluationResult clearEvalDecisionDetailsEntries() {
+    this.evalDecisionDetails = null;
+    return this;
+  }
+  
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -497,7 +625,8 @@ public class EvaluationResult implements Serializable, Cloneable {
         if (getEvalResourceName() != null) sb.append("EvalResourceName: " + getEvalResourceName() + ",");
         if (getEvalDecision() != null) sb.append("EvalDecision: " + getEvalDecision() + ",");
         if (getMatchedStatements() != null) sb.append("MatchedStatements: " + getMatchedStatements() + ",");
-        if (getMissingContextValues() != null) sb.append("MissingContextValues: " + getMissingContextValues() );
+        if (getMissingContextValues() != null) sb.append("MissingContextValues: " + getMissingContextValues() + ",");
+        if (getEvalDecisionDetails() != null) sb.append("EvalDecisionDetails: " + getEvalDecisionDetails() );
         sb.append("}");
         return sb.toString();
     }
@@ -512,6 +641,7 @@ public class EvaluationResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEvalDecision() == null) ? 0 : getEvalDecision().hashCode()); 
         hashCode = prime * hashCode + ((getMatchedStatements() == null) ? 0 : getMatchedStatements().hashCode()); 
         hashCode = prime * hashCode + ((getMissingContextValues() == null) ? 0 : getMissingContextValues().hashCode()); 
+        hashCode = prime * hashCode + ((getEvalDecisionDetails() == null) ? 0 : getEvalDecisionDetails().hashCode()); 
         return hashCode;
     }
     
@@ -533,6 +663,8 @@ public class EvaluationResult implements Serializable, Cloneable {
         if (other.getMatchedStatements() != null && other.getMatchedStatements().equals(this.getMatchedStatements()) == false) return false; 
         if (other.getMissingContextValues() == null ^ this.getMissingContextValues() == null) return false;
         if (other.getMissingContextValues() != null && other.getMissingContextValues().equals(this.getMissingContextValues()) == false) return false; 
+        if (other.getEvalDecisionDetails() == null ^ this.getEvalDecisionDetails() == null) return false;
+        if (other.getEvalDecisionDetails() != null && other.getEvalDecisionDetails().equals(this.getEvalDecisionDetails()) == false) return false; 
         return true;
     }
     

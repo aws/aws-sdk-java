@@ -73,6 +73,15 @@ public class SimulateCustomPolicyRequestMarshaller implements Marshaller<Request
 
             resourceArnsListIndex++;
         }
+        if (simulateCustomPolicyRequest.getResourcePolicy() != null) {
+            request.addParameter("ResourcePolicy", StringUtils.fromString(simulateCustomPolicyRequest.getResourcePolicy()));
+        }
+        if (simulateCustomPolicyRequest.getResourceOwner() != null) {
+            request.addParameter("ResourceOwner", StringUtils.fromString(simulateCustomPolicyRequest.getResourceOwner()));
+        }
+        if (simulateCustomPolicyRequest.getCallerArn() != null) {
+            request.addParameter("CallerArn", StringUtils.fromString(simulateCustomPolicyRequest.getCallerArn()));
+        }
 
         java.util.List<ContextEntry> contextEntriesList = simulateCustomPolicyRequest.getContextEntries();
         int contextEntriesListIndex = 1;

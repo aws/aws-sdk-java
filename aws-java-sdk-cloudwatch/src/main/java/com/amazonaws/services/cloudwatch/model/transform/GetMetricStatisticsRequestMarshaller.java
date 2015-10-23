@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudwatch.model.transform;
 
 import java.util.HashMap;
@@ -21,73 +22,101 @@ import java.util.Map;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
-import com.amazonaws.internal.ListWithAutoConstructFlag;
+import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudwatch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 
 /**
- * Get Metric Statistics Request Marshaller
+ * GetMetricStatisticsRequest Marshaller
  */
-public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<GetMetricStatisticsRequest>, GetMetricStatisticsRequest> {
 
-    public Request<GetMetricStatisticsRequest> marshall(GetMetricStatisticsRequest getMetricStatisticsRequest) {
+public class GetMetricStatisticsRequestMarshaller
+        implements
+        Marshaller<Request<GetMetricStatisticsRequest>, GetMetricStatisticsRequest> {
+
+    public Request<GetMetricStatisticsRequest> marshall(
+            GetMetricStatisticsRequest getMetricStatisticsRequest) {
 
         if (getMetricStatisticsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<GetMetricStatisticsRequest> request = new DefaultRequest<GetMetricStatisticsRequest>(getMetricStatisticsRequest, "AmazonCloudWatch");
+        Request<GetMetricStatisticsRequest> request = new DefaultRequest<GetMetricStatisticsRequest>(
+                getMetricStatisticsRequest, "AmazonCloudWatch");
         request.addParameter("Action", "GetMetricStatistics");
         request.addParameter("Version", "2010-08-01");
+        request.setHttpMethod(HttpMethodName.POST);
 
         if (getMetricStatisticsRequest.getNamespace() != null) {
-            request.addParameter("Namespace", StringUtils.fromString(getMetricStatisticsRequest.getNamespace()));
+            request.addParameter("Namespace", StringUtils
+                    .fromString(getMetricStatisticsRequest.getNamespace()));
         }
+
         if (getMetricStatisticsRequest.getMetricName() != null) {
-            request.addParameter("MetricName", StringUtils.fromString(getMetricStatisticsRequest.getMetricName()));
+            request.addParameter("MetricName", StringUtils
+                    .fromString(getMetricStatisticsRequest.getMetricName()));
         }
 
-        java.util.List<Dimension> dimensionsList = getMetricStatisticsRequest.getDimensions();
-        int dimensionsListIndex = 1;
+        com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) getMetricStatisticsRequest
+                .getDimensions();
+        if (!dimensionsList.isEmpty() || !dimensionsList.isAutoConstruct()) {
+            int dimensionsListIndex = 1;
 
-        for (Dimension dimensionsListValue : dimensionsList) {
-            Dimension dimensionMember = dimensionsListValue;
-            if (dimensionMember != null) {
-                if (dimensionMember.getName() != null) {
-                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionMember.getName()));
+            for (Dimension dimensionsListValue : dimensionsList) {
+
+                if (dimensionsListValue.getName() != null) {
+                    request.addParameter("Dimensions.member."
+                            + dimensionsListIndex + ".Name", StringUtils
+                            .fromString(dimensionsListValue.getName()));
                 }
-                if (dimensionMember.getValue() != null) {
-                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionMember.getValue()));
+
+                if (dimensionsListValue.getValue() != null) {
+                    request.addParameter("Dimensions.member."
+                            + dimensionsListIndex + ".Value", StringUtils
+                            .fromString(dimensionsListValue.getValue()));
                 }
+                dimensionsListIndex++;
             }
-
-            dimensionsListIndex++;
         }
+
         if (getMetricStatisticsRequest.getStartTime() != null) {
-            request.addParameter("StartTime", StringUtils.fromDate(getMetricStatisticsRequest.getStartTime()));
+            request.addParameter("StartTime", StringUtils
+                    .fromDate(getMetricStatisticsRequest.getStartTime()));
         }
+
         if (getMetricStatisticsRequest.getEndTime() != null) {
-            request.addParameter("EndTime", StringUtils.fromDate(getMetricStatisticsRequest.getEndTime()));
+            request.addParameter("EndTime", StringUtils
+                    .fromDate(getMetricStatisticsRequest.getEndTime()));
         }
+
         if (getMetricStatisticsRequest.getPeriod() != null) {
-            request.addParameter("Period", StringUtils.fromInteger(getMetricStatisticsRequest.getPeriod()));
+            request.addParameter("Period", StringUtils
+                    .fromInteger(getMetricStatisticsRequest.getPeriod()));
         }
 
-        java.util.List<String> statisticsList = getMetricStatisticsRequest.getStatistics();
-        int statisticsListIndex = 1;
+        com.amazonaws.internal.SdkInternalList<String> statisticsList = (com.amazonaws.internal.SdkInternalList<String>) getMetricStatisticsRequest
+                .getStatistics();
+        if (!statisticsList.isEmpty() || !statisticsList.isAutoConstruct()) {
+            int statisticsListIndex = 1;
 
-        for (String statisticsListValue : statisticsList) {
-            if (statisticsListValue != null) {
-                request.addParameter("Statistics.member." + statisticsListIndex, StringUtils.fromString(statisticsListValue));
+            for (String statisticsListValue : statisticsList) {
+                if (statisticsListValue != null) {
+                    request.addParameter("Statistics.member."
+                            + statisticsListIndex,
+                            StringUtils.fromString(statisticsListValue));
+                }
+                statisticsListIndex++;
             }
-
-            statisticsListIndex++;
         }
+
         if (getMetricStatisticsRequest.getUnit() != null) {
-            request.addParameter("Unit", StringUtils.fromString(getMetricStatisticsRequest.getUnit()));
+            request.addParameter("Unit", StringUtils
+                    .fromString(getMetricStatisticsRequest.getUnit()));
         }
 
         return request;
     }
+
 }

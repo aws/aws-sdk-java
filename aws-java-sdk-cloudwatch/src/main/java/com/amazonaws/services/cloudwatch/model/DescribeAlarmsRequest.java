@@ -1,418 +1,376 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarms(DescribeAlarmsRequest) DescribeAlarms operation}.
- * <p>
- * Retrieves alarms with the specified names. If no name is specified,
- * all alarms for the user are returned. Alarms can be retrieved by using
- * only a prefix for the alarm name, the alarm state, or a prefix for any
- * action.
- * </p>
- *
- * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarms(DescribeAlarmsRequest)
+ * 
  */
-public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * A list of alarm names to retrieve information for.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
+     * A list of alarm names to retrieve information for.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmNames;
-
+    private com.amazonaws.internal.SdkInternalList<String> alarmNames;
     /**
+     * <p>
      * The alarm name prefix. <code>AlarmNames</code> cannot be specified if
      * this parameter is specified.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * </p>
      */
     private String alarmNamePrefix;
-
     /**
-     * The state value to be used in matching alarms.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
+     * The state value to be used in matching alarms.
+     * </p>
      */
     private String stateValue;
-
     /**
-     * The action name prefix.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
+     * The action name prefix.
+     * </p>
      */
     private String actionPrefix;
-
     /**
-     * The maximum number of alarm descriptions to retrieve.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
+     * The maximum number of alarm descriptions to retrieve.
+     * </p>
      */
     private Integer maxRecords;
-
     /**
-     * The token returned by a previous call to indicate that there is more
-     * data available.
+     * <p>
+     * The token returned by a previous call to indicate that there is more data
+     * available.
+     * </p>
      */
     private String nextToken;
 
     /**
-     * A list of alarm names to retrieve information for.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
-     *
+     * A list of alarm names to retrieve information for.
+     * </p>
+     * 
      * @return A list of alarm names to retrieve information for.
      */
     public java.util.List<String> getAlarmNames() {
         if (alarmNames == null) {
-              alarmNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              alarmNames.setAutoConstruct(true);
+            alarmNames = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return alarmNames;
     }
-    
+
     /**
-     * A list of alarm names to retrieve information for.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
-     *
-     * @param alarmNames A list of alarm names to retrieve information for.
+     * A list of alarm names to retrieve information for.
+     * </p>
+     * 
+     * @param alarmNames
+     *        A list of alarm names to retrieve information for.
      */
     public void setAlarmNames(java.util.Collection<String> alarmNames) {
         if (alarmNames == null) {
             this.alarmNames = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(alarmNames.size());
-        alarmNamesCopy.addAll(alarmNames);
-        this.alarmNames = alarmNamesCopy;
+
+        this.alarmNames = new com.amazonaws.internal.SdkInternalList<String>(
+                alarmNames);
     }
-    
+
     /**
+     * <p>
      * A list of alarm names to retrieve information for.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAlarmNames(java.util.Collection)} or {@link
-     * #withAlarmNames(java.util.Collection)} if you want to override the
+     * any). Use {@link #setAlarmNames(java.util.Collection)} or
+     * {@link #withAlarmNames(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
-     *
-     * @param alarmNames A list of alarm names to retrieve information for.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param alarmNames
+     *        A list of alarm names to retrieve information for.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeAlarmsRequest withAlarmNames(String... alarmNames) {
-        if (getAlarmNames() == null) setAlarmNames(new java.util.ArrayList<String>(alarmNames.length));
-        for (String value : alarmNames) {
-            getAlarmNames().add(value);
+        if (this.alarmNames == null) {
+            setAlarmNames(new com.amazonaws.internal.SdkInternalList<String>(
+                    alarmNames.length));
+        }
+        for (String ele : alarmNames) {
+            this.alarmNames.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * A list of alarm names to retrieve information for.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
-     *
-     * @param alarmNames A list of alarm names to retrieve information for.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param alarmNames
+     *        A list of alarm names to retrieve information for.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeAlarmsRequest withAlarmNames(java.util.Collection<String> alarmNames) {
-        if (alarmNames == null) {
-            this.alarmNames = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(alarmNames.size());
-            alarmNamesCopy.addAll(alarmNames);
-            this.alarmNames = alarmNamesCopy;
-        }
-
+    public DescribeAlarmsRequest withAlarmNames(
+            java.util.Collection<String> alarmNames) {
+        setAlarmNames(alarmNames);
         return this;
     }
 
     /**
+     * <p>
      * The alarm name prefix. <code>AlarmNames</code> cannot be specified if
      * this parameter is specified.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @return The alarm name prefix. <code>AlarmNames</code> cannot be specified if
-     *         this parameter is specified.
-     */
-    public String getAlarmNamePrefix() {
-        return alarmNamePrefix;
-    }
-    
-    /**
-     * The alarm name prefix. <code>AlarmNames</code> cannot be specified if
-     * this parameter is specified.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @param alarmNamePrefix The alarm name prefix. <code>AlarmNames</code> cannot be specified if
-     *         this parameter is specified.
+     * </p>
+     * 
+     * @param alarmNamePrefix
+     *        The alarm name prefix. <code>AlarmNames</code> cannot be specified
+     *        if this parameter is specified.
      */
     public void setAlarmNamePrefix(String alarmNamePrefix) {
         this.alarmNamePrefix = alarmNamePrefix;
     }
-    
+
     /**
+     * <p>
      * The alarm name prefix. <code>AlarmNames</code> cannot be specified if
      * this parameter is specified.
+     * </p>
+     * 
+     * @return The alarm name prefix. <code>AlarmNames</code> cannot be
+     *         specified if this parameter is specified.
+     */
+    public String getAlarmNamePrefix() {
+        return this.alarmNamePrefix;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @param alarmNamePrefix The alarm name prefix. <code>AlarmNames</code> cannot be specified if
-     *         this parameter is specified.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The alarm name prefix. <code>AlarmNames</code> cannot be specified if
+     * this parameter is specified.
+     * </p>
+     * 
+     * @param alarmNamePrefix
+     *        The alarm name prefix. <code>AlarmNames</code> cannot be specified
+     *        if this parameter is specified.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeAlarmsRequest withAlarmNamePrefix(String alarmNamePrefix) {
-        this.alarmNamePrefix = alarmNamePrefix;
+        setAlarmNamePrefix(alarmNamePrefix);
         return this;
     }
 
     /**
-     * The state value to be used in matching alarms.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
-     *
-     * @return The state value to be used in matching alarms.
-     *
-     * @see StateValue
-     */
-    public String getStateValue() {
-        return stateValue;
-    }
-    
-    /**
      * The state value to be used in matching alarms.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
-     *
-     * @param stateValue The state value to be used in matching alarms.
-     *
+     * </p>
+     * 
+     * @param stateValue
+     *        The state value to be used in matching alarms.
      * @see StateValue
      */
     public void setStateValue(String stateValue) {
         this.stateValue = stateValue;
     }
-    
+
     /**
+     * <p>
      * The state value to be used in matching alarms.
+     * </p>
+     * 
+     * @return The state value to be used in matching alarms.
+     * @see StateValue
+     */
+    public String getStateValue() {
+        return this.stateValue;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
-     *
-     * @param stateValue The state value to be used in matching alarms.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The state value to be used in matching alarms.
+     * </p>
+     * 
+     * @param stateValue
+     *        The state value to be used in matching alarms.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StateValue
      */
     public DescribeAlarmsRequest withStateValue(String stateValue) {
-        this.stateValue = stateValue;
+        setStateValue(stateValue);
         return this;
     }
 
     /**
-     * The state value to be used in matching alarms.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
-     *
-     * @param stateValue The state value to be used in matching alarms.
-     *
+     * The state value to be used in matching alarms.
+     * </p>
+     * 
+     * @param stateValue
+     *        The state value to be used in matching alarms.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StateValue
      */
     public void setStateValue(StateValue stateValue) {
         this.stateValue = stateValue.toString();
     }
-    
+
     /**
+     * <p>
      * The state value to be used in matching alarms.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
-     *
-     * @param stateValue The state value to be used in matching alarms.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param stateValue
+     *        The state value to be used in matching alarms.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StateValue
      */
     public DescribeAlarmsRequest withStateValue(StateValue stateValue) {
-        this.stateValue = stateValue.toString();
+        setStateValue(stateValue);
         return this;
     }
 
     /**
-     * The action name prefix.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
-     *
-     * @return The action name prefix.
-     */
-    public String getActionPrefix() {
-        return actionPrefix;
-    }
-    
-    /**
      * The action name prefix.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
-     *
-     * @param actionPrefix The action name prefix.
+     * </p>
+     * 
+     * @param actionPrefix
+     *        The action name prefix.
      */
     public void setActionPrefix(String actionPrefix) {
         this.actionPrefix = actionPrefix;
     }
-    
+
     /**
+     * <p>
      * The action name prefix.
+     * </p>
+     * 
+     * @return The action name prefix.
+     */
+    public String getActionPrefix() {
+        return this.actionPrefix;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1024<br/>
-     *
-     * @param actionPrefix The action name prefix.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The action name prefix.
+     * </p>
+     * 
+     * @param actionPrefix
+     *        The action name prefix.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeAlarmsRequest withActionPrefix(String actionPrefix) {
-        this.actionPrefix = actionPrefix;
+        setActionPrefix(actionPrefix);
         return this;
     }
 
     /**
-     * The maximum number of alarm descriptions to retrieve.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
-     *
-     * @return The maximum number of alarm descriptions to retrieve.
-     */
-    public Integer getMaxRecords() {
-        return maxRecords;
-    }
-    
-    /**
      * The maximum number of alarm descriptions to retrieve.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
-     *
-     * @param maxRecords The maximum number of alarm descriptions to retrieve.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of alarm descriptions to retrieve.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
-    
+
     /**
+     * <p>
      * The maximum number of alarm descriptions to retrieve.
+     * </p>
+     * 
+     * @return The maximum number of alarm descriptions to retrieve.
+     */
+    public Integer getMaxRecords() {
+        return this.maxRecords;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 100<br/>
-     *
-     * @param maxRecords The maximum number of alarm descriptions to retrieve.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The maximum number of alarm descriptions to retrieve.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of alarm descriptions to retrieve.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeAlarmsRequest withMaxRecords(Integer maxRecords) {
-        this.maxRecords = maxRecords;
+        setMaxRecords(maxRecords);
         return this;
     }
 
     /**
-     * The token returned by a previous call to indicate that there is more
-     * data available.
-     *
-     * @return The token returned by a previous call to indicate that there is more
-     *         data available.
-     */
-    public String getNextToken() {
-        return nextToken;
-    }
-    
-    /**
-     * The token returned by a previous call to indicate that there is more
-     * data available.
-     *
-     * @param nextToken The token returned by a previous call to indicate that there is more
-     *         data available.
+     * <p>
+     * The token returned by a previous call to indicate that there is more data
+     * available.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token returned by a previous call to indicate that there is
+     *        more data available.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
-    
+
     /**
-     * The token returned by a previous call to indicate that there is more
-     * data available.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param nextToken The token returned by a previous call to indicate that there is more
-     *         data available.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The token returned by a previous call to indicate that there is more data
+     * available.
+     * </p>
+     * 
+     * @return The token returned by a previous call to indicate that there is
+     *         more data available.
+     */
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token returned by a previous call to indicate that there is more data
+     * available.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token returned by a previous call to indicate that there is
+     *        more data available.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeAlarmsRequest withNextToken(String nextToken) {
-        this.nextToken = nextToken;
+        setNextToken(nextToken);
         return this;
     }
 
@@ -428,58 +386,92 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements Se
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAlarmNames() != null) sb.append("AlarmNames: " + getAlarmNames() + ",");
-        if (getAlarmNamePrefix() != null) sb.append("AlarmNamePrefix: " + getAlarmNamePrefix() + ",");
-        if (getStateValue() != null) sb.append("StateValue: " + getStateValue() + ",");
-        if (getActionPrefix() != null) sb.append("ActionPrefix: " + getActionPrefix() + ",");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
+        if (getAlarmNames() != null)
+            sb.append("AlarmNames: " + getAlarmNames() + ",");
+        if (getAlarmNamePrefix() != null)
+            sb.append("AlarmNamePrefix: " + getAlarmNamePrefix() + ",");
+        if (getStateValue() != null)
+            sb.append("StateValue: " + getStateValue() + ",");
+        if (getActionPrefix() != null)
+            sb.append("ActionPrefix: " + getActionPrefix() + ",");
+        if (getMaxRecords() != null)
+            sb.append("MaxRecords: " + getMaxRecords() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeAlarmsRequest == false)
+            return false;
+        DescribeAlarmsRequest other = (DescribeAlarmsRequest) obj;
+        if (other.getAlarmNames() == null ^ this.getAlarmNames() == null)
+            return false;
+        if (other.getAlarmNames() != null
+                && other.getAlarmNames().equals(this.getAlarmNames()) == false)
+            return false;
+        if (other.getAlarmNamePrefix() == null
+                ^ this.getAlarmNamePrefix() == null)
+            return false;
+        if (other.getAlarmNamePrefix() != null
+                && other.getAlarmNamePrefix().equals(this.getAlarmNamePrefix()) == false)
+            return false;
+        if (other.getStateValue() == null ^ this.getStateValue() == null)
+            return false;
+        if (other.getStateValue() != null
+                && other.getStateValue().equals(this.getStateValue()) == false)
+            return false;
+        if (other.getActionPrefix() == null ^ this.getActionPrefix() == null)
+            return false;
+        if (other.getActionPrefix() != null
+                && other.getActionPrefix().equals(this.getActionPrefix()) == false)
+            return false;
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
+            return false;
+        if (other.getMaxRecords() != null
+                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null
+                && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAlarmNames() == null) ? 0 : getAlarmNames().hashCode()); 
-        hashCode = prime * hashCode + ((getAlarmNamePrefix() == null) ? 0 : getAlarmNamePrefix().hashCode()); 
-        hashCode = prime * hashCode + ((getStateValue() == null) ? 0 : getStateValue().hashCode()); 
-        hashCode = prime * hashCode + ((getActionPrefix() == null) ? 0 : getActionPrefix().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getAlarmNames() == null) ? 0 : getAlarmNames().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAlarmNamePrefix() == null) ? 0 : getAlarmNamePrefix()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getStateValue() == null) ? 0 : getStateValue().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getActionPrefix() == null) ? 0 : getActionPrefix()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode
+                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeAlarmsRequest == false) return false;
-        DescribeAlarmsRequest other = (DescribeAlarmsRequest)obj;
-        
-        if (other.getAlarmNames() == null ^ this.getAlarmNames() == null) return false;
-        if (other.getAlarmNames() != null && other.getAlarmNames().equals(this.getAlarmNames()) == false) return false; 
-        if (other.getAlarmNamePrefix() == null ^ this.getAlarmNamePrefix() == null) return false;
-        if (other.getAlarmNamePrefix() != null && other.getAlarmNamePrefix().equals(this.getAlarmNamePrefix()) == false) return false; 
-        if (other.getStateValue() == null ^ this.getStateValue() == null) return false;
-        if (other.getStateValue() != null && other.getStateValue().equals(this.getStateValue()) == false) return false; 
-        if (other.getActionPrefix() == null ^ this.getActionPrefix() == null) return false;
-        if (other.getActionPrefix() != null && other.getActionPrefix().equals(this.getActionPrefix()) == false) return false; 
-        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
-        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
-        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeAlarmsRequest clone() {
-        
-            return (DescribeAlarmsRequest) super.clone();
+        return (DescribeAlarmsRequest) super.clone();
     }
-
 }
-    

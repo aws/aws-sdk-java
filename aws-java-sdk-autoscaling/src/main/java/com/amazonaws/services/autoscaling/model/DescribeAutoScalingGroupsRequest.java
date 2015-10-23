@@ -1,204 +1,205 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingGroups(DescribeAutoScalingGroupsRequest) DescribeAutoScalingGroups operation}.
- * <p>
- * Describes one or more Auto Scaling groups. If a list of names is not
- * provided, the call describes all Auto Scaling groups.
- * </p>
- *
- * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingGroups(DescribeAutoScalingGroupsRequest)
+ * 
  */
-public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
-     * The group names.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingGroupNames;
-
-    /**
-     * The token for the next set of items to return. (You received this
-     * token from a previous call.)
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The group names.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> autoScalingGroupNames;
+    /**
+     * <p>
+     * The token for the next set of items to return. (You received this token
+     * from a previous call.)
+     * </p>
      */
     private String nextToken;
-
     /**
+     * <p>
      * The maximum number of items to return with this call.
+     * </p>
      */
     private Integer maxRecords;
 
     /**
+     * <p>
      * The group names.
-     *
+     * </p>
+     * 
      * @return The group names.
      */
     public java.util.List<String> getAutoScalingGroupNames() {
         if (autoScalingGroupNames == null) {
-              autoScalingGroupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              autoScalingGroupNames.setAutoConstruct(true);
+            autoScalingGroupNames = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return autoScalingGroupNames;
     }
-    
+
     /**
+     * <p>
      * The group names.
-     *
-     * @param autoScalingGroupNames The group names.
+     * </p>
+     * 
+     * @param autoScalingGroupNames
+     *        The group names.
      */
-    public void setAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
+    public void setAutoScalingGroupNames(
+            java.util.Collection<String> autoScalingGroupNames) {
         if (autoScalingGroupNames == null) {
             this.autoScalingGroupNames = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingGroupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(autoScalingGroupNames.size());
-        autoScalingGroupNamesCopy.addAll(autoScalingGroupNames);
-        this.autoScalingGroupNames = autoScalingGroupNamesCopy;
+
+        this.autoScalingGroupNames = new com.amazonaws.internal.SdkInternalList<String>(
+                autoScalingGroupNames);
     }
-    
+
     /**
+     * <p>
      * The group names.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAutoScalingGroupNames(java.util.Collection)} or
-     * {@link #withAutoScalingGroupNames(java.util.Collection)} if you want
-     * to override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param autoScalingGroupNames The group names.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * {@link #withAutoScalingGroupNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param autoScalingGroupNames
+     *        The group names.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeAutoScalingGroupsRequest withAutoScalingGroupNames(String... autoScalingGroupNames) {
-        if (getAutoScalingGroupNames() == null) setAutoScalingGroupNames(new java.util.ArrayList<String>(autoScalingGroupNames.length));
-        for (String value : autoScalingGroupNames) {
-            getAutoScalingGroupNames().add(value);
+    public DescribeAutoScalingGroupsRequest withAutoScalingGroupNames(
+            String... autoScalingGroupNames) {
+        if (this.autoScalingGroupNames == null) {
+            setAutoScalingGroupNames(new com.amazonaws.internal.SdkInternalList<String>(
+                    autoScalingGroupNames.length));
+        }
+        for (String ele : autoScalingGroupNames) {
+            this.autoScalingGroupNames.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The group names.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param autoScalingGroupNames The group names.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param autoScalingGroupNames
+     *        The group names.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeAutoScalingGroupsRequest withAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
-        if (autoScalingGroupNames == null) {
-            this.autoScalingGroupNames = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingGroupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(autoScalingGroupNames.size());
-            autoScalingGroupNamesCopy.addAll(autoScalingGroupNames);
-            this.autoScalingGroupNames = autoScalingGroupNamesCopy;
-        }
-
+    public DescribeAutoScalingGroupsRequest withAutoScalingGroupNames(
+            java.util.Collection<String> autoScalingGroupNames) {
+        setAutoScalingGroupNames(autoScalingGroupNames);
         return this;
     }
 
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a previous call.)
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The token for the next set of items to return. (You received this
-     *         token from a previous call.)
-     */
-    public String getNextToken() {
-        return nextToken;
-    }
-    
-    /**
-     * The token for the next set of items to return. (You received this
-     * token from a previous call.)
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param nextToken The token for the next set of items to return. (You received this
-     *         token from a previous call.)
+     * The token for the next set of items to return. (You received this token
+     * from a previous call.)
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of items to return. (You received this
+     *        token from a previous call.)
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
-    
+
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a previous call.)
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param nextToken The token for the next set of items to return. (You received this
+     * The token for the next set of items to return. (You received this token
+     * from a previous call.)
+     * </p>
+     * 
+     * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of items to return. (You received this token
+     * from a previous call.)
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of items to return. (You received this
+     *        token from a previous call.)
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeAutoScalingGroupsRequest withNextToken(String nextToken) {
-        this.nextToken = nextToken;
+        setNextToken(nextToken);
         return this;
     }
 
     /**
+     * <p>
      * The maximum number of items to return with this call.
-     *
-     * @return The maximum number of items to return with this call.
-     */
-    public Integer getMaxRecords() {
-        return maxRecords;
-    }
-    
-    /**
-     * The maximum number of items to return with this call.
-     *
-     * @param maxRecords The maximum number of items to return with this call.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of items to return with this call.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
-    
+
     /**
-     * The maximum number of items to return with this call.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param maxRecords The maximum number of items to return with this call.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The maximum number of items to return with this call.
+     * </p>
+     * 
+     * @return The maximum number of items to return with this call.
+     */
+    public Integer getMaxRecords() {
+        return this.maxRecords;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items to return with this call.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of items to return with this call.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeAutoScalingGroupsRequest withMaxRecords(Integer maxRecords) {
-        this.maxRecords = maxRecords;
+        setMaxRecords(maxRecords);
         return this;
     }
 
@@ -214,46 +215,65 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAutoScalingGroupNames() != null) sb.append("AutoScalingGroupNames: " + getAutoScalingGroupNames() + ",");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() );
+        if (getAutoScalingGroupNames() != null)
+            sb.append("AutoScalingGroupNames: " + getAutoScalingGroupNames()
+                    + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken() + ",");
+        if (getMaxRecords() != null)
+            sb.append("MaxRecords: " + getMaxRecords());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeAutoScalingGroupsRequest == false)
+            return false;
+        DescribeAutoScalingGroupsRequest other = (DescribeAutoScalingGroupsRequest) obj;
+        if (other.getAutoScalingGroupNames() == null
+                ^ this.getAutoScalingGroupNames() == null)
+            return false;
+        if (other.getAutoScalingGroupNames() != null
+                && other.getAutoScalingGroupNames().equals(
+                        this.getAutoScalingGroupNames()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null
+                && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
+            return false;
+        if (other.getMaxRecords() != null
+                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAutoScalingGroupNames() == null) ? 0 : getAutoScalingGroupNames().hashCode()); 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getAutoScalingGroupNames() == null) ? 0
+                        : getAutoScalingGroupNames().hashCode());
+        hashCode = prime * hashCode
+                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode
+                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeAutoScalingGroupsRequest == false) return false;
-        DescribeAutoScalingGroupsRequest other = (DescribeAutoScalingGroupsRequest)obj;
-        
-        if (other.getAutoScalingGroupNames() == null ^ this.getAutoScalingGroupNames() == null) return false;
-        if (other.getAutoScalingGroupNames() != null && other.getAutoScalingGroupNames().equals(this.getAutoScalingGroupNames()) == false) return false; 
-        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
-        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
-        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeAutoScalingGroupsRequest clone() {
-        
-            return (DescribeAutoScalingGroupsRequest) super.clone();
+        return (DescribeAutoScalingGroupsRequest) super.clone();
     }
-
 }
-    

@@ -57,6 +57,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "ds";
 
+    /** The region metadata service name for computing region endpoints. */
+    private static final String DEFAULT_ENDPOINT_PREFIX = "ds";
+
     /**
      * List of exception unmarshallers for all Directory Service exceptions.
      */
@@ -273,6 +276,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         // calling this.setEndPoint(...) will also modify the signer accordingly
         setEndpoint("https://ds.us-east-1.amazonaws.com");
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
+        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

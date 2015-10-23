@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
@@ -19,161 +20,172 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeMetricCollectionTypesResult implements Serializable, Cloneable {
+public class DescribeMetricCollectionTypesResult implements Serializable,
+        Cloneable {
 
     /**
+     * <p>
      * One or more metrics.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType> metrics;
-
+    private com.amazonaws.internal.SdkInternalList<MetricCollectionType> metrics;
     /**
+     * <p>
      * The granularities for the metrics.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType> granularities;
+    private com.amazonaws.internal.SdkInternalList<MetricGranularityType> granularities;
 
     /**
+     * <p>
      * One or more metrics.
-     *
+     * </p>
+     * 
      * @return One or more metrics.
      */
     public java.util.List<MetricCollectionType> getMetrics() {
         if (metrics == null) {
-              metrics = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType>();
-              metrics.setAutoConstruct(true);
+            metrics = new com.amazonaws.internal.SdkInternalList<MetricCollectionType>();
         }
         return metrics;
     }
-    
+
     /**
+     * <p>
      * One or more metrics.
-     *
-     * @param metrics One or more metrics.
+     * </p>
+     * 
+     * @param metrics
+     *        One or more metrics.
      */
     public void setMetrics(java.util.Collection<MetricCollectionType> metrics) {
         if (metrics == null) {
             this.metrics = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType> metricsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType>(metrics.size());
-        metricsCopy.addAll(metrics);
-        this.metrics = metricsCopy;
+
+        this.metrics = new com.amazonaws.internal.SdkInternalList<MetricCollectionType>(
+                metrics);
     }
-    
+
     /**
+     * <p>
      * One or more metrics.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMetrics(java.util.Collection)} or {@link
-     * #withMetrics(java.util.Collection)} if you want to override the
+     * any). Use {@link #setMetrics(java.util.Collection)} or
+     * {@link #withMetrics(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param metrics One or more metrics.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param metrics
+     *        One or more metrics.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeMetricCollectionTypesResult withMetrics(MetricCollectionType... metrics) {
-        if (getMetrics() == null) setMetrics(new java.util.ArrayList<MetricCollectionType>(metrics.length));
-        for (MetricCollectionType value : metrics) {
-            getMetrics().add(value);
+    public DescribeMetricCollectionTypesResult withMetrics(
+            MetricCollectionType... metrics) {
+        if (this.metrics == null) {
+            setMetrics(new com.amazonaws.internal.SdkInternalList<MetricCollectionType>(
+                    metrics.length));
+        }
+        for (MetricCollectionType ele : metrics) {
+            this.metrics.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * One or more metrics.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param metrics One or more metrics.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param metrics
+     *        One or more metrics.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeMetricCollectionTypesResult withMetrics(java.util.Collection<MetricCollectionType> metrics) {
-        if (metrics == null) {
-            this.metrics = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType> metricsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType>(metrics.size());
-            metricsCopy.addAll(metrics);
-            this.metrics = metricsCopy;
-        }
-
+    public DescribeMetricCollectionTypesResult withMetrics(
+            java.util.Collection<MetricCollectionType> metrics) {
+        setMetrics(metrics);
         return this;
     }
 
     /**
+     * <p>
      * The granularities for the metrics.
-     *
+     * </p>
+     * 
      * @return The granularities for the metrics.
      */
     public java.util.List<MetricGranularityType> getGranularities() {
         if (granularities == null) {
-              granularities = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType>();
-              granularities.setAutoConstruct(true);
+            granularities = new com.amazonaws.internal.SdkInternalList<MetricGranularityType>();
         }
         return granularities;
     }
-    
+
     /**
+     * <p>
      * The granularities for the metrics.
-     *
-     * @param granularities The granularities for the metrics.
+     * </p>
+     * 
+     * @param granularities
+     *        The granularities for the metrics.
      */
-    public void setGranularities(java.util.Collection<MetricGranularityType> granularities) {
+    public void setGranularities(
+            java.util.Collection<MetricGranularityType> granularities) {
         if (granularities == null) {
             this.granularities = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType> granularitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType>(granularities.size());
-        granularitiesCopy.addAll(granularities);
-        this.granularities = granularitiesCopy;
+
+        this.granularities = new com.amazonaws.internal.SdkInternalList<MetricGranularityType>(
+                granularities);
     }
-    
+
     /**
+     * <p>
      * The granularities for the metrics.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGranularities(java.util.Collection)} or {@link
-     * #withGranularities(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param granularities The granularities for the metrics.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setGranularities(java.util.Collection)} or
+     * {@link #withGranularities(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param granularities
+     *        The granularities for the metrics.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeMetricCollectionTypesResult withGranularities(MetricGranularityType... granularities) {
-        if (getGranularities() == null) setGranularities(new java.util.ArrayList<MetricGranularityType>(granularities.length));
-        for (MetricGranularityType value : granularities) {
-            getGranularities().add(value);
+    public DescribeMetricCollectionTypesResult withGranularities(
+            MetricGranularityType... granularities) {
+        if (this.granularities == null) {
+            setGranularities(new com.amazonaws.internal.SdkInternalList<MetricGranularityType>(
+                    granularities.length));
+        }
+        for (MetricGranularityType ele : granularities) {
+            this.granularities.add(ele);
         }
         return this;
     }
-    
-    /**
-     * The granularities for the metrics.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param granularities The granularities for the metrics.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribeMetricCollectionTypesResult withGranularities(java.util.Collection<MetricGranularityType> granularities) {
-        if (granularities == null) {
-            this.granularities = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType> granularitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType>(granularities.size());
-            granularitiesCopy.addAll(granularities);
-            this.granularities = granularitiesCopy;
-        }
 
+    /**
+     * <p>
+     * The granularities for the metrics.
+     * </p>
+     * 
+     * @param granularities
+     *        The granularities for the metrics.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeMetricCollectionTypesResult withGranularities(
+            java.util.Collection<MetricGranularityType> granularities) {
+        setGranularities(granularities);
         return this;
     }
 
@@ -189,50 +201,59 @@ public class DescribeMetricCollectionTypesResult implements Serializable, Clonea
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ",");
-        if (getGranularities() != null) sb.append("Granularities: " + getGranularities() );
+        if (getMetrics() != null)
+            sb.append("Metrics: " + getMetrics() + ",");
+        if (getGranularities() != null)
+            sb.append("Granularities: " + getGranularities());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeMetricCollectionTypesResult == false)
+            return false;
+        DescribeMetricCollectionTypesResult other = (DescribeMetricCollectionTypesResult) obj;
+        if (other.getMetrics() == null ^ this.getMetrics() == null)
+            return false;
+        if (other.getMetrics() != null
+                && other.getMetrics().equals(this.getMetrics()) == false)
+            return false;
+        if (other.getGranularities() == null ^ this.getGranularities() == null)
+            return false;
+        if (other.getGranularities() != null
+                && other.getGranularities().equals(this.getGranularities()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode()); 
-        hashCode = prime * hashCode + ((getGranularities() == null) ? 0 : getGranularities().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getGranularities() == null) ? 0 : getGranularities()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeMetricCollectionTypesResult == false) return false;
-        DescribeMetricCollectionTypesResult other = (DescribeMetricCollectionTypesResult)obj;
-        
-        if (other.getMetrics() == null ^ this.getMetrics() == null) return false;
-        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false) return false; 
-        if (other.getGranularities() == null ^ this.getGranularities() == null) return false;
-        if (other.getGranularities() != null && other.getGranularities().equals(this.getGranularities()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeMetricCollectionTypesResult clone() {
         try {
             return (DescribeMetricCollectionTypesResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

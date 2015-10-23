@@ -1,1226 +1,1098 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#putMetricAlarm(PutMetricAlarmRequest) PutMetricAlarm operation}.
- * <p>
- * Creates or updates an alarm and associates it with the specified
- * Amazon CloudWatch metric. Optionally, this operation can associate one
- * or more Amazon Simple Notification Service resources with the alarm.
- * </p>
- * <p>
- * When this operation creates an alarm, the alarm state is immediately
- * set to <code>INSUFFICIENT_DATA</code> . The alarm is evaluated and
- * its <code>StateValue</code> is set appropriately. Any actions
- * associated with the <code>StateValue</code> is then executed.
- * </p>
- * <p>
- * <b>NOTE:</b> When updating an existing alarm, its StateValue is left
- * unchanged.
- * </p>
- *
- * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#putMetricAlarm(PutMetricAlarmRequest)
+ * 
  */
-public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The descriptive name for the alarm. This name must be unique within
-     * the user's AWS account
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * The descriptive name for the alarm. This name must be unique within the
+     * user's AWS account
+     * </p>
      */
     private String alarmName;
-
     /**
-     * The description for the alarm.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 255<br/>
+     * The description for the alarm.
+     * </p>
      */
     private String alarmDescription;
-
     /**
-     * Indicates whether or not actions should be executed during any changes
-     * to the alarm's state.
+     * <p>
+     * Indicates whether or not actions should be executed during any changes to
+     * the alarm's state.
+     * </p>
      */
     private Boolean actionsEnabled;
-
     /**
-     * The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only action
-     * supported is publishing to an Amazon SNS topic or an Amazon Auto
-     * Scaling policy.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> oKActions;
-
-    /**
      * The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only
-     * action supported is publishing to an Amazon SNS topic or an Amazon
-     * Auto Scaling policy.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
+     * <code>OK</code> state from any other state. Each action is specified as
+     * an Amazon Resource Number (ARN). Currently the only action supported is
+     * publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmActions;
-
+    private com.amazonaws.internal.SdkInternalList<String> oKActions;
     /**
+     * <p>
      * The list of actions to execute when this alarm transitions into an
-     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     * is specified as an Amazon Resource Number (ARN). Currently the only
-     * action supported is publishing to an Amazon SNS topic or an Amazon
-     * Auto Scaling policy.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
+     * <code>ALARM</code> state from any other state. Each action is specified
+     * as an Amazon Resource Number (ARN). Currently the only action supported
+     * is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> insufficientDataActions;
-
+    private com.amazonaws.internal.SdkInternalList<String> alarmActions;
     /**
+     * <p>
+     * The list of actions to execute when this alarm transitions into an
+     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
+     * specified as an Amazon Resource Number (ARN). Currently the only action
+     * supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling
+     * policy.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> insufficientDataActions;
+    /**
+     * <p>
      * The name for the alarm's associated metric.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * </p>
      */
     private String metricName;
-
     /**
-     * The namespace for the alarm's associated metric.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[^:].*<br/>
+     * The namespace for the alarm's associated metric.
+     * </p>
      */
     private String namespace;
-
     /**
-     * The statistic to apply to the alarm's associated metric.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
+     * The statistic to apply to the alarm's associated metric.
+     * </p>
      */
     private String statistic;
-
     /**
+     * <p>
      * The dimensions for the alarm's associated metric.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 10<br/>
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensions;
-
+    private com.amazonaws.internal.SdkInternalList<Dimension> dimensions;
     /**
-     * The period in seconds over which the specified statistic is applied.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>60 - <br/>
+     * The period in seconds over which the specified statistic is applied.
+     * </p>
      */
     private Integer period;
-
     /**
-     * The unit for the alarm's associated metric.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
+     * The unit for the alarm's associated metric.
+     * </p>
      */
     private String unit;
-
     /**
+     * <p>
      * The number of periods over which data is compared to the specified
      * threshold.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
+     * </p>
      */
     private Integer evaluationPeriods;
-
     /**
+     * <p>
      * The value against which the specified statistic is compared.
+     * </p>
      */
     private Double threshold;
-
     /**
+     * <p>
      * The arithmetic operation to use when comparing the specified
      * <code>Statistic</code> and <code>Threshold</code>. The specified
      * <code>Statistic</code> value is used as the first operand.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold
+     * </p>
      */
     private String comparisonOperator;
 
     /**
-     * The descriptive name for the alarm. This name must be unique within
-     * the user's AWS account
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @return The descriptive name for the alarm. This name must be unique within
-     *         the user's AWS account
-     */
-    public String getAlarmName() {
-        return alarmName;
-    }
-    
-    /**
-     * The descriptive name for the alarm. This name must be unique within
-     * the user's AWS account
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @param alarmName The descriptive name for the alarm. This name must be unique within
-     *         the user's AWS account
+     * The descriptive name for the alarm. This name must be unique within the
+     * user's AWS account
+     * </p>
+     * 
+     * @param alarmName
+     *        The descriptive name for the alarm. This name must be unique
+     *        within the user's AWS account
      */
     public void setAlarmName(String alarmName) {
         this.alarmName = alarmName;
     }
-    
+
     /**
-     * The descriptive name for the alarm. This name must be unique within
-     * the user's AWS account
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The descriptive name for the alarm. This name must be unique within the
+     * user's AWS account
+     * </p>
+     * 
+     * @return The descriptive name for the alarm. This name must be unique
+     *         within the user's AWS account
+     */
+    public String getAlarmName() {
+        return this.alarmName;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @param alarmName The descriptive name for the alarm. This name must be unique within
-     *         the user's AWS account
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The descriptive name for the alarm. This name must be unique within the
+     * user's AWS account
+     * </p>
+     * 
+     * @param alarmName
+     *        The descriptive name for the alarm. This name must be unique
+     *        within the user's AWS account
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutMetricAlarmRequest withAlarmName(String alarmName) {
-        this.alarmName = alarmName;
+        setAlarmName(alarmName);
         return this;
     }
 
     /**
-     * The description for the alarm.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 255<br/>
-     *
-     * @return The description for the alarm.
-     */
-    public String getAlarmDescription() {
-        return alarmDescription;
-    }
-    
-    /**
      * The description for the alarm.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 255<br/>
-     *
-     * @param alarmDescription The description for the alarm.
+     * </p>
+     * 
+     * @param alarmDescription
+     *        The description for the alarm.
      */
     public void setAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
     }
-    
+
     /**
+     * <p>
      * The description for the alarm.
+     * </p>
+     * 
+     * @return The description for the alarm.
+     */
+    public String getAlarmDescription() {
+        return this.alarmDescription;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 255<br/>
-     *
-     * @param alarmDescription The description for the alarm.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The description for the alarm.
+     * </p>
+     * 
+     * @param alarmDescription
+     *        The description for the alarm.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutMetricAlarmRequest withAlarmDescription(String alarmDescription) {
-        this.alarmDescription = alarmDescription;
+        setAlarmDescription(alarmDescription);
         return this;
     }
 
     /**
-     * Indicates whether or not actions should be executed during any changes
-     * to the alarm's state.
-     *
-     * @return Indicates whether or not actions should be executed during any changes
-     *         to the alarm's state.
-     */
-    public Boolean isActionsEnabled() {
-        return actionsEnabled;
-    }
-    
-    /**
-     * Indicates whether or not actions should be executed during any changes
-     * to the alarm's state.
-     *
-     * @param actionsEnabled Indicates whether or not actions should be executed during any changes
-     *         to the alarm's state.
+     * <p>
+     * Indicates whether or not actions should be executed during any changes to
+     * the alarm's state.
+     * </p>
+     * 
+     * @param actionsEnabled
+     *        Indicates whether or not actions should be executed during any
+     *        changes to the alarm's state.
      */
     public void setActionsEnabled(Boolean actionsEnabled) {
         this.actionsEnabled = actionsEnabled;
     }
-    
+
     /**
-     * Indicates whether or not actions should be executed during any changes
-     * to the alarm's state.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param actionsEnabled Indicates whether or not actions should be executed during any changes
-     *         to the alarm's state.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Indicates whether or not actions should be executed during any changes to
+     * the alarm's state.
+     * </p>
+     * 
+     * @return Indicates whether or not actions should be executed during any
+     *         changes to the alarm's state.
+     */
+    public Boolean getActionsEnabled() {
+        return this.actionsEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not actions should be executed during any changes to
+     * the alarm's state.
+     * </p>
+     * 
+     * @param actionsEnabled
+     *        Indicates whether or not actions should be executed during any
+     *        changes to the alarm's state.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutMetricAlarmRequest withActionsEnabled(Boolean actionsEnabled) {
-        this.actionsEnabled = actionsEnabled;
+        setActionsEnabled(actionsEnabled);
         return this;
     }
 
     /**
-     * Indicates whether or not actions should be executed during any changes
-     * to the alarm's state.
-     *
-     * @return Indicates whether or not actions should be executed during any changes
-     *         to the alarm's state.
+     * <p>
+     * Indicates whether or not actions should be executed during any changes to
+     * the alarm's state.
+     * </p>
+     * 
+     * @return Indicates whether or not actions should be executed during any
+     *         changes to the alarm's state.
      */
-    public Boolean getActionsEnabled() {
-        return actionsEnabled;
+    public Boolean isActionsEnabled() {
+        return this.actionsEnabled;
     }
 
     /**
-     * The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only action
-     * supported is publishing to an Amazon SNS topic or an Amazon Auto
-     * Scaling policy.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @return The list of actions to execute when this alarm transitions into an
-     *         <code>OK</code> state from any other state. Each action is specified
-     *         as an Amazon Resource Number (ARN). Currently the only action
-     *         supported is publishing to an Amazon SNS topic or an Amazon Auto
-     *         Scaling policy.
+     * The list of actions to execute when this alarm transitions into an
+     * <code>OK</code> state from any other state. Each action is specified as
+     * an Amazon Resource Number (ARN). Currently the only action supported is
+     * publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * </p>
+     * 
+     * @return The list of actions to execute when this alarm transitions into
+     *         an <code>OK</code> state from any other state. Each action is
+     *         specified as an Amazon Resource Number (ARN). Currently the only
+     *         action supported is publishing to an Amazon SNS topic or an
+     *         Amazon Auto Scaling policy.
      */
     public java.util.List<String> getOKActions() {
         if (oKActions == null) {
-              oKActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              oKActions.setAutoConstruct(true);
+            oKActions = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return oKActions;
     }
-    
+
     /**
-     * The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only action
-     * supported is publishing to an Amazon SNS topic or an Amazon Auto
-     * Scaling policy.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param oKActions The list of actions to execute when this alarm transitions into an
-     *         <code>OK</code> state from any other state. Each action is specified
-     *         as an Amazon Resource Number (ARN). Currently the only action
-     *         supported is publishing to an Amazon SNS topic or an Amazon Auto
-     *         Scaling policy.
+     * The list of actions to execute when this alarm transitions into an
+     * <code>OK</code> state from any other state. Each action is specified as
+     * an Amazon Resource Number (ARN). Currently the only action supported is
+     * publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * </p>
+     * 
+     * @param oKActions
+     *        The list of actions to execute when this alarm transitions into an
+     *        <code>OK</code> state from any other state. Each action is
+     *        specified as an Amazon Resource Number (ARN). Currently the only
+     *        action supported is publishing to an Amazon SNS topic or an Amazon
+     *        Auto Scaling policy.
      */
     public void setOKActions(java.util.Collection<String> oKActions) {
         if (oKActions == null) {
             this.oKActions = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> oKActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(oKActions.size());
-        oKActionsCopy.addAll(oKActions);
-        this.oKActions = oKActionsCopy;
+
+        this.oKActions = new com.amazonaws.internal.SdkInternalList<String>(
+                oKActions);
     }
-    
+
     /**
+     * <p>
      * The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only action
-     * supported is publishing to an Amazon SNS topic or an Amazon Auto
-     * Scaling policy.
+     * <code>OK</code> state from any other state. Each action is specified as
+     * an Amazon Resource Number (ARN). Currently the only action supported is
+     * publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOKActions(java.util.Collection)} or {@link
-     * #withOKActions(java.util.Collection)} if you want to override the
+     * any). Use {@link #setOKActions(java.util.Collection)} or
+     * {@link #withOKActions(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param oKActions The list of actions to execute when this alarm transitions into an
-     *         <code>OK</code> state from any other state. Each action is specified
-     *         as an Amazon Resource Number (ARN). Currently the only action
-     *         supported is publishing to an Amazon SNS topic or an Amazon Auto
-     *         Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param oKActions
+     *        The list of actions to execute when this alarm transitions into an
+     *        <code>OK</code> state from any other state. Each action is
+     *        specified as an Amazon Resource Number (ARN). Currently the only
+     *        action supported is publishing to an Amazon SNS topic or an Amazon
+     *        Auto Scaling policy.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutMetricAlarmRequest withOKActions(String... oKActions) {
-        if (getOKActions() == null) setOKActions(new java.util.ArrayList<String>(oKActions.length));
-        for (String value : oKActions) {
-            getOKActions().add(value);
+        if (this.oKActions == null) {
+            setOKActions(new com.amazonaws.internal.SdkInternalList<String>(
+                    oKActions.length));
+        }
+        for (String ele : oKActions) {
+            this.oKActions.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only action
-     * supported is publishing to an Amazon SNS topic or an Amazon Auto
-     * Scaling policy.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param oKActions The list of actions to execute when this alarm transitions into an
-     *         <code>OK</code> state from any other state. Each action is specified
-     *         as an Amazon Resource Number (ARN). Currently the only action
-     *         supported is publishing to an Amazon SNS topic or an Amazon Auto
-     *         Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * <code>OK</code> state from any other state. Each action is specified as
+     * an Amazon Resource Number (ARN). Currently the only action supported is
+     * publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * </p>
+     * 
+     * @param oKActions
+     *        The list of actions to execute when this alarm transitions into an
+     *        <code>OK</code> state from any other state. Each action is
+     *        specified as an Amazon Resource Number (ARN). Currently the only
+     *        action supported is publishing to an Amazon SNS topic or an Amazon
+     *        Auto Scaling policy.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public PutMetricAlarmRequest withOKActions(java.util.Collection<String> oKActions) {
-        if (oKActions == null) {
-            this.oKActions = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> oKActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(oKActions.size());
-            oKActionsCopy.addAll(oKActions);
-            this.oKActions = oKActionsCopy;
-        }
-
+    public PutMetricAlarmRequest withOKActions(
+            java.util.Collection<String> oKActions) {
+        setOKActions(oKActions);
         return this;
     }
 
     /**
-     * The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only
-     * action supported is publishing to an Amazon SNS topic or an Amazon
-     * Auto Scaling policy.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @return The list of actions to execute when this alarm transitions into an
-     *         <code>ALARM</code> state from any other state. Each action is
+     * The list of actions to execute when this alarm transitions into an
+     * <code>ALARM</code> state from any other state. Each action is specified
+     * as an Amazon Resource Number (ARN). Currently the only action supported
+     * is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * </p>
+     * 
+     * @return The list of actions to execute when this alarm transitions into
+     *         an <code>ALARM</code> state from any other state. Each action is
      *         specified as an Amazon Resource Number (ARN). Currently the only
-     *         action supported is publishing to an Amazon SNS topic or an Amazon
-     *         Auto Scaling policy.
+     *         action supported is publishing to an Amazon SNS topic or an
+     *         Amazon Auto Scaling policy.
      */
     public java.util.List<String> getAlarmActions() {
         if (alarmActions == null) {
-              alarmActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              alarmActions.setAutoConstruct(true);
+            alarmActions = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return alarmActions;
     }
-    
+
     /**
-     * The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only
-     * action supported is publishing to an Amazon SNS topic or an Amazon
-     * Auto Scaling policy.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param alarmActions The list of actions to execute when this alarm transitions into an
-     *         <code>ALARM</code> state from any other state. Each action is
-     *         specified as an Amazon Resource Number (ARN). Currently the only
-     *         action supported is publishing to an Amazon SNS topic or an Amazon
-     *         Auto Scaling policy.
+     * The list of actions to execute when this alarm transitions into an
+     * <code>ALARM</code> state from any other state. Each action is specified
+     * as an Amazon Resource Number (ARN). Currently the only action supported
+     * is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * </p>
+     * 
+     * @param alarmActions
+     *        The list of actions to execute when this alarm transitions into an
+     *        <code>ALARM</code> state from any other state. Each action is
+     *        specified as an Amazon Resource Number (ARN). Currently the only
+     *        action supported is publishing to an Amazon SNS topic or an Amazon
+     *        Auto Scaling policy.
      */
     public void setAlarmActions(java.util.Collection<String> alarmActions) {
         if (alarmActions == null) {
             this.alarmActions = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(alarmActions.size());
-        alarmActionsCopy.addAll(alarmActions);
-        this.alarmActions = alarmActionsCopy;
+
+        this.alarmActions = new com.amazonaws.internal.SdkInternalList<String>(
+                alarmActions);
     }
-    
+
     /**
+     * <p>
      * The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only
-     * action supported is publishing to an Amazon SNS topic or an Amazon
-     * Auto Scaling policy.
+     * <code>ALARM</code> state from any other state. Each action is specified
+     * as an Amazon Resource Number (ARN). Currently the only action supported
+     * is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAlarmActions(java.util.Collection)} or {@link
-     * #withAlarmActions(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param alarmActions The list of actions to execute when this alarm transitions into an
-     *         <code>ALARM</code> state from any other state. Each action is
-     *         specified as an Amazon Resource Number (ARN). Currently the only
-     *         action supported is publishing to an Amazon SNS topic or an Amazon
-     *         Auto Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setAlarmActions(java.util.Collection)} or
+     * {@link #withAlarmActions(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param alarmActions
+     *        The list of actions to execute when this alarm transitions into an
+     *        <code>ALARM</code> state from any other state. Each action is
+     *        specified as an Amazon Resource Number (ARN). Currently the only
+     *        action supported is publishing to an Amazon SNS topic or an Amazon
+     *        Auto Scaling policy.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutMetricAlarmRequest withAlarmActions(String... alarmActions) {
-        if (getAlarmActions() == null) setAlarmActions(new java.util.ArrayList<String>(alarmActions.length));
-        for (String value : alarmActions) {
-            getAlarmActions().add(value);
+        if (this.alarmActions == null) {
+            setAlarmActions(new com.amazonaws.internal.SdkInternalList<String>(
+                    alarmActions.length));
+        }
+        for (String ele : alarmActions) {
+            this.alarmActions.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only
-     * action supported is publishing to an Amazon SNS topic or an Amazon
-     * Auto Scaling policy.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param alarmActions The list of actions to execute when this alarm transitions into an
-     *         <code>ALARM</code> state from any other state. Each action is
-     *         specified as an Amazon Resource Number (ARN). Currently the only
-     *         action supported is publishing to an Amazon SNS topic or an Amazon
-     *         Auto Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * <code>ALARM</code> state from any other state. Each action is specified
+     * as an Amazon Resource Number (ARN). Currently the only action supported
+     * is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * </p>
+     * 
+     * @param alarmActions
+     *        The list of actions to execute when this alarm transitions into an
+     *        <code>ALARM</code> state from any other state. Each action is
+     *        specified as an Amazon Resource Number (ARN). Currently the only
+     *        action supported is publishing to an Amazon SNS topic or an Amazon
+     *        Auto Scaling policy.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public PutMetricAlarmRequest withAlarmActions(java.util.Collection<String> alarmActions) {
-        if (alarmActions == null) {
-            this.alarmActions = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(alarmActions.size());
-            alarmActionsCopy.addAll(alarmActions);
-            this.alarmActions = alarmActionsCopy;
-        }
-
+    public PutMetricAlarmRequest withAlarmActions(
+            java.util.Collection<String> alarmActions) {
+        setAlarmActions(alarmActions);
         return this;
     }
 
     /**
-     * The list of actions to execute when this alarm transitions into an
-     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     * is specified as an Amazon Resource Number (ARN). Currently the only
-     * action supported is publishing to an Amazon SNS topic or an Amazon
-     * Auto Scaling policy.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @return The list of actions to execute when this alarm transitions into an
-     *         <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     *         is specified as an Amazon Resource Number (ARN). Currently the only
-     *         action supported is publishing to an Amazon SNS topic or an Amazon
-     *         Auto Scaling policy.
+     * The list of actions to execute when this alarm transitions into an
+     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
+     * specified as an Amazon Resource Number (ARN). Currently the only action
+     * supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling
+     * policy.
+     * </p>
+     * 
+     * @return The list of actions to execute when this alarm transitions into
+     *         an <code>INSUFFICIENT_DATA</code> state from any other state.
+     *         Each action is specified as an Amazon Resource Number (ARN).
+     *         Currently the only action supported is publishing to an Amazon
+     *         SNS topic or an Amazon Auto Scaling policy.
      */
     public java.util.List<String> getInsufficientDataActions() {
         if (insufficientDataActions == null) {
-              insufficientDataActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              insufficientDataActions.setAutoConstruct(true);
+            insufficientDataActions = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return insufficientDataActions;
     }
-    
+
     /**
-     * The list of actions to execute when this alarm transitions into an
-     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     * is specified as an Amazon Resource Number (ARN). Currently the only
-     * action supported is publishing to an Amazon SNS topic or an Amazon
-     * Auto Scaling policy.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param insufficientDataActions The list of actions to execute when this alarm transitions into an
-     *         <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     *         is specified as an Amazon Resource Number (ARN). Currently the only
-     *         action supported is publishing to an Amazon SNS topic or an Amazon
-     *         Auto Scaling policy.
+     * The list of actions to execute when this alarm transitions into an
+     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
+     * specified as an Amazon Resource Number (ARN). Currently the only action
+     * supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling
+     * policy.
+     * </p>
+     * 
+     * @param insufficientDataActions
+     *        The list of actions to execute when this alarm transitions into an
+     *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
+     *        action is specified as an Amazon Resource Number (ARN). Currently
+     *        the only action supported is publishing to an Amazon SNS topic or
+     *        an Amazon Auto Scaling policy.
      */
-    public void setInsufficientDataActions(java.util.Collection<String> insufficientDataActions) {
+    public void setInsufficientDataActions(
+            java.util.Collection<String> insufficientDataActions) {
         if (insufficientDataActions == null) {
             this.insufficientDataActions = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> insufficientDataActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(insufficientDataActions.size());
-        insufficientDataActionsCopy.addAll(insufficientDataActions);
-        this.insufficientDataActions = insufficientDataActionsCopy;
+
+        this.insufficientDataActions = new com.amazonaws.internal.SdkInternalList<String>(
+                insufficientDataActions);
     }
-    
+
     /**
+     * <p>
      * The list of actions to execute when this alarm transitions into an
-     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     * is specified as an Amazon Resource Number (ARN). Currently the only
-     * action supported is publishing to an Amazon SNS topic or an Amazon
-     * Auto Scaling policy.
+     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
+     * specified as an Amazon Resource Number (ARN). Currently the only action
+     * supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling
+     * policy.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInsufficientDataActions(java.util.Collection)} or
-     * {@link #withInsufficientDataActions(java.util.Collection)} if you want
-     * to override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param insufficientDataActions The list of actions to execute when this alarm transitions into an
-     *         <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     *         is specified as an Amazon Resource Number (ARN). Currently the only
-     *         action supported is publishing to an Amazon SNS topic or an Amazon
-     *         Auto Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * {@link #withInsufficientDataActions(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param insufficientDataActions
+     *        The list of actions to execute when this alarm transitions into an
+     *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
+     *        action is specified as an Amazon Resource Number (ARN). Currently
+     *        the only action supported is publishing to an Amazon SNS topic or
+     *        an Amazon Auto Scaling policy.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public PutMetricAlarmRequest withInsufficientDataActions(String... insufficientDataActions) {
-        if (getInsufficientDataActions() == null) setInsufficientDataActions(new java.util.ArrayList<String>(insufficientDataActions.length));
-        for (String value : insufficientDataActions) {
-            getInsufficientDataActions().add(value);
+    public PutMetricAlarmRequest withInsufficientDataActions(
+            String... insufficientDataActions) {
+        if (this.insufficientDataActions == null) {
+            setInsufficientDataActions(new com.amazonaws.internal.SdkInternalList<String>(
+                    insufficientDataActions.length));
+        }
+        for (String ele : insufficientDataActions) {
+            this.insufficientDataActions.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The list of actions to execute when this alarm transitions into an
-     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     * is specified as an Amazon Resource Number (ARN). Currently the only
-     * action supported is publishing to an Amazon SNS topic or an Amazon
-     * Auto Scaling policy.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param insufficientDataActions The list of actions to execute when this alarm transitions into an
-     *         <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     *         is specified as an Amazon Resource Number (ARN). Currently the only
-     *         action supported is publishing to an Amazon SNS topic or an Amazon
-     *         Auto Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
+     * specified as an Amazon Resource Number (ARN). Currently the only action
+     * supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling
+     * policy.
+     * </p>
+     * 
+     * @param insufficientDataActions
+     *        The list of actions to execute when this alarm transitions into an
+     *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
+     *        action is specified as an Amazon Resource Number (ARN). Currently
+     *        the only action supported is publishing to an Amazon SNS topic or
+     *        an Amazon Auto Scaling policy.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public PutMetricAlarmRequest withInsufficientDataActions(java.util.Collection<String> insufficientDataActions) {
-        if (insufficientDataActions == null) {
-            this.insufficientDataActions = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> insufficientDataActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(insufficientDataActions.size());
-            insufficientDataActionsCopy.addAll(insufficientDataActions);
-            this.insufficientDataActions = insufficientDataActionsCopy;
-        }
-
+    public PutMetricAlarmRequest withInsufficientDataActions(
+            java.util.Collection<String> insufficientDataActions) {
+        setInsufficientDataActions(insufficientDataActions);
         return this;
     }
 
     /**
-     * The name for the alarm's associated metric.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @return The name for the alarm's associated metric.
-     */
-    public String getMetricName() {
-        return metricName;
-    }
-    
-    /**
      * The name for the alarm's associated metric.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @param metricName The name for the alarm's associated metric.
+     * </p>
+     * 
+     * @param metricName
+     *        The name for the alarm's associated metric.
      */
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
-    
+
     /**
+     * <p>
      * The name for the alarm's associated metric.
+     * </p>
+     * 
+     * @return The name for the alarm's associated metric.
+     */
+    public String getMetricName() {
+        return this.metricName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @param metricName The name for the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name for the alarm's associated metric.
+     * </p>
+     * 
+     * @param metricName
+     *        The name for the alarm's associated metric.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutMetricAlarmRequest withMetricName(String metricName) {
-        this.metricName = metricName;
+        setMetricName(metricName);
         return this;
     }
 
     /**
-     * The namespace for the alarm's associated metric.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[^:].*<br/>
-     *
-     * @return The namespace for the alarm's associated metric.
-     */
-    public String getNamespace() {
-        return namespace;
-    }
-    
-    /**
      * The namespace for the alarm's associated metric.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[^:].*<br/>
-     *
-     * @param namespace The namespace for the alarm's associated metric.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace for the alarm's associated metric.
      */
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
-    
+
     /**
+     * <p>
      * The namespace for the alarm's associated metric.
+     * </p>
+     * 
+     * @return The namespace for the alarm's associated metric.
+     */
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[^:].*<br/>
-     *
-     * @param namespace The namespace for the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The namespace for the alarm's associated metric.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace for the alarm's associated metric.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutMetricAlarmRequest withNamespace(String namespace) {
-        this.namespace = namespace;
+        setNamespace(namespace);
         return this;
     }
 
     /**
-     * The statistic to apply to the alarm's associated metric.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
-     *
-     * @return The statistic to apply to the alarm's associated metric.
-     *
-     * @see Statistic
-     */
-    public String getStatistic() {
-        return statistic;
-    }
-    
-    /**
      * The statistic to apply to the alarm's associated metric.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
-     *
-     * @param statistic The statistic to apply to the alarm's associated metric.
-     *
+     * </p>
+     * 
+     * @param statistic
+     *        The statistic to apply to the alarm's associated metric.
      * @see Statistic
      */
     public void setStatistic(String statistic) {
         this.statistic = statistic;
     }
-    
+
     /**
+     * <p>
      * The statistic to apply to the alarm's associated metric.
+     * </p>
+     * 
+     * @return The statistic to apply to the alarm's associated metric.
+     * @see Statistic
+     */
+    public String getStatistic() {
+        return this.statistic;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
-     *
-     * @param statistic The statistic to apply to the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The statistic to apply to the alarm's associated metric.
+     * </p>
+     * 
+     * @param statistic
+     *        The statistic to apply to the alarm's associated metric.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see Statistic
      */
     public PutMetricAlarmRequest withStatistic(String statistic) {
-        this.statistic = statistic;
+        setStatistic(statistic);
         return this;
     }
 
     /**
-     * The statistic to apply to the alarm's associated metric.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
-     *
-     * @param statistic The statistic to apply to the alarm's associated metric.
-     *
+     * The statistic to apply to the alarm's associated metric.
+     * </p>
+     * 
+     * @param statistic
+     *        The statistic to apply to the alarm's associated metric.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see Statistic
      */
     public void setStatistic(Statistic statistic) {
         this.statistic = statistic.toString();
     }
-    
+
     /**
+     * <p>
      * The statistic to apply to the alarm's associated metric.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
-     *
-     * @param statistic The statistic to apply to the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param statistic
+     *        The statistic to apply to the alarm's associated metric.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see Statistic
      */
     public PutMetricAlarmRequest withStatistic(Statistic statistic) {
-        this.statistic = statistic.toString();
+        setStatistic(statistic);
         return this;
     }
 
     /**
-     * The dimensions for the alarm's associated metric.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 10<br/>
-     *
+     * The dimensions for the alarm's associated metric.
+     * </p>
+     * 
      * @return The dimensions for the alarm's associated metric.
      */
     public java.util.List<Dimension> getDimensions() {
         if (dimensions == null) {
-              dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>();
-              dimensions.setAutoConstruct(true);
+            dimensions = new com.amazonaws.internal.SdkInternalList<Dimension>();
         }
         return dimensions;
     }
-    
+
     /**
-     * The dimensions for the alarm's associated metric.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 10<br/>
-     *
-     * @param dimensions The dimensions for the alarm's associated metric.
+     * The dimensions for the alarm's associated metric.
+     * </p>
+     * 
+     * @param dimensions
+     *        The dimensions for the alarm's associated metric.
      */
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {
             this.dimensions = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
-        dimensionsCopy.addAll(dimensions);
-        this.dimensions = dimensionsCopy;
+
+        this.dimensions = new com.amazonaws.internal.SdkInternalList<Dimension>(
+                dimensions);
     }
-    
+
     /**
+     * <p>
      * The dimensions for the alarm's associated metric.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDimensions(java.util.Collection)} or {@link
-     * #withDimensions(java.util.Collection)} if you want to override the
+     * any). Use {@link #setDimensions(java.util.Collection)} or
+     * {@link #withDimensions(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 10<br/>
-     *
-     * @param dimensions The dimensions for the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param dimensions
+     *        The dimensions for the alarm's associated metric.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutMetricAlarmRequest withDimensions(Dimension... dimensions) {
-        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>(dimensions.length));
-        for (Dimension value : dimensions) {
-            getDimensions().add(value);
+        if (this.dimensions == null) {
+            setDimensions(new com.amazonaws.internal.SdkInternalList<Dimension>(
+                    dimensions.length));
+        }
+        for (Dimension ele : dimensions) {
+            this.dimensions.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The dimensions for the alarm's associated metric.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 10<br/>
-     *
-     * @param dimensions The dimensions for the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param dimensions
+     *        The dimensions for the alarm's associated metric.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public PutMetricAlarmRequest withDimensions(java.util.Collection<Dimension> dimensions) {
-        if (dimensions == null) {
-            this.dimensions = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
-            dimensionsCopy.addAll(dimensions);
-            this.dimensions = dimensionsCopy;
-        }
-
+    public PutMetricAlarmRequest withDimensions(
+            java.util.Collection<Dimension> dimensions) {
+        setDimensions(dimensions);
         return this;
     }
 
     /**
-     * The period in seconds over which the specified statistic is applied.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>60 - <br/>
-     *
-     * @return The period in seconds over which the specified statistic is applied.
-     */
-    public Integer getPeriod() {
-        return period;
-    }
-    
-    /**
      * The period in seconds over which the specified statistic is applied.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>60 - <br/>
-     *
-     * @param period The period in seconds over which the specified statistic is applied.
+     * </p>
+     * 
+     * @param period
+     *        The period in seconds over which the specified statistic is
+     *        applied.
      */
     public void setPeriod(Integer period) {
         this.period = period;
     }
-    
+
     /**
+     * <p>
      * The period in seconds over which the specified statistic is applied.
+     * </p>
+     * 
+     * @return The period in seconds over which the specified statistic is
+     *         applied.
+     */
+    public Integer getPeriod() {
+        return this.period;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>60 - <br/>
-     *
-     * @param period The period in seconds over which the specified statistic is applied.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The period in seconds over which the specified statistic is applied.
+     * </p>
+     * 
+     * @param period
+     *        The period in seconds over which the specified statistic is
+     *        applied.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutMetricAlarmRequest withPeriod(Integer period) {
-        this.period = period;
+        setPeriod(period);
         return this;
     }
 
     /**
-     * The unit for the alarm's associated metric.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
-     *
-     * @return The unit for the alarm's associated metric.
-     *
-     * @see StandardUnit
-     */
-    public String getUnit() {
-        return unit;
-    }
-    
-    /**
      * The unit for the alarm's associated metric.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
-     *
-     * @param unit The unit for the alarm's associated metric.
-     *
+     * </p>
+     * 
+     * @param unit
+     *        The unit for the alarm's associated metric.
      * @see StandardUnit
      */
     public void setUnit(String unit) {
         this.unit = unit;
     }
-    
+
     /**
+     * <p>
      * The unit for the alarm's associated metric.
+     * </p>
+     * 
+     * @return The unit for the alarm's associated metric.
+     * @see StandardUnit
+     */
+    public String getUnit() {
+        return this.unit;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
-     *
-     * @param unit The unit for the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The unit for the alarm's associated metric.
+     * </p>
+     * 
+     * @param unit
+     *        The unit for the alarm's associated metric.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StandardUnit
      */
     public PutMetricAlarmRequest withUnit(String unit) {
-        this.unit = unit;
+        setUnit(unit);
         return this;
     }
 
     /**
-     * The unit for the alarm's associated metric.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
-     *
-     * @param unit The unit for the alarm's associated metric.
-     *
+     * The unit for the alarm's associated metric.
+     * </p>
+     * 
+     * @param unit
+     *        The unit for the alarm's associated metric.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StandardUnit
      */
     public void setUnit(StandardUnit unit) {
         this.unit = unit.toString();
     }
-    
+
     /**
+     * <p>
      * The unit for the alarm's associated metric.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
-     *
-     * @param unit The unit for the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param unit
+     *        The unit for the alarm's associated metric.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StandardUnit
      */
     public PutMetricAlarmRequest withUnit(StandardUnit unit) {
-        this.unit = unit.toString();
+        setUnit(unit);
         return this;
     }
 
     /**
+     * <p>
      * The number of periods over which data is compared to the specified
      * threshold.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @return The number of periods over which data is compared to the specified
-     *         threshold.
-     */
-    public Integer getEvaluationPeriods() {
-        return evaluationPeriods;
-    }
-    
-    /**
-     * The number of periods over which data is compared to the specified
-     * threshold.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @param evaluationPeriods The number of periods over which data is compared to the specified
-     *         threshold.
+     * </p>
+     * 
+     * @param evaluationPeriods
+     *        The number of periods over which data is compared to the specified
+     *        threshold.
      */
     public void setEvaluationPeriods(Integer evaluationPeriods) {
         this.evaluationPeriods = evaluationPeriods;
     }
-    
+
     /**
+     * <p>
      * The number of periods over which data is compared to the specified
      * threshold.
+     * </p>
+     * 
+     * @return The number of periods over which data is compared to the
+     *         specified threshold.
+     */
+    public Integer getEvaluationPeriods() {
+        return this.evaluationPeriods;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @param evaluationPeriods The number of periods over which data is compared to the specified
-     *         threshold.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The number of periods over which data is compared to the specified
+     * threshold.
+     * </p>
+     * 
+     * @param evaluationPeriods
+     *        The number of periods over which data is compared to the specified
+     *        threshold.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutMetricAlarmRequest withEvaluationPeriods(Integer evaluationPeriods) {
-        this.evaluationPeriods = evaluationPeriods;
+        setEvaluationPeriods(evaluationPeriods);
         return this;
     }
 
     /**
+     * <p>
      * The value against which the specified statistic is compared.
-     *
-     * @return The value against which the specified statistic is compared.
-     */
-    public Double getThreshold() {
-        return threshold;
-    }
-    
-    /**
-     * The value against which the specified statistic is compared.
-     *
-     * @param threshold The value against which the specified statistic is compared.
+     * </p>
+     * 
+     * @param threshold
+     *        The value against which the specified statistic is compared.
      */
     public void setThreshold(Double threshold) {
         this.threshold = threshold;
     }
-    
+
     /**
-     * The value against which the specified statistic is compared.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param threshold The value against which the specified statistic is compared.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The value against which the specified statistic is compared.
+     * </p>
+     * 
+     * @return The value against which the specified statistic is compared.
+     */
+    public Double getThreshold() {
+        return this.threshold;
+    }
+
+    /**
+     * <p>
+     * The value against which the specified statistic is compared.
+     * </p>
+     * 
+     * @param threshold
+     *        The value against which the specified statistic is compared.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutMetricAlarmRequest withThreshold(Double threshold) {
-        this.threshold = threshold;
+        setThreshold(threshold);
         return this;
     }
 
     /**
+     * <p>
      * The arithmetic operation to use when comparing the specified
      * <code>Statistic</code> and <code>Threshold</code>. The specified
      * <code>Statistic</code> value is used as the first operand.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold
-     *
-     * @return The arithmetic operation to use when comparing the specified
-     *         <code>Statistic</code> and <code>Threshold</code>. The specified
-     *         <code>Statistic</code> value is used as the first operand.
-     *
-     * @see ComparisonOperator
-     */
-    public String getComparisonOperator() {
-        return comparisonOperator;
-    }
-    
-    /**
-     * The arithmetic operation to use when comparing the specified
-     * <code>Statistic</code> and <code>Threshold</code>. The specified
-     * <code>Statistic</code> value is used as the first operand.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold
-     *
-     * @param comparisonOperator The arithmetic operation to use when comparing the specified
-     *         <code>Statistic</code> and <code>Threshold</code>. The specified
-     *         <code>Statistic</code> value is used as the first operand.
-     *
+     * </p>
+     * 
+     * @param comparisonOperator
+     *        The arithmetic operation to use when comparing the specified
+     *        <code>Statistic</code> and <code>Threshold</code>. The specified
+     *        <code>Statistic</code> value is used as the first operand.
      * @see ComparisonOperator
      */
     public void setComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
     }
-    
+
     /**
+     * <p>
      * The arithmetic operation to use when comparing the specified
      * <code>Statistic</code> and <code>Threshold</code>. The specified
      * <code>Statistic</code> value is used as the first operand.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold
-     *
-     * @param comparisonOperator The arithmetic operation to use when comparing the specified
+     * </p>
+     * 
+     * @return The arithmetic operation to use when comparing the specified
      *         <code>Statistic</code> and <code>Threshold</code>. The specified
      *         <code>Statistic</code> value is used as the first operand.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
      * @see ComparisonOperator
      */
-    public PutMetricAlarmRequest withComparisonOperator(String comparisonOperator) {
-        this.comparisonOperator = comparisonOperator;
+    public String getComparisonOperator() {
+        return this.comparisonOperator;
+    }
+
+    /**
+     * <p>
+     * The arithmetic operation to use when comparing the specified
+     * <code>Statistic</code> and <code>Threshold</code>. The specified
+     * <code>Statistic</code> value is used as the first operand.
+     * </p>
+     * 
+     * @param comparisonOperator
+     *        The arithmetic operation to use when comparing the specified
+     *        <code>Statistic</code> and <code>Threshold</code>. The specified
+     *        <code>Statistic</code> value is used as the first operand.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ComparisonOperator
+     */
+    public PutMetricAlarmRequest withComparisonOperator(
+            String comparisonOperator) {
+        setComparisonOperator(comparisonOperator);
         return this;
     }
 
     /**
+     * <p>
      * The arithmetic operation to use when comparing the specified
      * <code>Statistic</code> and <code>Threshold</code>. The specified
      * <code>Statistic</code> value is used as the first operand.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold
-     *
-     * @param comparisonOperator The arithmetic operation to use when comparing the specified
-     *         <code>Statistic</code> and <code>Threshold</code>. The specified
-     *         <code>Statistic</code> value is used as the first operand.
-     *
+     * </p>
+     * 
+     * @param comparisonOperator
+     *        The arithmetic operation to use when comparing the specified
+     *        <code>Statistic</code> and <code>Threshold</code>. The specified
+     *        <code>Statistic</code> value is used as the first operand.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ComparisonOperator
      */
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }
-    
+
     /**
+     * <p>
      * The arithmetic operation to use when comparing the specified
      * <code>Statistic</code> and <code>Threshold</code>. The specified
      * <code>Statistic</code> value is used as the first operand.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold
-     *
-     * @param comparisonOperator The arithmetic operation to use when comparing the specified
-     *         <code>Statistic</code> and <code>Threshold</code>. The specified
-     *         <code>Statistic</code> value is used as the first operand.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param comparisonOperator
+     *        The arithmetic operation to use when comparing the specified
+     *        <code>Statistic</code> and <code>Threshold</code>. The specified
+     *        <code>Statistic</code> value is used as the first operand.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ComparisonOperator
      */
-    public PutMetricAlarmRequest withComparisonOperator(ComparisonOperator comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+    public PutMetricAlarmRequest withComparisonOperator(
+            ComparisonOperator comparisonOperator) {
+        setComparisonOperator(comparisonOperator);
         return this;
     }
 
@@ -1236,94 +1108,190 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ",");
-        if (getAlarmDescription() != null) sb.append("AlarmDescription: " + getAlarmDescription() + ",");
-        if (isActionsEnabled() != null) sb.append("ActionsEnabled: " + isActionsEnabled() + ",");
-        if (getOKActions() != null) sb.append("OKActions: " + getOKActions() + ",");
-        if (getAlarmActions() != null) sb.append("AlarmActions: " + getAlarmActions() + ",");
-        if (getInsufficientDataActions() != null) sb.append("InsufficientDataActions: " + getInsufficientDataActions() + ",");
-        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");
-        if (getStatistic() != null) sb.append("Statistic: " + getStatistic() + ",");
-        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");
-        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ",");
-        if (getUnit() != null) sb.append("Unit: " + getUnit() + ",");
-        if (getEvaluationPeriods() != null) sb.append("EvaluationPeriods: " + getEvaluationPeriods() + ",");
-        if (getThreshold() != null) sb.append("Threshold: " + getThreshold() + ",");
-        if (getComparisonOperator() != null) sb.append("ComparisonOperator: " + getComparisonOperator() );
+        if (getAlarmName() != null)
+            sb.append("AlarmName: " + getAlarmName() + ",");
+        if (getAlarmDescription() != null)
+            sb.append("AlarmDescription: " + getAlarmDescription() + ",");
+        if (getActionsEnabled() != null)
+            sb.append("ActionsEnabled: " + getActionsEnabled() + ",");
+        if (getOKActions() != null)
+            sb.append("OKActions: " + getOKActions() + ",");
+        if (getAlarmActions() != null)
+            sb.append("AlarmActions: " + getAlarmActions() + ",");
+        if (getInsufficientDataActions() != null)
+            sb.append("InsufficientDataActions: "
+                    + getInsufficientDataActions() + ",");
+        if (getMetricName() != null)
+            sb.append("MetricName: " + getMetricName() + ",");
+        if (getNamespace() != null)
+            sb.append("Namespace: " + getNamespace() + ",");
+        if (getStatistic() != null)
+            sb.append("Statistic: " + getStatistic() + ",");
+        if (getDimensions() != null)
+            sb.append("Dimensions: " + getDimensions() + ",");
+        if (getPeriod() != null)
+            sb.append("Period: " + getPeriod() + ",");
+        if (getUnit() != null)
+            sb.append("Unit: " + getUnit() + ",");
+        if (getEvaluationPeriods() != null)
+            sb.append("EvaluationPeriods: " + getEvaluationPeriods() + ",");
+        if (getThreshold() != null)
+            sb.append("Threshold: " + getThreshold() + ",");
+        if (getComparisonOperator() != null)
+            sb.append("ComparisonOperator: " + getComparisonOperator());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PutMetricAlarmRequest == false)
+            return false;
+        PutMetricAlarmRequest other = (PutMetricAlarmRequest) obj;
+        if (other.getAlarmName() == null ^ this.getAlarmName() == null)
+            return false;
+        if (other.getAlarmName() != null
+                && other.getAlarmName().equals(this.getAlarmName()) == false)
+            return false;
+        if (other.getAlarmDescription() == null
+                ^ this.getAlarmDescription() == null)
+            return false;
+        if (other.getAlarmDescription() != null
+                && other.getAlarmDescription().equals(
+                        this.getAlarmDescription()) == false)
+            return false;
+        if (other.getActionsEnabled() == null
+                ^ this.getActionsEnabled() == null)
+            return false;
+        if (other.getActionsEnabled() != null
+                && other.getActionsEnabled().equals(this.getActionsEnabled()) == false)
+            return false;
+        if (other.getOKActions() == null ^ this.getOKActions() == null)
+            return false;
+        if (other.getOKActions() != null
+                && other.getOKActions().equals(this.getOKActions()) == false)
+            return false;
+        if (other.getAlarmActions() == null ^ this.getAlarmActions() == null)
+            return false;
+        if (other.getAlarmActions() != null
+                && other.getAlarmActions().equals(this.getAlarmActions()) == false)
+            return false;
+        if (other.getInsufficientDataActions() == null
+                ^ this.getInsufficientDataActions() == null)
+            return false;
+        if (other.getInsufficientDataActions() != null
+                && other.getInsufficientDataActions().equals(
+                        this.getInsufficientDataActions()) == false)
+            return false;
+        if (other.getMetricName() == null ^ this.getMetricName() == null)
+            return false;
+        if (other.getMetricName() != null
+                && other.getMetricName().equals(this.getMetricName()) == false)
+            return false;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null
+                && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
+        if (other.getStatistic() == null ^ this.getStatistic() == null)
+            return false;
+        if (other.getStatistic() != null
+                && other.getStatistic().equals(this.getStatistic()) == false)
+            return false;
+        if (other.getDimensions() == null ^ this.getDimensions() == null)
+            return false;
+        if (other.getDimensions() != null
+                && other.getDimensions().equals(this.getDimensions()) == false)
+            return false;
+        if (other.getPeriod() == null ^ this.getPeriod() == null)
+            return false;
+        if (other.getPeriod() != null
+                && other.getPeriod().equals(this.getPeriod()) == false)
+            return false;
+        if (other.getUnit() == null ^ this.getUnit() == null)
+            return false;
+        if (other.getUnit() != null
+                && other.getUnit().equals(this.getUnit()) == false)
+            return false;
+        if (other.getEvaluationPeriods() == null
+                ^ this.getEvaluationPeriods() == null)
+            return false;
+        if (other.getEvaluationPeriods() != null
+                && other.getEvaluationPeriods().equals(
+                        this.getEvaluationPeriods()) == false)
+            return false;
+        if (other.getThreshold() == null ^ this.getThreshold() == null)
+            return false;
+        if (other.getThreshold() != null
+                && other.getThreshold().equals(this.getThreshold()) == false)
+            return false;
+        if (other.getComparisonOperator() == null
+                ^ this.getComparisonOperator() == null)
+            return false;
+        if (other.getComparisonOperator() != null
+                && other.getComparisonOperator().equals(
+                        this.getComparisonOperator()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode()); 
-        hashCode = prime * hashCode + ((getAlarmDescription() == null) ? 0 : getAlarmDescription().hashCode()); 
-        hashCode = prime * hashCode + ((isActionsEnabled() == null) ? 0 : isActionsEnabled().hashCode()); 
-        hashCode = prime * hashCode + ((getOKActions() == null) ? 0 : getOKActions().hashCode()); 
-        hashCode = prime * hashCode + ((getAlarmActions() == null) ? 0 : getAlarmActions().hashCode()); 
-        hashCode = prime * hashCode + ((getInsufficientDataActions() == null) ? 0 : getInsufficientDataActions().hashCode()); 
-        hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode()); 
-        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode()); 
-        hashCode = prime * hashCode + ((getStatistic() == null) ? 0 : getStatistic().hashCode()); 
-        hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode()); 
-        hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode()); 
-        hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode()); 
-        hashCode = prime * hashCode + ((getEvaluationPeriods() == null) ? 0 : getEvaluationPeriods().hashCode()); 
-        hashCode = prime * hashCode + ((getThreshold() == null) ? 0 : getThreshold().hashCode()); 
-        hashCode = prime * hashCode + ((getComparisonOperator() == null) ? 0 : getComparisonOperator().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAlarmDescription() == null) ? 0 : getAlarmDescription()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getActionsEnabled() == null) ? 0 : getActionsEnabled()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getOKActions() == null) ? 0 : getOKActions().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAlarmActions() == null) ? 0 : getAlarmActions()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInsufficientDataActions() == null) ? 0
+                        : getInsufficientDataActions().hashCode());
+        hashCode = prime * hashCode
+                + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
+        hashCode = prime * hashCode
+                + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
+        hashCode = prime * hashCode
+                + ((getStatistic() == null) ? 0 : getStatistic().hashCode());
+        hashCode = prime * hashCode
+                + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
+        hashCode = prime * hashCode
+                + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
+        hashCode = prime * hashCode
+                + ((getUnit() == null) ? 0 : getUnit().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEvaluationPeriods() == null) ? 0
+                        : getEvaluationPeriods().hashCode());
+        hashCode = prime * hashCode
+                + ((getThreshold() == null) ? 0 : getThreshold().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getComparisonOperator() == null) ? 0
+                        : getComparisonOperator().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof PutMetricAlarmRequest == false) return false;
-        PutMetricAlarmRequest other = (PutMetricAlarmRequest)obj;
-        
-        if (other.getAlarmName() == null ^ this.getAlarmName() == null) return false;
-        if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false) return false; 
-        if (other.getAlarmDescription() == null ^ this.getAlarmDescription() == null) return false;
-        if (other.getAlarmDescription() != null && other.getAlarmDescription().equals(this.getAlarmDescription()) == false) return false; 
-        if (other.isActionsEnabled() == null ^ this.isActionsEnabled() == null) return false;
-        if (other.isActionsEnabled() != null && other.isActionsEnabled().equals(this.isActionsEnabled()) == false) return false; 
-        if (other.getOKActions() == null ^ this.getOKActions() == null) return false;
-        if (other.getOKActions() != null && other.getOKActions().equals(this.getOKActions()) == false) return false; 
-        if (other.getAlarmActions() == null ^ this.getAlarmActions() == null) return false;
-        if (other.getAlarmActions() != null && other.getAlarmActions().equals(this.getAlarmActions()) == false) return false; 
-        if (other.getInsufficientDataActions() == null ^ this.getInsufficientDataActions() == null) return false;
-        if (other.getInsufficientDataActions() != null && other.getInsufficientDataActions().equals(this.getInsufficientDataActions()) == false) return false; 
-        if (other.getMetricName() == null ^ this.getMetricName() == null) return false;
-        if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false) return false; 
-        if (other.getNamespace() == null ^ this.getNamespace() == null) return false;
-        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false) return false; 
-        if (other.getStatistic() == null ^ this.getStatistic() == null) return false;
-        if (other.getStatistic() != null && other.getStatistic().equals(this.getStatistic()) == false) return false; 
-        if (other.getDimensions() == null ^ this.getDimensions() == null) return false;
-        if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false) return false; 
-        if (other.getPeriod() == null ^ this.getPeriod() == null) return false;
-        if (other.getPeriod() != null && other.getPeriod().equals(this.getPeriod()) == false) return false; 
-        if (other.getUnit() == null ^ this.getUnit() == null) return false;
-        if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false) return false; 
-        if (other.getEvaluationPeriods() == null ^ this.getEvaluationPeriods() == null) return false;
-        if (other.getEvaluationPeriods() != null && other.getEvaluationPeriods().equals(this.getEvaluationPeriods()) == false) return false; 
-        if (other.getThreshold() == null ^ this.getThreshold() == null) return false;
-        if (other.getThreshold() != null && other.getThreshold().equals(this.getThreshold()) == false) return false; 
-        if (other.getComparisonOperator() == null ^ this.getComparisonOperator() == null) return false;
-        if (other.getComparisonOperator() != null && other.getComparisonOperator().equals(this.getComparisonOperator()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public PutMetricAlarmRequest clone() {
-        
-            return (PutMetricAlarmRequest) super.clone();
+        return (PutMetricAlarmRequest) super.clone();
     }
-
 }
-    

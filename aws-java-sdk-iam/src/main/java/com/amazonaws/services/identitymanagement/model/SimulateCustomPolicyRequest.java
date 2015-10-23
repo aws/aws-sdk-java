@@ -21,12 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#simulateCustomPolicy(SimulateCustomPolicyRequest) SimulateCustomPolicy operation}.
  * <p>
- * Simulate a set of IAM policies against a list of API actions and AWS
- * resources to determine the policies' effective permissions. The
- * policies are provided as a list of strings.
+ * Simulate how a set of IAM policies and optionally a resource-based
+ * policy works with a list of API actions and AWS resources to determine
+ * the policies' effective permissions. The policies are provided as
+ * strings.
  * </p>
  * <p>
- * The simulation does not perform the API actions, it only checks the
+ * The simulation does not perform the API actions; it only checks the
  * authorization to determine if the simulated policies allow or deny the
  * actions.
  * </p>
@@ -36,15 +37,45 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * Context keys are variables maintained by AWS and its services that
- * provide details about the context of an API query request, and can be
- * evaluated by using the <code>Condition</code> element of an IAM
- * policy. To get the list of context keys required by the policies to
- * simulate them correctly, use GetContextKeysForCustomPolicy.
+ * provide details about the context of an API query request. You can use
+ * the <code>Condition</code> element of an IAM policy to evaluate
+ * context keys. To get the list of context keys that the policies
+ * require for correct simulation, use GetContextKeysForCustomPolicy.
  * </p>
  * <p>
- * If the output is long, you can paginate the results using the
- * <code>MaxItems</code> and <code>Marker</code> parameters.
+ * If the output is long, you can use <code>MaxItems</code> and
+ * <code>Marker</code> parameters to paginate the results.
  * </p>
+ * Example This example specifies a policy by string and supplies a
+ * ContextEntry to use for the context key that the policy references.
+ * Note that all parameters are shown in unencoded form here for clarity
+ * but must be URL encoded to be included as a part of a real HTML
+ * request. The results show that the policy allows s3:ListBucket access
+ * to the S3 bucket named teambucket.
+ * https://iam.amazonaws.com/Action=SimulateCustomPolicy
+ * &ActionNames.member.1=s3:ListBucket
+ * &ResourceArns.member.1=arn:aws:s3:::teambucket
+ * &ContextEntries.member.1.ContextKeyName=aws:MultiFactorAuthPresent
+ * &ContextEntries.member.1.ContextKeyType=boolean
+ * &ContextEntries.member.1.ContextKeyValues.member.1=true
+ * &PolicyInputList.member.1={' "Version":"2012-10-17", "Statement":{
+ * "Effect":"Allow", "Action":"s3:ListBucket",
+ * "Resource":"arn:aws:s3:::teambucket",
+ * "Condition":{"Bool":{"aws:MultiFactorAuthPresent":"true"}} }
+ * } &Version=2010-05-08 &AUTHPARAMS <SimulateCustomPolicyResponse
+ * xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
+ * <SimulateCustomPolicyResult> <IsTruncated>false</IsTruncated>
+ * <EvaluationResults> <member> <MatchedStatements> <member>
+ * <SourcePolicyId>PolicyInputList.1</SourcePolicyId> <EndPosition>
+ * <Column>4</Column> <Line>8</Line> </EndPosition> <StartPosition>
+ * <Column>16</Column> <Line>3</Line> </StartPosition> </member>
+ * </MatchedStatements> <MissingContextValues/>
+ * <EvalResourceName>arn:aws:s3:::teambucket</EvalResourceName>
+ * <EvalDecision>allowed</EvalDecision>
+ * <EvalActionName>s3:ListBucket</EvalActionName> </member>
+ * </EvaluationResults> </SimulateCustomPolicyResult> <ResponseMetadata>
+ * <RequestId>1cdb5b0a-4c15-11e5-b121-bd8c7EXAMPLE</RequestId>
+ * </ResponseMetadata> </SimulateCustomPolicyResponse>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#simulateCustomPolicy(SimulateCustomPolicyRequest)
  */
@@ -53,14 +84,22 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     /**
      * A list of policy documents to include in the simulation. Each document
      * is specified as a string containing the complete, valid JSON text of
-     * an IAM policy.
+     * an IAM policy. Do not include any resource-based policies in this
+     * parameter. Any resource-based policy must be submitted with the
+     * <code>ResourcePolicy</code> parameter. The policies cannot be
+     * "scope-down" policies, such as you could include in a call to <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * or one of the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * APIs to restrict what a user can do while using the temporary
+     * credentials.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyInputList;
 
     /**
      * A list of names of API actions to evaluate in the simulation. Each
-     * action is evaluated for each resource. Each action must include the
-     * service identifier, such as <code>iam:CreateUser</code>.
+     * action is evaluated against each resource. Each action must include
+     * the service identifier, such as <code>iam:CreateUser</code>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> actionNames;
 
@@ -70,28 +109,78 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      * (all resources). Each API in the <code>ActionNames</code> parameter is
      * evaluated for each resource in this list. The simulation determines
      * the access result (allowed or denied) of each combination and reports
-     * it in the response.
+     * it in the response. <p>The simulation does not automatically retrieve
+     * policies for the specified resources. If you want to include a
+     * resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter. <p>If you
+     * include a <code>ResourcePolicy</code>, then it must be applicable to
+     * all of the resources included in the simulation or you receive an
+     * invalid input error.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceArns;
 
     /**
-     * A list of context keys and corresponding values that are used by the
-     * simulation. Whenever a context key is evaluated by a
-     * <code>Condition</code> element in one of the simulated IAM permission
-     * policies, the corresponding value is supplied.
+     * A resource-based policy to include in the simulation provided as a
+     * string. Each resource in the simulation is treated as if it had this
+     * policy attached. You can include only one resource-based policy in a
+     * simulation.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
+     */
+    private String resourcePolicy;
+
+    /**
+     * An AWS account ID that specifies the owner of any simulated resource
+     * that does not identify its owner in the resource ARN, such as an S3
+     * bucket or object. If <code>ResourceOwner</code> is specified, it is
+     * also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code>
+     * parameter is not specified, then the owner of the resources and the
+     * resource policy defaults to the account of the identity provided in
+     * <code>CallerArn</code>. This parameter is required only if you specify
+     * a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
+     * <code>CallerArn</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 2048<br/>
+     */
+    private String resourceOwner;
+
+    /**
+     * The ARN of the user that you want to use as the simulated caller of
+     * the APIs. <code>CallerArn</code> is required if you include a
+     * <code>ResourcePolicy</code> so that the policy's
+     * <code>Principal</code> element has a value to use in evaluating the
+     * policy. <p>You can specify only the ARN of an IAM user. You cannot
+     * specify the ARN of an assumed role, federated user, or a service
+     * principal.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 2048<br/>
+     */
+    private String callerArn;
+
+    /**
+     * A list of context keys and corresponding values for the simulation to
+     * use. Whenever a context key is evaluated by a <code>Condition</code>
+     * element in one of the simulated IAM permission policies, the
+     * corresponding value is supplied.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ContextEntry> contextEntries;
 
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -101,8 +190,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -113,11 +202,27 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     /**
      * A list of policy documents to include in the simulation. Each document
      * is specified as a string containing the complete, valid JSON text of
-     * an IAM policy.
+     * an IAM policy. Do not include any resource-based policies in this
+     * parameter. Any resource-based policy must be submitted with the
+     * <code>ResourcePolicy</code> parameter. The policies cannot be
+     * "scope-down" policies, such as you could include in a call to <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * or one of the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * APIs to restrict what a user can do while using the temporary
+     * credentials.
      *
      * @return A list of policy documents to include in the simulation. Each document
      *         is specified as a string containing the complete, valid JSON text of
-     *         an IAM policy.
+     *         an IAM policy. Do not include any resource-based policies in this
+     *         parameter. Any resource-based policy must be submitted with the
+     *         <code>ResourcePolicy</code> parameter. The policies cannot be
+     *         "scope-down" policies, such as you could include in a call to <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     *         or one of the <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     *         APIs to restrict what a user can do while using the temporary
+     *         credentials.
      */
     public java.util.List<String> getPolicyInputList() {
         if (policyInputList == null) {
@@ -130,11 +235,27 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     /**
      * A list of policy documents to include in the simulation. Each document
      * is specified as a string containing the complete, valid JSON text of
-     * an IAM policy.
+     * an IAM policy. Do not include any resource-based policies in this
+     * parameter. Any resource-based policy must be submitted with the
+     * <code>ResourcePolicy</code> parameter. The policies cannot be
+     * "scope-down" policies, such as you could include in a call to <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * or one of the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * APIs to restrict what a user can do while using the temporary
+     * credentials.
      *
      * @param policyInputList A list of policy documents to include in the simulation. Each document
      *         is specified as a string containing the complete, valid JSON text of
-     *         an IAM policy.
+     *         an IAM policy. Do not include any resource-based policies in this
+     *         parameter. Any resource-based policy must be submitted with the
+     *         <code>ResourcePolicy</code> parameter. The policies cannot be
+     *         "scope-down" policies, such as you could include in a call to <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     *         or one of the <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     *         APIs to restrict what a user can do while using the temporary
+     *         credentials.
      */
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
         if (policyInputList == null) {
@@ -149,7 +270,15 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     /**
      * A list of policy documents to include in the simulation. Each document
      * is specified as a string containing the complete, valid JSON text of
-     * an IAM policy.
+     * an IAM policy. Do not include any resource-based policies in this
+     * parameter. Any resource-based policy must be submitted with the
+     * <code>ResourcePolicy</code> parameter. The policies cannot be
+     * "scope-down" policies, such as you could include in a call to <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * or one of the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * APIs to restrict what a user can do while using the temporary
+     * credentials.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPolicyInputList(java.util.Collection)} or {@link
@@ -160,7 +289,15 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      *
      * @param policyInputList A list of policy documents to include in the simulation. Each document
      *         is specified as a string containing the complete, valid JSON text of
-     *         an IAM policy.
+     *         an IAM policy. Do not include any resource-based policies in this
+     *         parameter. Any resource-based policy must be submitted with the
+     *         <code>ResourcePolicy</code> parameter. The policies cannot be
+     *         "scope-down" policies, such as you could include in a call to <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     *         or one of the <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     *         APIs to restrict what a user can do while using the temporary
+     *         credentials.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -176,13 +313,29 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     /**
      * A list of policy documents to include in the simulation. Each document
      * is specified as a string containing the complete, valid JSON text of
-     * an IAM policy.
+     * an IAM policy. Do not include any resource-based policies in this
+     * parameter. Any resource-based policy must be submitted with the
+     * <code>ResourcePolicy</code> parameter. The policies cannot be
+     * "scope-down" policies, such as you could include in a call to <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * or one of the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * APIs to restrict what a user can do while using the temporary
+     * credentials.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyInputList A list of policy documents to include in the simulation. Each document
      *         is specified as a string containing the complete, valid JSON text of
-     *         an IAM policy.
+     *         an IAM policy. Do not include any resource-based policies in this
+     *         parameter. Any resource-based policy must be submitted with the
+     *         <code>ResourcePolicy</code> parameter. The policies cannot be
+     *         "scope-down" policies, such as you could include in a call to <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     *         or one of the <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     *         APIs to restrict what a user can do while using the temporary
+     *         credentials.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -201,12 +354,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
 
     /**
      * A list of names of API actions to evaluate in the simulation. Each
-     * action is evaluated for each resource. Each action must include the
-     * service identifier, such as <code>iam:CreateUser</code>.
+     * action is evaluated against each resource. Each action must include
+     * the service identifier, such as <code>iam:CreateUser</code>.
      *
      * @return A list of names of API actions to evaluate in the simulation. Each
-     *         action is evaluated for each resource. Each action must include the
-     *         service identifier, such as <code>iam:CreateUser</code>.
+     *         action is evaluated against each resource. Each action must include
+     *         the service identifier, such as <code>iam:CreateUser</code>.
      */
     public java.util.List<String> getActionNames() {
         if (actionNames == null) {
@@ -218,12 +371,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     
     /**
      * A list of names of API actions to evaluate in the simulation. Each
-     * action is evaluated for each resource. Each action must include the
-     * service identifier, such as <code>iam:CreateUser</code>.
+     * action is evaluated against each resource. Each action must include
+     * the service identifier, such as <code>iam:CreateUser</code>.
      *
      * @param actionNames A list of names of API actions to evaluate in the simulation. Each
-     *         action is evaluated for each resource. Each action must include the
-     *         service identifier, such as <code>iam:CreateUser</code>.
+     *         action is evaluated against each resource. Each action must include
+     *         the service identifier, such as <code>iam:CreateUser</code>.
      */
     public void setActionNames(java.util.Collection<String> actionNames) {
         if (actionNames == null) {
@@ -237,8 +390,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     
     /**
      * A list of names of API actions to evaluate in the simulation. Each
-     * action is evaluated for each resource. Each action must include the
-     * service identifier, such as <code>iam:CreateUser</code>.
+     * action is evaluated against each resource. Each action must include
+     * the service identifier, such as <code>iam:CreateUser</code>.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setActionNames(java.util.Collection)} or {@link
@@ -248,8 +401,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param actionNames A list of names of API actions to evaluate in the simulation. Each
-     *         action is evaluated for each resource. Each action must include the
-     *         service identifier, such as <code>iam:CreateUser</code>.
+     *         action is evaluated against each resource. Each action must include
+     *         the service identifier, such as <code>iam:CreateUser</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -264,14 +417,14 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     
     /**
      * A list of names of API actions to evaluate in the simulation. Each
-     * action is evaluated for each resource. Each action must include the
-     * service identifier, such as <code>iam:CreateUser</code>.
+     * action is evaluated against each resource. Each action must include
+     * the service identifier, such as <code>iam:CreateUser</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param actionNames A list of names of API actions to evaluate in the simulation. Each
-     *         action is evaluated for each resource. Each action must include the
-     *         service identifier, such as <code>iam:CreateUser</code>.
+     *         action is evaluated against each resource. Each action must include
+     *         the service identifier, such as <code>iam:CreateUser</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -294,14 +447,26 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      * (all resources). Each API in the <code>ActionNames</code> parameter is
      * evaluated for each resource in this list. The simulation determines
      * the access result (allowed or denied) of each combination and reports
-     * it in the response.
+     * it in the response. <p>The simulation does not automatically retrieve
+     * policies for the specified resources. If you want to include a
+     * resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter. <p>If you
+     * include a <code>ResourcePolicy</code>, then it must be applicable to
+     * all of the resources included in the simulation or you receive an
+     * invalid input error.
      *
      * @return A list of ARNs of AWS resources to include in the simulation. If this
      *         parameter is not provided then the value defaults to <code>*</code>
      *         (all resources). Each API in the <code>ActionNames</code> parameter is
      *         evaluated for each resource in this list. The simulation determines
      *         the access result (allowed or denied) of each combination and reports
-     *         it in the response.
+     *         it in the response. <p>The simulation does not automatically retrieve
+     *         policies for the specified resources. If you want to include a
+     *         resource policy in the simulation, then you must include the policy as
+     *         a string in the <code>ResourcePolicy</code> parameter. <p>If you
+     *         include a <code>ResourcePolicy</code>, then it must be applicable to
+     *         all of the resources included in the simulation or you receive an
+     *         invalid input error.
      */
     public java.util.List<String> getResourceArns() {
         if (resourceArns == null) {
@@ -317,14 +482,26 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      * (all resources). Each API in the <code>ActionNames</code> parameter is
      * evaluated for each resource in this list. The simulation determines
      * the access result (allowed or denied) of each combination and reports
-     * it in the response.
+     * it in the response. <p>The simulation does not automatically retrieve
+     * policies for the specified resources. If you want to include a
+     * resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter. <p>If you
+     * include a <code>ResourcePolicy</code>, then it must be applicable to
+     * all of the resources included in the simulation or you receive an
+     * invalid input error.
      *
      * @param resourceArns A list of ARNs of AWS resources to include in the simulation. If this
      *         parameter is not provided then the value defaults to <code>*</code>
      *         (all resources). Each API in the <code>ActionNames</code> parameter is
      *         evaluated for each resource in this list. The simulation determines
      *         the access result (allowed or denied) of each combination and reports
-     *         it in the response.
+     *         it in the response. <p>The simulation does not automatically retrieve
+     *         policies for the specified resources. If you want to include a
+     *         resource policy in the simulation, then you must include the policy as
+     *         a string in the <code>ResourcePolicy</code> parameter. <p>If you
+     *         include a <code>ResourcePolicy</code>, then it must be applicable to
+     *         all of the resources included in the simulation or you receive an
+     *         invalid input error.
      */
     public void setResourceArns(java.util.Collection<String> resourceArns) {
         if (resourceArns == null) {
@@ -342,7 +519,13 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      * (all resources). Each API in the <code>ActionNames</code> parameter is
      * evaluated for each resource in this list. The simulation determines
      * the access result (allowed or denied) of each combination and reports
-     * it in the response.
+     * it in the response. <p>The simulation does not automatically retrieve
+     * policies for the specified resources. If you want to include a
+     * resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter. <p>If you
+     * include a <code>ResourcePolicy</code>, then it must be applicable to
+     * all of the resources included in the simulation or you receive an
+     * invalid input error.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setResourceArns(java.util.Collection)} or {@link
@@ -356,7 +539,13 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      *         (all resources). Each API in the <code>ActionNames</code> parameter is
      *         evaluated for each resource in this list. The simulation determines
      *         the access result (allowed or denied) of each combination and reports
-     *         it in the response.
+     *         it in the response. <p>The simulation does not automatically retrieve
+     *         policies for the specified resources. If you want to include a
+     *         resource policy in the simulation, then you must include the policy as
+     *         a string in the <code>ResourcePolicy</code> parameter. <p>If you
+     *         include a <code>ResourcePolicy</code>, then it must be applicable to
+     *         all of the resources included in the simulation or you receive an
+     *         invalid input error.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -375,7 +564,13 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      * (all resources). Each API in the <code>ActionNames</code> parameter is
      * evaluated for each resource in this list. The simulation determines
      * the access result (allowed or denied) of each combination and reports
-     * it in the response.
+     * it in the response. <p>The simulation does not automatically retrieve
+     * policies for the specified resources. If you want to include a
+     * resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter. <p>If you
+     * include a <code>ResourcePolicy</code>, then it must be applicable to
+     * all of the resources included in the simulation or you receive an
+     * invalid input error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -384,7 +579,13 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      *         (all resources). Each API in the <code>ActionNames</code> parameter is
      *         evaluated for each resource in this list. The simulation determines
      *         the access result (allowed or denied) of each combination and reports
-     *         it in the response.
+     *         it in the response. <p>The simulation does not automatically retrieve
+     *         policies for the specified resources. If you want to include a
+     *         resource policy in the simulation, then you must include the policy as
+     *         a string in the <code>ResourcePolicy</code> parameter. <p>If you
+     *         include a <code>ResourcePolicy</code>, then it must be applicable to
+     *         all of the resources included in the simulation or you receive an
+     *         invalid input error.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -402,15 +603,258 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * A list of context keys and corresponding values that are used by the
-     * simulation. Whenever a context key is evaluated by a
-     * <code>Condition</code> element in one of the simulated IAM permission
-     * policies, the corresponding value is supplied.
+     * A resource-based policy to include in the simulation provided as a
+     * string. Each resource in the simulation is treated as if it had this
+     * policy attached. You can include only one resource-based policy in a
+     * simulation.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return A list of context keys and corresponding values that are used by the
-     *         simulation. Whenever a context key is evaluated by a
-     *         <code>Condition</code> element in one of the simulated IAM permission
-     *         policies, the corresponding value is supplied.
+     * @return A resource-based policy to include in the simulation provided as a
+     *         string. Each resource in the simulation is treated as if it had this
+     *         policy attached. You can include only one resource-based policy in a
+     *         simulation.
+     */
+    public String getResourcePolicy() {
+        return resourcePolicy;
+    }
+    
+    /**
+     * A resource-based policy to include in the simulation provided as a
+     * string. Each resource in the simulation is treated as if it had this
+     * policy attached. You can include only one resource-based policy in a
+     * simulation.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
+     *
+     * @param resourcePolicy A resource-based policy to include in the simulation provided as a
+     *         string. Each resource in the simulation is treated as if it had this
+     *         policy attached. You can include only one resource-based policy in a
+     *         simulation.
+     */
+    public void setResourcePolicy(String resourcePolicy) {
+        this.resourcePolicy = resourcePolicy;
+    }
+    
+    /**
+     * A resource-based policy to include in the simulation provided as a
+     * string. Each resource in the simulation is treated as if it had this
+     * policy attached. You can include only one resource-based policy in a
+     * simulation.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
+     *
+     * @param resourcePolicy A resource-based policy to include in the simulation provided as a
+     *         string. Each resource in the simulation is treated as if it had this
+     *         policy attached. You can include only one resource-based policy in a
+     *         simulation.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public SimulateCustomPolicyRequest withResourcePolicy(String resourcePolicy) {
+        this.resourcePolicy = resourcePolicy;
+        return this;
+    }
+
+    /**
+     * An AWS account ID that specifies the owner of any simulated resource
+     * that does not identify its owner in the resource ARN, such as an S3
+     * bucket or object. If <code>ResourceOwner</code> is specified, it is
+     * also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code>
+     * parameter is not specified, then the owner of the resources and the
+     * resource policy defaults to the account of the identity provided in
+     * <code>CallerArn</code>. This parameter is required only if you specify
+     * a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
+     * <code>CallerArn</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 2048<br/>
+     *
+     * @return An AWS account ID that specifies the owner of any simulated resource
+     *         that does not identify its owner in the resource ARN, such as an S3
+     *         bucket or object. If <code>ResourceOwner</code> is specified, it is
+     *         also used as the account owner of any <code>ResourcePolicy</code>
+     *         included in the simulation. If the <code>ResourceOwner</code>
+     *         parameter is not specified, then the owner of the resources and the
+     *         resource policy defaults to the account of the identity provided in
+     *         <code>CallerArn</code>. This parameter is required only if you specify
+     *         a resource-based policy and account that owns the resource is
+     *         different from the account that owns the simulated calling user
+     *         <code>CallerArn</code>.
+     */
+    public String getResourceOwner() {
+        return resourceOwner;
+    }
+    
+    /**
+     * An AWS account ID that specifies the owner of any simulated resource
+     * that does not identify its owner in the resource ARN, such as an S3
+     * bucket or object. If <code>ResourceOwner</code> is specified, it is
+     * also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code>
+     * parameter is not specified, then the owner of the resources and the
+     * resource policy defaults to the account of the identity provided in
+     * <code>CallerArn</code>. This parameter is required only if you specify
+     * a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
+     * <code>CallerArn</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 2048<br/>
+     *
+     * @param resourceOwner An AWS account ID that specifies the owner of any simulated resource
+     *         that does not identify its owner in the resource ARN, such as an S3
+     *         bucket or object. If <code>ResourceOwner</code> is specified, it is
+     *         also used as the account owner of any <code>ResourcePolicy</code>
+     *         included in the simulation. If the <code>ResourceOwner</code>
+     *         parameter is not specified, then the owner of the resources and the
+     *         resource policy defaults to the account of the identity provided in
+     *         <code>CallerArn</code>. This parameter is required only if you specify
+     *         a resource-based policy and account that owns the resource is
+     *         different from the account that owns the simulated calling user
+     *         <code>CallerArn</code>.
+     */
+    public void setResourceOwner(String resourceOwner) {
+        this.resourceOwner = resourceOwner;
+    }
+    
+    /**
+     * An AWS account ID that specifies the owner of any simulated resource
+     * that does not identify its owner in the resource ARN, such as an S3
+     * bucket or object. If <code>ResourceOwner</code> is specified, it is
+     * also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code>
+     * parameter is not specified, then the owner of the resources and the
+     * resource policy defaults to the account of the identity provided in
+     * <code>CallerArn</code>. This parameter is required only if you specify
+     * a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
+     * <code>CallerArn</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 2048<br/>
+     *
+     * @param resourceOwner An AWS account ID that specifies the owner of any simulated resource
+     *         that does not identify its owner in the resource ARN, such as an S3
+     *         bucket or object. If <code>ResourceOwner</code> is specified, it is
+     *         also used as the account owner of any <code>ResourcePolicy</code>
+     *         included in the simulation. If the <code>ResourceOwner</code>
+     *         parameter is not specified, then the owner of the resources and the
+     *         resource policy defaults to the account of the identity provided in
+     *         <code>CallerArn</code>. This parameter is required only if you specify
+     *         a resource-based policy and account that owns the resource is
+     *         different from the account that owns the simulated calling user
+     *         <code>CallerArn</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public SimulateCustomPolicyRequest withResourceOwner(String resourceOwner) {
+        this.resourceOwner = resourceOwner;
+        return this;
+    }
+
+    /**
+     * The ARN of the user that you want to use as the simulated caller of
+     * the APIs. <code>CallerArn</code> is required if you include a
+     * <code>ResourcePolicy</code> so that the policy's
+     * <code>Principal</code> element has a value to use in evaluating the
+     * policy. <p>You can specify only the ARN of an IAM user. You cannot
+     * specify the ARN of an assumed role, federated user, or a service
+     * principal.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 2048<br/>
+     *
+     * @return The ARN of the user that you want to use as the simulated caller of
+     *         the APIs. <code>CallerArn</code> is required if you include a
+     *         <code>ResourcePolicy</code> so that the policy's
+     *         <code>Principal</code> element has a value to use in evaluating the
+     *         policy. <p>You can specify only the ARN of an IAM user. You cannot
+     *         specify the ARN of an assumed role, federated user, or a service
+     *         principal.
+     */
+    public String getCallerArn() {
+        return callerArn;
+    }
+    
+    /**
+     * The ARN of the user that you want to use as the simulated caller of
+     * the APIs. <code>CallerArn</code> is required if you include a
+     * <code>ResourcePolicy</code> so that the policy's
+     * <code>Principal</code> element has a value to use in evaluating the
+     * policy. <p>You can specify only the ARN of an IAM user. You cannot
+     * specify the ARN of an assumed role, federated user, or a service
+     * principal.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 2048<br/>
+     *
+     * @param callerArn The ARN of the user that you want to use as the simulated caller of
+     *         the APIs. <code>CallerArn</code> is required if you include a
+     *         <code>ResourcePolicy</code> so that the policy's
+     *         <code>Principal</code> element has a value to use in evaluating the
+     *         policy. <p>You can specify only the ARN of an IAM user. You cannot
+     *         specify the ARN of an assumed role, federated user, or a service
+     *         principal.
+     */
+    public void setCallerArn(String callerArn) {
+        this.callerArn = callerArn;
+    }
+    
+    /**
+     * The ARN of the user that you want to use as the simulated caller of
+     * the APIs. <code>CallerArn</code> is required if you include a
+     * <code>ResourcePolicy</code> so that the policy's
+     * <code>Principal</code> element has a value to use in evaluating the
+     * policy. <p>You can specify only the ARN of an IAM user. You cannot
+     * specify the ARN of an assumed role, federated user, or a service
+     * principal.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 2048<br/>
+     *
+     * @param callerArn The ARN of the user that you want to use as the simulated caller of
+     *         the APIs. <code>CallerArn</code> is required if you include a
+     *         <code>ResourcePolicy</code> so that the policy's
+     *         <code>Principal</code> element has a value to use in evaluating the
+     *         policy. <p>You can specify only the ARN of an IAM user. You cannot
+     *         specify the ARN of an assumed role, federated user, or a service
+     *         principal.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public SimulateCustomPolicyRequest withCallerArn(String callerArn) {
+        this.callerArn = callerArn;
+        return this;
+    }
+
+    /**
+     * A list of context keys and corresponding values for the simulation to
+     * use. Whenever a context key is evaluated by a <code>Condition</code>
+     * element in one of the simulated IAM permission policies, the
+     * corresponding value is supplied.
+     *
+     * @return A list of context keys and corresponding values for the simulation to
+     *         use. Whenever a context key is evaluated by a <code>Condition</code>
+     *         element in one of the simulated IAM permission policies, the
+     *         corresponding value is supplied.
      */
     public java.util.List<ContextEntry> getContextEntries() {
         if (contextEntries == null) {
@@ -421,15 +865,15 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * A list of context keys and corresponding values that are used by the
-     * simulation. Whenever a context key is evaluated by a
-     * <code>Condition</code> element in one of the simulated IAM permission
-     * policies, the corresponding value is supplied.
+     * A list of context keys and corresponding values for the simulation to
+     * use. Whenever a context key is evaluated by a <code>Condition</code>
+     * element in one of the simulated IAM permission policies, the
+     * corresponding value is supplied.
      *
-     * @param contextEntries A list of context keys and corresponding values that are used by the
-     *         simulation. Whenever a context key is evaluated by a
-     *         <code>Condition</code> element in one of the simulated IAM permission
-     *         policies, the corresponding value is supplied.
+     * @param contextEntries A list of context keys and corresponding values for the simulation to
+     *         use. Whenever a context key is evaluated by a <code>Condition</code>
+     *         element in one of the simulated IAM permission policies, the
+     *         corresponding value is supplied.
      */
     public void setContextEntries(java.util.Collection<ContextEntry> contextEntries) {
         if (contextEntries == null) {
@@ -442,10 +886,10 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * A list of context keys and corresponding values that are used by the
-     * simulation. Whenever a context key is evaluated by a
-     * <code>Condition</code> element in one of the simulated IAM permission
-     * policies, the corresponding value is supplied.
+     * A list of context keys and corresponding values for the simulation to
+     * use. Whenever a context key is evaluated by a <code>Condition</code>
+     * element in one of the simulated IAM permission policies, the
+     * corresponding value is supplied.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setContextEntries(java.util.Collection)} or {@link
@@ -454,10 +898,10 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param contextEntries A list of context keys and corresponding values that are used by the
-     *         simulation. Whenever a context key is evaluated by a
-     *         <code>Condition</code> element in one of the simulated IAM permission
-     *         policies, the corresponding value is supplied.
+     * @param contextEntries A list of context keys and corresponding values for the simulation to
+     *         use. Whenever a context key is evaluated by a <code>Condition</code>
+     *         element in one of the simulated IAM permission policies, the
+     *         corresponding value is supplied.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -471,17 +915,17 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * A list of context keys and corresponding values that are used by the
-     * simulation. Whenever a context key is evaluated by a
-     * <code>Condition</code> element in one of the simulated IAM permission
-     * policies, the corresponding value is supplied.
+     * A list of context keys and corresponding values for the simulation to
+     * use. Whenever a context key is evaluated by a <code>Condition</code>
+     * element in one of the simulated IAM permission policies, the
+     * corresponding value is supplied.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param contextEntries A list of context keys and corresponding values that are used by the
-     *         simulation. Whenever a context key is evaluated by a
-     *         <code>Condition</code> element in one of the simulated IAM permission
-     *         policies, the corresponding value is supplied.
+     * @param contextEntries A list of context keys and corresponding values for the simulation to
+     *         use. Whenever a context key is evaluated by a <code>Condition</code>
+     *         element in one of the simulated IAM permission policies, the
+     *         corresponding value is supplied.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -500,27 +944,27 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
 
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @return Use this only when paginating results to indicate the maximum number
-     *         of items you want in the response. If there are additional items
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>. <p>This parameter is optional. If you do
-     *         not include it, it defaults to 100. Note that IAM might return fewer
-     *         results, even when there are more results available. If this is the
-     *         case, the <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to include
-     *         in the subsequent call that tells the service where to continue from.
+     *         of items you want in the response. If additional items exist beyond
+     *         the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>. <p>This parameter is optional. If you do not
+     *         include it, it defaults to 100. Note that IAM might return fewer
+     *         results, even when there are more results available. In that case, the
+     *         <code>IsTruncated</code> response element returns <code>true</code>
+     *         and <code>Marker</code> contains a value to include in the subsequent
+     *         call that tells the service where to continue from.
      */
     public Integer getMaxItems() {
         return maxItems;
@@ -528,27 +972,27 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of items you want in the response. If there are additional items
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>. <p>This parameter is optional. If you do
-     *         not include it, it defaults to 100. Note that IAM might return fewer
-     *         results, even when there are more results available. If this is the
-     *         case, the <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to include
-     *         in the subsequent call that tells the service where to continue from.
+     *         of items you want in the response. If additional items exist beyond
+     *         the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>. <p>This parameter is optional. If you do not
+     *         include it, it defaults to 100. Note that IAM might return fewer
+     *         results, even when there are more results available. In that case, the
+     *         <code>IsTruncated</code> response element returns <code>true</code>
+     *         and <code>Marker</code> contains a value to include in the subsequent
+     *         call that tells the service where to continue from.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -556,14 +1000,14 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -571,14 +1015,14 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of items you want in the response. If there are additional items
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>. <p>This parameter is optional. If you do
-     *         not include it, it defaults to 100. Note that IAM might return fewer
-     *         results, even when there are more results available. If this is the
-     *         case, the <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to include
-     *         in the subsequent call that tells the service where to continue from.
+     *         of items you want in the response. If additional items exist beyond
+     *         the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>. <p>This parameter is optional. If you do not
+     *         include it, it defaults to 100. Note that IAM might return fewer
+     *         results, even when there are more results available. In that case, the
+     *         <code>IsTruncated</code> response element returns <code>true</code>
+     *         and <code>Marker</code> contains a value to include in the subsequent
+     *         call that tells the service where to continue from.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -591,8 +1035,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -600,8 +1044,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      *
      * @return Use this parameter only when paginating results and only after you
      *         receive a response indicating that the results are truncated. Set it
-     *         to the value of the <code>Marker</code> element in the response you
-     *         received to inform the next call about where to start.
+     *         to the value of the <code>Marker</code> element in the response that
+     *         you received to indicate where the next call should start.
      */
     public String getMarker() {
         return marker;
@@ -610,8 +1054,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -619,8 +1063,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      *
      * @param marker Use this parameter only when paginating results and only after you
      *         receive a response indicating that the results are truncated. Set it
-     *         to the value of the <code>Marker</code> element in the response you
-     *         received to inform the next call about where to start.
+     *         to the value of the <code>Marker</code> element in the response that
+     *         you received to indicate where the next call should start.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -629,8 +1073,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -640,8 +1084,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      *
      * @param marker Use this parameter only when paginating results and only after you
      *         receive a response indicating that the results are truncated. Set it
-     *         to the value of the <code>Marker</code> element in the response you
-     *         received to inform the next call about where to start.
+     *         to the value of the <code>Marker</code> element in the response that
+     *         you received to indicate where the next call should start.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -666,6 +1110,9 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
         if (getPolicyInputList() != null) sb.append("PolicyInputList: " + getPolicyInputList() + ",");
         if (getActionNames() != null) sb.append("ActionNames: " + getActionNames() + ",");
         if (getResourceArns() != null) sb.append("ResourceArns: " + getResourceArns() + ",");
+        if (getResourcePolicy() != null) sb.append("ResourcePolicy: " + getResourcePolicy() + ",");
+        if (getResourceOwner() != null) sb.append("ResourceOwner: " + getResourceOwner() + ",");
+        if (getCallerArn() != null) sb.append("CallerArn: " + getCallerArn() + ",");
         if (getContextEntries() != null) sb.append("ContextEntries: " + getContextEntries() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
@@ -681,6 +1128,9 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getPolicyInputList() == null) ? 0 : getPolicyInputList().hashCode()); 
         hashCode = prime * hashCode + ((getActionNames() == null) ? 0 : getActionNames().hashCode()); 
         hashCode = prime * hashCode + ((getResourceArns() == null) ? 0 : getResourceArns().hashCode()); 
+        hashCode = prime * hashCode + ((getResourcePolicy() == null) ? 0 : getResourcePolicy().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceOwner() == null) ? 0 : getResourceOwner().hashCode()); 
+        hashCode = prime * hashCode + ((getCallerArn() == null) ? 0 : getCallerArn().hashCode()); 
         hashCode = prime * hashCode + ((getContextEntries() == null) ? 0 : getContextEntries().hashCode()); 
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
@@ -701,6 +1151,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
         if (other.getActionNames() != null && other.getActionNames().equals(this.getActionNames()) == false) return false; 
         if (other.getResourceArns() == null ^ this.getResourceArns() == null) return false;
         if (other.getResourceArns() != null && other.getResourceArns().equals(this.getResourceArns()) == false) return false; 
+        if (other.getResourcePolicy() == null ^ this.getResourcePolicy() == null) return false;
+        if (other.getResourcePolicy() != null && other.getResourcePolicy().equals(this.getResourcePolicy()) == false) return false; 
+        if (other.getResourceOwner() == null ^ this.getResourceOwner() == null) return false;
+        if (other.getResourceOwner() != null && other.getResourceOwner().equals(this.getResourceOwner()) == false) return false; 
+        if (other.getCallerArn() == null ^ this.getCallerArn() == null) return false;
+        if (other.getCallerArn() != null && other.getCallerArn().equals(this.getCallerArn()) == false) return false; 
         if (other.getContextEntries() == null ^ this.getContextEntries() == null) return false;
         if (other.getContextEntries() != null && other.getContextEntries().equals(this.getContextEntries()) == false) return false; 
         if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;

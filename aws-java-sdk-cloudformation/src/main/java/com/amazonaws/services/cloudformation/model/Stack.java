@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
@@ -24,719 +25,783 @@ import java.io.Serializable;
 public class Stack implements Serializable, Cloneable {
 
     /**
+     * <p>
      * Unique identifier of the stack.
+     * </p>
      */
     private String stackId;
-
     /**
+     * <p>
      * The name associated with the stack.
+     * </p>
      */
     private String stackName;
-
     /**
+     * <p>
      * A user-defined description associated with the stack.
+     * </p>
      */
     private String description;
-
     /**
+     * <p>
      * A list of <code>Parameter</code> structures.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
-
+    private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
     /**
+     * <p>
      * The time at which the stack was created.
+     * </p>
      */
     private java.util.Date creationTime;
-
     /**
-     * The time the stack was last updated. This field will only be returned
-     * if the stack has been updated at least once.
+     * <p>
+     * The time the stack was last updated. This field will only be returned if
+     * the stack has been updated at least once.
+     * </p>
      */
     private java.util.Date lastUpdatedTime;
-
     /**
-     * Current status of the stack.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
+     * Current status of the stack.
+     * </p>
      */
     private String stackStatus;
-
     /**
+     * <p>
      * Success/failure message associated with the stack status.
+     * </p>
      */
     private String stackStatusReason;
-
     /**
-     * Boolean to enable or disable rollback on stack creation failures: <p>
-     * <ul> <li><code>true</code>: disable rollback</li>
-     * <li><code>false</code>: enable rollback</li> </ul>
+     * <p>
+     * Boolean to enable or disable rollback on stack creation failures:
+     * </p>
+     * <p>
+     * <ul>
+     * <li> <code>true</code>: disable rollback</li>
+     * <li> <code>false</code>: enable rollback</li>
+     * </ul>
+     * </p>
      */
     private Boolean disableRollback;
-
     /**
+     * <p>
      * SNS topic ARNs to which stack related events are published.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationARNs;
-
+    private com.amazonaws.internal.SdkInternalList<String> notificationARNs;
     /**
-     * The amount of time within which stack creation should complete.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
+     * The amount of time within which stack creation should complete.
+     * </p>
      */
     private Integer timeoutInMinutes;
-
     /**
+     * <p>
      * The capabilities allowed in the stack.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
-
+    private com.amazonaws.internal.SdkInternalList<String> capabilities;
     /**
+     * <p>
      * A list of output structures.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Output> outputs;
+    private com.amazonaws.internal.SdkInternalList<Output> outputs;
+    /**
+     * <p>
+     * A list of <code>Tag</code>s that specify cost allocation information for
+     * the stack.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
-     * A list of <code>Tag</code>s that specify cost allocation information
-     * for the stack.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
-
-    /**
+     * <p>
      * Unique identifier of the stack.
-     *
-     * @return Unique identifier of the stack.
-     */
-    public String getStackId() {
-        return stackId;
-    }
-    
-    /**
-     * Unique identifier of the stack.
-     *
-     * @param stackId Unique identifier of the stack.
+     * </p>
+     * 
+     * @param stackId
+     *        Unique identifier of the stack.
      */
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
-    
+
     /**
-     * Unique identifier of the stack.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stackId Unique identifier of the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Unique identifier of the stack.
+     * </p>
+     * 
+     * @return Unique identifier of the stack.
+     */
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier of the stack.
+     * </p>
+     * 
+     * @param stackId
+     *        Unique identifier of the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withStackId(String stackId) {
-        this.stackId = stackId;
+        setStackId(stackId);
         return this;
     }
 
     /**
+     * <p>
      * The name associated with the stack.
-     *
-     * @return The name associated with the stack.
-     */
-    public String getStackName() {
-        return stackName;
-    }
-    
-    /**
-     * The name associated with the stack.
-     *
-     * @param stackName The name associated with the stack.
+     * </p>
+     * 
+     * @param stackName
+     *        The name associated with the stack.
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
-    
+
     /**
-     * The name associated with the stack.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stackName The name associated with the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name associated with the stack.
+     * </p>
+     * 
+     * @return The name associated with the stack.
+     */
+    public String getStackName() {
+        return this.stackName;
+    }
+
+    /**
+     * <p>
+     * The name associated with the stack.
+     * </p>
+     * 
+     * @param stackName
+     *        The name associated with the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withStackName(String stackName) {
-        this.stackName = stackName;
+        setStackName(stackName);
         return this;
     }
 
     /**
+     * <p>
      * A user-defined description associated with the stack.
-     *
-     * @return A user-defined description associated with the stack.
-     */
-    public String getDescription() {
-        return description;
-    }
-    
-    /**
-     * A user-defined description associated with the stack.
-     *
-     * @param description A user-defined description associated with the stack.
+     * </p>
+     * 
+     * @param description
+     *        A user-defined description associated with the stack.
      */
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     /**
-     * A user-defined description associated with the stack.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param description A user-defined description associated with the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A user-defined description associated with the stack.
+     * </p>
+     * 
+     * @return A user-defined description associated with the stack.
+     */
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A user-defined description associated with the stack.
+     * </p>
+     * 
+     * @param description
+     *        A user-defined description associated with the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withDescription(String description) {
-        this.description = description;
+        setDescription(description);
         return this;
     }
 
     /**
+     * <p>
      * A list of <code>Parameter</code> structures.
-     *
+     * </p>
+     * 
      * @return A list of <code>Parameter</code> structures.
      */
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
-              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
-              parameters.setAutoConstruct(true);
+            parameters = new com.amazonaws.internal.SdkInternalList<Parameter>();
         }
         return parameters;
     }
-    
+
     /**
+     * <p>
      * A list of <code>Parameter</code> structures.
-     *
-     * @param parameters A list of <code>Parameter</code> structures.
+     * </p>
+     * 
+     * @param parameters
+     *        A list of <code>Parameter</code> structures.
      */
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
             this.parameters = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
-        parametersCopy.addAll(parameters);
-        this.parameters = parametersCopy;
+
+        this.parameters = new com.amazonaws.internal.SdkInternalList<Parameter>(
+                parameters);
     }
-    
+
     /**
+     * <p>
      * A list of <code>Parameter</code> structures.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setParameters(java.util.Collection)} or {@link
-     * #withParameters(java.util.Collection)} if you want to override the
+     * any). Use {@link #setParameters(java.util.Collection)} or
+     * {@link #withParameters(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param parameters A list of <code>Parameter</code> structures.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param parameters
+     *        A list of <code>Parameter</code> structures.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withParameters(Parameter... parameters) {
-        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
-        for (Parameter value : parameters) {
-            getParameters().add(value);
+        if (this.parameters == null) {
+            setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(
+                    parameters.length));
+        }
+        for (Parameter ele : parameters) {
+            this.parameters.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * A list of <code>Parameter</code> structures.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param parameters A list of <code>Parameter</code> structures.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A list of <code>Parameter</code> structures.
+     * </p>
+     * 
+     * @param parameters
+     *        A list of <code>Parameter</code> structures.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withParameters(java.util.Collection<Parameter> parameters) {
-        if (parameters == null) {
-            this.parameters = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
-            parametersCopy.addAll(parameters);
-            this.parameters = parametersCopy;
-        }
-
+        setParameters(parameters);
         return this;
     }
 
     /**
+     * <p>
      * The time at which the stack was created.
-     *
-     * @return The time at which the stack was created.
-     */
-    public java.util.Date getCreationTime() {
-        return creationTime;
-    }
-    
-    /**
-     * The time at which the stack was created.
-     *
-     * @param creationTime The time at which the stack was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        The time at which the stack was created.
      */
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
-    
+
     /**
-     * The time at which the stack was created.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param creationTime The time at which the stack was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The time at which the stack was created.
+     * </p>
+     * 
+     * @return The time at which the stack was created.
+     */
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * The time at which the stack was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        The time at which the stack was created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
+        setCreationTime(creationTime);
         return this;
     }
 
     /**
-     * The time the stack was last updated. This field will only be returned
-     * if the stack has been updated at least once.
-     *
-     * @return The time the stack was last updated. This field will only be returned
-     *         if the stack has been updated at least once.
-     */
-    public java.util.Date getLastUpdatedTime() {
-        return lastUpdatedTime;
-    }
-    
-    /**
-     * The time the stack was last updated. This field will only be returned
-     * if the stack has been updated at least once.
-     *
-     * @param lastUpdatedTime The time the stack was last updated. This field will only be returned
-     *         if the stack has been updated at least once.
+     * <p>
+     * The time the stack was last updated. This field will only be returned if
+     * the stack has been updated at least once.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        The time the stack was last updated. This field will only be
+     *        returned if the stack has been updated at least once.
      */
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
     }
-    
+
     /**
-     * The time the stack was last updated. This field will only be returned
-     * if the stack has been updated at least once.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param lastUpdatedTime The time the stack was last updated. This field will only be returned
-     *         if the stack has been updated at least once.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The time the stack was last updated. This field will only be returned if
+     * the stack has been updated at least once.
+     * </p>
+     * 
+     * @return The time the stack was last updated. This field will only be
+     *         returned if the stack has been updated at least once.
+     */
+    public java.util.Date getLastUpdatedTime() {
+        return this.lastUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The time the stack was last updated. This field will only be returned if
+     * the stack has been updated at least once.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        The time the stack was last updated. This field will only be
+     *        returned if the stack has been updated at least once.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withLastUpdatedTime(java.util.Date lastUpdatedTime) {
-        this.lastUpdatedTime = lastUpdatedTime;
+        setLastUpdatedTime(lastUpdatedTime);
         return this;
     }
 
     /**
-     * Current status of the stack.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
-     *
-     * @return Current status of the stack.
-     *
-     * @see StackStatus
-     */
-    public String getStackStatus() {
-        return stackStatus;
-    }
-    
-    /**
      * Current status of the stack.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
-     *
-     * @param stackStatus Current status of the stack.
-     *
+     * </p>
+     * 
+     * @param stackStatus
+     *        Current status of the stack.
      * @see StackStatus
      */
     public void setStackStatus(String stackStatus) {
         this.stackStatus = stackStatus;
     }
-    
+
     /**
+     * <p>
      * Current status of the stack.
+     * </p>
+     * 
+     * @return Current status of the stack.
+     * @see StackStatus
+     */
+    public String getStackStatus() {
+        return this.stackStatus;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
-     *
-     * @param stackStatus Current status of the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * Current status of the stack.
+     * </p>
+     * 
+     * @param stackStatus
+     *        Current status of the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StackStatus
      */
     public Stack withStackStatus(String stackStatus) {
-        this.stackStatus = stackStatus;
+        setStackStatus(stackStatus);
         return this;
     }
 
     /**
-     * Current status of the stack.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
-     *
-     * @param stackStatus Current status of the stack.
-     *
+     * Current status of the stack.
+     * </p>
+     * 
+     * @param stackStatus
+     *        Current status of the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StackStatus
      */
     public void setStackStatus(StackStatus stackStatus) {
         this.stackStatus = stackStatus.toString();
     }
-    
+
     /**
+     * <p>
      * Current status of the stack.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
-     *
-     * @param stackStatus Current status of the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param stackStatus
+     *        Current status of the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StackStatus
      */
     public Stack withStackStatus(StackStatus stackStatus) {
-        this.stackStatus = stackStatus.toString();
+        setStackStatus(stackStatus);
         return this;
     }
 
     /**
+     * <p>
      * Success/failure message associated with the stack status.
-     *
-     * @return Success/failure message associated with the stack status.
-     */
-    public String getStackStatusReason() {
-        return stackStatusReason;
-    }
-    
-    /**
-     * Success/failure message associated with the stack status.
-     *
-     * @param stackStatusReason Success/failure message associated with the stack status.
+     * </p>
+     * 
+     * @param stackStatusReason
+     *        Success/failure message associated with the stack status.
      */
     public void setStackStatusReason(String stackStatusReason) {
         this.stackStatusReason = stackStatusReason;
     }
-    
+
     /**
-     * Success/failure message associated with the stack status.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stackStatusReason Success/failure message associated with the stack status.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Success/failure message associated with the stack status.
+     * </p>
+     * 
+     * @return Success/failure message associated with the stack status.
+     */
+    public String getStackStatusReason() {
+        return this.stackStatusReason;
+    }
+
+    /**
+     * <p>
+     * Success/failure message associated with the stack status.
+     * </p>
+     * 
+     * @param stackStatusReason
+     *        Success/failure message associated with the stack status.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withStackStatusReason(String stackStatusReason) {
-        this.stackStatusReason = stackStatusReason;
+        setStackStatusReason(stackStatusReason);
         return this;
     }
 
     /**
-     * Boolean to enable or disable rollback on stack creation failures: <p>
-     * <ul> <li><code>true</code>: disable rollback</li>
-     * <li><code>false</code>: enable rollback</li> </ul>
-     *
-     * @return Boolean to enable or disable rollback on stack creation failures: <p>
-     *         <ul> <li><code>true</code>: disable rollback</li>
-     *         <li><code>false</code>: enable rollback</li> </ul>
-     */
-    public Boolean isDisableRollback() {
-        return disableRollback;
-    }
-    
-    /**
-     * Boolean to enable or disable rollback on stack creation failures: <p>
-     * <ul> <li><code>true</code>: disable rollback</li>
-     * <li><code>false</code>: enable rollback</li> </ul>
-     *
-     * @param disableRollback Boolean to enable or disable rollback on stack creation failures: <p>
-     *         <ul> <li><code>true</code>: disable rollback</li>
-     *         <li><code>false</code>: enable rollback</li> </ul>
+     * <p>
+     * Boolean to enable or disable rollback on stack creation failures:
+     * </p>
+     * <p>
+     * <ul>
+     * <li> <code>true</code>: disable rollback</li>
+     * <li> <code>false</code>: enable rollback</li>
+     * </ul>
+     * </p>
+     * 
+     * @param disableRollback
+     *        Boolean to enable or disable rollback on stack creation
+     *        failures:</p>
+     *        <p>
+     *        <ul>
+     *        <li> <code>true</code>: disable rollback</li>
+     *        <li> <code>false</code>: enable rollback</li>
+     *        </ul>
      */
     public void setDisableRollback(Boolean disableRollback) {
         this.disableRollback = disableRollback;
     }
-    
+
     /**
-     * Boolean to enable or disable rollback on stack creation failures: <p>
-     * <ul> <li><code>true</code>: disable rollback</li>
-     * <li><code>false</code>: enable rollback</li> </ul>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param disableRollback Boolean to enable or disable rollback on stack creation failures: <p>
-     *         <ul> <li><code>true</code>: disable rollback</li>
-     *         <li><code>false</code>: enable rollback</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Boolean to enable or disable rollback on stack creation failures:
+     * </p>
+     * <p>
+     * <ul>
+     * <li> <code>true</code>: disable rollback</li>
+     * <li> <code>false</code>: enable rollback</li>
+     * </ul>
+     * </p>
+     * 
+     * @return Boolean to enable or disable rollback on stack creation
+     *         failures:</p>
+     *         <p>
+     *         <ul>
+     *         <li> <code>true</code>: disable rollback</li>
+     *         <li> <code>false</code>: enable rollback</li>
+     *         </ul>
+     */
+    public Boolean getDisableRollback() {
+        return this.disableRollback;
+    }
+
+    /**
+     * <p>
+     * Boolean to enable or disable rollback on stack creation failures:
+     * </p>
+     * <p>
+     * <ul>
+     * <li> <code>true</code>: disable rollback</li>
+     * <li> <code>false</code>: enable rollback</li>
+     * </ul>
+     * </p>
+     * 
+     * @param disableRollback
+     *        Boolean to enable or disable rollback on stack creation
+     *        failures:</p>
+     *        <p>
+     *        <ul>
+     *        <li> <code>true</code>: disable rollback</li>
+     *        <li> <code>false</code>: enable rollback</li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withDisableRollback(Boolean disableRollback) {
-        this.disableRollback = disableRollback;
+        setDisableRollback(disableRollback);
         return this;
     }
 
     /**
-     * Boolean to enable or disable rollback on stack creation failures: <p>
-     * <ul> <li><code>true</code>: disable rollback</li>
-     * <li><code>false</code>: enable rollback</li> </ul>
-     *
-     * @return Boolean to enable or disable rollback on stack creation failures: <p>
-     *         <ul> <li><code>true</code>: disable rollback</li>
-     *         <li><code>false</code>: enable rollback</li> </ul>
+     * <p>
+     * Boolean to enable or disable rollback on stack creation failures:
+     * </p>
+     * <p>
+     * <ul>
+     * <li> <code>true</code>: disable rollback</li>
+     * <li> <code>false</code>: enable rollback</li>
+     * </ul>
+     * </p>
+     * 
+     * @return Boolean to enable or disable rollback on stack creation
+     *         failures:</p>
+     *         <p>
+     *         <ul>
+     *         <li> <code>true</code>: disable rollback</li>
+     *         <li> <code>false</code>: enable rollback</li>
+     *         </ul>
      */
-    public Boolean getDisableRollback() {
-        return disableRollback;
+    public Boolean isDisableRollback() {
+        return this.disableRollback;
     }
 
     /**
-     * SNS topic ARNs to which stack related events are published.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
+     * SNS topic ARNs to which stack related events are published.
+     * </p>
+     * 
      * @return SNS topic ARNs to which stack related events are published.
      */
     public java.util.List<String> getNotificationARNs() {
         if (notificationARNs == null) {
-              notificationARNs = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              notificationARNs.setAutoConstruct(true);
+            notificationARNs = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return notificationARNs;
     }
-    
+
     /**
-     * SNS topic ARNs to which stack related events are published.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param notificationARNs SNS topic ARNs to which stack related events are published.
+     * SNS topic ARNs to which stack related events are published.
+     * </p>
+     * 
+     * @param notificationARNs
+     *        SNS topic ARNs to which stack related events are published.
      */
-    public void setNotificationARNs(java.util.Collection<String> notificationARNs) {
+    public void setNotificationARNs(
+            java.util.Collection<String> notificationARNs) {
         if (notificationARNs == null) {
             this.notificationARNs = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationARNsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(notificationARNs.size());
-        notificationARNsCopy.addAll(notificationARNs);
-        this.notificationARNs = notificationARNsCopy;
+
+        this.notificationARNs = new com.amazonaws.internal.SdkInternalList<String>(
+                notificationARNs);
     }
-    
+
     /**
+     * <p>
      * SNS topic ARNs to which stack related events are published.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNotificationARNs(java.util.Collection)} or {@link
-     * #withNotificationARNs(java.util.Collection)} if you want to override
-     * the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param notificationARNs SNS topic ARNs to which stack related events are published.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setNotificationARNs(java.util.Collection)} or
+     * {@link #withNotificationARNs(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param notificationARNs
+     *        SNS topic ARNs to which stack related events are published.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withNotificationARNs(String... notificationARNs) {
-        if (getNotificationARNs() == null) setNotificationARNs(new java.util.ArrayList<String>(notificationARNs.length));
-        for (String value : notificationARNs) {
-            getNotificationARNs().add(value);
+        if (this.notificationARNs == null) {
+            setNotificationARNs(new com.amazonaws.internal.SdkInternalList<String>(
+                    notificationARNs.length));
+        }
+        for (String ele : notificationARNs) {
+            this.notificationARNs.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * SNS topic ARNs to which stack related events are published.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param notificationARNs SNS topic ARNs to which stack related events are published.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param notificationARNs
+     *        SNS topic ARNs to which stack related events are published.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public Stack withNotificationARNs(java.util.Collection<String> notificationARNs) {
-        if (notificationARNs == null) {
-            this.notificationARNs = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationARNsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(notificationARNs.size());
-            notificationARNsCopy.addAll(notificationARNs);
-            this.notificationARNs = notificationARNsCopy;
-        }
-
+    public Stack withNotificationARNs(
+            java.util.Collection<String> notificationARNs) {
+        setNotificationARNs(notificationARNs);
         return this;
     }
 
     /**
-     * The amount of time within which stack creation should complete.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @return The amount of time within which stack creation should complete.
-     */
-    public Integer getTimeoutInMinutes() {
-        return timeoutInMinutes;
-    }
-    
-    /**
      * The amount of time within which stack creation should complete.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @param timeoutInMinutes The amount of time within which stack creation should complete.
+     * </p>
+     * 
+     * @param timeoutInMinutes
+     *        The amount of time within which stack creation should complete.
      */
     public void setTimeoutInMinutes(Integer timeoutInMinutes) {
         this.timeoutInMinutes = timeoutInMinutes;
     }
-    
+
     /**
+     * <p>
      * The amount of time within which stack creation should complete.
+     * </p>
+     * 
+     * @return The amount of time within which stack creation should complete.
+     */
+    public Integer getTimeoutInMinutes() {
+        return this.timeoutInMinutes;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @param timeoutInMinutes The amount of time within which stack creation should complete.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The amount of time within which stack creation should complete.
+     * </p>
+     * 
+     * @param timeoutInMinutes
+     *        The amount of time within which stack creation should complete.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withTimeoutInMinutes(Integer timeoutInMinutes) {
-        this.timeoutInMinutes = timeoutInMinutes;
+        setTimeoutInMinutes(timeoutInMinutes);
         return this;
     }
 
     /**
+     * <p>
      * The capabilities allowed in the stack.
-     *
+     * </p>
+     * 
      * @return The capabilities allowed in the stack.
+     * @see Capability
      */
     public java.util.List<String> getCapabilities() {
         if (capabilities == null) {
-              capabilities = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              capabilities.setAutoConstruct(true);
+            capabilities = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return capabilities;
     }
-    
+
     /**
+     * <p>
      * The capabilities allowed in the stack.
-     *
-     * @param capabilities The capabilities allowed in the stack.
+     * </p>
+     * 
+     * @param capabilities
+     *        The capabilities allowed in the stack.
+     * @see Capability
      */
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
             this.capabilities = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
-        capabilitiesCopy.addAll(capabilities);
-        this.capabilities = capabilitiesCopy;
+
+        this.capabilities = new com.amazonaws.internal.SdkInternalList<String>(
+                capabilities);
     }
-    
+
     /**
+     * <p>
      * The capabilities allowed in the stack.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCapabilities(java.util.Collection)} or {@link
-     * #withCapabilities(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param capabilities The capabilities allowed in the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setCapabilities(java.util.Collection)} or
+     * {@link #withCapabilities(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param capabilities
+     *        The capabilities allowed in the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see Capability
      */
     public Stack withCapabilities(String... capabilities) {
-        if (getCapabilities() == null) setCapabilities(new java.util.ArrayList<String>(capabilities.length));
-        for (String value : capabilities) {
-            getCapabilities().add(value);
+        if (this.capabilities == null) {
+            setCapabilities(new com.amazonaws.internal.SdkInternalList<String>(
+                    capabilities.length));
+        }
+        for (String ele : capabilities) {
+            this.capabilities.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The capabilities allowed in the stack.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param capabilities The capabilities allowed in the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The capabilities allowed in the stack.
+     * </p>
+     * 
+     * @param capabilities
+     *        The capabilities allowed in the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see Capability
      */
     public Stack withCapabilities(java.util.Collection<String> capabilities) {
-        if (capabilities == null) {
-            this.capabilities = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
-            capabilitiesCopy.addAll(capabilities);
-            this.capabilities = capabilitiesCopy;
-        }
-
+        setCapabilities(capabilities);
         return this;
     }
 
     /**
-     * The capabilities allowed in the stack.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param capabilities The capabilities allowed in the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The capabilities allowed in the stack.
+     * </p>
+     * 
+     * @param capabilities
+     *        The capabilities allowed in the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see Capability
      */
     public Stack withCapabilities(Capability... capabilities) {
-        java.util.ArrayList<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.length);
-        for (Capability member : capabilities) {
-            capabilitiesCopy.add(member.toString());
+        com.amazonaws.internal.SdkInternalList<String> capabilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                capabilities.length);
+        for (Capability value : capabilities) {
+            capabilitiesCopy.add(value.toString());
         }
         if (getCapabilities() == null) {
             setCapabilities(capabilitiesCopy);
@@ -747,156 +812,156 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A list of output structures.
-     *
+     * </p>
+     * 
      * @return A list of output structures.
      */
     public java.util.List<Output> getOutputs() {
         if (outputs == null) {
-              outputs = new com.amazonaws.internal.ListWithAutoConstructFlag<Output>();
-              outputs.setAutoConstruct(true);
+            outputs = new com.amazonaws.internal.SdkInternalList<Output>();
         }
         return outputs;
     }
-    
+
     /**
+     * <p>
      * A list of output structures.
-     *
-     * @param outputs A list of output structures.
+     * </p>
+     * 
+     * @param outputs
+     *        A list of output structures.
      */
     public void setOutputs(java.util.Collection<Output> outputs) {
         if (outputs == null) {
             this.outputs = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Output> outputsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Output>(outputs.size());
-        outputsCopy.addAll(outputs);
-        this.outputs = outputsCopy;
+
+        this.outputs = new com.amazonaws.internal.SdkInternalList<Output>(
+                outputs);
     }
-    
+
     /**
+     * <p>
      * A list of output structures.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOutputs(java.util.Collection)} or {@link
-     * #withOutputs(java.util.Collection)} if you want to override the
+     * any). Use {@link #setOutputs(java.util.Collection)} or
+     * {@link #withOutputs(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param outputs A list of output structures.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param outputs
+     *        A list of output structures.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withOutputs(Output... outputs) {
-        if (getOutputs() == null) setOutputs(new java.util.ArrayList<Output>(outputs.length));
-        for (Output value : outputs) {
-            getOutputs().add(value);
+        if (this.outputs == null) {
+            setOutputs(new com.amazonaws.internal.SdkInternalList<Output>(
+                    outputs.length));
+        }
+        for (Output ele : outputs) {
+            this.outputs.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * A list of output structures.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param outputs A list of output structures.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A list of output structures.
+     * </p>
+     * 
+     * @param outputs
+     *        A list of output structures.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withOutputs(java.util.Collection<Output> outputs) {
-        if (outputs == null) {
-            this.outputs = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Output> outputsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Output>(outputs.size());
-            outputsCopy.addAll(outputs);
-            this.outputs = outputsCopy;
-        }
-
+        setOutputs(outputs);
         return this;
     }
 
     /**
-     * A list of <code>Tag</code>s that specify cost allocation information
-     * for the stack.
-     *
-     * @return A list of <code>Tag</code>s that specify cost allocation information
-     *         for the stack.
+     * <p>
+     * A list of <code>Tag</code>s that specify cost allocation information for
+     * the stack.
+     * </p>
+     * 
+     * @return A list of <code>Tag</code>s that specify cost allocation
+     *         information for the stack.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
-              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
-              tags.setAutoConstruct(true);
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
         }
         return tags;
     }
-    
+
     /**
-     * A list of <code>Tag</code>s that specify cost allocation information
-     * for the stack.
-     *
-     * @param tags A list of <code>Tag</code>s that specify cost allocation information
-     *         for the stack.
+     * <p>
+     * A list of <code>Tag</code>s that specify cost allocation information for
+     * the stack.
+     * </p>
+     * 
+     * @param tags
+     *        A list of <code>Tag</code>s that specify cost allocation
+     *        information for the stack.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
-        tagsCopy.addAll(tags);
-        this.tags = tagsCopy;
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
     }
-    
+
     /**
-     * A list of <code>Tag</code>s that specify cost allocation information
-     * for the stack.
+     * <p>
+     * A list of <code>Tag</code>s that specify cost allocation information for
+     * the stack.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or {@link
-     * #withTags(java.util.Collection)} if you want to override the existing
-     * values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tags A list of <code>Tag</code>s that specify cost allocation information
-     *         for the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of <code>Tag</code>s that specify cost allocation
+     *        information for the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
-        for (Tag value : tags) {
-            getTags().add(value);
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * A list of <code>Tag</code>s that specify cost allocation information
-     * for the stack.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tags A list of <code>Tag</code>s that specify cost allocation information
-     *         for the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A list of <code>Tag</code>s that specify cost allocation information for
+     * the stack.
+     * </p>
+     * 
+     * @param tags
+     *        A list of <code>Tag</code>s that specify cost allocation
+     *        information for the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Stack withTags(java.util.Collection<Tag> tags) {
-        if (tags == null) {
-            this.tags = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
-            tagsCopy.addAll(tags);
-            this.tags = tagsCopy;
-        }
-
+        setTags(tags);
         return this;
     }
 
@@ -912,98 +977,189 @@ public class Stack implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
-        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");
-        if (getCreationTime() != null) sb.append("CreationTime: " + getCreationTime() + ",");
-        if (getLastUpdatedTime() != null) sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ",");
-        if (getStackStatus() != null) sb.append("StackStatus: " + getStackStatus() + ",");
-        if (getStackStatusReason() != null) sb.append("StackStatusReason: " + getStackStatusReason() + ",");
-        if (isDisableRollback() != null) sb.append("DisableRollback: " + isDisableRollback() + ",");
-        if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ",");
-        if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ",");
-        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");
-        if (getOutputs() != null) sb.append("Outputs: " + getOutputs() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getStackId() != null)
+            sb.append("StackId: " + getStackId() + ",");
+        if (getStackName() != null)
+            sb.append("StackName: " + getStackName() + ",");
+        if (getDescription() != null)
+            sb.append("Description: " + getDescription() + ",");
+        if (getParameters() != null)
+            sb.append("Parameters: " + getParameters() + ",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: " + getCreationTime() + ",");
+        if (getLastUpdatedTime() != null)
+            sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ",");
+        if (getStackStatus() != null)
+            sb.append("StackStatus: " + getStackStatus() + ",");
+        if (getStackStatusReason() != null)
+            sb.append("StackStatusReason: " + getStackStatusReason() + ",");
+        if (getDisableRollback() != null)
+            sb.append("DisableRollback: " + getDisableRollback() + ",");
+        if (getNotificationARNs() != null)
+            sb.append("NotificationARNs: " + getNotificationARNs() + ",");
+        if (getTimeoutInMinutes() != null)
+            sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ",");
+        if (getCapabilities() != null)
+            sb.append("Capabilities: " + getCapabilities() + ",");
+        if (getOutputs() != null)
+            sb.append("Outputs: " + getOutputs() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof Stack == false)
+            return false;
+        Stack other = (Stack) obj;
+        if (other.getStackId() == null ^ this.getStackId() == null)
+            return false;
+        if (other.getStackId() != null
+                && other.getStackId().equals(this.getStackId()) == false)
+            return false;
+        if (other.getStackName() == null ^ this.getStackName() == null)
+            return false;
+        if (other.getStackName() != null
+                && other.getStackName().equals(this.getStackName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null
+                && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null
+                && other.getParameters().equals(this.getParameters()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null
+                && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getLastUpdatedTime() == null
+                ^ this.getLastUpdatedTime() == null)
+            return false;
+        if (other.getLastUpdatedTime() != null
+                && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
+            return false;
+        if (other.getStackStatus() == null ^ this.getStackStatus() == null)
+            return false;
+        if (other.getStackStatus() != null
+                && other.getStackStatus().equals(this.getStackStatus()) == false)
+            return false;
+        if (other.getStackStatusReason() == null
+                ^ this.getStackStatusReason() == null)
+            return false;
+        if (other.getStackStatusReason() != null
+                && other.getStackStatusReason().equals(
+                        this.getStackStatusReason()) == false)
+            return false;
+        if (other.getDisableRollback() == null
+                ^ this.getDisableRollback() == null)
+            return false;
+        if (other.getDisableRollback() != null
+                && other.getDisableRollback().equals(this.getDisableRollback()) == false)
+            return false;
+        if (other.getNotificationARNs() == null
+                ^ this.getNotificationARNs() == null)
+            return false;
+        if (other.getNotificationARNs() != null
+                && other.getNotificationARNs().equals(
+                        this.getNotificationARNs()) == false)
+            return false;
+        if (other.getTimeoutInMinutes() == null
+                ^ this.getTimeoutInMinutes() == null)
+            return false;
+        if (other.getTimeoutInMinutes() != null
+                && other.getTimeoutInMinutes().equals(
+                        this.getTimeoutInMinutes()) == false)
+            return false;
+        if (other.getCapabilities() == null ^ this.getCapabilities() == null)
+            return false;
+        if (other.getCapabilities() != null
+                && other.getCapabilities().equals(this.getCapabilities()) == false)
+            return false;
+        if (other.getOutputs() == null ^ this.getOutputs() == null)
+            return false;
+        if (other.getOutputs() != null
+                && other.getOutputs().equals(this.getOutputs()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null
+                && other.getTags().equals(this.getTags()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
-        hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode()); 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode()); 
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode()); 
-        hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode()); 
-        hashCode = prime * hashCode + ((getStackStatus() == null) ? 0 : getStackStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getStackStatusReason() == null) ? 0 : getStackStatusReason().hashCode()); 
-        hashCode = prime * hashCode + ((isDisableRollback() == null) ? 0 : isDisableRollback().hashCode()); 
-        hashCode = prime * hashCode + ((getNotificationARNs() == null) ? 0 : getNotificationARNs().hashCode()); 
-        hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode()); 
-        hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode()); 
-        hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode()); 
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode
+                + ((getStackName() == null) ? 0 : getStackName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode
+                + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCreationTime() == null) ? 0 : getCreationTime()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStackStatus() == null) ? 0 : getStackStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStackStatusReason() == null) ? 0
+                        : getStackStatusReason().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDisableRollback() == null) ? 0 : getDisableRollback()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNotificationARNs() == null) ? 0 : getNotificationARNs()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCapabilities() == null) ? 0 : getCapabilities()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
+        hashCode = prime * hashCode
+                + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof Stack == false) return false;
-        Stack other = (Stack)obj;
-        
-        if (other.getStackId() == null ^ this.getStackId() == null) return false;
-        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
-        if (other.getStackName() == null ^ this.getStackName() == null) return false;
-        if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false) return false; 
-        if (other.getDescription() == null ^ this.getDescription() == null) return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
-        if (other.getParameters() == null ^ this.getParameters() == null) return false;
-        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false) return false; 
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null) return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false) return false; 
-        if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null) return false;
-        if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false) return false; 
-        if (other.getStackStatus() == null ^ this.getStackStatus() == null) return false;
-        if (other.getStackStatus() != null && other.getStackStatus().equals(this.getStackStatus()) == false) return false; 
-        if (other.getStackStatusReason() == null ^ this.getStackStatusReason() == null) return false;
-        if (other.getStackStatusReason() != null && other.getStackStatusReason().equals(this.getStackStatusReason()) == false) return false; 
-        if (other.isDisableRollback() == null ^ this.isDisableRollback() == null) return false;
-        if (other.isDisableRollback() != null && other.isDisableRollback().equals(this.isDisableRollback()) == false) return false; 
-        if (other.getNotificationARNs() == null ^ this.getNotificationARNs() == null) return false;
-        if (other.getNotificationARNs() != null && other.getNotificationARNs().equals(this.getNotificationARNs()) == false) return false; 
-        if (other.getTimeoutInMinutes() == null ^ this.getTimeoutInMinutes() == null) return false;
-        if (other.getTimeoutInMinutes() != null && other.getTimeoutInMinutes().equals(this.getTimeoutInMinutes()) == false) return false; 
-        if (other.getCapabilities() == null ^ this.getCapabilities() == null) return false;
-        if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false) return false; 
-        if (other.getOutputs() == null ^ this.getOutputs() == null) return false;
-        if (other.getOutputs() != null && other.getOutputs().equals(this.getOutputs()) == false) return false; 
-        if (other.getTags() == null ^ this.getTags() == null) return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public Stack clone() {
         try {
             return (Stack) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

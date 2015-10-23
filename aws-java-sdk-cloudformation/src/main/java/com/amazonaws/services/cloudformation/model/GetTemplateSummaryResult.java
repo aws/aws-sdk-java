@@ -1,340 +1,371 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * The output for the GetTemplateSummary action.
+ * The output for the <a>GetTemplateSummary</a> action.
  * </p>
  */
 public class GetTemplateSummaryResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * A list of parameter declarations that describe various properties for
      * each parameter.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<ParameterDeclaration> parameters;
-
+    private com.amazonaws.internal.SdkInternalList<ParameterDeclaration> parameters;
     /**
-     * The value that is defined in the <code>Description</code> property of
-     * the template.
+     * <p>
+     * The value that is defined in the <code>Description</code> property of the
+     * template.
+     * </p>
      */
     private String description;
-
     /**
-     * The capabilities found within the template. Currently, AWS
-     * CloudFormation supports only the CAPABILITY_IAM capability. If your
-     * template contains IAM resources, you must specify the CAPABILITY_IAM
-     * value for this parameter when you use the <a>CreateStack</a> or
-     * <a>UpdateStack</a> actions with your template; otherwise, those
-     * actions return an InsufficientCapabilities error.
+     * <p>
+     * The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains
+     * IAM resources, you must specify the CAPABILITY_IAM value for this
+     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
+     * actions with your template; otherwise, those actions return an
+     * InsufficientCapabilities error.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
-
+    private com.amazonaws.internal.SdkInternalList<String> capabilities;
     /**
+     * <p>
      * The list of resources that generated the values in the
      * <code>Capabilities</code> response element.
+     * </p>
      */
     private String capabilitiesReason;
-
     /**
+     * <p>
      * A list of all the template resource types that are defined in the
      * template, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::Dynamo::Table</code>, and
      * <code>Custom::MyCustomInstance</code>. Use the following syntax to
      * describe template resource types: <code>AWS::*</code> (for all AWS
      * resources), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom
-     * resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
-     * of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
-     * a specific AWS resource).
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     * particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * specific AWS resource).
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypes;
-
+    private com.amazonaws.internal.SdkInternalList<String> resourceTypes;
     /**
-     * The AWS template format version, which identifies the capabilities of
-     * the template.
+     * <p>
+     * The AWS template format version, which identifies the capabilities of the
+     * template.
+     * </p>
      */
     private String version;
-
     /**
-     * The value that is defined for the <code>Metadata</code> property of
-     * the template.
+     * <p>
+     * The value that is defined for the <code>Metadata</code> property of the
+     * template.
+     * </p>
      */
     private String metadata;
 
     /**
+     * <p>
      * A list of parameter declarations that describe various properties for
      * each parameter.
-     *
-     * @return A list of parameter declarations that describe various properties for
-     *         each parameter.
+     * </p>
+     * 
+     * @return A list of parameter declarations that describe various properties
+     *         for each parameter.
      */
     public java.util.List<ParameterDeclaration> getParameters() {
         if (parameters == null) {
-              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterDeclaration>();
-              parameters.setAutoConstruct(true);
+            parameters = new com.amazonaws.internal.SdkInternalList<ParameterDeclaration>();
         }
         return parameters;
     }
-    
+
     /**
+     * <p>
      * A list of parameter declarations that describe various properties for
      * each parameter.
-     *
-     * @param parameters A list of parameter declarations that describe various properties for
-     *         each parameter.
+     * </p>
+     * 
+     * @param parameters
+     *        A list of parameter declarations that describe various properties
+     *        for each parameter.
      */
-    public void setParameters(java.util.Collection<ParameterDeclaration> parameters) {
+    public void setParameters(
+            java.util.Collection<ParameterDeclaration> parameters) {
         if (parameters == null) {
             this.parameters = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<ParameterDeclaration> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterDeclaration>(parameters.size());
-        parametersCopy.addAll(parameters);
-        this.parameters = parametersCopy;
+
+        this.parameters = new com.amazonaws.internal.SdkInternalList<ParameterDeclaration>(
+                parameters);
     }
-    
+
     /**
+     * <p>
      * A list of parameter declarations that describe various properties for
      * each parameter.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setParameters(java.util.Collection)} or {@link
-     * #withParameters(java.util.Collection)} if you want to override the
+     * any). Use {@link #setParameters(java.util.Collection)} or
+     * {@link #withParameters(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param parameters A list of parameter declarations that describe various properties for
-     *         each parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param parameters
+     *        A list of parameter declarations that describe various properties
+     *        for each parameter.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public GetTemplateSummaryResult withParameters(ParameterDeclaration... parameters) {
-        if (getParameters() == null) setParameters(new java.util.ArrayList<ParameterDeclaration>(parameters.length));
-        for (ParameterDeclaration value : parameters) {
-            getParameters().add(value);
+    public GetTemplateSummaryResult withParameters(
+            ParameterDeclaration... parameters) {
+        if (this.parameters == null) {
+            setParameters(new com.amazonaws.internal.SdkInternalList<ParameterDeclaration>(
+                    parameters.length));
+        }
+        for (ParameterDeclaration ele : parameters) {
+            this.parameters.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * A list of parameter declarations that describe various properties for
      * each parameter.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param parameters A list of parameter declarations that describe various properties for
-     *         each parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param parameters
+     *        A list of parameter declarations that describe various properties
+     *        for each parameter.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public GetTemplateSummaryResult withParameters(java.util.Collection<ParameterDeclaration> parameters) {
-        if (parameters == null) {
-            this.parameters = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<ParameterDeclaration> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterDeclaration>(parameters.size());
-            parametersCopy.addAll(parameters);
-            this.parameters = parametersCopy;
-        }
-
+    public GetTemplateSummaryResult withParameters(
+            java.util.Collection<ParameterDeclaration> parameters) {
+        setParameters(parameters);
         return this;
     }
 
     /**
-     * The value that is defined in the <code>Description</code> property of
-     * the template.
-     *
-     * @return The value that is defined in the <code>Description</code> property of
-     *         the template.
-     */
-    public String getDescription() {
-        return description;
-    }
-    
-    /**
-     * The value that is defined in the <code>Description</code> property of
-     * the template.
-     *
-     * @param description The value that is defined in the <code>Description</code> property of
-     *         the template.
+     * <p>
+     * The value that is defined in the <code>Description</code> property of the
+     * template.
+     * </p>
+     * 
+     * @param description
+     *        The value that is defined in the <code>Description</code> property
+     *        of the template.
      */
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     /**
-     * The value that is defined in the <code>Description</code> property of
-     * the template.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param description The value that is defined in the <code>Description</code> property of
-     *         the template.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The value that is defined in the <code>Description</code> property of the
+     * template.
+     * </p>
+     * 
+     * @return The value that is defined in the <code>Description</code>
+     *         property of the template.
+     */
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The value that is defined in the <code>Description</code> property of the
+     * template.
+     * </p>
+     * 
+     * @param description
+     *        The value that is defined in the <code>Description</code> property
+     *        of the template.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetTemplateSummaryResult withDescription(String description) {
-        this.description = description;
+        setDescription(description);
         return this;
     }
 
     /**
-     * The capabilities found within the template. Currently, AWS
-     * CloudFormation supports only the CAPABILITY_IAM capability. If your
-     * template contains IAM resources, you must specify the CAPABILITY_IAM
-     * value for this parameter when you use the <a>CreateStack</a> or
-     * <a>UpdateStack</a> actions with your template; otherwise, those
-     * actions return an InsufficientCapabilities error.
-     *
+     * <p>
+     * The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains
+     * IAM resources, you must specify the CAPABILITY_IAM value for this
+     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
+     * actions with your template; otherwise, those actions return an
+     * InsufficientCapabilities error.
+     * </p>
+     * 
      * @return The capabilities found within the template. Currently, AWS
-     *         CloudFormation supports only the CAPABILITY_IAM capability. If your
-     *         template contains IAM resources, you must specify the CAPABILITY_IAM
-     *         value for this parameter when you use the <a>CreateStack</a> or
-     *         <a>UpdateStack</a> actions with your template; otherwise, those
-     *         actions return an InsufficientCapabilities error.
+     *         CloudFormation supports only the CAPABILITY_IAM capability. If
+     *         your template contains IAM resources, you must specify the
+     *         CAPABILITY_IAM value for this parameter when you use the
+     *         <a>CreateStack</a> or <a>UpdateStack</a> actions with your
+     *         template; otherwise, those actions return an
+     *         InsufficientCapabilities error.
+     * @see Capability
      */
     public java.util.List<String> getCapabilities() {
         if (capabilities == null) {
-              capabilities = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              capabilities.setAutoConstruct(true);
+            capabilities = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return capabilities;
     }
-    
+
     /**
-     * The capabilities found within the template. Currently, AWS
-     * CloudFormation supports only the CAPABILITY_IAM capability. If your
-     * template contains IAM resources, you must specify the CAPABILITY_IAM
-     * value for this parameter when you use the <a>CreateStack</a> or
-     * <a>UpdateStack</a> actions with your template; otherwise, those
-     * actions return an InsufficientCapabilities error.
-     *
-     * @param capabilities The capabilities found within the template. Currently, AWS
-     *         CloudFormation supports only the CAPABILITY_IAM capability. If your
-     *         template contains IAM resources, you must specify the CAPABILITY_IAM
-     *         value for this parameter when you use the <a>CreateStack</a> or
-     *         <a>UpdateStack</a> actions with your template; otherwise, those
-     *         actions return an InsufficientCapabilities error.
+     * <p>
+     * The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains
+     * IAM resources, you must specify the CAPABILITY_IAM value for this
+     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
+     * actions with your template; otherwise, those actions return an
+     * InsufficientCapabilities error.
+     * </p>
+     * 
+     * @param capabilities
+     *        The capabilities found within the template. Currently, AWS
+     *        CloudFormation supports only the CAPABILITY_IAM capability. If
+     *        your template contains IAM resources, you must specify the
+     *        CAPABILITY_IAM value for this parameter when you use the
+     *        <a>CreateStack</a> or <a>UpdateStack</a> actions with your
+     *        template; otherwise, those actions return an
+     *        InsufficientCapabilities error.
+     * @see Capability
      */
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
             this.capabilities = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
-        capabilitiesCopy.addAll(capabilities);
-        this.capabilities = capabilitiesCopy;
+
+        this.capabilities = new com.amazonaws.internal.SdkInternalList<String>(
+                capabilities);
     }
-    
+
     /**
-     * The capabilities found within the template. Currently, AWS
-     * CloudFormation supports only the CAPABILITY_IAM capability. If your
-     * template contains IAM resources, you must specify the CAPABILITY_IAM
-     * value for this parameter when you use the <a>CreateStack</a> or
-     * <a>UpdateStack</a> actions with your template; otherwise, those
-     * actions return an InsufficientCapabilities error.
+     * <p>
+     * The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains
+     * IAM resources, you must specify the CAPABILITY_IAM value for this
+     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
+     * actions with your template; otherwise, those actions return an
+     * InsufficientCapabilities error.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCapabilities(java.util.Collection)} or {@link
-     * #withCapabilities(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param capabilities The capabilities found within the template. Currently, AWS
-     *         CloudFormation supports only the CAPABILITY_IAM capability. If your
-     *         template contains IAM resources, you must specify the CAPABILITY_IAM
-     *         value for this parameter when you use the <a>CreateStack</a> or
-     *         <a>UpdateStack</a> actions with your template; otherwise, those
-     *         actions return an InsufficientCapabilities error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setCapabilities(java.util.Collection)} or
+     * {@link #withCapabilities(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param capabilities
+     *        The capabilities found within the template. Currently, AWS
+     *        CloudFormation supports only the CAPABILITY_IAM capability. If
+     *        your template contains IAM resources, you must specify the
+     *        CAPABILITY_IAM value for this parameter when you use the
+     *        <a>CreateStack</a> or <a>UpdateStack</a> actions with your
+     *        template; otherwise, those actions return an
+     *        InsufficientCapabilities error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see Capability
      */
     public GetTemplateSummaryResult withCapabilities(String... capabilities) {
-        if (getCapabilities() == null) setCapabilities(new java.util.ArrayList<String>(capabilities.length));
-        for (String value : capabilities) {
-            getCapabilities().add(value);
+        if (this.capabilities == null) {
+            setCapabilities(new com.amazonaws.internal.SdkInternalList<String>(
+                    capabilities.length));
+        }
+        for (String ele : capabilities) {
+            this.capabilities.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The capabilities found within the template. Currently, AWS
-     * CloudFormation supports only the CAPABILITY_IAM capability. If your
-     * template contains IAM resources, you must specify the CAPABILITY_IAM
-     * value for this parameter when you use the <a>CreateStack</a> or
-     * <a>UpdateStack</a> actions with your template; otherwise, those
-     * actions return an InsufficientCapabilities error.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param capabilities The capabilities found within the template. Currently, AWS
-     *         CloudFormation supports only the CAPABILITY_IAM capability. If your
-     *         template contains IAM resources, you must specify the CAPABILITY_IAM
-     *         value for this parameter when you use the <a>CreateStack</a> or
-     *         <a>UpdateStack</a> actions with your template; otherwise, those
-     *         actions return an InsufficientCapabilities error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains
+     * IAM resources, you must specify the CAPABILITY_IAM value for this
+     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
+     * actions with your template; otherwise, those actions return an
+     * InsufficientCapabilities error.
+     * </p>
+     * 
+     * @param capabilities
+     *        The capabilities found within the template. Currently, AWS
+     *        CloudFormation supports only the CAPABILITY_IAM capability. If
+     *        your template contains IAM resources, you must specify the
+     *        CAPABILITY_IAM value for this parameter when you use the
+     *        <a>CreateStack</a> or <a>UpdateStack</a> actions with your
+     *        template; otherwise, those actions return an
+     *        InsufficientCapabilities error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see Capability
      */
-    public GetTemplateSummaryResult withCapabilities(java.util.Collection<String> capabilities) {
-        if (capabilities == null) {
-            this.capabilities = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
-            capabilitiesCopy.addAll(capabilities);
-            this.capabilities = capabilitiesCopy;
-        }
-
+    public GetTemplateSummaryResult withCapabilities(
+            java.util.Collection<String> capabilities) {
+        setCapabilities(capabilities);
         return this;
     }
 
     /**
-     * The capabilities found within the template. Currently, AWS
-     * CloudFormation supports only the CAPABILITY_IAM capability. If your
-     * template contains IAM resources, you must specify the CAPABILITY_IAM
-     * value for this parameter when you use the <a>CreateStack</a> or
-     * <a>UpdateStack</a> actions with your template; otherwise, those
-     * actions return an InsufficientCapabilities error.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param capabilities The capabilities found within the template. Currently, AWS
-     *         CloudFormation supports only the CAPABILITY_IAM capability. If your
-     *         template contains IAM resources, you must specify the CAPABILITY_IAM
-     *         value for this parameter when you use the <a>CreateStack</a> or
-     *         <a>UpdateStack</a> actions with your template; otherwise, those
-     *         actions return an InsufficientCapabilities error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains
+     * IAM resources, you must specify the CAPABILITY_IAM value for this
+     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
+     * actions with your template; otherwise, those actions return an
+     * InsufficientCapabilities error.
+     * </p>
+     * 
+     * @param capabilities
+     *        The capabilities found within the template. Currently, AWS
+     *        CloudFormation supports only the CAPABILITY_IAM capability. If
+     *        your template contains IAM resources, you must specify the
+     *        CAPABILITY_IAM value for this parameter when you use the
+     *        <a>CreateStack</a> or <a>UpdateStack</a> actions with your
+     *        template; otherwise, those actions return an
+     *        InsufficientCapabilities error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see Capability
      */
     public GetTemplateSummaryResult withCapabilities(Capability... capabilities) {
-        java.util.ArrayList<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.length);
-        for (Capability member : capabilities) {
-            capabilitiesCopy.add(member.toString());
+        com.amazonaws.internal.SdkInternalList<String> capabilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                capabilities.length);
+        for (Capability value : capabilities) {
+            capabilitiesCopy.add(value.toString());
         }
         if (getCapabilities() == null) {
             setCapabilities(capabilitiesCopy);
@@ -345,272 +376,291 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The list of resources that generated the values in the
      * <code>Capabilities</code> response element.
-     *
-     * @return The list of resources that generated the values in the
-     *         <code>Capabilities</code> response element.
-     */
-    public String getCapabilitiesReason() {
-        return capabilitiesReason;
-    }
-    
-    /**
-     * The list of resources that generated the values in the
-     * <code>Capabilities</code> response element.
-     *
-     * @param capabilitiesReason The list of resources that generated the values in the
-     *         <code>Capabilities</code> response element.
+     * </p>
+     * 
+     * @param capabilitiesReason
+     *        The list of resources that generated the values in the
+     *        <code>Capabilities</code> response element.
      */
     public void setCapabilitiesReason(String capabilitiesReason) {
         this.capabilitiesReason = capabilitiesReason;
     }
-    
+
     /**
+     * <p>
      * The list of resources that generated the values in the
      * <code>Capabilities</code> response element.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param capabilitiesReason The list of resources that generated the values in the
+     * </p>
+     * 
+     * @return The list of resources that generated the values in the
      *         <code>Capabilities</code> response element.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public GetTemplateSummaryResult withCapabilitiesReason(String capabilitiesReason) {
-        this.capabilitiesReason = capabilitiesReason;
+    public String getCapabilitiesReason() {
+        return this.capabilitiesReason;
+    }
+
+    /**
+     * <p>
+     * The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.
+     * </p>
+     * 
+     * @param capabilitiesReason
+     *        The list of resources that generated the values in the
+     *        <code>Capabilities</code> response element.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public GetTemplateSummaryResult withCapabilitiesReason(
+            String capabilitiesReason) {
+        setCapabilitiesReason(capabilitiesReason);
         return this;
     }
 
     /**
+     * <p>
      * A list of all the template resource types that are defined in the
      * template, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::Dynamo::Table</code>, and
      * <code>Custom::MyCustomInstance</code>. Use the following syntax to
      * describe template resource types: <code>AWS::*</code> (for all AWS
      * resources), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom
-     * resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
-     * of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
-     * a specific AWS resource).
-     *
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     * particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * specific AWS resource).
+     * </p>
+     * 
      * @return A list of all the template resource types that are defined in the
      *         template, such as <code>AWS::EC2::Instance</code>,
      *         <code>AWS::Dynamo::Table</code>, and
-     *         <code>Custom::MyCustomInstance</code>. Use the following syntax to
-     *         describe template resource types: <code>AWS::*</code> (for all AWS
-     *         resources), <code>Custom::*</code> (for all custom resources),
-     *         <code>Custom::<i>logical_ID</i></code> (for a specific custom
-     *         resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
-     *         of a particular AWS service), and
-     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
-     *         a specific AWS resource).
+     *         <code>Custom::MyCustomInstance</code>. Use the following syntax
+     *         to describe template resource types: <code>AWS::*</code> (for all
+     *         AWS resources), <code>Custom::*</code> (for all custom
+     *         resources), <code>Custom::<i>logical_ID</i></code> (for a
+     *         specific custom resource),
+     *         <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     *         particular AWS service), and
+     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *         (for a specific AWS resource).
      */
     public java.util.List<String> getResourceTypes() {
         if (resourceTypes == null) {
-              resourceTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              resourceTypes.setAutoConstruct(true);
+            resourceTypes = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return resourceTypes;
     }
-    
+
     /**
+     * <p>
      * A list of all the template resource types that are defined in the
      * template, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::Dynamo::Table</code>, and
      * <code>Custom::MyCustomInstance</code>. Use the following syntax to
      * describe template resource types: <code>AWS::*</code> (for all AWS
      * resources), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom
-     * resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
-     * of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
-     * a specific AWS resource).
-     *
-     * @param resourceTypes A list of all the template resource types that are defined in the
-     *         template, such as <code>AWS::EC2::Instance</code>,
-     *         <code>AWS::Dynamo::Table</code>, and
-     *         <code>Custom::MyCustomInstance</code>. Use the following syntax to
-     *         describe template resource types: <code>AWS::*</code> (for all AWS
-     *         resources), <code>Custom::*</code> (for all custom resources),
-     *         <code>Custom::<i>logical_ID</i></code> (for a specific custom
-     *         resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
-     *         of a particular AWS service), and
-     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
-     *         a specific AWS resource).
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     * particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * specific AWS resource).
+     * </p>
+     * 
+     * @param resourceTypes
+     *        A list of all the template resource types that are defined in the
+     *        template, such as <code>AWS::EC2::Instance</code>,
+     *        <code>AWS::Dynamo::Table</code>, and
+     *        <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     *        describe template resource types: <code>AWS::*</code> (for all AWS
+     *        resources), <code>Custom::*</code> (for all custom resources),
+     *        <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *        resource), <code>AWS::<i>service_name</i>::*</code> (for all
+     *        resources of a particular AWS service), and
+     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *        (for a specific AWS resource).
      */
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
         if (resourceTypes == null) {
             this.resourceTypes = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(resourceTypes.size());
-        resourceTypesCopy.addAll(resourceTypes);
-        this.resourceTypes = resourceTypesCopy;
+
+        this.resourceTypes = new com.amazonaws.internal.SdkInternalList<String>(
+                resourceTypes);
     }
-    
+
     /**
+     * <p>
      * A list of all the template resource types that are defined in the
      * template, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::Dynamo::Table</code>, and
      * <code>Custom::MyCustomInstance</code>. Use the following syntax to
      * describe template resource types: <code>AWS::*</code> (for all AWS
      * resources), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom
-     * resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
-     * of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
-     * a specific AWS resource).
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     * particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * specific AWS resource).
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setResourceTypes(java.util.Collection)} or {@link
-     * #withResourceTypes(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param resourceTypes A list of all the template resource types that are defined in the
-     *         template, such as <code>AWS::EC2::Instance</code>,
-     *         <code>AWS::Dynamo::Table</code>, and
-     *         <code>Custom::MyCustomInstance</code>. Use the following syntax to
-     *         describe template resource types: <code>AWS::*</code> (for all AWS
-     *         resources), <code>Custom::*</code> (for all custom resources),
-     *         <code>Custom::<i>logical_ID</i></code> (for a specific custom
-     *         resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
-     *         of a particular AWS service), and
-     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
-     *         a specific AWS resource).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setResourceTypes(java.util.Collection)} or
+     * {@link #withResourceTypes(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param resourceTypes
+     *        A list of all the template resource types that are defined in the
+     *        template, such as <code>AWS::EC2::Instance</code>,
+     *        <code>AWS::Dynamo::Table</code>, and
+     *        <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     *        describe template resource types: <code>AWS::*</code> (for all AWS
+     *        resources), <code>Custom::*</code> (for all custom resources),
+     *        <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *        resource), <code>AWS::<i>service_name</i>::*</code> (for all
+     *        resources of a particular AWS service), and
+     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *        (for a specific AWS resource).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetTemplateSummaryResult withResourceTypes(String... resourceTypes) {
-        if (getResourceTypes() == null) setResourceTypes(new java.util.ArrayList<String>(resourceTypes.length));
-        for (String value : resourceTypes) {
-            getResourceTypes().add(value);
+        if (this.resourceTypes == null) {
+            setResourceTypes(new com.amazonaws.internal.SdkInternalList<String>(
+                    resourceTypes.length));
+        }
+        for (String ele : resourceTypes) {
+            this.resourceTypes.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * A list of all the template resource types that are defined in the
      * template, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::Dynamo::Table</code>, and
      * <code>Custom::MyCustomInstance</code>. Use the following syntax to
      * describe template resource types: <code>AWS::*</code> (for all AWS
      * resources), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom
-     * resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
-     * of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
-     * a specific AWS resource).
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param resourceTypes A list of all the template resource types that are defined in the
-     *         template, such as <code>AWS::EC2::Instance</code>,
-     *         <code>AWS::Dynamo::Table</code>, and
-     *         <code>Custom::MyCustomInstance</code>. Use the following syntax to
-     *         describe template resource types: <code>AWS::*</code> (for all AWS
-     *         resources), <code>Custom::*</code> (for all custom resources),
-     *         <code>Custom::<i>logical_ID</i></code> (for a specific custom
-     *         resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
-     *         of a particular AWS service), and
-     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
-     *         a specific AWS resource).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     * particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * specific AWS resource).
+     * </p>
+     * 
+     * @param resourceTypes
+     *        A list of all the template resource types that are defined in the
+     *        template, such as <code>AWS::EC2::Instance</code>,
+     *        <code>AWS::Dynamo::Table</code>, and
+     *        <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     *        describe template resource types: <code>AWS::*</code> (for all AWS
+     *        resources), <code>Custom::*</code> (for all custom resources),
+     *        <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *        resource), <code>AWS::<i>service_name</i>::*</code> (for all
+     *        resources of a particular AWS service), and
+     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *        (for a specific AWS resource).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public GetTemplateSummaryResult withResourceTypes(java.util.Collection<String> resourceTypes) {
-        if (resourceTypes == null) {
-            this.resourceTypes = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(resourceTypes.size());
-            resourceTypesCopy.addAll(resourceTypes);
-            this.resourceTypes = resourceTypesCopy;
-        }
-
+    public GetTemplateSummaryResult withResourceTypes(
+            java.util.Collection<String> resourceTypes) {
+        setResourceTypes(resourceTypes);
         return this;
     }
 
     /**
-     * The AWS template format version, which identifies the capabilities of
-     * the template.
-     *
-     * @return The AWS template format version, which identifies the capabilities of
-     *         the template.
-     */
-    public String getVersion() {
-        return version;
-    }
-    
-    /**
-     * The AWS template format version, which identifies the capabilities of
-     * the template.
-     *
-     * @param version The AWS template format version, which identifies the capabilities of
-     *         the template.
+     * <p>
+     * The AWS template format version, which identifies the capabilities of the
+     * template.
+     * </p>
+     * 
+     * @param version
+     *        The AWS template format version, which identifies the capabilities
+     *        of the template.
      */
     public void setVersion(String version) {
         this.version = version;
     }
-    
+
     /**
-     * The AWS template format version, which identifies the capabilities of
-     * the template.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param version The AWS template format version, which identifies the capabilities of
-     *         the template.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The AWS template format version, which identifies the capabilities of the
+     * template.
+     * </p>
+     * 
+     * @return The AWS template format version, which identifies the
+     *         capabilities of the template.
+     */
+    public String getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The AWS template format version, which identifies the capabilities of the
+     * template.
+     * </p>
+     * 
+     * @param version
+     *        The AWS template format version, which identifies the capabilities
+     *        of the template.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetTemplateSummaryResult withVersion(String version) {
-        this.version = version;
+        setVersion(version);
         return this;
     }
 
     /**
-     * The value that is defined for the <code>Metadata</code> property of
-     * the template.
-     *
-     * @return The value that is defined for the <code>Metadata</code> property of
-     *         the template.
-     */
-    public String getMetadata() {
-        return metadata;
-    }
-    
-    /**
-     * The value that is defined for the <code>Metadata</code> property of
-     * the template.
-     *
-     * @param metadata The value that is defined for the <code>Metadata</code> property of
-     *         the template.
+     * <p>
+     * The value that is defined for the <code>Metadata</code> property of the
+     * template.
+     * </p>
+     * 
+     * @param metadata
+     *        The value that is defined for the <code>Metadata</code> property
+     *        of the template.
      */
     public void setMetadata(String metadata) {
         this.metadata = metadata;
     }
-    
+
     /**
-     * The value that is defined for the <code>Metadata</code> property of
-     * the template.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param metadata The value that is defined for the <code>Metadata</code> property of
-     *         the template.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The value that is defined for the <code>Metadata</code> property of the
+     * template.
+     * </p>
+     * 
+     * @return The value that is defined for the <code>Metadata</code> property
+     *         of the template.
+     */
+    public String getMetadata() {
+        return this.metadata;
+    }
+
+    /**
+     * <p>
+     * The value that is defined for the <code>Metadata</code> property of the
+     * template.
+     * </p>
+     * 
+     * @param metadata
+     *        The value that is defined for the <code>Metadata</code> property
+     *        of the template.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetTemplateSummaryResult withMetadata(String metadata) {
-        this.metadata = metadata;
+        setMetadata(metadata);
         return this;
     }
 
@@ -626,70 +676,111 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
-        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");
-        if (getCapabilitiesReason() != null) sb.append("CapabilitiesReason: " + getCapabilitiesReason() + ",");
-        if (getResourceTypes() != null) sb.append("ResourceTypes: " + getResourceTypes() + ",");
-        if (getVersion() != null) sb.append("Version: " + getVersion() + ",");
-        if (getMetadata() != null) sb.append("Metadata: " + getMetadata() );
+        if (getParameters() != null)
+            sb.append("Parameters: " + getParameters() + ",");
+        if (getDescription() != null)
+            sb.append("Description: " + getDescription() + ",");
+        if (getCapabilities() != null)
+            sb.append("Capabilities: " + getCapabilities() + ",");
+        if (getCapabilitiesReason() != null)
+            sb.append("CapabilitiesReason: " + getCapabilitiesReason() + ",");
+        if (getResourceTypes() != null)
+            sb.append("ResourceTypes: " + getResourceTypes() + ",");
+        if (getVersion() != null)
+            sb.append("Version: " + getVersion() + ",");
+        if (getMetadata() != null)
+            sb.append("Metadata: " + getMetadata());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetTemplateSummaryResult == false)
+            return false;
+        GetTemplateSummaryResult other = (GetTemplateSummaryResult) obj;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null
+                && other.getParameters().equals(this.getParameters()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null
+                && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getCapabilities() == null ^ this.getCapabilities() == null)
+            return false;
+        if (other.getCapabilities() != null
+                && other.getCapabilities().equals(this.getCapabilities()) == false)
+            return false;
+        if (other.getCapabilitiesReason() == null
+                ^ this.getCapabilitiesReason() == null)
+            return false;
+        if (other.getCapabilitiesReason() != null
+                && other.getCapabilitiesReason().equals(
+                        this.getCapabilitiesReason()) == false)
+            return false;
+        if (other.getResourceTypes() == null ^ this.getResourceTypes() == null)
+            return false;
+        if (other.getResourceTypes() != null
+                && other.getResourceTypes().equals(this.getResourceTypes()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null
+                && other.getVersion().equals(this.getVersion()) == false)
+            return false;
+        if (other.getMetadata() == null ^ this.getMetadata() == null)
+            return false;
+        if (other.getMetadata() != null
+                && other.getMetadata().equals(this.getMetadata()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode()); 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode()); 
-        hashCode = prime * hashCode + ((getCapabilitiesReason() == null) ? 0 : getCapabilitiesReason().hashCode()); 
-        hashCode = prime * hashCode + ((getResourceTypes() == null) ? 0 : getResourceTypes().hashCode()); 
-        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode()); 
-        hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCapabilities() == null) ? 0 : getCapabilities()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCapabilitiesReason() == null) ? 0
+                        : getCapabilitiesReason().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getResourceTypes() == null) ? 0 : getResourceTypes()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode
+                + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof GetTemplateSummaryResult == false) return false;
-        GetTemplateSummaryResult other = (GetTemplateSummaryResult)obj;
-        
-        if (other.getParameters() == null ^ this.getParameters() == null) return false;
-        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false) return false; 
-        if (other.getDescription() == null ^ this.getDescription() == null) return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
-        if (other.getCapabilities() == null ^ this.getCapabilities() == null) return false;
-        if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false) return false; 
-        if (other.getCapabilitiesReason() == null ^ this.getCapabilitiesReason() == null) return false;
-        if (other.getCapabilitiesReason() != null && other.getCapabilitiesReason().equals(this.getCapabilitiesReason()) == false) return false; 
-        if (other.getResourceTypes() == null ^ this.getResourceTypes() == null) return false;
-        if (other.getResourceTypes() != null && other.getResourceTypes().equals(this.getResourceTypes()) == false) return false; 
-        if (other.getVersion() == null ^ this.getVersion() == null) return false;
-        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false) return false; 
-        if (other.getMetadata() == null ^ this.getMetadata() == null) return false;
-        if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public GetTemplateSummaryResult clone() {
         try {
             return (GetTemplateSummaryResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

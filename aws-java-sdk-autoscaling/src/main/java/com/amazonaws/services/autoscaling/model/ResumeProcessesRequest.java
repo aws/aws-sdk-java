@@ -1,230 +1,529 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#resumeProcesses(ResumeProcessesRequest) ResumeProcesses operation}.
- * <p>
- * Resumes the specified suspended Auto Scaling processes for the
- * specified Auto Scaling group. To resume specific processes, use the
- * <code>ScalingProcesses</code> parameter. To resume all processes, omit
- * the <code>ScalingProcesses</code> parameter. For more information, see
- * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"> Suspend and Resume Auto Scaling Processes </a>
- * in the <i>Auto Scaling Developer Guide</i> .
- * </p>
- *
- * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#resumeProcesses(ResumeProcessesRequest)
+ * 
  */
-public class ResumeProcessesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
+     * </p>
      */
     private String autoScalingGroupName;
+    /**
+     * <p>
+     * One or more of the following processes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Launch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HealthCheck</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceUnhealthy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AZRebalance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AlarmNotification</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ScheduledActions</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AddToLoadBalancer</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> scalingProcesses;
 
     /**
-     * One or more of the following processes: <ul>
-     * <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
-     * <li><p><code>HealthCheck</code></li>
-     * <li><p><code>ReplaceUnhealthy</code></li>
-     * <li><p><code>AZRebalance</code></li>
-     * <li><p><code>AlarmNotification</code></li>
-     * <li><p><code>ScheduledActions</code></li>
-     * <li><p><code>AddToLoadBalancer</code></li> </ul>
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> scalingProcesses;
-
-    /**
-     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The name or Amazon Resource Name (ARN) of the Auto Scaling group.
-     */
-    public String getAutoScalingGroupName() {
-        return autoScalingGroupName;
-    }
-    
-    /**
      * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param autoScalingGroupName The name or Amazon Resource Name (ARN) of the Auto Scaling group.
+     * </p>
+     * 
+     * @param autoScalingGroupName
+     *        The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
-    
+
     /**
+     * <p>
      * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param autoScalingGroupName The name or Amazon Resource Name (ARN) of the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
-    public ResumeProcessesRequest withAutoScalingGroupName(String autoScalingGroupName) {
-        this.autoScalingGroupName = autoScalingGroupName;
+    public String getAutoScalingGroupName() {
+        return this.autoScalingGroupName;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
+     * </p>
+     * 
+     * @param autoScalingGroupName
+     *        The name or Amazon Resource Name (ARN) of the Auto Scaling group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ResumeProcessesRequest withAutoScalingGroupName(
+            String autoScalingGroupName) {
+        setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
-     * One or more of the following processes: <ul>
-     * <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
-     * <li><p><code>HealthCheck</code></li>
-     * <li><p><code>ReplaceUnhealthy</code></li>
-     * <li><p><code>AZRebalance</code></li>
-     * <li><p><code>AlarmNotification</code></li>
-     * <li><p><code>ScheduledActions</code></li>
-     * <li><p><code>AddToLoadBalancer</code></li> </ul>
-     *
-     * @return One or more of the following processes: <ul>
-     *         <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
-     *         <li><p><code>HealthCheck</code></li>
-     *         <li><p><code>ReplaceUnhealthy</code></li>
-     *         <li><p><code>AZRebalance</code></li>
-     *         <li><p><code>AlarmNotification</code></li>
-     *         <li><p><code>ScheduledActions</code></li>
-     *         <li><p><code>AddToLoadBalancer</code></li> </ul>
+     * <p>
+     * One or more of the following processes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Launch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HealthCheck</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceUnhealthy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AZRebalance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AlarmNotification</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ScheduledActions</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AddToLoadBalancer</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return One or more of the following processes:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Launch</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Terminate</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>HealthCheck</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReplaceUnhealthy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AZRebalance</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AlarmNotification</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ScheduledActions</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AddToLoadBalancer</code>
+     *         </p>
+     *         </li>
      */
     public java.util.List<String> getScalingProcesses() {
         if (scalingProcesses == null) {
-              scalingProcesses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              scalingProcesses.setAutoConstruct(true);
+            scalingProcesses = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return scalingProcesses;
     }
-    
+
     /**
-     * One or more of the following processes: <ul>
-     * <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
-     * <li><p><code>HealthCheck</code></li>
-     * <li><p><code>ReplaceUnhealthy</code></li>
-     * <li><p><code>AZRebalance</code></li>
-     * <li><p><code>AlarmNotification</code></li>
-     * <li><p><code>ScheduledActions</code></li>
-     * <li><p><code>AddToLoadBalancer</code></li> </ul>
-     *
-     * @param scalingProcesses One or more of the following processes: <ul>
-     *         <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
-     *         <li><p><code>HealthCheck</code></li>
-     *         <li><p><code>ReplaceUnhealthy</code></li>
-     *         <li><p><code>AZRebalance</code></li>
-     *         <li><p><code>AlarmNotification</code></li>
-     *         <li><p><code>ScheduledActions</code></li>
-     *         <li><p><code>AddToLoadBalancer</code></li> </ul>
+     * <p>
+     * One or more of the following processes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Launch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HealthCheck</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceUnhealthy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AZRebalance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AlarmNotification</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ScheduledActions</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AddToLoadBalancer</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param scalingProcesses
+     *        One or more of the following processes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Launch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HealthCheck</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceUnhealthy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AZRebalance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AlarmNotification</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ScheduledActions</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AddToLoadBalancer</code>
+     *        </p>
+     *        </li>
      */
-    public void setScalingProcesses(java.util.Collection<String> scalingProcesses) {
+    public void setScalingProcesses(
+            java.util.Collection<String> scalingProcesses) {
         if (scalingProcesses == null) {
             this.scalingProcesses = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> scalingProcessesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(scalingProcesses.size());
-        scalingProcessesCopy.addAll(scalingProcesses);
-        this.scalingProcesses = scalingProcessesCopy;
+
+        this.scalingProcesses = new com.amazonaws.internal.SdkInternalList<String>(
+                scalingProcesses);
     }
-    
+
     /**
-     * One or more of the following processes: <ul>
-     * <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
-     * <li><p><code>HealthCheck</code></li>
-     * <li><p><code>ReplaceUnhealthy</code></li>
-     * <li><p><code>AZRebalance</code></li>
-     * <li><p><code>AlarmNotification</code></li>
-     * <li><p><code>ScheduledActions</code></li>
-     * <li><p><code>AddToLoadBalancer</code></li> </ul>
+     * <p>
+     * One or more of the following processes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Launch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HealthCheck</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceUnhealthy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AZRebalance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AlarmNotification</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ScheduledActions</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AddToLoadBalancer</code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setScalingProcesses(java.util.Collection)} or {@link
-     * #withScalingProcesses(java.util.Collection)} if you want to override
-     * the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param scalingProcesses One or more of the following processes: <ul>
-     *         <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
-     *         <li><p><code>HealthCheck</code></li>
-     *         <li><p><code>ReplaceUnhealthy</code></li>
-     *         <li><p><code>AZRebalance</code></li>
-     *         <li><p><code>AlarmNotification</code></li>
-     *         <li><p><code>ScheduledActions</code></li>
-     *         <li><p><code>AddToLoadBalancer</code></li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setScalingProcesses(java.util.Collection)} or
+     * {@link #withScalingProcesses(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param scalingProcesses
+     *        One or more of the following processes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Launch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HealthCheck</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceUnhealthy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AZRebalance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AlarmNotification</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ScheduledActions</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AddToLoadBalancer</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ResumeProcessesRequest withScalingProcesses(String... scalingProcesses) {
-        if (getScalingProcesses() == null) setScalingProcesses(new java.util.ArrayList<String>(scalingProcesses.length));
-        for (String value : scalingProcesses) {
-            getScalingProcesses().add(value);
+    public ResumeProcessesRequest withScalingProcesses(
+            String... scalingProcesses) {
+        if (this.scalingProcesses == null) {
+            setScalingProcesses(new com.amazonaws.internal.SdkInternalList<String>(
+                    scalingProcesses.length));
+        }
+        for (String ele : scalingProcesses) {
+            this.scalingProcesses.add(ele);
         }
         return this;
     }
-    
-    /**
-     * One or more of the following processes: <ul>
-     * <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
-     * <li><p><code>HealthCheck</code></li>
-     * <li><p><code>ReplaceUnhealthy</code></li>
-     * <li><p><code>AZRebalance</code></li>
-     * <li><p><code>AlarmNotification</code></li>
-     * <li><p><code>ScheduledActions</code></li>
-     * <li><p><code>AddToLoadBalancer</code></li> </ul>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param scalingProcesses One or more of the following processes: <ul>
-     *         <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
-     *         <li><p><code>HealthCheck</code></li>
-     *         <li><p><code>ReplaceUnhealthy</code></li>
-     *         <li><p><code>AZRebalance</code></li>
-     *         <li><p><code>AlarmNotification</code></li>
-     *         <li><p><code>ScheduledActions</code></li>
-     *         <li><p><code>AddToLoadBalancer</code></li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ResumeProcessesRequest withScalingProcesses(java.util.Collection<String> scalingProcesses) {
-        if (scalingProcesses == null) {
-            this.scalingProcesses = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> scalingProcessesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(scalingProcesses.size());
-            scalingProcessesCopy.addAll(scalingProcesses);
-            this.scalingProcesses = scalingProcessesCopy;
-        }
 
+    /**
+     * <p>
+     * One or more of the following processes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Launch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HealthCheck</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceUnhealthy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AZRebalance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AlarmNotification</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ScheduledActions</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AddToLoadBalancer</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param scalingProcesses
+     *        One or more of the following processes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Launch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HealthCheck</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceUnhealthy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AZRebalance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AlarmNotification</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ScheduledActions</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AddToLoadBalancer</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ResumeProcessesRequest withScalingProcesses(
+            java.util.Collection<String> scalingProcesses) {
+        setScalingProcesses(scalingProcesses);
         return this;
     }
 
@@ -240,42 +539,60 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements S
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
-        if (getScalingProcesses() != null) sb.append("ScalingProcesses: " + getScalingProcesses() );
+        if (getAutoScalingGroupName() != null)
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
+                    + ",");
+        if (getScalingProcesses() != null)
+            sb.append("ScalingProcesses: " + getScalingProcesses());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ResumeProcessesRequest == false)
+            return false;
+        ResumeProcessesRequest other = (ResumeProcessesRequest) obj;
+        if (other.getAutoScalingGroupName() == null
+                ^ this.getAutoScalingGroupName() == null)
+            return false;
+        if (other.getAutoScalingGroupName() != null
+                && other.getAutoScalingGroupName().equals(
+                        this.getAutoScalingGroupName()) == false)
+            return false;
+        if (other.getScalingProcesses() == null
+                ^ this.getScalingProcesses() == null)
+            return false;
+        if (other.getScalingProcesses() != null
+                && other.getScalingProcesses().equals(
+                        this.getScalingProcesses()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
-        hashCode = prime * hashCode + ((getScalingProcesses() == null) ? 0 : getScalingProcesses().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getAutoScalingGroupName() == null) ? 0
+                        : getAutoScalingGroupName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getScalingProcesses() == null) ? 0 : getScalingProcesses()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ResumeProcessesRequest == false) return false;
-        ResumeProcessesRequest other = (ResumeProcessesRequest)obj;
-        
-        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null) return false;
-        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
-        if (other.getScalingProcesses() == null ^ this.getScalingProcesses() == null) return false;
-        if (other.getScalingProcesses() != null && other.getScalingProcesses().equals(this.getScalingProcesses()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ResumeProcessesRequest clone() {
-        
-            return (ResumeProcessesRequest) super.clone();
+        return (ResumeProcessesRequest) super.clone();
     }
-
 }
-    

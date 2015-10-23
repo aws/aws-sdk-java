@@ -133,6 +133,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "codedeploy";
 
+    /** The region metadata service name for computing region endpoints. */
+    private static final String DEFAULT_ENDPOINT_PREFIX = "codedeploy";
+
     /**
      * List of exception unmarshallers for all CodeDeploy exceptions.
      */
@@ -525,6 +528,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
         // calling this.setEndPoint(...) will also modify the signer accordingly
         setEndpoint("https://codedeploy.us-east-1.amazonaws.com");
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
+        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

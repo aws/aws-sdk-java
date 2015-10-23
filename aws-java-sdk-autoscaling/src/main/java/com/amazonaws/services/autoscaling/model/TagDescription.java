@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
@@ -24,274 +25,251 @@ import java.io.Serializable;
 public class TagDescription implements Serializable, Cloneable {
 
     /**
-     * The name of the group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The name of the group.
+     * </p>
      */
     private String resourceId;
-
     /**
+     * <p>
      * The type of resource. The only supported value is
      * <code>auto-scaling-group</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * </p>
      */
     private String resourceType;
-
     /**
-     * The tag key.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The tag key.
+     * </p>
      */
     private String key;
-
     /**
-     * The tag value.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The tag value.
+     * </p>
      */
     private String value;
-
     /**
-     * Determines whether the tag is added to new instances as they are
-     * launched in the group.
+     * <p>
+     * Determines whether the tag is added to new instances as they are launched
+     * in the group.
+     * </p>
      */
     private Boolean propagateAtLaunch;
 
     /**
-     * The name of the group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The name of the group.
-     */
-    public String getResourceId() {
-        return resourceId;
-    }
-    
-    /**
      * The name of the group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param resourceId The name of the group.
+     * </p>
+     * 
+     * @param resourceId
+     *        The name of the group.
      */
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
-    
+
     /**
+     * <p>
      * The name of the group.
+     * </p>
+     * 
+     * @return The name of the group.
+     */
+    public String getResourceId() {
+        return this.resourceId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param resourceId The name of the group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the group.
+     * </p>
+     * 
+     * @param resourceId
+     *        The name of the group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public TagDescription withResourceId(String resourceId) {
-        this.resourceId = resourceId;
+        setResourceId(resourceId);
         return this;
     }
 
     /**
+     * <p>
      * The type of resource. The only supported value is
      * <code>auto-scaling-group</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The type of resource. The only supported value is
-     *         <code>auto-scaling-group</code>.
-     */
-    public String getResourceType() {
-        return resourceType;
-    }
-    
-    /**
-     * The type of resource. The only supported value is
-     * <code>auto-scaling-group</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param resourceType The type of resource. The only supported value is
-     *         <code>auto-scaling-group</code>.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of resource. The only supported value is
+     *        <code>auto-scaling-group</code>.
      */
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
-    
+
     /**
+     * <p>
      * The type of resource. The only supported value is
      * <code>auto-scaling-group</code>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param resourceType The type of resource. The only supported value is
+     * </p>
+     * 
+     * @return The type of resource. The only supported value is
      *         <code>auto-scaling-group</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of resource. The only supported value is
+     * <code>auto-scaling-group</code>.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of resource. The only supported value is
+     *        <code>auto-scaling-group</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public TagDescription withResourceType(String resourceType) {
-        this.resourceType = resourceType;
+        setResourceType(resourceType);
         return this;
     }
 
     /**
-     * The tag key.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The tag key.
-     */
-    public String getKey() {
-        return key;
-    }
-    
-    /**
      * The tag key.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param key The tag key.
+     * </p>
+     * 
+     * @param key
+     *        The tag key.
      */
     public void setKey(String key) {
         this.key = key;
     }
-    
+
     /**
+     * <p>
      * The tag key.
+     * </p>
+     * 
+     * @return The tag key.
+     */
+    public String getKey() {
+        return this.key;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param key The tag key.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The tag key.
+     * </p>
+     * 
+     * @param key
+     *        The tag key.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public TagDescription withKey(String key) {
-        this.key = key;
+        setKey(key);
         return this;
     }
 
     /**
-     * The tag value.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The tag value.
-     */
-    public String getValue() {
-        return value;
-    }
-    
-    /**
      * The tag value.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param value The tag value.
+     * </p>
+     * 
+     * @param value
+     *        The tag value.
      */
     public void setValue(String value) {
         this.value = value;
     }
-    
+
     /**
+     * <p>
      * The tag value.
+     * </p>
+     * 
+     * @return The tag value.
+     */
+    public String getValue() {
+        return this.value;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param value The tag value.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The tag value.
+     * </p>
+     * 
+     * @param value
+     *        The tag value.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public TagDescription withValue(String value) {
-        this.value = value;
+        setValue(value);
         return this;
     }
 
     /**
-     * Determines whether the tag is added to new instances as they are
-     * launched in the group.
-     *
-     * @return Determines whether the tag is added to new instances as they are
-     *         launched in the group.
-     */
-    public Boolean isPropagateAtLaunch() {
-        return propagateAtLaunch;
-    }
-    
-    /**
-     * Determines whether the tag is added to new instances as they are
-     * launched in the group.
-     *
-     * @param propagateAtLaunch Determines whether the tag is added to new instances as they are
-     *         launched in the group.
+     * <p>
+     * Determines whether the tag is added to new instances as they are launched
+     * in the group.
+     * </p>
+     * 
+     * @param propagateAtLaunch
+     *        Determines whether the tag is added to new instances as they are
+     *        launched in the group.
      */
     public void setPropagateAtLaunch(Boolean propagateAtLaunch) {
         this.propagateAtLaunch = propagateAtLaunch;
     }
-    
-    /**
-     * Determines whether the tag is added to new instances as they are
-     * launched in the group.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param propagateAtLaunch Determines whether the tag is added to new instances as they are
-     *         launched in the group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public TagDescription withPropagateAtLaunch(Boolean propagateAtLaunch) {
-        this.propagateAtLaunch = propagateAtLaunch;
-        return this;
-    }
 
     /**
-     * Determines whether the tag is added to new instances as they are
-     * launched in the group.
-     *
+     * <p>
+     * Determines whether the tag is added to new instances as they are launched
+     * in the group.
+     * </p>
+     * 
      * @return Determines whether the tag is added to new instances as they are
      *         launched in the group.
      */
     public Boolean getPropagateAtLaunch() {
-        return propagateAtLaunch;
+        return this.propagateAtLaunch;
+    }
+
+    /**
+     * <p>
+     * Determines whether the tag is added to new instances as they are launched
+     * in the group.
+     * </p>
+     * 
+     * @param propagateAtLaunch
+     *        Determines whether the tag is added to new instances as they are
+     *        launched in the group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public TagDescription withPropagateAtLaunch(Boolean propagateAtLaunch) {
+        setPropagateAtLaunch(propagateAtLaunch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether the tag is added to new instances as they are launched
+     * in the group.
+     * </p>
+     * 
+     * @return Determines whether the tag is added to new instances as they are
+     *         launched in the group.
+     */
+    public Boolean isPropagateAtLaunch() {
+        return this.propagateAtLaunch;
     }
 
     /**
@@ -306,62 +284,90 @@ public class TagDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getResourceId() != null) sb.append("ResourceId: " + getResourceId() + ",");
-        if (getResourceType() != null) sb.append("ResourceType: " + getResourceType() + ",");
-        if (getKey() != null) sb.append("Key: " + getKey() + ",");
-        if (getValue() != null) sb.append("Value: " + getValue() + ",");
-        if (isPropagateAtLaunch() != null) sb.append("PropagateAtLaunch: " + isPropagateAtLaunch() );
+        if (getResourceId() != null)
+            sb.append("ResourceId: " + getResourceId() + ",");
+        if (getResourceType() != null)
+            sb.append("ResourceType: " + getResourceType() + ",");
+        if (getKey() != null)
+            sb.append("Key: " + getKey() + ",");
+        if (getValue() != null)
+            sb.append("Value: " + getValue() + ",");
+        if (getPropagateAtLaunch() != null)
+            sb.append("PropagateAtLaunch: " + getPropagateAtLaunch());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof TagDescription == false)
+            return false;
+        TagDescription other = (TagDescription) obj;
+        if (other.getResourceId() == null ^ this.getResourceId() == null)
+            return false;
+        if (other.getResourceId() != null
+                && other.getResourceId().equals(this.getResourceId()) == false)
+            return false;
+        if (other.getResourceType() == null ^ this.getResourceType() == null)
+            return false;
+        if (other.getResourceType() != null
+                && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
+        if (other.getKey() == null ^ this.getKey() == null)
+            return false;
+        if (other.getKey() != null
+                && other.getKey().equals(this.getKey()) == false)
+            return false;
+        if (other.getValue() == null ^ this.getValue() == null)
+            return false;
+        if (other.getValue() != null
+                && other.getValue().equals(this.getValue()) == false)
+            return false;
+        if (other.getPropagateAtLaunch() == null
+                ^ this.getPropagateAtLaunch() == null)
+            return false;
+        if (other.getPropagateAtLaunch() != null
+                && other.getPropagateAtLaunch().equals(
+                        this.getPropagateAtLaunch()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode()); 
-        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode()); 
-        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode()); 
-        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode()); 
-        hashCode = prime * hashCode + ((isPropagateAtLaunch() == null) ? 0 : isPropagateAtLaunch().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getResourceType() == null) ? 0 : getResourceType()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode
+                + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPropagateAtLaunch() == null) ? 0
+                        : getPropagateAtLaunch().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof TagDescription == false) return false;
-        TagDescription other = (TagDescription)obj;
-        
-        if (other.getResourceId() == null ^ this.getResourceId() == null) return false;
-        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false) return false; 
-        if (other.getResourceType() == null ^ this.getResourceType() == null) return false;
-        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false) return false; 
-        if (other.getKey() == null ^ this.getKey() == null) return false;
-        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false) return false; 
-        if (other.getValue() == null ^ this.getValue() == null) return false;
-        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false) return false; 
-        if (other.isPropagateAtLaunch() == null ^ this.isPropagateAtLaunch() == null) return false;
-        if (other.isPropagateAtLaunch() != null && other.isPropagateAtLaunch().equals(this.isPropagateAtLaunch()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public TagDescription clone() {
         try {
             return (TagDescription) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

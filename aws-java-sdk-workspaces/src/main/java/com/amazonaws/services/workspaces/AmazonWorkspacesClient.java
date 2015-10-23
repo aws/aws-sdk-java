@@ -57,6 +57,9 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "workspaces";
 
+    /** The region metadata service name for computing region endpoints. */
+    private static final String DEFAULT_ENDPOINT_PREFIX = "workspaces";
+
     /**
      * List of exception unmarshallers for all Amazon WorkSpaces exceptions.
      */
@@ -238,6 +241,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
         // calling this.setEndPoint(...) will also modify the signer accordingly
         setEndpoint("https://workspaces.us-east-1.amazonaws.com");
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
+        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

@@ -30,6 +30,41 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  * Evaluation Result StAX Unmarshaller
  */
 public class EvaluationResultStaxUnmarshaller implements Unmarshaller<EvaluationResult, StaxUnmarshallerContext> {
+    private static class EvalDecisionDetailsMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, String>, StaxUnmarshallerContext> {
+        @Override
+        public Entry<String, String> unmarshall(StaxUnmarshallerContext context) throws Exception {
+            int originalDepth = context.getCurrentDepth();
+            int targetDepth = originalDepth + 1;
+
+            MapEntry<String, String> entry
+                = new MapEntry<String, String>();
+
+            while (true) {
+                XMLEvent xmlEvent = context.nextEvent();
+                if (xmlEvent.isEndDocument()) return entry;
+
+                if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+                    if (context.testExpression("key", targetDepth)) {
+                        entry.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                        continue;
+                    }
+                    if (context.testExpression("value", targetDepth)) {
+                        entry.setValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                        continue;
+                    }
+                } else if (xmlEvent.isEndElement()) {
+                    if (context.getCurrentDepth() < originalDepth) return entry;
+                }
+            }
+        }
+
+        private static EvalDecisionDetailsMapEntryUnmarshaller instance;
+        public static EvalDecisionDetailsMapEntryUnmarshaller getInstance() {
+            if (instance == null) instance = new EvalDecisionDetailsMapEntryUnmarshaller();
+            return instance;
+        }
+
+    }
 
     public EvaluationResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         EvaluationResult evaluationResult = new EvaluationResult();
@@ -61,6 +96,11 @@ public class EvaluationResultStaxUnmarshaller implements Unmarshaller<Evaluation
                 }
                 if (context.testExpression("MissingContextValues/member", targetDepth)) {
                     evaluationResult.getMissingContextValues().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("EvalDecisionDetails/entry", targetDepth)) {
+                    Entry<String, String> entry = EvalDecisionDetailsMapEntryUnmarshaller.getInstance().unmarshall(context);
+                    evaluationResult.getEvalDecisionDetails().put(entry.getKey(), entry.getValue());
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

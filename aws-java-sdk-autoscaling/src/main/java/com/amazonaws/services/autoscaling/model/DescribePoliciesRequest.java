@@ -1,380 +1,369 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describePolicies(DescribePoliciesRequest) DescribePolicies operation}.
- * <p>
- * Describes the policies for the specified Auto Scaling group.
- * </p>
- *
- * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describePolicies(DescribePoliciesRequest)
+ * 
  */
-public class DescribePoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The name of the group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The name of the group.
+     * </p>
      */
     private String autoScalingGroupName;
-
     /**
-     * One or more policy names or policy ARNs to be described. If you omit
-     * this list, all policy names are described. If an group name is
-     * provided, the results are limited to that group. This list is limited
-     * to 50 items. If you specify an unknown policy name, it is ignored with
-     * no error.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNames;
-
-    /**
-     * One or more policy types. Valid values are <code>SimpleScaling</code>
-     * and <code>StepScaling</code>.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyTypes;
-
-    /**
-     * The token for the next set of items to return. (You received this
-     * token from a previous call.)
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * One or more policy names or policy ARNs to be described. If you omit this
+     * list, all policy names are described. If an group name is provided, the
+     * results are limited to that group. This list is limited to 50 items. If
+     * you specify an unknown policy name, it is ignored with no error.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> policyNames;
+    /**
+     * <p>
+     * One or more policy types. Valid values are <code>SimpleScaling</code> and
+     * <code>StepScaling</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> policyTypes;
+    /**
+     * <p>
+     * The token for the next set of items to return. (You received this token
+     * from a previous call.)
+     * </p>
      */
     private String nextToken;
-
     /**
+     * <p>
      * The maximum number of items to be returned with each call.
+     * </p>
      */
     private Integer maxRecords;
 
     /**
-     * The name of the group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The name of the group.
-     */
-    public String getAutoScalingGroupName() {
-        return autoScalingGroupName;
-    }
-    
-    /**
      * The name of the group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param autoScalingGroupName The name of the group.
+     * </p>
+     * 
+     * @param autoScalingGroupName
+     *        The name of the group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
-    
+
     /**
+     * <p>
      * The name of the group.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param autoScalingGroupName The name of the group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The name of the group.
      */
-    public DescribePoliciesRequest withAutoScalingGroupName(String autoScalingGroupName) {
-        this.autoScalingGroupName = autoScalingGroupName;
+    public String getAutoScalingGroupName() {
+        return this.autoScalingGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the group.
+     * </p>
+     * 
+     * @param autoScalingGroupName
+     *        The name of the group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribePoliciesRequest withAutoScalingGroupName(
+            String autoScalingGroupName) {
+        setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
-     * One or more policy names or policy ARNs to be described. If you omit
-     * this list, all policy names are described. If an group name is
-     * provided, the results are limited to that group. This list is limited
-     * to 50 items. If you specify an unknown policy name, it is ignored with
-     * no error.
-     *
-     * @return One or more policy names or policy ARNs to be described. If you omit
-     *         this list, all policy names are described. If an group name is
-     *         provided, the results are limited to that group. This list is limited
-     *         to 50 items. If you specify an unknown policy name, it is ignored with
-     *         no error.
+     * <p>
+     * One or more policy names or policy ARNs to be described. If you omit this
+     * list, all policy names are described. If an group name is provided, the
+     * results are limited to that group. This list is limited to 50 items. If
+     * you specify an unknown policy name, it is ignored with no error.
+     * </p>
+     * 
+     * @return One or more policy names or policy ARNs to be described. If you
+     *         omit this list, all policy names are described. If an group name
+     *         is provided, the results are limited to that group. This list is
+     *         limited to 50 items. If you specify an unknown policy name, it is
+     *         ignored with no error.
      */
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
-              policyNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              policyNames.setAutoConstruct(true);
+            policyNames = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return policyNames;
     }
-    
+
     /**
-     * One or more policy names or policy ARNs to be described. If you omit
-     * this list, all policy names are described. If an group name is
-     * provided, the results are limited to that group. This list is limited
-     * to 50 items. If you specify an unknown policy name, it is ignored with
-     * no error.
-     *
-     * @param policyNames One or more policy names or policy ARNs to be described. If you omit
-     *         this list, all policy names are described. If an group name is
-     *         provided, the results are limited to that group. This list is limited
-     *         to 50 items. If you specify an unknown policy name, it is ignored with
-     *         no error.
+     * <p>
+     * One or more policy names or policy ARNs to be described. If you omit this
+     * list, all policy names are described. If an group name is provided, the
+     * results are limited to that group. This list is limited to 50 items. If
+     * you specify an unknown policy name, it is ignored with no error.
+     * </p>
+     * 
+     * @param policyNames
+     *        One or more policy names or policy ARNs to be described. If you
+     *        omit this list, all policy names are described. If an group name
+     *        is provided, the results are limited to that group. This list is
+     *        limited to 50 items. If you specify an unknown policy name, it is
+     *        ignored with no error.
      */
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyNames.size());
-        policyNamesCopy.addAll(policyNames);
-        this.policyNames = policyNamesCopy;
+
+        this.policyNames = new com.amazonaws.internal.SdkInternalList<String>(
+                policyNames);
     }
-    
+
     /**
-     * One or more policy names or policy ARNs to be described. If you omit
-     * this list, all policy names are described. If an group name is
-     * provided, the results are limited to that group. This list is limited
-     * to 50 items. If you specify an unknown policy name, it is ignored with
-     * no error.
+     * <p>
+     * One or more policy names or policy ARNs to be described. If you omit this
+     * list, all policy names are described. If an group name is provided, the
+     * results are limited to that group. This list is limited to 50 items. If
+     * you specify an unknown policy name, it is ignored with no error.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPolicyNames(java.util.Collection)} or {@link
-     * #withPolicyNames(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param policyNames One or more policy names or policy ARNs to be described. If you omit
-     *         this list, all policy names are described. If an group name is
-     *         provided, the results are limited to that group. This list is limited
-     *         to 50 items. If you specify an unknown policy name, it is ignored with
-     *         no error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setPolicyNames(java.util.Collection)} or
+     * {@link #withPolicyNames(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param policyNames
+     *        One or more policy names or policy ARNs to be described. If you
+     *        omit this list, all policy names are described. If an group name
+     *        is provided, the results are limited to that group. This list is
+     *        limited to 50 items. If you specify an unknown policy name, it is
+     *        ignored with no error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribePoliciesRequest withPolicyNames(String... policyNames) {
-        if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>(policyNames.length));
-        for (String value : policyNames) {
-            getPolicyNames().add(value);
+        if (this.policyNames == null) {
+            setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(
+                    policyNames.length));
+        }
+        for (String ele : policyNames) {
+            this.policyNames.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * One or more policy names or policy ARNs to be described. If you omit
-     * this list, all policy names are described. If an group name is
-     * provided, the results are limited to that group. This list is limited
-     * to 50 items. If you specify an unknown policy name, it is ignored with
-     * no error.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param policyNames One or more policy names or policy ARNs to be described. If you omit
-     *         this list, all policy names are described. If an group name is
-     *         provided, the results are limited to that group. This list is limited
-     *         to 50 items. If you specify an unknown policy name, it is ignored with
-     *         no error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * One or more policy names or policy ARNs to be described. If you omit this
+     * list, all policy names are described. If an group name is provided, the
+     * results are limited to that group. This list is limited to 50 items. If
+     * you specify an unknown policy name, it is ignored with no error.
+     * </p>
+     * 
+     * @param policyNames
+     *        One or more policy names or policy ARNs to be described. If you
+     *        omit this list, all policy names are described. If an group name
+     *        is provided, the results are limited to that group. This list is
+     *        limited to 50 items. If you specify an unknown policy name, it is
+     *        ignored with no error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribePoliciesRequest withPolicyNames(java.util.Collection<String> policyNames) {
-        if (policyNames == null) {
-            this.policyNames = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyNames.size());
-            policyNamesCopy.addAll(policyNames);
-            this.policyNames = policyNamesCopy;
-        }
-
+    public DescribePoliciesRequest withPolicyNames(
+            java.util.Collection<String> policyNames) {
+        setPolicyNames(policyNames);
         return this;
     }
 
     /**
-     * One or more policy types. Valid values are <code>SimpleScaling</code>
-     * and <code>StepScaling</code>.
-     *
-     * @return One or more policy types. Valid values are <code>SimpleScaling</code>
-     *         and <code>StepScaling</code>.
+     * <p>
+     * One or more policy types. Valid values are <code>SimpleScaling</code> and
+     * <code>StepScaling</code>.
+     * </p>
+     * 
+     * @return One or more policy types. Valid values are
+     *         <code>SimpleScaling</code> and <code>StepScaling</code>.
      */
     public java.util.List<String> getPolicyTypes() {
         if (policyTypes == null) {
-              policyTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              policyTypes.setAutoConstruct(true);
+            policyTypes = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return policyTypes;
     }
-    
+
     /**
-     * One or more policy types. Valid values are <code>SimpleScaling</code>
-     * and <code>StepScaling</code>.
-     *
-     * @param policyTypes One or more policy types. Valid values are <code>SimpleScaling</code>
-     *         and <code>StepScaling</code>.
+     * <p>
+     * One or more policy types. Valid values are <code>SimpleScaling</code> and
+     * <code>StepScaling</code>.
+     * </p>
+     * 
+     * @param policyTypes
+     *        One or more policy types. Valid values are
+     *        <code>SimpleScaling</code> and <code>StepScaling</code>.
      */
     public void setPolicyTypes(java.util.Collection<String> policyTypes) {
         if (policyTypes == null) {
             this.policyTypes = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> policyTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyTypes.size());
-        policyTypesCopy.addAll(policyTypes);
-        this.policyTypes = policyTypesCopy;
+
+        this.policyTypes = new com.amazonaws.internal.SdkInternalList<String>(
+                policyTypes);
     }
-    
+
     /**
-     * One or more policy types. Valid values are <code>SimpleScaling</code>
-     * and <code>StepScaling</code>.
+     * <p>
+     * One or more policy types. Valid values are <code>SimpleScaling</code> and
+     * <code>StepScaling</code>.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPolicyTypes(java.util.Collection)} or {@link
-     * #withPolicyTypes(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param policyTypes One or more policy types. Valid values are <code>SimpleScaling</code>
-     *         and <code>StepScaling</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setPolicyTypes(java.util.Collection)} or
+     * {@link #withPolicyTypes(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param policyTypes
+     *        One or more policy types. Valid values are
+     *        <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribePoliciesRequest withPolicyTypes(String... policyTypes) {
-        if (getPolicyTypes() == null) setPolicyTypes(new java.util.ArrayList<String>(policyTypes.length));
-        for (String value : policyTypes) {
-            getPolicyTypes().add(value);
+        if (this.policyTypes == null) {
+            setPolicyTypes(new com.amazonaws.internal.SdkInternalList<String>(
+                    policyTypes.length));
         }
-        return this;
-    }
-    
-    /**
-     * One or more policy types. Valid values are <code>SimpleScaling</code>
-     * and <code>StepScaling</code>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param policyTypes One or more policy types. Valid values are <code>SimpleScaling</code>
-     *         and <code>StepScaling</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribePoliciesRequest withPolicyTypes(java.util.Collection<String> policyTypes) {
-        if (policyTypes == null) {
-            this.policyTypes = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> policyTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyTypes.size());
-            policyTypesCopy.addAll(policyTypes);
-            this.policyTypes = policyTypesCopy;
+        for (String ele : policyTypes) {
+            this.policyTypes.add(ele);
         }
-
         return this;
     }
 
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a previous call.)
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The token for the next set of items to return. (You received this
-     *         token from a previous call.)
+     * One or more policy types. Valid values are <code>SimpleScaling</code> and
+     * <code>StepScaling</code>.
+     * </p>
+     * 
+     * @param policyTypes
+     *        One or more policy types. Valid values are
+     *        <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public String getNextToken() {
-        return nextToken;
+    public DescribePoliciesRequest withPolicyTypes(
+            java.util.Collection<String> policyTypes) {
+        setPolicyTypes(policyTypes);
+        return this;
     }
-    
+
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a previous call.)
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param nextToken The token for the next set of items to return. (You received this
-     *         token from a previous call.)
+     * The token for the next set of items to return. (You received this token
+     * from a previous call.)
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of items to return. (You received this
+     *        token from a previous call.)
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
-    
+
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a previous call.)
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param nextToken The token for the next set of items to return. (You received this
+     * The token for the next set of items to return. (You received this token
+     * from a previous call.)
+     * </p>
+     * 
+     * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of items to return. (You received this token
+     * from a previous call.)
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of items to return. (You received this
+     *        token from a previous call.)
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribePoliciesRequest withNextToken(String nextToken) {
-        this.nextToken = nextToken;
+        setNextToken(nextToken);
         return this;
     }
 
     /**
+     * <p>
      * The maximum number of items to be returned with each call.
-     *
-     * @return The maximum number of items to be returned with each call.
-     */
-    public Integer getMaxRecords() {
-        return maxRecords;
-    }
-    
-    /**
-     * The maximum number of items to be returned with each call.
-     *
-     * @param maxRecords The maximum number of items to be returned with each call.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of items to be returned with each call.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
-    
+
     /**
-     * The maximum number of items to be returned with each call.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param maxRecords The maximum number of items to be returned with each call.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The maximum number of items to be returned with each call.
+     * </p>
+     * 
+     * @return The maximum number of items to be returned with each call.
+     */
+    public Integer getMaxRecords() {
+        return this.maxRecords;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items to be returned with each call.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of items to be returned with each call.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribePoliciesRequest withMaxRecords(Integer maxRecords) {
-        this.maxRecords = maxRecords;
+        setMaxRecords(maxRecords);
         return this;
     }
 
@@ -390,54 +379,85 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
-        if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() + ",");
-        if (getPolicyTypes() != null) sb.append("PolicyTypes: " + getPolicyTypes() + ",");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() );
+        if (getAutoScalingGroupName() != null)
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
+                    + ",");
+        if (getPolicyNames() != null)
+            sb.append("PolicyNames: " + getPolicyNames() + ",");
+        if (getPolicyTypes() != null)
+            sb.append("PolicyTypes: " + getPolicyTypes() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken() + ",");
+        if (getMaxRecords() != null)
+            sb.append("MaxRecords: " + getMaxRecords());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribePoliciesRequest == false)
+            return false;
+        DescribePoliciesRequest other = (DescribePoliciesRequest) obj;
+        if (other.getAutoScalingGroupName() == null
+                ^ this.getAutoScalingGroupName() == null)
+            return false;
+        if (other.getAutoScalingGroupName() != null
+                && other.getAutoScalingGroupName().equals(
+                        this.getAutoScalingGroupName()) == false)
+            return false;
+        if (other.getPolicyNames() == null ^ this.getPolicyNames() == null)
+            return false;
+        if (other.getPolicyNames() != null
+                && other.getPolicyNames().equals(this.getPolicyNames()) == false)
+            return false;
+        if (other.getPolicyTypes() == null ^ this.getPolicyTypes() == null)
+            return false;
+        if (other.getPolicyTypes() != null
+                && other.getPolicyTypes().equals(this.getPolicyTypes()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null
+                && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
+            return false;
+        if (other.getMaxRecords() != null
+                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
-        hashCode = prime * hashCode + ((getPolicyNames() == null) ? 0 : getPolicyNames().hashCode()); 
-        hashCode = prime * hashCode + ((getPolicyTypes() == null) ? 0 : getPolicyTypes().hashCode()); 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getAutoScalingGroupName() == null) ? 0
+                        : getAutoScalingGroupName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPolicyNames() == null) ? 0 : getPolicyNames().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPolicyTypes() == null) ? 0 : getPolicyTypes().hashCode());
+        hashCode = prime * hashCode
+                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode
+                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribePoliciesRequest == false) return false;
-        DescribePoliciesRequest other = (DescribePoliciesRequest)obj;
-        
-        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null) return false;
-        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
-        if (other.getPolicyNames() == null ^ this.getPolicyNames() == null) return false;
-        if (other.getPolicyNames() != null && other.getPolicyNames().equals(this.getPolicyNames()) == false) return false; 
-        if (other.getPolicyTypes() == null ^ this.getPolicyTypes() == null) return false;
-        if (other.getPolicyTypes() != null && other.getPolicyTypes().equals(this.getPolicyTypes()) == false) return false; 
-        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
-        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
-        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribePoliciesRequest clone() {
-        
-            return (DescribePoliciesRequest) super.clone();
+        return (DescribePoliciesRequest) super.clone();
     }
-
 }
-    

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -29,26 +29,33 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Alarm StAX Unmarshaller
  */
-public class AlarmStaxUnmarshaller implements Unmarshaller<Alarm, StaxUnmarshallerContext> {
+public class AlarmStaxUnmarshaller implements
+        Unmarshaller<Alarm, StaxUnmarshallerContext> {
 
     public Alarm unmarshall(StaxUnmarshallerContext context) throws Exception {
         Alarm alarm = new Alarm();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return alarm;
+            if (xmlEvent.isEndDocument())
+                return alarm;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("AlarmName", targetDepth)) {
-                    alarm.setAlarmName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    alarm.setAlarmName(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("AlarmARN", targetDepth)) {
-                    alarm.setAlarmARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    alarm.setAlarmARN(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -60,9 +67,10 @@ public class AlarmStaxUnmarshaller implements Unmarshaller<Alarm, StaxUnmarshall
     }
 
     private static AlarmStaxUnmarshaller instance;
+
     public static AlarmStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new AlarmStaxUnmarshaller();
+        if (instance == null)
+            instance = new AlarmStaxUnmarshaller();
         return instance;
     }
 }
-    

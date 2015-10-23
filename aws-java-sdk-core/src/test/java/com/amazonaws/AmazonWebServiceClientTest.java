@@ -67,7 +67,7 @@ public class AmazonWebServiceClientTest {
     }
 
     @Test
-    public void setEndpoint() {
+    public void setEndpointPrefix() {
         AmazonTestClient client = new AmazonTestClient();
         Assert.assertEquals(client.getServiceName(), client.getEndpointPrefix());
         String endpointPrefixOverride = "foo";

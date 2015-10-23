@@ -68,6 +68,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "execute-api";
 
+    /** The region metadata service name for computing region endpoints. */
+    private static final String DEFAULT_ENDPOINT_PREFIX = "iot";
+
     /**
      * List of exception unmarshallers for all AWS IoT exceptions.
      */
@@ -287,6 +290,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         // calling this.setEndPoint(...) will also modify the signer accordingly
         setEndpoint("https://iot.us-east-1.amazonaws.com");
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
+        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

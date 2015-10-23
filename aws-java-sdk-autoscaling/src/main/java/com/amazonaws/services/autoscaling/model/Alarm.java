@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
@@ -24,110 +25,91 @@ import java.io.Serializable;
 public class Alarm implements Serializable, Cloneable {
 
     /**
-     * The name of the alarm.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The name of the alarm.
+     * </p>
      */
     private String alarmName;
-
     /**
-     * The Amazon Resource Name (ARN) of the alarm.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     * The Amazon Resource Name (ARN) of the alarm.
+     * </p>
      */
     private String alarmARN;
 
     /**
-     * The name of the alarm.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The name of the alarm.
-     */
-    public String getAlarmName() {
-        return alarmName;
-    }
-    
-    /**
      * The name of the alarm.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param alarmName The name of the alarm.
+     * </p>
+     * 
+     * @param alarmName
+     *        The name of the alarm.
      */
     public void setAlarmName(String alarmName) {
         this.alarmName = alarmName;
     }
-    
+
     /**
+     * <p>
      * The name of the alarm.
+     * </p>
+     * 
+     * @return The name of the alarm.
+     */
+    public String getAlarmName() {
+        return this.alarmName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param alarmName The name of the alarm.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the alarm.
+     * </p>
+     * 
+     * @param alarmName
+     *        The name of the alarm.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Alarm withAlarmName(String alarmName) {
-        this.alarmName = alarmName;
+        setAlarmName(alarmName);
         return this;
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the alarm.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @return The Amazon Resource Name (ARN) of the alarm.
-     */
-    public String getAlarmARN() {
-        return alarmARN;
-    }
-    
-    /**
      * The Amazon Resource Name (ARN) of the alarm.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param alarmARN The Amazon Resource Name (ARN) of the alarm.
+     * </p>
+     * 
+     * @param alarmARN
+     *        The Amazon Resource Name (ARN) of the alarm.
      */
     public void setAlarmARN(String alarmARN) {
         this.alarmARN = alarmARN;
     }
-    
+
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the alarm.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the alarm.
+     */
+    public String getAlarmARN() {
+        return this.alarmARN;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
-     *
-     * @param alarmARN The Amazon Resource Name (ARN) of the alarm.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon Resource Name (ARN) of the alarm.
+     * </p>
+     * 
+     * @param alarmARN
+     *        The Amazon Resource Name (ARN) of the alarm.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Alarm withAlarmARN(String alarmARN) {
-        this.alarmARN = alarmARN;
+        setAlarmARN(alarmARN);
         return this;
     }
 
@@ -143,50 +125,57 @@ public class Alarm implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ",");
-        if (getAlarmARN() != null) sb.append("AlarmARN: " + getAlarmARN() );
+        if (getAlarmName() != null)
+            sb.append("AlarmName: " + getAlarmName() + ",");
+        if (getAlarmARN() != null)
+            sb.append("AlarmARN: " + getAlarmARN());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof Alarm == false)
+            return false;
+        Alarm other = (Alarm) obj;
+        if (other.getAlarmName() == null ^ this.getAlarmName() == null)
+            return false;
+        if (other.getAlarmName() != null
+                && other.getAlarmName().equals(this.getAlarmName()) == false)
+            return false;
+        if (other.getAlarmARN() == null ^ this.getAlarmARN() == null)
+            return false;
+        if (other.getAlarmARN() != null
+                && other.getAlarmARN().equals(this.getAlarmARN()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode()); 
-        hashCode = prime * hashCode + ((getAlarmARN() == null) ? 0 : getAlarmARN().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
+        hashCode = prime * hashCode
+                + ((getAlarmARN() == null) ? 0 : getAlarmARN().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof Alarm == false) return false;
-        Alarm other = (Alarm)obj;
-        
-        if (other.getAlarmName() == null ^ this.getAlarmName() == null) return false;
-        if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false) return false; 
-        if (other.getAlarmARN() == null ^ this.getAlarmARN() == null) return false;
-        if (other.getAlarmARN() != null && other.getAlarmARN().equals(this.getAlarmARN()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public Alarm clone() {
         try {
             return (Alarm) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

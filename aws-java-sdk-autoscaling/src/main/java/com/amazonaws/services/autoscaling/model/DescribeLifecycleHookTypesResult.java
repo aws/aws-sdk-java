@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
@@ -19,101 +20,194 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeLifecycleHookTypesResult implements Serializable, Cloneable {
+public class DescribeLifecycleHookTypesResult implements Serializable,
+        Cloneable {
 
     /**
-     * One or more of the following notification types: <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
+     * <p>
+     * One or more of the following notification types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
+     * </p>
+     * </li>
+     * </ul>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> lifecycleHookTypes;
+    private com.amazonaws.internal.SdkInternalList<String> lifecycleHookTypes;
 
     /**
-     * One or more of the following notification types: <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
-     *
-     * @return One or more of the following notification types: <ul>
-     *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
-     *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
+     * <p>
+     * One or more of the following notification types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return One or more of the following notification types:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
+     *         </p>
+     *         </li>
      */
     public java.util.List<String> getLifecycleHookTypes() {
         if (lifecycleHookTypes == null) {
-              lifecycleHookTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              lifecycleHookTypes.setAutoConstruct(true);
+            lifecycleHookTypes = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return lifecycleHookTypes;
     }
-    
+
     /**
-     * One or more of the following notification types: <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
-     *
-     * @param lifecycleHookTypes One or more of the following notification types: <ul>
-     *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
-     *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
+     * <p>
+     * One or more of the following notification types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lifecycleHookTypes
+     *        One or more of the following notification types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
+     *        </p>
+     *        </li>
      */
-    public void setLifecycleHookTypes(java.util.Collection<String> lifecycleHookTypes) {
+    public void setLifecycleHookTypes(
+            java.util.Collection<String> lifecycleHookTypes) {
         if (lifecycleHookTypes == null) {
             this.lifecycleHookTypes = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> lifecycleHookTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(lifecycleHookTypes.size());
-        lifecycleHookTypesCopy.addAll(lifecycleHookTypes);
-        this.lifecycleHookTypes = lifecycleHookTypesCopy;
+
+        this.lifecycleHookTypes = new com.amazonaws.internal.SdkInternalList<String>(
+                lifecycleHookTypes);
     }
-    
+
     /**
-     * One or more of the following notification types: <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
+     * <p>
+     * One or more of the following notification types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLifecycleHookTypes(java.util.Collection)} or
      * {@link #withLifecycleHookTypes(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param lifecycleHookTypes One or more of the following notification types: <ul>
-     *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
-     *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param lifecycleHookTypes
+     *        One or more of the following notification types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeLifecycleHookTypesResult withLifecycleHookTypes(String... lifecycleHookTypes) {
-        if (getLifecycleHookTypes() == null) setLifecycleHookTypes(new java.util.ArrayList<String>(lifecycleHookTypes.length));
-        for (String value : lifecycleHookTypes) {
-            getLifecycleHookTypes().add(value);
+    public DescribeLifecycleHookTypesResult withLifecycleHookTypes(
+            String... lifecycleHookTypes) {
+        if (this.lifecycleHookTypes == null) {
+            setLifecycleHookTypes(new com.amazonaws.internal.SdkInternalList<String>(
+                    lifecycleHookTypes.length));
+        }
+        for (String ele : lifecycleHookTypes) {
+            this.lifecycleHookTypes.add(ele);
         }
         return this;
     }
-    
-    /**
-     * One or more of the following notification types: <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param lifecycleHookTypes One or more of the following notification types: <ul>
-     *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
-     *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribeLifecycleHookTypesResult withLifecycleHookTypes(java.util.Collection<String> lifecycleHookTypes) {
-        if (lifecycleHookTypes == null) {
-            this.lifecycleHookTypes = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> lifecycleHookTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(lifecycleHookTypes.size());
-            lifecycleHookTypesCopy.addAll(lifecycleHookTypes);
-            this.lifecycleHookTypes = lifecycleHookTypesCopy;
-        }
 
+    /**
+     * <p>
+     * One or more of the following notification types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lifecycleHookTypes
+     *        One or more of the following notification types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeLifecycleHookTypesResult withLifecycleHookTypes(
+            java.util.Collection<String> lifecycleHookTypes) {
+        setLifecycleHookTypes(lifecycleHookTypes);
         return this;
     }
 
@@ -129,46 +223,52 @@ public class DescribeLifecycleHookTypesResult implements Serializable, Cloneable
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLifecycleHookTypes() != null) sb.append("LifecycleHookTypes: " + getLifecycleHookTypes() );
+        if (getLifecycleHookTypes() != null)
+            sb.append("LifecycleHookTypes: " + getLifecycleHookTypes());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeLifecycleHookTypesResult == false)
+            return false;
+        DescribeLifecycleHookTypesResult other = (DescribeLifecycleHookTypesResult) obj;
+        if (other.getLifecycleHookTypes() == null
+                ^ this.getLifecycleHookTypes() == null)
+            return false;
+        if (other.getLifecycleHookTypes() != null
+                && other.getLifecycleHookTypes().equals(
+                        this.getLifecycleHookTypes()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getLifecycleHookTypes() == null) ? 0 : getLifecycleHookTypes().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getLifecycleHookTypes() == null) ? 0
+                        : getLifecycleHookTypes().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeLifecycleHookTypesResult == false) return false;
-        DescribeLifecycleHookTypesResult other = (DescribeLifecycleHookTypesResult)obj;
-        
-        if (other.getLifecycleHookTypes() == null ^ this.getLifecycleHookTypes() == null) return false;
-        if (other.getLifecycleHookTypes() != null && other.getLifecycleHookTypes().equals(this.getLifecycleHookTypes()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeLifecycleHookTypesResult clone() {
         try {
             return (DescribeLifecycleHookTypesResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

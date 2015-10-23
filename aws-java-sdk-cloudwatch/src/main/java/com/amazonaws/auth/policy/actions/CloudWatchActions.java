@@ -1,60 +1,55 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.auth.policy.actions;
 
 import com.amazonaws.auth.policy.Action;
 
 /**
- * The available AWS access control policy actions for Amazon CloudWatch.
+ * The available AWS access control policy actions for CloudWatch.
  */
+
 public enum CloudWatchActions implements Action {
-    /** Represents any action executed on Amazon CloudWatch. */
-    AllCloudWatchActions("cloudwatch:*"),
+
+    /** Represents any action executed on CloudWatch. */
+    AllCloudWatchActions("monitoring:*"),
 
     /** Action for the DeleteAlarms operation. */
-    DeleteAlarms("cloudwatch:DeleteAlarms"),
-
+    DeleteAlarms("monitoring:DeleteAlarms"),
     /** Action for the DescribeAlarmHistory operation. */
-    DescribeAlarmHistory("cloudwatch:DescribeAlarmHistory"),
-
+    DescribeAlarmHistory("monitoring:DescribeAlarmHistory"),
     /** Action for the DescribeAlarms operation. */
-    DescribeAlarms("cloudwatch:DescribeAlarms"),
-
+    DescribeAlarms("monitoring:DescribeAlarms"),
     /** Action for the DescribeAlarmsForMetric operation. */
-    DescribeAlarmsForMetric("cloudwatch:DescribeAlarmsForMetric"),
-
+    DescribeAlarmsForMetric("monitoring:DescribeAlarmsForMetric"),
     /** Action for the DisableAlarmActions operation. */
-    DisableAlarmActions("cloudwatch:DisableAlarmActions"),
-
+    DisableAlarmActions("monitoring:DisableAlarmActions"),
     /** Action for the EnableAlarmActions operation. */
-    EnableAlarmActions("cloudwatch:EnableAlarmActions"),
-
+    EnableAlarmActions("monitoring:EnableAlarmActions"),
     /** Action for the GetMetricStatistics operation. */
-    GetMetricStatistics("cloudwatch:GetMetricStatistics"),
-
+    GetMetricStatistics("monitoring:GetMetricStatistics"),
     /** Action for the ListMetrics operation. */
-    ListMetrics("cloudwatch:ListMetrics"),
-
+    ListMetrics("monitoring:ListMetrics"),
     /** Action for the PutMetricAlarm operation. */
-    PutMetricAlarm("cloudwatch:PutMetricAlarm"),
-
+    PutMetricAlarm("monitoring:PutMetricAlarm"),
     /** Action for the PutMetricData operation. */
-    PutMetricData("cloudwatch:PutMetricData"),
-
+    PutMetricData("monitoring:PutMetricData"),
     /** Action for the SetAlarmState operation. */
-    SetAlarmState("cloudwatch:SetAlarmState");
+    SetAlarmState("monitoring:SetAlarmState"),
+
+    ;
 
     private final String action;
 

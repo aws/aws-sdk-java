@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.kms.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,65 +40,88 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Re Encrypt Request Marshaller
+ * ReEncryptRequest Marshaller
  */
-public class ReEncryptRequestMarshaller implements Marshaller<Request<ReEncryptRequest>, ReEncryptRequest> {
+public class ReEncryptRequestMarshaller implements
+        Marshaller<Request<ReEncryptRequest>, ReEncryptRequest> {
 
     public Request<ReEncryptRequest> marshall(ReEncryptRequest reEncryptRequest) {
+
         if (reEncryptRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<ReEncryptRequest> request = new DefaultRequest<ReEncryptRequest>(reEncryptRequest, "AWSKMS");
-        String target = "TrentService.ReEncrypt";
-        request.addHeader("X-Amz-Target", target);
+        Request<ReEncryptRequest> request = new DefaultRequest<ReEncryptRequest>(
+                reEncryptRequest, "AWSKMS");
+        request.addHeader("X-Amz-Target", "TrentService.ReEncrypt");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (reEncryptRequest.getCiphertextBlob() != null) {
-                jsonWriter.key("CiphertextBlob").value(reEncryptRequest.getCiphertextBlob());
+                jsonWriter.key("CiphertextBlob").value(
+                        reEncryptRequest.getCiphertextBlob());
             }
-            if (reEncryptRequest.getSourceEncryptionContext() != null && !reEncryptRequest.getSourceEncryptionContext().isEmpty()) {
+
+            com.amazonaws.internal.SdkInternalMap<String, String> sourceEncryptionContextMap = (com.amazonaws.internal.SdkInternalMap<String, String>) reEncryptRequest
+                    .getSourceEncryptionContext();
+            if (!sourceEncryptionContextMap.isEmpty()
+                    || !sourceEncryptionContextMap.isAutoConstruct()) {
                 jsonWriter.key("SourceEncryptionContext");
                 jsonWriter.object();
-                for (Map.Entry<String, String> sourceEncryptionContextListValue : reEncryptRequest.getSourceEncryptionContext().entrySet()) {
-                    if (sourceEncryptionContextListValue.getValue() != null) {
-                        jsonWriter.key(sourceEncryptionContextListValue.getKey());
 
-                        jsonWriter.value(sourceEncryptionContextListValue.getValue());
+                for (Map.Entry<String, String> sourceEncryptionContextMapValue : sourceEncryptionContextMap
+                        .entrySet()) {
+                    if (sourceEncryptionContextMapValue.getValue() != null) {
+                        jsonWriter
+                                .key(sourceEncryptionContextMapValue.getKey());
+
+                        jsonWriter.value(sourceEncryptionContextMapValue
+                                .getValue());
                     }
                 }
                 jsonWriter.endObject();
             }
+
             if (reEncryptRequest.getDestinationKeyId() != null) {
-                jsonWriter.key("DestinationKeyId").value(reEncryptRequest.getDestinationKeyId());
+                jsonWriter.key("DestinationKeyId").value(
+                        reEncryptRequest.getDestinationKeyId());
             }
-            if (reEncryptRequest.getDestinationEncryptionContext() != null && !reEncryptRequest.getDestinationEncryptionContext().isEmpty()) {
+
+            com.amazonaws.internal.SdkInternalMap<String, String> destinationEncryptionContextMap = (com.amazonaws.internal.SdkInternalMap<String, String>) reEncryptRequest
+                    .getDestinationEncryptionContext();
+            if (!destinationEncryptionContextMap.isEmpty()
+                    || !destinationEncryptionContextMap.isAutoConstruct()) {
                 jsonWriter.key("DestinationEncryptionContext");
                 jsonWriter.object();
-                for (Map.Entry<String, String> destinationEncryptionContextListValue : reEncryptRequest.getDestinationEncryptionContext().entrySet()) {
-                    if (destinationEncryptionContextListValue.getValue() != null) {
-                        jsonWriter.key(destinationEncryptionContextListValue.getKey());
 
-                        jsonWriter.value(destinationEncryptionContextListValue.getValue());
+                for (Map.Entry<String, String> destinationEncryptionContextMapValue : destinationEncryptionContextMap
+                        .entrySet()) {
+                    if (destinationEncryptionContextMapValue.getValue() != null) {
+                        jsonWriter.key(destinationEncryptionContextMapValue
+                                .getKey());
+
+                        jsonWriter.value(destinationEncryptionContextMapValue
+                                .getValue());
                     }
                 }
                 jsonWriter.endObject();
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> grantTokensList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(reEncryptRequest.getGrantTokens());
-            if (grantTokensList != null && !(grantTokensList.isAutoConstruct() && grantTokensList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> grantTokensList = (com.amazonaws.internal.SdkInternalList<String>) reEncryptRequest
+                    .getGrantTokens();
+            if (!grantTokensList.isEmpty()
+                    || !grantTokensList.isAutoConstruct()) {
                 jsonWriter.key("GrantTokens");
                 jsonWriter.array();
-
                 for (String grantTokensListValue : grantTokensList) {
                     if (grantTokensListValue != null) {
                         jsonWriter.value(grantTokensListValue);
@@ -106,17 +130,20 @@ public class ReEncryptRequestMarshaller implements Marshaller<Request<ReEncryptR
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

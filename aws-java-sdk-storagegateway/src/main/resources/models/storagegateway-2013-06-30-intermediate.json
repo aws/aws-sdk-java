@@ -21,8 +21,8 @@
     "signingName" : "storagegateway",
     "serviceName" : "AWS Storage Gateway",
     "jsonProtocol" : true,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {

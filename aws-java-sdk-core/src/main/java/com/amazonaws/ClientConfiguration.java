@@ -825,12 +825,14 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the amount of time to wait (in milliseconds) for the request
-     * to complete before giving up and timing out. A non-positive value
-     * means infinity.
+     * Returns the amount of time to wait (in milliseconds) for the request to complete before
+     * giving up and timing out. A non-positive value means infinity.
+     * <p>
+     * <b>Note:</b> This feature is not compatible with Java 1.6.
+     * </p>
      *
-     * @return The amount of time to wait (in milliseconds) for the request to complete
-     *         before giving up and timing out.
+     * @return The amount of time to wait (in milliseconds) for the request to complete before
+     *         giving up and timing out.
      */
     public int getRequestTimeout() {
         return requestTimeout;
@@ -840,6 +842,9 @@ public class ClientConfiguration {
      * Sets the amount of time to wait (in milliseconds) for the request
      * to complete before giving up and timing out. A non-positive value
      * means infinity.
+     * <p>
+     * <b>Note:</b> This feature is not compatible with Java 1.6.
+     * </p>
      *
      * @param requestTimeout
      *            The amount of time to wait (in milliseconds) for the request to complete
@@ -855,6 +860,9 @@ public class ClientConfiguration {
      * means infinity.
      * Returns the updated ClientConfiguration object so that additional method calls
      * may be chained together. 
+     * <p>
+     * <b>Note:</b> This feature is not compatible with Java 1.6.
+     * </p>
      *
      * @param requestTimeout
      *            The amount of time to wait (in milliseconds) for the request to complete

@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.autoscaling.model.transform;
 
 import java.util.HashMap;
@@ -21,52 +22,74 @@ import java.util.Map;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
-import com.amazonaws.internal.ListWithAutoConstructFlag;
+import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 
 /**
- * Create Or Update Tags Request Marshaller
+ * CreateOrUpdateTagsRequest Marshaller
  */
-public class CreateOrUpdateTagsRequestMarshaller implements Marshaller<Request<CreateOrUpdateTagsRequest>, CreateOrUpdateTagsRequest> {
 
-    public Request<CreateOrUpdateTagsRequest> marshall(CreateOrUpdateTagsRequest createOrUpdateTagsRequest) {
+public class CreateOrUpdateTagsRequestMarshaller
+        implements
+        Marshaller<Request<CreateOrUpdateTagsRequest>, CreateOrUpdateTagsRequest> {
+
+    public Request<CreateOrUpdateTagsRequest> marshall(
+            CreateOrUpdateTagsRequest createOrUpdateTagsRequest) {
 
         if (createOrUpdateTagsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateOrUpdateTagsRequest> request = new DefaultRequest<CreateOrUpdateTagsRequest>(createOrUpdateTagsRequest, "AmazonAutoScaling");
+        Request<CreateOrUpdateTagsRequest> request = new DefaultRequest<CreateOrUpdateTagsRequest>(
+                createOrUpdateTagsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "CreateOrUpdateTags");
         request.addParameter("Version", "2011-01-01");
+        request.setHttpMethod(HttpMethodName.POST);
 
-        java.util.List<Tag> tagsList = createOrUpdateTagsRequest.getTags();
-        int tagsListIndex = 1;
+        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createOrUpdateTagsRequest
+                .getTags();
+        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+            int tagsListIndex = 1;
 
-        for (Tag tagsListValue : tagsList) {
-            Tag tagMember = tagsListValue;
-            if (tagMember != null) {
-                if (tagMember.getResourceId() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".ResourceId", StringUtils.fromString(tagMember.getResourceId()));
+            for (Tag tagsListValue : tagsList) {
+
+                if (tagsListValue.getResourceId() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex
+                            + ".ResourceId", StringUtils
+                            .fromString(tagsListValue.getResourceId()));
                 }
-                if (tagMember.getResourceType() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".ResourceType", StringUtils.fromString(tagMember.getResourceType()));
+
+                if (tagsListValue.getResourceType() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex
+                            + ".ResourceType", StringUtils
+                            .fromString(tagsListValue.getResourceType()));
                 }
-                if (tagMember.getKey() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagMember.getKey()));
+
+                if (tagsListValue.getKey() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex
+                            + ".Key",
+                            StringUtils.fromString(tagsListValue.getKey()));
                 }
-                if (tagMember.getValue() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagMember.getValue()));
+
+                if (tagsListValue.getValue() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex
+                            + ".Value",
+                            StringUtils.fromString(tagsListValue.getValue()));
                 }
-                if (tagMember.isPropagateAtLaunch() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".PropagateAtLaunch", StringUtils.fromBoolean(tagMember.isPropagateAtLaunch()));
+
+                if (tagsListValue.getPropagateAtLaunch() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex
+                            + ".PropagateAtLaunch", StringUtils
+                            .fromBoolean(tagsListValue.getPropagateAtLaunch()));
                 }
+                tagsListIndex++;
             }
-
-            tagsListIndex++;
         }
 
         return request;
     }
+
 }

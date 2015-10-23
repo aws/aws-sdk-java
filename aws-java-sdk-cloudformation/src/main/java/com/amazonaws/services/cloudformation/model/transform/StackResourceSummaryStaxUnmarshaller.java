@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,44 +27,65 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Stack Resource Summary StAX Unmarshaller
+ * StackResourceSummary StAX Unmarshaller
  */
-public class StackResourceSummaryStaxUnmarshaller implements Unmarshaller<StackResourceSummary, StaxUnmarshallerContext> {
+public class StackResourceSummaryStaxUnmarshaller implements
+        Unmarshaller<StackResourceSummary, StaxUnmarshallerContext> {
 
-    public StackResourceSummary unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public StackResourceSummary unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         StackResourceSummary stackResourceSummary = new StackResourceSummary();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return stackResourceSummary;
+            if (xmlEvent.isEndDocument())
+                return stackResourceSummary;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("LogicalResourceId", targetDepth)) {
-                    stackResourceSummary.setLogicalResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceSummary
+                            .setLogicalResourceId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("PhysicalResourceId", targetDepth)) {
-                    stackResourceSummary.setPhysicalResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceSummary
+                            .setPhysicalResourceId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ResourceType", targetDepth)) {
-                    stackResourceSummary.setResourceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceSummary.setResourceType(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("LastUpdatedTimestamp", targetDepth)) {
-                    stackResourceSummary.setLastUpdatedTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceSummary
+                            .setLastUpdatedTimestamp(DateStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ResourceStatus", targetDepth)) {
-                    stackResourceSummary.setResourceStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceSummary
+                            .setResourceStatus(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ResourceStatusReason", targetDepth)) {
-                    stackResourceSummary.setResourceStatusReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceSummary
+                            .setResourceStatusReason(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -76,9 +97,10 @@ public class StackResourceSummaryStaxUnmarshaller implements Unmarshaller<StackR
     }
 
     private static StackResourceSummaryStaxUnmarshaller instance;
+
     public static StackResourceSummaryStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new StackResourceSummaryStaxUnmarshaller();
+        if (instance == null)
+            instance = new StackResourceSummaryStaxUnmarshaller();
         return instance;
     }
 }
-    

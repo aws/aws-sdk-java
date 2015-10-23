@@ -107,7 +107,7 @@ public abstract class AmazonWebServiceClient {
     /**
      * The service name in region metadata, i.e. the prefix of endpoint.
      */
-    private String endpointPrefix;
+    private volatile String endpointPrefix;
 
     /**
      * Constructs a new AmazonWebServiceClient object using the specified
@@ -641,10 +641,13 @@ public abstract class AmazonWebServiceClient {
         String serviceNameInRegionMetadata = ServiceNameFactory
                 .getServiceNameInRegionMetadata(httpClientName);
 
-        if (serviceNameInRegionMetadata != null) {
-            return endpointPrefix = serviceNameInRegionMetadata;
-        } else {
-            return endpointPrefix = getServiceNameIntern();
+        synchronized(this) {
+            if (endpointPrefix != null) return endpointPrefix;
+            if (serviceNameInRegionMetadata != null) {
+                return endpointPrefix = serviceNameInRegionMetadata;
+            } else {
+                return endpointPrefix = getServiceNameIntern();
+            }
         }
 
     }

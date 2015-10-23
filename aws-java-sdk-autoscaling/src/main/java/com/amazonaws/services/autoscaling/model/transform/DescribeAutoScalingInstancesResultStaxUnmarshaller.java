@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,28 +27,41 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Describe Auto Scaling Instances Result StAX Unmarshaller
+ * DescribeAutoScalingInstancesResult StAX Unmarshaller
  */
-public class DescribeAutoScalingInstancesResultStaxUnmarshaller implements Unmarshaller<DescribeAutoScalingInstancesResult, StaxUnmarshallerContext> {
+public class DescribeAutoScalingInstancesResultStaxUnmarshaller
+        implements
+        Unmarshaller<DescribeAutoScalingInstancesResult, StaxUnmarshallerContext> {
 
-    public DescribeAutoScalingInstancesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public DescribeAutoScalingInstancesResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         DescribeAutoScalingInstancesResult describeAutoScalingInstancesResult = new DescribeAutoScalingInstancesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return describeAutoScalingInstancesResult;
+            if (xmlEvent.isEndDocument())
+                return describeAutoScalingInstancesResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("AutoScalingInstances/member", targetDepth)) {
-                    describeAutoScalingInstancesResult.getAutoScalingInstances().add(AutoScalingInstanceDetailsStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("AutoScalingInstances/member",
+                        targetDepth)) {
+                    describeAutoScalingInstancesResult
+                            .getAutoScalingInstances().add(
+                                    AutoScalingInstanceDetailsStaxUnmarshaller
+                                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("NextToken", targetDepth)) {
-                    describeAutoScalingInstancesResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeAutoScalingInstancesResult
+                            .setNextToken(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -60,9 +73,10 @@ public class DescribeAutoScalingInstancesResultStaxUnmarshaller implements Unmar
     }
 
     private static DescribeAutoScalingInstancesResultStaxUnmarshaller instance;
+
     public static DescribeAutoScalingInstancesResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new DescribeAutoScalingInstancesResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new DescribeAutoScalingInstancesResultStaxUnmarshaller();
         return instance;
     }
 }
-    

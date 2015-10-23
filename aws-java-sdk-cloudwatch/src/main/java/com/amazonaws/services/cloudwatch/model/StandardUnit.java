@@ -1,24 +1,25 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudwatch.model;
 
 /**
- * Standard Unit
+ * 
  */
 public enum StandardUnit {
-    
+
     Seconds("Seconds"),
     Microseconds("Microseconds"),
     Milliseconds("Milliseconds"),
@@ -62,70 +63,69 @@ public enum StandardUnit {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return StandardUnit corresponding to the value
      */
     public static StandardUnit fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("Seconds".equals(value)) {
-            return StandardUnit.Seconds;
+            return Seconds;
         } else if ("Microseconds".equals(value)) {
-            return StandardUnit.Microseconds;
+            return Microseconds;
         } else if ("Milliseconds".equals(value)) {
-            return StandardUnit.Milliseconds;
+            return Milliseconds;
         } else if ("Bytes".equals(value)) {
-            return StandardUnit.Bytes;
+            return Bytes;
         } else if ("Kilobytes".equals(value)) {
-            return StandardUnit.Kilobytes;
+            return Kilobytes;
         } else if ("Megabytes".equals(value)) {
-            return StandardUnit.Megabytes;
+            return Megabytes;
         } else if ("Gigabytes".equals(value)) {
-            return StandardUnit.Gigabytes;
+            return Gigabytes;
         } else if ("Terabytes".equals(value)) {
-            return StandardUnit.Terabytes;
+            return Terabytes;
         } else if ("Bits".equals(value)) {
-            return StandardUnit.Bits;
+            return Bits;
         } else if ("Kilobits".equals(value)) {
-            return StandardUnit.Kilobits;
+            return Kilobits;
         } else if ("Megabits".equals(value)) {
-            return StandardUnit.Megabits;
+            return Megabits;
         } else if ("Gigabits".equals(value)) {
-            return StandardUnit.Gigabits;
+            return Gigabits;
         } else if ("Terabits".equals(value)) {
-            return StandardUnit.Terabits;
+            return Terabits;
         } else if ("Percent".equals(value)) {
-            return StandardUnit.Percent;
+            return Percent;
         } else if ("Count".equals(value)) {
-            return StandardUnit.Count;
+            return Count;
         } else if ("Bytes/Second".equals(value)) {
-            return StandardUnit.BytesSecond;
+            return BytesSecond;
         } else if ("Kilobytes/Second".equals(value)) {
-            return StandardUnit.KilobytesSecond;
+            return KilobytesSecond;
         } else if ("Megabytes/Second".equals(value)) {
-            return StandardUnit.MegabytesSecond;
+            return MegabytesSecond;
         } else if ("Gigabytes/Second".equals(value)) {
-            return StandardUnit.GigabytesSecond;
+            return GigabytesSecond;
         } else if ("Terabytes/Second".equals(value)) {
-            return StandardUnit.TerabytesSecond;
+            return TerabytesSecond;
         } else if ("Bits/Second".equals(value)) {
-            return StandardUnit.BitsSecond;
+            return BitsSecond;
         } else if ("Kilobits/Second".equals(value)) {
-            return StandardUnit.KilobitsSecond;
+            return KilobitsSecond;
         } else if ("Megabits/Second".equals(value)) {
-            return StandardUnit.MegabitsSecond;
+            return MegabitsSecond;
         } else if ("Gigabits/Second".equals(value)) {
-            return StandardUnit.GigabitsSecond;
+            return GigabitsSecond;
         } else if ("Terabits/Second".equals(value)) {
-            return StandardUnit.TerabitsSecond;
+            return TerabitsSecond;
         } else if ("Count/Second".equals(value)) {
-            return StandardUnit.CountSecond;
+            return CountSecond;
         } else if ("None".equals(value)) {
-            return StandardUnit.None;
+            return None;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

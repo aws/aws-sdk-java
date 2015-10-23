@@ -1,74 +1,74 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#cancelUpdateStack(CancelUpdateStackRequest) CancelUpdateStack operation}.
  * <p>
- * Cancels an update on the specified stack. If the call completes
- * successfully, the stack rolls back the update and reverts to the
- * previous stack configuration.
+ * The input for the <a>CancelUpdateStack</a> action.
  * </p>
- * <p>
- * <b>NOTE:</b>You can cancel only stacks that are in the
- * UPDATE_IN_PROGRESS state.
- * </p>
- *
- * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#cancelUpdateStack(CancelUpdateStackRequest)
  */
-public class CancelUpdateStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CancelUpdateStackRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * The name or the unique stack ID that is associated with the stack.
+     * </p>
      */
     private String stackName;
 
     /**
+     * <p>
      * The name or the unique stack ID that is associated with the stack.
-     *
-     * @return The name or the unique stack ID that is associated with the stack.
-     */
-    public String getStackName() {
-        return stackName;
-    }
-    
-    /**
-     * The name or the unique stack ID that is associated with the stack.
-     *
-     * @param stackName The name or the unique stack ID that is associated with the stack.
+     * </p>
+     * 
+     * @param stackName
+     *        The name or the unique stack ID that is associated with the stack.
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
-    
+
     /**
-     * The name or the unique stack ID that is associated with the stack.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stackName The name or the unique stack ID that is associated with the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name or the unique stack ID that is associated with the stack.
+     * </p>
+     * 
+     * @return The name or the unique stack ID that is associated with the
+     *         stack.
+     */
+    public String getStackName() {
+        return this.stackName;
+    }
+
+    /**
+     * <p>
+     * The name or the unique stack ID that is associated with the stack.
+     * </p>
+     * 
+     * @param stackName
+     *        The name or the unique stack ID that is associated with the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CancelUpdateStackRequest withStackName(String stackName) {
-        this.stackName = stackName;
+        setStackName(stackName);
         return this;
     }
 
@@ -84,38 +84,42 @@ public class CancelUpdateStackRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStackName() != null) sb.append("StackName: " + getStackName() );
+        if (getStackName() != null)
+            sb.append("StackName: " + getStackName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CancelUpdateStackRequest == false)
+            return false;
+        CancelUpdateStackRequest other = (CancelUpdateStackRequest) obj;
+        if (other.getStackName() == null ^ this.getStackName() == null)
+            return false;
+        if (other.getStackName() != null
+                && other.getStackName().equals(this.getStackName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getStackName() == null) ? 0 : getStackName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CancelUpdateStackRequest == false) return false;
-        CancelUpdateStackRequest other = (CancelUpdateStackRequest)obj;
-        
-        if (other.getStackName() == null ^ this.getStackName() == null) return false;
-        if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CancelUpdateStackRequest clone() {
-        
-            return (CancelUpdateStackRequest) super.clone();
+        return (CancelUpdateStackRequest) super.clone();
     }
-
 }
-    
