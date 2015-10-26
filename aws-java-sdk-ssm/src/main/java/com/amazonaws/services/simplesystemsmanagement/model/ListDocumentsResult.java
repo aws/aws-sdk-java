@@ -24,7 +24,7 @@ public class ListDocumentsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the configuration documents.
+     * The names of the SSM documents.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DocumentIdentifier> documentIdentifiers;
@@ -38,10 +38,10 @@ public class ListDocumentsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the configuration documents.
+     * The names of the SSM documents.
      * </p>
      * 
-     * @return The names of the configuration documents.
+     * @return The names of the SSM documents.
      */
     public java.util.List<DocumentIdentifier> getDocumentIdentifiers() {
         if (documentIdentifiers == null) {
@@ -52,11 +52,11 @@ public class ListDocumentsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the configuration documents.
+     * The names of the SSM documents.
      * </p>
      * 
      * @param documentIdentifiers
-     *        The names of the configuration documents.
+     *        The names of the SSM documents.
      */
     public void setDocumentIdentifiers(
             java.util.Collection<DocumentIdentifier> documentIdentifiers) {
@@ -71,7 +71,7 @@ public class ListDocumentsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the configuration documents.
+     * The names of the SSM documents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -81,7 +81,7 @@ public class ListDocumentsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param documentIdentifiers
-     *        The names of the configuration documents.
+     *        The names of the SSM documents.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,11 +99,11 @@ public class ListDocumentsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the configuration documents.
+     * The names of the SSM documents.
      * </p>
      * 
      * @param documentIdentifiers
-     *        The names of the configuration documents.
+     *        The names of the SSM documents.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

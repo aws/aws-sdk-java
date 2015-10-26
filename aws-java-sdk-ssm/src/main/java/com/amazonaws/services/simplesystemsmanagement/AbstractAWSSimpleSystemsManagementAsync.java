@@ -30,6 +30,21 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<CancelCommandResult> cancelCommandAsync(
+            CancelCommandRequest request) {
+
+        return cancelCommandAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelCommandResult> cancelCommandAsync(
+            CancelCommandRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelCommandRequest, CancelCommandResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAssociationResult> createAssociationAsync(
             CreateAssociationRequest request) {
 
@@ -135,6 +150,21 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeInstanceInformationResult> describeInstanceInformationAsync(
+            DescribeInstanceInformationRequest request) {
+
+        return describeInstanceInformationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceInformationResult> describeInstanceInformationAsync(
+            DescribeInstanceInformationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceInformationRequest, DescribeInstanceInformationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDocumentResult> getDocumentAsync(
             GetDocumentRequest request) {
 
@@ -160,6 +190,36 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
     public java.util.concurrent.Future<ListAssociationsResult> listAssociationsAsync(
             ListAssociationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssociationsRequest, ListAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCommandInvocationsResult> listCommandInvocationsAsync(
+            ListCommandInvocationsRequest request) {
+
+        return listCommandInvocationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCommandInvocationsResult> listCommandInvocationsAsync(
+            ListCommandInvocationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCommandInvocationsRequest, ListCommandInvocationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCommandsResult> listCommandsAsync(
+            ListCommandsRequest request) {
+
+        return listCommandsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCommandsResult> listCommandsAsync(
+            ListCommandsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCommandsRequest, ListCommandsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -201,6 +261,21 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
             com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler) {
 
         return listDocumentsAsync(new ListDocumentsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCommandResult> sendCommandAsync(
+            SendCommandRequest request) {
+
+        return sendCommandAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCommandResult> sendCommandAsync(
+            SendCommandRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendCommandRequest, SendCommandResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

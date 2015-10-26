@@ -71,6 +71,16 @@ public class AssociationDescriptionJsonUnmarshaller implements
                             .setStatus(AssociationStatusJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Parameters", targetDepth)) {
+                    context.nextToken();
+                    associationDescription
+                            .setParameters(new MapUnmarshaller<String, java.util.List<String>>(
+                                    StringJsonUnmarshaller.getInstance(),
+                                    new ListUnmarshaller<String>(
+                                            StringJsonUnmarshaller
+                                                    .getInstance()))
+                                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

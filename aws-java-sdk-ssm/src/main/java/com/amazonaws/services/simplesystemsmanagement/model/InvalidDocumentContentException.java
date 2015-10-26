@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The content for the configuration document is not valid.
+ * The content for the SSM document is not valid.
  * </p>
  */
 public class InvalidDocumentContentException extends AmazonServiceException {

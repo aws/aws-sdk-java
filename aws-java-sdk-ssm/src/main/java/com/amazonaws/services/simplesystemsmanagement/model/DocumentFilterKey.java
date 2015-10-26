@@ -20,7 +20,9 @@ package com.amazonaws.services.simplesystemsmanagement.model;
  */
 public enum DocumentFilterKey {
 
-    Name("Name");
+    Name("Name"),
+    Owner("Owner"),
+    PlatformTypes("PlatformTypes");
 
     private String value;
 
@@ -45,6 +47,10 @@ public enum DocumentFilterKey {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         } else if ("Name".equals(value)) {
             return Name;
+        } else if ("Owner".equals(value)) {
+            return Owner;
+        } else if ("PlatformTypes".equals(value)) {
+            return PlatformTypes;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

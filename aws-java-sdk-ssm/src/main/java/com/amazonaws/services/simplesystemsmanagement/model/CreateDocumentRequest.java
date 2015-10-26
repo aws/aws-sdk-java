@@ -26,33 +26,33 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid JSON file. For more information about the contents of this file,
-     * see <a href=
+     * A valid JSON string. For more information about the contents of this
+     * string, see <a href=
      * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >Configuration Document</a>.
+     * >SSM Document</a>.
      * </p>
      */
     private String content;
     /**
      * <p>
-     * A name for the configuration document.
+     * A name for the SSM document.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * A valid JSON file. For more information about the contents of this file,
-     * see <a href=
+     * A valid JSON string. For more information about the contents of this
+     * string, see <a href=
      * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >Configuration Document</a>.
+     * >SSM Document</a>.
      * </p>
      * 
      * @param content
-     *        A valid JSON file. For more information about the contents of this
-     *        file, see <a href=
+     *        A valid JSON string. For more information about the contents of
+     *        this string, see <a href=
      *        "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     *        >Configuration Document</a>.
+     *        >SSM Document</a>.
      */
     public void setContent(String content) {
         this.content = content;
@@ -60,16 +60,16 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid JSON file. For more information about the contents of this file,
-     * see <a href=
+     * A valid JSON string. For more information about the contents of this
+     * string, see <a href=
      * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >Configuration Document</a>.
+     * >SSM Document</a>.
      * </p>
      * 
-     * @return A valid JSON file. For more information about the contents of
-     *         this file, see <a href=
+     * @return A valid JSON string. For more information about the contents of
+     *         this string, see <a href=
      *         "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     *         >Configuration Document</a>.
+     *         >SSM Document</a>.
      */
     public String getContent() {
         return this.content;
@@ -77,17 +77,17 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid JSON file. For more information about the contents of this file,
-     * see <a href=
+     * A valid JSON string. For more information about the contents of this
+     * string, see <a href=
      * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >Configuration Document</a>.
+     * >SSM Document</a>.
      * </p>
      * 
      * @param content
-     *        A valid JSON file. For more information about the contents of this
-     *        file, see <a href=
+     *        A valid JSON string. For more information about the contents of
+     *        this string, see <a href=
      *        "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     *        >Configuration Document</a>.
+     *        >SSM Document</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -98,11 +98,11 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A name for the configuration document.
+     * A name for the SSM document.
      * </p>
      * 
      * @param name
-     *        A name for the configuration document.
+     *        A name for the SSM document.
      */
     public void setName(String name) {
         this.name = name;
@@ -110,10 +110,10 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A name for the configuration document.
+     * A name for the SSM document.
      * </p>
      * 
-     * @return A name for the configuration document.
+     * @return A name for the SSM document.
      */
     public String getName() {
         return this.name;
@@ -121,11 +121,11 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A name for the configuration document.
+     * A name for the SSM document.
      * </p>
      * 
      * @param name
-     *        A name for the configuration document.
+     *        A name for the SSM document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -55,6 +55,13 @@ public class DocumentIdentifierJsonUnmarshaller implements
                     documentIdentifier.setName(StringJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("PlatformTypes", targetDepth)) {
+                    context.nextToken();
+                    documentIdentifier
+                            .setPlatformTypes(new ListUnmarshaller<String>(
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * You can have at most 100 active configuration documents.
+ * You can have at most 100 active SSM documents.
  * </p>
  */
 public class DocumentLimitExceededException extends AmazonServiceException {

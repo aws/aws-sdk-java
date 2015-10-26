@@ -24,18 +24,18 @@ public class CreateDocumentResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the configuration document.
+     * Information about the SSM document.
      * </p>
      */
     private DocumentDescription documentDescription;
 
     /**
      * <p>
-     * Information about the configuration document.
+     * Information about the SSM document.
      * </p>
      * 
      * @param documentDescription
-     *        Information about the configuration document.
+     *        Information about the SSM document.
      */
     public void setDocumentDescription(DocumentDescription documentDescription) {
         this.documentDescription = documentDescription;
@@ -43,10 +43,10 @@ public class CreateDocumentResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the configuration document.
+     * Information about the SSM document.
      * </p>
      * 
-     * @return Information about the configuration document.
+     * @return Information about the SSM document.
      */
     public DocumentDescription getDocumentDescription() {
         return this.documentDescription;
@@ -54,11 +54,11 @@ public class CreateDocumentResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the configuration document.
+     * Information about the SSM document.
      * </p>
      * 
      * @param documentDescription
-     *        Information about the configuration document.
+     *        Information about the SSM document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

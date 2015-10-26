@@ -54,6 +54,20 @@ public class DocumentIdentifierJsonMarshaller {
                 jsonWriter.key("Name").value(documentIdentifier.getName());
             }
 
+            com.amazonaws.internal.SdkInternalList<String> platformTypesList = (com.amazonaws.internal.SdkInternalList<String>) documentIdentifier
+                    .getPlatformTypes();
+            if (!platformTypesList.isEmpty()
+                    || !platformTypesList.isAutoConstruct()) {
+                jsonWriter.key("PlatformTypes");
+                jsonWriter.array();
+                for (String platformTypesListValue : platformTypesList) {
+                    if (platformTypesListValue != null) {
+                        jsonWriter.value(platformTypesListValue);
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

@@ -70,6 +70,25 @@ public class DocumentDescriptionJsonUnmarshaller implements
                     documentDescription.setStatus(StringJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setDescription(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Parameters", targetDepth)) {
+                    context.nextToken();
+                    documentDescription
+                            .setParameters(new ListUnmarshaller<DocumentParameter>(
+                                    DocumentParameterJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("PlatformTypes", targetDepth)) {
+                    context.nextToken();
+                    documentDescription
+                            .setPlatformTypes(new ListUnmarshaller<String>(
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

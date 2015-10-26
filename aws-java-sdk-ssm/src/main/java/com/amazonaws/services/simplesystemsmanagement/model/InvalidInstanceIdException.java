@@ -19,7 +19,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * You must specify the ID of a running instance.
+ * The instance is not in valid state. Valid states are: Running, Pending,
+ * Stopped, Stopping. Invalid states are: Shutting-down and Terminated.
  * </p>
  */
 public class InvalidInstanceIdException extends AmazonServiceException {

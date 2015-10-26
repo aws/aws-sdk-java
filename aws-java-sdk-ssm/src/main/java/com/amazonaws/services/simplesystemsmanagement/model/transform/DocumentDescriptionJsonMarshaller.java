@@ -67,6 +67,40 @@ public class DocumentDescriptionJsonMarshaller {
                 jsonWriter.key("Status").value(documentDescription.getStatus());
             }
 
+            if (documentDescription.getDescription() != null) {
+                jsonWriter.key("Description").value(
+                        documentDescription.getDescription());
+            }
+
+            com.amazonaws.internal.SdkInternalList<DocumentParameter> parametersList = (com.amazonaws.internal.SdkInternalList<DocumentParameter>) documentDescription
+                    .getParameters();
+            if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+                jsonWriter.key("Parameters");
+                jsonWriter.array();
+                for (DocumentParameter parametersListValue : parametersList) {
+                    if (parametersListValue != null) {
+
+                        DocumentParameterJsonMarshaller.getInstance().marshall(
+                                parametersListValue, jsonWriter);
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
+            com.amazonaws.internal.SdkInternalList<String> platformTypesList = (com.amazonaws.internal.SdkInternalList<String>) documentDescription
+                    .getPlatformTypes();
+            if (!platformTypesList.isEmpty()
+                    || !platformTypesList.isAutoConstruct()) {
+                jsonWriter.key("PlatformTypes");
+                jsonWriter.array();
+                for (String platformTypesListValue : platformTypesList) {
+                    if (platformTypesListValue != null) {
+                        jsonWriter.value(platformTypesListValue);
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

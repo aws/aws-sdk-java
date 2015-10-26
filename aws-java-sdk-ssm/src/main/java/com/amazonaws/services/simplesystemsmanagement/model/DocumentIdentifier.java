@@ -19,25 +19,27 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the name of a configuration document.
+ * Describes the name of an SSM document.
  * </p>
  */
 public class DocumentIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      */
     private String name;
+    /** The operating system platform. */
+    private com.amazonaws.internal.SdkInternalList<String> platformTypes;
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the configuration document.
+     *        The name of the SSM document.
      */
     public void setName(String name) {
         this.name = name;
@@ -45,10 +47,10 @@ public class DocumentIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
-     * @return The name of the configuration document.
+     * @return The name of the SSM document.
      */
     public String getName() {
         return this.name;
@@ -56,16 +58,110 @@ public class DocumentIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the configuration document.
+     *        The name of the SSM document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
     public DocumentIdentifier withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * The operating system platform.
+     * 
+     * @return The operating system platform.
+     * @see PlatformType
+     */
+    public java.util.List<String> getPlatformTypes() {
+        if (platformTypes == null) {
+            platformTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return platformTypes;
+    }
+
+    /**
+     * The operating system platform.
+     * 
+     * @param platformTypes
+     *        The operating system platform.
+     * @see PlatformType
+     */
+    public void setPlatformTypes(java.util.Collection<String> platformTypes) {
+        if (platformTypes == null) {
+            this.platformTypes = null;
+            return;
+        }
+
+        this.platformTypes = new com.amazonaws.internal.SdkInternalList<String>(
+                platformTypes);
+    }
+
+    /**
+     * The operating system platform.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPlatformTypes(java.util.Collection)} or
+     * {@link #withPlatformTypes(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param platformTypes
+     *        The operating system platform.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PlatformType
+     */
+    public DocumentIdentifier withPlatformTypes(String... platformTypes) {
+        if (this.platformTypes == null) {
+            setPlatformTypes(new com.amazonaws.internal.SdkInternalList<String>(
+                    platformTypes.length));
+        }
+        for (String ele : platformTypes) {
+            this.platformTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The operating system platform.
+     * 
+     * @param platformTypes
+     *        The operating system platform.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PlatformType
+     */
+    public DocumentIdentifier withPlatformTypes(
+            java.util.Collection<String> platformTypes) {
+        setPlatformTypes(platformTypes);
+        return this;
+    }
+
+    /**
+     * The operating system platform.
+     * 
+     * @param platformTypes
+     *        The operating system platform.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PlatformType
+     */
+    public DocumentIdentifier withPlatformTypes(PlatformType... platformTypes) {
+        com.amazonaws.internal.SdkInternalList<String> platformTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                platformTypes.length);
+        for (PlatformType value : platformTypes) {
+            platformTypesCopy.add(value.toString());
+        }
+        if (getPlatformTypes() == null) {
+            setPlatformTypes(platformTypesCopy);
+        } else {
+            getPlatformTypes().addAll(platformTypesCopy);
+        }
         return this;
     }
 
@@ -82,7 +178,9 @@ public class DocumentIdentifier implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: " + getName() + ",");
+        if (getPlatformTypes() != null)
+            sb.append("PlatformTypes: " + getPlatformTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +200,11 @@ public class DocumentIdentifier implements Serializable, Cloneable {
         if (other.getName() != null
                 && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPlatformTypes() == null ^ this.getPlatformTypes() == null)
+            return false;
+        if (other.getPlatformTypes() != null
+                && other.getPlatformTypes().equals(this.getPlatformTypes()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +215,10 @@ public class DocumentIdentifier implements Serializable, Cloneable {
 
         hashCode = prime * hashCode
                 + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPlatformTypes() == null) ? 0 : getPlatformTypes()
+                        .hashCode());
         return hashCode;
     }
 

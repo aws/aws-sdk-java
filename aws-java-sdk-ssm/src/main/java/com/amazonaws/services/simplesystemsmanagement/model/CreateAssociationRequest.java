@@ -26,24 +26,26 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The ID of the instance.
+     * The instance ID.
      * </p>
      */
     private String instanceId;
+    /** The parameters for the document’s runtime configuration. */
+    private java.util.Map<String, java.util.List<String>> parameters;
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the configuration document.
+     *        The name of the SSM document.
      */
     public void setName(String name) {
         this.name = name;
@@ -51,10 +53,10 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
-     * @return The name of the configuration document.
+     * @return The name of the SSM document.
      */
     public String getName() {
         return this.name;
@@ -62,11 +64,11 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the configuration document.
+     *        The name of the SSM document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -77,11 +79,11 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the instance.
+     * The instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance.
+     *        The instance ID.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -89,10 +91,10 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the instance.
+     * The instance ID.
      * </p>
      * 
-     * @return The ID of the instance.
+     * @return The instance ID.
      */
     public String getInstanceId() {
         return this.instanceId;
@@ -100,16 +102,71 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the instance.
+     * The instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance.
+     *        The instance ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
     public CreateAssociationRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
+     * The parameters for the document’s runtime configuration.
+     * 
+     * @return The parameters for the document’s runtime configuration.
+     */
+    public java.util.Map<String, java.util.List<String>> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * The parameters for the document’s runtime configuration.
+     * 
+     * @param parameters
+     *        The parameters for the document’s runtime configuration.
+     */
+    public void setParameters(
+            java.util.Map<String, java.util.List<String>> parameters) {
+        this.parameters = parameters;
+    }
+
+    /**
+     * The parameters for the document’s runtime configuration.
+     * 
+     * @param parameters
+     *        The parameters for the document’s runtime configuration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateAssociationRequest withParameters(
+            java.util.Map<String, java.util.List<String>> parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    public CreateAssociationRequest addParametersEntry(String key,
+            java.util.List<String> value) {
+        if (null == this.parameters) {
+            this.parameters = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.parameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.parameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Parameters. &lt;p> Returns a reference
+     * to this object so that method calls can be chained together.
+     */
+    public CreateAssociationRequest clearParametersEntries() {
+        this.parameters = null;
         return this;
     }
 
@@ -128,7 +185,9 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId());
+            sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getParameters() != null)
+            sb.append("Parameters: " + getParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -153,6 +212,11 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
         if (other.getInstanceId() != null
                 && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null
+                && other.getParameters().equals(this.getParameters()) == false)
+            return false;
         return true;
     }
 
@@ -165,6 +229,8 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
                 + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode
                 + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode
+                + ((getParameters() == null) ? 0 : getParameters().hashCode());
         return hashCode;
     }
 

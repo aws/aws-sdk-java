@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified configuration document already exists.
+ * The specified SSM document already exists.
  * </p>
  */
 public class DocumentAlreadyExistsException extends AmazonServiceException {

@@ -19,8 +19,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * You must disassociate a configuration document from all instances before you
- * can delete it.
+ * You must disassociate an SSM document from all instances before you can
+ * delete it.
  * </p>
  */
 public class AssociatedInstancesException extends AmazonServiceException {

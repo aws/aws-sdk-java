@@ -35,8 +35,8 @@
         "variableType" : "GenerateDataSetRequest",
         "variableDeclarationType" : "GenerateDataSetRequest",
         "documentation" : "Container for the parameters to the GenerateDataSet operation.",
-        "variableSetterType" : "GenerateDataSetRequest",
-        "simpleType" : "GenerateDataSetRequest"
+        "simpleType" : "GenerateDataSetRequest",
+        "variableSetterType" : "GenerateDataSetRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -80,16 +80,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "dataSetRequestId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -114,13 +114,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param dataSetRequestId */",
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param dataSetRequestId \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param dataSetRequestId \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param dataSetRequestId \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -128,8 +128,8 @@
         "variableType" : "GenerateDataSetResult",
         "variableDeclarationType" : "GenerateDataSetResult",
         "documentation" : null,
-        "variableSetterType" : "GenerateDataSetResult",
-        "simpleType" : "GenerateDataSetResult"
+        "simpleType" : "GenerateDataSetResult",
+        "variableSetterType" : "GenerateDataSetResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -154,16 +154,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "dataSetRequestId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -188,13 +188,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param dataSetRequestId */",
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param dataSetRequestId \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param dataSetRequestId \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param dataSetRequestId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -218,16 +218,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "dataSetType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -252,13 +252,13 @@
         "mapModel" : null,
         "enumType" : "DataSetType",
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param dataSetType \n@see DataSetType*/",
         "getterDocumentation" : "/**\n@return \n@see DataSetType*/",
         "fluentSetterDocumentation" : "/**\n@param dataSetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
-        "varargSetterDocumentation" : "/**\n@param dataSetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param dataSetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/"
       }, {
         "documentation" : "",
         "name" : "DataSetPublicationDate",
@@ -269,16 +269,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "dataSetPublicationDate",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -303,13 +303,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param dataSetPublicationDate */",
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param dataSetPublicationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param dataSetPublicationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param dataSetPublicationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "RoleNameArn",
@@ -320,16 +320,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleNameArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -354,13 +354,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param roleNameArn */",
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param roleNameArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param roleNameArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param roleNameArn \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "DestinationS3BucketName",
@@ -371,16 +371,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "destinationS3BucketName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -405,13 +405,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param destinationS3BucketName */",
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param destinationS3BucketName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param destinationS3BucketName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param destinationS3BucketName \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "DestinationS3Prefix",
@@ -422,16 +422,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "destinationS3Prefix",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -456,13 +456,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param destinationS3Prefix */",
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param destinationS3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param destinationS3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param destinationS3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "SnsTopicArn",
@@ -473,16 +473,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "snsTopicArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -507,13 +507,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param snsTopicArn */",
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param snsTopicArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param snsTopicArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param snsTopicArn \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -521,8 +521,8 @@
         "variableType" : "GenerateDataSetRequest",
         "variableDeclarationType" : "GenerateDataSetRequest",
         "documentation" : null,
-        "variableSetterType" : "GenerateDataSetRequest",
-        "simpleType" : "GenerateDataSetRequest"
+        "simpleType" : "GenerateDataSetRequest",
+        "variableSetterType" : "GenerateDataSetRequest"
       },
       "marshaller" : {
         "action" : "GenerateDataSet",
@@ -551,16 +551,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "destinationS3Prefix",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -585,13 +585,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param destinationS3Prefix */",
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param destinationS3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param destinationS3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param destinationS3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "DataSetPublicationDate" : {
           "documentation" : "",
@@ -603,16 +603,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "dataSetPublicationDate",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -637,13 +637,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param dataSetPublicationDate */",
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param dataSetPublicationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param dataSetPublicationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param dataSetPublicationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SnsTopicArn" : {
           "documentation" : "",
@@ -655,16 +655,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "snsTopicArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -689,13 +689,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param snsTopicArn */",
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param snsTopicArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param snsTopicArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param snsTopicArn \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "DestinationS3BucketName" : {
           "documentation" : "",
@@ -707,16 +707,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "destinationS3BucketName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -741,13 +741,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param destinationS3BucketName */",
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param destinationS3BucketName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param destinationS3BucketName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param destinationS3BucketName \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "DataSetType" : {
           "documentation" : "",
@@ -759,16 +759,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "dataSetType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -793,13 +793,13 @@
           "mapModel" : null,
           "enumType" : "DataSetType",
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param dataSetType \n@see DataSetType*/",
           "getterDocumentation" : "/**\n@return \n@see DataSetType*/",
           "fluentSetterDocumentation" : "/**\n@param dataSetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
-          "varargSetterDocumentation" : "/**\n@param dataSetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param dataSetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/"
         },
         "RoleNameArn" : {
           "documentation" : "",
@@ -811,16 +811,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleNameArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -845,13 +845,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param roleNameArn */",
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param roleNameArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param roleNameArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param roleNameArn \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -872,8 +872,8 @@
         "variableType" : "MarketplaceCommerceAnalyticsException",
         "variableDeclarationType" : "MarketplaceCommerceAnalyticsException",
         "documentation" : null,
-        "variableSetterType" : "MarketplaceCommerceAnalyticsException",
-        "simpleType" : "MarketplaceCommerceAnalyticsException"
+        "simpleType" : "MarketplaceCommerceAnalyticsException",
+        "variableSetterType" : "MarketplaceCommerceAnalyticsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -951,8 +951,8 @@
         "variableType" : "DataSetType",
         "variableDeclarationType" : "DataSetType",
         "documentation" : null,
-        "variableSetterType" : "DataSetType",
-        "simpleType" : "DataSetType"
+        "simpleType" : "DataSetType",
+        "variableSetterType" : "DataSetType"
       },
       "marshaller" : null,
       "unmarshaller" : {

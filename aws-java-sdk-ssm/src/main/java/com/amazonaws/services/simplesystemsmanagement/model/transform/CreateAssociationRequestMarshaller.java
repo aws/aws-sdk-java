@@ -77,6 +77,30 @@ public class CreateAssociationRequestMarshaller implements
                         createAssociationRequest.getInstanceId());
             }
 
+            java.util.Map<String, java.util.List<String>> parametersMap = createAssociationRequest
+                    .getParameters();
+            if (parametersMap != null) {
+                jsonWriter.key("Parameters");
+                jsonWriter.object();
+
+                for (Map.Entry<String, java.util.List<String>> parametersMapValue : parametersMap
+                        .entrySet()) {
+                    if (parametersMapValue.getValue() != null) {
+                        jsonWriter.key(parametersMapValue.getKey());
+
+                        jsonWriter.array();
+                        for (String parametersMapValueList : parametersMapValue
+                                .getValue()) {
+                            if (parametersMapValueList != null) {
+                                jsonWriter.value(parametersMapValueList);
+                            }
+                        }
+                        jsonWriter.endArray();
+                    }
+                }
+                jsonWriter.endObject();
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

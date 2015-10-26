@@ -30,7 +30,10 @@ import com.amazonaws.services.dynamodbv2.model.TableStatus;
  *    Tables.awaitTableToBecomeActive(dynamoDB, myTableName);
  * }
  * </pre>
+ *
+ * @deprecated Use {@link TableUtils}.
  */
+@Deprecated
 public class Tables {
     private static final int DEFAULT_WAIT_TIMEOUT = 10 * 60 * 1000;
     private static final int DEFAULT_WAIT_INTERVAL = 20 * 1000;
@@ -45,7 +48,11 @@ public class Tables {
      *
      * @return True if a table already exists with the specified name, otherwise
      *         false.
+     *
+     * @deprecated Use {@link TableUtils#waitUntilExists(AmazonDynamoDB, String)}
+     *             or {@link TableUtils#waitUntilActive(AmazonDynamoDB, String)}.
      */
+    @Deprecated
     public static boolean doesTableExist(AmazonDynamoDB dynamo, String tableName) {
         try {
             TableDescription table = dynamo.describeTable(new DescribeTableRequest(tableName)).getTable();
@@ -71,7 +78,7 @@ public class Tables {
      *             <code>ACTIVE</code> state before this method times out and
      *             stops polling.
      *
-     * @deprecated Use {@link #awaitTableToBecomeActive(AmazonDynamoDB, String)}.
+     * @deprecated Use {@link TableUtils#waitUntilActive(AmazonDynamoDB, String)}.
      */
     @Deprecated
     public static void waitForTableToBecomeActive(AmazonDynamoDB dynamo, String tableName) {
@@ -95,7 +102,10 @@ public class Tables {
      * @throws InterruptedException
      *             If the thread is interrupted while waiting for the table to
      *             transition into the <code>ACTIVE</code> state.
+     *
+     * @deprecated Use {@link TableUtils#waitUntilActive(AmazonDynamoDB, String)}.
      */
+    @Deprecated
     public static void awaitTableToBecomeActive(AmazonDynamoDB dynamo, String tableName) throws InterruptedException {
         awaitTableToBecomeActive(dynamo, tableName, DEFAULT_WAIT_TIMEOUT, DEFAULT_WAIT_INTERVAL);
     }
@@ -120,7 +130,7 @@ public class Tables {
      *             <code>ACTIVE</code> state before this method times out and
      *             stops polling.
      *
-     * @deprecated Use {@link #awaitTableToBecomeActive(AmazonDynamoDB, String, int, int)}.
+     * @deprecated Use {@link TableUtils#waitUntilActive(AmazonDynamoDB, String, int, int)}.
      */
     @Deprecated
     public static void waitForTableToBecomeActive(AmazonDynamoDB dynamo, String tableName, int timeout, int interval) {
@@ -153,7 +163,9 @@ public class Tables {
      * @throws InterruptedException
      *             If the thread is interrupted while waiting for the table to
      *             transition into the <code>ACTIVE</code> state.
+     * @deprecated Use {@link TableUtils#waitUntilActive(AmazonDynamoDB, String, int, int)}.
      */
+    @Deprecated
     public static void awaitTableToBecomeActive(AmazonDynamoDB dynamo, String tableName, int timeout, int interval)
         throws InterruptedException {
         if (timeout < 0)

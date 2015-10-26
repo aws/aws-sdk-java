@@ -26,18 +26,18 @@ public class DeleteDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the configuration document.
+     *        The name of the SSM document.
      */
     public void setName(String name) {
         this.name = name;
@@ -45,10 +45,10 @@ public class DeleteDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
-     * @return The name of the configuration document.
+     * @return The name of the SSM document.
      */
     public String getName() {
         return this.name;
@@ -56,11 +56,11 @@ public class DeleteDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the configuration document.
+     *        The name of the SSM document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

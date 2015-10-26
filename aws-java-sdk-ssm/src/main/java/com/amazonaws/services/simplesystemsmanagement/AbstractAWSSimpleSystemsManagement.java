@@ -38,6 +38,11 @@ public class AbstractAWSSimpleSystemsManagement implements
     }
 
     @Override
+    public CancelCommandResult cancelCommand(CancelCommandRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAssociationResult createAssociation(
             CreateAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -78,6 +83,12 @@ public class AbstractAWSSimpleSystemsManagement implements
     }
 
     @Override
+    public DescribeInstanceInformationResult describeInstanceInformation(
+            DescribeInstanceInformationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDocumentResult getDocument(GetDocumentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +100,17 @@ public class AbstractAWSSimpleSystemsManagement implements
     }
 
     @Override
+    public ListCommandInvocationsResult listCommandInvocations(
+            ListCommandInvocationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCommandsResult listCommands(ListCommandsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDocumentsResult listDocuments(ListDocumentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -96,6 +118,11 @@ public class AbstractAWSSimpleSystemsManagement implements
     @Override
     public ListDocumentsResult listDocuments() {
         return listDocuments(new ListDocumentsRequest());
+    }
+
+    @Override
+    public SendCommandResult sendCommand(SendCommandRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

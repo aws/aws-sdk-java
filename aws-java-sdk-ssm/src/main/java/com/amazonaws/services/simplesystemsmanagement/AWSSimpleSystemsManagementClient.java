@@ -41,39 +41,107 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * blocking, and will not return until the service call completes.
  * <p>
  * <p>
- * Amazon EC2 Simple Systems Manager (SSM) enables you to configure and manage
- * your EC2 instances. You can create a configuration document and then
- * associate it with one or more running instances.
+ * Simple Systems Manager (SSM) is a set of capabilities that can help you
+ * manage your Amazon EC2 instances running on Windows. SSM enables you to run
+ * scripts or other common administrative tasks on your instances using either
+ * SSM Run Command or SSM Config.
  * </p>
  * <p>
- * You can use a configuration document to automate the following tasks for your
- * Windows instances:
+ * Run Command extends the server administration capabilities of SSM by offering
+ * an on-demand experience for executing commands. You can use pre-defined
+ * Amazon SSM documents (formerly called configuration documents) to perform the
+ * actions listed later in this section, or you can create your own documents.
+ * With these document, you can then remotely configure your instances by
+ * sending commands using the AWS command line interface (CLI), AWS Tools for
+ * Windows PowerShell, or the <b>Commands</b> page in the Amazon EC2 console.
+ * Additionally, because Run Command enables you to execute PowerShell commands
+ * or scripts, you can administer your instances remotely using PowerShell as
+ * though you were logged on locally to the instance. Run Command reports the
+ * status of the command execution for each instance targeted by a command. You
+ * can also audit the command execution to understand who executed commands,
+ * when, and what changes were made. By switching between different SSM
+ * documents, you can quickly configure your instances with different types of
+ * commands.
+ * </p>
+ * <p>
+ * SSM Config is a lightweight instance configuration solution. With SSM Config,
+ * you can specify a setup configuration for your instances. SSM Config is
+ * similar to EC2 User Data, which is another way of running one-time scripts or
+ * applying settings during instance launch. SSM Config is an extension of this
+ * capability. Using SSM documents, you can specify which actions the system
+ * should perform on your instances, including which applications to install,
+ * which AWS Directory Service directory to join, which Microsoft PowerShell
+ * modules to install, etc. If an instance is missing one or more of these
+ * configurations, the system makes those changes. By default, the system checks
+ * every five minutes to see if there is a new configuration to apply as defined
+ * in a new SSM document. If so, the system updates the instances accordingly.
+ * In this way, you can remotely maintain a consistent configuration baseline on
+ * your instances. SSM Config is available using the AWS CLI or the AWS Tools
+ * for Windows PowerShell.
+ * </p>
+ * <note>
+ * <p>
+ * SSM is currently not supported on Linux instances.
+ * </p>
+ * </note>
+ * <p>
+ * You can use Run Command and SSM Config to do the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Join an AWS Directory
+ * Join an AWS Directory Service directory (SSM Config and Run Command)
  * </p>
  * </li>
  * <li>
  * <p>
- * Install, repair, or uninstall software using an MSI package
+ * Install, repair, or uninstall software using an MSI package (SSM Config and
+ * Run Command)
  * </p>
  * </li>
  * <li>
  * <p>
- * Run PowerShell scripts
+ * Install PowerShell modules (SSM Config and Run Command)
  * </p>
  * </li>
  * <li>
  * <p>
- * Configure CloudWatch Logs to monitor applications and systems
+ * Configure CloudWatch Logs to monitor applications and systems (SSM Config and
+ * Run Command)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Run PowerShell commands or scripts (Run Command only)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Update the EC2Config service (Run Command only)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Configure Windows Update settings (Run Command only)
  * </p>
  * </li>
  * </ul>
+ * <important>
  * <p>
- * Note that configuration documents are not supported on Linux instances.
+ * SSM documents run with administrative privilege on Windows instances because
+ * the EC2Config service runs in the Local System account. If a user has
+ * permission to execute any of the pre-defined SSM documents (any document that
+ * begins with AWS-*) then that user also has administrator access to the
+ * instance. Delegate access to SSM Config and Run Command judiciously. This
+ * becomes extremely important if you create your own SSM documents. Amazon Web
+ * Services does not provide guidance about how to create secure SSM documents.
+ * You create SSM documents and delegate access to Run Command actions at your
+ * own risk. As a security best practice, we recommend that you assign access to
+ * "AWS-*" documents, especially the AWS-RunPowerShellScript document, to
+ * trusted administrators only. You can create low-level SSM documents for low
+ * security tasks and delegate access to non-administrators.
  * </p>
+ * </important>
  */
 public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         implements AWSSimpleSystemsManagement {
@@ -252,28 +320,16 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
     private void init() {
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentContentException.class,
-                        "InvalidDocumentContent"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.AssociationDoesNotExistException.class,
-                        "AssociationDoesNotExist"));
+                        com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException.class,
+                        "InvalidInstanceInformationFilterValue"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.simplesystemsmanagement.model.InvalidNextTokenException.class,
                         "InvalidNextToken"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException.class,
-                        "TooManyUpdates"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException.class,
                         "AssociatedInstances"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class,
-                        "InternalServerError"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException.class,
@@ -284,20 +340,52 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                         "DuplicateInstanceId"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException.class,
-                        "MaxDocumentSizeExceeded"));
+                        com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException.class,
+                        "InvalidFilterKey"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException.class,
+                        "InvalidParameters"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException.class,
                         "AssociationAlreadyExists"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException.class,
-                        "InvalidInstanceId"));
+                        com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException.class,
+                        "InvalidCommandId"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException.class,
                         "InvalidDocument"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentContentException.class,
+                        "InvalidDocumentContent"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simplesystemsmanagement.model.AssociationDoesNotExistException.class,
+                        "AssociationDoesNotExist"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException.class,
+                        "TooManyUpdates"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class,
+                        "InternalServerError"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException.class,
+                        "MaxDocumentSizeExceeded"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException.class,
+                        "UnsupportedPlatformType"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException.class,
+                        "InvalidInstanceId"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException.class,
@@ -310,6 +398,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException.class,
                         "StatusUnchanged"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException.class,
+                        "InvalidOutputFolder"));
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -327,18 +419,68 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Associates the specified configuration document with the specified
-     * instance.
+     * Attempts to cancel the command specified by the Command ID. There is no
+     * guarantee that the command will be terminated and the underlying process
+     * stopped.
+     * </p>
+     * 
+     * @param cancelCommandRequest
+     * @return Result of the CancelCommand operation returned by the service.
+     * @throws InvalidCommandIdException
+     * @throws InvalidInstanceIdException
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
+     * @throws DuplicateInstanceIdException
+     *         You cannot specify an instance ID in more than one association.
+     */
+    @Override
+    public CancelCommandResult cancelCommand(
+            CancelCommandRequest cancelCommandRequest) {
+        ExecutionContext executionContext = createExecutionContext(cancelCommandRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelCommandRequest> request = null;
+        Response<CancelCommandResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelCommandRequestMarshaller()
+                        .marshall(cancelCommandRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<CancelCommandResult> responseHandler = new JsonResponseHandler<CancelCommandResult>(
+                    new CancelCommandResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates the specified SSM document with the specified instance.
      * </p>
      * <p>
-     * When you associate a configuration document with an instance, the
-     * configuration agent on the instance processes the configuration document
-     * and configures the instance as specified.
+     * When you associate an SSM document with an instance, the configuration
+     * agent on the instance processes the document and configures the instance
+     * as specified.
      * </p>
      * <p>
-     * If you associate a configuration document with an instance that already
-     * has an associated configuration document, we replace the current
-     * configuration document with the new configuration document.
+     * If you associate a document with an instance that already has an
+     * associated document, the system throws the AssociationAlreadyExists
+     * exception.
      * </p>
      * 
      * @param createAssociationRequest
@@ -351,9 +493,18 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
-     *         The configuration document is not valid.
+     *         The specified document does not exist.
      * @throws InvalidInstanceIdException
-     *         You must specify the ID of a running instance.
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
+     * @throws UnsupportedPlatformTypeException
+     *         The document does not support the platform type of the given
+     *         instance ID(s).
+     * @throws InvalidParametersException
+     *         You must specify values for all required parameters in the SSM
+     *         document. You can only supply values to parameters defined in the
+     *         SSM document.
      */
     @Override
     public CreateAssociationResult createAssociation(
@@ -391,18 +542,17 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Associates the specified configuration documents with the specified
-     * instances.
+     * Associates the specified SSM document with the specified instances.
      * </p>
      * <p>
-     * When you associate a configuration document with an instance, the
-     * configuration agent on the instance processes the configuration document
-     * and configures the instance as specified.
+     * When you associate an SSM document with an instance, the configuration
+     * agent on the instance processes the document and configures the instance
+     * as specified.
      * </p>
      * <p>
-     * If you associate a configuration document with an instance that already
-     * has an associated configuration document, we replace the current
-     * configuration document with the new configuration document.
+     * If you associate a document with an instance that already has an
+     * associated document, the system throws the AssociationAlreadyExists
+     * exception.
      * </p>
      * 
      * @param createAssociationBatchRequest
@@ -411,13 +561,22 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
-     *         The configuration document is not valid.
+     *         The specified document does not exist.
      * @throws InvalidInstanceIdException
-     *         You must specify the ID of a running instance.
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
+     * @throws InvalidParametersException
+     *         You must specify values for all required parameters in the SSM
+     *         document. You can only supply values to parameters defined in the
+     *         SSM document.
      * @throws DuplicateInstanceIdException
      *         You cannot specify an instance ID in more than one association.
      * @throws AssociationLimitExceededException
      *         You can have at most 2,000 active associations.
+     * @throws UnsupportedPlatformTypeException
+     *         The document does not support the platform type of the given
+     *         instance ID(s).
      */
     @Override
     public CreateAssociationBatchResult createAssociationBatch(
@@ -455,26 +614,25 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Creates a configuration document.
+     * Creates an SSM document.
      * </p>
      * <p>
-     * After you create a configuration document, you can use
-     * <a>CreateAssociation</a> to associate it with one or more running
-     * instances.
+     * After you create an SSM document, you can use <a>CreateAssociation</a> to
+     * associate it with one or more running instances.
      * </p>
      * 
      * @param createDocumentRequest
      * @return Result of the CreateDocument operation returned by the service.
      * @throws DocumentAlreadyExistsException
-     *         The specified configuration document already exists.
+     *         The specified SSM document already exists.
      * @throws MaxDocumentSizeExceededException
-     *         The size limit of a configuration document is 64 KB.
+     *         The size limit of an SSM document is 64 KB.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidDocumentContentException
-     *         The content for the configuration document is not valid.
+     *         The content for the SSM document is not valid.
      * @throws DocumentLimitExceededException
-     *         You can have at most 100 active configuration documents.
+     *         You can have at most 100 active SSM documents.
      */
     @Override
     public CreateDocumentResult createDocument(
@@ -512,15 +670,14 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Disassociates the specified configuration document from the specified
-     * instance.
+     * Disassociates the specified SSM document from the specified instance.
      * </p>
      * <p>
-     * When you disassociate a configuration document from an instance, it does
-     * not change the configuration of the instance. To change the configuration
-     * state of an instance after you disassociate a configuration document, you
-     * must create a new configuration document with the desired configuration
-     * and associate it with the instance.
+     * When you disassociate an SSM document from an instance, it does not
+     * change the configuration of the instance. To change the configuration
+     * state of an instance after you disassociate a document, you must create a
+     * new document with the desired configuration and associate it with the
+     * instance.
      * </p>
      * 
      * @param deleteAssociationRequest
@@ -531,9 +688,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
-     *         The configuration document is not valid.
+     *         The specified document does not exist.
      * @throws InvalidInstanceIdException
-     *         You must specify the ID of a running instance.
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
      * @throws TooManyUpdatesException
      *         There are concurrent updates for a resource that supports one
      *         update at a time.
@@ -574,11 +733,12 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes the specified configuration document.
+     * Deletes the SSM document and all instance associations to the document.
      * </p>
      * <p>
-     * You must use <a>DeleteAssociation</a> to disassociate all instances that
-     * are associated with the configuration document before you can delete it.
+     * Before you delete the SSM document, we recommend that you use
+     * DeleteAssociation to disassociate all instances that are associated with
+     * the document.
      * </p>
      * 
      * @param deleteDocumentRequest
@@ -586,10 +746,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
-     *         The configuration document is not valid.
+     *         The specified document does not exist.
      * @throws AssociatedInstancesException
-     *         You must disassociate a configuration document from all instances
-     *         before you can delete it.
+     *         You must disassociate an SSM document from all instances before
+     *         you can delete it.
      */
     @Override
     public DeleteDocumentResult deleteDocument(
@@ -627,8 +787,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Describes the associations for the specified configuration document or
-     * instance.
+     * Describes the associations for the specified SSM document or instance.
      * </p>
      * 
      * @param describeAssociationRequest
@@ -639,9 +798,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
-     *         The configuration document is not valid.
+     *         The specified document does not exist.
      * @throws InvalidInstanceIdException
-     *         You must specify the ID of a running instance.
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
      */
     @Override
     public DescribeAssociationResult describeAssociation(
@@ -679,7 +840,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Describes the specified configuration document.
+     * Describes the specified SSM document.
      * </p>
      * 
      * @param describeDocumentRequest
@@ -687,7 +848,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
-     *         The configuration document is not valid.
+     *         The specified document does not exist.
      */
     @Override
     public DescribeDocumentResult describeDocument(
@@ -724,8 +885,67 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
     }
 
     /**
+     * Describes one or more of your instances. You can use this to get
+     * information about instances like the operating system platform, the SSM
+     * agent version, status etc. If you specify one or more instance IDs, it
+     * returns information for those instances. If you do not specify instance
+     * IDs, it returns information for all your instances. If you specify an
+     * instance ID that is not valid or an instance that you do not own, you
+     * receive an error.
+     * 
+     * @param describeInstanceInformationRequest
+     * @return Result of the DescribeInstanceInformation operation returned by
+     *         the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidInstanceIdException
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws InvalidInstanceInformationFilterValueException
+     *         The specified filter value is not valid.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
+     */
+    @Override
+    public DescribeInstanceInformationResult describeInstanceInformation(
+            DescribeInstanceInformationRequest describeInstanceInformationRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeInstanceInformationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceInformationRequest> request = null;
+        Response<DescribeInstanceInformationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceInformationRequestMarshaller()
+                        .marshall(describeInstanceInformationRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeInstanceInformationResult> responseHandler = new JsonResponseHandler<DescribeInstanceInformationResult>(
+                    new DescribeInstanceInformationResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
-     * Gets the contents of the specified configuration document.
+     * Gets the contents of the specified SSM document.
      * </p>
      * 
      * @param getDocumentRequest
@@ -733,7 +953,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
-     *         The configuration document is not valid.
+     *         The specified document does not exist.
      */
     @Override
     public GetDocumentResult getDocument(GetDocumentRequest getDocumentRequest) {
@@ -770,8 +990,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the associations for the specified configuration document or
-     * instance.
+     * Lists the associations for the specified SSM document or instance.
      * </p>
      * 
      * @param listAssociationsRequest
@@ -816,8 +1035,114 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
     }
 
     /**
+     * An invocation is copy of a command sent to a specific instance. A command
+     * can apply to one or more instances. A command invocation applies to one
+     * instance. For example, if a user executes SendCommand against three
+     * instances, then a command invocation is created for each requested
+     * instance ID. ListCommandInvocations provide status about command
+     * execution.
+     * 
+     * @param listCommandInvocationsRequest
+     * @return Result of the ListCommandInvocations operation returned by the
+     *         service.
+     * @throws InvalidCommandIdException
+     * @throws InvalidInstanceIdException
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     */
+    @Override
+    public ListCommandInvocationsResult listCommandInvocations(
+            ListCommandInvocationsRequest listCommandInvocationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listCommandInvocationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCommandInvocationsRequest> request = null;
+        Response<ListCommandInvocationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCommandInvocationsRequestMarshaller()
+                        .marshall(listCommandInvocationsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ListCommandInvocationsResult> responseHandler = new JsonResponseHandler<ListCommandInvocationsResult>(
+                    new ListCommandInvocationsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
-     * Describes one or more of your configuration documents.
+     * Lists the commands requested by users of the AWS account.
+     * </p>
+     * 
+     * @param listCommandsRequest
+     * @return Result of the ListCommands operation returned by the service.
+     * @throws InvalidCommandIdException
+     * @throws InvalidInstanceIdException
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     */
+    @Override
+    public ListCommandsResult listCommands(
+            ListCommandsRequest listCommandsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listCommandsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCommandsRequest> request = null;
+        Response<ListCommandsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCommandsRequestMarshaller()
+                        .marshall(listCommandsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ListCommandsResult> responseHandler = new JsonResponseHandler<ListCommandsResult>(
+                    new ListCommandsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more of your SSM documents.
      * </p>
      * 
      * @param listDocumentsRequest
@@ -826,6 +1151,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         An error occurred on the server side.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
      */
     @Override
     public ListDocumentsResult listDocuments(
@@ -867,9 +1194,65 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
     }
 
     /**
+     * Executes commands on one or more remote instances.
+     * 
+     * @param sendCommandRequest
+     * @return Result of the SendCommand operation returned by the service.
+     * @throws DuplicateInstanceIdException
+     *         You cannot specify an instance ID in more than one association.
+     * @throws InvalidInstanceIdException
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidOutputFolderException
+     *         The S3 bucket does not exist.
+     * @throws InvalidParametersException
+     *         You must specify values for all required parameters in the SSM
+     *         document. You can only supply values to parameters defined in the
+     *         SSM document.
+     * @throws UnsupportedPlatformTypeException
+     *         The document does not support the platform type of the given
+     *         instance ID(s).
+     */
+    @Override
+    public SendCommandResult sendCommand(SendCommandRequest sendCommandRequest) {
+        ExecutionContext executionContext = createExecutionContext(sendCommandRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendCommandRequest> request = null;
+        Response<SendCommandResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendCommandRequestMarshaller()
+                        .marshall(sendCommandRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<SendCommandResult> responseHandler = new JsonResponseHandler<SendCommandResult>(
+                    new SendCommandResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
-     * Updates the status of the configuration document associated with the
-     * specified instance.
+     * Updates the status of the SSM document associated with the specified
+     * instance.
      * </p>
      * 
      * @param updateAssociationStatusRequest
@@ -878,9 +1261,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidInstanceIdException
-     *         You must specify the ID of a running instance.
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
      * @throws InvalidDocumentException
-     *         The configuration document is not valid.
+     *         The specified document does not exist.
      * @throws AssociationDoesNotExistException
      *         The specified association does not exist.
      * @throws StatusUnchangedException

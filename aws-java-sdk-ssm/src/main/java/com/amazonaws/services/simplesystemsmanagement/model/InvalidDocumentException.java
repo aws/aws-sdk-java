@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The configuration document is not valid.
+ * The specified document does not exist.
  * </p>
  */
 public class InvalidDocumentException extends AmazonServiceException {

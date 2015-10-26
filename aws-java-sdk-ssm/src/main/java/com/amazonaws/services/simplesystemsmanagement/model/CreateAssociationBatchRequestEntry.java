@@ -18,30 +18,20 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Describes the association of a configuration document and an instance.
- * </p>
+ * Describes the association of an SSM document and an instance.
  */
 public class CreateAssociationBatchRequestEntry implements Serializable,
         Cloneable {
 
-    /**
-     * <p>
-     * The name of the configuration document.
-     * </p>
-     */
+    /** The name of the configuration document. */
     private String name;
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     */
+    /** The ID of the instance. */
     private String instanceId;
+    /** A description of the parameters for a document. */
+    private java.util.Map<String, java.util.List<String>> parameters;
 
     /**
-     * <p>
      * The name of the configuration document.
-     * </p>
      * 
      * @param name
      *        The name of the configuration document.
@@ -51,9 +41,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
-     * <p>
      * The name of the configuration document.
-     * </p>
      * 
      * @return The name of the configuration document.
      */
@@ -62,9 +50,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
-     * <p>
      * The name of the configuration document.
-     * </p>
      * 
      * @param name
      *        The name of the configuration document.
@@ -77,9 +63,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
-     * <p>
      * The ID of the instance.
-     * </p>
      * 
      * @param instanceId
      *        The ID of the instance.
@@ -89,9 +73,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
-     * <p>
      * The ID of the instance.
-     * </p>
      * 
      * @return The ID of the instance.
      */
@@ -100,9 +82,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
-     * <p>
      * The ID of the instance.
-     * </p>
      * 
      * @param instanceId
      *        The ID of the instance.
@@ -111,6 +91,61 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      */
     public CreateAssociationBatchRequestEntry withInstanceId(String instanceId) {
         setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
+     * A description of the parameters for a document.
+     * 
+     * @return A description of the parameters for a document.
+     */
+    public java.util.Map<String, java.util.List<String>> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * A description of the parameters for a document.
+     * 
+     * @param parameters
+     *        A description of the parameters for a document.
+     */
+    public void setParameters(
+            java.util.Map<String, java.util.List<String>> parameters) {
+        this.parameters = parameters;
+    }
+
+    /**
+     * A description of the parameters for a document.
+     * 
+     * @param parameters
+     *        A description of the parameters for a document.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateAssociationBatchRequestEntry withParameters(
+            java.util.Map<String, java.util.List<String>> parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    public CreateAssociationBatchRequestEntry addParametersEntry(String key,
+            java.util.List<String> value) {
+        if (null == this.parameters) {
+            this.parameters = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.parameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.parameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Parameters. &lt;p> Returns a reference
+     * to this object so that method calls can be chained together.
+     */
+    public CreateAssociationBatchRequestEntry clearParametersEntries() {
+        this.parameters = null;
         return this;
     }
 
@@ -129,7 +164,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId());
+            sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getParameters() != null)
+            sb.append("Parameters: " + getParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +191,11 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
         if (other.getInstanceId() != null
                 && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null
+                && other.getParameters().equals(this.getParameters()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +208,8 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
                 + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode
                 + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode
+                + ((getParameters() == null) ? 0 : getParameters().hashCode());
         return hashCode;
     }
 

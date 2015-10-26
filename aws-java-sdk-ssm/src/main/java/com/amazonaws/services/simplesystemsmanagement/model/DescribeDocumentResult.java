@@ -24,18 +24,18 @@ public class DescribeDocumentResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the configuration document.
+     * Information about the SSM document.
      * </p>
      */
     private DocumentDescription document;
 
     /**
      * <p>
-     * Information about the configuration document.
+     * Information about the SSM document.
      * </p>
      * 
      * @param document
-     *        Information about the configuration document.
+     *        Information about the SSM document.
      */
     public void setDocument(DocumentDescription document) {
         this.document = document;
@@ -43,10 +43,10 @@ public class DescribeDocumentResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the configuration document.
+     * Information about the SSM document.
      * </p>
      * 
-     * @return Information about the configuration document.
+     * @return Information about the SSM document.
      */
     public DocumentDescription getDocument() {
         return this.document;
@@ -54,11 +54,11 @@ public class DescribeDocumentResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the configuration document.
+     * Information about the SSM document.
      * </p>
      * 
      * @param document
-     *        Information about the configuration document.
+     *        Information about the SSM document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

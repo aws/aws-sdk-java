@@ -69,6 +69,30 @@ public class AssociationDescriptionJsonMarshaller {
                         associationDescription.getStatus(), jsonWriter);
             }
 
+            java.util.Map<String, java.util.List<String>> parametersMap = associationDescription
+                    .getParameters();
+            if (parametersMap != null) {
+                jsonWriter.key("Parameters");
+                jsonWriter.object();
+
+                for (Map.Entry<String, java.util.List<String>> parametersMapValue : parametersMap
+                        .entrySet()) {
+                    if (parametersMapValue.getValue() != null) {
+                        jsonWriter.key(parametersMapValue.getKey());
+
+                        jsonWriter.array();
+                        for (String parametersMapValueList : parametersMapValue
+                                .getValue()) {
+                            if (parametersMapValueList != null) {
+                                jsonWriter.value(parametersMapValueList);
+                            }
+                        }
+                        jsonWriter.endArray();
+                    }
+                }
+                jsonWriter.endObject();
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

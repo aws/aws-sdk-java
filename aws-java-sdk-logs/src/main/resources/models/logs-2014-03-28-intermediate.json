@@ -12421,9 +12421,9 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "keySimple" : true,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
@@ -12613,9 +12613,9 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "keySimple" : true,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },

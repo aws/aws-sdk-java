@@ -18,9 +18,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Describes a configuration document.
- * </p>
+ * Describes an SSM document.
  */
 public class DocumentDescription implements Serializable, Cloneable {
 
@@ -33,22 +31,28 @@ public class DocumentDescription implements Serializable, Cloneable {
     private String sha1;
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      */
     private String name;
-    /**
-     * <p>
-     * The date when the configuration document was created.
-     * </p>
-     */
+    /** The date when the SSM document was created. */
     private java.util.Date createdDate;
     /**
      * <p>
-     * The status of the configuration document.
+     * The status of the SSM document.
      * </p>
      */
     private String status;
+    /** A description of the document. */
+    private String description;
+    /**
+     * <p>
+     * A description of the parameters for a document.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DocumentParameter> parameters;
+    /** The list of OS platforms compatible with this SSM document. */
+    private com.amazonaws.internal.SdkInternalList<String> platformTypes;
 
     /**
      * <p>
@@ -96,11 +100,11 @@ public class DocumentDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the configuration document.
+     *        The name of the SSM document.
      */
     public void setName(String name) {
         this.name = name;
@@ -108,10 +112,10 @@ public class DocumentDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
-     * @return The name of the configuration document.
+     * @return The name of the SSM document.
      */
     public String getName() {
         return this.name;
@@ -119,11 +123,11 @@ public class DocumentDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the configuration document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the configuration document.
+     *        The name of the SSM document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -133,35 +137,29 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The date when the configuration document was created.
-     * </p>
+     * The date when the SSM document was created.
      * 
      * @param createdDate
-     *        The date when the configuration document was created.
+     *        The date when the SSM document was created.
      */
     public void setCreatedDate(java.util.Date createdDate) {
         this.createdDate = createdDate;
     }
 
     /**
-     * <p>
-     * The date when the configuration document was created.
-     * </p>
+     * The date when the SSM document was created.
      * 
-     * @return The date when the configuration document was created.
+     * @return The date when the SSM document was created.
      */
     public java.util.Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * <p>
-     * The date when the configuration document was created.
-     * </p>
+     * The date when the SSM document was created.
      * 
      * @param createdDate
-     *        The date when the configuration document was created.
+     *        The date when the SSM document was created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -172,11 +170,11 @@ public class DocumentDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the configuration document.
+     * The status of the SSM document.
      * </p>
      * 
      * @param status
-     *        The status of the configuration document.
+     *        The status of the SSM document.
      * @see DocumentStatus
      */
     public void setStatus(String status) {
@@ -185,10 +183,10 @@ public class DocumentDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the configuration document.
+     * The status of the SSM document.
      * </p>
      * 
-     * @return The status of the configuration document.
+     * @return The status of the SSM document.
      * @see DocumentStatus
      */
     public String getStatus() {
@@ -197,11 +195,11 @@ public class DocumentDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the configuration document.
+     * The status of the SSM document.
      * </p>
      * 
      * @param status
-     *        The status of the configuration document.
+     *        The status of the SSM document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DocumentStatus
@@ -213,11 +211,11 @@ public class DocumentDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the configuration document.
+     * The status of the SSM document.
      * </p>
      * 
      * @param status
-     *        The status of the configuration document.
+     *        The status of the SSM document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DocumentStatus
@@ -228,17 +226,218 @@ public class DocumentDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the configuration document.
+     * The status of the SSM document.
      * </p>
      * 
      * @param status
-     *        The status of the configuration document.
+     *        The status of the SSM document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DocumentStatus
      */
     public DocumentDescription withStatus(DocumentStatus status) {
         setStatus(status);
+        return this;
+    }
+
+    /**
+     * A description of the document.
+     * 
+     * @param description
+     *        A description of the document.
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * A description of the document.
+     * 
+     * @return A description of the document.
+     */
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * A description of the document.
+     * 
+     * @param description
+     *        A description of the document.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DocumentDescription withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description of the parameters for a document.
+     * </p>
+     * 
+     * @return A description of the parameters for a document.
+     */
+    public java.util.List<DocumentParameter> getParameters() {
+        if (parameters == null) {
+            parameters = new com.amazonaws.internal.SdkInternalList<DocumentParameter>();
+        }
+        return parameters;
+    }
+
+    /**
+     * <p>
+     * A description of the parameters for a document.
+     * </p>
+     * 
+     * @param parameters
+     *        A description of the parameters for a document.
+     */
+    public void setParameters(java.util.Collection<DocumentParameter> parameters) {
+        if (parameters == null) {
+            this.parameters = null;
+            return;
+        }
+
+        this.parameters = new com.amazonaws.internal.SdkInternalList<DocumentParameter>(
+                parameters);
+    }
+
+    /**
+     * <p>
+     * A description of the parameters for a document.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setParameters(java.util.Collection)} or
+     * {@link #withParameters(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param parameters
+     *        A description of the parameters for a document.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DocumentDescription withParameters(DocumentParameter... parameters) {
+        if (this.parameters == null) {
+            setParameters(new com.amazonaws.internal.SdkInternalList<DocumentParameter>(
+                    parameters.length));
+        }
+        for (DocumentParameter ele : parameters) {
+            this.parameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description of the parameters for a document.
+     * </p>
+     * 
+     * @param parameters
+     *        A description of the parameters for a document.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DocumentDescription withParameters(
+            java.util.Collection<DocumentParameter> parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    /**
+     * The list of OS platforms compatible with this SSM document.
+     * 
+     * @return The list of OS platforms compatible with this SSM document.
+     * @see PlatformType
+     */
+    public java.util.List<String> getPlatformTypes() {
+        if (platformTypes == null) {
+            platformTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return platformTypes;
+    }
+
+    /**
+     * The list of OS platforms compatible with this SSM document.
+     * 
+     * @param platformTypes
+     *        The list of OS platforms compatible with this SSM document.
+     * @see PlatformType
+     */
+    public void setPlatformTypes(java.util.Collection<String> platformTypes) {
+        if (platformTypes == null) {
+            this.platformTypes = null;
+            return;
+        }
+
+        this.platformTypes = new com.amazonaws.internal.SdkInternalList<String>(
+                platformTypes);
+    }
+
+    /**
+     * The list of OS platforms compatible with this SSM document.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPlatformTypes(java.util.Collection)} or
+     * {@link #withPlatformTypes(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param platformTypes
+     *        The list of OS platforms compatible with this SSM document.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PlatformType
+     */
+    public DocumentDescription withPlatformTypes(String... platformTypes) {
+        if (this.platformTypes == null) {
+            setPlatformTypes(new com.amazonaws.internal.SdkInternalList<String>(
+                    platformTypes.length));
+        }
+        for (String ele : platformTypes) {
+            this.platformTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The list of OS platforms compatible with this SSM document.
+     * 
+     * @param platformTypes
+     *        The list of OS platforms compatible with this SSM document.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PlatformType
+     */
+    public DocumentDescription withPlatformTypes(
+            java.util.Collection<String> platformTypes) {
+        setPlatformTypes(platformTypes);
+        return this;
+    }
+
+    /**
+     * The list of OS platforms compatible with this SSM document.
+     * 
+     * @param platformTypes
+     *        The list of OS platforms compatible with this SSM document.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PlatformType
+     */
+    public DocumentDescription withPlatformTypes(PlatformType... platformTypes) {
+        com.amazonaws.internal.SdkInternalList<String> platformTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                platformTypes.length);
+        for (PlatformType value : platformTypes) {
+            platformTypesCopy.add(value.toString());
+        }
+        if (getPlatformTypes() == null) {
+            setPlatformTypes(platformTypesCopy);
+        } else {
+            getPlatformTypes().addAll(platformTypesCopy);
+        }
         return this;
     }
 
@@ -261,7 +460,13 @@ public class DocumentDescription implements Serializable, Cloneable {
         if (getCreatedDate() != null)
             sb.append("CreatedDate: " + getCreatedDate() + ",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: " + getStatus() + ",");
+        if (getDescription() != null)
+            sb.append("Description: " + getDescription() + ",");
+        if (getParameters() != null)
+            sb.append("Parameters: " + getParameters() + ",");
+        if (getPlatformTypes() != null)
+            sb.append("PlatformTypes: " + getPlatformTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -296,6 +501,21 @@ public class DocumentDescription implements Serializable, Cloneable {
         if (other.getStatus() != null
                 && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null
+                && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null
+                && other.getParameters().equals(this.getParameters()) == false)
+            return false;
+        if (other.getPlatformTypes() == null ^ this.getPlatformTypes() == null)
+            return false;
+        if (other.getPlatformTypes() != null
+                && other.getPlatformTypes().equals(this.getPlatformTypes()) == false)
+            return false;
         return true;
     }
 
@@ -313,6 +533,15 @@ public class DocumentDescription implements Serializable, Cloneable {
                 + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode
                 + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode
+                + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPlatformTypes() == null) ? 0 : getPlatformTypes()
+                        .hashCode());
         return hashCode;
     }
 
