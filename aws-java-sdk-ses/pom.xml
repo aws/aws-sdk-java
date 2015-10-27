@@ -5,46 +5,37 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.10.29</version>
+    <version>1.10.30-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-ses</artifactId>
   <name>AWS Java SDK for Amazon SES</name>
   <description>The AWS Java SDK for Amazon SES module holds the client classes that are used for communicating with Amazon Simple Email Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
-
-  <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
     <dependency>
-        <artifactId>javax.mail-api</artifactId>
-        <groupId>javax.mail</groupId>
-        <optional>true</optional>
-        <version>1.4.6</version>
+      <groupId>javax.mail</groupId>
+      <artifactId>javax.mail-api</artifactId>
+      <version>1.4.6</version>
+      <optional>true</optional>
     </dependency>
     <dependency>
-        <artifactId>aws-java-sdk-core</artifactId>
-        <groupId>com.amazonaws</groupId>
-        <optional>false</optional>
-        <version>1.10.29</version>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-core</artifactId>
+      <version>1.10.29</version>
+      <optional>false</optional>
     </dependency>
-</dependencies>
-
+  </dependencies>
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
-
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
-
-  <!-- This profile uses the JAPICMP plugin to generate a report of changes between the release version and the latest version -->
-  <!-- For more information on the plugin, see https://github.com/siom79/japicmp -->
   <profiles>
     <profile>
       <id>versiondiff</id>
