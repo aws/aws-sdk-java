@@ -33727,7 +33727,7 @@
         "fluentSetterDocumentation" : "/**<p>Specifies a put integration request's resource ID.</p>\n@param resourceId Specifies a put integration request's resource ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>Specifies a put integration request's resource ID.</p>\n@param resourceId Specifies a put integration request's resource ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>Specifies a put integration HTTP method.</p>",
+        "documentation" : "<p>Specifies a put integration request's HTTP method.</p>",
         "name" : "HttpMethod",
         "c2jName" : "httpMethod",
         "c2jShape" : "String",
@@ -33735,7 +33735,7 @@
           "variableName" : "httpMethod",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>Specifies a put integration HTTP method.</p>",
+          "documentation" : "<p>Specifies a put integration request's HTTP method.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -33752,16 +33752,16 @@
           "documentation" : null
         },
         "http" : {
-          "unmarshallLocationName" : "httpMethod",
-          "marshallLocationName" : "httpMethod",
+          "unmarshallLocationName" : "http_method",
+          "marshallLocationName" : "http_method",
           "additionalUnmarshallingPath" : null,
           "additionalMarshallingPath" : null,
           "isPayload" : false,
           "isStreaming" : false,
-          "location" : null,
+          "location" : "uri",
           "flattened" : false,
           "header" : false,
-          "uri" : false,
+          "uri" : true,
           "statusCode" : false,
           "queryString" : false
         },
@@ -33773,10 +33773,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param httpMethod Specifies a put integration HTTP method.*/",
-        "getterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@return Specifies a put integration HTTP method.*/",
-        "fluentSetterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param httpMethod Specifies a put integration HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param httpMethod Specifies a put integration HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>Specifies a put integration request's HTTP method.</p>\n@param httpMethod Specifies a put integration request's HTTP method.*/",
+        "getterDocumentation" : "/**<p>Specifies a put integration request's HTTP method.</p>\n@return Specifies a put integration request's HTTP method.*/",
+        "fluentSetterDocumentation" : "/**<p>Specifies a put integration request's HTTP method.</p>\n@param httpMethod Specifies a put integration request's HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specifies a put integration request's HTTP method.</p>\n@param httpMethod Specifies a put integration request's HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>Specifies a put integration input's type.</p>",
         "name" : "Type",
@@ -33828,6 +33828,57 @@
         "getterDocumentation" : "/**<p>Specifies a put integration input's type.</p>\n@return Specifies a put integration input's type.\n@see IntegrationType*/",
         "fluentSetterDocumentation" : "/**<p>Specifies a put integration input's type.</p>\n@param type Specifies a put integration input's type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IntegrationType*/",
         "varargSetterDocumentation" : "/**<p>Specifies a put integration input's type.</p>\n@param type Specifies a put integration input's type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IntegrationType*/"
+      }, {
+        "documentation" : "<p>Specifies a put integration HTTP method.</p>",
+        "name" : "IntegrationHttpMethod",
+        "c2jName" : "integrationHttpMethod",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "integrationHttpMethod",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>Specifies a put integration HTTP method.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "integrationHttpMethod",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "httpMethod",
+          "marshallLocationName" : "httpMethod",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param integrationHttpMethod Specifies a put integration HTTP method.*/",
+        "getterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@return Specifies a put integration HTTP method.*/",
+        "fluentSetterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param integrationHttpMethod Specifies a put integration HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param integrationHttpMethod Specifies a put integration HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>Specifies a put integration input's Uniform Resource Identifier (URI).</p>",
         "name" : "Uri",
@@ -34595,7 +34646,7 @@
           "varargSetterDocumentation" : "/**<p>Specifies whether credentials are required for a put integration.</p>\n@param credentials Specifies whether credentials are required for a put integration.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "HttpMethod" : {
-          "documentation" : "<p>Specifies a put integration HTTP method.</p>",
+          "documentation" : "<p>Specifies a put integration request's HTTP method.</p>",
           "name" : "HttpMethod",
           "c2jName" : "httpMethod",
           "c2jShape" : "String",
@@ -34603,7 +34654,7 @@
             "variableName" : "httpMethod",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>Specifies a put integration HTTP method.</p>",
+            "documentation" : "<p>Specifies a put integration request's HTTP method.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -34620,16 +34671,16 @@
             "documentation" : null
           },
           "http" : {
-            "unmarshallLocationName" : "httpMethod",
-            "marshallLocationName" : "httpMethod",
+            "unmarshallLocationName" : "http_method",
+            "marshallLocationName" : "http_method",
             "additionalUnmarshallingPath" : null,
             "additionalMarshallingPath" : null,
             "isPayload" : false,
             "isStreaming" : false,
-            "location" : null,
+            "location" : "uri",
             "flattened" : false,
             "header" : false,
-            "uri" : false,
+            "uri" : true,
             "statusCode" : false,
             "queryString" : false
           },
@@ -34641,10 +34692,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param httpMethod Specifies a put integration HTTP method.*/",
-          "getterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@return Specifies a put integration HTTP method.*/",
-          "fluentSetterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param httpMethod Specifies a put integration HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param httpMethod Specifies a put integration HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>Specifies a put integration request's HTTP method.</p>\n@param httpMethod Specifies a put integration request's HTTP method.*/",
+          "getterDocumentation" : "/**<p>Specifies a put integration request's HTTP method.</p>\n@return Specifies a put integration request's HTTP method.*/",
+          "fluentSetterDocumentation" : "/**<p>Specifies a put integration request's HTTP method.</p>\n@param httpMethod Specifies a put integration request's HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specifies a put integration request's HTTP method.</p>\n@param httpMethod Specifies a put integration request's HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "CacheKeyParameters" : {
           "documentation" : "<p>Specifies a put integration input's cache key parameters.</p>",
@@ -34762,6 +34813,58 @@
           "getterDocumentation" : "/**<p>Specifies a put integration input's cache namespace.</p>\n@return Specifies a put integration input's cache namespace.*/",
           "fluentSetterDocumentation" : "/**<p>Specifies a put integration input's cache namespace.</p>\n@param cacheNamespace Specifies a put integration input's cache namespace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>Specifies a put integration input's cache namespace.</p>\n@param cacheNamespace Specifies a put integration input's cache namespace.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "IntegrationHttpMethod" : {
+          "documentation" : "<p>Specifies a put integration HTTP method.</p>",
+          "name" : "IntegrationHttpMethod",
+          "c2jName" : "integrationHttpMethod",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "integrationHttpMethod",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>Specifies a put integration HTTP method.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "integrationHttpMethod",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "httpMethod",
+            "marshallLocationName" : "httpMethod",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param integrationHttpMethod Specifies a put integration HTTP method.*/",
+          "getterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@return Specifies a put integration HTTP method.*/",
+          "fluentSetterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param integrationHttpMethod Specifies a put integration HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specifies a put integration HTTP method.</p>\n@param integrationHttpMethod Specifies a put integration HTTP method.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
