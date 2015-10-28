@@ -40,7 +40,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     private String resourceId;
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration request's HTTP method.
      * </p>
      */
     private String httpMethod;
@@ -50,6 +50,12 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * Specifies a put integration HTTP method.
+     * </p>
+     */
+    private String integrationHttpMethod;
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
@@ -175,11 +181,11 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a put integration HTTP method.
+     *        Specifies a put integration request's HTTP method.
      */
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
@@ -187,10 +193,10 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration request's HTTP method.
      * </p>
      * 
-     * @return Specifies a put integration HTTP method.
+     * @return Specifies a put integration request's HTTP method.
      */
     public String getHttpMethod() {
         return this.httpMethod;
@@ -198,11 +204,11 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a put integration HTTP method.
+     *        Specifies a put integration request's HTTP method.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -280,6 +286,45 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      */
     public PutIntegrationRequest withType(IntegrationType type) {
         setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a put integration HTTP method.
+     * </p>
+     * 
+     * @param integrationHttpMethod
+     *        Specifies a put integration HTTP method.
+     */
+    public void setIntegrationHttpMethod(String integrationHttpMethod) {
+        this.integrationHttpMethod = integrationHttpMethod;
+    }
+
+    /**
+     * <p>
+     * Specifies a put integration HTTP method.
+     * </p>
+     * 
+     * @return Specifies a put integration HTTP method.
+     */
+    public String getIntegrationHttpMethod() {
+        return this.integrationHttpMethod;
+    }
+
+    /**
+     * <p>
+     * Specifies a put integration HTTP method.
+     * </p>
+     * 
+     * @param integrationHttpMethod
+     *        Specifies a put integration HTTP method.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public PutIntegrationRequest withIntegrationHttpMethod(
+            String integrationHttpMethod) {
+        setIntegrationHttpMethod(integrationHttpMethod);
         return this;
     }
 
@@ -679,6 +724,9 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
             sb.append("HttpMethod: " + getHttpMethod() + ",");
         if (getType() != null)
             sb.append("Type: " + getType() + ",");
+        if (getIntegrationHttpMethod() != null)
+            sb.append("IntegrationHttpMethod: " + getIntegrationHttpMethod()
+                    + ",");
         if (getUri() != null)
             sb.append("Uri: " + getUri() + ",");
         if (getCredentials() != null)
@@ -724,6 +772,13 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getType() != null
                 && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getIntegrationHttpMethod() == null
+                ^ this.getIntegrationHttpMethod() == null)
+            return false;
+        if (other.getIntegrationHttpMethod() != null
+                && other.getIntegrationHttpMethod().equals(
+                        this.getIntegrationHttpMethod()) == false)
             return false;
         if (other.getUri() == null ^ this.getUri() == null)
             return false;
@@ -778,6 +833,10 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
                 + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
         hashCode = prime * hashCode
                 + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIntegrationHttpMethod() == null) ? 0
+                        : getIntegrationHttpMethod().hashCode());
         hashCode = prime * hashCode
                 + ((getUri() == null) ? 0 : getUri().hashCode());
         hashCode = prime

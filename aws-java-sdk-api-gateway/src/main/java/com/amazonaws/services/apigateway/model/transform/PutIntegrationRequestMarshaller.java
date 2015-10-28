@@ -71,6 +71,11 @@ public class PutIntegrationRequestMarshaller implements
                 (putIntegrationRequest.getResourceId() == null) ? ""
                         : StringUtils.fromString(putIntegrationRequest
                                 .getResourceId()));
+        uriResourcePath = uriResourcePath.replace(
+                "{http_method}",
+                (putIntegrationRequest.getHttpMethod() == null) ? ""
+                        : StringUtils.fromString(putIntegrationRequest
+                                .getHttpMethod()));
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -79,13 +84,13 @@ public class PutIntegrationRequestMarshaller implements
 
             jsonWriter.object();
 
-            if (putIntegrationRequest.getHttpMethod() != null) {
-                jsonWriter.key("httpMethod").value(
-                        putIntegrationRequest.getHttpMethod());
-            }
-
             if (putIntegrationRequest.getType() != null) {
                 jsonWriter.key("type").value(putIntegrationRequest.getType());
+            }
+
+            if (putIntegrationRequest.getIntegrationHttpMethod() != null) {
+                jsonWriter.key("httpMethod").value(
+                        putIntegrationRequest.getIntegrationHttpMethod());
             }
 
             if (putIntegrationRequest.getUri() != null) {
