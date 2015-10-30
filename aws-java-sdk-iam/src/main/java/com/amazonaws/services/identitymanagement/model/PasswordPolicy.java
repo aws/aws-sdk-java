@@ -63,8 +63,9 @@ public class PasswordPolicy implements Serializable, Cloneable {
     private Boolean allowUsersToChangePassword;
 
     /**
-     * Specifies whether IAM users are required to change their password
-     * after a specified number of days.
+     * Indicates whether passwords in the account expire. Returns true if
+     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * MaxPasswordAge is 0 or not present.
      */
     private Boolean expirePasswords;
 
@@ -360,35 +361,41 @@ public class PasswordPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether IAM users are required to change their password
-     * after a specified number of days.
+     * Indicates whether passwords in the account expire. Returns true if
+     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * MaxPasswordAge is 0 or not present.
      *
-     * @return Specifies whether IAM users are required to change their password
-     *         after a specified number of days.
+     * @return Indicates whether passwords in the account expire. Returns true if
+     *         MaxPasswordAge is contains a value greater than 0. Returns false if
+     *         MaxPasswordAge is 0 or not present.
      */
     public Boolean isExpirePasswords() {
         return expirePasswords;
     }
     
     /**
-     * Specifies whether IAM users are required to change their password
-     * after a specified number of days.
+     * Indicates whether passwords in the account expire. Returns true if
+     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * MaxPasswordAge is 0 or not present.
      *
-     * @param expirePasswords Specifies whether IAM users are required to change their password
-     *         after a specified number of days.
+     * @param expirePasswords Indicates whether passwords in the account expire. Returns true if
+     *         MaxPasswordAge is contains a value greater than 0. Returns false if
+     *         MaxPasswordAge is 0 or not present.
      */
     public void setExpirePasswords(Boolean expirePasswords) {
         this.expirePasswords = expirePasswords;
     }
     
     /**
-     * Specifies whether IAM users are required to change their password
-     * after a specified number of days.
+     * Indicates whether passwords in the account expire. Returns true if
+     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * MaxPasswordAge is 0 or not present.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param expirePasswords Specifies whether IAM users are required to change their password
-     *         after a specified number of days.
+     * @param expirePasswords Indicates whether passwords in the account expire. Returns true if
+     *         MaxPasswordAge is contains a value greater than 0. Returns false if
+     *         MaxPasswordAge is 0 or not present.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -399,11 +406,13 @@ public class PasswordPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether IAM users are required to change their password
-     * after a specified number of days.
+     * Indicates whether passwords in the account expire. Returns true if
+     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * MaxPasswordAge is 0 or not present.
      *
-     * @return Specifies whether IAM users are required to change their password
-     *         after a specified number of days.
+     * @return Indicates whether passwords in the account expire. Returns true if
+     *         MaxPasswordAge is contains a value greater than 0. Returns false if
+     *         MaxPasswordAge is 0 or not present.
      */
     public Boolean getExpirePasswords() {
         return expirePasswords;

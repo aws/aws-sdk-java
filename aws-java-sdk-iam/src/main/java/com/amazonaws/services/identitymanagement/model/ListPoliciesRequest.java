@@ -83,8 +83,8 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -94,14 +94,14 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -371,8 +371,8 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -380,8 +380,8 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @return Use this parameter only when paginating results and only after you
      *         receive a response indicating that the results are truncated. Set it
-     *         to the value of the <code>Marker</code> element in the response you
-     *         received to inform the next call about where to start.
+     *         to the value of the <code>Marker</code> element in the response that
+     *         you received to indicate where the next call should start.
      */
     public String getMarker() {
         return marker;
@@ -390,8 +390,8 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -399,8 +399,8 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param marker Use this parameter only when paginating results and only after you
      *         receive a response indicating that the results are truncated. Set it
-     *         to the value of the <code>Marker</code> element in the response you
-     *         received to inform the next call about where to start.
+     *         to the value of the <code>Marker</code> element in the response that
+     *         you received to indicate where the next call should start.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -409,8 +409,8 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -420,8 +420,8 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param marker Use this parameter only when paginating results and only after you
      *         receive a response indicating that the results are truncated. Set it
-     *         to the value of the <code>Marker</code> element in the response you
-     *         received to inform the next call about where to start.
+     *         to the value of the <code>Marker</code> element in the response that
+     *         you received to indicate where the next call should start.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -433,27 +433,27 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @return Use this only when paginating results to indicate the maximum number
-     *         of items you want in the response. If there are additional items
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>. <p>This parameter is optional. If you do
-     *         not include it, it defaults to 100. Note that IAM might return fewer
-     *         results, even when there are more results available. If this is the
-     *         case, the <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to include
-     *         in the subsequent call that tells the service where to continue from.
+     *         of items you want in the response. If additional items exist beyond
+     *         the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>. <p>This parameter is optional. If you do not
+     *         include it, it defaults to 100. Note that IAM might return fewer
+     *         results, even when there are more results available. In that case, the
+     *         <code>IsTruncated</code> response element returns <code>true</code>
+     *         and <code>Marker</code> contains a value to include in the subsequent
+     *         call that tells the service where to continue from.
      */
     public Integer getMaxItems() {
         return maxItems;
@@ -461,27 +461,27 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of items you want in the response. If there are additional items
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>. <p>This parameter is optional. If you do
-     *         not include it, it defaults to 100. Note that IAM might return fewer
-     *         results, even when there are more results available. If this is the
-     *         case, the <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to include
-     *         in the subsequent call that tells the service where to continue from.
+     *         of items you want in the response. If additional items exist beyond
+     *         the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>. <p>This parameter is optional. If you do not
+     *         include it, it defaults to 100. Note that IAM might return fewer
+     *         results, even when there are more results available. In that case, the
+     *         <code>IsTruncated</code> response element returns <code>true</code>
+     *         and <code>Marker</code> contains a value to include in the subsequent
+     *         call that tells the service where to continue from.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -489,14 +489,14 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -504,14 +504,14 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of items you want in the response. If there are additional items
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>. <p>This parameter is optional. If you do
-     *         not include it, it defaults to 100. Note that IAM might return fewer
-     *         results, even when there are more results available. If this is the
-     *         case, the <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to include
-     *         in the subsequent call that tells the service where to continue from.
+     *         of items you want in the response. If additional items exist beyond
+     *         the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>. <p>This parameter is optional. If you do not
+     *         include it, it defaults to 100. Note that IAM might return fewer
+     *         results, even when there are more results available. In that case, the
+     *         <code>IsTruncated</code> response element returns <code>true</code>
+     *         and <code>Marker</code> contains a value to include in the subsequent
+     *         call that tells the service where to continue from.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

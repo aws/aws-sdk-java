@@ -43,16 +43,19 @@ public class GetContextKeysForCustomPolicyRequest extends AmazonWebServiceReques
 
     /**
      * A list of policies for which you want list of context keys used in
-     * <code>Condition</code> elements.
+     * <code>Condition</code> elements. Each document is specified as a
+     * string containing the complete, valid JSON text of an IAM policy.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyInputList;
 
     /**
      * A list of policies for which you want list of context keys used in
-     * <code>Condition</code> elements.
+     * <code>Condition</code> elements. Each document is specified as a
+     * string containing the complete, valid JSON text of an IAM policy.
      *
      * @return A list of policies for which you want list of context keys used in
-     *         <code>Condition</code> elements.
+     *         <code>Condition</code> elements. Each document is specified as a
+     *         string containing the complete, valid JSON text of an IAM policy.
      */
     public java.util.List<String> getPolicyInputList() {
         if (policyInputList == null) {
@@ -64,10 +67,12 @@ public class GetContextKeysForCustomPolicyRequest extends AmazonWebServiceReques
     
     /**
      * A list of policies for which you want list of context keys used in
-     * <code>Condition</code> elements.
+     * <code>Condition</code> elements. Each document is specified as a
+     * string containing the complete, valid JSON text of an IAM policy.
      *
      * @param policyInputList A list of policies for which you want list of context keys used in
-     *         <code>Condition</code> elements.
+     *         <code>Condition</code> elements. Each document is specified as a
+     *         string containing the complete, valid JSON text of an IAM policy.
      */
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
         if (policyInputList == null) {
@@ -81,7 +86,8 @@ public class GetContextKeysForCustomPolicyRequest extends AmazonWebServiceReques
     
     /**
      * A list of policies for which you want list of context keys used in
-     * <code>Condition</code> elements.
+     * <code>Condition</code> elements. Each document is specified as a
+     * string containing the complete, valid JSON text of an IAM policy.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPolicyInputList(java.util.Collection)} or {@link
@@ -91,7 +97,8 @@ public class GetContextKeysForCustomPolicyRequest extends AmazonWebServiceReques
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyInputList A list of policies for which you want list of context keys used in
-     *         <code>Condition</code> elements.
+     *         <code>Condition</code> elements. Each document is specified as a
+     *         string containing the complete, valid JSON text of an IAM policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -106,12 +113,14 @@ public class GetContextKeysForCustomPolicyRequest extends AmazonWebServiceReques
     
     /**
      * A list of policies for which you want list of context keys used in
-     * <code>Condition</code> elements.
+     * <code>Condition</code> elements. Each document is specified as a
+     * string containing the complete, valid JSON text of an IAM policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyInputList A list of policies for which you want list of context keys used in
-     *         <code>Condition</code> elements.
+     *         <code>Condition</code> elements. Each document is specified as a
+     *         string containing the complete, valid JSON text of an IAM policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

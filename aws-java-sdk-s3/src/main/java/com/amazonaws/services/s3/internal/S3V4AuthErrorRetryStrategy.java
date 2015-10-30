@@ -96,7 +96,7 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
      * @return
      */
     private AuthRetryParameters redirectToS3External() {
-        AWSS3V4Signer v4Signer = buildSigV4Signer(Regions.US_EAST_1.toString());
+        AWSS3V4Signer v4Signer = buildSigV4Signer(Regions.US_EAST_1.getName());
         try {
             URI bucketEndpoint = new URI(String.format("https://%s.s3-external-1.amazonaws.com", endpointResolver.getBucketName()));
             return buildRetryParams(v4Signer, bucketEndpoint);

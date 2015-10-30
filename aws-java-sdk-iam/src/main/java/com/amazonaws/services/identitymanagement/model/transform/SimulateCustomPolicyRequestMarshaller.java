@@ -110,6 +110,9 @@ public class SimulateCustomPolicyRequestMarshaller implements Marshaller<Request
 
             contextEntriesListIndex++;
         }
+        if (simulateCustomPolicyRequest.getResourceHandlingOption() != null) {
+            request.addParameter("ResourceHandlingOption", StringUtils.fromString(simulateCustomPolicyRequest.getResourceHandlingOption()));
+        }
         if (simulateCustomPolicyRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(simulateCustomPolicyRequest.getMaxItems()));
         }

@@ -103,6 +103,10 @@ public class EvaluationResultStaxUnmarshaller implements Unmarshaller<Evaluation
                     evaluationResult.getEvalDecisionDetails().put(entry.getKey(), entry.getValue());
                     continue;
                 }
+                if (context.testExpression("ResourceSpecificResults/member", targetDepth)) {
+                    evaluationResult.getResourceSpecificResults().add(ResourceSpecificResultStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return evaluationResult;

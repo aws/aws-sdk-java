@@ -46,36 +46,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * If the output is long, you can use <code>MaxItems</code> and
  * <code>Marker</code> parameters to paginate the results.
  * </p>
- * Example This example specifies a policy by string and supplies a
- * ContextEntry to use for the context key that the policy references.
- * Note that all parameters are shown in unencoded form here for clarity
- * but must be URL encoded to be included as a part of a real HTML
- * request. The results show that the policy allows s3:ListBucket access
- * to the S3 bucket named teambucket.
- * https://iam.amazonaws.com/Action=SimulateCustomPolicy
- * &ActionNames.member.1=s3:ListBucket
- * &ResourceArns.member.1=arn:aws:s3:::teambucket
- * &ContextEntries.member.1.ContextKeyName=aws:MultiFactorAuthPresent
- * &ContextEntries.member.1.ContextKeyType=boolean
- * &ContextEntries.member.1.ContextKeyValues.member.1=true
- * &PolicyInputList.member.1={' "Version":"2012-10-17", "Statement":{
- * "Effect":"Allow", "Action":"s3:ListBucket",
- * "Resource":"arn:aws:s3:::teambucket",
- * "Condition":{"Bool":{"aws:MultiFactorAuthPresent":"true"}} }
- * } &Version=2010-05-08 &AUTHPARAMS <SimulateCustomPolicyResponse
- * xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
- * <SimulateCustomPolicyResult> <IsTruncated>false</IsTruncated>
- * <EvaluationResults> <member> <MatchedStatements> <member>
- * <SourcePolicyId>PolicyInputList.1</SourcePolicyId> <EndPosition>
- * <Column>4</Column> <Line>8</Line> </EndPosition> <StartPosition>
- * <Column>16</Column> <Line>3</Line> </StartPosition> </member>
- * </MatchedStatements> <MissingContextValues/>
- * <EvalResourceName>arn:aws:s3:::teambucket</EvalResourceName>
- * <EvalDecision>allowed</EvalDecision>
- * <EvalActionName>s3:ListBucket</EvalActionName> </member>
- * </EvaluationResults> </SimulateCustomPolicyResult> <ResponseMetadata>
- * <RequestId>1cdb5b0a-4c15-11e5-b121-bd8c7EXAMPLE</RequestId>
- * </ResponseMetadata> </SimulateCustomPolicyResponse>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#simulateCustomPolicy(SimulateCustomPolicyRequest)
  */
@@ -170,6 +140,39 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
      * corresponding value is supplied.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ContextEntry> contextEntries;
+
+    /**
+     * Specifies the type of simulation to run. Different APIs that support
+     * resource-based policies require different combinations of resources.
+     * By specifying the type of simulation to run, you enable the policy
+     * simulator to enforce the presence of the required resources to ensure
+     * reliable simulation results. If your simulation does not match one of
+     * the following scenarios, then you can omit this parameter. The
+     * following list shows each of the supported scenario values and the
+     * resources that you must define to run the simulation. <p>Each of the
+     * EC2 scenarios requires that you specify instance, image, and
+     * security-group resources. If your scenario includes an EBS volume,
+     * then you must specify that volume as a resource. If the EC2 scenario
+     * includes VPC, then you must supply the network-interface resource. If
+     * it includes an IP subnet, then you must specify the subnet resource.
+     * For more information on the EC2 scenario options, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * Platforms</a> in the <i>AWS EC2 User Guide</i>. <ul>
+     * <li><p><b>EC2-Classic-InstanceStore</b> <p>instance, image,
+     * security-group </li> <li><p><b>EC2-Classic-EBS</b> <p>instance, image,
+     * security-group, volume </li> <li><p><b>EC2-VPC-InstanceStore</b>
+     * <p>instance, image, security-group, network-interface </li>
+     * <li><p><b>EC2-VPC-InstanceStore-Subnet</b> <p>instance, image,
+     * security-group, network-interface, subnet </li>
+     * <li><p><b>EC2-VPC-EBS</b> <p>instance, image, security-group,
+     * network-interface, volume </li> <li><p><b>EC2-VPC-EBS-Subnet</b>
+     * <p>instance, image, security-group, network-interface, subnet, volume
+     * </li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 64<br/>
+     */
+    private String resourceHandlingOption;
 
     /**
      * Use this only when paginating results to indicate the maximum number
@@ -943,6 +946,198 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
+     * Specifies the type of simulation to run. Different APIs that support
+     * resource-based policies require different combinations of resources.
+     * By specifying the type of simulation to run, you enable the policy
+     * simulator to enforce the presence of the required resources to ensure
+     * reliable simulation results. If your simulation does not match one of
+     * the following scenarios, then you can omit this parameter. The
+     * following list shows each of the supported scenario values and the
+     * resources that you must define to run the simulation. <p>Each of the
+     * EC2 scenarios requires that you specify instance, image, and
+     * security-group resources. If your scenario includes an EBS volume,
+     * then you must specify that volume as a resource. If the EC2 scenario
+     * includes VPC, then you must supply the network-interface resource. If
+     * it includes an IP subnet, then you must specify the subnet resource.
+     * For more information on the EC2 scenario options, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * Platforms</a> in the <i>AWS EC2 User Guide</i>. <ul>
+     * <li><p><b>EC2-Classic-InstanceStore</b> <p>instance, image,
+     * security-group </li> <li><p><b>EC2-Classic-EBS</b> <p>instance, image,
+     * security-group, volume </li> <li><p><b>EC2-VPC-InstanceStore</b>
+     * <p>instance, image, security-group, network-interface </li>
+     * <li><p><b>EC2-VPC-InstanceStore-Subnet</b> <p>instance, image,
+     * security-group, network-interface, subnet </li>
+     * <li><p><b>EC2-VPC-EBS</b> <p>instance, image, security-group,
+     * network-interface, volume </li> <li><p><b>EC2-VPC-EBS-Subnet</b>
+     * <p>instance, image, security-group, network-interface, subnet, volume
+     * </li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 64<br/>
+     *
+     * @return Specifies the type of simulation to run. Different APIs that support
+     *         resource-based policies require different combinations of resources.
+     *         By specifying the type of simulation to run, you enable the policy
+     *         simulator to enforce the presence of the required resources to ensure
+     *         reliable simulation results. If your simulation does not match one of
+     *         the following scenarios, then you can omit this parameter. The
+     *         following list shows each of the supported scenario values and the
+     *         resources that you must define to run the simulation. <p>Each of the
+     *         EC2 scenarios requires that you specify instance, image, and
+     *         security-group resources. If your scenario includes an EBS volume,
+     *         then you must specify that volume as a resource. If the EC2 scenario
+     *         includes VPC, then you must supply the network-interface resource. If
+     *         it includes an IP subnet, then you must specify the subnet resource.
+     *         For more information on the EC2 scenario options, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *         Platforms</a> in the <i>AWS EC2 User Guide</i>. <ul>
+     *         <li><p><b>EC2-Classic-InstanceStore</b> <p>instance, image,
+     *         security-group </li> <li><p><b>EC2-Classic-EBS</b> <p>instance, image,
+     *         security-group, volume </li> <li><p><b>EC2-VPC-InstanceStore</b>
+     *         <p>instance, image, security-group, network-interface </li>
+     *         <li><p><b>EC2-VPC-InstanceStore-Subnet</b> <p>instance, image,
+     *         security-group, network-interface, subnet </li>
+     *         <li><p><b>EC2-VPC-EBS</b> <p>instance, image, security-group,
+     *         network-interface, volume </li> <li><p><b>EC2-VPC-EBS-Subnet</b>
+     *         <p>instance, image, security-group, network-interface, subnet, volume
+     *         </li> </ul>
+     */
+    public String getResourceHandlingOption() {
+        return resourceHandlingOption;
+    }
+    
+    /**
+     * Specifies the type of simulation to run. Different APIs that support
+     * resource-based policies require different combinations of resources.
+     * By specifying the type of simulation to run, you enable the policy
+     * simulator to enforce the presence of the required resources to ensure
+     * reliable simulation results. If your simulation does not match one of
+     * the following scenarios, then you can omit this parameter. The
+     * following list shows each of the supported scenario values and the
+     * resources that you must define to run the simulation. <p>Each of the
+     * EC2 scenarios requires that you specify instance, image, and
+     * security-group resources. If your scenario includes an EBS volume,
+     * then you must specify that volume as a resource. If the EC2 scenario
+     * includes VPC, then you must supply the network-interface resource. If
+     * it includes an IP subnet, then you must specify the subnet resource.
+     * For more information on the EC2 scenario options, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * Platforms</a> in the <i>AWS EC2 User Guide</i>. <ul>
+     * <li><p><b>EC2-Classic-InstanceStore</b> <p>instance, image,
+     * security-group </li> <li><p><b>EC2-Classic-EBS</b> <p>instance, image,
+     * security-group, volume </li> <li><p><b>EC2-VPC-InstanceStore</b>
+     * <p>instance, image, security-group, network-interface </li>
+     * <li><p><b>EC2-VPC-InstanceStore-Subnet</b> <p>instance, image,
+     * security-group, network-interface, subnet </li>
+     * <li><p><b>EC2-VPC-EBS</b> <p>instance, image, security-group,
+     * network-interface, volume </li> <li><p><b>EC2-VPC-EBS-Subnet</b>
+     * <p>instance, image, security-group, network-interface, subnet, volume
+     * </li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 64<br/>
+     *
+     * @param resourceHandlingOption Specifies the type of simulation to run. Different APIs that support
+     *         resource-based policies require different combinations of resources.
+     *         By specifying the type of simulation to run, you enable the policy
+     *         simulator to enforce the presence of the required resources to ensure
+     *         reliable simulation results. If your simulation does not match one of
+     *         the following scenarios, then you can omit this parameter. The
+     *         following list shows each of the supported scenario values and the
+     *         resources that you must define to run the simulation. <p>Each of the
+     *         EC2 scenarios requires that you specify instance, image, and
+     *         security-group resources. If your scenario includes an EBS volume,
+     *         then you must specify that volume as a resource. If the EC2 scenario
+     *         includes VPC, then you must supply the network-interface resource. If
+     *         it includes an IP subnet, then you must specify the subnet resource.
+     *         For more information on the EC2 scenario options, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *         Platforms</a> in the <i>AWS EC2 User Guide</i>. <ul>
+     *         <li><p><b>EC2-Classic-InstanceStore</b> <p>instance, image,
+     *         security-group </li> <li><p><b>EC2-Classic-EBS</b> <p>instance, image,
+     *         security-group, volume </li> <li><p><b>EC2-VPC-InstanceStore</b>
+     *         <p>instance, image, security-group, network-interface </li>
+     *         <li><p><b>EC2-VPC-InstanceStore-Subnet</b> <p>instance, image,
+     *         security-group, network-interface, subnet </li>
+     *         <li><p><b>EC2-VPC-EBS</b> <p>instance, image, security-group,
+     *         network-interface, volume </li> <li><p><b>EC2-VPC-EBS-Subnet</b>
+     *         <p>instance, image, security-group, network-interface, subnet, volume
+     *         </li> </ul>
+     */
+    public void setResourceHandlingOption(String resourceHandlingOption) {
+        this.resourceHandlingOption = resourceHandlingOption;
+    }
+    
+    /**
+     * Specifies the type of simulation to run. Different APIs that support
+     * resource-based policies require different combinations of resources.
+     * By specifying the type of simulation to run, you enable the policy
+     * simulator to enforce the presence of the required resources to ensure
+     * reliable simulation results. If your simulation does not match one of
+     * the following scenarios, then you can omit this parameter. The
+     * following list shows each of the supported scenario values and the
+     * resources that you must define to run the simulation. <p>Each of the
+     * EC2 scenarios requires that you specify instance, image, and
+     * security-group resources. If your scenario includes an EBS volume,
+     * then you must specify that volume as a resource. If the EC2 scenario
+     * includes VPC, then you must supply the network-interface resource. If
+     * it includes an IP subnet, then you must specify the subnet resource.
+     * For more information on the EC2 scenario options, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * Platforms</a> in the <i>AWS EC2 User Guide</i>. <ul>
+     * <li><p><b>EC2-Classic-InstanceStore</b> <p>instance, image,
+     * security-group </li> <li><p><b>EC2-Classic-EBS</b> <p>instance, image,
+     * security-group, volume </li> <li><p><b>EC2-VPC-InstanceStore</b>
+     * <p>instance, image, security-group, network-interface </li>
+     * <li><p><b>EC2-VPC-InstanceStore-Subnet</b> <p>instance, image,
+     * security-group, network-interface, subnet </li>
+     * <li><p><b>EC2-VPC-EBS</b> <p>instance, image, security-group,
+     * network-interface, volume </li> <li><p><b>EC2-VPC-EBS-Subnet</b>
+     * <p>instance, image, security-group, network-interface, subnet, volume
+     * </li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 64<br/>
+     *
+     * @param resourceHandlingOption Specifies the type of simulation to run. Different APIs that support
+     *         resource-based policies require different combinations of resources.
+     *         By specifying the type of simulation to run, you enable the policy
+     *         simulator to enforce the presence of the required resources to ensure
+     *         reliable simulation results. If your simulation does not match one of
+     *         the following scenarios, then you can omit this parameter. The
+     *         following list shows each of the supported scenario values and the
+     *         resources that you must define to run the simulation. <p>Each of the
+     *         EC2 scenarios requires that you specify instance, image, and
+     *         security-group resources. If your scenario includes an EBS volume,
+     *         then you must specify that volume as a resource. If the EC2 scenario
+     *         includes VPC, then you must supply the network-interface resource. If
+     *         it includes an IP subnet, then you must specify the subnet resource.
+     *         For more information on the EC2 scenario options, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *         Platforms</a> in the <i>AWS EC2 User Guide</i>. <ul>
+     *         <li><p><b>EC2-Classic-InstanceStore</b> <p>instance, image,
+     *         security-group </li> <li><p><b>EC2-Classic-EBS</b> <p>instance, image,
+     *         security-group, volume </li> <li><p><b>EC2-VPC-InstanceStore</b>
+     *         <p>instance, image, security-group, network-interface </li>
+     *         <li><p><b>EC2-VPC-InstanceStore-Subnet</b> <p>instance, image,
+     *         security-group, network-interface, subnet </li>
+     *         <li><p><b>EC2-VPC-EBS</b> <p>instance, image, security-group,
+     *         network-interface, volume </li> <li><p><b>EC2-VPC-EBS-Subnet</b>
+     *         <p>instance, image, security-group, network-interface, subnet, volume
+     *         </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public SimulateCustomPolicyRequest withResourceHandlingOption(String resourceHandlingOption) {
+        this.resourceHandlingOption = resourceHandlingOption;
+        return this;
+    }
+
+    /**
      * Use this only when paginating results to indicate the maximum number
      * of items you want in the response. If additional items exist beyond
      * the maximum you specify, the <code>IsTruncated</code> response element
@@ -1114,6 +1309,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
         if (getResourceOwner() != null) sb.append("ResourceOwner: " + getResourceOwner() + ",");
         if (getCallerArn() != null) sb.append("CallerArn: " + getCallerArn() + ",");
         if (getContextEntries() != null) sb.append("ContextEntries: " + getContextEntries() + ",");
+        if (getResourceHandlingOption() != null) sb.append("ResourceHandlingOption: " + getResourceHandlingOption() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
@@ -1132,6 +1328,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getResourceOwner() == null) ? 0 : getResourceOwner().hashCode()); 
         hashCode = prime * hashCode + ((getCallerArn() == null) ? 0 : getCallerArn().hashCode()); 
         hashCode = prime * hashCode + ((getContextEntries() == null) ? 0 : getContextEntries().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceHandlingOption() == null) ? 0 : getResourceHandlingOption().hashCode()); 
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
         return hashCode;
@@ -1159,6 +1356,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest impleme
         if (other.getCallerArn() != null && other.getCallerArn().equals(this.getCallerArn()) == false) return false; 
         if (other.getContextEntries() == null ^ this.getContextEntries() == null) return false;
         if (other.getContextEntries() != null && other.getContextEntries().equals(this.getContextEntries()) == false) return false; 
+        if (other.getResourceHandlingOption() == null ^ this.getResourceHandlingOption() == null) return false;
+        if (other.getResourceHandlingOption() != null && other.getResourceHandlingOption().equals(this.getResourceHandlingOption()) == false) return false; 
         if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;
         if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
         if (other.getMarker() == null ^ this.getMarker() == null) return false;

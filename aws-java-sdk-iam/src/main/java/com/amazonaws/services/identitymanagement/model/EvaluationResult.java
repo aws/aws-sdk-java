@@ -79,11 +79,17 @@ public class EvaluationResult implements Serializable, Cloneable {
      * explains how each set of policies contributes to the final evaluation
      * decision. When simulating cross-account access to a resource, both the
      * resource-based policy and the caller's IAM policy must grant access.
-     * See <ulink
+     * See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</ulink>
+     * IAM Roles Differ from Resource-based Policies</a>
      */
     private java.util.Map<String,String> evalDecisionDetails;
+
+    /**
+     * The individual results of the simulation of the API action specified
+     * in EvalActionName on each resource.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ResourceSpecificResult> resourceSpecificResults;
 
     /**
      * The name of the API action tested on the indicated resource.
@@ -499,18 +505,18 @@ public class EvaluationResult implements Serializable, Cloneable {
      * explains how each set of policies contributes to the final evaluation
      * decision. When simulating cross-account access to a resource, both the
      * resource-based policy and the caller's IAM policy must grant access.
-     * See <ulink
+     * See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</ulink>
+     * IAM Roles Differ from Resource-based Policies</a>
      *
      * @return Additional details about the results of the evaluation decision. When
      *         there are both IAM policies and resource policies, this parameter
      *         explains how each set of policies contributes to the final evaluation
      *         decision. When simulating cross-account access to a resource, both the
      *         resource-based policy and the caller's IAM policy must grant access.
-     *         See <ulink
+     *         See <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     *         IAM Roles Differ from Resource-based Policies</ulink>
+     *         IAM Roles Differ from Resource-based Policies</a>
      */
     public java.util.Map<String,String> getEvalDecisionDetails() {
         
@@ -526,18 +532,18 @@ public class EvaluationResult implements Serializable, Cloneable {
      * explains how each set of policies contributes to the final evaluation
      * decision. When simulating cross-account access to a resource, both the
      * resource-based policy and the caller's IAM policy must grant access.
-     * See <ulink
+     * See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</ulink>
+     * IAM Roles Differ from Resource-based Policies</a>
      *
      * @param evalDecisionDetails Additional details about the results of the evaluation decision. When
      *         there are both IAM policies and resource policies, this parameter
      *         explains how each set of policies contributes to the final evaluation
      *         decision. When simulating cross-account access to a resource, both the
      *         resource-based policy and the caller's IAM policy must grant access.
-     *         See <ulink
+     *         See <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     *         IAM Roles Differ from Resource-based Policies</ulink>
+     *         IAM Roles Differ from Resource-based Policies</a>
      */
     public void setEvalDecisionDetails(java.util.Map<String,String> evalDecisionDetails) {
         this.evalDecisionDetails = evalDecisionDetails;
@@ -549,9 +555,9 @@ public class EvaluationResult implements Serializable, Cloneable {
      * explains how each set of policies contributes to the final evaluation
      * decision. When simulating cross-account access to a resource, both the
      * resource-based policy and the caller's IAM policy must grant access.
-     * See <ulink
+     * See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</ulink>
+     * IAM Roles Differ from Resource-based Policies</a>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -560,9 +566,9 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         explains how each set of policies contributes to the final evaluation
      *         decision. When simulating cross-account access to a resource, both the
      *         resource-based policy and the caller's IAM policy must grant access.
-     *         See <ulink
+     *         See <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     *         IAM Roles Differ from Resource-based Policies</ulink>
+     *         IAM Roles Differ from Resource-based Policies</a>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -578,9 +584,9 @@ public class EvaluationResult implements Serializable, Cloneable {
      * explains how each set of policies contributes to the final evaluation
      * decision. When simulating cross-account access to a resource, both the
      * resource-based policy and the caller's IAM policy must grant access.
-     * See <ulink
+     * See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</ulink>
+     * IAM Roles Differ from Resource-based Policies</a>
      * <p>
      * The method adds a new key-value pair into EvalDecisionDetails
      * parameter, and returns a reference to this object so that method calls
@@ -610,6 +616,87 @@ public class EvaluationResult implements Serializable, Cloneable {
   }
   
     /**
+     * The individual results of the simulation of the API action specified
+     * in EvalActionName on each resource.
+     *
+     * @return The individual results of the simulation of the API action specified
+     *         in EvalActionName on each resource.
+     */
+    public java.util.List<ResourceSpecificResult> getResourceSpecificResults() {
+        if (resourceSpecificResults == null) {
+              resourceSpecificResults = new com.amazonaws.internal.ListWithAutoConstructFlag<ResourceSpecificResult>();
+              resourceSpecificResults.setAutoConstruct(true);
+        }
+        return resourceSpecificResults;
+    }
+    
+    /**
+     * The individual results of the simulation of the API action specified
+     * in EvalActionName on each resource.
+     *
+     * @param resourceSpecificResults The individual results of the simulation of the API action specified
+     *         in EvalActionName on each resource.
+     */
+    public void setResourceSpecificResults(java.util.Collection<ResourceSpecificResult> resourceSpecificResults) {
+        if (resourceSpecificResults == null) {
+            this.resourceSpecificResults = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<ResourceSpecificResult> resourceSpecificResultsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ResourceSpecificResult>(resourceSpecificResults.size());
+        resourceSpecificResultsCopy.addAll(resourceSpecificResults);
+        this.resourceSpecificResults = resourceSpecificResultsCopy;
+    }
+    
+    /**
+     * The individual results of the simulation of the API action specified
+     * in EvalActionName on each resource.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setResourceSpecificResults(java.util.Collection)} or
+     * {@link #withResourceSpecificResults(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceSpecificResults The individual results of the simulation of the API action specified
+     *         in EvalActionName on each resource.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public EvaluationResult withResourceSpecificResults(ResourceSpecificResult... resourceSpecificResults) {
+        if (getResourceSpecificResults() == null) setResourceSpecificResults(new java.util.ArrayList<ResourceSpecificResult>(resourceSpecificResults.length));
+        for (ResourceSpecificResult value : resourceSpecificResults) {
+            getResourceSpecificResults().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The individual results of the simulation of the API action specified
+     * in EvalActionName on each resource.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceSpecificResults The individual results of the simulation of the API action specified
+     *         in EvalActionName on each resource.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public EvaluationResult withResourceSpecificResults(java.util.Collection<ResourceSpecificResult> resourceSpecificResults) {
+        if (resourceSpecificResults == null) {
+            this.resourceSpecificResults = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<ResourceSpecificResult> resourceSpecificResultsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ResourceSpecificResult>(resourceSpecificResults.size());
+            resourceSpecificResultsCopy.addAll(resourceSpecificResults);
+            this.resourceSpecificResults = resourceSpecificResultsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -626,7 +713,8 @@ public class EvaluationResult implements Serializable, Cloneable {
         if (getEvalDecision() != null) sb.append("EvalDecision: " + getEvalDecision() + ",");
         if (getMatchedStatements() != null) sb.append("MatchedStatements: " + getMatchedStatements() + ",");
         if (getMissingContextValues() != null) sb.append("MissingContextValues: " + getMissingContextValues() + ",");
-        if (getEvalDecisionDetails() != null) sb.append("EvalDecisionDetails: " + getEvalDecisionDetails() );
+        if (getEvalDecisionDetails() != null) sb.append("EvalDecisionDetails: " + getEvalDecisionDetails() + ",");
+        if (getResourceSpecificResults() != null) sb.append("ResourceSpecificResults: " + getResourceSpecificResults() );
         sb.append("}");
         return sb.toString();
     }
@@ -642,6 +730,7 @@ public class EvaluationResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMatchedStatements() == null) ? 0 : getMatchedStatements().hashCode()); 
         hashCode = prime * hashCode + ((getMissingContextValues() == null) ? 0 : getMissingContextValues().hashCode()); 
         hashCode = prime * hashCode + ((getEvalDecisionDetails() == null) ? 0 : getEvalDecisionDetails().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceSpecificResults() == null) ? 0 : getResourceSpecificResults().hashCode()); 
         return hashCode;
     }
     
@@ -665,6 +754,8 @@ public class EvaluationResult implements Serializable, Cloneable {
         if (other.getMissingContextValues() != null && other.getMissingContextValues().equals(this.getMissingContextValues()) == false) return false; 
         if (other.getEvalDecisionDetails() == null ^ this.getEvalDecisionDetails() == null) return false;
         if (other.getEvalDecisionDetails() != null && other.getEvalDecisionDetails().equals(this.getEvalDecisionDetails()) == false) return false; 
+        if (other.getResourceSpecificResults() == null ^ this.getResourceSpecificResults() == null) return false;
+        if (other.getResourceSpecificResults() != null && other.getResourceSpecificResults().equals(this.getResourceSpecificResults()) == false) return false; 
         return true;
     }
     

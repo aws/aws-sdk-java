@@ -1515,36 +1515,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * If the output is long, you can use <code>MaxItems</code> and
      * <code>Marker</code> parameters to paginate the results.
      * </p>
-     * Example This example specifies a policy by string and supplies a
-     * ContextEntry to use for the context key that the policy references.
-     * Note that all parameters are shown in unencoded form here for clarity
-     * but must be URL encoded to be included as a part of a real HTML
-     * request. The results show that the policy allows s3:ListBucket access
-     * to the S3 bucket named teambucket.
-     * https://iam.amazonaws.com/Action=SimulateCustomPolicy
-     * &ActionNames.member.1=s3:ListBucket
-     * &ResourceArns.member.1=arn:aws:s3:::teambucket
-     * &ContextEntries.member.1.ContextKeyName=aws:MultiFactorAuthPresent
-     * &ContextEntries.member.1.ContextKeyType=boolean
-     * &ContextEntries.member.1.ContextKeyValues.member.1=true
-     * &PolicyInputList.member.1={' "Version":"2012-10-17", "Statement":{
-     * "Effect":"Allow", "Action":"s3:ListBucket",
-     * "Resource":"arn:aws:s3:::teambucket",
-     * "Condition":{"Bool":{"aws:MultiFactorAuthPresent":"true"}} } }
-     * &Version=2010-05-08 &AUTHPARAMS <SimulateCustomPolicyResponse
-     * xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
-     * <SimulateCustomPolicyResult> <IsTruncated>false</IsTruncated>
-     * <EvaluationResults> <member> <MatchedStatements> <member>
-     * <SourcePolicyId>PolicyInputList.1</SourcePolicyId> <EndPosition>
-     * <Column>4</Column> <Line>8</Line> </EndPosition> <StartPosition>
-     * <Column>16</Column> <Line>3</Line> </StartPosition> </member>
-     * </MatchedStatements> <MissingContextValues/>
-     * <EvalResourceName>arn:aws:s3:::teambucket</EvalResourceName>
-     * <EvalDecision>allowed</EvalDecision>
-     * <EvalActionName>s3:ListBucket</EvalActionName> </member>
-     * </EvaluationResults> </SimulateCustomPolicyResult> <ResponseMetadata>
-     * <RequestId>1cdb5b0a-4c15-11e5-b121-bd8c7EXAMPLE</RequestId>
-     * </ResponseMetadata> </SimulateCustomPolicyResponse>
      *
      * @param simulateCustomPolicyRequest Container for the necessary
      *           parameters to execute the SimulateCustomPolicy service method on
@@ -2072,14 +2042,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Lists the account aliases associated with the account. For
-     * information about using an AWS account alias, see
+     * Lists the account alias associated with the account (Note: you can
+     * have only one). For information about using an AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
      * in the <i>IAM User Guide</i> .
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
      * </p>
      *
      * @param listAccountAliasesRequest Container for the necessary
@@ -5853,52 +5819,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * If the output is long, you can use the <code>MaxItems</code> and
      * <code>Marker</code> parameters to paginate the results.
      * </p>
-     * Example This example simulates calling the Amazon S3 APIs GetObject,
-     * PutObject, and DeleteObject for a specific S3 bucket. The simulation
-     * includes all policies that are attached to the user Jill. In this
-     * example, the user Jill has only the managed policy
-     * "AmazonS3ReadOnlyAccess" attached. Note that all parameters are shown
-     * in unencoded form here for clarity but must be URL encoded to be
-     * included as a part of a real HTML request. In the results, the
-     * simulation shows that Jill can add new files to the bucket because of
-     * the additional policy specified as a string parameter. In addition,
-     * she can read from the bucket because of the managed policy attached to
-     * the user. However, she cannot delete anything from the S3 bucket
-     * because of the default implicitDeny.
-     * https://iam.amazonaws.com/Action=SimulatePrincipalPolicy
-     * &ActionNames.member.1=s3:PutObject &ActionNames.member.2=s3:GetObject
-     * &ActionNames.member.3=s3:DeleteObject
-     * &ResourceArns.member.1="arn:aws:s3:::my-test-bucket"
-     * &PolicySourceArn=arn:aws:iam:::user/Jill &PolicyInputList.member.1='{
-     * "Version":"2012-10-17", "Statement":{ "Effect":"Allow",
-     * "Action":"s3:PutObject", "Resource":"arn:aws:s3:::my-test-bucket" } }'
-     * &Version=2010-05-08 &AUTHPARAMS <SimulatePrincipalPolicyResponse
-     * xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
-     * <SimulatePrincipalPolicyResult> <IsTruncated>false</IsTruncated>
-     * <EvaluationResults> <member> <MatchedStatements> <member>
-     * <SourcePolicyId>PolicyInputList.1</SourcePolicyId> <EndPosition>
-     * <Column>2</Column> <Line>8</Line> </EndPosition> <StartPosition>
-     * <Column>14</Column> <Line>3</Line> </StartPosition> </member>
-     * </MatchedStatements> <MissingContextValues/>
-     * <EvalResourceName>arn:aws:s3:::my-test-bucket</EvalResourceName>
-     * <EvalDecision>allowed</EvalDecision>
-     * <EvalActionName>s3:PutObject</EvalActionName> </member> <member>
-     * <MatchedStatements> <member>
-     * <SourcePolicyId>AmazonS3ReadOnlyAccess</SourcePolicyId> <EndPosition>
-     * <Column>6</Column> <Line>11</Line> </EndPosition> <StartPosition>
-     * <Column>17</Column> <Line>3</Line> </StartPosition> </member>
-     * </MatchedStatements> <MissingContextValues/>
-     * <EvalResourceName>arn:aws:s3:::my-test-bucket</EvalResourceName>
-     * <EvalDecision>allowed</EvalDecision>
-     * <EvalActionName>s3:GetObject</EvalActionName> </member> <member>
-     * <MatchedStatements/> <MissingContextValues/>
-     * <EvalResourceName>arn:aws:s3:::my-test-bucket</EvalResourceName>
-     * <EvalDecision>implicitDeny</EvalDecision>
-     * <EvalActionName>s3:DeleteObject</EvalActionName> </member>
-     * </EvaluationResults> </SimulatePrincipalPolicyResult>
-     * <ResponseMetadata>
-     * <RequestId>004d7059-4c14-11e5-b121-bd8c7EXAMPLE</RequestId>
-     * </ResponseMetadata> </SimulatePrincipalPolicyResponse>
      *
      * @param simulatePrincipalPolicyRequest Container for the necessary
      *           parameters to execute the SimulatePrincipalPolicy service method on
@@ -7181,14 +7101,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Lists the account aliases associated with the account. For
-     * information about using an AWS account alias, see
+     * Lists the account alias associated with the account (Note: you can
+     * have only one). For information about using an AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
      * in the <i>IAM User Guide</i> .
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
      * </p>
      * 
      * @return The response from the ListAccountAliases service method, as

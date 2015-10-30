@@ -21,14 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccountAliases(ListAccountAliasesRequest) ListAccountAliases operation}.
  * <p>
- * Lists the account aliases associated with the account. For
- * information about using an AWS account alias, see
+ * Lists the account alias associated with the account (Note: you can
+ * have only one). For information about using an AWS account alias, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
  * in the <i>IAM User Guide</i> .
- * </p>
- * <p>
- * You can paginate the results using the <code>MaxItems</code> and
- * <code>Marker</code> parameters.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccountAliases(ListAccountAliasesRequest)
@@ -38,8 +34,8 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -49,14 +45,14 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
 
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -72,8 +68,8 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -81,8 +77,8 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
      *
      * @return Use this parameter only when paginating results and only after you
      *         receive a response indicating that the results are truncated. Set it
-     *         to the value of the <code>Marker</code> element in the response you
-     *         received to inform the next call about where to start.
+     *         to the value of the <code>Marker</code> element in the response that
+     *         you received to indicate where the next call should start.
      */
     public String getMarker() {
         return marker;
@@ -91,8 +87,8 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -100,8 +96,8 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
      *
      * @param marker Use this parameter only when paginating results and only after you
      *         receive a response indicating that the results are truncated. Set it
-     *         to the value of the <code>Marker</code> element in the response you
-     *         received to inform the next call about where to start.
+     *         to the value of the <code>Marker</code> element in the response that
+     *         you received to indicate where the next call should start.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -110,8 +106,8 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
     /**
      * Use this parameter only when paginating results and only after you
      * receive a response indicating that the results are truncated. Set it
-     * to the value of the <code>Marker</code> element in the response you
-     * received to inform the next call about where to start.
+     * to the value of the <code>Marker</code> element in the response that
+     * you received to indicate where the next call should start.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -121,8 +117,8 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
      *
      * @param marker Use this parameter only when paginating results and only after you
      *         receive a response indicating that the results are truncated. Set it
-     *         to the value of the <code>Marker</code> element in the response you
-     *         received to inform the next call about where to start.
+     *         to the value of the <code>Marker</code> element in the response that
+     *         you received to indicate where the next call should start.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -134,27 +130,27 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
 
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @return Use this only when paginating results to indicate the maximum number
-     *         of items you want in the response. If there are additional items
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>. <p>This parameter is optional. If you do
-     *         not include it, it defaults to 100. Note that IAM might return fewer
-     *         results, even when there are more results available. If this is the
-     *         case, the <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to include
-     *         in the subsequent call that tells the service where to continue from.
+     *         of items you want in the response. If additional items exist beyond
+     *         the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>. <p>This parameter is optional. If you do not
+     *         include it, it defaults to 100. Note that IAM might return fewer
+     *         results, even when there are more results available. In that case, the
+     *         <code>IsTruncated</code> response element returns <code>true</code>
+     *         and <code>Marker</code> contains a value to include in the subsequent
+     *         call that tells the service where to continue from.
      */
     public Integer getMaxItems() {
         return maxItems;
@@ -162,27 +158,27 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of items you want in the response. If there are additional items
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>. <p>This parameter is optional. If you do
-     *         not include it, it defaults to 100. Note that IAM might return fewer
-     *         results, even when there are more results available. If this is the
-     *         case, the <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to include
-     *         in the subsequent call that tells the service where to continue from.
+     *         of items you want in the response. If additional items exist beyond
+     *         the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>. <p>This parameter is optional. If you do not
+     *         include it, it defaults to 100. Note that IAM might return fewer
+     *         results, even when there are more results available. In that case, the
+     *         <code>IsTruncated</code> response element returns <code>true</code>
+     *         and <code>Marker</code> contains a value to include in the subsequent
+     *         call that tells the service where to continue from.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -190,14 +186,14 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of items you want in the response. If there are additional items
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>. <p>This parameter is optional. If you do
-     * not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. If this is the
-     * case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include
-     * in the subsequent call that tells the service where to continue from.
+     * of items you want in the response. If additional items exist beyond
+     * the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>. <p>This parameter is optional. If you do not
+     * include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the
+     * <code>IsTruncated</code> response element returns <code>true</code>
+     * and <code>Marker</code> contains a value to include in the subsequent
+     * call that tells the service where to continue from.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -205,14 +201,14 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of items you want in the response. If there are additional items
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>. <p>This parameter is optional. If you do
-     *         not include it, it defaults to 100. Note that IAM might return fewer
-     *         results, even when there are more results available. If this is the
-     *         case, the <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to include
-     *         in the subsequent call that tells the service where to continue from.
+     *         of items you want in the response. If additional items exist beyond
+     *         the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>. <p>This parameter is optional. If you do not
+     *         include it, it defaults to 100. Note that IAM might return fewer
+     *         results, even when there are more results available. In that case, the
+     *         <code>IsTruncated</code> response element returns <code>true</code>
+     *         and <code>Marker</code> contains a value to include in the subsequent
+     *         call that tells the service where to continue from.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

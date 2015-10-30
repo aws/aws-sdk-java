@@ -24,7 +24,8 @@ import java.io.Serializable;
 public class ListAccountAliasesResult implements Serializable, Cloneable {
 
     /**
-     * A list of aliases associated with the account.
+     * A list of aliases associated with the account. AWS supports only one
+     * alias per account.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> accountAliases;
 
@@ -51,9 +52,11 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
     private String marker;
 
     /**
-     * A list of aliases associated with the account.
+     * A list of aliases associated with the account. AWS supports only one
+     * alias per account.
      *
-     * @return A list of aliases associated with the account.
+     * @return A list of aliases associated with the account. AWS supports only one
+     *         alias per account.
      */
     public java.util.List<String> getAccountAliases() {
         if (accountAliases == null) {
@@ -64,9 +67,11 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of aliases associated with the account.
+     * A list of aliases associated with the account. AWS supports only one
+     * alias per account.
      *
-     * @param accountAliases A list of aliases associated with the account.
+     * @param accountAliases A list of aliases associated with the account. AWS supports only one
+     *         alias per account.
      */
     public void setAccountAliases(java.util.Collection<String> accountAliases) {
         if (accountAliases == null) {
@@ -79,7 +84,8 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of aliases associated with the account.
+     * A list of aliases associated with the account. AWS supports only one
+     * alias per account.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAccountAliases(java.util.Collection)} or {@link
@@ -88,7 +94,8 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param accountAliases A list of aliases associated with the account.
+     * @param accountAliases A list of aliases associated with the account. AWS supports only one
+     *         alias per account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -102,11 +109,13 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of aliases associated with the account.
+     * A list of aliases associated with the account. AWS supports only one
+     * alias per account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param accountAliases A list of aliases associated with the account.
+     * @param accountAliases A list of aliases associated with the account. AWS supports only one
+     *         alias per account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
