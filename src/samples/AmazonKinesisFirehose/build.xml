@@ -1,0 +1,20 @@
+<!-- Ant build script for compiling and running the Amazon Kinesis Firehose Sample.
+     Don't forget to fill in your AWS access credentials in (~/.aws/credentials)
+     before trying to run it.  -->
+<project name="Amazon Kinesis Firehose Sample" default="run" basedir=".">
+    <path id="aws.java.sdk.classpath">
+        <fileset dir="${basedir}/../../third-party" includes="**/*.jar"/>
+        <fileset dir="${basedir}/../../lib" includes="**/*.jar"/>
+        <pathelement location="."/>
+    </path>
+
+    <target name="run-s3sample">
+        <javac srcdir="." destdir="." classpathref="aws.java.sdk.classpath"/>
+        <java classname="AmazonKinesisFirehoseToS3Sample" classpathref="aws.java.sdk.classpath" fork="true"/>
+    </target>
+
+    <target name="run-redshiftsample">
+        <javac srcdir="." destdir="." classpathref="aws.java.sdk.classpath"/>
+        <java classname="AmazonKinesisFirehoseToRedshiftSample" classpathref="aws.java.sdk.classpath" fork="true"/>
+    </target>
+</project>

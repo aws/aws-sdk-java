@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For more information, see
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies"> Duration-Based Session Stickiness </a>
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-duration"> Duration-Based Session Stickiness </a>
  * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *
@@ -56,8 +56,9 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
     private String loadBalancerName;
 
     /**
-     * The name of the policy being created. This name must be unique within
-     * the set of policies for this load balancer.
+     * The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique
+     * within the set of policies for this load balancer.
      */
     private String policyName;
 
@@ -80,7 +81,8 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
      * initialize any additional object members.
      * 
      * @param loadBalancerName The name of the load balancer.
-     * @param policyName The name of the policy being created. This name must
+     * @param policyName The name of the policy being created. Policy names
+     * must consist of alphanumeric characters and dashes (-). This name must
      * be unique within the set of policies for this load balancer.
      */
     public CreateLBCookieStickinessPolicyRequest(String loadBalancerName, String policyName) {
@@ -122,35 +124,41 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
     }
 
     /**
-     * The name of the policy being created. This name must be unique within
-     * the set of policies for this load balancer.
+     * The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique
+     * within the set of policies for this load balancer.
      *
-     * @return The name of the policy being created. This name must be unique within
-     *         the set of policies for this load balancer.
+     * @return The name of the policy being created. Policy names must consist of
+     *         alphanumeric characters and dashes (-). This name must be unique
+     *         within the set of policies for this load balancer.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * The name of the policy being created. This name must be unique within
-     * the set of policies for this load balancer.
+     * The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique
+     * within the set of policies for this load balancer.
      *
-     * @param policyName The name of the policy being created. This name must be unique within
-     *         the set of policies for this load balancer.
+     * @param policyName The name of the policy being created. Policy names must consist of
+     *         alphanumeric characters and dashes (-). This name must be unique
+     *         within the set of policies for this load balancer.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * The name of the policy being created. This name must be unique within
-     * the set of policies for this load balancer.
+     * The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique
+     * within the set of policies for this load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyName The name of the policy being created. This name must be unique within
-     *         the set of policies for this load balancer.
+     * @param policyName The name of the policy being created. Policy names must consist of
+     *         alphanumeric characters and dashes (-). This name must be unique
+     *         within the set of policies for this load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

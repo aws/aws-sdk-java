@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * security credentials to access all the other accounts by assuming
  * roles in those accounts. For more information about roles, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> IAM Roles (Delegation and Federation) </a>
- * in <i>Using IAM</i> .
+ * in the <i>Using IAM</i> .
  * </p>
  * <p>
  * For federation, you can, for example, grant single sign-on access to
@@ -56,8 +56,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * credentials for that user. With those temporary security credentials,
  * you construct a sign-in URL that users can use to access the console.
  * For more information, see
- * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html"> Scenarios for Granting Temporary Access </a>
- * in <i>Using Temporary Security Credentials</i> .
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html#sts-introduction"> Common Scenarios for Temporary Credentials </a>
+ * in the <i>Using IAM</i> .
  * </p>
  * <p>
  * The temporary security credentials are valid for the duration that you
@@ -77,8 +77,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * credentials. You cannot use the passed policy to grant permissions
  * that are in excess of those allowed by the access policy of the role
  * that is being assumed. For more information, see
- * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html"> Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
- * in <i>Using Temporary Security Credentials</i> .
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"> Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+ * in the <i>Using IAM</i> .
  * </p>
  * <p>
  * To assume a role, your AWS account must be trusted by the role. The
@@ -107,7 +107,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For more information, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html"> Configuring MFA-Protected API Access </a>
- * in <i>Using IAM</i> guide.
+ * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
  * To use MFA with <code>AssumeRole</code> , you pass values for the
@@ -151,7 +151,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * CloudTrail logs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 32<br/>
+     * <b>Length: </b>2 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String roleSessionName;
@@ -166,14 +166,14 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a>
-     * in <i>Using Temporary Security Credentials</i>. <note>The policy plain
-     * text must be 2048 bytes or shorter. However, an internal conversion
-     * compresses it into a packed binary format with a separate limit. The
-     * PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size. </note>
+     * in the <i>Using IAM</i>. <note>The policy plain text must be 2048
+     * bytes or shorter. However, an internal conversion compresses it into a
+     * packed binary format with a separate limit. The PackedPolicySize
+     * response element indicates by percentage how close to the upper size
+     * limit the policy is, with 100% equaling the maximum allowed
+     * size.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -200,13 +200,13 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * pass the customer's external ID. The external ID is useful in order to
      * help third parties bind a role to the customer who created it. For
      * more information about the external ID, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     * to Use External ID When Granting Access to Your AWS Resources</a> in
-     * <i>Using Temporary Security Credentials</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to Use an External ID When Granting Access to Your AWS Resources to a
+     * Third Party</a> in the <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 96<br/>
-     * <b>Pattern: </b>[\w+=,.@:-]*<br/>
+     * <b>Length: </b>2 - 1224<br/>
+     * <b>Pattern: </b>[\w+=,.@:\/-]*<br/>
      */
     private String externalId;
 
@@ -293,7 +293,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * CloudTrail logs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 32<br/>
+     * <b>Length: </b>2 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @return An identifier for the assumed role session. <p>Use the role session
@@ -322,7 +322,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * CloudTrail logs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 32<br/>
+     * <b>Length: </b>2 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleSessionName An identifier for the assumed role session. <p>Use the role session
@@ -353,7 +353,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 32<br/>
+     * <b>Length: </b>2 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleSessionName An identifier for the assumed role session. <p>Use the role session
@@ -384,14 +384,14 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a>
-     * in <i>Using Temporary Security Credentials</i>. <note>The policy plain
-     * text must be 2048 bytes or shorter. However, an internal conversion
-     * compresses it into a packed binary format with a separate limit. The
-     * PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size. </note>
+     * in the <i>Using IAM</i>. <note>The policy plain text must be 2048
+     * bytes or shorter. However, an internal conversion compresses it into a
+     * packed binary format with a separate limit. The PackedPolicySize
+     * response element indicates by percentage how close to the upper size
+     * limit the policy is, with 100% equaling the maximum allowed
+     * size.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -406,14 +406,14 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      *         credentials. You cannot use the passed policy to grant permissions
      *         that are in excess of those allowed by the access policy of the role
      *         that is being assumed. For more information, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      *         for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a>
-     *         in <i>Using Temporary Security Credentials</i>. <note>The policy plain
-     *         text must be 2048 bytes or shorter. However, an internal conversion
-     *         compresses it into a packed binary format with a separate limit. The
-     *         PackedPolicySize response element indicates by percentage how close to
-     *         the upper size limit the policy is, with 100% equaling the maximum
-     *         allowed size. </note>
+     *         in the <i>Using IAM</i>. <note>The policy plain text must be 2048
+     *         bytes or shorter. However, an internal conversion compresses it into a
+     *         packed binary format with a separate limit. The PackedPolicySize
+     *         response element indicates by percentage how close to the upper size
+     *         limit the policy is, with 100% equaling the maximum allowed
+     *         size.</note>
      */
     public String getPolicy() {
         return policy;
@@ -429,14 +429,14 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a>
-     * in <i>Using Temporary Security Credentials</i>. <note>The policy plain
-     * text must be 2048 bytes or shorter. However, an internal conversion
-     * compresses it into a packed binary format with a separate limit. The
-     * PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size. </note>
+     * in the <i>Using IAM</i>. <note>The policy plain text must be 2048
+     * bytes or shorter. However, an internal conversion compresses it into a
+     * packed binary format with a separate limit. The PackedPolicySize
+     * response element indicates by percentage how close to the upper size
+     * limit the policy is, with 100% equaling the maximum allowed
+     * size.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -451,14 +451,14 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      *         credentials. You cannot use the passed policy to grant permissions
      *         that are in excess of those allowed by the access policy of the role
      *         that is being assumed. For more information, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      *         for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a>
-     *         in <i>Using Temporary Security Credentials</i>. <note>The policy plain
-     *         text must be 2048 bytes or shorter. However, an internal conversion
-     *         compresses it into a packed binary format with a separate limit. The
-     *         PackedPolicySize response element indicates by percentage how close to
-     *         the upper size limit the policy is, with 100% equaling the maximum
-     *         allowed size. </note>
+     *         in the <i>Using IAM</i>. <note>The policy plain text must be 2048
+     *         bytes or shorter. However, an internal conversion compresses it into a
+     *         packed binary format with a separate limit. The PackedPolicySize
+     *         response element indicates by percentage how close to the upper size
+     *         limit the policy is, with 100% equaling the maximum allowed
+     *         size.</note>
      */
     public void setPolicy(String policy) {
         this.policy = policy;
@@ -474,14 +474,14 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a>
-     * in <i>Using Temporary Security Credentials</i>. <note>The policy plain
-     * text must be 2048 bytes or shorter. However, an internal conversion
-     * compresses it into a packed binary format with a separate limit. The
-     * PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size. </note>
+     * in the <i>Using IAM</i>. <note>The policy plain text must be 2048
+     * bytes or shorter. However, an internal conversion compresses it into a
+     * packed binary format with a separate limit. The PackedPolicySize
+     * response element indicates by percentage how close to the upper size
+     * limit the policy is, with 100% equaling the maximum allowed
+     * size.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -498,14 +498,14 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      *         credentials. You cannot use the passed policy to grant permissions
      *         that are in excess of those allowed by the access policy of the role
      *         that is being assumed. For more information, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      *         for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a>
-     *         in <i>Using Temporary Security Credentials</i>. <note>The policy plain
-     *         text must be 2048 bytes or shorter. However, an internal conversion
-     *         compresses it into a packed binary format with a separate limit. The
-     *         PackedPolicySize response element indicates by percentage how close to
-     *         the upper size limit the policy is, with 100% equaling the maximum
-     *         allowed size. </note>
+     *         in the <i>Using IAM</i>. <note>The policy plain text must be 2048
+     *         bytes or shorter. However, an internal conversion compresses it into a
+     *         packed binary format with a separate limit. The PackedPolicySize
+     *         response element indicates by percentage how close to the upper size
+     *         limit the policy is, with 100% equaling the maximum allowed
+     *         size.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -578,13 +578,13 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * pass the customer's external ID. The external ID is useful in order to
      * help third parties bind a role to the customer who created it. For
      * more information about the external ID, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     * to Use External ID When Granting Access to Your AWS Resources</a> in
-     * <i>Using Temporary Security Credentials</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to Use an External ID When Granting Access to Your AWS Resources to a
+     * Third Party</a> in the <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 96<br/>
-     * <b>Pattern: </b>[\w+=,.@:-]*<br/>
+     * <b>Length: </b>2 - 1224<br/>
+     * <b>Pattern: </b>[\w+=,.@:\/-]*<br/>
      *
      * @return A unique identifier that is used by third parties when assuming roles
      *         in their customers' accounts. For each role that the third party can
@@ -594,9 +594,9 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      *         pass the customer's external ID. The external ID is useful in order to
      *         help third parties bind a role to the customer who created it. For
      *         more information about the external ID, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     *         to Use External ID When Granting Access to Your AWS Resources</a> in
-     *         <i>Using Temporary Security Credentials</i>.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     *         to Use an External ID When Granting Access to Your AWS Resources to a
+     *         Third Party</a> in the <i>Using IAM</i>.
      */
     public String getExternalId() {
         return externalId;
@@ -611,13 +611,13 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * pass the customer's external ID. The external ID is useful in order to
      * help third parties bind a role to the customer who created it. For
      * more information about the external ID, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     * to Use External ID When Granting Access to Your AWS Resources</a> in
-     * <i>Using Temporary Security Credentials</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to Use an External ID When Granting Access to Your AWS Resources to a
+     * Third Party</a> in the <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 96<br/>
-     * <b>Pattern: </b>[\w+=,.@:-]*<br/>
+     * <b>Length: </b>2 - 1224<br/>
+     * <b>Pattern: </b>[\w+=,.@:\/-]*<br/>
      *
      * @param externalId A unique identifier that is used by third parties when assuming roles
      *         in their customers' accounts. For each role that the third party can
@@ -627,9 +627,9 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      *         pass the customer's external ID. The external ID is useful in order to
      *         help third parties bind a role to the customer who created it. For
      *         more information about the external ID, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     *         to Use External ID When Granting Access to Your AWS Resources</a> in
-     *         <i>Using Temporary Security Credentials</i>.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     *         to Use an External ID When Granting Access to Your AWS Resources to a
+     *         Third Party</a> in the <i>Using IAM</i>.
      */
     public void setExternalId(String externalId) {
         this.externalId = externalId;
@@ -644,15 +644,15 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * pass the customer's external ID. The external ID is useful in order to
      * help third parties bind a role to the customer who created it. For
      * more information about the external ID, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     * to Use External ID When Granting Access to Your AWS Resources</a> in
-     * <i>Using Temporary Security Credentials</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to Use an External ID When Granting Access to Your AWS Resources to a
+     * Third Party</a> in the <i>Using IAM</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 96<br/>
-     * <b>Pattern: </b>[\w+=,.@:-]*<br/>
+     * <b>Length: </b>2 - 1224<br/>
+     * <b>Pattern: </b>[\w+=,.@:\/-]*<br/>
      *
      * @param externalId A unique identifier that is used by third parties when assuming roles
      *         in their customers' accounts. For each role that the third party can
@@ -662,9 +662,9 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      *         pass the customer's external ID. The external ID is useful in order to
      *         help third parties bind a role to the customer who created it. For
      *         more information about the external ID, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     *         to Use External ID When Granting Access to Your AWS Resources</a> in
-     *         <i>Using Temporary Security Credentials</i>.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     *         to Use an External ID When Granting Access to Your AWS Resources to a
+     *         Third Party</a> in the <i>Using IAM</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

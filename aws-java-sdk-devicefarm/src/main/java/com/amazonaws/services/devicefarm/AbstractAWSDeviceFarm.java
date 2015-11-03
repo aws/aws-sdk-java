@@ -53,6 +53,27 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public DeleteDevicePoolResult deleteDevicePool(
+            DeleteDevicePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteProjectResult deleteProject(DeleteProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRunResult deleteRun(DeleteRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteUploadResult deleteUpload(DeleteUploadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAccountSettingsResult getAccountSettings(
             GetAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -162,6 +183,17 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public ScheduleRunResult scheduleRun(ScheduleRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDevicePoolResult updateDevicePool(
+            UpdateDevicePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateProjectResult updateProject(UpdateProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

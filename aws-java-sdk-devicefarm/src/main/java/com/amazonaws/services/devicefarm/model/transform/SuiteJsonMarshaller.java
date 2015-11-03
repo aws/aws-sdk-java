@@ -91,6 +91,12 @@ public class SuiteJsonMarshaller {
                 jsonWriter.key("message").value(suite.getMessage());
             }
 
+            if (suite.getDeviceMinutes() != null) {
+                jsonWriter.key("deviceMinutes");
+                DeviceMinutesJsonMarshaller.getInstance().marshall(
+                        suite.getDeviceMinutes(), jsonWriter);
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

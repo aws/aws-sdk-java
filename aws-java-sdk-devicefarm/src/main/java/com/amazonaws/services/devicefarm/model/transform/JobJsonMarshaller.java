@@ -97,6 +97,12 @@ public class JobJsonMarshaller {
                         jsonWriter);
             }
 
+            if (job.getDeviceMinutes() != null) {
+                jsonWriter.key("deviceMinutes");
+                DeviceMinutesJsonMarshaller.getInstance().marshall(
+                        job.getDeviceMinutes(), jsonWriter);
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

@@ -29,7 +29,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * would need to call <code>GetSessionToken</code> and submit an MFA code
  * that is associated with their MFA device. Using the temporary security
  * credentials that are returned from the call, IAM users can then make
- * programmatic calls to APIs that require MFA authentication.
+ * programmatic calls to APIs that require MFA authentication. If you do
+ * not supply a correct MFA code, then the API returns an access denied
+ * error.
  * </p>
  * <p>
  * The <code>GetSessionToken</code> action must be called by using the
@@ -58,8 +60,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For more information about using <code>GetSessionToken</code> to
  * create temporary credentials, go to
- * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSessionTokens.html"> Creating Temporary Credentials to Enable Access for IAM Users </a>
- * .
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken"> Temporary Credentials for Users in Untrusted Environments </a>
+ * in the <i>Using IAM</i> .
  * </p>
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getSessionToken(GetSessionTokenRequest)

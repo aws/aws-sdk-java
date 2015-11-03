@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The load balancer evenly distributes requests across all registered
  * subnets. For more information, see
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Elastic Load Balancing in Amazon VPC </a>
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-manage-subnets.html"> Add or Remove Subnets for Your Load Balancer in a VPC </a>
  * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *

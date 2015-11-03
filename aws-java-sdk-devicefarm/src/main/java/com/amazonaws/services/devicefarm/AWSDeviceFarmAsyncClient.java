@@ -365,6 +365,146 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDevicePoolResult> deleteDevicePoolAsync(
+            DeleteDevicePoolRequest request) {
+
+        return deleteDevicePoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDevicePoolResult> deleteDevicePoolAsync(
+            final DeleteDevicePoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDevicePoolRequest, DeleteDevicePoolResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteDevicePoolResult>() {
+                    @Override
+                    public DeleteDevicePoolResult call() throws Exception {
+                        DeleteDevicePoolResult result;
+
+                        try {
+                            result = deleteDevicePool(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(
+            DeleteProjectRequest request) {
+
+        return deleteProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(
+            final DeleteProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteProjectResult>() {
+                    @Override
+                    public DeleteProjectResult call() throws Exception {
+                        DeleteProjectResult result;
+
+                        try {
+                            result = deleteProject(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
+            DeleteRunRequest request) {
+
+        return deleteRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
+            final DeleteRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRunRequest, DeleteRunResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteRunResult>() {
+                    @Override
+                    public DeleteRunResult call() throws Exception {
+                        DeleteRunResult result;
+
+                        try {
+                            result = deleteRun(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUploadResult> deleteUploadAsync(
+            DeleteUploadRequest request) {
+
+        return deleteUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUploadResult> deleteUploadAsync(
+            final DeleteUploadRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteUploadRequest, DeleteUploadResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteUploadResult>() {
+                    @Override
+                    public DeleteUploadResult call() throws Exception {
+                        DeleteUploadResult result;
+
+                        try {
+                            result = deleteUpload(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(
             GetAccountSettingsRequest request) {
 
@@ -1120,6 +1260,76 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
 
                         try {
                             result = scheduleRun(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDevicePoolResult> updateDevicePoolAsync(
+            UpdateDevicePoolRequest request) {
+
+        return updateDevicePoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDevicePoolResult> updateDevicePoolAsync(
+            final UpdateDevicePoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDevicePoolRequest, UpdateDevicePoolResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateDevicePoolResult>() {
+                    @Override
+                    public UpdateDevicePoolResult call() throws Exception {
+                        UpdateDevicePoolResult result;
+
+                        try {
+                            result = updateDevicePool(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(
+            UpdateProjectRequest request) {
+
+        return updateProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(
+            final UpdateProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateProjectResult>() {
+                    @Override
+                    public UpdateProjectResult call() throws Exception {
+                        UpdateProjectResult result;
+
+                        try {
+                            result = updateProject(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

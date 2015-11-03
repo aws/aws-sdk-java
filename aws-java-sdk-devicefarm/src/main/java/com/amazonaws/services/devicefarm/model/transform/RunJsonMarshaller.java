@@ -107,6 +107,12 @@ public class RunJsonMarshaller {
                 jsonWriter.key("billingMethod").value(run.getBillingMethod());
             }
 
+            if (run.getDeviceMinutes() != null) {
+                jsonWriter.key("deviceMinutes");
+                DeviceMinutesJsonMarshaller.getInstance().marshall(
+                        run.getDeviceMinutes(), jsonWriter);
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

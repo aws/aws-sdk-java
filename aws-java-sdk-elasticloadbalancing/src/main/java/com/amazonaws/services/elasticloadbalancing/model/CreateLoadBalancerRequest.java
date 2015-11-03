@@ -25,34 +25,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * If the call completes successfully, a new load balancer is created
- * with a unique Domain Name Service (DNS) name. The DNS name includes
- * the name of the AWS region in which the load balancer was created. For
- * example, the DNS name might end with either of the following:
- * </p>
- * 
- * <ul>
- * <li> <code>us-east-1.elb.amazonaws.com</code> </li>
- * <li> <code>us-west-2.elb.amazonaws.com</code> </li>
- * 
- * </ul>
- * <p>
- * For information about the AWS regions supported by Elastic Load
- * Balancing, see
- * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a>
- * in the <i>Amazon Web Services General Reference</i> .
+ * with a unique Domain Name Service (DNS) name. The load balancer
+ * receives incoming traffic and routes it to the registered instances.
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/how-elb-works.html"> How Elastic Load Balancing Works </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  * <p>
  * You can create up to 20 load balancers per region per account. You can
  * request an increase for the number of load balancers for your account.
  * For more information, see
  * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-limits.html"> Elastic Load Balancing Limits </a>
- * in the <i>Elastic Load Balancing Developer Guide</i> .
- * </p>
- * <p>
- * Elastic Load Balancing supports load balancing your EC2 instances
- * launched in either the EC2-Classic or EC2-VPC platform. For more
- * information, see
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Elastic Load Balancing in EC2-Classic </a> or <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Elastic Load Balancing in a VPC </a>
  * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *
@@ -62,17 +45,17 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
 
     /**
      * The name of the load balancer. <p>This name must be unique within your
-     * AWS account, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a
-     * hyphen.
+     * set of load balancers for the region, must have a maximum of 32
+     * characters, must contain only alphanumeric characters or hyphens, and
+     * cannot begin or end with a hyphen.
      */
     private String loadBalancerName;
 
     /**
      * The listeners. <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-     * Configurations for Elastic Load Balancing</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners
+     * for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer
+     * Guide</i>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Listener> listeners;
 
@@ -134,9 +117,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * initialize any additional object members.
      * 
      * @param loadBalancerName The name of the load balancer. <p>This name
-     * must be unique within your AWS account, must have a maximum of 32
-     * characters, must contain only alphanumeric characters or hyphens, and
-     * cannot begin or end with a hyphen.
+     * must be unique within your set of load balancers for the region, must
+     * have a maximum of 32 characters, must contain only alphanumeric
+     * characters or hyphens, and cannot begin or end with a hyphen.
      */
     public CreateLoadBalancerRequest(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -148,13 +131,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * initialize any additional object members.
      * 
      * @param loadBalancerName The name of the load balancer. <p>This name
-     * must be unique within your AWS account, must have a maximum of 32
-     * characters, must contain only alphanumeric characters or hyphens, and
-     * cannot begin or end with a hyphen.
+     * must be unique within your set of load balancers for the region, must
+     * have a maximum of 32 characters, must contain only alphanumeric
+     * characters or hyphens, and cannot begin or end with a hyphen.
      * @param listeners The listeners. <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-     * Configurations for Elastic Load Balancing</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners
+     * for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer
+     * Guide</i>.
      * @param availabilityZones One or more Availability Zones from the same
      * region as the load balancer. Traffic is equally distributed across all
      * specified Availability Zones. <p>You must specify at least one
@@ -170,14 +153,14 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
 
     /**
      * The name of the load balancer. <p>This name must be unique within your
-     * AWS account, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a
-     * hyphen.
+     * set of load balancers for the region, must have a maximum of 32
+     * characters, must contain only alphanumeric characters or hyphens, and
+     * cannot begin or end with a hyphen.
      *
      * @return The name of the load balancer. <p>This name must be unique within your
-     *         AWS account, must have a maximum of 32 characters, must contain only
-     *         alphanumeric characters or hyphens, and cannot begin or end with a
-     *         hyphen.
+     *         set of load balancers for the region, must have a maximum of 32
+     *         characters, must contain only alphanumeric characters or hyphens, and
+     *         cannot begin or end with a hyphen.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
@@ -185,14 +168,14 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     
     /**
      * The name of the load balancer. <p>This name must be unique within your
-     * AWS account, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a
-     * hyphen.
+     * set of load balancers for the region, must have a maximum of 32
+     * characters, must contain only alphanumeric characters or hyphens, and
+     * cannot begin or end with a hyphen.
      *
      * @param loadBalancerName The name of the load balancer. <p>This name must be unique within your
-     *         AWS account, must have a maximum of 32 characters, must contain only
-     *         alphanumeric characters or hyphens, and cannot begin or end with a
-     *         hyphen.
+     *         set of load balancers for the region, must have a maximum of 32
+     *         characters, must contain only alphanumeric characters or hyphens, and
+     *         cannot begin or end with a hyphen.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -200,16 +183,16 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     
     /**
      * The name of the load balancer. <p>This name must be unique within your
-     * AWS account, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a
-     * hyphen.
+     * set of load balancers for the region, must have a maximum of 32
+     * characters, must contain only alphanumeric characters or hyphens, and
+     * cannot begin or end with a hyphen.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerName The name of the load balancer. <p>This name must be unique within your
-     *         AWS account, must have a maximum of 32 characters, must contain only
-     *         alphanumeric characters or hyphens, and cannot begin or end with a
-     *         hyphen.
+     *         set of load balancers for the region, must have a maximum of 32
+     *         characters, must contain only alphanumeric characters or hyphens, and
+     *         cannot begin or end with a hyphen.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -221,14 +204,14 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
 
     /**
      * The listeners. <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-     * Configurations for Elastic Load Balancing</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners
+     * for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer
+     * Guide</i>.
      *
      * @return The listeners. <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-     *         Configurations for Elastic Load Balancing</a> in the <i>Elastic Load
-     *         Balancing Developer Guide</i>.
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners
+     *         for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer
+     *         Guide</i>.
      */
     public java.util.List<Listener> getListeners() {
         if (listeners == null) {
@@ -240,14 +223,14 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     
     /**
      * The listeners. <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-     * Configurations for Elastic Load Balancing</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners
+     * for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer
+     * Guide</i>.
      *
      * @param listeners The listeners. <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-     *         Configurations for Elastic Load Balancing</a> in the <i>Elastic Load
-     *         Balancing Developer Guide</i>.
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners
+     *         for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer
+     *         Guide</i>.
      */
     public void setListeners(java.util.Collection<Listener> listeners) {
         if (listeners == null) {
@@ -261,9 +244,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     
     /**
      * The listeners. <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-     * Configurations for Elastic Load Balancing</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners
+     * for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer
+     * Guide</i>.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setListeners(java.util.Collection)} or {@link
@@ -273,9 +256,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param listeners The listeners. <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-     *         Configurations for Elastic Load Balancing</a> in the <i>Elastic Load
-     *         Balancing Developer Guide</i>.
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners
+     *         for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer
+     *         Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -290,16 +273,16 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     
     /**
      * The listeners. <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-     * Configurations for Elastic Load Balancing</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners
+     * for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer
+     * Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param listeners The listeners. <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-     *         Configurations for Elastic Load Balancing</a> in the <i>Elastic Load
-     *         Balancing Developer Guide</i>.
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners
+     *         for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer
+     *         Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
