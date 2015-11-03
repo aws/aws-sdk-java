@@ -173,7 +173,7 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
      * else a {@link SecurityException} will be thrown.
      * @param sock connected socket
      */
-    private void verifyMasterSecret(final Socket sock) {
+    private void verifyMasterSecret(final Socket sock) throws SSLException {
         if (sock instanceof SSLSocket) {
             SSLSocket ssl = (SSLSocket)sock;
             SSLSession session = ssl.getSession();
@@ -190,8 +190,10 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
                             if (log.isDebugEnabled()) {
                                 log.debug("Invalidated session " + session);
                             }
-                            throw log(new SecurityException("Invalid SSL master secret"));
+                            throw log(new SSLException("Invalid SSL master secret"));
                         }
+                    } catch (SecurityException e) {
+                        failedToVerifyMasterSecret(e);
                     } catch (ClassNotFoundException e) {
                         failedToVerifyMasterSecret(e);
                     } catch (NoSuchMethodException e) {
