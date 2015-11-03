@@ -148,6 +148,90 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Deletes a device pool given the pool ARN. Does not allow deletion of
+     * curated pools owned by the system.
+     * </p>
+     * 
+     * @param deleteDevicePoolRequest
+     *        Represents a request to the delete device pool operation.
+     * @return Result of the DeleteDevicePool operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    DeleteDevicePoolResult deleteDevicePool(
+            DeleteDevicePoolRequest deleteDevicePoolRequest);
+
+    /**
+     * <p>
+     * Deletes an AWS Device Farm project, given the project ARN.
+     * </p>
+     * <p>
+     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * </p>
+     * 
+     * @param deleteProjectRequest
+     *        Represents a request to the delete project operation.
+     * @return Result of the DeleteProject operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest);
+
+    /**
+     * <p>
+     * Deletes the run, given the run ARN.
+     * </p>
+     * <p>
+     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * </p>
+     * 
+     * @param deleteRunRequest
+     *        Represents a request to the delete run operation.
+     * @return Result of the DeleteRun operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest);
+
+    /**
+     * <p>
+     * Deletes an upload given the upload ARN.
+     * </p>
+     * 
+     * @param deleteUploadRequest
+     *        Represents a request to the delete upload operation.
+     * @return Result of the DeleteUpload operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    DeleteUploadResult deleteUpload(DeleteUploadRequest deleteUploadRequest);
+
+    /**
+     * <p>
      * Returns the number of unmetered iOS and/or unmetered Android devices that
      * have been purchased by the account.
      * </p>
@@ -573,6 +657,48 @@ public interface AWSDeviceFarm {
      *         There was a problem with the service account.
      */
     ScheduleRunResult scheduleRun(ScheduleRunRequest scheduleRunRequest);
+
+    /**
+     * <p>
+     * Modifies the name, description, and rules in a device pool given the
+     * attributes and the pool ARN. Rule updates are all-or-nothing, meaning
+     * they can only be updated as a whole (or not at all).
+     * </p>
+     * 
+     * @param updateDevicePoolRequest
+     *        Represents a request to the update device pool operation.
+     * @return Result of the UpdateDevicePool operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    UpdateDevicePoolResult updateDevicePool(
+            UpdateDevicePoolRequest updateDevicePoolRequest);
+
+    /**
+     * <p>
+     * Modifies the specified project name, given the project ARN and a new
+     * name.
+     * </p>
+     * 
+     * @param updateProjectRequest
+     *        Represents a request to the update project operation.
+     * @return Result of the UpdateProject operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held

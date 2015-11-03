@@ -36,9 +36,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * that can authenticate users using a web identity provider like Login
  * with Amazon, Facebook, Google, or an OpenID Connect-compatible
  * identity provider, we recommend that you use Amazon Cognito or
- * AssumeRoleWithWebIdentity. For more information, see Creating
- * Temporary Security Credentials for Mobile Apps Using Identity
- * Providers.
+ * AssumeRoleWithWebIdentity. For more information, see Federation
+ * Through a Web-based Identity Provider.
  * </p>
  * <p>
  * The <code>GetFederationToken</code> action must be called by using the
@@ -49,8 +48,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * and then attach a policy to the IAM user that limits federated users
  * to only the actions and resources they need access to. For more
  * information, see
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html"> IAM Best Practices </a>
- * in <i>Using IAM</i> .
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"> IAM Best Practices </a>
+ * in the <i>Using IAM</i> .
  * </p>
  * <p>
  * The temporary security credentials that are obtained by using the
@@ -104,7 +103,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For more information about how permissions work, see
- * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html"> Permissions for GetFederationToken </a> . For information about using <code>GetFederationToken</code> to create temporary security credentials, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html"> Creating Temporary Credentials to Enable Access for Federated Users </a>
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html"> Permissions for GetFederationToken </a> . For information about using <code>GetFederationToken</code> to create temporary security credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken"> GetFederationToken???Federation Through a Custom Identity Broker </a>
  * .
  * </p>
  *
@@ -145,7 +144,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      * indicates by percentage how close to the upper size limit the policy
      * is, with 100% equaling the maximum allowed size. </note> <p>For more
      * information about how permissions work, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -273,7 +272,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      * indicates by percentage how close to the upper size limit the policy
      * is, with 100% equaling the maximum allowed size. </note> <p>For more
      * information about how permissions work, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -300,7 +299,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      *         indicates by percentage how close to the upper size limit the policy
      *         is, with 100% equaling the maximum allowed size. </note> <p>For more
      *         information about how permissions work, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      *         for GetFederationToken</a>.
      */
     public String getPolicy() {
@@ -328,7 +327,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      * indicates by percentage how close to the upper size limit the policy
      * is, with 100% equaling the maximum allowed size. </note> <p>For more
      * information about how permissions work, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -355,7 +354,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      *         indicates by percentage how close to the upper size limit the policy
      *         is, with 100% equaling the maximum allowed size. </note> <p>For more
      *         information about how permissions work, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      *         for GetFederationToken</a>.
      */
     public void setPolicy(String policy) {
@@ -383,7 +382,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      * indicates by percentage how close to the upper size limit the policy
      * is, with 100% equaling the maximum allowed size. </note> <p>For more
      * information about how permissions work, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -412,7 +411,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      *         indicates by percentage how close to the upper size limit the policy
      *         is, with 100% equaling the maximum allowed size. </note> <p>For more
      *         information about how permissions work, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      *         for GetFederationToken</a>.
      *
      * @return A reference to this updated object so that method calls can be chained

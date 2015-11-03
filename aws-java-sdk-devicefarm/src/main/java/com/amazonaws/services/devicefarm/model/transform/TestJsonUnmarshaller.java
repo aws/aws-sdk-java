@@ -99,6 +99,11 @@ public class TestJsonUnmarshaller implements
                     test.setMessage(StringJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("deviceMinutes", targetDepth)) {
+                    context.nextToken();
+                    test.setDeviceMinutes(DeviceMinutesJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

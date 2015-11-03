@@ -2581,11 +2581,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateType" : "java.util.List<DomainInfo>",
+          "templateImplType" : "java.util.ArrayList<DomainInfo>",
           "simpleType" : "DomainInfo",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<DomainInfo>",
-          "templateImplType" : "java.util.ArrayList<DomainInfo>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2719,11 +2719,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateType" : "java.util.List<DomainInfo>",
+            "templateImplType" : "java.util.ArrayList<DomainInfo>",
             "simpleType" : "DomainInfo",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<DomainInfo>",
-            "templateImplType" : "java.util.ArrayList<DomainInfo>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6087,11 +6087,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateType" : "java.util.List<ElasticsearchDomainStatus>",
+          "templateImplType" : "java.util.ArrayList<ElasticsearchDomainStatus>",
           "simpleType" : "ElasticsearchDomainStatus",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<ElasticsearchDomainStatus>",
-          "templateImplType" : "java.util.ArrayList<ElasticsearchDomainStatus>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6225,11 +6225,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateType" : "java.util.List<ElasticsearchDomainStatus>",
+            "templateImplType" : "java.util.ArrayList<ElasticsearchDomainStatus>",
             "simpleType" : "ElasticsearchDomainStatus",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<ElasticsearchDomainStatus>",
-            "templateImplType" : "java.util.ArrayList<ElasticsearchDomainStatus>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6502,11 +6502,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>",
           "simpleType" : "String",
           "simple" : true,
-          "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6593,11 +6593,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>",
             "simpleType" : "String",
             "simple" : true,
-            "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7456,11 +7456,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "java.util.ArrayList<Tag>",
           "simpleType" : "Tag",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7594,11 +7594,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "java.util.ArrayList<Tag>",
             "simpleType" : "Tag",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7722,11 +7722,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>",
           "simpleType" : "String",
           "simple" : true,
-          "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7813,11 +7813,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>",
             "simpleType" : "String",
             "simple" : true,
-            "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9210,11 +9210,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "java.util.ArrayList<Tag>",
           "simpleType" : "Tag",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9352,11 +9352,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "java.util.ArrayList<Tag>",
             "simpleType" : "Tag",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,

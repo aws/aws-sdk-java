@@ -223,10 +223,6 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
     private void init() {
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.devicefarm.model.ServiceAccountException.class,
-                        "ServiceAccountException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.devicefarm.model.ArgumentException.class,
                         "ArgumentException"));
         jsonErrorUnmarshallers
@@ -235,12 +231,16 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                         "NotFoundException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.devicefarm.model.IdempotencyException.class,
-                        "IdempotencyException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.devicefarm.model.LimitExceededException.class,
                         "LimitExceededException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.devicefarm.model.ServiceAccountException.class,
+                        "ServiceAccountException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.devicefarm.model.IdempotencyException.class,
+                        "IdempotencyException"));
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -398,6 +398,216 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
             JsonResponseHandler<CreateUploadResult> responseHandler = new JsonResponseHandler<CreateUploadResult>(
                     new CreateUploadResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a device pool given the pool ARN. Does not allow deletion of
+     * curated pools owned by the system.
+     * </p>
+     * 
+     * @param deleteDevicePoolRequest
+     *        Represents a request to the delete device pool operation.
+     * @return Result of the DeleteDevicePool operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    @Override
+    public DeleteDevicePoolResult deleteDevicePool(
+            DeleteDevicePoolRequest deleteDevicePoolRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDevicePoolRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDevicePoolRequest> request = null;
+        Response<DeleteDevicePoolResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDevicePoolRequestMarshaller()
+                        .marshall(deleteDevicePoolRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DeleteDevicePoolResult> responseHandler = new JsonResponseHandler<DeleteDevicePoolResult>(
+                    new DeleteDevicePoolResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an AWS Device Farm project, given the project ARN.
+     * </p>
+     * <p>
+     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * </p>
+     * 
+     * @param deleteProjectRequest
+     *        Represents a request to the delete project operation.
+     * @return Result of the DeleteProject operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    @Override
+    public DeleteProjectResult deleteProject(
+            DeleteProjectRequest deleteProjectRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProjectRequest> request = null;
+        Response<DeleteProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProjectRequestMarshaller()
+                        .marshall(deleteProjectRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DeleteProjectResult> responseHandler = new JsonResponseHandler<DeleteProjectResult>(
+                    new DeleteProjectResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the run, given the run ARN.
+     * </p>
+     * <p>
+     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * </p>
+     * 
+     * @param deleteRunRequest
+     *        Represents a request to the delete run operation.
+     * @return Result of the DeleteRun operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    @Override
+    public DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRunRequest> request = null;
+        Response<DeleteRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRunRequestMarshaller()
+                        .marshall(deleteRunRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DeleteRunResult> responseHandler = new JsonResponseHandler<DeleteRunResult>(
+                    new DeleteRunResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an upload given the upload ARN.
+     * </p>
+     * 
+     * @param deleteUploadRequest
+     *        Represents a request to the delete upload operation.
+     * @return Result of the DeleteUpload operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    @Override
+    public DeleteUploadResult deleteUpload(
+            DeleteUploadRequest deleteUploadRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteUploadRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUploadRequest> request = null;
+        Response<DeleteUploadResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUploadRequestMarshaller()
+                        .marshall(deleteUploadRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DeleteUploadResult> responseHandler = new JsonResponseHandler<DeleteUploadResult>(
+                    new DeleteUploadResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1509,6 +1719,111 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
             JsonResponseHandler<ScheduleRunResult> responseHandler = new JsonResponseHandler<ScheduleRunResult>(
                     new ScheduleRunResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the name, description, and rules in a device pool given the
+     * attributes and the pool ARN. Rule updates are all-or-nothing, meaning
+     * they can only be updated as a whole (or not at all).
+     * </p>
+     * 
+     * @param updateDevicePoolRequest
+     *        Represents a request to the update device pool operation.
+     * @return Result of the UpdateDevicePool operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    @Override
+    public UpdateDevicePoolResult updateDevicePool(
+            UpdateDevicePoolRequest updateDevicePoolRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateDevicePoolRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDevicePoolRequest> request = null;
+        Response<UpdateDevicePoolResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDevicePoolRequestMarshaller()
+                        .marshall(updateDevicePoolRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<UpdateDevicePoolResult> responseHandler = new JsonResponseHandler<UpdateDevicePoolResult>(
+                    new UpdateDevicePoolResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the specified project name, given the project ARN and a new
+     * name.
+     * </p>
+     * 
+     * @param updateProjectRequest
+     *        Represents a request to the update project operation.
+     * @return Result of the UpdateProject operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    @Override
+    public UpdateProjectResult updateProject(
+            UpdateProjectRequest updateProjectRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateProjectRequest> request = null;
+        Response<UpdateProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateProjectRequestMarshaller()
+                        .marshall(updateProjectRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<UpdateProjectResult> responseHandler = new JsonResponseHandler<UpdateProjectResult>(
+                    new UpdateProjectResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 

@@ -206,6 +206,13 @@ public class Suite implements Serializable, Cloneable {
      * </p>
      */
     private String message;
+    /**
+     * <p>
+     * Represents the total (metered or unmetered) minutes used by the test
+     * suite.
+     * </p>
+     */
+    private DeviceMinutes deviceMinutes;
 
     /**
      * <p>
@@ -1895,6 +1902,50 @@ public class Suite implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the total (metered or unmetered) minutes used by the test
+     * suite.
+     * </p>
+     * 
+     * @param deviceMinutes
+     *        Represents the total (metered or unmetered) minutes used by the
+     *        test suite.
+     */
+    public void setDeviceMinutes(DeviceMinutes deviceMinutes) {
+        this.deviceMinutes = deviceMinutes;
+    }
+
+    /**
+     * <p>
+     * Represents the total (metered or unmetered) minutes used by the test
+     * suite.
+     * </p>
+     * 
+     * @return Represents the total (metered or unmetered) minutes used by the
+     *         test suite.
+     */
+    public DeviceMinutes getDeviceMinutes() {
+        return this.deviceMinutes;
+    }
+
+    /**
+     * <p>
+     * Represents the total (metered or unmetered) minutes used by the test
+     * suite.
+     * </p>
+     * 
+     * @param deviceMinutes
+     *        Represents the total (metered or unmetered) minutes used by the
+     *        test suite.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Suite withDeviceMinutes(DeviceMinutes deviceMinutes) {
+        setDeviceMinutes(deviceMinutes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1925,7 +1976,9 @@ public class Suite implements Serializable, Cloneable {
         if (getCounters() != null)
             sb.append("Counters: " + getCounters() + ",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage());
+            sb.append("Message: " + getMessage() + ",");
+        if (getDeviceMinutes() != null)
+            sb.append("DeviceMinutes: " + getDeviceMinutes());
         sb.append("}");
         return sb.toString();
     }
@@ -1990,6 +2043,11 @@ public class Suite implements Serializable, Cloneable {
         if (other.getMessage() != null
                 && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getDeviceMinutes() == null ^ this.getDeviceMinutes() == null)
+            return false;
+        if (other.getDeviceMinutes() != null
+                && other.getDeviceMinutes().equals(this.getDeviceMinutes()) == false)
+            return false;
         return true;
     }
 
@@ -2018,6 +2076,10 @@ public class Suite implements Serializable, Cloneable {
                 + ((getCounters() == null) ? 0 : getCounters().hashCode());
         hashCode = prime * hashCode
                 + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDeviceMinutes() == null) ? 0 : getDeviceMinutes()
+                        .hashCode());
         return hashCode;
     }
 

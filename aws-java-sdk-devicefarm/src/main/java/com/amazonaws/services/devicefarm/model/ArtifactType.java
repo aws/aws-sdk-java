@@ -35,7 +35,10 @@ public enum ArtifactType {
     AUTOMATION_OUTPUT("AUTOMATION_OUTPUT"),
     APPIUM_SERVER_OUTPUT("APPIUM_SERVER_OUTPUT"),
     APPIUM_JAVA_OUTPUT("APPIUM_JAVA_OUTPUT"),
-    APPIUM_JAVA_XML_OUTPUT("APPIUM_JAVA_XML_OUTPUT");
+    APPIUM_JAVA_XML_OUTPUT("APPIUM_JAVA_XML_OUTPUT"),
+    EXPLORER_EVENT_LOG("EXPLORER_EVENT_LOG"),
+    EXPLORER_SUMMARY_LOG("EXPLORER_SUMMARY_LOG"),
+    APPLICATION_CRASH_REPORT("APPLICATION_CRASH_REPORT");
 
     private String value;
 
@@ -90,6 +93,12 @@ public enum ArtifactType {
             return APPIUM_JAVA_OUTPUT;
         } else if ("APPIUM_JAVA_XML_OUTPUT".equals(value)) {
             return APPIUM_JAVA_XML_OUTPUT;
+        } else if ("EXPLORER_EVENT_LOG".equals(value)) {
+            return EXPLORER_EVENT_LOG;
+        } else if ("EXPLORER_SUMMARY_LOG".equals(value)) {
+            return EXPLORER_SUMMARY_LOG;
+        } else if ("APPLICATION_CRASH_REPORT".equals(value)) {
+            return APPLICATION_CRASH_REPORT;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

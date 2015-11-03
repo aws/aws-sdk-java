@@ -99,6 +99,11 @@ public class SuiteJsonUnmarshaller implements
                     suite.setMessage(StringJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("deviceMinutes", targetDepth)) {
+                    context.nextToken();
+                    suite.setDeviceMinutes(DeviceMinutesJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

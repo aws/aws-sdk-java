@@ -54,8 +54,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <ul>
  * <li>Whether the request was denied due to an explicit deny or due to
  * the absence of an explicit allow. For more information, see
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_EvaluationLogic.html#policy-eval-denyallow"> Determining Whether a Request is Allowed or Denied </a>
- * in <i>Using IAM</i> . </li>
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow"> Determining Whether a Request is Allowed or Denied </a>
+ * in the <i>Using IAM</i> . </li>
  * <li>The principal who made the request.</li>
  * <li>The requested action.</li>
  * <li>The requested resource.</li>

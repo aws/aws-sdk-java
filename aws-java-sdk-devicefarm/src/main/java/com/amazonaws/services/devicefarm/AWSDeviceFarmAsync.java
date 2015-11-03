@@ -128,6 +128,148 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Deletes a device pool given the pool ARN. Does not allow deletion of
+     * curated pools owned by the system.
+     * </p>
+     * 
+     * @param deleteDevicePoolRequest
+     *        Represents a request to the delete device pool operation.
+     * @return A Java Future containing the result of the DeleteDevicePool
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteDevicePoolResult> deleteDevicePoolAsync(
+            DeleteDevicePoolRequest deleteDevicePoolRequest);
+
+    /**
+     * <p>
+     * Deletes a device pool given the pool ARN. Does not allow deletion of
+     * curated pools owned by the system.
+     * </p>
+     * 
+     * @param deleteDevicePoolRequest
+     *        Represents a request to the delete device pool operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDevicePool
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteDevicePoolResult> deleteDevicePoolAsync(
+            DeleteDevicePoolRequest deleteDevicePoolRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDevicePoolRequest, DeleteDevicePoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an AWS Device Farm project, given the project ARN.
+     * </p>
+     * <p>
+     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * </p>
+     * 
+     * @param deleteProjectRequest
+     *        Represents a request to the delete project operation.
+     * @return A Java Future containing the result of the DeleteProject
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(
+            DeleteProjectRequest deleteProjectRequest);
+
+    /**
+     * <p>
+     * Deletes an AWS Device Farm project, given the project ARN.
+     * </p>
+     * <p>
+     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * </p>
+     * 
+     * @param deleteProjectRequest
+     *        Represents a request to the delete project operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProject
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(
+            DeleteProjectRequest deleteProjectRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the run, given the run ARN.
+     * </p>
+     * <p>
+     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * </p>
+     * 
+     * @param deleteRunRequest
+     *        Represents a request to the delete run operation.
+     * @return A Java Future containing the result of the DeleteRun operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
+            DeleteRunRequest deleteRunRequest);
+
+    /**
+     * <p>
+     * Deletes the run, given the run ARN.
+     * </p>
+     * <p>
+     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * </p>
+     * 
+     * @param deleteRunRequest
+     *        Represents a request to the delete run operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRun operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
+            DeleteRunRequest deleteRunRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRunRequest, DeleteRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an upload given the upload ARN.
+     * </p>
+     * 
+     * @param deleteUploadRequest
+     *        Represents a request to the delete upload operation.
+     * @return A Java Future containing the result of the DeleteUpload operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<DeleteUploadResult> deleteUploadAsync(
+            DeleteUploadRequest deleteUploadRequest);
+
+    /**
+     * <p>
+     * Deletes an upload given the upload ARN.
+     * </p>
+     * 
+     * @param deleteUploadRequest
+     *        Represents a request to the delete upload operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUpload operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<DeleteUploadResult> deleteUploadAsync(
+            DeleteUploadRequest deleteUploadRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteUploadRequest, DeleteUploadResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the number of unmetered iOS and/or unmetered Android devices that
      * have been purchased by the account.
      * </p>
@@ -831,5 +973,75 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
     java.util.concurrent.Future<ScheduleRunResult> scheduleRunAsync(
             ScheduleRunRequest scheduleRunRequest,
             com.amazonaws.handlers.AsyncHandler<ScheduleRunRequest, ScheduleRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the name, description, and rules in a device pool given the
+     * attributes and the pool ARN. Rule updates are all-or-nothing, meaning
+     * they can only be updated as a whole (or not at all).
+     * </p>
+     * 
+     * @param updateDevicePoolRequest
+     *        Represents a request to the update device pool operation.
+     * @return A Java Future containing the result of the UpdateDevicePool
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateDevicePoolResult> updateDevicePoolAsync(
+            UpdateDevicePoolRequest updateDevicePoolRequest);
+
+    /**
+     * <p>
+     * Modifies the name, description, and rules in a device pool given the
+     * attributes and the pool ARN. Rule updates are all-or-nothing, meaning
+     * they can only be updated as a whole (or not at all).
+     * </p>
+     * 
+     * @param updateDevicePoolRequest
+     *        Represents a request to the update device pool operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDevicePool
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateDevicePoolResult> updateDevicePoolAsync(
+            UpdateDevicePoolRequest updateDevicePoolRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDevicePoolRequest, UpdateDevicePoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the specified project name, given the project ARN and a new
+     * name.
+     * </p>
+     * 
+     * @param updateProjectRequest
+     *        Represents a request to the update project operation.
+     * @return A Java Future containing the result of the UpdateProject
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(
+            UpdateProjectRequest updateProjectRequest);
+
+    /**
+     * <p>
+     * Modifies the specified project name, given the project ARN and a new
+     * name.
+     * </p>
+     * 
+     * @param updateProjectRequest
+     *        Represents a request to the update project operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProject
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(
+            UpdateProjectRequest updateProjectRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler);
 
 }

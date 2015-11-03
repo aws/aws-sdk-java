@@ -36,8 +36,10 @@ public class Listener implements Serializable, Cloneable {
     private String protocol;
 
     /**
-     * The port on which the load balancer is listening: 25, 80, 443, 465,
-     * 587, or 1024-65535.
+     * The port on which the load balancer is listening. On EC2-VPC, you can
+     * specify any port from the range 1-65535. On EC2-Classic, you can
+     * specify any port from the following list: 25, 80, 443, 465, 587,
+     * 1024-65535.
      */
     private Integer loadBalancerPort;
 
@@ -56,8 +58,7 @@ public class Listener implements Serializable, Cloneable {
     private String instanceProtocol;
 
     /**
-     * The port on which the instance server is listening - 25, 80, 443, 465,
-     * 587, or 1024-65535.
+     * The port on which the instance is listening.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
@@ -83,9 +84,10 @@ public class Listener implements Serializable, Cloneable {
      * @param protocol The load balancer transport protocol to use for
      * routing: HTTP, HTTPS, TCP, or SSL.
      * @param loadBalancerPort The port on which the load balancer is
-     * listening: 25, 80, 443, 465, 587, or 1024-65535.
-     * @param instancePort The port on which the instance server is listening
-     * - 25, 80, 443, 465, 587, or 1024-65535.
+     * listening. On EC2-VPC, you can specify any port from the range
+     * 1-65535. On EC2-Classic, you can specify any port from the following
+     * list: 25, 80, 443, 465, 587, 1024-65535.
+     * @param instancePort The port on which the instance is listening.
      */
     public Listener(String protocol, Integer loadBalancerPort, Integer instancePort) {
         setProtocol(protocol);
@@ -133,35 +135,47 @@ public class Listener implements Serializable, Cloneable {
     }
 
     /**
-     * The port on which the load balancer is listening: 25, 80, 443, 465,
-     * 587, or 1024-65535.
+     * The port on which the load balancer is listening. On EC2-VPC, you can
+     * specify any port from the range 1-65535. On EC2-Classic, you can
+     * specify any port from the following list: 25, 80, 443, 465, 587,
+     * 1024-65535.
      *
-     * @return The port on which the load balancer is listening: 25, 80, 443, 465,
-     *         587, or 1024-65535.
+     * @return The port on which the load balancer is listening. On EC2-VPC, you can
+     *         specify any port from the range 1-65535. On EC2-Classic, you can
+     *         specify any port from the following list: 25, 80, 443, 465, 587,
+     *         1024-65535.
      */
     public Integer getLoadBalancerPort() {
         return loadBalancerPort;
     }
     
     /**
-     * The port on which the load balancer is listening: 25, 80, 443, 465,
-     * 587, or 1024-65535.
+     * The port on which the load balancer is listening. On EC2-VPC, you can
+     * specify any port from the range 1-65535. On EC2-Classic, you can
+     * specify any port from the following list: 25, 80, 443, 465, 587,
+     * 1024-65535.
      *
-     * @param loadBalancerPort The port on which the load balancer is listening: 25, 80, 443, 465,
-     *         587, or 1024-65535.
+     * @param loadBalancerPort The port on which the load balancer is listening. On EC2-VPC, you can
+     *         specify any port from the range 1-65535. On EC2-Classic, you can
+     *         specify any port from the following list: 25, 80, 443, 465, 587,
+     *         1024-65535.
      */
     public void setLoadBalancerPort(Integer loadBalancerPort) {
         this.loadBalancerPort = loadBalancerPort;
     }
     
     /**
-     * The port on which the load balancer is listening: 25, 80, 443, 465,
-     * 587, or 1024-65535.
+     * The port on which the load balancer is listening. On EC2-VPC, you can
+     * specify any port from the range 1-65535. On EC2-Classic, you can
+     * specify any port from the following list: 25, 80, 443, 465, 587,
+     * 1024-65535.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerPort The port on which the load balancer is listening: 25, 80, 443, 465,
-     *         587, or 1024-65535.
+     * @param loadBalancerPort The port on which the load balancer is listening. On EC2-VPC, you can
+     *         specify any port from the range 1-65535. On EC2-Classic, you can
+     *         specify any port from the following list: 25, 80, 443, 465, 587,
+     *         1024-65535.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -259,44 +273,38 @@ public class Listener implements Serializable, Cloneable {
     }
 
     /**
-     * The port on which the instance server is listening - 25, 80, 443, 465,
-     * 587, or 1024-65535.
+     * The port on which the instance is listening.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @return The port on which the instance server is listening - 25, 80, 443, 465,
-     *         587, or 1024-65535.
+     * @return The port on which the instance is listening.
      */
     public Integer getInstancePort() {
         return instancePort;
     }
     
     /**
-     * The port on which the instance server is listening - 25, 80, 443, 465,
-     * 587, or 1024-65535.
+     * The port on which the instance is listening.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @param instancePort The port on which the instance server is listening - 25, 80, 443, 465,
-     *         587, or 1024-65535.
+     * @param instancePort The port on which the instance is listening.
      */
     public void setInstancePort(Integer instancePort) {
         this.instancePort = instancePort;
     }
     
     /**
-     * The port on which the instance server is listening - 25, 80, 443, 465,
-     * 587, or 1024-65535.
+     * The port on which the instance is listening.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @param instancePort The port on which the instance server is listening - 25, 80, 443, 465,
-     *         587, or 1024-65535.
+     * @param instancePort The port on which the instance is listening.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

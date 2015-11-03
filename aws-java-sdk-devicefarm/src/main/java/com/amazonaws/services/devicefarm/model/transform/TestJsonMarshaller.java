@@ -91,6 +91,12 @@ public class TestJsonMarshaller {
                 jsonWriter.key("message").value(test.getMessage());
             }
 
+            if (test.getDeviceMinutes() != null) {
+                jsonWriter.key("deviceMinutes");
+                DeviceMinutesJsonMarshaller.getInstance().marshall(
+                        test.getDeviceMinutes(), jsonWriter);
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

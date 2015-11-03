@@ -40,7 +40,7 @@ import com.amazonaws.services.securitytoken.model.*;
  * and Access Management (IAM) users or for users that you authenticate
  * (federated users). This guide provides descriptions of the STS API.
  * For more detailed information about using this service, go to
- * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/Welcome.html"> Using Temporary Security Credentials </a>
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html"> Temporary Security Credentials </a>
  * .
  * </p>
  * <p>
@@ -56,8 +56,8 @@ import com.amazonaws.services.securitytoken.model.*;
  * <p>
  * For information about setting up signatures and authorization through
  * the API, go to
- * <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"> Signing AWS API Requests </a> in the <i>AWS General Reference</i> . For general information about the Query API, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"> Making Query Requests </a> in <i>Using IAM</i> . For information about using security tokens with other AWS products, go to <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html"> Using Temporary Security Credentials to Access AWS </a>
- * in <i>Using Temporary Security Credentials</i> .
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"> Signing AWS API Requests </a> in the <i>AWS General Reference</i> . For general information about the Query API, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"> Making Query Requests </a> in <i>Using IAM</i> . For information about using security tokens with other AWS products, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html"> AWS Services That Work with IAM </a>
+ * in the <i>Using IAM</i> .
  * </p>
  * <p>
  * If you're new to AWS and need additional technical information about a
@@ -75,8 +75,8 @@ import com.amazonaws.services.securitytoken.model.*;
  * region. Additional regions are available, but must first be activated
  * in the AWS Management Console before you can use a different region's
  * endpoint. For more information about activating a region for STS see
- * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-enableregions.html"> Activating STS in a New Region </a>
- * in the <i>Using Temporary Security Credentials</i> guide.
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"> Activating STS in a New Region </a>
+ * in the <i>Using IAM</i> .
  * </p>
  * <p>
  * For information about STS endpoints, see
@@ -340,7 +340,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * <code>GetSessionToken</code> and submit an MFA code that is associated
      * with their MFA device. Using the temporary security credentials that
      * are returned from the call, IAM users can then make programmatic calls
-     * to APIs that require MFA authentication.
+     * to APIs that require MFA authentication. If you do not supply a
+     * correct MFA code, then the API returns an access denied error.
      * </p>
      * <p>
      * The <code>GetSessionToken</code> action must be called by using the
@@ -369,8 +370,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * <p>
      * For more information about using <code>GetSessionToken</code> to
      * create temporary credentials, go to
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSessionTokens.html"> Creating Temporary Credentials to Enable Access for IAM Users </a>
-     * .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken"> Temporary Credentials for Users in Untrusted Environments </a>
+     * in the <i>Using IAM</i> .
      * </p>
      *
      * @param getSessionTokenRequest Container for the necessary parameters
@@ -409,7 +410,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * <code>GetSessionToken</code> and submit an MFA code that is associated
      * with their MFA device. Using the temporary security credentials that
      * are returned from the call, IAM users can then make programmatic calls
-     * to APIs that require MFA authentication.
+     * to APIs that require MFA authentication. If you do not supply a
+     * correct MFA code, then the API returns an access denied error.
      * </p>
      * <p>
      * The <code>GetSessionToken</code> action must be called by using the
@@ -438,8 +440,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * <p>
      * For more information about using <code>GetSessionToken</code> to
      * create temporary credentials, go to
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSessionTokens.html"> Creating Temporary Credentials to Enable Access for IAM Users </a>
-     * .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken"> Temporary Credentials for Users in Untrusted Environments </a>
+     * in the <i>Using IAM</i> .
      * </p>
      *
      * @param getSessionTokenRequest Container for the necessary parameters
@@ -515,8 +517,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * <ul>
      * <li>Whether the request was denied due to an explicit deny or due to
      * the absence of an explicit allow. For more information, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_EvaluationLogic.html#policy-eval-denyallow"> Determining Whether a Request is Allowed or Denied </a>
-     * in <i>Using IAM</i> . </li>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow"> Determining Whether a Request is Allowed or Denied </a>
+     * in the <i>Using IAM</i> . </li>
      * <li>The principal who made the request.</li>
      * <li>The requested action.</li>
      * <li>The requested resource.</li>
@@ -585,8 +587,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * <ul>
      * <li>Whether the request was denied due to an explicit deny or due to
      * the absence of an explicit allow. For more information, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_EvaluationLogic.html#policy-eval-denyallow"> Determining Whether a Request is Allowed or Denied </a>
-     * in <i>Using IAM</i> . </li>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow"> Determining Whether a Request is Allowed or Denied </a>
+     * in the <i>Using IAM</i> . </li>
      * <li>The principal who made the request.</li>
      * <li>The requested action.</li>
      * <li>The requested resource.</li>
@@ -671,8 +673,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html"> Permissions for AssumeRoleWithSAML </a>
-     * in <i>Using Temporary Security Credentials</i> .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"> Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * Before your application can call <code>AssumeRoleWithSAML</code> ,
@@ -694,17 +696,17 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * 
      * <ul>
      * <li>
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html"> Creating Temporary Security Credentials for SAML Federation </a>
-     * . </li>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html"> About SAML 2.0-based Federation </a>
+     * in the <i>Using IAM</i> . </li>
      * <li>
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/idp-managing-identityproviders.html"> SAML Providers </a>
-     * in <i>Using IAM</i> . </li>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html"> Creating SAML Identity Providers </a>
+     * in the <i>Using IAM</i> . </li>
      * <li>
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html"> Configuring a Relying Party and Claims </a>
-     * in <i>Using IAM</i> . </li>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html"> Configuring a Relying Party and Claims </a>
+     * in the <i>Using IAM</i> . </li>
      * <li>
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml.html"> Creating a Role for SAML-Based Federation </a>
-     * in <i>Using IAM</i> . </li>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html"> Creating a Role for SAML 2.0 Federation </a>
+     * in the <i>Using IAM</i> . </li>
      * 
      * </ul>
      * <p>
@@ -782,8 +784,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html"> Permissions for AssumeRoleWithSAML </a>
-     * in <i>Using Temporary Security Credentials</i> .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"> Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * Before your application can call <code>AssumeRoleWithSAML</code> ,
@@ -805,17 +807,17 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * 
      * <ul>
      * <li>
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html"> Creating Temporary Security Credentials for SAML Federation </a>
-     * . </li>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html"> About SAML 2.0-based Federation </a>
+     * in the <i>Using IAM</i> . </li>
      * <li>
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/idp-managing-identityproviders.html"> SAML Providers </a>
-     * in <i>Using IAM</i> . </li>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html"> Creating SAML Identity Providers </a>
+     * in the <i>Using IAM</i> . </li>
      * <li>
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html"> Configuring a Relying Party and Claims </a>
-     * in <i>Using IAM</i> . </li>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html"> Configuring a Relying Party and Claims </a>
+     * in the <i>Using IAM</i> . </li>
      * <li>
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml.html"> Creating a Role for SAML-Based Federation </a>
-     * in <i>Using IAM</i> . </li>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html"> Creating a Role for SAML 2.0 Federation </a>
+     * in the <i>Using IAM</i> . </li>
      * 
      * </ul>
      * <p>
@@ -918,8 +920,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html"> Permissions for AssumeRoleWithWebIdentity </a>
-     * .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"> Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * Before your application can call
@@ -938,7 +940,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * 
      * <ul>
      * <li>
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider"> Creating a Mobile Application with Third-Party Sign-In </a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html"> Creating Temporary Security Credentials for Mobile Apps Using Third-Party Identity Providers </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual"> Using Web Identity Federation APIs for Mobile Apps </a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity"> Federation Through a Web-based Identity Provider </a>
      * . </li>
      * <li>
      * <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html"> Web Identity Federation Playground </a>
@@ -1032,8 +1034,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html"> Permissions for AssumeRoleWithWebIdentity </a>
-     * .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"> Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * Before your application can call
@@ -1052,7 +1054,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * 
      * <ul>
      * <li>
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider"> Creating a Mobile Application with Third-Party Sign-In </a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html"> Creating Temporary Security Credentials for Mobile Apps Using Third-Party Identity Providers </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual"> Using Web Identity Federation APIs for Mobile Apps </a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity"> Federation Through a Web-based Identity Provider </a>
      * . </li>
      * <li>
      * <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html"> Web Identity Federation Playground </a>
@@ -1130,9 +1132,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * that can authenticate users using a web identity provider like Login
      * with Amazon, Facebook, Google, or an OpenID Connect-compatible
      * identity provider, we recommend that you use Amazon Cognito or
-     * AssumeRoleWithWebIdentity. For more information, see Creating
-     * Temporary Security Credentials for Mobile Apps Using Identity
-     * Providers.
+     * AssumeRoleWithWebIdentity. For more information, see Federation
+     * Through a Web-based Identity Provider.
      * </p>
      * <p>
      * The <code>GetFederationToken</code> action must be called by using
@@ -1143,8 +1144,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * application and then attach a policy to the IAM user that limits
      * federated users to only the actions and resources they need access to.
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html"> IAM Best Practices </a>
-     * in <i>Using IAM</i> .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"> IAM Best Practices </a>
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * The temporary security credentials that are obtained by using the
@@ -1198,7 +1199,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * </p>
      * <p>
      * For more information about how permissions work, see
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html"> Permissions for GetFederationToken </a> . For information about using <code>GetFederationToken</code> to create temporary security credentials, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html"> Creating Temporary Credentials to Enable Access for Federated Users </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html"> Permissions for GetFederationToken </a> . For information about using <code>GetFederationToken</code> to create temporary security credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken"> GetFederationToken???Federation Through a Custom Identity Broker </a>
      * .
      * </p>
      *
@@ -1245,9 +1246,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * that can authenticate users using a web identity provider like Login
      * with Amazon, Facebook, Google, or an OpenID Connect-compatible
      * identity provider, we recommend that you use Amazon Cognito or
-     * AssumeRoleWithWebIdentity. For more information, see Creating
-     * Temporary Security Credentials for Mobile Apps Using Identity
-     * Providers.
+     * AssumeRoleWithWebIdentity. For more information, see Federation
+     * Through a Web-based Identity Provider.
      * </p>
      * <p>
      * The <code>GetFederationToken</code> action must be called by using
@@ -1258,8 +1258,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * application and then attach a policy to the IAM user that limits
      * federated users to only the actions and resources they need access to.
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html"> IAM Best Practices </a>
-     * in <i>Using IAM</i> .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"> IAM Best Practices </a>
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * The temporary security credentials that are obtained by using the
@@ -1313,7 +1313,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * </p>
      * <p>
      * For more information about how permissions work, see
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html"> Permissions for GetFederationToken </a> . For information about using <code>GetFederationToken</code> to create temporary security credentials, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html"> Creating Temporary Credentials to Enable Access for Federated Users </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html"> Permissions for GetFederationToken </a> . For information about using <code>GetFederationToken</code> to create temporary security credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken"> GetFederationToken???Federation Through a Custom Identity Broker </a>
      * .
      * </p>
      *
@@ -1381,7 +1381,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * security credentials to access all the other accounts by assuming
      * roles in those accounts. For more information about roles, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> IAM Roles (Delegation and Federation) </a>
-     * in <i>Using IAM</i> .
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * For federation, you can, for example, grant single sign-on access to
@@ -1394,8 +1394,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * credentials for that user. With those temporary security credentials,
      * you construct a sign-in URL that users can use to access the console.
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html"> Scenarios for Granting Temporary Access </a>
-     * in <i>Using Temporary Security Credentials</i> .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html#sts-introduction"> Common Scenarios for Temporary Credentials </a>
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * The temporary security credentials are valid for the duration that
@@ -1416,8 +1416,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html"> Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
-     * in <i>Using Temporary Security Credentials</i> .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"> Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * To assume a role, your AWS account must be trusted by the role. The
@@ -1446,7 +1446,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html"> Configuring MFA-Protected API Access </a>
-     * in <i>Using IAM</i> guide.
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * To use MFA with <code>AssumeRole</code> , you pass values for the
@@ -1519,7 +1519,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * security credentials to access all the other accounts by assuming
      * roles in those accounts. For more information about roles, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> IAM Roles (Delegation and Federation) </a>
-     * in <i>Using IAM</i> .
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * For federation, you can, for example, grant single sign-on access to
@@ -1532,8 +1532,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * credentials for that user. With those temporary security credentials,
      * you construct a sign-in URL that users can use to access the console.
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html"> Scenarios for Granting Temporary Access </a>
-     * in <i>Using Temporary Security Credentials</i> .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html#sts-introduction"> Common Scenarios for Temporary Credentials </a>
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * The temporary security credentials are valid for the duration that
@@ -1554,8 +1554,8 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see
-     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html"> Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
-     * in <i>Using Temporary Security Credentials</i> .
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"> Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+     * in the <i>Using IAM</i> .
      * </p>
      * <p>
      * To assume a role, your AWS account must be trusted by the role. The
@@ -1584,7 +1584,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html"> Configuring MFA-Protected API Access </a>
-     * in <i>Using IAM</i> guide.
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * To use MFA with <code>AssumeRole</code> , you pass values for the

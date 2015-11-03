@@ -66,8 +66,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * credentials. You cannot use the passed policy to grant permissions
  * that are in excess of those allowed by the access policy of the role
  * that is being assumed. For more information, see
- * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html"> Permissions for AssumeRoleWithWebIdentity </a>
- * .
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"> Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+ * in the <i>Using IAM</i> .
  * </p>
  * <p>
  * Before your application can call
@@ -86,7 +86,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * <ul>
  * <li>
- * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider"> Creating a Mobile Application with Third-Party Sign-In </a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html"> Creating Temporary Security Credentials for Mobile Apps Using Third-Party Identity Providers </a>
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual"> Using Web Identity Federation APIs for Mobile Apps </a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity"> Federation Through a Web-based Identity Provider </a>
  * . </li>
  * <li>
  * <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html"> Web Identity Federation Playground </a>
@@ -129,7 +129,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * <code>AssumedRoleUser</code> response element.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 32<br/>
+     * <b>Length: </b>2 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String roleSessionName;
@@ -170,13 +170,13 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRoleWithWebIdentity</a>. <note>The policy plain text must be
-     * 2048 bytes or shorter. However, an internal conversion compresses it
-     * into a packed binary format with a separate limit. The
-     * PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. <note>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage
+     * how close to the upper size limit the policy is, with 100% equaling
+     * the maximum allowed size. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -190,7 +190,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * the value is set to 3600 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>900 - 129600<br/>
+     * <b>Range: </b>900 - 3600<br/>
      */
     private Integer durationSeconds;
 
@@ -251,7 +251,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * <code>AssumedRoleUser</code> response element.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 32<br/>
+     * <b>Length: </b>2 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @return An identifier for the assumed role session. Typically, you pass the
@@ -274,7 +274,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * <code>AssumedRoleUser</code> response element.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 32<br/>
+     * <b>Length: </b>2 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleSessionName An identifier for the assumed role session. Typically, you pass the
@@ -299,7 +299,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>2 - 32<br/>
+     * <b>Length: </b>2 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleSessionName An identifier for the assumed role session. Typically, you pass the
@@ -471,13 +471,13 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRoleWithWebIdentity</a>. <note>The policy plain text must be
-     * 2048 bytes or shorter. However, an internal conversion compresses it
-     * into a packed binary format with a separate limit. The
-     * PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. <note>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage
+     * how close to the upper size limit the policy is, with 100% equaling
+     * the maximum allowed size. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -492,13 +492,13 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      *         credentials. You cannot use the passed policy to grant permissions
      *         that are in excess of those allowed by the access policy of the role
      *         that is being assumed. For more information, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     *         for AssumeRoleWithWebIdentity</a>. <note>The policy plain text must be
-     *         2048 bytes or shorter. However, an internal conversion compresses it
-     *         into a packed binary format with a separate limit. The
-     *         PackedPolicySize response element indicates by percentage how close to
-     *         the upper size limit the policy is, with 100% equaling the maximum
-     *         allowed size. </note>
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     *         for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. <note>The
+     *         policy plain text must be 2048 bytes or shorter. However, an internal
+     *         conversion compresses it into a packed binary format with a separate
+     *         limit. The PackedPolicySize response element indicates by percentage
+     *         how close to the upper size limit the policy is, with 100% equaling
+     *         the maximum allowed size. </note>
      */
     public String getPolicy() {
         return policy;
@@ -514,13 +514,13 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRoleWithWebIdentity</a>. <note>The policy plain text must be
-     * 2048 bytes or shorter. However, an internal conversion compresses it
-     * into a packed binary format with a separate limit. The
-     * PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. <note>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage
+     * how close to the upper size limit the policy is, with 100% equaling
+     * the maximum allowed size. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -535,13 +535,13 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      *         credentials. You cannot use the passed policy to grant permissions
      *         that are in excess of those allowed by the access policy of the role
      *         that is being assumed. For more information, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     *         for AssumeRoleWithWebIdentity</a>. <note>The policy plain text must be
-     *         2048 bytes or shorter. However, an internal conversion compresses it
-     *         into a packed binary format with a separate limit. The
-     *         PackedPolicySize response element indicates by percentage how close to
-     *         the upper size limit the policy is, with 100% equaling the maximum
-     *         allowed size. </note>
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     *         for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. <note>The
+     *         policy plain text must be 2048 bytes or shorter. However, an internal
+     *         conversion compresses it into a packed binary format with a separate
+     *         limit. The PackedPolicySize response element indicates by percentage
+     *         how close to the upper size limit the policy is, with 100% equaling
+     *         the maximum allowed size. </note>
      */
     public void setPolicy(String policy) {
         this.policy = policy;
@@ -557,13 +557,13 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * credentials. You cannot use the passed policy to grant permissions
      * that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRoleWithWebIdentity</a>. <note>The policy plain text must be
-     * 2048 bytes or shorter. However, an internal conversion compresses it
-     * into a packed binary format with a separate limit. The
-     * PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. <note>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage
+     * how close to the upper size limit the policy is, with 100% equaling
+     * the maximum allowed size. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -580,13 +580,13 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      *         credentials. You cannot use the passed policy to grant permissions
      *         that are in excess of those allowed by the access policy of the role
      *         that is being assumed. For more information, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     *         for AssumeRoleWithWebIdentity</a>. <note>The policy plain text must be
-     *         2048 bytes or shorter. However, an internal conversion compresses it
-     *         into a packed binary format with a separate limit. The
-     *         PackedPolicySize response element indicates by percentage how close to
-     *         the upper size limit the policy is, with 100% equaling the maximum
-     *         allowed size. </note>
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     *         for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. <note>The
+     *         policy plain text must be 2048 bytes or shorter. However, an internal
+     *         conversion compresses it into a packed binary format with a separate
+     *         limit. The PackedPolicySize response element indicates by percentage
+     *         how close to the upper size limit the policy is, with 100% equaling
+     *         the maximum allowed size. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -602,7 +602,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * the value is set to 3600 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>900 - 129600<br/>
+     * <b>Range: </b>900 - 3600<br/>
      *
      * @return The duration, in seconds, of the role session. The value can range
      *         from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
@@ -618,7 +618,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * the value is set to 3600 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>900 - 129600<br/>
+     * <b>Range: </b>900 - 3600<br/>
      *
      * @param durationSeconds The duration, in seconds, of the role session. The value can range
      *         from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
@@ -636,7 +636,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>900 - 129600<br/>
+     * <b>Range: </b>900 - 3600<br/>
      *
      * @param durationSeconds The duration, in seconds, of the role session. The value can range
      *         from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,

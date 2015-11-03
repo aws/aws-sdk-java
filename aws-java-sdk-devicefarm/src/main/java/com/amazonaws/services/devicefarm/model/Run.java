@@ -247,6 +247,12 @@ public class Run implements Serializable, Cloneable {
      * </p>
      */
     private String billingMethod;
+    /**
+     * <p>
+     * Represents the total (metered or unmetered) minutes used by the test run.
+     * </p>
+     */
+    private DeviceMinutes deviceMinutes;
 
     /**
      * <p>
@@ -2321,6 +2327,47 @@ public class Run implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the total (metered or unmetered) minutes used by the test run.
+     * </p>
+     * 
+     * @param deviceMinutes
+     *        Represents the total (metered or unmetered) minutes used by the
+     *        test run.
+     */
+    public void setDeviceMinutes(DeviceMinutes deviceMinutes) {
+        this.deviceMinutes = deviceMinutes;
+    }
+
+    /**
+     * <p>
+     * Represents the total (metered or unmetered) minutes used by the test run.
+     * </p>
+     * 
+     * @return Represents the total (metered or unmetered) minutes used by the
+     *         test run.
+     */
+    public DeviceMinutes getDeviceMinutes() {
+        return this.deviceMinutes;
+    }
+
+    /**
+     * <p>
+     * Represents the total (metered or unmetered) minutes used by the test run.
+     * </p>
+     * 
+     * @param deviceMinutes
+     *        Represents the total (metered or unmetered) minutes used by the
+     *        test run.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Run withDeviceMinutes(DeviceMinutes deviceMinutes) {
+        setDeviceMinutes(deviceMinutes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2359,7 +2406,9 @@ public class Run implements Serializable, Cloneable {
         if (getCompletedJobs() != null)
             sb.append("CompletedJobs: " + getCompletedJobs() + ",");
         if (getBillingMethod() != null)
-            sb.append("BillingMethod: " + getBillingMethod());
+            sb.append("BillingMethod: " + getBillingMethod() + ",");
+        if (getDeviceMinutes() != null)
+            sb.append("DeviceMinutes: " + getDeviceMinutes());
         sb.append("}");
         return sb.toString();
     }
@@ -2444,6 +2493,11 @@ public class Run implements Serializable, Cloneable {
         if (other.getBillingMethod() != null
                 && other.getBillingMethod().equals(this.getBillingMethod()) == false)
             return false;
+        if (other.getDeviceMinutes() == null ^ this.getDeviceMinutes() == null)
+            return false;
+        if (other.getDeviceMinutes() != null
+                && other.getDeviceMinutes().equals(this.getDeviceMinutes()) == false)
+            return false;
         return true;
     }
 
@@ -2483,6 +2537,10 @@ public class Run implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getBillingMethod() == null) ? 0 : getBillingMethod()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDeviceMinutes() == null) ? 0 : getDeviceMinutes()
                         .hashCode());
         return hashCode;
     }

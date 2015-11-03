@@ -13,12 +13,13 @@
  * limitations under the License.
  */
 package com.amazonaws.http.conn.ssl;
+
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.security.AccessController;
+import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
@@ -46,107 +47,112 @@ import com.amazonaws.internal.SdkSocket;
  */
 @ThreadSafe
 public class SdkTLSSocketFactory extends SSLSocketFactory {
-    private static final Log log = LogFactory.getLog(SdkTLSSocketFactory.class);
-	private final SSLContext sslContext;
-    
-    public SdkTLSSocketFactory(final SSLContext sslContext,
-            final X509HostnameVerifier hostnameVerifier) {
+
+    private static final Log LOG = LogFactory.getLog(SdkTLSSocketFactory.class);
+    private final SSLContext sslContext;
+    private final MasterSecretValidators.MasterSecretValidator masterSecretValidator;
+
+    public SdkTLSSocketFactory(final SSLContext sslContext, final X509HostnameVerifier hostnameVerifier) {
         super(sslContext, hostnameVerifier);
         if (sslContext == null) {
-            throw new NullPointerException("sslContext must not be null. "
-                    + "Use SSLContext.getDefault() if you are unsure.");
+            throw new IllegalArgumentException(
+                    "sslContext must not be null. " + "Use SSLContext.getDefault() if you are unsure.");
         }
         this.sslContext = sslContext;
+        this.masterSecretValidator = MasterSecretValidators.getMasterSecretValidator();
     }
 
     /**
-     * {@inheritDoc}
-     * 
-     * Used to enforce the preferred TLS protocol during SSL handshake.
+     * {@inheritDoc} Used to enforce the preferred TLS protocol during SSL handshake.
      */
     @Override
     protected final void prepareSocket(final SSLSocket socket) {
         String[] supported = socket.getSupportedProtocols();
         String[] enabled = socket.getEnabledProtocols();
-        if (log.isDebugEnabled()) {
-            log.debug("socket.getSupportedProtocols(): "
-                    + Arrays.toString(supported)
-                    + ", socket.getEnabledProtocols(): "
-                    + Arrays.toString(enabled));
+        if (LOG.isDebugEnabled()) {
+            LOG.debug("socket.getSupportedProtocols(): " + Arrays.toString(supported)
+                    + ", socket.getEnabledProtocols(): " + Arrays.toString(enabled));
         }
         List<String> target = new ArrayList<String>();
         if (supported != null) {
             // Append the preferred protocols in descending order of preference
             // but only do so if the protocols are supported
             TLSProtocol[] values = TLSProtocol.values();
-            for (int i=0; i < values.length; i++) {
+            for (int i = 0; i < values.length; i++) {
                 final String pname = values[i].getProtocolName();
-                if (existsIn(pname, supported))
+                if (existsIn(pname, supported)) {
                     target.add(pname);
+                }
             }
         }
         if (enabled != null) {
             // Append the rest of the already enabled protocols to the end
             // if not already included in the list
-            for (String pname: enabled) {
-                if (!target.contains(pname))
+            for (String pname : enabled) {
+                if (!target.contains(pname)) {
                     target.add(pname);
+                }
             }
         }
         if (target.size() > 0) {
             String[] enabling = target.toArray(new String[target.size()]);
             socket.setEnabledProtocols(enabling);
-            if (log.isDebugEnabled()) {
-                log.debug("TLS protocol enabled for SSL handshake: "
-                        + Arrays.toString(enabling));
+            if (LOG.isDebugEnabled()) {
+                LOG.debug("TLS protocol enabled for SSL handshake: " + Arrays.toString(enabling));
             }
         }
     }
+
     /**
-     * Returns true if the given element exists in the given array;
-     * false otherwise.
+     * Returns true if the given element exists in the given array; false otherwise.
      */
     private boolean existsIn(String element, String[] a) {
-        for (String s: a) {
-            if (element.equals(s))
+        for (String s : a) {
+            if (element.equals(s)) {
                 return true;
+            }
         }
         return false;
     }
 
     @Override
-    public Socket connectSocket(
-            final Socket socket,
-            final InetSocketAddress remoteAddress,
-            final InetSocketAddress localAddress,
-            final HttpParams params)
-            throws IOException, UnknownHostException, ConnectTimeoutException {
-        if (log.isDebugEnabled())
-            log.debug("connecting to " + remoteAddress.getAddress() + ":"
-                    + remoteAddress.getPort());
+    public Socket connectSocket(final Socket socket,
+                                final InetSocketAddress remoteAddress,
+                                final InetSocketAddress localAddress,
+                                final HttpParams params)
+                                        throws IOException, UnknownHostException, ConnectTimeoutException {
+        if (LOG.isDebugEnabled()) {
+            LOG.debug("connecting to " + remoteAddress.getAddress() + ":" + remoteAddress.getPort());
+        }
         try {
-            verifyMasterSecret(
-                    super.connectSocket(socket, remoteAddress, localAddress, params));
+            final Socket connectedSocket = super.connectSocket(socket, remoteAddress, localAddress, params);
+            if (!masterSecretValidator.isMasterSecretValid(connectedSocket)) {
+                throw log(new IllegalStateException("Invalid SSL master secret"));
+            }
         } catch (final SSLException sslEx) {
             // clear any related sessions from our cache
-            if (log.isDebugEnabled()) {
-                log.debug("connection failed due to SSL error, clearing TLS session cache", sslEx);
+            if (LOG.isDebugEnabled()) {
+                LOG.debug("connection failed due to SSL error, clearing TLS session cache", sslEx);
             }
             clearSessionCache(sslContext.getClientSessionContext(), remoteAddress);
             throw sslEx;
         }
-        if (socket instanceof SSLSocket)
-            return new SdkSSLSocket((SSLSocket)socket);
+        if (socket instanceof SSLSocket) {
+            return new SdkSSLSocket((SSLSocket) socket);
+        }
         return new SdkSocket(socket);
     }
 
     /**
-     * Invalidates all SSL/TLS sessions in {@code sessionContext} associated with {@code remoteAddress}.
-     * @param sessionContext collection of SSL/TLS sessions to be (potentially) invalidated
-     * @param remoteAddress associated with sessions to invalidate
+     * Invalidates all SSL/TLS sessions in {@code sessionContext} associated with
+     * {@code remoteAddress}.
+     * 
+     * @param sessionContext
+     *            collection of SSL/TLS sessions to be (potentially) invalidated
+     * @param remoteAddress
+     *            associated with sessions to invalidate
      */
-    private void clearSessionCache(final SSLSessionContext sessionContext,
-            final InetSocketAddress remoteAddress) {
+    private void clearSessionCache(final SSLSessionContext sessionContext, final InetSocketAddress remoteAddress) {
         final String hostName = remoteAddress.getHostName();
         final int port = remoteAddress.getPort();
         final Enumeration<byte[]> ids = sessionContext.getIds();
@@ -158,63 +164,20 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
         while (ids.hasMoreElements()) {
             final byte[] id = ids.nextElement();
             final SSLSession session = sessionContext.getSession(id);
-            if (session != null && session.getPeerHost() != null &&
-                  session.getPeerHost().equalsIgnoreCase(hostName) && session.getPeerPort() == port) {
+            if (session != null && session.getPeerHost() != null && session.getPeerHost().equalsIgnoreCase(hostName)
+                    && session.getPeerPort() == port) {
                 session.invalidate();
-                if (log.isDebugEnabled()) {
-                    log.debug("Invalidated session " + session);
+                if (LOG.isDebugEnabled()) {
+                    LOG.debug("Invalidated session " + session);
                 }
             }
         }
-    }
-
-    /**
-     * Double check the master secret of an SSL session must not be null, or
-     * else a {@link SecurityException} will be thrown.
-     * @param sock connected socket
-     */
-    private void verifyMasterSecret(final Socket sock) {
-        if (sock instanceof SSLSocket) {
-            SSLSocket ssl = (SSLSocket)sock;
-            SSLSession session = ssl.getSession();
-            if (session != null) {
-                String className = session.getClass().getName();
-                if ("sun.security.ssl.SSLSessionImpl".equals(className)) {
-                    try {
-                        Class<?> clazz = Class.forName(className);
-                        Method method = clazz.getDeclaredMethod("getMasterSecret");
-                        method.setAccessible(true);
-                        Object masterSecret = method.invoke(session);
-                        if (masterSecret == null) {
-                            session.invalidate();
-                            if (log.isDebugEnabled()) {
-                                log.debug("Invalidated session " + session);
-                            }
-                            throw log(new SecurityException("Invalid SSL master secret"));
-                        }
-                    } catch (ClassNotFoundException e) {
-                        failedToVerifyMasterSecret(e);
-                    } catch (NoSuchMethodException e) {
-                        failedToVerifyMasterSecret(e);
-                    } catch (IllegalAccessException e) {
-                        failedToVerifyMasterSecret(e);
-                    } catch (InvocationTargetException e) {
-                        failedToVerifyMasterSecret(e.getCause());
-                    }
-                }
-            }
-        }
-        return;
-    }
-
-    private void failedToVerifyMasterSecret(Throwable t) {
-        if (log.isDebugEnabled())
-            log.debug("Failed to verify the SSL master secret", t);
     }
 
     private <T extends Throwable> T log(T t) {
-        if (log.isDebugEnabled())
-            log.debug("", t);
+        if (LOG.isDebugEnabled()) {
+            LOG.debug("", t);
+        }
         return t;
     }
 }
