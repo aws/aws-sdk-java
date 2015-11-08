@@ -23,7 +23,6 @@ import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.VersionInfoUtils;
-
 /**
  * Client configuration options such as proxy settings, user agent string, max
  * retry attempts, etc.
@@ -95,6 +94,13 @@ public class ClientConfiguration {
      */
     public static final int DEFAULT_RESPONSE_METADATA_CACHE_SIZE = 50;
 
+    /**
+     * The default on whether to utilize the USE_EXPECT_CONTINUE
+     * handshake for operations. Currently only honored for PUT
+     * operations.
+     */
+    private static final boolean DEFAULT_USE_EXPECT_CONTINUE = true;
+    
     /** The HTTP user agent header passed with all HTTP requests. */
     private String userAgent = DEFAULT_USER_AGENT;
 
@@ -224,7 +230,7 @@ public class ClientConfiguration {
      * the operating system (sysctl on Linux, and Registry values on Windows).
      */
     private boolean tcpKeepAlive = DEFAULT_TCP_KEEP_ALIVE;
-
+    
     /**
      * Size of the response metadata cache.
      * <p>
@@ -232,18 +238,27 @@ public class ClientConfiguration {
      * support staff when services aren't acting as expected.
      */
     private int responseMetadataCacheSize = DEFAULT_RESPONSE_METADATA_CACHE_SIZE;
-
+    
     /**
      * The DNS Resolver to resolve IP addresses of Amazon Web Services.
      */
     private DnsResolver dnsResolver = new SystemDefaultDnsResolver();
-
+    
     /**
      * An instance of {@link SecureRandom} configured by the user; or the JDK
      * default will be used if it is set to null or not explicitly configured.
      */
     private SecureRandom secureRandom;
-
+    
+    /**
+     * Optional override to enable/disable support for HTTP/1.1 handshake utilizing
+     * EXPECT: 100-Continue
+     * <p>
+     * Actual TCP KeepAlive values (timeout, number of packets, etc) are configured via
+     * the operating system (sysctl on Linux, and Registry values on Windows).
+     */
+    private boolean useExpectContinue = DEFAULT_USE_EXPECT_CONTINUE;
+    
     /**
      * Can be used to specify custom specific Apache HTTP client configurations.
      */
@@ -277,6 +292,7 @@ public class ClientConfiguration {
         this.signerOverride              = other.signerOverride;
         this.responseMetadataCacheSize   = other.responseMetadataCacheSize;
         this.dnsResolver                 = other.dnsResolver;
+        this.useExpectContinue           = other.useExpectContinue;
         this.apacheHttpClientConfig =
             new ApacheHttpClientConfig(other.apacheHttpClientConfig);
     }
@@ -1191,7 +1207,7 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the expiration time (in milliseconds) for a connection in the
+     * Returns the expiration time(in milliseconds) for a connection in the
      * connection pool. When retrieving a connection from the pool to make a
      * request, the total time that the connection has been open is compared
      * against this value. Connections which have been open for longer are
@@ -1210,7 +1226,7 @@ public class ClientConfiguration {
     }
 
     /**
-     * Sets the expiration time (in milliseconds) for a connection in the
+     * Sets the expiration time(in milliseconds) for a connection in the
      * connection pool. When retrieving a connection from the pool to make a
      * request, the total time that the connection has been open is compared
      * against this value. Connections which have been open for longer are
@@ -1231,7 +1247,7 @@ public class ClientConfiguration {
     }
 
     /**
-     * Sets the expiration time (in milliseconds) for a connection in the
+     * Sets the expiration time(in milliseconds) for a connection in the
      * connection pool. When retrieving a connection from the pool to make a
      * request, the total time that the connection has been open is compared
      * against this value. Connections which have been open for longer are
@@ -1371,7 +1387,7 @@ public class ClientConfiguration {
         setDnsResolver(resolver);
         return this;
     }
-
+    
     /**
      * Returns the response metadata cache size.
      */
@@ -1398,7 +1414,37 @@ public class ClientConfiguration {
         setResponseMetadataCacheSize(responseMetadataCacheSize);
         return this;
     }
-
+    
+    /**
+     * Returns the use expect continue flag
+     */
+    public boolean isUseExpectContinue() {
+        return useExpectContinue;
+    }
+    /**
+     * Sets if use expect continue should be enabled. By default, it is set to
+     * {@value #DEFAULT_USE_EXPECT_CONTINUE}.
+     * 
+     * @param useExpectContinue use expect continue HTTP/1.1 header.
+     */
+    public void setUseExpectContinue(boolean useExpectContinue) {
+        this.useExpectContinue = useExpectContinue;
+    }
+    
+    /**
+     * Sets if use expect continue should be enabled. By default, it is set to
+     * {@value #DEFAULT_USE_EXPECT_CONTINUE}.
+     * 
+     *  @param useExpectContinue use expect continue HTTP/1.1 header.
+     * 
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withUseExpectContinue(boolean useExpectContinue) {
+        setUseExpectContinue(useExpectContinue);
+        
+        return this;
+    }
+    
     /**
      * Returns a non-null object that can be used to specify Apache HTTP client
      * specific custom configurations.
@@ -1406,7 +1452,7 @@ public class ClientConfiguration {
     public ApacheHttpClientConfig getApacheHttpClientConfig() {
         return apacheHttpClientConfig;
     }
-
+    
     /**
      * Returns the instance of {@link SecureRandom} configured by the user; or
      * the JDK default if it is null.
