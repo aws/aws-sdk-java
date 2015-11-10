@@ -44,8 +44,10 @@ import com.amazonaws.AmazonServiceException;
 public class WAFInvalidParameterException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("field")
     private String field;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("parameter")
     private String parameter;
 
     /**

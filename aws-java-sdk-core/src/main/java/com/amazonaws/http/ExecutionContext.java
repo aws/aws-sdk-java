@@ -17,6 +17,8 @@ package com.amazonaws.http;
 import java.net.URI;
 import java.util.List;
 
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.internal.StaticCredentialsProvider;
 import org.apache.http.annotation.NotThreadSafe;
 
 import com.amazonaws.AmazonWebServiceClient;
@@ -35,7 +37,7 @@ public class ExecutionContext {
     private final AmazonWebServiceClient awsClient;
 
     /** Optional credentials to enable the runtime layer to handle signing requests (and resigning on retries). */
-    private AWSCredentials credentials;
+    private AWSCredentialsProvider credentialsProvider;
 
     /**
      * An internal retry strategy for auth errors. This is currently only used
@@ -100,25 +102,70 @@ public class ExecutionContext {
     }
 
     /**
-     * Returns the optional credentials used to sign the associated request.
+     * <p>
+     * Returns the credentials used to sign the associated request.
+     * </p>
+     * <p>
+     * This method is deprecated as the provider needs to be used every time
+     * we fetch the credentials.
+     * </p>
+     * @return The credentials used to sign the associated request.
      *
-     * @return The optional credentials used to sign the associated request.
+     * @deprecated in favor of {@link #getCredentialsProvider}
      */
+    @Deprecated
     public AWSCredentials getCredentials() {
-        return credentials;
+        return credentialsProvider != null
+                ? credentialsProvider.getCredentials()
+                : null;
     }
 
     /**
-     * Sets the optional credentials used to sign the associated request. If no
+     * <p>
+     * Sets the credentials used to sign the associated request. If no
      * credentials are specified as part of a request's ExecutionContext, then
      * the runtime layer will not attempt to sign (or resign on retries)
      * requests.
-     *
+     * </p>
+     * <p>
+     * This method is deprecated as the provider needs to be used every time
+     * we fetch the credentials.
+     * </p>
      * @param credentials
      *            The optional credentials used to sign the associated request.
+     *
+     * @deprecated in favor of {@link #setCredentialsProvider(AWSCredentialsProvider)}
      */
+    @Deprecated
     public void setCredentials(AWSCredentials credentials) {
-        this.credentials = credentials;
+        this.credentialsProvider = new StaticCredentialsProvider(credentials);
+    }
+
+    /**
+     * Sets the credentials provider used for fetching the credentials.
+     * The credentials fetched is used for signing the request. If there is no
+     * credential provider, then the runtime will not attempt to sign (or
+     * resign on retries) requests.
+     *
+     * @param credentialsProvider the credentials provider to fetch
+     *                            {@link AWSCredentials}
+     */
+    public void setCredentialsProvider(AWSCredentialsProvider
+                                               credentialsProvider) {
+        this.credentialsProvider = credentialsProvider;
+    }
+
+    /**
+     * Returns the credentials provider used for fetching the credentials.
+     * The credentials fetched is used for signing the request. If there is no
+     * credential provider, then the runtime will not attempt to sign (or
+     * resign on retries) requests.
+     *
+     * @return the credentials provider to fetch
+     *                            {@link AWSCredentials}
+     */
+    public AWSCredentialsProvider getCredentialsProvider() {
+        return this.credentialsProvider;
     }
 
     /**

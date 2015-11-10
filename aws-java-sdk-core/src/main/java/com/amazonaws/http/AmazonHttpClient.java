@@ -15,6 +15,7 @@
 package com.amazonaws.http;
 import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 import static com.amazonaws.event.SDKProgressPublisher.publishRequestContentLength;
 import static com.amazonaws.event.SDKProgressPublisher.publishResponseContentLength;
@@ -162,7 +163,7 @@ public class AmazonHttpClient {
 
     /** Timer to enforce http request timeouts. */
     private final HttpRequestTimer httpRequestTimer;
-    
+
     /**
      * A request metric collector used specifically for this http client; or
      * null if there is none. This collector, if specified, always takes
@@ -224,7 +225,7 @@ public class AmazonHttpClient {
     HttpRequestTimer getHttpRequestTimer() {
         return httpRequestTimer;
     }
-    
+
     /**
      * Returns additional response metadata for an executed request. Response
      * metadata isn't considered part of the standard results returned by an
@@ -565,7 +566,7 @@ public class AmazonHttpClient {
      *
      * @param t
      *            the failure
-     * @param apacheRequest
+     * @param req
      *            the request, if known; or null otherwise.
      * @return the failure as given
      */
@@ -661,6 +662,26 @@ public class AmazonHttpClient {
     }
 
     /**
+     * Returns the credentials from the execution if exists. Else returns null.
+     */
+    private AWSCredentials getCredentialsFromContext(final ExecutionContext executionContext,
+                                                     final AWSRequestMetrics requestMetrics) {
+        final AWSCredentialsProvider credentialsProvider = executionContext
+                .getCredentialsProvider();
+
+        AWSCredentials credentials = null;
+        if (credentialsProvider != null) {
+            requestMetrics.startEvent(Field.CredentialsRequestTime);
+            try {
+                credentials = credentialsProvider.getCredentials();
+            } finally {
+                requestMetrics.endEvent(Field.CredentialsRequestTime);
+            }
+        }
+        return credentials;
+    }
+
+    /**
      * Returns the response from executing one http request; or null for retry.
      */
     private <T> Response<T> executeOneRequest(final Request<?> request,
@@ -685,7 +706,7 @@ public class AmazonHttpClient {
         }
         if (requestLog.isDebugEnabled())
             requestLog.debug("Sending Request: " + request);
-        final AWSCredentials credentials = execContext.getCredentials();
+        final AWSCredentials credentials = getCredentialsFromContext(execContext, awsRequestMetrics);
         final AmazonWebServiceRequest awsreq = request.getOriginalRequest();
         final ProgressListener listener = awsreq.getGeneralProgressListener();
 
@@ -744,7 +765,6 @@ public class AmazonHttpClient {
         if (httpRequestTimer.isEnabled()){
             requestAbortTaskTracker = httpRequestTimer.schedule(execParams.apacheRequest);
         }
-
         try {
             execParams.apacheResponse = httpClient.execute(execParams.apacheRequest, httpContext);
             if(httpRequestTimer.isEnabled() && !responseHandler.needsConnectionLeftOpen()) {

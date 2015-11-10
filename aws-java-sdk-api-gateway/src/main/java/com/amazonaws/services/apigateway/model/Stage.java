@@ -75,6 +75,14 @@ public class Stage implements Serializable, Cloneable {
     private java.util.Map<String, MethodSetting> methodSettings;
     /**
      * <p>
+     * A map that defines the stage variables for a <a>Stage</a> resource.
+     * Variable names can have alphabetic characters, and the values must match
+     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * </p>
+     */
+    private java.util.Map<String, String> variables;
+    /**
+     * <p>
      * The date and time that the stage was created, in <a target="_blank"
      * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
      * format</a>.
@@ -477,6 +485,76 @@ public class Stage implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A map that defines the stage variables for a <a>Stage</a> resource.
+     * Variable names can have alphabetic characters, and the values must match
+     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * </p>
+     * 
+     * @return A map that defines the stage variables for a <a>Stage</a>
+     *         resource. Variable names can have alphabetic characters, and the
+     *         values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     */
+    public java.util.Map<String, String> getVariables() {
+        return variables;
+    }
+
+    /**
+     * <p>
+     * A map that defines the stage variables for a <a>Stage</a> resource.
+     * Variable names can have alphabetic characters, and the values must match
+     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * </p>
+     * 
+     * @param variables
+     *        A map that defines the stage variables for a <a>Stage</a>
+     *        resource. Variable names can have alphabetic characters, and the
+     *        values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     */
+    public void setVariables(java.util.Map<String, String> variables) {
+        this.variables = variables;
+    }
+
+    /**
+     * <p>
+     * A map that defines the stage variables for a <a>Stage</a> resource.
+     * Variable names can have alphabetic characters, and the values must match
+     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * </p>
+     * 
+     * @param variables
+     *        A map that defines the stage variables for a <a>Stage</a>
+     *        resource. Variable names can have alphabetic characters, and the
+     *        values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Stage withVariables(java.util.Map<String, String> variables) {
+        setVariables(variables);
+        return this;
+    }
+
+    public Stage addVariablesEntry(String key, String value) {
+        if (null == this.variables) {
+            this.variables = new java.util.HashMap<String, String>();
+        }
+        if (this.variables.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.variables.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Variables. &lt;p> Returns a reference
+     * to this object so that method calls can be chained together.
+     */
+    public Stage clearVariablesEntries() {
+        this.variables = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time that the stage was created, in <a target="_blank"
      * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
      * format</a>.
@@ -612,6 +690,8 @@ public class Stage implements Serializable, Cloneable {
             sb.append("CacheClusterStatus: " + getCacheClusterStatus() + ",");
         if (getMethodSettings() != null)
             sb.append("MethodSettings: " + getMethodSettings() + ",");
+        if (getVariables() != null)
+            sb.append("Variables: " + getVariables() + ",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: " + getCreatedDate() + ",");
         if (getLastUpdatedDate() != null)
@@ -679,6 +759,11 @@ public class Stage implements Serializable, Cloneable {
         if (other.getMethodSettings() != null
                 && other.getMethodSettings().equals(this.getMethodSettings()) == false)
             return false;
+        if (other.getVariables() == null ^ this.getVariables() == null)
+            return false;
+        if (other.getVariables() != null
+                && other.getVariables().equals(this.getVariables()) == false)
+            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null
@@ -727,6 +812,8 @@ public class Stage implements Serializable, Cloneable {
                 * hashCode
                 + ((getMethodSettings() == null) ? 0 : getMethodSettings()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getVariables() == null) ? 0 : getVariables().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());

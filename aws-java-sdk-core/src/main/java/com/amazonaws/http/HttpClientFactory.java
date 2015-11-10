@@ -108,7 +108,6 @@ class HttpClientFactory {
                     Math.max(socketSendBufferSizeHint, socketReceiveBufferSizeHint));
         }
         final SSLContext sslContext = createSSLContext(config);
-        SSLContext.setDefault(sslContext);
         SSLSocketFactory sslSocketFactory =
                 config.getApacheHttpClientConfig().getSslSocketFactory();
         if (sslSocketFactory == null) {

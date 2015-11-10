@@ -39,9 +39,15 @@ public class ClientConfiguration {
 
     /** The default timeout for a request. This is disabled by default, being vended as an opt-in setting. */
     public static final int DEFAULT_REQUEST_TIMEOUT = 0;
-    
+
     /** The default max connection pool size. */
     public static final int DEFAULT_MAX_CONNECTIONS = 50;
+
+    /**
+     * The default on whether to utilize the USE_EXPECT_CONTINUE handshake for
+     * operations. Currently only honored for PUT operations.
+     */
+    private static final boolean DEFAULT_USE_EXPECT_CONTINUE = true;
 
     /** The default HTTP user agent header for AWS Java SDK clients. */
     public static final String DEFAULT_USER_AGENT = VersionInfoUtils.getUserAgent();
@@ -164,11 +170,11 @@ public class ClientConfiguration {
     /**
      * The amount of time to wait (in milliseconds) for a request
      * to complete before giving up and timing out. A value of 0 means
-     * infinity. Consider setting this if a harder guarantee is required on the maximum amount of time a request will take 
+     * infinity. Consider setting this if a harder guarantee is required on the maximum amount of time a request will take
      * for non-streaming operations, and are willing to spin up a background thread to enforce it.
      */
     private int requestTimeout = DEFAULT_REQUEST_TIMEOUT;
-    
+
     /**
      * Optional size hint (in bytes) for the low level TCP send buffer. This is
      * an advanced option for advanced users who want to tune low level TCP
@@ -245,6 +251,19 @@ public class ClientConfiguration {
     private SecureRandom secureRandom;
 
     /**
+     * Optional override to enable/disable support for HTTP/1.1 handshake
+     * utilizing EXPECT: 100-Continue. The default value is true.
+     * <p>
+     * The detail of HTTP Expect Continue is defined at
+     * <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.2.3">
+     * Use of the 100 (Continue) Status</a>. Setting this as false will reduce latency
+     * when you want to send small size of payload. It is highly recommended to use
+     * the default value if you want to transfer a large amount of data to the server,
+     * such as uploading a big file to S3 bucket.
+     */
+    private boolean useExpectContinue = DEFAULT_USE_EXPECT_CONTINUE;
+
+    /**
      * Can be used to specify custom specific Apache HTTP client configurations.
      */
     private final ApacheHttpClientConfig apacheHttpClientConfig;
@@ -277,6 +296,7 @@ public class ClientConfiguration {
         this.signerOverride              = other.signerOverride;
         this.responseMetadataCacheSize   = other.responseMetadataCacheSize;
         this.dnsResolver                 = other.dnsResolver;
+        this.useExpectContinue           = other.useExpectContinue;
         this.apacheHttpClientConfig =
             new ApacheHttpClientConfig(other.apacheHttpClientConfig);
     }
@@ -859,7 +879,7 @@ public class ClientConfiguration {
      * to complete before giving up and timing out. A non-positive value
      * means infinity.
      * Returns the updated ClientConfiguration object so that additional method calls
-     * may be chained together. 
+     * may be chained together.
      * <p>
      * <b>Note:</b> This feature is not compatible with Java 1.6.
      * </p>
@@ -874,7 +894,7 @@ public class ClientConfiguration {
         setRequestTimeout(requestTimeout);
         return this;
     }
-    
+
     /**
      * Checks if the {@link IdleConnectionReaper} is to be started
      *
@@ -1431,6 +1451,39 @@ public class ClientConfiguration {
      */
     public ClientConfiguration withSecureRandom(SecureRandom secureRandom) {
         setSecureRandom(secureRandom);
+        return this;
+    }
+
+    /**
+     * Returns the use expect continue flag
+     */
+    public boolean isUseExpectContinue() {
+        return useExpectContinue;
+    }
+
+    /**
+     * Sets if use expect continue should be enabled. By default, it is set to
+     * {@value #DEFAULT_USE_EXPECT_CONTINUE}.
+     *
+     * @param useExpectContinue
+     *            use expect continue HTTP/1.1 header.
+     */
+    public void setUseExpectContinue(boolean useExpectContinue) {
+        this.useExpectContinue = useExpectContinue;
+    }
+
+    /**
+     * Sets if use expect continue should be enabled. By default, it is set to
+     * {@value #DEFAULT_USE_EXPECT_CONTINUE}.
+     *
+     * @param useExpectContinue
+     *            use expect continue HTTP/1.1 header.
+     *
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withUseExpectContinue(boolean useExpectContinue) {
+        setUseExpectContinue(useExpectContinue);
+
         return this;
     }
 }

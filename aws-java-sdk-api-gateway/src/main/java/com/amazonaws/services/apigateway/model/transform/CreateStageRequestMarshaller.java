@@ -98,6 +98,23 @@ public class CreateStageRequestMarshaller implements
                         createStageRequest.getCacheClusterSize());
             }
 
+            java.util.Map<String, String> variablesMap = createStageRequest
+                    .getVariables();
+            if (variablesMap != null) {
+                jsonWriter.key("variables");
+                jsonWriter.object();
+
+                for (Map.Entry<String, String> variablesMapValue : variablesMap
+                        .entrySet()) {
+                    if (variablesMapValue.getValue() != null) {
+                        jsonWriter.key(variablesMapValue.getKey());
+
+                        jsonWriter.value(variablesMapValue.getValue());
+                    }
+                }
+                jsonWriter.endObject();
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

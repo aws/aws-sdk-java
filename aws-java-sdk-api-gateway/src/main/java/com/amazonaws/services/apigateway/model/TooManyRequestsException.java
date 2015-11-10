@@ -23,6 +23,7 @@ import com.amazonaws.AmazonServiceException;
 public class TooManyRequestsException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("retryAfterSeconds")
     private String retryAfterSeconds;
 
     /**

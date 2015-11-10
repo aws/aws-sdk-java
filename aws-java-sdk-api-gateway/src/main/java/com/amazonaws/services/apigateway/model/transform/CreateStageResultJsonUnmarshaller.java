@@ -97,6 +97,14 @@ public class CreateStageResultJsonUnmarshaller implements
                                     MethodSettingJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }
+                if (context.testExpression("variables", targetDepth)) {
+                    context.nextToken();
+                    createStageResult
+                            .setVariables(new MapUnmarshaller<String, String>(
+                                    StringJsonUnmarshaller.getInstance(),
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
+                }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
                     createStageResult.setCreatedDate(DateJsonUnmarshaller

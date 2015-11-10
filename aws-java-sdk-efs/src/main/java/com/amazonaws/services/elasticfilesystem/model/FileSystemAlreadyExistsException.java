@@ -26,8 +26,10 @@ import com.amazonaws.AmazonServiceException;
 public class FileSystemAlreadyExistsException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     private String errorCode;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("FileSystemId")
     private String fileSystemId;
 
     /**

@@ -23,6 +23,7 @@ import com.amazonaws.AmazonServiceException;
 public class InvalidSequenceTokenException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("expectedSequenceToken")
     private String expectedSequenceToken;
 
     /**

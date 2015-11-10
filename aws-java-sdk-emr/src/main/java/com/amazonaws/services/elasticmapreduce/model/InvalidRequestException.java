@@ -30,6 +30,7 @@ public class InvalidRequestException extends AmazonServiceException {
      * The error code associated with the exception.
      * </p>
      */
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     private String errorCode;
 
     /**

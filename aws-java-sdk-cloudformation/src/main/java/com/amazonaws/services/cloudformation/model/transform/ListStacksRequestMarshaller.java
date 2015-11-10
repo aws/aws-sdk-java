@@ -61,7 +61,7 @@ public class ListStacksRequestMarshaller implements
 
             for (String stackStatusFiltersListValue : stackStatusFiltersList) {
                 if (stackStatusFiltersListValue != null) {
-                    request.addParameter("stackStatusFilters.member."
+                    request.addParameter("StackStatusFilter.member."
                             + stackStatusFiltersListIndex,
                             StringUtils.fromString(stackStatusFiltersListValue));
                 }

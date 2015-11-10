@@ -21,7 +21,9 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
+import com.amazonaws.handlers.HandlerContextKey;
 import org.apache.http.annotation.NotThreadSafe;
 
 import com.amazonaws.event.ProgressInputStream;
@@ -76,6 +78,13 @@ public class DefaultRequest<T> implements Request<T> {
 
     /** All AWS Request metrics are collected into this object. */
     private AWSRequestMetrics metrics;
+
+    /**
+     * Context associated with a request. Mainly used to transfer
+     * information between different {@link com.amazonaws.handlers.RequestHandler2}
+     */
+    private final Map<HandlerContextKey<?>, Object> handlerContext = new
+            HashMap<HandlerContextKey<?>, Object>();
 
     /**
      * Constructs a new DefaultRequest with the specified service name and the
@@ -305,6 +314,16 @@ public class DefaultRequest<T> implements Request<T> {
         } else {
             throw new IllegalStateException("AWSRequestMetrics has already been set on this request");
         }
+    }
+
+    @Override
+    public <X> void addHandlerContext(HandlerContextKey<X> key, X value) {
+        handlerContext.put(key, value);
+    }
+
+    @Override
+    public <X> X getHandlerContext(HandlerContextKey<X> key) {
+        return (X) handlerContext.get(key);
     }
 
     @SuppressWarnings("resource")
