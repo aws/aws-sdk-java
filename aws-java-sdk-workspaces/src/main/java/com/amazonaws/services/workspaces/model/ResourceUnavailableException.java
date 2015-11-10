@@ -30,6 +30,7 @@ public class ResourceUnavailableException extends AmazonServiceException {
      * The identifier of the resource that is not available.
      * </p>
      */
+    @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
     private String resourceId;
 
     /**

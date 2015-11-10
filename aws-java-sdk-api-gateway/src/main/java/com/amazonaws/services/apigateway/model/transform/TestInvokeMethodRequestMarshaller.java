@@ -115,6 +115,23 @@ public class TestInvokeMethodRequestMarshaller implements
                         testInvokeMethodRequest.getClientCertificateId());
             }
 
+            java.util.Map<String, String> stageVariablesMap = testInvokeMethodRequest
+                    .getStageVariables();
+            if (stageVariablesMap != null) {
+                jsonWriter.key("stageVariables");
+                jsonWriter.object();
+
+                for (Map.Entry<String, String> stageVariablesMapValue : stageVariablesMap
+                        .entrySet()) {
+                    if (stageVariablesMapValue.getValue() != null) {
+                        jsonWriter.key(stageVariablesMapValue.getKey());
+
+                        jsonWriter.value(stageVariablesMapValue.getValue());
+                    }
+                }
+                jsonWriter.endObject();
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

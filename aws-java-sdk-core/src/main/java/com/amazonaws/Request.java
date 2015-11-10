@@ -18,6 +18,7 @@ import java.net.URI;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.util.AWSRequestMetrics;
 
@@ -26,8 +27,9 @@ import com.amazonaws.util.AWSRequestMetrics;
  * parameters being sent as part of the request, the endpoint to which the
  * request should be sent, etc.
  * <p>
- * This class is only intended for internal use inside the AWS client libraries.
- * Callers shouldn't ever interact directly with objects of this class.
+ * This class is only intended for use inside the AWS client libraries and
+ * request handlers. Users of the AWS SDK for Java should not implement this
+ * interface.
  *
  * @param <T>
  *            The type of original, user facing request represented by this
@@ -133,4 +135,23 @@ public interface Request<T> extends SignableRequest<T> {
      * @throws IllegalStateException if the binding has already occurred
      */
     public void setAWSRequestMetrics(AWSRequestMetrics metrics);
+
+    /**
+     * Adds a context to the request object that is visible
+     * to all {@link com.amazonaws.handlers.RequestHandler2} .
+     *
+     * Note that, context added here will available only for the scope of
+     * the request execution and will not be marshalled over the wire.
+     * @param key the key for the property being set in the request.
+     * @param value the value for the property being set in the request.
+     */
+    <X> void addHandlerContext(HandlerContextKey<X> key, X value);
+
+    /**
+     * Return the context for the given key if present; else return null.
+     *
+     * @param key the key for the context
+     * @return the context if present else null.
+     */
+    <X> X getHandlerContext(HandlerContextKey<X> key);
 }

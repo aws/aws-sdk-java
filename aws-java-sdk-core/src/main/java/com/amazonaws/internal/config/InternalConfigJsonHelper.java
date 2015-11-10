@@ -15,19 +15,18 @@
 package com.amazonaws.internal.config;
 
 /**
- * An internal class used to help build {@link InternalConfig} after this
- * class per se has been unmarshalled from JSON. This class allows us to make
- * use of Jackson without the need to write any special parser or json
- * marshaller/unmarshaller.
+ * An internal class used to help build {@link InternalConfig} after this class per se has been
+ * unmarshalled from JSON. This class allows us to make use of Jackson without the need to write any
+ * special parser or json marshaller/unmarshaller.
  */
-class InternalConfigJsonHelper {
+public class InternalConfigJsonHelper {
 
     private SignerConfigJsonHelper defaultSigner;
 
     // Implementation note:
     // Internally use list instead of Map for ease of implementation to
     // leverage on Jackson which supports recursive list of arbitrary pojos
-    // without the use of custom [un]marshallers.  This is not the case for
+    // without the use of custom [un]marshallers. This is not the case for
     // Map, which Jackson only supports the use of strings
     // without custom [un]marshaller.
     private JsonIndex<SignerConfigJsonHelper, SignerConfig>[] serviceSigners;
@@ -39,11 +38,11 @@ class InternalConfigJsonHelper {
 
     private String userAgentTemplate;
 
-    SignerConfigJsonHelper getDefaultSigner() {
+    public SignerConfigJsonHelper getDefaultSigner() {
         return defaultSigner;
     }
 
-    void setDefaultSigner(SignerConfigJsonHelper defaultSigner) {
+    public void setDefaultSigner(SignerConfigJsonHelper defaultSigner) {
         this.defaultSigner = defaultSigner;
     }
 
@@ -51,7 +50,7 @@ class InternalConfigJsonHelper {
         return serviceSigners;
     }
 
-    void setServiceSigners(JsonIndex<SignerConfigJsonHelper, SignerConfig> ... serviceSigners) {
+    public void setServiceSigners(JsonIndex<SignerConfigJsonHelper, SignerConfig>... serviceSigners) {
         this.serviceSigners = serviceSigners;
     }
 
@@ -59,7 +58,7 @@ class InternalConfigJsonHelper {
         return regionSigners;
     }
 
-    void setRegionSigners(JsonIndex<SignerConfigJsonHelper, SignerConfig> ... regionSigners) {
+    public void setRegionSigners(JsonIndex<SignerConfigJsonHelper, SignerConfig>... regionSigners) {
         this.regionSigners = regionSigners;
     }
 
@@ -67,7 +66,7 @@ class InternalConfigJsonHelper {
         return serviceRegionSigners;
     }
 
-    void setServiceRegionSigners(JsonIndex<SignerConfigJsonHelper, SignerConfig> ... serviceRegionSigners) {
+    public void setServiceRegionSigners(JsonIndex<SignerConfigJsonHelper, SignerConfig>... serviceRegionSigners) {
         this.serviceRegionSigners = serviceRegionSigners;
     }
 
@@ -75,7 +74,7 @@ class InternalConfigJsonHelper {
         return httpClients;
     }
 
-    public void setHttpClients(JsonIndex<HttpClientConfigJsonHelper, HttpClientConfig> ... httpClients) {
+    public void setHttpClients(JsonIndex<HttpClientConfigJsonHelper, HttpClientConfig>... httpClients) {
         this.httpClients = httpClients;
     }
 
@@ -83,8 +82,7 @@ class InternalConfigJsonHelper {
         return hostRegexToRegionMappings;
     }
 
-    public void setHostRegexToRegionMappings(
-            HostRegexToRegionMappingJsonHelper[] hostRegexToRegionMappings) {
+    public void setHostRegexToRegionMappings(HostRegexToRegionMappingJsonHelper[] hostRegexToRegionMappings) {
         this.hostRegexToRegionMappings = hostRegexToRegionMappings;
     }
 
@@ -92,7 +90,7 @@ class InternalConfigJsonHelper {
         return userAgentTemplate;
     }
 
-    void setUserAgentTemplate(String userAgentTemplate) {
+    public void setUserAgentTemplate(String userAgentTemplate) {
         this.userAgentTemplate = userAgentTemplate;
     }
 }

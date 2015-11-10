@@ -67,6 +67,14 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String cacheClusterSize;
+    /**
+     * <p>
+     * A map that defines the stage variables for the <a>Stage</a> resource that
+     * is associated with the new deployment. Variable names can have alphabetic
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     * </p>
+     */
+    private java.util.Map<String, String> variables;
 
     /**
      * <p>
@@ -341,6 +349,80 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A map that defines the stage variables for the <a>Stage</a> resource that
+     * is associated with the new deployment. Variable names can have alphabetic
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     * </p>
+     * 
+     * @return A map that defines the stage variables for the <a>Stage</a>
+     *         resource that is associated with the new deployment. Variable
+     *         names can have alphabetic characters, and the values must match
+     *         [A-Za-z0-9-._~:/?#&amp;=,]+
+     */
+    public java.util.Map<String, String> getVariables() {
+        return variables;
+    }
+
+    /**
+     * <p>
+     * A map that defines the stage variables for the <a>Stage</a> resource that
+     * is associated with the new deployment. Variable names can have alphabetic
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     * </p>
+     * 
+     * @param variables
+     *        A map that defines the stage variables for the <a>Stage</a>
+     *        resource that is associated with the new deployment. Variable
+     *        names can have alphabetic characters, and the values must match
+     *        [A-Za-z0-9-._~:/?#&amp;=,]+
+     */
+    public void setVariables(java.util.Map<String, String> variables) {
+        this.variables = variables;
+    }
+
+    /**
+     * <p>
+     * A map that defines the stage variables for the <a>Stage</a> resource that
+     * is associated with the new deployment. Variable names can have alphabetic
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     * </p>
+     * 
+     * @param variables
+     *        A map that defines the stage variables for the <a>Stage</a>
+     *        resource that is associated with the new deployment. Variable
+     *        names can have alphabetic characters, and the values must match
+     *        [A-Za-z0-9-._~:/?#&amp;=,]+
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateDeploymentRequest withVariables(
+            java.util.Map<String, String> variables) {
+        setVariables(variables);
+        return this;
+    }
+
+    public CreateDeploymentRequest addVariablesEntry(String key, String value) {
+        if (null == this.variables) {
+            this.variables = new java.util.HashMap<String, String>();
+        }
+        if (this.variables.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.variables.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Variables. &lt;p> Returns a reference
+     * to this object so that method calls can be chained together.
+     */
+    public CreateDeploymentRequest clearVariablesEntries() {
+        this.variables = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -363,7 +445,9 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
         if (getCacheClusterEnabled() != null)
             sb.append("CacheClusterEnabled: " + getCacheClusterEnabled() + ",");
         if (getCacheClusterSize() != null)
-            sb.append("CacheClusterSize: " + getCacheClusterSize());
+            sb.append("CacheClusterSize: " + getCacheClusterSize() + ",");
+        if (getVariables() != null)
+            sb.append("Variables: " + getVariables());
         sb.append("}");
         return sb.toString();
     }
@@ -414,6 +498,11 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
                 && other.getCacheClusterSize().equals(
                         this.getCacheClusterSize()) == false)
             return false;
+        if (other.getVariables() == null ^ this.getVariables() == null)
+            return false;
+        if (other.getVariables() != null
+                && other.getVariables().equals(this.getVariables()) == false)
+            return false;
         return true;
     }
 
@@ -441,6 +530,8 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getCacheClusterSize() == null) ? 0 : getCacheClusterSize()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getVariables() == null) ? 0 : getVariables().hashCode());
         return hashCode;
     }
 

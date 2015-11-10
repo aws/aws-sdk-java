@@ -57,7 +57,6 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "activatePipeline",
       "asyncDocumentationWithHandler" : "/**<p>Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.</p> <p>If you need to pause the pipeline to investigate an issue with a component, such as a data source or script, call <a>DeactivatePipeline</a>.</p> <p>To activate a finished pipeline, modify the end date for the pipeline and then activate it.</p>\n@param activatePipelineRequest Contains the parameters for ActivatePipeline.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ActivatePipeline operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.</p> <p>If you need to pause the pipeline to investigate an issue with a component, such as a data source or script, call <a>DeactivatePipeline</a>.</p> <p>To activate a finished pipeline, modify the end date for the pipeline and then activate it.</p>\n@param activatePipelineRequest Contains the parameters for ActivatePipeline.\n@return Result of the ActivatePipeline operation returned by the service.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.*/",
       "asyncDocumentation" : "/**<p>Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.</p> <p>If you need to pause the pipeline to investigate an issue with a component, such as a data source or script, call <a>DeactivatePipeline</a>.</p> <p>To activate a finished pipeline, modify the end date for the pipeline and then activate it.</p>\n@param activatePipelineRequest Contains the parameters for ActivatePipeline.\n@return A Java Future containing the result of the ActivatePipeline operation returned by the service.*/",
@@ -65,7 +64,8 @@
       "asyncReturnType" : "ActivatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<ActivatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ActivatePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ActivatePipelineRequest, ActivatePipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ActivatePipelineRequest, ActivatePipelineResult>",
+      "methodName" : "activatePipeline"
     },
     "AddTags" : {
       "documentation" : "<p>Adds or modifies tags for the specified pipeline.</p>",
@@ -98,7 +98,6 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "addTags",
       "asyncDocumentationWithHandler" : "/**<p>Adds or modifies tags for the specified pipeline.</p>\n@param addTagsRequest Contains the parameters for AddTags.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the AddTags operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Adds or modifies tags for the specified pipeline.</p>\n@param addTagsRequest Contains the parameters for AddTags.\n@return Result of the AddTags operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.*/",
       "asyncDocumentation" : "/**<p>Adds or modifies tags for the specified pipeline.</p>\n@param addTagsRequest Contains the parameters for AddTags.\n@return A Java Future containing the result of the AddTags operation returned by the service.*/",
@@ -106,7 +105,8 @@
       "asyncReturnType" : "AddTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>",
+      "methodName" : "addTags"
     },
     "CreatePipeline" : {
       "documentation" : "<p>Creates a new, empty pipeline. Use <a>PutPipelineDefinition</a> to populate the pipeline.</p>",
@@ -133,7 +133,6 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createPipeline",
       "asyncDocumentationWithHandler" : "/**<p>Creates a new, empty pipeline. Use <a>PutPipelineDefinition</a> to populate the pipeline.</p>\n@param createPipelineRequest Contains the parameters for CreatePipeline.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreatePipeline operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Creates a new, empty pipeline. Use <a>PutPipelineDefinition</a> to populate the pipeline.</p>\n@param createPipelineRequest Contains the parameters for CreatePipeline.\n@return Result of the CreatePipeline operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.*/",
       "asyncDocumentation" : "/**<p>Creates a new, empty pipeline. Use <a>PutPipelineDefinition</a> to populate the pipeline.</p>\n@param createPipelineRequest Contains the parameters for CreatePipeline.\n@return A Java Future containing the result of the CreatePipeline operation returned by the service.*/",
@@ -141,7 +140,8 @@
       "asyncReturnType" : "CreatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>",
+      "methodName" : "createPipeline"
     },
     "DeactivatePipeline" : {
       "documentation" : "<p>Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code> state until the deactivation process completes.</p> <p>To resume a deactivated pipeline, use <a>ActivatePipeline</a>. By default, the pipeline resumes from the last completed execution. Optionally, you can specify the date and time to resume the pipeline.</p>",
@@ -174,7 +174,6 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deactivatePipeline",
       "asyncDocumentationWithHandler" : "/**<p>Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code> state until the deactivation process completes.</p> <p>To resume a deactivated pipeline, use <a>ActivatePipeline</a>. By default, the pipeline resumes from the last completed execution. Optionally, you can specify the date and time to resume the pipeline.</p>\n@param deactivatePipelineRequest Contains the parameters for DeactivatePipeline.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeactivatePipeline operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code> state until the deactivation process completes.</p> <p>To resume a deactivated pipeline, use <a>ActivatePipeline</a>. By default, the pipeline resumes from the last completed execution. Optionally, you can specify the date and time to resume the pipeline.</p>\n@param deactivatePipelineRequest Contains the parameters for DeactivatePipeline.\n@return Result of the DeactivatePipeline operation returned by the service.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.*/",
       "asyncDocumentation" : "/**<p>Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code> state until the deactivation process completes.</p> <p>To resume a deactivated pipeline, use <a>ActivatePipeline</a>. By default, the pipeline resumes from the last completed execution. Optionally, you can specify the date and time to resume the pipeline.</p>\n@param deactivatePipelineRequest Contains the parameters for DeactivatePipeline.\n@return A Java Future containing the result of the DeactivatePipeline operation returned by the service.*/",
@@ -182,7 +181,8 @@
       "asyncReturnType" : "DeactivatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeactivatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeactivatePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeactivatePipelineRequest, DeactivatePipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeactivatePipelineRequest, DeactivatePipelineResult>",
+      "methodName" : "deactivatePipeline"
     },
     "DeletePipeline" : {
       "documentation" : "<p>Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline attempts to cancel instances associated with the pipeline that are currently being processed by task runners.</p> <p>Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline. To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with the status set to <code>PAUSE</code> on individual components. Components that are paused by <a>SetStatus</a> can be resumed.</p>",
@@ -209,7 +209,6 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deletePipeline",
       "asyncDocumentationWithHandler" : "/**<p>Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline attempts to cancel instances associated with the pipeline that are currently being processed by task runners.</p> <p>Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline. To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with the status set to <code>PAUSE</code> on individual components. Components that are paused by <a>SetStatus</a> can be resumed.</p>\n@param deletePipelineRequest Contains the parameters for DeletePipeline.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p>Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline attempts to cancel instances associated with the pipeline that are currently being processed by task runners.</p> <p>Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline. To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with the status set to <code>PAUSE</code> on individual components. Components that are paused by <a>SetStatus</a> can be resumed.</p>\n@param deletePipelineRequest Contains the parameters for DeletePipeline.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.*/",
       "asyncDocumentation" : "/**<p>Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline attempts to cancel instances associated with the pipeline that are currently being processed by task runners.</p> <p>Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline. To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with the status set to <code>PAUSE</code> on individual components. Components that are paused by <a>SetStatus</a> can be resumed.</p>\n@param deletePipelineRequest Contains the parameters for DeletePipeline.*/",
@@ -217,7 +216,8 @@
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void>",
+      "methodName" : "deletePipeline"
     },
     "DescribeObjects" : {
       "documentation" : "<p>Gets the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields that define the properties of the object.</p>",
@@ -250,7 +250,6 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeObjects",
       "asyncDocumentationWithHandler" : "/**<p>Gets the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields that define the properties of the object.</p>\n@param describeObjectsRequest Contains the parameters for DescribeObjects.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeObjects operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Gets the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields that define the properties of the object.</p>\n@param describeObjectsRequest Contains the parameters for DescribeObjects.\n@return Result of the DescribeObjects operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.*/",
       "asyncDocumentation" : "/**<p>Gets the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields that define the properties of the object.</p>\n@param describeObjectsRequest Contains the parameters for DescribeObjects.\n@return A Java Future containing the result of the DescribeObjects operation returned by the service.*/",
@@ -258,7 +257,8 @@
       "asyncReturnType" : "DescribeObjectsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeObjectsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeObjectsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeObjectsRequest, DescribeObjectsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeObjectsRequest, DescribeObjectsResult>",
+      "methodName" : "describeObjects"
     },
     "DescribePipelines" : {
       "documentation" : "<p>Retrieves metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier, its current state, and the user account that owns the pipeline. Using account credentials, you can retrieve metadata about pipelines that you or your IAM users have created. If you are using an IAM user account, you can retrieve metadata about only those pipelines for which you have read permissions.</p> <p>To retrieve the full pipeline definition instead of metadata about the pipeline, call <a>GetPipelineDefinition</a>.</p>",
@@ -291,7 +291,6 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describePipelines",
       "asyncDocumentationWithHandler" : "/**<p>Retrieves metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier, its current state, and the user account that owns the pipeline. Using account credentials, you can retrieve metadata about pipelines that you or your IAM users have created. If you are using an IAM user account, you can retrieve metadata about only those pipelines for which you have read permissions.</p> <p>To retrieve the full pipeline definition instead of metadata about the pipeline, call <a>GetPipelineDefinition</a>.</p>\n@param describePipelinesRequest Contains the parameters for DescribePipelines.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribePipelines operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Retrieves metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier, its current state, and the user account that owns the pipeline. Using account credentials, you can retrieve metadata about pipelines that you or your IAM users have created. If you are using an IAM user account, you can retrieve metadata about only those pipelines for which you have read permissions.</p> <p>To retrieve the full pipeline definition instead of metadata about the pipeline, call <a>GetPipelineDefinition</a>.</p>\n@param describePipelinesRequest Contains the parameters for DescribePipelines.\n@return Result of the DescribePipelines operation returned by the service.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.*/",
       "asyncDocumentation" : "/**<p>Retrieves metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier, its current state, and the user account that owns the pipeline. Using account credentials, you can retrieve metadata about pipelines that you or your IAM users have created. If you are using an IAM user account, you can retrieve metadata about only those pipelines for which you have read permissions.</p> <p>To retrieve the full pipeline definition instead of metadata about the pipeline, call <a>GetPipelineDefinition</a>.</p>\n@param describePipelinesRequest Contains the parameters for DescribePipelines.\n@return A Java Future containing the result of the DescribePipelines operation returned by the service.*/",
@@ -299,7 +298,8 @@
       "asyncReturnType" : "DescribePipelinesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribePipelinesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribePipelinesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribePipelinesRequest, DescribePipelinesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribePipelinesRequest, DescribePipelinesResult>",
+      "methodName" : "describePipelines"
     },
     "EvaluateExpression" : {
       "documentation" : "<p>Task runners call <code>EvaluateExpression</code> to evaluate a string in the context of the specified object. For example, a task runner can evaluate SQL queries stored in Amazon S3.</p>",
@@ -335,7 +335,6 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "evaluateExpression",
       "asyncDocumentationWithHandler" : "/**<p>Task runners call <code>EvaluateExpression</code> to evaluate a string in the context of the specified object. For example, a task runner can evaluate SQL queries stored in Amazon S3.</p>\n@param evaluateExpressionRequest Contains the parameters for EvaluateExpression.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the EvaluateExpression operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Task runners call <code>EvaluateExpression</code> to evaluate a string in the context of the specified object. For example, a task runner can evaluate SQL queries stored in Amazon S3.</p>\n@param evaluateExpressionRequest Contains the parameters for EvaluateExpression.\n@return Result of the EvaluateExpression operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws TaskNotFoundException The specified task was not found.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.*/",
       "asyncDocumentation" : "/**<p>Task runners call <code>EvaluateExpression</code> to evaluate a string in the context of the specified object. For example, a task runner can evaluate SQL queries stored in Amazon S3.</p>\n@param evaluateExpressionRequest Contains the parameters for EvaluateExpression.\n@return A Java Future containing the result of the EvaluateExpression operation returned by the service.*/",
@@ -343,7 +342,8 @@
       "asyncReturnType" : "EvaluateExpressionResult",
       "asyncFutureType" : "java.util.concurrent.Future<EvaluateExpressionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EvaluateExpressionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EvaluateExpressionRequest, EvaluateExpressionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EvaluateExpressionRequest, EvaluateExpressionResult>",
+      "methodName" : "evaluateExpression"
     },
     "GetPipelineDefinition" : {
       "documentation" : "<p>Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code> to retrieve the pipeline definition that you provided using <a>PutPipelineDefinition</a>.</p>",
@@ -376,7 +376,6 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getPipelineDefinition",
       "asyncDocumentationWithHandler" : "/**<p>Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code> to retrieve the pipeline definition that you provided using <a>PutPipelineDefinition</a>.</p>\n@param getPipelineDefinitionRequest Contains the parameters for GetPipelineDefinition.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetPipelineDefinition operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code> to retrieve the pipeline definition that you provided using <a>PutPipelineDefinition</a>.</p>\n@param getPipelineDefinitionRequest Contains the parameters for GetPipelineDefinition.\n@return Result of the GetPipelineDefinition operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.*/",
       "asyncDocumentation" : "/**<p>Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code> to retrieve the pipeline definition that you provided using <a>PutPipelineDefinition</a>.</p>\n@param getPipelineDefinitionRequest Contains the parameters for GetPipelineDefinition.\n@return A Java Future containing the result of the GetPipelineDefinition operation returned by the service.*/",
@@ -384,7 +383,8 @@
       "asyncReturnType" : "GetPipelineDefinitionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetPipelineDefinitionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetPipelineDefinitionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPipelineDefinitionRequest, GetPipelineDefinitionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPipelineDefinitionRequest, GetPipelineDefinitionResult>",
+      "methodName" : "getPipelineDefinition"
     },
     "ListPipelines" : {
       "documentation" : "<p>Lists the pipeline identifiers for all active pipelines that you have permission to access.</p>",
@@ -411,7 +411,6 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listPipelines",
       "asyncDocumentationWithHandler" : "/**<p>Lists the pipeline identifiers for all active pipelines that you have permission to access.</p>\n@param listPipelinesRequest Contains the parameters for ListPipelines.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListPipelines operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Lists the pipeline identifiers for all active pipelines that you have permission to access.</p>\n@param listPipelinesRequest Contains the parameters for ListPipelines.\n@return Result of the ListPipelines operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.*/",
       "asyncDocumentation" : "/**<p>Lists the pipeline identifiers for all active pipelines that you have permission to access.</p>\n@param listPipelinesRequest Contains the parameters for ListPipelines.\n@return A Java Future containing the result of the ListPipelines operation returned by the service.*/",
@@ -419,7 +418,8 @@
       "asyncReturnType" : "ListPipelinesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPipelinesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPipelinesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>",
+      "methodName" : "listPipelines"
     },
     "PollForTask" : {
       "documentation" : "<p>Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can perform by setting a value for the <code>workerGroup</code> parameter. The task returned can come from any of the pipelines that match the <code>workerGroup</code> value passed in by the task runner and that was launched using the IAM user credentials specified by the task runner.</p> <p>If tasks are ready in the work queue, <code>PollForTask</code> returns a response immediately. If no tasks are available in the queue, <code>PollForTask</code> uses long-polling and holds on to a poll connection for up to a 90 seconds, during which time the first newly scheduled task is handed to the task runner. To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner should not call <code>PollForTask</code> again on the same <code>workerGroup</code> until it receives a response, and this can take up to 90 seconds. </p>",
@@ -449,7 +449,6 @@
         "documentation" : "<p>The specified task was not found. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "pollForTask",
       "asyncDocumentationWithHandler" : "/**<p>Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can perform by setting a value for the <code>workerGroup</code> parameter. The task returned can come from any of the pipelines that match the <code>workerGroup</code> value passed in by the task runner and that was launched using the IAM user credentials specified by the task runner.</p> <p>If tasks are ready in the work queue, <code>PollForTask</code> returns a response immediately. If no tasks are available in the queue, <code>PollForTask</code> uses long-polling and holds on to a poll connection for up to a 90 seconds, during which time the first newly scheduled task is handed to the task runner. To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner should not call <code>PollForTask</code> again on the same <code>workerGroup</code> until it receives a response, and this can take up to 90 seconds. </p>\n@param pollForTaskRequest Contains the parameters for PollForTask.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the PollForTask operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can perform by setting a value for the <code>workerGroup</code> parameter. The task returned can come from any of the pipelines that match the <code>workerGroup</code> value passed in by the task runner and that was launched using the IAM user credentials specified by the task runner.</p> <p>If tasks are ready in the work queue, <code>PollForTask</code> returns a response immediately. If no tasks are available in the queue, <code>PollForTask</code> uses long-polling and holds on to a poll connection for up to a 90 seconds, during which time the first newly scheduled task is handed to the task runner. To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner should not call <code>PollForTask</code> again on the same <code>workerGroup</code> until it receives a response, and this can take up to 90 seconds. </p>\n@param pollForTaskRequest Contains the parameters for PollForTask.\n@return Result of the PollForTask operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.\n@throws TaskNotFoundException The specified task was not found.*/",
       "asyncDocumentation" : "/**<p>Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can perform by setting a value for the <code>workerGroup</code> parameter. The task returned can come from any of the pipelines that match the <code>workerGroup</code> value passed in by the task runner and that was launched using the IAM user credentials specified by the task runner.</p> <p>If tasks are ready in the work queue, <code>PollForTask</code> returns a response immediately. If no tasks are available in the queue, <code>PollForTask</code> uses long-polling and holds on to a poll connection for up to a 90 seconds, during which time the first newly scheduled task is handed to the task runner. To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner should not call <code>PollForTask</code> again on the same <code>workerGroup</code> until it receives a response, and this can take up to 90 seconds. </p>\n@param pollForTaskRequest Contains the parameters for PollForTask.\n@return A Java Future containing the result of the PollForTask operation returned by the service.*/",
@@ -457,7 +456,8 @@
       "asyncReturnType" : "PollForTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<PollForTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PollForTaskResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PollForTaskRequest, PollForTaskResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PollForTaskRequest, PollForTaskResult>",
+      "methodName" : "pollForTask"
     },
     "PutPipelineDefinition" : {
       "documentation" : "<p>Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code> to populate a new pipeline.</p> <p> <code>PutPipelineDefinition</code> also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following three validation errors exists in the pipeline. </p> <ol> <li>An object is missing a name or identifier field.</li> <li>A string or reference field is empty.</li> <li>The number of objects in the pipeline exceeds the maximum allowed objects.</li> <li>The pipeline is in a FINISHED state.</li> </ol> <p> Pipeline object definitions are passed to the <code>PutPipelineDefinition</code> action and returned by the <a>GetPipelineDefinition</a> action. </p>",
@@ -490,7 +490,6 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "putPipelineDefinition",
       "asyncDocumentationWithHandler" : "/**<p>Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code> to populate a new pipeline.</p> <p> <code>PutPipelineDefinition</code> also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following three validation errors exists in the pipeline. </p> <ol> <li>An object is missing a name or identifier field.</li> <li>A string or reference field is empty.</li> <li>The number of objects in the pipeline exceeds the maximum allowed objects.</li> <li>The pipeline is in a FINISHED state.</li> </ol> <p> Pipeline object definitions are passed to the <code>PutPipelineDefinition</code> action and returned by the <a>GetPipelineDefinition</a> action. </p>\n@param putPipelineDefinitionRequest Contains the parameters for PutPipelineDefinition.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the PutPipelineDefinition operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code> to populate a new pipeline.</p> <p> <code>PutPipelineDefinition</code> also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following three validation errors exists in the pipeline. </p> <ol> <li>An object is missing a name or identifier field.</li> <li>A string or reference field is empty.</li> <li>The number of objects in the pipeline exceeds the maximum allowed objects.</li> <li>The pipeline is in a FINISHED state.</li> </ol> <p> Pipeline object definitions are passed to the <code>PutPipelineDefinition</code> action and returned by the <a>GetPipelineDefinition</a> action. </p>\n@param putPipelineDefinitionRequest Contains the parameters for PutPipelineDefinition.\n@return Result of the PutPipelineDefinition operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.*/",
       "asyncDocumentation" : "/**<p>Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code> to populate a new pipeline.</p> <p> <code>PutPipelineDefinition</code> also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following three validation errors exists in the pipeline. </p> <ol> <li>An object is missing a name or identifier field.</li> <li>A string or reference field is empty.</li> <li>The number of objects in the pipeline exceeds the maximum allowed objects.</li> <li>The pipeline is in a FINISHED state.</li> </ol> <p> Pipeline object definitions are passed to the <code>PutPipelineDefinition</code> action and returned by the <a>GetPipelineDefinition</a> action. </p>\n@param putPipelineDefinitionRequest Contains the parameters for PutPipelineDefinition.\n@return A Java Future containing the result of the PutPipelineDefinition operation returned by the service.*/",
@@ -498,7 +497,8 @@
       "asyncReturnType" : "PutPipelineDefinitionResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutPipelineDefinitionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutPipelineDefinitionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutPipelineDefinitionRequest, PutPipelineDefinitionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutPipelineDefinitionRequest, PutPipelineDefinitionResult>",
+      "methodName" : "putPipelineDefinition"
     },
     "QueryObjects" : {
       "documentation" : "<p>Queries the specified pipeline for the names of objects that match the specified set of conditions.</p>",
@@ -531,7 +531,6 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "queryObjects",
       "asyncDocumentationWithHandler" : "/**<p>Queries the specified pipeline for the names of objects that match the specified set of conditions.</p>\n@param queryObjectsRequest Contains the parameters for QueryObjects.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the QueryObjects operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Queries the specified pipeline for the names of objects that match the specified set of conditions.</p>\n@param queryObjectsRequest Contains the parameters for QueryObjects.\n@return Result of the QueryObjects operation returned by the service.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.*/",
       "asyncDocumentation" : "/**<p>Queries the specified pipeline for the names of objects that match the specified set of conditions.</p>\n@param queryObjectsRequest Contains the parameters for QueryObjects.\n@return A Java Future containing the result of the QueryObjects operation returned by the service.*/",
@@ -539,7 +538,8 @@
       "asyncReturnType" : "QueryObjectsResult",
       "asyncFutureType" : "java.util.concurrent.Future<QueryObjectsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<QueryObjectsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<QueryObjectsRequest, QueryObjectsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<QueryObjectsRequest, QueryObjectsResult>",
+      "methodName" : "queryObjects"
     },
     "RemoveTags" : {
       "documentation" : "<p>Removes existing tags from the specified pipeline.</p>",
@@ -572,7 +572,6 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "removeTags",
       "asyncDocumentationWithHandler" : "/**<p>Removes existing tags from the specified pipeline.</p>\n@param removeTagsRequest Contains the parameters for RemoveTags.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the RemoveTags operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Removes existing tags from the specified pipeline.</p>\n@param removeTagsRequest Contains the parameters for RemoveTags.\n@return Result of the RemoveTags operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.*/",
       "asyncDocumentation" : "/**<p>Removes existing tags from the specified pipeline.</p>\n@param removeTagsRequest Contains the parameters for RemoveTags.\n@return A Java Future containing the result of the RemoveTags operation returned by the service.*/",
@@ -580,7 +579,8 @@
       "asyncReturnType" : "RemoveTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>",
+      "methodName" : "removeTags"
     },
     "ReportTaskProgress" : {
       "documentation" : "<p>Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge that it has the task. If the web service does not receive this acknowledgement within 2 minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this initial acknowledgement, the task runner only needs to report progress every 15 minutes to maintain its ownership of the task. You can change this reporting time from 15 minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.</p> <p>If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes that the task runner is unable to process the task and reassigns the task in a subsequent response to <a>PollForTask</a>. Task runners should call <code>ReportTaskProgress</code> every 60 seconds.</p>",
@@ -616,7 +616,6 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "reportTaskProgress",
       "asyncDocumentationWithHandler" : "/**<p>Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge that it has the task. If the web service does not receive this acknowledgement within 2 minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this initial acknowledgement, the task runner only needs to report progress every 15 minutes to maintain its ownership of the task. You can change this reporting time from 15 minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.</p> <p>If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes that the task runner is unable to process the task and reassigns the task in a subsequent response to <a>PollForTask</a>. Task runners should call <code>ReportTaskProgress</code> every 60 seconds.</p>\n@param reportTaskProgressRequest Contains the parameters for ReportTaskProgress.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ReportTaskProgress operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge that it has the task. If the web service does not receive this acknowledgement within 2 minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this initial acknowledgement, the task runner only needs to report progress every 15 minutes to maintain its ownership of the task. You can change this reporting time from 15 minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.</p> <p>If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes that the task runner is unable to process the task and reassigns the task in a subsequent response to <a>PollForTask</a>. Task runners should call <code>ReportTaskProgress</code> every 60 seconds.</p>\n@param reportTaskProgressRequest Contains the parameters for ReportTaskProgress.\n@return Result of the ReportTaskProgress operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.\n@throws TaskNotFoundException The specified task was not found.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.*/",
       "asyncDocumentation" : "/**<p>Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge that it has the task. If the web service does not receive this acknowledgement within 2 minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this initial acknowledgement, the task runner only needs to report progress every 15 minutes to maintain its ownership of the task. You can change this reporting time from 15 minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.</p> <p>If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes that the task runner is unable to process the task and reassigns the task in a subsequent response to <a>PollForTask</a>. Task runners should call <code>ReportTaskProgress</code> every 60 seconds.</p>\n@param reportTaskProgressRequest Contains the parameters for ReportTaskProgress.\n@return A Java Future containing the result of the ReportTaskProgress operation returned by the service.*/",
@@ -624,7 +623,8 @@
       "asyncReturnType" : "ReportTaskProgressResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReportTaskProgressResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReportTaskProgressResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReportTaskProgressRequest, ReportTaskProgressResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReportTaskProgressRequest, ReportTaskProgressResult>",
+      "methodName" : "reportTaskProgress"
     },
     "ReportTaskRunnerHeartbeat" : {
       "documentation" : "<p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance.</p>",
@@ -651,7 +651,6 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "reportTaskRunnerHeartbeat",
       "asyncDocumentationWithHandler" : "/**<p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance.</p>\n@param reportTaskRunnerHeartbeatRequest Contains the parameters for ReportTaskRunnerHeartbeat.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ReportTaskRunnerHeartbeat operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance.</p>\n@param reportTaskRunnerHeartbeatRequest Contains the parameters for ReportTaskRunnerHeartbeat.\n@return Result of the ReportTaskRunnerHeartbeat operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.*/",
       "asyncDocumentation" : "/**<p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance.</p>\n@param reportTaskRunnerHeartbeatRequest Contains the parameters for ReportTaskRunnerHeartbeat.\n@return A Java Future containing the result of the ReportTaskRunnerHeartbeat operation returned by the service.*/",
@@ -659,7 +658,8 @@
       "asyncReturnType" : "ReportTaskRunnerHeartbeatResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReportTaskRunnerHeartbeatResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReportTaskRunnerHeartbeatResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReportTaskRunnerHeartbeatRequest, ReportTaskRunnerHeartbeatResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReportTaskRunnerHeartbeatRequest, ReportTaskRunnerHeartbeatResult>",
+      "methodName" : "reportTaskRunnerHeartbeat"
     },
     "SetStatus" : {
       "documentation" : "<p>Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline. This update might not occur immediately, but is eventually consistent. The status that can be set depends on the type of object (for example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code> pipelines and attempting to do so returns <code>InvalidRequestException</code>.</p>",
@@ -689,7 +689,6 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "setStatus",
       "asyncDocumentationWithHandler" : "/**<p>Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline. This update might not occur immediately, but is eventually consistent. The status that can be set depends on the type of object (for example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code> pipelines and attempting to do so returns <code>InvalidRequestException</code>.</p>\n@param setStatusRequest Contains the parameters for SetStatus.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p>Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline. This update might not occur immediately, but is eventually consistent. The status that can be set depends on the type of object (for example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code> pipelines and attempting to do so returns <code>InvalidRequestException</code>.</p>\n@param setStatusRequest Contains the parameters for SetStatus.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.*/",
       "asyncDocumentation" : "/**<p>Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline. This update might not occur immediately, but is eventually consistent. The status that can be set depends on the type of object (for example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code> pipelines and attempting to do so returns <code>InvalidRequestException</code>.</p>\n@param setStatusRequest Contains the parameters for SetStatus.*/",
@@ -697,7 +696,8 @@
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetStatusRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetStatusRequest, Void>",
+      "methodName" : "setStatus"
     },
     "SetTaskStatus" : {
       "documentation" : "<p>Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task is completed and provide information about the final status. A task runner makes this call regardless of whether the task was sucessful. A task runner does not need to call <code>SetTaskStatus</code> for tasks that are canceled by the web service during a call to <a>ReportTaskProgress</a>.</p>",
@@ -733,7 +733,6 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "setTaskStatus",
       "asyncDocumentationWithHandler" : "/**<p>Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task is completed and provide information about the final status. A task runner makes this call regardless of whether the task was sucessful. A task runner does not need to call <code>SetTaskStatus</code> for tasks that are canceled by the web service during a call to <a>ReportTaskProgress</a>.</p>\n@param setTaskStatusRequest Contains the parameters for SetTaskStatus.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the SetTaskStatus operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task is completed and provide information about the final status. A task runner makes this call regardless of whether the task was sucessful. A task runner does not need to call <code>SetTaskStatus</code> for tasks that are canceled by the web service during a call to <a>ReportTaskProgress</a>.</p>\n@param setTaskStatusRequest Contains the parameters for SetTaskStatus.\n@return Result of the SetTaskStatus operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws TaskNotFoundException The specified task was not found.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.*/",
       "asyncDocumentation" : "/**<p>Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task is completed and provide information about the final status. A task runner makes this call regardless of whether the task was sucessful. A task runner does not need to call <code>SetTaskStatus</code> for tasks that are canceled by the web service during a call to <a>ReportTaskProgress</a>.</p>\n@param setTaskStatusRequest Contains the parameters for SetTaskStatus.\n@return A Java Future containing the result of the SetTaskStatus operation returned by the service.*/",
@@ -741,7 +740,8 @@
       "asyncReturnType" : "SetTaskStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetTaskStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetTaskStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetTaskStatusRequest, SetTaskStatusResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetTaskStatusRequest, SetTaskStatusResult>",
+      "methodName" : "setTaskStatus"
     },
     "ValidatePipelineDefinition" : {
       "documentation" : "<p>Validates the specified pipeline definition to ensure that it is well formed and can be run without error.</p>",
@@ -774,7 +774,6 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "validatePipelineDefinition",
       "asyncDocumentationWithHandler" : "/**<p>Validates the specified pipeline definition to ensure that it is well formed and can be run without error.</p>\n@param validatePipelineDefinitionRequest Contains the parameters for ValidatePipelineDefinition.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ValidatePipelineDefinition operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Validates the specified pipeline definition to ensure that it is well formed and can be run without error.</p>\n@param validatePipelineDefinitionRequest Contains the parameters for ValidatePipelineDefinition.\n@return Result of the ValidatePipelineDefinition operation returned by the service.\n@throws InternalServiceErrorException An internal service error occurred.\n@throws InvalidRequestException The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.\n@throws PipelineNotFoundException The specified pipeline was not found. Verify that you used the correct user and account identifiers.\n@throws PipelineDeletedException The specified pipeline has been deleted.*/",
       "asyncDocumentation" : "/**<p>Validates the specified pipeline definition to ensure that it is well formed and can be run without error.</p>\n@param validatePipelineDefinitionRequest Contains the parameters for ValidatePipelineDefinition.\n@return A Java Future containing the result of the ValidatePipelineDefinition operation returned by the service.*/",
@@ -782,7 +781,8 @@
       "asyncReturnType" : "ValidatePipelineDefinitionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ValidatePipelineDefinitionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ValidatePipelineDefinitionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidatePipelineDefinitionRequest, ValidatePipelineDefinitionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidatePipelineDefinitionRequest, ValidatePipelineDefinitionResult>",
+      "methodName" : "validatePipelineDefinition"
     }
   },
   "shapes" : {
@@ -1084,8 +1084,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ParameterAttribute",
           "simple" : false,
+          "simpleType" : "ParameterAttribute",
           "map" : false,
           "templateType" : "java.util.List<ParameterAttribute>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterAttribute>"
@@ -1222,8 +1222,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ParameterAttribute",
             "simple" : false,
+            "simpleType" : "ParameterAttribute",
             "map" : false,
             "templateType" : "java.util.List<ParameterAttribute>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterAttribute>"
@@ -1402,8 +1402,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ValidationError",
           "simple" : false,
+          "simpleType" : "ValidationError",
           "map" : false,
           "templateType" : "java.util.List<ValidationError>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationError>"
@@ -1517,8 +1517,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ValidationWarning",
           "simple" : false,
+          "simpleType" : "ValidationWarning",
           "map" : false,
           "templateType" : "java.util.List<ValidationWarning>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationWarning>"
@@ -1706,8 +1706,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ValidationWarning",
             "simple" : false,
+            "simpleType" : "ValidationWarning",
             "map" : false,
             "templateType" : "java.util.List<ValidationWarning>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationWarning>"
@@ -1822,8 +1822,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ValidationError",
             "simple" : false,
+            "simpleType" : "ValidationError",
             "map" : false,
             "templateType" : "java.util.List<ValidationError>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationError>"
@@ -2053,8 +2053,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Field",
           "simple" : false,
+          "simpleType" : "Field",
           "map" : false,
           "templateType" : "java.util.List<Field>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Field>"
@@ -2195,8 +2195,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Field",
             "simple" : false,
+            "simpleType" : "Field",
             "map" : false,
             "templateType" : "java.util.List<Field>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Field>"
@@ -2375,8 +2375,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2462,8 +2462,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -4754,8 +4754,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PipelineObject",
           "simple" : false,
+          "simpleType" : "PipelineObject",
           "map" : false,
           "templateType" : "java.util.List<PipelineObject>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineObject>"
@@ -4994,8 +4994,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PipelineObject",
             "simple" : false,
+            "simpleType" : "PipelineObject",
             "map" : false,
             "templateType" : "java.util.List<PipelineObject>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineObject>"
@@ -5482,8 +5482,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5671,8 +5671,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -6178,8 +6178,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -6372,8 +6372,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -6603,8 +6603,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PipelineObject",
           "simple" : false,
+          "simpleType" : "PipelineObject",
           "map" : false,
           "templateType" : "java.util.List<PipelineObject>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineObject>"
@@ -6718,8 +6718,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ParameterObject",
           "simple" : false,
+          "simpleType" : "ParameterObject",
           "map" : false,
           "templateType" : "java.util.List<ParameterObject>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterObject>"
@@ -6833,8 +6833,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ParameterValue",
           "simple" : false,
+          "simpleType" : "ParameterValue",
           "map" : false,
           "templateType" : "java.util.List<ParameterValue>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterValue>"
@@ -6975,8 +6975,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ParameterObject",
             "simple" : false,
+            "simpleType" : "ParameterObject",
             "map" : false,
             "templateType" : "java.util.List<ParameterObject>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterObject>"
@@ -7091,8 +7091,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ParameterValue",
             "simple" : false,
+            "simpleType" : "ParameterValue",
             "map" : false,
             "templateType" : "java.util.List<ParameterValue>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterValue>"
@@ -7207,8 +7207,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PipelineObject",
             "simple" : false,
+            "simpleType" : "PipelineObject",
             "map" : false,
             "templateType" : "java.util.List<PipelineObject>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineObject>"
@@ -7489,8 +7489,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Field",
           "simple" : false,
+          "simpleType" : "Field",
           "map" : false,
           "templateType" : "java.util.List<Field>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Field>"
@@ -7655,8 +7655,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Tag",
           "simple" : false,
+          "simpleType" : "Tag",
           "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -7845,8 +7845,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Tag",
             "simple" : false,
+            "simpleType" : "Tag",
             "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -8013,8 +8013,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Field",
             "simple" : false,
+            "simpleType" : "Field",
             "map" : false,
             "templateType" : "java.util.List<Field>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Field>"
@@ -8193,8 +8193,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PipelineDescription",
           "simple" : false,
+          "simpleType" : "PipelineDescription",
           "map" : false,
           "templateType" : "java.util.List<PipelineDescription>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineDescription>"
@@ -8331,8 +8331,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PipelineDescription",
             "simple" : false,
+            "simpleType" : "PipelineDescription",
             "map" : false,
             "templateType" : "java.util.List<PipelineDescription>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineDescription>"
@@ -8459,8 +8459,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PipelineObject",
           "simple" : false,
+          "simpleType" : "PipelineObject",
           "map" : false,
           "templateType" : "java.util.List<PipelineObject>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineObject>"
@@ -8574,8 +8574,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ParameterObject",
           "simple" : false,
+          "simpleType" : "ParameterObject",
           "map" : false,
           "templateType" : "java.util.List<ParameterObject>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterObject>"
@@ -8689,8 +8689,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ParameterValue",
           "simple" : false,
+          "simpleType" : "ParameterValue",
           "map" : false,
           "templateType" : "java.util.List<ParameterValue>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterValue>"
@@ -8827,8 +8827,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ParameterObject",
             "simple" : false,
+            "simpleType" : "ParameterObject",
             "map" : false,
             "templateType" : "java.util.List<ParameterObject>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterObject>"
@@ -8943,8 +8943,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ParameterValue",
             "simple" : false,
+            "simpleType" : "ParameterValue",
             "map" : false,
             "templateType" : "java.util.List<ParameterValue>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterValue>"
@@ -9059,8 +9059,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PipelineObject",
             "simple" : false,
+            "simpleType" : "PipelineObject",
             "map" : false,
             "templateType" : "java.util.List<PipelineObject>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineObject>"
@@ -9221,8 +9221,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PipelineIdName",
           "simple" : false,
+          "simpleType" : "PipelineIdName",
           "map" : false,
           "templateType" : "java.util.List<PipelineIdName>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineIdName>"
@@ -9461,8 +9461,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PipelineIdName",
             "simple" : false,
+            "simpleType" : "PipelineIdName",
             "map" : false,
             "templateType" : "java.util.List<PipelineIdName>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineIdName>"
@@ -9986,8 +9986,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10077,8 +10077,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10205,8 +10205,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ValidationError",
           "simple" : false,
+          "simpleType" : "ValidationError",
           "map" : false,
           "templateType" : "java.util.List<ValidationError>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationError>"
@@ -10320,8 +10320,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ValidationWarning",
           "simple" : false,
+          "simpleType" : "ValidationWarning",
           "map" : false,
           "templateType" : "java.util.List<ValidationWarning>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationWarning>"
@@ -10509,8 +10509,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ValidationWarning",
             "simple" : false,
+            "simpleType" : "ValidationWarning",
             "map" : false,
             "templateType" : "java.util.List<ValidationWarning>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationWarning>"
@@ -10625,8 +10625,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ValidationError",
             "simple" : false,
+            "simpleType" : "ValidationError",
             "map" : false,
             "templateType" : "java.util.List<ValidationError>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationError>"
@@ -10805,8 +10805,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Selector",
           "simple" : false,
+          "simpleType" : "Selector",
           "map" : false,
           "templateType" : "java.util.List<Selector>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Selector>"
@@ -10943,8 +10943,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Selector",
             "simple" : false,
+            "simpleType" : "Selector",
             "map" : false,
             "templateType" : "java.util.List<Selector>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Selector>"
@@ -11518,8 +11518,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11657,8 +11657,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11938,8 +11938,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Tag",
           "simple" : false,
+          "simpleType" : "Tag",
           "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -12132,8 +12132,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Tag",
             "simple" : false,
+            "simpleType" : "Tag",
             "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -12415,8 +12415,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ParameterValue",
           "simple" : false,
+          "simpleType" : "ParameterValue",
           "map" : false,
           "templateType" : "java.util.List<ParameterValue>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterValue>"
@@ -12608,8 +12608,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ParameterValue",
             "simple" : false,
+            "simpleType" : "ParameterValue",
             "map" : false,
             "templateType" : "java.util.List<ParameterValue>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterValue>"
@@ -13356,8 +13356,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Field",
           "simple" : false,
+          "simpleType" : "Field",
           "map" : false,
           "templateType" : "java.util.List<Field>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Field>"
@@ -13546,8 +13546,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Field",
             "simple" : false,
+            "simpleType" : "Field",
             "map" : false,
             "templateType" : "java.util.List<Field>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Field>"
@@ -14022,8 +14022,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PipelineObject",
           "simple" : false,
+          "simpleType" : "PipelineObject",
           "map" : false,
           "templateType" : "java.util.List<PipelineObject>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineObject>"
@@ -14137,8 +14137,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ParameterObject",
           "simple" : false,
+          "simpleType" : "ParameterObject",
           "map" : false,
           "templateType" : "java.util.List<ParameterObject>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterObject>"
@@ -14252,8 +14252,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ParameterValue",
           "simple" : false,
+          "simpleType" : "ParameterValue",
           "map" : false,
           "templateType" : "java.util.List<ParameterValue>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterValue>"
@@ -14394,8 +14394,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ParameterObject",
             "simple" : false,
+            "simpleType" : "ParameterObject",
             "map" : false,
             "templateType" : "java.util.List<ParameterObject>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterObject>"
@@ -14510,8 +14510,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ParameterValue",
             "simple" : false,
+            "simpleType" : "ParameterValue",
             "map" : false,
             "templateType" : "java.util.List<ParameterValue>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterValue>"
@@ -14626,8 +14626,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PipelineObject",
             "simple" : false,
+            "simpleType" : "PipelineObject",
             "map" : false,
             "templateType" : "java.util.List<PipelineObject>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PipelineObject>"
@@ -14806,8 +14806,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -14945,8 +14945,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15314,8 +15314,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15405,8 +15405,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15636,8 +15636,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Tag",
           "simple" : false,
+          "simpleType" : "Tag",
           "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -15778,8 +15778,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Tag",
             "simple" : false,
+            "simpleType" : "Tag",
             "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -17101,8 +17101,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17294,8 +17294,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"

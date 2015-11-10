@@ -91,6 +91,13 @@ public class StageJsonUnmarshaller implements
                             MethodSettingJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("variables", targetDepth)) {
+                    context.nextToken();
+                    stage.setVariables(new MapUnmarshaller<String, String>(
+                            StringJsonUnmarshaller.getInstance(),
+                            StringJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
                     stage.setCreatedDate(DateJsonUnmarshaller.getInstance()

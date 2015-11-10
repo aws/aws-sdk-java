@@ -15,31 +15,32 @@
 package com.amazonaws.internal.config;
 
 /**
- * An internal class used to build {@link HttpClientConfig} after this
- * class per se has been unmarshalled from JSON. This class allows us to make
- * use of Jackson without the need to write any special parser or json
- * marshaller/unmarshaller.
+ * An internal class used to build {@link HttpClientConfig} after this class per se has been
+ * unmarshalled from JSON. This class allows us to make use of Jackson without the need to write any
+ * special parser or json marshaller/unmarshaller.
  */
-class HttpClientConfigJsonHelper implements Builder<HttpClientConfig> {
+public class HttpClientConfigJsonHelper implements Builder<HttpClientConfig> {
+
     private String serviceName;
     private String regionMetadataServiceName;
 
-    HttpClientConfigJsonHelper(String serviceName,
-            String regionMetadataServiceName) {
+    public HttpClientConfigJsonHelper() {
+    }
+
+    public HttpClientConfigJsonHelper(String serviceName, String regionMetadataServiceName) {
         this.serviceName = serviceName;
         this.regionMetadataServiceName = regionMetadataServiceName;
     }
 
-    HttpClientConfigJsonHelper() {}
-
-    @Override public String toString() {
-        return "serviceName: " + serviceName + ", regionMetadataServiceName: "
-                + regionMetadataServiceName;
+    @Override
+    public String toString() {
+        return "serviceName: " + serviceName + ", regionMetadataServiceName: " + regionMetadataServiceName;
     }
 
     public String getServiceName() {
         return serviceName;
     }
+
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
@@ -52,7 +53,8 @@ class HttpClientConfigJsonHelper implements Builder<HttpClientConfig> {
         this.regionMetadataServiceName = regionMetadataServiceName;
     }
 
-    @Override public HttpClientConfig build() {
+    @Override
+    public HttpClientConfig build() {
         return new HttpClientConfig(serviceName, regionMetadataServiceName);
     }
 }

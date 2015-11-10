@@ -26,9 +26,11 @@ import java.net.URI;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
+import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.BasicHttpEntity;
 import org.apache.http.message.BasicHttpResponse;
+import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.protocol.HttpContext;
 import org.easymock.EasyMock;
 import org.easymock.IAnswer;
@@ -41,8 +43,12 @@ import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
+import com.amazonaws.util.FakeIOException;
 
 public class AmazonHttpClientTest {
+
+    private final String SERVER_NAME = "testsvc";
+    private final String URI_NAME = "http://testsvc.region.amazonaws.com";
 
     private HttpClient httpClient;
     private AmazonHttpClient client;
@@ -160,44 +166,54 @@ public class AmazonHttpClientTest {
     }
 
     @Test
-    public void testPutRetryNoCL() throws Exception {
-        Request<?> request = new DefaultRequest<Object>(null, "testsvc");
-        request.setHttpMethod(HttpMethodName.PUT);
-        request.setContent(new ByteArrayInputStream(new byte[100]));
-        request.setEndpoint(URI.create("http://testsvc.region.amazonaws.com"));
+    public void testUseExpectContinueTrue() throws FakeIOException {
+        Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.PUT, URI_NAME, true);
+        ClientConfiguration clientConfiguration = new ClientConfiguration().withUseExpectContinue(true);
 
+        HttpRequestFactory httpRequestFactory = new HttpRequestFactory();
+        HttpRequestBase httpRequest = httpRequestFactory.createHttpRequest(request, clientConfiguration, null);
+
+        Assert.assertNotNull(httpRequest);
+        Assert.assertNotNull(httpRequest.getParams());
+        Assert.assertNotNull(httpRequest.getParams().getParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE));
+        Boolean useExpectContinue = (Boolean)httpRequest.getParams().getParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE);
+        Assert.assertTrue(useExpectContinue.booleanValue());
+    }
+
+    @Test
+    public void testUseExpectContinueFalse() throws FakeIOException {
+        Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.PUT, URI_NAME, true);
+        ClientConfiguration clientConfiguration = new ClientConfiguration().withUseExpectContinue(false);
+
+        HttpRequestFactory httpRequestFactory = new HttpRequestFactory();
+        HttpRequestBase httpRequest = httpRequestFactory.createHttpRequest(request, clientConfiguration, null);
+
+        Assert.assertNotNull(httpRequest);
+        Assert.assertTrue(httpRequest.getParams() == null ||
+                httpRequest.getParams().getParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE) == null);
+    }
+
+    @Test
+    public void testPutRetryNoCL() throws Exception {
+        Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.PUT, URI_NAME, false);
         testRetries(request, 100);
     }
 
     @Test
     public void testPostRetryNoCL() throws Exception {
-        Request<?> request = new DefaultRequest<Object>(null, "testsvc");
-        request.setHttpMethod(HttpMethodName.POST);
-        request.setContent(new ByteArrayInputStream(new byte[100]));
-        request.setEndpoint(URI.create("http://testsvc.region.amazonaws.com"));
-
+        Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.POST, URI_NAME, false);
         testRetries(request, 100);
     }
 
     @Test
     public void testPutRetryCL() throws Exception {
-        Request<?> request = new DefaultRequest<Object>(null, "testsvc");
-        request.setHttpMethod(HttpMethodName.PUT);
-        request.setContent(new ByteArrayInputStream(new byte[100]));
-        request.setEndpoint(URI.create("http://testsvc.region.amazonaws.com"));
-        request.addHeader("Content-Length", "100");
-
+        Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.PUT, URI_NAME, true);
         testRetries(request, 100);
     }
 
     @Test
     public void testPostRetryCL() throws Exception {
-        Request<?> request = new DefaultRequest<Object>(null, "testsvc");
-        request.setHttpMethod(HttpMethodName.POST);
-        request.setContent(new ByteArrayInputStream(new byte[100]));
-        request.setEndpoint(URI.create("http://testsvc.region.amazonaws.com"));
-        request.addHeader("Content-Length", "100");
-
+        Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.POST, URI_NAME, true);
         testRetries(request, 100);
     }
 
@@ -257,5 +273,15 @@ public class AmazonHttpClientTest {
         }
 
         EasyMock.replay(httpClient);
+    }
+
+    private Request<?> mockRequest(String serverName, HttpMethodName methodName, String uri, boolean hasCL) {
+        Request<?> request = new DefaultRequest<Object>(null, serverName);
+        request.setHttpMethod(methodName);
+        request.setContent(new ByteArrayInputStream(new byte[100]));
+        request.setEndpoint(URI.create(uri));
+        if (hasCL) request.addHeader("Content-Length", "100");
+
+        return request;
     }
 }

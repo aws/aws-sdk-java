@@ -38,6 +38,8 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
 
     private String clientCertificateId;
 
+    private java.util.Map<String, String> stageVariables;
+
     /**
      * @param restApiId
      */
@@ -230,6 +232,52 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * @return
+     */
+    public java.util.Map<String, String> getStageVariables() {
+        return stageVariables;
+    }
+
+    /**
+     * @param stageVariables
+     */
+    public void setStageVariables(java.util.Map<String, String> stageVariables) {
+        this.stageVariables = stageVariables;
+    }
+
+    /**
+     * @param stageVariables
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public TestInvokeMethodRequest withStageVariables(
+            java.util.Map<String, String> stageVariables) {
+        setStageVariables(stageVariables);
+        return this;
+    }
+
+    public TestInvokeMethodRequest addStageVariablesEntry(String key,
+            String value) {
+        if (null == this.stageVariables) {
+            this.stageVariables = new java.util.HashMap<String, String>();
+        }
+        if (this.stageVariables.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.stageVariables.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into StageVariables. &lt;p> Returns a
+     * reference to this object so that method calls can be chained together.
+     */
+    public TestInvokeMethodRequest clearStageVariablesEntries() {
+        this.stageVariables = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -254,7 +302,9 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
         if (getHeaders() != null)
             sb.append("Headers: " + getHeaders() + ",");
         if (getClientCertificateId() != null)
-            sb.append("ClientCertificateId: " + getClientCertificateId());
+            sb.append("ClientCertificateId: " + getClientCertificateId() + ",");
+        if (getStageVariables() != null)
+            sb.append("StageVariables: " + getStageVariables());
         sb.append("}");
         return sb.toString();
     }
@@ -308,6 +358,12 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
                 && other.getClientCertificateId().equals(
                         this.getClientCertificateId()) == false)
             return false;
+        if (other.getStageVariables() == null
+                ^ this.getStageVariables() == null)
+            return false;
+        if (other.getStageVariables() != null
+                && other.getStageVariables().equals(this.getStageVariables()) == false)
+            return false;
         return true;
     }
 
@@ -334,6 +390,10 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getClientCertificateId() == null) ? 0
                         : getClientCertificateId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStageVariables() == null) ? 0 : getStageVariables()
+                        .hashCode());
         return hashCode;
     }
 
