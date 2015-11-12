@@ -41,13 +41,17 @@ public class Instance implements Serializable, Cloneable {
     /**
      * The private DNS name assigned to the instance. This DNS name can only
      * be used inside the Amazon EC2 network. This name is not available
-     * until the instance enters the <code>running</code> state.
+     * until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your
+     * VPC.
      */
     private String privateDnsName;
 
     /**
      * The public DNS name assigned to the instance. This name is not
      * available until the instance enters the <code>running</code> state.
+     * For EC2-VPC, this name is only available if you've enabled DNS
+     * hostnames for your VPC.
      */
     private String publicDnsName;
 
@@ -70,7 +74,7 @@ public class Instance implements Serializable, Cloneable {
     private Integer amiLaunchIndex;
 
     /**
-     * The product codes attached to this instance.
+     * The product codes attached to this instance, if applicable.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
 
@@ -88,17 +92,17 @@ public class Instance implements Serializable, Cloneable {
     private java.util.Date launchTime;
 
     /**
-     * The location where the instance launched.
+     * The location where the instance launched, if applicable.
      */
     private Placement placement;
 
     /**
-     * The kernel associated with this instance.
+     * The kernel associated with this instance, if applicable.
      */
     private String kernelId;
 
     /**
-     * The RAM disk associated with this instance.
+     * The RAM disk associated with this instance, if applicable.
      */
     private String ramdiskId;
 
@@ -117,12 +121,12 @@ public class Instance implements Serializable, Cloneable {
     private Monitoring monitoring;
 
     /**
-     * The ID of the subnet in which the instance is running.
+     * [EC2-VPC] The ID of the subnet in which the instance is running.
      */
     private String subnetId;
 
     /**
-     * The ID of the VPC in which the instance is running.
+     * [EC2-VPC] The ID of the VPC in which the instance is running.
      */
     private String vpcId;
 
@@ -132,7 +136,7 @@ public class Instance implements Serializable, Cloneable {
     private String privateIpAddress;
 
     /**
-     * The public IP address assigned to the instance.
+     * The public IP address assigned to the instance, if applicable.
      */
     private String publicIpAddress;
 
@@ -186,12 +190,13 @@ public class Instance implements Serializable, Cloneable {
     private String instanceLifecycle;
 
     /**
-     * The ID of the Spot Instance request.
+     * If the request is a Spot instance request, the ID of the request.
      */
     private String spotInstanceRequestId;
 
     /**
-     * The idempotency token you provided when you launched the instance.
+     * The idempotency token you provided when you launched the instance, if
+     * applicable.
      */
     private String clientToken;
 
@@ -231,7 +236,7 @@ public class Instance implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterface> networkInterfaces;
 
     /**
-     * The IAM instance profile associated with the instance.
+     * The IAM instance profile associated with the instance, if applicable.
      */
     private IamInstanceProfile iamInstanceProfile;
 
@@ -351,11 +356,15 @@ public class Instance implements Serializable, Cloneable {
     /**
      * The private DNS name assigned to the instance. This DNS name can only
      * be used inside the Amazon EC2 network. This name is not available
-     * until the instance enters the <code>running</code> state.
+     * until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your
+     * VPC.
      *
      * @return The private DNS name assigned to the instance. This DNS name can only
      *         be used inside the Amazon EC2 network. This name is not available
-     *         until the instance enters the <code>running</code> state.
+     *         until the instance enters the <code>running</code> state. For EC2-VPC,
+     *         this name is only available if you've enabled DNS hostnames for your
+     *         VPC.
      */
     public String getPrivateDnsName() {
         return privateDnsName;
@@ -364,11 +373,15 @@ public class Instance implements Serializable, Cloneable {
     /**
      * The private DNS name assigned to the instance. This DNS name can only
      * be used inside the Amazon EC2 network. This name is not available
-     * until the instance enters the <code>running</code> state.
+     * until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your
+     * VPC.
      *
      * @param privateDnsName The private DNS name assigned to the instance. This DNS name can only
      *         be used inside the Amazon EC2 network. This name is not available
-     *         until the instance enters the <code>running</code> state.
+     *         until the instance enters the <code>running</code> state. For EC2-VPC,
+     *         this name is only available if you've enabled DNS hostnames for your
+     *         VPC.
      */
     public void setPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
@@ -377,13 +390,17 @@ public class Instance implements Serializable, Cloneable {
     /**
      * The private DNS name assigned to the instance. This DNS name can only
      * be used inside the Amazon EC2 network. This name is not available
-     * until the instance enters the <code>running</code> state.
+     * until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your
+     * VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateDnsName The private DNS name assigned to the instance. This DNS name can only
      *         be used inside the Amazon EC2 network. This name is not available
-     *         until the instance enters the <code>running</code> state.
+     *         until the instance enters the <code>running</code> state. For EC2-VPC,
+     *         this name is only available if you've enabled DNS hostnames for your
+     *         VPC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -396,9 +413,13 @@ public class Instance implements Serializable, Cloneable {
     /**
      * The public DNS name assigned to the instance. This name is not
      * available until the instance enters the <code>running</code> state.
+     * For EC2-VPC, this name is only available if you've enabled DNS
+     * hostnames for your VPC.
      *
      * @return The public DNS name assigned to the instance. This name is not
      *         available until the instance enters the <code>running</code> state.
+     *         For EC2-VPC, this name is only available if you've enabled DNS
+     *         hostnames for your VPC.
      */
     public String getPublicDnsName() {
         return publicDnsName;
@@ -407,9 +428,13 @@ public class Instance implements Serializable, Cloneable {
     /**
      * The public DNS name assigned to the instance. This name is not
      * available until the instance enters the <code>running</code> state.
+     * For EC2-VPC, this name is only available if you've enabled DNS
+     * hostnames for your VPC.
      *
      * @param publicDnsName The public DNS name assigned to the instance. This name is not
      *         available until the instance enters the <code>running</code> state.
+     *         For EC2-VPC, this name is only available if you've enabled DNS
+     *         hostnames for your VPC.
      */
     public void setPublicDnsName(String publicDnsName) {
         this.publicDnsName = publicDnsName;
@@ -418,11 +443,15 @@ public class Instance implements Serializable, Cloneable {
     /**
      * The public DNS name assigned to the instance. This name is not
      * available until the instance enters the <code>running</code> state.
+     * For EC2-VPC, this name is only available if you've enabled DNS
+     * hostnames for your VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicDnsName The public DNS name assigned to the instance. This name is not
      *         available until the instance enters the <code>running</code> state.
+     *         For EC2-VPC, this name is only available if you've enabled DNS
+     *         hostnames for your VPC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -550,9 +579,9 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The product codes attached to this instance.
+     * The product codes attached to this instance, if applicable.
      *
-     * @return The product codes attached to this instance.
+     * @return The product codes attached to this instance, if applicable.
      */
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
@@ -563,9 +592,9 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * The product codes attached to this instance.
+     * The product codes attached to this instance, if applicable.
      *
-     * @param productCodes The product codes attached to this instance.
+     * @param productCodes The product codes attached to this instance, if applicable.
      */
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
@@ -578,7 +607,7 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * The product codes attached to this instance.
+     * The product codes attached to this instance, if applicable.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setProductCodes(java.util.Collection)} or {@link
@@ -587,7 +616,7 @@ public class Instance implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCodes The product codes attached to this instance.
+     * @param productCodes The product codes attached to this instance, if applicable.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -601,11 +630,11 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * The product codes attached to this instance.
+     * The product codes attached to this instance, if applicable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCodes The product codes attached to this instance.
+     * @param productCodes The product codes attached to this instance, if applicable.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -738,29 +767,29 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The location where the instance launched.
+     * The location where the instance launched, if applicable.
      *
-     * @return The location where the instance launched.
+     * @return The location where the instance launched, if applicable.
      */
     public Placement getPlacement() {
         return placement;
     }
     
     /**
-     * The location where the instance launched.
+     * The location where the instance launched, if applicable.
      *
-     * @param placement The location where the instance launched.
+     * @param placement The location where the instance launched, if applicable.
      */
     public void setPlacement(Placement placement) {
         this.placement = placement;
     }
     
     /**
-     * The location where the instance launched.
+     * The location where the instance launched, if applicable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param placement The location where the instance launched.
+     * @param placement The location where the instance launched, if applicable.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -771,29 +800,29 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The kernel associated with this instance.
+     * The kernel associated with this instance, if applicable.
      *
-     * @return The kernel associated with this instance.
+     * @return The kernel associated with this instance, if applicable.
      */
     public String getKernelId() {
         return kernelId;
     }
     
     /**
-     * The kernel associated with this instance.
+     * The kernel associated with this instance, if applicable.
      *
-     * @param kernelId The kernel associated with this instance.
+     * @param kernelId The kernel associated with this instance, if applicable.
      */
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
     
     /**
-     * The kernel associated with this instance.
+     * The kernel associated with this instance, if applicable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param kernelId The kernel associated with this instance.
+     * @param kernelId The kernel associated with this instance, if applicable.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -804,29 +833,29 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The RAM disk associated with this instance.
+     * The RAM disk associated with this instance, if applicable.
      *
-     * @return The RAM disk associated with this instance.
+     * @return The RAM disk associated with this instance, if applicable.
      */
     public String getRamdiskId() {
         return ramdiskId;
     }
     
     /**
-     * The RAM disk associated with this instance.
+     * The RAM disk associated with this instance, if applicable.
      *
-     * @param ramdiskId The RAM disk associated with this instance.
+     * @param ramdiskId The RAM disk associated with this instance, if applicable.
      */
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
     
     /**
-     * The RAM disk associated with this instance.
+     * The RAM disk associated with this instance, if applicable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ramdiskId The RAM disk associated with this instance.
+     * @param ramdiskId The RAM disk associated with this instance, if applicable.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -962,29 +991,29 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the subnet in which the instance is running.
+     * [EC2-VPC] The ID of the subnet in which the instance is running.
      *
-     * @return The ID of the subnet in which the instance is running.
+     * @return [EC2-VPC] The ID of the subnet in which the instance is running.
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * The ID of the subnet in which the instance is running.
+     * [EC2-VPC] The ID of the subnet in which the instance is running.
      *
-     * @param subnetId The ID of the subnet in which the instance is running.
+     * @param subnetId [EC2-VPC] The ID of the subnet in which the instance is running.
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * The ID of the subnet in which the instance is running.
+     * [EC2-VPC] The ID of the subnet in which the instance is running.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId The ID of the subnet in which the instance is running.
+     * @param subnetId [EC2-VPC] The ID of the subnet in which the instance is running.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -995,29 +1024,29 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the VPC in which the instance is running.
+     * [EC2-VPC] The ID of the VPC in which the instance is running.
      *
-     * @return The ID of the VPC in which the instance is running.
+     * @return [EC2-VPC] The ID of the VPC in which the instance is running.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * The ID of the VPC in which the instance is running.
+     * [EC2-VPC] The ID of the VPC in which the instance is running.
      *
-     * @param vpcId The ID of the VPC in which the instance is running.
+     * @param vpcId [EC2-VPC] The ID of the VPC in which the instance is running.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * The ID of the VPC in which the instance is running.
+     * [EC2-VPC] The ID of the VPC in which the instance is running.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The ID of the VPC in which the instance is running.
+     * @param vpcId [EC2-VPC] The ID of the VPC in which the instance is running.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1061,29 +1090,29 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The public IP address assigned to the instance.
+     * The public IP address assigned to the instance, if applicable.
      *
-     * @return The public IP address assigned to the instance.
+     * @return The public IP address assigned to the instance, if applicable.
      */
     public String getPublicIpAddress() {
         return publicIpAddress;
     }
     
     /**
-     * The public IP address assigned to the instance.
+     * The public IP address assigned to the instance, if applicable.
      *
-     * @param publicIpAddress The public IP address assigned to the instance.
+     * @param publicIpAddress The public IP address assigned to the instance, if applicable.
      */
     public void setPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
     }
     
     /**
-     * The public IP address assigned to the instance.
+     * The public IP address assigned to the instance, if applicable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIpAddress The public IP address assigned to the instance.
+     * @param publicIpAddress The public IP address assigned to the instance, if applicable.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1577,29 +1606,29 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the Spot Instance request.
+     * If the request is a Spot instance request, the ID of the request.
      *
-     * @return The ID of the Spot Instance request.
+     * @return If the request is a Spot instance request, the ID of the request.
      */
     public String getSpotInstanceRequestId() {
         return spotInstanceRequestId;
     }
     
     /**
-     * The ID of the Spot Instance request.
+     * If the request is a Spot instance request, the ID of the request.
      *
-     * @param spotInstanceRequestId The ID of the Spot Instance request.
+     * @param spotInstanceRequestId If the request is a Spot instance request, the ID of the request.
      */
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
     }
     
     /**
-     * The ID of the Spot Instance request.
+     * If the request is a Spot instance request, the ID of the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequestId The ID of the Spot Instance request.
+     * @param spotInstanceRequestId If the request is a Spot instance request, the ID of the request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1610,29 +1639,35 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The idempotency token you provided when you launched the instance.
+     * The idempotency token you provided when you launched the instance, if
+     * applicable.
      *
-     * @return The idempotency token you provided when you launched the instance.
+     * @return The idempotency token you provided when you launched the instance, if
+     *         applicable.
      */
     public String getClientToken() {
         return clientToken;
     }
     
     /**
-     * The idempotency token you provided when you launched the instance.
+     * The idempotency token you provided when you launched the instance, if
+     * applicable.
      *
-     * @param clientToken The idempotency token you provided when you launched the instance.
+     * @param clientToken The idempotency token you provided when you launched the instance, if
+     *         applicable.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
     
     /**
-     * The idempotency token you provided when you launched the instance.
+     * The idempotency token you provided when you launched the instance, if
+     * applicable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clientToken The idempotency token you provided when you launched the instance.
+     * @param clientToken The idempotency token you provided when you launched the instance, if
+     *         applicable.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2042,29 +2077,29 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The IAM instance profile associated with the instance.
+     * The IAM instance profile associated with the instance, if applicable.
      *
-     * @return The IAM instance profile associated with the instance.
+     * @return The IAM instance profile associated with the instance, if applicable.
      */
     public IamInstanceProfile getIamInstanceProfile() {
         return iamInstanceProfile;
     }
     
     /**
-     * The IAM instance profile associated with the instance.
+     * The IAM instance profile associated with the instance, if applicable.
      *
-     * @param iamInstanceProfile The IAM instance profile associated with the instance.
+     * @param iamInstanceProfile The IAM instance profile associated with the instance, if applicable.
      */
     public void setIamInstanceProfile(IamInstanceProfile iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
     }
     
     /**
-     * The IAM instance profile associated with the instance.
+     * The IAM instance profile associated with the instance, if applicable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param iamInstanceProfile The IAM instance profile associated with the instance.
+     * @param iamInstanceProfile The IAM instance profile associated with the instance, if applicable.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

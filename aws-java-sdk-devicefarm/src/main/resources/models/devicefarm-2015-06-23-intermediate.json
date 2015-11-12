@@ -3523,8 +3523,8 @@
           "simpleType" : "Device",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Device>",
-          "templateImplType" : "java.util.ArrayList<Device>"
+          "templateImplType" : "java.util.ArrayList<Device>",
+          "templateType" : "java.util.List<Device>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3764,8 +3764,8 @@
             "simpleType" : "Device",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Device>",
-            "templateImplType" : "java.util.ArrayList<Device>"
+            "templateImplType" : "java.util.ArrayList<Device>",
+            "templateType" : "java.util.List<Device>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4110,8 +4110,8 @@
           "simpleType" : "Sample",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Sample>",
-          "templateImplType" : "java.util.ArrayList<Sample>"
+          "templateImplType" : "java.util.ArrayList<Sample>",
+          "templateType" : "java.util.List<Sample>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4351,8 +4351,8 @@
             "simpleType" : "Sample",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Sample>",
-            "templateImplType" : "java.util.ArrayList<Sample>"
+            "templateImplType" : "java.util.ArrayList<Sample>",
+            "templateType" : "java.util.List<Sample>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5173,8 +5173,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5415,8 +5415,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8701,8 +8701,8 @@
           "simpleType" : "Job",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Job>",
-          "templateImplType" : "java.util.ArrayList<Job>"
+          "templateImplType" : "java.util.ArrayList<Job>",
+          "templateType" : "java.util.List<Job>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8942,8 +8942,8 @@
             "simpleType" : "Job",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Job>",
-            "templateImplType" : "java.util.ArrayList<Job>"
+            "templateImplType" : "java.util.ArrayList<Job>",
+            "templateType" : "java.util.List<Job>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9311,8 +9311,8 @@
           "simpleType" : "Run",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Run>",
-          "templateImplType" : "java.util.ArrayList<Run>"
+          "templateImplType" : "java.util.ArrayList<Run>",
+          "templateType" : "java.util.List<Run>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9552,8 +9552,8 @@
             "simpleType" : "Run",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Run>",
-            "templateImplType" : "java.util.ArrayList<Run>"
+            "templateImplType" : "java.util.ArrayList<Run>",
+            "templateType" : "java.util.List<Run>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10108,8 +10108,8 @@
           "simpleType" : "Test",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Test>",
-          "templateImplType" : "java.util.ArrayList<Test>"
+          "templateImplType" : "java.util.ArrayList<Test>",
+          "templateType" : "java.util.List<Test>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10349,8 +10349,8 @@
             "simpleType" : "Test",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Test>",
-            "templateImplType" : "java.util.ArrayList<Test>"
+            "templateImplType" : "java.util.ArrayList<Test>",
+            "templateType" : "java.util.List<Test>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10577,8 +10577,8 @@
               "simpleType" : "UniqueProblem",
               "simple" : false,
               "map" : false,
-              "templateType" : "java.util.List<UniqueProblem>",
-              "templateImplType" : "java.util.ArrayList<UniqueProblem>"
+              "templateImplType" : "java.util.ArrayList<UniqueProblem>",
+              "templateType" : "java.util.List<UniqueProblem>"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -10591,8 +10591,8 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
           "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
+          "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : true
@@ -10882,8 +10882,8 @@
                 "simpleType" : "UniqueProblem",
                 "simple" : false,
                 "map" : false,
-                "templateType" : "java.util.List<UniqueProblem>",
-                "templateImplType" : "java.util.ArrayList<UniqueProblem>"
+                "templateImplType" : "java.util.ArrayList<UniqueProblem>",
+                "templateType" : "java.util.List<UniqueProblem>"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -10896,8 +10896,8 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
             "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
+            "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : true
@@ -13245,8 +13245,8 @@
           "simpleType" : "Rule",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Rule>",
-          "templateImplType" : "java.util.ArrayList<Rule>"
+          "templateImplType" : "java.util.ArrayList<Rule>",
+          "templateType" : "java.util.List<Rule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13491,8 +13491,8 @@
             "simpleType" : "Rule",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Rule>",
-            "templateImplType" : "java.util.ArrayList<Rule>"
+            "templateImplType" : "java.util.ArrayList<Rule>",
+            "templateType" : "java.util.List<Rule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14221,8 +14221,8 @@
           "simpleType" : "Project",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Project>",
-          "templateImplType" : "java.util.ArrayList<Project>"
+          "templateImplType" : "java.util.ArrayList<Project>",
+          "templateType" : "java.util.List<Project>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14462,8 +14462,8 @@
             "simpleType" : "Project",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Project>",
-            "templateImplType" : "java.util.ArrayList<Project>"
+            "templateImplType" : "java.util.ArrayList<Project>",
+            "templateType" : "java.util.List<Project>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15114,8 +15114,8 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
+          "templateType" : "java.util.Map<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false
@@ -15254,8 +15254,8 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
+            "templateType" : "java.util.Map<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false
@@ -17621,8 +17621,8 @@
           "simpleType" : "DevicePool",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<DevicePool>",
-          "templateImplType" : "java.util.ArrayList<DevicePool>"
+          "templateImplType" : "java.util.ArrayList<DevicePool>",
+          "templateType" : "java.util.List<DevicePool>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17862,8 +17862,8 @@
             "simpleType" : "DevicePool",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<DevicePool>",
-            "templateImplType" : "java.util.ArrayList<DevicePool>"
+            "templateImplType" : "java.util.ArrayList<DevicePool>",
+            "templateType" : "java.util.List<DevicePool>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20622,8 +20622,8 @@
           "simpleType" : "Problem",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Problem>",
-          "templateImplType" : "java.util.ArrayList<Problem>"
+          "templateImplType" : "java.util.ArrayList<Problem>",
+          "templateType" : "java.util.List<Problem>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20760,8 +20760,8 @@
             "simpleType" : "Problem",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Problem>",
-            "templateImplType" : "java.util.ArrayList<Problem>"
+            "templateImplType" : "java.util.ArrayList<Problem>",
+            "templateType" : "java.util.List<Problem>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26944,8 +26944,8 @@
           "simpleType" : "IncompatibilityMessage",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<IncompatibilityMessage>",
-          "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>"
+          "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>",
+          "templateType" : "java.util.List<IncompatibilityMessage>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27082,8 +27082,8 @@
             "simpleType" : "IncompatibilityMessage",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<IncompatibilityMessage>",
-            "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>"
+            "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>",
+            "templateType" : "java.util.List<IncompatibilityMessage>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27456,8 +27456,8 @@
           "simpleType" : "Upload",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Upload>",
-          "templateImplType" : "java.util.ArrayList<Upload>"
+          "templateImplType" : "java.util.ArrayList<Upload>",
+          "templateType" : "java.util.List<Upload>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27645,8 +27645,8 @@
             "simpleType" : "Upload",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Upload>",
-            "templateImplType" : "java.util.ArrayList<Upload>"
+            "templateImplType" : "java.util.ArrayList<Upload>",
+            "templateType" : "java.util.List<Upload>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27825,8 +27825,8 @@
           "simpleType" : "Suite",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Suite>",
-          "templateImplType" : "java.util.ArrayList<Suite>"
+          "templateImplType" : "java.util.ArrayList<Suite>",
+          "templateType" : "java.util.List<Suite>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28066,8 +28066,8 @@
             "simpleType" : "Suite",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Suite>",
-            "templateImplType" : "java.util.ArrayList<Suite>"
+            "templateImplType" : "java.util.ArrayList<Suite>",
+            "templateType" : "java.util.List<Suite>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28684,8 +28684,8 @@
           "simpleType" : "Artifact",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "java.util.ArrayList<Artifact>"
+          "templateImplType" : "java.util.ArrayList<Artifact>",
+          "templateType" : "java.util.List<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28873,8 +28873,8 @@
             "simpleType" : "Artifact",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "java.util.ArrayList<Artifact>"
+            "templateImplType" : "java.util.ArrayList<Artifact>",
+            "templateType" : "java.util.List<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29344,8 +29344,8 @@
           "simpleType" : "Rule",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Rule>",
-          "templateImplType" : "java.util.ArrayList<Rule>"
+          "templateImplType" : "java.util.ArrayList<Rule>",
+          "templateType" : "java.util.List<Rule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29590,8 +29590,8 @@
             "simpleType" : "Rule",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Rule>",
-            "templateImplType" : "java.util.ArrayList<Rule>"
+            "templateImplType" : "java.util.ArrayList<Rule>",
+            "templateType" : "java.util.List<Rule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30627,8 +30627,8 @@
           "simpleType" : "DevicePoolCompatibilityResult",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+          "templateType" : "java.util.List<DevicePoolCompatibilityResult>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30742,8 +30742,8 @@
           "simpleType" : "DevicePoolCompatibilityResult",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+          "templateType" : "java.util.List<DevicePoolCompatibilityResult>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30880,8 +30880,8 @@
             "simpleType" : "DevicePoolCompatibilityResult",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+            "templateType" : "java.util.List<DevicePoolCompatibilityResult>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30996,8 +30996,8 @@
             "simpleType" : "DevicePoolCompatibilityResult",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+            "templateType" : "java.util.List<DevicePoolCompatibilityResult>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31328,8 +31328,8 @@
           "simpleType" : "Rule",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Rule>",
-          "templateImplType" : "java.util.ArrayList<Rule>"
+          "templateImplType" : "java.util.ArrayList<Rule>",
+          "templateType" : "java.util.List<Rule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31622,8 +31622,8 @@
             "simpleType" : "Rule",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Rule>",
-            "templateImplType" : "java.util.ArrayList<Rule>"
+            "templateImplType" : "java.util.ArrayList<Rule>",
+            "templateType" : "java.util.List<Rule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31852,8 +31852,8 @@
           "valueType" : "Integer",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Integer>",
           "templateImplType" : "java.util.HashMap<String,Integer>",
+          "templateType" : "java.util.Map<String,Integer>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false
@@ -31991,8 +31991,8 @@
             "valueType" : "Integer",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Integer>",
             "templateImplType" : "java.util.HashMap<String,Integer>",
+            "templateType" : "java.util.Map<String,Integer>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false

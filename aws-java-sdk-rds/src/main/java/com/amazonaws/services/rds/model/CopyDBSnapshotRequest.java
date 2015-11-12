@@ -21,8 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#copyDBSnapshot(CopyDBSnapshotRequest) CopyDBSnapshot operation}.
  * <p>
- * Copies the specified DBSnapshot. The source DBSnapshot must be in the
- * "available" state.
+ * Copies the specified DBSnapshot. The source DB snapshot must be in
+ * the "available" state.
+ * </p>
+ * <p>
+ * If you are copying from a shared manual DB snapshot, the
+ * <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared
+ * DB snapshot.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#copyDBSnapshot(CopyDBSnapshotRequest)
@@ -30,12 +35,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The identifier for the source DB snapshot. <p>Constraints: <ul>
-     * <li>Must specify a valid system snapshot in the "available"
-     * state.</li> <li>If the source snapshot is in the same region as the
-     * copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     * snapshot is in a different region than the copy, specify a valid DB
-     * snapshot ARN. For more information, go to <a
+     * The identifier for the source DB snapshot. <p>If you are copying from
+     * a shared manual DB snapshot, this must be the ARN of the shared DB
+     * snapshot. <p>Constraints: <ul> <li>Must specify a valid system
+     * snapshot in the "available" state.</li> <li>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot
+     * identifier.</li> <li>If the source snapshot is in a different region
+     * than the copy, specify a valid DB snapshot ARN. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</li> </ul> <p>Example:
      * <code>rds:mydb-2012-04-02-00-01</code> <p>Example:
@@ -64,23 +71,27 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
     private Boolean copyTags;
 
     /**
-     * The identifier for the source DB snapshot. <p>Constraints: <ul>
-     * <li>Must specify a valid system snapshot in the "available"
-     * state.</li> <li>If the source snapshot is in the same region as the
-     * copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     * snapshot is in a different region than the copy, specify a valid DB
-     * snapshot ARN. For more information, go to <a
+     * The identifier for the source DB snapshot. <p>If you are copying from
+     * a shared manual DB snapshot, this must be the ARN of the shared DB
+     * snapshot. <p>Constraints: <ul> <li>Must specify a valid system
+     * snapshot in the "available" state.</li> <li>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot
+     * identifier.</li> <li>If the source snapshot is in a different region
+     * than the copy, specify a valid DB snapshot ARN. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</li> </ul> <p>Example:
      * <code>rds:mydb-2012-04-02-00-01</code> <p>Example:
      * <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      *
-     * @return The identifier for the source DB snapshot. <p>Constraints: <ul>
-     *         <li>Must specify a valid system snapshot in the "available"
-     *         state.</li> <li>If the source snapshot is in the same region as the
-     *         copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     *         snapshot is in a different region than the copy, specify a valid DB
-     *         snapshot ARN. For more information, go to <a
+     * @return The identifier for the source DB snapshot. <p>If you are copying from
+     *         a shared manual DB snapshot, this must be the ARN of the shared DB
+     *         snapshot. <p>Constraints: <ul> <li>Must specify a valid system
+     *         snapshot in the "available" state.</li> <li>If the source snapshot is
+     *         in the same region as the copy, specify a valid DB snapshot
+     *         identifier.</li> <li>If the source snapshot is in a different region
+     *         than the copy, specify a valid DB snapshot ARN. For more information,
+     *         go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      *         Copying a DB Snapshot</a>.</li> </ul> <p>Example:
      *         <code>rds:mydb-2012-04-02-00-01</code> <p>Example:
@@ -91,23 +102,27 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The identifier for the source DB snapshot. <p>Constraints: <ul>
-     * <li>Must specify a valid system snapshot in the "available"
-     * state.</li> <li>If the source snapshot is in the same region as the
-     * copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     * snapshot is in a different region than the copy, specify a valid DB
-     * snapshot ARN. For more information, go to <a
+     * The identifier for the source DB snapshot. <p>If you are copying from
+     * a shared manual DB snapshot, this must be the ARN of the shared DB
+     * snapshot. <p>Constraints: <ul> <li>Must specify a valid system
+     * snapshot in the "available" state.</li> <li>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot
+     * identifier.</li> <li>If the source snapshot is in a different region
+     * than the copy, specify a valid DB snapshot ARN. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</li> </ul> <p>Example:
      * <code>rds:mydb-2012-04-02-00-01</code> <p>Example:
      * <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      *
-     * @param sourceDBSnapshotIdentifier The identifier for the source DB snapshot. <p>Constraints: <ul>
-     *         <li>Must specify a valid system snapshot in the "available"
-     *         state.</li> <li>If the source snapshot is in the same region as the
-     *         copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     *         snapshot is in a different region than the copy, specify a valid DB
-     *         snapshot ARN. For more information, go to <a
+     * @param sourceDBSnapshotIdentifier The identifier for the source DB snapshot. <p>If you are copying from
+     *         a shared manual DB snapshot, this must be the ARN of the shared DB
+     *         snapshot. <p>Constraints: <ul> <li>Must specify a valid system
+     *         snapshot in the "available" state.</li> <li>If the source snapshot is
+     *         in the same region as the copy, specify a valid DB snapshot
+     *         identifier.</li> <li>If the source snapshot is in a different region
+     *         than the copy, specify a valid DB snapshot ARN. For more information,
+     *         go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      *         Copying a DB Snapshot</a>.</li> </ul> <p>Example:
      *         <code>rds:mydb-2012-04-02-00-01</code> <p>Example:
@@ -118,12 +133,14 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The identifier for the source DB snapshot. <p>Constraints: <ul>
-     * <li>Must specify a valid system snapshot in the "available"
-     * state.</li> <li>If the source snapshot is in the same region as the
-     * copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     * snapshot is in a different region than the copy, specify a valid DB
-     * snapshot ARN. For more information, go to <a
+     * The identifier for the source DB snapshot. <p>If you are copying from
+     * a shared manual DB snapshot, this must be the ARN of the shared DB
+     * snapshot. <p>Constraints: <ul> <li>Must specify a valid system
+     * snapshot in the "available" state.</li> <li>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot
+     * identifier.</li> <li>If the source snapshot is in a different region
+     * than the copy, specify a valid DB snapshot ARN. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</li> </ul> <p>Example:
      * <code>rds:mydb-2012-04-02-00-01</code> <p>Example:
@@ -131,12 +148,14 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceDBSnapshotIdentifier The identifier for the source DB snapshot. <p>Constraints: <ul>
-     *         <li>Must specify a valid system snapshot in the "available"
-     *         state.</li> <li>If the source snapshot is in the same region as the
-     *         copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     *         snapshot is in a different region than the copy, specify a valid DB
-     *         snapshot ARN. For more information, go to <a
+     * @param sourceDBSnapshotIdentifier The identifier for the source DB snapshot. <p>If you are copying from
+     *         a shared manual DB snapshot, this must be the ARN of the shared DB
+     *         snapshot. <p>Constraints: <ul> <li>Must specify a valid system
+     *         snapshot in the "available" state.</li> <li>If the source snapshot is
+     *         in the same region as the copy, specify a valid DB snapshot
+     *         identifier.</li> <li>If the source snapshot is in a different region
+     *         than the copy, specify a valid DB snapshot ARN. For more information,
+     *         go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      *         Copying a DB Snapshot</a>.</li> </ul> <p>Example:
      *         <code>rds:mydb-2012-04-02-00-01</code> <p>Example:

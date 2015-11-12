@@ -43,7 +43,7 @@ import com.amazonaws.services.rds.model.*;
  * their applications and businesses unique.
  * </p>
  * <p>
- * Amazon RDS gives you access to the capabilities of a MySQL,
+ * Amazon RDS gives you access to the capabilities of a MySQL, MariaDB,
  * PostgreSQL, Microsoft SQL Server, Oracle, or Aurora database server.
  * This means the code, applications, and tools you already use today
  * with your existing databases work with Amazon RDS without
@@ -625,8 +625,13 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
-     * "available" state.
+     * Copies the specified DBSnapshot. The source DB snapshot must be in
+     * the "available" state.
+     * </p>
+     * <p>
+     * If you are copying from a shared manual DB snapshot, the
+     * <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared
+     * DB snapshot.
      * </p>
      *
      * @param copyDBSnapshotRequest Container for the necessary parameters to
@@ -655,8 +660,13 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
 
     /**
      * <p>
-     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
-     * "available" state.
+     * Copies the specified DBSnapshot. The source DB snapshot must be in
+     * the "available" state.
+     * </p>
+     * <p>
+     * If you are copying from a shared manual DB snapshot, the
+     * <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared
+     * DB snapshot.
      * </p>
      *
      * @param copyDBSnapshotRequest Container for the necessary parameters to
@@ -1357,6 +1367,110 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
+     * Returns a list of DB snapshot attribute names and values for a manual
+     * DB snapshot.
+     * </p>
+     * <p>
+     * When sharing snapshots with other AWS accounts,
+     * <code>DescribeDBSnapshotAttributes</code> returns the
+     * <code>restore</code> attribute and a list of the AWS account ids that
+     * are authorized to copy or restore the manual DB snapshot. If
+     * <code>all</code> is included in the list of values for the
+     * <code>restore</code> attribute, then the manual DB snapshot is public
+     * and can be copied or restored by all AWS accounts.
+     * </p>
+     * <p>
+     * To add or remove access for an AWS account to copy or restore a
+     * manual DB snapshot, or to make the manual DB snapshot public or
+     * private, use the ModifyDBSnapshotAttribute API.
+     * </p>
+     *
+     * @param describeDBSnapshotAttributesRequest Container for the necessary
+     *           parameters to execute the DescribeDBSnapshotAttributes operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBSnapshotAttributes service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshotAttributesResult> describeDBSnapshotAttributesAsync(final DescribeDBSnapshotAttributesRequest describeDBSnapshotAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSnapshotAttributesResult>() {
+            public DBSnapshotAttributesResult call() throws Exception {
+                return describeDBSnapshotAttributes(describeDBSnapshotAttributesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns a list of DB snapshot attribute names and values for a manual
+     * DB snapshot.
+     * </p>
+     * <p>
+     * When sharing snapshots with other AWS accounts,
+     * <code>DescribeDBSnapshotAttributes</code> returns the
+     * <code>restore</code> attribute and a list of the AWS account ids that
+     * are authorized to copy or restore the manual DB snapshot. If
+     * <code>all</code> is included in the list of values for the
+     * <code>restore</code> attribute, then the manual DB snapshot is public
+     * and can be copied or restored by all AWS accounts.
+     * </p>
+     * <p>
+     * To add or remove access for an AWS account to copy or restore a
+     * manual DB snapshot, or to make the manual DB snapshot public or
+     * private, use the ModifyDBSnapshotAttribute API.
+     * </p>
+     *
+     * @param describeDBSnapshotAttributesRequest Container for the necessary
+     *           parameters to execute the DescribeDBSnapshotAttributes operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBSnapshotAttributes service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshotAttributesResult> describeDBSnapshotAttributesAsync(
+            final DescribeDBSnapshotAttributesRequest describeDBSnapshotAttributesRequest,
+            final AsyncHandler<DescribeDBSnapshotAttributesRequest, DBSnapshotAttributesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSnapshotAttributesResult>() {
+            public DBSnapshotAttributesResult call() throws Exception {
+              DBSnapshotAttributesResult result;
+                try {
+                result = describeDBSnapshotAttributes(describeDBSnapshotAttributesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBSnapshotAttributesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Creates a new DB cluster parameter group.
      * </p>
      * <p>
@@ -1987,6 +2101,120 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
+     * Adds an attribute and values to, or removes an attibute and values
+     * from a manual DB snapshot.
+     * </p>
+     * <p>
+     * To share a manual DB snapshot with other AWS accounts, specify
+     * <code>restore</code> as the <code>AttributeName</code> and use the
+     * <code>ValuesToAdd</code> parameter to add a list of the AWS account
+     * ids that are authorized to retore the manual DB snapshot. Uses the
+     * value <code>all</code> to make the manual DB snapshot public and can
+     * by copied or restored by all AWS accounts. Do not add the
+     * <code>all</code> value for any manual DB snapshots that contain
+     * private information that you do not want to be available to all AWS
+     * accounts.
+     * </p>
+     * <p>
+     * To view which AWS accounts have access to copy or restore a manual DB
+     * snapshot, or whether a manual DB snapshot public or private, use the
+     * DescribeDBSnapshotAttributes API.
+     * </p>
+     * <p>
+     * If the manual DB snapshot is encrypted, it cannot be shared.
+     * </p>
+     *
+     * @param modifyDBSnapshotAttributeRequest Container for the necessary
+     *           parameters to execute the ModifyDBSnapshotAttribute operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyDBSnapshotAttribute service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshotAttributesResult> modifyDBSnapshotAttributeAsync(final ModifyDBSnapshotAttributeRequest modifyDBSnapshotAttributeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSnapshotAttributesResult>() {
+            public DBSnapshotAttributesResult call() throws Exception {
+                return modifyDBSnapshotAttribute(modifyDBSnapshotAttributeRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Adds an attribute and values to, or removes an attibute and values
+     * from a manual DB snapshot.
+     * </p>
+     * <p>
+     * To share a manual DB snapshot with other AWS accounts, specify
+     * <code>restore</code> as the <code>AttributeName</code> and use the
+     * <code>ValuesToAdd</code> parameter to add a list of the AWS account
+     * ids that are authorized to retore the manual DB snapshot. Uses the
+     * value <code>all</code> to make the manual DB snapshot public and can
+     * by copied or restored by all AWS accounts. Do not add the
+     * <code>all</code> value for any manual DB snapshots that contain
+     * private information that you do not want to be available to all AWS
+     * accounts.
+     * </p>
+     * <p>
+     * To view which AWS accounts have access to copy or restore a manual DB
+     * snapshot, or whether a manual DB snapshot public or private, use the
+     * DescribeDBSnapshotAttributes API.
+     * </p>
+     * <p>
+     * If the manual DB snapshot is encrypted, it cannot be shared.
+     * </p>
+     *
+     * @param modifyDBSnapshotAttributeRequest Container for the necessary
+     *           parameters to execute the ModifyDBSnapshotAttribute operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyDBSnapshotAttribute service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshotAttributesResult> modifyDBSnapshotAttributeAsync(
+            final ModifyDBSnapshotAttributeRequest modifyDBSnapshotAttributeRequest,
+            final AsyncHandler<ModifyDBSnapshotAttributeRequest, DBSnapshotAttributesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSnapshotAttributesResult>() {
+            public DBSnapshotAttributesResult call() throws Exception {
+              DBSnapshotAttributesResult result;
+                try {
+                result = modifyDBSnapshotAttribute(modifyDBSnapshotAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyDBSnapshotAttributeRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Displays a list of categories for all event source types, or, if
      * specified, for a specified source type. You can see a list of the
      * event categories and source types in the
@@ -2429,8 +2657,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Creates a DB instance for a DB instance running MySQL or PostgreSQL
-     * that acts as a Read Replica of a source DB instance.
+     * Creates a DB instance for a DB instance running MySQL, MariaDB, or
+     * PostgreSQL that acts as a Read Replica of a source DB instance.
      * </p>
      * <p>
      * All Read Replica DB instances are created as Single-AZ deployments
@@ -2470,8 +2698,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
 
     /**
      * <p>
-     * Creates a DB instance for a DB instance running MySQL or PostgreSQL
-     * that acts as a Read Replica of a source DB instance.
+     * Creates a DB instance for a DB instance running MySQL, MariaDB, or
+     * PostgreSQL that acts as a Read Replica of a source DB instance.
      * </p>
      * <p>
      * All Read Replica DB instances are created as Single-AZ deployments
@@ -3614,6 +3842,11 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * that you will replace the original DB instance with the DB instance
      * created from the snapshot.
      * </p>
+     * <p>
+     * If you are restoring from a shared manual DB snapshot, the
+     * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB
+     * snapshot.
+     * </p>
      *
      * @param restoreDBInstanceFromDBSnapshotRequest Container for the
      *           necessary parameters to execute the RestoreDBInstanceFromDBSnapshot
@@ -3663,6 +3896,11 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * the call to the RestoreDBInstanceFromDBSnapshot action. The result is
      * that you will replace the original DB instance with the DB instance
      * created from the snapshot.
+     * </p>
+     * <p>
+     * If you are restoring from a shared manual DB snapshot, the
+     * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB
+     * snapshot.
      * </p>
      *
      * @param restoreDBInstanceFromDBSnapshotRequest Container for the
@@ -4177,6 +4415,172 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
+     * Returns the default engine and system parameter information for the
+     * cluster database engine.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeEngineDefaultClusterParametersRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeEngineDefaultClusterParameters operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeEngineDefaultClusterParameters service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EngineDefaults> describeEngineDefaultClusterParametersAsync(final DescribeEngineDefaultClusterParametersRequest describeEngineDefaultClusterParametersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EngineDefaults>() {
+            public EngineDefaults call() throws Exception {
+                return describeEngineDefaultClusterParameters(describeEngineDefaultClusterParametersRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the default engine and system parameter information for the
+     * cluster database engine.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeEngineDefaultClusterParametersRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeEngineDefaultClusterParameters operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeEngineDefaultClusterParameters service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EngineDefaults> describeEngineDefaultClusterParametersAsync(
+            final DescribeEngineDefaultClusterParametersRequest describeEngineDefaultClusterParametersRequest,
+            final AsyncHandler<DescribeEngineDefaultClusterParametersRequest, EngineDefaults> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EngineDefaults>() {
+            public EngineDefaults call() throws Exception {
+              EngineDefaults result;
+                try {
+                result = describeEngineDefaultClusterParameters(describeEngineDefaultClusterParametersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeEngineDefaultClusterParametersRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a new Amazon Aurora DB cluster. For more information on
+     * Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param createDBClusterRequest Container for the necessary parameters
+     *           to execute the CreateDBCluster operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBCluster service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> createDBClusterAsync(final CreateDBClusterRequest createDBClusterRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+                return createDBCluster(createDBClusterRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a new Amazon Aurora DB cluster. For more information on
+     * Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param createDBClusterRequest Container for the necessary parameters
+     *           to execute the CreateDBCluster operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBCluster service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> createDBClusterAsync(
+            final CreateDBClusterRequest createDBClusterRequest,
+            final AsyncHandler<CreateDBClusterRequest, DBCluster> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+              DBCluster result;
+                try {
+                result = createDBCluster(createDBClusterRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDBClusterRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Modifies the parameters of a DB cluster parameter group to the
      * default value. To reset specific parameters submit a list of the
      * following: <code>ParameterName</code> and <code>ApplyMethod</code> .
@@ -4280,172 +4684,6 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             throw ex;
               }
               asyncHandler.onSuccess(resetDBClusterParameterGroupRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates a new Amazon Aurora DB cluster. For more information on
-     * Amazon Aurora, see
-     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
-     * in the <i>Amazon RDS User Guide.</i>
-     * </p>
-     *
-     * @param createDBClusterRequest Container for the necessary parameters
-     *           to execute the CreateDBCluster operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBCluster service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBCluster> createDBClusterAsync(final CreateDBClusterRequest createDBClusterRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBCluster>() {
-            public DBCluster call() throws Exception {
-                return createDBCluster(createDBClusterRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates a new Amazon Aurora DB cluster. For more information on
-     * Amazon Aurora, see
-     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
-     * in the <i>Amazon RDS User Guide.</i>
-     * </p>
-     *
-     * @param createDBClusterRequest Container for the necessary parameters
-     *           to execute the CreateDBCluster operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBCluster service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBCluster> createDBClusterAsync(
-            final CreateDBClusterRequest createDBClusterRequest,
-            final AsyncHandler<CreateDBClusterRequest, DBCluster> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBCluster>() {
-            public DBCluster call() throws Exception {
-              DBCluster result;
-                try {
-                result = createDBCluster(createDBClusterRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createDBClusterRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns the default engine and system parameter information for the
-     * cluster database engine.
-     * </p>
-     * <p>
-     * For more information on Amazon Aurora, see
-     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
-     * in the <i>Amazon RDS User Guide.</i>
-     * </p>
-     *
-     * @param describeEngineDefaultClusterParametersRequest Container for the
-     *           necessary parameters to execute the
-     *           DescribeEngineDefaultClusterParameters operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEngineDefaultClusterParameters service method, as returned by
-     *         AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EngineDefaults> describeEngineDefaultClusterParametersAsync(final DescribeEngineDefaultClusterParametersRequest describeEngineDefaultClusterParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EngineDefaults>() {
-            public EngineDefaults call() throws Exception {
-                return describeEngineDefaultClusterParameters(describeEngineDefaultClusterParametersRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns the default engine and system parameter information for the
-     * cluster database engine.
-     * </p>
-     * <p>
-     * For more information on Amazon Aurora, see
-     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
-     * in the <i>Amazon RDS User Guide.</i>
-     * </p>
-     *
-     * @param describeEngineDefaultClusterParametersRequest Container for the
-     *           necessary parameters to execute the
-     *           DescribeEngineDefaultClusterParameters operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEngineDefaultClusterParameters service method, as returned by
-     *         AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EngineDefaults> describeEngineDefaultClusterParametersAsync(
-            final DescribeEngineDefaultClusterParametersRequest describeEngineDefaultClusterParametersRequest,
-            final AsyncHandler<DescribeEngineDefaultClusterParametersRequest, EngineDefaults> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EngineDefaults>() {
-            public EngineDefaults call() throws Exception {
-              EngineDefaults result;
-                try {
-                result = describeEngineDefaultClusterParameters(describeEngineDefaultClusterParametersRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeEngineDefaultClusterParametersRequest, result);
                  return result;
         }
     });

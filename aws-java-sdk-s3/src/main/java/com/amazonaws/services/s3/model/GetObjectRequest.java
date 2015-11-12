@@ -403,6 +403,31 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
+     * Sets the optional inclusive start range within the desired object that the
+     * rest of which will be downloaded by this request.
+     * </p>
+     * <p>
+     * The first byte in an object has
+     * position 0; as an example, the object is of 10 bytes in length, the last
+     * 4 bytes can be downloaded by specifying the start range as 6.
+     * </p>
+     * <p>
+     * If no byte range is specified, this request downloads the entire
+     * object from Amazon S3.
+     * </p>
+     *
+     * @param start
+     *            The start of the inclusive byte range to download.
+     *
+     * @see #setRange(long, long)
+     * @see #withRange(long)
+     */
+    public void setRange(long start) {
+        setRange(start, Long.MAX_VALUE);
+    }
+
+    /**
+     * <p>
      * Sets the optional inclusive byte range within the desired object that
      * will be downloaded by this request.
      * Returns this {@link GetObjectRequest}, enabling additional method
@@ -432,6 +457,36 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
     public GetObjectRequest withRange(long start, long end) {
         setRange(start, end);
         return this;
+    }
+
+    /**
+     * <p>
+     * Sets the optional inclusive start range within the desired object that the
+     * rest of which will be downloaded by this request.
+     * </p>
+     * Returns this {@link GetObjectRequest}, enabling additional method
+     * calls to be chained together.
+     * <p>
+     * The first byte in an object has
+     * position 0; as an example, the object is of 10 bytes in length, the last
+     * 4 bytes can be downloaded by specifying the start range as 6.
+     * </p>
+     * <p>
+     * If no byte range is specified, this request downloads the entire
+     * object from Amazon S3.
+     * </p>
+     *
+     * @param start
+     *            The start of the inclusive byte range to download.
+     *
+     * @return This {@link GetObjectRequest}, enabling additional method
+     *         calls to be chained together.
+     *
+     * @see #withRange(long, long)
+     * @see #setRange(long)
+     */
+    public GetObjectRequest withRange(long start) {
+        return withRange(start, Long.MAX_VALUE);
     }
 
     /**

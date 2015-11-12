@@ -164,6 +164,12 @@ public class DBCluster implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroups;
 
     /**
+     * Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.
+     */
+    private String hostedZoneId;
+
+    /**
      * Specifies the allocated storage size in gigabytes (GB).
      *
      * @return Specifies the allocated storage size in gigabytes (GB).
@@ -1149,6 +1155,45 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.
+     *
+     * @return Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     *         zone.
+     */
+    public String getHostedZoneId() {
+        return hostedZoneId;
+    }
+    
+    /**
+     * Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.
+     *
+     * @param hostedZoneId Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     *         zone.
+     */
+    public void setHostedZoneId(String hostedZoneId) {
+        this.hostedZoneId = hostedZoneId;
+    }
+    
+    /**
+     * Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hostedZoneId Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     *         zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBCluster withHostedZoneId(String hostedZoneId) {
+        this.hostedZoneId = hostedZoneId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1181,7 +1226,8 @@ public class DBCluster implements Serializable, Cloneable {
         if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");
         if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
         if (getDBClusterMembers() != null) sb.append("DBClusterMembers: " + getDBClusterMembers() + ",");
-        if (getVpcSecurityGroups() != null) sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() );
+        if (getVpcSecurityGroups() != null) sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ",");
+        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() );
         sb.append("}");
         return sb.toString();
     }
@@ -1213,6 +1259,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
         hashCode = prime * hashCode + ((getDBClusterMembers() == null) ? 0 : getDBClusterMembers().hashCode()); 
         hashCode = prime * hashCode + ((getVpcSecurityGroups() == null) ? 0 : getVpcSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode()); 
         return hashCode;
     }
     
@@ -1268,6 +1315,8 @@ public class DBCluster implements Serializable, Cloneable {
         if (other.getDBClusterMembers() != null && other.getDBClusterMembers().equals(this.getDBClusterMembers()) == false) return false; 
         if (other.getVpcSecurityGroups() == null ^ this.getVpcSecurityGroups() == null) return false;
         if (other.getVpcSecurityGroups() != null && other.getVpcSecurityGroups().equals(this.getVpcSecurityGroups()) == false) return false; 
+        if (other.getHostedZoneId() == null ^ this.getHostedZoneId() == null) return false;
+        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false) return false; 
         return true;
     }
     

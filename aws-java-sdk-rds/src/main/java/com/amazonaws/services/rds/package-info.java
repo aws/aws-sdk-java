@@ -11,7 +11,7 @@
  * their applications and businesses unique.
  * </p>
  * <p>
- * Amazon RDS gives you access to the capabilities of a MySQL,
+ * Amazon RDS gives you access to the capabilities of a MySQL, MariaDB,
  * PostgreSQL, Microsoft SQL Server, Oracle, or Aurora database server.
  * This means the code, applications, and tools you already use today
  * with your existing databases work with Amazon RDS without

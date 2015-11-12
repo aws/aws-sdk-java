@@ -33,7 +33,7 @@ public class Event implements Serializable, Cloneable {
      * Specifies the source type for this event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot, db-cluster, db-cluster-snapshot
      */
     private String sourceType;
 
@@ -95,7 +95,7 @@ public class Event implements Serializable, Cloneable {
      * Specifies the source type for this event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot, db-cluster, db-cluster-snapshot
      *
      * @return Specifies the source type for this event.
      *
@@ -109,7 +109,7 @@ public class Event implements Serializable, Cloneable {
      * Specifies the source type for this event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot, db-cluster, db-cluster-snapshot
      *
      * @param sourceType Specifies the source type for this event.
      *
@@ -125,7 +125,7 @@ public class Event implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot, db-cluster, db-cluster-snapshot
      *
      * @param sourceType Specifies the source type for this event.
      *
@@ -143,7 +143,7 @@ public class Event implements Serializable, Cloneable {
      * Specifies the source type for this event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot, db-cluster, db-cluster-snapshot
      *
      * @param sourceType Specifies the source type for this event.
      *
@@ -159,7 +159,7 @@ public class Event implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot, db-cluster, db-cluster-snapshot
      *
      * @param sourceType Specifies the source type for this event.
      *

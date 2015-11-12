@@ -73,8 +73,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     private String cidrBlock;
 
     /**
-     * The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
-     * one for you (recommended).
+     * The Availability Zone for the subnet. <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not
+     * necessarily select a different zone for each subnet.
      */
     private String availabilityZone;
 
@@ -171,35 +172,41 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
-     * one for you (recommended).
+     * The Availability Zone for the subnet. <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not
+     * necessarily select a different zone for each subnet.
      *
-     * @return The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
-     *         one for you (recommended).
+     * @return The Availability Zone for the subnet. <p>Default: AWS selects one for
+     *         you. If you create more than one subnet in your VPC, we may not
+     *         necessarily select a different zone for each subnet.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
-     * one for you (recommended).
+     * The Availability Zone for the subnet. <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not
+     * necessarily select a different zone for each subnet.
      *
-     * @param availabilityZone The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
-     *         one for you (recommended).
+     * @param availabilityZone The Availability Zone for the subnet. <p>Default: AWS selects one for
+     *         you. If you create more than one subnet in your VPC, we may not
+     *         necessarily select a different zone for each subnet.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
-     * one for you (recommended).
+     * The Availability Zone for the subnet. <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not
+     * necessarily select a different zone for each subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
-     *         one for you (recommended).
+     * @param availabilityZone The Availability Zone for the subnet. <p>Default: AWS selects one for
+     *         you. If you create more than one subnet in your VPC, we may not
+     *         necessarily select a different zone for each subnet.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

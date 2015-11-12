@@ -52,9 +52,26 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
     private String dBSnapshotIdentifier;
 
     /**
-     * The type of snapshots that will be returned. Values can be "automated"
-     * or "manual." If not specified, the returned results will include all
-     * snapshots types.
+     * The type of snapshots that will be returned. You can specify one of
+     * the following values: <ul> <li><code>automated</code> - Return all DB
+     * snapshots that have been automatically taken by Amazon RDS for my AWS
+     * account.</li> <li><code>manual</code> - Return all DB snapshots that
+     * have been taken by my AWS account.</li> <li><code>shared</code> -
+     * Return all manual DB snapshots that have been shared to my AWS
+     * account.</li> <li><code>public</code> - Return all DB snapshots that
+     * have been marked as public.</li> </ul> <p>If you do not specify a
+     * <code>SnapshotType</code>, then both automated and manual snapshots
+     * are returned. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>.
+     * You can include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>. <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters
+     * do not apply for <code>SnapshotType</code> values of
+     * <code>manual</code> or <code>automated</code>. The
+     * <code>IncludePublic</code> paramter does not apply when
+     * <code>SnapshotType</code> is set to <code>shared</code>. the
+     * <code>IncludeShared</code> parameter does not apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.
      */
     private String snapshotType;
 
@@ -79,6 +96,23 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      * the value specified by <code>MaxRecords</code>.
      */
     private String marker;
+
+    /**
+     * True to include shared manual DB snapshots from other AWS accounts
+     * that this AWS account has been given permission to copy or restore;
+     * otherwise false. The default is false. <p>An AWS account is given
+     * permission to restore a manual DB snapshot from another AWS account by
+     * the <a>ModifyDBSnapshotAttribute</a> API.
+     */
+    private Boolean includeShared;
+
+    /**
+     * True to include manual DB snapshots that are public and can be copied
+     * or restored by any AWS account; otherwise false. The default is false.
+     * <p>An manual DB snapshot is shared as public by the
+     * <a>ModifyDBSnapshotAttribute</a> API.
+     */
+    private Boolean includePublic;
 
     /**
      * Default constructor for a new DescribeDBSnapshotsRequest object.  Callers should use the
@@ -231,41 +265,143 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * The type of snapshots that will be returned. Values can be "automated"
-     * or "manual." If not specified, the returned results will include all
-     * snapshots types.
+     * The type of snapshots that will be returned. You can specify one of
+     * the following values: <ul> <li><code>automated</code> - Return all DB
+     * snapshots that have been automatically taken by Amazon RDS for my AWS
+     * account.</li> <li><code>manual</code> - Return all DB snapshots that
+     * have been taken by my AWS account.</li> <li><code>shared</code> -
+     * Return all manual DB snapshots that have been shared to my AWS
+     * account.</li> <li><code>public</code> - Return all DB snapshots that
+     * have been marked as public.</li> </ul> <p>If you do not specify a
+     * <code>SnapshotType</code>, then both automated and manual snapshots
+     * are returned. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>.
+     * You can include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>. <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters
+     * do not apply for <code>SnapshotType</code> values of
+     * <code>manual</code> or <code>automated</code>. The
+     * <code>IncludePublic</code> paramter does not apply when
+     * <code>SnapshotType</code> is set to <code>shared</code>. the
+     * <code>IncludeShared</code> parameter does not apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.
      *
-     * @return The type of snapshots that will be returned. Values can be "automated"
-     *         or "manual." If not specified, the returned results will include all
-     *         snapshots types.
+     * @return The type of snapshots that will be returned. You can specify one of
+     *         the following values: <ul> <li><code>automated</code> - Return all DB
+     *         snapshots that have been automatically taken by Amazon RDS for my AWS
+     *         account.</li> <li><code>manual</code> - Return all DB snapshots that
+     *         have been taken by my AWS account.</li> <li><code>shared</code> -
+     *         Return all manual DB snapshots that have been shared to my AWS
+     *         account.</li> <li><code>public</code> - Return all DB snapshots that
+     *         have been marked as public.</li> </ul> <p>If you do not specify a
+     *         <code>SnapshotType</code>, then both automated and manual snapshots
+     *         are returned. You can include shared snapshots with these results by
+     *         setting the <code>IncludeShared</code> parameter to <code>true</code>.
+     *         You can include public snapshots with these results by setting the
+     *         <code>IncludePublic</code> parameter to <code>true</code>. <p>The
+     *         <code>IncludeShared</code> and <code>IncludePublic</code> parameters
+     *         do not apply for <code>SnapshotType</code> values of
+     *         <code>manual</code> or <code>automated</code>. The
+     *         <code>IncludePublic</code> paramter does not apply when
+     *         <code>SnapshotType</code> is set to <code>shared</code>. the
+     *         <code>IncludeShared</code> parameter does not apply when
+     *         <code>SnapshotType</code> is set to <code>public</code>.
      */
     public String getSnapshotType() {
         return snapshotType;
     }
     
     /**
-     * The type of snapshots that will be returned. Values can be "automated"
-     * or "manual." If not specified, the returned results will include all
-     * snapshots types.
+     * The type of snapshots that will be returned. You can specify one of
+     * the following values: <ul> <li><code>automated</code> - Return all DB
+     * snapshots that have been automatically taken by Amazon RDS for my AWS
+     * account.</li> <li><code>manual</code> - Return all DB snapshots that
+     * have been taken by my AWS account.</li> <li><code>shared</code> -
+     * Return all manual DB snapshots that have been shared to my AWS
+     * account.</li> <li><code>public</code> - Return all DB snapshots that
+     * have been marked as public.</li> </ul> <p>If you do not specify a
+     * <code>SnapshotType</code>, then both automated and manual snapshots
+     * are returned. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>.
+     * You can include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>. <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters
+     * do not apply for <code>SnapshotType</code> values of
+     * <code>manual</code> or <code>automated</code>. The
+     * <code>IncludePublic</code> paramter does not apply when
+     * <code>SnapshotType</code> is set to <code>shared</code>. the
+     * <code>IncludeShared</code> parameter does not apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.
      *
-     * @param snapshotType The type of snapshots that will be returned. Values can be "automated"
-     *         or "manual." If not specified, the returned results will include all
-     *         snapshots types.
+     * @param snapshotType The type of snapshots that will be returned. You can specify one of
+     *         the following values: <ul> <li><code>automated</code> - Return all DB
+     *         snapshots that have been automatically taken by Amazon RDS for my AWS
+     *         account.</li> <li><code>manual</code> - Return all DB snapshots that
+     *         have been taken by my AWS account.</li> <li><code>shared</code> -
+     *         Return all manual DB snapshots that have been shared to my AWS
+     *         account.</li> <li><code>public</code> - Return all DB snapshots that
+     *         have been marked as public.</li> </ul> <p>If you do not specify a
+     *         <code>SnapshotType</code>, then both automated and manual snapshots
+     *         are returned. You can include shared snapshots with these results by
+     *         setting the <code>IncludeShared</code> parameter to <code>true</code>.
+     *         You can include public snapshots with these results by setting the
+     *         <code>IncludePublic</code> parameter to <code>true</code>. <p>The
+     *         <code>IncludeShared</code> and <code>IncludePublic</code> parameters
+     *         do not apply for <code>SnapshotType</code> values of
+     *         <code>manual</code> or <code>automated</code>. The
+     *         <code>IncludePublic</code> paramter does not apply when
+     *         <code>SnapshotType</code> is set to <code>shared</code>. the
+     *         <code>IncludeShared</code> parameter does not apply when
+     *         <code>SnapshotType</code> is set to <code>public</code>.
      */
     public void setSnapshotType(String snapshotType) {
         this.snapshotType = snapshotType;
     }
     
     /**
-     * The type of snapshots that will be returned. Values can be "automated"
-     * or "manual." If not specified, the returned results will include all
-     * snapshots types.
+     * The type of snapshots that will be returned. You can specify one of
+     * the following values: <ul> <li><code>automated</code> - Return all DB
+     * snapshots that have been automatically taken by Amazon RDS for my AWS
+     * account.</li> <li><code>manual</code> - Return all DB snapshots that
+     * have been taken by my AWS account.</li> <li><code>shared</code> -
+     * Return all manual DB snapshots that have been shared to my AWS
+     * account.</li> <li><code>public</code> - Return all DB snapshots that
+     * have been marked as public.</li> </ul> <p>If you do not specify a
+     * <code>SnapshotType</code>, then both automated and manual snapshots
+     * are returned. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>.
+     * You can include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>. <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters
+     * do not apply for <code>SnapshotType</code> values of
+     * <code>manual</code> or <code>automated</code>. The
+     * <code>IncludePublic</code> paramter does not apply when
+     * <code>SnapshotType</code> is set to <code>shared</code>. the
+     * <code>IncludeShared</code> parameter does not apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotType The type of snapshots that will be returned. Values can be "automated"
-     *         or "manual." If not specified, the returned results will include all
-     *         snapshots types.
+     * @param snapshotType The type of snapshots that will be returned. You can specify one of
+     *         the following values: <ul> <li><code>automated</code> - Return all DB
+     *         snapshots that have been automatically taken by Amazon RDS for my AWS
+     *         account.</li> <li><code>manual</code> - Return all DB snapshots that
+     *         have been taken by my AWS account.</li> <li><code>shared</code> -
+     *         Return all manual DB snapshots that have been shared to my AWS
+     *         account.</li> <li><code>public</code> - Return all DB snapshots that
+     *         have been marked as public.</li> </ul> <p>If you do not specify a
+     *         <code>SnapshotType</code>, then both automated and manual snapshots
+     *         are returned. You can include shared snapshots with these results by
+     *         setting the <code>IncludeShared</code> parameter to <code>true</code>.
+     *         You can include public snapshots with these results by setting the
+     *         <code>IncludePublic</code> parameter to <code>true</code>. <p>The
+     *         <code>IncludeShared</code> and <code>IncludePublic</code> parameters
+     *         do not apply for <code>SnapshotType</code> values of
+     *         <code>manual</code> or <code>automated</code>. The
+     *         <code>IncludePublic</code> paramter does not apply when
+     *         <code>SnapshotType</code> is set to <code>shared</code>. the
+     *         <code>IncludeShared</code> parameter does not apply when
+     *         <code>SnapshotType</code> is set to <code>public</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -457,6 +593,146 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * True to include shared manual DB snapshots from other AWS accounts
+     * that this AWS account has been given permission to copy or restore;
+     * otherwise false. The default is false. <p>An AWS account is given
+     * permission to restore a manual DB snapshot from another AWS account by
+     * the <a>ModifyDBSnapshotAttribute</a> API.
+     *
+     * @return True to include shared manual DB snapshots from other AWS accounts
+     *         that this AWS account has been given permission to copy or restore;
+     *         otherwise false. The default is false. <p>An AWS account is given
+     *         permission to restore a manual DB snapshot from another AWS account by
+     *         the <a>ModifyDBSnapshotAttribute</a> API.
+     */
+    public Boolean isIncludeShared() {
+        return includeShared;
+    }
+    
+    /**
+     * True to include shared manual DB snapshots from other AWS accounts
+     * that this AWS account has been given permission to copy or restore;
+     * otherwise false. The default is false. <p>An AWS account is given
+     * permission to restore a manual DB snapshot from another AWS account by
+     * the <a>ModifyDBSnapshotAttribute</a> API.
+     *
+     * @param includeShared True to include shared manual DB snapshots from other AWS accounts
+     *         that this AWS account has been given permission to copy or restore;
+     *         otherwise false. The default is false. <p>An AWS account is given
+     *         permission to restore a manual DB snapshot from another AWS account by
+     *         the <a>ModifyDBSnapshotAttribute</a> API.
+     */
+    public void setIncludeShared(Boolean includeShared) {
+        this.includeShared = includeShared;
+    }
+    
+    /**
+     * True to include shared manual DB snapshots from other AWS accounts
+     * that this AWS account has been given permission to copy or restore;
+     * otherwise false. The default is false. <p>An AWS account is given
+     * permission to restore a manual DB snapshot from another AWS account by
+     * the <a>ModifyDBSnapshotAttribute</a> API.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param includeShared True to include shared manual DB snapshots from other AWS accounts
+     *         that this AWS account has been given permission to copy or restore;
+     *         otherwise false. The default is false. <p>An AWS account is given
+     *         permission to restore a manual DB snapshot from another AWS account by
+     *         the <a>ModifyDBSnapshotAttribute</a> API.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeDBSnapshotsRequest withIncludeShared(Boolean includeShared) {
+        this.includeShared = includeShared;
+        return this;
+    }
+
+    /**
+     * True to include shared manual DB snapshots from other AWS accounts
+     * that this AWS account has been given permission to copy or restore;
+     * otherwise false. The default is false. <p>An AWS account is given
+     * permission to restore a manual DB snapshot from another AWS account by
+     * the <a>ModifyDBSnapshotAttribute</a> API.
+     *
+     * @return True to include shared manual DB snapshots from other AWS accounts
+     *         that this AWS account has been given permission to copy or restore;
+     *         otherwise false. The default is false. <p>An AWS account is given
+     *         permission to restore a manual DB snapshot from another AWS account by
+     *         the <a>ModifyDBSnapshotAttribute</a> API.
+     */
+    public Boolean getIncludeShared() {
+        return includeShared;
+    }
+
+    /**
+     * True to include manual DB snapshots that are public and can be copied
+     * or restored by any AWS account; otherwise false. The default is false.
+     * <p>An manual DB snapshot is shared as public by the
+     * <a>ModifyDBSnapshotAttribute</a> API.
+     *
+     * @return True to include manual DB snapshots that are public and can be copied
+     *         or restored by any AWS account; otherwise false. The default is false.
+     *         <p>An manual DB snapshot is shared as public by the
+     *         <a>ModifyDBSnapshotAttribute</a> API.
+     */
+    public Boolean isIncludePublic() {
+        return includePublic;
+    }
+    
+    /**
+     * True to include manual DB snapshots that are public and can be copied
+     * or restored by any AWS account; otherwise false. The default is false.
+     * <p>An manual DB snapshot is shared as public by the
+     * <a>ModifyDBSnapshotAttribute</a> API.
+     *
+     * @param includePublic True to include manual DB snapshots that are public and can be copied
+     *         or restored by any AWS account; otherwise false. The default is false.
+     *         <p>An manual DB snapshot is shared as public by the
+     *         <a>ModifyDBSnapshotAttribute</a> API.
+     */
+    public void setIncludePublic(Boolean includePublic) {
+        this.includePublic = includePublic;
+    }
+    
+    /**
+     * True to include manual DB snapshots that are public and can be copied
+     * or restored by any AWS account; otherwise false. The default is false.
+     * <p>An manual DB snapshot is shared as public by the
+     * <a>ModifyDBSnapshotAttribute</a> API.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param includePublic True to include manual DB snapshots that are public and can be copied
+     *         or restored by any AWS account; otherwise false. The default is false.
+     *         <p>An manual DB snapshot is shared as public by the
+     *         <a>ModifyDBSnapshotAttribute</a> API.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeDBSnapshotsRequest withIncludePublic(Boolean includePublic) {
+        this.includePublic = includePublic;
+        return this;
+    }
+
+    /**
+     * True to include manual DB snapshots that are public and can be copied
+     * or restored by any AWS account; otherwise false. The default is false.
+     * <p>An manual DB snapshot is shared as public by the
+     * <a>ModifyDBSnapshotAttribute</a> API.
+     *
+     * @return True to include manual DB snapshots that are public and can be copied
+     *         or restored by any AWS account; otherwise false. The default is false.
+     *         <p>An manual DB snapshot is shared as public by the
+     *         <a>ModifyDBSnapshotAttribute</a> API.
+     */
+    public Boolean getIncludePublic() {
+        return includePublic;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -473,7 +749,9 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
         if (getSnapshotType() != null) sb.append("SnapshotType: " + getSnapshotType() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
         if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() );
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (isIncludeShared() != null) sb.append("IncludeShared: " + isIncludeShared() + ",");
+        if (isIncludePublic() != null) sb.append("IncludePublic: " + isIncludePublic() );
         sb.append("}");
         return sb.toString();
     }
@@ -489,6 +767,8 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((isIncludeShared() == null) ? 0 : isIncludeShared().hashCode()); 
+        hashCode = prime * hashCode + ((isIncludePublic() == null) ? 0 : isIncludePublic().hashCode()); 
         return hashCode;
     }
     
@@ -512,6 +792,10 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
         if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
         if (other.getMarker() == null ^ this.getMarker() == null) return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.isIncludeShared() == null ^ this.isIncludeShared() == null) return false;
+        if (other.isIncludeShared() != null && other.isIncludeShared().equals(this.isIncludeShared()) == false) return false; 
+        if (other.isIncludePublic() == null ^ this.isIncludePublic() == null) return false;
+        if (other.isIncludePublic() != null && other.isIncludePublic().equals(this.isIncludePublic()) == false) return false; 
         return true;
     }
     

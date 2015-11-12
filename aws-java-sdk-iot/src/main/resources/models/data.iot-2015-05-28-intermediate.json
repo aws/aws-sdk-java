@@ -35,8 +35,8 @@
         "variableType" : "DeleteThingShadowRequest",
         "variableDeclarationType" : "DeleteThingShadowRequest",
         "documentation" : "<p>The input for the DeleteThingShadow operation.</p>",
-        "variableSetterType" : "DeleteThingShadowRequest",
-        "simpleType" : "DeleteThingShadowRequest"
+        "simpleType" : "DeleteThingShadowRequest",
+        "variableSetterType" : "DeleteThingShadowRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -71,12 +71,12 @@
       "hasBlobMemberAsPayload" : true,
       "syncDocumentation" : "/**<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param deleteThingShadowRequest The input for the DeleteThingShadow operation.\n@return Result of the DeleteThingShadow operation returned by the service.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.\n@throws MethodNotAllowedException The specified combination of HTTP verb and URI is not supported.\n@throws UnsupportedDocumentEncodingException The document encoding is not supported.*/",
       "asyncDocumentation" : "/**<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param deleteThingShadowRequest The input for the DeleteThingShadow operation.\n@return A Java Future containing the result of the DeleteThingShadow operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param deleteThingShadowRequest The input for the DeleteThingShadow operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteThingShadow operation returned by the service.*/",
       "syncReturnType" : "DeleteThingShadowResult",
       "asyncReturnType" : "DeleteThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteThingShadowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteThingShadowResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteThingShadowRequest, DeleteThingShadowResult>",
-      "asyncDocumentationWithHandler" : "/**<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param deleteThingShadowRequest The input for the DeleteThingShadow operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteThingShadow operation returned by the service.*/",
       "methodName" : "deleteThingShadow"
     },
     "GetThingShadow" : {
@@ -88,8 +88,8 @@
         "variableType" : "GetThingShadowRequest",
         "variableDeclarationType" : "GetThingShadowRequest",
         "documentation" : "<p>The input for the GetThingShadow operation.</p>",
-        "variableSetterType" : "GetThingShadowRequest",
-        "simpleType" : "GetThingShadowRequest"
+        "simpleType" : "GetThingShadowRequest",
+        "variableSetterType" : "GetThingShadowRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -124,12 +124,12 @@
       "hasBlobMemberAsPayload" : true,
       "syncDocumentation" : "/**<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param getThingShadowRequest The input for the GetThingShadow operation.\n@return Result of the GetThingShadow operation returned by the service.\n@throws InvalidRequestException The request is not valid.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.\n@throws MethodNotAllowedException The specified combination of HTTP verb and URI is not supported.\n@throws UnsupportedDocumentEncodingException The document encoding is not supported.*/",
       "asyncDocumentation" : "/**<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param getThingShadowRequest The input for the GetThingShadow operation.\n@return A Java Future containing the result of the GetThingShadow operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param getThingShadowRequest The input for the GetThingShadow operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetThingShadow operation returned by the service.*/",
       "syncReturnType" : "GetThingShadowResult",
       "asyncReturnType" : "GetThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetThingShadowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetThingShadowResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetThingShadowRequest, GetThingShadowResult>",
-      "asyncDocumentationWithHandler" : "/**<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param getThingShadowRequest The input for the GetThingShadow operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetThingShadow operation returned by the service.*/",
       "methodName" : "getThingShadow"
     },
     "Publish" : {
@@ -141,8 +141,8 @@
         "variableType" : "PublishRequest",
         "variableDeclarationType" : "PublishRequest",
         "documentation" : "<p>The input for the Publish operation.</p>",
-        "variableSetterType" : "PublishRequest",
-        "simpleType" : "PublishRequest"
+        "simpleType" : "PublishRequest",
+        "variableSetterType" : "PublishRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : null,
@@ -162,12 +162,12 @@
       "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param publishRequest The input for the Publish operation.\n@throws InternalFailureException An unexpected error has occurred.\n@throws InvalidRequestException The request is not valid.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws MethodNotAllowedException The specified combination of HTTP verb and URI is not supported.*/",
       "asyncDocumentation" : "/**<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param publishRequest The input for the Publish operation.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param publishRequest The input for the Publish operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PublishRequest, Void>",
-      "asyncDocumentationWithHandler" : "/**<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param publishRequest The input for the Publish operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "methodName" : "publish"
     },
     "UpdateThingShadow" : {
@@ -179,8 +179,8 @@
         "variableType" : "UpdateThingShadowRequest",
         "variableDeclarationType" : "UpdateThingShadowRequest",
         "documentation" : "<p>The input for the UpdateThingShadow operation.</p>",
-        "variableSetterType" : "UpdateThingShadowRequest",
-        "simpleType" : "UpdateThingShadowRequest"
+        "simpleType" : "UpdateThingShadowRequest",
+        "variableSetterType" : "UpdateThingShadowRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -218,12 +218,12 @@
       "hasBlobMemberAsPayload" : true,
       "syncDocumentation" : "/**<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param updateThingShadowRequest The input for the UpdateThingShadow operation.\n@return Result of the UpdateThingShadow operation returned by the service.\n@throws ConflictException The specified version does not match the version of the document.\n@throws RequestEntityTooLargeException The payload exceeds the maximum size allowed.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.\n@throws MethodNotAllowedException The specified combination of HTTP verb and URI is not supported.\n@throws UnsupportedDocumentEncodingException The document encoding is not supported.*/",
       "asyncDocumentation" : "/**<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param updateThingShadowRequest The input for the UpdateThingShadow operation.\n@return A Java Future containing the result of the UpdateThingShadow operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param updateThingShadowRequest The input for the UpdateThingShadow operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateThingShadow operation returned by the service.*/",
       "syncReturnType" : "UpdateThingShadowResult",
       "asyncReturnType" : "UpdateThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateThingShadowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateThingShadowResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateThingShadowRequest, UpdateThingShadowResult>",
-      "asyncDocumentationWithHandler" : "/**<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>\n@param updateThingShadowRequest The input for the UpdateThingShadow operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateThingShadow operation returned by the service.*/",
       "methodName" : "updateThingShadow"
     }
   },
@@ -248,16 +248,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the MQTT topic.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "topic",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -282,13 +282,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.*/",
         "getterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@return The name of the MQTT topic.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The Quality of Service (QoS) level.</p>",
         "name" : "Qos",
@@ -299,16 +299,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The Quality of Service (QoS) level.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "qos",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -333,13 +333,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.*/",
         "getterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@return The Quality of Service (QoS) level.*/",
         "fluentSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The state information, in JSON format.</p>",
         "name" : "Payload",
@@ -350,16 +350,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>The state information, in JSON format.</p>",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -384,13 +384,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
         "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -398,8 +398,8 @@
         "variableType" : "PublishRequest",
         "variableDeclarationType" : "PublishRequest",
         "documentation" : null,
-        "variableSetterType" : "PublishRequest",
-        "simpleType" : "PublishRequest"
+        "simpleType" : "PublishRequest",
+        "variableSetterType" : "PublishRequest"
       },
       "marshaller" : {
         "action" : "Publish",
@@ -428,16 +428,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The Quality of Service (QoS) level.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "qos",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -462,13 +462,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.*/",
           "getterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@return The Quality of Service (QoS) level.*/",
           "fluentSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Payload" : {
           "documentation" : "<p>The state information, in JSON format.</p>",
@@ -480,16 +480,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>The state information, in JSON format.</p>",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -514,13 +514,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
           "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
           "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Topic" : {
           "documentation" : "<p>The name of the MQTT topic.</p>",
@@ -532,16 +532,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the MQTT topic.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "topic",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -566,13 +566,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.*/",
           "getterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@return The name of the MQTT topic.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -593,8 +593,8 @@
         "variableType" : "UnauthorizedException",
         "variableDeclarationType" : "UnauthorizedException",
         "documentation" : null,
-        "variableSetterType" : "UnauthorizedException",
-        "simpleType" : "UnauthorizedException"
+        "simpleType" : "UnauthorizedException",
+        "variableSetterType" : "UnauthorizedException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -624,8 +624,8 @@
         "variableType" : "MethodNotAllowedException",
         "variableDeclarationType" : "MethodNotAllowedException",
         "documentation" : null,
-        "variableSetterType" : "MethodNotAllowedException",
-        "simpleType" : "MethodNotAllowedException"
+        "simpleType" : "MethodNotAllowedException",
+        "variableSetterType" : "MethodNotAllowedException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -655,8 +655,8 @@
         "variableType" : "ConflictException",
         "variableDeclarationType" : "ConflictException",
         "documentation" : null,
-        "variableSetterType" : "ConflictException",
-        "simpleType" : "ConflictException"
+        "simpleType" : "ConflictException",
+        "variableSetterType" : "ConflictException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -686,8 +686,8 @@
         "variableType" : "RequestEntityTooLargeException",
         "variableDeclarationType" : "RequestEntityTooLargeException",
         "documentation" : null,
-        "variableSetterType" : "RequestEntityTooLargeException",
-        "simpleType" : "RequestEntityTooLargeException"
+        "simpleType" : "RequestEntityTooLargeException",
+        "variableSetterType" : "RequestEntityTooLargeException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -720,16 +720,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the thing.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -754,13 +754,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
         "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -768,8 +768,8 @@
         "variableType" : "GetThingShadowRequest",
         "variableDeclarationType" : "GetThingShadowRequest",
         "documentation" : null,
-        "variableSetterType" : "GetThingShadowRequest",
-        "simpleType" : "GetThingShadowRequest"
+        "simpleType" : "GetThingShadowRequest",
+        "variableSetterType" : "GetThingShadowRequest"
       },
       "marshaller" : {
         "action" : "GetThingShadow",
@@ -798,16 +798,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the thing.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -832,13 +832,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
           "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -862,16 +862,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>The state information, in JSON format.</p>",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -896,13 +896,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
         "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -910,8 +910,8 @@
         "variableType" : "GetThingShadowResult",
         "variableDeclarationType" : "GetThingShadowResult",
         "documentation" : null,
-        "variableSetterType" : "GetThingShadowResult",
-        "simpleType" : "GetThingShadowResult"
+        "simpleType" : "GetThingShadowResult",
+        "variableSetterType" : "GetThingShadowResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -936,16 +936,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>The state information, in JSON format.</p>",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -970,13 +970,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
           "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
           "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -997,8 +997,8 @@
         "variableType" : "UnsupportedDocumentEncodingException",
         "variableDeclarationType" : "UnsupportedDocumentEncodingException",
         "documentation" : null,
-        "variableSetterType" : "UnsupportedDocumentEncodingException",
-        "simpleType" : "UnsupportedDocumentEncodingException"
+        "simpleType" : "UnsupportedDocumentEncodingException",
+        "variableSetterType" : "UnsupportedDocumentEncodingException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1028,8 +1028,8 @@
         "variableType" : "ThrottlingException",
         "variableDeclarationType" : "ThrottlingException",
         "documentation" : null,
-        "variableSetterType" : "ThrottlingException",
-        "simpleType" : "ThrottlingException"
+        "simpleType" : "ThrottlingException",
+        "variableSetterType" : "ThrottlingException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1059,8 +1059,8 @@
         "variableType" : "ServiceUnavailableException",
         "variableDeclarationType" : "ServiceUnavailableException",
         "documentation" : null,
-        "variableSetterType" : "ServiceUnavailableException",
-        "simpleType" : "ServiceUnavailableException"
+        "simpleType" : "ServiceUnavailableException",
+        "variableSetterType" : "ServiceUnavailableException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1090,8 +1090,8 @@
         "variableType" : "ResourceNotFoundException",
         "variableDeclarationType" : "ResourceNotFoundException",
         "documentation" : null,
-        "variableSetterType" : "ResourceNotFoundException",
-        "simpleType" : "ResourceNotFoundException"
+        "simpleType" : "ResourceNotFoundException",
+        "variableSetterType" : "ResourceNotFoundException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1121,8 +1121,8 @@
         "variableType" : "InternalFailureException",
         "variableDeclarationType" : "InternalFailureException",
         "documentation" : null,
-        "variableSetterType" : "InternalFailureException",
-        "simpleType" : "InternalFailureException"
+        "simpleType" : "InternalFailureException",
+        "variableSetterType" : "InternalFailureException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1152,8 +1152,8 @@
         "variableType" : "InvalidRequestException",
         "variableDeclarationType" : "InvalidRequestException",
         "documentation" : null,
-        "variableSetterType" : "InvalidRequestException",
-        "simpleType" : "InvalidRequestException"
+        "simpleType" : "InvalidRequestException",
+        "variableSetterType" : "InvalidRequestException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1186,16 +1186,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>The state information, in JSON format.</p>",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -1220,13 +1220,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
         "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1234,8 +1234,8 @@
         "variableType" : "DeleteThingShadowResult",
         "variableDeclarationType" : "DeleteThingShadowResult",
         "documentation" : null,
-        "variableSetterType" : "DeleteThingShadowResult",
-        "simpleType" : "DeleteThingShadowResult"
+        "simpleType" : "DeleteThingShadowResult",
+        "variableSetterType" : "DeleteThingShadowResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1260,16 +1260,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>The state information, in JSON format.</p>",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -1294,13 +1294,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
           "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
           "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -1324,16 +1324,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>The state information, in JSON format.</p>",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -1358,13 +1358,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
         "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1372,8 +1372,8 @@
         "variableType" : "UpdateThingShadowResult",
         "variableDeclarationType" : "UpdateThingShadowResult",
         "documentation" : null,
-        "variableSetterType" : "UpdateThingShadowResult",
-        "simpleType" : "UpdateThingShadowResult"
+        "simpleType" : "UpdateThingShadowResult",
+        "variableSetterType" : "UpdateThingShadowResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1398,16 +1398,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>The state information, in JSON format.</p>",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -1432,13 +1432,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
           "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
           "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -1462,16 +1462,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the thing.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1496,13 +1496,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
         "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The state information, in JSON format.</p>",
         "name" : "Payload",
@@ -1513,16 +1513,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>The state information, in JSON format.</p>",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -1547,13 +1547,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
         "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1561,8 +1561,8 @@
         "variableType" : "UpdateThingShadowRequest",
         "variableDeclarationType" : "UpdateThingShadowRequest",
         "documentation" : null,
-        "variableSetterType" : "UpdateThingShadowRequest",
-        "simpleType" : "UpdateThingShadowRequest"
+        "simpleType" : "UpdateThingShadowRequest",
+        "variableSetterType" : "UpdateThingShadowRequest"
       },
       "marshaller" : {
         "action" : "UpdateThingShadow",
@@ -1591,16 +1591,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>The state information, in JSON format.</p>",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -1625,13 +1625,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.*/",
           "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
           "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ThingName" : {
           "documentation" : "<p>The name of the thing.</p>",
@@ -1643,16 +1643,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the thing.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1677,13 +1677,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
           "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -1707,16 +1707,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the thing.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1741,13 +1741,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
         "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1755,8 +1755,8 @@
         "variableType" : "DeleteThingShadowRequest",
         "variableDeclarationType" : "DeleteThingShadowRequest",
         "documentation" : null,
-        "variableSetterType" : "DeleteThingShadowRequest",
-        "simpleType" : "DeleteThingShadowRequest"
+        "simpleType" : "DeleteThingShadowRequest",
+        "variableSetterType" : "DeleteThingShadowRequest"
       },
       "marshaller" : {
         "action" : "DeleteThingShadow",
@@ -1785,16 +1785,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the thing.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1819,13 +1819,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
           "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     }

@@ -167,7 +167,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * the network interface. </li> <li>
      * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
      * network interface. </li> <li>
-     * <p><code>network-interface.network-interface.id</code> - The ID of the
+     * <p><code>network-interface.network-interface-id</code> - The ID of the
      * network interface. </li> <li>
      * <p><code>network-interface.owner-id</code> - The ID of the owner of
      * the network interface. </li> <li>
@@ -440,7 +440,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * the network interface. </li> <li>
      * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
      * network interface. </li> <li>
-     * <p><code>network-interface.network-interface.id</code> - The ID of the
+     * <p><code>network-interface.network-interface-id</code> - The ID of the
      * network interface. </li> <li>
      * <p><code>network-interface.owner-id</code> - The ID of the owner of
      * the network interface. </li> <li>
@@ -621,7 +621,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         the network interface. </li> <li>
      *         <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
      *         network interface. </li> <li>
-     *         <p><code>network-interface.network-interface.id</code> - The ID of the
+     *         <p><code>network-interface.network-interface-id</code> - The ID of the
      *         network interface. </li> <li>
      *         <p><code>network-interface.owner-id</code> - The ID of the owner of
      *         the network interface. </li> <li>
@@ -811,7 +811,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * the network interface. </li> <li>
      * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
      * network interface. </li> <li>
-     * <p><code>network-interface.network-interface.id</code> - The ID of the
+     * <p><code>network-interface.network-interface-id</code> - The ID of the
      * network interface. </li> <li>
      * <p><code>network-interface.owner-id</code> - The ID of the owner of
      * the network interface. </li> <li>
@@ -992,7 +992,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         the network interface. </li> <li>
      *         <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
      *         network interface. </li> <li>
-     *         <p><code>network-interface.network-interface.id</code> - The ID of the
+     *         <p><code>network-interface.network-interface-id</code> - The ID of the
      *         network interface. </li> <li>
      *         <p><code>network-interface.owner-id</code> - The ID of the owner of
      *         the network interface. </li> <li>
@@ -1184,7 +1184,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * the network interface. </li> <li>
      * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
      * network interface. </li> <li>
-     * <p><code>network-interface.network-interface.id</code> - The ID of the
+     * <p><code>network-interface.network-interface-id</code> - The ID of the
      * network interface. </li> <li>
      * <p><code>network-interface.owner-id</code> - The ID of the owner of
      * the network interface. </li> <li>
@@ -1372,7 +1372,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         the network interface. </li> <li>
      *         <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
      *         network interface. </li> <li>
-     *         <p><code>network-interface.network-interface.id</code> - The ID of the
+     *         <p><code>network-interface.network-interface-id</code> - The ID of the
      *         network interface. </li> <li>
      *         <p><code>network-interface.owner-id</code> - The ID of the owner of
      *         the network interface. </li> <li>
@@ -1565,7 +1565,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * the network interface. </li> <li>
      * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
      * network interface. </li> <li>
-     * <p><code>network-interface.network-interface.id</code> - The ID of the
+     * <p><code>network-interface.network-interface-id</code> - The ID of the
      * network interface. </li> <li>
      * <p><code>network-interface.owner-id</code> - The ID of the owner of
      * the network interface. </li> <li>
@@ -1748,7 +1748,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         the network interface. </li> <li>
      *         <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
      *         network interface. </li> <li>
-     *         <p><code>network-interface.network-interface.id</code> - The ID of the
+     *         <p><code>network-interface.network-interface-id</code> - The ID of the
      *         network interface. </li> <li>
      *         <p><code>network-interface.owner-id</code> - The ID of the owner of
      *         the network interface. </li> <li>
