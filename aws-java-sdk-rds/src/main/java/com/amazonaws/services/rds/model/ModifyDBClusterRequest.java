@@ -64,10 +64,9 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements S
     private Boolean applyImmediately;
 
     /**
-     * The number of days for which automated backups are retained. Setting
-     * this parameter to a positive number enables backups. Setting this
-     * parameter to 0 disables automated backups. <p>Default: 1
-     * <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> </ul>
+     * The number of days for which automated backups are retained. You must
+     * specify a minimum value of 1. <p>Default: 1 <p>Constraints: <ul>
+     * <li>Must be a value from 1 to 35</li> </ul>
      */
     private Integer backupRetentionPeriod;
 
@@ -347,47 +346,41 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * The number of days for which automated backups are retained. Setting
-     * this parameter to a positive number enables backups. Setting this
-     * parameter to 0 disables automated backups. <p>Default: 1
-     * <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> </ul>
+     * The number of days for which automated backups are retained. You must
+     * specify a minimum value of 1. <p>Default: 1 <p>Constraints: <ul>
+     * <li>Must be a value from 1 to 35</li> </ul>
      *
-     * @return The number of days for which automated backups are retained. Setting
-     *         this parameter to a positive number enables backups. Setting this
-     *         parameter to 0 disables automated backups. <p>Default: 1
-     *         <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> </ul>
+     * @return The number of days for which automated backups are retained. You must
+     *         specify a minimum value of 1. <p>Default: 1 <p>Constraints: <ul>
+     *         <li>Must be a value from 1 to 35</li> </ul>
      */
     public Integer getBackupRetentionPeriod() {
         return backupRetentionPeriod;
     }
     
     /**
-     * The number of days for which automated backups are retained. Setting
-     * this parameter to a positive number enables backups. Setting this
-     * parameter to 0 disables automated backups. <p>Default: 1
-     * <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> </ul>
+     * The number of days for which automated backups are retained. You must
+     * specify a minimum value of 1. <p>Default: 1 <p>Constraints: <ul>
+     * <li>Must be a value from 1 to 35</li> </ul>
      *
-     * @param backupRetentionPeriod The number of days for which automated backups are retained. Setting
-     *         this parameter to a positive number enables backups. Setting this
-     *         parameter to 0 disables automated backups. <p>Default: 1
-     *         <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> </ul>
+     * @param backupRetentionPeriod The number of days for which automated backups are retained. You must
+     *         specify a minimum value of 1. <p>Default: 1 <p>Constraints: <ul>
+     *         <li>Must be a value from 1 to 35</li> </ul>
      */
     public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
         this.backupRetentionPeriod = backupRetentionPeriod;
     }
     
     /**
-     * The number of days for which automated backups are retained. Setting
-     * this parameter to a positive number enables backups. Setting this
-     * parameter to 0 disables automated backups. <p>Default: 1
-     * <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> </ul>
+     * The number of days for which automated backups are retained. You must
+     * specify a minimum value of 1. <p>Default: 1 <p>Constraints: <ul>
+     * <li>Must be a value from 1 to 35</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param backupRetentionPeriod The number of days for which automated backups are retained. Setting
-     *         this parameter to a positive number enables backups. Setting this
-     *         parameter to 0 disables automated backups. <p>Default: 1
-     *         <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> </ul>
+     * @param backupRetentionPeriod The number of days for which automated backups are retained. You must
+     *         specify a minimum value of 1. <p>Default: 1 <p>Constraints: <ul>
+     *         <li>Must be a value from 1 to 35</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

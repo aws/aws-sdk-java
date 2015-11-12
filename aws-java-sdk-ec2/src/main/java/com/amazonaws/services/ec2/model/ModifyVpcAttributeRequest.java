@@ -39,14 +39,18 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
      * 169.254.169.253 IP address, or the reserved IP address at the base of
      * the VPC network range "plus two" will succeed. If disabled, the Amazon
      * provided DNS service in the VPC that resolves public DNS hostnames to
-     * IP addresses is not enabled.
+     * IP addresses is not enabled. <p>You cannot modify the DNS resolution
+     * and DNS hostnames attributes in the same request. Use separate
+     * requests for each attribute.
      */
     private Boolean enableDnsSupport;
 
     /**
      * Indicates whether the instances launched in the VPC get DNS hostnames.
      * If enabled, instances in the VPC get DNS hostnames; otherwise, they do
-     * not. <p>You can only enable DNS hostnames if you also enable DNS
+     * not. <p>You cannot modify the DNS resolution and DNS hostnames
+     * attributes in the same request. Use separate requests for each
+     * attribute. You can only enable DNS hostnames if you've enabled DNS
      * support.
      */
     private Boolean enableDnsHostnames;
@@ -90,14 +94,18 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
      * 169.254.169.253 IP address, or the reserved IP address at the base of
      * the VPC network range "plus two" will succeed. If disabled, the Amazon
      * provided DNS service in the VPC that resolves public DNS hostnames to
-     * IP addresses is not enabled.
+     * IP addresses is not enabled. <p>You cannot modify the DNS resolution
+     * and DNS hostnames attributes in the same request. Use separate
+     * requests for each attribute.
      *
      * @return Indicates whether the DNS resolution is supported for the VPC. If
      *         enabled, queries to the Amazon provided DNS server at the
      *         169.254.169.253 IP address, or the reserved IP address at the base of
      *         the VPC network range "plus two" will succeed. If disabled, the Amazon
      *         provided DNS service in the VPC that resolves public DNS hostnames to
-     *         IP addresses is not enabled.
+     *         IP addresses is not enabled. <p>You cannot modify the DNS resolution
+     *         and DNS hostnames attributes in the same request. Use separate
+     *         requests for each attribute.
      */
     public Boolean isEnableDnsSupport() {
         return enableDnsSupport;
@@ -109,14 +117,18 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
      * 169.254.169.253 IP address, or the reserved IP address at the base of
      * the VPC network range "plus two" will succeed. If disabled, the Amazon
      * provided DNS service in the VPC that resolves public DNS hostnames to
-     * IP addresses is not enabled.
+     * IP addresses is not enabled. <p>You cannot modify the DNS resolution
+     * and DNS hostnames attributes in the same request. Use separate
+     * requests for each attribute.
      *
      * @param enableDnsSupport Indicates whether the DNS resolution is supported for the VPC. If
      *         enabled, queries to the Amazon provided DNS server at the
      *         169.254.169.253 IP address, or the reserved IP address at the base of
      *         the VPC network range "plus two" will succeed. If disabled, the Amazon
      *         provided DNS service in the VPC that resolves public DNS hostnames to
-     *         IP addresses is not enabled.
+     *         IP addresses is not enabled. <p>You cannot modify the DNS resolution
+     *         and DNS hostnames attributes in the same request. Use separate
+     *         requests for each attribute.
      */
     public void setEnableDnsSupport(Boolean enableDnsSupport) {
         this.enableDnsSupport = enableDnsSupport;
@@ -128,7 +140,9 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
      * 169.254.169.253 IP address, or the reserved IP address at the base of
      * the VPC network range "plus two" will succeed. If disabled, the Amazon
      * provided DNS service in the VPC that resolves public DNS hostnames to
-     * IP addresses is not enabled.
+     * IP addresses is not enabled. <p>You cannot modify the DNS resolution
+     * and DNS hostnames attributes in the same request. Use separate
+     * requests for each attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -137,7 +151,9 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
      *         169.254.169.253 IP address, or the reserved IP address at the base of
      *         the VPC network range "plus two" will succeed. If disabled, the Amazon
      *         provided DNS service in the VPC that resolves public DNS hostnames to
-     *         IP addresses is not enabled.
+     *         IP addresses is not enabled. <p>You cannot modify the DNS resolution
+     *         and DNS hostnames attributes in the same request. Use separate
+     *         requests for each attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -153,14 +169,18 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
      * 169.254.169.253 IP address, or the reserved IP address at the base of
      * the VPC network range "plus two" will succeed. If disabled, the Amazon
      * provided DNS service in the VPC that resolves public DNS hostnames to
-     * IP addresses is not enabled.
+     * IP addresses is not enabled. <p>You cannot modify the DNS resolution
+     * and DNS hostnames attributes in the same request. Use separate
+     * requests for each attribute.
      *
      * @return Indicates whether the DNS resolution is supported for the VPC. If
      *         enabled, queries to the Amazon provided DNS server at the
      *         169.254.169.253 IP address, or the reserved IP address at the base of
      *         the VPC network range "plus two" will succeed. If disabled, the Amazon
      *         provided DNS service in the VPC that resolves public DNS hostnames to
-     *         IP addresses is not enabled.
+     *         IP addresses is not enabled. <p>You cannot modify the DNS resolution
+     *         and DNS hostnames attributes in the same request. Use separate
+     *         requests for each attribute.
      */
     public Boolean getEnableDnsSupport() {
         return enableDnsSupport;
@@ -169,12 +189,16 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
     /**
      * Indicates whether the instances launched in the VPC get DNS hostnames.
      * If enabled, instances in the VPC get DNS hostnames; otherwise, they do
-     * not. <p>You can only enable DNS hostnames if you also enable DNS
+     * not. <p>You cannot modify the DNS resolution and DNS hostnames
+     * attributes in the same request. Use separate requests for each
+     * attribute. You can only enable DNS hostnames if you've enabled DNS
      * support.
      *
      * @return Indicates whether the instances launched in the VPC get DNS hostnames.
      *         If enabled, instances in the VPC get DNS hostnames; otherwise, they do
-     *         not. <p>You can only enable DNS hostnames if you also enable DNS
+     *         not. <p>You cannot modify the DNS resolution and DNS hostnames
+     *         attributes in the same request. Use separate requests for each
+     *         attribute. You can only enable DNS hostnames if you've enabled DNS
      *         support.
      */
     public Boolean isEnableDnsHostnames() {
@@ -184,12 +208,16 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
     /**
      * Indicates whether the instances launched in the VPC get DNS hostnames.
      * If enabled, instances in the VPC get DNS hostnames; otherwise, they do
-     * not. <p>You can only enable DNS hostnames if you also enable DNS
+     * not. <p>You cannot modify the DNS resolution and DNS hostnames
+     * attributes in the same request. Use separate requests for each
+     * attribute. You can only enable DNS hostnames if you've enabled DNS
      * support.
      *
      * @param enableDnsHostnames Indicates whether the instances launched in the VPC get DNS hostnames.
      *         If enabled, instances in the VPC get DNS hostnames; otherwise, they do
-     *         not. <p>You can only enable DNS hostnames if you also enable DNS
+     *         not. <p>You cannot modify the DNS resolution and DNS hostnames
+     *         attributes in the same request. Use separate requests for each
+     *         attribute. You can only enable DNS hostnames if you've enabled DNS
      *         support.
      */
     public void setEnableDnsHostnames(Boolean enableDnsHostnames) {
@@ -199,14 +227,18 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
     /**
      * Indicates whether the instances launched in the VPC get DNS hostnames.
      * If enabled, instances in the VPC get DNS hostnames; otherwise, they do
-     * not. <p>You can only enable DNS hostnames if you also enable DNS
+     * not. <p>You cannot modify the DNS resolution and DNS hostnames
+     * attributes in the same request. Use separate requests for each
+     * attribute. You can only enable DNS hostnames if you've enabled DNS
      * support.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enableDnsHostnames Indicates whether the instances launched in the VPC get DNS hostnames.
      *         If enabled, instances in the VPC get DNS hostnames; otherwise, they do
-     *         not. <p>You can only enable DNS hostnames if you also enable DNS
+     *         not. <p>You cannot modify the DNS resolution and DNS hostnames
+     *         attributes in the same request. Use separate requests for each
+     *         attribute. You can only enable DNS hostnames if you've enabled DNS
      *         support.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -220,12 +252,16 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
     /**
      * Indicates whether the instances launched in the VPC get DNS hostnames.
      * If enabled, instances in the VPC get DNS hostnames; otherwise, they do
-     * not. <p>You can only enable DNS hostnames if you also enable DNS
+     * not. <p>You cannot modify the DNS resolution and DNS hostnames
+     * attributes in the same request. Use separate requests for each
+     * attribute. You can only enable DNS hostnames if you've enabled DNS
      * support.
      *
      * @return Indicates whether the instances launched in the VPC get DNS hostnames.
      *         If enabled, instances in the VPC get DNS hostnames; otherwise, they do
-     *         not. <p>You can only enable DNS hostnames if you also enable DNS
+     *         not. <p>You cannot modify the DNS resolution and DNS hostnames
+     *         attributes in the same request. Use separate requests for each
+     *         attribute. You can only enable DNS hostnames if you've enabled DNS
      *         support.
      */
     public Boolean getEnableDnsHostnames() {

@@ -25,157 +25,191 @@ import com.amazonaws.services.dynamodbv2.model.TableStatus;
  * Utility methods for working with DynamoDB tables.
  *
  * <pre class="brush: java">
- *  // ... create DynamoDB table ...
+ * // ... create DynamoDB table ...
  * try {
- *      waitUntilActive(dynamoDB, myTableName());
+ * 	waitUntilActive(dynamoDB, myTableName());
  * } catch (AmazonClientException e) {
- *      // table didn't become active
+ * 	// table didn't become active
  * }
  * // ... start making calls to table ...
  * </pre>
  */
 public class TableUtils {
-    private static final int DEFAULT_WAIT_TIMEOUT = 10 * 60 * 1000;
-    private static final int DEFAULT_WAIT_INTERVAL = 20 * 1000;
 
-    /**
-     * Waits up to 10 minutes for a specified DynamoDB table to resolve,
-     * indicating that it exists. If the table doesn't return a result after
-     * this time, an AmazonClientException is thrown.
-     *
-     * @param dynamo
-     *        The DynamoDB client to use to make requests.
-     * @param tableName
-     *        The name of the table being resolved.
-     *
-     * @throws AmazonClientException
-     *             If the specified table does not resolve before
-     *             this method times out and stops polling.
-     * @throws InterruptedException
-     *             If the thread is interrupted while waiting for the table to
-     *             resolve.
-     */
-    public static void waitUntilExists(final AmazonDynamoDB dynamo,
-            final String tableName) throws InterruptedException {
-        waitUntilExists(dynamo, tableName, DEFAULT_WAIT_TIMEOUT, DEFAULT_WAIT_INTERVAL);
-    }
+	/**
+	 * Thrown by {@link TableUtils} when a table never reaches a desired state
+	 */
+	public static class TableNeverTransitionedToStateException extends AmazonClientException {
 
-    /**
-     * Waits up to a specified amount of time for a specified DynamoDB table
-     * to resolve, indicating that it exists. If the table doesn't return a result
-     * after this time, an AmazonClientException is thrown.
-     *
-     * @param dynamo
-     *        The DynamoDB client to use to make requests.
-     * @param tableName
-     *        The name of the table being resolved.
-     * @param timeout
-     *        The maximum number of milliseconds to wait.
-     * @param interval
-     *        The poll interval in milliseconds.
-     *
-     * @throws AmazonClientException
-     *             If the specified table does not resolve before
-     *             this method times out and stops polling.
-     * @throws InterruptedException
-     *             If the thread is interrupted while waiting for the table to
-     *             resolve.
-     */
-    public static void waitUntilExists(final AmazonDynamoDB dynamo,
-            final String tableName, final int timeout, final int interval)
-            throws InterruptedException {
-        TableDescription table = waitForTableDescription(dynamo, tableName,
-                timeout, interval);
+		private static final long serialVersionUID = 8920567021104846647L;
 
-        if (table == null) {
-            throw new AmazonClientException("Table " + tableName
-                    + " never returned a result");
-        }
-    }
+		public TableNeverTransitionedToStateException(String tableName, TableStatus desiredStatus) {
+			super("Table " + tableName + " never transitioned to desired state of " + desiredStatus.toString());
+		}
 
-    /**
-     * Waits up to 10 minutes for a specified DynamoDB table to move into
-     * the <code>ACTIVE</code> state. If the table does not exist or does not
-     * transition to the <code>ACTIVE</code> state after this time, then an
-     * AmazonClientException is thrown.
-     *
-     * @param dynamo
-     *        The DynamoDB client to use to make requests.
-     * @param tableName
-     *        The name of the table whose status is being checked.
-     *
-     * @throws AmazonClientException
-     *             If the specified table does not exist or does not transition
-     *             into the <code>ACTIVE</code> state before this method times out
-     *             and stops polling.
-     * @throws InterruptedException
-     *             If the thread is interrupted while waiting for the table to
-     *             transition into the <code>ACTIVE</code> state.
-     */
-    public static void waitUntilActive(final AmazonDynamoDB dynamo,
-            final String tableName) throws InterruptedException {
-        waitUntilActive(dynamo, tableName, DEFAULT_WAIT_TIMEOUT, DEFAULT_WAIT_INTERVAL);
-    }
+	}
 
-    /**
-     * Waits up to a specified amount of time for a specified DynamoDB
-     * table to move into the <code>ACTIVE</code> state. If the table does not exist
-     * or does not transition to the <code>ACTIVE</code> state after this time, then
-     * an AmazonClientException is thrown.
-     *
-     * @param dynamo
-     *            The DynamoDB client to use to make requests.
-     * @param tableName
-     *            The name of the table whose status is being checked.
-     * @param timeout
-     *            The maximum number of milliseconds to wait.
-     * @param interval
-     *            The poll interval in milliseconds.
-     *
-     * @throws AmazonClientException
-     *             If the specified table does not exist or does not transition
-     *             into the <code>ACTIVE</code> state before this method times out
-     *             and stops polling.
-     * @throws InterruptedException
-     *             If the thread is interrupted while waiting for the table to
-     *             transition into the <code>ACTIVE</code> state.
-     */
-    public static void waitUntilActive(final AmazonDynamoDB dynamo,
-            final String tableName, final int timeout, final int interval)
-        throws InterruptedException {
-        TableDescription table = waitForTableDescription(dynamo, tableName,
-                timeout, interval);
+	private static final int DEFAULT_WAIT_TIMEOUT = 10 * 60 * 1000;
+	private static final int DEFAULT_WAIT_INTERVAL = 20 * 1000;
 
-        if (table == null || !table.getTableStatus().equals(TableStatus.ACTIVE.toString())) {
-            throw new AmazonClientException("Table " + tableName + " never became active");
-        }
-    }
+	/**
+	 * Waits up to 10 minutes for a specified DynamoDB table to resolve,
+	 * indicating that it exists. If the table doesn't return a result after
+	 * this time, an AmazonClientException is thrown.
+	 *
+	 * @param dynamo
+	 *            The DynamoDB client to use to make requests.
+	 * @param tableName
+	 *            The name of the table being resolved.
+	 *
+	 * @throws AmazonClientException
+	 *             If the specified table does not resolve before this method
+	 *             times out and stops polling.
+	 * @throws InterruptedException
+	 *             If the thread is interrupted while waiting for the table to
+	 *             resolve.
+	 */
+	public static void waitUntilExists(final AmazonDynamoDB dynamo, final String tableName)
+			throws InterruptedException {
+		waitUntilExists(dynamo, tableName, DEFAULT_WAIT_TIMEOUT, DEFAULT_WAIT_INTERVAL);
+	}
 
-    private static TableDescription waitForTableDescription(final AmazonDynamoDB dynamo,
-            final String tableName, final int timeout, final int interval)
-            throws InterruptedException {
-        if (timeout < 0) {
-            throw new IllegalArgumentException("Timeout must be >= 0");
-        }
-        if (interval <= 0 || interval >= timeout) {
-            throw new IllegalArgumentException("Interval must be > 0 and < timeout");
-        }
-        long startTime = System.currentTimeMillis();
-        long endTime = startTime + timeout;
-        while (System.currentTimeMillis() < endTime) {
-            try {
-                TableDescription table = dynamo.describeTable(
-                        new DescribeTableRequest(tableName)).getTable();
-                if (table != null) {
-                    return table;
-                }
-            } catch (ResourceNotFoundException rnfe) {
-                // ResourceNotFound means the table doesn't exist yet,
-                // so ignore this error and just keep polling.
-            }
+	/**
+	 * Waits up to a specified amount of time for a specified DynamoDB table to
+	 * resolve, indicating that it exists. If the table doesn't return a result
+	 * after this time, an AmazonClientException is thrown.
+	 *
+	 * @param dynamo
+	 *            The DynamoDB client to use to make requests.
+	 * @param tableName
+	 *            The name of the table being resolved.
+	 * @param timeout
+	 *            The maximum number of milliseconds to wait.
+	 * @param interval
+	 *            The poll interval in milliseconds.
+	 *
+	 * @throws AmazonClientException
+	 *             If the specified table does not resolve before this method
+	 *             times out and stops polling.
+	 * @throws InterruptedException
+	 *             If the thread is interrupted while waiting for the table to
+	 *             resolve.
+	 */
+	public static void waitUntilExists(final AmazonDynamoDB dynamo, final String tableName, final int timeout,
+			final int interval) throws InterruptedException {
+		TableDescription table = waitForTableDescription(dynamo, tableName, null, timeout, interval);
 
-            Thread.sleep(interval);
-        }
-        return null;
-    }
+		if (table == null) {
+			throw new AmazonClientException("Table " + tableName + " never returned a result");
+		}
+	}
+
+	/**
+	 * Waits up to 10 minutes for a specified DynamoDB table to move into the
+	 * <code>ACTIVE</code> state. If the table does not exist or does not
+	 * transition to the <code>ACTIVE</code> state after this time, then an
+	 * AmazonClientException is thrown.
+	 *
+	 * @param dynamo
+	 *            The DynamoDB client to use to make requests.
+	 * @param tableName
+	 *            The name of the table whose status is being checked.
+	 *
+	 * @throws TableNeverTransitionedToStateException
+	 *             If the specified table does not exist or does not transition
+	 *             into the <code>ACTIVE</code> state before this method times
+	 *             out and stops polling.
+	 * @throws InterruptedException
+	 *             If the thread is interrupted while waiting for the table to
+	 *             transition into the <code>ACTIVE</code> state.
+	 */
+	public static void waitUntilActive(final AmazonDynamoDB dynamo, final String tableName)
+			throws InterruptedException, TableNeverTransitionedToStateException {
+		waitUntilActive(dynamo, tableName, DEFAULT_WAIT_TIMEOUT, DEFAULT_WAIT_INTERVAL);
+	}
+
+	/**
+	 * Waits up to a specified amount of time for a specified DynamoDB table to
+	 * move into the <code>ACTIVE</code> state. If the table does not exist or
+	 * does not transition to the <code>ACTIVE</code> state after this time,
+	 * then an AmazonClientException is thrown.
+	 *
+	 * @param dynamo
+	 *            The DynamoDB client to use to make requests.
+	 * @param tableName
+	 *            The name of the table whose status is being checked.
+	 * @param timeout
+	 *            The maximum number of milliseconds to wait.
+	 * @param interval
+	 *            The poll interval in milliseconds.
+	 *
+	 * @throws TableNeverTransitionedToStateException
+	 *             If the specified table does not exist or does not transition
+	 *             into the <code>ACTIVE</code> state before this method times
+	 *             out and stops polling.
+	 * @throws InterruptedException
+	 *             If the thread is interrupted while waiting for the table to
+	 *             transition into the <code>ACTIVE</code> state.
+	 */
+	public static void waitUntilActive(final AmazonDynamoDB dynamo, final String tableName, final int timeout,
+			final int interval) throws InterruptedException, TableNeverTransitionedToStateException {
+		TableDescription table = waitForTableDescription(dynamo, tableName, TableStatus.ACTIVE, timeout, interval);
+
+		if (table == null || !table.getTableStatus().equals(TableStatus.ACTIVE.toString())) {
+			throw new TableNeverTransitionedToStateException(tableName, TableStatus.ACTIVE);
+		}
+	}
+
+	/**
+	 * Wait for the table to reach the desired status and returns the table
+	 * description
+	 * 
+	 * @param dynamo
+	 *            Dynamo client to use
+	 * @param tableName
+	 *            Table name to poll status of
+	 * @param desiredStatus
+	 *            Desired {@link TableStatus} to wait for. If null this method
+	 *            simply waits until DescribeTable returns something non-null
+	 *            (i.e. any status)
+	 * @param timeout
+	 *            Timeout in milliseconds to continue to poll for desired status
+	 * @param interval
+	 *            Time to wait in milliseconds between poll attempts
+	 * @return Null if DescribeTables never returns a result, otherwise the
+	 *         result of the last poll attempt (which may or may not have the
+	 *         desired state)
+	 * @throws InterruptedException
+	 * @throws {@link
+	 *             IllegalArgumentException} If timeout or interval is invalid
+	 */
+	private static TableDescription waitForTableDescription(final AmazonDynamoDB dynamo, final String tableName,
+			TableStatus desiredStatus, final int timeout, final int interval)
+					throws InterruptedException, IllegalArgumentException {
+		if (timeout < 0) {
+			throw new IllegalArgumentException("Timeout must be >= 0");
+		}
+		if (interval <= 0 || interval >= timeout) {
+			throw new IllegalArgumentException("Interval must be > 0 and < timeout");
+		}
+		long startTime = System.currentTimeMillis();
+		long endTime = startTime + timeout;
+
+		TableDescription table = null;
+		while (System.currentTimeMillis() < endTime) {
+			try {
+				table = dynamo.describeTable(new DescribeTableRequest(tableName)).getTable();
+				if (desiredStatus == null || table.getTableStatus().equals(desiredStatus.toString())) {
+					return table;
+
+				}
+			} catch (ResourceNotFoundException rnfe) {
+				// ResourceNotFound means the table doesn't exist yet,
+				// so ignore this error and just keep polling.
+			}
+
+			Thread.sleep(interval);
+		}
+		return table;
+	}
 }

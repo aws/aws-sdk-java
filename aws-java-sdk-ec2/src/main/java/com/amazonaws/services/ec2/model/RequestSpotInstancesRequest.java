@@ -119,7 +119,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * Spot instance for termination and provides a Spot instance termination
      * notice, which gives the instance a two-minute warning before it
      * terminates. <p>Note that you can't specify an Availability Zone group
-     * or a launch group if you specify a required duration.
+     * or a launch group if you specify a duration.
      */
     private Integer blockDurationMinutes;
 
@@ -659,7 +659,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * Spot instance for termination and provides a Spot instance termination
      * notice, which gives the instance a two-minute warning before it
      * terminates. <p>Note that you can't specify an Availability Zone group
-     * or a launch group if you specify a required duration.
+     * or a launch group if you specify a duration.
      *
      * @return The required duration for the Spot instances, in minutes. This value
      *         must be a multiple of 60 (60, 120, 180, 240, 300, or 360). <p>The
@@ -668,7 +668,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *         Spot instance for termination and provides a Spot instance termination
      *         notice, which gives the instance a two-minute warning before it
      *         terminates. <p>Note that you can't specify an Availability Zone group
-     *         or a launch group if you specify a required duration.
+     *         or a launch group if you specify a duration.
      */
     public Integer getBlockDurationMinutes() {
         return blockDurationMinutes;
@@ -682,7 +682,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * Spot instance for termination and provides a Spot instance termination
      * notice, which gives the instance a two-minute warning before it
      * terminates. <p>Note that you can't specify an Availability Zone group
-     * or a launch group if you specify a required duration.
+     * or a launch group if you specify a duration.
      *
      * @param blockDurationMinutes The required duration for the Spot instances, in minutes. This value
      *         must be a multiple of 60 (60, 120, 180, 240, 300, or 360). <p>The
@@ -691,7 +691,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *         Spot instance for termination and provides a Spot instance termination
      *         notice, which gives the instance a two-minute warning before it
      *         terminates. <p>Note that you can't specify an Availability Zone group
-     *         or a launch group if you specify a required duration.
+     *         or a launch group if you specify a duration.
      */
     public void setBlockDurationMinutes(Integer blockDurationMinutes) {
         this.blockDurationMinutes = blockDurationMinutes;
@@ -705,7 +705,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * Spot instance for termination and provides a Spot instance termination
      * notice, which gives the instance a two-minute warning before it
      * terminates. <p>Note that you can't specify an Availability Zone group
-     * or a launch group if you specify a required duration.
+     * or a launch group if you specify a duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -716,7 +716,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *         Spot instance for termination and provides a Spot instance termination
      *         notice, which gives the instance a two-minute warning before it
      *         terminates. <p>Note that you can't specify an Availability Zone group
-     *         or a launch group if you specify a required duration.
+     *         or a launch group if you specify a duration.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

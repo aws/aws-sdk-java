@@ -8296,7 +8296,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * connection. (The device on the AWS side of the VPN connection is the
      * virtual private gateway.) You must provide the Internet-routable IP
      * address of the customer gateway's external interface. The IP address
-     * must be static and can't be behind a device performing network address
+     * must be static and may be behind a device performing network address
      * translation (NAT).
      * </p>
      * <p>
@@ -8356,7 +8356,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * connection. (The device on the AWS side of the VPN connection is the
      * virtual private gateway.) You must provide the Internet-routable IP
      * address of the customer gateway's external interface. The IP address
-     * must be static and can't be behind a device performing network address
+     * must be static and may be behind a device performing network address
      * translation (NAT).
      * </p>
      * <p>
@@ -11784,7 +11784,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * For more information about tags, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about creating IAM policies that control users' access to resources based on tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html"> Supported Resource-Level Permissions for Amazon EC2 API Actions </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
@@ -11822,7 +11822,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * For more information about tags, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about creating IAM policies that control users' access to resources based on tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html"> Supported Resource-Level Permissions for Amazon EC2 API Actions </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *

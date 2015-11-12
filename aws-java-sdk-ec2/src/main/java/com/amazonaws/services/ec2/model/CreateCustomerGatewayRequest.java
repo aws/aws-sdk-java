@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.CreateCustomerGatewayRequestMa
  * connection. (The device on the AWS side of the VPN connection is the
  * virtual private gateway.) You must provide the Internet-routable IP
  * address of the customer gateway's external interface. The IP address
- * must be static and can't be behind a device performing network address
+ * must be static and may be behind a device performing network address
  * translation (NAT).
  * </p>
  * <p>

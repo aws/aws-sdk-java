@@ -49,31 +49,35 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     * <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
-     * least 10% greater than the current value. Values that are not at least
-     * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     * <p>Default: Uses existing setting <p>Valid Values: 10-6144
+     * Integer <p> <b>MariaDB</b> <p>Default: Uses existing setting <p>Valid
+     * Values: 5-6144 <p>Constraints: Value supplied must be at least 10%
+     * greater than the current value. Values that are not at least 10%
+     * greater than the existing value are rounded up so that they are 10%
+     * greater than the current value. <p>Type: Integer <p> <b>PostgreSQL</b>
+     * <p>Default: Uses existing setting <p>Valid Values: 5-6144
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
-     * current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
-     * choose to migrate your DB instance from using standard storage to
-     * using Provisioned IOPS, or from using Provisioned IOPS to using
-     * standard storage, the process can take time. The duration of the
-     * migration depends on several factors such as database load, storage
-     * size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage
-     * operations. Typical migration times are under 24 hours, but the
-     * process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but might
-     * experience performance degradation. While the migration takes place,
-     * nightly backups for the instance will be suspended. No other Amazon
-     * RDS operations can take place for the instance, including modifying
-     * the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the
-     * instance.
+     * current value. <p>Type: Integer <p> <b>Oracle</b> <p>Default: Uses
+     * existing setting <p>Valid Values: 10-6144 <p>Constraints: Value
+     * supplied must be at least 10% greater than the current value. Values
+     * that are not at least 10% greater than the existing value are rounded
+     * up so that they are 10% greater than the current value. <p> <b>SQL
+     * Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or
+     * from using Provisioned IOPS to using standard storage, the process can
+     * take time. The duration of the migration depends on several factors
+     * such as database load, storage size, storage type (standard or
+     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     * of prior scale storage operations. Typical migration times are under
+     * 24 hours, but the process can take up to several days in some cases.
+     * During the migration, the DB instance will be available for use, but
+     * might experience performance degradation. While the migration takes
+     * place, nightly backups for the instance will be suspended. No other
+     * Amazon RDS operations can take place for the instance, including
+     * modifying the instance, rebooting the instance, deleting the instance,
+     * creating a Read Replica for the instance, and creating a DB snapshot
+     * of the instance.
      */
     private Integer allocatedStorage;
 
@@ -88,9 +92,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
      * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code>
+     * db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     * db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     * db.t2.medium | db.t2.large</code>
      */
     private String dBInstanceClass;
 
@@ -138,12 +143,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * completion of the request, the <code>MasterUserPassword</code> element
      * exists in the <code>PendingModifiedValues</code> element of the
      * operation response. <p>Default: Uses existing setting <p>Constraints:
-     * Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
-     * to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
-     * characters (SQL Server). <note> Amazon RDS API actions never return
-     * the password, so this action provides a way to regain access to a
-     * primary instance user if the password is lost. This includes restoring
-     * privileges that might have been accidentally revoked. </note>
+     * Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon
+     * Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
+     * alphanumeric characters (SQL Server). <note> Amazon RDS API actions
+     * never return the password, so this action provides a way to regain
+     * access to a primary instance user if the password is lost. This
+     * includes restoring privileges that might have been accidentally
+     * revoked. </note>
      */
     private String masterUserPassword;
 
@@ -347,6 +353,19 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private Boolean copyTagsToSnapshot;
 
     /**
+     * True to make the DB instance Internet-facing with a publicly
+     * resolvable DNS name, which resolves to a public IP address. False to
+     * make the DB instance internal with a DNS name that resolves to a
+     * private IP address. <p><code>PubliclyAccessible</code> only applies to
+     * DB instances in a VPC. The DB instance must be part of a public subnet
+     * and <code>PubliclyAccessible</code> must be true in order for it to be
+     * publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
+     * parameter are applied immediately regardless of the value of the
+     * <code>ApplyImmediately</code> parameter. <p> Default: false
+     */
+    private Boolean publiclyAccessible;
+
+    /**
      * Default constructor for a new ModifyDBInstanceRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -440,31 +459,35 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     * <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
-     * least 10% greater than the current value. Values that are not at least
-     * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     * <p>Default: Uses existing setting <p>Valid Values: 10-6144
+     * Integer <p> <b>MariaDB</b> <p>Default: Uses existing setting <p>Valid
+     * Values: 5-6144 <p>Constraints: Value supplied must be at least 10%
+     * greater than the current value. Values that are not at least 10%
+     * greater than the existing value are rounded up so that they are 10%
+     * greater than the current value. <p>Type: Integer <p> <b>PostgreSQL</b>
+     * <p>Default: Uses existing setting <p>Valid Values: 5-6144
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
-     * current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
-     * choose to migrate your DB instance from using standard storage to
-     * using Provisioned IOPS, or from using Provisioned IOPS to using
-     * standard storage, the process can take time. The duration of the
-     * migration depends on several factors such as database load, storage
-     * size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage
-     * operations. Typical migration times are under 24 hours, but the
-     * process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but might
-     * experience performance degradation. While the migration takes place,
-     * nightly backups for the instance will be suspended. No other Amazon
-     * RDS operations can take place for the instance, including modifying
-     * the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the
-     * instance.
+     * current value. <p>Type: Integer <p> <b>Oracle</b> <p>Default: Uses
+     * existing setting <p>Valid Values: 10-6144 <p>Constraints: Value
+     * supplied must be at least 10% greater than the current value. Values
+     * that are not at least 10% greater than the existing value are rounded
+     * up so that they are 10% greater than the current value. <p> <b>SQL
+     * Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or
+     * from using Provisioned IOPS to using standard storage, the process can
+     * take time. The duration of the migration depends on several factors
+     * such as database load, storage size, storage type (standard or
+     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     * of prior scale storage operations. Typical migration times are under
+     * 24 hours, but the process can take up to several days in some cases.
+     * During the migration, the DB instance will be available for use, but
+     * might experience performance degradation. While the migration takes
+     * place, nightly backups for the instance will be suspended. No other
+     * Amazon RDS operations can take place for the instance, including
+     * modifying the instance, rebooting the instance, deleting the instance,
+     * creating a Read Replica for the instance, and creating a DB snapshot
+     * of the instance.
      *
      * @return The new storage capacity of the RDS instance. Changing this setting
      *         does not result in an outage and the change is applied during the next
@@ -474,31 +497,35 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
-     *         Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     *         <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
-     *         least 10% greater than the current value. Values that are not at least
-     *         10% greater than the existing value are rounded up so that they are
-     *         10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     *         <p>Default: Uses existing setting <p>Valid Values: 10-6144
+     *         Integer <p> <b>MariaDB</b> <p>Default: Uses existing setting <p>Valid
+     *         Values: 5-6144 <p>Constraints: Value supplied must be at least 10%
+     *         greater than the current value. Values that are not at least 10%
+     *         greater than the existing value are rounded up so that they are 10%
+     *         greater than the current value. <p>Type: Integer <p> <b>PostgreSQL</b>
+     *         <p>Default: Uses existing setting <p>Valid Values: 5-6144
      *         <p>Constraints: Value supplied must be at least 10% greater than the
      *         current value. Values that are not at least 10% greater than the
      *         existing value are rounded up so that they are 10% greater than the
-     *         current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
-     *         choose to migrate your DB instance from using standard storage to
-     *         using Provisioned IOPS, or from using Provisioned IOPS to using
-     *         standard storage, the process can take time. The duration of the
-     *         migration depends on several factors such as database load, storage
-     *         size, storage type (standard or Provisioned IOPS), amount of IOPS
-     *         provisioned (if any), and the number of prior scale storage
-     *         operations. Typical migration times are under 24 hours, but the
-     *         process can take up to several days in some cases. During the
-     *         migration, the DB instance will be available for use, but might
-     *         experience performance degradation. While the migration takes place,
-     *         nightly backups for the instance will be suspended. No other Amazon
-     *         RDS operations can take place for the instance, including modifying
-     *         the instance, rebooting the instance, deleting the instance, creating
-     *         a Read Replica for the instance, and creating a DB snapshot of the
-     *         instance.
+     *         current value. <p>Type: Integer <p> <b>Oracle</b> <p>Default: Uses
+     *         existing setting <p>Valid Values: 10-6144 <p>Constraints: Value
+     *         supplied must be at least 10% greater than the current value. Values
+     *         that are not at least 10% greater than the existing value are rounded
+     *         up so that they are 10% greater than the current value. <p> <b>SQL
+     *         Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     *         instance from using standard storage to using Provisioned IOPS, or
+     *         from using Provisioned IOPS to using standard storage, the process can
+     *         take time. The duration of the migration depends on several factors
+     *         such as database load, storage size, storage type (standard or
+     *         Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     *         of prior scale storage operations. Typical migration times are under
+     *         24 hours, but the process can take up to several days in some cases.
+     *         During the migration, the DB instance will be available for use, but
+     *         might experience performance degradation. While the migration takes
+     *         place, nightly backups for the instance will be suspended. No other
+     *         Amazon RDS operations can take place for the instance, including
+     *         modifying the instance, rebooting the instance, deleting the instance,
+     *         creating a Read Replica for the instance, and creating a DB snapshot
+     *         of the instance.
      */
     public Integer getAllocatedStorage() {
         return allocatedStorage;
@@ -513,31 +540,35 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     * <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
-     * least 10% greater than the current value. Values that are not at least
-     * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     * <p>Default: Uses existing setting <p>Valid Values: 10-6144
+     * Integer <p> <b>MariaDB</b> <p>Default: Uses existing setting <p>Valid
+     * Values: 5-6144 <p>Constraints: Value supplied must be at least 10%
+     * greater than the current value. Values that are not at least 10%
+     * greater than the existing value are rounded up so that they are 10%
+     * greater than the current value. <p>Type: Integer <p> <b>PostgreSQL</b>
+     * <p>Default: Uses existing setting <p>Valid Values: 5-6144
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
-     * current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
-     * choose to migrate your DB instance from using standard storage to
-     * using Provisioned IOPS, or from using Provisioned IOPS to using
-     * standard storage, the process can take time. The duration of the
-     * migration depends on several factors such as database load, storage
-     * size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage
-     * operations. Typical migration times are under 24 hours, but the
-     * process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but might
-     * experience performance degradation. While the migration takes place,
-     * nightly backups for the instance will be suspended. No other Amazon
-     * RDS operations can take place for the instance, including modifying
-     * the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the
-     * instance.
+     * current value. <p>Type: Integer <p> <b>Oracle</b> <p>Default: Uses
+     * existing setting <p>Valid Values: 10-6144 <p>Constraints: Value
+     * supplied must be at least 10% greater than the current value. Values
+     * that are not at least 10% greater than the existing value are rounded
+     * up so that they are 10% greater than the current value. <p> <b>SQL
+     * Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or
+     * from using Provisioned IOPS to using standard storage, the process can
+     * take time. The duration of the migration depends on several factors
+     * such as database load, storage size, storage type (standard or
+     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     * of prior scale storage operations. Typical migration times are under
+     * 24 hours, but the process can take up to several days in some cases.
+     * During the migration, the DB instance will be available for use, but
+     * might experience performance degradation. While the migration takes
+     * place, nightly backups for the instance will be suspended. No other
+     * Amazon RDS operations can take place for the instance, including
+     * modifying the instance, rebooting the instance, deleting the instance,
+     * creating a Read Replica for the instance, and creating a DB snapshot
+     * of the instance.
      *
      * @param allocatedStorage The new storage capacity of the RDS instance. Changing this setting
      *         does not result in an outage and the change is applied during the next
@@ -547,31 +578,35 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
-     *         Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     *         <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
-     *         least 10% greater than the current value. Values that are not at least
-     *         10% greater than the existing value are rounded up so that they are
-     *         10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     *         <p>Default: Uses existing setting <p>Valid Values: 10-6144
+     *         Integer <p> <b>MariaDB</b> <p>Default: Uses existing setting <p>Valid
+     *         Values: 5-6144 <p>Constraints: Value supplied must be at least 10%
+     *         greater than the current value. Values that are not at least 10%
+     *         greater than the existing value are rounded up so that they are 10%
+     *         greater than the current value. <p>Type: Integer <p> <b>PostgreSQL</b>
+     *         <p>Default: Uses existing setting <p>Valid Values: 5-6144
      *         <p>Constraints: Value supplied must be at least 10% greater than the
      *         current value. Values that are not at least 10% greater than the
      *         existing value are rounded up so that they are 10% greater than the
-     *         current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
-     *         choose to migrate your DB instance from using standard storage to
-     *         using Provisioned IOPS, or from using Provisioned IOPS to using
-     *         standard storage, the process can take time. The duration of the
-     *         migration depends on several factors such as database load, storage
-     *         size, storage type (standard or Provisioned IOPS), amount of IOPS
-     *         provisioned (if any), and the number of prior scale storage
-     *         operations. Typical migration times are under 24 hours, but the
-     *         process can take up to several days in some cases. During the
-     *         migration, the DB instance will be available for use, but might
-     *         experience performance degradation. While the migration takes place,
-     *         nightly backups for the instance will be suspended. No other Amazon
-     *         RDS operations can take place for the instance, including modifying
-     *         the instance, rebooting the instance, deleting the instance, creating
-     *         a Read Replica for the instance, and creating a DB snapshot of the
-     *         instance.
+     *         current value. <p>Type: Integer <p> <b>Oracle</b> <p>Default: Uses
+     *         existing setting <p>Valid Values: 10-6144 <p>Constraints: Value
+     *         supplied must be at least 10% greater than the current value. Values
+     *         that are not at least 10% greater than the existing value are rounded
+     *         up so that they are 10% greater than the current value. <p> <b>SQL
+     *         Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     *         instance from using standard storage to using Provisioned IOPS, or
+     *         from using Provisioned IOPS to using standard storage, the process can
+     *         take time. The duration of the migration depends on several factors
+     *         such as database load, storage size, storage type (standard or
+     *         Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     *         of prior scale storage operations. Typical migration times are under
+     *         24 hours, but the process can take up to several days in some cases.
+     *         During the migration, the DB instance will be available for use, but
+     *         might experience performance degradation. While the migration takes
+     *         place, nightly backups for the instance will be suspended. No other
+     *         Amazon RDS operations can take place for the instance, including
+     *         modifying the instance, rebooting the instance, deleting the instance,
+     *         creating a Read Replica for the instance, and creating a DB snapshot
+     *         of the instance.
      */
     public void setAllocatedStorage(Integer allocatedStorage) {
         this.allocatedStorage = allocatedStorage;
@@ -586,31 +621,35 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     * <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
-     * least 10% greater than the current value. Values that are not at least
-     * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     * <p>Default: Uses existing setting <p>Valid Values: 10-6144
+     * Integer <p> <b>MariaDB</b> <p>Default: Uses existing setting <p>Valid
+     * Values: 5-6144 <p>Constraints: Value supplied must be at least 10%
+     * greater than the current value. Values that are not at least 10%
+     * greater than the existing value are rounded up so that they are 10%
+     * greater than the current value. <p>Type: Integer <p> <b>PostgreSQL</b>
+     * <p>Default: Uses existing setting <p>Valid Values: 5-6144
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
-     * current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
-     * choose to migrate your DB instance from using standard storage to
-     * using Provisioned IOPS, or from using Provisioned IOPS to using
-     * standard storage, the process can take time. The duration of the
-     * migration depends on several factors such as database load, storage
-     * size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage
-     * operations. Typical migration times are under 24 hours, but the
-     * process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but might
-     * experience performance degradation. While the migration takes place,
-     * nightly backups for the instance will be suspended. No other Amazon
-     * RDS operations can take place for the instance, including modifying
-     * the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the
-     * instance.
+     * current value. <p>Type: Integer <p> <b>Oracle</b> <p>Default: Uses
+     * existing setting <p>Valid Values: 10-6144 <p>Constraints: Value
+     * supplied must be at least 10% greater than the current value. Values
+     * that are not at least 10% greater than the existing value are rounded
+     * up so that they are 10% greater than the current value. <p> <b>SQL
+     * Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or
+     * from using Provisioned IOPS to using standard storage, the process can
+     * take time. The duration of the migration depends on several factors
+     * such as database load, storage size, storage type (standard or
+     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     * of prior scale storage operations. Typical migration times are under
+     * 24 hours, but the process can take up to several days in some cases.
+     * During the migration, the DB instance will be available for use, but
+     * might experience performance degradation. While the migration takes
+     * place, nightly backups for the instance will be suspended. No other
+     * Amazon RDS operations can take place for the instance, including
+     * modifying the instance, rebooting the instance, deleting the instance,
+     * creating a Read Replica for the instance, and creating a DB snapshot
+     * of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -622,31 +661,35 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
-     *         Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     *         <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
-     *         least 10% greater than the current value. Values that are not at least
-     *         10% greater than the existing value are rounded up so that they are
-     *         10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     *         <p>Default: Uses existing setting <p>Valid Values: 10-6144
+     *         Integer <p> <b>MariaDB</b> <p>Default: Uses existing setting <p>Valid
+     *         Values: 5-6144 <p>Constraints: Value supplied must be at least 10%
+     *         greater than the current value. Values that are not at least 10%
+     *         greater than the existing value are rounded up so that they are 10%
+     *         greater than the current value. <p>Type: Integer <p> <b>PostgreSQL</b>
+     *         <p>Default: Uses existing setting <p>Valid Values: 5-6144
      *         <p>Constraints: Value supplied must be at least 10% greater than the
      *         current value. Values that are not at least 10% greater than the
      *         existing value are rounded up so that they are 10% greater than the
-     *         current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
-     *         choose to migrate your DB instance from using standard storage to
-     *         using Provisioned IOPS, or from using Provisioned IOPS to using
-     *         standard storage, the process can take time. The duration of the
-     *         migration depends on several factors such as database load, storage
-     *         size, storage type (standard or Provisioned IOPS), amount of IOPS
-     *         provisioned (if any), and the number of prior scale storage
-     *         operations. Typical migration times are under 24 hours, but the
-     *         process can take up to several days in some cases. During the
-     *         migration, the DB instance will be available for use, but might
-     *         experience performance degradation. While the migration takes place,
-     *         nightly backups for the instance will be suspended. No other Amazon
-     *         RDS operations can take place for the instance, including modifying
-     *         the instance, rebooting the instance, deleting the instance, creating
-     *         a Read Replica for the instance, and creating a DB snapshot of the
-     *         instance.
+     *         current value. <p>Type: Integer <p> <b>Oracle</b> <p>Default: Uses
+     *         existing setting <p>Valid Values: 10-6144 <p>Constraints: Value
+     *         supplied must be at least 10% greater than the current value. Values
+     *         that are not at least 10% greater than the existing value are rounded
+     *         up so that they are 10% greater than the current value. <p> <b>SQL
+     *         Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     *         instance from using standard storage to using Provisioned IOPS, or
+     *         from using Provisioned IOPS to using standard storage, the process can
+     *         take time. The duration of the migration depends on several factors
+     *         such as database load, storage size, storage type (standard or
+     *         Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     *         of prior scale storage operations. Typical migration times are under
+     *         24 hours, but the process can take up to several days in some cases.
+     *         During the migration, the DB instance will be available for use, but
+     *         might experience performance degradation. While the migration takes
+     *         place, nightly backups for the instance will be suspended. No other
+     *         Amazon RDS operations can take place for the instance, including
+     *         modifying the instance, rebooting the instance, deleting the instance,
+     *         creating a Read Replica for the instance, and creating a DB snapshot
+     *         of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -667,9 +710,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
      * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code>
+     * db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     * db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     * db.t2.medium | db.t2.large</code>
      *
      * @return The new compute and memory capacity of the DB instance. To determine
      *         the instance classes that are available for a particular DB engine,
@@ -681,9 +725,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
      *         db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     *         db.t2.large</code>
+     *         db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     *         db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     *         db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     *         db.t2.medium | db.t2.large</code>
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -700,9 +745,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
      * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code>
+     * db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     * db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     * db.t2.medium | db.t2.large</code>
      *
      * @param dBInstanceClass The new compute and memory capacity of the DB instance. To determine
      *         the instance classes that are available for a particular DB engine,
@@ -714,9 +760,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
      *         db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     *         db.t2.large</code>
+     *         db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     *         db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     *         db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     *         db.t2.medium | db.t2.large</code>
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -733,9 +780,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
      * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code>
+     * db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     * db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     * db.t2.medium | db.t2.large</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -749,9 +797,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
      *         db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     *         db.t2.large</code>
+     *         db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     *         db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     *         db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     *         db.t2.medium | db.t2.large</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1125,12 +1174,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * completion of the request, the <code>MasterUserPassword</code> element
      * exists in the <code>PendingModifiedValues</code> element of the
      * operation response. <p>Default: Uses existing setting <p>Constraints:
-     * Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
-     * to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
-     * characters (SQL Server). <note> Amazon RDS API actions never return
-     * the password, so this action provides a way to regain access to a
-     * primary instance user if the password is lost. This includes restoring
-     * privileges that might have been accidentally revoked. </note>
+     * Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon
+     * Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
+     * alphanumeric characters (SQL Server). <note> Amazon RDS API actions
+     * never return the password, so this action provides a way to regain
+     * access to a primary instance user if the password is lost. This
+     * includes restoring privileges that might have been accidentally
+     * revoked. </note>
      *
      * @return The new password for the DB instance master user. Can be any printable
      *         ASCII character except "/", """, or "@". <p> Changing this parameter
@@ -1139,12 +1189,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         completion of the request, the <code>MasterUserPassword</code> element
      *         exists in the <code>PendingModifiedValues</code> element of the
      *         operation response. <p>Default: Uses existing setting <p>Constraints:
-     *         Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
-     *         to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
-     *         characters (SQL Server). <note> Amazon RDS API actions never return
-     *         the password, so this action provides a way to regain access to a
-     *         primary instance user if the password is lost. This includes restoring
-     *         privileges that might have been accidentally revoked. </note>
+     *         Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon
+     *         Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
+     *         alphanumeric characters (SQL Server). <note> Amazon RDS API actions
+     *         never return the password, so this action provides a way to regain
+     *         access to a primary instance user if the password is lost. This
+     *         includes restoring privileges that might have been accidentally
+     *         revoked. </note>
      */
     public String getMasterUserPassword() {
         return masterUserPassword;
@@ -1158,12 +1209,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * completion of the request, the <code>MasterUserPassword</code> element
      * exists in the <code>PendingModifiedValues</code> element of the
      * operation response. <p>Default: Uses existing setting <p>Constraints:
-     * Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
-     * to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
-     * characters (SQL Server). <note> Amazon RDS API actions never return
-     * the password, so this action provides a way to regain access to a
-     * primary instance user if the password is lost. This includes restoring
-     * privileges that might have been accidentally revoked. </note>
+     * Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon
+     * Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
+     * alphanumeric characters (SQL Server). <note> Amazon RDS API actions
+     * never return the password, so this action provides a way to regain
+     * access to a primary instance user if the password is lost. This
+     * includes restoring privileges that might have been accidentally
+     * revoked. </note>
      *
      * @param masterUserPassword The new password for the DB instance master user. Can be any printable
      *         ASCII character except "/", """, or "@". <p> Changing this parameter
@@ -1172,12 +1224,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         completion of the request, the <code>MasterUserPassword</code> element
      *         exists in the <code>PendingModifiedValues</code> element of the
      *         operation response. <p>Default: Uses existing setting <p>Constraints:
-     *         Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
-     *         to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
-     *         characters (SQL Server). <note> Amazon RDS API actions never return
-     *         the password, so this action provides a way to regain access to a
-     *         primary instance user if the password is lost. This includes restoring
-     *         privileges that might have been accidentally revoked. </note>
+     *         Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon
+     *         Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
+     *         alphanumeric characters (SQL Server). <note> Amazon RDS API actions
+     *         never return the password, so this action provides a way to regain
+     *         access to a primary instance user if the password is lost. This
+     *         includes restoring privileges that might have been accidentally
+     *         revoked. </note>
      */
     public void setMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
@@ -1191,12 +1244,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * completion of the request, the <code>MasterUserPassword</code> element
      * exists in the <code>PendingModifiedValues</code> element of the
      * operation response. <p>Default: Uses existing setting <p>Constraints:
-     * Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
-     * to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
-     * characters (SQL Server). <note> Amazon RDS API actions never return
-     * the password, so this action provides a way to regain access to a
-     * primary instance user if the password is lost. This includes restoring
-     * privileges that might have been accidentally revoked. </note>
+     * Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon
+     * Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
+     * alphanumeric characters (SQL Server). <note> Amazon RDS API actions
+     * never return the password, so this action provides a way to regain
+     * access to a primary instance user if the password is lost. This
+     * includes restoring privileges that might have been accidentally
+     * revoked. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1207,12 +1261,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         completion of the request, the <code>MasterUserPassword</code> element
      *         exists in the <code>PendingModifiedValues</code> element of the
      *         operation response. <p>Default: Uses existing setting <p>Constraints:
-     *         Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
-     *         to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
-     *         characters (SQL Server). <note> Amazon RDS API actions never return
-     *         the password, so this action provides a way to regain access to a
-     *         primary instance user if the password is lost. This includes restoring
-     *         privileges that might have been accidentally revoked. </note>
+     *         Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon
+     *         Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
+     *         alphanumeric characters (SQL Server). <note> Amazon RDS API actions
+     *         never return the password, so this action provides a way to regain
+     *         access to a primary instance user if the password is lost. This
+     *         includes restoring privileges that might have been accidentally
+     *         revoked. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2541,6 +2596,112 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * True to make the DB instance Internet-facing with a publicly
+     * resolvable DNS name, which resolves to a public IP address. False to
+     * make the DB instance internal with a DNS name that resolves to a
+     * private IP address. <p><code>PubliclyAccessible</code> only applies to
+     * DB instances in a VPC. The DB instance must be part of a public subnet
+     * and <code>PubliclyAccessible</code> must be true in order for it to be
+     * publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
+     * parameter are applied immediately regardless of the value of the
+     * <code>ApplyImmediately</code> parameter. <p> Default: false
+     *
+     * @return True to make the DB instance Internet-facing with a publicly
+     *         resolvable DNS name, which resolves to a public IP address. False to
+     *         make the DB instance internal with a DNS name that resolves to a
+     *         private IP address. <p><code>PubliclyAccessible</code> only applies to
+     *         DB instances in a VPC. The DB instance must be part of a public subnet
+     *         and <code>PubliclyAccessible</code> must be true in order for it to be
+     *         publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
+     *         parameter are applied immediately regardless of the value of the
+     *         <code>ApplyImmediately</code> parameter. <p> Default: false
+     */
+    public Boolean isPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+    
+    /**
+     * True to make the DB instance Internet-facing with a publicly
+     * resolvable DNS name, which resolves to a public IP address. False to
+     * make the DB instance internal with a DNS name that resolves to a
+     * private IP address. <p><code>PubliclyAccessible</code> only applies to
+     * DB instances in a VPC. The DB instance must be part of a public subnet
+     * and <code>PubliclyAccessible</code> must be true in order for it to be
+     * publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
+     * parameter are applied immediately regardless of the value of the
+     * <code>ApplyImmediately</code> parameter. <p> Default: false
+     *
+     * @param publiclyAccessible True to make the DB instance Internet-facing with a publicly
+     *         resolvable DNS name, which resolves to a public IP address. False to
+     *         make the DB instance internal with a DNS name that resolves to a
+     *         private IP address. <p><code>PubliclyAccessible</code> only applies to
+     *         DB instances in a VPC. The DB instance must be part of a public subnet
+     *         and <code>PubliclyAccessible</code> must be true in order for it to be
+     *         publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
+     *         parameter are applied immediately regardless of the value of the
+     *         <code>ApplyImmediately</code> parameter. <p> Default: false
+     */
+    public void setPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+    }
+    
+    /**
+     * True to make the DB instance Internet-facing with a publicly
+     * resolvable DNS name, which resolves to a public IP address. False to
+     * make the DB instance internal with a DNS name that resolves to a
+     * private IP address. <p><code>PubliclyAccessible</code> only applies to
+     * DB instances in a VPC. The DB instance must be part of a public subnet
+     * and <code>PubliclyAccessible</code> must be true in order for it to be
+     * publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
+     * parameter are applied immediately regardless of the value of the
+     * <code>ApplyImmediately</code> parameter. <p> Default: false
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param publiclyAccessible True to make the DB instance Internet-facing with a publicly
+     *         resolvable DNS name, which resolves to a public IP address. False to
+     *         make the DB instance internal with a DNS name that resolves to a
+     *         private IP address. <p><code>PubliclyAccessible</code> only applies to
+     *         DB instances in a VPC. The DB instance must be part of a public subnet
+     *         and <code>PubliclyAccessible</code> must be true in order for it to be
+     *         publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
+     *         parameter are applied immediately regardless of the value of the
+     *         <code>ApplyImmediately</code> parameter. <p> Default: false
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyDBInstanceRequest withPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+        return this;
+    }
+
+    /**
+     * True to make the DB instance Internet-facing with a publicly
+     * resolvable DNS name, which resolves to a public IP address. False to
+     * make the DB instance internal with a DNS name that resolves to a
+     * private IP address. <p><code>PubliclyAccessible</code> only applies to
+     * DB instances in a VPC. The DB instance must be part of a public subnet
+     * and <code>PubliclyAccessible</code> must be true in order for it to be
+     * publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
+     * parameter are applied immediately regardless of the value of the
+     * <code>ApplyImmediately</code> parameter. <p> Default: false
+     *
+     * @return True to make the DB instance Internet-facing with a publicly
+     *         resolvable DNS name, which resolves to a public IP address. False to
+     *         make the DB instance internal with a DNS name that resolves to a
+     *         private IP address. <p><code>PubliclyAccessible</code> only applies to
+     *         DB instances in a VPC. The DB instance must be part of a public subnet
+     *         and <code>PubliclyAccessible</code> must be true in order for it to be
+     *         publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
+     *         parameter are applied immediately regardless of the value of the
+     *         <code>ApplyImmediately</code> parameter. <p> Default: false
+     */
+    public Boolean getPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2574,7 +2735,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
         if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() + ",");
         if (getCACertificateIdentifier() != null) sb.append("CACertificateIdentifier: " + getCACertificateIdentifier() + ",");
-        if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() );
+        if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() + ",");
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() );
         sb.append("}");
         return sb.toString();
     }
@@ -2607,6 +2769,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode()); 
         hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((isCopyTagsToSnapshot() == null) ? 0 : isCopyTagsToSnapshot().hashCode()); 
+        hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         return hashCode;
     }
     
@@ -2664,6 +2827,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.getCACertificateIdentifier() != null && other.getCACertificateIdentifier().equals(this.getCACertificateIdentifier()) == false) return false; 
         if (other.isCopyTagsToSnapshot() == null ^ this.isCopyTagsToSnapshot() == null) return false;
         if (other.isCopyTagsToSnapshot() != null && other.isCopyTagsToSnapshot().equals(this.isCopyTagsToSnapshot()) == false) return false; 
+        if (other.isPubliclyAccessible() == null ^ this.isPubliclyAccessible() == null) return false;
+        if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         return true;
     }
     

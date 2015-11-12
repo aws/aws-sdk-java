@@ -22,6 +22,7 @@ public enum SourceType {
     DbInstance("db-instance"),
     DbParameterGroup("db-parameter-group"),
     DbSecurityGroup("db-security-group"),
+    DbSnapshot("db-snapshot"),
     DbCluster("db-cluster"),
     DbClusterSnapshot("db-cluster-snapshot");
 
@@ -53,6 +54,8 @@ public enum SourceType {
             return SourceType.DbParameterGroup;
         } else if ("db-security-group".equals(value)) {
             return SourceType.DbSecurityGroup;
+        } else if ("db-snapshot".equals(value)) {
+            return SourceType.DbSnapshot;
         } else if ("db-cluster".equals(value)) {
             return SourceType.DbCluster;
         } else if ("db-cluster-snapshot".equals(value)) {

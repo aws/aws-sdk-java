@@ -65,16 +65,16 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. For example, this value returns either MySQL or PostgreSQL
+     * you use. For example, this value returns MySQL, MariaDB, or PostgreSQL
      * information when returning values from CreateDBInstanceReadReplica
-     * since Read Replicas are only supported for MySQL and PostgreSQL. <p>
-     * <b>MySQL, SQL Server, PostgreSQL, Amazon Aurora</b> <p> Contains the
-     * name of the initial database of this instance that was provided at
-     * create time, if one was specified when the DB instance was created.
-     * This same name is returned for the life of the DB instance. <p>Type:
-     * String <p> <b>Oracle</b> <p> Contains the Oracle System ID (SID) of
-     * the created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * since Read Replicas are only supported for these engines. <p>
+     * <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b> <p>
+     * Contains the name of the initial database of this instance that was
+     * provided at create time, if one was specified when the DB instance was
+     * created. This same name is returned for the life of the DB instance.
+     * <p>Type: String <p> <b>Oracle</b> <p> Contains the Oracle System ID
+     * (SID) of the created DB instance. Not shown when the returned
+     * parameters do not apply to an Oracle DB instance.
      */
     private String dBName;
 
@@ -472,28 +472,28 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. For example, this value returns either MySQL or PostgreSQL
+     * you use. For example, this value returns MySQL, MariaDB, or PostgreSQL
      * information when returning values from CreateDBInstanceReadReplica
-     * since Read Replicas are only supported for MySQL and PostgreSQL. <p>
-     * <b>MySQL, SQL Server, PostgreSQL, Amazon Aurora</b> <p> Contains the
-     * name of the initial database of this instance that was provided at
-     * create time, if one was specified when the DB instance was created.
-     * This same name is returned for the life of the DB instance. <p>Type:
-     * String <p> <b>Oracle</b> <p> Contains the Oracle System ID (SID) of
-     * the created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * since Read Replicas are only supported for these engines. <p>
+     * <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b> <p>
+     * Contains the name of the initial database of this instance that was
+     * provided at create time, if one was specified when the DB instance was
+     * created. This same name is returned for the life of the DB instance.
+     * <p>Type: String <p> <b>Oracle</b> <p> Contains the Oracle System ID
+     * (SID) of the created DB instance. Not shown when the returned
+     * parameters do not apply to an Oracle DB instance.
      *
      * @return The meaning of this parameter differs according to the database engine
-     *         you use. For example, this value returns either MySQL or PostgreSQL
+     *         you use. For example, this value returns MySQL, MariaDB, or PostgreSQL
      *         information when returning values from CreateDBInstanceReadReplica
-     *         since Read Replicas are only supported for MySQL and PostgreSQL. <p>
-     *         <b>MySQL, SQL Server, PostgreSQL, Amazon Aurora</b> <p> Contains the
-     *         name of the initial database of this instance that was provided at
-     *         create time, if one was specified when the DB instance was created.
-     *         This same name is returned for the life of the DB instance. <p>Type:
-     *         String <p> <b>Oracle</b> <p> Contains the Oracle System ID (SID) of
-     *         the created DB instance. Not shown when the returned parameters do not
-     *         apply to an Oracle DB instance.
+     *         since Read Replicas are only supported for these engines. <p>
+     *         <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b> <p>
+     *         Contains the name of the initial database of this instance that was
+     *         provided at create time, if one was specified when the DB instance was
+     *         created. This same name is returned for the life of the DB instance.
+     *         <p>Type: String <p> <b>Oracle</b> <p> Contains the Oracle System ID
+     *         (SID) of the created DB instance. Not shown when the returned
+     *         parameters do not apply to an Oracle DB instance.
      */
     public String getDBName() {
         return dBName;
@@ -501,28 +501,28 @@ public class DBInstance implements Serializable, Cloneable {
     
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. For example, this value returns either MySQL or PostgreSQL
+     * you use. For example, this value returns MySQL, MariaDB, or PostgreSQL
      * information when returning values from CreateDBInstanceReadReplica
-     * since Read Replicas are only supported for MySQL and PostgreSQL. <p>
-     * <b>MySQL, SQL Server, PostgreSQL, Amazon Aurora</b> <p> Contains the
-     * name of the initial database of this instance that was provided at
-     * create time, if one was specified when the DB instance was created.
-     * This same name is returned for the life of the DB instance. <p>Type:
-     * String <p> <b>Oracle</b> <p> Contains the Oracle System ID (SID) of
-     * the created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * since Read Replicas are only supported for these engines. <p>
+     * <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b> <p>
+     * Contains the name of the initial database of this instance that was
+     * provided at create time, if one was specified when the DB instance was
+     * created. This same name is returned for the life of the DB instance.
+     * <p>Type: String <p> <b>Oracle</b> <p> Contains the Oracle System ID
+     * (SID) of the created DB instance. Not shown when the returned
+     * parameters do not apply to an Oracle DB instance.
      *
      * @param dBName The meaning of this parameter differs according to the database engine
-     *         you use. For example, this value returns either MySQL or PostgreSQL
+     *         you use. For example, this value returns MySQL, MariaDB, or PostgreSQL
      *         information when returning values from CreateDBInstanceReadReplica
-     *         since Read Replicas are only supported for MySQL and PostgreSQL. <p>
-     *         <b>MySQL, SQL Server, PostgreSQL, Amazon Aurora</b> <p> Contains the
-     *         name of the initial database of this instance that was provided at
-     *         create time, if one was specified when the DB instance was created.
-     *         This same name is returned for the life of the DB instance. <p>Type:
-     *         String <p> <b>Oracle</b> <p> Contains the Oracle System ID (SID) of
-     *         the created DB instance. Not shown when the returned parameters do not
-     *         apply to an Oracle DB instance.
+     *         since Read Replicas are only supported for these engines. <p>
+     *         <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b> <p>
+     *         Contains the name of the initial database of this instance that was
+     *         provided at create time, if one was specified when the DB instance was
+     *         created. This same name is returned for the life of the DB instance.
+     *         <p>Type: String <p> <b>Oracle</b> <p> Contains the Oracle System ID
+     *         (SID) of the created DB instance. Not shown when the returned
+     *         parameters do not apply to an Oracle DB instance.
      */
     public void setDBName(String dBName) {
         this.dBName = dBName;
@@ -530,30 +530,30 @@ public class DBInstance implements Serializable, Cloneable {
     
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. For example, this value returns either MySQL or PostgreSQL
+     * you use. For example, this value returns MySQL, MariaDB, or PostgreSQL
      * information when returning values from CreateDBInstanceReadReplica
-     * since Read Replicas are only supported for MySQL and PostgreSQL. <p>
-     * <b>MySQL, SQL Server, PostgreSQL, Amazon Aurora</b> <p> Contains the
-     * name of the initial database of this instance that was provided at
-     * create time, if one was specified when the DB instance was created.
-     * This same name is returned for the life of the DB instance. <p>Type:
-     * String <p> <b>Oracle</b> <p> Contains the Oracle System ID (SID) of
-     * the created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * since Read Replicas are only supported for these engines. <p>
+     * <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b> <p>
+     * Contains the name of the initial database of this instance that was
+     * provided at create time, if one was specified when the DB instance was
+     * created. This same name is returned for the life of the DB instance.
+     * <p>Type: String <p> <b>Oracle</b> <p> Contains the Oracle System ID
+     * (SID) of the created DB instance. Not shown when the returned
+     * parameters do not apply to an Oracle DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBName The meaning of this parameter differs according to the database engine
-     *         you use. For example, this value returns either MySQL or PostgreSQL
+     *         you use. For example, this value returns MySQL, MariaDB, or PostgreSQL
      *         information when returning values from CreateDBInstanceReadReplica
-     *         since Read Replicas are only supported for MySQL and PostgreSQL. <p>
-     *         <b>MySQL, SQL Server, PostgreSQL, Amazon Aurora</b> <p> Contains the
-     *         name of the initial database of this instance that was provided at
-     *         create time, if one was specified when the DB instance was created.
-     *         This same name is returned for the life of the DB instance. <p>Type:
-     *         String <p> <b>Oracle</b> <p> Contains the Oracle System ID (SID) of
-     *         the created DB instance. Not shown when the returned parameters do not
-     *         apply to an Oracle DB instance.
+     *         since Read Replicas are only supported for these engines. <p>
+     *         <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b> <p>
+     *         Contains the name of the initial database of this instance that was
+     *         provided at create time, if one was specified when the DB instance was
+     *         created. This same name is returned for the life of the DB instance.
+     *         <p>Type: String <p> <b>Oracle</b> <p> Contains the Oracle System ID
+     *         (SID) of the created DB instance. Not shown when the returned
+     *         parameters do not apply to an Oracle DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

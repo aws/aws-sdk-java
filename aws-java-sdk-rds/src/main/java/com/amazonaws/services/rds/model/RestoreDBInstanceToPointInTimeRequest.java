@@ -77,10 +77,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
      * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> <p>Default: The same DBInstanceClass as the
-     * original DB instance.
+     * db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     * db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     * db.t2.medium | db.t2.large</code> <p>Default: The same DBInstanceClass
+     * as the original DB instance.
      */
     private String dBInstanceClass;
 
@@ -145,18 +146,18 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
 
     /**
      * The database name for the restored DB instance. <note> <p>This
-     * parameter is not used for the MySQL engine. </note>
+     * parameter is not used for the MySQL or MariaDB engines. </note>
      */
     private String dBName;
 
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
-     * | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
+     * <code>oracle-se1</code> | <code>oracle-se</code> |
+     * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code> | <code>postgres</code>
      */
     private String engine;
 
@@ -480,19 +481,21 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
      * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> <p>Default: The same DBInstanceClass as the
-     * original DB instance.
+     * db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     * db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     * db.t2.medium | db.t2.large</code> <p>Default: The same DBInstanceClass
+     * as the original DB instance.
      *
      * @return The compute and memory capacity of the Amazon RDS DB instance.
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
      *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     *         db.t2.large</code> <p>Default: The same DBInstanceClass as the
-     *         original DB instance.
+     *         db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     *         db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     *         db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     *         db.t2.medium | db.t2.large</code> <p>Default: The same DBInstanceClass
+     *         as the original DB instance.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -503,19 +506,21 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
      * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> <p>Default: The same DBInstanceClass as the
-     * original DB instance.
+     * db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     * db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     * db.t2.medium | db.t2.large</code> <p>Default: The same DBInstanceClass
+     * as the original DB instance.
      *
      * @param dBInstanceClass The compute and memory capacity of the Amazon RDS DB instance.
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
      *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     *         db.t2.large</code> <p>Default: The same DBInstanceClass as the
-     *         original DB instance.
+     *         db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     *         db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     *         db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     *         db.t2.medium | db.t2.large</code> <p>Default: The same DBInstanceClass
+     *         as the original DB instance.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -526,10 +531,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
      * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> <p>Default: The same DBInstanceClass as the
-     * original DB instance.
+     * db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     * db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     * db.t2.medium | db.t2.large</code> <p>Default: The same DBInstanceClass
+     * as the original DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -537,10 +543,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
      *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
-     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     *         db.t2.large</code> <p>Default: The same DBInstanceClass as the
-     *         original DB instance.
+     *         db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge |
+     *         db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
+     *         db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
+     *         db.t2.medium | db.t2.large</code> <p>Default: The same DBInstanceClass
+     *         as the original DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -984,10 +991,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
 
     /**
      * The database name for the restored DB instance. <note> <p>This
-     * parameter is not used for the MySQL engine. </note>
+     * parameter is not used for the MySQL or MariaDB engines. </note>
      *
      * @return The database name for the restored DB instance. <note> <p>This
-     *         parameter is not used for the MySQL engine. </note>
+     *         parameter is not used for the MySQL or MariaDB engines. </note>
      */
     public String getDBName() {
         return dBName;
@@ -995,10 +1002,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The database name for the restored DB instance. <note> <p>This
-     * parameter is not used for the MySQL engine. </note>
+     * parameter is not used for the MySQL or MariaDB engines. </note>
      *
      * @param dBName The database name for the restored DB instance. <note> <p>This
-     *         parameter is not used for the MySQL engine. </note>
+     *         parameter is not used for the MySQL or MariaDB engines. </note>
      */
     public void setDBName(String dBName) {
         this.dBName = dBName;
@@ -1006,12 +1013,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The database name for the restored DB instance. <note> <p>This
-     * parameter is not used for the MySQL engine. </note>
+     * parameter is not used for the MySQL or MariaDB engines. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBName The database name for the restored DB instance. <note> <p>This
-     *         parameter is not used for the MySQL engine. </note>
+     *         parameter is not used for the MySQL or MariaDB engines. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1024,19 +1031,19 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
-     * | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
+     * <code>oracle-se1</code> | <code>oracle-se</code> |
+     * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code> | <code>postgres</code>
      *
      * @return The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
-     *         source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
-     *         | <code>oracle-se</code> | <code>oracle-ee</code> |
-     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     *         <code>postgres</code>
+     *         source <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
+     *         <code>oracle-se1</code> | <code>oracle-se</code> |
+     *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     *         <code>sqlserver-web</code> | <code>postgres</code>
      */
     public String getEngine() {
         return engine;
@@ -1045,19 +1052,19 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
-     * | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
+     * <code>oracle-se1</code> | <code>oracle-se</code> |
+     * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code> | <code>postgres</code>
      *
      * @param engine The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
-     *         source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
-     *         | <code>oracle-se</code> | <code>oracle-ee</code> |
-     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     *         <code>postgres</code>
+     *         source <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
+     *         <code>oracle-se1</code> | <code>oracle-se</code> |
+     *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     *         <code>sqlserver-web</code> | <code>postgres</code>
      */
     public void setEngine(String engine) {
         this.engine = engine;
@@ -1066,21 +1073,21 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
-     * | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
+     * <code>oracle-se1</code> | <code>oracle-se</code> |
+     * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code> | <code>postgres</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
-     *         source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
-     *         | <code>oracle-se</code> | <code>oracle-ee</code> |
-     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     *         <code>postgres</code>
+     *         source <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
+     *         <code>oracle-se1</code> | <code>oracle-se</code> |
+     *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     *         <code>sqlserver-web</code> | <code>postgres</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

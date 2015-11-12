@@ -122,14 +122,14 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     private String productDescription;
 
     /**
-     * The required duration for the Spot instance, in minutes.
+     * The duration for the Spot instance, in minutes.
      */
     private Integer blockDurationMinutes;
 
     /**
-     * If you specified a required duration and your request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot instance while
-     * it runs.
+     * If you specified a duration and your Spot instance request was
+     * fulfilled, this is the fixed hourly price in effect for the Spot
+     * instance while it runs.
      */
     private String actualBlockHourlyPrice;
 
@@ -883,29 +883,29 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     }
 
     /**
-     * The required duration for the Spot instance, in minutes.
+     * The duration for the Spot instance, in minutes.
      *
-     * @return The required duration for the Spot instance, in minutes.
+     * @return The duration for the Spot instance, in minutes.
      */
     public Integer getBlockDurationMinutes() {
         return blockDurationMinutes;
     }
     
     /**
-     * The required duration for the Spot instance, in minutes.
+     * The duration for the Spot instance, in minutes.
      *
-     * @param blockDurationMinutes The required duration for the Spot instance, in minutes.
+     * @param blockDurationMinutes The duration for the Spot instance, in minutes.
      */
     public void setBlockDurationMinutes(Integer blockDurationMinutes) {
         this.blockDurationMinutes = blockDurationMinutes;
     }
     
     /**
-     * The required duration for the Spot instance, in minutes.
+     * The duration for the Spot instance, in minutes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDurationMinutes The required duration for the Spot instance, in minutes.
+     * @param blockDurationMinutes The duration for the Spot instance, in minutes.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -916,41 +916,41 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     }
 
     /**
-     * If you specified a required duration and your request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot instance while
-     * it runs.
+     * If you specified a duration and your Spot instance request was
+     * fulfilled, this is the fixed hourly price in effect for the Spot
+     * instance while it runs.
      *
-     * @return If you specified a required duration and your request was fulfilled,
-     *         this is the fixed hourly price in effect for the Spot instance while
-     *         it runs.
+     * @return If you specified a duration and your Spot instance request was
+     *         fulfilled, this is the fixed hourly price in effect for the Spot
+     *         instance while it runs.
      */
     public String getActualBlockHourlyPrice() {
         return actualBlockHourlyPrice;
     }
     
     /**
-     * If you specified a required duration and your request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot instance while
-     * it runs.
+     * If you specified a duration and your Spot instance request was
+     * fulfilled, this is the fixed hourly price in effect for the Spot
+     * instance while it runs.
      *
-     * @param actualBlockHourlyPrice If you specified a required duration and your request was fulfilled,
-     *         this is the fixed hourly price in effect for the Spot instance while
-     *         it runs.
+     * @param actualBlockHourlyPrice If you specified a duration and your Spot instance request was
+     *         fulfilled, this is the fixed hourly price in effect for the Spot
+     *         instance while it runs.
      */
     public void setActualBlockHourlyPrice(String actualBlockHourlyPrice) {
         this.actualBlockHourlyPrice = actualBlockHourlyPrice;
     }
     
     /**
-     * If you specified a required duration and your request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot instance while
-     * it runs.
+     * If you specified a duration and your Spot instance request was
+     * fulfilled, this is the fixed hourly price in effect for the Spot
+     * instance while it runs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param actualBlockHourlyPrice If you specified a required duration and your request was fulfilled,
-     *         this is the fixed hourly price in effect for the Spot instance while
-     *         it runs.
+     * @param actualBlockHourlyPrice If you specified a duration and your Spot instance request was
+     *         fulfilled, this is the fixed hourly price in effect for the Spot
+     *         instance while it runs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

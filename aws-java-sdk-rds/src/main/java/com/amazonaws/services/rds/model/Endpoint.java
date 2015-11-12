@@ -42,6 +42,12 @@ public class Endpoint implements Serializable, Cloneable {
     private Integer port;
 
     /**
+     * Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.
+     */
+    private String hostedZoneId;
+
+    /**
      * Default constructor for a new Endpoint object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -114,6 +120,45 @@ public class Endpoint implements Serializable, Cloneable {
     }
 
     /**
+     * Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.
+     *
+     * @return Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     *         zone.
+     */
+    public String getHostedZoneId() {
+        return hostedZoneId;
+    }
+    
+    /**
+     * Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.
+     *
+     * @param hostedZoneId Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     *         zone.
+     */
+    public void setHostedZoneId(String hostedZoneId) {
+        this.hostedZoneId = hostedZoneId;
+    }
+    
+    /**
+     * Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hostedZoneId Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     *         zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Endpoint withHostedZoneId(String hostedZoneId) {
+        this.hostedZoneId = hostedZoneId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -126,7 +171,8 @@ public class Endpoint implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAddress() != null) sb.append("Address: " + getAddress() + ",");
-        if (getPort() != null) sb.append("Port: " + getPort() );
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");
+        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() );
         sb.append("}");
         return sb.toString();
     }
@@ -138,6 +184,7 @@ public class Endpoint implements Serializable, Cloneable {
         
         hashCode = prime * hashCode + ((getAddress() == null) ? 0 : getAddress().hashCode()); 
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
+        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode()); 
         return hashCode;
     }
     
@@ -153,6 +200,8 @@ public class Endpoint implements Serializable, Cloneable {
         if (other.getAddress() != null && other.getAddress().equals(this.getAddress()) == false) return false; 
         if (other.getPort() == null ^ this.getPort() == null) return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false) return false; 
+        if (other.getHostedZoneId() == null ^ this.getHostedZoneId() == null) return false;
+        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false) return false; 
         return true;
     }
     

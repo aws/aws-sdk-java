@@ -24,7 +24,10 @@ import java.io.Serializable;
 public class SpotInstanceStatus implements Serializable, Cloneable {
 
     /**
-     * The status code.
+     * The status code. For a list of status codes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      */
     private String code;
 
@@ -41,29 +44,47 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
     private String message;
 
     /**
-     * The status code.
+     * The status code. For a list of status codes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      *
-     * @return The status code.
+     * @return The status code. For a list of status codes, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     *         Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * The status code.
+     * The status code. For a list of status codes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      *
-     * @param code The status code.
+     * @param code The status code. For a list of status codes, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     *         Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * The status code.
+     * The status code. For a list of status codes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code The status code.
+     * @param code The status code. For a list of status codes, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     *         Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

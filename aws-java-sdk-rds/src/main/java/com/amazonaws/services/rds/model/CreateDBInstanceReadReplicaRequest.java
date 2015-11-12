@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest) CreateDBInstanceReadReplica operation}.
  * <p>
- * Creates a DB instance for a DB instance running MySQL or PostgreSQL
- * that acts as a Read Replica of a source DB instance.
+ * Creates a DB instance for a DB instance running MySQL, MariaDB, or
+ * PostgreSQL that acts as a Read Replica of a source DB instance.
  * </p>
  * <p>
  * All Read Replica DB instances are created as Single-AZ deployments
@@ -49,16 +49,17 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     /**
      * The identifier of the DB instance that will act as the source for the
      * Read Replica. Each DB instance can have up to five Read Replicas.
-     * <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     * instance.</li> <li>Can specify a DB instance that is a MySQL Read
-     * Replica only if the source is running MySQL 5.6.</li> <li>Can specify
-     * a DB instance that is a PostgreSQL Read Replica only if the source is
-     * running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
-     * automatic backups enabled, its backup retention period must be greater
-     * than 0.</li> <li>If the source DB instance is in the same region as
-     * the Read Replica, specify a valid DB instance identifier.</li> <li>If
-     * the source DB instance is in a different region than the Read Replica,
-     * specify a valid DB instance ARN. For more information, go to <a
+     * <p>Constraints: <ul> <li>Must be the identifier of an existing MySQL,
+     * MariaDB, or PostgreSQL DB instance.</li> <li>Can specify a DB instance
+     * that is a MySQL Read Replica only if the source is running MySQL
+     * 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read
+     * Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The
+     * specified DB instance must have automatic backups enabled, its backup
+     * retention period must be greater than 0.</li> <li>If the source DB
+     * instance is in the same region as the Read Replica, specify a valid DB
+     * instance identifier.</li> <li>If the source DB instance is in a
+     * different region than the Read Replica, specify a valid DB instance
+     * ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
@@ -68,10 +69,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * The compute and memory capacity of the Read Replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     * db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     * <p>Default: Inherits from the source DB instance.
+     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     * db.t2.large</code> <p>Default: Inherits from the source DB instance.
      */
     private String dBInstanceClass;
 
@@ -179,16 +181,16 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * @param sourceDBInstanceIdentifier The identifier of the DB instance
      * that will act as the source for the Read Replica. Each DB instance can
      * have up to five Read Replicas. <p>Constraints: <ul> <li>Must be the
-     * identifier of an existing DB instance.</li> <li>Can specify a DB
-     * instance that is a MySQL Read Replica only if the source is running
-     * MySQL 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL
-     * Read Replica only if the source is running PostgreSQL 9.3.5.</li>
-     * <li>The specified DB instance must have automatic backups enabled, its
-     * backup retention period must be greater than 0.</li> <li>If the source
-     * DB instance is in the same region as the Read Replica, specify a valid
-     * DB instance identifier.</li> <li>If the source DB instance is in a
-     * different region than the Read Replica, specify a valid DB instance
-     * ARN. For more information, go to <a
+     * identifier of an existing MySQL, MariaDB, or PostgreSQL DB
+     * instance.</li> <li>Can specify a DB instance that is a MySQL Read
+     * Replica only if the source is running MySQL 5.6.</li> <li>Can specify
+     * a DB instance that is a PostgreSQL Read Replica only if the source is
+     * running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater
+     * than 0.</li> <li>If the source DB instance is in the same region as
+     * the Read Replica, specify a valid DB instance identifier.</li> <li>If
+     * the source DB instance is in a different region than the Read Replica,
+     * specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
@@ -245,31 +247,33 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     /**
      * The identifier of the DB instance that will act as the source for the
      * Read Replica. Each DB instance can have up to five Read Replicas.
-     * <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     * instance.</li> <li>Can specify a DB instance that is a MySQL Read
-     * Replica only if the source is running MySQL 5.6.</li> <li>Can specify
-     * a DB instance that is a PostgreSQL Read Replica only if the source is
-     * running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
-     * automatic backups enabled, its backup retention period must be greater
-     * than 0.</li> <li>If the source DB instance is in the same region as
-     * the Read Replica, specify a valid DB instance identifier.</li> <li>If
-     * the source DB instance is in a different region than the Read Replica,
-     * specify a valid DB instance ARN. For more information, go to <a
+     * <p>Constraints: <ul> <li>Must be the identifier of an existing MySQL,
+     * MariaDB, or PostgreSQL DB instance.</li> <li>Can specify a DB instance
+     * that is a MySQL Read Replica only if the source is running MySQL
+     * 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read
+     * Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The
+     * specified DB instance must have automatic backups enabled, its backup
+     * retention period must be greater than 0.</li> <li>If the source DB
+     * instance is in the same region as the Read Replica, specify a valid DB
+     * instance identifier.</li> <li>If the source DB instance is in a
+     * different region than the Read Replica, specify a valid DB instance
+     * ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      *
      * @return The identifier of the DB instance that will act as the source for the
      *         Read Replica. Each DB instance can have up to five Read Replicas.
-     *         <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     *         instance.</li> <li>Can specify a DB instance that is a MySQL Read
-     *         Replica only if the source is running MySQL 5.6.</li> <li>Can specify
-     *         a DB instance that is a PostgreSQL Read Replica only if the source is
-     *         running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
-     *         automatic backups enabled, its backup retention period must be greater
-     *         than 0.</li> <li>If the source DB instance is in the same region as
-     *         the Read Replica, specify a valid DB instance identifier.</li> <li>If
-     *         the source DB instance is in a different region than the Read Replica,
-     *         specify a valid DB instance ARN. For more information, go to <a
+     *         <p>Constraints: <ul> <li>Must be the identifier of an existing MySQL,
+     *         MariaDB, or PostgreSQL DB instance.</li> <li>Can specify a DB instance
+     *         that is a MySQL Read Replica only if the source is running MySQL
+     *         5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read
+     *         Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The
+     *         specified DB instance must have automatic backups enabled, its backup
+     *         retention period must be greater than 0.</li> <li>If the source DB
+     *         instance is in the same region as the Read Replica, specify a valid DB
+     *         instance identifier.</li> <li>If the source DB instance is in a
+     *         different region than the Read Replica, specify a valid DB instance
+     *         ARN. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
@@ -280,31 +284,33 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     /**
      * The identifier of the DB instance that will act as the source for the
      * Read Replica. Each DB instance can have up to five Read Replicas.
-     * <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     * instance.</li> <li>Can specify a DB instance that is a MySQL Read
-     * Replica only if the source is running MySQL 5.6.</li> <li>Can specify
-     * a DB instance that is a PostgreSQL Read Replica only if the source is
-     * running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
-     * automatic backups enabled, its backup retention period must be greater
-     * than 0.</li> <li>If the source DB instance is in the same region as
-     * the Read Replica, specify a valid DB instance identifier.</li> <li>If
-     * the source DB instance is in a different region than the Read Replica,
-     * specify a valid DB instance ARN. For more information, go to <a
+     * <p>Constraints: <ul> <li>Must be the identifier of an existing MySQL,
+     * MariaDB, or PostgreSQL DB instance.</li> <li>Can specify a DB instance
+     * that is a MySQL Read Replica only if the source is running MySQL
+     * 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read
+     * Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The
+     * specified DB instance must have automatic backups enabled, its backup
+     * retention period must be greater than 0.</li> <li>If the source DB
+     * instance is in the same region as the Read Replica, specify a valid DB
+     * instance identifier.</li> <li>If the source DB instance is in a
+     * different region than the Read Replica, specify a valid DB instance
+     * ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      *
      * @param sourceDBInstanceIdentifier The identifier of the DB instance that will act as the source for the
      *         Read Replica. Each DB instance can have up to five Read Replicas.
-     *         <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     *         instance.</li> <li>Can specify a DB instance that is a MySQL Read
-     *         Replica only if the source is running MySQL 5.6.</li> <li>Can specify
-     *         a DB instance that is a PostgreSQL Read Replica only if the source is
-     *         running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
-     *         automatic backups enabled, its backup retention period must be greater
-     *         than 0.</li> <li>If the source DB instance is in the same region as
-     *         the Read Replica, specify a valid DB instance identifier.</li> <li>If
-     *         the source DB instance is in a different region than the Read Replica,
-     *         specify a valid DB instance ARN. For more information, go to <a
+     *         <p>Constraints: <ul> <li>Must be the identifier of an existing MySQL,
+     *         MariaDB, or PostgreSQL DB instance.</li> <li>Can specify a DB instance
+     *         that is a MySQL Read Replica only if the source is running MySQL
+     *         5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read
+     *         Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The
+     *         specified DB instance must have automatic backups enabled, its backup
+     *         retention period must be greater than 0.</li> <li>If the source DB
+     *         instance is in the same region as the Read Replica, specify a valid DB
+     *         instance identifier.</li> <li>If the source DB instance is in a
+     *         different region than the Read Replica, specify a valid DB instance
+     *         ARN. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
@@ -315,16 +321,17 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     /**
      * The identifier of the DB instance that will act as the source for the
      * Read Replica. Each DB instance can have up to five Read Replicas.
-     * <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     * instance.</li> <li>Can specify a DB instance that is a MySQL Read
-     * Replica only if the source is running MySQL 5.6.</li> <li>Can specify
-     * a DB instance that is a PostgreSQL Read Replica only if the source is
-     * running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
-     * automatic backups enabled, its backup retention period must be greater
-     * than 0.</li> <li>If the source DB instance is in the same region as
-     * the Read Replica, specify a valid DB instance identifier.</li> <li>If
-     * the source DB instance is in a different region than the Read Replica,
-     * specify a valid DB instance ARN. For more information, go to <a
+     * <p>Constraints: <ul> <li>Must be the identifier of an existing MySQL,
+     * MariaDB, or PostgreSQL DB instance.</li> <li>Can specify a DB instance
+     * that is a MySQL Read Replica only if the source is running MySQL
+     * 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read
+     * Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The
+     * specified DB instance must have automatic backups enabled, its backup
+     * retention period must be greater than 0.</li> <li>If the source DB
+     * instance is in the same region as the Read Replica, specify a valid DB
+     * instance identifier.</li> <li>If the source DB instance is in a
+     * different region than the Read Replica, specify a valid DB instance
+     * ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      * <p>
@@ -332,16 +339,17 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *
      * @param sourceDBInstanceIdentifier The identifier of the DB instance that will act as the source for the
      *         Read Replica. Each DB instance can have up to five Read Replicas.
-     *         <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     *         instance.</li> <li>Can specify a DB instance that is a MySQL Read
-     *         Replica only if the source is running MySQL 5.6.</li> <li>Can specify
-     *         a DB instance that is a PostgreSQL Read Replica only if the source is
-     *         running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
-     *         automatic backups enabled, its backup retention period must be greater
-     *         than 0.</li> <li>If the source DB instance is in the same region as
-     *         the Read Replica, specify a valid DB instance identifier.</li> <li>If
-     *         the source DB instance is in a different region than the Read Replica,
-     *         specify a valid DB instance ARN. For more information, go to <a
+     *         <p>Constraints: <ul> <li>Must be the identifier of an existing MySQL,
+     *         MariaDB, or PostgreSQL DB instance.</li> <li>Can specify a DB instance
+     *         that is a MySQL Read Replica only if the source is running MySQL
+     *         5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read
+     *         Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The
+     *         specified DB instance must have automatic backups enabled, its backup
+     *         retention period must be greater than 0.</li> <li>If the source DB
+     *         instance is in the same region as the Read Replica, specify a valid DB
+     *         instance identifier.</li> <li>If the source DB instance is in a
+     *         different region than the Read Replica, specify a valid DB instance
+     *         ARN. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      *
@@ -357,18 +365,20 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * The compute and memory capacity of the Read Replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     * db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     * <p>Default: Inherits from the source DB instance.
+     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     * db.t2.large</code> <p>Default: Inherits from the source DB instance.
      *
      * @return The compute and memory capacity of the Read Replica. <p> Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
-     *         db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     *         db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     *         <p>Default: Inherits from the source DB instance.
+     *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     *         db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     *         db.t2.large</code> <p>Default: Inherits from the source DB instance.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -378,18 +388,20 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * The compute and memory capacity of the Read Replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     * db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     * <p>Default: Inherits from the source DB instance.
+     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     * db.t2.large</code> <p>Default: Inherits from the source DB instance.
      *
      * @param dBInstanceClass The compute and memory capacity of the Read Replica. <p> Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
-     *         db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     *         db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     *         <p>Default: Inherits from the source DB instance.
+     *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     *         db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     *         db.t2.large</code> <p>Default: Inherits from the source DB instance.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -399,20 +411,22 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * The compute and memory capacity of the Read Replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     * db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     * <p>Default: Inherits from the source DB instance.
+     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     * db.t2.large</code> <p>Default: Inherits from the source DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass The compute and memory capacity of the Read Replica. <p> Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
-     *         db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     *         db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     *         <p>Default: Inherits from the source DB instance.
+     *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     *         db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     *         db.t2.large</code> <p>Default: Inherits from the source DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

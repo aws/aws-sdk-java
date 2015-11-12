@@ -81,6 +81,12 @@ public class DescribeDBSnapshotsRequestMarshaller implements Marshaller<Request<
         if (describeDBSnapshotsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeDBSnapshotsRequest.getMarker()));
         }
+        if (describeDBSnapshotsRequest.isIncludeShared() != null) {
+            request.addParameter("IncludeShared", StringUtils.fromBoolean(describeDBSnapshotsRequest.isIncludeShared()));
+        }
+        if (describeDBSnapshotsRequest.isIncludePublic() != null) {
+            request.addParameter("IncludePublic", StringUtils.fromBoolean(describeDBSnapshotsRequest.isIncludePublic()));
+        }
 
         return request;
     }
