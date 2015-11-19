@@ -447,8 +447,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelCommandRequestMarshaller()
-                        .marshall(cancelCommandRequest);
+                request = new CancelCommandRequestMarshaller().marshall(super
+                        .beforeMarshalling(cancelCommandRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -520,7 +520,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateAssociationRequestMarshaller()
-                        .marshall(createAssociationRequest);
+                        .marshall(super
+                                .beforeMarshalling(createAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -592,7 +593,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateAssociationBatchRequestMarshaller()
-                        .marshall(createAssociationBatchRequest);
+                        .marshall(super
+                                .beforeMarshalling(createAssociationBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -647,8 +649,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDocumentRequestMarshaller()
-                        .marshall(createDocumentRequest);
+                request = new CreateDocumentRequestMarshaller().marshall(super
+                        .beforeMarshalling(createDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -711,7 +713,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteAssociationRequestMarshaller()
-                        .marshall(deleteAssociationRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -764,8 +767,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDocumentRequestMarshaller()
-                        .marshall(deleteDocumentRequest);
+                request = new DeleteDocumentRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -818,7 +821,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeAssociationRequestMarshaller()
-                        .marshall(describeAssociationRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -864,7 +868,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeDocumentRequestMarshaller()
-                        .marshall(describeDocumentRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -923,7 +928,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeInstanceInformationRequestMarshaller()
-                        .marshall(describeInstanceInformationRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeInstanceInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -967,8 +973,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDocumentRequestMarshaller()
-                        .marshall(getDocumentRequest);
+                request = new GetDocumentRequestMarshaller().marshall(super
+                        .beforeMarshalling(getDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1014,7 +1020,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListAssociationsRequestMarshaller()
-                        .marshall(listAssociationsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1069,7 +1076,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListCommandInvocationsRequestMarshaller()
-                        .marshall(listCommandInvocationsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listCommandInvocationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1119,8 +1127,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCommandsRequestMarshaller()
-                        .marshall(listCommandsRequest);
+                request = new ListCommandsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listCommandsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1167,8 +1175,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDocumentsRequestMarshaller()
-                        .marshall(listDocumentsRequest);
+                request = new ListDocumentsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1228,8 +1236,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SendCommandRequestMarshaller()
-                        .marshall(sendCommandRequest);
+                request = new SendCommandRequestMarshaller().marshall(super
+                        .beforeMarshalling(sendCommandRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1288,7 +1296,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateAssociationStatusRequestMarshaller()
-                        .marshall(updateAssociationStatusRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateAssociationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

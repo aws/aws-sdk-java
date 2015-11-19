@@ -276,8 +276,8 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataSetRequestMarshaller()
-                        .marshall(generateDataSetRequest);
+                request = new GenerateDataSetRequestMarshaller().marshall(super
+                        .beforeMarshalling(generateDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

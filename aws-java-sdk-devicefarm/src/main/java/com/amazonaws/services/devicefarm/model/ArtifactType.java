@@ -26,6 +26,7 @@ public enum ArtifactType {
     MESSAGE_LOG("MESSAGE_LOG"),
     RESULT_LOG("RESULT_LOG"),
     SERVICE_LOG("SERVICE_LOG"),
+    WEBKIT_LOG("WEBKIT_LOG"),
     INSTRUMENTATION_OUTPUT("INSTRUMENTATION_OUTPUT"),
     EXERCISER_MONKEY_OUTPUT("EXERCISER_MONKEY_OUTPUT"),
     CALABASH_JSON_OUTPUT("CALABASH_JSON_OUTPUT"),
@@ -73,6 +74,8 @@ public enum ArtifactType {
             return RESULT_LOG;
         } else if ("SERVICE_LOG".equals(value)) {
             return SERVICE_LOG;
+        } else if ("WEBKIT_LOG".equals(value)) {
+            return WEBKIT_LOG;
         } else if ("INSTRUMENTATION_OUTPUT".equals(value)) {
             return INSTRUMENTATION_OUTPUT;
         } else if ("EXERCISER_MONKEY_OUTPUT".equals(value)) {

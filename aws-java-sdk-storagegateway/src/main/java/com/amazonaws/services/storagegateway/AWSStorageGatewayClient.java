@@ -323,8 +323,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ActivateGatewayRequestMarshaller()
-                        .marshall(activateGatewayRequest);
+                request = new ActivateGatewayRequestMarshaller().marshall(super
+                        .beforeMarshalling(activateGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -380,8 +380,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddCacheRequestMarshaller()
-                        .marshall(addCacheRequest);
+                request = new AddCacheRequestMarshaller().marshall(super
+                        .beforeMarshalling(addCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -461,7 +461,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AddTagsToResourceRequestMarshaller()
-                        .marshall(addTagsToResourceRequest);
+                        .marshall(super
+                                .beforeMarshalling(addTagsToResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -516,8 +517,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddUploadBufferRequestMarshaller()
-                        .marshall(addUploadBufferRequest);
+                request = new AddUploadBufferRequestMarshaller().marshall(super
+                        .beforeMarshalling(addUploadBufferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -585,7 +586,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AddWorkingStorageRequestMarshaller()
-                        .marshall(addWorkingStorageRequest);
+                        .marshall(super
+                                .beforeMarshalling(addWorkingStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -635,8 +637,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelArchivalRequestMarshaller()
-                        .marshall(cancelArchivalRequest);
+                request = new CancelArchivalRequestMarshaller().marshall(super
+                        .beforeMarshalling(cancelArchivalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -687,8 +689,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelRetrievalRequestMarshaller()
-                        .marshall(cancelRetrievalRequest);
+                request = new CancelRetrievalRequestMarshaller().marshall(super
+                        .beforeMarshalling(cancelRetrievalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -751,7 +753,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateCachediSCSIVolumeRequestMarshaller()
-                        .marshall(createCachediSCSIVolumeRequest);
+                        .marshall(super
+                                .beforeMarshalling(createCachediSCSIVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -826,8 +829,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSnapshotRequestMarshaller()
-                        .marshall(createSnapshotRequest);
+                request = new CreateSnapshotRequestMarshaller().marshall(super
+                        .beforeMarshalling(createSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -901,7 +904,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller()
-                        .marshall(createSnapshotFromVolumeRecoveryPointRequest);
+                        .marshall(super
+                                .beforeMarshalling(createSnapshotFromVolumeRecoveryPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -972,7 +976,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateStorediSCSIVolumeRequestMarshaller()
-                        .marshall(createStorediSCSIVolumeRequest);
+                        .marshall(super
+                                .beforeMarshalling(createStorediSCSIVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1024,8 +1029,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTapesRequestMarshaller()
-                        .marshall(createTapesRequest);
+                request = new CreateTapesRequestMarshaller().marshall(super
+                        .beforeMarshalling(createTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1079,7 +1084,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteBandwidthRateLimitRequestMarshaller()
-                        .marshall(deleteBandwidthRateLimitRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1134,7 +1140,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteChapCredentialsRequestMarshaller()
-                        .marshall(deleteChapCredentialsRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1204,8 +1211,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteGatewayRequestMarshaller()
-                        .marshall(deleteGatewayRequest);
+                request = new DeleteGatewayRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1270,7 +1277,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteSnapshotScheduleRequestMarshaller()
-                        .marshall(deleteSnapshotScheduleRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1318,8 +1326,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTapeRequestMarshaller()
-                        .marshall(deleteTapeRequest);
+                request = new DeleteTapeRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteTapeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1370,7 +1378,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteTapeArchiveRequestMarshaller()
-                        .marshall(deleteTapeArchiveRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteTapeArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1438,8 +1447,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteVolumeRequestMarshaller()
-                        .marshall(deleteVolumeRequest);
+                request = new DeleteVolumeRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1499,7 +1508,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeBandwidthRateLimitRequestMarshaller()
-                        .marshall(describeBandwidthRateLimitRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1552,8 +1562,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCacheRequestMarshaller()
-                        .marshall(describeCacheRequest);
+                request = new DescribeCacheRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1610,7 +1620,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeCachediSCSIVolumesRequestMarshaller()
-                        .marshall(describeCachediSCSIVolumesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeCachediSCSIVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1664,7 +1675,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeChapCredentialsRequestMarshaller()
-                        .marshall(describeChapCredentialsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1718,7 +1730,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeGatewayInformationRequestMarshaller()
-                        .marshall(describeGatewayInformationRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeGatewayInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1771,7 +1784,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeMaintenanceStartTimeRequestMarshaller()
-                        .marshall(describeMaintenanceStartTimeRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeMaintenanceStartTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1825,7 +1839,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeSnapshotScheduleRequestMarshaller()
-                        .marshall(describeSnapshotScheduleRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1880,7 +1895,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeStorediSCSIVolumesRequestMarshaller()
-                        .marshall(describeStorediSCSIVolumesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeStorediSCSIVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1937,7 +1953,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeTapeArchivesRequestMarshaller()
-                        .marshall(describeTapeArchivesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeTapeArchivesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2000,7 +2017,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeTapeRecoveryPointsRequestMarshaller()
-                        .marshall(describeTapeRecoveryPointsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeTapeRecoveryPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2051,8 +2069,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTapesRequestMarshaller()
-                        .marshall(describeTapesRequest);
+                request = new DescribeTapesRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2109,7 +2127,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeUploadBufferRequestMarshaller()
-                        .marshall(describeUploadBufferRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeUploadBufferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2165,7 +2184,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeVTLDevicesRequestMarshaller()
-                        .marshall(describeVTLDevicesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeVTLDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2230,7 +2250,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeWorkingStorageRequestMarshaller()
-                        .marshall(describeWorkingStorageRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeWorkingStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2286,8 +2307,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableGatewayRequestMarshaller()
-                        .marshall(disableGatewayRequest);
+                request = new DisableGatewayRequestMarshaller().marshall(super
+                        .beforeMarshalling(disableGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2352,8 +2373,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGatewaysRequestMarshaller()
-                        .marshall(listGatewaysRequest);
+                request = new ListGatewaysRequestMarshaller().marshall(super
+                        .beforeMarshalling(listGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2418,8 +2439,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListLocalDisksRequestMarshaller()
-                        .marshall(listLocalDisksRequest);
+                request = new ListLocalDisksRequestMarshaller().marshall(super
+                        .beforeMarshalling(listLocalDisksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2471,7 +2492,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListTagsForResourceRequestMarshaller()
-                        .marshall(listTagsForResourceRequest);
+                        .marshall(super
+                                .beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2529,7 +2551,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListVolumeInitiatorsRequestMarshaller()
-                        .marshall(listVolumeInitiatorsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listVolumeInitiatorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2587,7 +2610,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListVolumeRecoveryPointsRequestMarshaller()
-                        .marshall(listVolumeRecoveryPointsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listVolumeRecoveryPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2650,8 +2674,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVolumesRequestMarshaller()
-                        .marshall(listVolumesRequest);
+                request = new ListVolumesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2702,7 +2726,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RemoveTagsFromResourceRequestMarshaller()
-                        .marshall(removeTagsFromResourceRequest);
+                        .marshall(super
+                                .beforeMarshalling(removeTagsFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2769,8 +2794,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResetCacheRequestMarshaller()
-                        .marshall(resetCacheRequest);
+                request = new ResetCacheRequestMarshaller().marshall(super
+                        .beforeMarshalling(resetCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2829,7 +2854,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RetrieveTapeArchiveRequestMarshaller()
-                        .marshall(retrieveTapeArchiveRequest);
+                        .marshall(super
+                                .beforeMarshalling(retrieveTapeArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2888,7 +2914,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RetrieveTapeRecoveryPointRequestMarshaller()
-                        .marshall(retrieveTapeRecoveryPointRequest);
+                        .marshall(super
+                                .beforeMarshalling(retrieveTapeRecoveryPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2963,8 +2990,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ShutdownGatewayRequestMarshaller()
-                        .marshall(shutdownGatewayRequest);
+                request = new ShutdownGatewayRequestMarshaller().marshall(super
+                        .beforeMarshalling(shutdownGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3025,8 +3052,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartGatewayRequestMarshaller()
-                        .marshall(startGatewayRequest);
+                request = new StartGatewayRequestMarshaller().marshall(super
+                        .beforeMarshalling(startGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3096,7 +3123,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateBandwidthRateLimitRequestMarshaller()
-                        .marshall(updateBandwidthRateLimitRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3162,7 +3190,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateChapCredentialsRequestMarshaller()
-                        .marshall(updateChapCredentialsRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3214,7 +3243,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateGatewayInformationRequestMarshaller()
-                        .marshall(updateGatewayInformationRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateGatewayInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3278,7 +3308,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateGatewaySoftwareNowRequestMarshaller()
-                        .marshall(updateGatewaySoftwareNowRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateGatewaySoftwareNowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3335,7 +3366,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateMaintenanceStartTimeRequestMarshaller()
-                        .marshall(updateMaintenanceStartTimeRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateMaintenanceStartTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3403,7 +3435,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateSnapshotScheduleRequestMarshaller()
-                        .marshall(updateSnapshotScheduleRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3457,7 +3490,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateVTLDeviceTypeRequestMarshaller()
-                        .marshall(updateVTLDeviceTypeRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateVTLDeviceTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

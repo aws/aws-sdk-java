@@ -276,7 +276,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AddInstanceGroupsRequestMarshaller()
-                        .marshall(addInstanceGroupsRequest);
+                        .marshall(super
+                                .beforeMarshalling(addInstanceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -350,8 +351,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddJobFlowStepsRequestMarshaller()
-                        .marshall(addJobFlowStepsRequest);
+                request = new AddJobFlowStepsRequestMarshaller().marshall(super
+                        .beforeMarshalling(addJobFlowStepsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -402,8 +403,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsRequestMarshaller()
-                        .marshall(addTagsRequest);
+                request = new AddTagsRequestMarshaller().marshall(super
+                        .beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -453,8 +454,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClusterRequestMarshaller()
-                        .marshall(describeClusterRequest);
+                request = new DescribeClusterRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -526,7 +527,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeJobFlowsRequestMarshaller()
-                        .marshall(describeJobFlowsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeJobFlowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -580,8 +582,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStepRequestMarshaller()
-                        .marshall(describeStepRequest);
+                request = new DescribeStepRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeStepRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -632,7 +634,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListBootstrapActionsRequestMarshaller()
-                        .marshall(listBootstrapActionsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listBootstrapActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -685,8 +688,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListClustersRequestMarshaller()
-                        .marshall(listClustersRequest);
+                request = new ListClustersRequestMarshaller().marshall(super
+                        .beforeMarshalling(listClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -741,7 +744,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListInstanceGroupsRequestMarshaller()
-                        .marshall(listInstanceGroupsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listInstanceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -793,8 +797,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListInstancesRequestMarshaller()
-                        .marshall(listInstancesRequest);
+                request = new ListInstancesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -841,8 +845,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListStepsRequestMarshaller()
-                        .marshall(listStepsRequest);
+                request = new ListStepsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listStepsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -890,7 +894,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ModifyInstanceGroupsRequestMarshaller()
-                        .marshall(modifyInstanceGroupsRequest);
+                        .marshall(super
+                                .beforeMarshalling(modifyInstanceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -949,8 +954,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsRequestMarshaller()
-                        .marshall(removeTagsRequest);
+                request = new RemoveTagsRequestMarshaller().marshall(super
+                        .beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1025,8 +1030,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RunJobFlowRequestMarshaller()
-                        .marshall(runJobFlowRequest);
+                request = new RunJobFlowRequestMarshaller().marshall(super
+                        .beforeMarshalling(runJobFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1094,7 +1099,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new SetTerminationProtectionRequestMarshaller()
-                        .marshall(setTerminationProtectionRequest);
+                        .marshall(super
+                                .beforeMarshalling(setTerminationProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1143,7 +1149,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new SetVisibleToAllUsersRequestMarshaller()
-                        .marshall(setVisibleToAllUsersRequest);
+                        .marshall(super
+                                .beforeMarshalling(setVisibleToAllUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1196,7 +1203,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new TerminateJobFlowsRequestMarshaller()
-                        .marshall(terminateJobFlowsRequest);
+                        .marshall(super
+                                .beforeMarshalling(terminateJobFlowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

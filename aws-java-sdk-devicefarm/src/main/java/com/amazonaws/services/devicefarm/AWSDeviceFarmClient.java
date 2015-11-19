@@ -287,7 +287,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateDevicePoolRequestMarshaller()
-                        .marshall(createDevicePoolRequest);
+                        .marshall(super
+                                .beforeMarshalling(createDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -337,8 +338,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateProjectRequestMarshaller()
-                        .marshall(createProjectRequest);
+                request = new CreateProjectRequestMarshaller().marshall(super
+                        .beforeMarshalling(createProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -388,8 +389,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUploadRequestMarshaller()
-                        .marshall(createUploadRequest);
+                request = new CreateUploadRequestMarshaller().marshall(super
+                        .beforeMarshalling(createUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -441,7 +442,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteDevicePoolRequestMarshaller()
-                        .marshall(deleteDevicePoolRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -494,8 +496,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteProjectRequestMarshaller()
-                        .marshall(deleteProjectRequest);
+                request = new DeleteProjectRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -547,8 +549,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRunRequestMarshaller()
-                        .marshall(deleteRunRequest);
+                request = new DeleteRunRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -598,8 +600,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUploadRequestMarshaller()
-                        .marshall(deleteUploadRequest);
+                request = new DeleteUploadRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -651,7 +653,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetAccountSettingsRequestMarshaller()
-                        .marshall(getAccountSettingsRequest);
+                        .marshall(super
+                                .beforeMarshalling(getAccountSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -700,8 +703,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeviceRequestMarshaller()
-                        .marshall(getDeviceRequest);
+                request = new GetDeviceRequestMarshaller().marshall(super
+                        .beforeMarshalling(getDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -751,8 +754,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDevicePoolRequestMarshaller()
-                        .marshall(getDevicePoolRequest);
+                request = new GetDevicePoolRequestMarshaller().marshall(super
+                        .beforeMarshalling(getDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -805,7 +808,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetDevicePoolCompatibilityRequestMarshaller()
-                        .marshall(getDevicePoolCompatibilityRequest);
+                        .marshall(super
+                                .beforeMarshalling(getDevicePoolCompatibilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -854,7 +858,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetJobRequestMarshaller().marshall(getJobRequest);
+                request = new GetJobRequestMarshaller().marshall(super
+                        .beforeMarshalling(getJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -903,8 +908,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetProjectRequestMarshaller()
-                        .marshall(getProjectRequest);
+                request = new GetProjectRequestMarshaller().marshall(super
+                        .beforeMarshalling(getProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -953,7 +958,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRunRequestMarshaller().marshall(getRunRequest);
+                request = new GetRunRequestMarshaller().marshall(super
+                        .beforeMarshalling(getRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1002,8 +1008,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSuiteRequestMarshaller()
-                        .marshall(getSuiteRequest);
+                request = new GetSuiteRequestMarshaller().marshall(super
+                        .beforeMarshalling(getSuiteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1052,8 +1058,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTestRequestMarshaller()
-                        .marshall(getTestRequest);
+                request = new GetTestRequestMarshaller().marshall(super
+                        .beforeMarshalling(getTestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1102,8 +1108,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUploadRequestMarshaller()
-                        .marshall(getUploadRequest);
+                request = new GetUploadRequestMarshaller().marshall(super
+                        .beforeMarshalling(getUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1153,8 +1159,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListArtifactsRequestMarshaller()
-                        .marshall(listArtifactsRequest);
+                request = new ListArtifactsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listArtifactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1204,8 +1210,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDevicePoolsRequestMarshaller()
-                        .marshall(listDevicePoolsRequest);
+                request = new ListDevicePoolsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listDevicePoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1254,8 +1260,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDevicesRequestMarshaller()
-                        .marshall(listDevicesRequest);
+                request = new ListDevicesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1304,8 +1310,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListJobsRequestMarshaller()
-                        .marshall(listJobsRequest);
+                request = new ListJobsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1355,8 +1361,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListProjectsRequestMarshaller()
-                        .marshall(listProjectsRequest);
+                request = new ListProjectsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1405,8 +1411,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRunsRequestMarshaller()
-                        .marshall(listRunsRequest);
+                request = new ListRunsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1455,8 +1461,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListSamplesRequestMarshaller()
-                        .marshall(listSamplesRequest);
+                request = new ListSamplesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listSamplesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1505,8 +1511,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListSuitesRequestMarshaller()
-                        .marshall(listSuitesRequest);
+                request = new ListSuitesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listSuitesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1555,8 +1561,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTestsRequestMarshaller()
-                        .marshall(listTestsRequest);
+                request = new ListTestsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listTestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1608,7 +1614,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListUniqueProblemsRequestMarshaller()
-                        .marshall(listUniqueProblemsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listUniqueProblemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1657,8 +1664,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListUploadsRequestMarshaller()
-                        .marshall(listUploadsRequest);
+                request = new ListUploadsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listUploadsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1709,8 +1716,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ScheduleRunRequestMarshaller()
-                        .marshall(scheduleRunRequest);
+                request = new ScheduleRunRequestMarshaller().marshall(super
+                        .beforeMarshalling(scheduleRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1763,7 +1770,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateDevicePoolRequestMarshaller()
-                        .marshall(updateDevicePoolRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1814,8 +1822,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateProjectRequestMarshaller()
-                        .marshall(updateProjectRequest);
+                request = new UpdateProjectRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

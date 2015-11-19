@@ -542,8 +542,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchGetItemRequestMarshaller()
-                        .marshall(batchGetItemRequest);
+                request = new BatchGetItemRequestMarshaller().marshall(super
+                        .beforeMarshalling(batchGetItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -729,8 +729,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchWriteItemRequestMarshaller()
-                        .marshall(batchWriteItemRequest);
+                request = new BatchWriteItemRequestMarshaller().marshall(super
+                        .beforeMarshalling(batchWriteItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -818,8 +818,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTableRequestMarshaller()
-                        .marshall(createTableRequest);
+                request = new CreateTableRequestMarshaller().marshall(super
+                        .beforeMarshalling(createTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -907,8 +907,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteItemRequestMarshaller()
-                        .marshall(deleteItemRequest);
+                request = new DeleteItemRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1012,8 +1012,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTableRequestMarshaller()
-                        .marshall(deleteTableRequest);
+                request = new DeleteTableRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1077,8 +1077,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTableRequestMarshaller()
-                        .marshall(describeTableRequest);
+                request = new DescribeTableRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1149,8 +1149,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetItemRequestMarshaller()
-                        .marshall(getItemRequest);
+                request = new GetItemRequestMarshaller().marshall(super
+                        .beforeMarshalling(getItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1209,8 +1209,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTablesRequestMarshaller()
-                        .marshall(listTablesRequest);
+                request = new ListTablesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1328,8 +1328,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutItemRequestMarshaller()
-                        .marshall(putItemRequest);
+                request = new PutItemRequestMarshaller().marshall(super
+                        .beforeMarshalling(putItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1431,7 +1431,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new QueryRequestMarshaller().marshall(queryRequest);
+                request = new QueryRequestMarshaller().marshall(super
+                        .beforeMarshalling(queryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1510,7 +1511,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ScanRequestMarshaller().marshall(scanRequest);
+                request = new ScanRequestMarshaller().marshall(super
+                        .beforeMarshalling(scanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1604,8 +1606,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateItemRequestMarshaller()
-                        .marshall(updateItemRequest);
+                request = new UpdateItemRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1721,8 +1723,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateTableRequestMarshaller()
-                        .marshall(updateTableRequest);
+                request = new UpdateTableRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

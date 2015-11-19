@@ -24,6 +24,8 @@ public enum TestType {
     BUILTIN_EXPLORER("BUILTIN_EXPLORER"),
     APPIUM_JAVA_JUNIT("APPIUM_JAVA_JUNIT"),
     APPIUM_JAVA_TESTNG("APPIUM_JAVA_TESTNG"),
+    APPIUM_WEB_JAVA_JUNIT("APPIUM_WEB_JAVA_JUNIT"),
+    APPIUM_WEB_JAVA_TESTNG("APPIUM_WEB_JAVA_TESTNG"),
     CALABASH("CALABASH"),
     INSTRUMENTATION("INSTRUMENTATION"),
     UIAUTOMATION("UIAUTOMATION"),
@@ -59,6 +61,10 @@ public enum TestType {
             return APPIUM_JAVA_JUNIT;
         } else if ("APPIUM_JAVA_TESTNG".equals(value)) {
             return APPIUM_JAVA_TESTNG;
+        } else if ("APPIUM_WEB_JAVA_JUNIT".equals(value)) {
+            return APPIUM_WEB_JAVA_JUNIT;
+        } else if ("APPIUM_WEB_JAVA_TESTNG".equals(value)) {
+            return APPIUM_WEB_JAVA_TESTNG;
         } else if ("CALABASH".equals(value)) {
             return CALABASH;
         } else if ("INSTRUMENTATION".equals(value)) {

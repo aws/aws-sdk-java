@@ -96,6 +96,18 @@ public class Upload implements Serializable, Cloneable {
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
@@ -326,6 +338,18 @@ public class Upload implements Serializable, Cloneable {
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -379,6 +403,18 @@ public class Upload implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     *        package upload.
      *        </p>
      *        </li>
      * @see UploadType
@@ -441,6 +477,18 @@ public class Upload implements Serializable, Cloneable {
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The upload's type.</p>
@@ -493,6 +541,18 @@ public class Upload implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
+     *         package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     *         package upload.
      *         </p>
      *         </li>
      * @see UploadType
@@ -555,6 +615,18 @@ public class Upload implements Serializable, Cloneable {
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -608,6 +680,18 @@ public class Upload implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     *        package upload.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -673,6 +757,18 @@ public class Upload implements Serializable, Cloneable {
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -726,6 +822,18 @@ public class Upload implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     *        package upload.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -790,6 +898,18 @@ public class Upload implements Serializable, Cloneable {
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -843,6 +963,18 @@ public class Upload implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     *        package upload.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

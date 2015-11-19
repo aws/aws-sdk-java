@@ -92,7 +92,24 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>Note</b> If you call <code>CreateUpload</code> with
+     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <a>ArgumentException</a> error.
+     * </p>
      */
     private String type;
     /**
@@ -232,7 +249,24 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>Note</b> If you call <code>CreateUpload</code> with
+     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <a>ArgumentException</a> error.
+     * </p>
      * 
      * @param type
      *        The upload's upload type.</p>
@@ -287,6 +321,23 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Note</b> If you call <code>CreateUpload</code> with
+     *        <code>WEB_APP</code> specified, AWS Device Farm throws an
+     *        <a>ArgumentException</a> error.
      * @see UploadType
      */
     public void setType(String type) {
@@ -347,7 +398,24 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>Note</b> If you call <code>CreateUpload</code> with
+     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <a>ArgumentException</a> error.
+     * </p>
      * 
      * @return The upload's upload type.</p>
      *         <p>
@@ -401,6 +469,23 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *         XCTEST_TEST_PACKAGE: An XCode test package upload.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
+     *         package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     *         package upload.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Note</b> If you call <code>CreateUpload</code> with
+     *         <code>WEB_APP</code> specified, AWS Device Farm throws an
+     *         <a>ArgumentException</a> error.
      * @see UploadType
      */
     public String getType() {
@@ -461,7 +546,24 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>Note</b> If you call <code>CreateUpload</code> with
+     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <a>ArgumentException</a> error.
+     * </p>
      * 
      * @param type
      *        The upload's upload type.</p>
@@ -516,6 +618,23 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Note</b> If you call <code>CreateUpload</code> with
+     *        <code>WEB_APP</code> specified, AWS Device Farm throws an
+     *        <a>ArgumentException</a> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see UploadType
@@ -579,7 +698,24 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>Note</b> If you call <code>CreateUpload</code> with
+     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <a>ArgumentException</a> error.
+     * </p>
      * 
      * @param type
      *        The upload's upload type.</p>
@@ -634,6 +770,23 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Note</b> If you call <code>CreateUpload</code> with
+     *        <code>WEB_APP</code> specified, AWS Device Farm throws an
+     *        <a>ArgumentException</a> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see UploadType
@@ -696,7 +849,24 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>Note</b> If you call <code>CreateUpload</code> with
+     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <a>ArgumentException</a> error.
+     * </p>
      * 
      * @param type
      *        The upload's upload type.</p>
@@ -751,6 +921,23 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     *        package upload.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Note</b> If you call <code>CreateUpload</code> with
+     *        <code>WEB_APP</code> specified, AWS Device Farm throws an
+     *        <a>ArgumentException</a> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see UploadType

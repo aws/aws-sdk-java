@@ -1737,8 +1737,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -1828,8 +1828,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -3304,8 +3304,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Shard",
           "simple" : false,
+          "simpleType" : "Shard",
           "map" : false,
           "templateType" : "java.util.List<Shard>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Shard>"
@@ -3752,8 +3752,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Shard",
             "simple" : false,
+            "simpleType" : "Shard",
             "map" : false,
             "templateType" : "java.util.List<Shard>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Shard>"
@@ -4208,8 +4208,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PutRecordsRequestEntry",
           "simple" : false,
+          "simpleType" : "PutRecordsRequestEntry",
           "map" : false,
           "templateType" : "java.util.List<PutRecordsRequestEntry>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>"
@@ -4401,8 +4401,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PutRecordsRequestEntry",
             "simple" : false,
+            "simpleType" : "PutRecordsRequestEntry",
             "map" : false,
             "templateType" : "java.util.List<PutRecordsRequestEntry>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>"
@@ -5787,8 +5787,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Record",
           "simple" : false,
+          "simpleType" : "Record",
           "map" : false,
           "templateType" : "java.util.List<Record>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
@@ -6079,8 +6079,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Record",
             "simple" : false,
+            "simpleType" : "Record",
             "map" : false,
             "templateType" : "java.util.List<Record>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
@@ -7785,8 +7785,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Tag",
           "simple" : false,
+          "simpleType" : "Tag",
           "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -7974,8 +7974,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Tag",
             "simple" : false,
+            "simpleType" : "Tag",
             "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -8103,8 +8103,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8241,8 +8241,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9203,8 +9203,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PutRecordsResultEntry",
           "simple" : false,
+          "simpleType" : "PutRecordsResultEntry",
           "map" : false,
           "templateType" : "java.util.List<PutRecordsResultEntry>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsResultEntry>"
@@ -9393,8 +9393,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PutRecordsResultEntry",
             "simple" : false,
+            "simpleType" : "PutRecordsResultEntry",
             "map" : false,
             "templateType" : "java.util.List<PutRecordsResultEntry>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsResultEntry>"

@@ -270,8 +270,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachInstancesRequestMarshaller()
-                        .marshall(attachInstancesRequest);
+                request = new AttachInstancesRequestMarshaller().marshall(super
+                        .beforeMarshalling(attachInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -325,7 +325,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AttachLoadBalancersRequestMarshaller()
-                        .marshall(attachLoadBalancersRequest);
+                        .marshall(super
+                                .beforeMarshalling(attachLoadBalancersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -399,7 +400,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CompleteLifecycleActionRequestMarshaller()
-                        .marshall(completeLifecycleActionRequest);
+                        .marshall(super
+                                .beforeMarshalling(completeLifecycleActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -459,7 +461,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateAutoScalingGroupRequestMarshaller()
-                        .marshall(createAutoScalingGroupRequest);
+                        .marshall(super
+                                .beforeMarshalling(createAutoScalingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -517,7 +520,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateLaunchConfigurationRequestMarshaller()
-                        .marshall(createLaunchConfigurationRequest);
+                        .marshall(super
+                                .beforeMarshalling(createLaunchConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -585,7 +589,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateOrUpdateTagsRequestMarshaller()
-                        .marshall(createOrUpdateTagsRequest);
+                        .marshall(super
+                                .beforeMarshalling(createOrUpdateTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -640,7 +645,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteAutoScalingGroupRequestMarshaller()
-                        .marshall(deleteAutoScalingGroupRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteAutoScalingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -689,7 +695,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteLaunchConfigurationRequestMarshaller()
-                        .marshall(deleteLaunchConfigurationRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteLaunchConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -737,7 +744,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteLifecycleHookRequestMarshaller()
-                        .marshall(deleteLifecycleHookRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteLifecycleHookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -780,7 +788,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteNotificationConfigurationRequestMarshaller()
-                        .marshall(deleteNotificationConfigurationRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteNotificationConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -819,8 +828,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePolicyRequestMarshaller()
-                        .marshall(deletePolicyRequest);
+                request = new DeletePolicyRequestMarshaller().marshall(super
+                        .beforeMarshalling(deletePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -861,7 +870,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteScheduledActionRequestMarshaller()
-                        .marshall(deleteScheduledActionRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteScheduledActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -900,8 +910,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTagsRequestMarshaller()
-                        .marshall(deleteTagsRequest);
+                request = new DeleteTagsRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -951,7 +961,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeAccountLimitsRequestMarshaller()
-                        .marshall(describeAccountLimitsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeAccountLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1002,7 +1013,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeAdjustmentTypesRequestMarshaller()
-                        .marshall(describeAdjustmentTypesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeAdjustmentTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1055,7 +1067,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeAutoScalingGroupsRequestMarshaller()
-                        .marshall(describeAutoScalingGroupsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeAutoScalingGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1108,7 +1121,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeAutoScalingInstancesRequestMarshaller()
-                        .marshall(describeAutoScalingInstancesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeAutoScalingInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1158,7 +1172,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeAutoScalingNotificationTypesRequestMarshaller()
-                        .marshall(describeAutoScalingNotificationTypesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeAutoScalingNotificationTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1211,7 +1226,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeLaunchConfigurationsRequestMarshaller()
-                        .marshall(describeLaunchConfigurationsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeLaunchConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1261,7 +1277,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeLifecycleHookTypesRequestMarshaller()
-                        .marshall(describeLifecycleHookTypesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeLifecycleHookTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1311,7 +1328,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeLifecycleHooksRequestMarshaller()
-                        .marshall(describeLifecycleHooksRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeLifecycleHooksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1356,7 +1374,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeLoadBalancersRequestMarshaller()
-                        .marshall(describeLoadBalancersRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeLoadBalancersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1406,7 +1425,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeMetricCollectionTypesRequestMarshaller()
-                        .marshall(describeMetricCollectionTypesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeMetricCollectionTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1459,7 +1479,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeNotificationConfigurationsRequestMarshaller()
-                        .marshall(describeNotificationConfigurationsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeNotificationConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1510,7 +1531,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribePoliciesRequestMarshaller()
-                        .marshall(describePoliciesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describePoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1565,7 +1587,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeScalingActivitiesRequestMarshaller()
-                        .marshall(describeScalingActivitiesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeScalingActivitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1616,7 +1639,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeScalingProcessTypesRequestMarshaller()
-                        .marshall(describeScalingProcessTypesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeScalingProcessTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1670,7 +1694,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeScheduledActionsRequestMarshaller()
-                        .marshall(describeScheduledActionsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeScheduledActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1731,8 +1756,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTagsRequestMarshaller()
-                        .marshall(describeTagsRequest);
+                request = new DescribeTagsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1782,7 +1807,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeTerminationPolicyTypesRequestMarshaller()
-                        .marshall(describeTerminationPolicyTypesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeTerminationPolicyTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1838,8 +1864,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachInstancesRequestMarshaller()
-                        .marshall(detachInstancesRequest);
+                request = new DetachInstancesRequestMarshaller().marshall(super
+                        .beforeMarshalling(detachInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1890,7 +1916,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DetachLoadBalancersRequestMarshaller()
-                        .marshall(detachLoadBalancersRequest);
+                        .marshall(super
+                                .beforeMarshalling(detachLoadBalancersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1939,7 +1966,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DisableMetricsCollectionRequestMarshaller()
-                        .marshall(disableMetricsCollectionRequest);
+                        .marshall(super
+                                .beforeMarshalling(disableMetricsCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1985,7 +2013,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new EnableMetricsCollectionRequestMarshaller()
-                        .marshall(enableMetricsCollectionRequest);
+                        .marshall(super
+                                .beforeMarshalling(enableMetricsCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2032,8 +2061,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnterStandbyRequestMarshaller()
-                        .marshall(enterStandbyRequest);
+                request = new EnterStandbyRequestMarshaller().marshall(super
+                        .beforeMarshalling(enterStandbyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2077,8 +2106,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ExecutePolicyRequestMarshaller()
-                        .marshall(executePolicyRequest);
+                request = new ExecutePolicyRequestMarshaller().marshall(super
+                        .beforeMarshalling(executePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2124,8 +2153,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ExitStandbyRequestMarshaller()
-                        .marshall(exitStandbyRequest);
+                request = new ExitStandbyRequestMarshaller().marshall(super
+                        .beforeMarshalling(exitStandbyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2209,7 +2238,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutLifecycleHookRequestMarshaller()
-                        .marshall(putLifecycleHookRequest);
+                        .marshall(super
+                                .beforeMarshalling(putLifecycleHookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2267,7 +2297,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutNotificationConfigurationRequestMarshaller()
-                        .marshall(putNotificationConfigurationRequest);
+                        .marshall(super
+                                .beforeMarshalling(putNotificationConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2324,7 +2355,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutScalingPolicyRequestMarshaller()
-                        .marshall(putScalingPolicyRequest);
+                        .marshall(super
+                                .beforeMarshalling(putScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2382,7 +2414,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutScheduledUpdateGroupActionRequestMarshaller()
-                        .marshall(putScheduledUpdateGroupActionRequest);
+                        .marshall(super
+                                .beforeMarshalling(putScheduledUpdateGroupActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2450,7 +2483,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RecordLifecycleActionHeartbeatRequestMarshaller()
-                        .marshall(recordLifecycleActionHeartbeatRequest);
+                        .marshall(super
+                                .beforeMarshalling(recordLifecycleActionHeartbeatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2501,8 +2535,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResumeProcessesRequestMarshaller()
-                        .marshall(resumeProcessesRequest);
+                request = new ResumeProcessesRequestMarshaller().marshall(super
+                        .beforeMarshalling(resumeProcessesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2551,7 +2585,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new SetDesiredCapacityRequestMarshaller()
-                        .marshall(setDesiredCapacityRequest);
+                        .marshall(super
+                                .beforeMarshalling(setDesiredCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2597,7 +2632,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new SetInstanceHealthRequestMarshaller()
-                        .marshall(setInstanceHealthRequest);
+                        .marshall(super
+                                .beforeMarshalling(setInstanceHealthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2657,7 +2693,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new SuspendProcessesRequestMarshaller()
-                        .marshall(suspendProcessesRequest);
+                        .marshall(super
+                                .beforeMarshalling(suspendProcessesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2708,7 +2745,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new TerminateInstanceInAutoScalingGroupRequestMarshaller()
-                        .marshall(terminateInstanceInAutoScalingGroupRequest);
+                        .marshall(super
+                                .beforeMarshalling(terminateInstanceInAutoScalingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2795,7 +2833,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateAutoScalingGroupRequestMarshaller()
-                        .marshall(updateAutoScalingGroupRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateAutoScalingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

@@ -22,9 +22,12 @@ public enum UploadType {
 
     ANDROID_APP("ANDROID_APP"),
     IOS_APP("IOS_APP"),
+    WEB_APP("WEB_APP"),
     EXTERNAL_DATA("EXTERNAL_DATA"),
     APPIUM_JAVA_JUNIT_TEST_PACKAGE("APPIUM_JAVA_JUNIT_TEST_PACKAGE"),
     APPIUM_JAVA_TESTNG_TEST_PACKAGE("APPIUM_JAVA_TESTNG_TEST_PACKAGE"),
+    APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE("APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE"),
+    APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE("APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE"),
     CALABASH_TEST_PACKAGE("CALABASH_TEST_PACKAGE"),
     INSTRUMENTATION_TEST_PACKAGE("INSTRUMENTATION_TEST_PACKAGE"),
     UIAUTOMATION_TEST_PACKAGE("UIAUTOMATION_TEST_PACKAGE"),
@@ -56,12 +59,18 @@ public enum UploadType {
             return ANDROID_APP;
         } else if ("IOS_APP".equals(value)) {
             return IOS_APP;
+        } else if ("WEB_APP".equals(value)) {
+            return WEB_APP;
         } else if ("EXTERNAL_DATA".equals(value)) {
             return EXTERNAL_DATA;
         } else if ("APPIUM_JAVA_JUNIT_TEST_PACKAGE".equals(value)) {
             return APPIUM_JAVA_JUNIT_TEST_PACKAGE;
         } else if ("APPIUM_JAVA_TESTNG_TEST_PACKAGE".equals(value)) {
             return APPIUM_JAVA_TESTNG_TEST_PACKAGE;
+        } else if ("APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE".equals(value)) {
+            return APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE;
+        } else if ("APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE".equals(value)) {
+            return APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE;
         } else if ("CALABASH_TEST_PACKAGE".equals(value)) {
             return CALABASH_TEST_PACKAGE;
         } else if ("INSTRUMENTATION_TEST_PACKAGE".equals(value)) {

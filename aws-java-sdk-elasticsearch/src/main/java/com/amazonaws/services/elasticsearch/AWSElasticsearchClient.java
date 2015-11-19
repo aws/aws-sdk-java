@@ -317,8 +317,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsRequestMarshaller()
-                        .marshall(addTagsRequest);
+                request = new AddTagsRequestMarshaller().marshall(super
+                        .beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -383,7 +383,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateElasticsearchDomainRequestMarshaller()
-                        .marshall(createElasticsearchDomainRequest);
+                        .marshall(super
+                                .beforeMarshalling(createElasticsearchDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -442,7 +443,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteElasticsearchDomainRequestMarshaller()
-                        .marshall(deleteElasticsearchDomainRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteElasticsearchDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -501,7 +503,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeElasticsearchDomainRequestMarshaller()
-                        .marshall(describeElasticsearchDomainRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeElasticsearchDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -562,7 +565,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeElasticsearchDomainConfigRequestMarshaller()
-                        .marshall(describeElasticsearchDomainConfigRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeElasticsearchDomainConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -619,7 +623,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeElasticsearchDomainsRequestMarshaller()
-                        .marshall(describeElasticsearchDomainsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeElasticsearchDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -666,8 +671,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDomainNamesRequestMarshaller()
-                        .marshall(listDomainNamesRequest);
+                request = new ListDomainNamesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listDomainNamesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -723,8 +728,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsRequestMarshaller()
-                        .marshall(listTagsRequest);
+                request = new ListTagsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -777,8 +782,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsRequestMarshaller()
-                        .marshall(removeTagsRequest);
+                request = new RemoveTagsRequestMarshaller().marshall(super
+                        .beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -841,7 +846,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateElasticsearchDomainConfigRequestMarshaller()
-                        .marshall(updateElasticsearchDomainConfigRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateElasticsearchDomainConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

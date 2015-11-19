@@ -337,8 +337,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssignInstanceRequestMarshaller()
-                        .marshall(assignInstanceRequest);
+                request = new AssignInstanceRequestMarshaller().marshall(super
+                        .beforeMarshalling(assignInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -393,8 +393,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssignVolumeRequestMarshaller()
-                        .marshall(assignVolumeRequest);
+                request = new AssignVolumeRequestMarshaller().marshall(super
+                        .beforeMarshalling(assignVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -449,7 +449,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AssociateElasticIpRequestMarshaller()
-                        .marshall(associateElasticIpRequest);
+                        .marshall(super
+                                .beforeMarshalling(associateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -512,7 +513,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AttachElasticLoadBalancerRequestMarshaller()
-                        .marshall(attachElasticLoadBalancerRequest);
+                        .marshall(super
+                                .beforeMarshalling(attachElasticLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -564,8 +566,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CloneStackRequestMarshaller()
-                        .marshall(cloneStackRequest);
+                request = new CloneStackRequestMarshaller().marshall(super
+                        .beforeMarshalling(cloneStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -619,8 +621,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAppRequestMarshaller()
-                        .marshall(createAppRequest);
+                request = new CreateAppRequestMarshaller().marshall(super
+                        .beforeMarshalling(createAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -678,7 +680,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateDeploymentRequestMarshaller()
-                        .marshall(createDeploymentRequest);
+                        .marshall(super
+                                .beforeMarshalling(createDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -734,8 +737,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateInstanceRequestMarshaller()
-                        .marshall(createInstanceRequest);
+                request = new CreateInstanceRequestMarshaller().marshall(super
+                        .beforeMarshalling(createInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -799,8 +802,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLayerRequestMarshaller()
-                        .marshall(createLayerRequest);
+                request = new CreateLayerRequestMarshaller().marshall(super
+                        .beforeMarshalling(createLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -851,8 +854,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStackRequestMarshaller()
-                        .marshall(createStackRequest);
+                request = new CreateStackRequestMarshaller().marshall(super
+                        .beforeMarshalling(createStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -904,7 +907,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateUserProfileRequestMarshaller()
-                        .marshall(createUserProfileRequest);
+                        .marshall(super
+                                .beforeMarshalling(createUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -955,8 +959,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAppRequestMarshaller()
-                        .marshall(deleteAppRequest);
+                request = new DeleteAppRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1011,8 +1015,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteInstanceRequestMarshaller()
-                        .marshall(deleteInstanceRequest);
+                request = new DeleteInstanceRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1065,8 +1069,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLayerRequestMarshaller()
-                        .marshall(deleteLayerRequest);
+                request = new DeleteLayerRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1119,8 +1123,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteStackRequestMarshaller()
-                        .marshall(deleteStackRequest);
+                request = new DeleteStackRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1170,7 +1174,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteUserProfileRequestMarshaller()
-                        .marshall(deleteUserProfileRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1224,7 +1229,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeregisterEcsClusterRequestMarshaller()
-                        .marshall(deregisterEcsClusterRequest);
+                        .marshall(super
+                                .beforeMarshalling(deregisterEcsClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1278,7 +1284,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeregisterElasticIpRequestMarshaller()
-                        .marshall(deregisterElasticIpRequest);
+                        .marshall(super
+                                .beforeMarshalling(deregisterElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1332,7 +1339,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeregisterInstanceRequestMarshaller()
-                        .marshall(deregisterInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(deregisterInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1383,7 +1391,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeregisterRdsDbInstanceRequestMarshaller()
-                        .marshall(deregisterRdsDbInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(deregisterRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1436,7 +1445,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeregisterVolumeRequestMarshaller()
-                        .marshall(deregisterVolumeRequest);
+                        .marshall(super
+                                .beforeMarshalling(deregisterVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1484,7 +1494,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeAgentVersionsRequestMarshaller()
-                        .marshall(describeAgentVersionsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeAgentVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1542,8 +1553,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAppsRequestMarshaller()
-                        .marshall(describeAppsRequest);
+                request = new DescribeAppsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeAppsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1602,7 +1613,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeCommandsRequestMarshaller()
-                        .marshall(describeCommandsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeCommandsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1662,7 +1674,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeDeploymentsRequestMarshaller()
-                        .marshall(describeDeploymentsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1721,7 +1734,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeEcsClustersRequestMarshaller()
-                        .marshall(describeEcsClustersRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeEcsClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1783,7 +1797,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeElasticIpsRequestMarshaller()
-                        .marshall(describeElasticIpsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeElasticIpsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1843,7 +1858,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeElasticLoadBalancersRequestMarshaller()
-                        .marshall(describeElasticLoadBalancersRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeElasticLoadBalancersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1903,7 +1919,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeInstancesRequestMarshaller()
-                        .marshall(describeInstancesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1961,8 +1978,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLayersRequestMarshaller()
-                        .marshall(describeLayersRequest);
+                request = new DescribeLayersRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeLayersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2022,7 +2039,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeLoadBasedAutoScalingRequestMarshaller()
-                        .marshall(describeLoadBasedAutoScalingRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeLoadBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2072,7 +2090,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeMyUserProfileRequestMarshaller()
-                        .marshall(describeMyUserProfileRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeMyUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2127,7 +2146,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribePermissionsRequestMarshaller()
-                        .marshall(describePermissionsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2187,7 +2207,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeRaidArraysRequestMarshaller()
-                        .marshall(describeRaidArraysRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeRaidArraysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2242,7 +2263,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeRdsDbInstancesRequestMarshaller()
-                        .marshall(describeRdsDbInstancesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeRdsDbInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2297,7 +2319,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeServiceErrorsRequestMarshaller()
-                        .marshall(describeServiceErrorsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeServiceErrorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2352,7 +2375,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeStackProvisioningParametersRequestMarshaller()
-                        .marshall(describeStackProvisioningParametersRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeStackProvisioningParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2409,7 +2433,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeStackSummaryRequestMarshaller()
-                        .marshall(describeStackSummaryRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeStackSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2462,8 +2487,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStacksRequestMarshaller()
-                        .marshall(describeStacksRequest);
+                request = new DescribeStacksRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2523,7 +2548,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeTimeBasedAutoScalingRequestMarshaller()
-                        .marshall(describeTimeBasedAutoScalingRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeTimeBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2577,7 +2603,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeUserProfilesRequestMarshaller()
-                        .marshall(describeUserProfilesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeUserProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2635,8 +2662,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVolumesRequestMarshaller()
-                        .marshall(describeVolumesRequest);
+                request = new DescribeVolumesRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2687,7 +2714,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DetachElasticLoadBalancerRequestMarshaller()
-                        .marshall(detachElasticLoadBalancerRequest);
+                        .marshall(super
+                                .beforeMarshalling(detachElasticLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2741,7 +2769,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DisassociateElasticIpRequestMarshaller()
-                        .marshall(disassociateElasticIpRequest);
+                        .marshall(super
+                                .beforeMarshalling(disassociateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2795,7 +2824,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetHostnameSuggestionRequestMarshaller()
-                        .marshall(getHostnameSuggestionRequest);
+                        .marshall(super
+                                .beforeMarshalling(getHostnameSuggestionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2840,8 +2870,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GrantAccessRequestMarshaller()
-                        .marshall(grantAccessRequest);
+                request = new GrantAccessRequestMarshaller().marshall(super
+                        .beforeMarshalling(grantAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2894,8 +2924,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RebootInstanceRequestMarshaller()
-                        .marshall(rebootInstanceRequest);
+                request = new RebootInstanceRequestMarshaller().marshall(super
+                        .beforeMarshalling(rebootInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2952,7 +2982,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RegisterEcsClusterRequestMarshaller()
-                        .marshall(registerEcsClusterRequest);
+                        .marshall(super
+                                .beforeMarshalling(registerEcsClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3012,7 +3043,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RegisterElasticIpRequestMarshaller()
-                        .marshall(registerElasticIpRequest);
+                        .marshall(super
+                                .beforeMarshalling(registerElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3076,7 +3108,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RegisterInstanceRequestMarshaller()
-                        .marshall(registerInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(registerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3129,7 +3162,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RegisterRdsDbInstanceRequestMarshaller()
-                        .marshall(registerRdsDbInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(registerRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3185,8 +3219,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterVolumeRequestMarshaller()
-                        .marshall(registerVolumeRequest);
+                request = new RegisterVolumeRequestMarshaller().marshall(super
+                        .beforeMarshalling(registerVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3250,7 +3284,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new SetLoadBasedAutoScalingRequestMarshaller()
-                        .marshall(setLoadBasedAutoScalingRequest);
+                        .marshall(super
+                                .beforeMarshalling(setLoadBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3301,8 +3336,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetPermissionRequestMarshaller()
-                        .marshall(setPermissionRequest);
+                request = new SetPermissionRequestMarshaller().marshall(super
+                        .beforeMarshalling(setPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3356,7 +3391,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new SetTimeBasedAutoScalingRequestMarshaller()
-                        .marshall(setTimeBasedAutoScalingRequest);
+                        .marshall(super
+                                .beforeMarshalling(setTimeBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3407,8 +3443,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartInstanceRequestMarshaller()
-                        .marshall(startInstanceRequest);
+                request = new StartInstanceRequestMarshaller().marshall(super
+                        .beforeMarshalling(startInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3457,8 +3493,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartStackRequestMarshaller()
-                        .marshall(startStackRequest);
+                request = new StartStackRequestMarshaller().marshall(super
+                        .beforeMarshalling(startStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3512,8 +3548,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopInstanceRequestMarshaller()
-                        .marshall(stopInstanceRequest);
+                request = new StopInstanceRequestMarshaller().marshall(super
+                        .beforeMarshalling(stopInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3562,8 +3598,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopStackRequestMarshaller()
-                        .marshall(stopStackRequest);
+                request = new StopStackRequestMarshaller().marshall(super
+                        .beforeMarshalling(stopStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3616,7 +3652,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UnassignInstanceRequestMarshaller()
-                        .marshall(unassignInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(unassignInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3668,8 +3705,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnassignVolumeRequestMarshaller()
-                        .marshall(unassignVolumeRequest);
+                request = new UnassignVolumeRequestMarshaller().marshall(super
+                        .beforeMarshalling(unassignVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3718,8 +3755,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAppRequestMarshaller()
-                        .marshall(updateAppRequest);
+                request = new UpdateAppRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3771,8 +3808,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateElasticIpRequestMarshaller()
-                        .marshall(updateElasticIpRequest);
+                request = new UpdateElasticIpRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3821,8 +3858,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateInstanceRequestMarshaller()
-                        .marshall(updateInstanceRequest);
+                request = new UpdateInstanceRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3871,8 +3908,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateLayerRequestMarshaller()
-                        .marshall(updateLayerRequest);
+                request = new UpdateLayerRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3920,7 +3957,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateMyUserProfileRequestMarshaller()
-                        .marshall(updateMyUserProfileRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateMyUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3971,7 +4009,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateRdsDbInstanceRequestMarshaller()
-                        .marshall(updateRdsDbInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4020,8 +4059,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateStackRequestMarshaller()
-                        .marshall(updateStackRequest);
+                request = new UpdateStackRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4071,7 +4110,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateUserProfileRequestMarshaller()
-                        .marshall(updateUserProfileRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4123,8 +4163,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateVolumeRequestMarshaller()
-                        .marshall(updateVolumeRequest);
+                request = new UpdateVolumeRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

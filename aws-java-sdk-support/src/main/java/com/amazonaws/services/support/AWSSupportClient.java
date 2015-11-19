@@ -370,7 +370,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AddAttachmentsToSetRequestMarshaller()
-                        .marshall(addAttachmentsToSetRequest);
+                        .marshall(super
+                                .beforeMarshalling(addAttachmentsToSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -435,7 +436,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AddCommunicationToCaseRequestMarshaller()
-                        .marshall(addCommunicationToCaseRequest);
+                        .marshall(super
+                                .beforeMarshalling(addCommunicationToCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -533,8 +535,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCaseRequestMarshaller()
-                        .marshall(createCaseRequest);
+                request = new CreateCaseRequestMarshaller().marshall(super
+                        .beforeMarshalling(createCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -588,7 +590,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeAttachmentRequestMarshaller()
-                        .marshall(describeAttachmentRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -651,8 +654,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCasesRequestMarshaller()
-                        .marshall(describeCasesRequest);
+                request = new DescribeCasesRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeCasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -718,7 +721,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeCommunicationsRequestMarshaller()
-                        .marshall(describeCommunicationsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeCommunicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -776,7 +780,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeServicesRequestMarshaller()
-                        .marshall(describeServicesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -828,7 +833,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeSeverityLevelsRequestMarshaller()
-                        .marshall(describeSeverityLevelsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeSeverityLevelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -880,7 +886,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller()
-                        .marshall(describeTrustedAdvisorCheckRefreshStatusesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeTrustedAdvisorCheckRefreshStatusesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -945,7 +952,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeTrustedAdvisorCheckResultRequestMarshaller()
-                        .marshall(describeTrustedAdvisorCheckResultRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeTrustedAdvisorCheckResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -996,7 +1004,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller()
-                        .marshall(describeTrustedAdvisorCheckSummariesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeTrustedAdvisorCheckSummariesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1045,7 +1054,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeTrustedAdvisorChecksRequestMarshaller()
-                        .marshall(describeTrustedAdvisorChecksRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeTrustedAdvisorChecksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1103,7 +1113,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RefreshTrustedAdvisorCheckRequestMarshaller()
-                        .marshall(refreshTrustedAdvisorCheckRequest);
+                        .marshall(super
+                                .beforeMarshalling(refreshTrustedAdvisorCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1149,8 +1160,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResolveCaseRequestMarshaller()
-                        .marshall(resolveCaseRequest);
+                request = new ResolveCaseRequestMarshaller().marshall(super
+                        .beforeMarshalling(resolveCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

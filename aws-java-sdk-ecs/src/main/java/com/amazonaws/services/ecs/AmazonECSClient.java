@@ -317,8 +317,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateClusterRequestMarshaller()
-                        .marshall(createClusterRequest);
+                request = new CreateClusterRequestMarshaller().marshall(super
+                        .beforeMarshalling(createClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -381,8 +381,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateServiceRequestMarshaller()
-                        .marshall(createServiceRequest);
+                request = new CreateServiceRequestMarshaller().marshall(super
+                        .beforeMarshalling(createServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -450,8 +450,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteClusterRequestMarshaller()
-                        .marshall(deleteClusterRequest);
+                request = new DeleteClusterRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -510,8 +510,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteServiceRequestMarshaller()
-                        .marshall(deleteServiceRequest);
+                request = new DeleteServiceRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -587,7 +587,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeregisterContainerInstanceRequestMarshaller()
-                        .marshall(deregisterContainerInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(deregisterContainerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -652,7 +653,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeregisterTaskDefinitionRequestMarshaller()
-                        .marshall(deregisterTaskDefinitionRequest);
+                        .marshall(super
+                                .beforeMarshalling(deregisterTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -704,7 +706,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeClustersRequestMarshaller()
-                        .marshall(describeClustersRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -768,7 +771,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeContainerInstancesRequestMarshaller()
-                        .marshall(describeContainerInstancesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeContainerInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -824,7 +828,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeServicesRequestMarshaller()
-                        .marshall(describeServicesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -886,7 +891,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeTaskDefinitionRequestMarshaller()
-                        .marshall(describeTaskDefinitionRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -941,8 +947,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTasksRequestMarshaller()
-                        .marshall(describeTasksRequest);
+                request = new DescribeTasksRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -999,7 +1005,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DiscoverPollEndpointRequestMarshaller()
-                        .marshall(discoverPollEndpointRequest);
+                        .marshall(super
+                                .beforeMarshalling(discoverPollEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1055,8 +1062,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListClustersRequestMarshaller()
-                        .marshall(listClustersRequest);
+                request = new ListClustersRequestMarshaller().marshall(super
+                        .beforeMarshalling(listClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1118,7 +1125,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListContainerInstancesRequestMarshaller()
-                        .marshall(listContainerInstancesRequest);
+                        .marshall(super
+                                .beforeMarshalling(listContainerInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1178,8 +1186,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListServicesRequestMarshaller()
-                        .marshall(listServicesRequest);
+                request = new ListServicesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1240,7 +1248,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListTaskDefinitionFamiliesRequestMarshaller()
-                        .marshall(listTaskDefinitionFamiliesRequest);
+                        .marshall(super
+                                .beforeMarshalling(listTaskDefinitionFamiliesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1301,7 +1310,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListTaskDefinitionsRequestMarshaller()
-                        .marshall(listTaskDefinitionsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listTaskDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1368,8 +1378,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTasksRequestMarshaller()
-                        .marshall(listTasksRequest);
+                request = new ListTasksRequestMarshaller().marshall(super
+                        .beforeMarshalling(listTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1431,7 +1441,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RegisterContainerInstanceRequestMarshaller()
-                        .marshall(registerContainerInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(registerContainerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1490,7 +1501,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RegisterTaskDefinitionRequestMarshaller()
-                        .marshall(registerTaskDefinitionRequest);
+                        .marshall(super
+                                .beforeMarshalling(registerTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1551,8 +1563,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RunTaskRequestMarshaller()
-                        .marshall(runTaskRequest);
+                request = new RunTaskRequestMarshaller().marshall(super
+                        .beforeMarshalling(runTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1613,8 +1625,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartTaskRequestMarshaller()
-                        .marshall(startTaskRequest);
+                request = new StartTaskRequestMarshaller().marshall(super
+                        .beforeMarshalling(startTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1677,8 +1689,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopTaskRequestMarshaller()
-                        .marshall(stopTaskRequest);
+                request = new StopTaskRequestMarshaller().marshall(super
+                        .beforeMarshalling(stopTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1734,7 +1746,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new SubmitContainerStateChangeRequestMarshaller()
-                        .marshall(submitContainerStateChangeRequest);
+                        .marshall(super
+                                .beforeMarshalling(submitContainerStateChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1795,7 +1808,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new SubmitTaskStateChangeRequestMarshaller()
-                        .marshall(submitTaskStateChangeRequest);
+                        .marshall(super
+                                .beforeMarshalling(submitTaskStateChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1883,7 +1897,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateContainerAgentRequestMarshaller()
-                        .marshall(updateContainerAgentRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateContainerAgentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1973,8 +1988,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateServiceRequestMarshaller()
-                        .marshall(updateServiceRequest);
+                request = new UpdateServiceRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
