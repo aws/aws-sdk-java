@@ -16,6 +16,7 @@ package com.amazonaws.util;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.Date;
@@ -34,11 +35,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl;
-import com.sun.org.apache.xml.internal.dtm.DTMManager;
-import com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault;
-import com.sun.org.apache.xpath.internal.XPathContext;
-
 /**
  * Utility methods for extracting data from XML documents using Xpath
  * expressions.
@@ -50,6 +46,15 @@ public class XpathUtils {
     /** The default property name to load the Xalan Document Builder Factory. */
     private static final String DOCUMENT_BUILDER_FACTORY_PROP_NAME =
       "javax.xml.parsers.DocumentBuilderFactory";
+    /** The FQCN of the desired DocumentBuilderFactory implementation. */
+    private static final String DOCUMENT_BUILDER_FACTORY_IMPL_CLASS_NAME =
+      "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl";
+    /** The FQCN of the internal XPathContext class. */
+    private static final String XPATH_CONTEXT_CLASS_NAME =
+      "com.sun.org.apache.xpath.internal.XPathContext";
+    /** The FQCN of the desired DTMManager implementation. */
+    private static final String DTM_MANAGER_IMPL_CLASS_NAME =
+      "com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault";
     private static final Log log = LogFactory.getLog(XpathUtils.class);
 
     /**
@@ -57,17 +62,20 @@ public class XpathUtils {
      * a DTMManager is constructed as a result of constructing a Xalan xpath
      * context!
      */
-    private static void speedUpDTMManager() {
+    private static void speedUpDTMManager() throws Exception {
         // https://github.com/aws/aws-sdk-java/issues/238
         // http://stackoverflow.com/questions/6340802/java-xpath-apache-jaxp-implementation-performance
-        String className = System.getProperty(DTM_MANAGER_DEFAULT_PROP_NAME);
-        if (className == null) {
-            DTMManager dtmManager = new XPathContext().getDTMManager();
-            if (dtmManager instanceof DTMManagerDefault) {
+        if (System.getProperty(DTM_MANAGER_DEFAULT_PROP_NAME) == null) {
+            Class<?> XPathContextClass = Class.forName(XPATH_CONTEXT_CLASS_NAME);
+            Method getDTMManager = XPathContextClass.getMethod("getDTMManager");
+            Object XPathContext = XPathContextClass.newInstance();
+            Object dtmManager = getDTMManager.invoke(XPathContext);
+
+            if (DTM_MANAGER_IMPL_CLASS_NAME.equals(dtmManager.getClass().getName())) {
                 // This would avoid the file system to be accessed every time
                 // the internal XPathContext is instantiated.
                 System.setProperty(DTM_MANAGER_DEFAULT_PROP_NAME,
-                        DTMManagerDefault.class.getName());
+                        DTM_MANAGER_IMPL_CLASS_NAME);
             }
         }
     }
@@ -78,14 +86,13 @@ public class XpathUtils {
      * Xalan document factory.
      */
     private static void speedUpDcoumentBuilderFactory() {
-        String className = System.getProperty(DOCUMENT_BUILDER_FACTORY_PROP_NAME);
-        if (className == null) {
+        if (System.getProperty(DOCUMENT_BUILDER_FACTORY_PROP_NAME) == null) {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            if (factory instanceof DocumentBuilderFactoryImpl) {
+            if (DOCUMENT_BUILDER_FACTORY_IMPL_CLASS_NAME.equals(factory.getClass().getName())) {
                 // This would avoid the file system to be accessed every time
                 // the internal DocumentBuilderFactory is instantiated.
                 System.setProperty(DOCUMENT_BUILDER_FACTORY_PROP_NAME,
-                        DocumentBuilderFactoryImpl.class.getName());
+                        DOCUMENT_BUILDER_FACTORY_IMPL_CLASS_NAME);
             }
         }
     }
