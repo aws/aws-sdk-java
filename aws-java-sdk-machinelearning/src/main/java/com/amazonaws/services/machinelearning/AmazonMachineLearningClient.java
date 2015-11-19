@@ -313,7 +313,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateBatchPredictionRequestMarshaller()
-                        .marshall(createBatchPredictionRequest);
+                        .marshall(super
+                                .beforeMarshalling(createBatchPredictionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -386,7 +387,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateDataSourceFromRDSRequestMarshaller()
-                        .marshall(createDataSourceFromRDSRequest);
+                        .marshall(super
+                                .beforeMarshalling(createDataSourceFromRDSRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -480,7 +482,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateDataSourceFromRedshiftRequestMarshaller()
-                        .marshall(createDataSourceFromRedshiftRequest);
+                        .marshall(super
+                                .beforeMarshalling(createDataSourceFromRedshiftRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -574,7 +577,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateDataSourceFromS3RequestMarshaller()
-                        .marshall(createDataSourceFromS3Request);
+                        .marshall(super
+                                .beforeMarshalling(createDataSourceFromS3Request));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -647,7 +651,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateEvaluationRequestMarshaller()
-                        .marshall(createEvaluationRequest);
+                        .marshall(super
+                                .beforeMarshalling(createEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -721,8 +726,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateMLModelRequestMarshaller()
-                        .marshall(createMLModelRequest);
+                request = new CreateMLModelRequestMarshaller().marshall(super
+                        .beforeMarshalling(createMLModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -775,7 +780,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateRealtimeEndpointRequestMarshaller()
-                        .marshall(createRealtimeEndpointRequest);
+                        .marshall(super
+                                .beforeMarshalling(createRealtimeEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -835,7 +841,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteBatchPredictionRequestMarshaller()
-                        .marshall(deleteBatchPredictionRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteBatchPredictionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -894,7 +901,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteDataSourceRequestMarshaller()
-                        .marshall(deleteDataSourceRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -953,7 +961,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteEvaluationRequestMarshaller()
-                        .marshall(deleteEvaluationRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1011,8 +1020,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMLModelRequestMarshaller()
-                        .marshall(deleteMLModelRequest);
+                request = new DeleteMLModelRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteMLModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1062,7 +1071,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteRealtimeEndpointRequestMarshaller()
-                        .marshall(deleteRealtimeEndpointRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteRealtimeEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1111,7 +1121,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeBatchPredictionsRequestMarshaller()
-                        .marshall(describeBatchPredictionsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeBatchPredictionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1165,7 +1176,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeDataSourcesRequestMarshaller()
-                        .marshall(describeDataSourcesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeDataSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1219,7 +1231,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeEvaluationsRequestMarshaller()
-                        .marshall(describeEvaluationsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeEvaluationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1272,7 +1285,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeMLModelsRequestMarshaller()
-                        .marshall(describeMLModelsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeMLModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1329,7 +1343,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetBatchPredictionRequestMarshaller()
-                        .marshall(getBatchPredictionRequest);
+                        .marshall(super
+                                .beforeMarshalling(getBatchPredictionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1384,8 +1399,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDataSourceRequestMarshaller()
-                        .marshall(getDataSourceRequest);
+                request = new GetDataSourceRequestMarshaller().marshall(super
+                        .beforeMarshalling(getDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1434,8 +1449,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetEvaluationRequestMarshaller()
-                        .marshall(getEvaluationRequest);
+                request = new GetEvaluationRequestMarshaller().marshall(super
+                        .beforeMarshalling(getEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1487,8 +1502,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetMLModelRequestMarshaller()
-                        .marshall(getMLModelRequest);
+                request = new GetMLModelRequestMarshaller().marshall(super
+                        .beforeMarshalling(getMLModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1549,8 +1564,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PredictRequestMarshaller()
-                        .marshall(predictRequest);
+                request = new PredictRequestMarshaller().marshall(super
+                        .beforeMarshalling(predictRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1605,7 +1620,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateBatchPredictionRequestMarshaller()
-                        .marshall(updateBatchPredictionRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateBatchPredictionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1658,7 +1674,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateDataSourceRequestMarshaller()
-                        .marshall(updateDataSourceRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1711,7 +1728,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateEvaluationRequestMarshaller()
-                        .marshall(updateEvaluationRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1764,8 +1782,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMLModelRequestMarshaller()
-                        .marshall(updateMLModelRequest);
+                request = new UpdateMLModelRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateMLModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

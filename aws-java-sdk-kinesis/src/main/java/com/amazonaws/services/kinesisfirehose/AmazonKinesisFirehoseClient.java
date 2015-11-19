@@ -358,7 +358,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateDeliveryStreamRequestMarshaller()
-                        .marshall(createDeliveryStreamRequest);
+                        .marshall(super
+                                .beforeMarshalling(createDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -424,7 +425,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteDeliveryStreamRequestMarshaller()
-                        .marshall(deleteDeliveryStreamRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -473,7 +475,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeDeliveryStreamRequestMarshaller()
-                        .marshall(describeDeliveryStreamRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -528,7 +531,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListDeliveryStreamsRequestMarshaller()
-                        .marshall(listDeliveryStreamsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listDeliveryStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -629,8 +633,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRecordRequestMarshaller()
-                        .marshall(putRecordRequest);
+                request = new PutRecordRequestMarshaller().marshall(super
+                        .beforeMarshalling(putRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -758,8 +762,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRecordBatchRequestMarshaller()
-                        .marshall(putRecordBatchRequest);
+                request = new PutRecordBatchRequestMarshaller().marshall(super
+                        .beforeMarshalling(putRecordBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -852,7 +856,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateDestinationRequestMarshaller()
-                        .marshall(updateDestinationRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

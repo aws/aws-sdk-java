@@ -45,7 +45,7 @@ import com.amazonaws.services.inspector.model.transform.*;
  * Amazon Inspector enables you to analyze the behavior of the applications you
  * run in AWS and to identify potential security issues. For more information,
  * see <a href=
- * "https://docs.aws.amazon.com/inspector/latest/userguide//inspector_introduction.html"
+ * "https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html"
  * > Amazon Inspector User Guide</a>.
  * </p>
  */
@@ -290,7 +290,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AddAttributesToFindingsRequestMarshaller()
-                        .marshall(addAttributesToFindingsRequest);
+                        .marshall(super
+                                .beforeMarshalling(addAttributesToFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -338,7 +339,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AttachAssessmentAndRulesPackageRequestMarshaller()
-                        .marshall(attachAssessmentAndRulesPackageRequest);
+                        .marshall(super
+                                .beforeMarshalling(attachAssessmentAndRulesPackageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -390,7 +392,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateApplicationRequestMarshaller()
-                        .marshall(createApplicationRequest);
+                        .marshall(super
+                                .beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -437,7 +440,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateAssessmentRequestMarshaller()
-                        .marshall(createAssessmentRequest);
+                        .marshall(super
+                                .beforeMarshalling(createAssessmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -486,7 +490,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateResourceGroupRequestMarshaller()
-                        .marshall(createResourceGroupRequest);
+                        .marshall(super
+                                .beforeMarshalling(createResourceGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -534,7 +539,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteApplicationRequestMarshaller()
-                        .marshall(deleteApplicationRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -581,7 +587,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteAssessmentRequestMarshaller()
-                        .marshall(deleteAssessmentRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteAssessmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -625,8 +632,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRunRequestMarshaller()
-                        .marshall(deleteRunRequest);
+                request = new DeleteRunRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -673,7 +680,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeApplicationRequestMarshaller()
-                        .marshall(describeApplicationRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -720,7 +728,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeAssessmentRequestMarshaller()
-                        .marshall(describeAssessmentRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeAssessmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -765,7 +774,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeCrossAccountAccessRoleRequestMarshaller()
-                        .marshall(describeCrossAccountAccessRoleRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeCrossAccountAccessRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -810,8 +820,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFindingRequestMarshaller()
-                        .marshall(describeFindingRequest);
+                request = new DescribeFindingRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeFindingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -858,7 +868,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeResourceGroupRequestMarshaller()
-                        .marshall(describeResourceGroupRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeResourceGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -905,7 +916,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeRulesPackageRequestMarshaller()
-                        .marshall(describeRulesPackageRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeRulesPackageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -949,8 +961,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRunRequestMarshaller()
-                        .marshall(describeRunRequest);
+                request = new DescribeRunRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -998,7 +1010,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DetachAssessmentAndRulesPackageRequestMarshaller()
-                        .marshall(detachAssessmentAndRulesPackageRequest);
+                        .marshall(super
+                                .beforeMarshalling(detachAssessmentAndRulesPackageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1046,7 +1059,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetAssessmentTelemetryRequestMarshaller()
-                        .marshall(getAssessmentTelemetryRequest);
+                        .marshall(super
+                                .beforeMarshalling(getAssessmentTelemetryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1094,7 +1108,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListApplicationsRequestMarshaller()
-                        .marshall(listApplicationsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1141,7 +1156,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListAssessmentAgentsRequestMarshaller()
-                        .marshall(listAssessmentAgentsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listAssessmentAgentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1187,8 +1203,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentsRequestMarshaller()
-                        .marshall(listAssessmentsRequest);
+                request = new ListAssessmentsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listAssessmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1236,7 +1252,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListAttachedAssessmentsRequestMarshaller()
-                        .marshall(listAttachedAssessmentsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listAttachedAssessmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1284,7 +1301,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListAttachedRulesPackagesRequestMarshaller()
-                        .marshall(listAttachedRulesPackagesRequest);
+                        .marshall(super
+                                .beforeMarshalling(listAttachedRulesPackagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1329,8 +1347,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFindingsRequestMarshaller()
-                        .marshall(listFindingsRequest);
+                request = new ListFindingsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1376,7 +1394,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListRulesPackagesRequestMarshaller()
-                        .marshall(listRulesPackagesRequest);
+                        .marshall(super
+                                .beforeMarshalling(listRulesPackagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1421,8 +1440,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRunsRequestMarshaller()
-                        .marshall(listRunsRequest);
+                request = new ListRunsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1469,7 +1488,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListTagsForResourceRequestMarshaller()
-                        .marshall(listTagsForResourceRequest);
+                        .marshall(super
+                                .beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1515,8 +1535,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new LocalizeTextRequestMarshaller()
-                        .marshall(localizeTextRequest);
+                request = new LocalizeTextRequestMarshaller().marshall(super
+                        .beforeMarshalling(localizeTextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1565,7 +1585,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PreviewAgentsForResourceGroupRequestMarshaller()
-                        .marshall(previewAgentsForResourceGroupRequest);
+                        .marshall(super
+                                .beforeMarshalling(previewAgentsForResourceGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1613,7 +1634,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RegisterCrossAccountAccessRoleRequestMarshaller()
-                        .marshall(registerCrossAccountAccessRoleRequest);
+                        .marshall(super
+                                .beforeMarshalling(registerCrossAccountAccessRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1662,7 +1684,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RemoveAttributesFromFindingsRequestMarshaller()
-                        .marshall(removeAttributesFromFindingsRequest);
+                        .marshall(super
+                                .beforeMarshalling(removeAttributesFromFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1708,8 +1731,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RunAssessmentRequestMarshaller()
-                        .marshall(runAssessmentRequest);
+                request = new RunAssessmentRequestMarshaller().marshall(super
+                        .beforeMarshalling(runAssessmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1757,7 +1780,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new SetTagsForResourceRequestMarshaller()
-                        .marshall(setTagsForResourceRequest);
+                        .marshall(super
+                                .beforeMarshalling(setTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1807,7 +1831,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new StartDataCollectionRequestMarshaller()
-                        .marshall(startDataCollectionRequest);
+                        .marshall(super
+                                .beforeMarshalling(startDataCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1854,7 +1879,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new StopDataCollectionRequestMarshaller()
-                        .marshall(stopDataCollectionRequest);
+                        .marshall(super
+                                .beforeMarshalling(stopDataCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1901,7 +1927,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateApplicationRequestMarshaller()
-                        .marshall(updateApplicationRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1947,7 +1974,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateAssessmentRequestMarshaller()
-                        .marshall(updateAssessmentRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateAssessmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

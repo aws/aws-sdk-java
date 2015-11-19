@@ -40,21 +40,22 @@ import org.xml.sax.SAXException;
  * expressions.
  */
 public class XpathUtils {
+
     /** The default property name to load the Xalan DTM manager. */
-    private static final String DTM_MANAGER_DEFAULT_PROP_NAME =
-      "com.sun.org.apache.xml.internal.dtm.DTMManager";
+    private static final String DTM_MANAGER_DEFAULT_PROP_NAME = "com.sun.org.apache.xml.internal.dtm.DTMManager";
+
     /** The default property name to load the Xalan Document Builder Factory. */
-    private static final String DOCUMENT_BUILDER_FACTORY_PROP_NAME =
-      "javax.xml.parsers.DocumentBuilderFactory";
+    private static final String DOCUMENT_BUILDER_FACTORY_PROP_NAME = "javax.xml.parsers.DocumentBuilderFactory";
+
     /** The FQCN of the desired DocumentBuilderFactory implementation. */
-    private static final String DOCUMENT_BUILDER_FACTORY_IMPL_CLASS_NAME =
-      "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl";
+    private static final String DOCUMENT_BUILDER_FACTORY_IMPL_CLASS_NAME = "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl";
+
     /** The FQCN of the internal XPathContext class. */
-    private static final String XPATH_CONTEXT_CLASS_NAME =
-      "com.sun.org.apache.xpath.internal.XPathContext";
+    private static final String XPATH_CONTEXT_CLASS_NAME = "com.sun.org.apache.xpath.internal.XPathContext";
+
     /** The FQCN of the desired DTMManager implementation. */
-    private static final String DTM_MANAGER_IMPL_CLASS_NAME =
-      "com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault";
+    private static final String DTM_MANAGER_IMPL_CLASS_NAME = "com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault";
+
     private static final Log log = LogFactory.getLog(XpathUtils.class);
 
     /**

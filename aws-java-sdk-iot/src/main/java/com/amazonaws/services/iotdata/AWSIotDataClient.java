@@ -326,7 +326,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteThingShadowRequestMarshaller()
-                        .marshall(deleteThingShadowRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -389,8 +390,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetThingShadowRequestMarshaller()
-                        .marshall(getThingShadowRequest);
+                request = new GetThingShadowRequestMarshaller().marshall(super
+                        .beforeMarshalling(getThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -443,8 +444,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PublishRequestMarshaller()
-                        .marshall(publishRequest);
+                request = new PublishRequestMarshaller().marshall(super
+                        .beforeMarshalling(publishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -509,7 +510,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateThingShadowRequestMarshaller()
-                        .marshall(updateThingShadowRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

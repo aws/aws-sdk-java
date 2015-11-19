@@ -390,7 +390,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new BatchGetRepositoriesRequestMarshaller()
-                        .marshall(batchGetRepositoriesRequest);
+                        .marshall(super
+                                .beforeMarshalling(batchGetRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -466,8 +467,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBranchRequestMarshaller()
-                        .marshall(createBranchRequest);
+                request = new CreateBranchRequestMarshaller().marshall(super
+                        .beforeMarshalling(createBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -532,7 +533,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateRepositoryRequestMarshaller()
-                        .marshall(createRepositoryRequest);
+                        .marshall(super
+                                .beforeMarshalling(createRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -597,7 +599,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteRepositoryRequestMarshaller()
-                        .marshall(deleteRepositoryRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -665,8 +668,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBranchRequestMarshaller()
-                        .marshall(getBranchRequest);
+                request = new GetBranchRequestMarshaller().marshall(super
+                        .beforeMarshalling(getBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -738,8 +741,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRepositoryRequestMarshaller()
-                        .marshall(getRepositoryRequest);
+                request = new GetRepositoryRequestMarshaller().marshall(super
+                        .beforeMarshalling(getRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -803,8 +806,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListBranchesRequestMarshaller()
-                        .marshall(listBranchesRequest);
+                request = new ListBranchesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listBranchesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -853,7 +856,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListRepositoriesRequestMarshaller()
-                        .marshall(listRepositoriesRequest);
+                        .marshall(super
+                                .beforeMarshalling(listRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -924,7 +928,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateDefaultBranchRequestMarshaller()
-                        .marshall(updateDefaultBranchRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateDefaultBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -997,7 +1002,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateRepositoryDescriptionRequestMarshaller()
-                        .marshall(updateRepositoryDescriptionRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateRepositoryDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1050,7 +1056,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateRepositoryNameRequestMarshaller()
-                        .marshall(updateRepositoryNameRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateRepositoryNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

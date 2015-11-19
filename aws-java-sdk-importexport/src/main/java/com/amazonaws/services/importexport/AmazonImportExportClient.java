@@ -303,8 +303,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelJobRequestMarshaller()
-                        .marshall(cancelJobRequest);
+                request = new CancelJobRequestMarshaller().marshall(super
+                        .beforeMarshalling(cancelJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -394,8 +394,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateJobRequestMarshaller()
-                        .marshall(createJobRequest);
+                request = new CreateJobRequestMarshaller().marshall(super
+                        .beforeMarshalling(createJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -452,7 +452,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetShippingLabelRequestMarshaller()
-                        .marshall(getShippingLabelRequest);
+                        .marshall(super
+                                .beforeMarshalling(getShippingLabelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -506,8 +507,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetStatusRequestMarshaller()
-                        .marshall(getStatusRequest);
+                request = new GetStatusRequestMarshaller().marshall(super
+                        .beforeMarshalling(getStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -557,8 +558,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListJobsRequestMarshaller()
-                        .marshall(listJobsRequest);
+                request = new ListJobsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -654,8 +655,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateJobRequestMarshaller()
-                        .marshall(updateJobRequest);
+                request = new UpdateJobRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

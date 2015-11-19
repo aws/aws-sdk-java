@@ -356,8 +356,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStreamRequestMarshaller()
-                        .marshall(describeStreamRequest);
+                request = new DescribeStreamRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -446,8 +446,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRecordsRequestMarshaller()
-                        .marshall(getRecordsRequest);
+                request = new GetRecordsRequestMarshaller().marshall(super
+                        .beforeMarshalling(getRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -519,7 +519,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetShardIteratorRequestMarshaller()
-                        .marshall(getShardIteratorRequest);
+                        .marshall(super
+                                .beforeMarshalling(getShardIteratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -571,8 +572,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListStreamsRequestMarshaller()
-                        .marshall(listStreamsRequest);
+                request = new ListStreamsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

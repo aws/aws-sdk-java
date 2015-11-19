@@ -29,7 +29,9 @@ public class CreateResourceGroupRequest extends AmazonWebServiceRequest
      * A collection of keys and an array of possible values in JSON format.
      * </p>
      * <p>
-     * For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]
+     * For example,
+     * [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values"
+     * :["Value3"]}]
      * </p>
      */
     private String resourceGroupTags;
@@ -39,15 +41,18 @@ public class CreateResourceGroupRequest extends AmazonWebServiceRequest
      * A collection of keys and an array of possible values in JSON format.
      * </p>
      * <p>
-     * For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]
+     * For example,
+     * [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values"
+     * :["Value3"]}]
      * </p>
      * 
      * @param resourceGroupTags
      *        A collection of keys and an array of possible values in JSON
      *        format.</p>
      *        <p>
-     *        For example, [{ "key1" : ["Value1","Value2"]},{"Key2":
-     *        ["Value3"]}]
+     *        For example,
+     *        [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2"
+     *        ,"values":["Value3"]}]
      */
     public void setResourceGroupTags(String resourceGroupTags) {
         this.resourceGroupTags = resourceGroupTags;
@@ -58,14 +63,17 @@ public class CreateResourceGroupRequest extends AmazonWebServiceRequest
      * A collection of keys and an array of possible values in JSON format.
      * </p>
      * <p>
-     * For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]
+     * For example,
+     * [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values"
+     * :["Value3"]}]
      * </p>
      * 
      * @return A collection of keys and an array of possible values in JSON
      *         format.</p>
      *         <p>
-     *         For example, [{ "key1" : ["Value1","Value2"]},{"Key2":
-     *         ["Value3"]}]
+     *         For example,
+     *         [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2"
+     *         ,"values":["Value3"]}]
      */
     public String getResourceGroupTags() {
         return this.resourceGroupTags;
@@ -76,15 +84,18 @@ public class CreateResourceGroupRequest extends AmazonWebServiceRequest
      * A collection of keys and an array of possible values in JSON format.
      * </p>
      * <p>
-     * For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]
+     * For example,
+     * [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values"
+     * :["Value3"]}]
      * </p>
      * 
      * @param resourceGroupTags
      *        A collection of keys and an array of possible values in JSON
      *        format.</p>
      *        <p>
-     *        For example, [{ "key1" : ["Value1","Value2"]},{"Key2":
-     *        ["Value3"]}]
+     *        For example,
+     *        [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2"
+     *        ,"values":["Value3"]}]
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

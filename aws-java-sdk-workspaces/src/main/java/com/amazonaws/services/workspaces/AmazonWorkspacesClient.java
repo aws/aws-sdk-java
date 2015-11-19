@@ -282,7 +282,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateWorkspacesRequestMarshaller()
-                        .marshall(createWorkspacesRequest);
+                        .marshall(super
+                                .beforeMarshalling(createWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -341,7 +342,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeWorkspaceBundlesRequestMarshaller()
-                        .marshall(describeWorkspaceBundlesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeWorkspaceBundlesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -402,7 +404,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeWorkspaceDirectoriesRequestMarshaller()
-                        .marshall(describeWorkspaceDirectoriesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeWorkspaceDirectoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -467,7 +470,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeWorkspacesRequestMarshaller()
-                        .marshall(describeWorkspacesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -526,7 +530,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RebootWorkspacesRequestMarshaller()
-                        .marshall(rebootWorkspacesRequest);
+                        .marshall(super
+                                .beforeMarshalling(rebootWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -595,7 +600,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RebuildWorkspacesRequestMarshaller()
-                        .marshall(rebuildWorkspacesRequest);
+                        .marshall(super
+                                .beforeMarshalling(rebuildWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -655,7 +661,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new TerminateWorkspacesRequestMarshaller()
-                        .marshall(terminateWorkspacesRequest);
+                        .marshall(super
+                                .beforeMarshalling(terminateWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

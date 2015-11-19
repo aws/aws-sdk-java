@@ -322,7 +322,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ActivatePipelineRequestMarshaller()
-                        .marshall(activatePipelineRequest);
+                        .marshall(super
+                                .beforeMarshalling(activatePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -375,8 +376,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsRequestMarshaller()
-                        .marshall(addTagsRequest);
+                request = new AddTagsRequestMarshaller().marshall(super
+                        .beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -426,8 +427,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePipelineRequestMarshaller()
-                        .marshall(createPipelineRequest);
+                request = new CreatePipelineRequestMarshaller().marshall(super
+                        .beforeMarshalling(createPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -489,7 +490,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeactivatePipelineRequestMarshaller()
-                        .marshall(deactivatePipelineRequest);
+                        .marshall(super
+                                .beforeMarshalling(deactivatePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -548,8 +550,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePipelineRequestMarshaller()
-                        .marshall(deletePipelineRequest);
+                request = new DeletePipelineRequestMarshaller().marshall(super
+                        .beforeMarshalling(deletePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -603,8 +605,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeObjectsRequestMarshaller()
-                        .marshall(describeObjectsRequest);
+                request = new DescribeObjectsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeObjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -670,7 +672,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribePipelinesRequestMarshaller()
-                        .marshall(describePipelinesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describePipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -730,7 +733,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new EvaluateExpressionRequestMarshaller()
-                        .marshall(evaluateExpressionRequest);
+                        .marshall(super
+                                .beforeMarshalling(evaluateExpressionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -788,7 +792,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetPipelineDefinitionRequestMarshaller()
-                        .marshall(getPipelineDefinitionRequest);
+                        .marshall(super
+                                .beforeMarshalling(getPipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -838,8 +843,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPipelinesRequestMarshaller()
-                        .marshall(listPipelinesRequest);
+                request = new ListPipelinesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listPipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -910,8 +915,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PollForTaskRequestMarshaller()
-                        .marshall(pollForTaskRequest);
+                request = new PollForTaskRequestMarshaller().marshall(super
+                        .beforeMarshalling(pollForTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -985,7 +990,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutPipelineDefinitionRequestMarshaller()
-                        .marshall(putPipelineDefinitionRequest);
+                        .marshall(super
+                                .beforeMarshalling(putPipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1040,8 +1046,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new QueryObjectsRequestMarshaller()
-                        .marshall(queryObjectsRequest);
+                request = new QueryObjectsRequestMarshaller().marshall(super
+                        .beforeMarshalling(queryObjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1094,8 +1100,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsRequestMarshaller()
-                        .marshall(removeTagsRequest);
+                request = new RemoveTagsRequestMarshaller().marshall(super
+                        .beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1166,7 +1172,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ReportTaskProgressRequestMarshaller()
-                        .marshall(reportTaskProgressRequest);
+                        .marshall(super
+                                .beforeMarshalling(reportTaskProgressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1221,7 +1228,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ReportTaskRunnerHeartbeatRequestMarshaller()
-                        .marshall(reportTaskRunnerHeartbeatRequest);
+                        .marshall(super
+                                .beforeMarshalling(reportTaskRunnerHeartbeatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1278,8 +1286,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetStatusRequestMarshaller()
-                        .marshall(setStatusRequest);
+                request = new SetStatusRequestMarshaller().marshall(super
+                        .beforeMarshalling(setStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1338,8 +1346,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetTaskStatusRequestMarshaller()
-                        .marshall(setTaskStatusRequest);
+                request = new SetTaskStatusRequestMarshaller().marshall(super
+                        .beforeMarshalling(setTaskStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1396,7 +1404,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ValidatePipelineDefinitionRequestMarshaller()
-                        .marshall(validatePipelineDefinitionRequest);
+                        .marshall(super
+                                .beforeMarshalling(validatePipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

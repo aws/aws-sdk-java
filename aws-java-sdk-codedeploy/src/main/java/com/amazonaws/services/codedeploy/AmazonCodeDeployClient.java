@@ -573,7 +573,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AddTagsToOnPremisesInstancesRequestMarshaller()
-                        .marshall(addTagsToOnPremisesInstancesRequest);
+                        .marshall(super
+                                .beforeMarshalling(addTagsToOnPremisesInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -623,7 +624,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new BatchGetApplicationsRequestMarshaller()
-                        .marshall(batchGetApplicationsRequest);
+                        .marshall(super
+                                .beforeMarshalling(batchGetApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -677,7 +679,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new BatchGetDeploymentsRequestMarshaller()
-                        .marshall(batchGetDeploymentsRequest);
+                        .marshall(super
+                                .beforeMarshalling(batchGetDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -732,7 +735,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new BatchGetOnPremisesInstancesRequestMarshaller()
-                        .marshall(batchGetOnPremisesInstancesRequest);
+                        .marshall(super
+                                .beforeMarshalling(batchGetOnPremisesInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -791,7 +795,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateApplicationRequestMarshaller()
-                        .marshall(createApplicationRequest);
+                        .marshall(super
+                                .beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -863,7 +868,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateDeploymentRequestMarshaller()
-                        .marshall(createDeploymentRequest);
+                        .marshall(super
+                                .beforeMarshalling(createDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -921,7 +927,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateDeploymentConfigRequestMarshaller()
-                        .marshall(createDeploymentConfigRequest);
+                        .marshall(super
+                                .beforeMarshalling(createDeploymentConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1002,7 +1009,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateDeploymentGroupRequestMarshaller()
-                        .marshall(createDeploymentGroupRequest);
+                        .marshall(super
+                                .beforeMarshalling(createDeploymentGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1049,7 +1057,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteApplicationRequestMarshaller()
-                        .marshall(deleteApplicationRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1101,7 +1110,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteDeploymentConfigRequestMarshaller()
-                        .marshall(deleteDeploymentConfigRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteDeploymentConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1156,7 +1166,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteDeploymentGroupRequestMarshaller()
-                        .marshall(deleteDeploymentGroupRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteDeploymentGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1204,7 +1215,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeregisterOnPremisesInstanceRequestMarshaller()
-                        .marshall(deregisterOnPremisesInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(deregisterOnPremisesInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1252,8 +1264,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetApplicationRequestMarshaller()
-                        .marshall(getApplicationRequest);
+                request = new GetApplicationRequestMarshaller().marshall(super
+                        .beforeMarshalling(getApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1312,7 +1324,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetApplicationRevisionRequestMarshaller()
-                        .marshall(getApplicationRevisionRequest);
+                        .marshall(super
+                                .beforeMarshalling(getApplicationRevisionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1362,8 +1375,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeploymentRequestMarshaller()
-                        .marshall(getDeploymentRequest);
+                request = new GetDeploymentRequestMarshaller().marshall(super
+                        .beforeMarshalling(getDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1415,7 +1428,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetDeploymentConfigRequestMarshaller()
-                        .marshall(getDeploymentConfigRequest);
+                        .marshall(super
+                                .beforeMarshalling(getDeploymentConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1474,7 +1488,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetDeploymentGroupRequestMarshaller()
-                        .marshall(getDeploymentGroupRequest);
+                        .marshall(super
+                                .beforeMarshalling(getDeploymentGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1530,7 +1545,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetDeploymentInstanceRequestMarshaller()
-                        .marshall(getDeploymentInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(getDeploymentInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1581,7 +1597,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetOnPremisesInstanceRequestMarshaller()
-                        .marshall(getOnPremisesInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(getOnPremisesInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1650,7 +1667,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListApplicationRevisionsRequestMarshaller()
-                        .marshall(listApplicationRevisionsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listApplicationRevisionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1696,7 +1714,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListApplicationsRequestMarshaller()
-                        .marshall(listApplicationsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1749,7 +1768,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListDeploymentConfigsRequestMarshaller()
-                        .marshall(listDeploymentConfigsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listDeploymentConfigsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1809,7 +1829,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListDeploymentGroupsRequestMarshaller()
-                        .marshall(listDeploymentGroupsRequest);
+                        .marshall(super
+                                .beforeMarshalling(listDeploymentGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1868,7 +1889,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListDeploymentInstancesRequestMarshaller()
-                        .marshall(listDeploymentInstancesRequest);
+                        .marshall(super
+                                .beforeMarshalling(listDeploymentInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1933,8 +1955,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDeploymentsRequestMarshaller()
-                        .marshall(listDeploymentsRequest);
+                request = new ListDeploymentsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1994,7 +2016,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListOnPremisesInstancesRequestMarshaller()
-                        .marshall(listOnPremisesInstancesRequest);
+                        .marshall(super
+                                .beforeMarshalling(listOnPremisesInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2055,7 +2078,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RegisterApplicationRevisionRequestMarshaller()
-                        .marshall(registerApplicationRevisionRequest);
+                        .marshall(super
+                                .beforeMarshalling(registerApplicationRevisionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2109,7 +2133,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RegisterOnPremisesInstanceRequestMarshaller()
-                        .marshall(registerOnPremisesInstanceRequest);
+                        .marshall(super
+                                .beforeMarshalling(registerOnPremisesInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2162,7 +2187,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RemoveTagsFromOnPremisesInstancesRequestMarshaller()
-                        .marshall(removeTagsFromOnPremisesInstancesRequest);
+                        .marshall(super
+                                .beforeMarshalling(removeTagsFromOnPremisesInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2212,8 +2238,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopDeploymentRequestMarshaller()
-                        .marshall(stopDeploymentRequest);
+                request = new StopDeploymentRequestMarshaller().marshall(super
+                        .beforeMarshalling(stopDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2266,7 +2292,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateApplicationRequestMarshaller()
-                        .marshall(updateApplicationRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2348,7 +2375,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateDeploymentGroupRequestMarshaller()
-                        .marshall(updateDeploymentGroupRequest);
+                        .marshall(super
+                                .beforeMarshalling(updateDeploymentGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

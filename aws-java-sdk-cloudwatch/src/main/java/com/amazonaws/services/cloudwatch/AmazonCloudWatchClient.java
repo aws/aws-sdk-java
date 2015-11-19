@@ -299,8 +299,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAlarmsRequestMarshaller()
-                        .marshall(deleteAlarmsRequest);
+                request = new DeleteAlarmsRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteAlarmsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -346,7 +346,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeAlarmHistoryRequestMarshaller()
-                        .marshall(describeAlarmHistoryRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeAlarmHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -395,8 +396,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAlarmsRequestMarshaller()
-                        .marshall(describeAlarmsRequest);
+                request = new DescribeAlarmsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeAlarmsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -444,7 +445,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeAlarmsForMetricRequestMarshaller()
-                        .marshall(describeAlarmsForMetricRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeAlarmsForMetricRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -486,7 +488,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DisableAlarmActionsRequestMarshaller()
-                        .marshall(disableAlarmActionsRequest);
+                        .marshall(super
+                                .beforeMarshalling(disableAlarmActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -524,7 +527,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new EnableAlarmActionsRequestMarshaller()
-                        .marshall(enableAlarmActionsRequest);
+                        .marshall(super
+                                .beforeMarshalling(enableAlarmActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -600,7 +604,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetMetricStatisticsRequestMarshaller()
-                        .marshall(getMetricStatisticsRequest);
+                        .marshall(super
+                                .beforeMarshalling(getMetricStatisticsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -652,8 +657,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListMetricsRequestMarshaller()
-                        .marshall(listMetricsRequest);
+                request = new ListMetricsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listMetricsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -708,8 +713,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutMetricAlarmRequestMarshaller()
-                        .marshall(putMetricAlarmRequest);
+                request = new PutMetricAlarmRequestMarshaller().marshall(super
+                        .beforeMarshalling(putMetricAlarmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -769,8 +774,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutMetricDataRequestMarshaller()
-                        .marshall(putMetricDataRequest);
+                request = new PutMetricDataRequestMarshaller().marshall(super
+                        .beforeMarshalling(putMetricDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -814,8 +819,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetAlarmStateRequestMarshaller()
-                        .marshall(setAlarmStateRequest);
+                request = new SetAlarmStateRequestMarshaller().marshall(super
+                        .beforeMarshalling(setAlarmStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

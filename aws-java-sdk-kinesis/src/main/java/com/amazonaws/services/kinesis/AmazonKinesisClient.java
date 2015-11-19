@@ -296,8 +296,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsToStreamRequestMarshaller()
-                        .marshall(addTagsToStreamRequest);
+                request = new AddTagsToStreamRequestMarshaller().marshall(super
+                        .beforeMarshalling(addTagsToStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -397,8 +397,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStreamRequestMarshaller()
-                        .marshall(createStreamRequest);
+                request = new CreateStreamRequestMarshaller().marshall(super
+                        .beforeMarshalling(createStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -466,7 +466,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DecreaseStreamRetentionPeriodRequestMarshaller()
-                        .marshall(decreaseStreamRetentionPeriodRequest);
+                        .marshall(super
+                                .beforeMarshalling(decreaseStreamRetentionPeriodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -537,8 +538,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteStreamRequestMarshaller()
-                        .marshall(deleteStreamRequest);
+                request = new DeleteStreamRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -619,8 +620,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStreamRequestMarshaller()
-                        .marshall(describeStreamRequest);
+                request = new DescribeStreamRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -761,8 +762,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRecordsRequestMarshaller()
-                        .marshall(getRecordsRequest);
+                request = new GetRecordsRequestMarshaller().marshall(super
+                        .beforeMarshalling(getRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -870,7 +871,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetShardIteratorRequestMarshaller()
-                        .marshall(getShardIteratorRequest);
+                        .marshall(super
+                                .beforeMarshalling(getShardIteratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -956,7 +958,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new IncreaseStreamRetentionPeriodRequestMarshaller()
-                        .marshall(increaseStreamRetentionPeriodRequest);
+                        .marshall(super
+                                .beforeMarshalling(increaseStreamRetentionPeriodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1019,8 +1022,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListStreamsRequestMarshaller()
-                        .marshall(listStreamsRequest);
+                request = new ListStreamsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1093,7 +1096,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListTagsForStreamRequestMarshaller()
-                        .marshall(listTagsForStreamRequest);
+                        .marshall(super
+                                .beforeMarshalling(listTagsForStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1199,8 +1203,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new MergeShardsRequestMarshaller()
-                        .marshall(mergeShardsRequest);
+                request = new MergeShardsRequestMarshaller().marshall(super
+                        .beforeMarshalling(mergeShardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1316,8 +1320,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRecordRequestMarshaller()
-                        .marshall(putRecordRequest);
+                request = new PutRecordRequestMarshaller().marshall(super
+                        .beforeMarshalling(putRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1472,8 +1476,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRecordsRequestMarshaller()
-                        .marshall(putRecordsRequest);
+                request = new PutRecordsRequestMarshaller().marshall(super
+                        .beforeMarshalling(putRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1533,7 +1537,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RemoveTagsFromStreamRequestMarshaller()
-                        .marshall(removeTagsFromStreamRequest);
+                        .marshall(super
+                                .beforeMarshalling(removeTagsFromStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1651,8 +1656,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SplitShardRequestMarshaller()
-                        .marshall(splitShardRequest);
+                request = new SplitShardRequestMarshaller().marshall(super
+                        .beforeMarshalling(splitShardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

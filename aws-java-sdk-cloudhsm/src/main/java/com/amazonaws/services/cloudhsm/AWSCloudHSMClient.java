@@ -269,8 +269,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateHapgRequestMarshaller()
-                        .marshall(createHapgRequest);
+                request = new CreateHapgRequestMarshaller().marshall(super
+                        .beforeMarshalling(createHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -319,8 +319,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateHsmRequestMarshaller()
-                        .marshall(createHsmRequest);
+                request = new CreateHsmRequestMarshaller().marshall(super
+                        .beforeMarshalling(createHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -370,7 +370,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateLunaClientRequestMarshaller()
-                        .marshall(createLunaClientRequest);
+                        .marshall(super
+                                .beforeMarshalling(createLunaClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -418,8 +419,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteHapgRequestMarshaller()
-                        .marshall(deleteHapgRequest);
+                request = new DeleteHapgRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -468,8 +469,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteHsmRequestMarshaller()
-                        .marshall(deleteHsmRequest);
+                request = new DeleteHsmRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -518,7 +519,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteLunaClientRequestMarshaller()
-                        .marshall(deleteLunaClientRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteLunaClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -567,8 +569,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeHapgRequestMarshaller()
-                        .marshall(describeHapgRequest);
+                request = new DescribeHapgRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -617,8 +619,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeHsmRequestMarshaller()
-                        .marshall(describeHsmRequest);
+                request = new DescribeHsmRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -673,7 +675,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeLunaClientRequestMarshaller()
-                        .marshall(describeLunaClientRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeLunaClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -726,8 +729,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetConfigRequestMarshaller()
-                        .marshall(getConfigRequest);
+                request = new GetConfigRequestMarshaller().marshall(super
+                        .beforeMarshalling(getConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -778,7 +781,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListAvailableZonesRequestMarshaller()
-                        .marshall(listAvailableZonesRequest);
+                        .marshall(super
+                                .beforeMarshalling(listAvailableZonesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -836,8 +840,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListHapgsRequestMarshaller()
-                        .marshall(listHapgsRequest);
+                request = new ListHapgsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listHapgsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -896,8 +900,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListHsmsRequestMarshaller()
-                        .marshall(listHsmsRequest);
+                request = new ListHsmsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listHsmsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -956,8 +960,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListLunaClientsRequestMarshaller()
-                        .marshall(listLunaClientsRequest);
+                request = new ListLunaClientsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listLunaClientsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1009,8 +1013,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyHapgRequestMarshaller()
-                        .marshall(modifyHapgRequest);
+                request = new ModifyHapgRequestMarshaller().marshall(super
+                        .beforeMarshalling(modifyHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1058,8 +1062,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyHsmRequestMarshaller()
-                        .marshall(modifyHsmRequest);
+                request = new ModifyHsmRequestMarshaller().marshall(super
+                        .beforeMarshalling(modifyHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1107,7 +1111,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ModifyLunaClientRequestMarshaller()
-                        .marshall(modifyLunaClientRequest);
+                        .marshall(super
+                                .beforeMarshalling(modifyLunaClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

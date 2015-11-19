@@ -400,7 +400,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteConfigRuleRequestMarshaller()
-                        .marshall(deleteConfigRuleRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -452,7 +453,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteDeliveryChannelRequestMarshaller()
-                        .marshall(deleteDeliveryChannelRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -512,7 +514,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeliverConfigSnapshotRequestMarshaller()
-                        .marshall(deliverConfigSnapshotRequest);
+                        .marshall(super
+                                .beforeMarshalling(deliverConfigSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -587,7 +590,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeComplianceByConfigRuleRequestMarshaller()
-                        .marshall(describeComplianceByConfigRuleRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeComplianceByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -669,7 +673,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeComplianceByResourceRequestMarshaller()
-                        .marshall(describeComplianceByResourceRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeComplianceByResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -723,7 +728,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeConfigRuleEvaluationStatusRequestMarshaller()
-                        .marshall(describeConfigRuleEvaluationStatusRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeConfigRuleEvaluationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -774,7 +780,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeConfigRulesRequestMarshaller()
-                        .marshall(describeConfigRulesRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeConfigRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -830,7 +837,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeConfigurationRecorderStatusRequestMarshaller()
-                        .marshall(describeConfigurationRecorderStatusRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeConfigurationRecorderStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -888,7 +896,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeConfigurationRecordersRequestMarshaller()
-                        .marshall(describeConfigurationRecordersRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeConfigurationRecordersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -943,7 +952,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeDeliveryChannelStatusRequestMarshaller()
-                        .marshall(describeDeliveryChannelStatusRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeDeliveryChannelStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1001,7 +1011,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeDeliveryChannelsRequestMarshaller()
-                        .marshall(describeDeliveryChannelsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeDeliveryChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1062,7 +1073,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetComplianceDetailsByConfigRuleRequestMarshaller()
-                        .marshall(getComplianceDetailsByConfigRuleRequest);
+                        .marshall(super
+                                .beforeMarshalling(getComplianceDetailsByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1111,7 +1123,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetComplianceDetailsByResourceRequestMarshaller()
-                        .marshall(getComplianceDetailsByResourceRequest);
+                        .marshall(super
+                                .beforeMarshalling(getComplianceDetailsByResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1155,7 +1168,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetComplianceSummaryByConfigRuleRequestMarshaller()
-                        .marshall(getComplianceSummaryByConfigRuleRequest);
+                        .marshall(super
+                                .beforeMarshalling(getComplianceSummaryByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1208,7 +1222,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetComplianceSummaryByResourceTypeRequestMarshaller()
-                        .marshall(getComplianceSummaryByResourceTypeRequest);
+                        .marshall(super
+                                .beforeMarshalling(getComplianceSummaryByResourceTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1293,7 +1308,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetResourceConfigHistoryRequestMarshaller()
-                        .marshall(getResourceConfigHistoryRequest);
+                        .marshall(super
+                                .beforeMarshalling(getResourceConfigHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1364,7 +1380,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListDiscoveredResourcesRequestMarshaller()
-                        .marshall(listDiscoveredResourcesRequest);
+                        .marshall(super
+                                .beforeMarshalling(listDiscoveredResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1461,8 +1478,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutConfigRuleRequestMarshaller()
-                        .marshall(putConfigRuleRequest);
+                request = new PutConfigRuleRequestMarshaller().marshall(super
+                        .beforeMarshalling(putConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1531,7 +1548,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutConfigurationRecorderRequestMarshaller()
-                        .marshall(putConfigurationRecorderRequest);
+                        .marshall(super
+                                .beforeMarshalling(putConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1603,7 +1621,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutDeliveryChannelRequestMarshaller()
-                        .marshall(putDeliveryChannelRequest);
+                        .marshall(super
+                                .beforeMarshalling(putDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1652,8 +1671,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutEvaluationsRequestMarshaller()
-                        .marshall(putEvaluationsRequest);
+                request = new PutEvaluationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(putEvaluationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1704,7 +1723,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new StartConfigurationRecorderRequestMarshaller()
-                        .marshall(startConfigurationRecorderRequest);
+                        .marshall(super
+                                .beforeMarshalling(startConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1749,7 +1769,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new StopConfigurationRecorderRequestMarshaller()
-                        .marshall(stopConfigurationRecorderRequest);
+                        .marshall(super
+                                .beforeMarshalling(stopConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

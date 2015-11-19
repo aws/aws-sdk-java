@@ -357,7 +357,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CancelExportTaskRequestMarshaller()
-                        .marshall(cancelExportTaskRequest);
+                        .marshall(super
+                                .beforeMarshalling(cancelExportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -418,7 +419,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateExportTaskRequestMarshaller()
-                        .marshall(createExportTaskRequest);
+                        .marshall(super
+                                .beforeMarshalling(createExportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -479,8 +481,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLogGroupRequestMarshaller()
-                        .marshall(createLogGroupRequest);
+                request = new CreateLogGroupRequestMarshaller().marshall(super
+                        .beforeMarshalling(createLogGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -534,8 +536,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLogStreamRequestMarshaller()
-                        .marshall(createLogStreamRequest);
+                request = new CreateLogStreamRequestMarshaller().marshall(super
+                        .beforeMarshalling(createLogStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -585,7 +587,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteDestinationRequestMarshaller()
-                        .marshall(deleteDestinationRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -632,8 +635,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLogGroupRequestMarshaller()
-                        .marshall(deleteLogGroupRequest);
+                request = new DeleteLogGroupRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteLogGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -680,8 +683,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLogStreamRequestMarshaller()
-                        .marshall(deleteLogStreamRequest);
+                request = new DeleteLogStreamRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteLogStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -729,7 +732,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteMetricFilterRequestMarshaller()
-                        .marshall(deleteMetricFilterRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteMetricFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -778,7 +782,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteRetentionPolicyRequestMarshaller()
-                        .marshall(deleteRetentionPolicyRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteRetentionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -826,7 +831,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteSubscriptionFilterRequestMarshaller()
-                        .marshall(deleteSubscriptionFilterRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteSubscriptionFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -880,7 +886,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeDestinationsRequestMarshaller()
-                        .marshall(describeDestinationsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeDestinationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -942,7 +949,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeExportTasksRequestMarshaller()
-                        .marshall(describeExportTasksRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeExportTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -998,7 +1006,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeLogGroupsRequestMarshaller()
-                        .marshall(describeLogGroupsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeLogGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1063,7 +1072,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeLogStreamsRequestMarshaller()
-                        .marshall(describeLogStreamsRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeLogStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1120,7 +1130,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeMetricFiltersRequestMarshaller()
-                        .marshall(describeMetricFiltersRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeMetricFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1177,7 +1188,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeSubscriptionFiltersRequestMarshaller()
-                        .marshall(describeSubscriptionFiltersRequest);
+                        .marshall(super
+                                .beforeMarshalling(describeSubscriptionFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1241,8 +1253,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new FilterLogEventsRequestMarshaller()
-                        .marshall(filterLogEventsRequest);
+                request = new FilterLogEventsRequestMarshaller().marshall(super
+                        .beforeMarshalling(filterLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1302,8 +1314,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetLogEventsRequestMarshaller()
-                        .marshall(getLogEventsRequest);
+                request = new GetLogEventsRequestMarshaller().marshall(super
+                        .beforeMarshalling(getLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1364,8 +1376,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutDestinationRequestMarshaller()
-                        .marshall(putDestinationRequest);
+                request = new PutDestinationRequestMarshaller().marshall(super
+                        .beforeMarshalling(putDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1417,7 +1429,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutDestinationPolicyRequestMarshaller()
-                        .marshall(putDestinationPolicyRequest);
+                        .marshall(super
+                                .beforeMarshalling(putDestinationPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1488,8 +1501,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutLogEventsRequestMarshaller()
-                        .marshall(putLogEventsRequest);
+                request = new PutLogEventsRequestMarshaller().marshall(super
+                        .beforeMarshalling(putLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1547,8 +1560,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutMetricFilterRequestMarshaller()
-                        .marshall(putMetricFilterRequest);
+                request = new PutMetricFilterRequestMarshaller().marshall(super
+                        .beforeMarshalling(putMetricFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1598,7 +1611,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutRetentionPolicyRequestMarshaller()
-                        .marshall(putRetentionPolicyRequest);
+                        .marshall(super
+                                .beforeMarshalling(putRetentionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1663,7 +1677,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutSubscriptionFilterRequestMarshaller()
-                        .marshall(putSubscriptionFilterRequest);
+                        .marshall(super
+                                .beforeMarshalling(putSubscriptionFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1709,7 +1724,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new TestMetricFilterRequestMarshaller()
-                        .marshall(testMetricFilterRequest);
+                        .marshall(super
+                                .beforeMarshalling(testMetricFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

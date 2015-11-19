@@ -439,8 +439,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AcknowledgeJobRequestMarshaller()
-                        .marshall(acknowledgeJobRequest);
+                request = new AcknowledgeJobRequestMarshaller().marshall(super
+                        .beforeMarshalling(acknowledgeJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -494,7 +494,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AcknowledgeThirdPartyJobRequestMarshaller()
-                        .marshall(acknowledgeThirdPartyJobRequest);
+                        .marshall(super
+                                .beforeMarshalling(acknowledgeThirdPartyJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -544,7 +545,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateCustomActionTypeRequestMarshaller()
-                        .marshall(createCustomActionTypeRequest);
+                        .marshall(super
+                                .beforeMarshalling(createCustomActionTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -604,8 +606,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePipelineRequestMarshaller()
-                        .marshall(createPipelineRequest);
+                request = new CreatePipelineRequestMarshaller().marshall(super
+                        .beforeMarshalling(createPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -658,7 +660,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteCustomActionTypeRequestMarshaller()
-                        .marshall(deleteCustomActionTypeRequest);
+                        .marshall(super
+                                .beforeMarshalling(deleteCustomActionTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -698,8 +701,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePipelineRequestMarshaller()
-                        .marshall(deletePipelineRequest);
+                request = new DeletePipelineRequestMarshaller().marshall(super
+                        .beforeMarshalling(deletePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -748,7 +751,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DisableStageTransitionRequestMarshaller()
-                        .marshall(disableStageTransitionRequest);
+                        .marshall(super
+                                .beforeMarshalling(disableStageTransitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -796,7 +800,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new EnableStageTransitionRequestMarshaller()
-                        .marshall(enableStageTransitionRequest);
+                        .marshall(super
+                                .beforeMarshalling(enableStageTransitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -850,8 +855,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetJobDetailsRequestMarshaller()
-                        .marshall(getJobDetailsRequest);
+                request = new GetJobDetailsRequestMarshaller().marshall(super
+                        .beforeMarshalling(getJobDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -903,8 +908,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPipelineRequestMarshaller()
-                        .marshall(getPipelineRequest);
+                request = new GetPipelineRequestMarshaller().marshall(super
+                        .beforeMarshalling(getPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -953,7 +958,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetPipelineStateRequestMarshaller()
-                        .marshall(getPipelineStateRequest);
+                        .marshall(super
+                                .beforeMarshalling(getPipelineStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1017,7 +1023,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetThirdPartyJobDetailsRequestMarshaller()
-                        .marshall(getThirdPartyJobDetailsRequest);
+                        .marshall(super
+                                .beforeMarshalling(getThirdPartyJobDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1066,8 +1073,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListActionTypesRequestMarshaller()
-                        .marshall(listActionTypesRequest);
+                request = new ListActionTypesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listActionTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1113,8 +1120,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPipelinesRequestMarshaller()
-                        .marshall(listPipelinesRequest);
+                request = new ListPipelinesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listPipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1168,8 +1175,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PollForJobsRequestMarshaller()
-                        .marshall(pollForJobsRequest);
+                request = new PollForJobsRequestMarshaller().marshall(super
+                        .beforeMarshalling(pollForJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1226,7 +1233,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PollForThirdPartyJobsRequestMarshaller()
-                        .marshall(pollForThirdPartyJobsRequest);
+                        .marshall(super
+                                .beforeMarshalling(pollForThirdPartyJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1280,7 +1288,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutActionRevisionRequestMarshaller()
-                        .marshall(putActionRevisionRequest);
+                        .marshall(super
+                                .beforeMarshalling(putActionRevisionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1330,7 +1339,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutJobFailureResultRequestMarshaller()
-                        .marshall(putJobFailureResultRequest);
+                        .marshall(super
+                                .beforeMarshalling(putJobFailureResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1378,7 +1388,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutJobSuccessResultRequestMarshaller()
-                        .marshall(putJobSuccessResultRequest);
+                        .marshall(super
+                                .beforeMarshalling(putJobSuccessResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1428,7 +1439,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutThirdPartyJobFailureResultRequestMarshaller()
-                        .marshall(putThirdPartyJobFailureResultRequest);
+                        .marshall(super
+                                .beforeMarshalling(putThirdPartyJobFailureResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1479,7 +1491,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutThirdPartyJobSuccessResultRequestMarshaller()
-                        .marshall(putThirdPartyJobSuccessResultRequest);
+                        .marshall(super
+                                .beforeMarshalling(putThirdPartyJobSuccessResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1527,7 +1540,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new StartPipelineExecutionRequestMarshaller()
-                        .marshall(startPipelineExecutionRequest);
+                        .marshall(super
+                                .beforeMarshalling(startPipelineExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1585,8 +1599,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdatePipelineRequestMarshaller()
-                        .marshall(updatePipelineRequest);
+                request = new UpdatePipelineRequestMarshaller().marshall(super
+                        .beforeMarshalling(updatePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

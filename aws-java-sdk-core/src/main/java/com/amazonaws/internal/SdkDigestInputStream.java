@@ -48,14 +48,14 @@ public class SdkDigestInputStream extends DigestInputStream implements
      * reaching end of file before <code>n</code> bytes have been skipped is
      * only one possibility. The actual number of bytes skipped is returned. If
      * <code>n</code> is negative, no bytes are skipped.
-     * 
+     *
      * <p>
      * The <code>skip</code> method of this class creates a byte array and then
      * repeatedly reads into it until <code>n</code> bytes have been read or the
      * end of the stream has been reached. Subclasses are encouraged to provide
      * a more efficient implementation of this method. For instance, the
      * implementation may depend on the ability to seek.
-     * 
+     *
      * @param n
      *            the number of bytes to be skipped.
      * @return the actual number of bytes skipped.
@@ -72,7 +72,7 @@ public class SdkDigestInputStream extends DigestInputStream implements
         while (m > 0) {
             int len = read(b, 0, (int)Math.min(m, b.length));
             if (len == -1)
-                return (m == n) ? -1 : (n - m);
+                return n - m;
             m -= len;
         }
         assert (m == 0);
