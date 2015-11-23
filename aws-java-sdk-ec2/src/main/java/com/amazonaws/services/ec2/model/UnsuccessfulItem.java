@@ -25,47 +25,14 @@ import java.io.Serializable;
 public class UnsuccessfulItem implements Serializable, Cloneable {
 
     /**
-     * The ID of the resource.
-     */
-    private String resourceId;
-
-    /**
      * Information about the error.
      */
     private UnsuccessfulItemError error;
 
     /**
      * The ID of the resource.
-     *
-     * @return The ID of the resource.
      */
-    public String getResourceId() {
-        return resourceId;
-    }
-    
-    /**
-     * The ID of the resource.
-     *
-     * @param resourceId The ID of the resource.
-     */
-    public void setResourceId(String resourceId) {
-        this.resourceId = resourceId;
-    }
-    
-    /**
-     * The ID of the resource.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param resourceId The ID of the resource.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public UnsuccessfulItem withResourceId(String resourceId) {
-        this.resourceId = resourceId;
-        return this;
-    }
+    private String resourceId;
 
     /**
      * Information about the error.
@@ -101,6 +68,39 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
     }
 
     /**
+     * The ID of the resource.
+     *
+     * @return The ID of the resource.
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+    
+    /**
+     * The ID of the resource.
+     *
+     * @param resourceId The ID of the resource.
+     */
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+    
+    /**
+     * The ID of the resource.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceId The ID of the resource.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UnsuccessfulItem withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -112,8 +112,8 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getResourceId() != null) sb.append("ResourceId: " + getResourceId() + ",");
-        if (getError() != null) sb.append("Error: " + getError() );
+        if (getError() != null) sb.append("Error: " + getError() + ",");
+        if (getResourceId() != null) sb.append("ResourceId: " + getResourceId() );
         sb.append("}");
         return sb.toString();
     }
@@ -123,8 +123,8 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode()); 
         hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode()); 
         return hashCode;
     }
     
@@ -136,10 +136,10 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
         if (obj instanceof UnsuccessfulItem == false) return false;
         UnsuccessfulItem other = (UnsuccessfulItem)obj;
         
-        if (other.getResourceId() == null ^ this.getResourceId() == null) return false;
-        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false) return false; 
         if (other.getError() == null ^ this.getError() == null) return false;
         if (other.getError() != null && other.getError().equals(this.getError()) == false) return false; 
+        if (other.getResourceId() == null ^ this.getResourceId() == null) return false;
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false) return false; 
         return true;
     }
     

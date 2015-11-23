@@ -182,7 +182,7 @@ public class Instance implements Serializable, Cloneable {
     private String virtualizationType;
 
     /**
-     * Indicates whether this is a Spot Instance.
+     * Indicates whether this is a Spot instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>spot
@@ -1524,12 +1524,12 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether this is a Spot Instance.
+     * Indicates whether this is a Spot instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>spot
      *
-     * @return Indicates whether this is a Spot Instance.
+     * @return Indicates whether this is a Spot instance.
      *
      * @see InstanceLifecycleType
      */
@@ -1538,12 +1538,12 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * Indicates whether this is a Spot Instance.
+     * Indicates whether this is a Spot instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>spot
      *
-     * @param instanceLifecycle Indicates whether this is a Spot Instance.
+     * @param instanceLifecycle Indicates whether this is a Spot instance.
      *
      * @see InstanceLifecycleType
      */
@@ -1552,14 +1552,14 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * Indicates whether this is a Spot Instance.
+     * Indicates whether this is a Spot instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>spot
      *
-     * @param instanceLifecycle Indicates whether this is a Spot Instance.
+     * @param instanceLifecycle Indicates whether this is a Spot instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1572,12 +1572,12 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether this is a Spot Instance.
+     * Indicates whether this is a Spot instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>spot
      *
-     * @param instanceLifecycle Indicates whether this is a Spot Instance.
+     * @param instanceLifecycle Indicates whether this is a Spot instance.
      *
      * @see InstanceLifecycleType
      */
@@ -1586,14 +1586,14 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * Indicates whether this is a Spot Instance.
+     * Indicates whether this is a Spot instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>spot
      *
-     * @param instanceLifecycle Indicates whether this is a Spot Instance.
+     * @param instanceLifecycle Indicates whether this is a Spot instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

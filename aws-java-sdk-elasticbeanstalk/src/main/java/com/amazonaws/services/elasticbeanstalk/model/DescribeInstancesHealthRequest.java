@@ -41,7 +41,8 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns a list of
+     * instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> attributeNames;
@@ -132,12 +133,13 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns a list of
+     * instances.
      * </p>
      * 
      * @return Specifies the response elements you wish to receive. If no
-     *         attribute names are specified, AWS Elastic Beanstalk returns all
-     *         response elements.
+     *         attribute names are specified, AWS Elastic Beanstalk only returns
+     *         a list of instances.
      * @see InstancesHealthAttribute
      */
     public java.util.List<String> getAttributeNames() {
@@ -150,13 +152,14 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns a list of
+     * instances.
      * </p>
      * 
      * @param attributeNames
      *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk returns all
-     *        response elements.
+     *        attribute names are specified, AWS Elastic Beanstalk only returns
+     *        a list of instances.
      * @see InstancesHealthAttribute
      */
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
@@ -172,7 +175,8 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns a list of
+     * instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -183,8 +187,8 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      * 
      * @param attributeNames
      *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk returns all
-     *        response elements.
+     *        attribute names are specified, AWS Elastic Beanstalk only returns
+     *        a list of instances.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstancesHealthAttribute
@@ -204,13 +208,14 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns a list of
+     * instances.
      * </p>
      * 
      * @param attributeNames
      *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk returns all
-     *        response elements.
+     *        attribute names are specified, AWS Elastic Beanstalk only returns
+     *        a list of instances.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstancesHealthAttribute
@@ -224,13 +229,14 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns a list of
+     * instances.
      * </p>
      * 
      * @param attributeNames
      *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk returns all
-     *        response elements.
+     *        attribute names are specified, AWS Elastic Beanstalk only returns
+     *        a list of instances.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstancesHealthAttribute

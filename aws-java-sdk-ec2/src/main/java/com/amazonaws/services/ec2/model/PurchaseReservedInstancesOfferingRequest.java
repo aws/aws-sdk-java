@@ -23,16 +23,16 @@ import com.amazonaws.services.ec2.model.transform.PurchaseReservedInstancesOffer
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#purchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest) PurchaseReservedInstancesOffering operation}.
  * <p>
- * Purchases a Reserved Instance for use with your account. With Amazon
- * EC2 Reserved Instances, you obtain a capacity reservation for a
+ * Purchases a Reserved instance for use with your account. With Amazon
+ * EC2 Reserved instances, you obtain a capacity reservation for a
  * certain instance configuration over a specified period of time and pay
- * a lower hourly rate compared to on-Demand Instance pricing.
+ * a lower hourly rate compared to On-Demand Instance pricing.
  * </p>
  * <p>
  * Use DescribeReservedInstancesOfferings to get a list of Reserved
- * Instance offerings that match your specifications. After you've
- * purchased a Reserved Instance, you can check for your new Reserved
- * Instance with DescribeReservedInstances.
+ * instance offerings that match your specifications. After you've
+ * purchased a Reserved instance, you can check for your new Reserved
+ * instance with DescribeReservedInstances.
  * </p>
  * <p>
  * For more information, see
@@ -45,18 +45,18 @@ import com.amazonaws.services.ec2.model.transform.PurchaseReservedInstancesOffer
 public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<PurchaseReservedInstancesOfferingRequest> {
 
     /**
-     * The ID of the Reserved Instance offering to purchase.
+     * The ID of the Reserved instance offering to purchase.
      */
     private String reservedInstancesOfferingId;
 
     /**
-     * The number of Reserved Instances to purchase.
+     * The number of Reserved instances to purchase.
      */
     private Integer instanceCount;
 
     /**
      * Specified for Reserved Instance Marketplace offerings to limit the
-     * total order and ensure that the Reserved Instances are not purchased
+     * total order and ensure that the Reserved instances are not purchased
      * at unexpected prices.
      */
     private ReservedInstanceLimitPrice limitPrice;
@@ -72,9 +72,9 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param reservedInstancesOfferingId The ID of the Reserved Instance
+     * @param reservedInstancesOfferingId The ID of the Reserved instance
      * offering to purchase.
-     * @param instanceCount The number of Reserved Instances to purchase.
+     * @param instanceCount The number of Reserved instances to purchase.
      */
     public PurchaseReservedInstancesOfferingRequest(String reservedInstancesOfferingId, Integer instanceCount) {
         setReservedInstancesOfferingId(reservedInstancesOfferingId);
@@ -82,29 +82,29 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     }
 
     /**
-     * The ID of the Reserved Instance offering to purchase.
+     * The ID of the Reserved instance offering to purchase.
      *
-     * @return The ID of the Reserved Instance offering to purchase.
+     * @return The ID of the Reserved instance offering to purchase.
      */
     public String getReservedInstancesOfferingId() {
         return reservedInstancesOfferingId;
     }
     
     /**
-     * The ID of the Reserved Instance offering to purchase.
+     * The ID of the Reserved instance offering to purchase.
      *
-     * @param reservedInstancesOfferingId The ID of the Reserved Instance offering to purchase.
+     * @param reservedInstancesOfferingId The ID of the Reserved instance offering to purchase.
      */
     public void setReservedInstancesOfferingId(String reservedInstancesOfferingId) {
         this.reservedInstancesOfferingId = reservedInstancesOfferingId;
     }
     
     /**
-     * The ID of the Reserved Instance offering to purchase.
+     * The ID of the Reserved instance offering to purchase.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesOfferingId The ID of the Reserved Instance offering to purchase.
+     * @param reservedInstancesOfferingId The ID of the Reserved instance offering to purchase.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -115,29 +115,29 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     }
 
     /**
-     * The number of Reserved Instances to purchase.
+     * The number of Reserved instances to purchase.
      *
-     * @return The number of Reserved Instances to purchase.
+     * @return The number of Reserved instances to purchase.
      */
     public Integer getInstanceCount() {
         return instanceCount;
     }
     
     /**
-     * The number of Reserved Instances to purchase.
+     * The number of Reserved instances to purchase.
      *
-     * @param instanceCount The number of Reserved Instances to purchase.
+     * @param instanceCount The number of Reserved instances to purchase.
      */
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
     
     /**
-     * The number of Reserved Instances to purchase.
+     * The number of Reserved instances to purchase.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceCount The number of Reserved Instances to purchase.
+     * @param instanceCount The number of Reserved instances to purchase.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -149,11 +149,11 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
 
     /**
      * Specified for Reserved Instance Marketplace offerings to limit the
-     * total order and ensure that the Reserved Instances are not purchased
+     * total order and ensure that the Reserved instances are not purchased
      * at unexpected prices.
      *
      * @return Specified for Reserved Instance Marketplace offerings to limit the
-     *         total order and ensure that the Reserved Instances are not purchased
+     *         total order and ensure that the Reserved instances are not purchased
      *         at unexpected prices.
      */
     public ReservedInstanceLimitPrice getLimitPrice() {
@@ -162,11 +162,11 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     
     /**
      * Specified for Reserved Instance Marketplace offerings to limit the
-     * total order and ensure that the Reserved Instances are not purchased
+     * total order and ensure that the Reserved instances are not purchased
      * at unexpected prices.
      *
      * @param limitPrice Specified for Reserved Instance Marketplace offerings to limit the
-     *         total order and ensure that the Reserved Instances are not purchased
+     *         total order and ensure that the Reserved instances are not purchased
      *         at unexpected prices.
      */
     public void setLimitPrice(ReservedInstanceLimitPrice limitPrice) {
@@ -175,13 +175,13 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     
     /**
      * Specified for Reserved Instance Marketplace offerings to limit the
-     * total order and ensure that the Reserved Instances are not purchased
+     * total order and ensure that the Reserved instances are not purchased
      * at unexpected prices.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param limitPrice Specified for Reserved Instance Marketplace offerings to limit the
-     *         total order and ensure that the Reserved Instances are not purchased
+     *         total order and ensure that the Reserved instances are not purchased
      *         at unexpected prices.
      *
      * @return A reference to this updated object so that method calls can be chained

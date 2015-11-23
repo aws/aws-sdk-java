@@ -82,6 +82,35 @@ public class Task implements Serializable, Cloneable {
      * </p>
      */
     private String startedBy;
+    /**
+     * <p>
+     * The reason the task was stopped.
+     * </p>
+     */
+    private String stoppedReason;
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was created (the
+     * task entered the <code>PENDING</code> state).
+     * </p>
+     */
+    private java.util.Date createdAt;
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was started (the
+     * task transitioned from the <code>PENDING</code> state to the
+     * <code>RUNNING</code> state).
+     * </p>
+     */
+    private java.util.Date startedAt;
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was stopped (the
+     * task transitioned from the <code>RUNNING</code> state to the
+     * <code>STOPPED</code> state).
+     * </p>
+     */
+    private java.util.Date stoppedAt;
 
     /**
      * <p>
@@ -492,6 +521,188 @@ public class Task implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The reason the task was stopped.
+     * </p>
+     * 
+     * @param stoppedReason
+     *        The reason the task was stopped.
+     */
+    public void setStoppedReason(String stoppedReason) {
+        this.stoppedReason = stoppedReason;
+    }
+
+    /**
+     * <p>
+     * The reason the task was stopped.
+     * </p>
+     * 
+     * @return The reason the task was stopped.
+     */
+    public String getStoppedReason() {
+        return this.stoppedReason;
+    }
+
+    /**
+     * <p>
+     * The reason the task was stopped.
+     * </p>
+     * 
+     * @param stoppedReason
+     *        The reason the task was stopped.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Task withStoppedReason(String stoppedReason) {
+        setStoppedReason(stoppedReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was created (the
+     * task entered the <code>PENDING</code> state).
+     * </p>
+     * 
+     * @param createdAt
+     *        The Unix time in seconds and milliseconds when the task was
+     *        created (the task entered the <code>PENDING</code> state).
+     */
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was created (the
+     * task entered the <code>PENDING</code> state).
+     * </p>
+     * 
+     * @return The Unix time in seconds and milliseconds when the task was
+     *         created (the task entered the <code>PENDING</code> state).
+     */
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was created (the
+     * task entered the <code>PENDING</code> state).
+     * </p>
+     * 
+     * @param createdAt
+     *        The Unix time in seconds and milliseconds when the task was
+     *        created (the task entered the <code>PENDING</code> state).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Task withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was started (the
+     * task transitioned from the <code>PENDING</code> state to the
+     * <code>RUNNING</code> state).
+     * </p>
+     * 
+     * @param startedAt
+     *        The Unix time in seconds and milliseconds when the task was
+     *        started (the task transitioned from the <code>PENDING</code> state
+     *        to the <code>RUNNING</code> state).
+     */
+    public void setStartedAt(java.util.Date startedAt) {
+        this.startedAt = startedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was started (the
+     * task transitioned from the <code>PENDING</code> state to the
+     * <code>RUNNING</code> state).
+     * </p>
+     * 
+     * @return The Unix time in seconds and milliseconds when the task was
+     *         started (the task transitioned from the <code>PENDING</code>
+     *         state to the <code>RUNNING</code> state).
+     */
+    public java.util.Date getStartedAt() {
+        return this.startedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was started (the
+     * task transitioned from the <code>PENDING</code> state to the
+     * <code>RUNNING</code> state).
+     * </p>
+     * 
+     * @param startedAt
+     *        The Unix time in seconds and milliseconds when the task was
+     *        started (the task transitioned from the <code>PENDING</code> state
+     *        to the <code>RUNNING</code> state).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Task withStartedAt(java.util.Date startedAt) {
+        setStartedAt(startedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was stopped (the
+     * task transitioned from the <code>RUNNING</code> state to the
+     * <code>STOPPED</code> state).
+     * </p>
+     * 
+     * @param stoppedAt
+     *        The Unix time in seconds and milliseconds when the task was
+     *        stopped (the task transitioned from the <code>RUNNING</code> state
+     *        to the <code>STOPPED</code> state).
+     */
+    public void setStoppedAt(java.util.Date stoppedAt) {
+        this.stoppedAt = stoppedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was stopped (the
+     * task transitioned from the <code>RUNNING</code> state to the
+     * <code>STOPPED</code> state).
+     * </p>
+     * 
+     * @return The Unix time in seconds and milliseconds when the task was
+     *         stopped (the task transitioned from the <code>RUNNING</code>
+     *         state to the <code>STOPPED</code> state).
+     */
+    public java.util.Date getStoppedAt() {
+        return this.stoppedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix time in seconds and milliseconds when the task was stopped (the
+     * task transitioned from the <code>RUNNING</code> state to the
+     * <code>STOPPED</code> state).
+     * </p>
+     * 
+     * @param stoppedAt
+     *        The Unix time in seconds and milliseconds when the task was
+     *        stopped (the task transitioned from the <code>RUNNING</code> state
+     *        to the <code>STOPPED</code> state).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Task withStoppedAt(java.util.Date stoppedAt) {
+        setStoppedAt(stoppedAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -521,7 +732,15 @@ public class Task implements Serializable, Cloneable {
         if (getContainers() != null)
             sb.append("Containers: " + getContainers() + ",");
         if (getStartedBy() != null)
-            sb.append("StartedBy: " + getStartedBy());
+            sb.append("StartedBy: " + getStartedBy() + ",");
+        if (getStoppedReason() != null)
+            sb.append("StoppedReason: " + getStoppedReason() + ",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: " + getCreatedAt() + ",");
+        if (getStartedAt() != null)
+            sb.append("StartedAt: " + getStartedAt() + ",");
+        if (getStoppedAt() != null)
+            sb.append("StoppedAt: " + getStoppedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -585,6 +804,26 @@ public class Task implements Serializable, Cloneable {
         if (other.getStartedBy() != null
                 && other.getStartedBy().equals(this.getStartedBy()) == false)
             return false;
+        if (other.getStoppedReason() == null ^ this.getStoppedReason() == null)
+            return false;
+        if (other.getStoppedReason() != null
+                && other.getStoppedReason().equals(this.getStoppedReason()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null
+                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getStartedAt() == null ^ this.getStartedAt() == null)
+            return false;
+        if (other.getStartedAt() != null
+                && other.getStartedAt().equals(this.getStartedAt()) == false)
+            return false;
+        if (other.getStoppedAt() == null ^ this.getStoppedAt() == null)
+            return false;
+        if (other.getStoppedAt() != null
+                && other.getStoppedAt().equals(this.getStoppedAt()) == false)
+            return false;
         return true;
     }
 
@@ -617,6 +856,16 @@ public class Task implements Serializable, Cloneable {
                 + ((getContainers() == null) ? 0 : getContainers().hashCode());
         hashCode = prime * hashCode
                 + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStoppedReason() == null) ? 0 : getStoppedReason()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode
+                + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
+        hashCode = prime * hashCode
+                + ((getStoppedAt() == null) ? 0 : getStoppedAt().hashCode());
         return hashCode;
     }
 

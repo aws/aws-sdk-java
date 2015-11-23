@@ -24,34 +24,34 @@ import java.io.Serializable;
 public class RunInstancesResult implements Serializable, Cloneable {
 
     /**
-     * One or more reservations.
+     * Zero or more reservations.
      */
     private Reservation reservation;
 
     /**
-     * One or more reservations.
+     * Zero or more reservations.
      *
-     * @return One or more reservations.
+     * @return Zero or more reservations.
      */
     public Reservation getReservation() {
         return reservation;
     }
     
     /**
-     * One or more reservations.
+     * Zero or more reservations.
      *
-     * @param reservation One or more reservations.
+     * @param reservation Zero or more reservations.
      */
     public void setReservation(Reservation reservation) {
         this.reservation = reservation;
     }
     
     /**
-     * One or more reservations.
+     * Zero or more reservations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservation One or more reservations.
+     * @param reservation Zero or more reservations.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

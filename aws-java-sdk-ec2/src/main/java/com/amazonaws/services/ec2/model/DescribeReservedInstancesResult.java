@@ -22,14 +22,14 @@ import java.io.Serializable;
 public class DescribeReservedInstancesResult implements Serializable, Cloneable {
 
     /**
-     * A list of Reserved Instances.
+     * A list of Reserved instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstances> reservedInstances;
 
     /**
-     * A list of Reserved Instances.
+     * A list of Reserved instances.
      *
-     * @return A list of Reserved Instances.
+     * @return A list of Reserved instances.
      */
     public java.util.List<ReservedInstances> getReservedInstances() {
         if (reservedInstances == null) {
@@ -40,9 +40,9 @@ public class DescribeReservedInstancesResult implements Serializable, Cloneable 
     }
     
     /**
-     * A list of Reserved Instances.
+     * A list of Reserved instances.
      *
-     * @param reservedInstances A list of Reserved Instances.
+     * @param reservedInstances A list of Reserved instances.
      */
     public void setReservedInstances(java.util.Collection<ReservedInstances> reservedInstances) {
         if (reservedInstances == null) {
@@ -55,7 +55,7 @@ public class DescribeReservedInstancesResult implements Serializable, Cloneable 
     }
     
     /**
-     * A list of Reserved Instances.
+     * A list of Reserved instances.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setReservedInstances(java.util.Collection)} or
@@ -64,7 +64,7 @@ public class DescribeReservedInstancesResult implements Serializable, Cloneable 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstances A list of Reserved Instances.
+     * @param reservedInstances A list of Reserved instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -78,11 +78,11 @@ public class DescribeReservedInstancesResult implements Serializable, Cloneable 
     }
     
     /**
-     * A list of Reserved Instances.
+     * A list of Reserved instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstances A list of Reserved Instances.
+     * @param reservedInstances A list of Reserved instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

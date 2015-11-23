@@ -162,6 +162,15 @@ public class CreateEnvironmentResultStaxUnmarshaller implements
                                     .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("EnvironmentLinks/member",
+                        targetDepth)) {
+                    createEnvironmentResult.getEnvironmentLinks().add(
+                            EnvironmentLinkStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createEnvironmentResult;

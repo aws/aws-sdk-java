@@ -127,21 +127,6 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * Describes the health status of the environment. AWS Elastic Beanstalk
      * indicates the failure levels for a running environment:
      * </p>
-     * <enumValues> <value name="Red">
-     * <p>
-     * <code>Red</code> : Indicates the environment is not working.
-     * </p>
-     * </value> <value name="Yellow">
-     * <p>
-     * <code>Yellow</code>: Indicates that something is wrong, the application
-     * might not be available, but the instances appear running.
-     * </p>
-     * </value> <value name="Green">
-     * <p>
-     * <code>Green</code>: Indicates the environment is healthy and fully
-     * functional.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs
      * when three or more consecutive failures occur for an environment.</li>
@@ -180,6 +165,12 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * </p>
      */
     private EnvironmentTier tier;
+    /**
+     * <p>
+     * A list of links to other environments in the same group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<EnvironmentLink> environmentLinks;
 
     /**
      * <p>
@@ -901,21 +892,6 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * Describes the health status of the environment. AWS Elastic Beanstalk
      * indicates the failure levels for a running environment:
      * </p>
-     * <enumValues> <value name="Red">
-     * <p>
-     * <code>Red</code> : Indicates the environment is not working.
-     * </p>
-     * </value> <value name="Yellow">
-     * <p>
-     * <code>Yellow</code>: Indicates that something is wrong, the application
-     * might not be available, but the instances appear running.
-     * </p>
-     * </value> <value name="Green">
-     * <p>
-     * <code>Green</code>: Indicates the environment is healthy and fully
-     * functional.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs
      * when three or more consecutive failures occur for an environment.</li>
@@ -935,22 +911,7 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * @param health
      *        Describes the health status of the environment. AWS Elastic
      *        Beanstalk indicates the failure levels for a running environment:
-     *        </p> <enumValues> <value name="Red">
-     *        <p>
-     *        <code>Red</code> : Indicates the environment is not working.
      *        </p>
-     *        </value> <value name="Yellow">
-     *        <p>
-     *        <code>Yellow</code>: Indicates that something is wrong, the
-     *        application might not be available, but the instances appear
-     *        running.
-     *        </p>
-     *        </value> <value name="Green">
-     *        <p>
-     *        <code>Green</code>: Indicates the environment is healthy and fully
-     *        functional.
-     *        </p>
-     *        </value> </enumValues>
      *        <ul>
      *        <li> <code>Red</code>: Indicates the environment is not responsive.
      *        Occurs when three or more consecutive failures occur for an
@@ -978,21 +939,6 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * Describes the health status of the environment. AWS Elastic Beanstalk
      * indicates the failure levels for a running environment:
      * </p>
-     * <enumValues> <value name="Red">
-     * <p>
-     * <code>Red</code> : Indicates the environment is not working.
-     * </p>
-     * </value> <value name="Yellow">
-     * <p>
-     * <code>Yellow</code>: Indicates that something is wrong, the application
-     * might not be available, but the instances appear running.
-     * </p>
-     * </value> <value name="Green">
-     * <p>
-     * <code>Green</code>: Indicates the environment is healthy and fully
-     * functional.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs
      * when three or more consecutive failures occur for an environment.</li>
@@ -1011,22 +957,7 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return Describes the health status of the environment. AWS Elastic
      *         Beanstalk indicates the failure levels for a running environment:
-     *         </p> <enumValues> <value name="Red">
-     *         <p>
-     *         <code>Red</code> : Indicates the environment is not working.
      *         </p>
-     *         </value> <value name="Yellow">
-     *         <p>
-     *         <code>Yellow</code>: Indicates that something is wrong, the
-     *         application might not be available, but the instances appear
-     *         running.
-     *         </p>
-     *         </value> <value name="Green">
-     *         <p>
-     *         <code>Green</code>: Indicates the environment is healthy and
-     *         fully functional.
-     *         </p>
-     *         </value> </enumValues>
      *         <ul>
      *         <li> <code>Red</code>: Indicates the environment is not
      *         responsive. Occurs when three or more consecutive failures occur
@@ -1054,21 +985,6 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * Describes the health status of the environment. AWS Elastic Beanstalk
      * indicates the failure levels for a running environment:
      * </p>
-     * <enumValues> <value name="Red">
-     * <p>
-     * <code>Red</code> : Indicates the environment is not working.
-     * </p>
-     * </value> <value name="Yellow">
-     * <p>
-     * <code>Yellow</code>: Indicates that something is wrong, the application
-     * might not be available, but the instances appear running.
-     * </p>
-     * </value> <value name="Green">
-     * <p>
-     * <code>Green</code>: Indicates the environment is healthy and fully
-     * functional.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs
      * when three or more consecutive failures occur for an environment.</li>
@@ -1088,22 +1004,7 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * @param health
      *        Describes the health status of the environment. AWS Elastic
      *        Beanstalk indicates the failure levels for a running environment:
-     *        </p> <enumValues> <value name="Red">
-     *        <p>
-     *        <code>Red</code> : Indicates the environment is not working.
      *        </p>
-     *        </value> <value name="Yellow">
-     *        <p>
-     *        <code>Yellow</code>: Indicates that something is wrong, the
-     *        application might not be available, but the instances appear
-     *        running.
-     *        </p>
-     *        </value> <value name="Green">
-     *        <p>
-     *        <code>Green</code>: Indicates the environment is healthy and fully
-     *        functional.
-     *        </p>
-     *        </value> </enumValues>
      *        <ul>
      *        <li> <code>Red</code>: Indicates the environment is not responsive.
      *        Occurs when three or more consecutive failures occur for an
@@ -1134,21 +1035,6 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * Describes the health status of the environment. AWS Elastic Beanstalk
      * indicates the failure levels for a running environment:
      * </p>
-     * <enumValues> <value name="Red">
-     * <p>
-     * <code>Red</code> : Indicates the environment is not working.
-     * </p>
-     * </value> <value name="Yellow">
-     * <p>
-     * <code>Yellow</code>: Indicates that something is wrong, the application
-     * might not be available, but the instances appear running.
-     * </p>
-     * </value> <value name="Green">
-     * <p>
-     * <code>Green</code>: Indicates the environment is healthy and fully
-     * functional.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs
      * when three or more consecutive failures occur for an environment.</li>
@@ -1168,22 +1054,7 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * @param health
      *        Describes the health status of the environment. AWS Elastic
      *        Beanstalk indicates the failure levels for a running environment:
-     *        </p> <enumValues> <value name="Red">
-     *        <p>
-     *        <code>Red</code> : Indicates the environment is not working.
      *        </p>
-     *        </value> <value name="Yellow">
-     *        <p>
-     *        <code>Yellow</code>: Indicates that something is wrong, the
-     *        application might not be available, but the instances appear
-     *        running.
-     *        </p>
-     *        </value> <value name="Green">
-     *        <p>
-     *        <code>Green</code>: Indicates the environment is healthy and fully
-     *        functional.
-     *        </p>
-     *        </value> </enumValues>
      *        <ul>
      *        <li> <code>Red</code>: Indicates the environment is not responsive.
      *        Occurs when three or more consecutive failures occur for an
@@ -1213,21 +1084,6 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * Describes the health status of the environment. AWS Elastic Beanstalk
      * indicates the failure levels for a running environment:
      * </p>
-     * <enumValues> <value name="Red">
-     * <p>
-     * <code>Red</code> : Indicates the environment is not working.
-     * </p>
-     * </value> <value name="Yellow">
-     * <p>
-     * <code>Yellow</code>: Indicates that something is wrong, the application
-     * might not be available, but the instances appear running.
-     * </p>
-     * </value> <value name="Green">
-     * <p>
-     * <code>Green</code>: Indicates the environment is healthy and fully
-     * functional.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs
      * when three or more consecutive failures occur for an environment.</li>
@@ -1247,22 +1103,7 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
      * @param health
      *        Describes the health status of the environment. AWS Elastic
      *        Beanstalk indicates the failure levels for a running environment:
-     *        </p> <enumValues> <value name="Red">
-     *        <p>
-     *        <code>Red</code> : Indicates the environment is not working.
      *        </p>
-     *        </value> <value name="Yellow">
-     *        <p>
-     *        <code>Yellow</code>: Indicates that something is wrong, the
-     *        application might not be available, but the instances appear
-     *        running.
-     *        </p>
-     *        </value> <value name="Green">
-     *        <p>
-     *        <code>Green</code>: Indicates the environment is healthy and fully
-     *        functional.
-     *        </p>
-     *        </value> </enumValues>
      *        <ul>
      *        <li> <code>Red</code>: Indicates the environment is not responsive.
      *        Occurs when three or more consecutive failures occur for an
@@ -1469,6 +1310,83 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of links to other environments in the same group.
+     * </p>
+     * 
+     * @return A list of links to other environments in the same group.
+     */
+    public java.util.List<EnvironmentLink> getEnvironmentLinks() {
+        if (environmentLinks == null) {
+            environmentLinks = new com.amazonaws.internal.SdkInternalList<EnvironmentLink>();
+        }
+        return environmentLinks;
+    }
+
+    /**
+     * <p>
+     * A list of links to other environments in the same group.
+     * </p>
+     * 
+     * @param environmentLinks
+     *        A list of links to other environments in the same group.
+     */
+    public void setEnvironmentLinks(
+            java.util.Collection<EnvironmentLink> environmentLinks) {
+        if (environmentLinks == null) {
+            this.environmentLinks = null;
+            return;
+        }
+
+        this.environmentLinks = new com.amazonaws.internal.SdkInternalList<EnvironmentLink>(
+                environmentLinks);
+    }
+
+    /**
+     * <p>
+     * A list of links to other environments in the same group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEnvironmentLinks(java.util.Collection)} or
+     * {@link #withEnvironmentLinks(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param environmentLinks
+     *        A list of links to other environments in the same group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public TerminateEnvironmentResult withEnvironmentLinks(
+            EnvironmentLink... environmentLinks) {
+        if (this.environmentLinks == null) {
+            setEnvironmentLinks(new com.amazonaws.internal.SdkInternalList<EnvironmentLink>(
+                    environmentLinks.length));
+        }
+        for (EnvironmentLink ele : environmentLinks) {
+            this.environmentLinks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of links to other environments in the same group.
+     * </p>
+     * 
+     * @param environmentLinks
+     *        A list of links to other environments in the same group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public TerminateEnvironmentResult withEnvironmentLinks(
+            java.util.Collection<EnvironmentLink> environmentLinks) {
+        setEnvironmentLinks(environmentLinks);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1514,7 +1432,9 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
         if (getResources() != null)
             sb.append("Resources: " + getResources() + ",");
         if (getTier() != null)
-            sb.append("Tier: " + getTier());
+            sb.append("Tier: " + getTier() + ",");
+        if (getEnvironmentLinks() != null)
+            sb.append("EnvironmentLinks: " + getEnvironmentLinks());
         sb.append("}");
         return sb.toString();
     }
@@ -1620,6 +1540,13 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
         if (other.getTier() != null
                 && other.getTier().equals(this.getTier()) == false)
             return false;
+        if (other.getEnvironmentLinks() == null
+                ^ this.getEnvironmentLinks() == null)
+            return false;
+        if (other.getEnvironmentLinks() != null
+                && other.getEnvironmentLinks().equals(
+                        this.getEnvironmentLinks()) == false)
+            return false;
         return true;
     }
 
@@ -1682,6 +1609,10 @@ public class TerminateEnvironmentResult implements Serializable, Cloneable {
                 + ((getResources() == null) ? 0 : getResources().hashCode());
         hashCode = prime * hashCode
                 + ((getTier() == null) ? 0 : getTier().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEnvironmentLinks() == null) ? 0 : getEnvironmentLinks()
+                        .hashCode());
         return hashCode;
     }
 

@@ -19,8 +19,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The caller has exceeded the limit of allowed environments associated with the
- * account.
+ * The specified account has reached its limit of environments.
  * </p>
  */
 public class TooManyEnvironmentsException extends AmazonServiceException {

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The caller does not have a subscription to Amazon S3.
+ * The specified account does not have a subscription to Amazon S3.
  * </p>
  */
 public class S3SubscriptionRequiredException extends AmazonServiceException {

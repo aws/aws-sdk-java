@@ -45,12 +45,12 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     private String clientToken;
 
     /**
-     * The IDs of the Reserved Instances to modify.
+     * The IDs of the Reserved instances to modify.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> reservedInstancesIds;
 
     /**
-     * The configuration settings for the Reserved Instances to modify.
+     * The configuration settings for the Reserved instances to modify.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesConfiguration> targetConfigurations;
 
@@ -106,9 +106,9 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The IDs of the Reserved Instances to modify.
+     * The IDs of the Reserved instances to modify.
      *
-     * @return The IDs of the Reserved Instances to modify.
+     * @return The IDs of the Reserved instances to modify.
      */
     public java.util.List<String> getReservedInstancesIds() {
         if (reservedInstancesIds == null) {
@@ -119,9 +119,9 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The IDs of the Reserved Instances to modify.
+     * The IDs of the Reserved instances to modify.
      *
-     * @param reservedInstancesIds The IDs of the Reserved Instances to modify.
+     * @param reservedInstancesIds The IDs of the Reserved instances to modify.
      */
     public void setReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
         if (reservedInstancesIds == null) {
@@ -134,7 +134,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The IDs of the Reserved Instances to modify.
+     * The IDs of the Reserved instances to modify.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setReservedInstancesIds(java.util.Collection)} or
@@ -143,7 +143,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesIds The IDs of the Reserved Instances to modify.
+     * @param reservedInstancesIds The IDs of the Reserved instances to modify.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -157,11 +157,11 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The IDs of the Reserved Instances to modify.
+     * The IDs of the Reserved instances to modify.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesIds The IDs of the Reserved Instances to modify.
+     * @param reservedInstancesIds The IDs of the Reserved instances to modify.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -179,9 +179,9 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The configuration settings for the Reserved Instances to modify.
+     * The configuration settings for the Reserved instances to modify.
      *
-     * @return The configuration settings for the Reserved Instances to modify.
+     * @return The configuration settings for the Reserved instances to modify.
      */
     public java.util.List<ReservedInstancesConfiguration> getTargetConfigurations() {
         if (targetConfigurations == null) {
@@ -192,9 +192,9 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The configuration settings for the Reserved Instances to modify.
+     * The configuration settings for the Reserved instances to modify.
      *
-     * @param targetConfigurations The configuration settings for the Reserved Instances to modify.
+     * @param targetConfigurations The configuration settings for the Reserved instances to modify.
      */
     public void setTargetConfigurations(java.util.Collection<ReservedInstancesConfiguration> targetConfigurations) {
         if (targetConfigurations == null) {
@@ -207,7 +207,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The configuration settings for the Reserved Instances to modify.
+     * The configuration settings for the Reserved instances to modify.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTargetConfigurations(java.util.Collection)} or
@@ -216,7 +216,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetConfigurations The configuration settings for the Reserved Instances to modify.
+     * @param targetConfigurations The configuration settings for the Reserved instances to modify.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -230,11 +230,11 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The configuration settings for the Reserved Instances to modify.
+     * The configuration settings for the Reserved instances to modify.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetConfigurations The configuration settings for the Reserved Instances to modify.
+     * @param targetConfigurations The configuration settings for the Reserved instances to modify.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

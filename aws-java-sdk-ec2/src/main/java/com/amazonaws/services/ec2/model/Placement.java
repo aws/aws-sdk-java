@@ -37,12 +37,25 @@ public class Placement implements Serializable, Cloneable {
     /**
      * The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on
-     * single-tenant hardware.
+     * single-tenant hardware. The <code>host</code> tenancy is not supported
+     * for the <a>ImportInstance</a> command.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      */
     private String tenancy;
+
+    /**
+     * The ID of the Dedicted host on which the instance resides. This
+     * parameter is not support for the <a>ImportInstance</a> command.
+     */
+    private String hostId;
+
+    /**
+     * The affinity setting for the instance on the Dedicated host. This
+     * parameter is not supported for the <a>ImportInstance</a> command.
+     */
+    private String affinity;
 
     /**
      * Default constructor for a new Placement object.  Callers should use the
@@ -136,14 +149,16 @@ public class Placement implements Serializable, Cloneable {
     /**
      * The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on
-     * single-tenant hardware.
+     * single-tenant hardware. The <code>host</code> tenancy is not supported
+     * for the <a>ImportInstance</a> command.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      *
      * @return The tenancy of the instance (if the instance is running in a VPC). An
      *         instance with a tenancy of <code>dedicated</code> runs on
-     *         single-tenant hardware.
+     *         single-tenant hardware. The <code>host</code> tenancy is not supported
+     *         for the <a>ImportInstance</a> command.
      *
      * @see Tenancy
      */
@@ -154,14 +169,16 @@ public class Placement implements Serializable, Cloneable {
     /**
      * The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on
-     * single-tenant hardware.
+     * single-tenant hardware. The <code>host</code> tenancy is not supported
+     * for the <a>ImportInstance</a> command.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param tenancy The tenancy of the instance (if the instance is running in a VPC). An
      *         instance with a tenancy of <code>dedicated</code> runs on
-     *         single-tenant hardware.
+     *         single-tenant hardware. The <code>host</code> tenancy is not supported
+     *         for the <a>ImportInstance</a> command.
      *
      * @see Tenancy
      */
@@ -172,16 +189,18 @@ public class Placement implements Serializable, Cloneable {
     /**
      * The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on
-     * single-tenant hardware.
+     * single-tenant hardware. The <code>host</code> tenancy is not supported
+     * for the <a>ImportInstance</a> command.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param tenancy The tenancy of the instance (if the instance is running in a VPC). An
      *         instance with a tenancy of <code>dedicated</code> runs on
-     *         single-tenant hardware.
+     *         single-tenant hardware. The <code>host</code> tenancy is not supported
+     *         for the <a>ImportInstance</a> command.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -196,14 +215,16 @@ public class Placement implements Serializable, Cloneable {
     /**
      * The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on
-     * single-tenant hardware.
+     * single-tenant hardware. The <code>host</code> tenancy is not supported
+     * for the <a>ImportInstance</a> command.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param tenancy The tenancy of the instance (if the instance is running in a VPC). An
      *         instance with a tenancy of <code>dedicated</code> runs on
-     *         single-tenant hardware.
+     *         single-tenant hardware. The <code>host</code> tenancy is not supported
+     *         for the <a>ImportInstance</a> command.
      *
      * @see Tenancy
      */
@@ -214,16 +235,18 @@ public class Placement implements Serializable, Cloneable {
     /**
      * The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on
-     * single-tenant hardware.
+     * single-tenant hardware. The <code>host</code> tenancy is not supported
+     * for the <a>ImportInstance</a> command.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param tenancy The tenancy of the instance (if the instance is running in a VPC). An
      *         instance with a tenancy of <code>dedicated</code> runs on
-     *         single-tenant hardware.
+     *         single-tenant hardware. The <code>host</code> tenancy is not supported
+     *         for the <a>ImportInstance</a> command.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -232,6 +255,84 @@ public class Placement implements Serializable, Cloneable {
      */
     public Placement withTenancy(Tenancy tenancy) {
         this.tenancy = tenancy.toString();
+        return this;
+    }
+
+    /**
+     * The ID of the Dedicted host on which the instance resides. This
+     * parameter is not support for the <a>ImportInstance</a> command.
+     *
+     * @return The ID of the Dedicted host on which the instance resides. This
+     *         parameter is not support for the <a>ImportInstance</a> command.
+     */
+    public String getHostId() {
+        return hostId;
+    }
+    
+    /**
+     * The ID of the Dedicted host on which the instance resides. This
+     * parameter is not support for the <a>ImportInstance</a> command.
+     *
+     * @param hostId The ID of the Dedicted host on which the instance resides. This
+     *         parameter is not support for the <a>ImportInstance</a> command.
+     */
+    public void setHostId(String hostId) {
+        this.hostId = hostId;
+    }
+    
+    /**
+     * The ID of the Dedicted host on which the instance resides. This
+     * parameter is not support for the <a>ImportInstance</a> command.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hostId The ID of the Dedicted host on which the instance resides. This
+     *         parameter is not support for the <a>ImportInstance</a> command.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Placement withHostId(String hostId) {
+        this.hostId = hostId;
+        return this;
+    }
+
+    /**
+     * The affinity setting for the instance on the Dedicated host. This
+     * parameter is not supported for the <a>ImportInstance</a> command.
+     *
+     * @return The affinity setting for the instance on the Dedicated host. This
+     *         parameter is not supported for the <a>ImportInstance</a> command.
+     */
+    public String getAffinity() {
+        return affinity;
+    }
+    
+    /**
+     * The affinity setting for the instance on the Dedicated host. This
+     * parameter is not supported for the <a>ImportInstance</a> command.
+     *
+     * @param affinity The affinity setting for the instance on the Dedicated host. This
+     *         parameter is not supported for the <a>ImportInstance</a> command.
+     */
+    public void setAffinity(String affinity) {
+        this.affinity = affinity;
+    }
+    
+    /**
+     * The affinity setting for the instance on the Dedicated host. This
+     * parameter is not supported for the <a>ImportInstance</a> command.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param affinity The affinity setting for the instance on the Dedicated host. This
+     *         parameter is not supported for the <a>ImportInstance</a> command.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Placement withAffinity(String affinity) {
+        this.affinity = affinity;
         return this;
     }
 
@@ -249,7 +350,9 @@ public class Placement implements Serializable, Cloneable {
         sb.append("{");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
-        if (getTenancy() != null) sb.append("Tenancy: " + getTenancy() );
+        if (getTenancy() != null) sb.append("Tenancy: " + getTenancy() + ",");
+        if (getHostId() != null) sb.append("HostId: " + getHostId() + ",");
+        if (getAffinity() != null) sb.append("Affinity: " + getAffinity() );
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +365,8 @@ public class Placement implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode()); 
+        hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode()); 
+        hashCode = prime * hashCode + ((getAffinity() == null) ? 0 : getAffinity().hashCode()); 
         return hashCode;
     }
     
@@ -279,6 +384,10 @@ public class Placement implements Serializable, Cloneable {
         if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false) return false; 
         if (other.getTenancy() == null ^ this.getTenancy() == null) return false;
         if (other.getTenancy() != null && other.getTenancy().equals(this.getTenancy()) == false) return false; 
+        if (other.getHostId() == null ^ this.getHostId() == null) return false;
+        if (other.getHostId() != null && other.getHostId().equals(this.getHostId()) == false) return false; 
+        if (other.getAffinity() == null ^ this.getAffinity() == null) return false;
+        if (other.getAffinity() != null && other.getAffinity().equals(this.getAffinity()) == false) return false; 
         return true;
     }
     

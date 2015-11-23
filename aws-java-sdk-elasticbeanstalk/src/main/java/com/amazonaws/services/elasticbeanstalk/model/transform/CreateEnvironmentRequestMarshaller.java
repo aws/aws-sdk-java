@@ -58,6 +58,11 @@ public class CreateEnvironmentRequestMarshaller implements
                     .fromString(createEnvironmentRequest.getEnvironmentName()));
         }
 
+        if (createEnvironmentRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils
+                    .fromString(createEnvironmentRequest.getGroupName()));
+        }
+
         if (createEnvironmentRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils
                     .fromString(createEnvironmentRequest.getDescription()));

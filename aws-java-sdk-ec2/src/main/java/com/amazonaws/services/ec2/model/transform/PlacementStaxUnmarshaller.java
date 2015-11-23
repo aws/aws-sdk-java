@@ -55,6 +55,14 @@ public class PlacementStaxUnmarshaller implements Unmarshaller<Placement, StaxUn
                     placement.setTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("hostId", targetDepth)) {
+                    placement.setHostId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("affinity", targetDepth)) {
+                    placement.setAffinity(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return placement;

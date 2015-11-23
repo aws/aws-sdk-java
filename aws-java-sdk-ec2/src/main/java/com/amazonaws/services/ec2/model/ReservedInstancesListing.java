@@ -18,18 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a Reserved Instance listing.
+ * Describes a Reserved instance listing.
  * </p>
  */
 public class ReservedInstancesListing implements Serializable, Cloneable {
 
     /**
-     * The ID of the Reserved Instance listing.
+     * The ID of the Reserved instance listing.
      */
     private String reservedInstancesListingId;
 
     /**
-     * The ID of the Reserved Instance.
+     * The ID of the Reserved instance.
      */
     private String reservedInstancesId;
 
@@ -44,7 +44,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     private java.util.Date updateDate;
 
     /**
-     * The status of the Reserved Instance listing.
+     * The status of the Reserved instance listing.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, pending, cancelled, closed
@@ -52,7 +52,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     private String status;
 
     /**
-     * The reason for the current status of the Reserved Instance listing.
+     * The reason for the current status of the Reserved instance listing.
      * The response can be blank.
      */
     private String statusMessage;
@@ -63,7 +63,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceCount> instanceCounts;
 
     /**
-     * The price of the Reserved Instance listing.
+     * The price of the Reserved instance listing.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PriceSchedule> priceSchedules;
 
@@ -81,29 +81,29 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     private String clientToken;
 
     /**
-     * The ID of the Reserved Instance listing.
+     * The ID of the Reserved instance listing.
      *
-     * @return The ID of the Reserved Instance listing.
+     * @return The ID of the Reserved instance listing.
      */
     public String getReservedInstancesListingId() {
         return reservedInstancesListingId;
     }
     
     /**
-     * The ID of the Reserved Instance listing.
+     * The ID of the Reserved instance listing.
      *
-     * @param reservedInstancesListingId The ID of the Reserved Instance listing.
+     * @param reservedInstancesListingId The ID of the Reserved instance listing.
      */
     public void setReservedInstancesListingId(String reservedInstancesListingId) {
         this.reservedInstancesListingId = reservedInstancesListingId;
     }
     
     /**
-     * The ID of the Reserved Instance listing.
+     * The ID of the Reserved instance listing.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesListingId The ID of the Reserved Instance listing.
+     * @param reservedInstancesListingId The ID of the Reserved instance listing.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -114,29 +114,29 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the Reserved Instance.
+     * The ID of the Reserved instance.
      *
-     * @return The ID of the Reserved Instance.
+     * @return The ID of the Reserved instance.
      */
     public String getReservedInstancesId() {
         return reservedInstancesId;
     }
     
     /**
-     * The ID of the Reserved Instance.
+     * The ID of the Reserved instance.
      *
-     * @param reservedInstancesId The ID of the Reserved Instance.
+     * @param reservedInstancesId The ID of the Reserved instance.
      */
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
     
     /**
-     * The ID of the Reserved Instance.
+     * The ID of the Reserved instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesId The ID of the Reserved Instance.
+     * @param reservedInstancesId The ID of the Reserved instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -213,12 +213,12 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
 
     /**
-     * The status of the Reserved Instance listing.
+     * The status of the Reserved instance listing.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, pending, cancelled, closed
      *
-     * @return The status of the Reserved Instance listing.
+     * @return The status of the Reserved instance listing.
      *
      * @see ListingStatus
      */
@@ -227,12 +227,12 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
     
     /**
-     * The status of the Reserved Instance listing.
+     * The status of the Reserved instance listing.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, pending, cancelled, closed
      *
-     * @param status The status of the Reserved Instance listing.
+     * @param status The status of the Reserved instance listing.
      *
      * @see ListingStatus
      */
@@ -241,14 +241,14 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
     
     /**
-     * The status of the Reserved Instance listing.
+     * The status of the Reserved instance listing.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, pending, cancelled, closed
      *
-     * @param status The status of the Reserved Instance listing.
+     * @param status The status of the Reserved instance listing.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -261,12 +261,12 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
 
     /**
-     * The status of the Reserved Instance listing.
+     * The status of the Reserved instance listing.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, pending, cancelled, closed
      *
-     * @param status The status of the Reserved Instance listing.
+     * @param status The status of the Reserved instance listing.
      *
      * @see ListingStatus
      */
@@ -275,14 +275,14 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
     
     /**
-     * The status of the Reserved Instance listing.
+     * The status of the Reserved instance listing.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, pending, cancelled, closed
      *
-     * @param status The status of the Reserved Instance listing.
+     * @param status The status of the Reserved instance listing.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -295,10 +295,10 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
 
     /**
-     * The reason for the current status of the Reserved Instance listing.
+     * The reason for the current status of the Reserved instance listing.
      * The response can be blank.
      *
-     * @return The reason for the current status of the Reserved Instance listing.
+     * @return The reason for the current status of the Reserved instance listing.
      *         The response can be blank.
      */
     public String getStatusMessage() {
@@ -306,10 +306,10 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
     
     /**
-     * The reason for the current status of the Reserved Instance listing.
+     * The reason for the current status of the Reserved instance listing.
      * The response can be blank.
      *
-     * @param statusMessage The reason for the current status of the Reserved Instance listing.
+     * @param statusMessage The reason for the current status of the Reserved instance listing.
      *         The response can be blank.
      */
     public void setStatusMessage(String statusMessage) {
@@ -317,12 +317,12 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
     
     /**
-     * The reason for the current status of the Reserved Instance listing.
+     * The reason for the current status of the Reserved instance listing.
      * The response can be blank.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statusMessage The reason for the current status of the Reserved Instance listing.
+     * @param statusMessage The reason for the current status of the Reserved instance listing.
      *         The response can be blank.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -407,9 +407,9 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
 
     /**
-     * The price of the Reserved Instance listing.
+     * The price of the Reserved instance listing.
      *
-     * @return The price of the Reserved Instance listing.
+     * @return The price of the Reserved instance listing.
      */
     public java.util.List<PriceSchedule> getPriceSchedules() {
         if (priceSchedules == null) {
@@ -420,9 +420,9 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
     
     /**
-     * The price of the Reserved Instance listing.
+     * The price of the Reserved instance listing.
      *
-     * @param priceSchedules The price of the Reserved Instance listing.
+     * @param priceSchedules The price of the Reserved instance listing.
      */
     public void setPriceSchedules(java.util.Collection<PriceSchedule> priceSchedules) {
         if (priceSchedules == null) {
@@ -435,7 +435,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
     
     /**
-     * The price of the Reserved Instance listing.
+     * The price of the Reserved instance listing.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPriceSchedules(java.util.Collection)} or {@link
@@ -444,7 +444,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param priceSchedules The price of the Reserved Instance listing.
+     * @param priceSchedules The price of the Reserved instance listing.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -458,11 +458,11 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
     
     /**
-     * The price of the Reserved Instance listing.
+     * The price of the Reserved instance listing.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param priceSchedules The price of the Reserved Instance listing.
+     * @param priceSchedules The price of the Reserved instance listing.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

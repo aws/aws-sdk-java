@@ -88,6 +88,11 @@ public class CreateApplicationVersionRequestMarshaller
                             .getAutoCreateApplication()));
         }
 
+        if (createApplicationVersionRequest.getProcess() != null) {
+            request.addParameter("Process", StringUtils
+                    .fromBoolean(createApplicationVersionRequest.getProcess()));
+        }
+
         return request;
     }
 

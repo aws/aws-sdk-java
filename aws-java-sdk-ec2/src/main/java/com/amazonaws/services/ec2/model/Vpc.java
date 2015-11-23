@@ -57,7 +57,7 @@ public class Vpc implements Serializable, Cloneable {
      * The allowed tenancy of instances launched into the VPC.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      */
     private String instanceTenancy;
 
@@ -336,7 +336,7 @@ public class Vpc implements Serializable, Cloneable {
      * The allowed tenancy of instances launched into the VPC.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      *
      * @return The allowed tenancy of instances launched into the VPC.
      *
@@ -350,7 +350,7 @@ public class Vpc implements Serializable, Cloneable {
      * The allowed tenancy of instances launched into the VPC.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
      *
@@ -366,7 +366,7 @@ public class Vpc implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
      *
@@ -384,7 +384,7 @@ public class Vpc implements Serializable, Cloneable {
      * The allowed tenancy of instances launched into the VPC.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
      *
@@ -400,7 +400,7 @@ public class Vpc implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>default, dedicated
+     * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
      *

@@ -84,6 +84,21 @@ public class AbstractAWSElasticBeanstalkAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<ComposeEnvironmentsResult> composeEnvironmentsAsync(
+            ComposeEnvironmentsRequest request) {
+
+        return composeEnvironmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ComposeEnvironmentsResult> composeEnvironmentsAsync(
+            ComposeEnvironmentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ComposeEnvironmentsRequest, ComposeEnvironmentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
             CreateApplicationRequest request) {
 

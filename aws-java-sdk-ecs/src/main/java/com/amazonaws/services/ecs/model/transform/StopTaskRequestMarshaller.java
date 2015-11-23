@@ -75,6 +75,10 @@ public class StopTaskRequestMarshaller implements
                 jsonWriter.key("task").value(stopTaskRequest.getTask());
             }
 
+            if (stopTaskRequest.getReason() != null) {
+                jsonWriter.key("reason").value(stopTaskRequest.getReason());
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

@@ -48,6 +48,11 @@ public class UpdateEnvironmentRequestMarshaller implements
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (updateEnvironmentRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils
+                    .fromString(updateEnvironmentRequest.getApplicationName()));
+        }
+
         if (updateEnvironmentRequest.getEnvironmentId() != null) {
             request.addParameter("EnvironmentId", StringUtils
                     .fromString(updateEnvironmentRequest.getEnvironmentId()));
@@ -56,6 +61,11 @@ public class UpdateEnvironmentRequestMarshaller implements
         if (updateEnvironmentRequest.getEnvironmentName() != null) {
             request.addParameter("EnvironmentName", StringUtils
                     .fromString(updateEnvironmentRequest.getEnvironmentName()));
+        }
+
+        if (updateEnvironmentRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils
+                    .fromString(updateEnvironmentRequest.getGroupName()));
         }
 
         if (updateEnvironmentRequest.getDescription() != null) {

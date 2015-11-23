@@ -51,9 +51,9 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      * results in a single page along with a <code>nextToken</code> response
      * element. The remaining results of the initial request can be seen by
      * sending another <code>ListServices</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListServices</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.
+     * <code>nextToken</code> value. This value can be between 1 and 10. If this
+     * parameter is not used, then <code>ListServices</code> returns up to 10
+     * results and a <code>nextToken</code> value if applicable.
      * </p>
      */
     private Integer maxResults;
@@ -187,9 +187,9 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      * results in a single page along with a <code>nextToken</code> response
      * element. The remaining results of the initial request can be seen by
      * sending another <code>ListServices</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListServices</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.
+     * <code>nextToken</code> value. This value can be between 1 and 10. If this
+     * parameter is not used, then <code>ListServices</code> returns up to 10
+     * results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
@@ -200,9 +200,9 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      *        <code>nextToken</code> response element. The remaining results of
      *        the initial request can be seen by sending another
      *        <code>ListServices</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100.
+     *        <code>nextToken</code> value. This value can be between 1 and 10.
      *        If this parameter is not used, then <code>ListServices</code>
-     *        returns up to 100 results and a <code>nextToken</code> value if
+     *        returns up to 10 results and a <code>nextToken</code> value if
      *        applicable.
      */
     public void setMaxResults(Integer maxResults) {
@@ -217,9 +217,9 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      * results in a single page along with a <code>nextToken</code> response
      * element. The remaining results of the initial request can be seen by
      * sending another <code>ListServices</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListServices</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.
+     * <code>nextToken</code> value. This value can be between 1 and 10. If this
+     * parameter is not used, then <code>ListServices</code> returns up to 10
+     * results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @return The maximum number of container instance results returned by
@@ -229,10 +229,10 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      *         <code>nextToken</code> response element. The remaining results of
      *         the initial request can be seen by sending another
      *         <code>ListServices</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and
-     *         100. If this parameter is not used, then
-     *         <code>ListServices</code> returns up to 100 results and a
-     *         <code>nextToken</code> value if applicable.
+     *         <code>nextToken</code> value. This value can be between 1 and 10.
+     *         If this parameter is not used, then <code>ListServices</code>
+     *         returns up to 10 results and a <code>nextToken</code> value if
+     *         applicable.
      */
     public Integer getMaxResults() {
         return this.maxResults;
@@ -246,9 +246,9 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      * results in a single page along with a <code>nextToken</code> response
      * element. The remaining results of the initial request can be seen by
      * sending another <code>ListServices</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListServices</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.
+     * <code>nextToken</code> value. This value can be between 1 and 10. If this
+     * parameter is not used, then <code>ListServices</code> returns up to 10
+     * results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
@@ -259,9 +259,9 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      *        <code>nextToken</code> response element. The remaining results of
      *        the initial request can be seen by sending another
      *        <code>ListServices</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100.
+     *        <code>nextToken</code> value. This value can be between 1 and 10.
      *        If this parameter is not used, then <code>ListServices</code>
-     *        returns up to 100 results and a <code>nextToken</code> value if
+     *        returns up to 10 results and a <code>nextToken</code> value if
      *        applicable.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

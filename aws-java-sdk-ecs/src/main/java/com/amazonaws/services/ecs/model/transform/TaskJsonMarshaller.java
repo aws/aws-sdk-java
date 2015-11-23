@@ -100,6 +100,22 @@ public class TaskJsonMarshaller {
                 jsonWriter.key("startedBy").value(task.getStartedBy());
             }
 
+            if (task.getStoppedReason() != null) {
+                jsonWriter.key("stoppedReason").value(task.getStoppedReason());
+            }
+
+            if (task.getCreatedAt() != null) {
+                jsonWriter.key("createdAt").value(task.getCreatedAt());
+            }
+
+            if (task.getStartedAt() != null) {
+                jsonWriter.key("startedAt").value(task.getStartedAt());
+            }
+
+            if (task.getStoppedAt() != null) {
+                jsonWriter.key("stoppedAt").value(task.getStoppedAt());
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

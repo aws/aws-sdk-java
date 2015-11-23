@@ -30,7 +30,7 @@ public class StateReason implements Serializable, Cloneable {
 
     /**
      * The message for the state change. <ul>
-     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance
      * was terminated due to an increase in the market price.</li>
      * <li><p><code>Server.InternalError</code>: An internal error occurred
      * during instance launch, resulting in termination.</li>
@@ -83,7 +83,7 @@ public class StateReason implements Serializable, Cloneable {
 
     /**
      * The message for the state change. <ul>
-     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance
      * was terminated due to an increase in the market price.</li>
      * <li><p><code>Server.InternalError</code>: An internal error occurred
      * during instance launch, resulting in termination.</li>
@@ -100,7 +100,7 @@ public class StateReason implements Serializable, Cloneable {
      * The specified snapshot was not found.</li> </ul>
      *
      * @return The message for the state change. <ul>
-     *         <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     *         <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance
      *         was terminated due to an increase in the market price.</li>
      *         <li><p><code>Server.InternalError</code>: An internal error occurred
      *         during instance launch, resulting in termination.</li>
@@ -122,7 +122,7 @@ public class StateReason implements Serializable, Cloneable {
     
     /**
      * The message for the state change. <ul>
-     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance
      * was terminated due to an increase in the market price.</li>
      * <li><p><code>Server.InternalError</code>: An internal error occurred
      * during instance launch, resulting in termination.</li>
@@ -139,7 +139,7 @@ public class StateReason implements Serializable, Cloneable {
      * The specified snapshot was not found.</li> </ul>
      *
      * @param message The message for the state change. <ul>
-     *         <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     *         <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance
      *         was terminated due to an increase in the market price.</li>
      *         <li><p><code>Server.InternalError</code>: An internal error occurred
      *         during instance launch, resulting in termination.</li>
@@ -161,7 +161,7 @@ public class StateReason implements Serializable, Cloneable {
     
     /**
      * The message for the state change. <ul>
-     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance
      * was terminated due to an increase in the market price.</li>
      * <li><p><code>Server.InternalError</code>: An internal error occurred
      * during instance launch, resulting in termination.</li>
@@ -180,7 +180,7 @@ public class StateReason implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message The message for the state change. <ul>
-     *         <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     *         <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance
      *         was terminated due to an increase in the market price.</li>
      *         <li><p><code>Server.InternalError</code>: An internal error occurred
      *         during instance launch, resulting in termination.</li>

@@ -30,6 +30,8 @@ public enum ElasticBeanstalkActions implements Action {
     AbortEnvironmentUpdate("elasticbeanstalk:AbortEnvironmentUpdate"),
     /** Action for the CheckDNSAvailability operation. */
     CheckDNSAvailability("elasticbeanstalk:CheckDNSAvailability"),
+    /** Action for the ComposeEnvironments operation. */
+    ComposeEnvironments("elasticbeanstalk:ComposeEnvironments"),
     /** Action for the CreateApplication operation. */
     CreateApplication("elasticbeanstalk:CreateApplication"),
     /** Action for the CreateApplicationVersion operation. */

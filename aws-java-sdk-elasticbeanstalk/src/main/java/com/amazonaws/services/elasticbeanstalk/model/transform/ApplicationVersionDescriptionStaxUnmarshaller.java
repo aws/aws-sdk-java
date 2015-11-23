@@ -89,6 +89,13 @@ public class ApplicationVersionDescriptionStaxUnmarshaller implements
                                     .unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Status", targetDepth)) {
+                    applicationVersionDescription
+                            .setStatus(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return applicationVersionDescription;

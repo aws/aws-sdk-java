@@ -20,7 +20,6 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * This documentation target is not reported in the API reference.
  * </p>
  */
 public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
@@ -53,18 +52,6 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * Indicates whether the associated AWS resources should shut down when the
      * environment is terminated:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code>: (default) The user AWS resources (for example, the
-     * Auto Scaling group, LoadBalancer, etc.) are terminated along with the
-     * environment.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>false</code>: The environment is removed from the AWS Elastic
-     * Beanstalk but the AWS resources continue to operate.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>true</code>: The specified environment as well as the
      * associated AWS resources, such as Auto Scaling group and LoadBalancer,
@@ -85,6 +72,13 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * </p>
      */
     private Boolean terminateResources;
+    /**
+     * <p>
+     * Terminates the target environment even if another environment in the same
+     * group is dependent on it.
+     * </p>
+     */
+    private Boolean forceTerminate;
 
     /**
      * <p>
@@ -222,18 +216,6 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * Indicates whether the associated AWS resources should shut down when the
      * environment is terminated:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code>: (default) The user AWS resources (for example, the
-     * Auto Scaling group, LoadBalancer, etc.) are terminated along with the
-     * environment.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>false</code>: The environment is removed from the AWS Elastic
-     * Beanstalk but the AWS resources continue to operate.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>true</code>: The specified environment as well as the
      * associated AWS resources, such as Auto Scaling group and LoadBalancer,
@@ -255,19 +237,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * 
      * @param terminateResources
      *        Indicates whether the associated AWS resources should shut down
-     *        when the environment is terminated: </p> <enumValues> <value
-     *        name="true">
-     *        <p>
-     *        <code>true</code>: (default) The user AWS resources (for example,
-     *        the Auto Scaling group, LoadBalancer, etc.) are terminated along
-     *        with the environment.
-     *        </p>
-     *        </value> <value name="false">
-     *        <p>
-     *        <code>false</code>: The environment is removed from the AWS
-     *        Elastic Beanstalk but the AWS resources continue to operate.
-     *        </p>
-     *        </value> </enumValues>
+     *        when the environment is terminated: </p>
      *        <ul>
      *        <li> <code>true</code>: The specified environment as well as the
      *        associated AWS resources, such as Auto Scaling group and
@@ -296,18 +266,6 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * Indicates whether the associated AWS resources should shut down when the
      * environment is terminated:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code>: (default) The user AWS resources (for example, the
-     * Auto Scaling group, LoadBalancer, etc.) are terminated along with the
-     * environment.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>false</code>: The environment is removed from the AWS Elastic
-     * Beanstalk but the AWS resources continue to operate.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>true</code>: The specified environment as well as the
      * associated AWS resources, such as Auto Scaling group and LoadBalancer,
@@ -328,19 +286,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return Indicates whether the associated AWS resources should shut down
-     *         when the environment is terminated: </p> <enumValues> <value
-     *         name="true">
-     *         <p>
-     *         <code>true</code>: (default) The user AWS resources (for example,
-     *         the Auto Scaling group, LoadBalancer, etc.) are terminated along
-     *         with the environment.
-     *         </p>
-     *         </value> <value name="false">
-     *         <p>
-     *         <code>false</code>: The environment is removed from the AWS
-     *         Elastic Beanstalk but the AWS resources continue to operate.
-     *         </p>
-     *         </value> </enumValues>
+     *         when the environment is terminated: </p>
      *         <ul>
      *         <li> <code>true</code>: The specified environment as well as the
      *         associated AWS resources, such as Auto Scaling group and
@@ -369,18 +315,6 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * Indicates whether the associated AWS resources should shut down when the
      * environment is terminated:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code>: (default) The user AWS resources (for example, the
-     * Auto Scaling group, LoadBalancer, etc.) are terminated along with the
-     * environment.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>false</code>: The environment is removed from the AWS Elastic
-     * Beanstalk but the AWS resources continue to operate.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>true</code>: The specified environment as well as the
      * associated AWS resources, such as Auto Scaling group and LoadBalancer,
@@ -402,19 +336,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * 
      * @param terminateResources
      *        Indicates whether the associated AWS resources should shut down
-     *        when the environment is terminated: </p> <enumValues> <value
-     *        name="true">
-     *        <p>
-     *        <code>true</code>: (default) The user AWS resources (for example,
-     *        the Auto Scaling group, LoadBalancer, etc.) are terminated along
-     *        with the environment.
-     *        </p>
-     *        </value> <value name="false">
-     *        <p>
-     *        <code>false</code>: The environment is removed from the AWS
-     *        Elastic Beanstalk but the AWS resources continue to operate.
-     *        </p>
-     *        </value> </enumValues>
+     *        when the environment is terminated: </p>
      *        <ul>
      *        <li> <code>true</code>: The specified environment as well as the
      *        associated AWS resources, such as Auto Scaling group and
@@ -447,18 +369,6 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * Indicates whether the associated AWS resources should shut down when the
      * environment is terminated:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code>: (default) The user AWS resources (for example, the
-     * Auto Scaling group, LoadBalancer, etc.) are terminated along with the
-     * environment.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>false</code>: The environment is removed from the AWS Elastic
-     * Beanstalk but the AWS resources continue to operate.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>true</code>: The specified environment as well as the
      * associated AWS resources, such as Auto Scaling group and LoadBalancer,
@@ -479,19 +389,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return Indicates whether the associated AWS resources should shut down
-     *         when the environment is terminated: </p> <enumValues> <value
-     *         name="true">
-     *         <p>
-     *         <code>true</code>: (default) The user AWS resources (for example,
-     *         the Auto Scaling group, LoadBalancer, etc.) are terminated along
-     *         with the environment.
-     *         </p>
-     *         </value> <value name="false">
-     *         <p>
-     *         <code>false</code>: The environment is removed from the AWS
-     *         Elastic Beanstalk but the AWS resources continue to operate.
-     *         </p>
-     *         </value> </enumValues>
+     *         when the environment is terminated: </p>
      *         <ul>
      *         <li> <code>true</code>: The specified environment as well as the
      *         associated AWS resources, such as Auto Scaling group and
@@ -516,6 +414,63 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Terminates the target environment even if another environment in the same
+     * group is dependent on it.
+     * </p>
+     * 
+     * @param forceTerminate
+     *        Terminates the target environment even if another environment in
+     *        the same group is dependent on it.
+     */
+    public void setForceTerminate(Boolean forceTerminate) {
+        this.forceTerminate = forceTerminate;
+    }
+
+    /**
+     * <p>
+     * Terminates the target environment even if another environment in the same
+     * group is dependent on it.
+     * </p>
+     * 
+     * @return Terminates the target environment even if another environment in
+     *         the same group is dependent on it.
+     */
+    public Boolean getForceTerminate() {
+        return this.forceTerminate;
+    }
+
+    /**
+     * <p>
+     * Terminates the target environment even if another environment in the same
+     * group is dependent on it.
+     * </p>
+     * 
+     * @param forceTerminate
+     *        Terminates the target environment even if another environment in
+     *        the same group is dependent on it.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public TerminateEnvironmentRequest withForceTerminate(Boolean forceTerminate) {
+        setForceTerminate(forceTerminate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Terminates the target environment even if another environment in the same
+     * group is dependent on it.
+     * </p>
+     * 
+     * @return Terminates the target environment even if another environment in
+     *         the same group is dependent on it.
+     */
+    public Boolean isForceTerminate() {
+        return this.forceTerminate;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -532,7 +487,9 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: " + getEnvironmentName() + ",");
         if (getTerminateResources() != null)
-            sb.append("TerminateResources: " + getTerminateResources());
+            sb.append("TerminateResources: " + getTerminateResources() + ",");
+        if (getForceTerminate() != null)
+            sb.append("ForceTerminate: " + getForceTerminate());
         sb.append("}");
         return sb.toString();
     }
@@ -565,6 +522,12 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
                 && other.getTerminateResources().equals(
                         this.getTerminateResources()) == false)
             return false;
+        if (other.getForceTerminate() == null
+                ^ this.getForceTerminate() == null)
+            return false;
+        if (other.getForceTerminate() != null
+                && other.getForceTerminate().equals(this.getForceTerminate()) == false)
+            return false;
         return true;
     }
 
@@ -585,6 +548,10 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getTerminateResources() == null) ? 0
                         : getTerminateResources().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getForceTerminate() == null) ? 0 : getForceTerminate()
+                        .hashCode());
         return hashCode;
     }
 

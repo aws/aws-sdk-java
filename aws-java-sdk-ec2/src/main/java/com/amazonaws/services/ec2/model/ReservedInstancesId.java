@@ -18,40 +18,40 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the ID of a Reserved Instance.
+ * Describes the ID of a Reserved instance.
  * </p>
  */
 public class ReservedInstancesId implements Serializable, Cloneable {
 
     /**
-     * The ID of the Reserved Instance.
+     * The ID of the Reserved instance.
      */
     private String reservedInstancesId;
 
     /**
-     * The ID of the Reserved Instance.
+     * The ID of the Reserved instance.
      *
-     * @return The ID of the Reserved Instance.
+     * @return The ID of the Reserved instance.
      */
     public String getReservedInstancesId() {
         return reservedInstancesId;
     }
     
     /**
-     * The ID of the Reserved Instance.
+     * The ID of the Reserved instance.
      *
-     * @param reservedInstancesId The ID of the Reserved Instance.
+     * @param reservedInstancesId The ID of the Reserved instance.
      */
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
     
     /**
-     * The ID of the Reserved Instance.
+     * The ID of the Reserved instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesId The ID of the Reserved Instance.
+     * @param reservedInstancesId The ID of the Reserved instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

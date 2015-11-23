@@ -383,6 +383,41 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     }
 
     @Override
+    public java.util.concurrent.Future<ComposeEnvironmentsResult> composeEnvironmentsAsync(
+            ComposeEnvironmentsRequest request) {
+
+        return composeEnvironmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ComposeEnvironmentsResult> composeEnvironmentsAsync(
+            final ComposeEnvironmentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ComposeEnvironmentsRequest, ComposeEnvironmentsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ComposeEnvironmentsResult>() {
+                    @Override
+                    public ComposeEnvironmentsResult call() throws Exception {
+                        ComposeEnvironmentsResult result;
+
+                        try {
+                            result = composeEnvironments(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
             CreateApplicationRequest request) {
 

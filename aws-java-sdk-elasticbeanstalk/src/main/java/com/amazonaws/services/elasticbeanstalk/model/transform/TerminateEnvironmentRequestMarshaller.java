@@ -66,6 +66,12 @@ public class TerminateEnvironmentRequestMarshaller
                             .getTerminateResources()));
         }
 
+        if (terminateEnvironmentRequest.getForceTerminate() != null) {
+            request.addParameter("ForceTerminate", StringUtils
+                    .fromBoolean(terminateEnvironmentRequest
+                            .getForceTerminate()));
+        }
+
         return request;
     }
 

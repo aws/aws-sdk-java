@@ -20,7 +20,6 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * This documentation target is not reported in the API reference.
  * </p>
  */
 public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
