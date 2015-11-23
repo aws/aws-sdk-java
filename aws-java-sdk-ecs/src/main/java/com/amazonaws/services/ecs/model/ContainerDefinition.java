@@ -114,7 +114,10 @@ public class ContainerDefinition implements Serializable, Cloneable {
     private Integer cpu;
     /**
      * <p>
-     * The number of MiB of memory reserved for the container. If your container
+     * The number of MiB of memory to reserve for the container. You must
+     * specify a non-zero integer for this parameter; the Docker daemon reserves
+     * a minimum of 4 MiB of memory for a container, so you should not specify
+     * fewer than 4 MiB of memory for your containers. If your container
      * attempts to exceed the memory allocated here, the container is killed.
      * This parameter maps to <code>Memory</code> in the <a href=
      * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
@@ -232,6 +235,12 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <important>
+     * <p>
+     * We do not recommend using plain text environment variables for sensitive
+     * information, such as credential data.
+     * </p>
+     * </important>
      */
     private com.amazonaws.internal.SdkInternalList<KeyValuePair> environment;
     /**
@@ -1009,7 +1018,10 @@ public class ContainerDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the container. If your container
+     * The number of MiB of memory to reserve for the container. You must
+     * specify a non-zero integer for this parameter; the Docker daemon reserves
+     * a minimum of 4 MiB of memory for a container, so you should not specify
+     * fewer than 4 MiB of memory for your containers. If your container
      * attempts to exceed the memory allocated here, the container is killed.
      * This parameter maps to <code>Memory</code> in the <a href=
      * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
@@ -1020,10 +1032,13 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * </p>
      * 
      * @param memory
-     *        The number of MiB of memory reserved for the container. If your
-     *        container attempts to exceed the memory allocated here, the
-     *        container is killed. This parameter maps to <code>Memory</code> in
-     *        the <a href=
+     *        The number of MiB of memory to reserve for the container. You must
+     *        specify a non-zero integer for this parameter; the Docker daemon
+     *        reserves a minimum of 4 MiB of memory for a container, so you
+     *        should not specify fewer than 4 MiB of memory for your containers.
+     *        If your container attempts to exceed the memory allocated here,
+     *        the container is killed. This parameter maps to
+     *        <code>Memory</code> in the <a href=
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
      *        >Create a container</a> section of the <a href=
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
@@ -1037,7 +1052,10 @@ public class ContainerDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the container. If your container
+     * The number of MiB of memory to reserve for the container. You must
+     * specify a non-zero integer for this parameter; the Docker daemon reserves
+     * a minimum of 4 MiB of memory for a container, so you should not specify
+     * fewer than 4 MiB of memory for your containers. If your container
      * attempts to exceed the memory allocated here, the container is killed.
      * This parameter maps to <code>Memory</code> in the <a href=
      * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
@@ -1047,10 +1065,13 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * 
-     * @return The number of MiB of memory reserved for the container. If your
-     *         container attempts to exceed the memory allocated here, the
-     *         container is killed. This parameter maps to <code>Memory</code>
-     *         in the <a href=
+     * @return The number of MiB of memory to reserve for the container. You
+     *         must specify a non-zero integer for this parameter; the Docker
+     *         daemon reserves a minimum of 4 MiB of memory for a container, so
+     *         you should not specify fewer than 4 MiB of memory for your
+     *         containers. If your container attempts to exceed the memory
+     *         allocated here, the container is killed. This parameter maps to
+     *         <code>Memory</code> in the <a href=
      *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
      *         >Create a container</a> section of the <a href=
      *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
@@ -1064,7 +1085,10 @@ public class ContainerDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the container. If your container
+     * The number of MiB of memory to reserve for the container. You must
+     * specify a non-zero integer for this parameter; the Docker daemon reserves
+     * a minimum of 4 MiB of memory for a container, so you should not specify
+     * fewer than 4 MiB of memory for your containers. If your container
      * attempts to exceed the memory allocated here, the container is killed.
      * This parameter maps to <code>Memory</code> in the <a href=
      * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
@@ -1075,10 +1099,13 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * </p>
      * 
      * @param memory
-     *        The number of MiB of memory reserved for the container. If your
-     *        container attempts to exceed the memory allocated here, the
-     *        container is killed. This parameter maps to <code>Memory</code> in
-     *        the <a href=
+     *        The number of MiB of memory to reserve for the container. You must
+     *        specify a non-zero integer for this parameter; the Docker daemon
+     *        reserves a minimum of 4 MiB of memory for a container, so you
+     *        should not specify fewer than 4 MiB of memory for your containers.
+     *        If your container attempts to exceed the memory allocated here,
+     *        the container is killed. This parameter maps to
+     *        <code>Memory</code> in the <a href=
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
      *        >Create a container</a> section of the <a href=
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
@@ -1987,6 +2014,12 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <important>
+     * <p>
+     * We do not recommend using plain text environment variables for sensitive
+     * information, such as credential data.
+     * </p>
+     * </important>
      * 
      * @return The environment variables to pass to a container. This parameter
      *         maps to <code>Env</code> in the <a href=
@@ -1995,7 +2028,11 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *         >Docker Remote API</a> and the <code>--env</code> option to <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
-     *         run</a>.
+     *         run</a>.</p> <important>
+     *         <p>
+     *         We do not recommend using plain text environment variables for
+     *         sensitive information, such as credential data.
+     *         </p>
      */
     public java.util.List<KeyValuePair> getEnvironment() {
         if (environment == null) {
@@ -2014,6 +2051,12 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <important>
+     * <p>
+     * We do not recommend using plain text environment variables for sensitive
+     * information, such as credential data.
+     * </p>
+     * </important>
      * 
      * @param environment
      *        The environment variables to pass to a container. This parameter
@@ -2023,7 +2066,11 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--env</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.
+     *        run</a>.</p> <important>
+     *        <p>
+     *        We do not recommend using plain text environment variables for
+     *        sensitive information, such as credential data.
+     *        </p>
      */
     public void setEnvironment(java.util.Collection<KeyValuePair> environment) {
         if (environment == null) {
@@ -2045,6 +2092,12 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <important>
+     * <p>
+     * We do not recommend using plain text environment variables for sensitive
+     * information, such as credential data.
+     * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setEnvironment(java.util.Collection)} or
@@ -2060,7 +2113,11 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--env</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.
+     *        run</a>.</p> <important>
+     *        <p>
+     *        We do not recommend using plain text environment variables for
+     *        sensitive information, such as credential data.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2085,6 +2142,12 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <important>
+     * <p>
+     * We do not recommend using plain text environment variables for sensitive
+     * information, such as credential data.
+     * </p>
+     * </important>
      * 
      * @param environment
      *        The environment variables to pass to a container. This parameter
@@ -2094,7 +2157,11 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--env</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.
+     *        run</a>.</p> <important>
+     *        <p>
+     *        We do not recommend using plain text environment variables for
+     *        sensitive information, such as credential data.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

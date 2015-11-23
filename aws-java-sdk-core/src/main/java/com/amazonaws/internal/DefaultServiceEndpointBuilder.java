@@ -14,14 +14,13 @@
  */
 package com.amazonaws.internal;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-
+import com.amazonaws.annotation.NotThreadSafe;
+import com.amazonaws.regions.Region;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.annotation.NotThreadSafe;
-import com.amazonaws.regions.Region;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 /**
  * Uses region metdata to construct an endpoint for a specific service
@@ -41,6 +40,9 @@ public class DefaultServiceEndpointBuilder extends ServiceEndpointBuilder {
     }
 
     public DefaultServiceEndpointBuilder withRegion(Region region) {
+        if (region == null) {
+            throw new IllegalArgumentException("Region cannot be null");
+        }
         this.region = region;
         return this;
     }

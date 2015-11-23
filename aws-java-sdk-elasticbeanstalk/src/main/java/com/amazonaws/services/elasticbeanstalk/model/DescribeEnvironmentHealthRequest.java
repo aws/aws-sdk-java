@@ -30,18 +30,29 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies the AWS Elastic Beanstalk environment name.
      * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentId, or both. If
+     * you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
      */
     private String environmentName;
     /**
      * <p>
      * Specifies the AWS Elastic Beanstalk environment ID.
      * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentName, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
      */
     private String environmentId;
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> attributeNames;
@@ -50,9 +61,18 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies the AWS Elastic Beanstalk environment name.
      * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentId, or both. If
+     * you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
      * 
      * @param environmentName
-     *        Specifies the AWS Elastic Beanstalk environment name.
+     *        Specifies the AWS Elastic Beanstalk environment name.</p>
+     *        <p>
+     *        Condition: You must specify either this or an EnvironmentId, or
+     *        both. If you do not specify either, AWS Elastic Beanstalk returns
+     *        <code>MissingRequiredParameter</code> error.
      */
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -62,8 +82,17 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies the AWS Elastic Beanstalk environment name.
      * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentId, or both. If
+     * you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
      * 
-     * @return Specifies the AWS Elastic Beanstalk environment name.
+     * @return Specifies the AWS Elastic Beanstalk environment name.</p>
+     *         <p>
+     *         Condition: You must specify either this or an EnvironmentId, or
+     *         both. If you do not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public String getEnvironmentName() {
         return this.environmentName;
@@ -73,9 +102,18 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies the AWS Elastic Beanstalk environment name.
      * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentId, or both. If
+     * you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
      * 
      * @param environmentName
-     *        Specifies the AWS Elastic Beanstalk environment name.
+     *        Specifies the AWS Elastic Beanstalk environment name.</p>
+     *        <p>
+     *        Condition: You must specify either this or an EnvironmentId, or
+     *        both. If you do not specify either, AWS Elastic Beanstalk returns
+     *        <code>MissingRequiredParameter</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -89,9 +127,18 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies the AWS Elastic Beanstalk environment ID.
      * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentName, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
      * 
      * @param environmentId
-     *        Specifies the AWS Elastic Beanstalk environment ID.
+     *        Specifies the AWS Elastic Beanstalk environment ID.</p>
+     *        <p>
+     *        Condition: You must specify either this or an EnvironmentName, or
+     *        both. If you do not specify either, AWS Elastic Beanstalk returns
+     *        <code>MissingRequiredParameter</code> error.
      */
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -101,8 +148,17 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies the AWS Elastic Beanstalk environment ID.
      * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentName, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
      * 
-     * @return Specifies the AWS Elastic Beanstalk environment ID.
+     * @return Specifies the AWS Elastic Beanstalk environment ID.</p>
+     *         <p>
+     *         Condition: You must specify either this or an EnvironmentName, or
+     *         both. If you do not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public String getEnvironmentId() {
         return this.environmentId;
@@ -112,9 +168,18 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies the AWS Elastic Beanstalk environment ID.
      * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentName, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
      * 
      * @param environmentId
-     *        Specifies the AWS Elastic Beanstalk environment ID.
+     *        Specifies the AWS Elastic Beanstalk environment ID.</p>
+     *        <p>
+     *        Condition: You must specify either this or an EnvironmentName, or
+     *        both. If you do not specify either, AWS Elastic Beanstalk returns
+     *        <code>MissingRequiredParameter</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -127,12 +192,13 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.
      * </p>
      * 
      * @return Specifies the response elements you wish to receive. If no
-     *         attribute names are specified, AWS Elastic Beanstalk returns all
-     *         response elements.
+     *         attribute names are specified, AWS Elastic Beanstalk only returns
+     *         the name of the environment.
      * @see EnvironmentHealthAttribute
      */
     public java.util.List<String> getAttributeNames() {
@@ -145,13 +211,14 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.
      * </p>
      * 
      * @param attributeNames
      *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk returns all
-     *        response elements.
+     *        attribute names are specified, AWS Elastic Beanstalk only returns
+     *        the name of the environment.
      * @see EnvironmentHealthAttribute
      */
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
@@ -167,7 +234,8 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -178,8 +246,8 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      * 
      * @param attributeNames
      *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk returns all
-     *        response elements.
+     *        attribute names are specified, AWS Elastic Beanstalk only returns
+     *        the name of the environment.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EnvironmentHealthAttribute
@@ -199,13 +267,14 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.
      * </p>
      * 
      * @param attributeNames
      *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk returns all
-     *        response elements.
+     *        attribute names are specified, AWS Elastic Beanstalk only returns
+     *        the name of the environment.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EnvironmentHealthAttribute
@@ -219,13 +288,14 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk returns all response elements.
+     * names are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.
      * </p>
      * 
      * @param attributeNames
      *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk returns all
-     *        response elements.
+     *        attribute names are specified, AWS Elastic Beanstalk only returns
+     *        the name of the environment.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EnvironmentHealthAttribute

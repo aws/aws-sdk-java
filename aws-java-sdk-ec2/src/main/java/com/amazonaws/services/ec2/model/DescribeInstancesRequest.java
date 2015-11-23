@@ -137,7 +137,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address
      * translation (NAT) in your VPC. </li> <li>
-     * <p><code>spot-instance-request-id</code> - The ID of the Spot Instance
+     * <p><code>spot-instance-request-id</code> - The ID of the Spot instance
      * request. </li> <li> <p><code>state-reason-code</code> - The reason
      * code for the state change. </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the
@@ -410,7 +410,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address
      * translation (NAT) in your VPC. </li> <li>
-     * <p><code>spot-instance-request-id</code> - The ID of the Spot Instance
+     * <p><code>spot-instance-request-id</code> - The ID of the Spot instance
      * request. </li> <li> <p><code>state-reason-code</code> - The reason
      * code for the state change. </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the
@@ -591,7 +591,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>false</code> means checking is disabled. The value must be
      *         <code>false</code> for the instance to perform network address
      *         translation (NAT) in your VPC. </li> <li>
-     *         <p><code>spot-instance-request-id</code> - The ID of the Spot Instance
+     *         <p><code>spot-instance-request-id</code> - The ID of the Spot instance
      *         request. </li> <li> <p><code>state-reason-code</code> - The reason
      *         code for the state change. </li> <li>
      *         <p><code>state-reason-message</code> - A message that describes the
@@ -781,7 +781,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address
      * translation (NAT) in your VPC. </li> <li>
-     * <p><code>spot-instance-request-id</code> - The ID of the Spot Instance
+     * <p><code>spot-instance-request-id</code> - The ID of the Spot instance
      * request. </li> <li> <p><code>state-reason-code</code> - The reason
      * code for the state change. </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the
@@ -962,7 +962,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>false</code> means checking is disabled. The value must be
      *         <code>false</code> for the instance to perform network address
      *         translation (NAT) in your VPC. </li> <li>
-     *         <p><code>spot-instance-request-id</code> - The ID of the Spot Instance
+     *         <p><code>spot-instance-request-id</code> - The ID of the Spot instance
      *         request. </li> <li> <p><code>state-reason-code</code> - The reason
      *         code for the state change. </li> <li>
      *         <p><code>state-reason-message</code> - A message that describes the
@@ -1154,7 +1154,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address
      * translation (NAT) in your VPC. </li> <li>
-     * <p><code>spot-instance-request-id</code> - The ID of the Spot Instance
+     * <p><code>spot-instance-request-id</code> - The ID of the Spot instance
      * request. </li> <li> <p><code>state-reason-code</code> - The reason
      * code for the state change. </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the
@@ -1342,7 +1342,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>false</code> means checking is disabled. The value must be
      *         <code>false</code> for the instance to perform network address
      *         translation (NAT) in your VPC. </li> <li>
-     *         <p><code>spot-instance-request-id</code> - The ID of the Spot Instance
+     *         <p><code>spot-instance-request-id</code> - The ID of the Spot instance
      *         request. </li> <li> <p><code>state-reason-code</code> - The reason
      *         code for the state change. </li> <li>
      *         <p><code>state-reason-message</code> - A message that describes the
@@ -1535,7 +1535,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address
      * translation (NAT) in your VPC. </li> <li>
-     * <p><code>spot-instance-request-id</code> - The ID of the Spot Instance
+     * <p><code>spot-instance-request-id</code> - The ID of the Spot instance
      * request. </li> <li> <p><code>state-reason-code</code> - The reason
      * code for the state change. </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the
@@ -1718,7 +1718,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>false</code> means checking is disabled. The value must be
      *         <code>false</code> for the instance to perform network address
      *         translation (NAT) in your VPC. </li> <li>
-     *         <p><code>spot-instance-request-id</code> - The ID of the Spot Instance
+     *         <p><code>spot-instance-request-id</code> - The ID of the Spot instance
      *         request. </li> <li> <p><code>state-reason-code</code> - The reason
      *         code for the state change. </li> <li>
      *         <p><code>state-reason-message</code> - A message that describes the

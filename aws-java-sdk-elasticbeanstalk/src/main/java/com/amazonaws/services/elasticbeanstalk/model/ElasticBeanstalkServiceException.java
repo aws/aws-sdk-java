@@ -18,7 +18,9 @@ package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * A generic service exception has occurred.
+ * </p>
  */
 public class ElasticBeanstalkServiceException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

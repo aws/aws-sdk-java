@@ -1692,11 +1692,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -2398,11 +2398,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7364,11 +7364,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7480,11 +7480,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7596,11 +7596,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7888,11 +7888,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8161,11 +8161,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8278,11 +8278,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

@@ -56,6 +56,16 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
     private String environmentName;
     /**
      * <p>
+     * The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name parameter. See <a href=
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * >Environment Manifest (env.yaml)</a> for details.
+     * </p>
+     */
+    private String groupName;
+    /**
+     * <p>
      * Describes this environment.
      * </p>
      */
@@ -359,6 +369,71 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      */
     public CreateEnvironmentRequest withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name parameter. See <a href=
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * >Environment Manifest (env.yaml)</a> for details.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the group to which the target environment belongs.
+     *        Specify a group name only if the environment's name is specified
+     *        in an environment manifest and not with the environment name
+     *        parameter. See <a href=
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        >Environment Manifest (env.yaml)</a> for details.
+     */
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    /**
+     * <p>
+     * The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name parameter. See <a href=
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * >Environment Manifest (env.yaml)</a> for details.
+     * </p>
+     * 
+     * @return The name of the group to which the target environment belongs.
+     *         Specify a group name only if the environment's name is specified
+     *         in an environment manifest and not with the environment name
+     *         parameter. See <a href=
+     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *         >Environment Manifest (env.yaml)</a> for details.
+     */
+    public String getGroupName() {
+        return this.groupName;
+    }
+
+    /**
+     * <p>
+     * The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name parameter. See <a href=
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * >Environment Manifest (env.yaml)</a> for details.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the group to which the target environment belongs.
+     *        Specify a group name only if the environment's name is specified
+     *        in an environment manifest and not with the environment name
+     *        parameter. See <a href=
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        >Environment Manifest (env.yaml)</a> for details.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateEnvironmentRequest withGroupName(String groupName) {
+        setGroupName(groupName);
         return this;
     }
 
@@ -1045,6 +1120,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
             sb.append("ApplicationName: " + getApplicationName() + ",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+        if (getGroupName() != null)
+            sb.append("GroupName: " + getGroupName() + ",");
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getCNAMEPrefix() != null)
@@ -1088,6 +1165,11 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getEnvironmentName() != null
                 && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
+            return false;
+        if (other.getGroupName() == null ^ this.getGroupName() == null)
+            return false;
+        if (other.getGroupName() != null
+                && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -1154,6 +1236,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getEnvironmentName() == null) ? 0 : getEnvironmentName()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getDescription() == null) ? 0 : getDescription().hashCode());

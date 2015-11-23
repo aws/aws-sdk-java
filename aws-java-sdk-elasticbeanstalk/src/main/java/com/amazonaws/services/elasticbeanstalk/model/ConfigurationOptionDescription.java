@@ -47,24 +47,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which action is required if the value for this
      * configuration option changes:
      * </p>
-     * <enumValues> <value name="NoInterruption">
-     * <p>
-     * NoInterruption - There is no interruption to the environment or
-     * application availability.
-     * </p>
-     * </value> <value name="RestartEnvironment">
-     * <p>
-     * RestartEnvironment - The environment is restarted, all AWS resources are
-     * deleted and recreated, and the environment is unavailable during the
-     * process.
-     * </p>
-     * </value> <value name="RestartApplicationServer">
-     * <p>
-     * RestartApplicationServer - The environment is available the entire time.
-     * However, a short application outage occurs when the application servers
-     * on the running Amazon EC2 instances are restarted.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>NoInterruption</code> : There is no interruption to the
      * environment or application availability.</li>
@@ -81,17 +63,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * <p>
      * An indication of whether the user defined this configuration option:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code> : This configuration option was defined by the user. It
-     * is a valid choice for specifying this as an Option to Remove when
-     * updating configuration settings.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>false</code> : This configuration was not defined by the user.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li>
      * <p>
@@ -116,29 +87,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which type of values this option has and whether it is
      * allowable to select one or more than one of the possible values:
      * </p>
-     * <enumValues> <value name="Scalar">
-     * <p>
-     * <code>Scalar</code> : Values for this option are a single selection from
-     * the possible values, or a unformatted string or numeric value governed by
-     * the MIN/MAX/Regex constraints:
-     * </p>
-     * </value> <value name="List">
-     * <p>
-     * <code>List</code> : Values for this option are multiple selections of the
-     * possible values.
-     * </p>
-     * </value> <value name="Boolean">
-     * <p>
-     * <code>Boolean</code> : Values for this option are either
-     * <code>true</code> or <code>false</code> .
-     * </p>
-     * </value> <value name="Json">
-     * <p>
-     * <code>Json</code> : Values for this option are a JSON representation of a
-     * <code>ConfigDocument</code>.
-     * </p>
-     * </value> </enumValues>
-     * <p>
      * <ul>
      * <li> <code>Scalar</code> : Values for this option are a single selection
      * from the possible values, or an unformatted string, or numeric value
@@ -150,7 +98,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * <li> <code>Json</code> : Values for this option are a JSON representation
      * of a <code>ConfigDocument</code>.</li>
      * </ul>
-     * </p>
      */
     private String valueType;
     /**
@@ -311,24 +258,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which action is required if the value for this
      * configuration option changes:
      * </p>
-     * <enumValues> <value name="NoInterruption">
-     * <p>
-     * NoInterruption - There is no interruption to the environment or
-     * application availability.
-     * </p>
-     * </value> <value name="RestartEnvironment">
-     * <p>
-     * RestartEnvironment - The environment is restarted, all AWS resources are
-     * deleted and recreated, and the environment is unavailable during the
-     * process.
-     * </p>
-     * </value> <value name="RestartApplicationServer">
-     * <p>
-     * RestartApplicationServer - The environment is available the entire time.
-     * However, a short application outage occurs when the application servers
-     * on the running Amazon EC2 instances are restarted.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>NoInterruption</code> : There is no interruption to the
      * environment or application availability.</li>
@@ -342,26 +271,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * 
      * @param changeSeverity
      *        An indication of which action is required if the value for this
-     *        configuration option changes: </p> <enumValues> <value
-     *        name="NoInterruption">
-     *        <p>
-     *        NoInterruption - There is no interruption to the environment or
-     *        application availability.
-     *        </p>
-     *        </value> <value name="RestartEnvironment">
-     *        <p>
-     *        RestartEnvironment - The environment is restarted, all AWS
-     *        resources are deleted and recreated, and the environment is
-     *        unavailable during the process.
-     *        </p>
-     *        </value> <value name="RestartApplicationServer">
-     *        <p>
-     *        RestartApplicationServer - The environment is available the entire
-     *        time. However, a short application outage occurs when the
-     *        application servers on the running Amazon EC2 instances are
-     *        restarted.
-     *        </p>
-     *        </value> </enumValues>
+     *        configuration option changes: </p>
      *        <ul>
      *        <li> <code>NoInterruption</code> : There is no interruption to the
      *        environment or application availability.</li>
@@ -382,24 +292,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which action is required if the value for this
      * configuration option changes:
      * </p>
-     * <enumValues> <value name="NoInterruption">
-     * <p>
-     * NoInterruption - There is no interruption to the environment or
-     * application availability.
-     * </p>
-     * </value> <value name="RestartEnvironment">
-     * <p>
-     * RestartEnvironment - The environment is restarted, all AWS resources are
-     * deleted and recreated, and the environment is unavailable during the
-     * process.
-     * </p>
-     * </value> <value name="RestartApplicationServer">
-     * <p>
-     * RestartApplicationServer - The environment is available the entire time.
-     * However, a short application outage occurs when the application servers
-     * on the running Amazon EC2 instances are restarted.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>NoInterruption</code> : There is no interruption to the
      * environment or application availability.</li>
@@ -412,26 +304,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * </ul>
      * 
      * @return An indication of which action is required if the value for this
-     *         configuration option changes: </p> <enumValues> <value
-     *         name="NoInterruption">
-     *         <p>
-     *         NoInterruption - There is no interruption to the environment or
-     *         application availability.
-     *         </p>
-     *         </value> <value name="RestartEnvironment">
-     *         <p>
-     *         RestartEnvironment - The environment is restarted, all AWS
-     *         resources are deleted and recreated, and the environment is
-     *         unavailable during the process.
-     *         </p>
-     *         </value> <value name="RestartApplicationServer">
-     *         <p>
-     *         RestartApplicationServer - The environment is available the
-     *         entire time. However, a short application outage occurs when the
-     *         application servers on the running Amazon EC2 instances are
-     *         restarted.
-     *         </p>
-     *         </value> </enumValues>
+     *         configuration option changes: </p>
      *         <ul>
      *         <li> <code>NoInterruption</code> : There is no interruption to the
      *         environment or application availability.</li>
@@ -452,24 +325,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which action is required if the value for this
      * configuration option changes:
      * </p>
-     * <enumValues> <value name="NoInterruption">
-     * <p>
-     * NoInterruption - There is no interruption to the environment or
-     * application availability.
-     * </p>
-     * </value> <value name="RestartEnvironment">
-     * <p>
-     * RestartEnvironment - The environment is restarted, all AWS resources are
-     * deleted and recreated, and the environment is unavailable during the
-     * process.
-     * </p>
-     * </value> <value name="RestartApplicationServer">
-     * <p>
-     * RestartApplicationServer - The environment is available the entire time.
-     * However, a short application outage occurs when the application servers
-     * on the running Amazon EC2 instances are restarted.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>NoInterruption</code> : There is no interruption to the
      * environment or application availability.</li>
@@ -483,26 +338,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * 
      * @param changeSeverity
      *        An indication of which action is required if the value for this
-     *        configuration option changes: </p> <enumValues> <value
-     *        name="NoInterruption">
-     *        <p>
-     *        NoInterruption - There is no interruption to the environment or
-     *        application availability.
-     *        </p>
-     *        </value> <value name="RestartEnvironment">
-     *        <p>
-     *        RestartEnvironment - The environment is restarted, all AWS
-     *        resources are deleted and recreated, and the environment is
-     *        unavailable during the process.
-     *        </p>
-     *        </value> <value name="RestartApplicationServer">
-     *        <p>
-     *        RestartApplicationServer - The environment is available the entire
-     *        time. However, a short application outage occurs when the
-     *        application servers on the running Amazon EC2 instances are
-     *        restarted.
-     *        </p>
-     *        </value> </enumValues>
+     *        configuration option changes: </p>
      *        <ul>
      *        <li> <code>NoInterruption</code> : There is no interruption to the
      *        environment or application availability.</li>
@@ -526,17 +362,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * <p>
      * An indication of whether the user defined this configuration option:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code> : This configuration option was defined by the user. It
-     * is a valid choice for specifying this as an Option to Remove when
-     * updating configuration settings.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>false</code> : This configuration was not defined by the user.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li>
      * <p>
@@ -557,18 +382,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * 
      * @param userDefined
      *        An indication of whether the user defined this configuration
-     *        option: </p> <enumValues> <value name="true">
-     *        <p>
-     *        <code>true</code> : This configuration option was defined by the
-     *        user. It is a valid choice for specifying this as an Option to
-     *        Remove when updating configuration settings.
-     *        </p>
-     *        </value> <value name="false">
-     *        <p>
-     *        <code>false</code> : This configuration was not defined by the
-     *        user.
-     *        </p>
-     *        </value> </enumValues>
+     *        option: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -596,17 +410,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * <p>
      * An indication of whether the user defined this configuration option:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code> : This configuration option was defined by the user. It
-     * is a valid choice for specifying this as an Option to Remove when
-     * updating configuration settings.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>false</code> : This configuration was not defined by the user.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li>
      * <p>
@@ -626,18 +429,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @return An indication of whether the user defined this configuration
-     *         option: </p> <enumValues> <value name="true">
-     *         <p>
-     *         <code>true</code> : This configuration option was defined by the
-     *         user. It is a valid choice for specifying this as an Option to
-     *         Remove when updating configuration settings.
-     *         </p>
-     *         </value> <value name="false">
-     *         <p>
-     *         <code>false</code> : This configuration was not defined by the
-     *         user.
-     *         </p>
-     *         </value> </enumValues>
+     *         option: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -665,17 +457,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * <p>
      * An indication of whether the user defined this configuration option:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code> : This configuration option was defined by the user. It
-     * is a valid choice for specifying this as an Option to Remove when
-     * updating configuration settings.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>false</code> : This configuration was not defined by the user.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li>
      * <p>
@@ -696,18 +477,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * 
      * @param userDefined
      *        An indication of whether the user defined this configuration
-     *        option: </p> <enumValues> <value name="true">
-     *        <p>
-     *        <code>true</code> : This configuration option was defined by the
-     *        user. It is a valid choice for specifying this as an Option to
-     *        Remove when updating configuration settings.
-     *        </p>
-     *        </value> <value name="false">
-     *        <p>
-     *        <code>false</code> : This configuration was not defined by the
-     *        user.
-     *        </p>
-     *        </value> </enumValues>
+     *        option: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -738,17 +508,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * <p>
      * An indication of whether the user defined this configuration option:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code> : This configuration option was defined by the user. It
-     * is a valid choice for specifying this as an Option to Remove when
-     * updating configuration settings.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>false</code> : This configuration was not defined by the user.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li>
      * <p>
@@ -768,18 +527,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @return An indication of whether the user defined this configuration
-     *         option: </p> <enumValues> <value name="true">
-     *         <p>
-     *         <code>true</code> : This configuration option was defined by the
-     *         user. It is a valid choice for specifying this as an Option to
-     *         Remove when updating configuration settings.
-     *         </p>
-     *         </value> <value name="false">
-     *         <p>
-     *         <code>false</code> : This configuration was not defined by the
-     *         user.
-     *         </p>
-     *         </value> </enumValues>
+     *         option: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -808,29 +556,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which type of values this option has and whether it is
      * allowable to select one or more than one of the possible values:
      * </p>
-     * <enumValues> <value name="Scalar">
-     * <p>
-     * <code>Scalar</code> : Values for this option are a single selection from
-     * the possible values, or a unformatted string or numeric value governed by
-     * the MIN/MAX/Regex constraints:
-     * </p>
-     * </value> <value name="List">
-     * <p>
-     * <code>List</code> : Values for this option are multiple selections of the
-     * possible values.
-     * </p>
-     * </value> <value name="Boolean">
-     * <p>
-     * <code>Boolean</code> : Values for this option are either
-     * <code>true</code> or <code>false</code> .
-     * </p>
-     * </value> <value name="Json">
-     * <p>
-     * <code>Json</code> : Values for this option are a JSON representation of a
-     * <code>ConfigDocument</code>.
-     * </p>
-     * </value> </enumValues>
-     * <p>
      * <ul>
      * <li> <code>Scalar</code> : Values for this option are a single selection
      * from the possible values, or an unformatted string, or numeric value
@@ -842,34 +567,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * <li> <code>Json</code> : Values for this option are a JSON representation
      * of a <code>ConfigDocument</code>.</li>
      * </ul>
-     * </p>
      * 
      * @param valueType
      *        An indication of which type of values this option has and whether
      *        it is allowable to select one or more than one of the possible
-     *        values: </p> <enumValues> <value name="Scalar">
-     *        <p>
-     *        <code>Scalar</code> : Values for this option are a single
-     *        selection from the possible values, or a unformatted string or
-     *        numeric value governed by the MIN/MAX/Regex constraints:
-     *        </p>
-     *        </value> <value name="List">
-     *        <p>
-     *        <code>List</code> : Values for this option are multiple selections
-     *        of the possible values.
-     *        </p>
-     *        </value> <value name="Boolean">
-     *        <p>
-     *        <code>Boolean</code> : Values for this option are either
-     *        <code>true</code> or <code>false</code> .
-     *        </p>
-     *        </value> <value name="Json">
-     *        <p>
-     *        <code>Json</code> : Values for this option are a JSON
-     *        representation of a <code>ConfigDocument</code>.
-     *        </p>
-     *        </value> </enumValues>
-     *        <p>
+     *        values: </p>
      *        <ul>
      *        <li> <code>Scalar</code> : Values for this option are a single
      *        selection from the possible values, or an unformatted string, or
@@ -881,7 +583,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        <code>true</code> or <code>false</code> .</li>
      *        <li> <code>Json</code> : Values for this option are a JSON
      *        representation of a <code>ConfigDocument</code>.</li>
-     *        </ul>
      * @see ConfigurationOptionValueType
      */
     public void setValueType(String valueType) {
@@ -893,29 +594,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which type of values this option has and whether it is
      * allowable to select one or more than one of the possible values:
      * </p>
-     * <enumValues> <value name="Scalar">
-     * <p>
-     * <code>Scalar</code> : Values for this option are a single selection from
-     * the possible values, or a unformatted string or numeric value governed by
-     * the MIN/MAX/Regex constraints:
-     * </p>
-     * </value> <value name="List">
-     * <p>
-     * <code>List</code> : Values for this option are multiple selections of the
-     * possible values.
-     * </p>
-     * </value> <value name="Boolean">
-     * <p>
-     * <code>Boolean</code> : Values for this option are either
-     * <code>true</code> or <code>false</code> .
-     * </p>
-     * </value> <value name="Json">
-     * <p>
-     * <code>Json</code> : Values for this option are a JSON representation of a
-     * <code>ConfigDocument</code>.
-     * </p>
-     * </value> </enumValues>
-     * <p>
      * <ul>
      * <li> <code>Scalar</code> : Values for this option are a single selection
      * from the possible values, or an unformatted string, or numeric value
@@ -927,33 +605,10 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * <li> <code>Json</code> : Values for this option are a JSON representation
      * of a <code>ConfigDocument</code>.</li>
      * </ul>
-     * </p>
      * 
      * @return An indication of which type of values this option has and whether
      *         it is allowable to select one or more than one of the possible
-     *         values: </p> <enumValues> <value name="Scalar">
-     *         <p>
-     *         <code>Scalar</code> : Values for this option are a single
-     *         selection from the possible values, or a unformatted string or
-     *         numeric value governed by the MIN/MAX/Regex constraints:
-     *         </p>
-     *         </value> <value name="List">
-     *         <p>
-     *         <code>List</code> : Values for this option are multiple
-     *         selections of the possible values.
-     *         </p>
-     *         </value> <value name="Boolean">
-     *         <p>
-     *         <code>Boolean</code> : Values for this option are either
-     *         <code>true</code> or <code>false</code> .
-     *         </p>
-     *         </value> <value name="Json">
-     *         <p>
-     *         <code>Json</code> : Values for this option are a JSON
-     *         representation of a <code>ConfigDocument</code>.
-     *         </p>
-     *         </value> </enumValues>
-     *         <p>
+     *         values: </p>
      *         <ul>
      *         <li> <code>Scalar</code> : Values for this option are a single
      *         selection from the possible values, or an unformatted string, or
@@ -965,7 +620,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *         <code>true</code> or <code>false</code> .</li>
      *         <li> <code>Json</code> : Values for this option are a JSON
      *         representation of a <code>ConfigDocument</code>.</li>
-     *         </ul>
      * @see ConfigurationOptionValueType
      */
     public String getValueType() {
@@ -977,29 +631,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which type of values this option has and whether it is
      * allowable to select one or more than one of the possible values:
      * </p>
-     * <enumValues> <value name="Scalar">
-     * <p>
-     * <code>Scalar</code> : Values for this option are a single selection from
-     * the possible values, or a unformatted string or numeric value governed by
-     * the MIN/MAX/Regex constraints:
-     * </p>
-     * </value> <value name="List">
-     * <p>
-     * <code>List</code> : Values for this option are multiple selections of the
-     * possible values.
-     * </p>
-     * </value> <value name="Boolean">
-     * <p>
-     * <code>Boolean</code> : Values for this option are either
-     * <code>true</code> or <code>false</code> .
-     * </p>
-     * </value> <value name="Json">
-     * <p>
-     * <code>Json</code> : Values for this option are a JSON representation of a
-     * <code>ConfigDocument</code>.
-     * </p>
-     * </value> </enumValues>
-     * <p>
      * <ul>
      * <li> <code>Scalar</code> : Values for this option are a single selection
      * from the possible values, or an unformatted string, or numeric value
@@ -1011,34 +642,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * <li> <code>Json</code> : Values for this option are a JSON representation
      * of a <code>ConfigDocument</code>.</li>
      * </ul>
-     * </p>
      * 
      * @param valueType
      *        An indication of which type of values this option has and whether
      *        it is allowable to select one or more than one of the possible
-     *        values: </p> <enumValues> <value name="Scalar">
-     *        <p>
-     *        <code>Scalar</code> : Values for this option are a single
-     *        selection from the possible values, or a unformatted string or
-     *        numeric value governed by the MIN/MAX/Regex constraints:
-     *        </p>
-     *        </value> <value name="List">
-     *        <p>
-     *        <code>List</code> : Values for this option are multiple selections
-     *        of the possible values.
-     *        </p>
-     *        </value> <value name="Boolean">
-     *        <p>
-     *        <code>Boolean</code> : Values for this option are either
-     *        <code>true</code> or <code>false</code> .
-     *        </p>
-     *        </value> <value name="Json">
-     *        <p>
-     *        <code>Json</code> : Values for this option are a JSON
-     *        representation of a <code>ConfigDocument</code>.
-     *        </p>
-     *        </value> </enumValues>
-     *        <p>
+     *        values: </p>
      *        <ul>
      *        <li> <code>Scalar</code> : Values for this option are a single
      *        selection from the possible values, or an unformatted string, or
@@ -1050,7 +658,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        <code>true</code> or <code>false</code> .</li>
      *        <li> <code>Json</code> : Values for this option are a JSON
      *        representation of a <code>ConfigDocument</code>.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ConfigurationOptionValueType
@@ -1065,29 +672,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which type of values this option has and whether it is
      * allowable to select one or more than one of the possible values:
      * </p>
-     * <enumValues> <value name="Scalar">
-     * <p>
-     * <code>Scalar</code> : Values for this option are a single selection from
-     * the possible values, or a unformatted string or numeric value governed by
-     * the MIN/MAX/Regex constraints:
-     * </p>
-     * </value> <value name="List">
-     * <p>
-     * <code>List</code> : Values for this option are multiple selections of the
-     * possible values.
-     * </p>
-     * </value> <value name="Boolean">
-     * <p>
-     * <code>Boolean</code> : Values for this option are either
-     * <code>true</code> or <code>false</code> .
-     * </p>
-     * </value> <value name="Json">
-     * <p>
-     * <code>Json</code> : Values for this option are a JSON representation of a
-     * <code>ConfigDocument</code>.
-     * </p>
-     * </value> </enumValues>
-     * <p>
      * <ul>
      * <li> <code>Scalar</code> : Values for this option are a single selection
      * from the possible values, or an unformatted string, or numeric value
@@ -1099,34 +683,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * <li> <code>Json</code> : Values for this option are a JSON representation
      * of a <code>ConfigDocument</code>.</li>
      * </ul>
-     * </p>
      * 
      * @param valueType
      *        An indication of which type of values this option has and whether
      *        it is allowable to select one or more than one of the possible
-     *        values: </p> <enumValues> <value name="Scalar">
-     *        <p>
-     *        <code>Scalar</code> : Values for this option are a single
-     *        selection from the possible values, or a unformatted string or
-     *        numeric value governed by the MIN/MAX/Regex constraints:
-     *        </p>
-     *        </value> <value name="List">
-     *        <p>
-     *        <code>List</code> : Values for this option are multiple selections
-     *        of the possible values.
-     *        </p>
-     *        </value> <value name="Boolean">
-     *        <p>
-     *        <code>Boolean</code> : Values for this option are either
-     *        <code>true</code> or <code>false</code> .
-     *        </p>
-     *        </value> <value name="Json">
-     *        <p>
-     *        <code>Json</code> : Values for this option are a JSON
-     *        representation of a <code>ConfigDocument</code>.
-     *        </p>
-     *        </value> </enumValues>
-     *        <p>
+     *        values: </p>
      *        <ul>
      *        <li> <code>Scalar</code> : Values for this option are a single
      *        selection from the possible values, or an unformatted string, or
@@ -1138,7 +699,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        <code>true</code> or <code>false</code> .</li>
      *        <li> <code>Json</code> : Values for this option are a JSON
      *        representation of a <code>ConfigDocument</code>.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ConfigurationOptionValueType
@@ -1152,29 +712,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which type of values this option has and whether it is
      * allowable to select one or more than one of the possible values:
      * </p>
-     * <enumValues> <value name="Scalar">
-     * <p>
-     * <code>Scalar</code> : Values for this option are a single selection from
-     * the possible values, or a unformatted string or numeric value governed by
-     * the MIN/MAX/Regex constraints:
-     * </p>
-     * </value> <value name="List">
-     * <p>
-     * <code>List</code> : Values for this option are multiple selections of the
-     * possible values.
-     * </p>
-     * </value> <value name="Boolean">
-     * <p>
-     * <code>Boolean</code> : Values for this option are either
-     * <code>true</code> or <code>false</code> .
-     * </p>
-     * </value> <value name="Json">
-     * <p>
-     * <code>Json</code> : Values for this option are a JSON representation of a
-     * <code>ConfigDocument</code>.
-     * </p>
-     * </value> </enumValues>
-     * <p>
      * <ul>
      * <li> <code>Scalar</code> : Values for this option are a single selection
      * from the possible values, or an unformatted string, or numeric value
@@ -1186,34 +723,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * <li> <code>Json</code> : Values for this option are a JSON representation
      * of a <code>ConfigDocument</code>.</li>
      * </ul>
-     * </p>
      * 
      * @param valueType
      *        An indication of which type of values this option has and whether
      *        it is allowable to select one or more than one of the possible
-     *        values: </p> <enumValues> <value name="Scalar">
-     *        <p>
-     *        <code>Scalar</code> : Values for this option are a single
-     *        selection from the possible values, or a unformatted string or
-     *        numeric value governed by the MIN/MAX/Regex constraints:
-     *        </p>
-     *        </value> <value name="List">
-     *        <p>
-     *        <code>List</code> : Values for this option are multiple selections
-     *        of the possible values.
-     *        </p>
-     *        </value> <value name="Boolean">
-     *        <p>
-     *        <code>Boolean</code> : Values for this option are either
-     *        <code>true</code> or <code>false</code> .
-     *        </p>
-     *        </value> <value name="Json">
-     *        <p>
-     *        <code>Json</code> : Values for this option are a JSON
-     *        representation of a <code>ConfigDocument</code>.
-     *        </p>
-     *        </value> </enumValues>
-     *        <p>
+     *        values: </p>
      *        <ul>
      *        <li> <code>Scalar</code> : Values for this option are a single
      *        selection from the possible values, or an unformatted string, or
@@ -1225,7 +739,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        <code>true</code> or <code>false</code> .</li>
      *        <li> <code>Json</code> : Values for this option are a JSON
      *        representation of a <code>ConfigDocument</code>.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ConfigurationOptionValueType

@@ -21,27 +21,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesListings(DescribeReservedInstancesListingsRequest) DescribeReservedInstancesListings operation}.
  * <p>
- * Describes your account's Reserved Instance listings in the Reserved
+ * Describes your account's Reserved instance listings in the Reserved
  * Instance Marketplace.
  * </p>
  * <p>
  * The Reserved Instance Marketplace matches sellers who want to resell
- * Reserved Instance capacity that they no longer need with buyers who
- * want to purchase additional capacity. Reserved Instances bought and
+ * Reserved instance capacity that they no longer need with buyers who
+ * want to purchase additional capacity. Reserved instances bought and
  * sold through the Reserved Instance Marketplace work like any other
  * Reserved Instances.
  * </p>
  * <p>
  * As a seller, you choose to list some or all of your Reserved
- * Instances, and you specify the upfront price to receive for them. Your
- * Reserved Instances are then listed in the Reserved Instance
+ * instances, and you specify the upfront price to receive for them. Your
+ * Reserved instances are then listed in the Reserved Instance
  * Marketplace and are available for purchase.
  * </p>
  * <p>
- * As a buyer, you specify the configuration of the Reserved Instance to
+ * As a buyer, you specify the configuration of the Reserved instance to
  * purchase, and the Marketplace matches what you're searching for with
  * what's available. The Marketplace first sells the lowest priced
- * Reserved Instances to you, and continues to sell available Reserved
+ * Reserved instances to you, and continues to sell available Reserved
  * Instance listings to you until your demand is met. You are charged
  * based on the total price of all of the listings that you purchase.
  * </p>
@@ -56,21 +56,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * One or more Reserved Instance IDs.
+     * One or more Reserved instance IDs.
      */
     private String reservedInstancesId;
 
     /**
-     * One or more Reserved Instance Listing IDs.
+     * One or more Reserved instance Listing IDs.
      */
     private String reservedInstancesListingId;
 
     /**
      * One or more filters. <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances. </li> <li>
+     * The ID of the Reserved instances. </li> <li>
      * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved
-     * Instances listing. </li> <li> <p><code>status</code> - The status of
-     * the Reserved Instance listing (<code>pending</code> |
+     * instances listing. </li> <li> <p><code>status</code> - The status of
+     * the Reserved instance listing (<code>pending</code> |
      * <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      * </li> <li> <p><code>status-message</code> - The reason for the status.
      * </li> </ul>
@@ -78,29 +78,29 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * One or more Reserved Instance IDs.
+     * One or more Reserved instance IDs.
      *
-     * @return One or more Reserved Instance IDs.
+     * @return One or more Reserved instance IDs.
      */
     public String getReservedInstancesId() {
         return reservedInstancesId;
     }
     
     /**
-     * One or more Reserved Instance IDs.
+     * One or more Reserved instance IDs.
      *
-     * @param reservedInstancesId One or more Reserved Instance IDs.
+     * @param reservedInstancesId One or more Reserved instance IDs.
      */
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
     
     /**
-     * One or more Reserved Instance IDs.
+     * One or more Reserved instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesId One or more Reserved Instance IDs.
+     * @param reservedInstancesId One or more Reserved instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -111,29 +111,29 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
     }
 
     /**
-     * One or more Reserved Instance Listing IDs.
+     * One or more Reserved instance Listing IDs.
      *
-     * @return One or more Reserved Instance Listing IDs.
+     * @return One or more Reserved instance Listing IDs.
      */
     public String getReservedInstancesListingId() {
         return reservedInstancesListingId;
     }
     
     /**
-     * One or more Reserved Instance Listing IDs.
+     * One or more Reserved instance Listing IDs.
      *
-     * @param reservedInstancesListingId One or more Reserved Instance Listing IDs.
+     * @param reservedInstancesListingId One or more Reserved instance Listing IDs.
      */
     public void setReservedInstancesListingId(String reservedInstancesListingId) {
         this.reservedInstancesListingId = reservedInstancesListingId;
     }
     
     /**
-     * One or more Reserved Instance Listing IDs.
+     * One or more Reserved instance Listing IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesListingId One or more Reserved Instance Listing IDs.
+     * @param reservedInstancesListingId One or more Reserved instance Listing IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -145,19 +145,19 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
 
     /**
      * One or more filters. <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances. </li> <li>
+     * The ID of the Reserved instances. </li> <li>
      * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved
-     * Instances listing. </li> <li> <p><code>status</code> - The status of
-     * the Reserved Instance listing (<code>pending</code> |
+     * instances listing. </li> <li> <p><code>status</code> - The status of
+     * the Reserved instance listing (<code>pending</code> |
      * <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      * </li> <li> <p><code>status-message</code> - The reason for the status.
      * </li> </ul>
      *
      * @return One or more filters. <ul> <li> <p><code>reserved-instances-id</code> -
-     *         The ID of the Reserved Instances. </li> <li>
+     *         The ID of the Reserved instances. </li> <li>
      *         <p><code>reserved-instances-listing-id</code> - The ID of the Reserved
-     *         Instances listing. </li> <li> <p><code>status</code> - The status of
-     *         the Reserved Instance listing (<code>pending</code> |
+     *         instances listing. </li> <li> <p><code>status</code> - The status of
+     *         the Reserved instance listing (<code>pending</code> |
      *         <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      *         </li> <li> <p><code>status-message</code> - The reason for the status.
      *         </li> </ul>
@@ -172,19 +172,19 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
     
     /**
      * One or more filters. <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances. </li> <li>
+     * The ID of the Reserved instances. </li> <li>
      * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved
-     * Instances listing. </li> <li> <p><code>status</code> - The status of
-     * the Reserved Instance listing (<code>pending</code> |
+     * instances listing. </li> <li> <p><code>status</code> - The status of
+     * the Reserved instance listing (<code>pending</code> |
      * <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      * </li> <li> <p><code>status-message</code> - The reason for the status.
      * </li> </ul>
      *
      * @param filters One or more filters. <ul> <li> <p><code>reserved-instances-id</code> -
-     *         The ID of the Reserved Instances. </li> <li>
+     *         The ID of the Reserved instances. </li> <li>
      *         <p><code>reserved-instances-listing-id</code> - The ID of the Reserved
-     *         Instances listing. </li> <li> <p><code>status</code> - The status of
-     *         the Reserved Instance listing (<code>pending</code> |
+     *         instances listing. </li> <li> <p><code>status</code> - The status of
+     *         the Reserved instance listing (<code>pending</code> |
      *         <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      *         </li> <li> <p><code>status-message</code> - The reason for the status.
      *         </li> </ul>
@@ -201,10 +201,10 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
     
     /**
      * One or more filters. <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances. </li> <li>
+     * The ID of the Reserved instances. </li> <li>
      * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved
-     * Instances listing. </li> <li> <p><code>status</code> - The status of
-     * the Reserved Instance listing (<code>pending</code> |
+     * instances listing. </li> <li> <p><code>status</code> - The status of
+     * the Reserved instance listing (<code>pending</code> |
      * <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      * </li> <li> <p><code>status-message</code> - The reason for the status.
      * </li> </ul>
@@ -217,10 +217,10 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters One or more filters. <ul> <li> <p><code>reserved-instances-id</code> -
-     *         The ID of the Reserved Instances. </li> <li>
+     *         The ID of the Reserved instances. </li> <li>
      *         <p><code>reserved-instances-listing-id</code> - The ID of the Reserved
-     *         Instances listing. </li> <li> <p><code>status</code> - The status of
-     *         the Reserved Instance listing (<code>pending</code> |
+     *         instances listing. </li> <li> <p><code>status</code> - The status of
+     *         the Reserved instance listing (<code>pending</code> |
      *         <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      *         </li> <li> <p><code>status-message</code> - The reason for the status.
      *         </li> </ul>
@@ -238,10 +238,10 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
     
     /**
      * One or more filters. <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances. </li> <li>
+     * The ID of the Reserved instances. </li> <li>
      * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved
-     * Instances listing. </li> <li> <p><code>status</code> - The status of
-     * the Reserved Instance listing (<code>pending</code> |
+     * instances listing. </li> <li> <p><code>status</code> - The status of
+     * the Reserved instance listing (<code>pending</code> |
      * <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      * </li> <li> <p><code>status-message</code> - The reason for the status.
      * </li> </ul>
@@ -249,10 +249,10 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters One or more filters. <ul> <li> <p><code>reserved-instances-id</code> -
-     *         The ID of the Reserved Instances. </li> <li>
+     *         The ID of the Reserved instances. </li> <li>
      *         <p><code>reserved-instances-listing-id</code> - The ID of the Reserved
-     *         Instances listing. </li> <li> <p><code>status</code> - The status of
-     *         the Reserved Instance listing (<code>pending</code> |
+     *         instances listing. </li> <li> <p><code>status</code> - The status of
+     *         the Reserved instance listing (<code>pending</code> |
      *         <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      *         </li> <li> <p><code>status-message</code> - The reason for the status.
      *         </li> </ul>

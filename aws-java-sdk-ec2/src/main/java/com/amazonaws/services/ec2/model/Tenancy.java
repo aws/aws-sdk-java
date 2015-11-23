@@ -20,7 +20,8 @@ package com.amazonaws.services.ec2.model;
 public enum Tenancy {
     
     Default("default"),
-    Dedicated("dedicated");
+    Dedicated("dedicated"),
+    Host("host");
 
     private String value;
 
@@ -48,6 +49,8 @@ public enum Tenancy {
             return Tenancy.Default;
         } else if ("dedicated".equals(value)) {
             return Tenancy.Dedicated;
+        } else if ("host".equals(value)) {
+            return Tenancy.Host;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

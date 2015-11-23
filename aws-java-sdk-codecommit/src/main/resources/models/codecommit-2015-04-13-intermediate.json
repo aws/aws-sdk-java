@@ -2228,9 +2228,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2319,9 +2319,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2719,9 +2719,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "RepositoryNameIdPair",
           "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<RepositoryNameIdPair>",
-          "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>"
+          "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2960,9 +2960,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "RepositoryNameIdPair",
             "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<RepositoryNameIdPair>",
-            "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>"
+            "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3181,9 +3181,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "RepositoryMetadata",
           "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<RepositoryMetadata>",
-          "templateImplType" : "java.util.ArrayList<RepositoryMetadata>"
+          "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3245,9 +3245,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3383,9 +3383,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "RepositoryMetadata",
             "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<RepositoryMetadata>",
-            "templateImplType" : "java.util.ArrayList<RepositoryMetadata>"
+            "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3448,9 +3448,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5002,9 +5002,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5192,9 +5192,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,

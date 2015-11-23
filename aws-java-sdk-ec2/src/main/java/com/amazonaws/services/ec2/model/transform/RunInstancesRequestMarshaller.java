@@ -92,6 +92,12 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             if (placementPlacement.getTenancy() != null) {
                 request.addParameter("Placement.Tenancy", StringUtils.fromString(placementPlacement.getTenancy()));
             }
+            if (placementPlacement.getHostId() != null) {
+                request.addParameter("Placement.HostId", StringUtils.fromString(placementPlacement.getHostId()));
+            }
+            if (placementPlacement.getAffinity() != null) {
+                request.addParameter("Placement.Affinity", StringUtils.fromString(placementPlacement.getAffinity()));
+            }
         }
         if (runInstancesRequest.getKernelId() != null) {
             request.addParameter("KernelId", StringUtils.fromString(runInstancesRequest.getKernelId()));

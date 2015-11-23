@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.StopInstancesRequestMarshaller
  * hour, even if transitions happen multiple times within a single hour.
  * </p>
  * <p>
- * You can't start or stop Spot Instances.
+ * You can't start or stop Spot instances.
  * </p>
  * <p>
  * Instances that use Amazon EBS volumes as their root devices can be

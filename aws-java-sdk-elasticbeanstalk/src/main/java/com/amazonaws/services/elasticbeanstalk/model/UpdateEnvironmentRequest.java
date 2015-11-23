@@ -20,12 +20,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * This documentation target is not reported in the API reference.
  * </p>
  */
 public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the application with which the environment is associated.
+     * </p>
+     */
+    private String applicationName;
     /**
      * <p>
      * The ID of the environment to update.
@@ -54,6 +59,17 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String environmentName;
+    /**
+     * <p>
+     * The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name or environment ID parameters.
+     * See <a href=
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * >Environment Manifest (env.yaml)</a> for details.
+     * </p>
+     */
+    private String groupName;
     /**
      * <p>
      * If this parameter is specified, AWS Elastic Beanstalk updates the
@@ -110,6 +126,47 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsToRemove;
+
+    /**
+     * <p>
+     * The name of the application with which the environment is associated.
+     * </p>
+     * 
+     * @param applicationName
+     *        The name of the application with which the environment is
+     *        associated.
+     */
+    public void setApplicationName(String applicationName) {
+        this.applicationName = applicationName;
+    }
+
+    /**
+     * <p>
+     * The name of the application with which the environment is associated.
+     * </p>
+     * 
+     * @return The name of the application with which the environment is
+     *         associated.
+     */
+    public String getApplicationName() {
+        return this.applicationName;
+    }
+
+    /**
+     * <p>
+     * The name of the application with which the environment is associated.
+     * </p>
+     * 
+     * @param applicationName
+     *        The name of the application with which the environment is
+     *        associated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateEnvironmentRequest withApplicationName(String applicationName) {
+        setApplicationName(applicationName);
+        return this;
+    }
 
     /**
      * <p>
@@ -274,6 +331,74 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      */
     public UpdateEnvironmentRequest withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name or environment ID parameters.
+     * See <a href=
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * >Environment Manifest (env.yaml)</a> for details.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the group to which the target environment belongs.
+     *        Specify a group name only if the environment's name is specified
+     *        in an environment manifest and not with the environment name or
+     *        environment ID parameters. See <a href=
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        >Environment Manifest (env.yaml)</a> for details.
+     */
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    /**
+     * <p>
+     * The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name or environment ID parameters.
+     * See <a href=
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * >Environment Manifest (env.yaml)</a> for details.
+     * </p>
+     * 
+     * @return The name of the group to which the target environment belongs.
+     *         Specify a group name only if the environment's name is specified
+     *         in an environment manifest and not with the environment name or
+     *         environment ID parameters. See <a href=
+     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *         >Environment Manifest (env.yaml)</a> for details.
+     */
+    public String getGroupName() {
+        return this.groupName;
+    }
+
+    /**
+     * <p>
+     * The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name or environment ID parameters.
+     * See <a href=
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * >Environment Manifest (env.yaml)</a> for details.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the group to which the target environment belongs.
+     *        Specify a group name only if the environment's name is specified
+     *        in an environment manifest and not with the environment name or
+     *        environment ID parameters. See <a href=
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        >Environment Manifest (env.yaml)</a> for details.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateEnvironmentRequest withGroupName(String groupName) {
+        setGroupName(groupName);
         return this;
     }
 
@@ -727,10 +852,14 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApplicationName() != null)
+            sb.append("ApplicationName: " + getApplicationName() + ",");
         if (getEnvironmentId() != null)
             sb.append("EnvironmentId: " + getEnvironmentId() + ",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+        if (getGroupName() != null)
+            sb.append("GroupName: " + getGroupName() + ",");
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getTier() != null)
@@ -759,6 +888,12 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         if (obj instanceof UpdateEnvironmentRequest == false)
             return false;
         UpdateEnvironmentRequest other = (UpdateEnvironmentRequest) obj;
+        if (other.getApplicationName() == null
+                ^ this.getApplicationName() == null)
+            return false;
+        if (other.getApplicationName() != null
+                && other.getApplicationName().equals(this.getApplicationName()) == false)
+            return false;
         if (other.getEnvironmentId() == null ^ this.getEnvironmentId() == null)
             return false;
         if (other.getEnvironmentId() != null
@@ -769,6 +904,11 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getEnvironmentName() != null
                 && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
+            return false;
+        if (other.getGroupName() == null ^ this.getGroupName() == null)
+            return false;
+        if (other.getGroupName() != null
+                && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -819,12 +959,18 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
 
         hashCode = prime
                 * hashCode
+                + ((getApplicationName() == null) ? 0 : getApplicationName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
                 + ((getEnvironmentId() == null) ? 0 : getEnvironmentId()
                         .hashCode());
         hashCode = prime
                 * hashCode
                 + ((getEnvironmentName() == null) ? 0 : getEnvironmentName()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getDescription() == null) ? 0 : getDescription().hashCode());

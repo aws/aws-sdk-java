@@ -28,21 +28,10 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      * <p>
      * Indicates if the specified CNAME is available:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code> : The CNAME is available.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>true</code> : The CNAME is not available.
-     * </p>
-     * </value> </enumValues>
-     * <p>
      * <ul>
      * <li> <code>true</code> : The CNAME is available.</li>
      * <li> <code>false</code> : The CNAME is not available.</li>
      * </ul>
-     * </p>
      */
     private Boolean available;
     /**
@@ -57,38 +46,16 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      * <p>
      * Indicates if the specified CNAME is available:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code> : The CNAME is available.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>true</code> : The CNAME is not available.
-     * </p>
-     * </value> </enumValues>
-     * <p>
      * <ul>
      * <li> <code>true</code> : The CNAME is available.</li>
      * <li> <code>false</code> : The CNAME is not available.</li>
      * </ul>
-     * </p>
      * 
      * @param available
-     *        Indicates if the specified CNAME is available: </p> <enumValues>
-     *        <value name="true">
-     *        <p>
-     *        <code>true</code> : The CNAME is available.
-     *        </p>
-     *        </value> <value name="false">
-     *        <p>
-     *        <code>true</code> : The CNAME is not available.
-     *        </p>
-     *        </value> </enumValues>
-     *        <p>
+     *        Indicates if the specified CNAME is available: </p>
      *        <ul>
      *        <li> <code>true</code> : The CNAME is available.</li>
      *        <li> <code>false</code> : The CNAME is not available.</li>
-     *        </ul>
      */
     public void setAvailable(Boolean available) {
         this.available = available;
@@ -98,37 +65,15 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      * <p>
      * Indicates if the specified CNAME is available:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code> : The CNAME is available.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>true</code> : The CNAME is not available.
-     * </p>
-     * </value> </enumValues>
-     * <p>
      * <ul>
      * <li> <code>true</code> : The CNAME is available.</li>
      * <li> <code>false</code> : The CNAME is not available.</li>
      * </ul>
-     * </p>
      * 
-     * @return Indicates if the specified CNAME is available: </p> <enumValues>
-     *         <value name="true">
-     *         <p>
-     *         <code>true</code> : The CNAME is available.
-     *         </p>
-     *         </value> <value name="false">
-     *         <p>
-     *         <code>true</code> : The CNAME is not available.
-     *         </p>
-     *         </value> </enumValues>
-     *         <p>
+     * @return Indicates if the specified CNAME is available: </p>
      *         <ul>
      *         <li> <code>true</code> : The CNAME is available.</li>
      *         <li> <code>false</code> : The CNAME is not available.</li>
-     *         </ul>
      */
     public Boolean getAvailable() {
         return this.available;
@@ -138,38 +83,16 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      * <p>
      * Indicates if the specified CNAME is available:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code> : The CNAME is available.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>true</code> : The CNAME is not available.
-     * </p>
-     * </value> </enumValues>
-     * <p>
      * <ul>
      * <li> <code>true</code> : The CNAME is available.</li>
      * <li> <code>false</code> : The CNAME is not available.</li>
      * </ul>
-     * </p>
      * 
      * @param available
-     *        Indicates if the specified CNAME is available: </p> <enumValues>
-     *        <value name="true">
-     *        <p>
-     *        <code>true</code> : The CNAME is available.
-     *        </p>
-     *        </value> <value name="false">
-     *        <p>
-     *        <code>true</code> : The CNAME is not available.
-     *        </p>
-     *        </value> </enumValues>
-     *        <p>
+     *        Indicates if the specified CNAME is available: </p>
      *        <ul>
      *        <li> <code>true</code> : The CNAME is available.</li>
      *        <li> <code>false</code> : The CNAME is not available.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -182,37 +105,15 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      * <p>
      * Indicates if the specified CNAME is available:
      * </p>
-     * <enumValues> <value name="true">
-     * <p>
-     * <code>true</code> : The CNAME is available.
-     * </p>
-     * </value> <value name="false">
-     * <p>
-     * <code>true</code> : The CNAME is not available.
-     * </p>
-     * </value> </enumValues>
-     * <p>
      * <ul>
      * <li> <code>true</code> : The CNAME is available.</li>
      * <li> <code>false</code> : The CNAME is not available.</li>
      * </ul>
-     * </p>
      * 
-     * @return Indicates if the specified CNAME is available: </p> <enumValues>
-     *         <value name="true">
-     *         <p>
-     *         <code>true</code> : The CNAME is available.
-     *         </p>
-     *         </value> <value name="false">
-     *         <p>
-     *         <code>true</code> : The CNAME is not available.
-     *         </p>
-     *         </value> </enumValues>
-     *         <p>
+     * @return Indicates if the specified CNAME is available: </p>
      *         <ul>
      *         <li> <code>true</code> : The CNAME is available.</li>
      *         <li> <code>false</code> : The CNAME is not available.</li>
-     *         </ul>
      */
     public Boolean isAvailable() {
         return this.available;

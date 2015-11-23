@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class PurchaseReservedInstancesOfferingResult implements Serializable, Cloneable {
 
     /**
-     * The IDs of the purchased Reserved Instances.
+     * The IDs of the purchased Reserved instances.
      */
     private String reservedInstancesId;
 
     /**
-     * The IDs of the purchased Reserved Instances.
+     * The IDs of the purchased Reserved instances.
      *
-     * @return The IDs of the purchased Reserved Instances.
+     * @return The IDs of the purchased Reserved instances.
      */
     public String getReservedInstancesId() {
         return reservedInstancesId;
     }
     
     /**
-     * The IDs of the purchased Reserved Instances.
+     * The IDs of the purchased Reserved instances.
      *
-     * @param reservedInstancesId The IDs of the purchased Reserved Instances.
+     * @param reservedInstancesId The IDs of the purchased Reserved instances.
      */
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
     
     /**
-     * The IDs of the purchased Reserved Instances.
+     * The IDs of the purchased Reserved instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesId The IDs of the purchased Reserved Instances.
+     * @param reservedInstancesId The IDs of the purchased Reserved instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

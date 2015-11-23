@@ -94,6 +94,12 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
                 if (placementPlacement.getTenancy() != null) {
                     request.addParameter("LaunchSpecification.Placement.Tenancy", StringUtils.fromString(placementPlacement.getTenancy()));
                 }
+                if (placementPlacement.getHostId() != null) {
+                    request.addParameter("LaunchSpecification.Placement.HostId", StringUtils.fromString(placementPlacement.getHostId()));
+                }
+                if (placementPlacement.getAffinity() != null) {
+                    request.addParameter("LaunchSpecification.Placement.Affinity", StringUtils.fromString(placementPlacement.getAffinity()));
+                }
             }
             if (importInstanceLaunchSpecificationLaunchSpecification.isMonitoring() != null) {
                 request.addParameter("LaunchSpecification.Monitoring.Enabled", StringUtils.fromBoolean(importInstanceLaunchSpecificationLaunchSpecification.isMonitoring()));

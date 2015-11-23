@@ -348,8 +348,39 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * Runs and maintains a desired number of tasks from a specified task
      * definition. If the number of tasks running in a service drops below
      * <code>desiredCount</code>, Amazon ECS spawns another instantiation of the
-     * task in the specified cluster.
+     * task in the specified cluster. To update an existing service, see
+     * <a>UpdateService</a>.
      * </p>
+     * <p>
+     * When the service scheduler launches new tasks, it attempts to balance
+     * them across the Availability Zones in your cluster with the following
+     * logic:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Determine which of the container instances in your cluster can support
+     * your service's task definition (for example, they have the required CPU,
+     * memory, ports, and container instance attributes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Sort the valid container instances by the fewest number of running tasks
+     * for this service in the same Availability Zone as the instance. For
+     * example, if zone A has one running service task and zones B and C each
+     * have zero, valid container instances in either zone B or C are considered
+     * optimal for placement.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Place the new service task on a valid container instance in an optimal
+     * Availability Zone (based on the previous steps), favoring container
+     * instances with the fewest number of running tasks for this service.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createServiceRequest
      * @return Result of the CreateService operation returned by the service.
@@ -473,8 +504,27 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Deletes a specified service within a cluster.
+     * Deletes a specified service within a cluster. You can delete a service if
+     * you have no running tasks in it and the desired task count is zero. If
+     * the service is actively maintaining tasks, you cannot delete it, and you
+     * must update the service to a desired task count of zero. For more
+     * information, see <a>UpdateService</a>.
      * </p>
+     * <note>
+     * <p>
+     * When you delete a service, if there are still running tasks that require
+     * cleanup, the service status moves from <code>ACTIVE</code> to
+     * <code>DRAINING</code>, and the service is no longer visible in the
+     * console or in <a>ListServices</a> API operations. After the tasks have
+     * stopped, then the service status moves from <code>DRAINING</code> to
+     * <code>INACTIVE</code>. Services in the <code>DRAINING</code> or
+     * <code>INACTIVE</code> status can still be viewed with
+     * <a>DescribeServices</a> API operations; however, in the future,
+     * <code>INACTIVE</code> services may be cleaned up and purged from Amazon
+     * ECS record keeping, and <a>DescribeServices</a> API operations on those
+     * services will return a <code>ServiceNotFoundException</code> error.
+     * </p>
+     * </note>
      * 
      * @param deleteServiceRequest
      * @return Result of the DeleteService operation returned by the service.
@@ -1949,6 +1999,36 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * <code>SIGTERM</code> gracefully and exits within 30 seconds from
      * receiving it, no <code>SIGKILL</code> is sent.
      * </p>
+     * <p>
+     * When the service scheduler launches new tasks, it attempts to balance
+     * them across the Availability Zones in your cluster with the following
+     * logic:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Determine which of the container instances in your cluster can support
+     * your service's task definition (for example, they have the required CPU,
+     * memory, ports, and container instance attributes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Sort the valid container instances by the fewest number of running tasks
+     * for this service in the same Availability Zone as the instance. For
+     * example, if zone A has one running service task and zones B and C each
+     * have zero, valid container instances in either zone B or C are considered
+     * optimal for placement.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Place the new service task on a valid container instance in an optimal
+     * Availability Zone (based on the previous steps), favoring container
+     * instances with the fewest number of running tasks for this service.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateServiceRequest
      * @return Result of the UpdateService operation returned by the service.

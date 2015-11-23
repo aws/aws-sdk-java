@@ -60,6 +60,12 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date dateUpdated;
+    /**
+     * <p>
+     * The processing status of the application version.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
@@ -297,6 +303,79 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The processing status of the application version.
+     * </p>
+     * 
+     * @param status
+     *        The processing status of the application version.
+     * @see ApplicationVersionStatus
+     */
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The processing status of the application version.
+     * </p>
+     * 
+     * @return The processing status of the application version.
+     * @see ApplicationVersionStatus
+     */
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The processing status of the application version.
+     * </p>
+     * 
+     * @param status
+     *        The processing status of the application version.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ApplicationVersionStatus
+     */
+    public ApplicationVersionDescription withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The processing status of the application version.
+     * </p>
+     * 
+     * @param status
+     *        The processing status of the application version.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ApplicationVersionStatus
+     */
+    public void setStatus(ApplicationVersionStatus status) {
+        this.status = status.toString();
+    }
+
+    /**
+     * <p>
+     * The processing status of the application version.
+     * </p>
+     * 
+     * @param status
+     *        The processing status of the application version.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ApplicationVersionStatus
+     */
+    public ApplicationVersionDescription withStatus(
+            ApplicationVersionStatus status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -319,7 +398,9 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
         if (getDateCreated() != null)
             sb.append("DateCreated: " + getDateCreated() + ",");
         if (getDateUpdated() != null)
-            sb.append("DateUpdated: " + getDateUpdated());
+            sb.append("DateUpdated: " + getDateUpdated() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -365,6 +446,11 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
         if (other.getDateUpdated() != null
                 && other.getDateUpdated().equals(this.getDateUpdated()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null
+                && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -394,6 +480,8 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode());
+        hashCode = prime * hashCode
+                + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

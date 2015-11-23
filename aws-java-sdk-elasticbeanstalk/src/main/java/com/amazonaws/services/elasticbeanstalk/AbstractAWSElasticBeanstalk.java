@@ -53,6 +53,12 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
+    public ComposeEnvironmentsResult composeEnvironments(
+            ComposeEnvironmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateApplicationResult createApplication(
             CreateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();

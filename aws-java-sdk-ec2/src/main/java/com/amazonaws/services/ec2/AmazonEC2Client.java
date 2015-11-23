@@ -268,10 +268,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes one or more of the Reserved Instances that you purchased.
+     * Describes one or more of the Reserved instances that you purchased.
      * </p>
      * <p>
-     * For more information about Reserved Instances, see
+     * For more information about Reserved instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -798,6 +798,128 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Set the instance affinity value for a specific stopped instance and
+     * modify the instance tenancy setting.
+     * </p>
+     * <p>
+     * Instance affinity is disabled by default. When instance affinity is
+     * <code>host</code> and it is not associated with a specific Dedicated
+     * host, the next time it is launched it will automatically be associated
+     * with the host it lands on. This relationship will persist if the
+     * instance is stopped/started, or rebooted.
+     * </p>
+     * <p>
+     * You can modify the host ID associated with a stopped instance. If a
+     * stopped instance has a new host ID association, the instance will
+     * target that host when restarted.
+     * </p>
+     * <p>
+     * You can modify the tenancy of a stopped instance with a tenancy of
+     * <code>host</code> or <code>dedicated</code> .
+     * </p>
+     * <p>
+     * Affinity, hostID, and tenancy are not required parameters, but at
+     * least one of them must be specified in the request. Affinity and
+     * tenancy can be modified in the same request, but tenancy can only be
+     * modified on instances that are stopped.
+     * </p>
+     *
+     * @param modifyInstancePlacementRequest Container for the necessary
+     *           parameters to execute the ModifyInstancePlacement service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the ModifyInstancePlacement service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ModifyInstancePlacementResult modifyInstancePlacement(ModifyInstancePlacementRequest modifyInstancePlacementRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyInstancePlacementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyInstancePlacementRequest> request = null;
+        Response<ModifyInstancePlacementResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyInstancePlacementRequestMarshaller().marshall(super.beforeMarshalling(modifyInstancePlacementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ModifyInstancePlacementResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Describes one or more of your Dedicated hosts.
+     * </p>
+     * <p>
+     * The results describe only the Dedicated hosts in the region you're
+     * currently using. All listed instances consume capacity on your
+     * Dedicated host. Dedicated hosts that have recently been released will
+     * be listed with the status "released".
+     * </p>
+     *
+     * @param describeHostsRequest Container for the necessary parameters to
+     *           execute the DescribeHosts service method on AmazonEC2.
+     * 
+     * @return The response from the DescribeHosts service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeHostsResult describeHosts(DescribeHostsRequest describeHostsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeHostsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeHostsRequest> request = null;
+        Response<DescribeHostsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeHostsRequestMarshaller().marshall(super.beforeMarshalling(describeHostsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeHostsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Exports a running or stopped instance to an S3 bucket.
      * </p>
      * <p>
@@ -1046,7 +1168,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * hour, even if transitions happen multiple times within a single hour.
      * </p>
      * <p>
-     * You can't start or stop Spot Instances.
+     * You can't start or stop Spot instances.
      * </p>
      * <p>
      * Instances that use Amazon EBS volumes as their root devices can be
@@ -1451,53 +1573,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes one or more of your network interfaces.
-     * </p>
-     *
-     * @param describeNetworkInterfacesRequest Container for the necessary
-     *           parameters to execute the DescribeNetworkInterfaces service method on
-     *           AmazonEC2.
-     * 
-     * @return The response from the DescribeNetworkInterfaces service
-     *         method, as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeNetworkInterfacesResult describeNetworkInterfaces(DescribeNetworkInterfacesRequest describeNetworkInterfacesRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeNetworkInterfacesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeNetworkInterfacesRequest> request = null;
-        Response<DescribeNetworkInterfacesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeNetworkInterfacesRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkInterfacesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new DescribeNetworkInterfacesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * Describes one or more regions that are currently available to you.
      * </p>
      * <p>
@@ -1539,6 +1614,53 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             response = invoke(request, new DescribeRegionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Describes one or more of your network interfaces.
+     * </p>
+     *
+     * @param describeNetworkInterfacesRequest Container for the necessary
+     *           parameters to execute the DescribeNetworkInterfaces service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeNetworkInterfaces service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeNetworkInterfacesResult describeNetworkInterfaces(DescribeNetworkInterfacesRequest describeNetworkInterfacesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeNetworkInterfacesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNetworkInterfacesRequest> request = null;
+        Response<DescribeNetworkInterfacesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNetworkInterfacesRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkInterfacesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeNetworkInterfacesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -1642,26 +1764,26 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Creates a listing for Amazon EC2 Reserved Instances to be sold in the
-     * Reserved Instance Marketplace. You can submit one Reserved Instance
-     * listing at a time. To get a list of your Reserved Instances, you can
+     * Creates a listing for Amazon EC2 Reserved instances to be sold in the
+     * Reserved Instance Marketplace. You can submit one Reserved instance
+     * listing at a time. To get a list of your Reserved instances, you can
      * use the DescribeReservedInstances operation.
      * </p>
      * <p>
      * The Reserved Instance Marketplace matches sellers who want to resell
-     * Reserved Instance capacity that they no longer need with buyers who
-     * want to purchase additional capacity. Reserved Instances bought and
+     * Reserved instance capacity that they no longer need with buyers who
+     * want to purchase additional capacity. Reserved instances bought and
      * sold through the Reserved Instance Marketplace work like any other
-     * Reserved Instances.
+     * Reserved instances.
      * </p>
      * <p>
-     * To sell your Reserved Instances, you must first register as a seller
+     * To sell your Reserved instances, you must first register as a seller
      * in the Reserved Instance Marketplace. After completing the
      * registration process, you can create a Reserved Instance Marketplace
      * listing of some or all of your Reserved Instances, and specify the
-     * upfront price to receive for them. Your Reserved Instance listings
+     * upfront price to receive for them. Your Reserved instance listings
      * then become available for purchase. To view the details of your
-     * Reserved Instance listing, you can use the
+     * Reserved instance listing, you can use the
      * DescribeReservedInstancesListings operation.
      * </p>
      * <p>
@@ -2292,6 +2414,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * When you no longer want to use a Dedicated host it can be released.
+     * On-Demand billing is stopped and the host goes into "released" state.
+     * The host ID of Dedicated hosts that have been released can no longer
+     * be specified in another request, e.g., ModifyHosts. You must stop or
+     * terminate all instances on a host before it can be released.
+     * </p>
+     * <p>
+     * When Dedicated hosts are released, it make take some time for them to
+     * stop counting toward your limit and you may receive capacity errors
+     * when trying to allocate new Dedicated hosts. Try waiting a few
+     * minutes, and then try again.
+     * </p>
+     * <p>
+     * Released hosts will still appear in a DescribeHosts response.
+     * </p>
+     *
+     * @param releaseHostsRequest Container for the necessary parameters to
+     *           execute the ReleaseHosts service method on AmazonEC2.
+     * 
+     * @return The response from the ReleaseHosts service method, as returned
+     *         by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ReleaseHostsResult releaseHosts(ReleaseHostsRequest releaseHostsRequest) {
+        ExecutionContext executionContext = createExecutionContext(releaseHostsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReleaseHostsRequest> request = null;
+        Response<ReleaseHostsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReleaseHostsRequestMarshaller().marshall(super.beforeMarshalling(releaseHostsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ReleaseHostsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -4020,27 +4201,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes your account's Reserved Instance listings in the Reserved
+     * Describes your account's Reserved instance listings in the Reserved
      * Instance Marketplace.
      * </p>
      * <p>
      * The Reserved Instance Marketplace matches sellers who want to resell
-     * Reserved Instance capacity that they no longer need with buyers who
-     * want to purchase additional capacity. Reserved Instances bought and
+     * Reserved instance capacity that they no longer need with buyers who
+     * want to purchase additional capacity. Reserved instances bought and
      * sold through the Reserved Instance Marketplace work like any other
      * Reserved Instances.
      * </p>
      * <p>
      * As a seller, you choose to list some or all of your Reserved
-     * Instances, and you specify the upfront price to receive for them. Your
-     * Reserved Instances are then listed in the Reserved Instance
+     * instances, and you specify the upfront price to receive for them. Your
+     * Reserved instances are then listed in the Reserved Instance
      * Marketplace and are available for purchase.
      * </p>
      * <p>
-     * As a buyer, you specify the configuration of the Reserved Instance to
+     * As a buyer, you specify the configuration of the Reserved instance to
      * purchase, and the Marketplace matches what you're searching for with
      * what's available. The Marketplace first sells the lowest priced
-     * Reserved Instances to you, and continues to sell available Reserved
+     * Reserved instances to you, and continues to sell available Reserved
      * Instance listings to you until your demand is met. You are charged
      * based on the total price of all of the listings that you purchase.
      * </p>
@@ -4995,6 +5176,54 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Allocates a Dedicated host to your account. At minimum you need to
+     * specify the instance size type, Availability Zone, and quantity of
+     * hosts you want to allocate.
+     * </p>
+     *
+     * @param allocateHostsRequest Container for the necessary parameters to
+     *           execute the AllocateHosts service method on AmazonEC2.
+     * 
+     * @return The response from the AllocateHosts service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AllocateHostsResult allocateHosts(AllocateHostsRequest allocateHostsRequest) {
+        ExecutionContext executionContext = createExecutionContext(allocateHostsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AllocateHostsRequest> request = null;
+        Response<AllocateHostsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AllocateHostsRequestMarshaller().marshall(super.beforeMarshalling(allocateHostsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new AllocateHostsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Provides information to AWS about your VPN customer gateway device.
      * The customer gateway is the appliance at your end of the VPN
      * connection. (The device on the AWS side of the VPN connection is the
@@ -5224,18 +5453,36 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes your Elastic IP addresses that are being moved to the
-     * EC2-VPC platform, or that are being restored to the EC2-Classic
-     * platform. This request does not return information about any other
-     * Elastic IP addresses in your account.
+     * Creates a VPN connection between an existing virtual private gateway
+     * and a VPN customer gateway. The only supported connection type is
+     * <code>ipsec.1</code> .
+     * </p>
+     * <p>
+     * The response includes information that you need to give to your
+     * network administrator to configure your customer gateway.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> We strongly recommend that you use HTTPS when
+     * calling this operation because the response contains sensitive
+     * cryptographic information for configuring your customer gateway.
+     * </p>
+     * <p>
+     * If you decide to shut down your VPN connection for any reason and
+     * later create a new VPN connection, you must reconfigure your customer
+     * gateway with the new information returned from this call.
+     * </p>
+     * <p>
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
-     * @param describeMovingAddressesRequest Container for the necessary
-     *           parameters to execute the DescribeMovingAddresses service method on
+     * @param createVpnConnectionRequest Container for the necessary
+     *           parameters to execute the CreateVpnConnection service method on
      *           AmazonEC2.
      * 
-     * @return The response from the DescribeMovingAddresses service method,
-     *         as returned by AmazonEC2.
+     * @return The response from the CreateVpnConnection service method, as
+     *         returned by AmazonEC2.
      * 
      *
      * @throws AmazonClientException
@@ -5246,24 +5493,24 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *             If an error response is returned by AmazonEC2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeMovingAddressesResult describeMovingAddresses(DescribeMovingAddressesRequest describeMovingAddressesRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeMovingAddressesRequest);
+    public CreateVpnConnectionResult createVpnConnection(CreateVpnConnectionRequest createVpnConnectionRequest) {
+        ExecutionContext executionContext = createExecutionContext(createVpnConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeMovingAddressesRequest> request = null;
-        Response<DescribeMovingAddressesResult> response = null;
+        Request<CreateVpnConnectionRequest> request = null;
+        Response<CreateVpnConnectionResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMovingAddressesRequestMarshaller().marshall(super.beforeMarshalling(describeMovingAddressesRequest));
+                request = new CreateVpnConnectionRequestMarshaller().marshall(super.beforeMarshalling(createVpnConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new DescribeMovingAddressesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateVpnConnectionResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -5324,36 +5571,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Creates a VPN connection between an existing virtual private gateway
-     * and a VPN customer gateway. The only supported connection type is
-     * <code>ipsec.1</code> .
-     * </p>
-     * <p>
-     * The response includes information that you need to give to your
-     * network administrator to configure your customer gateway.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> We strongly recommend that you use HTTPS when
-     * calling this operation because the response contains sensitive
-     * cryptographic information for configuring your customer gateway.
-     * </p>
-     * <p>
-     * If you decide to shut down your VPN connection for any reason and
-     * later create a new VPN connection, you must reconfigure your customer
-     * gateway with the new information returned from this call.
-     * </p>
-     * <p>
-     * For more information about VPN connections, see
-     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
-     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
+     * Describes your Elastic IP addresses that are being moved to the
+     * EC2-VPC platform, or that are being restored to the EC2-Classic
+     * platform. This request does not return information about any other
+     * Elastic IP addresses in your account.
      * </p>
      *
-     * @param createVpnConnectionRequest Container for the necessary
-     *           parameters to execute the CreateVpnConnection service method on
+     * @param describeMovingAddressesRequest Container for the necessary
+     *           parameters to execute the DescribeMovingAddresses service method on
      *           AmazonEC2.
      * 
-     * @return The response from the CreateVpnConnection service method, as
-     *         returned by AmazonEC2.
+     * @return The response from the DescribeMovingAddresses service method,
+     *         as returned by AmazonEC2.
      * 
      *
      * @throws AmazonClientException
@@ -5364,24 +5593,24 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *             If an error response is returned by AmazonEC2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateVpnConnectionResult createVpnConnection(CreateVpnConnectionRequest createVpnConnectionRequest) {
-        ExecutionContext executionContext = createExecutionContext(createVpnConnectionRequest);
+    public DescribeMovingAddressesResult describeMovingAddresses(DescribeMovingAddressesRequest describeMovingAddressesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeMovingAddressesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateVpnConnectionRequest> request = null;
-        Response<CreateVpnConnectionResult> response = null;
+        Request<DescribeMovingAddressesRequest> request = null;
+        Response<DescribeMovingAddressesResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateVpnConnectionRequestMarshaller().marshall(super.beforeMarshalling(createVpnConnectionRequest));
+                request = new DescribeMovingAddressesRequestMarshaller().marshall(super.beforeMarshalling(describeMovingAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new CreateVpnConnectionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeMovingAddressesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -6220,7 +6449,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Cancels the specified Reserved Instance listing in the Reserved
+     * Cancels the specified Reserved instance listing in the Reserved
      * Instance Marketplace.
      * </p>
      * <p>
@@ -7226,6 +7455,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * <b>Important: This command is reserved for future use, and is
+     * currently not available for you to use.</b>
+     * </p>
+     * <p>
+     * Modifies the ID format for the specified resource. You can specify
+     * that resources should receive longer IDs (17-character IDs) when they
+     * are created. The following resource types support longer IDs:
+     * <code>instance</code> | <code>reservation</code> .
+     * </p>
+     * <p>
+     * This setting applies to the IAM user who makes the request; it does
+     * not apply to the entire AWS account. By default, an IAM user defaults
+     * to the same settings as the root user, unless they explicitly override
+     * the settings by running this request. These settings are applied on a
+     * per-region basis.
+     * </p>
+     *
+     * @param modifyIdFormatRequest Container for the necessary parameters to
+     *           execute the ModifyIdFormat service method on AmazonEC2.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void modifyIdFormat(ModifyIdFormatRequest modifyIdFormatRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyIdFormatRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyIdFormatRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyIdFormatRequestMarshaller().marshall(super.beforeMarshalling(modifyIdFormatRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
      * Replaces an existing route within a route table in a VPC. You must
      * provide only one of the following: Internet gateway or virtual private
      * gateway, NAT instance, VPC peering connection, or network interface.
@@ -7640,16 +7925,16 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Purchases a Reserved Instance for use with your account. With Amazon
-     * EC2 Reserved Instances, you obtain a capacity reservation for a
+     * Purchases a Reserved instance for use with your account. With Amazon
+     * EC2 Reserved instances, you obtain a capacity reservation for a
      * certain instance configuration over a specified period of time and pay
-     * a lower hourly rate compared to on-Demand Instance pricing.
+     * a lower hourly rate compared to On-Demand Instance pricing.
      * </p>
      * <p>
      * Use DescribeReservedInstancesOfferings to get a list of Reserved
-     * Instance offerings that match your specifications. After you've
-     * purchased a Reserved Instance, you can check for your new Reserved
-     * Instance with DescribeReservedInstances.
+     * instance offerings that match your specifications. After you've
+     * purchased a Reserved instance, you can check for your new Reserved
+     * instance with DescribeReservedInstances.
      * </p>
      * <p>
      * For more information, see
@@ -7757,7 +8042,60 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the modifications made to your Reserved Instances. If no
+     * Modify the auto-placement setting of a Dedicated host. When
+     * auto-placement is enabled, AWS will place instances that you launch
+     * with a tenancy of <code>host</code> , but without targeting a specific
+     * host ID, onto any available Dedicated host in your account which has
+     * auto-placement enabled. When auto-placement is disabled, you need to
+     * provide a host ID if you want the instance to launch onto a specific
+     * host. If no host ID is provided, the instance will be launched onto a
+     * suitable host which has auto-placement enabled.
+     * </p>
+     *
+     * @param modifyHostsRequest Container for the necessary parameters to
+     *           execute the ModifyHosts service method on AmazonEC2.
+     * 
+     * @return The response from the ModifyHosts service method, as returned
+     *         by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ModifyHostsResult modifyHosts(ModifyHostsRequest modifyHostsRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyHostsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyHostsRequest> request = null;
+        Response<ModifyHostsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyHostsRequestMarshaller().marshall(super.beforeMarshalling(modifyHostsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ModifyHostsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Describes the modifications made to your Reserved instances. If no
      * parameter is specified, information about all your Reserved Instances
      * modification requests is returned. If a modification ID is specified,
      * only information about the specific modification is returned.
@@ -8806,8 +9144,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes Reserved Instance offerings that are available for
-     * purchase. With Reserved Instances, you purchase the right to launch
+     * Describes Reserved instance offerings that are available for
+     * purchase. With Reserved instances, you purchase the right to launch
      * instances for a period of time. During that time period, you do not
      * receive insufficient capacity errors, and you pay a lower usage rate
      * than the rate charged for On-Demand instances for the actual time
@@ -9726,6 +10064,70 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * <b>Important: This command is reserved for future use, and is
+     * currently not available for you to use.</b>
+     * </p>
+     * <p>
+     * Describes the ID format settings for your resources, for example, to
+     * view which resource types are enabled for longer IDs. This request
+     * only returns information about resource types whose ID formats can be
+     * modified; it does not return information about other resource types.
+     * </p>
+     * <p>
+     * The following resource types support longer IDs:
+     * <code>instance</code> | <code>reservation</code> .
+     * </p>
+     * <p>
+     * These settings apply to the IAM user who makes the request; they do
+     * not apply to the entire AWS account. By default, an IAM user defaults
+     * to the same settings as the root user, unless they explicitly override
+     * the settings by running the ModifyIdFormat command. These settings are
+     * applied on a per-region basis.
+     * </p>
+     *
+     * @param describeIdFormatRequest Container for the necessary parameters
+     *           to execute the DescribeIdFormat service method on AmazonEC2.
+     * 
+     * @return The response from the DescribeIdFormat service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeIdFormatResult describeIdFormat(DescribeIdFormatRequest describeIdFormatRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeIdFormatRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeIdFormatRequest> request = null;
+        Response<DescribeIdFormatResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeIdFormatRequestMarshaller().marshall(super.beforeMarshalling(describeIdFormatRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeIdFormatResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Replaces an entry (rule) in a network ACL. For more information about
      * network ACLs, see
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
@@ -10262,10 +10664,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes one or more of the Reserved Instances that you purchased.
+     * Describes one or more of the Reserved instances that you purchased.
      * </p>
      * <p>
-     * For more information about Reserved Instances, see
+     * For more information about Reserved instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -10318,6 +10720,33 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Describes one or more of your Dedicated hosts.
+     * </p>
+     * <p>
+     * The results describe only the Dedicated hosts in the region you're
+     * currently using. All listed instances consume capacity on your
+     * Dedicated host. Dedicated hosts that have recently been released will
+     * be listed with the status "released".
+     * </p>
+     * 
+     * @return The response from the DescribeHosts service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeHostsResult describeHosts() throws AmazonServiceException, AmazonClientException {
+        return describeHosts(new DescribeHostsRequest());
+    }
+    
+    /**
+     * <p>
      * Describes the Spot price history. The prices returned are listed in
      * chronological order, from the oldest to the most recent, for up to the
      * past 90 days. For more information, see
@@ -10350,27 +10779,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes one or more of your network interfaces.
-     * </p>
-     * 
-     * @return The response from the DescribeNetworkInterfaces service
-     *         method, as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeNetworkInterfacesResult describeNetworkInterfaces() throws AmazonServiceException, AmazonClientException {
-        return describeNetworkInterfaces(new DescribeNetworkInterfacesRequest());
-    }
-    
-    /**
-     * <p>
      * Describes one or more regions that are currently available to you.
      * </p>
      * <p>
@@ -10393,6 +10801,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeRegionsResult describeRegions() throws AmazonServiceException, AmazonClientException {
         return describeRegions(new DescribeRegionsRequest());
+    }
+    
+    /**
+     * <p>
+     * Describes one or more of your network interfaces.
+     * </p>
+     * 
+     * @return The response from the DescribeNetworkInterfaces service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeNetworkInterfacesResult describeNetworkInterfaces() throws AmazonServiceException, AmazonClientException {
+        return describeNetworkInterfaces(new DescribeNetworkInterfacesRequest());
     }
     
     /**
@@ -10797,27 +11226,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes your account's Reserved Instance listings in the Reserved
+     * Describes your account's Reserved instance listings in the Reserved
      * Instance Marketplace.
      * </p>
      * <p>
      * The Reserved Instance Marketplace matches sellers who want to resell
-     * Reserved Instance capacity that they no longer need with buyers who
-     * want to purchase additional capacity. Reserved Instances bought and
+     * Reserved instance capacity that they no longer need with buyers who
+     * want to purchase additional capacity. Reserved instances bought and
      * sold through the Reserved Instance Marketplace work like any other
      * Reserved Instances.
      * </p>
      * <p>
      * As a seller, you choose to list some or all of your Reserved
-     * Instances, and you specify the upfront price to receive for them. Your
-     * Reserved Instances are then listed in the Reserved Instance
+     * instances, and you specify the upfront price to receive for them. Your
+     * Reserved instances are then listed in the Reserved Instance
      * Marketplace and are available for purchase.
      * </p>
      * <p>
-     * As a buyer, you specify the configuration of the Reserved Instance to
+     * As a buyer, you specify the configuration of the Reserved instance to
      * purchase, and the Marketplace matches what you're searching for with
      * what's available. The Marketplace first sells the lowest priced
-     * Reserved Instances to you, and continues to sell available Reserved
+     * Reserved instances to you, and continues to sell available Reserved
      * Instance listings to you until your demand is met. You are charged
      * based on the total price of all of the listings that you purchase.
      * </p>
@@ -11061,30 +11490,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes your Elastic IP addresses that are being moved to the
-     * EC2-VPC platform, or that are being restored to the EC2-Classic
-     * platform. This request does not return information about any other
-     * Elastic IP addresses in your account.
-     * </p>
-     * 
-     * @return The response from the DescribeMovingAddresses service method,
-     *         as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeMovingAddressesResult describeMovingAddresses() throws AmazonServiceException, AmazonClientException {
-        return describeMovingAddresses(new DescribeMovingAddressesRequest());
-    }
-    
-    /**
-     * <p>
      * Describes one or more of your conversion tasks. For more information,
      * see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
@@ -11105,6 +11510,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeConversionTasksResult describeConversionTasks() throws AmazonServiceException, AmazonClientException {
         return describeConversionTasks(new DescribeConversionTasksRequest());
+    }
+    
+    /**
+     * <p>
+     * Describes your Elastic IP addresses that are being moved to the
+     * EC2-VPC platform, or that are being restored to the EC2-Classic
+     * platform. This request does not return information about any other
+     * Elastic IP addresses in your account.
+     * </p>
+     * 
+     * @return The response from the DescribeMovingAddresses service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeMovingAddressesResult describeMovingAddresses() throws AmazonServiceException, AmazonClientException {
+        return describeMovingAddresses(new DescribeMovingAddressesRequest());
     }
     
     /**
@@ -11460,7 +11889,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the modifications made to your Reserved Instances. If no
+     * Describes the modifications made to your Reserved instances. If no
      * parameter is specified, information about all your Reserved Instances
      * modification requests is returned. If a modification ID is specified,
      * only information about the specific modification is returned.
@@ -11639,8 +12068,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes Reserved Instance offerings that are available for
-     * purchase. With Reserved Instances, you purchase the right to launch
+     * Describes Reserved instance offerings that are available for
+     * purchase. With Reserved instances, you purchase the right to launch
      * instances for a period of time. During that time period, you do not
      * receive insufficient capacity errors, and you pay a lower usage rate
      * than the rate charged for On-Demand instances for the actual time
@@ -11715,6 +12144,45 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public AllocateAddressResult allocateAddress() throws AmazonServiceException, AmazonClientException {
         return allocateAddress(new AllocateAddressRequest());
+    }
+    
+    /**
+     * <p>
+     * <b>Important: This command is reserved for future use, and is
+     * currently not available for you to use.</b>
+     * </p>
+     * <p>
+     * Describes the ID format settings for your resources, for example, to
+     * view which resource types are enabled for longer IDs. This request
+     * only returns information about resource types whose ID formats can be
+     * modified; it does not return information about other resource types.
+     * </p>
+     * <p>
+     * The following resource types support longer IDs:
+     * <code>instance</code> | <code>reservation</code> .
+     * </p>
+     * <p>
+     * These settings apply to the IAM user who makes the request; they do
+     * not apply to the entire AWS account. By default, an IAM user defaults
+     * to the same settings as the root user, unless they explicitly override
+     * the settings by running the ModifyIdFormat command. These settings are
+     * applied on a per-region basis.
+     * </p>
+     * 
+     * @return The response from the DescribeIdFormat service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeIdFormatResult describeIdFormat() throws AmazonServiceException, AmazonClientException {
+        return describeIdFormat(new DescribeIdFormatRequest());
     }
     
     /**

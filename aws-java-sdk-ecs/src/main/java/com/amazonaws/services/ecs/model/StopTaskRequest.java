@@ -38,6 +38,16 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String task;
+    /**
+     * <p>
+     * An optional message specified when a task is stopped. For example, if you
+     * are using a custom scheduler, you can use this parameter to specify the
+     * reason for stopping the task here, and the message will appear in
+     * subsequent <a>DescribeTasks</a> API operations on this task. Up to 255
+     * characters are allowed in this message.
+     * </p>
+     */
+    private String reason;
 
     /**
      * <p>
@@ -131,6 +141,69 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * An optional message specified when a task is stopped. For example, if you
+     * are using a custom scheduler, you can use this parameter to specify the
+     * reason for stopping the task here, and the message will appear in
+     * subsequent <a>DescribeTasks</a> API operations on this task. Up to 255
+     * characters are allowed in this message.
+     * </p>
+     * 
+     * @param reason
+     *        An optional message specified when a task is stopped. For example,
+     *        if you are using a custom scheduler, you can use this parameter to
+     *        specify the reason for stopping the task here, and the message
+     *        will appear in subsequent <a>DescribeTasks</a> API operations on
+     *        this task. Up to 255 characters are allowed in this message.
+     */
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * <p>
+     * An optional message specified when a task is stopped. For example, if you
+     * are using a custom scheduler, you can use this parameter to specify the
+     * reason for stopping the task here, and the message will appear in
+     * subsequent <a>DescribeTasks</a> API operations on this task. Up to 255
+     * characters are allowed in this message.
+     * </p>
+     * 
+     * @return An optional message specified when a task is stopped. For
+     *         example, if you are using a custom scheduler, you can use this
+     *         parameter to specify the reason for stopping the task here, and
+     *         the message will appear in subsequent <a>DescribeTasks</a> API
+     *         operations on this task. Up to 255 characters are allowed in this
+     *         message.
+     */
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * <p>
+     * An optional message specified when a task is stopped. For example, if you
+     * are using a custom scheduler, you can use this parameter to specify the
+     * reason for stopping the task here, and the message will appear in
+     * subsequent <a>DescribeTasks</a> API operations on this task. Up to 255
+     * characters are allowed in this message.
+     * </p>
+     * 
+     * @param reason
+     *        An optional message specified when a task is stopped. For example,
+     *        if you are using a custom scheduler, you can use this parameter to
+     *        specify the reason for stopping the task here, and the message
+     *        will appear in subsequent <a>DescribeTasks</a> API operations on
+     *        this task. Up to 255 characters are allowed in this message.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public StopTaskRequest withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -145,7 +218,9 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
         if (getCluster() != null)
             sb.append("Cluster: " + getCluster() + ",");
         if (getTask() != null)
-            sb.append("Task: " + getTask());
+            sb.append("Task: " + getTask() + ",");
+        if (getReason() != null)
+            sb.append("Reason: " + getReason());
         sb.append("}");
         return sb.toString();
     }
@@ -170,6 +245,11 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
         if (other.getTask() != null
                 && other.getTask().equals(this.getTask()) == false)
             return false;
+        if (other.getReason() == null ^ this.getReason() == null)
+            return false;
+        if (other.getReason() != null
+                && other.getReason().equals(this.getReason()) == false)
+            return false;
         return true;
     }
 
@@ -182,6 +262,8 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
                 + ((getCluster() == null) ? 0 : getCluster().hashCode());
         hashCode = prime * hashCode
                 + ((getTask() == null) ? 0 : getTask().hashCode());
+        hashCode = prime * hashCode
+                + ((getReason() == null) ? 0 : getReason().hashCode());
         return hashCode;
     }
 

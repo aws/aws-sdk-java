@@ -22,24 +22,24 @@ import java.io.Serializable;
 public class ReservedInstancesModificationResult implements Serializable, Cloneable {
 
     /**
-     * The ID for the Reserved Instances that were created as part of the
+     * The ID for the Reserved instances that were created as part of the
      * modification request. This field is only available when the
      * modification is fulfilled.
      */
     private String reservedInstancesId;
 
     /**
-     * The target Reserved Instances configurations supplied as part of the
+     * The target Reserved instances configurations supplied as part of the
      * modification request.
      */
     private ReservedInstancesConfiguration targetConfiguration;
 
     /**
-     * The ID for the Reserved Instances that were created as part of the
+     * The ID for the Reserved instances that were created as part of the
      * modification request. This field is only available when the
      * modification is fulfilled.
      *
-     * @return The ID for the Reserved Instances that were created as part of the
+     * @return The ID for the Reserved instances that were created as part of the
      *         modification request. This field is only available when the
      *         modification is fulfilled.
      */
@@ -48,11 +48,11 @@ public class ReservedInstancesModificationResult implements Serializable, Clonea
     }
     
     /**
-     * The ID for the Reserved Instances that were created as part of the
+     * The ID for the Reserved instances that were created as part of the
      * modification request. This field is only available when the
      * modification is fulfilled.
      *
-     * @param reservedInstancesId The ID for the Reserved Instances that were created as part of the
+     * @param reservedInstancesId The ID for the Reserved instances that were created as part of the
      *         modification request. This field is only available when the
      *         modification is fulfilled.
      */
@@ -61,13 +61,13 @@ public class ReservedInstancesModificationResult implements Serializable, Clonea
     }
     
     /**
-     * The ID for the Reserved Instances that were created as part of the
+     * The ID for the Reserved instances that were created as part of the
      * modification request. This field is only available when the
      * modification is fulfilled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesId The ID for the Reserved Instances that were created as part of the
+     * @param reservedInstancesId The ID for the Reserved instances that were created as part of the
      *         modification request. This field is only available when the
      *         modification is fulfilled.
      *
@@ -80,10 +80,10 @@ public class ReservedInstancesModificationResult implements Serializable, Clonea
     }
 
     /**
-     * The target Reserved Instances configurations supplied as part of the
+     * The target Reserved instances configurations supplied as part of the
      * modification request.
      *
-     * @return The target Reserved Instances configurations supplied as part of the
+     * @return The target Reserved instances configurations supplied as part of the
      *         modification request.
      */
     public ReservedInstancesConfiguration getTargetConfiguration() {
@@ -91,10 +91,10 @@ public class ReservedInstancesModificationResult implements Serializable, Clonea
     }
     
     /**
-     * The target Reserved Instances configurations supplied as part of the
+     * The target Reserved instances configurations supplied as part of the
      * modification request.
      *
-     * @param targetConfiguration The target Reserved Instances configurations supplied as part of the
+     * @param targetConfiguration The target Reserved instances configurations supplied as part of the
      *         modification request.
      */
     public void setTargetConfiguration(ReservedInstancesConfiguration targetConfiguration) {
@@ -102,12 +102,12 @@ public class ReservedInstancesModificationResult implements Serializable, Clonea
     }
     
     /**
-     * The target Reserved Instances configurations supplied as part of the
+     * The target Reserved instances configurations supplied as part of the
      * modification request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetConfiguration The target Reserved Instances configurations supplied as part of the
+     * @param targetConfiguration The target Reserved instances configurations supplied as part of the
      *         modification request.
      *
      * @return A reference to this updated object so that method calls can be chained

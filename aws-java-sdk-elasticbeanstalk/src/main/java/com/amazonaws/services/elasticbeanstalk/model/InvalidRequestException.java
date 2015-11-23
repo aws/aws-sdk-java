@@ -19,7 +19,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request is invalid, please check parameters and their values
+ * One or more input parameters is not valid. Please correct the input
+ * parameters and try the operation again.
  * </p>
  */
 public class InvalidRequestException extends AmazonServiceException {

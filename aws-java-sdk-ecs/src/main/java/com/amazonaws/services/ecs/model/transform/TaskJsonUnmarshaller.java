@@ -95,6 +95,26 @@ public class TaskJsonUnmarshaller implements
                     task.setStartedBy(StringJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("stoppedReason", targetDepth)) {
+                    context.nextToken();
+                    task.setStoppedReason(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    task.setCreatedAt(DateJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("startedAt", targetDepth)) {
+                    context.nextToken();
+                    task.setStartedAt(DateJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("stoppedAt", targetDepth)) {
+                    context.nextToken();
+                    task.setStoppedAt(DateJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

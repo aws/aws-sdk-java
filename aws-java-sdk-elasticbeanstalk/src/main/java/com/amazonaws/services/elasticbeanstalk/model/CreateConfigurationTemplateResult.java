@@ -63,27 +63,6 @@ public class CreateConfigurationTemplateResult implements Serializable,
      * <code>DeploymentStatus</code> parameter indicates the deployment status
      * of this configuration set:
      * </p>
-     * <enumValues> <value name="null">
-     * <p>
-     * <code>null</code>: This configuration is not associated with a running
-     * environment.
-     * </p>
-     * </value> <value name="pending">
-     * <p>
-     * <code>pending</code>: This is a draft configuration that is not deployed
-     * to the associated environment but is in the process of deploying.
-     * </p>
-     * </value> <value name="deployed">
-     * <p>
-     * <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.
-     * </p>
-     * </value> <value name="failed">
-     * <p>
-     * <code>failed</code>: This is a draft configuration, that failed to
-     * successfully deploy.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>null</code>: This configuration is not associated with a
      * running environment.</li>
@@ -332,27 +311,6 @@ public class CreateConfigurationTemplateResult implements Serializable,
      * <code>DeploymentStatus</code> parameter indicates the deployment status
      * of this configuration set:
      * </p>
-     * <enumValues> <value name="null">
-     * <p>
-     * <code>null</code>: This configuration is not associated with a running
-     * environment.
-     * </p>
-     * </value> <value name="pending">
-     * <p>
-     * <code>pending</code>: This is a draft configuration that is not deployed
-     * to the associated environment but is in the process of deploying.
-     * </p>
-     * </value> <value name="deployed">
-     * <p>
-     * <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.
-     * </p>
-     * </value> <value name="failed">
-     * <p>
-     * <code>failed</code>: This is a draft configuration, that failed to
-     * successfully deploy.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>null</code>: This configuration is not associated with a
      * running environment.</li>
@@ -368,29 +326,7 @@ public class CreateConfigurationTemplateResult implements Serializable,
      * @param deploymentStatus
      *        If this configuration set is associated with an environment, the
      *        <code>DeploymentStatus</code> parameter indicates the deployment
-     *        status of this configuration set: </p> <enumValues> <value
-     *        name="null">
-     *        <p>
-     *        <code>null</code>: This configuration is not associated with a
-     *        running environment.
-     *        </p>
-     *        </value> <value name="pending">
-     *        <p>
-     *        <code>pending</code>: This is a draft configuration that is not
-     *        deployed to the associated environment but is in the process of
-     *        deploying.
-     *        </p>
-     *        </value> <value name="deployed">
-     *        <p>
-     *        <code>deployed</code>: This is the configuration that is currently
-     *        deployed to the associated running environment.
-     *        </p>
-     *        </value> <value name="failed">
-     *        <p>
-     *        <code>failed</code>: This is a draft configuration, that failed to
-     *        successfully deploy.
-     *        </p>
-     *        </value> </enumValues>
+     *        status of this configuration set: </p>
      *        <ul>
      *        <li> <code>null</code>: This configuration is not associated with a
      *        running environment.</li>
@@ -413,27 +349,6 @@ public class CreateConfigurationTemplateResult implements Serializable,
      * <code>DeploymentStatus</code> parameter indicates the deployment status
      * of this configuration set:
      * </p>
-     * <enumValues> <value name="null">
-     * <p>
-     * <code>null</code>: This configuration is not associated with a running
-     * environment.
-     * </p>
-     * </value> <value name="pending">
-     * <p>
-     * <code>pending</code>: This is a draft configuration that is not deployed
-     * to the associated environment but is in the process of deploying.
-     * </p>
-     * </value> <value name="deployed">
-     * <p>
-     * <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.
-     * </p>
-     * </value> <value name="failed">
-     * <p>
-     * <code>failed</code>: This is a draft configuration, that failed to
-     * successfully deploy.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>null</code>: This configuration is not associated with a
      * running environment.</li>
@@ -448,29 +363,7 @@ public class CreateConfigurationTemplateResult implements Serializable,
      * 
      * @return If this configuration set is associated with an environment, the
      *         <code>DeploymentStatus</code> parameter indicates the deployment
-     *         status of this configuration set: </p> <enumValues> <value
-     *         name="null">
-     *         <p>
-     *         <code>null</code>: This configuration is not associated with a
-     *         running environment.
-     *         </p>
-     *         </value> <value name="pending">
-     *         <p>
-     *         <code>pending</code>: This is a draft configuration that is not
-     *         deployed to the associated environment but is in the process of
-     *         deploying.
-     *         </p>
-     *         </value> <value name="deployed">
-     *         <p>
-     *         <code>deployed</code>: This is the configuration that is
-     *         currently deployed to the associated running environment.
-     *         </p>
-     *         </value> <value name="failed">
-     *         <p>
-     *         <code>failed</code>: This is a draft configuration, that failed
-     *         to successfully deploy.
-     *         </p>
-     *         </value> </enumValues>
+     *         status of this configuration set: </p>
      *         <ul>
      *         <li> <code>null</code>: This configuration is not associated with
      *         a running environment.</li>
@@ -493,27 +386,6 @@ public class CreateConfigurationTemplateResult implements Serializable,
      * <code>DeploymentStatus</code> parameter indicates the deployment status
      * of this configuration set:
      * </p>
-     * <enumValues> <value name="null">
-     * <p>
-     * <code>null</code>: This configuration is not associated with a running
-     * environment.
-     * </p>
-     * </value> <value name="pending">
-     * <p>
-     * <code>pending</code>: This is a draft configuration that is not deployed
-     * to the associated environment but is in the process of deploying.
-     * </p>
-     * </value> <value name="deployed">
-     * <p>
-     * <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.
-     * </p>
-     * </value> <value name="failed">
-     * <p>
-     * <code>failed</code>: This is a draft configuration, that failed to
-     * successfully deploy.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>null</code>: This configuration is not associated with a
      * running environment.</li>
@@ -529,29 +401,7 @@ public class CreateConfigurationTemplateResult implements Serializable,
      * @param deploymentStatus
      *        If this configuration set is associated with an environment, the
      *        <code>DeploymentStatus</code> parameter indicates the deployment
-     *        status of this configuration set: </p> <enumValues> <value
-     *        name="null">
-     *        <p>
-     *        <code>null</code>: This configuration is not associated with a
-     *        running environment.
-     *        </p>
-     *        </value> <value name="pending">
-     *        <p>
-     *        <code>pending</code>: This is a draft configuration that is not
-     *        deployed to the associated environment but is in the process of
-     *        deploying.
-     *        </p>
-     *        </value> <value name="deployed">
-     *        <p>
-     *        <code>deployed</code>: This is the configuration that is currently
-     *        deployed to the associated running environment.
-     *        </p>
-     *        </value> <value name="failed">
-     *        <p>
-     *        <code>failed</code>: This is a draft configuration, that failed to
-     *        successfully deploy.
-     *        </p>
-     *        </value> </enumValues>
+     *        status of this configuration set: </p>
      *        <ul>
      *        <li> <code>null</code>: This configuration is not associated with a
      *        running environment.</li>
@@ -578,27 +428,6 @@ public class CreateConfigurationTemplateResult implements Serializable,
      * <code>DeploymentStatus</code> parameter indicates the deployment status
      * of this configuration set:
      * </p>
-     * <enumValues> <value name="null">
-     * <p>
-     * <code>null</code>: This configuration is not associated with a running
-     * environment.
-     * </p>
-     * </value> <value name="pending">
-     * <p>
-     * <code>pending</code>: This is a draft configuration that is not deployed
-     * to the associated environment but is in the process of deploying.
-     * </p>
-     * </value> <value name="deployed">
-     * <p>
-     * <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.
-     * </p>
-     * </value> <value name="failed">
-     * <p>
-     * <code>failed</code>: This is a draft configuration, that failed to
-     * successfully deploy.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>null</code>: This configuration is not associated with a
      * running environment.</li>
@@ -614,29 +443,7 @@ public class CreateConfigurationTemplateResult implements Serializable,
      * @param deploymentStatus
      *        If this configuration set is associated with an environment, the
      *        <code>DeploymentStatus</code> parameter indicates the deployment
-     *        status of this configuration set: </p> <enumValues> <value
-     *        name="null">
-     *        <p>
-     *        <code>null</code>: This configuration is not associated with a
-     *        running environment.
-     *        </p>
-     *        </value> <value name="pending">
-     *        <p>
-     *        <code>pending</code>: This is a draft configuration that is not
-     *        deployed to the associated environment but is in the process of
-     *        deploying.
-     *        </p>
-     *        </value> <value name="deployed">
-     *        <p>
-     *        <code>deployed</code>: This is the configuration that is currently
-     *        deployed to the associated running environment.
-     *        </p>
-     *        </value> <value name="failed">
-     *        <p>
-     *        <code>failed</code>: This is a draft configuration, that failed to
-     *        successfully deploy.
-     *        </p>
-     *        </value> </enumValues>
+     *        status of this configuration set: </p>
      *        <ul>
      *        <li> <code>null</code>: This configuration is not associated with a
      *        running environment.</li>
@@ -662,27 +469,6 @@ public class CreateConfigurationTemplateResult implements Serializable,
      * <code>DeploymentStatus</code> parameter indicates the deployment status
      * of this configuration set:
      * </p>
-     * <enumValues> <value name="null">
-     * <p>
-     * <code>null</code>: This configuration is not associated with a running
-     * environment.
-     * </p>
-     * </value> <value name="pending">
-     * <p>
-     * <code>pending</code>: This is a draft configuration that is not deployed
-     * to the associated environment but is in the process of deploying.
-     * </p>
-     * </value> <value name="deployed">
-     * <p>
-     * <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.
-     * </p>
-     * </value> <value name="failed">
-     * <p>
-     * <code>failed</code>: This is a draft configuration, that failed to
-     * successfully deploy.
-     * </p>
-     * </value> </enumValues>
      * <ul>
      * <li> <code>null</code>: This configuration is not associated with a
      * running environment.</li>
@@ -698,29 +484,7 @@ public class CreateConfigurationTemplateResult implements Serializable,
      * @param deploymentStatus
      *        If this configuration set is associated with an environment, the
      *        <code>DeploymentStatus</code> parameter indicates the deployment
-     *        status of this configuration set: </p> <enumValues> <value
-     *        name="null">
-     *        <p>
-     *        <code>null</code>: This configuration is not associated with a
-     *        running environment.
-     *        </p>
-     *        </value> <value name="pending">
-     *        <p>
-     *        <code>pending</code>: This is a draft configuration that is not
-     *        deployed to the associated environment but is in the process of
-     *        deploying.
-     *        </p>
-     *        </value> <value name="deployed">
-     *        <p>
-     *        <code>deployed</code>: This is the configuration that is currently
-     *        deployed to the associated running environment.
-     *        </p>
-     *        </value> <value name="failed">
-     *        <p>
-     *        <code>failed</code>: This is a draft configuration, that failed to
-     *        successfully deploy.
-     *        </p>
-     *        </value> </enumValues>
+     *        status of this configuration set: </p>
      *        <ul>
      *        <li> <code>null</code>: This configuration is not associated with a
      *        running environment.</li>

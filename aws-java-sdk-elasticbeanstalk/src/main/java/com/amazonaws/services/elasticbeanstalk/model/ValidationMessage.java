@@ -34,22 +34,11 @@ public class ValidationMessage implements Serializable, Cloneable {
      * <p>
      * An indication of the severity of this message:
      * </p>
-     * <enumValues> <value name="error">
-     * <p>
-     * error: This message indicates that this is not a valid setting for an
-     * option.
-     * </p>
-     * </value> <value name="warning">
-     * <p>
-     * warning: This message is providing information you should take into
-     * account.
-     * </p>
-     * </value> </enumValues>
      * <ul>
-     * <li>error: This message indicates that this is not a valid setting for an
-     * option.</li>
-     * <li>warning: This message is providing information you should take into
-     * account.</li>
+     * <li> <code>error</code>: This message indicates that this is not a valid
+     * setting for an option.</li>
+     * <li> <code>warning</code>: This message is providing information you
+     * should take into account.</li>
      * </ul>
      */
     private String severity;
@@ -106,42 +95,20 @@ public class ValidationMessage implements Serializable, Cloneable {
      * <p>
      * An indication of the severity of this message:
      * </p>
-     * <enumValues> <value name="error">
-     * <p>
-     * error: This message indicates that this is not a valid setting for an
-     * option.
-     * </p>
-     * </value> <value name="warning">
-     * <p>
-     * warning: This message is providing information you should take into
-     * account.
-     * </p>
-     * </value> </enumValues>
      * <ul>
-     * <li>error: This message indicates that this is not a valid setting for an
-     * option.</li>
-     * <li>warning: This message is providing information you should take into
-     * account.</li>
+     * <li> <code>error</code>: This message indicates that this is not a valid
+     * setting for an option.</li>
+     * <li> <code>warning</code>: This message is providing information you
+     * should take into account.</li>
      * </ul>
      * 
      * @param severity
-     *        An indication of the severity of this message: </p> <enumValues>
-     *        <value name="error">
-     *        <p>
-     *        error: This message indicates that this is not a valid setting for
-     *        an option.
-     *        </p>
-     *        </value> <value name="warning">
-     *        <p>
-     *        warning: This message is providing information you should take
-     *        into account.
-     *        </p>
-     *        </value> </enumValues>
+     *        An indication of the severity of this message: </p>
      *        <ul>
-     *        <li>error: This message indicates that this is not a valid setting
-     *        for an option.</li>
-     *        <li>warning: This message is providing information you should take
-     *        into account.</li>
+     *        <li> <code>error</code>: This message indicates that this is not a
+     *        valid setting for an option.</li>
+     *        <li> <code>warning</code>: This message is providing information
+     *        you should take into account.</li>
      * @see ValidationSeverity
      */
     public void setSeverity(String severity) {
@@ -152,41 +119,19 @@ public class ValidationMessage implements Serializable, Cloneable {
      * <p>
      * An indication of the severity of this message:
      * </p>
-     * <enumValues> <value name="error">
-     * <p>
-     * error: This message indicates that this is not a valid setting for an
-     * option.
-     * </p>
-     * </value> <value name="warning">
-     * <p>
-     * warning: This message is providing information you should take into
-     * account.
-     * </p>
-     * </value> </enumValues>
      * <ul>
-     * <li>error: This message indicates that this is not a valid setting for an
-     * option.</li>
-     * <li>warning: This message is providing information you should take into
-     * account.</li>
+     * <li> <code>error</code>: This message indicates that this is not a valid
+     * setting for an option.</li>
+     * <li> <code>warning</code>: This message is providing information you
+     * should take into account.</li>
      * </ul>
      * 
-     * @return An indication of the severity of this message: </p> <enumValues>
-     *         <value name="error">
-     *         <p>
-     *         error: This message indicates that this is not a valid setting
-     *         for an option.
-     *         </p>
-     *         </value> <value name="warning">
-     *         <p>
-     *         warning: This message is providing information you should take
-     *         into account.
-     *         </p>
-     *         </value> </enumValues>
+     * @return An indication of the severity of this message: </p>
      *         <ul>
-     *         <li>error: This message indicates that this is not a valid
-     *         setting for an option.</li>
-     *         <li>warning: This message is providing information you should
-     *         take into account.</li>
+     *         <li> <code>error</code>: This message indicates that this is not a
+     *         valid setting for an option.</li>
+     *         <li> <code>warning</code>: This message is providing information
+     *         you should take into account.</li>
      * @see ValidationSeverity
      */
     public String getSeverity() {
@@ -197,42 +142,20 @@ public class ValidationMessage implements Serializable, Cloneable {
      * <p>
      * An indication of the severity of this message:
      * </p>
-     * <enumValues> <value name="error">
-     * <p>
-     * error: This message indicates that this is not a valid setting for an
-     * option.
-     * </p>
-     * </value> <value name="warning">
-     * <p>
-     * warning: This message is providing information you should take into
-     * account.
-     * </p>
-     * </value> </enumValues>
      * <ul>
-     * <li>error: This message indicates that this is not a valid setting for an
-     * option.</li>
-     * <li>warning: This message is providing information you should take into
-     * account.</li>
+     * <li> <code>error</code>: This message indicates that this is not a valid
+     * setting for an option.</li>
+     * <li> <code>warning</code>: This message is providing information you
+     * should take into account.</li>
      * </ul>
      * 
      * @param severity
-     *        An indication of the severity of this message: </p> <enumValues>
-     *        <value name="error">
-     *        <p>
-     *        error: This message indicates that this is not a valid setting for
-     *        an option.
-     *        </p>
-     *        </value> <value name="warning">
-     *        <p>
-     *        warning: This message is providing information you should take
-     *        into account.
-     *        </p>
-     *        </value> </enumValues>
+     *        An indication of the severity of this message: </p>
      *        <ul>
-     *        <li>error: This message indicates that this is not a valid setting
-     *        for an option.</li>
-     *        <li>warning: This message is providing information you should take
-     *        into account.</li>
+     *        <li> <code>error</code>: This message indicates that this is not a
+     *        valid setting for an option.</li>
+     *        <li> <code>warning</code>: This message is providing information
+     *        you should take into account.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ValidationSeverity
@@ -246,42 +169,20 @@ public class ValidationMessage implements Serializable, Cloneable {
      * <p>
      * An indication of the severity of this message:
      * </p>
-     * <enumValues> <value name="error">
-     * <p>
-     * error: This message indicates that this is not a valid setting for an
-     * option.
-     * </p>
-     * </value> <value name="warning">
-     * <p>
-     * warning: This message is providing information you should take into
-     * account.
-     * </p>
-     * </value> </enumValues>
      * <ul>
-     * <li>error: This message indicates that this is not a valid setting for an
-     * option.</li>
-     * <li>warning: This message is providing information you should take into
-     * account.</li>
+     * <li> <code>error</code>: This message indicates that this is not a valid
+     * setting for an option.</li>
+     * <li> <code>warning</code>: This message is providing information you
+     * should take into account.</li>
      * </ul>
      * 
      * @param severity
-     *        An indication of the severity of this message: </p> <enumValues>
-     *        <value name="error">
-     *        <p>
-     *        error: This message indicates that this is not a valid setting for
-     *        an option.
-     *        </p>
-     *        </value> <value name="warning">
-     *        <p>
-     *        warning: This message is providing information you should take
-     *        into account.
-     *        </p>
-     *        </value> </enumValues>
+     *        An indication of the severity of this message: </p>
      *        <ul>
-     *        <li>error: This message indicates that this is not a valid setting
-     *        for an option.</li>
-     *        <li>warning: This message is providing information you should take
-     *        into account.</li>
+     *        <li> <code>error</code>: This message indicates that this is not a
+     *        valid setting for an option.</li>
+     *        <li> <code>warning</code>: This message is providing information
+     *        you should take into account.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ValidationSeverity
@@ -294,42 +195,20 @@ public class ValidationMessage implements Serializable, Cloneable {
      * <p>
      * An indication of the severity of this message:
      * </p>
-     * <enumValues> <value name="error">
-     * <p>
-     * error: This message indicates that this is not a valid setting for an
-     * option.
-     * </p>
-     * </value> <value name="warning">
-     * <p>
-     * warning: This message is providing information you should take into
-     * account.
-     * </p>
-     * </value> </enumValues>
      * <ul>
-     * <li>error: This message indicates that this is not a valid setting for an
-     * option.</li>
-     * <li>warning: This message is providing information you should take into
-     * account.</li>
+     * <li> <code>error</code>: This message indicates that this is not a valid
+     * setting for an option.</li>
+     * <li> <code>warning</code>: This message is providing information you
+     * should take into account.</li>
      * </ul>
      * 
      * @param severity
-     *        An indication of the severity of this message: </p> <enumValues>
-     *        <value name="error">
-     *        <p>
-     *        error: This message indicates that this is not a valid setting for
-     *        an option.
-     *        </p>
-     *        </value> <value name="warning">
-     *        <p>
-     *        warning: This message is providing information you should take
-     *        into account.
-     *        </p>
-     *        </value> </enumValues>
+     *        An indication of the severity of this message: </p>
      *        <ul>
-     *        <li>error: This message indicates that this is not a valid setting
-     *        for an option.</li>
-     *        <li>warning: This message is providing information you should take
-     *        into account.</li>
+     *        <li> <code>error</code>: This message indicates that this is not a
+     *        valid setting for an option.</li>
+     *        <li> <code>warning</code>: This message is providing information
+     *        you should take into account.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ValidationSeverity

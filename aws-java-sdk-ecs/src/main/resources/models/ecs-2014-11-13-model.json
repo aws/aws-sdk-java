@@ -71,7 +71,7 @@
           "documentation":"<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>"
         }
       ],
-      "documentation":"<p>Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in a service drops below <code>desiredCount</code>, Amazon ECS spawns another instantiation of the task in the specified cluster.</p>"
+      "documentation":"<p>Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in a service drops below <code>desiredCount</code>, Amazon ECS spawns another instantiation of the task in the specified cluster. To update an existing service, see <a>UpdateService</a>.</p> <p>When the service scheduler launches new tasks, it attempts to balance them across the Availability Zones in your cluster with the following logic:</p> <ul> <li> <p>Determine which of the container instances in your cluster can support your service's task definition (for example, they have the required CPU, memory, ports, and container instance attributes).</p> </li> <li> <p>Sort the valid container instances by the fewest number of running tasks for this service in the same Availability Zone as the instance. For example, if zone A has one running service task and zones B and C each have zero, valid container instances in either zone B or C are considered optimal for placement.</p> </li> <li> <p>Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous steps), favoring container instances with the fewest number of running tasks for this service.</p> </li> </ul>"
     },
     "DeleteCluster":{
       "name":"DeleteCluster",
@@ -152,7 +152,7 @@
           "documentation":"<p>The specified service could not be found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.</p>"
         }
       ],
-      "documentation":"<p>Deletes a specified service within a cluster.</p>"
+      "documentation":"<p>Deletes a specified service within a cluster. You can delete a service if you have no running tasks in it and the desired task count is zero. If the service is actively maintaining tasks, you cannot delete it, and you must update the service to a desired task count of zero. For more information, see <a>UpdateService</a>.</p> <note> <p>When you delete a service, if there are still running tasks that require cleanup, the service status moves from <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in <a>ListServices</a> API operations. After the tasks have stopped, then the service status moves from <code>DRAINING</code> to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code> status can still be viewed with <a>DescribeServices</a> API operations; however, in the future, <code>INACTIVE</code> services may be cleaned up and purged from Amazon ECS record keeping, and <a>DescribeServices</a> API operations on those services will return a <code>ServiceNotFoundException</code> error.</p> </note>"
     },
     "DeregisterContainerInstance":{
       "name":"DeregisterContainerInstance",
@@ -866,7 +866,7 @@
           "documentation":"<p>The specified service is not active. You cannot update a service that is not active. If you have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>"
         }
       ],
-      "documentation":"<p>Modify the desired count or task definition used in a service.</p> <p>You can add to or subtract from the number of instantiations of a task definition in a service by specifying the cluster that the service is running in and a new <code>desiredCount</code> parameter.</p> <p>You can use <code>UpdateService</code> to modify your task definition and deploy a new version of your service, one task at a time. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running. Because <code>UpdateService</code> starts a new version of the task before stopping an old version, your cluster must have capacity to support one more instantiation of the task when <code>UpdateService</code> is run. If your cluster cannot support another instantiation of the task used in your service, you can reduce the desired count of your service by one before modifying the task definition.</p> <p>When <a>UpdateService</a> replaces a task during an update, the equivalent of <code>docker stop</code> is issued to the containers running in the task. This results in a <code>SIGTERM</code> and a 30-second timeout, after which <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the container handles the <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.</p>"
+      "documentation":"<p>Modify the desired count or task definition used in a service.</p> <p>You can add to or subtract from the number of instantiations of a task definition in a service by specifying the cluster that the service is running in and a new <code>desiredCount</code> parameter.</p> <p>You can use <code>UpdateService</code> to modify your task definition and deploy a new version of your service, one task at a time. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running. Because <code>UpdateService</code> starts a new version of the task before stopping an old version, your cluster must have capacity to support one more instantiation of the task when <code>UpdateService</code> is run. If your cluster cannot support another instantiation of the task used in your service, you can reduce the desired count of your service by one before modifying the task definition.</p> <p>When <a>UpdateService</a> replaces a task during an update, the equivalent of <code>docker stop</code> is issued to the containers running in the task. This results in a <code>SIGTERM</code> and a 30-second timeout, after which <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the container handles the <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.</p> <p>When the service scheduler launches new tasks, it attempts to balance them across the Availability Zones in your cluster with the following logic:</p> <ul> <li> <p>Determine which of the container instances in your cluster can support your service's task definition (for example, they have the required CPU, memory, ports, and container instance attributes).</p> </li> <li> <p>Sort the valid container instances by the fewest number of running tasks for this service in the same Availability Zone as the instance. For example, if zone A has one running service task and zones B and C each have zero, valid container instances in either zone B or C are considered optimal for placement.</p> </li> <li> <p>Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous steps), favoring container instances with the fewest number of running tasks for this service.</p> </li> </ul>"
     }
   },
   "shapes":{
@@ -1027,7 +1027,7 @@
         },
         "memory":{
           "shape":"Integer",
-          "documentation":"<p>The number of MiB of memory reserved for the container. If your container attempts to exceed the memory allocated here, the container is killed. This parameter maps to <code>Memory</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--memory</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p>"
+          "documentation":"<p>The number of MiB of memory to reserve for the container. You must specify a non-zero integer for this parameter; the Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4 MiB of memory for your containers. If your container attempts to exceed the memory allocated here, the container is killed. This parameter maps to <code>Memory</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--memory</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p>"
         },
         "links":{
           "shape":"StringList",
@@ -1051,7 +1051,7 @@
         },
         "environment":{
           "shape":"EnvironmentVariables",
-          "documentation":"<p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--env</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p>"
+          "documentation":"<p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--env</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <important> <p>We do not recommend using plain text environment variables for sensitive information, such as credential data.</p> </important>"
         },
         "mountPoints":{
           "shape":"MountPointList",
@@ -1702,7 +1702,7 @@
         },
         "maxResults":{
           "shape":"BoxedInteger",
-          "documentation":"<p>The maximum number of container instance results returned by <code>ListServices</code> in paginated output. When this parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>"
+          "documentation":"<p>The maximum number of container instance results returned by <code>ListServices</code> in paginated output. When this parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>ListServices</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>"
         }
       }
     },
@@ -2286,6 +2286,10 @@
         "task":{
           "shape":"String",
           "documentation":"<p>The task ID or full Amazon Resource Name (ARN) entry of the task to stop.</p>"
+        },
+        "reason":{
+          "shape":"String",
+          "documentation":"<p>An optional message specified when a task is stopped. For example, if you are using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message will appear in subsequent <a>DescribeTasks</a> API operations on this task. Up to 255 characters are allowed in this message.</p>"
         }
       }
     },
@@ -2410,6 +2414,22 @@
         "startedBy":{
           "shape":"String",
           "documentation":"<p>The tag specified when a task is started. If the task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>"
+        },
+        "stoppedReason":{
+          "shape":"String",
+          "documentation":"<p>The reason the task was stopped.</p>"
+        },
+        "createdAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The Unix time in seconds and milliseconds when the task was created (the task entered the <code>PENDING</code> state).</p>"
+        },
+        "startedAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The Unix time in seconds and milliseconds when the task was started (the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code> state).</p>"
+        },
+        "stoppedAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The Unix time in seconds and milliseconds when the task was stopped (the task transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>"
         }
       },
       "documentation":"<p>Details on a task in a cluster.</p>"

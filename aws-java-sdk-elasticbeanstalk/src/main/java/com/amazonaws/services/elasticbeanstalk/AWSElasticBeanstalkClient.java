@@ -295,9 +295,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * 
      * @param abortEnvironmentUpdateRequest
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      */
     @Override
     public void abortEnvironmentUpdate(
@@ -382,17 +381,70 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Create or update a group of environments that each run a separate
+     * component of a single application. Takes a list of version labels that
+     * specify application source bundles for each of the environments to create
+     * or update. The name of each environment and other required information
+     * must be included in the source bundles in an environment manifest named
+     * <code>env.yaml</code>. See <a href=
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html"
+     * >Compose Environments</a> for details.
+     * </p>
+     * 
+     * @param composeEnvironmentsRequest
+     * @return Result of the ComposeEnvironments operation returned by the
+     *         service.
+     * @throws TooManyEnvironmentsException
+     *         The specified account has reached its limit of environments.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
+     */
+    @Override
+    public ComposeEnvironmentsResult composeEnvironments(
+            ComposeEnvironmentsRequest composeEnvironmentsRequest) {
+        ExecutionContext executionContext = createExecutionContext(composeEnvironmentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ComposeEnvironmentsRequest> request = null;
+        Response<ComposeEnvironmentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ComposeEnvironmentsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(composeEnvironmentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ComposeEnvironmentsResult> responseHandler = new StaxResponseHandler<ComposeEnvironmentsResult>(
+                    new ComposeEnvironmentsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an application that has one configuration template named
      * <code>default</code> and no application versions.
      * </p>
      * 
      * @param createApplicationRequest
-     *        This documentation target is not reported in the API reference.
      * @return Result of the CreateApplication operation returned by the
      *         service.
      * @throws TooManyApplicationsException
-     *         The caller has exceeded the limit on the number of applications
-     *         associated with their account.
+     *         The specified account has reached its limit of applications.
      */
     @Override
     public CreateApplicationResult createApplication(
@@ -441,15 +493,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return Result of the CreateApplicationVersion operation returned by the
      *         service.
      * @throws TooManyApplicationsException
-     *         The caller has exceeded the limit on the number of applications
-     *         associated with their account.
+     *         The specified account has reached its limit of applications.
      * @throws TooManyApplicationVersionsException
-     *         The caller has exceeded the limit on the number of application
-     *         versions associated with their account.
+     *         The specified account has reached its limit of application
+     *         versions.
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      * @throws S3LocationNotInServiceRegionException
      *         The specified S3 bucket does not belong to the S3 region in which
      *         the service is running.
@@ -504,16 +554,14 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </ul>
      * 
      * @param createConfigurationTemplateRequest
-     *        This documentation target is not reported in the API reference.
      * @return Result of the CreateConfigurationTemplate operation returned by
      *         the service.
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      * @throws TooManyConfigurationTemplatesException
-     *         The caller has exceeded the limit on the number of configuration
-     *         templates associated with their account.
+     *         The specified account has reached its limit of configuration
+     *         templates.
      */
     @Override
     public CreateConfigurationTemplateResult createConfigurationTemplate(
@@ -559,12 +607,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return Result of the CreateEnvironment operation returned by the
      *         service.
      * @throws TooManyEnvironmentsException
-     *         The caller has exceeded the limit of allowed environments
-     *         associated with the account.
+     *         The specified account has reached its limit of environments.
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      */
     @Override
     public CreateEnvironmentResult createEnvironment(
@@ -612,14 +658,12 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return Result of the CreateStorageLocation operation returned by the
      *         service.
      * @throws TooManyBucketsException
-     *         The web service attempted to create a bucket in an Amazon S3
-     *         account that already has 100 buckets.
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @throws S3SubscriptionRequiredException
-     *         The caller does not have a subscription to Amazon S3.
+     *         The specified account does not have a subscription to Amazon S3.
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      */
     @Override
     public CreateStorageLocationResult createStorageLocation(
@@ -670,11 +714,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </note>
      * 
      * @param deleteApplicationRequest
-     *        This documentation target is not reported in the API reference.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another
-     *         operation is already in progress affecting an element in this
-     *         activity.
+     *         operation that effects an element in this activity is already in
+     *         progress.
      */
     @Override
     public void deleteApplication(
@@ -716,19 +759,17 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * running environment.</note>
      * 
      * @param deleteApplicationVersionRequest
-     *        This documentation target is not reported in the API reference.
      * @throws SourceBundleDeletionException
      *         Unable to delete the Amazon S3 source bundle associated with the
-     *         application version, although the application version deleted
+     *         application version. The application version was deleted
      *         successfully.
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another
-     *         operation is already in progress affecting an element in this
-     *         activity.
+     *         operation that effects an element in this activity is already in
+     *         progress.
      * @throws S3LocationNotInServiceRegionException
      *         The specified S3 bucket does not belong to the S3 region in which
      *         the service is running.
@@ -775,11 +816,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * environment.</note>
      * 
      * @param deleteConfigurationTemplateRequest
-     *        This documentation target is not reported in the API reference.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another
-     *         operation is already in progress affecting an element in this
-     *         activity.
+     *         operation that effects an element in this activity is already in
+     *         progress.
      */
     @Override
     public void deleteConfigurationTemplate(
@@ -828,7 +868,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteEnvironmentConfigurationRequest
-     *        This documentation target is not reported in the API reference.
      */
     @Override
     public void deleteEnvironmentConfiguration(
@@ -864,7 +903,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Returns descriptions for existing application versions.
+     * Retrieve a list of application versions stored in your AWS Elastic
+     * Beanstalk storage bucket.
      * </p>
      * 
      * @param describeApplicationVersionsRequest
@@ -917,7 +957,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeApplicationsRequest
-     *        This documentation target is not reported in the API reference.
      * @return Result of the DescribeApplications operation returned by the
      *         service.
      */
@@ -1081,8 +1120,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return Result of the DescribeEnvironmentHealth operation returned by the
      *         service.
      * @throws InvalidRequestException
-     *         The request is invalid, please check parameters and their values
+     *         One or more input parameters is not valid. Please correct the
+     *         input parameters and try the operation again.
      * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
      */
     @Override
     public DescribeEnvironmentHealthResult describeEnvironmentHealth(
@@ -1124,13 +1165,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeEnvironmentResourcesRequest
-     *        This documentation target is not reported in the API reference.
      * @return Result of the DescribeEnvironmentResources operation returned by
      *         the service.
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      */
     @Override
     public DescribeEnvironmentResourcesResult describeEnvironmentResources(
@@ -1172,7 +1211,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeEnvironmentsRequest
-     *        This documentation target is not reported in the API reference.
      * @return Result of the DescribeEnvironments operation returned by the
      *         service.
      */
@@ -1224,7 +1262,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * specified <code>NextToken</code>. </note>
      * 
      * @param describeEventsRequest
-     *        This documentation target is not reported in the API reference.
      * @return Result of the DescribeEvents operation returned by the service.
      */
     @Override
@@ -1278,8 +1315,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return Result of the DescribeInstancesHealth operation returned by the
      *         service.
      * @throws InvalidRequestException
-     *         The request is invalid, please check parameters and their values
+     *         One or more input parameters is not valid. Please correct the
+     *         input parameters and try the operation again.
      * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
      */
     @Override
     public DescribeInstancesHealthResult describeInstancesHealth(
@@ -1372,9 +1411,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * 
      * @param rebuildEnvironmentRequest
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      */
     @Override
     public void rebuildEnvironment(
@@ -1435,7 +1473,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </ul>
      * 
      * @param requestEnvironmentInfoRequest
-     *        This documentation target is not reported in the API reference.
      */
     @Override
     public void requestEnvironmentInfo(
@@ -1521,7 +1558,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </ul>
      * 
      * @param retrieveEnvironmentInfoRequest
-     *        This documentation target is not reported in the API reference.
      * @return Result of the RetrieveEnvironmentInfo operation returned by the
      *         service.
      */
@@ -1610,13 +1646,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param terminateEnvironmentRequest
-     *        This documentation target is not reported in the API reference.
      * @return Result of the TerminateEnvironment operation returned by the
      *         service.
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      */
     @Override
     public TerminateEnvironmentResult terminateEnvironment(
@@ -1661,7 +1695,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * an empty string. </note>
      * 
      * @param updateApplicationRequest
-     *        This documentation target is not reported in the API reference.
      * @return Result of the UpdateApplication operation returned by the
      *         service.
      */
@@ -1767,9 +1800,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return Result of the UpdateConfigurationTemplate operation returned by
      *         the service.
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      */
     @Override
     public UpdateConfigurationTemplateResult updateConfigurationTemplate(
@@ -1825,13 +1857,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateEnvironmentRequest
-     *        This documentation target is not reported in the API reference.
      * @return Result of the UpdateEnvironment operation returned by the
      *         service.
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      */
     @Override
     public UpdateEnvironmentResult updateEnvironment(
@@ -1883,9 +1913,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return Result of the ValidateConfigurationSettings operation returned by
      *         the service.
      * @throws InsufficientPrivilegesException
-     *         Unable to perform the specified operation because the user does
-     *         not have enough privileges for one of more downstream aws
-     *         services
+     *         The specified account does not have sufficient privileges for one
+     *         of more AWS services.
      */
     @Override
     public ValidateConfigurationSettingsResult validateConfigurationSettings(
