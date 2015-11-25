@@ -35,6 +35,8 @@ public class EmptyHttpRequest implements Request<Object> {
 
     private final URI endpoint;
     private final HttpMethodName httpMethod;
+    private AmazonWebServiceRequest originalRequest = new AmazonWebServiceRequest() {
+    };
 
     public EmptyHttpRequest(String endpoint, HttpMethodName httpMethod) {
         this.endpoint = URI.create(endpoint);
@@ -117,7 +119,11 @@ public class EmptyHttpRequest implements Request<Object> {
 
     @Override
     public AmazonWebServiceRequest getOriginalRequest() {
-        return new AmazonWebServiceRequest() {};
+        return originalRequest;
+    }
+
+    public void setOriginalRequest(AmazonWebServiceRequest originalRequest) {
+        this.originalRequest = originalRequest;
     }
 
     @Override
@@ -145,7 +151,8 @@ public class EmptyHttpRequest implements Request<Object> {
 
     @Override
     public ReadLimitInfo getReadLimitInfo() {
-        return new AmazonWebServiceRequest() {};
+        return new AmazonWebServiceRequest() {
+        };
     }
 
     @Override
@@ -155,7 +162,8 @@ public class EmptyHttpRequest implements Request<Object> {
 
     @Override
     public Object getOriginalRequestObject() {
-        return new AmazonWebServiceRequest() {};
+        return new AmazonWebServiceRequest() {
+        };
     }
 
 

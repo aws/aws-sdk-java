@@ -18,71 +18,49 @@
  */
 package com.amazonaws.http;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
 import java.net.SocketTimeoutException;
 
-import junit.framework.Assert;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
-import com.amazonaws.http.request.EmptyHttpRequest;
 import com.amazonaws.http.response.NullErrorResponseHandler;
 import com.amazonaws.http.response.NullResponseHandler;
-import com.amazonaws.http.server.ProblematicServer;
-import com.amazonaws.Request;
 
 /**
- * This test is to verify that the apache-httpclient library has fixed the bug
- * where socket timeout configuration is incorrectly ignored during SSL
- * handshake. This test is expected to hang (and fail after the junit timeout)
- * if run against the problematic httpclient version (e.g. 4.3).
+ * This test is to verify that the apache-httpclient library has fixed the bug where socket timeout
+ * configuration is incorrectly ignored during SSL handshake. This test is expected to hang (and
+ * fail after the junit timeout) if run against the problematic httpclient version (e.g. 4.3).
  *
  * @see https://issues.apache.org/jira/browse/HTTPCLIENT-1478
  */
-public class AmazonHttpClientSslHandshakeTimeoutTest {
+public class AmazonHttpClientSslHandshakeTimeoutTest extends UnresponsiveMockServerTestBase {
 
     private static final int CLIENT_CONNECTION_TO = 1 * 1000;
-    private static final int CLIENT_SOCKET_TO     = 1 * 1000;
-
-    private static ProblematicServer server = new ProblematicServer(ProblematicServer.ServerIssue.UNRESPONSIVE);
-
-    @BeforeClass
-    public static void startServer() {
-        server.startServer();
-    }
-
-    @AfterClass
-    public static void stopServer() {
-        server.stopServer();
-    }
+    private static final int CLIENT_SOCKET_TO = 1 * 1000;
 
     @Test(timeout = 60 * 1000)
     public void testSslHandshakeTimeout() {
-        String localhostEndpoint = "https://localhost:" + server.getPort();
-
-        AmazonHttpClient httpClient = new AmazonHttpClient(
-                new ClientConfiguration()
-                        .withConnectionTimeout(CLIENT_CONNECTION_TO)
-                        .withSocketTimeout(CLIENT_SOCKET_TO)
-                        .withMaxErrorRetry(0));
-
-        Request<?> request = new EmptyHttpRequest(localhostEndpoint, HttpMethodName.GET);
+        AmazonHttpClient httpClient = new AmazonHttpClient(new ClientConfiguration()
+                .withConnectionTimeout(CLIENT_CONNECTION_TO).withSocketTimeout(CLIENT_SOCKET_TO).withMaxErrorRetry(0));
 
         System.out.println("Sending request to localhost...");
 
         try {
-            httpClient.execute(request, new NullResponseHandler(), new NullErrorResponseHandler(), new ExecutionContext());
+            httpClient.execute(newGetRequest(), new NullResponseHandler(), new NullErrorResponseHandler(),
+                    new ExecutionContext());
 
-            Assert.fail("Client-side socket read timeout is expected!");
+            fail("Client-side socket read timeout is expected!");
 
         } catch (AmazonClientException e) {
-            Assert.assertTrue(e.getCause() instanceof SocketTimeoutException);
+            assertTrue(e.getCause() instanceof SocketTimeoutException);
 
             SocketTimeoutException ste = (SocketTimeoutException) e.getCause();
-            Assert.assertEquals("Read timed out", ste.getMessage());
+            assertEquals("Read timed out", ste.getMessage());
         }
 
     }

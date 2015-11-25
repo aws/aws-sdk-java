@@ -12,29 +12,41 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.http.timertask;
+package com.amazonaws.http.timers.request;
 
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.util.ValidationUtils;
+
 /**
- * Tracking object for a scheduled HttpRequestAbortTask.
+ * Keeps track of the scheduled {@link HttpRequestAbortTask} and the associated {@link Future}
  */
-public class HttpRequestAbortTaskTracker {
-    
+@SdkInternalApi
+public class HttpRequestAbortTaskTrackerImpl implements HttpRequestAbortTaskTracker {
+
     private final HttpRequestAbortTask task;
     private final ScheduledFuture<?> future;
-    
-    public HttpRequestAbortTaskTracker(final HttpRequestAbortTask task, final ScheduledFuture<?> future) {
-        this.task = task;
-        this.future = future;
+
+    public HttpRequestAbortTaskTrackerImpl(final HttpRequestAbortTask task, final ScheduledFuture<?> future) {
+        this.task = ValidationUtils.assertNotNull(task, "task");
+        this.future = ValidationUtils.assertNotNull(future, "future");
     }
-    
+
+    @Override
     public boolean httpRequestAborted() {
         return task.httpRequestAborted();
     }
- 
-    public void cancelTask() {
-        future.cancel(true);
+
+    @Override
+    public boolean isEnabled() {
+        return task.isEnabled();
     }
-    
+
+    @Override
+    public void cancelTask() {
+        future.cancel(false);
+    }
+
 }

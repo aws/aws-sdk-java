@@ -1,102 +1,116 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * Contains the resource id ( <code>rid</code> ) and the time it took to
- * process the request ( <code>timems</code> ).
+ * Contains the resource id (<code>rid</code>) and the time it took to process
+ * the request (<code>timems</code>).
  * </p>
  */
 public class SearchStatus implements Serializable, Cloneable {
 
     /**
+     * <p>
      * How long it took to process the request, in milliseconds.
+     * </p>
      */
     private Long timems;
-
     /**
+     * <p>
      * The encrypted resource ID for the request.
+     * </p>
      */
     private String rid;
 
     /**
+     * <p>
      * How long it took to process the request, in milliseconds.
-     *
-     * @return How long it took to process the request, in milliseconds.
-     */
-    public Long getTimems() {
-        return timems;
-    }
-    
-    /**
-     * How long it took to process the request, in milliseconds.
-     *
-     * @param timems How long it took to process the request, in milliseconds.
+     * </p>
+     * 
+     * @param timems
+     *        How long it took to process the request, in milliseconds.
      */
     public void setTimems(Long timems) {
         this.timems = timems;
     }
-    
+
     /**
-     * How long it took to process the request, in milliseconds.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param timems How long it took to process the request, in milliseconds.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * How long it took to process the request, in milliseconds.
+     * </p>
+     * 
+     * @return How long it took to process the request, in milliseconds.
+     */
+    public Long getTimems() {
+        return this.timems;
+    }
+
+    /**
+     * <p>
+     * How long it took to process the request, in milliseconds.
+     * </p>
+     * 
+     * @param timems
+     *        How long it took to process the request, in milliseconds.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public SearchStatus withTimems(Long timems) {
-        this.timems = timems;
+        setTimems(timems);
         return this;
     }
 
     /**
+     * <p>
      * The encrypted resource ID for the request.
-     *
-     * @return The encrypted resource ID for the request.
-     */
-    public String getRid() {
-        return rid;
-    }
-    
-    /**
-     * The encrypted resource ID for the request.
-     *
-     * @param rid The encrypted resource ID for the request.
+     * </p>
+     * 
+     * @param rid
+     *        The encrypted resource ID for the request.
      */
     public void setRid(String rid) {
         this.rid = rid;
     }
-    
+
     /**
-     * The encrypted resource ID for the request.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param rid The encrypted resource ID for the request.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The encrypted resource ID for the request.
+     * </p>
+     * 
+     * @return The encrypted resource ID for the request.
+     */
+    public String getRid() {
+        return this.rid;
+    }
+
+    /**
+     * <p>
+     * The encrypted resource ID for the request.
+     * </p>
+     * 
+     * @param rid
+     *        The encrypted resource ID for the request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public SearchStatus withRid(String rid) {
-        this.rid = rid;
+        setRid(rid);
         return this;
     }
 
@@ -112,50 +126,57 @@ public class SearchStatus implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTimems() != null) sb.append("Timems: " + getTimems() + ",");
-        if (getRid() != null) sb.append("Rid: " + getRid() );
+        if (getTimems() != null)
+            sb.append("Timems: " + getTimems() + ",");
+        if (getRid() != null)
+            sb.append("Rid: " + getRid());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof SearchStatus == false)
+            return false;
+        SearchStatus other = (SearchStatus) obj;
+        if (other.getTimems() == null ^ this.getTimems() == null)
+            return false;
+        if (other.getTimems() != null
+                && other.getTimems().equals(this.getTimems()) == false)
+            return false;
+        if (other.getRid() == null ^ this.getRid() == null)
+            return false;
+        if (other.getRid() != null
+                && other.getRid().equals(this.getRid()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getTimems() == null) ? 0 : getTimems().hashCode()); 
-        hashCode = prime * hashCode + ((getRid() == null) ? 0 : getRid().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getTimems() == null) ? 0 : getTimems().hashCode());
+        hashCode = prime * hashCode
+                + ((getRid() == null) ? 0 : getRid().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof SearchStatus == false) return false;
-        SearchStatus other = (SearchStatus)obj;
-        
-        if (other.getTimems() == null ^ this.getTimems() == null) return false;
-        if (other.getTimems() != null && other.getTimems().equals(this.getTimems()) == false) return false; 
-        if (other.getRid() == null ^ this.getRid() == null) return false;
-        if (other.getRid() != null && other.getRid().equals(this.getRid()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public SearchStatus clone() {
         try {
             return (SearchStatus) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

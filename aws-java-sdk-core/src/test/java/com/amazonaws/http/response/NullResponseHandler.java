@@ -18,12 +18,17 @@
  */
 package com.amazonaws.http.response;
 
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.junit.Assert.assertThat;
+
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.HttpResponseHandler;
 
 public class NullResponseHandler implements HttpResponseHandler<AmazonWebServiceResponse<Object>> {
-   
+
     @Override
     public AmazonWebServiceResponse<Object> handle(HttpResponse response) throws Exception {
         return null;
@@ -33,5 +38,10 @@ public class NullResponseHandler implements HttpResponseHandler<AmazonWebService
     public boolean needsConnectionLeftOpen() {
         return false;
     }
-    
+
+    public static void assertIsUnmarshallingException(AmazonClientException e) {
+        assertThat(e.getCause(), instanceOf(RuntimeException.class));
+        RuntimeException re = (RuntimeException) e.getCause();
+        assertThat(re.getMessage(), containsString("Unable to unmarshall response"));
+    }
 }

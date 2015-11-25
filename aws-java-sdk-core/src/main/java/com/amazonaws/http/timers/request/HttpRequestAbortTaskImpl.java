@@ -12,32 +12,41 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.http.timertask;
+package com.amazonaws.http.timers.request;
 
 import org.apache.http.client.methods.HttpRequestBase;
 
+import com.amazonaws.annotation.SdkInternalApi;
+
 /**
- * Represents a runnable to abort its HttpRequest.
+ * Implementation of {@link HttpRequestAbortTask} that aborts the tracking {@link HttpRequestBase}
+ * when triggered
  */
-public class HttpRequestAbortTask implements Runnable {
-    
+@SdkInternalApi
+public class HttpRequestAbortTaskImpl implements HttpRequestAbortTask {
+
     private final HttpRequestBase httpRequest;
     private volatile boolean httpRequestAborted;
-    
-    public HttpRequestAbortTask(final HttpRequestBase httpRequest) {
+
+    public HttpRequestAbortTaskImpl(final HttpRequestBase httpRequest) {
         this.httpRequest = httpRequest;
     }
-    
+
     @Override
     public void run() {
-        if(!httpRequest.isAborted()) {
-            httpRequestAborted = true;     
+        if (!httpRequest.isAborted()) {
+            httpRequestAborted = true;
             httpRequest.abort();
         }
     }
-    
+
     public boolean httpRequestAborted() {
         return httpRequestAborted;
     }
-    
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
 }

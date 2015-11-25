@@ -18,18 +18,19 @@ import java.io.IOException;
 
 /**
  * Signals that the http request could not complete within the specified timeout.
- *
  */
 public class HttpRequestTimeoutException extends IOException {
+
+    private static final long serialVersionUID = -2588353895012259837L;
 
     public HttpRequestTimeoutException(String message) {
         super(message);
     }
-    
+
     public HttpRequestTimeoutException(Throwable throwable) {
-        super(throwable);
+        this("Request did not complete before the request timeout configuration.", throwable);
     }
-    
+
     public HttpRequestTimeoutException(String message, Throwable throwable) {
         super(message, throwable);
     }
