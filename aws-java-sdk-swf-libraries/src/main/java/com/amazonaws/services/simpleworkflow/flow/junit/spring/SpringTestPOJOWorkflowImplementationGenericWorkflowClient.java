@@ -18,7 +18,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.amazonaws.services.simpleworkflow.flow.DataConverter;
-import com.amazonaws.services.simpleworkflow.flow.DecisionContext;
 import com.amazonaws.services.simpleworkflow.flow.DecisionContextProvider;
 import com.amazonaws.services.simpleworkflow.flow.WorkflowException;
 import com.amazonaws.services.simpleworkflow.flow.core.Promise;
@@ -29,7 +28,7 @@ import com.amazonaws.services.simpleworkflow.flow.generic.StartChildWorkflowExec
 import com.amazonaws.services.simpleworkflow.flow.generic.StartChildWorkflowReply;
 import com.amazonaws.services.simpleworkflow.flow.pojo.POJOWorkflowDefinitionFactoryFactory;
 import com.amazonaws.services.simpleworkflow.flow.pojo.POJOWorkflowImplementationFactory;
-import com.amazonaws.services.simpleworkflow.flow.spring.WorkflowScope;
+import com.amazonaws.services.simpleworkflow.flow.spring.POJOWorkflowStubImplementationFactory;
 import com.amazonaws.services.simpleworkflow.flow.test.TestGenericWorkflowClient;
 import com.amazonaws.services.simpleworkflow.model.WorkflowExecution;
 import com.amazonaws.services.simpleworkflow.model.WorkflowType;
@@ -49,25 +48,7 @@ public class SpringTestPOJOWorkflowImplementationGenericWorkflowClient implement
                 if (instanceProxy == null) {
                     throw new IllegalArgumentException("unknown workflowImplementationType: " + workflowImplementationType);
                 }
-                return new POJOWorkflowImplementationFactory() {
-
-                    @Override
-                    public Object newInstance(DecisionContext decisionContext) throws Exception {
-                        WorkflowScope.setDecisionContext(decisionContext);
-                        return instanceProxy;
-                    }
-
-                    @Override
-                    public Object newInstance(DecisionContext decisionContext, Object[] constructorArgs) throws Exception {
-                        WorkflowScope.setDecisionContext(decisionContext);
-                        return instanceProxy;
-                    }
-
-                    @Override
-                    public void deleteInstance(Object instance) {
-                        WorkflowScope.removeDecisionContext();
-                    }
-                };
+                return new POJOWorkflowStubImplementationFactory(instanceProxy);
             }
         });
     }
