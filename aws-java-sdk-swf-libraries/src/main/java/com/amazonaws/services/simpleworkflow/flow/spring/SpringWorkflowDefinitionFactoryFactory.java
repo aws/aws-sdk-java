@@ -18,7 +18,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.amazonaws.services.simpleworkflow.flow.DataConverter;
-import com.amazonaws.services.simpleworkflow.flow.DecisionContext;
 import com.amazonaws.services.simpleworkflow.flow.generic.WorkflowDefinitionFactory;
 import com.amazonaws.services.simpleworkflow.flow.generic.WorkflowDefinitionFactoryFactory;
 import com.amazonaws.services.simpleworkflow.flow.pojo.POJOWorkflowDefinitionFactoryFactory;
@@ -36,26 +35,7 @@ class SpringWorkflowDefinitionFactoryFactory extends WorkflowDefinitionFactoryFa
             if (instanceProxy == null) {
                 throw new IllegalArgumentException("unknown workflowImplementationType: " + workflowImplementationType);
             }
-            return new POJOWorkflowImplementationFactory() {
-
-                @Override
-                public Object newInstance(DecisionContext decisionContext) throws Exception {
-                    WorkflowScope.setDecisionContext(decisionContext);
-                    return instanceProxy;
-                }
-
-                @Override
-                public Object newInstance(DecisionContext decisionContext, Object[] constructorArgs) throws Exception {
-                    WorkflowScope.setDecisionContext(decisionContext);
-                    return instanceProxy;
-                }
-
-                @Override
-                public void deleteInstance(Object instance) {
-                    WorkflowScope.removeDecisionContext();
-                }
-
-            };
+            return new POJOWorkflowStubImplementationFactory(instanceProxy);
         }
 
     };
