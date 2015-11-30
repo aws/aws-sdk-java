@@ -432,12 +432,13 @@ public class ServiceUtils {
     /**
      * Based on the given request object, returns whether the specified request
      * should skip MD5 check on the requested object content. Specifically, MD5
-     * check should be skipped if one of the following condition is true:
+     * check should be skipped if one of the following conditions are true:
      * <ol>
      * <li>The system property
      *
      * <pre>
      * -Dcom.amazonaws.services.s3.disableGetObjectMD5Validation
+     * -Dcom.amazonaws.services.s3.disablePutObjectMD5Validation
      * </pre>
      *
      * is specified;</li>
@@ -460,10 +461,14 @@ public class ServiceUtils {
             if (getObjectRequest.getSSECustomerKey() != null)
                 return true;
         } else if (request instanceof PutObjectRequest) {
+            if (System.getProperty("com.amazonaws.services.s3.disablePutObjectMD5Validation") != null)
+                return true;
             PutObjectRequest putObjectRequest = (PutObjectRequest)request;
             return putObjectRequest.getSSECustomerKey() != null
                     || putObjectRequest.getSSEAwsKeyManagementParams() != null;
         } else if (request instanceof UploadPartRequest) {
+            if (System.getProperty("com.amazonaws.services.s3.disablePutObjectMD5Validation") != null)
+                return true;
             UploadPartRequest uploadPartRequest = (UploadPartRequest)request;
             return uploadPartRequest.getSSECustomerKey() != null;
         }
