@@ -3584,7 +3584,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              */
             if (!request.getHeaders().containsKey(Headers.CONTENT_TYPE)) {
                 request.addHeader(Headers.CONTENT_TYPE,
-                    "application/x-www-form-urlencoded; charset=utf-8");
+                    "application/octet-stream");
             }
             AWSCredentials credentials = awsCredentialsProvider.getCredentials();
             if (originalRequest.getRequestCredentials() != null) {
