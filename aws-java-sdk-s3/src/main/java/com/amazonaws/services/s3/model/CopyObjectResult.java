@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.Date;
 
@@ -32,7 +33,7 @@ import com.amazonaws.services.s3.internal.SSEResultBase;
  * @see AmazonS3Client#copyObject(String, String, String, String)
  * @see AmazonS3Client#copyObject(com.amazonaws.services.s3.model.CopyObjectRequest)
  */
-public class CopyObjectResult extends SSEResultBase implements ObjectExpirationResult {
+public class CopyObjectResult extends SSEResultBase implements ObjectExpirationResult,Serializable {
 
     /** The ETag value of the new object */
     private String etag;

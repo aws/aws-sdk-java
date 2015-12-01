@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Request object for the parameters to list next batch of versions.
  */
-public class ListNextBatchOfVersionsRequest extends AmazonWebServiceRequest {
+public class ListNextBatchOfVersionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     private VersionListing previousVersionListing;
 

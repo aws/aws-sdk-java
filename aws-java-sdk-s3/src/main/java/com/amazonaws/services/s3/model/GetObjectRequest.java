@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -51,7 +52,7 @@ import com.amazonaws.services.s3.internal.Constants;
  * @see GetObjectMetadataRequest
  */
 public class GetObjectRequest extends AmazonWebServiceRequest implements
-        SSECustomerKeyProvider {
+        SSECustomerKeyProvider, Serializable {
     /**
      * Builder of an S3 object identifier.  This member field is never null.
      */

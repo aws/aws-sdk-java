@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import javax.crypto.SecretKey;
 
@@ -42,7 +43,7 @@ import com.amazonaws.util.Base64;
  * For more information on client-side encryption for Amazon S3 data, see:
  * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html
  */
-public class SSECustomerKey {
+public class SSECustomerKey implements Serializable {
     private final String base64EncodedKey;
     private String base64EncodedMd5;
     private String algorithm;

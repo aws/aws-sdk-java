@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3Client;
@@ -64,7 +65,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
  * nor does the presence or absence of additional request parameters.
  * </p>
  */
-public class ListObjectsRequest extends AmazonWebServiceRequest {
+public class ListObjectsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /** The name of the Amazon S3 bucket to list. */
     private String bucketName;

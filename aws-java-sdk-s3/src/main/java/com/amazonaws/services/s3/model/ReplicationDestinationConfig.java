@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.util.json.Jackson;
 
@@ -20,7 +21,7 @@ import com.amazonaws.util.json.Jackson;
  * Destination configuration for an Amazon S3 bucket replication rule.
  * Configurations in addition to destination bucket ARN may be added in future.
  */
-public class ReplicationDestinationConfig {
+public class ReplicationDestinationConfig implements Serializable {
 
     /**
      * The ARN of the Amazon S3 bucket where the replicas are sent.
@@ -28,7 +29,8 @@ public class ReplicationDestinationConfig {
     private String bucketARN;
 
     /**
-     * Storage class for the replica.
+     * Storage class for the replica. If not specified, Amazon S3
+     * uses the storage class of the source object to create object replica.
      */
     private String storageClass;
 
@@ -66,34 +68,26 @@ public class ReplicationDestinationConfig {
     }
 
     /**
-     * Sets the storage class for the replication destination.
-     *
-     * @throws IllegalArgumentException
-     *             if the storageClass is null.
+     * Sets the storage class for the replication destination. If not specified,
+     * Amazon S3 uses the storage class of the source object to create object replica.
      */
     public void setStorageClass(String storageClass) {
-        if (storageClass == null) {
-            throw new IllegalArgumentException("Storage Class cannot be null");
-        }
         this.storageClass = storageClass;
     }
 
     /**
-     * Sets the storage class for the replication destination.
-     *
-     * @throws IllegalArgumentException
-     *             if the storageClass is null.
+     * Sets the storage class for the replication destination. If not specified,
+     * Amazon S3 uses the storage class of the source object to create object replica.
      */
     public void setStorageClass(StorageClass storageClass) {
-        setStorageClass(storageClass.toString());
+        setStorageClass(storageClass == null ? (String)null : storageClass.toString());
     }
 
     /**
-     * Sets the storage class for the replication destination. Returns the
-     * updated object.
+     * Sets the storage class for the replication destination. If not specified,
+     * Amazon S3 uses the storage class of the source object to create object replica.
+     * Returns the updated object.
      *
-     * @throws IllegalArgumentException
-     *             if the storageClass is null.
      * @return the updated {@link ReplicationDestinationConfig} object
      */
     public ReplicationDestinationConfig withStorageClass(String storageClass) {
@@ -102,15 +96,14 @@ public class ReplicationDestinationConfig {
     }
 
     /**
-     * Sets the storage class for the replication destination. Returns the
-     * updated object.
+     * Sets the storage class for the replication destination. If not specified,
+     * Amazon S3 uses the storage class of the source object to create object replica.
+     * Returns the updated object.
      *
-     * @throws IllegalArgumentException
-     *             if the storageClass is null.
      * @return the updated {@link ReplicationDestinationConfig} object
      */
     public ReplicationDestinationConfig withStorageClass(StorageClass storageClass) {
-        setStorageClass(storageClass.toString());
+        setStorageClass(storageClass == null ? (String)null : storageClass.toString());
         return this;
     }
 

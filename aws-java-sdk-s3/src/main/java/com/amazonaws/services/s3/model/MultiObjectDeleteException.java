@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,7 +26,7 @@ import com.amazonaws.services.s3.model.DeleteObjectsResult.DeletedObject;
  * including the errors that occurred. For successfully deleted objects, refer
  * to {@link MultiObjectDeleteException#getDeletedObjects()}.
  */
-public class MultiObjectDeleteException extends AmazonS3Exception {
+public class MultiObjectDeleteException extends AmazonS3Exception implements Serializable {
 
     private static final long serialVersionUID = -2004213552302446866L;
 

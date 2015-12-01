@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#listObjects(ListObjectsRequest)
  * @see AmazonS3#listNextBatchOfObjects(ObjectListing)
  */
-public class ObjectListing {
+public class ObjectListing implements Serializable {
     
     /** A list of summary information describing the objects stored in the bucket */
     private List<S3ObjectSummary> objectSummaries = new ArrayList<S3ObjectSummary>();

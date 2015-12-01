@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
@@ -32,7 +33,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#deleteBucketPolicy(DeleteBucketPolicyRequest)
  */
-public class DeleteBucketPolicyRequest extends AmazonWebServiceRequest {
+public class DeleteBucketPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /** The name of the Amazon S3 bucket whose policy is being deleted. */
     private String bucketName;

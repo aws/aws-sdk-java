@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.internal.Constants;
@@ -66,7 +67,7 @@ import com.amazonaws.services.s3.internal.Constants;
  * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration)
  * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration, MultiFactorAuthentication)
  */
-public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceRequest {
+public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
     
     /**
      * The bucket whose versioning configuration is being set.

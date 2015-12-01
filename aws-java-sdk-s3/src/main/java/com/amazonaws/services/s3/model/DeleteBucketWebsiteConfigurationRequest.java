@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.services.s3.AmazonS3;
 
@@ -42,7 +43,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#deleteBucketWebsiteConfiguration(DeleteBucketWebsiteConfigurationRequest)
  */
-public class DeleteBucketWebsiteConfigurationRequest extends GenericBucketRequest {
+public class DeleteBucketWebsiteConfigurationRequest extends GenericBucketRequest implements Serializable {
 
     /**
      * Creates a new request object, ready to be executed to delete the website

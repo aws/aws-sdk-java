@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.io.File;
 import java.io.InputStream;
@@ -81,7 +82,7 @@ import java.io.InputStream;
  * @see PutObjectRequest#PutObjectRequest(String, String, InputStream,
  *      ObjectMetadata)
  */
-public class PutObjectRequest extends AbstractPutObjectRequest {
+public class PutObjectRequest extends AbstractPutObjectRequest implements Serializable {
 
     /**
      * Constructs a new

@@ -16,6 +16,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 /**
  * Represents an e-mail grantee.  An e-mail grantee is a grantee 
@@ -42,7 +43,7 @@ package com.amazonaws.services.s3.model;
  * 
  * @see EmailAddressGrantee#EmailAddressGrantee(String)
  */
-public class EmailAddressGrantee implements Grantee {
+public class EmailAddressGrantee implements Grantee,Serializable {
     private String emailAddress = null;
     
     /* (non-Javadoc)

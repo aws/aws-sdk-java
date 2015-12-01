@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.Map;
 
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonServiceException;
  * the user needs to contact Amazon about an issue where Amazon S3 is incorrectly
  * handling a request.
  */
-public class AmazonS3Exception extends AmazonServiceException {
+public class AmazonS3Exception extends AmazonServiceException implements Serializable {
     private static final long serialVersionUID = 7573680383273658477L;
 
     /**

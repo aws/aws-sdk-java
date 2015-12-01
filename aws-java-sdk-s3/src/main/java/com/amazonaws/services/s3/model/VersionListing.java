@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#listVersions(ListVersionsRequest)
  * @see AmazonS3#listNextBatchOfVersions(VersionListing)
  */
-public class VersionListing {
+public class VersionListing implements Serializable {
 
     /** A list of summary information describing the versions stored in the bucket */
     private List<S3VersionSummary> versionSummaries =

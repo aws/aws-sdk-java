@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.services.s3.internal.SSEResultBase;
 
@@ -20,7 +21,7 @@ import com.amazonaws.services.s3.internal.SSEResultBase;
  * Contains the details returned from Amazon S3 after calling the UploadPart
  * operation.
  */
-public class UploadPartResult extends SSEResultBase {
+public class UploadPartResult extends SSEResultBase implements Serializable {
 
     /** The part number of the newly uploaded part */
     private int partNumber;

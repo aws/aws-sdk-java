@@ -17,82 +17,48 @@ package com.amazonaws.handlers;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.Response;
+import com.amazonaws.http.HttpResponse;
 import com.amazonaws.util.TimingInfo;
 
 /**
- * Interface for addition request handling in clients. A request handler is
- * executed on a request object <b>before</b> it is sent to the client runtime
- * to be executed.
+ * Interface for addition request handling in clients. A request handler is executed on a request
+ * object <b>before</b> it is sent to the client runtime to be executed.
  * <p>
- * This interface deprecates {@link RequestHandler} by providing access to not
- * only the AWS response, but also the associated http response via
- * {@link Response}.
+ * This interface deprecates {@link RequestHandler} by providing access to not only the AWS
+ * response, but also the associated http response via {@link Response}.
  * <p>
- * Note {@link TimingInfo} is accessible via
- * {@link Request#getAWSRequestMetrics()} and hence is omitted from the
- * interface to reduce duplication by design.
+ * Note {@link TimingInfo} is accessible via {@link Request#getAWSRequestMetrics()} and hence is
+ * omitted from the interface to reduce duplication by design.
  */
-public abstract class RequestHandler2 {
+public abstract class RequestHandler2 implements IRequestHandler2 {
 
-    /**
-     * Runs any additional processing logic on the specified request object
-     * before it is marshaled into an HTTP request.
-     * <p>
-     * If you're going to modify the request, make sure to clone it first,
-     * modify the clone, and return it from this method. Otherwise your changes
-     * will leak out to the user, who might reuse the request object without
-     * realizing that it was modified as part of sending it the first time.
-     *
-     * @param request the request passed in by the user
-     * @return the (possibly different) request to marshal
-     */
-    public AmazonWebServiceRequest beforeMarshalling(
-            AmazonWebServiceRequest request) {
-
+    @Override
+    public AmazonWebServiceRequest beforeMarshalling(AmazonWebServiceRequest request) {
         return request;
     }
 
-    /**
-     * Runs any additional processing logic on the specified request (before it
-     * is executed by the client runtime).
-     *
-     * @param request
-     *            The low level request being processed.
-     */
-    public abstract void beforeRequest(Request<?> request);
+    @Override
+    public void beforeRequest(Request<?> request) {
+    }
+
+    @Override
+    public HttpResponse beforeUnmarshalling(Request<?> request, HttpResponse httpResponse) {
+        return httpResponse;
+    }
+
+    @Override
+    public void afterResponse(Request<?> request, Response<?> response) {
+    }
+
+    @Override
+    public void afterError(Request<?> request, Response<?> response, Exception e) {
+    }
 
     /**
-     * Runs any additional processing logic on the specified request (after is
-     * has been executed by the client runtime).
-     *
-     * @param request
-     *            The low level request being processed.
-     * @param response
-     *            The response generated from the specified request.
+     * Returns an instance of request handler adapted to the {@link RequestHandler2} interface from
+     * the given request handler implementing the deprecated {@link RequestHandler} interface.
      */
-    public abstract void afterResponse(Request<?> request, Response<?> response);
-
-    /**
-     * Runs any additional processing logic on a request after it has failed.
-     *
-     * @param request
-     *            The request that generated an error.
-     * @param response
-     *            the response or null if the failure occurred before the
-     *            response is made available
-     * @param e
-     *            The error that resulted from executing the request.
-     */
-    public abstract void afterError(Request<?> request, Response<?> response,
-            Exception e);
-
-    /**
-     * Returns an instance of request handler adapted to the
-     * {@link RequestHandler2} interface from the given request handler
-     * implementing the deprecated {@link RequestHandler} interface.
-     */
-    public static RequestHandler2 adapt(
-            @SuppressWarnings("deprecation") RequestHandler old) {
+    public static RequestHandler2 adapt(@SuppressWarnings("deprecation") RequestHandler old) {
         return new RequestHandler2Adaptor(old);
     }
 }

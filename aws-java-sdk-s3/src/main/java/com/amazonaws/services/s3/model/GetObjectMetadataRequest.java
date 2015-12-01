@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.io.Serializable;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3Client;
 
@@ -40,7 +42,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
  * @see GetObjectRequest
  */
 public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
-        SSECustomerKeyProvider {
+        SSECustomerKeyProvider, Serializable {
     /**
      * The name of the bucket containing the object's whose metadata is being
      * retrieved.

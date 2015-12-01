@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.EnumSet;
 
 /**
  * Represents the topic configuration for an Amazon S3 bucket.
  */
-public class TopicConfiguration extends NotificationConfiguration {
+public class TopicConfiguration extends NotificationConfiguration implements Serializable {
 
     /**
      * The Amazon SNS topic ARN for this configuration.

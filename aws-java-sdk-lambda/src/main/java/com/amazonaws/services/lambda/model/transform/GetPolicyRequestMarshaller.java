@@ -100,6 +100,18 @@ public class GetPolicyRequestMarshaller implements Marshaller<Request<GetPolicyR
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (getPolicyRequest.getFunctionName() == null) ? "" : StringUtils.fromString(getPolicyRequest.getFunctionName())); 
         } 
+        if (DYNAMIC_QUERY_PARAMS.containsKey("Qualifier")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("Qualifier");
+
+            String value = (getPolicyRequest.getQualifier() == null) ? null : StringUtils.fromString(getPolicyRequest.getQualifier());
+
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
+            }
+            
+        } else {
+            uriResourcePath = uriResourcePath.replace("{Qualifier}", (getPolicyRequest.getQualifier() == null) ? "" : StringUtils.fromString(getPolicyRequest.getQualifier())); 
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 
@@ -107,25 +119,9 @@ public class GetPolicyRequestMarshaller implements Marshaller<Request<GetPolicyR
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-          jsonWriter.object();
-          
-            if (getPolicyRequest.getQualifier() != null) {
-                jsonWriter.key("Qualifier").value(getPolicyRequest.getQualifier());
-            }
-
-          jsonWriter.endObject();
-
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+        request.setContent(new ByteArrayInputStream(new byte[0]));
+        if (!request.getHeaders().containsKey("Content-Type")) {
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
         }
 
         return request;

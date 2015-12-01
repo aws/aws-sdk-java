@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.List;

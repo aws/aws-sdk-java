@@ -14,11 +14,13 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.io.Serializable;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.util.json.Jackson;
 
 public class SetBucketReplicationConfigurationRequest extends
-        AmazonWebServiceRequest {
+        AmazonWebServiceRequest implements Serializable{
 
     /**
      * The name of Amazon S3 bucket to which the replication configuration is

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.util.json.Jackson;
 
 /**
  * Rule that specifies the replication configuration.
  */
-public class ReplicationRule {
+public class ReplicationRule implements Serializable {
 
     /**
      * The Amazon S3 object prefix for the replication rule. This rule will be

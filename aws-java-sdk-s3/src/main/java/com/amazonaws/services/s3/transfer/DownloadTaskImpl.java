@@ -17,6 +17,7 @@ package com.amazonaws.services.s3.transfer;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Encryption;
 import com.amazonaws.services.s3.internal.ServiceUtils;
+import com.amazonaws.services.s3.internal.SkipMd5CheckStrategy;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.transfer.internal.DownloadImpl;
@@ -27,6 +28,7 @@ final class DownloadTaskImpl implements
     private final AmazonS3 s3;
     private final DownloadImpl download;
     private final GetObjectRequest getObjectRequest;
+    private final SkipMd5CheckStrategy skipMd5CheckStrategy = SkipMd5CheckStrategy.INSTANCE;
 
     DownloadTaskImpl(AmazonS3 s3, DownloadImpl download,
             GetObjectRequest getObjectRequest) {
@@ -45,7 +47,6 @@ final class DownloadTaskImpl implements
     @Override
     public boolean needIntegrityCheck() {
         // Don't perform the integrity check if the checksum won't matchup.
-        return !(s3 instanceof AmazonS3Encryption)
-            && !ServiceUtils.skipMd5CheckPerRequest(getObjectRequest);
+        return !(s3 instanceof AmazonS3Encryption) && !skipMd5CheckStrategy.skipMd5CheckPerRequest(getObjectRequest);
     }
 }

@@ -50,6 +50,7 @@ import com.amazonaws.services.s3.model.CreateBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
+import com.amazonaws.services.s3.model.DeleteBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest;
@@ -222,8 +223,12 @@ public interface AmazonS3 extends S3DirectSpi {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
+     * @deprecated this operation will not retain the ACL's or SSE parameters
+     * associated with the given Amazon S3 object. Use {@link #copyObject(CopyObjectRequest)}
+     * instead.
      */
-    public void changeObjectStorageClass(String bucketName, String key, StorageClass newStorageClass)
+    @Deprecated
+    void changeObjectStorageClass(String bucketName, String key, StorageClass newStorageClass)
         throws AmazonClientException, AmazonServiceException;
 
 
@@ -244,8 +249,12 @@ public interface AmazonS3 extends S3DirectSpi {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
+     * @deprecated this operation will not retain the ACL's or SSE parameters
+     * associated with the given Amazon S3 object. Use {@link #copyObject(CopyObjectRequest)}
+     * instead.
      */
-    public void setObjectRedirectLocation(String bucketName, String key, String newRedirectLocation)
+    @Deprecated
+    void setObjectRedirectLocation(String bucketName, String key, String newRedirectLocation)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -2121,7 +2130,6 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     public void deleteBucket(DeleteBucketRequest deleteBucketRequest)
             throws AmazonClientException, AmazonServiceException;
-
 
     /**
      * <p>
@@ -4449,8 +4457,31 @@ public interface AmazonS3 extends S3DirectSpi {
      * @see AmazonS3#setBucketReplicationConfiguration(String,
      *      BucketReplicationConfiguration)
      * @see AmazonS3#getBucketReplicationConfiguration(String)
+     * @see AmazonS3#deleteBucketReplicationConfiguration(DeleteBucketReplicationConfigurationRequest)
      */
-    public void deleteBucketReplicationConfiguration(String bucketName)
+    void deleteBucketReplicationConfiguration(String bucketName)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Deletes the replication configuration for the given Amazon S3 bucket.
+     *
+     * @param request
+     *            The request object for delete bucket replication
+     *            configuration.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     *
+     * @see AmazonS3#setBucketReplicationConfiguration(String,
+     *      BucketReplicationConfiguration)
+     * @see AmazonS3#getBucketReplicationConfiguration(String)
+     * @see AmazonS3#deleteBucketReplicationConfiguration(String)
+     */
+    void deleteBucketReplicationConfiguration
+    (DeleteBucketReplicationConfigurationRequest request)
             throws AmazonServiceException, AmazonClientException;
 
 }

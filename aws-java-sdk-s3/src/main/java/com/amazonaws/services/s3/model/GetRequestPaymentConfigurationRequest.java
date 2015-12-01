@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.io.Serializable;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -21,7 +23,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * an Amazon S3 bucket.
  */
 public class GetRequestPaymentConfigurationRequest extends
-        AmazonWebServiceRequest {
+        AmazonWebServiceRequest implements Serializable {
 
     /** The name of the Amazon S3 bucket. */
     private String bucketName;

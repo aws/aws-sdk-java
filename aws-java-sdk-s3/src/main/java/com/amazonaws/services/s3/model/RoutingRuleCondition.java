@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 /**
  * A container for describing a condition that must be met for the specified
@@ -20,7 +21,7 @@ package com.amazonaws.services.s3.model;
  * redirect to the /documents folder or if request results in HTTP error 4xx,
  * redirect request to another host where you might process the error.
  */
-public class RoutingRuleCondition {
+public class RoutingRuleCondition implements Serializable {
 
 	/**
 	 * The object key name prefix when the redirect is applied. For example, to

@@ -16,6 +16,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 /**
  * Represents a grantee identified by their canonical Amazon ID.
@@ -31,7 +32,7 @@ package com.amazonaws.services.s3.model;
  * 
  * @see CanonicalGrantee#CanonicalGrantee(String)
  */
-public class CanonicalGrantee implements Grantee {
+public class CanonicalGrantee implements Grantee,Serializable {
     private String id = null;
     private String displayName = null;
         

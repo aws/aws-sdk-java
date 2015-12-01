@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3Client;
@@ -31,7 +32,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
  * @see AmazonS3Client#deleteObject(String, String)
  * @see AmazonS3Client#deleteObject(DeleteObjectRequest)
  */
-public class DeleteObjectRequest extends AmazonWebServiceRequest {
+public class DeleteObjectRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Amazon S3 bucket containing the object to delete.

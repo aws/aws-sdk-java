@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.model;
 
 import static com.amazonaws.util.DateUtils.cloneDate;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -32,7 +33,7 @@ import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
  * sends and receives (Content-Length, ETag, Content-MD5, etc.).
  */
 public class ObjectMetadata implements ServerSideEncryptionResult,
-        ObjectExpirationResult, ObjectRestoreResult, Cloneable
+        ObjectExpirationResult, ObjectRestoreResult, Cloneable, Serializable
 {
     /*
      * TODO: Might be nice to get as many of the internal use only methods out

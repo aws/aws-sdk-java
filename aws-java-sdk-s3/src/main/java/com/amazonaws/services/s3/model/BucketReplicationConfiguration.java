@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +23,7 @@ import com.amazonaws.util.json.Jackson;
 /**
  * Replication configuration for an Amazon S3 bucket.
  */
-public class BucketReplicationConfiguration {
+public class BucketReplicationConfiguration implements Serializable {
 
     /** The ARN of the IAM role that Amazon S3 assumes while replication. */
     private String roleARN;

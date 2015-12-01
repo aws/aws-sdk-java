@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,7 +39,7 @@ import com.amazonaws.services.s3.internal.Constants;
  * @see AmazonS3Client#uploadPart(UploadPartRequest)
  * @see CopyPartResult
  */
-public class CopyPartRequest extends AmazonWebServiceRequest {
+public class CopyPartRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The upload id of the multipart upload into which to copy this part.

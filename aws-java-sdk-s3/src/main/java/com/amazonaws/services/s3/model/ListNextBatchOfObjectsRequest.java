@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Request object for parameters of listing next batch of objects.
  */
-public class ListNextBatchOfObjectsRequest extends AmazonWebServiceRequest {
+public class ListNextBatchOfObjectsRequest extends AmazonWebServiceRequest implements Serializable {
 
     private ObjectListing previousObjectListing;
 

@@ -21,10 +21,12 @@ public class SDKGlobalConfiguration {
     /////////////////////// System Properties ///////////////////////
 
     /**
-     * Disable validation of server certificates when using the HTTPS protocol.
-     * This should ONLY be used to do quick smoke tests against endpoints which
-     * don't yet have valid certificates; it should NEVER be used in
-     * production.
+     * Disable validation of server certificates when using the HTTPS protocol. This should ONLY be
+     * used to do quick smoke tests against endpoints which don't yet have valid certificates; it
+     * should NEVER be used in production. This property is meant to be used as a flag (i.e.
+     * -Dcom.amazonaws.sdk.disableCertChecking) rather then taking a value
+     * (-Dcom.amazonaws.sdk.disableCertChecking=true). This property is treated as false by default
+     * (i.e. check certificates by default)
      */
     public static final String DISABLE_CERT_CHECKING_SYSTEM_PROPERTY =
         "com.amazonaws.sdk.disableCertChecking";
@@ -167,5 +169,14 @@ public class SDKGlobalConfiguration {
     @Deprecated
     public static int getGlobalTimeOffset() {
         return SDKGlobalTime.getGlobalTimeOffset();
+    }
+
+    public static boolean isCertCheckingDisabled() {
+        final String property = System.getProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY);
+        if (property == null || property.equalsIgnoreCase("false")) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }

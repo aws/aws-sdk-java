@@ -14,8 +14,6 @@
  */
 package com.amazonaws.http;
 
-import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -69,6 +67,7 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HttpContext;
 
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.http.conn.SdkConnectionKeepAliveStrategy;
 import com.amazonaws.http.conn.ssl.SdkTLSSocketFactory;
@@ -79,15 +78,12 @@ import com.amazonaws.http.impl.client.SdkHttpClient;
 @SdkInternalApi
 public class HttpClientFactory {
 
-
     /**
-     * Creates a new HttpClient object using the specified AWS
-     * ClientConfiguration to configure the client.
+     * Creates a new HttpClient object using the specified AWS ClientConfiguration to configure the
+     * client.
      *
      * @param config
-     *            Client configuration options (ex: proxy settings, connection
-     *            limits, etc).
-     *
+     *            Client configuration options (ex: proxy settings, connection limits, etc).
      * @return The new, configured HttpClient.
      */
     public HttpClient createHttpClient(ClientConfiguration config) {
@@ -141,7 +137,7 @@ public class HttpClientFactory {
          * register a new scheme for HTTPS that won't cause self-signed certs to
          * error out.
          */
-        if (System.getProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY) != null) {
+        if (SDKGlobalConfiguration.isCertCheckingDisabled()) {
             Scheme sch = new Scheme("https", 443, new TrustingSocketFactory());
             httpClient.getConnectionManager().getSchemeRegistry().register(sch);
         }

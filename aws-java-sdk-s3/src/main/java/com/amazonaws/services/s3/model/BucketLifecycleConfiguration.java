@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +23,7 @@ import java.util.List;
 /**
  * Container for bucket lifecycle configuration operations.
  */
-public class BucketLifecycleConfiguration {
+public class BucketLifecycleConfiguration implements Serializable {
 
     /**
      * Constant for an enabled rule.

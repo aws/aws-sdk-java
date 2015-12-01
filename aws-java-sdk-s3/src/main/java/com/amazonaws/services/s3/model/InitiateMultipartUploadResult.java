@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.internal.SSEResultBase;
@@ -23,7 +24,7 @@ import com.amazonaws.services.s3.internal.SSEResultBase;
  *
  * @see AmazonS3#initiateMultipartUpload(InitiateMultipartUploadRequest)
  */
-public class InitiateMultipartUploadResult extends SSEResultBase {
+public class InitiateMultipartUploadResult extends SSEResultBase implements Serializable {
 
     /** The name of the bucket in which the new multipart upload was initiated */
     private String bucketName;

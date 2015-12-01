@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.io.Serializable;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
 
@@ -35,7 +37,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#initiateMultipartUpload(InitiateMultipartUploadRequest)
  */
 public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
-        implements SSECustomerKeyProvider, SSEAwsKeyManagementParamsProvider {
+        implements SSECustomerKeyProvider, SSEAwsKeyManagementParamsProvider, Serializable {
     /**
      * The name of the bucket in which to create the new multipart upload, and
      * hence, the eventual object created from the multipart upload.

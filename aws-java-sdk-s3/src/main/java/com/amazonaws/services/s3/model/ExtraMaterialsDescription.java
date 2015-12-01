@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -23,7 +24,7 @@ import java.util.Map;
  * per-request basis and for more advanced use-case) to supplement the one
  * stored in S3 for crypto material retrieval.
  */
-public class ExtraMaterialsDescription {
+public class ExtraMaterialsDescription implements Serializable {
     @SuppressWarnings("unchecked")
     public static final ExtraMaterialsDescription NONE =
         new ExtraMaterialsDescription(Collections.EMPTY_MAP);

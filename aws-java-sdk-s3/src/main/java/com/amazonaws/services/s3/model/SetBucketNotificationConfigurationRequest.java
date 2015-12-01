@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * @see SetBucketNotificationConfigurationRequest#SetBucketNotificationConfigurationRequest(String, BucketNotificationConfiguration)
  */
-public class SetBucketNotificationConfigurationRequest extends AmazonWebServiceRequest {
+public class SetBucketNotificationConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
 
     private BucketNotificationConfiguration notificationConfiguration;
 

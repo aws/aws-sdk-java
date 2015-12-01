@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.Date;
 
@@ -29,7 +30,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#completeMultipartUpload(CompleteMultipartUploadRequest)
  * @see AmazonS3#abortMultipartUpload(AbortMultipartUploadRequest)
  */
-public class MultipartUpload {
+public class MultipartUpload implements Serializable {
 
     /** The key by which this upload is stored. */
     private String key;

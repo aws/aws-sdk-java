@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Request object containing all the options for requesting a bucket's Access Control List (ACL).
  */
-public class GetBucketAclRequest extends AmazonWebServiceRequest {
+public class GetBucketAclRequest extends AmazonWebServiceRequest implements Serializable {
 	/** The name of the bucket whose ACL is being retrieved. */
 	private String bucketName;
 

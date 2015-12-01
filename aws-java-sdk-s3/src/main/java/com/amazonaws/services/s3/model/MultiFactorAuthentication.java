@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 
 /**
@@ -35,7 +36,7 @@ package com.amazonaws.services.s3.model;
  * href="http://aws.amazon.com/mfa"/>http://aws.amazon.com/mfa</a>
  * </p>
  */
-public class MultiFactorAuthentication {
+public class MultiFactorAuthentication implements Serializable {
 
     /**
      * The serial number of the Multi-Factor Authentication device associated

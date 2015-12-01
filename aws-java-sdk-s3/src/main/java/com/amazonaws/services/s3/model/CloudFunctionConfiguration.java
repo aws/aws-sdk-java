@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.EnumSet;
 
@@ -21,7 +22,7 @@ import java.util.EnumSet;
  * @deprecated use {@link LambdaConfiguration} instead
  */
 @Deprecated
-public class CloudFunctionConfiguration extends NotificationConfiguration {
+public class CloudFunctionConfiguration extends NotificationConfiguration implements Serializable {
 
     /**
      * The ARN for the IAM role to be used by Amazon S3.

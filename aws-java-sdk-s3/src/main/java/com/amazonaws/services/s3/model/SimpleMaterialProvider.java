@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class SimpleMaterialProvider implements EncryptionMaterialsProvider {
+public class SimpleMaterialProvider implements EncryptionMaterialsProvider,Serializable {
     private final Map<Map<String, String>, EncryptionMaterials> map =
         new HashMap<Map<String, String>, EncryptionMaterials>();
     private EncryptionMaterials latest;

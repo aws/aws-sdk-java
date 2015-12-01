@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.services.s3.AmazonS3;
 
@@ -61,7 +62,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#getBucketVersioningConfiguration(String)
  * @see AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)
  */
-public class BucketVersioningConfiguration {
+public class BucketVersioningConfiguration implements Serializable {
 
     /**
      * S3 bucket versioning status indicating that versioning is off for a

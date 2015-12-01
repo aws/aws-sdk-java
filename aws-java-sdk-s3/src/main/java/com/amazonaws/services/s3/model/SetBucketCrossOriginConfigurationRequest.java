@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * @see SetBucketCrossOriginConfigurationRequest#SetBucketCrossOriginConfigurationRequest(String, BucketCrossOriginConfiguration)
  */
-public class SetBucketCrossOriginConfigurationRequest extends AmazonWebServiceRequest {
+public class SetBucketCrossOriginConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
     
     /**
      * The bucket whose cross origin configuration is being set.

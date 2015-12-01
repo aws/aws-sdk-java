@@ -71,7 +71,7 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * Aborts the underlying http request without reading any more data and
      * closes the stream.
      * <p>
@@ -106,7 +106,7 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
      * causing file truncation.
      * <p>
      * http://bugs.java.com/bugdatabase/view_bug.do?bug_id=7036144
-     * <p> 
+     * <p>
      * Reference TT: 0034867351
      */
     @Override

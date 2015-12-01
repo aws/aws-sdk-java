@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 /**
  * Container for the part number and ETag of an uploaded part. After the part is
  * uploaded to Amazon S3, this data is used when completing the multipart
  * upload.
  */
-public class PartETag {
+public class PartETag implements Serializable {
 
     /** The part number of the associated part. */
     private int partNumber;

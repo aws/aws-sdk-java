@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.Date;
 
@@ -35,7 +36,7 @@ import com.amazonaws.services.s3.internal.SSEResultBase;
  *      ObjectMetadata)
  * @see AmazonS3Client#putObject(PutObjectRequest)
  */
-public class PutObjectResult extends SSEResultBase implements ObjectExpirationResult {
+public class PutObjectResult extends SSEResultBase implements ObjectExpirationResult,Serializable {
 
     /**
      * The version ID of the new, uploaded object. This field will only be
