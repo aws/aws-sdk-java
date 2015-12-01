@@ -13,12 +13,13 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 /**
  * Container for one routing rule that identifies a condition and a redirect
  * that applies when the condition is met.
  */
-public class RoutingRule {
+public class RoutingRule implements Serializable {
 
     /**
      * The condition that must be met for the specified redirect to apply. For

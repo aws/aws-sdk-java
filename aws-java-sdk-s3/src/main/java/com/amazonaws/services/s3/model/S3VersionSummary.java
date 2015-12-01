@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.Date;
 
@@ -26,7 +27,7 @@ import com.amazonaws.services.s3.internal.Constants;
  * @see S3Object
  * @see S3ObjectSummary
  */
-public class S3VersionSummary {
+public class S3VersionSummary implements Serializable {
     
     /** The name of the bucket in which this version is stored */
     protected String bucketName;

@@ -16,6 +16,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,7 +25,7 @@ import java.util.Map;
 
 import com.amazonaws.services.s3.AmazonS3;
 
-public class TagSet {
+public class TagSet implements Serializable {
 	private Map<String, String> tags;
 	
 	/**

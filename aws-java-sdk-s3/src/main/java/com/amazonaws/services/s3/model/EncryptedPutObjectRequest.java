@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.model;
 
 import java.io.File;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +37,7 @@ import com.amazonaws.services.s3.AmazonS3EncryptionClient;
  * </p>
  */
 public class EncryptedPutObjectRequest extends PutObjectRequest implements
-        MaterialsDescriptionProvider {
+        MaterialsDescriptionProvider, Serializable {
     /**
      * description of encryption materials to be used with this request.
      */
@@ -53,12 +54,12 @@ public class EncryptedPutObjectRequest extends PutObjectRequest implements
     public EncryptedPutObjectRequest(String bucketName, String key, InputStream input, ObjectMetadata metadata) {
         super(bucketName, key, input, metadata);
     }
-    
+
     @Override
     public Map<String, String> getMaterialsDescription() {
         return materialsDescription;
     }
-    
+
     /**
      * sets the materials description for the encryption materials to be used with the current PutObjectRequest.
      * @param materialsDescription the materialsDescription to set
@@ -69,7 +70,7 @@ public class EncryptedPutObjectRequest extends PutObjectRequest implements
                 : Collections.unmodifiableMap(new HashMap<String,String>(materialsDescription))
                 ;
     }
-    
+
     /**
      * sets the materials description for the encryption materials to be used with the current PutObjectRequest.
      * @param materialsDescription the materialsDescription to set
@@ -84,7 +85,7 @@ public class EncryptedPutObjectRequest extends PutObjectRequest implements
      */
     @Override
     public EncryptedPutObjectRequest clone() {
-        final EncryptedPutObjectRequest cloned = 
+        final EncryptedPutObjectRequest cloned =
             new EncryptedPutObjectRequest(
                 getBucketName(), getKey(), getFile());
         super.copyPutObjectBaseTo(cloned);

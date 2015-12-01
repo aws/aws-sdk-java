@@ -1024,11 +1024,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -1220,11 +1220,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -2210,11 +2210,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -2354,11 +2354,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -2481,11 +2481,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<UnprocessedIdentityId>",
           "map" : false,
-          "simpleType" : "UnprocessedIdentityId",
-          "simple" : false,
           "templateType" : "java.util.List<UnprocessedIdentityId>",
-          "templateImplType" : "java.util.ArrayList<UnprocessedIdentityId>"
+          "simple" : false,
+          "simpleType" : "UnprocessedIdentityId"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2619,11 +2619,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<UnprocessedIdentityId>",
             "map" : false,
-            "simpleType" : "UnprocessedIdentityId",
-            "simple" : false,
             "templateType" : "java.util.List<UnprocessedIdentityId>",
-            "templateImplType" : "java.util.ArrayList<UnprocessedIdentityId>"
+            "simple" : false,
+            "simpleType" : "UnprocessedIdentityId"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2780,11 +2780,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -2924,11 +2924,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -3602,11 +3602,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -3716,11 +3716,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<String>",
           "map" : false,
-          "simpleType" : "String",
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "simple" : true,
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4011,11 +4011,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<String>",
             "map" : false,
-            "simpleType" : "String",
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "simple" : true,
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4078,11 +4078,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -4185,11 +4185,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<String>",
           "map" : false,
-          "simpleType" : "String",
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "simple" : true,
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4276,11 +4276,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<String>",
             "map" : false,
-            "simpleType" : "String",
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "simple" : true,
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4539,11 +4539,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -4653,11 +4653,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<String>",
           "map" : false,
-          "simpleType" : "String",
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "simple" : true,
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4948,11 +4948,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<String>",
             "map" : false,
-            "simpleType" : "String",
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "simple" : true,
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5015,11 +5015,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -5142,11 +5142,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<String>",
           "map" : false,
-          "simpleType" : "String",
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "simple" : true,
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5384,11 +5384,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<String>",
             "map" : false,
-            "simpleType" : "String",
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "simple" : true,
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5512,11 +5512,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<String>",
           "map" : false,
-          "simpleType" : "String",
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "simple" : true,
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5857,11 +5857,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<String>",
             "map" : false,
-            "simpleType" : "String",
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "simple" : true,
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5987,11 +5987,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -6127,11 +6127,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6530,11 +6530,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<String>",
           "map" : false,
-          "simpleType" : "String",
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "simple" : true,
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6875,11 +6875,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<String>",
             "map" : false,
-            "simpleType" : "String",
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "simple" : true,
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7245,11 +7245,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7359,11 +7359,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<String>",
           "map" : false,
-          "simpleType" : "String",
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "simple" : true,
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7658,11 +7658,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<String>",
             "map" : false,
-            "simpleType" : "String",
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "simple" : true,
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7725,11 +7725,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8087,11 +8087,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<IdentityPoolShortDescription>",
           "map" : false,
-          "simpleType" : "IdentityPoolShortDescription",
-          "simple" : false,
           "templateType" : "java.util.List<IdentityPoolShortDescription>",
-          "templateImplType" : "java.util.ArrayList<IdentityPoolShortDescription>"
+          "simple" : false,
+          "simpleType" : "IdentityPoolShortDescription"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8328,11 +8328,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<IdentityPoolShortDescription>",
             "map" : false,
-            "simpleType" : "IdentityPoolShortDescription",
-            "simple" : false,
             "templateType" : "java.util.List<IdentityPoolShortDescription>",
-            "templateImplType" : "java.util.ArrayList<IdentityPoolShortDescription>"
+            "simple" : false,
+            "simpleType" : "IdentityPoolShortDescription"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8651,11 +8651,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -8950,11 +8950,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -10016,11 +10016,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10160,11 +10160,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -10391,11 +10391,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10505,11 +10505,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<String>",
           "map" : false,
-          "simpleType" : "String",
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "simple" : true,
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10800,11 +10800,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<String>",
             "map" : false,
-            "simpleType" : "String",
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "simple" : true,
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10867,11 +10867,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -12431,11 +12431,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12545,11 +12545,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<String>",
           "map" : false,
-          "simpleType" : "String",
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "simple" : true,
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12792,11 +12792,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<String>",
             "map" : false,
-            "simpleType" : "String",
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "simple" : true,
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12859,11 +12859,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -13037,11 +13037,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<IdentityDescription>",
           "map" : false,
-          "simpleType" : "IdentityDescription",
-          "simple" : false,
           "templateType" : "java.util.List<IdentityDescription>",
-          "templateImplType" : "java.util.ArrayList<IdentityDescription>"
+          "simple" : false,
+          "simpleType" : "IdentityDescription"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13330,11 +13330,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<IdentityDescription>",
             "map" : false,
-            "simpleType" : "IdentityDescription",
-            "simple" : false,
             "templateType" : "java.util.List<IdentityDescription>",
-            "templateImplType" : "java.util.ArrayList<IdentityDescription>"
+            "simple" : false,
+            "simpleType" : "IdentityDescription"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13460,11 +13460,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -13523,11 +13523,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<String>",
           "map" : false,
-          "simpleType" : "String",
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "simple" : true,
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13666,11 +13666,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<String>",
             "map" : false,
-            "simpleType" : "String",
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "simple" : true,
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13733,11 +13733,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

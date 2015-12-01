@@ -16,6 +16,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
@@ -43,7 +44,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
  * @see AmazonS3#getBucketLoggingConfiguration(String)
  * @see AmazonS3#setBucketLoggingConfiguration(SetBucketLoggingConfigurationRequest)
  */
-public class BucketLoggingConfiguration {
+public class BucketLoggingConfiguration implements Serializable {
     private String destinationBucketName = null;
     private String logFilePrefix = null;
 

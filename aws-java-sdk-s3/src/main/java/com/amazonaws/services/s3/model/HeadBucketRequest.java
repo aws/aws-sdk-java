@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
@@ -20,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request object for checking if the bucket exists and the user has access to
  * the given bucket.
  */
-public class HeadBucketRequest extends AmazonWebServiceRequest {
+public class HeadBucketRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String bucketName;
 

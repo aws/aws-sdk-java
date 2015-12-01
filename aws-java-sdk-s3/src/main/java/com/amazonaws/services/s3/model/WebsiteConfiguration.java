@@ -1,9 +1,10 @@
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class WebsiteConfiguration {
+public class WebsiteConfiguration implements Serializable {
         private String indexDocumentSuffix;
         private String errorDocument;
         private String redirectAllRequestsTo;

@@ -16,6 +16,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.Date;
 
@@ -54,7 +55,7 @@ import java.util.Date;
  * all objects within a single bucket or organize them across several buckets.
  * </p>
  */
-public class Bucket {
+public class Bucket implements Serializable {
     private static final long serialVersionUID = -8646831898339939580L;
 
     /** The name of this S3 bucket */

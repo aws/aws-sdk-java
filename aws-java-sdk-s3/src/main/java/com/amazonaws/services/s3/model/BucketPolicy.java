@@ -16,6 +16,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -35,7 +36,7 @@ package com.amazonaws.services.s3.model;
  * polices.
  * </p>
  */
-public class BucketPolicy {
+public class BucketPolicy implements Serializable {
 
     /** The raw, policy JSON text, as returned by Amazon S3 */
     private String policyText;

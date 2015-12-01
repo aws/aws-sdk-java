@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * a success message, not an error message.
  * </p>
  */
-public class DeleteBucketRequest extends AmazonWebServiceRequest {
+public class DeleteBucketRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Amazon S3 bucket to delete.

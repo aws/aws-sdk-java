@@ -13,8 +13,9 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
-public class KMSEncryptionMaterialsProvider extends StaticEncryptionMaterialsProvider {
+public class KMSEncryptionMaterialsProvider extends StaticEncryptionMaterialsProvider implements Serializable {
     public KMSEncryptionMaterialsProvider(String defaultCustomerMasterKeyId) {
         this(new KMSEncryptionMaterials(defaultCustomerMasterKeyId));
     }

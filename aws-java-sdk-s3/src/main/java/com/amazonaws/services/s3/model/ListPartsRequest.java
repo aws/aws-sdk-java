@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
@@ -24,7 +25,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#listParts(ListPartsRequest)
  */
-public class ListPartsRequest extends AmazonWebServiceRequest {
+public class ListPartsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the bucket containing the multipart upload whose parts are

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * @see SetBucketLifecycleConfigurationRequest#SetBucketLifecycleConfigurationRequest(String, BucketLifecycleConfiguration)
  */
-public class SetBucketLifecycleConfigurationRequest extends AmazonWebServiceRequest {
+public class SetBucketLifecycleConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
     
     /**
      * The bucket whose lifecycle configuration is being set.

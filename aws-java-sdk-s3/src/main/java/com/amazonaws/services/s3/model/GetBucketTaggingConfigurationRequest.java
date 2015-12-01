@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.services.s3.AmazonS3;
 
@@ -21,7 +22,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#getBucketTaggingConfiguration(GetBucketTaggingConfigurationRequest)
  */
-public class GetBucketTaggingConfigurationRequest extends GenericBucketRequest {
+public class GetBucketTaggingConfigurationRequest extends GenericBucketRequest implements Serializable {
 
     /**
      * Creates request object, ready to be executed to fetch the tagging

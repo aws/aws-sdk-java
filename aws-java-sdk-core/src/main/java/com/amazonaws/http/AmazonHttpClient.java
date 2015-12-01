@@ -14,9 +14,7 @@
  */
 package com.amazonaws.http;
 
-import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
-import com.amazonaws.auth.AWSCredentialsProvider;
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 import static com.amazonaws.event.SDKProgressPublisher.publishRequestContentLength;
 import static com.amazonaws.event.SDKProgressPublisher.publishResponseContentLength;
@@ -83,9 +81,11 @@ import com.amazonaws.RequestClientOptions.Marker;
 import com.amazonaws.ResetException;
 import com.amazonaws.Response;
 import com.amazonaws.ResponseMetadata;
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.SDKGlobalTime;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressInputStream;
@@ -270,7 +270,7 @@ public class AmazonHttpClient {
          * If SSL cert checking for endpoints is disabled, we don't need to do any changes to the
          * SSL context.
          */
-        if (System.getProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY) != null) {
+        if (SDKGlobalConfiguration.isCertCheckingDisabled()) {
             return;
         }
 
@@ -359,7 +359,8 @@ public class AmazonHttpClient {
         request.setContent(notCloseable);
         try {
             publishProgress(listener, ProgressEventType.CLIENT_REQUEST_STARTED_EVENT);
-            response = executeHelper(request, responseHandler, errorResponseHandler, executionContext);
+            response = executeHelper(request, responseHandler, errorResponseHandler, executionContext,
+                    requestHandler2s);
             publishProgress(listener, ProgressEventType.CLIENT_REQUEST_SUCCESS_EVENT);
             TimingInfo timingInfo = awsRequestMetrics.getTimingInfo().endTiming();
             afterResponse(request, requestHandler2s, response, timingInfo);
@@ -514,7 +515,8 @@ public class AmazonHttpClient {
     private <T> Response<T> executeHelper(final Request<?> request,
                                           HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
                                           HttpResponseHandler<AmazonServiceException> errorResponseHandler,
-                                          final ExecutionContext executionContext) throws InterruptedException {
+                                          final ExecutionContext executionContext,
+                                          List<RequestHandler2> requestHandlers) throws InterruptedException {
         /*
          * add the service endpoint to the logs. You can infer service name from service endpoint
          */
@@ -572,7 +574,7 @@ public class AmazonHttpClient {
             }
             try {
                 Response<T> response = executeOneRequest(request, responseHandler, errorResponseHandler,
-                        executionContext, awsRequestMetrics, p);
+                        executionContext, awsRequestMetrics, p, requestHandlers);
                 if (response != null) {
                     return response;
                 }
@@ -739,7 +741,8 @@ public class AmazonHttpClient {
                                               final HttpResponseHandler<AmazonServiceException> errorResponseHandler,
                                               final ExecutionContext execContext,
                                               final AWSRequestMetrics awsRequestMetrics,
-                                              ExecOneRequestParams execParams)
+                                              ExecOneRequestParams execParams,
+                                              List<RequestHandler2> requestHandlers)
                                                       throws IOException, InterruptedException {
         // Reset the request input stream
         if (execParams.isRetry()) {
@@ -848,7 +851,7 @@ public class AmazonHttpClient {
             execParams.leaveHttpConnectionOpen = responseHandler.needsConnectionLeftOpen();
             HttpResponse httpResponse = createResponse(execParams.apacheRequest, request, execParams.apacheResponse);
             T response = handleResponse(request, responseHandler, execParams.apacheRequest, httpResponse,
-                    execParams.apacheResponse, execContext, isHeaderReqIdAvail);
+                    execParams.apacheResponse, execContext, isHeaderReqIdAvail, requestHandlers);
             return new Response<T>(response, httpResponse);
         }
         if (isTemporaryRedirect(execParams.apacheResponse)) {
@@ -1103,7 +1106,8 @@ public class AmazonHttpClient {
                                  HttpResponse httpResponse,
                                  org.apache.http.HttpResponse apacheHttpResponse,
                                  ExecutionContext executionContext,
-                                 final boolean isHeaderReqIdAvail) throws IOException, InterruptedException {
+                                 final boolean isHeaderReqIdAvail,
+                                 List<RequestHandler2> requestHandlers) throws IOException, InterruptedException {
         AmazonWebServiceRequest awsreq = request.getOriginalRequest();
         ProgressListener listener = awsreq.getGeneralProgressListener();
         try {
@@ -1135,7 +1139,7 @@ public class AmazonHttpClient {
             awsRequestMetrics.startEvent(Field.ResponseProcessingTime);
             publishProgress(listener, ProgressEventType.HTTP_RESPONSE_STARTED_EVENT);
             try {
-                awsResponse = responseHandler.handle(httpResponse);
+                awsResponse = responseHandler.handle(beforeUnmarshalling(requestHandlers, request, httpResponse));
             } finally {
                 awsRequestMetrics.endEvent(Field.ResponseProcessingTime);
             }
@@ -1182,6 +1186,28 @@ public class AmazonHttpClient {
                     + httpResponse.getStatusCode() + ", Response Text: " + httpResponse.getStatusText();
             throw new AmazonClientException(errorMessage, e);
         }
+    }
+
+    /**
+     * Run {@link RequestHandler2#beforeUnmarshalling(Request, HttpResponse)} callback
+     * 
+     * @param requestHandler2s
+     *            List of request handlers to invoke
+     * @param request
+     *            Original request
+     * @param origHttpResponse
+     *            Original {@link HttpResponse}
+     * @return {@link HttpResponse} object to pass to unmarshaller. May have been modified or
+     *         replaced by the request handlers
+     */
+    private HttpResponse beforeUnmarshalling(List<RequestHandler2> requestHandler2s,
+                                             Request<?> request,
+                                             HttpResponse origHttpResponse) {
+        HttpResponse toReturn = origHttpResponse;
+        for (RequestHandler2 requestHandler : requestHandler2s) {
+            toReturn = requestHandler.beforeUnmarshalling(request, toReturn);
+        }
+        return toReturn;
     }
 
     /**

@@ -22,6 +22,7 @@ public enum ResourceType {
 
     AWSEC2CustomerGateway("AWS::EC2::CustomerGateway"),
     AWSEC2EIP("AWS::EC2::EIP"),
+    AWSEC2Host("AWS::EC2::Host"),
     AWSEC2Instance("AWS::EC2::Instance"),
     AWSEC2InternetGateway("AWS::EC2::InternetGateway"),
     AWSEC2NetworkAcl("AWS::EC2::NetworkAcl"),
@@ -60,6 +61,8 @@ public enum ResourceType {
             return AWSEC2CustomerGateway;
         } else if ("AWS::EC2::EIP".equals(value)) {
             return AWSEC2EIP;
+        } else if ("AWS::EC2::Host".equals(value)) {
+            return AWSEC2Host;
         } else if ("AWS::EC2::Instance".equals(value)) {
             return AWSEC2Instance;
         } else if ("AWS::EC2::InternetGateway".equals(value)) {

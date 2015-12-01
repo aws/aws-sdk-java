@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +41,7 @@ import com.amazonaws.services.s3.AmazonS3EncryptionClient;
  * ignored.
  */
 public class EncryptedInitiateMultipartUploadRequest extends
-        InitiateMultipartUploadRequest implements MaterialsDescriptionProvider {
+        InitiateMultipartUploadRequest implements MaterialsDescriptionProvider, Serializable {
     /**
      * description of encryption materials to be used with this request.
      */
@@ -50,31 +51,31 @@ public class EncryptedInitiateMultipartUploadRequest extends
      * otherwise. Default is true.
      */
     private boolean createEncryptionMaterial = true;
-    
+
     public EncryptedInitiateMultipartUploadRequest(String bucketName, String key) {
         super(bucketName, key);
     }
-    
+
     public EncryptedInitiateMultipartUploadRequest(String bucketName, String key, ObjectMetadata objectMetadata) {
         super(bucketName, key, objectMetadata);
     }
-    
+
     @Override
     public Map<String, String> getMaterialsDescription() {
         return materialsDescription;
     }
-    
+
     /**
      * sets the materials description for the encryption materials to be used with the current Multi Part Upload Request.
      * @param materialsDescription the materialsDescription to set
      */
     public void setMaterialsDescription(Map<String, String> materialsDescription) {
         this.materialsDescription = materialsDescription == null
-                ? null 
+                ? null
                 : Collections.unmodifiableMap(new HashMap<String,String>(materialsDescription))
                 ;
     }
-    
+
     /**
      * sets the materials description for the encryption materials to be used with the current Multi Part Upload Request.
      * @param materialsDescription the materialsDescription to set

@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.model;
 
 import java.io.File;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,12 +29,14 @@ import com.amazonaws.services.s3.internal.MultiFileOutputStream;
 /**
  * Used to request the client-side encryption and upload of a large S3 object
  * via pipelined parallel multi-part uploads.
- * 
+ *
  * @see AmazonS3EncryptionClient#uploadObject(UploadObjectRequest)
  */
 public class UploadObjectRequest extends AbstractPutObjectRequest implements
-        MaterialsDescriptionProvider {
-    static final int MIN_PART_SIZE = 5 << 20; // 5 MB
+        MaterialsDescriptionProvider, Serializable {
+	private static final long serialVersionUID = 1L;
+
+	static final int MIN_PART_SIZE = 5 << 20; // 5 MB
 
     /**
      * Optional metadata to be included in each upload part requests.
@@ -52,16 +55,16 @@ public class UploadObjectRequest extends AbstractPutObjectRequest implements
     /**
      * Optional configuration of a custom thread pool used for concurrent uploads.
      */
-    private ExecutorService executorService;
+    private transient ExecutorService executorService;
     /**
-     * Optional configuration of a custom mutli-file output stream used for 
+     * Optional configuration of a custom mutli-file output stream used for
      * generating multiple parts for ciphertext.
      */
-    private MultiFileOutputStream multiFileOutputStream;
+    private transient MultiFileOutputStream multiFileOutputStream;
     /**
      * Optional configuration of an object observer for advanced customization.
      */
-    private UploadObjectObserver uploadObjectObserver;
+    private transient UploadObjectObserver uploadObjectObserver;
 
     /**
      * Limitation (in bytes) on temporary disk space consumption for this
@@ -190,7 +193,7 @@ public class UploadObjectRequest extends AbstractPutObjectRequest implements
     /**
      * Sets the materials description for the encryption materials to be used
      * with the current request.
-     * 
+     *
      * @param materialsDescription
      *            the materialsDescription to set
      */

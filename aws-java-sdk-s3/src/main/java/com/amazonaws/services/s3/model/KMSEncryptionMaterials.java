@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.security.KeyPair;
 
@@ -24,7 +25,7 @@ import javax.crypto.SecretKey;
  * The KEK has no relevance on the client-side, as KMS only requires the CMK
  * id to be used to uniquely identify the KEK on the server side.
  */
-public class KMSEncryptionMaterials extends EncryptionMaterials {
+public class KMSEncryptionMaterials extends EncryptionMaterials implements Serializable {
     /**
      * Name of the material description to be persisted in S3 for the KMS's
      * customer master key id.

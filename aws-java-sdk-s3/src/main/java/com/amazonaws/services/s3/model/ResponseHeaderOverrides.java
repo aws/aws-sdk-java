@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
@@ -43,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * @see GetObjectRequest#setResponseHeaders(ResponseHeaderOverrides)
  * @see GeneratePresignedUrlRequest#setResponseHeaders(ResponseHeaderOverrides)
  */
-public class ResponseHeaderOverrides {
+public class ResponseHeaderOverrides implements Serializable {
     private String contentType;
     private String contentLanguage;
     private String expires;

@@ -16,6 +16,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -57,7 +58,7 @@ import com.amazonaws.util.json.Jackson;
  * @see AmazonS3#getBucketNotificationConfiguration(String)
  * @see AmazonS3#setBucketNotificationConfiguration(String, BucketNotificationConfiguration)
  */
-public class BucketNotificationConfiguration {
+public class BucketNotificationConfiguration implements Serializable {
 
     private Map<String, NotificationConfiguration> configurations = null;
 

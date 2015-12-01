@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
@@ -29,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * @see RestoreObjectRequest#RestoreObjectRequest(String, String, int)
  * @see RestoreObjectRequest#RestoreObjectRequest(String, String)
  */
-public class RestoreObjectRequest extends AmazonWebServiceRequest {
+public class RestoreObjectRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The time, in days, between when an object is restored to the bucket and

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.Date;
 
@@ -20,7 +21,7 @@ import java.util.Date;
  * Container for summary information about a part in a multipart upload, such as
  * part number, size, etc.
  */
-public class PartSummary {
+public class PartSummary implements Serializable {
 
     /**
      * The part number describing this part's position relative to the other

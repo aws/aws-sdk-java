@@ -26,6 +26,8 @@ import com.amazonaws.util.VersionInfoUtils;
 
 /**
  * Client configuration options such as proxy settings, user agent string, max retry attempts, etc.
+ * 
+ * @see PredefinedClientConfigurations
  */
 @NotThreadSafe
 public class ClientConfiguration {
@@ -61,11 +63,6 @@ public class ClientConfiguration {
     /**
      * Default request retry policy, including the maximum retry count of 3, the default retry
      * condition and the default back-off strategy.
-     * <p>
-     * Note this default policy might be overridden by a service-specific default policy, if the
-     * user doesn't provide a custom RetryPolicy implementation by
-     * {@link #setRetryPolicy(RetryPolicy)}. For example, AmazonDynamoDBClient by default uses a
-     * different retry policy {@link PredefinedRetryPolicies#DYNAMODB_DEFAULT}.
      *
      * @see PredefinedRetryPolicies#DEFAULT
      * @see PredefinedRetryPolicies#DYNAMODB_DEFAULT

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -37,7 +38,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#completeMultipartUpload(CompleteMultipartUploadRequest)
  */
-public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest {
+public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable {
 
     /** The name of the bucket containing the multipart upload to complete */
     private String bucketName;

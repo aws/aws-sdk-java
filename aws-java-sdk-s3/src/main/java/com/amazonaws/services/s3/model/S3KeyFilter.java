@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +23,7 @@ import java.util.List;
 /**
  * Filter criteria that allows for event notification filtering based on an S3 Object's key name
  */
-public class S3KeyFilter {
+public class S3KeyFilter implements Serializable {
 
     /**
      * Allowable values for the name of a {@link FilterRule} for an {@link S3KeyFilter}

@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Generic request container for web service requests on buckets.
  */
-public class GenericBucketRequest extends AmazonWebServiceRequest {
+public class GenericBucketRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String bucketName;
 

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.Map;
 
@@ -20,7 +21,7 @@ import java.util.Map;
  * Simple implementation of EncryptionMaterialsProvider that just wraps static
  * EncryptionMaterials.
  */
-public class StaticEncryptionMaterialsProvider implements EncryptionMaterialsProvider {
+public class StaticEncryptionMaterialsProvider implements EncryptionMaterialsProvider,Serializable {
     
     private final EncryptionMaterials materials;
 

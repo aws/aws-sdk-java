@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
@@ -46,7 +47,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * @see SetBucketLoggingConfigurationRequest#SetBucketLoggingConfigurationRequest(String, BucketLoggingConfiguration)
  */
-public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceRequest {
+public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the bucket whose logging configuration is being set.

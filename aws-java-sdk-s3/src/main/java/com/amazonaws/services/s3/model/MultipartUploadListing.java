@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ import java.util.List;
  * The ListMultipartUploadsResponse contains all the information about the
  * ListMultipartUploads method.
  */
-public class MultipartUploadListing {
+public class MultipartUploadListing implements Serializable {
 
     /**
      * The name of the bucket containing the listed multipart uploads, as

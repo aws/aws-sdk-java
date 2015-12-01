@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 /**
  * Defines a set of filter criteria that limits the objects that can trigger event notifications
  */
-public class Filter {
+public class Filter implements Serializable {
 
     private S3KeyFilter s3KeyFilter;
 

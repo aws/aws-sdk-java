@@ -16,6 +16,7 @@
  * for applicable license terms and NOTICE.txt for applicable notices.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -31,8 +32,11 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see ObjectMetadata
  */
-public class S3Object implements Closeable {
-    /** The key under which this object is stored */
+public class S3Object implements Closeable,Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	/** The key under which this object is stored */
     private String key = null;
 
     /** The name of the bucket in which this object is contained */
@@ -42,7 +46,7 @@ public class S3Object implements Closeable {
     private ObjectMetadata metadata = new ObjectMetadata();
 
     /** The stream containing the contents of this object from S3 */
-    private S3ObjectInputStream objectContent;
+    private transient S3ObjectInputStream objectContent;
 
     /** The redirect location for this object */
     private String redirectLocation;

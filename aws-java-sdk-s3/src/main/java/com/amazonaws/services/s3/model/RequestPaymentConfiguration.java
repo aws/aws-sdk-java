@@ -16,6 +16,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 /**
  * The Request Payment Configuration associated with an Amazon S3 bucket.
@@ -24,7 +25,7 @@ package com.amazonaws.services.s3.model;
  * of the request and the data download from the bucket. The bucket owner always
  * pays the cost of storing data.
  */
-public class RequestPaymentConfiguration {
+public class RequestPaymentConfiguration implements Serializable {
 
     public static enum Payer {
         Requester, BucketOwner

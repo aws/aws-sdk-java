@@ -18,6 +18,7 @@ import static com.amazonaws.SDKGlobalConfiguration.ENABLE_S3_SIGV4_SYSTEM_PROPER
 import static com.amazonaws.SDKGlobalConfiguration.ENFORCE_S3_SIGV4_SYSTEM_PROPERTY;
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 import static com.amazonaws.internal.ResettableInputStream.newResettableInputStream;
+import com.amazonaws.services.s3.model.DeleteBucketReplicationConfigurationRequest;
 import static com.amazonaws.services.s3.model.S3DataSource.Utils.cleanupDataSource;
 import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
@@ -55,6 +56,7 @@ import org.apache.http.client.methods.HttpRequestBase;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
+import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.AmazonWebServiceResponse;
@@ -118,6 +120,7 @@ import com.amazonaws.services.s3.internal.S3VersionHeaderHandler;
 import com.amazonaws.services.s3.internal.S3XmlResponseHandler;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionHeaderHandler;
 import com.amazonaws.services.s3.internal.ServiceUtils;
+import com.amazonaws.services.s3.internal.SkipMd5CheckStrategy;
 import com.amazonaws.services.s3.internal.XmlWriter;
 import com.amazonaws.services.s3.metrics.S3ServiceMetric;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
@@ -311,6 +314,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     private final FIFOCache<String> bucketRegionCache = new FIFOCache<String>(BUCKET_REGION_CACHE_SIZE);
 
+    private final SkipMd5CheckStrategy skipMd5CheckStrategy;
+
     /**
      * Constructs a new client to invoke service methods on Amazon S3. A
      * credentials provider chain will be used that searches for credentials in
@@ -399,8 +404,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @see AmazonS3Client#AmazonS3Client(AWSCredentials)
      */
     public AmazonS3Client(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
-        this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this(new StaticCredentialsProvider(awsCredentials), clientConfiguration);
         init();
     }
 
@@ -447,8 +451,30 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public AmazonS3Client(AWSCredentialsProvider credentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
+        this(credentialsProvider, clientConfiguration, requestMetricCollector, SkipMd5CheckStrategy.INSTANCE);
+        init();
+    }
+
+    /**
+     * Constructs a new Amazon S3 client using the specified AWS credentials,
+     * client configuration and request metric collector to access Amazon S3.
+     *
+     * @param credentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration
+     *            The client configuration options controlling how this client
+     *            connects to Amazon S3 (e.g. proxy settings, retry counts, etc).
+     * @param requestMetricCollector request metric collector
+     */
+    @SdkTestInternalApi
+    AmazonS3Client(AWSCredentialsProvider credentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector,
+            SkipMd5CheckStrategy skipMd5CheckStrategy) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = credentialsProvider;
+        this.skipMd5CheckStrategy = skipMd5CheckStrategy;
         init();
     }
 
@@ -1141,8 +1167,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             // we're downloading the whole object, by default we wrap the
             // stream in a validator that calculates an MD5 of the downloaded
             // bytes and complains if what we received doesn't match the Etag.
-            if (!ServiceUtils.skipMd5CheckPerRequest(getObjectRequest)
-            &&  !ServiceUtils.skipMd5CheckPerResponse(s3Object.getObjectMetadata())) {
+            if (!skipMd5CheckStrategy.skipMd5CheckPerRequest(getObjectRequest)
+                    && !skipMd5CheckStrategy.skipMd5CheckPerResponse(s3Object.getObjectMetadata())) {
                 byte[] serverSideHash = null;
                 String etag = s3Object.getObjectMetadata().getETag();
                 if (etag != null && ServiceUtils.isMultipartUploadETag(etag) == false) {
@@ -1204,7 +1230,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             @Override
             public boolean needIntegrityCheck() {
-                return !ServiceUtils.skipMd5CheckPerRequest(getObjectRequest);
+                return !skipMd5CheckStrategy.skipMd5CheckPerRequest(getObjectRequest);
             }
 
         }, ServiceUtils.OVERWRITE_MODE);
@@ -1262,7 +1288,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             metadata = new ObjectMetadata();
         rejectNull(bucketName, "The bucket name parameter must be specified when uploading an object");
         rejectNull(key, "The key parameter must be specified when uploading an object");
-        final boolean skipContentMd5Check = ServiceUtils.skipMd5CheckPerRequest(putObjectRequest);
+        final boolean skipContentMd5Check = skipMd5CheckStrategy.skipMd5CheckPerRequest(putObjectRequest);
         // If a file is specified for upload, we need to pull some additional
         // information from it to auto-configure a few options
         if (file == null) {
@@ -2704,7 +2730,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     uploadPartRequest.isLastPart());
             MD5DigestCalculatingInputStream md5DigestStream = null;
             if (uploadPartRequest.getMd5Digest() == null
-            && !ServiceUtils.skipMd5CheckPerRequest(uploadPartRequest)) {
+                    && !skipMd5CheckStrategy.skipMd5CheckPerRequest(uploadPartRequest)) {
                 /*
                  * If the user hasn't set the content MD5, then we don't want to
                  * buffer the whole stream in memory just to calculate it. Instead,
@@ -2733,8 +2759,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ObjectMetadata metadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
             final String etag = metadata.getETag();
 
-            if (md5DigestStream != null
-            && !ServiceUtils.skipMd5CheckPerResponse(metadata)) {
+            if (md5DigestStream != null && !skipMd5CheckStrategy.skipMd5CheckPerResponse(metadata)) {
                 byte[] clientSideHash = md5DigestStream.getMd5Digest();
                 byte[] serverSideHash = BinaryUtils.fromHex(etag);
 
@@ -3926,12 +3951,24 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public void deleteBucketReplicationConfiguration(String bucketName)
             throws AmazonServiceException, AmazonClientException {
+        deleteBucketReplicationConfiguration(new
+                DeleteBucketReplicationConfigurationRequest(bucketName));
+    }
+
+    @Override
+    public void deleteBucketReplicationConfiguration
+            (DeleteBucketReplicationConfigurationRequest
+                     deleteBucketReplicationConfigurationRequest)
+            throws AmazonServiceException, AmazonClientException {
+
+        final String bucketName = deleteBucketReplicationConfigurationRequest.getBucketName();
         rejectNull(
                 bucketName,
                 "The bucket name parameter must be specified when deleting replication configuration");
 
-        Request<GenericBucketRequest> request = createRequest(bucketName, null,
-                new GenericBucketRequest(bucketName), HttpMethodName.DELETE);
+        Request<DeleteBucketReplicationConfigurationRequest> request = createRequest(bucketName, null,
+                deleteBucketReplicationConfigurationRequest, HttpMethodName
+                        .DELETE);
         request.addParameter("replication", null);
 
         invoke(request, voidResponseHandler, bucketName, null);

@@ -2329,6 +2329,12 @@
         <Hostname>autoscaling.cn-north-1.amazonaws.com.cn</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>elasticbeanstalk</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>elasticbeanstalk.cn-north-1.amazonaws.com.cn</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>iam</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -2867,6 +2873,7 @@
       <RegionName>sa-east-1</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
+      <RegionName>cn-north-1</RegionName>
     </Service>
     <Service>
       <Name>iam</Name>

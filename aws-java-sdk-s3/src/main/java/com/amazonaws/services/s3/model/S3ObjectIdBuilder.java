@@ -14,11 +14,13 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.io.Serializable;
+
 /**
  * Convenient builder for {@link S3ObjectId}.
  */
-public final class S3ObjectIdBuilder {
-    private String bucket; 
+public final class S3ObjectIdBuilder implements Serializable {
+    private String bucket;
     private String key;
     private String versionId;
 
@@ -55,7 +57,7 @@ public final class S3ObjectIdBuilder {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
-    
+
     public S3ObjectIdBuilder withBucket(String bucket) {
         this.bucket = bucket;
         return this;
@@ -70,7 +72,7 @@ public final class S3ObjectIdBuilder {
         this.versionId = versionId;
         return this;
     }
-    
+
     public S3ObjectId build() {
         return new S3ObjectId(bucket, key, versionId);
     }

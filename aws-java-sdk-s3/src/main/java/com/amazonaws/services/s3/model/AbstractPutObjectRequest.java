@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.model;
 
 import java.io.File;
 import java.io.InputStream;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.event.ProgressListener;
@@ -24,7 +25,7 @@ import com.amazonaws.event.ProgressListener;
  * Abstract base class for a put object or put object like request.
  */
 public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest implements
-        Cloneable, SSECustomerKeyProvider, SSEAwsKeyManagementParamsProvider, S3DataSource {
+        Cloneable, SSECustomerKeyProvider, SSEAwsKeyManagementParamsProvider, S3DataSource, Serializable {
     /**
      * The name of an existing bucket, to which this request will upload a new
      * object. You must have {@link Permission#Write} permission granted to you
@@ -49,7 +50,7 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
      * either specify a file or an InputStream containing the data to be
      * uploaded to Amazon S3.
      */
-    private InputStream inputStream;
+    private transient InputStream inputStream;
 
     /**
      * Optional metadata instructing Amazon S3 how to handle the uploaded data

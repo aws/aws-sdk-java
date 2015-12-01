@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
@@ -20,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request object for setting the request payment configuration associated with
  * an Amazon S3 bucket.
  */
-public class SetRequestPaymentConfigurationRequest extends AmazonWebServiceRequest {
+public class SetRequestPaymentConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
 
     /** The name of the Amazon S3 bucket.*/
     private String bucketName;

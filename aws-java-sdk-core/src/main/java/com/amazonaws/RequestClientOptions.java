@@ -26,10 +26,15 @@ import org.apache.http.annotation.NotThreadSafe;
 @NotThreadSafe
 public final class RequestClientOptions {
     /**
-     * Default maximum buffer size: 128K + 1. Used to enable mark-and-reset for
+     * Used to enable mark-and-reset for
      * non-mark-and-resettable non-file input stream for up to 128K memory
      * buffering by default. Add 1 to get around an implementation quirk of
      * BufferedInputStream.
+     *
+     * Retries after reading {@link #DEFAULT_STREAM_BUFFER_SIZE} bytes would
+     * fail to reset the underlying input stream as the mark position would
+     * have been invalidated.
+     *
      */
     public static final int DEFAULT_STREAM_BUFFER_SIZE = (1 << 17)+1;
     public static enum Marker {

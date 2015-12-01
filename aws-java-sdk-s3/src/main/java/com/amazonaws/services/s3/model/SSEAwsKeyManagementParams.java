@@ -13,8 +13,9 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
-public class SSEAwsKeyManagementParams {
+public class SSEAwsKeyManagementParams implements Serializable {
 
     /**
      * The AWS Key Management Key id to be used for Server Side Encryption of

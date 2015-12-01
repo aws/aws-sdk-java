@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see CreateBucketRequest
  */
-public class GetBucketLocationRequest extends AmazonWebServiceRequest {
+public class GetBucketLocationRequest extends AmazonWebServiceRequest implements Serializable {
 
 	/** The name of the bucket whose location is being requested. */
 	private String bucketName;

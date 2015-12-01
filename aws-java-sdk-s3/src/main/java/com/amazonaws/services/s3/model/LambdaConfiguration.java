@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.EnumSet;
 
@@ -20,7 +21,7 @@ import java.util.EnumSet;
  * Represents the lambda configuration for an Amazon S3 bucket notification.
  *
  */
-public class LambdaConfiguration extends NotificationConfiguration {
+public class LambdaConfiguration extends NotificationConfiguration implements Serializable {
 
     /**
      * The ARN for the lambda function to be invoked.

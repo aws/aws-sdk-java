@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 /**
  * Model class representing a Filter Rule for a {@link NotificationConfiguration}.
  */
-public class FilterRule {
+public class FilterRule implements Serializable {
 
     private String name;
     private String value;

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Request object for listing all the Amazon S3 buckets owned by a user.
  */
-public class ListBucketsRequest extends AmazonWebServiceRequest {
+public class ListBucketsRequest extends AmazonWebServiceRequest implements Serializable {
 }

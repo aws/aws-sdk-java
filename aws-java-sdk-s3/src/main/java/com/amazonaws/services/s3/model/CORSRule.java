@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import java.io.Serializable;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +21,7 @@ import java.util.List;
 /**
  * Container for rules of cross origin configuration.
  */
-public class CORSRule {
+public class CORSRule implements Serializable {
 
     private String id;
     private List<AllowedMethods> allowedMethods;
