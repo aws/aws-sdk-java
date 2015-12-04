@@ -58,7 +58,18 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public CreateMicrosoftADResult createMicrosoftAD(
+            CreateMicrosoftADRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSnapshotResult createSnapshot(CreateSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTrustResult createTrust(CreateTrustRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,6 +80,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public DeleteSnapshotResult deleteSnapshot(DeleteSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTrustResult deleteTrust(DeleteTrustRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -92,6 +108,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     @Override
     public DescribeSnapshotsResult describeSnapshots() {
         return describeSnapshots(new DescribeSnapshotsRequest());
+    }
+
+    @Override
+    public DescribeTrustsResult describeTrusts(DescribeTrustsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -139,6 +160,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public UpdateRadiusResult updateRadius(UpdateRadiusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public VerifyTrustResult verifyTrust(VerifyTrustRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

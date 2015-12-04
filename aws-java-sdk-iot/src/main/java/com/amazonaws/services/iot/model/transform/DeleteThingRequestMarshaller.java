@@ -61,6 +61,7 @@ public class DeleteThingRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/things/{thingName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
                 (deleteThingRequest.getThingName() == null) ? "" : StringUtils

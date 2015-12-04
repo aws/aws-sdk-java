@@ -126,6 +126,9 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         if (modifyDBInstanceRequest.isCopyTagsToSnapshot() != null) {
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(modifyDBInstanceRequest.isCopyTagsToSnapshot()));
         }
+        if (modifyDBInstanceRequest.getDBPortNumber() != null) {
+            request.addParameter("DBPortNumber", StringUtils.fromInteger(modifyDBInstanceRequest.getDBPortNumber()));
+        }
         if (modifyDBInstanceRequest.isPubliclyAccessible() != null) {
             request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(modifyDBInstanceRequest.isPubliclyAccessible()));
         }

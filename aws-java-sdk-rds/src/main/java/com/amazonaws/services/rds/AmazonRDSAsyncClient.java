@@ -2101,7 +2101,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Adds an attribute and values to, or removes an attibute and values
+     * Adds an attribute and values to, or removes an attribute and values
      * from a manual DB snapshot.
      * </p>
      * <p>
@@ -2151,7 +2151,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
 
     /**
      * <p>
-     * Adds an attribute and values to, or removes an attibute and values
+     * Adds an attribute and values to, or removes an attribute and values
      * from a manual DB snapshot.
      * </p>
      * <p>

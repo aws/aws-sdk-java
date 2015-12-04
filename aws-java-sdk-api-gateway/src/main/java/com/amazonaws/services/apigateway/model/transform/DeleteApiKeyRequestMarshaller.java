@@ -61,6 +61,7 @@ public class DeleteApiKeyRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/apikeys/{api_Key}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{api_Key}",
                 (deleteApiKeyRequest.getApiKey() == null) ? "" : StringUtils

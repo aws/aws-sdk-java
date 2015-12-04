@@ -27,14 +27,14 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the VPC that the AD Connector is created in.
+     * The identifier of the VPC in which the AD Connector is created.
      * </p>
      */
     private String vpcId;
     /**
      * <p>
-     * A list of subnet identifiers in the VPC that the AD Connector is created
-     * in.
+     * A list of subnet identifiers in the VPC in which the AD Connector is
+     * created.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
@@ -61,11 +61,11 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the VPC that the AD Connector is created in.
+     * The identifier of the VPC in which the AD Connector is created.
      * </p>
      * 
      * @param vpcId
-     *        The identifier of the VPC that the AD Connector is created in.
+     *        The identifier of the VPC in which the AD Connector is created.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -73,10 +73,10 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the VPC that the AD Connector is created in.
+     * The identifier of the VPC in which the AD Connector is created.
      * </p>
      * 
-     * @return The identifier of the VPC that the AD Connector is created in.
+     * @return The identifier of the VPC in which the AD Connector is created.
      */
     public String getVpcId() {
         return this.vpcId;
@@ -84,11 +84,11 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the VPC that the AD Connector is created in.
+     * The identifier of the VPC in which the AD Connector is created.
      * </p>
      * 
      * @param vpcId
-     *        The identifier of the VPC that the AD Connector is created in.
+     *        The identifier of the VPC in which the AD Connector is created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,12 +99,12 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC that the AD Connector is created
-     * in.
+     * A list of subnet identifiers in the VPC in which the AD Connector is
+     * created.
      * </p>
      * 
-     * @return A list of subnet identifiers in the VPC that the AD Connector is
-     *         created in.
+     * @return A list of subnet identifiers in the VPC in which the AD Connector
+     *         is created.
      */
     public java.util.List<String> getSubnetIds() {
         if (subnetIds == null) {
@@ -115,13 +115,13 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC that the AD Connector is created
-     * in.
+     * A list of subnet identifiers in the VPC in which the AD Connector is
+     * created.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC that the AD Connector is
-     *        created in.
+     *        A list of subnet identifiers in the VPC in which the AD Connector
+     *        is created.
      */
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {
@@ -135,8 +135,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC that the AD Connector is created
-     * in.
+     * A list of subnet identifiers in the VPC in which the AD Connector is
+     * created.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -146,8 +146,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC that the AD Connector is
-     *        created in.
+     *        A list of subnet identifiers in the VPC in which the AD Connector
+     *        is created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -164,13 +164,13 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC that the AD Connector is created
-     * in.
+     * A list of subnet identifiers in the VPC in which the AD Connector is
+     * created.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC that the AD Connector is
-     *        created in.
+     *        A list of subnet identifiers in the VPC in which the AD Connector
+     *        is created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -71,6 +71,27 @@ public class DirectoryLimitsJsonUnmarshaller implements
                             .setCloudOnlyDirectoriesLimitReached(BooleanJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CloudOnlyMicrosoftADLimit",
+                        targetDepth)) {
+                    context.nextToken();
+                    directoryLimits
+                            .setCloudOnlyMicrosoftADLimit(IntegerJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CloudOnlyMicrosoftADCurrentCount",
+                        targetDepth)) {
+                    context.nextToken();
+                    directoryLimits
+                            .setCloudOnlyMicrosoftADCurrentCount(IntegerJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CloudOnlyMicrosoftADLimitReached",
+                        targetDepth)) {
+                    context.nextToken();
+                    directoryLimits
+                            .setCloudOnlyMicrosoftADLimitReached(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ConnectedDirectoriesLimit",
                         targetDepth)) {
                     context.nextToken();

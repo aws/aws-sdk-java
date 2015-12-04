@@ -60,6 +60,7 @@ public class AddTagsRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/2015-01-01/tags";
+
         request.setResourcePath(uriResourcePath);
 
         try {

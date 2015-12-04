@@ -45,11 +45,11 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     private String healthCheckId;
 
     /**
-     * Optional. When you specify a health check version, Route 53 compares
-     * this value with the current value in the health check, which prevents
-     * you from updating the health check when the versions don't match.
-     * Using <code>HealthCheckVersion</code> lets you prevent overwriting
-     * another change to the health check.
+     * Optional. When you specify a health check version, Amazon Route 53
+     * compares this value with the current value in the health check, which
+     * prevents you from updating the health check when the versions don't
+     * match. Using <code>HealthCheckVersion</code> lets you prevent
+     * overwriting another change to the health check.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -67,8 +67,9 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     private String iPAddress;
 
     /**
-     * The port on which you want Route 53 to open a connection to perform
-     * health checks. <p>Specify this value only if you want to change it.
+     * The port on which you want Amazon Route 53 to open a connection to
+     * perform health checks. <p>Specify this value only if you want to
+     * change it.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
@@ -98,10 +99,10 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
-     * <code>HTTP_STR_MATCH</code>, the string that you want Route 53 to
-     * search for in the response body from the specified resource. If the
-     * string appears in the response body, Route 53 considers the resource
-     * healthy. <p>Specify this value only if you want to change it.
+     * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53
+     * to search for in the response body from the specified resource. If the
+     * string appears in the response body, Amazon Route 53 considers the
+     * resource healthy. <p>Specify this value only if you want to change it.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
@@ -110,8 +111,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * The number of consecutive health checks that an endpoint must pass or
-     * fail for Route 53 to change the current status of the endpoint from
-     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * fail for Amazon Route 53 to change the current status of the endpoint
+     * from unhealthy to healthy or vice versa. <p>Valid values are integers
      * between 1 and 10. For more information, see "How Amazon Route 53
      * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      * Developer Guide. <p>Specify this value only if you want to change it.
@@ -124,17 +125,17 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     /**
      * A boolean value that indicates whether the status of health check
      * should be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     * the health check to be unhealthy. <p>Specify this value only if you
-     * want to change it.
+     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     * considers the health check to be unhealthy. <p>Specify this value only
+     * if you want to change it.
      */
     private Boolean inverted;
 
     /**
      * The minimum number of child health checks that must be healthy for
-     * Route 53 to consider the parent health check to be healthy. Valid
-     * values are integers between 0 and 256, inclusive. <p>Specify this
-     * value only if you want to change it.
+     * Amazon Route 53 to consider the parent health check to be healthy.
+     * Valid values are integers between 0 and 256, inclusive. <p>Specify
+     * this value only if you want to change it.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 256<br/>
@@ -194,62 +195,62 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Optional. When you specify a health check version, Route 53 compares
-     * this value with the current value in the health check, which prevents
-     * you from updating the health check when the versions don't match.
-     * Using <code>HealthCheckVersion</code> lets you prevent overwriting
-     * another change to the health check.
+     * Optional. When you specify a health check version, Amazon Route 53
+     * compares this value with the current value in the health check, which
+     * prevents you from updating the health check when the versions don't
+     * match. Using <code>HealthCheckVersion</code> lets you prevent
+     * overwriting another change to the health check.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
-     * @return Optional. When you specify a health check version, Route 53 compares
-     *         this value with the current value in the health check, which prevents
-     *         you from updating the health check when the versions don't match.
-     *         Using <code>HealthCheckVersion</code> lets you prevent overwriting
-     *         another change to the health check.
+     * @return Optional. When you specify a health check version, Amazon Route 53
+     *         compares this value with the current value in the health check, which
+     *         prevents you from updating the health check when the versions don't
+     *         match. Using <code>HealthCheckVersion</code> lets you prevent
+     *         overwriting another change to the health check.
      */
     public Long getHealthCheckVersion() {
         return healthCheckVersion;
     }
     
     /**
-     * Optional. When you specify a health check version, Route 53 compares
-     * this value with the current value in the health check, which prevents
-     * you from updating the health check when the versions don't match.
-     * Using <code>HealthCheckVersion</code> lets you prevent overwriting
-     * another change to the health check.
+     * Optional. When you specify a health check version, Amazon Route 53
+     * compares this value with the current value in the health check, which
+     * prevents you from updating the health check when the versions don't
+     * match. Using <code>HealthCheckVersion</code> lets you prevent
+     * overwriting another change to the health check.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
-     * @param healthCheckVersion Optional. When you specify a health check version, Route 53 compares
-     *         this value with the current value in the health check, which prevents
-     *         you from updating the health check when the versions don't match.
-     *         Using <code>HealthCheckVersion</code> lets you prevent overwriting
-     *         another change to the health check.
+     * @param healthCheckVersion Optional. When you specify a health check version, Amazon Route 53
+     *         compares this value with the current value in the health check, which
+     *         prevents you from updating the health check when the versions don't
+     *         match. Using <code>HealthCheckVersion</code> lets you prevent
+     *         overwriting another change to the health check.
      */
     public void setHealthCheckVersion(Long healthCheckVersion) {
         this.healthCheckVersion = healthCheckVersion;
     }
     
     /**
-     * Optional. When you specify a health check version, Route 53 compares
-     * this value with the current value in the health check, which prevents
-     * you from updating the health check when the versions don't match.
-     * Using <code>HealthCheckVersion</code> lets you prevent overwriting
-     * another change to the health check.
+     * Optional. When you specify a health check version, Amazon Route 53
+     * compares this value with the current value in the health check, which
+     * prevents you from updating the health check when the versions don't
+     * match. Using <code>HealthCheckVersion</code> lets you prevent
+     * overwriting another change to the health check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
-     * @param healthCheckVersion Optional. When you specify a health check version, Route 53 compares
-     *         this value with the current value in the health check, which prevents
-     *         you from updating the health check when the versions don't match.
-     *         Using <code>HealthCheckVersion</code> lets you prevent overwriting
-     *         another change to the health check.
+     * @param healthCheckVersion Optional. When you specify a health check version, Amazon Route 53
+     *         compares this value with the current value in the health check, which
+     *         prevents you from updating the health check when the versions don't
+     *         match. Using <code>HealthCheckVersion</code> lets you prevent
+     *         overwriting another change to the health check.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -311,44 +312,50 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * The port on which you want Route 53 to open a connection to perform
-     * health checks. <p>Specify this value only if you want to change it.
+     * The port on which you want Amazon Route 53 to open a connection to
+     * perform health checks. <p>Specify this value only if you want to
+     * change it.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @return The port on which you want Route 53 to open a connection to perform
-     *         health checks. <p>Specify this value only if you want to change it.
+     * @return The port on which you want Amazon Route 53 to open a connection to
+     *         perform health checks. <p>Specify this value only if you want to
+     *         change it.
      */
     public Integer getPort() {
         return port;
     }
     
     /**
-     * The port on which you want Route 53 to open a connection to perform
-     * health checks. <p>Specify this value only if you want to change it.
+     * The port on which you want Amazon Route 53 to open a connection to
+     * perform health checks. <p>Specify this value only if you want to
+     * change it.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @param port The port on which you want Route 53 to open a connection to perform
-     *         health checks. <p>Specify this value only if you want to change it.
+     * @param port The port on which you want Amazon Route 53 to open a connection to
+     *         perform health checks. <p>Specify this value only if you want to
+     *         change it.
      */
     public void setPort(Integer port) {
         this.port = port;
     }
     
     /**
-     * The port on which you want Route 53 to open a connection to perform
-     * health checks. <p>Specify this value only if you want to change it.
+     * The port on which you want Amazon Route 53 to open a connection to
+     * perform health checks. <p>Specify this value only if you want to
+     * change it.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @param port The port on which you want Route 53 to open a connection to perform
-     *         health checks. <p>Specify this value only if you want to change it.
+     * @param port The port on which you want Amazon Route 53 to open a connection to
+     *         perform health checks. <p>Specify this value only if you want to
+     *         change it.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -474,19 +481,19 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
-     * <code>HTTP_STR_MATCH</code>, the string that you want Route 53 to
-     * search for in the response body from the specified resource. If the
-     * string appears in the response body, Route 53 considers the resource
-     * healthy. <p>Specify this value only if you want to change it.
+     * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53
+     * to search for in the response body from the specified resource. If the
+     * string appears in the response body, Amazon Route 53 considers the
+     * resource healthy. <p>Specify this value only if you want to change it.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
      *
      * @return If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
-     *         <code>HTTP_STR_MATCH</code>, the string that you want Route 53 to
-     *         search for in the response body from the specified resource. If the
-     *         string appears in the response body, Route 53 considers the resource
-     *         healthy. <p>Specify this value only if you want to change it.
+     *         <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53
+     *         to search for in the response body from the specified resource. If the
+     *         string appears in the response body, Amazon Route 53 considers the
+     *         resource healthy. <p>Specify this value only if you want to change it.
      */
     public String getSearchString() {
         return searchString;
@@ -494,19 +501,19 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     
     /**
      * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
-     * <code>HTTP_STR_MATCH</code>, the string that you want Route 53 to
-     * search for in the response body from the specified resource. If the
-     * string appears in the response body, Route 53 considers the resource
-     * healthy. <p>Specify this value only if you want to change it.
+     * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53
+     * to search for in the response body from the specified resource. If the
+     * string appears in the response body, Amazon Route 53 considers the
+     * resource healthy. <p>Specify this value only if you want to change it.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
      *
      * @param searchString If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
-     *         <code>HTTP_STR_MATCH</code>, the string that you want Route 53 to
-     *         search for in the response body from the specified resource. If the
-     *         string appears in the response body, Route 53 considers the resource
-     *         healthy. <p>Specify this value only if you want to change it.
+     *         <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53
+     *         to search for in the response body from the specified resource. If the
+     *         string appears in the response body, Amazon Route 53 considers the
+     *         resource healthy. <p>Specify this value only if you want to change it.
      */
     public void setSearchString(String searchString) {
         this.searchString = searchString;
@@ -514,10 +521,10 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     
     /**
      * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
-     * <code>HTTP_STR_MATCH</code>, the string that you want Route 53 to
-     * search for in the response body from the specified resource. If the
-     * string appears in the response body, Route 53 considers the resource
-     * healthy. <p>Specify this value only if you want to change it.
+     * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53
+     * to search for in the response body from the specified resource. If the
+     * string appears in the response body, Amazon Route 53 considers the
+     * resource healthy. <p>Specify this value only if you want to change it.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -525,10 +532,10 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <b>Length: </b>0 - 255<br/>
      *
      * @param searchString If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
-     *         <code>HTTP_STR_MATCH</code>, the string that you want Route 53 to
-     *         search for in the response body from the specified resource. If the
-     *         string appears in the response body, Route 53 considers the resource
-     *         healthy. <p>Specify this value only if you want to change it.
+     *         <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53
+     *         to search for in the response body from the specified resource. If the
+     *         string appears in the response body, Amazon Route 53 considers the
+     *         resource healthy. <p>Specify this value only if you want to change it.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -540,8 +547,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * The number of consecutive health checks that an endpoint must pass or
-     * fail for Route 53 to change the current status of the endpoint from
-     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * fail for Amazon Route 53 to change the current status of the endpoint
+     * from unhealthy to healthy or vice versa. <p>Valid values are integers
      * between 1 and 10. For more information, see "How Amazon Route 53
      * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      * Developer Guide. <p>Specify this value only if you want to change it.
@@ -550,8 +557,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <b>Range: </b>1 - 10<br/>
      *
      * @return The number of consecutive health checks that an endpoint must pass or
-     *         fail for Route 53 to change the current status of the endpoint from
-     *         unhealthy to healthy or vice versa. <p>Valid values are integers
+     *         fail for Amazon Route 53 to change the current status of the endpoint
+     *         from unhealthy to healthy or vice versa. <p>Valid values are integers
      *         between 1 and 10. For more information, see "How Amazon Route 53
      *         Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      *         Developer Guide. <p>Specify this value only if you want to change it.
@@ -562,8 +569,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     
     /**
      * The number of consecutive health checks that an endpoint must pass or
-     * fail for Route 53 to change the current status of the endpoint from
-     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * fail for Amazon Route 53 to change the current status of the endpoint
+     * from unhealthy to healthy or vice versa. <p>Valid values are integers
      * between 1 and 10. For more information, see "How Amazon Route 53
      * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      * Developer Guide. <p>Specify this value only if you want to change it.
@@ -572,8 +579,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <b>Range: </b>1 - 10<br/>
      *
      * @param failureThreshold The number of consecutive health checks that an endpoint must pass or
-     *         fail for Route 53 to change the current status of the endpoint from
-     *         unhealthy to healthy or vice versa. <p>Valid values are integers
+     *         fail for Amazon Route 53 to change the current status of the endpoint
+     *         from unhealthy to healthy or vice versa. <p>Valid values are integers
      *         between 1 and 10. For more information, see "How Amazon Route 53
      *         Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      *         Developer Guide. <p>Specify this value only if you want to change it.
@@ -584,8 +591,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     
     /**
      * The number of consecutive health checks that an endpoint must pass or
-     * fail for Route 53 to change the current status of the endpoint from
-     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * fail for Amazon Route 53 to change the current status of the endpoint
+     * from unhealthy to healthy or vice versa. <p>Valid values are integers
      * between 1 and 10. For more information, see "How Amazon Route 53
      * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      * Developer Guide. <p>Specify this value only if you want to change it.
@@ -596,8 +603,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <b>Range: </b>1 - 10<br/>
      *
      * @param failureThreshold The number of consecutive health checks that an endpoint must pass or
-     *         fail for Route 53 to change the current status of the endpoint from
-     *         unhealthy to healthy or vice versa. <p>Valid values are integers
+     *         fail for Amazon Route 53 to change the current status of the endpoint
+     *         from unhealthy to healthy or vice versa. <p>Valid values are integers
      *         between 1 and 10. For more information, see "How Amazon Route 53
      *         Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      *         Developer Guide. <p>Specify this value only if you want to change it.
@@ -613,15 +620,15 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     /**
      * A boolean value that indicates whether the status of health check
      * should be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     * the health check to be unhealthy. <p>Specify this value only if you
-     * want to change it.
+     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     * considers the health check to be unhealthy. <p>Specify this value only
+     * if you want to change it.
      *
      * @return A boolean value that indicates whether the status of health check
      *         should be inverted. For example, if a health check is healthy but
-     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     *         the health check to be unhealthy. <p>Specify this value only if you
-     *         want to change it.
+     *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     *         considers the health check to be unhealthy. <p>Specify this value only
+     *         if you want to change it.
      */
     public Boolean isInverted() {
         return inverted;
@@ -630,15 +637,15 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     /**
      * A boolean value that indicates whether the status of health check
      * should be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     * the health check to be unhealthy. <p>Specify this value only if you
-     * want to change it.
+     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     * considers the health check to be unhealthy. <p>Specify this value only
+     * if you want to change it.
      *
      * @param inverted A boolean value that indicates whether the status of health check
      *         should be inverted. For example, if a health check is healthy but
-     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     *         the health check to be unhealthy. <p>Specify this value only if you
-     *         want to change it.
+     *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     *         considers the health check to be unhealthy. <p>Specify this value only
+     *         if you want to change it.
      */
     public void setInverted(Boolean inverted) {
         this.inverted = inverted;
@@ -647,17 +654,17 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     /**
      * A boolean value that indicates whether the status of health check
      * should be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     * the health check to be unhealthy. <p>Specify this value only if you
-     * want to change it.
+     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     * considers the health check to be unhealthy. <p>Specify this value only
+     * if you want to change it.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param inverted A boolean value that indicates whether the status of health check
      *         should be inverted. For example, if a health check is healthy but
-     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     *         the health check to be unhealthy. <p>Specify this value only if you
-     *         want to change it.
+     *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     *         considers the health check to be unhealthy. <p>Specify this value only
+     *         if you want to change it.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -670,15 +677,15 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     /**
      * A boolean value that indicates whether the status of health check
      * should be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     * the health check to be unhealthy. <p>Specify this value only if you
-     * want to change it.
+     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     * considers the health check to be unhealthy. <p>Specify this value only
+     * if you want to change it.
      *
      * @return A boolean value that indicates whether the status of health check
      *         should be inverted. For example, if a health check is healthy but
-     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     *         the health check to be unhealthy. <p>Specify this value only if you
-     *         want to change it.
+     *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     *         considers the health check to be unhealthy. <p>Specify this value only
+     *         if you want to change it.
      */
     public Boolean getInverted() {
         return inverted;
@@ -686,17 +693,17 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * The minimum number of child health checks that must be healthy for
-     * Route 53 to consider the parent health check to be healthy. Valid
-     * values are integers between 0 and 256, inclusive. <p>Specify this
-     * value only if you want to change it.
+     * Amazon Route 53 to consider the parent health check to be healthy.
+     * Valid values are integers between 0 and 256, inclusive. <p>Specify
+     * this value only if you want to change it.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 256<br/>
      *
      * @return The minimum number of child health checks that must be healthy for
-     *         Route 53 to consider the parent health check to be healthy. Valid
-     *         values are integers between 0 and 256, inclusive. <p>Specify this
-     *         value only if you want to change it.
+     *         Amazon Route 53 to consider the parent health check to be healthy.
+     *         Valid values are integers between 0 and 256, inclusive. <p>Specify
+     *         this value only if you want to change it.
      */
     public Integer getHealthThreshold() {
         return healthThreshold;
@@ -704,17 +711,17 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     
     /**
      * The minimum number of child health checks that must be healthy for
-     * Route 53 to consider the parent health check to be healthy. Valid
-     * values are integers between 0 and 256, inclusive. <p>Specify this
-     * value only if you want to change it.
+     * Amazon Route 53 to consider the parent health check to be healthy.
+     * Valid values are integers between 0 and 256, inclusive. <p>Specify
+     * this value only if you want to change it.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 256<br/>
      *
      * @param healthThreshold The minimum number of child health checks that must be healthy for
-     *         Route 53 to consider the parent health check to be healthy. Valid
-     *         values are integers between 0 and 256, inclusive. <p>Specify this
-     *         value only if you want to change it.
+     *         Amazon Route 53 to consider the parent health check to be healthy.
+     *         Valid values are integers between 0 and 256, inclusive. <p>Specify
+     *         this value only if you want to change it.
      */
     public void setHealthThreshold(Integer healthThreshold) {
         this.healthThreshold = healthThreshold;
@@ -722,9 +729,9 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     
     /**
      * The minimum number of child health checks that must be healthy for
-     * Route 53 to consider the parent health check to be healthy. Valid
-     * values are integers between 0 and 256, inclusive. <p>Specify this
-     * value only if you want to change it.
+     * Amazon Route 53 to consider the parent health check to be healthy.
+     * Valid values are integers between 0 and 256, inclusive. <p>Specify
+     * this value only if you want to change it.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -732,9 +739,9 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <b>Range: </b>0 - 256<br/>
      *
      * @param healthThreshold The minimum number of child health checks that must be healthy for
-     *         Route 53 to consider the parent health check to be healthy. Valid
-     *         values are integers between 0 and 256, inclusive. <p>Specify this
-     *         value only if you want to change it.
+     *         Amazon Route 53 to consider the parent health check to be healthy.
+     *         Valid values are integers between 0 and 256, inclusive. <p>Specify
+     *         this value only if you want to change it.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

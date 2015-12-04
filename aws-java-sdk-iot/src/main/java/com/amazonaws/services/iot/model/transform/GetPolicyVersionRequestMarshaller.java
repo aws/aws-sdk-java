@@ -61,6 +61,7 @@ public class GetPolicyVersionRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/policies/{policyName}/version/{policyVersionId}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
                 (getPolicyVersionRequest.getPolicyName() == null) ? ""

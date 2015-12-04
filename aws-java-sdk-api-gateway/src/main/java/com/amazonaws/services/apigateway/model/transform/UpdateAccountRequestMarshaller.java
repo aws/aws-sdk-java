@@ -61,6 +61,7 @@ public class UpdateAccountRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/account";
+
         request.setResourcePath(uriResourcePath);
 
         try {

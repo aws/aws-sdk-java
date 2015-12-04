@@ -32,18 +32,18 @@ import com.amazonaws.AmazonWebServiceRequest;
  * about the hosted zone.
  * </p>
  * <p>
- * Route 53 automatically creates a default SOA record and four NS
+ * Amazon Route 53 automatically creates a default SOA record and four NS
  * records for the zone. The NS records in the hosted zone are the name
  * servers you give your registrar to delegate your domain to. For more
  * information about SOA and NS records, see
- * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Route 53 Creates for a Hosted Zone </a>
+ * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Amazon Route 53 Creates for a Hosted Zone </a>
  * in the <i>Amazon Route 53 Developer Guide</i> .
  * </p>
  * <p>
  * When you create a zone, its initial status is <code>PENDING</code> .
  * This means that it is not yet available on all DNS servers. The status
  * of the zone changes to <code>INSYNC</code> when the NS and SOA records
- * are available on all Route 53 DNS servers.
+ * are available on all Amazon Route 53 DNS servers.
  * </p>
  * <p>
  * When trying to create a hosted zone using a reusable delegation set,
@@ -57,9 +57,9 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Route 53
-     * assumes that the domain name is fully qualified. This means that Route
-     * 53 treats www.example.com (without a trailing dot) and
+     * example, www.example.com. The trailing dot is optional; Amazon Route
+     * 53 assumes that the domain name is fully qualified. This means that
+     * Amazon Route 53 treats www.example.com (without a trailing dot) and
      * www.example.com. (with a trailing dot) as identical. <p>This is the
      * name you have registered with your DNS registrar. You should ask your
      * registrar to change the authoritative name servers for your domain to
@@ -122,12 +122,12 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
      * 
      * @param name The name of the domain. This must be a fully-specified
      * domain, for example, www.example.com. The trailing dot is optional;
-     * Route 53 assumes that the domain name is fully qualified. This means
-     * that Route 53 treats www.example.com (without a trailing dot) and
-     * www.example.com. (with a trailing dot) as identical. <p>This is the
-     * name you have registered with your DNS registrar. You should ask your
-     * registrar to change the authoritative name servers for your domain to
-     * the set of <code>NameServers</code> elements returned in
+     * Amazon Route 53 assumes that the domain name is fully qualified. This
+     * means that Amazon Route 53 treats www.example.com (without a trailing
+     * dot) and www.example.com. (with a trailing dot) as identical. <p>This
+     * is the name you have registered with your DNS registrar. You should
+     * ask your registrar to change the authoritative name servers for your
+     * domain to the set of <code>NameServers</code> elements returned in
      * <code>DelegationSet</code>.
      * @param callerReference A unique string that identifies the request and
      * that allows failed <code>CreateHostedZone</code> requests to be
@@ -146,9 +146,9 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Route 53
-     * assumes that the domain name is fully qualified. This means that Route
-     * 53 treats www.example.com (without a trailing dot) and
+     * example, www.example.com. The trailing dot is optional; Amazon Route
+     * 53 assumes that the domain name is fully qualified. This means that
+     * Amazon Route 53 treats www.example.com (without a trailing dot) and
      * www.example.com. (with a trailing dot) as identical. <p>This is the
      * name you have registered with your DNS registrar. You should ask your
      * registrar to change the authoritative name servers for your domain to
@@ -159,9 +159,9 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>0 - 1024<br/>
      *
      * @return The name of the domain. This must be a fully-specified domain, for
-     *         example, www.example.com. The trailing dot is optional; Route 53
-     *         assumes that the domain name is fully qualified. This means that Route
-     *         53 treats www.example.com (without a trailing dot) and
+     *         example, www.example.com. The trailing dot is optional; Amazon Route
+     *         53 assumes that the domain name is fully qualified. This means that
+     *         Amazon Route 53 treats www.example.com (without a trailing dot) and
      *         www.example.com. (with a trailing dot) as identical. <p>This is the
      *         name you have registered with your DNS registrar. You should ask your
      *         registrar to change the authoritative name servers for your domain to
@@ -174,9 +174,9 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Route 53
-     * assumes that the domain name is fully qualified. This means that Route
-     * 53 treats www.example.com (without a trailing dot) and
+     * example, www.example.com. The trailing dot is optional; Amazon Route
+     * 53 assumes that the domain name is fully qualified. This means that
+     * Amazon Route 53 treats www.example.com (without a trailing dot) and
      * www.example.com. (with a trailing dot) as identical. <p>This is the
      * name you have registered with your DNS registrar. You should ask your
      * registrar to change the authoritative name servers for your domain to
@@ -187,9 +187,9 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param name The name of the domain. This must be a fully-specified domain, for
-     *         example, www.example.com. The trailing dot is optional; Route 53
-     *         assumes that the domain name is fully qualified. This means that Route
-     *         53 treats www.example.com (without a trailing dot) and
+     *         example, www.example.com. The trailing dot is optional; Amazon Route
+     *         53 assumes that the domain name is fully qualified. This means that
+     *         Amazon Route 53 treats www.example.com (without a trailing dot) and
      *         www.example.com. (with a trailing dot) as identical. <p>This is the
      *         name you have registered with your DNS registrar. You should ask your
      *         registrar to change the authoritative name servers for your domain to
@@ -202,9 +202,9 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Route 53
-     * assumes that the domain name is fully qualified. This means that Route
-     * 53 treats www.example.com (without a trailing dot) and
+     * example, www.example.com. The trailing dot is optional; Amazon Route
+     * 53 assumes that the domain name is fully qualified. This means that
+     * Amazon Route 53 treats www.example.com (without a trailing dot) and
      * www.example.com. (with a trailing dot) as identical. <p>This is the
      * name you have registered with your DNS registrar. You should ask your
      * registrar to change the authoritative name servers for your domain to
@@ -217,9 +217,9 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param name The name of the domain. This must be a fully-specified domain, for
-     *         example, www.example.com. The trailing dot is optional; Route 53
-     *         assumes that the domain name is fully qualified. This means that Route
-     *         53 treats www.example.com (without a trailing dot) and
+     *         example, www.example.com. The trailing dot is optional; Amazon Route
+     *         53 assumes that the domain name is fully qualified. This means that
+     *         Amazon Route 53 treats www.example.com (without a trailing dot) and
      *         www.example.com. (with a trailing dot) as identical. <p>This is the
      *         name you have registered with your DNS registrar. You should ask your
      *         registrar to change the authoritative name servers for your domain to

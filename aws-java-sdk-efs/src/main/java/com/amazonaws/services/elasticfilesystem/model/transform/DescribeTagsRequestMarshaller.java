@@ -61,6 +61,7 @@ public class DescribeTagsRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2015-02-01/tags/{FileSystemId}/";
+
         uriResourcePath = uriResourcePath.replace(
                 "{FileSystemId}",
                 (describeTagsRequest.getFileSystemId() == null) ? ""

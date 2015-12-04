@@ -270,10 +270,295 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             
     /**
      * <p>
+     * Gets information about a specified traffic policy instance.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instance, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicyinstance</code> resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit a CreateTrafficPolicyInstance or an
+     * UpdateTrafficPolicyInstance request, there's a brief delay while
+     * Amazon Route 53 creates the resource record sets that are specified in
+     * the traffic policy definition. For more information, see the State
+     * response element.
+     * </p>
+     *
+     * @param getTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the GetTrafficPolicyInstance operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetTrafficPolicyInstance service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetTrafficPolicyInstanceResult> getTrafficPolicyInstanceAsync(final GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetTrafficPolicyInstanceResult>() {
+            public GetTrafficPolicyInstanceResult call() throws Exception {
+                return getTrafficPolicyInstance(getTrafficPolicyInstanceRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about a specified traffic policy instance.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instance, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicyinstance</code> resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit a CreateTrafficPolicyInstance or an
+     * UpdateTrafficPolicyInstance request, there's a brief delay while
+     * Amazon Route 53 creates the resource record sets that are specified in
+     * the traffic policy definition. For more information, see the State
+     * response element.
+     * </p>
+     *
+     * @param getTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the GetTrafficPolicyInstance operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetTrafficPolicyInstance service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetTrafficPolicyInstanceResult> getTrafficPolicyInstanceAsync(
+            final GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest,
+            final AsyncHandler<GetTrafficPolicyInstanceRequest, GetTrafficPolicyInstanceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetTrafficPolicyInstanceResult>() {
+            public GetTrafficPolicyInstanceResult call() throws Exception {
+              GetTrafficPolicyInstanceResult result;
+                try {
+                result = getTrafficPolicyInstance(getTrafficPolicyInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getTrafficPolicyInstanceRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a traffic policy, which you use to create multiple DNS
+     * resource record sets for one domain name (such as example.com) or one
+     * subdomain name (such as www.example.com).
+     * </p>
+     * <p>
+     * To create a traffic policy, send a <code>POST</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource. The request body must
+     * include an XML document with a <code>CreateTrafficPolicyRequest</code>
+     * element. The response includes the
+     * <code>CreateTrafficPolicyResponse</code> element, which contains
+     * information about the new traffic policy.
+     * </p>
+     *
+     * @param createTrafficPolicyRequest Container for the necessary
+     *           parameters to execute the CreateTrafficPolicy operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateTrafficPolicy service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateTrafficPolicyResult> createTrafficPolicyAsync(final CreateTrafficPolicyRequest createTrafficPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateTrafficPolicyResult>() {
+            public CreateTrafficPolicyResult call() throws Exception {
+                return createTrafficPolicy(createTrafficPolicyRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a traffic policy, which you use to create multiple DNS
+     * resource record sets for one domain name (such as example.com) or one
+     * subdomain name (such as www.example.com).
+     * </p>
+     * <p>
+     * To create a traffic policy, send a <code>POST</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource. The request body must
+     * include an XML document with a <code>CreateTrafficPolicyRequest</code>
+     * element. The response includes the
+     * <code>CreateTrafficPolicyResponse</code> element, which contains
+     * information about the new traffic policy.
+     * </p>
+     *
+     * @param createTrafficPolicyRequest Container for the necessary
+     *           parameters to execute the CreateTrafficPolicy operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateTrafficPolicy service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateTrafficPolicyResult> createTrafficPolicyAsync(
+            final CreateTrafficPolicyRequest createTrafficPolicyRequest,
+            final AsyncHandler<CreateTrafficPolicyRequest, CreateTrafficPolicyResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateTrafficPolicyResult>() {
+            public CreateTrafficPolicyResult call() throws Exception {
+              CreateTrafficPolicyResult result;
+                try {
+                result = createTrafficPolicy(createTrafficPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createTrafficPolicyRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Updates the comment for a specified traffic policy version.
+     * </p>
+     * <p>
+     * To update the comment, send a <code>POST</code> request to the
+     * <code>/2013-04-01/trafficpolicy/</code> resource.
+     * </p>
+     * <p>
+     * The request body must include an XML document with an
+     * <code>UpdateTrafficPolicyCommentRequest</code> element.
+     * </p>
+     *
+     * @param updateTrafficPolicyCommentRequest Container for the necessary
+     *           parameters to execute the UpdateTrafficPolicyComment operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateTrafficPolicyComment service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateTrafficPolicyCommentResult> updateTrafficPolicyCommentAsync(final UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateTrafficPolicyCommentResult>() {
+            public UpdateTrafficPolicyCommentResult call() throws Exception {
+                return updateTrafficPolicyComment(updateTrafficPolicyCommentRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Updates the comment for a specified traffic policy version.
+     * </p>
+     * <p>
+     * To update the comment, send a <code>POST</code> request to the
+     * <code>/2013-04-01/trafficpolicy/</code> resource.
+     * </p>
+     * <p>
+     * The request body must include an XML document with an
+     * <code>UpdateTrafficPolicyCommentRequest</code> element.
+     * </p>
+     *
+     * @param updateTrafficPolicyCommentRequest Container for the necessary
+     *           parameters to execute the UpdateTrafficPolicyComment operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateTrafficPolicyComment service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateTrafficPolicyCommentResult> updateTrafficPolicyCommentAsync(
+            final UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest,
+            final AsyncHandler<UpdateTrafficPolicyCommentRequest, UpdateTrafficPolicyCommentResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateTrafficPolicyCommentResult>() {
+            public UpdateTrafficPolicyCommentResult call() throws Exception {
+              UpdateTrafficPolicyCommentResult result;
+                try {
+                result = updateTrafficPolicyComment(updateTrafficPolicyCommentRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateTrafficPolicyCommentRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * To retrieve the delegation set for a hosted zone, send a
      * <code>GET</code> request to the <code>2013-04-01/hostedzone/hosted
-     * zone ID </code> resource. The delegation set is the four Route 53 name
-     * servers that were assigned to the hosted zone when you created it.
+     * zone ID </code> resource. The delegation set is the four Amazon Route
+     * 53 name servers that were assigned to the hosted zone when you created
+     * it.
      * </p>
      *
      * @param getHostedZoneRequest Container for the necessary parameters to
@@ -304,8 +589,9 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * <p>
      * To retrieve the delegation set for a hosted zone, send a
      * <code>GET</code> request to the <code>2013-04-01/hostedzone/hosted
-     * zone ID </code> resource. The delegation set is the four Route 53 name
-     * servers that were assigned to the hosted zone when you created it.
+     * zone ID </code> resource. The delegation set is the four Amazon Route
+     * 53 name servers that were assigned to the hosted zone when you created
+     * it.
      * </p>
      *
      * @param getHostedZoneRequest Container for the necessary parameters to
@@ -353,8 +639,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * </p>
      * <p>
      * - <code>PENDING</code> indicates that the changes in this request
-     * have not replicated to all Route 53 DNS servers. This is the initial
-     * status of all change batch requests.
+     * have not replicated to all Amazon Route 53 DNS servers. This is the
+     * initial status of all change batch requests.
      * </p>
      * <p>
      * - <code>INSYNC</code> indicates that the changes have replicated to
@@ -392,8 +678,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * </p>
      * <p>
      * - <code>PENDING</code> indicates that the changes in this request
-     * have not replicated to all Route 53 DNS servers. This is the initial
-     * status of all change batch requests.
+     * have not replicated to all Amazon Route 53 DNS servers. This is the
+     * initial status of all change batch requests.
      * </p>
      * <p>
      * - <code>INSYNC</code> indicates that the changes have replicated to
@@ -433,6 +719,140 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(getChangeRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Updates the resource record sets in a specified hosted zone that were
+     * created based on the settings in a specified traffic policy version.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>The DNS type of the resource record sets that you're
+     * updating must match the DNS type in the JSON document that is
+     * associated with the traffic policy version that you're using to update
+     * the traffic policy instance.
+     * </p>
+     * <p>
+     * When you update a traffic policy instance, Amazon Route 53 continues
+     * to respond to DNS queries for the root resource record set name (such
+     * as example.com) while it replaces one group of resource record sets
+     * with another. Amazon Route 53 performs the following operations:
+     * </p>
+     * <ol> <li>Amazon Route 53 creates a new group of resource record sets
+     * based on the specified traffic policy. This is true regardless of how
+     * substantial the differences are between the existing resource record
+     * sets and the new resource record sets. </li>
+     * <li>When all of the new resource record sets have been created,
+     * Amazon Route 53 starts to respond to DNS queries for the root resource
+     * record set name (such as example.com) by using the new resource record
+     * sets.</li>
+     * <li>Amazon Route 53 deletes the old group of resource record sets
+     * that are associated with the root resource record set name.</li>
+     * </ol> <p>
+     * To update a traffic policy instance, send a <code>POST</code> request
+     * to the <code>/2013-04-01/trafficpolicyinstance/traffic policy ID
+     * </code> resource. The request body must include an XML document with
+     * an <code>UpdateTrafficPolicyInstanceRequest</code> element.
+     * </p>
+     *
+     * @param updateTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the UpdateTrafficPolicyInstance operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateTrafficPolicyInstance service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateTrafficPolicyInstanceResult> updateTrafficPolicyInstanceAsync(final UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateTrafficPolicyInstanceResult>() {
+            public UpdateTrafficPolicyInstanceResult call() throws Exception {
+                return updateTrafficPolicyInstance(updateTrafficPolicyInstanceRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Updates the resource record sets in a specified hosted zone that were
+     * created based on the settings in a specified traffic policy version.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>The DNS type of the resource record sets that you're
+     * updating must match the DNS type in the JSON document that is
+     * associated with the traffic policy version that you're using to update
+     * the traffic policy instance.
+     * </p>
+     * <p>
+     * When you update a traffic policy instance, Amazon Route 53 continues
+     * to respond to DNS queries for the root resource record set name (such
+     * as example.com) while it replaces one group of resource record sets
+     * with another. Amazon Route 53 performs the following operations:
+     * </p>
+     * <ol> <li>Amazon Route 53 creates a new group of resource record sets
+     * based on the specified traffic policy. This is true regardless of how
+     * substantial the differences are between the existing resource record
+     * sets and the new resource record sets. </li>
+     * <li>When all of the new resource record sets have been created,
+     * Amazon Route 53 starts to respond to DNS queries for the root resource
+     * record set name (such as example.com) by using the new resource record
+     * sets.</li>
+     * <li>Amazon Route 53 deletes the old group of resource record sets
+     * that are associated with the root resource record set name.</li>
+     * </ol> <p>
+     * To update a traffic policy instance, send a <code>POST</code> request
+     * to the <code>/2013-04-01/trafficpolicyinstance/traffic policy ID
+     * </code> resource. The request body must include an XML document with
+     * an <code>UpdateTrafficPolicyInstanceRequest</code> element.
+     * </p>
+     *
+     * @param updateTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the UpdateTrafficPolicyInstance operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateTrafficPolicyInstance service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateTrafficPolicyInstanceResult> updateTrafficPolicyInstanceAsync(
+            final UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest,
+            final AsyncHandler<UpdateTrafficPolicyInstanceRequest, UpdateTrafficPolicyInstanceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateTrafficPolicyInstanceResult>() {
+            public UpdateTrafficPolicyInstanceResult call() throws Exception {
+              UpdateTrafficPolicyInstanceResult result;
+                try {
+                result = updateTrafficPolicyInstance(updateTrafficPolicyInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateTrafficPolicyInstanceRequest, result);
                  return result;
         }
     });
@@ -605,6 +1025,266 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     }
     
     /**
+     * <p>
+     * Gets information about all of the versions for a specified traffic
+     * policy. <code>ListTrafficPolicyVersions</code> lists only versions
+     * that have not been deleted.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policies, you can use the
+     * <code>maxitems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes three values that help you navigate from one
+     * group of <code>maxitems</code> maxitems traffic policies to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policy versions associated
+     * with the specified traffic policy.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy version that is associated with the
+     * specified traffic policy.
+     * </p>
+     * <li> <b>TrafficPolicyVersionMarker</b> </li>
+     * <p>
+     * The ID of the next traffic policy version that is associated with the
+     * current AWS account. If you want to list more traffic policies, make
+     * another call to <code>ListTrafficPolicyVersions</code> , and specify
+     * the value of the <code>TrafficPolicyVersionMarker</code> element in
+     * the <code>TrafficPolicyVersionMarker</code> request parameter.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , Amazon Route 53
+     * omits the <code>TrafficPolicyVersionMarker</code> element from the
+     * response.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyVersionsRequest Container for the necessary
+     *           parameters to execute the ListTrafficPolicyVersions operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTrafficPolicyVersions service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTrafficPolicyVersionsResult> listTrafficPolicyVersionsAsync(final ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTrafficPolicyVersionsResult>() {
+            public ListTrafficPolicyVersionsResult call() throws Exception {
+                return listTrafficPolicyVersions(listTrafficPolicyVersionsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about all of the versions for a specified traffic
+     * policy. <code>ListTrafficPolicyVersions</code> lists only versions
+     * that have not been deleted.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policies, you can use the
+     * <code>maxitems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes three values that help you navigate from one
+     * group of <code>maxitems</code> maxitems traffic policies to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policy versions associated
+     * with the specified traffic policy.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy version that is associated with the
+     * specified traffic policy.
+     * </p>
+     * <li> <b>TrafficPolicyVersionMarker</b> </li>
+     * <p>
+     * The ID of the next traffic policy version that is associated with the
+     * current AWS account. If you want to list more traffic policies, make
+     * another call to <code>ListTrafficPolicyVersions</code> , and specify
+     * the value of the <code>TrafficPolicyVersionMarker</code> element in
+     * the <code>TrafficPolicyVersionMarker</code> request parameter.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , Amazon Route 53
+     * omits the <code>TrafficPolicyVersionMarker</code> element from the
+     * response.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyVersionsRequest Container for the necessary
+     *           parameters to execute the ListTrafficPolicyVersions operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTrafficPolicyVersions service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTrafficPolicyVersionsResult> listTrafficPolicyVersionsAsync(
+            final ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest,
+            final AsyncHandler<ListTrafficPolicyVersionsRequest, ListTrafficPolicyVersionsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTrafficPolicyVersionsResult>() {
+            public ListTrafficPolicyVersionsResult call() throws Exception {
+              ListTrafficPolicyVersionsResult result;
+                try {
+                result = listTrafficPolicyVersions(listTrafficPolicyVersionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listTrafficPolicyVersionsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * This action deletes a health check. To delete a health check, send a
+     * <code>DELETE</code> request to the <code>2013-04-01/healthcheck/health
+     * check ID </code> resource.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You can delete a health check only if there are no
+     * resource record sets associated with this health check. If resource
+     * record sets are associated with this health check, you must
+     * disassociate them before you can delete your health check. If you try
+     * to delete a health check that is associated with resource record sets,
+     * Amazon Route 53 will deny your request with a HealthCheckInUse error.
+     * For information about disassociating the records from your health
+     * check, see ChangeResourceRecordSets.
+     * </p>
+     *
+     * @param deleteHealthCheckRequest Container for the necessary parameters
+     *           to execute the DeleteHealthCheck operation on AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteHealthCheck service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteHealthCheckResult> deleteHealthCheckAsync(final DeleteHealthCheckRequest deleteHealthCheckRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteHealthCheckResult>() {
+            public DeleteHealthCheckResult call() throws Exception {
+                return deleteHealthCheck(deleteHealthCheckRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * This action deletes a health check. To delete a health check, send a
+     * <code>DELETE</code> request to the <code>2013-04-01/healthcheck/health
+     * check ID </code> resource.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You can delete a health check only if there are no
+     * resource record sets associated with this health check. If resource
+     * record sets are associated with this health check, you must
+     * disassociate them before you can delete your health check. If you try
+     * to delete a health check that is associated with resource record sets,
+     * Amazon Route 53 will deny your request with a HealthCheckInUse error.
+     * For information about disassociating the records from your health
+     * check, see ChangeResourceRecordSets.
+     * </p>
+     *
+     * @param deleteHealthCheckRequest Container for the necessary parameters
+     *           to execute the DeleteHealthCheck operation on AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteHealthCheck service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteHealthCheckResult> deleteHealthCheckAsync(
+            final DeleteHealthCheckRequest deleteHealthCheckRequest,
+            final AsyncHandler<DeleteHealthCheckRequest, DeleteHealthCheckResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteHealthCheckResult>() {
+            public DeleteHealthCheckResult call() throws Exception {
+              DeleteHealthCheckResult result;
+                try {
+                result = deleteHealthCheck(deleteHealthCheckRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteHealthCheckRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
      *
      * @param listTagsForResourcesRequest Container for the necessary
      *           parameters to execute the ListTagsForResources operation on
@@ -667,102 +1347,6 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(listTagsForResourcesRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This action deletes a health check. To delete a health check, send a
-     * <code>DELETE</code> request to the <code>2013-04-01/healthcheck/health
-     * check ID </code> resource.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> You can delete a health check only if there are no
-     * resource record sets associated with this health check. If resource
-     * record sets are associated with this health check, you must
-     * disassociate them before you can delete your health check. If you try
-     * to delete a health check that is associated with resource record sets,
-     * Route 53 will deny your request with a HealthCheckInUse error. For
-     * information about disassociating the records from your health check,
-     * see ChangeResourceRecordSets.
-     * </p>
-     *
-     * @param deleteHealthCheckRequest Container for the necessary parameters
-     *           to execute the DeleteHealthCheck operation on AmazonRoute53.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteHealthCheck service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteHealthCheckResult> deleteHealthCheckAsync(final DeleteHealthCheckRequest deleteHealthCheckRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeleteHealthCheckResult>() {
-            public DeleteHealthCheckResult call() throws Exception {
-                return deleteHealthCheck(deleteHealthCheckRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This action deletes a health check. To delete a health check, send a
-     * <code>DELETE</code> request to the <code>2013-04-01/healthcheck/health
-     * check ID </code> resource.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> You can delete a health check only if there are no
-     * resource record sets associated with this health check. If resource
-     * record sets are associated with this health check, you must
-     * disassociate them before you can delete your health check. If you try
-     * to delete a health check that is associated with resource record sets,
-     * Route 53 will deny your request with a HealthCheckInUse error. For
-     * information about disassociating the records from your health check,
-     * see ChangeResourceRecordSets.
-     * </p>
-     *
-     * @param deleteHealthCheckRequest Container for the necessary parameters
-     *           to execute the DeleteHealthCheck operation on AmazonRoute53.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteHealthCheck service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteHealthCheckResult> deleteHealthCheckAsync(
-            final DeleteHealthCheckRequest deleteHealthCheckRequest,
-            final AsyncHandler<DeleteHealthCheckRequest, DeleteHealthCheckResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeleteHealthCheckResult>() {
-            public DeleteHealthCheckResult call() throws Exception {
-              DeleteHealthCheckResult result;
-                try {
-                result = deleteHealthCheck(deleteHealthCheckRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteHealthCheckRequest, result);
                  return result;
         }
     });
@@ -944,6 +1528,292 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     
     /**
      * <p>
+     * Deletes a traffic policy instance and all of the resource record sets
+     * that Amazon Route 53 created when you created the instance.
+     * </p>
+     * <p>
+     * To delete a traffic policy instance, send a <code>DELETE</code>
+     * request to the <code>2013-04-01/trafficpolicy/traffic policy instance
+     * ID </code> resource.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>When you delete a traffic policy instance, Amazon
+     * Route 53 also deletes all of the resource record sets that were
+     * created when you created the traffic policy instance.
+     * </p>
+     *
+     * @param deleteTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the DeleteTrafficPolicyInstance operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteTrafficPolicyInstance service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteTrafficPolicyInstanceResult> deleteTrafficPolicyInstanceAsync(final DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteTrafficPolicyInstanceResult>() {
+            public DeleteTrafficPolicyInstanceResult call() throws Exception {
+                return deleteTrafficPolicyInstance(deleteTrafficPolicyInstanceRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a traffic policy instance and all of the resource record sets
+     * that Amazon Route 53 created when you created the instance.
+     * </p>
+     * <p>
+     * To delete a traffic policy instance, send a <code>DELETE</code>
+     * request to the <code>2013-04-01/trafficpolicy/traffic policy instance
+     * ID </code> resource.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>When you delete a traffic policy instance, Amazon
+     * Route 53 also deletes all of the resource record sets that were
+     * created when you created the traffic policy instance.
+     * </p>
+     *
+     * @param deleteTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the DeleteTrafficPolicyInstance operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteTrafficPolicyInstance service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteTrafficPolicyInstanceResult> deleteTrafficPolicyInstanceAsync(
+            final DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest,
+            final AsyncHandler<DeleteTrafficPolicyInstanceRequest, DeleteTrafficPolicyInstanceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteTrafficPolicyInstanceResult>() {
+            public DeleteTrafficPolicyInstanceResult call() throws Exception {
+              DeleteTrafficPolicyInstanceResult result;
+                try {
+                result = deleteTrafficPolicyInstance(deleteTrafficPolicyInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteTrafficPolicyInstanceRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets information about the traffic policy instances that you created
+     * in a specified hosted zone.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit an UpdateTrafficPolicyInstance request,
+     * there's a brief delay while Amazon Route 53 creates the resource
+     * record sets that are specified in the traffic policy definition. For
+     * more information, see the State response element.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instances that you
+     * created in a specified hosted zone, send a <code>GET</code> request to
+     * the <code>2013-04-01/trafficpolicyinstance</code> resource and include
+     * the ID of the hosted zone.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policy instances, you can use the
+     * <code>MaxItems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes four values that help you navigate from one
+     * group of <code>MaxItems</code> traffic policy instances to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code></code> IsTruncated in the response is
+     * <code>true</code> , there are more traffic policy instances associated
+     * with the current AWS account.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy instance that is associated with the
+     * current account.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * <li> <b>TrafficPolicyInstanceNameMarker</b> and
+     * <b>TrafficPolicyInstanceTypeMarker</b> </li>
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code> , these two values
+     * in the response represent the first traffic policy instance in the
+     * next group of <code>MaxItems</code> traffic policy instances. To list
+     * more traffic policy instances, make another call to
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> , and specify
+     * these values in the corresponding request parameters.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , all three
+     * elements are omitted from the response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyInstancesByHostedZoneRequest Container for the
+     *           necessary parameters to execute the
+     *           ListTrafficPolicyInstancesByHostedZone operation on AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTrafficPolicyInstancesByHostedZone service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTrafficPolicyInstancesByHostedZoneResult> listTrafficPolicyInstancesByHostedZoneAsync(final ListTrafficPolicyInstancesByHostedZoneRequest listTrafficPolicyInstancesByHostedZoneRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTrafficPolicyInstancesByHostedZoneResult>() {
+            public ListTrafficPolicyInstancesByHostedZoneResult call() throws Exception {
+                return listTrafficPolicyInstancesByHostedZone(listTrafficPolicyInstancesByHostedZoneRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about the traffic policy instances that you created
+     * in a specified hosted zone.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit an UpdateTrafficPolicyInstance request,
+     * there's a brief delay while Amazon Route 53 creates the resource
+     * record sets that are specified in the traffic policy definition. For
+     * more information, see the State response element.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instances that you
+     * created in a specified hosted zone, send a <code>GET</code> request to
+     * the <code>2013-04-01/trafficpolicyinstance</code> resource and include
+     * the ID of the hosted zone.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policy instances, you can use the
+     * <code>MaxItems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes four values that help you navigate from one
+     * group of <code>MaxItems</code> traffic policy instances to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code></code> IsTruncated in the response is
+     * <code>true</code> , there are more traffic policy instances associated
+     * with the current AWS account.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy instance that is associated with the
+     * current account.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * <li> <b>TrafficPolicyInstanceNameMarker</b> and
+     * <b>TrafficPolicyInstanceTypeMarker</b> </li>
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code> , these two values
+     * in the response represent the first traffic policy instance in the
+     * next group of <code>MaxItems</code> traffic policy instances. To list
+     * more traffic policy instances, make another call to
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> , and specify
+     * these values in the corresponding request parameters.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , all three
+     * elements are omitted from the response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyInstancesByHostedZoneRequest Container for the
+     *           necessary parameters to execute the
+     *           ListTrafficPolicyInstancesByHostedZone operation on AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTrafficPolicyInstancesByHostedZone service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTrafficPolicyInstancesByHostedZoneResult> listTrafficPolicyInstancesByHostedZoneAsync(
+            final ListTrafficPolicyInstancesByHostedZoneRequest listTrafficPolicyInstancesByHostedZoneRequest,
+            final AsyncHandler<ListTrafficPolicyInstancesByHostedZoneRequest, ListTrafficPolicyInstancesByHostedZoneResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTrafficPolicyInstancesByHostedZoneResult>() {
+            public ListTrafficPolicyInstancesByHostedZoneResult call() throws Exception {
+              ListTrafficPolicyInstancesByHostedZoneResult result;
+                try {
+                result = listTrafficPolicyInstancesByHostedZone(listTrafficPolicyInstancesByHostedZoneRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listTrafficPolicyInstancesByHostedZoneRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * This action deletes a reusable delegation set. To delete a reusable
      * delegation set, send a <code>DELETE</code> request to the
      * <code>2013-04-01/delegationset/delegation set ID </code> resource.
@@ -953,8 +1823,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * there are no associated hosted zones. If your reusable delegation set
      * contains associated hosted zones, you must delete them before you can
      * delete your reusable delegation set. If you try to delete a reusable
-     * delegation set that contains associated hosted zones, Route 53 will
-     * deny your request with a DelegationSetInUse error.
+     * delegation set that contains associated hosted zones, Amazon Route 53
+     * will deny your request with a DelegationSetInUse error.
      * </p>
      *
      * @param deleteReusableDelegationSetRequest Container for the necessary
@@ -994,8 +1864,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * there are no associated hosted zones. If your reusable delegation set
      * contains associated hosted zones, you must delete them before you can
      * delete your reusable delegation set. If you try to delete a reusable
-     * delegation set that contains associated hosted zones, Route 53 will
-     * deny your request with a DelegationSetInUse error.
+     * delegation set that contains associated hosted zones, Amazon Route 53
+     * will deny your request with a DelegationSetInUse error.
      * </p>
      *
      * @param deleteReusableDelegationSetRequest Container for the necessary
@@ -1033,6 +1903,78 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(deleteReusableDelegationSetRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * This action returns the status and changes of a change batch request.
+     * </p>
+     *
+     * @param getChangeDetailsRequest Container for the necessary parameters
+     *           to execute the GetChangeDetails operation on AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetChangeDetails service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetChangeDetailsResult> getChangeDetailsAsync(final GetChangeDetailsRequest getChangeDetailsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetChangeDetailsResult>() {
+            public GetChangeDetailsResult call() throws Exception {
+                return getChangeDetails(getChangeDetailsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * This action returns the status and changes of a change batch request.
+     * </p>
+     *
+     * @param getChangeDetailsRequest Container for the necessary parameters
+     *           to execute the GetChangeDetails operation on AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetChangeDetails service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetChangeDetailsResult> getChangeDetailsAsync(
+            final GetChangeDetailsRequest getChangeDetailsRequest,
+            final AsyncHandler<GetChangeDetailsRequest, GetChangeDetailsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetChangeDetailsResult>() {
+            public GetChangeDetailsResult call() throws Exception {
+              GetChangeDetailsResult result;
+                try {
+                result = getChangeDetails(getChangeDetailsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getChangeDetailsRequest, result);
                  return result;
         }
     });
@@ -1107,90 +2049,6 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(getHealthCheckRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * To retrieve a list of the IP ranges used by Amazon Route 53 health
-     * checkers to check the health of your resources, send a
-     * <code>GET</code> request to the
-     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
-     * addresses to configure router and firewall rules to allow health
-     * checkers to check the health of your resources.
-     * </p>
-     *
-     * @param getCheckerIpRangesRequest Container for the necessary
-     *           parameters to execute the GetCheckerIpRanges operation on
-     *           AmazonRoute53.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetCheckerIpRanges service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(final GetCheckerIpRangesRequest getCheckerIpRangesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetCheckerIpRangesResult>() {
-            public GetCheckerIpRangesResult call() throws Exception {
-                return getCheckerIpRanges(getCheckerIpRangesRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * To retrieve a list of the IP ranges used by Amazon Route 53 health
-     * checkers to check the health of your resources, send a
-     * <code>GET</code> request to the
-     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
-     * addresses to configure router and firewall rules to allow health
-     * checkers to check the health of your resources.
-     * </p>
-     *
-     * @param getCheckerIpRangesRequest Container for the necessary
-     *           parameters to execute the GetCheckerIpRanges operation on
-     *           AmazonRoute53.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetCheckerIpRanges service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(
-            final GetCheckerIpRangesRequest getCheckerIpRangesRequest,
-            final AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetCheckerIpRangesResult>() {
-            public GetCheckerIpRangesResult call() throws Exception {
-              GetCheckerIpRangesResult result;
-                try {
-                result = getCheckerIpRanges(getCheckerIpRangesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getCheckerIpRangesRequest, result);
                  return result;
         }
     });
@@ -1298,6 +2156,90 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     
     /**
      * <p>
+     * To retrieve a list of the IP ranges used by Amazon Route 53 health
+     * checkers to check the health of your resources, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
+     * addresses to configure router and firewall rules to allow health
+     * checkers to check the health of your resources.
+     * </p>
+     *
+     * @param getCheckerIpRangesRequest Container for the necessary
+     *           parameters to execute the GetCheckerIpRanges operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetCheckerIpRanges service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(final GetCheckerIpRangesRequest getCheckerIpRangesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetCheckerIpRangesResult>() {
+            public GetCheckerIpRangesResult call() throws Exception {
+                return getCheckerIpRanges(getCheckerIpRangesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * To retrieve a list of the IP ranges used by Amazon Route 53 health
+     * checkers to check the health of your resources, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
+     * addresses to configure router and firewall rules to allow health
+     * checkers to check the health of your resources.
+     * </p>
+     *
+     * @param getCheckerIpRangesRequest Container for the necessary
+     *           parameters to execute the GetCheckerIpRanges operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetCheckerIpRanges service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(
+            final GetCheckerIpRangesRequest getCheckerIpRangesRequest,
+            final AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetCheckerIpRangesResult>() {
+            public GetCheckerIpRangesResult call() throws Exception {
+              GetCheckerIpRangesResult result;
+                try {
+                result = getCheckerIpRanges(getCheckerIpRangesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getCheckerIpRangesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * This action disassociates a VPC from an hosted zone.
      * </p>
      * <p>
@@ -1398,6 +2340,82 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     
     /**
      * <p>
+     * This action gets the list of ChangeBatches in a given time period for
+     * a given hosted zone and RRSet.
+     * </p>
+     *
+     * @param listChangeBatchesByRRSetRequest Container for the necessary
+     *           parameters to execute the ListChangeBatchesByRRSet operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListChangeBatchesByRRSet service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(final ListChangeBatchesByRRSetRequest listChangeBatchesByRRSetRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListChangeBatchesByRRSetResult>() {
+            public ListChangeBatchesByRRSetResult call() throws Exception {
+                return listChangeBatchesByRRSet(listChangeBatchesByRRSetRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * This action gets the list of ChangeBatches in a given time period for
+     * a given hosted zone and RRSet.
+     * </p>
+     *
+     * @param listChangeBatchesByRRSetRequest Container for the necessary
+     *           parameters to execute the ListChangeBatchesByRRSet operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListChangeBatchesByRRSet service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(
+            final ListChangeBatchesByRRSetRequest listChangeBatchesByRRSetRequest,
+            final AsyncHandler<ListChangeBatchesByRRSetRequest, ListChangeBatchesByRRSetResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListChangeBatchesByRRSetResult>() {
+            public ListChangeBatchesByRRSetResult call() throws Exception {
+              ListChangeBatchesByRRSetResult result;
+                try {
+                result = listChangeBatchesByRRSet(listChangeBatchesByRRSetRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listChangeBatchesByRRSetRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * If you want to learn why a health check is currently failing or why
      * it failed most recently (if at all), you can get the failure reason
      * for the most recent failure. Send a <code>GET</code> request to the
@@ -1475,6 +2493,102 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(getHealthCheckLastFailureReasonRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * To retrieve a list of your health checks, send a <code>GET</code>
+     * request to the <code>2013-04-01/healthcheck</code> resource. The
+     * response to this request includes a <code>HealthChecks</code> element
+     * with zero, one, or multiple <code>HealthCheck</code> child elements.
+     * By default, the list of health checks is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the health check that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     *
+     * @param listHealthChecksRequest Container for the necessary parameters
+     *           to execute the ListHealthChecks operation on AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListHealthChecks service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListHealthChecksResult> listHealthChecksAsync(final ListHealthChecksRequest listHealthChecksRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListHealthChecksResult>() {
+            public ListHealthChecksResult call() throws Exception {
+                return listHealthChecks(listHealthChecksRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * To retrieve a list of your health checks, send a <code>GET</code>
+     * request to the <code>2013-04-01/healthcheck</code> resource. The
+     * response to this request includes a <code>HealthChecks</code> element
+     * with zero, one, or multiple <code>HealthCheck</code> child elements.
+     * By default, the list of health checks is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the health check that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     *
+     * @param listHealthChecksRequest Container for the necessary parameters
+     *           to execute the ListHealthChecks operation on AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListHealthChecks service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListHealthChecksResult> listHealthChecksAsync(
+            final ListHealthChecksRequest listHealthChecksRequest,
+            final AsyncHandler<ListHealthChecksRequest, ListHealthChecksResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListHealthChecksResult>() {
+            public ListHealthChecksResult call() throws Exception {
+              ListHealthChecksResult result;
+                try {
+                result = listHealthChecks(listHealthChecksRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listHealthChecksRequest, result);
                  return result;
         }
     });
@@ -1676,102 +2790,6 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     
     /**
      * <p>
-     * To retrieve a list of your health checks, send a <code>GET</code>
-     * request to the <code>2013-04-01/healthcheck</code> resource. The
-     * response to this request includes a <code>HealthChecks</code> element
-     * with zero, one, or multiple <code>HealthCheck</code> child elements.
-     * By default, the list of health checks is displayed on a single page.
-     * You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-     * parameter to control the health check that the list begins with.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
-     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
-     * the first 100.
-     * </p>
-     *
-     * @param listHealthChecksRequest Container for the necessary parameters
-     *           to execute the ListHealthChecks operation on AmazonRoute53.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListHealthChecks service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListHealthChecksResult> listHealthChecksAsync(final ListHealthChecksRequest listHealthChecksRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListHealthChecksResult>() {
-            public ListHealthChecksResult call() throws Exception {
-                return listHealthChecks(listHealthChecksRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * To retrieve a list of your health checks, send a <code>GET</code>
-     * request to the <code>2013-04-01/healthcheck</code> resource. The
-     * response to this request includes a <code>HealthChecks</code> element
-     * with zero, one, or multiple <code>HealthCheck</code> child elements.
-     * By default, the list of health checks is displayed on a single page.
-     * You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-     * parameter to control the health check that the list begins with.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
-     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
-     * the first 100.
-     * </p>
-     *
-     * @param listHealthChecksRequest Container for the necessary parameters
-     *           to execute the ListHealthChecks operation on AmazonRoute53.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListHealthChecks service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListHealthChecksResult> listHealthChecksAsync(
-            final ListHealthChecksRequest listHealthChecksRequest,
-            final AsyncHandler<ListHealthChecksRequest, ListHealthChecksResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListHealthChecksResult>() {
-            public ListHealthChecksResult call() throws Exception {
-              ListHealthChecksResult result;
-                try {
-                result = listHealthChecks(listHealthChecksRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listHealthChecksRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * To retrieve a count of all your health checks, send a
      * <code>GET</code> request to the
      * <code>2013-04-01/healthcheckcount</code> resource.
@@ -1911,6 +2929,466 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(changeTagsForResourceRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates resource record sets in a specified hosted zone based on the
+     * settings in a specified traffic policy version. In addition,
+     * <code>CreateTrafficPolicyInstance</code> associates the resource
+     * record sets with a specified domain name (such as example.com) or
+     * subdomain name (such as www.example.com). Amazon Route 53 responds to
+     * DNS queries for the domain or subdomain name by using the resource
+     * record sets that <code>CreateTrafficPolicyInstance</code> created.
+     * </p>
+     * <p>
+     * To create a traffic policy instance, send a <code>POST</code> request
+     * to the <code>2013-04-01/trafficpolicyinstance</code> resource. The
+     * request body must include an XML document with a
+     * <code>CreateTrafficPolicyRequest</code> element. The response returns
+     * the <code>CreateTrafficPolicyInstanceResponse</code> element, which
+     * contains information about the traffic policy instance.
+     * </p>
+     *
+     * @param createTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the CreateTrafficPolicyInstance operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateTrafficPolicyInstance service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateTrafficPolicyInstanceResult> createTrafficPolicyInstanceAsync(final CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateTrafficPolicyInstanceResult>() {
+            public CreateTrafficPolicyInstanceResult call() throws Exception {
+                return createTrafficPolicyInstance(createTrafficPolicyInstanceRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates resource record sets in a specified hosted zone based on the
+     * settings in a specified traffic policy version. In addition,
+     * <code>CreateTrafficPolicyInstance</code> associates the resource
+     * record sets with a specified domain name (such as example.com) or
+     * subdomain name (such as www.example.com). Amazon Route 53 responds to
+     * DNS queries for the domain or subdomain name by using the resource
+     * record sets that <code>CreateTrafficPolicyInstance</code> created.
+     * </p>
+     * <p>
+     * To create a traffic policy instance, send a <code>POST</code> request
+     * to the <code>2013-04-01/trafficpolicyinstance</code> resource. The
+     * request body must include an XML document with a
+     * <code>CreateTrafficPolicyRequest</code> element. The response returns
+     * the <code>CreateTrafficPolicyInstanceResponse</code> element, which
+     * contains information about the traffic policy instance.
+     * </p>
+     *
+     * @param createTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the CreateTrafficPolicyInstance operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateTrafficPolicyInstance service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateTrafficPolicyInstanceResult> createTrafficPolicyInstanceAsync(
+            final CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest,
+            final AsyncHandler<CreateTrafficPolicyInstanceRequest, CreateTrafficPolicyInstanceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateTrafficPolicyInstanceResult>() {
+            public CreateTrafficPolicyInstanceResult call() throws Exception {
+              CreateTrafficPolicyInstanceResult result;
+                try {
+                result = createTrafficPolicyInstance(createTrafficPolicyInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createTrafficPolicyInstanceRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets information about the traffic policy instances that you created
+     * by using the current AWS account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit an UpdateTrafficPolicyInstance request,
+     * there's a brief delay while Amazon Route 53 creates the resource
+     * record sets that are specified in the traffic policy definition. For
+     * more information, see the State response element.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instances that are
+     * associated with the current AWS account, send a <code>GET</code>
+     * request to the <code>2013-04-01/trafficpolicyinstance</code> resource.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policy instances, you can use the
+     * <code>MaxItems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes five values that help you navigate from one
+     * group of <code>MaxItems</code> traffic policy instances to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policy instances associated
+     * with the current AWS account.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy instance that is associated with the
+     * current account.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * <li> <b>HostedZoneIdMarker</b> ,
+     * <b>TrafficPolicyInstanceNameMarker</b> , and
+     * <b>TrafficPolicyInstanceTypeMarker</b> </li>
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code> , these three values
+     * in the response represent the first traffic policy instance in the
+     * next group of <code>MaxItems</code> traffic policy instances. To list
+     * more traffic policy instances, make another call to
+     * <code>ListTrafficPolicyInstances</code> , and specify these values in
+     * the corresponding request parameters.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , all three
+     * elements are omitted from the response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyInstancesRequest Container for the necessary
+     *           parameters to execute the ListTrafficPolicyInstances operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTrafficPolicyInstances service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTrafficPolicyInstancesResult> listTrafficPolicyInstancesAsync(final ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTrafficPolicyInstancesResult>() {
+            public ListTrafficPolicyInstancesResult call() throws Exception {
+                return listTrafficPolicyInstances(listTrafficPolicyInstancesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about the traffic policy instances that you created
+     * by using the current AWS account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit an UpdateTrafficPolicyInstance request,
+     * there's a brief delay while Amazon Route 53 creates the resource
+     * record sets that are specified in the traffic policy definition. For
+     * more information, see the State response element.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instances that are
+     * associated with the current AWS account, send a <code>GET</code>
+     * request to the <code>2013-04-01/trafficpolicyinstance</code> resource.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policy instances, you can use the
+     * <code>MaxItems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes five values that help you navigate from one
+     * group of <code>MaxItems</code> traffic policy instances to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policy instances associated
+     * with the current AWS account.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy instance that is associated with the
+     * current account.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * <li> <b>HostedZoneIdMarker</b> ,
+     * <b>TrafficPolicyInstanceNameMarker</b> , and
+     * <b>TrafficPolicyInstanceTypeMarker</b> </li>
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code> , these three values
+     * in the response represent the first traffic policy instance in the
+     * next group of <code>MaxItems</code> traffic policy instances. To list
+     * more traffic policy instances, make another call to
+     * <code>ListTrafficPolicyInstances</code> , and specify these values in
+     * the corresponding request parameters.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , all three
+     * elements are omitted from the response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyInstancesRequest Container for the necessary
+     *           parameters to execute the ListTrafficPolicyInstances operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTrafficPolicyInstances service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTrafficPolicyInstancesResult> listTrafficPolicyInstancesAsync(
+            final ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest,
+            final AsyncHandler<ListTrafficPolicyInstancesRequest, ListTrafficPolicyInstancesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTrafficPolicyInstancesResult>() {
+            public ListTrafficPolicyInstancesResult call() throws Exception {
+              ListTrafficPolicyInstancesResult result;
+                try {
+                result = listTrafficPolicyInstances(listTrafficPolicyInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listTrafficPolicyInstancesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets information about the latest version for every traffic policy
+     * that is associated with the current AWS account. To get the
+     * information, send a <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policies, you can use the
+     * <code>maxitems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes three values that help you navigate from one
+     * group of <code>maxitems</code> traffic policies to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policies associated with
+     * the current AWS account.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy that is associated with the current
+     * account.
+     * </p>
+     * <li> <b>TrafficPolicyIdMarker</b> </li>
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code> ,
+     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic
+     * policy in the next group of <code>MaxItems</code> traffic policies. If
+     * you want to list more traffic policies, make another call to
+     * <code>ListTrafficPolicies</code> , and specify the value of the
+     * <code>TrafficPolicyIdMarker</code> element from the response in the
+     * <code>TrafficPolicyIdMarker</code> request parameter.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , the
+     * <code>TrafficPolicyIdMarker</code> element is omitted from the
+     * response.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPoliciesRequest Container for the necessary
+     *           parameters to execute the ListTrafficPolicies operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTrafficPolicies service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTrafficPoliciesResult> listTrafficPoliciesAsync(final ListTrafficPoliciesRequest listTrafficPoliciesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTrafficPoliciesResult>() {
+            public ListTrafficPoliciesResult call() throws Exception {
+                return listTrafficPolicies(listTrafficPoliciesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about the latest version for every traffic policy
+     * that is associated with the current AWS account. To get the
+     * information, send a <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policies, you can use the
+     * <code>maxitems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes three values that help you navigate from one
+     * group of <code>maxitems</code> traffic policies to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policies associated with
+     * the current AWS account.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy that is associated with the current
+     * account.
+     * </p>
+     * <li> <b>TrafficPolicyIdMarker</b> </li>
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code> ,
+     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic
+     * policy in the next group of <code>MaxItems</code> traffic policies. If
+     * you want to list more traffic policies, make another call to
+     * <code>ListTrafficPolicies</code> , and specify the value of the
+     * <code>TrafficPolicyIdMarker</code> element from the response in the
+     * <code>TrafficPolicyIdMarker</code> request parameter.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , the
+     * <code>TrafficPolicyIdMarker</code> element is omitted from the
+     * response.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPoliciesRequest Container for the necessary
+     *           parameters to execute the ListTrafficPolicies operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTrafficPolicies service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTrafficPoliciesResult> listTrafficPoliciesAsync(
+            final ListTrafficPoliciesRequest listTrafficPoliciesRequest,
+            final AsyncHandler<ListTrafficPoliciesRequest, ListTrafficPoliciesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTrafficPoliciesResult>() {
+            public ListTrafficPoliciesResult call() throws Exception {
+              ListTrafficPoliciesResult result;
+                try {
+                result = listTrafficPolicies(listTrafficPoliciesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listTrafficPoliciesRequest, result);
                  return result;
         }
     });
@@ -2170,84 +3648,6 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     
     /**
      * <p>
-     * To retrieve the reusable delegation set, send a <code>GET</code>
-     * request to the <code>2013-04-01/delegationset/delegation set ID
-     * </code> resource.
-     * </p>
-     *
-     * @param getReusableDelegationSetRequest Container for the necessary
-     *           parameters to execute the GetReusableDelegationSet operation on
-     *           AmazonRoute53.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetReusableDelegationSet service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetReusableDelegationSetResult> getReusableDelegationSetAsync(final GetReusableDelegationSetRequest getReusableDelegationSetRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetReusableDelegationSetResult>() {
-            public GetReusableDelegationSetResult call() throws Exception {
-                return getReusableDelegationSet(getReusableDelegationSetRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * To retrieve the reusable delegation set, send a <code>GET</code>
-     * request to the <code>2013-04-01/delegationset/delegation set ID
-     * </code> resource.
-     * </p>
-     *
-     * @param getReusableDelegationSetRequest Container for the necessary
-     *           parameters to execute the GetReusableDelegationSet operation on
-     *           AmazonRoute53.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetReusableDelegationSet service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetReusableDelegationSetResult> getReusableDelegationSetAsync(
-            final GetReusableDelegationSetRequest getReusableDelegationSetRequest,
-            final AsyncHandler<GetReusableDelegationSetRequest, GetReusableDelegationSetResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetReusableDelegationSetResult>() {
-            public GetReusableDelegationSetResult call() throws Exception {
-              GetReusableDelegationSetResult result;
-                try {
-                result = getReusableDelegationSet(getReusableDelegationSetRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getReusableDelegationSetRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * This action updates an existing health check.
      * </p>
      * <p>
@@ -2329,6 +3729,84 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(updateHealthCheckRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * To retrieve the reusable delegation set, send a <code>GET</code>
+     * request to the <code>2013-04-01/delegationset/delegation set ID
+     * </code> resource.
+     * </p>
+     *
+     * @param getReusableDelegationSetRequest Container for the necessary
+     *           parameters to execute the GetReusableDelegationSet operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetReusableDelegationSet service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetReusableDelegationSetResult> getReusableDelegationSetAsync(final GetReusableDelegationSetRequest getReusableDelegationSetRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetReusableDelegationSetResult>() {
+            public GetReusableDelegationSetResult call() throws Exception {
+                return getReusableDelegationSet(getReusableDelegationSetRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * To retrieve the reusable delegation set, send a <code>GET</code>
+     * request to the <code>2013-04-01/delegationset/delegation set ID
+     * </code> resource.
+     * </p>
+     *
+     * @param getReusableDelegationSetRequest Container for the necessary
+     *           parameters to execute the GetReusableDelegationSet operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetReusableDelegationSet service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetReusableDelegationSetResult> getReusableDelegationSetAsync(
+            final GetReusableDelegationSetRequest getReusableDelegationSetRequest,
+            final AsyncHandler<GetReusableDelegationSetRequest, GetReusableDelegationSetResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetReusableDelegationSetResult>() {
+            public GetReusableDelegationSetResult call() throws Exception {
+              GetReusableDelegationSetResult result;
+                try {
+                result = getReusableDelegationSet(getReusableDelegationSetRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getReusableDelegationSetRequest, result);
                  return result;
         }
     });
@@ -2438,6 +3916,248 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     
     /**
      * <p>
+     * Gets information about a specific traffic policy version. To get the
+     * information, send a <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource.
+     * </p>
+     *
+     * @param getTrafficPolicyRequest Container for the necessary parameters
+     *           to execute the GetTrafficPolicy operation on AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetTrafficPolicy service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetTrafficPolicyResult> getTrafficPolicyAsync(final GetTrafficPolicyRequest getTrafficPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetTrafficPolicyResult>() {
+            public GetTrafficPolicyResult call() throws Exception {
+                return getTrafficPolicy(getTrafficPolicyRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about a specific traffic policy version. To get the
+     * information, send a <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource.
+     * </p>
+     *
+     * @param getTrafficPolicyRequest Container for the necessary parameters
+     *           to execute the GetTrafficPolicy operation on AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetTrafficPolicy service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetTrafficPolicyResult> getTrafficPolicyAsync(
+            final GetTrafficPolicyRequest getTrafficPolicyRequest,
+            final AsyncHandler<GetTrafficPolicyRequest, GetTrafficPolicyResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetTrafficPolicyResult>() {
+            public GetTrafficPolicyResult call() throws Exception {
+              GetTrafficPolicyResult result;
+                try {
+                result = getTrafficPolicy(getTrafficPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getTrafficPolicyRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes a traffic policy. To delete a traffic policy, send a
+     * <code>DELETE</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource.
+     * </p>
+     *
+     * @param deleteTrafficPolicyRequest Container for the necessary
+     *           parameters to execute the DeleteTrafficPolicy operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteTrafficPolicy service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteTrafficPolicyResult> deleteTrafficPolicyAsync(final DeleteTrafficPolicyRequest deleteTrafficPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteTrafficPolicyResult>() {
+            public DeleteTrafficPolicyResult call() throws Exception {
+                return deleteTrafficPolicy(deleteTrafficPolicyRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a traffic policy. To delete a traffic policy, send a
+     * <code>DELETE</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource.
+     * </p>
+     *
+     * @param deleteTrafficPolicyRequest Container for the necessary
+     *           parameters to execute the DeleteTrafficPolicy operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteTrafficPolicy service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteTrafficPolicyResult> deleteTrafficPolicyAsync(
+            final DeleteTrafficPolicyRequest deleteTrafficPolicyRequest,
+            final AsyncHandler<DeleteTrafficPolicyRequest, DeleteTrafficPolicyResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteTrafficPolicyResult>() {
+            public DeleteTrafficPolicyResult call() throws Exception {
+              DeleteTrafficPolicyResult result;
+                try {
+                result = deleteTrafficPolicy(deleteTrafficPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteTrafficPolicyRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets the number of traffic policy instances that are associated with
+     * the current AWS account.
+     * </p>
+     * <p>
+     * To get the number of traffic policy instances, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicyinstancecount</code> resource.
+     * </p>
+     *
+     * @param getTrafficPolicyInstanceCountRequest Container for the
+     *           necessary parameters to execute the GetTrafficPolicyInstanceCount
+     *           operation on AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetTrafficPolicyInstanceCount service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetTrafficPolicyInstanceCountResult> getTrafficPolicyInstanceCountAsync(final GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetTrafficPolicyInstanceCountResult>() {
+            public GetTrafficPolicyInstanceCountResult call() throws Exception {
+                return getTrafficPolicyInstanceCount(getTrafficPolicyInstanceCountRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets the number of traffic policy instances that are associated with
+     * the current AWS account.
+     * </p>
+     * <p>
+     * To get the number of traffic policy instances, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicyinstancecount</code> resource.
+     * </p>
+     *
+     * @param getTrafficPolicyInstanceCountRequest Container for the
+     *           necessary parameters to execute the GetTrafficPolicyInstanceCount
+     *           operation on AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetTrafficPolicyInstanceCount service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetTrafficPolicyInstanceCountResult> getTrafficPolicyInstanceCountAsync(
+            final GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest,
+            final AsyncHandler<GetTrafficPolicyInstanceCountRequest, GetTrafficPolicyInstanceCountResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetTrafficPolicyInstanceCountResult>() {
+            public GetTrafficPolicyInstanceCountResult call() throws Exception {
+              GetTrafficPolicyInstanceCountResult result;
+                try {
+                result = getTrafficPolicyInstanceCount(getTrafficPolicyInstanceCountRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getTrafficPolicyInstanceCountRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * This action deletes a hosted zone. To delete a hosted zone, send a
      * <code>DELETE</code> request to the <code>2013-04-01/hostedzone/hosted
      * zone ID </code> resource.
@@ -2453,9 +4173,9 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * record sets. If your hosted zone contains other resource record sets,
      * you must delete them before you can delete your hosted zone. If you
      * try to delete a hosted zone that contains other resource record sets,
-     * Route 53 will deny your request with a HostedZoneNotEmpty error. For
-     * information about deleting records from your hosted zone, see
-     * ChangeResourceRecordSets.
+     * Amazon Route 53 will deny your request with a HostedZoneNotEmpty
+     * error. For information about deleting records from your hosted zone,
+     * see ChangeResourceRecordSets.
      * </p>
      *
      * @param deleteHostedZoneRequest Container for the necessary parameters
@@ -2499,9 +4219,9 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * record sets. If your hosted zone contains other resource record sets,
      * you must delete them before you can delete your hosted zone. If you
      * try to delete a hosted zone that contains other resource record sets,
-     * Route 53 will deny your request with a HostedZoneNotEmpty error. For
-     * information about deleting records from your hosted zone, see
-     * ChangeResourceRecordSets.
+     * Amazon Route 53 will deny your request with a HostedZoneNotEmpty
+     * error. For information about deleting records from your hosted zone,
+     * see ChangeResourceRecordSets.
      * </p>
      *
      * @param deleteHostedZoneRequest Container for the necessary parameters
@@ -2555,18 +4275,18 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * about the hosted zone.
      * </p>
      * <p>
-     * Route 53 automatically creates a default SOA record and four NS
-     * records for the zone. The NS records in the hosted zone are the name
-     * servers you give your registrar to delegate your domain to. For more
-     * information about SOA and NS records, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Route 53 Creates for a Hosted Zone </a>
+     * Amazon Route 53 automatically creates a default SOA record and four
+     * NS records for the zone. The NS records in the hosted zone are the
+     * name servers you give your registrar to delegate your domain to. For
+     * more information about SOA and NS records, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Amazon Route 53 Creates for a Hosted Zone </a>
      * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * When you create a zone, its initial status is <code>PENDING</code> .
      * This means that it is not yet available on all DNS servers. The status
      * of the zone changes to <code>INSYNC</code> when the NS and SOA records
-     * are available on all Route 53 DNS servers.
+     * are available on all Amazon Route 53 DNS servers.
      * </p>
      * <p>
      * When trying to create a hosted zone using a reusable delegation set,
@@ -2611,18 +4331,18 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * about the hosted zone.
      * </p>
      * <p>
-     * Route 53 automatically creates a default SOA record and four NS
-     * records for the zone. The NS records in the hosted zone are the name
-     * servers you give your registrar to delegate your domain to. For more
-     * information about SOA and NS records, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Route 53 Creates for a Hosted Zone </a>
+     * Amazon Route 53 automatically creates a default SOA record and four
+     * NS records for the zone. The NS records in the hosted zone are the
+     * name servers you give your registrar to delegate your domain to. For
+     * more information about SOA and NS records, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Amazon Route 53 Creates for a Hosted Zone </a>
      * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * When you create a zone, its initial status is <code>PENDING</code> .
      * This means that it is not yet available on all DNS servers. The status
      * of the zone changes to <code>INSYNC</code> when the NS and SOA records
-     * are available on all Route 53 DNS servers.
+     * are available on all Amazon Route 53 DNS servers.
      * </p>
      * <p>
      * When trying to create a hosted zone using a reusable delegation set,
@@ -2940,6 +4660,84 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     
     /**
      * <p>
+     * This action gets the list of ChangeBatches in a given time period for
+     * a given hosted zone.
+     * </p>
+     *
+     * @param listChangeBatchesByHostedZoneRequest Container for the
+     *           necessary parameters to execute the ListChangeBatchesByHostedZone
+     *           operation on AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListChangeBatchesByHostedZone service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(final ListChangeBatchesByHostedZoneRequest listChangeBatchesByHostedZoneRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListChangeBatchesByHostedZoneResult>() {
+            public ListChangeBatchesByHostedZoneResult call() throws Exception {
+                return listChangeBatchesByHostedZone(listChangeBatchesByHostedZoneRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * This action gets the list of ChangeBatches in a given time period for
+     * a given hosted zone.
+     * </p>
+     *
+     * @param listChangeBatchesByHostedZoneRequest Container for the
+     *           necessary parameters to execute the ListChangeBatchesByHostedZone
+     *           operation on AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListChangeBatchesByHostedZone service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(
+            final ListChangeBatchesByHostedZoneRequest listChangeBatchesByHostedZoneRequest,
+            final AsyncHandler<ListChangeBatchesByHostedZoneRequest, ListChangeBatchesByHostedZoneResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListChangeBatchesByHostedZoneResult>() {
+            public ListChangeBatchesByHostedZoneResult call() throws Exception {
+              ListChangeBatchesByHostedZoneResult result;
+                try {
+                result = listChangeBatchesByHostedZone(listChangeBatchesByHostedZoneRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listChangeBatchesByHostedZoneRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Use this action to create or change your authoritative DNS
      * information. To use this action, send a <code>POST</code> request to
      * the <code>2013-04-01/hostedzone/hosted Zone ID/rrset</code> resource.
@@ -2950,38 +4748,37 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * Changes are a list of change items and are considered transactional.
      * For more information on transactional changes, also known as change
      * batches, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API"> Creating, Changing, and Deleting Resource Record Sets Using the Route 53 API </a>
-     * in the <i>Amazon Route 53 Developer Guide</i> .
+     * <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/"> POST ChangeResourceRecordSets </a>
+     * in the <i>Amazon Route 53 API Reference</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b>Due to the nature of transactional changes, you
      * cannot delete the same resource record set more than once in a single
      * change batch. If you attempt to delete the same change batch more than
-     * once, Route 53 returns an InvalidChangeBatch error.
+     * once, Amazon Route 53 returns an InvalidChangeBatch error.
      * </p>
      * <p>
      * In response to a <code>ChangeResourceRecordSets</code> request, your
-     * DNS data is changed on all Route 53 DNS servers. Initially, the status
-     * of a change is <code>PENDING</code> . This means the change has not
-     * yet propagated to all the authoritative Route 53 DNS servers. When the
-     * change is propagated to all hosts, the change returns a status of
-     * <code>INSYNC</code> .
+     * DNS data is changed on all Amazon Route 53 DNS servers. Initially, the
+     * status of a change is <code>PENDING</code> . This means the change has
+     * not yet propagated to all the authoritative Amazon Route 53 DNS
+     * servers. When the change is propagated to all hosts, the change
+     * returns a status of <code>INSYNC</code> .
      * </p>
      * <p>
      * Note the following limitations on a
      * <code>ChangeResourceRecordSets</code> request:
      * </p>
-     * <p>
-     * - A request cannot contain more than 100 Change elements.
-     * </p>
-     * <p>
-     * - A request cannot contain more than 1000 ResourceRecord elements.
-     * </p>
-     * <p>
-     * The sum of the number of characters (including spaces) in all
+     * 
+     * <ul>
+     * <li>A request cannot contain more than 100 Change elements.</li>
+     * <li> A request cannot contain more than 1000 ResourceRecord
+     * elements.</li>
+     * <li>The sum of the number of characters (including spaces) in all
      * <code>Value</code> elements in a request cannot exceed 32,000
-     * characters.
-     * </p>
+     * characters.</li>
+     * 
+     * </ul>
      *
      * @param changeResourceRecordSetsRequest Container for the necessary
      *           parameters to execute the ChangeResourceRecordSets operation on
@@ -3020,38 +4817,37 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * Changes are a list of change items and are considered transactional.
      * For more information on transactional changes, also known as change
      * batches, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API"> Creating, Changing, and Deleting Resource Record Sets Using the Route 53 API </a>
-     * in the <i>Amazon Route 53 Developer Guide</i> .
+     * <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/"> POST ChangeResourceRecordSets </a>
+     * in the <i>Amazon Route 53 API Reference</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b>Due to the nature of transactional changes, you
      * cannot delete the same resource record set more than once in a single
      * change batch. If you attempt to delete the same change batch more than
-     * once, Route 53 returns an InvalidChangeBatch error.
+     * once, Amazon Route 53 returns an InvalidChangeBatch error.
      * </p>
      * <p>
      * In response to a <code>ChangeResourceRecordSets</code> request, your
-     * DNS data is changed on all Route 53 DNS servers. Initially, the status
-     * of a change is <code>PENDING</code> . This means the change has not
-     * yet propagated to all the authoritative Route 53 DNS servers. When the
-     * change is propagated to all hosts, the change returns a status of
-     * <code>INSYNC</code> .
+     * DNS data is changed on all Amazon Route 53 DNS servers. Initially, the
+     * status of a change is <code>PENDING</code> . This means the change has
+     * not yet propagated to all the authoritative Amazon Route 53 DNS
+     * servers. When the change is propagated to all hosts, the change
+     * returns a status of <code>INSYNC</code> .
      * </p>
      * <p>
      * Note the following limitations on a
      * <code>ChangeResourceRecordSets</code> request:
      * </p>
-     * <p>
-     * - A request cannot contain more than 100 Change elements.
-     * </p>
-     * <p>
-     * - A request cannot contain more than 1000 ResourceRecord elements.
-     * </p>
-     * <p>
-     * The sum of the number of characters (including spaces) in all
+     * 
+     * <ul>
+     * <li>A request cannot contain more than 100 Change elements.</li>
+     * <li> A request cannot contain more than 1000 ResourceRecord
+     * elements.</li>
+     * <li>The sum of the number of characters (including spaces) in all
      * <code>Value</code> elements in a request cannot exceed 32,000
-     * characters.
-     * </p>
+     * characters.</li>
+     * 
+     * </ul>
      *
      * @param changeResourceRecordSetsRequest Container for the necessary
      *           parameters to execute the ChangeResourceRecordSets operation on
@@ -3087,6 +4883,310 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(changeResourceRecordSetsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a new version of an existing traffic policy. When you create
+     * a new version of a traffic policy, you specify the ID of the traffic
+     * policy that you want to update and a JSON-formatted document that
+     * describes the new version.
+     * </p>
+     * <p>
+     * You use traffic policies to create multiple DNS resource record sets
+     * for one domain name (such as example.com) or one subdomain name (such
+     * as www.example.com).
+     * </p>
+     * <p>
+     * To create a new version, send a <code>POST</code> request to the
+     * <code>2013-04-01/trafficpolicy/</code> resource. The request body
+     * includes an XML document with a
+     * <code>CreateTrafficPolicyVersionRequest</code> element. The response
+     * returns the <code>CreateTrafficPolicyVersionResponse</code> element,
+     * which contains information about the new version of the traffic
+     * policy.
+     * </p>
+     *
+     * @param createTrafficPolicyVersionRequest Container for the necessary
+     *           parameters to execute the CreateTrafficPolicyVersion operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateTrafficPolicyVersion service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateTrafficPolicyVersionResult> createTrafficPolicyVersionAsync(final CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateTrafficPolicyVersionResult>() {
+            public CreateTrafficPolicyVersionResult call() throws Exception {
+                return createTrafficPolicyVersion(createTrafficPolicyVersionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a new version of an existing traffic policy. When you create
+     * a new version of a traffic policy, you specify the ID of the traffic
+     * policy that you want to update and a JSON-formatted document that
+     * describes the new version.
+     * </p>
+     * <p>
+     * You use traffic policies to create multiple DNS resource record sets
+     * for one domain name (such as example.com) or one subdomain name (such
+     * as www.example.com).
+     * </p>
+     * <p>
+     * To create a new version, send a <code>POST</code> request to the
+     * <code>2013-04-01/trafficpolicy/</code> resource. The request body
+     * includes an XML document with a
+     * <code>CreateTrafficPolicyVersionRequest</code> element. The response
+     * returns the <code>CreateTrafficPolicyVersionResponse</code> element,
+     * which contains information about the new version of the traffic
+     * policy.
+     * </p>
+     *
+     * @param createTrafficPolicyVersionRequest Container for the necessary
+     *           parameters to execute the CreateTrafficPolicyVersion operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateTrafficPolicyVersion service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateTrafficPolicyVersionResult> createTrafficPolicyVersionAsync(
+            final CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest,
+            final AsyncHandler<CreateTrafficPolicyVersionRequest, CreateTrafficPolicyVersionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateTrafficPolicyVersionResult>() {
+            public CreateTrafficPolicyVersionResult call() throws Exception {
+              CreateTrafficPolicyVersionResult result;
+                try {
+                result = createTrafficPolicyVersion(createTrafficPolicyVersionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createTrafficPolicyVersionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets information about the traffic policy instances that you created
+     * by using a specify traffic policy version.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit a CreateTrafficPolicyInstance or an
+     * UpdateTrafficPolicyInstance request, there's a brief delay while
+     * Amazon Route 53 creates the resource record sets that are specified in
+     * the traffic policy definition. For more information, see the State
+     * response element.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instances that you
+     * created by using a specify traffic policy version, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicyinstance</code> resource and include the
+     * ID and version of the traffic policy.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policy instances, you can use the
+     * <code>MaxItems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes five values that help you navigate from one
+     * group of <code>MaxItems</code> traffic policy instances to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policy instances associated
+     * with the specified traffic policy.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy instance that is associated with the
+     * specified traffic policy.
+     * </p>
+     * </li>
+     * <li> <b>MaxItems</b> <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * </li>
+     * <li> <b>HostedZoneIdMarker</b> ,
+     * <b>TrafficPolicyInstanceNameMarker</b> , and
+     * <b>TrafficPolicyInstanceTypeMarker</b> <p>
+     * If <code>IsTruncated</code> is <code>true</code> , these values in
+     * the response represent the first traffic policy instance in the next
+     * group of <code>MaxItems</code> traffic policy instances. To list more
+     * traffic policy instances, make another call to
+     * <code>ListTrafficPolicyInstancesByPolicy</code> , and specify these
+     * values in the corresponding request parameters.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , all three
+     * elements are omitted from the response.
+     * </p>
+     * </li>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyInstancesByPolicyRequest Container for the
+     *           necessary parameters to execute the ListTrafficPolicyInstancesByPolicy
+     *           operation on AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTrafficPolicyInstancesByPolicy service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTrafficPolicyInstancesByPolicyResult> listTrafficPolicyInstancesByPolicyAsync(final ListTrafficPolicyInstancesByPolicyRequest listTrafficPolicyInstancesByPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTrafficPolicyInstancesByPolicyResult>() {
+            public ListTrafficPolicyInstancesByPolicyResult call() throws Exception {
+                return listTrafficPolicyInstancesByPolicy(listTrafficPolicyInstancesByPolicyRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about the traffic policy instances that you created
+     * by using a specify traffic policy version.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit a CreateTrafficPolicyInstance or an
+     * UpdateTrafficPolicyInstance request, there's a brief delay while
+     * Amazon Route 53 creates the resource record sets that are specified in
+     * the traffic policy definition. For more information, see the State
+     * response element.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instances that you
+     * created by using a specify traffic policy version, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicyinstance</code> resource and include the
+     * ID and version of the traffic policy.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policy instances, you can use the
+     * <code>MaxItems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes five values that help you navigate from one
+     * group of <code>MaxItems</code> traffic policy instances to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policy instances associated
+     * with the specified traffic policy.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy instance that is associated with the
+     * specified traffic policy.
+     * </p>
+     * </li>
+     * <li> <b>MaxItems</b> <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * </li>
+     * <li> <b>HostedZoneIdMarker</b> ,
+     * <b>TrafficPolicyInstanceNameMarker</b> , and
+     * <b>TrafficPolicyInstanceTypeMarker</b> <p>
+     * If <code>IsTruncated</code> is <code>true</code> , these values in
+     * the response represent the first traffic policy instance in the next
+     * group of <code>MaxItems</code> traffic policy instances. To list more
+     * traffic policy instances, make another call to
+     * <code>ListTrafficPolicyInstancesByPolicy</code> , and specify these
+     * values in the corresponding request parameters.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , all three
+     * elements are omitted from the response.
+     * </p>
+     * </li>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyInstancesByPolicyRequest Container for the
+     *           necessary parameters to execute the ListTrafficPolicyInstancesByPolicy
+     *           operation on AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTrafficPolicyInstancesByPolicy service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTrafficPolicyInstancesByPolicyResult> listTrafficPolicyInstancesByPolicyAsync(
+            final ListTrafficPolicyInstancesByPolicyRequest listTrafficPolicyInstancesByPolicyRequest,
+            final AsyncHandler<ListTrafficPolicyInstancesByPolicyRequest, ListTrafficPolicyInstancesByPolicyResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTrafficPolicyInstancesByPolicyResult>() {
+            public ListTrafficPolicyInstancesByPolicyResult call() throws Exception {
+              ListTrafficPolicyInstancesByPolicyResult result;
+                try {
+                result = listTrafficPolicyInstancesByPolicy(listTrafficPolicyInstancesByPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listTrafficPolicyInstancesByPolicyRequest, result);
                  return result;
         }
     });

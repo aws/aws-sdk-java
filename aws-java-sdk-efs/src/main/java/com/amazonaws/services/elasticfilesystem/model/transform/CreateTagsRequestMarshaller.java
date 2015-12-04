@@ -61,6 +61,7 @@ public class CreateTagsRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/2015-02-01/create-tags/{FileSystemId}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{FileSystemId}",
                 (createTagsRequest.getFileSystemId() == null) ? ""

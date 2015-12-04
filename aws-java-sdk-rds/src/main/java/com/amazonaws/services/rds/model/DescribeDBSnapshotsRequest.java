@@ -68,7 +68,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      * <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * do not apply for <code>SnapshotType</code> values of
      * <code>manual</code> or <code>automated</code>. The
-     * <code>IncludePublic</code> paramter does not apply when
+     * <code>IncludePublic</code> parameter does not apply when
      * <code>SnapshotType</code> is set to <code>shared</code>. the
      * <code>IncludeShared</code> parameter does not apply when
      * <code>SnapshotType</code> is set to <code>public</code>.
@@ -281,7 +281,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      * <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * do not apply for <code>SnapshotType</code> values of
      * <code>manual</code> or <code>automated</code>. The
-     * <code>IncludePublic</code> paramter does not apply when
+     * <code>IncludePublic</code> parameter does not apply when
      * <code>SnapshotType</code> is set to <code>shared</code>. the
      * <code>IncludeShared</code> parameter does not apply when
      * <code>SnapshotType</code> is set to <code>public</code>.
@@ -302,7 +302,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      *         <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      *         do not apply for <code>SnapshotType</code> values of
      *         <code>manual</code> or <code>automated</code>. The
-     *         <code>IncludePublic</code> paramter does not apply when
+     *         <code>IncludePublic</code> parameter does not apply when
      *         <code>SnapshotType</code> is set to <code>shared</code>. the
      *         <code>IncludeShared</code> parameter does not apply when
      *         <code>SnapshotType</code> is set to <code>public</code>.
@@ -328,7 +328,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      * <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * do not apply for <code>SnapshotType</code> values of
      * <code>manual</code> or <code>automated</code>. The
-     * <code>IncludePublic</code> paramter does not apply when
+     * <code>IncludePublic</code> parameter does not apply when
      * <code>SnapshotType</code> is set to <code>shared</code>. the
      * <code>IncludeShared</code> parameter does not apply when
      * <code>SnapshotType</code> is set to <code>public</code>.
@@ -349,7 +349,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      *         <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      *         do not apply for <code>SnapshotType</code> values of
      *         <code>manual</code> or <code>automated</code>. The
-     *         <code>IncludePublic</code> paramter does not apply when
+     *         <code>IncludePublic</code> parameter does not apply when
      *         <code>SnapshotType</code> is set to <code>shared</code>. the
      *         <code>IncludeShared</code> parameter does not apply when
      *         <code>SnapshotType</code> is set to <code>public</code>.
@@ -375,7 +375,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      * <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * do not apply for <code>SnapshotType</code> values of
      * <code>manual</code> or <code>automated</code>. The
-     * <code>IncludePublic</code> paramter does not apply when
+     * <code>IncludePublic</code> parameter does not apply when
      * <code>SnapshotType</code> is set to <code>shared</code>. the
      * <code>IncludeShared</code> parameter does not apply when
      * <code>SnapshotType</code> is set to <code>public</code>.
@@ -398,7 +398,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      *         <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      *         do not apply for <code>SnapshotType</code> values of
      *         <code>manual</code> or <code>automated</code>. The
-     *         <code>IncludePublic</code> paramter does not apply when
+     *         <code>IncludePublic</code> parameter does not apply when
      *         <code>SnapshotType</code> is set to <code>shared</code>. the
      *         <code>IncludeShared</code> parameter does not apply when
      *         <code>SnapshotType</code> is set to <code>public</code>.

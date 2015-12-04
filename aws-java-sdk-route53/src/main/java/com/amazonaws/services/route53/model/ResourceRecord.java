@@ -25,8 +25,15 @@ import java.io.Serializable;
 public class ResourceRecord implements Serializable, Cloneable {
 
     /**
-     * The value of the <code>Value</code> element for the current resource
-     * record set.
+     * The current or new DNS record value, not to exceed 4,000 characters.
+     * In the case of a <code>DELETE</code> action, if the current value does
+     * not match the actual value, an error is returned. For descriptions
+     * about how to format <code>Value</code> for different record types, see
+     * <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>. <p>You can specify more than one value for all record types
+     * except <code>CNAME</code> and <code>SOA</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 4000<br/>
@@ -44,52 +51,101 @@ public class ResourceRecord implements Serializable, Cloneable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param value The value of the <code>Value</code> element for the
-     * current resource record set.
+     * @param value The current or new DNS record value, not to exceed 4,000
+     * characters. In the case of a <code>DELETE</code> action, if the
+     * current value does not match the actual value, an error is returned.
+     * For descriptions about how to format <code>Value</code> for different
+     * record types, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>. <p>You can specify more than one value for all record types
+     * except <code>CNAME</code> and <code>SOA</code>.
      */
     public ResourceRecord(String value) {
         setValue(value);
     }
 
     /**
-     * The value of the <code>Value</code> element for the current resource
-     * record set.
+     * The current or new DNS record value, not to exceed 4,000 characters.
+     * In the case of a <code>DELETE</code> action, if the current value does
+     * not match the actual value, an error is returned. For descriptions
+     * about how to format <code>Value</code> for different record types, see
+     * <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>. <p>You can specify more than one value for all record types
+     * except <code>CNAME</code> and <code>SOA</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 4000<br/>
      *
-     * @return The value of the <code>Value</code> element for the current resource
-     *         record set.
+     * @return The current or new DNS record value, not to exceed 4,000 characters.
+     *         In the case of a <code>DELETE</code> action, if the current value does
+     *         not match the actual value, an error is returned. For descriptions
+     *         about how to format <code>Value</code> for different record types, see
+     *         <a
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+     *         DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>. <p>You can specify more than one value for all record types
+     *         except <code>CNAME</code> and <code>SOA</code>.
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * The value of the <code>Value</code> element for the current resource
-     * record set.
+     * The current or new DNS record value, not to exceed 4,000 characters.
+     * In the case of a <code>DELETE</code> action, if the current value does
+     * not match the actual value, an error is returned. For descriptions
+     * about how to format <code>Value</code> for different record types, see
+     * <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>. <p>You can specify more than one value for all record types
+     * except <code>CNAME</code> and <code>SOA</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 4000<br/>
      *
-     * @param value The value of the <code>Value</code> element for the current resource
-     *         record set.
+     * @param value The current or new DNS record value, not to exceed 4,000 characters.
+     *         In the case of a <code>DELETE</code> action, if the current value does
+     *         not match the actual value, an error is returned. For descriptions
+     *         about how to format <code>Value</code> for different record types, see
+     *         <a
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+     *         DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>. <p>You can specify more than one value for all record types
+     *         except <code>CNAME</code> and <code>SOA</code>.
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * The value of the <code>Value</code> element for the current resource
-     * record set.
+     * The current or new DNS record value, not to exceed 4,000 characters.
+     * In the case of a <code>DELETE</code> action, if the current value does
+     * not match the actual value, an error is returned. For descriptions
+     * about how to format <code>Value</code> for different record types, see
+     * <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>. <p>You can specify more than one value for all record types
+     * except <code>CNAME</code> and <code>SOA</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 4000<br/>
      *
-     * @param value The value of the <code>Value</code> element for the current resource
-     *         record set.
+     * @param value The current or new DNS record value, not to exceed 4,000 characters.
+     *         In the case of a <code>DELETE</code> action, if the current value does
+     *         not match the actual value, an error is returned. For descriptions
+     *         about how to format <code>Value</code> for different record types, see
+     *         <a
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+     *         DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>. <p>You can specify more than one value for all record types
+     *         except <code>CNAME</code> and <code>SOA</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

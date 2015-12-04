@@ -28,8 +28,8 @@ public class UpdateRadiusRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to update the RADIUS server information
-     * for.
+     * The identifier of the directory for which to update the RADIUS server
+     * information.
      * </p>
      */
     private String directoryId;
@@ -43,13 +43,13 @@ public class UpdateRadiusRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to update the RADIUS server information
-     * for.
+     * The identifier of the directory for which to update the RADIUS server
+     * information.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to update the RADIUS server
-     *        information for.
+     *        The identifier of the directory for which to update the RADIUS
+     *        server information.
      */
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
@@ -57,12 +57,12 @@ public class UpdateRadiusRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to update the RADIUS server information
-     * for.
+     * The identifier of the directory for which to update the RADIUS server
+     * information.
      * </p>
      * 
-     * @return The identifier of the directory to update the RADIUS server
-     *         information for.
+     * @return The identifier of the directory for which to update the RADIUS
+     *         server information.
      */
     public String getDirectoryId() {
         return this.directoryId;
@@ -70,13 +70,13 @@ public class UpdateRadiusRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to update the RADIUS server information
-     * for.
+     * The identifier of the directory for which to update the RADIUS server
+     * information.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to update the RADIUS server
-     *        information for.
+     *        The identifier of the directory for which to update the RADIUS
+     *        server information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

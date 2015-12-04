@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#listHostedZonesByName(ListHostedZonesByNameRequest) ListHostedZonesByName operation}.
  * <p>
- * To retrieve a list of your hosted zones in lexicographic order, send
- * a <code>GET</code> request to the
+ * To retrieve a list of your hosted zones in lexicographic order, send a
+ * <code>GET</code> request to the
  * <code>2013-04-01/hostedzonesbyname</code> resource. The response to
  * this request includes a <code>HostedZones</code> element with zero or
  * more <code>HostedZone</code> child elements lexicographically ordered

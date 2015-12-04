@@ -19,8 +19,8 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The hosted zone you are trying to associate VPC with doesn't have any
- * VPC association. Route 53 currently doesn't support associate a VPC
- * with a public hosted zone.
+ * VPC association. Amazon Route 53 currently doesn't support associate a
+ * VPC with a public hosted zone.
  * </p>
  */        
 public class PublicZoneVPCAssociationException extends AmazonServiceException {

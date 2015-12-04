@@ -61,6 +61,7 @@ public class GetDeploymentsRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/restapis/{restapi_id}/deployments";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (getDeploymentsRequest.getRestApiId() == null) ? ""

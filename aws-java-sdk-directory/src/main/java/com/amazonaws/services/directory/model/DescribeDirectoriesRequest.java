@@ -28,9 +28,9 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of identifiers of the directories to obtain the information for.
-     * If this member is null, all directories that belong to the current
-     * account are returned.
+     * A list of identifiers of the directories for which to obtain the
+     * information. If this member is null, all directories that belong to the
+     * current account are returned.
      * </p>
      * <p>
      * An empty list results in an <code>InvalidParameterException</code> being
@@ -55,18 +55,18 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of identifiers of the directories to obtain the information for.
-     * If this member is null, all directories that belong to the current
-     * account are returned.
+     * A list of identifiers of the directories for which to obtain the
+     * information. If this member is null, all directories that belong to the
+     * current account are returned.
      * </p>
      * <p>
      * An empty list results in an <code>InvalidParameterException</code> being
      * thrown.
      * </p>
      * 
-     * @return A list of identifiers of the directories to obtain the
-     *         information for. If this member is null, all directories that
-     *         belong to the current account are returned.</p>
+     * @return A list of identifiers of the directories for which to obtain the
+     *         information. If this member is null, all directories that belong
+     *         to the current account are returned.</p>
      *         <p>
      *         An empty list results in an
      *         <code>InvalidParameterException</code> being thrown.
@@ -80,9 +80,9 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of identifiers of the directories to obtain the information for.
-     * If this member is null, all directories that belong to the current
-     * account are returned.
+     * A list of identifiers of the directories for which to obtain the
+     * information. If this member is null, all directories that belong to the
+     * current account are returned.
      * </p>
      * <p>
      * An empty list results in an <code>InvalidParameterException</code> being
@@ -90,9 +90,9 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param directoryIds
-     *        A list of identifiers of the directories to obtain the information
-     *        for. If this member is null, all directories that belong to the
-     *        current account are returned.</p>
+     *        A list of identifiers of the directories for which to obtain the
+     *        information. If this member is null, all directories that belong
+     *        to the current account are returned.</p>
      *        <p>
      *        An empty list results in an <code>InvalidParameterException</code>
      *        being thrown.
@@ -109,9 +109,9 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of identifiers of the directories to obtain the information for.
-     * If this member is null, all directories that belong to the current
-     * account are returned.
+     * A list of identifiers of the directories for which to obtain the
+     * information. If this member is null, all directories that belong to the
+     * current account are returned.
      * </p>
      * <p>
      * An empty list results in an <code>InvalidParameterException</code> being
@@ -125,9 +125,9 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param directoryIds
-     *        A list of identifiers of the directories to obtain the information
-     *        for. If this member is null, all directories that belong to the
-     *        current account are returned.</p>
+     *        A list of identifiers of the directories for which to obtain the
+     *        information. If this member is null, all directories that belong
+     *        to the current account are returned.</p>
      *        <p>
      *        An empty list results in an <code>InvalidParameterException</code>
      *        being thrown.
@@ -147,9 +147,9 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of identifiers of the directories to obtain the information for.
-     * If this member is null, all directories that belong to the current
-     * account are returned.
+     * A list of identifiers of the directories for which to obtain the
+     * information. If this member is null, all directories that belong to the
+     * current account are returned.
      * </p>
      * <p>
      * An empty list results in an <code>InvalidParameterException</code> being
@@ -157,9 +157,9 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param directoryIds
-     *        A list of identifiers of the directories to obtain the information
-     *        for. If this member is null, all directories that belong to the
-     *        current account are returned.</p>
+     *        A list of identifiers of the directories for which to obtain the
+     *        information. If this member is null, all directories that belong
+     *        to the current account are returned.</p>
      *        <p>
      *        An empty list results in an <code>InvalidParameterException</code>
      *        being thrown.

@@ -61,6 +61,7 @@ public class UpdateThingRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/things/{thingName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
                 (updateThingRequest.getThingName() == null) ? "" : StringUtils

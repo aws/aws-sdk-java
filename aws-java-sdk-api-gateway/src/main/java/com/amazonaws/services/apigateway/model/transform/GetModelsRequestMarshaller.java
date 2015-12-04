@@ -60,6 +60,7 @@ public class GetModelsRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/restapis/{restapi_id}/models";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (getModelsRequest.getRestApiId() == null) ? "" : StringUtils

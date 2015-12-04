@@ -34,9 +34,9 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Route 53
-     * assumes that the domain name is fully qualified. This means that Route
-     * 53 treats www.example.com (without a trailing dot) and
+     * example, www.example.com. The trailing dot is optional; Amazon Route
+     * 53 assumes that the domain name is fully qualified. This means that
+     * Amazon Route 53 treats www.example.com (without a trailing dot) and
      * www.example.com. (with a trailing dot) as identical. <p>This is the
      * name you have registered with your DNS registrar. You should ask your
      * registrar to change the authoritative name servers for your domain to
@@ -80,12 +80,12 @@ public class HostedZone implements Serializable, Cloneable {
      * @param id The ID of the specified hosted zone.
      * @param name The name of the domain. This must be a fully-specified
      * domain, for example, www.example.com. The trailing dot is optional;
-     * Route 53 assumes that the domain name is fully qualified. This means
-     * that Route 53 treats www.example.com (without a trailing dot) and
-     * www.example.com. (with a trailing dot) as identical. <p>This is the
-     * name you have registered with your DNS registrar. You should ask your
-     * registrar to change the authoritative name servers for your domain to
-     * the set of <code>NameServers</code> elements returned in
+     * Amazon Route 53 assumes that the domain name is fully qualified. This
+     * means that Amazon Route 53 treats www.example.com (without a trailing
+     * dot) and www.example.com. (with a trailing dot) as identical. <p>This
+     * is the name you have registered with your DNS registrar. You should
+     * ask your registrar to change the authoritative name servers for your
+     * domain to the set of <code>NameServers</code> elements returned in
      * <code>DelegationSet</code>.
      * @param callerReference A unique string that identifies the request to
      * create the hosted zone.
@@ -140,9 +140,9 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Route 53
-     * assumes that the domain name is fully qualified. This means that Route
-     * 53 treats www.example.com (without a trailing dot) and
+     * example, www.example.com. The trailing dot is optional; Amazon Route
+     * 53 assumes that the domain name is fully qualified. This means that
+     * Amazon Route 53 treats www.example.com (without a trailing dot) and
      * www.example.com. (with a trailing dot) as identical. <p>This is the
      * name you have registered with your DNS registrar. You should ask your
      * registrar to change the authoritative name servers for your domain to
@@ -153,9 +153,9 @@ public class HostedZone implements Serializable, Cloneable {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @return The name of the domain. This must be a fully-specified domain, for
-     *         example, www.example.com. The trailing dot is optional; Route 53
-     *         assumes that the domain name is fully qualified. This means that Route
-     *         53 treats www.example.com (without a trailing dot) and
+     *         example, www.example.com. The trailing dot is optional; Amazon Route
+     *         53 assumes that the domain name is fully qualified. This means that
+     *         Amazon Route 53 treats www.example.com (without a trailing dot) and
      *         www.example.com. (with a trailing dot) as identical. <p>This is the
      *         name you have registered with your DNS registrar. You should ask your
      *         registrar to change the authoritative name servers for your domain to
@@ -168,9 +168,9 @@ public class HostedZone implements Serializable, Cloneable {
     
     /**
      * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Route 53
-     * assumes that the domain name is fully qualified. This means that Route
-     * 53 treats www.example.com (without a trailing dot) and
+     * example, www.example.com. The trailing dot is optional; Amazon Route
+     * 53 assumes that the domain name is fully qualified. This means that
+     * Amazon Route 53 treats www.example.com (without a trailing dot) and
      * www.example.com. (with a trailing dot) as identical. <p>This is the
      * name you have registered with your DNS registrar. You should ask your
      * registrar to change the authoritative name servers for your domain to
@@ -181,9 +181,9 @@ public class HostedZone implements Serializable, Cloneable {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param name The name of the domain. This must be a fully-specified domain, for
-     *         example, www.example.com. The trailing dot is optional; Route 53
-     *         assumes that the domain name is fully qualified. This means that Route
-     *         53 treats www.example.com (without a trailing dot) and
+     *         example, www.example.com. The trailing dot is optional; Amazon Route
+     *         53 assumes that the domain name is fully qualified. This means that
+     *         Amazon Route 53 treats www.example.com (without a trailing dot) and
      *         www.example.com. (with a trailing dot) as identical. <p>This is the
      *         name you have registered with your DNS registrar. You should ask your
      *         registrar to change the authoritative name servers for your domain to
@@ -196,9 +196,9 @@ public class HostedZone implements Serializable, Cloneable {
     
     /**
      * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Route 53
-     * assumes that the domain name is fully qualified. This means that Route
-     * 53 treats www.example.com (without a trailing dot) and
+     * example, www.example.com. The trailing dot is optional; Amazon Route
+     * 53 assumes that the domain name is fully qualified. This means that
+     * Amazon Route 53 treats www.example.com (without a trailing dot) and
      * www.example.com. (with a trailing dot) as identical. <p>This is the
      * name you have registered with your DNS registrar. You should ask your
      * registrar to change the authoritative name servers for your domain to
@@ -211,9 +211,9 @@ public class HostedZone implements Serializable, Cloneable {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param name The name of the domain. This must be a fully-specified domain, for
-     *         example, www.example.com. The trailing dot is optional; Route 53
-     *         assumes that the domain name is fully qualified. This means that Route
-     *         53 treats www.example.com (without a trailing dot) and
+     *         example, www.example.com. The trailing dot is optional; Amazon Route
+     *         53 assumes that the domain name is fully qualified. This means that
+     *         Amazon Route 53 treats www.example.com (without a trailing dot) and
      *         www.example.com. (with a trailing dot) as identical. <p>This is the
      *         name you have registered with your DNS registrar. You should ask your
      *         registrar to change the authoritative name servers for your domain to

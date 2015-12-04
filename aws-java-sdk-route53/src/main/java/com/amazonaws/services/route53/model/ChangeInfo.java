@@ -52,8 +52,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      * standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      * the time indicates that the time is listed in Coordinated Universal
-     * Time (UTC), which is synonymous with Greenwich Mean Time in this
-     * context.
+     * Time (UTC).
      */
     private java.util.Date submittedAt;
 
@@ -89,8 +88,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      * format <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      * standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      * the time indicates that the time is listed in Coordinated Universal
-     * Time (UTC), which is synonymous with Greenwich Mean Time in this
-     * context.
+     * Time (UTC).
      */
     public ChangeInfo(String id, String status, java.util.Date submittedAt) {
         setId(id);
@@ -113,8 +111,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      * format <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      * standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      * the time indicates that the time is listed in Coordinated Universal
-     * Time (UTC), which is synonymous with Greenwich Mean Time in this
-     * context.
+     * Time (UTC).
      */
     public ChangeInfo(String id, ChangeStatus status, java.util.Date submittedAt) {
         this.id = id;
@@ -277,15 +274,13 @@ public class ChangeInfo implements Serializable, Cloneable {
      * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      * standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      * the time indicates that the time is listed in Coordinated Universal
-     * Time (UTC), which is synonymous with Greenwich Mean Time in this
-     * context.
+     * Time (UTC).
      *
      * @return The date and time the change was submitted, in the format
      *         <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      *         standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      *         the time indicates that the time is listed in Coordinated Universal
-     *         Time (UTC), which is synonymous with Greenwich Mean Time in this
-     *         context.
+     *         Time (UTC).
      */
     public java.util.Date getSubmittedAt() {
         return submittedAt;
@@ -296,15 +291,13 @@ public class ChangeInfo implements Serializable, Cloneable {
      * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      * standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      * the time indicates that the time is listed in Coordinated Universal
-     * Time (UTC), which is synonymous with Greenwich Mean Time in this
-     * context.
+     * Time (UTC).
      *
      * @param submittedAt The date and time the change was submitted, in the format
      *         <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      *         standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      *         the time indicates that the time is listed in Coordinated Universal
-     *         Time (UTC), which is synonymous with Greenwich Mean Time in this
-     *         context.
+     *         Time (UTC).
      */
     public void setSubmittedAt(java.util.Date submittedAt) {
         this.submittedAt = submittedAt;
@@ -315,8 +308,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      * standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      * the time indicates that the time is listed in Coordinated Universal
-     * Time (UTC), which is synonymous with Greenwich Mean Time in this
-     * context.
+     * Time (UTC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -324,8 +316,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      *         <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      *         standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      *         the time indicates that the time is listed in Coordinated Universal
-     *         Time (UTC), which is synonymous with Greenwich Mean Time in this
-     *         context.
+     *         Time (UTC).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

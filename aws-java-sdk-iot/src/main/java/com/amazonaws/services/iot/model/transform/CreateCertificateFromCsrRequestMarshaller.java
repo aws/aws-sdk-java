@@ -62,6 +62,7 @@ public class CreateCertificateFromCsrRequestMarshaller
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/certificates";
+
         request.setResourcePath(uriResourcePath);
 
         String setAsActive = (createCertificateFromCsrRequest.getSetAsActive() == null) ? null

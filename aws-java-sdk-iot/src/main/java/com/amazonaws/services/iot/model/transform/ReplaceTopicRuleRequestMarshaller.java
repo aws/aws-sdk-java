@@ -61,6 +61,7 @@ public class ReplaceTopicRuleRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/rules/{ruleName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{ruleName}",
                 (replaceTopicRuleRequest.getRuleName() == null) ? ""

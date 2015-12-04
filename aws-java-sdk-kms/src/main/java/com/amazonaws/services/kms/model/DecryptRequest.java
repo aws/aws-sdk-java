@@ -57,6 +57,11 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * <p>
      * Ciphertext to be decrypted. The blob includes metadata.
      * </p>
+     * <p>
+     * AWS SDK for Java performs a Base64 encoding on this field before sending
+     * this request to AWS service by default. Users of the SDK should not
+     * perform Base64 encoding on this field.
+     * </p>
      * 
      * @param ciphertextBlob
      *        Ciphertext to be decrypted. The blob includes metadata.

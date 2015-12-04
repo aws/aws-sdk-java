@@ -42,6 +42,12 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * </p>
      */
     private Boolean cloudOnlyDirectoriesLimitReached;
+    /** The maximum number of Microsoft AD directories allowed in the region. */
+    private Integer cloudOnlyMicrosoftADLimit;
+    /** The current number of Microsoft AD directories in the region. */
+    private Integer cloudOnlyMicrosoftADCurrentCount;
+    /** Indicates if the Microsoft AD directory limit has been reached. */
+    private Boolean cloudOnlyMicrosoftADLimitReached;
     /**
      * <p>
      * The maximum number of connected directories allowed in the region.
@@ -189,6 +195,119 @@ public class DirectoryLimits implements Serializable, Cloneable {
      */
     public Boolean isCloudOnlyDirectoriesLimitReached() {
         return this.cloudOnlyDirectoriesLimitReached;
+    }
+
+    /**
+     * The maximum number of Microsoft AD directories allowed in the region.
+     * 
+     * @param cloudOnlyMicrosoftADLimit
+     *        The maximum number of Microsoft AD directories allowed in the
+     *        region.
+     */
+    public void setCloudOnlyMicrosoftADLimit(Integer cloudOnlyMicrosoftADLimit) {
+        this.cloudOnlyMicrosoftADLimit = cloudOnlyMicrosoftADLimit;
+    }
+
+    /**
+     * The maximum number of Microsoft AD directories allowed in the region.
+     * 
+     * @return The maximum number of Microsoft AD directories allowed in the
+     *         region.
+     */
+    public Integer getCloudOnlyMicrosoftADLimit() {
+        return this.cloudOnlyMicrosoftADLimit;
+    }
+
+    /**
+     * The maximum number of Microsoft AD directories allowed in the region.
+     * 
+     * @param cloudOnlyMicrosoftADLimit
+     *        The maximum number of Microsoft AD directories allowed in the
+     *        region.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DirectoryLimits withCloudOnlyMicrosoftADLimit(
+            Integer cloudOnlyMicrosoftADLimit) {
+        setCloudOnlyMicrosoftADLimit(cloudOnlyMicrosoftADLimit);
+        return this;
+    }
+
+    /**
+     * The current number of Microsoft AD directories in the region.
+     * 
+     * @param cloudOnlyMicrosoftADCurrentCount
+     *        The current number of Microsoft AD directories in the region.
+     */
+    public void setCloudOnlyMicrosoftADCurrentCount(
+            Integer cloudOnlyMicrosoftADCurrentCount) {
+        this.cloudOnlyMicrosoftADCurrentCount = cloudOnlyMicrosoftADCurrentCount;
+    }
+
+    /**
+     * The current number of Microsoft AD directories in the region.
+     * 
+     * @return The current number of Microsoft AD directories in the region.
+     */
+    public Integer getCloudOnlyMicrosoftADCurrentCount() {
+        return this.cloudOnlyMicrosoftADCurrentCount;
+    }
+
+    /**
+     * The current number of Microsoft AD directories in the region.
+     * 
+     * @param cloudOnlyMicrosoftADCurrentCount
+     *        The current number of Microsoft AD directories in the region.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DirectoryLimits withCloudOnlyMicrosoftADCurrentCount(
+            Integer cloudOnlyMicrosoftADCurrentCount) {
+        setCloudOnlyMicrosoftADCurrentCount(cloudOnlyMicrosoftADCurrentCount);
+        return this;
+    }
+
+    /**
+     * Indicates if the Microsoft AD directory limit has been reached.
+     * 
+     * @param cloudOnlyMicrosoftADLimitReached
+     *        Indicates if the Microsoft AD directory limit has been reached.
+     */
+    public void setCloudOnlyMicrosoftADLimitReached(
+            Boolean cloudOnlyMicrosoftADLimitReached) {
+        this.cloudOnlyMicrosoftADLimitReached = cloudOnlyMicrosoftADLimitReached;
+    }
+
+    /**
+     * Indicates if the Microsoft AD directory limit has been reached.
+     * 
+     * @return Indicates if the Microsoft AD directory limit has been reached.
+     */
+    public Boolean getCloudOnlyMicrosoftADLimitReached() {
+        return this.cloudOnlyMicrosoftADLimitReached;
+    }
+
+    /**
+     * Indicates if the Microsoft AD directory limit has been reached.
+     * 
+     * @param cloudOnlyMicrosoftADLimitReached
+     *        Indicates if the Microsoft AD directory limit has been reached.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DirectoryLimits withCloudOnlyMicrosoftADLimitReached(
+            Boolean cloudOnlyMicrosoftADLimitReached) {
+        setCloudOnlyMicrosoftADLimitReached(cloudOnlyMicrosoftADLimitReached);
+        return this;
+    }
+
+    /**
+     * Indicates if the Microsoft AD directory limit has been reached.
+     * 
+     * @return Indicates if the Microsoft AD directory limit has been reached.
+     */
+    public Boolean isCloudOnlyMicrosoftADLimitReached() {
+        return this.cloudOnlyMicrosoftADLimitReached;
     }
 
     /**
@@ -343,6 +462,15 @@ public class DirectoryLimits implements Serializable, Cloneable {
         if (getCloudOnlyDirectoriesLimitReached() != null)
             sb.append("CloudOnlyDirectoriesLimitReached: "
                     + getCloudOnlyDirectoriesLimitReached() + ",");
+        if (getCloudOnlyMicrosoftADLimit() != null)
+            sb.append("CloudOnlyMicrosoftADLimit: "
+                    + getCloudOnlyMicrosoftADLimit() + ",");
+        if (getCloudOnlyMicrosoftADCurrentCount() != null)
+            sb.append("CloudOnlyMicrosoftADCurrentCount: "
+                    + getCloudOnlyMicrosoftADCurrentCount() + ",");
+        if (getCloudOnlyMicrosoftADLimitReached() != null)
+            sb.append("CloudOnlyMicrosoftADLimitReached: "
+                    + getCloudOnlyMicrosoftADLimitReached() + ",");
         if (getConnectedDirectoriesLimit() != null)
             sb.append("ConnectedDirectoriesLimit: "
                     + getConnectedDirectoriesLimit() + ",");
@@ -387,6 +515,27 @@ public class DirectoryLimits implements Serializable, Cloneable {
                 && other.getCloudOnlyDirectoriesLimitReached().equals(
                         this.getCloudOnlyDirectoriesLimitReached()) == false)
             return false;
+        if (other.getCloudOnlyMicrosoftADLimit() == null
+                ^ this.getCloudOnlyMicrosoftADLimit() == null)
+            return false;
+        if (other.getCloudOnlyMicrosoftADLimit() != null
+                && other.getCloudOnlyMicrosoftADLimit().equals(
+                        this.getCloudOnlyMicrosoftADLimit()) == false)
+            return false;
+        if (other.getCloudOnlyMicrosoftADCurrentCount() == null
+                ^ this.getCloudOnlyMicrosoftADCurrentCount() == null)
+            return false;
+        if (other.getCloudOnlyMicrosoftADCurrentCount() != null
+                && other.getCloudOnlyMicrosoftADCurrentCount().equals(
+                        this.getCloudOnlyMicrosoftADCurrentCount()) == false)
+            return false;
+        if (other.getCloudOnlyMicrosoftADLimitReached() == null
+                ^ this.getCloudOnlyMicrosoftADLimitReached() == null)
+            return false;
+        if (other.getCloudOnlyMicrosoftADLimitReached() != null
+                && other.getCloudOnlyMicrosoftADLimitReached().equals(
+                        this.getCloudOnlyMicrosoftADLimitReached()) == false)
+            return false;
         if (other.getConnectedDirectoriesLimit() == null
                 ^ this.getConnectedDirectoriesLimit() == null)
             return false;
@@ -428,6 +577,18 @@ public class DirectoryLimits implements Serializable, Cloneable {
                 * hashCode
                 + ((getCloudOnlyDirectoriesLimitReached() == null) ? 0
                         : getCloudOnlyDirectoriesLimitReached().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudOnlyMicrosoftADLimit() == null) ? 0
+                        : getCloudOnlyMicrosoftADLimit().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudOnlyMicrosoftADCurrentCount() == null) ? 0
+                        : getCloudOnlyMicrosoftADCurrentCount().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudOnlyMicrosoftADLimitReached() == null) ? 0
+                        : getCloudOnlyMicrosoftADLimitReached().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getConnectedDirectoriesLimit() == null) ? 0

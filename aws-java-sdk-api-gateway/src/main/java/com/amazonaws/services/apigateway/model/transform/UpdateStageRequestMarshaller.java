@@ -61,6 +61,7 @@ public class UpdateStageRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (updateStageRequest.getRestApiId() == null) ? "" : StringUtils

@@ -50,14 +50,18 @@ public class DirectoryDescription implements Serializable, Cloneable {
     private String size;
     /**
      * <p>
-     * The alias for the directory.
+     * The alias for the directory. If no alias has been created for the
+     * directory, the alias is the directory identifier, such as
+     * <code>d-XXXXXXXXXX</code>.
      * </p>
      */
     private String alias;
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has been
+     * created for the directory, <code>&#x3C;alias&#x3E;</code> is the
+     * directory identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      */
     private String accessUrl;
@@ -69,11 +73,11 @@ public class DirectoryDescription implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The IP addresses of the DNS servers for the directory. For a Simple AD
-     * directory, these are the IP addresses of the Simple AD directory servers.
-     * For an AD Connector directory, these are the IP addresses of the DNS
-     * servers or domain controllers in the on-premises directory that the AD
-     * Connector is connected to.
+     * The IP addresses of the DNS servers for the directory. For a Simple AD or
+     * Microsoft AD directory, these are the IP addresses of the Simple AD or
+     * Microsoft AD directory servers. For an AD Connector directory, these are
+     * the IP addresses of the DNS servers or domain controllers in the
+     * on-premises directory to which the AD Connector is connected.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> dnsIpAddrs;
@@ -104,8 +108,8 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * A <a>DirectoryVpcSettingsDescription</a> object that contains additional
-     * information about a Simple AD directory. This member is only present if
-     * the directory is a Simple AD directory.
+     * information about a directory. This member is only present if the
+     * directory is a Simple AD or Managed AD directory.
      * </p>
      */
     private DirectoryVpcSettingsDescription vpcSettings;
@@ -332,11 +336,15 @@ public class DirectoryDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The alias for the directory.
+     * The alias for the directory. If no alias has been created for the
+     * directory, the alias is the directory identifier, such as
+     * <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
      * @param alias
-     *        The alias for the directory.
+     *        The alias for the directory. If no alias has been created for the
+     *        directory, the alias is the directory identifier, such as
+     *        <code>d-XXXXXXXXXX</code>.
      */
     public void setAlias(String alias) {
         this.alias = alias;
@@ -344,10 +352,14 @@ public class DirectoryDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The alias for the directory.
+     * The alias for the directory. If no alias has been created for the
+     * directory, the alias is the directory identifier, such as
+     * <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
-     * @return The alias for the directory.
+     * @return The alias for the directory. If no alias has been created for the
+     *         directory, the alias is the directory identifier, such as
+     *         <code>d-XXXXXXXXXX</code>.
      */
     public String getAlias() {
         return this.alias;
@@ -355,11 +367,15 @@ public class DirectoryDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The alias for the directory.
+     * The alias for the directory. If no alias has been created for the
+     * directory, the alias is the directory identifier, such as
+     * <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
      * @param alias
-     *        The alias for the directory.
+     *        The alias for the directory. If no alias has been created for the
+     *        directory, the alias is the directory identifier, such as
+     *        <code>d-XXXXXXXXXX</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -371,12 +387,16 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has been
+     * created for the directory, <code>&#x3C;alias&#x3E;</code> is the
+     * directory identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
      * @param accessUrl
      *        The access URL for the directory, such as
-     *        <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+     *        <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has
+     *        been created for the directory, <code>&#x3C;alias&#x3E;</code> is
+     *        the directory identifier, such as <code>d-XXXXXXXXXX</code>.
      */
     public void setAccessUrl(String accessUrl) {
         this.accessUrl = accessUrl;
@@ -385,11 +405,16 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has been
+     * created for the directory, <code>&#x3C;alias&#x3E;</code> is the
+     * directory identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
      * @return The access URL for the directory, such as
-     *         <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+     *         <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias
+     *         has been created for the directory,
+     *         <code>&#x3C;alias&#x3E;</code> is the directory identifier, such
+     *         as <code>d-XXXXXXXXXX</code>.
      */
     public String getAccessUrl() {
         return this.accessUrl;
@@ -398,12 +423,16 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has been
+     * created for the directory, <code>&#x3C;alias&#x3E;</code> is the
+     * directory identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
      * @param accessUrl
      *        The access URL for the directory, such as
-     *        <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+     *        <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has
+     *        been created for the directory, <code>&#x3C;alias&#x3E;</code> is
+     *        the directory identifier, such as <code>d-XXXXXXXXXX</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -452,18 +481,19 @@ public class DirectoryDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP addresses of the DNS servers for the directory. For a Simple AD
-     * directory, these are the IP addresses of the Simple AD directory servers.
-     * For an AD Connector directory, these are the IP addresses of the DNS
-     * servers or domain controllers in the on-premises directory that the AD
-     * Connector is connected to.
+     * The IP addresses of the DNS servers for the directory. For a Simple AD or
+     * Microsoft AD directory, these are the IP addresses of the Simple AD or
+     * Microsoft AD directory servers. For an AD Connector directory, these are
+     * the IP addresses of the DNS servers or domain controllers in the
+     * on-premises directory to which the AD Connector is connected.
      * </p>
      * 
      * @return The IP addresses of the DNS servers for the directory. For a
-     *         Simple AD directory, these are the IP addresses of the Simple AD
-     *         directory servers. For an AD Connector directory, these are the
-     *         IP addresses of the DNS servers or domain controllers in the
-     *         on-premises directory that the AD Connector is connected to.
+     *         Simple AD or Microsoft AD directory, these are the IP addresses
+     *         of the Simple AD or Microsoft AD directory servers. For an AD
+     *         Connector directory, these are the IP addresses of the DNS
+     *         servers or domain controllers in the on-premises directory to
+     *         which the AD Connector is connected.
      */
     public java.util.List<String> getDnsIpAddrs() {
         if (dnsIpAddrs == null) {
@@ -474,19 +504,20 @@ public class DirectoryDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP addresses of the DNS servers for the directory. For a Simple AD
-     * directory, these are the IP addresses of the Simple AD directory servers.
-     * For an AD Connector directory, these are the IP addresses of the DNS
-     * servers or domain controllers in the on-premises directory that the AD
-     * Connector is connected to.
+     * The IP addresses of the DNS servers for the directory. For a Simple AD or
+     * Microsoft AD directory, these are the IP addresses of the Simple AD or
+     * Microsoft AD directory servers. For an AD Connector directory, these are
+     * the IP addresses of the DNS servers or domain controllers in the
+     * on-premises directory to which the AD Connector is connected.
      * </p>
      * 
      * @param dnsIpAddrs
      *        The IP addresses of the DNS servers for the directory. For a
-     *        Simple AD directory, these are the IP addresses of the Simple AD
-     *        directory servers. For an AD Connector directory, these are the IP
-     *        addresses of the DNS servers or domain controllers in the
-     *        on-premises directory that the AD Connector is connected to.
+     *        Simple AD or Microsoft AD directory, these are the IP addresses of
+     *        the Simple AD or Microsoft AD directory servers. For an AD
+     *        Connector directory, these are the IP addresses of the DNS servers
+     *        or domain controllers in the on-premises directory to which the AD
+     *        Connector is connected.
      */
     public void setDnsIpAddrs(java.util.Collection<String> dnsIpAddrs) {
         if (dnsIpAddrs == null) {
@@ -500,11 +531,11 @@ public class DirectoryDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP addresses of the DNS servers for the directory. For a Simple AD
-     * directory, these are the IP addresses of the Simple AD directory servers.
-     * For an AD Connector directory, these are the IP addresses of the DNS
-     * servers or domain controllers in the on-premises directory that the AD
-     * Connector is connected to.
+     * The IP addresses of the DNS servers for the directory. For a Simple AD or
+     * Microsoft AD directory, these are the IP addresses of the Simple AD or
+     * Microsoft AD directory servers. For an AD Connector directory, these are
+     * the IP addresses of the DNS servers or domain controllers in the
+     * on-premises directory to which the AD Connector is connected.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -515,10 +546,11 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @param dnsIpAddrs
      *        The IP addresses of the DNS servers for the directory. For a
-     *        Simple AD directory, these are the IP addresses of the Simple AD
-     *        directory servers. For an AD Connector directory, these are the IP
-     *        addresses of the DNS servers or domain controllers in the
-     *        on-premises directory that the AD Connector is connected to.
+     *        Simple AD or Microsoft AD directory, these are the IP addresses of
+     *        the Simple AD or Microsoft AD directory servers. For an AD
+     *        Connector directory, these are the IP addresses of the DNS servers
+     *        or domain controllers in the on-premises directory to which the AD
+     *        Connector is connected.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -535,19 +567,20 @@ public class DirectoryDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP addresses of the DNS servers for the directory. For a Simple AD
-     * directory, these are the IP addresses of the Simple AD directory servers.
-     * For an AD Connector directory, these are the IP addresses of the DNS
-     * servers or domain controllers in the on-premises directory that the AD
-     * Connector is connected to.
+     * The IP addresses of the DNS servers for the directory. For a Simple AD or
+     * Microsoft AD directory, these are the IP addresses of the Simple AD or
+     * Microsoft AD directory servers. For an AD Connector directory, these are
+     * the IP addresses of the DNS servers or domain controllers in the
+     * on-premises directory to which the AD Connector is connected.
      * </p>
      * 
      * @param dnsIpAddrs
      *        The IP addresses of the DNS servers for the directory. For a
-     *        Simple AD directory, these are the IP addresses of the Simple AD
-     *        directory servers. For an AD Connector directory, these are the IP
-     *        addresses of the DNS servers or domain controllers in the
-     *        on-premises directory that the AD Connector is connected to.
+     *        Simple AD or Microsoft AD directory, these are the IP addresses of
+     *        the Simple AD or Microsoft AD directory servers. For an AD
+     *        Connector directory, these are the IP addresses of the DNS servers
+     *        or domain controllers in the on-premises directory to which the AD
+     *        Connector is connected.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -782,14 +815,14 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * A <a>DirectoryVpcSettingsDescription</a> object that contains additional
-     * information about a Simple AD directory. This member is only present if
-     * the directory is a Simple AD directory.
+     * information about a directory. This member is only present if the
+     * directory is a Simple AD or Managed AD directory.
      * </p>
      * 
      * @param vpcSettings
      *        A <a>DirectoryVpcSettingsDescription</a> object that contains
-     *        additional information about a Simple AD directory. This member is
-     *        only present if the directory is a Simple AD directory.
+     *        additional information about a directory. This member is only
+     *        present if the directory is a Simple AD or Managed AD directory.
      */
     public void setVpcSettings(DirectoryVpcSettingsDescription vpcSettings) {
         this.vpcSettings = vpcSettings;
@@ -798,13 +831,13 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * A <a>DirectoryVpcSettingsDescription</a> object that contains additional
-     * information about a Simple AD directory. This member is only present if
-     * the directory is a Simple AD directory.
+     * information about a directory. This member is only present if the
+     * directory is a Simple AD or Managed AD directory.
      * </p>
      * 
      * @return A <a>DirectoryVpcSettingsDescription</a> object that contains
-     *         additional information about a Simple AD directory. This member
-     *         is only present if the directory is a Simple AD directory.
+     *         additional information about a directory. This member is only
+     *         present if the directory is a Simple AD or Managed AD directory.
      */
     public DirectoryVpcSettingsDescription getVpcSettings() {
         return this.vpcSettings;
@@ -813,14 +846,14 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * A <a>DirectoryVpcSettingsDescription</a> object that contains additional
-     * information about a Simple AD directory. This member is only present if
-     * the directory is a Simple AD directory.
+     * information about a directory. This member is only present if the
+     * directory is a Simple AD or Managed AD directory.
      * </p>
      * 
      * @param vpcSettings
      *        A <a>DirectoryVpcSettingsDescription</a> object that contains
-     *        additional information about a Simple AD directory. This member is
-     *        only present if the directory is a Simple AD directory.
+     *        additional information about a directory. This member is only
+     *        present if the directory is a Simple AD or Managed AD directory.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -62,6 +62,7 @@ public class DescribeElasticsearchDomainsRequestMarshaller
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/2015-01-01/es/domain-info";
+
         request.setResourcePath(uriResourcePath);
 
         try {

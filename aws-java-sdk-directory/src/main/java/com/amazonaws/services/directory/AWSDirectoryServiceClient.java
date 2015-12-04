@@ -288,7 +288,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates an AD Connector to connect an on-premises directory.
+     * Creates an AD Connector to connect to an on-premises directory.
      * </p>
      * 
      * @param connectDirectoryRequest
@@ -514,12 +514,70 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * Creates a Microsoft AD in the AWS cloud.
+     * 
+     * @param createMicrosoftADRequest
+     *        Creates a Microsoft AD in the AWS cloud.
+     * @return Result of the CreateMicrosoftAD operation returned by the
+     *         service.
+     * @throws DirectoryLimitExceededException
+     *         The maximum number of directories in the region has been reached.
+     *         You can use the <a>GetDirectoryLimits</a> operation to determine
+     *         your directory limits in the region.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     */
+    @Override
+    public CreateMicrosoftADResult createMicrosoftAD(
+            CreateMicrosoftADRequest createMicrosoftADRequest) {
+        ExecutionContext executionContext = createExecutionContext(createMicrosoftADRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMicrosoftADRequest> request = null;
+        Response<CreateMicrosoftADResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMicrosoftADRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(createMicrosoftADRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<CreateMicrosoftADResult> responseHandler = new JsonResponseHandler<CreateMicrosoftADResult>(
+                    new CreateMicrosoftADResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
-     * Creates a snapshot of an existing directory.
+     * Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
+     * cloud.
      * </p>
+     * <note>
      * <p>
-     * You cannot take snapshots of extended or connected directories.
+     * You cannot take snapshots of AD Connector directories.
      * </p>
+     * </note>
      * 
      * @param createSnapshotRequest
      *        Contains the inputs for the <a>CreateSnapshot</a> operation.
@@ -560,6 +618,79 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             JsonResponseHandler<CreateSnapshotResult> responseHandler = new JsonResponseHandler<CreateSnapshotResult>(
                     new CreateSnapshotResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * AWS Directory Service for Microsoft Active Directory allows you to
+     * configure trust relationships. For example, you can establish a trust
+     * between your Microsoft AD in the AWS cloud, and your existing on-premises
+     * Microsoft Active Directory. This would allow you to provide users and
+     * groups access to resources in either domain, with a single set of
+     * credentials.
+     * </p>
+     * <p>
+     * This action initiates the creation of the AWS side of a trust
+     * relationship between a Microsoft AD in the AWS cloud and an external
+     * domain.
+     * </p>
+     * 
+     * @param createTrustRequest
+     *        AWS Directory Service for Microsoft Active Directory allows you to
+     *        configure trust relationships. For example, you can establish a
+     *        trust between your Microsoft AD in the AWS cloud, and your
+     *        existing on-premises Microsoft Active Directory. This would allow
+     *        you to provide users and groups access to resources in either
+     *        domain, with a single set of credentials.</p>
+     *        <p>
+     *        This action initiates the creation of the AWS side of a trust
+     *        relationship between a Microsoft AD in the AWS cloud and an
+     *        external domain.
+     * @return Result of the CreateTrust operation returned by the service.
+     * @throws EntityAlreadyExistsException
+     *         The specified entity already exists.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     */
+    @Override
+    public CreateTrustResult createTrust(CreateTrustRequest createTrustRequest) {
+        ExecutionContext executionContext = createExecutionContext(createTrustRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTrustRequest> request = null;
+        Response<CreateTrustResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTrustRequestMarshaller().marshall(super
+                        .beforeMarshalling(createTrustRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<CreateTrustResult> responseHandler = new JsonResponseHandler<CreateTrustResult>(
+                    new CreateTrustResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -660,6 +791,58 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             JsonResponseHandler<DeleteSnapshotResult> responseHandler = new JsonResponseHandler<DeleteSnapshotResult>(
                     new DeleteSnapshotResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Deletes an existing trust relationship between your Microsoft AD in the
+     * AWS cloud and an external domain.
+     * 
+     * @param deleteTrustRequest
+     *        Deletes the local side of an existing trust relationship between
+     *        the Microsoft AD in the AWS cloud and the external domain.
+     * @return Result of the DeleteTrust operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     */
+    @Override
+    public DeleteTrustResult deleteTrust(DeleteTrustRequest deleteTrustRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteTrustRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTrustRequest> request = null;
+        Response<DeleteTrustResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTrustRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteTrustRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DeleteTrustResult> responseHandler = new JsonResponseHandler<DeleteTrustResult>(
+                    new DeleteTrustResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -821,8 +1004,71 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Disables multi-factor authentication (MFA) with Remote Authentication
-     * Dial In User Service (RADIUS) for an AD Connector directory.
+     * Obtains information about the trust relationships for this account.
+     * </p>
+     * <p>
+     * If no input parameters are provided, such as DirectoryId or TrustIds,
+     * this request describes all the trust relationships belonging to the
+     * account.
+     * </p>
+     * 
+     * @param describeTrustsRequest
+     *        Describes the trust relationships for a particular Microsoft AD in
+     *        the AWS cloud. If no input parameters are are provided, such as
+     *        directory ID or trust ID, this request describes all the trust
+     *        relationships.
+     * @return Result of the DescribeTrusts operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     */
+    @Override
+    public DescribeTrustsResult describeTrusts(
+            DescribeTrustsRequest describeTrustsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeTrustsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrustsRequest> request = null;
+        Response<DescribeTrustsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrustsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeTrustsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeTrustsResult> responseHandler = new JsonResponseHandler<DescribeTrustsResult>(
+                    new DescribeTrustsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disables multi-factor authentication (MFA) with the Remote Authentication
+     * Dial In User Service (RADIUS) server for an AD Connector directory.
      * </p>
      * 
      * @param disableRadiusRequest
@@ -924,8 +1170,8 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Enables multi-factor authentication (MFA) with Remote Authentication Dial
-     * In User Service (RADIUS) for an AD Connector directory.
+     * Enables multi-factor authentication (MFA) with the Remote Authentication
+     * Dial In User Service (RADIUS) server for an AD Connector directory.
      * </p>
      * 
      * @param enableRadiusRequest
@@ -1242,6 +1488,64 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             JsonResponseHandler<UpdateRadiusResult> responseHandler = new JsonResponseHandler<UpdateRadiusResult>(
                     new UpdateRadiusResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * AWS Directory Service for Microsoft Active Directory allows you to
+     * configure and verify trust relationships.
+     * </p>
+     * <p>
+     * This action verifies a trust relationship between your Microsoft AD in
+     * the AWS cloud and an external domain.
+     * </p>
+     * 
+     * @param verifyTrustRequest
+     *        Initiates the verification of an existing trust relationship
+     *        between a Microsoft AD in the AWS cloud and an external domain.
+     * @return Result of the VerifyTrust operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     */
+    @Override
+    public VerifyTrustResult verifyTrust(VerifyTrustRequest verifyTrustRequest) {
+        ExecutionContext executionContext = createExecutionContext(verifyTrustRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<VerifyTrustRequest> request = null;
+        Response<VerifyTrustResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new VerifyTrustRequestMarshaller().marshall(super
+                        .beforeMarshalling(verifyTrustRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<VerifyTrustResult> responseHandler = new JsonResponseHandler<VerifyTrustResult>(
+                    new VerifyTrustResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 

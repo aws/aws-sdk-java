@@ -62,6 +62,7 @@ public class ListThingPrincipalsRequestMarshaller
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/things/{thingName}/principals";
+
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
                 (listThingPrincipalsRequest.getThingName() == null) ? ""

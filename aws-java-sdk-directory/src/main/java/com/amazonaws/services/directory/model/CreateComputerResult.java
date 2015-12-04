@@ -26,18 +26,18 @@ public class CreateComputerResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Computer object the represents the computer account.
+     * A <a>Computer</a> object that represents the computer account.
      * </p>
      */
     private Computer computer;
 
     /**
      * <p>
-     * A Computer object the represents the computer account.
+     * A <a>Computer</a> object that represents the computer account.
      * </p>
      * 
      * @param computer
-     *        A Computer object the represents the computer account.
+     *        A <a>Computer</a> object that represents the computer account.
      */
     public void setComputer(Computer computer) {
         this.computer = computer;
@@ -45,10 +45,10 @@ public class CreateComputerResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Computer object the represents the computer account.
+     * A <a>Computer</a> object that represents the computer account.
      * </p>
      * 
-     * @return A Computer object the represents the computer account.
+     * @return A <a>Computer</a> object that represents the computer account.
      */
     public Computer getComputer() {
         return this.computer;
@@ -56,11 +56,11 @@ public class CreateComputerResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Computer object the represents the computer account.
+     * A <a>Computer</a> object that represents the computer account.
      * </p>
      * 
      * @param computer
-     *        A Computer object the represents the computer account.
+     *        A <a>Computer</a> object that represents the computer account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

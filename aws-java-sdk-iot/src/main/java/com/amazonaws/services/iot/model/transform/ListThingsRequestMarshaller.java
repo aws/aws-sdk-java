@@ -61,6 +61,7 @@ public class ListThingsRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/things";
+
         request.setResourcePath(uriResourcePath);
 
         String nextToken = (listThingsRequest.getNextToken() == null) ? null

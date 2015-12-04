@@ -61,6 +61,7 @@ public class CreateThingRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/things/{thingName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
                 (createThingRequest.getThingName() == null) ? "" : StringUtils

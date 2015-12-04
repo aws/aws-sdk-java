@@ -61,6 +61,7 @@ public class GetResourcesRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/restapis/{restapi_id}/resources";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (getResourcesRequest.getRestApiId() == null) ? "" : StringUtils

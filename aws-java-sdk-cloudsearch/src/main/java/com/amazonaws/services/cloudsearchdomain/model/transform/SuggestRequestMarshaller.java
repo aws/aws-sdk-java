@@ -60,6 +60,10 @@ public class SuggestRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2013-01-01/suggest?format=sdk&pretty=true";
+
+        uriResourcePath = com.amazonaws.util.UriResourcePathUtils
+                .addStaticQueryParamtersToRequest(request, uriResourcePath);
+
         request.setResourcePath(uriResourcePath);
 
         String query = (suggestRequest.getQuery() == null) ? null : StringUtils

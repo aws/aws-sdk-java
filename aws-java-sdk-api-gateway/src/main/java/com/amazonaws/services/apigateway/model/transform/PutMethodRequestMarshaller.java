@@ -60,6 +60,7 @@ public class PutMethodRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.PUT);
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (putMethodRequest.getRestApiId() == null) ? "" : StringUtils

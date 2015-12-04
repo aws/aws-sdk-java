@@ -61,6 +61,7 @@ public class GetModelTemplateRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/restapis/{restapi_id}/models/{model_name}/default_template";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (getModelTemplateRequest.getRestApiId() == null) ? ""

@@ -67,6 +67,7 @@ public class ListPrincipalThingsRequestMarshaller
         }
 
         String uriResourcePath = "/principals/things";
+
         request.setResourcePath(uriResourcePath);
 
         String nextToken = (listPrincipalThingsRequest.getNextToken() == null) ? null

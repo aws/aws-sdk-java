@@ -36,10 +36,6 @@ public class HostedZoneConfig implements Serializable, Cloneable {
      */
     private String comment;
 
-    /**
-     * A value that indicates whether this is a private hosted zone. The
-     * value is returned in the response; do not specify it in the request.
-     */
     private Boolean privateZone;
 
     /**
@@ -103,35 +99,29 @@ public class HostedZoneConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A value that indicates whether this is a private hosted zone. The
-     * value is returned in the response; do not specify it in the request.
+     * Returns the value of the PrivateZone property for this object.
      *
-     * @return A value that indicates whether this is a private hosted zone. The
-     *         value is returned in the response; do not specify it in the request.
+     * @return The value of the PrivateZone property for this object.
      */
     public Boolean isPrivateZone() {
         return privateZone;
     }
     
     /**
-     * A value that indicates whether this is a private hosted zone. The
-     * value is returned in the response; do not specify it in the request.
+     * Sets the value of the PrivateZone property for this object.
      *
-     * @param privateZone A value that indicates whether this is a private hosted zone. The
-     *         value is returned in the response; do not specify it in the request.
+     * @param privateZone The new value for the PrivateZone property for this object.
      */
     public void setPrivateZone(Boolean privateZone) {
         this.privateZone = privateZone;
     }
     
     /**
-     * A value that indicates whether this is a private hosted zone. The
-     * value is returned in the response; do not specify it in the request.
+     * Sets the value of the PrivateZone property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateZone A value that indicates whether this is a private hosted zone. The
-     *         value is returned in the response; do not specify it in the request.
+     * @param privateZone The new value for the PrivateZone property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -142,11 +132,9 @@ public class HostedZoneConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A value that indicates whether this is a private hosted zone. The
-     * value is returned in the response; do not specify it in the request.
+     * Returns the value of the PrivateZone property for this object.
      *
-     * @return A value that indicates whether this is a private hosted zone. The
-     *         value is returned in the response; do not specify it in the request.
+     * @return The value of the PrivateZone property for this object.
      */
     public Boolean getPrivateZone() {
         return privateZone;

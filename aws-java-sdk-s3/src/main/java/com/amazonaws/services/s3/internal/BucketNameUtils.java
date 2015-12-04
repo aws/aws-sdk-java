@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.internal;
 
+import java.util.regex.Pattern;
+
 /**
  * Utilities for working with Amazon S3 bucket names, such as validation and
  * checked to see if they are compatible with DNS addressing.
@@ -22,6 +24,8 @@ public enum BucketNameUtils {
     ;
     private static final int MIN_BUCKET_NAME_LENGTH = 3;
     private static final int MAX_BUCKET_NAME_LENGTH = 63;
+
+    private static final Pattern ipAddressPattern = Pattern.compile("(\\d+\\.){3}\\d+");
 
     /**
      * Validates that the specified bucket name is valid for Amazon S3 V2 naming
@@ -87,7 +91,14 @@ public enum BucketNameUtils {
 
             return exception(
                 throwOnError,
-                "Bucket name should be between 3 and 63 characters long"
+                "Bucket name must not be formatted as an IP Address"
+            );
+        }
+
+        if (ipAddressPattern.matcher(bucketName).matches()) {
+            return exception(
+                    throwOnError,
+                    "Bucket name should be between 3 and 63 characters long"
             );
         }
 
@@ -134,6 +145,12 @@ public enum BucketNameUtils {
                     return exception(
                         throwOnError,
                         "Bucket name should not contain dashes next to periods"
+                    );
+                }
+                if (previous == '\0') {
+                    return exception(
+                            throwOnError,
+                            "Bucket name should not begin with a '-'"
                     );
                 }
             } else if ((next < '0')

@@ -62,6 +62,7 @@ public class SetDefaultPolicyVersionRequestMarshaller
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/policies/{policyName}/version/{policyVersionId}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
                 (setDefaultPolicyVersionRequest.getPolicyName() == null) ? ""

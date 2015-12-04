@@ -21,7 +21,8 @@ package com.amazonaws.services.directory.model;
 public enum DirectoryType {
 
     SimpleAD("SimpleAD"),
-    ADConnector("ADConnector");
+    ADConnector("ADConnector"),
+    MicrosoftAD("MicrosoftAD");
 
     private String value;
 
@@ -48,6 +49,8 @@ public enum DirectoryType {
             return SimpleAD;
         } else if ("ADConnector".equals(value)) {
             return ADConnector;
+        } else if ("MicrosoftAD".equals(value)) {
+            return MicrosoftAD;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

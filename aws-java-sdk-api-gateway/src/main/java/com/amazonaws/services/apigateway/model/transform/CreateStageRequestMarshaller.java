@@ -61,6 +61,7 @@ public class CreateStageRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/restapis/{restapi_id}/stages";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (createStageRequest.getRestApiId() == null) ? "" : StringUtils

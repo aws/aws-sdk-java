@@ -61,6 +61,7 @@ public class DeleteMountTargetRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/2015-02-01/mount-targets/{MountTargetId}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{MountTargetId}",
                 (deleteMountTargetRequest.getMountTargetId() == null) ? ""

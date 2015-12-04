@@ -194,37 +194,47 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     }
 
     private void init() {
-        exceptionUnmarshallers.add(new LimitsExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchChangeExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyHealthChecksExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchDelegationSetExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HealthCheckAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ThrottlingExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyTrafficPolicyInstancesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ConflictingTypesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidInputExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TrafficPolicyAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TrafficPolicyInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchHostedZoneExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchGeoLocationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new HostedZoneAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyHostedZonesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new HostedZoneNotEmptyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchTrafficPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new IncompatibleVersionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ConflictingDomainExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ConcurrentModificationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidVPCIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchTrafficPolicyInstanceExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PublicZoneVPCAssociationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDomainNameExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new LimitsExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyHealthChecksExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidTrafficPolicyDocumentExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchDelegationSetExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ThrottlingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new VPCAssociationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PriorRequestNotCompleteExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DelegationSetAlreadyCreatedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HealthCheckInUseExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidInputExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidChangeBatchExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchHostedZoneExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyTrafficPoliciesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DelegationSetInUseExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchGeoLocationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HealthCheckVersionMismatchExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new HostedZoneAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyHostedZonesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new HostedZoneNotEmptyExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new IncompatibleVersionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ConflictingDomainExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DelegationSetAlreadyReusableExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchHealthCheckExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidVPCIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TrafficPolicyInstanceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LastVPCAssociationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DelegationSetNotAvailableExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HostedZoneNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DelegationSetNotReusableExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new PublicZoneVPCAssociationExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidDomainNameExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
         
@@ -240,10 +250,191 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Gets information about a specified traffic policy instance.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instance, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicyinstance</code> resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit a CreateTrafficPolicyInstance or an
+     * UpdateTrafficPolicyInstance request, there's a brief delay while
+     * Amazon Route 53 creates the resource record sets that are specified in
+     * the traffic policy definition. For more information, see the State
+     * response element.
+     * </p>
+     *
+     * @param getTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the GetTrafficPolicyInstance service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the GetTrafficPolicyInstance service method,
+     *         as returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     * @throws NoSuchTrafficPolicyInstanceException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetTrafficPolicyInstanceResult getTrafficPolicyInstance(GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(getTrafficPolicyInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTrafficPolicyInstanceRequest> request = null;
+        Response<GetTrafficPolicyInstanceResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(getTrafficPolicyInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new GetTrafficPolicyInstanceResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Creates a traffic policy, which you use to create multiple DNS
+     * resource record sets for one domain name (such as example.com) or one
+     * subdomain name (such as www.example.com).
+     * </p>
+     * <p>
+     * To create a traffic policy, send a <code>POST</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource. The request body must
+     * include an XML document with a <code>CreateTrafficPolicyRequest</code>
+     * element. The response includes the
+     * <code>CreateTrafficPolicyResponse</code> element, which contains
+     * information about the new traffic policy.
+     * </p>
+     *
+     * @param createTrafficPolicyRequest Container for the necessary
+     *           parameters to execute the CreateTrafficPolicy service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the CreateTrafficPolicy service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws InvalidTrafficPolicyDocumentException
+     * @throws InvalidInputException
+     * @throws TrafficPolicyAlreadyExistsException
+     * @throws TooManyTrafficPoliciesException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateTrafficPolicyResult createTrafficPolicy(CreateTrafficPolicyRequest createTrafficPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(createTrafficPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTrafficPolicyRequest> request = null;
+        Response<CreateTrafficPolicyResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTrafficPolicyRequestMarshaller().marshall(super.beforeMarshalling(createTrafficPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new CreateTrafficPolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Updates the comment for a specified traffic policy version.
+     * </p>
+     * <p>
+     * To update the comment, send a <code>POST</code> request to the
+     * <code>/2013-04-01/trafficpolicy/</code> resource.
+     * </p>
+     * <p>
+     * The request body must include an XML document with an
+     * <code>UpdateTrafficPolicyCommentRequest</code> element.
+     * </p>
+     *
+     * @param updateTrafficPolicyCommentRequest Container for the necessary
+     *           parameters to execute the UpdateTrafficPolicyComment service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the UpdateTrafficPolicyComment service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws ConcurrentModificationException
+     * @throws NoSuchTrafficPolicyException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateTrafficPolicyCommentResult updateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateTrafficPolicyCommentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTrafficPolicyCommentRequest> request = null;
+        Response<UpdateTrafficPolicyCommentResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTrafficPolicyCommentRequestMarshaller().marshall(super.beforeMarshalling(updateTrafficPolicyCommentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new UpdateTrafficPolicyCommentResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * To retrieve the delegation set for a hosted zone, send a
      * <code>GET</code> request to the <code>2013-04-01/hostedzone/hosted
-     * zone ID </code> resource. The delegation set is the four Route 53 name
-     * servers that were assigned to the hosted zone when you created it.
+     * zone ID </code> resource. The delegation set is the four Amazon Route
+     * 53 name servers that were assigned to the hosted zone when you created
+     * it.
      * </p>
      *
      * @param getHostedZoneRequest Container for the necessary parameters to
@@ -296,8 +487,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * - <code>PENDING</code> indicates that the changes in this request
-     * have not replicated to all Route 53 DNS servers. This is the initial
-     * status of all change batch requests.
+     * have not replicated to all Amazon Route 53 DNS servers. This is the
+     * initial status of all change batch requests.
      * </p>
      * <p>
      * - <code>INSYNC</code> indicates that the changes have replicated to
@@ -339,6 +530,87 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
 
             response = invoke(request, new GetChangeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Updates the resource record sets in a specified hosted zone that were
+     * created based on the settings in a specified traffic policy version.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>The DNS type of the resource record sets that you're
+     * updating must match the DNS type in the JSON document that is
+     * associated with the traffic policy version that you're using to update
+     * the traffic policy instance.
+     * </p>
+     * <p>
+     * When you update a traffic policy instance, Amazon Route 53 continues
+     * to respond to DNS queries for the root resource record set name (such
+     * as example.com) while it replaces one group of resource record sets
+     * with another. Amazon Route 53 performs the following operations:
+     * </p>
+     * <ol> <li>Amazon Route 53 creates a new group of resource record sets
+     * based on the specified traffic policy. This is true regardless of how
+     * substantial the differences are between the existing resource record
+     * sets and the new resource record sets. </li>
+     * <li>When all of the new resource record sets have been created,
+     * Amazon Route 53 starts to respond to DNS queries for the root resource
+     * record set name (such as example.com) by using the new resource record
+     * sets.</li>
+     * <li>Amazon Route 53 deletes the old group of resource record sets
+     * that are associated with the root resource record set name.</li>
+     * </ol> <p>
+     * To update a traffic policy instance, send a <code>POST</code> request
+     * to the <code>/2013-04-01/trafficpolicyinstance/traffic policy ID
+     * </code> resource. The request body must include an XML document with
+     * an <code>UpdateTrafficPolicyInstanceRequest</code> element.
+     * </p>
+     *
+     * @param updateTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the UpdateTrafficPolicyInstance service method
+     *           on AmazonRoute53.
+     * 
+     * @return The response from the UpdateTrafficPolicyInstance service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws PriorRequestNotCompleteException
+     * @throws ConflictingTypesException
+     * @throws NoSuchTrafficPolicyException
+     * @throws InvalidInputException
+     * @throws NoSuchTrafficPolicyInstanceException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateTrafficPolicyInstanceResult updateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateTrafficPolicyInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTrafficPolicyInstanceRequest> request = null;
+        Response<UpdateTrafficPolicyInstanceResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(updateTrafficPolicyInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new UpdateTrafficPolicyInstanceResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -455,6 +727,160 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     }
     
     /**
+     * <p>
+     * Gets information about all of the versions for a specified traffic
+     * policy. <code>ListTrafficPolicyVersions</code> lists only versions
+     * that have not been deleted.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policies, you can use the
+     * <code>maxitems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes three values that help you navigate from one
+     * group of <code>maxitems</code> maxitems traffic policies to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policy versions associated
+     * with the specified traffic policy.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy version that is associated with the
+     * specified traffic policy.
+     * </p>
+     * <li> <b>TrafficPolicyVersionMarker</b> </li>
+     * <p>
+     * The ID of the next traffic policy version that is associated with the
+     * current AWS account. If you want to list more traffic policies, make
+     * another call to <code>ListTrafficPolicyVersions</code> , and specify
+     * the value of the <code>TrafficPolicyVersionMarker</code> element in
+     * the <code>TrafficPolicyVersionMarker</code> request parameter.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , Amazon Route 53
+     * omits the <code>TrafficPolicyVersionMarker</code> element from the
+     * response.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyVersionsRequest Container for the necessary
+     *           parameters to execute the ListTrafficPolicyVersions service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the ListTrafficPolicyVersions service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws NoSuchTrafficPolicyException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTrafficPolicyVersionsResult listTrafficPolicyVersions(ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTrafficPolicyVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTrafficPolicyVersionsRequest> request = null;
+        Response<ListTrafficPolicyVersionsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTrafficPolicyVersionsRequestMarshaller().marshall(super.beforeMarshalling(listTrafficPolicyVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ListTrafficPolicyVersionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * This action deletes a health check. To delete a health check, send a
+     * <code>DELETE</code> request to the <code>2013-04-01/healthcheck/health
+     * check ID </code> resource.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You can delete a health check only if there are no
+     * resource record sets associated with this health check. If resource
+     * record sets are associated with this health check, you must
+     * disassociate them before you can delete your health check. If you try
+     * to delete a health check that is associated with resource record sets,
+     * Amazon Route 53 will deny your request with a HealthCheckInUse error.
+     * For information about disassociating the records from your health
+     * check, see ChangeResourceRecordSets.
+     * </p>
+     *
+     * @param deleteHealthCheckRequest Container for the necessary parameters
+     *           to execute the DeleteHealthCheck service method on AmazonRoute53.
+     * 
+     * @return The response from the DeleteHealthCheck service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws NoSuchHealthCheckException
+     * @throws HealthCheckInUseException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteHealthCheckRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteHealthCheckRequest> request = null;
+        Response<DeleteHealthCheckResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteHealthCheckRequestMarshaller().marshall(super.beforeMarshalling(deleteHealthCheckRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DeleteHealthCheckResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
      *
      * @param listTagsForResourcesRequest Container for the necessary
      *           parameters to execute the ListTagsForResources service method on
@@ -495,67 +921,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
 
             response = invoke(request, new ListTagsForResourcesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * This action deletes a health check. To delete a health check, send a
-     * <code>DELETE</code> request to the <code>2013-04-01/healthcheck/health
-     * check ID </code> resource.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> You can delete a health check only if there are no
-     * resource record sets associated with this health check. If resource
-     * record sets are associated with this health check, you must
-     * disassociate them before you can delete your health check. If you try
-     * to delete a health check that is associated with resource record sets,
-     * Route 53 will deny your request with a HealthCheckInUse error. For
-     * information about disassociating the records from your health check,
-     * see ChangeResourceRecordSets.
-     * </p>
-     *
-     * @param deleteHealthCheckRequest Container for the necessary parameters
-     *           to execute the DeleteHealthCheck service method on AmazonRoute53.
-     * 
-     * @return The response from the DeleteHealthCheck service method, as
-     *         returned by AmazonRoute53.
-     * 
-     * @throws NoSuchHealthCheckException
-     * @throws HealthCheckInUseException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteHealthCheckRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteHealthCheckRequest> request = null;
-        Response<DeleteHealthCheckResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteHealthCheckRequestMarshaller().marshall(super.beforeMarshalling(deleteHealthCheckRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new DeleteHealthCheckResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -665,6 +1030,174 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * Deletes a traffic policy instance and all of the resource record sets
+     * that Amazon Route 53 created when you created the instance.
+     * </p>
+     * <p>
+     * To delete a traffic policy instance, send a <code>DELETE</code>
+     * request to the <code>2013-04-01/trafficpolicy/traffic policy instance
+     * ID </code> resource.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>When you delete a traffic policy instance, Amazon
+     * Route 53 also deletes all of the resource record sets that were
+     * created when you created the traffic policy instance.
+     * </p>
+     *
+     * @param deleteTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the DeleteTrafficPolicyInstance service method
+     *           on AmazonRoute53.
+     * 
+     * @return The response from the DeleteTrafficPolicyInstance service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws PriorRequestNotCompleteException
+     * @throws InvalidInputException
+     * @throws NoSuchTrafficPolicyInstanceException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteTrafficPolicyInstanceResult deleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteTrafficPolicyInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTrafficPolicyInstanceRequest> request = null;
+        Response<DeleteTrafficPolicyInstanceResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficPolicyInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DeleteTrafficPolicyInstanceResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Gets information about the traffic policy instances that you created
+     * in a specified hosted zone.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit an UpdateTrafficPolicyInstance request,
+     * there's a brief delay while Amazon Route 53 creates the resource
+     * record sets that are specified in the traffic policy definition. For
+     * more information, see the State response element.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instances that you
+     * created in a specified hosted zone, send a <code>GET</code> request to
+     * the <code>2013-04-01/trafficpolicyinstance</code> resource and include
+     * the ID of the hosted zone.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policy instances, you can use the
+     * <code>MaxItems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes four values that help you navigate from one
+     * group of <code>MaxItems</code> traffic policy instances to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code></code> IsTruncated in the response is
+     * <code>true</code> , there are more traffic policy instances associated
+     * with the current AWS account.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy instance that is associated with the
+     * current account.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * <li> <b>TrafficPolicyInstanceNameMarker</b> and
+     * <b>TrafficPolicyInstanceTypeMarker</b> </li>
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code> , these two values
+     * in the response represent the first traffic policy instance in the
+     * next group of <code>MaxItems</code> traffic policy instances. To list
+     * more traffic policy instances, make another call to
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> , and specify
+     * these values in the corresponding request parameters.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , all three
+     * elements are omitted from the response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyInstancesByHostedZoneRequest Container for the
+     *           necessary parameters to execute the
+     *           ListTrafficPolicyInstancesByHostedZone service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the ListTrafficPolicyInstancesByHostedZone
+     *         service method, as returned by AmazonRoute53.
+     * 
+     * @throws NoSuchHostedZoneException
+     * @throws InvalidInputException
+     * @throws NoSuchTrafficPolicyInstanceException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTrafficPolicyInstancesByHostedZoneResult listTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest listTrafficPolicyInstancesByHostedZoneRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesByHostedZoneRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTrafficPolicyInstancesByHostedZoneRequest> request = null;
+        Response<ListTrafficPolicyInstancesByHostedZoneResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTrafficPolicyInstancesByHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(listTrafficPolicyInstancesByHostedZoneRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ListTrafficPolicyInstancesByHostedZoneResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * This action deletes a reusable delegation set. To delete a reusable
      * delegation set, send a <code>DELETE</code> request to the
      * <code>2013-04-01/delegationset/delegation set ID </code> resource.
@@ -674,8 +1207,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * there are no associated hosted zones. If your reusable delegation set
      * contains associated hosted zones, you must delete them before you can
      * delete your reusable delegation set. If you try to delete a reusable
-     * delegation set that contains associated hosted zones, Route 53 will
-     * deny your request with a DelegationSetInUse error.
+     * delegation set that contains associated hosted zones, Amazon Route 53
+     * will deny your request with a DelegationSetInUse error.
      * </p>
      *
      * @param deleteReusableDelegationSetRequest Container for the necessary
@@ -726,6 +1259,54 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * This action returns the status and changes of a change batch request.
+     * </p>
+     *
+     * @param getChangeDetailsRequest Container for the necessary parameters
+     *           to execute the GetChangeDetails service method on AmazonRoute53.
+     * 
+     * @return The response from the GetChangeDetails service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws NoSuchChangeException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetChangeDetailsResult getChangeDetails(GetChangeDetailsRequest getChangeDetailsRequest) {
+        ExecutionContext executionContext = createExecutionContext(getChangeDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetChangeDetailsRequest> request = null;
+        Response<GetChangeDetailsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetChangeDetailsRequestMarshaller().marshall(super.beforeMarshalling(getChangeDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new GetChangeDetailsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * To retrieve the health check, send a <code>GET</code> request to the
      * <code>2013-04-01/healthcheck/health check ID </code> resource.
      * </p>
@@ -766,58 +1347,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
 
             response = invoke(request, new GetHealthCheckResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * To retrieve a list of the IP ranges used by Amazon Route 53 health
-     * checkers to check the health of your resources, send a
-     * <code>GET</code> request to the
-     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
-     * addresses to configure router and firewall rules to allow health
-     * checkers to check the health of your resources.
-     * </p>
-     *
-     * @param getCheckerIpRangesRequest Container for the necessary
-     *           parameters to execute the GetCheckerIpRanges service method on
-     *           AmazonRoute53.
-     * 
-     * @return The response from the GetCheckerIpRanges service method, as
-     *         returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest getCheckerIpRangesRequest) {
-        ExecutionContext executionContext = createExecutionContext(getCheckerIpRangesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetCheckerIpRangesRequest> request = null;
-        Response<GetCheckerIpRangesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetCheckerIpRangesRequestMarshaller().marshall(super.beforeMarshalling(getCheckerIpRangesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new GetCheckerIpRangesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -894,6 +1423,58 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * To retrieve a list of the IP ranges used by Amazon Route 53 health
+     * checkers to check the health of your resources, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
+     * addresses to configure router and firewall rules to allow health
+     * checkers to check the health of your resources.
+     * </p>
+     *
+     * @param getCheckerIpRangesRequest Container for the necessary
+     *           parameters to execute the GetCheckerIpRanges service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the GetCheckerIpRanges service method, as
+     *         returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest getCheckerIpRangesRequest) {
+        ExecutionContext executionContext = createExecutionContext(getCheckerIpRangesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCheckerIpRangesRequest> request = null;
+        Response<GetCheckerIpRangesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCheckerIpRangesRequestMarshaller().marshall(super.beforeMarshalling(getCheckerIpRangesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new GetCheckerIpRangesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * This action disassociates a VPC from an hosted zone.
      * </p>
      * <p>
@@ -958,6 +1539,56 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * This action gets the list of ChangeBatches in a given time period for
+     * a given hosted zone and RRSet.
+     * </p>
+     *
+     * @param listChangeBatchesByRRSetRequest Container for the necessary
+     *           parameters to execute the ListChangeBatchesByRRSet service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the ListChangeBatchesByRRSet service method,
+     *         as returned by AmazonRoute53.
+     * 
+     * @throws NoSuchHostedZoneException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListChangeBatchesByRRSetResult listChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest listChangeBatchesByRRSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(listChangeBatchesByRRSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListChangeBatchesByRRSetRequest> request = null;
+        Response<ListChangeBatchesByRRSetResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListChangeBatchesByRRSetRequestMarshaller().marshall(super.beforeMarshalling(listChangeBatchesByRRSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ListChangeBatchesByRRSetResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * If you want to learn why a health check is currently failing or why
      * it failed most recently (if at all), you can get the failure reason
      * for the most recent failure. Send a <code>GET</code> request to the
@@ -973,6 +1604,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         method, as returned by AmazonRoute53.
      * 
      * @throws NoSuchHealthCheckException
+     * @throws InvalidInputException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1000,6 +1632,66 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
 
             response = invoke(request, new GetHealthCheckLastFailureReasonResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * To retrieve a list of your health checks, send a <code>GET</code>
+     * request to the <code>2013-04-01/healthcheck</code> resource. The
+     * response to this request includes a <code>HealthChecks</code> element
+     * with zero, one, or multiple <code>HealthCheck</code> child elements.
+     * By default, the list of health checks is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the health check that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     *
+     * @param listHealthChecksRequest Container for the necessary parameters
+     *           to execute the ListHealthChecks service method on AmazonRoute53.
+     * 
+     * @return The response from the ListHealthChecks service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws IncompatibleVersionException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest) {
+        ExecutionContext executionContext = createExecutionContext(listHealthChecksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListHealthChecksRequest> request = null;
+        Response<ListHealthChecksResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListHealthChecksRequestMarshaller().marshall(super.beforeMarshalling(listHealthChecksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ListHealthChecksResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -1131,66 +1823,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * To retrieve a list of your health checks, send a <code>GET</code>
-     * request to the <code>2013-04-01/healthcheck</code> resource. The
-     * response to this request includes a <code>HealthChecks</code> element
-     * with zero, one, or multiple <code>HealthCheck</code> child elements.
-     * By default, the list of health checks is displayed on a single page.
-     * You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-     * parameter to control the health check that the list begins with.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
-     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
-     * the first 100.
-     * </p>
-     *
-     * @param listHealthChecksRequest Container for the necessary parameters
-     *           to execute the ListHealthChecks service method on AmazonRoute53.
-     * 
-     * @return The response from the ListHealthChecks service method, as
-     *         returned by AmazonRoute53.
-     * 
-     * @throws IncompatibleVersionException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest) {
-        ExecutionContext executionContext = createExecutionContext(listHealthChecksRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListHealthChecksRequest> request = null;
-        Response<ListHealthChecksResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListHealthChecksRequestMarshaller().marshall(super.beforeMarshalling(listHealthChecksRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new ListHealthChecksResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * To retrieve a count of all your health checks, send a
      * <code>GET</code> request to the
      * <code>2013-04-01/healthcheckcount</code> resource.
@@ -1289,6 +1921,272 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * Creates resource record sets in a specified hosted zone based on the
+     * settings in a specified traffic policy version. In addition,
+     * <code>CreateTrafficPolicyInstance</code> associates the resource
+     * record sets with a specified domain name (such as example.com) or
+     * subdomain name (such as www.example.com). Amazon Route 53 responds to
+     * DNS queries for the domain or subdomain name by using the resource
+     * record sets that <code>CreateTrafficPolicyInstance</code> created.
+     * </p>
+     * <p>
+     * To create a traffic policy instance, send a <code>POST</code> request
+     * to the <code>2013-04-01/trafficpolicyinstance</code> resource. The
+     * request body must include an XML document with a
+     * <code>CreateTrafficPolicyRequest</code> element. The response returns
+     * the <code>CreateTrafficPolicyInstanceResponse</code> element, which
+     * contains information about the traffic policy instance.
+     * </p>
+     *
+     * @param createTrafficPolicyInstanceRequest Container for the necessary
+     *           parameters to execute the CreateTrafficPolicyInstance service method
+     *           on AmazonRoute53.
+     * 
+     * @return The response from the CreateTrafficPolicyInstance service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws NoSuchTrafficPolicyException
+     * @throws TrafficPolicyInstanceAlreadyExistsException
+     * @throws NoSuchHostedZoneException
+     * @throws TooManyTrafficPolicyInstancesException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateTrafficPolicyInstanceResult createTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(createTrafficPolicyInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTrafficPolicyInstanceRequest> request = null;
+        Response<CreateTrafficPolicyInstanceResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(createTrafficPolicyInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new CreateTrafficPolicyInstanceResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Gets information about the traffic policy instances that you created
+     * by using the current AWS account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit an UpdateTrafficPolicyInstance request,
+     * there's a brief delay while Amazon Route 53 creates the resource
+     * record sets that are specified in the traffic policy definition. For
+     * more information, see the State response element.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instances that are
+     * associated with the current AWS account, send a <code>GET</code>
+     * request to the <code>2013-04-01/trafficpolicyinstance</code> resource.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policy instances, you can use the
+     * <code>MaxItems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes five values that help you navigate from one
+     * group of <code>MaxItems</code> traffic policy instances to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policy instances associated
+     * with the current AWS account.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy instance that is associated with the
+     * current account.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * <li> <b>HostedZoneIdMarker</b> ,
+     * <b>TrafficPolicyInstanceNameMarker</b> , and
+     * <b>TrafficPolicyInstanceTypeMarker</b> </li>
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code> , these three values
+     * in the response represent the first traffic policy instance in the
+     * next group of <code>MaxItems</code> traffic policy instances. To list
+     * more traffic policy instances, make another call to
+     * <code>ListTrafficPolicyInstances</code> , and specify these values in
+     * the corresponding request parameters.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , all three
+     * elements are omitted from the response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyInstancesRequest Container for the necessary
+     *           parameters to execute the ListTrafficPolicyInstances service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the ListTrafficPolicyInstances service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     * @throws NoSuchTrafficPolicyInstanceException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTrafficPolicyInstancesResult listTrafficPolicyInstances(ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTrafficPolicyInstancesRequest> request = null;
+        Response<ListTrafficPolicyInstancesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTrafficPolicyInstancesRequestMarshaller().marshall(super.beforeMarshalling(listTrafficPolicyInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ListTrafficPolicyInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Gets information about the latest version for every traffic policy
+     * that is associated with the current AWS account. To get the
+     * information, send a <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policies, you can use the
+     * <code>maxitems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes three values that help you navigate from one
+     * group of <code>maxitems</code> traffic policies to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policies associated with
+     * the current AWS account.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy that is associated with the current
+     * account.
+     * </p>
+     * <li> <b>TrafficPolicyIdMarker</b> </li>
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code> ,
+     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic
+     * policy in the next group of <code>MaxItems</code> traffic policies. If
+     * you want to list more traffic policies, make another call to
+     * <code>ListTrafficPolicies</code> , and specify the value of the
+     * <code>TrafficPolicyIdMarker</code> element from the response in the
+     * <code>TrafficPolicyIdMarker</code> request parameter.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , the
+     * <code>TrafficPolicyIdMarker</code> element is omitted from the
+     * response.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPoliciesRequest Container for the necessary
+     *           parameters to execute the ListTrafficPolicies service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the ListTrafficPolicies service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTrafficPoliciesResult listTrafficPolicies(ListTrafficPoliciesRequest listTrafficPoliciesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTrafficPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTrafficPoliciesRequest> request = null;
+        Response<ListTrafficPoliciesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTrafficPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listTrafficPoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ListTrafficPoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * To retrieve the health check status, send a <code>GET</code> request
      * to the <code>2013-04-01/healthcheck/health check ID/status</code>
      * resource. You can use this call to get a health check's current
@@ -1303,6 +2201,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         returned by AmazonRoute53.
      * 
      * @throws NoSuchHealthCheckException
+     * @throws InvalidInputException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1450,58 +2349,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * To retrieve the reusable delegation set, send a <code>GET</code>
-     * request to the <code>2013-04-01/delegationset/delegation set ID
-     * </code> resource.
-     * </p>
-     *
-     * @param getReusableDelegationSetRequest Container for the necessary
-     *           parameters to execute the GetReusableDelegationSet service method on
-     *           AmazonRoute53.
-     * 
-     * @return The response from the GetReusableDelegationSet service method,
-     *         as returned by AmazonRoute53.
-     * 
-     * @throws NoSuchDelegationSetException
-     * @throws DelegationSetNotReusableException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest getReusableDelegationSetRequest) {
-        ExecutionContext executionContext = createExecutionContext(getReusableDelegationSetRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetReusableDelegationSetRequest> request = null;
-        Response<GetReusableDelegationSetResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetReusableDelegationSetRequestMarshaller().marshall(super.beforeMarshalling(getReusableDelegationSetRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new GetReusableDelegationSetResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * This action updates an existing health check.
      * </p>
      * <p>
@@ -1549,6 +2396,58 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
 
             response = invoke(request, new UpdateHealthCheckResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * To retrieve the reusable delegation set, send a <code>GET</code>
+     * request to the <code>2013-04-01/delegationset/delegation set ID
+     * </code> resource.
+     * </p>
+     *
+     * @param getReusableDelegationSetRequest Container for the necessary
+     *           parameters to execute the GetReusableDelegationSet service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the GetReusableDelegationSet service method,
+     *         as returned by AmazonRoute53.
+     * 
+     * @throws NoSuchDelegationSetException
+     * @throws DelegationSetNotReusableException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest getReusableDelegationSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(getReusableDelegationSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetReusableDelegationSetRequest> request = null;
+        Response<GetReusableDelegationSetResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetReusableDelegationSetRequestMarshaller().marshall(super.beforeMarshalling(getReusableDelegationSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new GetReusableDelegationSetResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -1622,6 +2521,162 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * Gets information about a specific traffic policy version. To get the
+     * information, send a <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource.
+     * </p>
+     *
+     * @param getTrafficPolicyRequest Container for the necessary parameters
+     *           to execute the GetTrafficPolicy service method on AmazonRoute53.
+     * 
+     * @return The response from the GetTrafficPolicy service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws NoSuchTrafficPolicyException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetTrafficPolicyResult getTrafficPolicy(GetTrafficPolicyRequest getTrafficPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(getTrafficPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTrafficPolicyRequest> request = null;
+        Response<GetTrafficPolicyResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTrafficPolicyRequestMarshaller().marshall(super.beforeMarshalling(getTrafficPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new GetTrafficPolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes a traffic policy. To delete a traffic policy, send a
+     * <code>DELETE</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource.
+     * </p>
+     *
+     * @param deleteTrafficPolicyRequest Container for the necessary
+     *           parameters to execute the DeleteTrafficPolicy service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the DeleteTrafficPolicy service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws ConcurrentModificationException
+     * @throws NoSuchTrafficPolicyException
+     * @throws TrafficPolicyInUseException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteTrafficPolicyResult deleteTrafficPolicy(DeleteTrafficPolicyRequest deleteTrafficPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteTrafficPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTrafficPolicyRequest> request = null;
+        Response<DeleteTrafficPolicyResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTrafficPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DeleteTrafficPolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Gets the number of traffic policy instances that are associated with
+     * the current AWS account.
+     * </p>
+     * <p>
+     * To get the number of traffic policy instances, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicyinstancecount</code> resource.
+     * </p>
+     *
+     * @param getTrafficPolicyInstanceCountRequest Container for the
+     *           necessary parameters to execute the GetTrafficPolicyInstanceCount
+     *           service method on AmazonRoute53.
+     * 
+     * @return The response from the GetTrafficPolicyInstanceCount service
+     *         method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest) {
+        ExecutionContext executionContext = createExecutionContext(getTrafficPolicyInstanceCountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTrafficPolicyInstanceCountRequest> request = null;
+        Response<GetTrafficPolicyInstanceCountResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTrafficPolicyInstanceCountRequestMarshaller().marshall(super.beforeMarshalling(getTrafficPolicyInstanceCountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new GetTrafficPolicyInstanceCountResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * This action deletes a hosted zone. To delete a hosted zone, send a
      * <code>DELETE</code> request to the <code>2013-04-01/hostedzone/hosted
      * zone ID </code> resource.
@@ -1637,9 +2692,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * record sets. If your hosted zone contains other resource record sets,
      * you must delete them before you can delete your hosted zone. If you
      * try to delete a hosted zone that contains other resource record sets,
-     * Route 53 will deny your request with a HostedZoneNotEmpty error. For
-     * information about deleting records from your hosted zone, see
-     * ChangeResourceRecordSets.
+     * Amazon Route 53 will deny your request with a HostedZoneNotEmpty
+     * error. For information about deleting records from your hosted zone,
+     * see ChangeResourceRecordSets.
      * </p>
      *
      * @param deleteHostedZoneRequest Container for the necessary parameters
@@ -1700,18 +2755,18 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * about the hosted zone.
      * </p>
      * <p>
-     * Route 53 automatically creates a default SOA record and four NS
-     * records for the zone. The NS records in the hosted zone are the name
-     * servers you give your registrar to delegate your domain to. For more
-     * information about SOA and NS records, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Route 53 Creates for a Hosted Zone </a>
+     * Amazon Route 53 automatically creates a default SOA record and four
+     * NS records for the zone. The NS records in the hosted zone are the
+     * name servers you give your registrar to delegate your domain to. For
+     * more information about SOA and NS records, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Amazon Route 53 Creates for a Hosted Zone </a>
      * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * When you create a zone, its initial status is <code>PENDING</code> .
      * This means that it is not yet available on all DNS servers. The status
      * of the zone changes to <code>INSYNC</code> when the NS and SOA records
-     * are available on all Route 53 DNS servers.
+     * are available on all Amazon Route 53 DNS servers.
      * </p>
      * <p>
      * When trying to create a hosted zone using a reusable delegation set,
@@ -1798,6 +2853,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws NoSuchHostedZoneException
      * @throws PublicZoneVPCAssociationException
      * @throws InvalidInputException
+     * @throws LimitsExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1945,6 +3001,56 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * This action gets the list of ChangeBatches in a given time period for
+     * a given hosted zone.
+     * </p>
+     *
+     * @param listChangeBatchesByHostedZoneRequest Container for the
+     *           necessary parameters to execute the ListChangeBatchesByHostedZone
+     *           service method on AmazonRoute53.
+     * 
+     * @return The response from the ListChangeBatchesByHostedZone service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws NoSuchHostedZoneException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListChangeBatchesByHostedZoneResult listChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest listChangeBatchesByHostedZoneRequest) {
+        ExecutionContext executionContext = createExecutionContext(listChangeBatchesByHostedZoneRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListChangeBatchesByHostedZoneRequest> request = null;
+        Response<ListChangeBatchesByHostedZoneResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListChangeBatchesByHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(listChangeBatchesByHostedZoneRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ListChangeBatchesByHostedZoneResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Use this action to create or change your authoritative DNS
      * information. To use this action, send a <code>POST</code> request to
      * the <code>2013-04-01/hostedzone/hosted Zone ID/rrset</code> resource.
@@ -1955,38 +3061,37 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * Changes are a list of change items and are considered transactional.
      * For more information on transactional changes, also known as change
      * batches, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API"> Creating, Changing, and Deleting Resource Record Sets Using the Route 53 API </a>
-     * in the <i>Amazon Route 53 Developer Guide</i> .
+     * <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/"> POST ChangeResourceRecordSets </a>
+     * in the <i>Amazon Route 53 API Reference</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b>Due to the nature of transactional changes, you
      * cannot delete the same resource record set more than once in a single
      * change batch. If you attempt to delete the same change batch more than
-     * once, Route 53 returns an InvalidChangeBatch error.
+     * once, Amazon Route 53 returns an InvalidChangeBatch error.
      * </p>
      * <p>
      * In response to a <code>ChangeResourceRecordSets</code> request, your
-     * DNS data is changed on all Route 53 DNS servers. Initially, the status
-     * of a change is <code>PENDING</code> . This means the change has not
-     * yet propagated to all the authoritative Route 53 DNS servers. When the
-     * change is propagated to all hosts, the change returns a status of
-     * <code>INSYNC</code> .
+     * DNS data is changed on all Amazon Route 53 DNS servers. Initially, the
+     * status of a change is <code>PENDING</code> . This means the change has
+     * not yet propagated to all the authoritative Amazon Route 53 DNS
+     * servers. When the change is propagated to all hosts, the change
+     * returns a status of <code>INSYNC</code> .
      * </p>
      * <p>
      * Note the following limitations on a
      * <code>ChangeResourceRecordSets</code> request:
      * </p>
-     * <p>
-     * - A request cannot contain more than 100 Change elements.
-     * </p>
-     * <p>
-     * - A request cannot contain more than 1000 ResourceRecord elements.
-     * </p>
-     * <p>
-     * The sum of the number of characters (including spaces) in all
+     * 
+     * <ul>
+     * <li>A request cannot contain more than 100 Change elements.</li>
+     * <li> A request cannot contain more than 1000 ResourceRecord
+     * elements.</li>
+     * <li>The sum of the number of characters (including spaces) in all
      * <code>Value</code> elements in a request cannot exceed 32,000
-     * characters.
-     * </p>
+     * characters.</li>
+     * 
+     * </ul>
      *
      * @param changeResourceRecordSetsRequest Container for the necessary
      *           parameters to execute the ChangeResourceRecordSets service method on
@@ -2027,6 +3132,183 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
 
             response = invoke(request, new ChangeResourceRecordSetsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Creates a new version of an existing traffic policy. When you create
+     * a new version of a traffic policy, you specify the ID of the traffic
+     * policy that you want to update and a JSON-formatted document that
+     * describes the new version.
+     * </p>
+     * <p>
+     * You use traffic policies to create multiple DNS resource record sets
+     * for one domain name (such as example.com) or one subdomain name (such
+     * as www.example.com).
+     * </p>
+     * <p>
+     * To create a new version, send a <code>POST</code> request to the
+     * <code>2013-04-01/trafficpolicy/</code> resource. The request body
+     * includes an XML document with a
+     * <code>CreateTrafficPolicyVersionRequest</code> element. The response
+     * returns the <code>CreateTrafficPolicyVersionResponse</code> element,
+     * which contains information about the new version of the traffic
+     * policy.
+     * </p>
+     *
+     * @param createTrafficPolicyVersionRequest Container for the necessary
+     *           parameters to execute the CreateTrafficPolicyVersion service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the CreateTrafficPolicyVersion service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws ConcurrentModificationException
+     * @throws InvalidTrafficPolicyDocumentException
+     * @throws NoSuchTrafficPolicyException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateTrafficPolicyVersionResult createTrafficPolicyVersion(CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest) {
+        ExecutionContext executionContext = createExecutionContext(createTrafficPolicyVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTrafficPolicyVersionRequest> request = null;
+        Response<CreateTrafficPolicyVersionResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTrafficPolicyVersionRequestMarshaller().marshall(super.beforeMarshalling(createTrafficPolicyVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new CreateTrafficPolicyVersionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Gets information about the traffic policy instances that you created
+     * by using a specify traffic policy version.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit a CreateTrafficPolicyInstance or an
+     * UpdateTrafficPolicyInstance request, there's a brief delay while
+     * Amazon Route 53 creates the resource record sets that are specified in
+     * the traffic policy definition. For more information, see the State
+     * response element.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instances that you
+     * created by using a specify traffic policy version, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicyinstance</code> resource and include the
+     * ID and version of the traffic policy.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policy instances, you can use the
+     * <code>MaxItems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes five values that help you navigate from one
+     * group of <code>MaxItems</code> traffic policy instances to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policy instances associated
+     * with the specified traffic policy.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy instance that is associated with the
+     * specified traffic policy.
+     * </p>
+     * </li>
+     * <li> <b>MaxItems</b> <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * </li>
+     * <li> <b>HostedZoneIdMarker</b> ,
+     * <b>TrafficPolicyInstanceNameMarker</b> , and
+     * <b>TrafficPolicyInstanceTypeMarker</b> <p>
+     * If <code>IsTruncated</code> is <code>true</code> , these values in
+     * the response represent the first traffic policy instance in the next
+     * group of <code>MaxItems</code> traffic policy instances. To list more
+     * traffic policy instances, make another call to
+     * <code>ListTrafficPolicyInstancesByPolicy</code> , and specify these
+     * values in the corresponding request parameters.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , all three
+     * elements are omitted from the response.
+     * </p>
+     * </li>
+     * 
+     * </ul>
+     *
+     * @param listTrafficPolicyInstancesByPolicyRequest Container for the
+     *           necessary parameters to execute the ListTrafficPolicyInstancesByPolicy
+     *           service method on AmazonRoute53.
+     * 
+     * @return The response from the ListTrafficPolicyInstancesByPolicy
+     *         service method, as returned by AmazonRoute53.
+     * 
+     * @throws NoSuchTrafficPolicyException
+     * @throws InvalidInputException
+     * @throws NoSuchTrafficPolicyInstanceException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTrafficPolicyInstancesByPolicyResult listTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest listTrafficPolicyInstancesByPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesByPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTrafficPolicyInstancesByPolicyRequest> request = null;
+        Response<ListTrafficPolicyInstancesByPolicyResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTrafficPolicyInstancesByPolicyRequestMarshaller().marshall(super.beforeMarshalling(listTrafficPolicyInstancesByPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ListTrafficPolicyInstancesByPolicyResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -2089,6 +3371,41 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * To retrieve a list of your health checks, send a <code>GET</code>
+     * request to the <code>2013-04-01/healthcheck</code> resource. The
+     * response to this request includes a <code>HealthChecks</code> element
+     * with zero, one, or multiple <code>HealthCheck</code> child elements.
+     * By default, the list of health checks is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the health check that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     * 
+     * @return The response from the ListHealthChecks service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws IncompatibleVersionException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListHealthChecksResult listHealthChecks() throws AmazonServiceException, AmazonClientException {
+        return listHealthChecks(new ListHealthChecksRequest());
+    }
+    
+    /**
+     * <p>
      * To retrieve a list of supported geo locations, send a
      * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
      * resource. The response to this request includes a
@@ -2128,41 +3445,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * To retrieve a list of your health checks, send a <code>GET</code>
-     * request to the <code>2013-04-01/healthcheck</code> resource. The
-     * response to this request includes a <code>HealthChecks</code> element
-     * with zero, one, or multiple <code>HealthCheck</code> child elements.
-     * By default, the list of health checks is displayed on a single page.
-     * You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-     * parameter to control the health check that the list begins with.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
-     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
-     * the first 100.
-     * </p>
-     * 
-     * @return The response from the ListHealthChecks service method, as
-     *         returned by AmazonRoute53.
-     * 
-     * @throws IncompatibleVersionException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListHealthChecksResult listHealthChecks() throws AmazonServiceException, AmazonClientException {
-        return listHealthChecks(new ListHealthChecksRequest());
-    }
-    
-    /**
-     * <p>
      * To retrieve a count of all your health checks, send a
      * <code>GET</code> request to the
      * <code>2013-04-01/healthcheckcount</code> resource.
@@ -2182,6 +3464,154 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     public GetHealthCheckCountResult getHealthCheckCount() throws AmazonServiceException, AmazonClientException {
         return getHealthCheckCount(new GetHealthCheckCountRequest());
+    }
+    
+    /**
+     * <p>
+     * Gets information about the traffic policy instances that you created
+     * by using the current AWS account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>After you submit an UpdateTrafficPolicyInstance request,
+     * there's a brief delay while Amazon Route 53 creates the resource
+     * record sets that are specified in the traffic policy definition. For
+     * more information, see the State response element.
+     * </p>
+     * <p>
+     * To get information about the traffic policy instances that are
+     * associated with the current AWS account, send a <code>GET</code>
+     * request to the <code>2013-04-01/trafficpolicyinstance</code> resource.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policy instances, you can use the
+     * <code>MaxItems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes five values that help you navigate from one
+     * group of <code>MaxItems</code> traffic policy instances to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policy instances associated
+     * with the current AWS account.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy instance that is associated with the
+     * current account.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * <li> <b>HostedZoneIdMarker</b> ,
+     * <b>TrafficPolicyInstanceNameMarker</b> , and
+     * <b>TrafficPolicyInstanceTypeMarker</b> </li>
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code> , these three values
+     * in the response represent the first traffic policy instance in the
+     * next group of <code>MaxItems</code> traffic policy instances. To list
+     * more traffic policy instances, make another call to
+     * <code>ListTrafficPolicyInstances</code> , and specify these values in
+     * the corresponding request parameters.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , all three
+     * elements are omitted from the response.
+     * </p>
+     * 
+     * </ul>
+     * 
+     * @return The response from the ListTrafficPolicyInstances service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     * @throws NoSuchTrafficPolicyInstanceException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTrafficPolicyInstancesResult listTrafficPolicyInstances() throws AmazonServiceException, AmazonClientException {
+        return listTrafficPolicyInstances(new ListTrafficPolicyInstancesRequest());
+    }
+    
+    /**
+     * <p>
+     * Gets information about the latest version for every traffic policy
+     * that is associated with the current AWS account. To get the
+     * information, send a <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicy</code> resource.
+     * </p>
+     * <p>
+     * Amazon Route 53 returns a maximum of 100 items in each response. If
+     * you have a lot of traffic policies, you can use the
+     * <code>maxitems</code> parameter to list them in groups of up to 100.
+     * </p>
+     * <p>
+     * The response includes three values that help you navigate from one
+     * group of <code>maxitems</code> traffic policies to the next:
+     * </p>
+     * 
+     * <ul>
+     * <li> <b>IsTruncated</b> </li>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the response is
+     * <code>true</code> , there are more traffic policies associated with
+     * the current AWS account.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , this response
+     * includes the last traffic policy that is associated with the current
+     * account.
+     * </p>
+     * <li> <b>TrafficPolicyIdMarker</b> </li>
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code> ,
+     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic
+     * policy in the next group of <code>MaxItems</code> traffic policies. If
+     * you want to list more traffic policies, make another call to
+     * <code>ListTrafficPolicies</code> , and specify the value of the
+     * <code>TrafficPolicyIdMarker</code> element from the response in the
+     * <code>TrafficPolicyIdMarker</code> request parameter.
+     * </p>
+     * <p>
+     * If <code>IsTruncated</code> is <code>false</code> , the
+     * <code>TrafficPolicyIdMarker</code> element is omitted from the
+     * response.
+     * </p>
+     * <li> <b>MaxItems</b> </li>
+     * <p>
+     * The value that you specified for the <code>MaxItems</code> parameter
+     * in the request that produced the current response.
+     * </p>
+     * 
+     * </ul>
+     * 
+     * @return The response from the ListTrafficPolicies service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTrafficPoliciesResult listTrafficPolicies() throws AmazonServiceException, AmazonClientException {
+        return listTrafficPolicies(new ListTrafficPoliciesRequest());
     }
     
     /**
@@ -2278,6 +3708,33 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     public ListHostedZonesByNameResult listHostedZonesByName() throws AmazonServiceException, AmazonClientException {
         return listHostedZonesByName(new ListHostedZonesByNameRequest());
+    }
+    
+    /**
+     * <p>
+     * Gets the number of traffic policy instances that are associated with
+     * the current AWS account.
+     * </p>
+     * <p>
+     * To get the number of traffic policy instances, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/trafficpolicyinstancecount</code> resource.
+     * </p>
+     * 
+     * @return The response from the GetTrafficPolicyInstanceCount service
+     *         method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount() throws AmazonServiceException, AmazonClientException {
+        return getTrafficPolicyInstanceCount(new GetTrafficPolicyInstanceCountRequest());
     }
     
     /**

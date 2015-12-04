@@ -41,6 +41,11 @@ public class EncryptResult implements Serializable, Cloneable {
      * The encrypted plaintext. If you are using the CLI, the value is Base64
      * encoded. Otherwise, it is not encoded.
      * </p>
+     * <p>
+     * AWS SDK for Java performs a Base64 encoding on this field before sending
+     * this request to AWS service by default. Users of the SDK should not
+     * perform Base64 encoding on this field.
+     * </p>
      * 
      * @param ciphertextBlob
      *        The encrypted plaintext. If you are using the CLI, the value is

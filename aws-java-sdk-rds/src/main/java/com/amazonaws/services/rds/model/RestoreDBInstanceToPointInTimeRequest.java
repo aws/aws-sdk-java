@@ -157,7 +157,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code>
+     * <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>aurora</code>
      */
     private String engine;
 
@@ -1035,7 +1036,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code>
+     * <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>aurora</code>
      *
      * @return The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
@@ -1043,7 +1045,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         <code>oracle-se1</code> | <code>oracle-se</code> |
      *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     *         <code>sqlserver-web</code> | <code>postgres</code>
+     *         <code>sqlserver-web</code> | <code>postgres</code>|
+     *         <code>aurora</code>
      */
     public String getEngine() {
         return engine;
@@ -1056,7 +1059,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code>
+     * <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>aurora</code>
      *
      * @param engine The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
@@ -1064,7 +1068,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         <code>oracle-se1</code> | <code>oracle-se</code> |
      *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     *         <code>sqlserver-web</code> | <code>postgres</code>
+     *         <code>sqlserver-web</code> | <code>postgres</code>|
+     *         <code>aurora</code>
      */
     public void setEngine(String engine) {
         this.engine = engine;
@@ -1077,7 +1082,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code>
+     * <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>aurora</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1087,7 +1093,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         <code>oracle-se1</code> | <code>oracle-se</code> |
      *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     *         <code>sqlserver-web</code> | <code>postgres</code>
+     *         <code>sqlserver-web</code> | <code>postgres</code>|
+     *         <code>aurora</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

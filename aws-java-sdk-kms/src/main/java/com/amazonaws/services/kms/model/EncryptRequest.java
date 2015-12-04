@@ -186,6 +186,11 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      * <p>
      * Data to be encrypted.
      * </p>
+     * <p>
+     * AWS SDK for Java performs a Base64 encoding on this field before sending
+     * this request to AWS service by default. Users of the SDK should not
+     * perform Base64 encoding on this field.
+     * </p>
      * 
      * @param plaintext
      *        Data to be encrypted.

@@ -62,6 +62,7 @@ public class DescribeMountTargetsRequestMarshaller
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2015-02-01/mount-targets";
+
         request.setResourcePath(uriResourcePath);
 
         String maxItems = (describeMountTargetsRequest.getMaxItems() == null) ? null

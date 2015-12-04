@@ -62,6 +62,7 @@ public class DeleteBasePathMappingRequestMarshaller
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{domain_name}",
                 (deleteBasePathMappingRequest.getDomainName() == null) ? ""

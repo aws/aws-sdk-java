@@ -62,6 +62,7 @@ public class CancelCertificateTransferRequestMarshaller
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/cancel-certificate-transfer/{certificateId}";
+
         uriResourcePath = uriResourcePath
                 .replace(
                         "{certificateId}",

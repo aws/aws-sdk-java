@@ -67,6 +67,7 @@ public class AttachThingPrincipalRequestMarshaller
         }
 
         String uriResourcePath = "/things/{thingName}/principals";
+
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
                 (attachThingPrincipalRequest.getThingName() == null) ? ""

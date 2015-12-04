@@ -62,6 +62,11 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
      * base64-encoding) is added to the partition key size, the total size must
      * not exceed the maximum record size (1 MB).
      * </p>
+     * <p>
+     * AWS SDK for Java performs a Base64 encoding on this field before sending
+     * this request to AWS service by default. Users of the SDK should not
+     * perform Base64 encoding on this field.
+     * </p>
      * 
      * @param data
      *        The data blob to put into the record, which is base64-encoded when

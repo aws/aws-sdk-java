@@ -28,7 +28,8 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to retrieve snapshot information for.
+     * The identifier of the directory for which to retrieve snapshot
+     * information.
      * </p>
      */
     private String directoryId;
@@ -56,12 +57,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to retrieve snapshot information for.
+     * The identifier of the directory for which to retrieve snapshot
+     * information.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to retrieve snapshot information
-     *        for.
+     *        The identifier of the directory for which to retrieve snapshot
+     *        information.
      */
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
@@ -69,11 +71,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to retrieve snapshot information for.
+     * The identifier of the directory for which to retrieve snapshot
+     * information.
      * </p>
      * 
-     * @return The identifier of the directory to retrieve snapshot information
-     *         for.
+     * @return The identifier of the directory for which to retrieve snapshot
+     *         information.
      */
     public String getDirectoryId() {
         return this.directoryId;
@@ -81,12 +84,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to retrieve snapshot information for.
+     * The identifier of the directory for which to retrieve snapshot
+     * information.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to retrieve snapshot information
-     *        for.
+     *        The identifier of the directory for which to retrieve snapshot
+     *        information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

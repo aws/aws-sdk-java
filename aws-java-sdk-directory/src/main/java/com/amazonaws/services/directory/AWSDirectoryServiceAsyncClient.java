@@ -401,6 +401,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMicrosoftADResult> createMicrosoftADAsync(
+            CreateMicrosoftADRequest request) {
+
+        return createMicrosoftADAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMicrosoftADResult> createMicrosoftADAsync(
+            final CreateMicrosoftADRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMicrosoftADRequest, CreateMicrosoftADResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateMicrosoftADResult>() {
+                    @Override
+                    public CreateMicrosoftADResult call() throws Exception {
+                        CreateMicrosoftADResult result;
+
+                        try {
+                            result = createMicrosoftAD(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(
             CreateSnapshotRequest request) {
 
@@ -420,6 +455,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
 
                         try {
                             result = createSnapshot(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrustResult> createTrustAsync(
+            CreateTrustRequest request) {
+
+        return createTrustAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrustResult> createTrustAsync(
+            final CreateTrustRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTrustRequest, CreateTrustResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateTrustResult>() {
+                    @Override
+                    public CreateTrustResult call() throws Exception {
+                        CreateTrustResult result;
+
+                        try {
+                            result = createTrust(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -490,6 +560,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
 
                         try {
                             result = deleteSnapshot(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrustResult> deleteTrustAsync(
+            DeleteTrustRequest request) {
+
+        return deleteTrustAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrustResult> deleteTrustAsync(
+            final DeleteTrustRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTrustRequest, DeleteTrustResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteTrustResult>() {
+                    @Override
+                    public DeleteTrustResult call() throws Exception {
+                        DeleteTrustResult result;
+
+                        try {
+                            result = deleteTrust(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -623,6 +728,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
 
         return describeSnapshotsAsync(new DescribeSnapshotsRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrustsResult> describeTrustsAsync(
+            DescribeTrustsRequest request) {
+
+        return describeTrustsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrustsResult> describeTrustsAsync(
+            final DescribeTrustsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTrustsRequest, DescribeTrustsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeTrustsResult>() {
+                    @Override
+                    public DescribeTrustsResult call() throws Exception {
+                        DescribeTrustsResult result;
+
+                        try {
+                            result = describeTrusts(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override
@@ -915,6 +1055,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
 
                         try {
                             result = updateRadius(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyTrustResult> verifyTrustAsync(
+            VerifyTrustRequest request) {
+
+        return verifyTrustAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyTrustResult> verifyTrustAsync(
+            final VerifyTrustRequest request,
+            final com.amazonaws.handlers.AsyncHandler<VerifyTrustRequest, VerifyTrustResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<VerifyTrustResult>() {
+                    @Override
+                    public VerifyTrustResult call() throws Exception {
+                        VerifyTrustResult result;
+
+                        try {
+                            result = verifyTrust(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

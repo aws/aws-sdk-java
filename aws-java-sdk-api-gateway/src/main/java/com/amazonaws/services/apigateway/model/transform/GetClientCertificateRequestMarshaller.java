@@ -62,6 +62,7 @@ public class GetClientCertificateRequestMarshaller
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/clientcertificates/{clientcertificate_id}";
+
         uriResourcePath = uriResourcePath
                 .replace(
                         "{clientcertificate_id}",

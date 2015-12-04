@@ -98,11 +98,29 @@ public class BootstrapActions {
 
   /**
    * Create a new bootstrap action which lets you configure Hadoop's XML files.
+   *
+   * ConfigureHadoop is deprecated. Use {@link com.amazonaws.services
+   * .elasticmapreduce.model.RunJobFlowRequest#setConfigurations} instead.
+   * For more information see,
+   * @link http://docs.aws.amazon.com/ElasticMapReduce/latest/ReleaseGuide/emr
+   * -configure-apps.html
+   *
+   * @Deprecated
    */
   public ConfigureHadoop newConfigureHadoop() {
     return new ConfigureHadoop();
   }
 
+  /**
+   * ConfigureHadoop is deprecated. Use {@link com.amazonaws.services
+   * .elasticmapreduce.model.RunJobFlowRequest#setConfigurations} instead.
+   * For more information see,
+   * @link http://docs.aws.amazon.com/ElasticMapReduce/latest/ReleaseGuide/emr
+   * -configure-apps.html
+   *
+   * @Deprecated
+   */
+  @Deprecated
   public class ConfigureHadoop {
     List<String> args = new ArrayList<String>();
 

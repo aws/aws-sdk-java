@@ -61,6 +61,7 @@ public class RemoveTagsRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/2015-01-01/tags-removal";
+
         request.setResourcePath(uriResourcePath);
 
         try {

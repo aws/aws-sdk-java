@@ -61,6 +61,7 @@ public class FlushStageCacheRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/cache/data";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (flushStageCacheRequest.getRestApiId() == null) ? ""

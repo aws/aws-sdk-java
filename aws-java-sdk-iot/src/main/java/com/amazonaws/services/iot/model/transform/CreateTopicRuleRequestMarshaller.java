@@ -61,6 +61,7 @@ public class CreateTopicRuleRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/rules/{ruleName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{ruleName}",
                 (createTopicRuleRequest.getRuleName() == null) ? ""

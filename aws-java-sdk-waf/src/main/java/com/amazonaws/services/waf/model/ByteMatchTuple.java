@@ -337,6 +337,11 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      * The value that you want AWS WAF to search for. The SDK automatically
      * base64 encodes the value.
      * </p>
+     * <p>
+     * AWS SDK for Java performs a Base64 encoding on this field before sending
+     * this request to AWS service by default. Users of the SDK should not
+     * perform Base64 encoding on this field.
+     * </p>
      * 
      * @param targetString
      *        The value that you want AWS WAF to search for. AWS WAF searches

@@ -61,6 +61,7 @@ public class GetThingShadowRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/things/{thingName}/shadow";
+
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
                 (getThingShadowRequest.getThingName() == null) ? ""

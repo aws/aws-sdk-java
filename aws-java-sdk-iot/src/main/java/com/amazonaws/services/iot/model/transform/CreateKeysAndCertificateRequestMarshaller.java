@@ -62,6 +62,7 @@ public class CreateKeysAndCertificateRequestMarshaller
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/keys-and-certificate";
+
         request.setResourcePath(uriResourcePath);
 
         String setAsActive = (createKeysAndCertificateRequest.getSetAsActive() == null) ? null

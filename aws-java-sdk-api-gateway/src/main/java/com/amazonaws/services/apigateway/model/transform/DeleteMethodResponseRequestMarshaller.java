@@ -62,6 +62,7 @@ public class DeleteMethodResponseRequestMarshaller
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (deleteMethodResponseRequest.getRestApiId() == null) ? ""

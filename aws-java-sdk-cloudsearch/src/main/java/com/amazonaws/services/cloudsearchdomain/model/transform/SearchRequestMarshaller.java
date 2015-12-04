@@ -60,6 +60,10 @@ public class SearchRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2013-01-01/search?format=sdk&pretty=true";
+
+        uriResourcePath = com.amazonaws.util.UriResourcePathUtils
+                .addStaticQueryParamtersToRequest(request, uriResourcePath);
+
         request.setResourcePath(uriResourcePath);
 
         String cursor = (searchRequest.getCursor() == null) ? null

@@ -28,7 +28,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to create the alias for.
+     * The identifier of the directory for which to create the alias.
      * </p>
      */
     private String directoryId;
@@ -37,20 +37,20 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * The requested alias.
      * </p>
      * <p>
-     * The alias must be unique amongst all aliases in AWS. This operation will
-     * throw an <code>EntityAlreadyExistsException</code> if this alias already
-     * exists.
+     * The alias must be unique amongst all aliases in AWS. This operation
+     * throws an <code>EntityAlreadyExistsException</code> error if the alias
+     * already exists.
      * </p>
      */
     private String alias;
 
     /**
      * <p>
-     * The identifier of the directory to create the alias for.
+     * The identifier of the directory for which to create the alias.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to create the alias for.
+     *        The identifier of the directory for which to create the alias.
      */
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
@@ -58,10 +58,10 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to create the alias for.
+     * The identifier of the directory for which to create the alias.
      * </p>
      * 
-     * @return The identifier of the directory to create the alias for.
+     * @return The identifier of the directory for which to create the alias.
      */
     public String getDirectoryId() {
         return this.directoryId;
@@ -69,11 +69,11 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to create the alias for.
+     * The identifier of the directory for which to create the alias.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to create the alias for.
+     *        The identifier of the directory for which to create the alias.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -87,17 +87,17 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * The requested alias.
      * </p>
      * <p>
-     * The alias must be unique amongst all aliases in AWS. This operation will
-     * throw an <code>EntityAlreadyExistsException</code> if this alias already
-     * exists.
+     * The alias must be unique amongst all aliases in AWS. This operation
+     * throws an <code>EntityAlreadyExistsException</code> error if the alias
+     * already exists.
      * </p>
      * 
      * @param alias
      *        The requested alias.</p>
      *        <p>
      *        The alias must be unique amongst all aliases in AWS. This
-     *        operation will throw an <code>EntityAlreadyExistsException</code>
-     *        if this alias already exists.
+     *        operation throws an <code>EntityAlreadyExistsException</code>
+     *        error if the alias already exists.
      */
     public void setAlias(String alias) {
         this.alias = alias;
@@ -108,16 +108,16 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * The requested alias.
      * </p>
      * <p>
-     * The alias must be unique amongst all aliases in AWS. This operation will
-     * throw an <code>EntityAlreadyExistsException</code> if this alias already
-     * exists.
+     * The alias must be unique amongst all aliases in AWS. This operation
+     * throws an <code>EntityAlreadyExistsException</code> error if the alias
+     * already exists.
      * </p>
      * 
      * @return The requested alias.</p>
      *         <p>
      *         The alias must be unique amongst all aliases in AWS. This
-     *         operation will throw an <code>EntityAlreadyExistsException</code>
-     *         if this alias already exists.
+     *         operation throws an <code>EntityAlreadyExistsException</code>
+     *         error if the alias already exists.
      */
     public String getAlias() {
         return this.alias;
@@ -128,17 +128,17 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * The requested alias.
      * </p>
      * <p>
-     * The alias must be unique amongst all aliases in AWS. This operation will
-     * throw an <code>EntityAlreadyExistsException</code> if this alias already
-     * exists.
+     * The alias must be unique amongst all aliases in AWS. This operation
+     * throws an <code>EntityAlreadyExistsException</code> error if the alias
+     * already exists.
      * </p>
      * 
      * @param alias
      *        The requested alias.</p>
      *        <p>
      *        The alias must be unique amongst all aliases in AWS. This
-     *        operation will throw an <code>EntityAlreadyExistsException</code>
-     *        if this alias already exists.
+     *        operation throws an <code>EntityAlreadyExistsException</code>
+     *        error if the alias already exists.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -61,6 +61,7 @@ public class SetLoggingOptionsRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/loggingOptions";
+
         request.setResourcePath(uriResourcePath);
 
         try {

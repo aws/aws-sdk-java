@@ -99,8 +99,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> <p> Not every
-     * database engine is available for every AWS region.
+     * <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> <p> Not every database engine is available for
+     * every AWS region.
      */
     private String engine;
 
@@ -294,24 +295,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
      * eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 9.3.1 |
      * 9.3.2</code></li> <li><b>Version 9.3 (Available in all regions):</b>
-     * <code> 9.3.3 | 9.3.5 | 9.3.6</code></li> <li><b>Version 9.4 (Available
-     * in all regions):</b> <code> 9.4.1</code></li> </ul> <p><b>Microsoft
-     * SQL Server Enterprise Edition (sqlserver-ee)</b> <ul> <li><b>Version
+     * <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
+     * <li><b>Version 9.4 (Available in all regions):</b> <code> 9.4.1 |
+     * 9.4.4 | 9.4.5</code></li> </ul> <p><b>Microsoft SQL Server Enterprise
+     * Edition (sqlserver-ee)</b> <ul> <li><b>Version 10.50 (Available in all
+     * regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
+     * (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
+     * <li><b>Version 11.00 (Available in all regions):</b> <code>
+     * 11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
+     * regions):</b> <code> 11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft
+     * SQL Server Express Edition (sqlserver-ex)</b> <ul> <li><b>Version
      * 10.50 (Available in all regions):</b> <code>
      * 10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      * regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      * (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
      * <li><b>Version 11.00 (Available in all regions):</b> <code>
-     * 11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft SQL Server Express
-     * Edition (sqlserver-ex)</b> <ul> <li><b>Version 10.50 (Available in all
-     * regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
-     * (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b> <code>
-     * 11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
-     * regions):</b> <code> 11.00.5058.0.v1</code></li> <li><b>Version 12.00
-     * (Available in all regions):</b> <code> 12.00.4422.0.v1</code></li>
-     * </ul> <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
-     * <ul> <li><b>Version 10.50 (Available in all regions):</b> <code>
+     * 11.00.5058.0.v1</code></li> <li><b>Version 12.00 (Available in all
+     * regions):</b> <code> 12.00.4422.0.v1</code></li> </ul> <p><b>Microsoft
+     * SQL Server Standard Edition (sqlserver-se)</b> <ul> <li><b>Version
+     * 10.50 (Available in all regions):</b> <code>
      * 10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      * regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      * (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
@@ -480,8 +482,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * | <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> <p> Not every
-     * database engine is available for every AWS region.
+     * <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> <p> Not every database engine is available for
+     * every AWS region.
      * @param masterUsername The name of master user for the client DB
      * instance. <p> <b>MySQL</b> <p>Constraints: <ul> <li>Must be 1 to 16
      * alphanumeric characters.</li> <li>First character must be a
@@ -926,16 +929,18 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> <p> Not every
-     * database engine is available for every AWS region.
+     * <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> <p> Not every database engine is available for
+     * every AWS region.
      *
      * @return The name of the database engine to be used for this instance. <p>
      *         Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      *         <code>oracle-se1</code> | <code>oracle-se</code> |
      *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     *         <code>sqlserver-web</code> | <code>postgres</code> <p> Not every
-     *         database engine is available for every AWS region.
+     *         <code>sqlserver-web</code> | <code>postgres</code> |
+     *         <code>aurora</code> <p> Not every database engine is available for
+     *         every AWS region.
      */
     public String getEngine() {
         return engine;
@@ -947,16 +952,18 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> <p> Not every
-     * database engine is available for every AWS region.
+     * <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> <p> Not every database engine is available for
+     * every AWS region.
      *
      * @param engine The name of the database engine to be used for this instance. <p>
      *         Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      *         <code>oracle-se1</code> | <code>oracle-se</code> |
      *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     *         <code>sqlserver-web</code> | <code>postgres</code> <p> Not every
-     *         database engine is available for every AWS region.
+     *         <code>sqlserver-web</code> | <code>postgres</code> |
+     *         <code>aurora</code> <p> Not every database engine is available for
+     *         every AWS region.
      */
     public void setEngine(String engine) {
         this.engine = engine;
@@ -968,8 +975,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> <p> Not every
-     * database engine is available for every AWS region.
+     * <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> <p> Not every database engine is available for
+     * every AWS region.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -978,8 +986,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>oracle-se1</code> | <code>oracle-se</code> |
      *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     *         <code>sqlserver-web</code> | <code>postgres</code> <p> Not every
-     *         database engine is available for every AWS region.
+     *         <code>sqlserver-web</code> | <code>postgres</code> |
+     *         <code>aurora</code> <p> Not every database engine is available for
+     *         every AWS region.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2033,24 +2042,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
      * eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 9.3.1 |
      * 9.3.2</code></li> <li><b>Version 9.3 (Available in all regions):</b>
-     * <code> 9.3.3 | 9.3.5 | 9.3.6</code></li> <li><b>Version 9.4 (Available
-     * in all regions):</b> <code> 9.4.1</code></li> </ul> <p><b>Microsoft
-     * SQL Server Enterprise Edition (sqlserver-ee)</b> <ul> <li><b>Version
+     * <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
+     * <li><b>Version 9.4 (Available in all regions):</b> <code> 9.4.1 |
+     * 9.4.4 | 9.4.5</code></li> </ul> <p><b>Microsoft SQL Server Enterprise
+     * Edition (sqlserver-ee)</b> <ul> <li><b>Version 10.50 (Available in all
+     * regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
+     * (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
+     * <li><b>Version 11.00 (Available in all regions):</b> <code>
+     * 11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
+     * regions):</b> <code> 11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft
+     * SQL Server Express Edition (sqlserver-ex)</b> <ul> <li><b>Version
      * 10.50 (Available in all regions):</b> <code>
      * 10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      * regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      * (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
      * <li><b>Version 11.00 (Available in all regions):</b> <code>
-     * 11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft SQL Server Express
-     * Edition (sqlserver-ex)</b> <ul> <li><b>Version 10.50 (Available in all
-     * regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
-     * (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b> <code>
-     * 11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
-     * regions):</b> <code> 11.00.5058.0.v1</code></li> <li><b>Version 12.00
-     * (Available in all regions):</b> <code> 12.00.4422.0.v1</code></li>
-     * </ul> <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
-     * <ul> <li><b>Version 10.50 (Available in all regions):</b> <code>
+     * 11.00.5058.0.v1</code></li> <li><b>Version 12.00 (Available in all
+     * regions):</b> <code> 12.00.4422.0.v1</code></li> </ul> <p><b>Microsoft
+     * SQL Server Standard Edition (sqlserver-se)</b> <ul> <li><b>Version
+     * 10.50 (Available in all regions):</b> <code>
      * 10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      * regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      * (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
@@ -2112,24 +2122,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
      *         eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 9.3.1 |
      *         9.3.2</code></li> <li><b>Version 9.3 (Available in all regions):</b>
-     *         <code> 9.3.3 | 9.3.5 | 9.3.6</code></li> <li><b>Version 9.4 (Available
-     *         in all regions):</b> <code> 9.4.1</code></li> </ul> <p><b>Microsoft
-     *         SQL Server Enterprise Edition (sqlserver-ee)</b> <ul> <li><b>Version
+     *         <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
+     *         <li><b>Version 9.4 (Available in all regions):</b> <code> 9.4.1 |
+     *         9.4.4 | 9.4.5</code></li> </ul> <p><b>Microsoft SQL Server Enterprise
+     *         Edition (sqlserver-ee)</b> <ul> <li><b>Version 10.50 (Available in all
+     *         regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
+     *         (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
+     *         <li><b>Version 11.00 (Available in all regions):</b> <code>
+     *         11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
+     *         regions):</b> <code> 11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft
+     *         SQL Server Express Edition (sqlserver-ex)</b> <ul> <li><b>Version
      *         10.50 (Available in all regions):</b> <code>
      *         10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      *         regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      *         (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
      *         <li><b>Version 11.00 (Available in all regions):</b> <code>
-     *         11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft SQL Server Express
-     *         Edition (sqlserver-ex)</b> <ul> <li><b>Version 10.50 (Available in all
-     *         regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
-     *         (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
-     *         <li><b>Version 11.00 (Available in all regions):</b> <code>
-     *         11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
-     *         regions):</b> <code> 11.00.5058.0.v1</code></li> <li><b>Version 12.00
-     *         (Available in all regions):</b> <code> 12.00.4422.0.v1</code></li>
-     *         </ul> <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
-     *         <ul> <li><b>Version 10.50 (Available in all regions):</b> <code>
+     *         11.00.5058.0.v1</code></li> <li><b>Version 12.00 (Available in all
+     *         regions):</b> <code> 12.00.4422.0.v1</code></li> </ul> <p><b>Microsoft
+     *         SQL Server Standard Edition (sqlserver-se)</b> <ul> <li><b>Version
+     *         10.50 (Available in all regions):</b> <code>
      *         10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      *         regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      *         (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
@@ -2196,24 +2207,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
      * eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 9.3.1 |
      * 9.3.2</code></li> <li><b>Version 9.3 (Available in all regions):</b>
-     * <code> 9.3.3 | 9.3.5 | 9.3.6</code></li> <li><b>Version 9.4 (Available
-     * in all regions):</b> <code> 9.4.1</code></li> </ul> <p><b>Microsoft
-     * SQL Server Enterprise Edition (sqlserver-ee)</b> <ul> <li><b>Version
+     * <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
+     * <li><b>Version 9.4 (Available in all regions):</b> <code> 9.4.1 |
+     * 9.4.4 | 9.4.5</code></li> </ul> <p><b>Microsoft SQL Server Enterprise
+     * Edition (sqlserver-ee)</b> <ul> <li><b>Version 10.50 (Available in all
+     * regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
+     * (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
+     * <li><b>Version 11.00 (Available in all regions):</b> <code>
+     * 11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
+     * regions):</b> <code> 11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft
+     * SQL Server Express Edition (sqlserver-ex)</b> <ul> <li><b>Version
      * 10.50 (Available in all regions):</b> <code>
      * 10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      * regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      * (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
      * <li><b>Version 11.00 (Available in all regions):</b> <code>
-     * 11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft SQL Server Express
-     * Edition (sqlserver-ex)</b> <ul> <li><b>Version 10.50 (Available in all
-     * regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
-     * (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b> <code>
-     * 11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
-     * regions):</b> <code> 11.00.5058.0.v1</code></li> <li><b>Version 12.00
-     * (Available in all regions):</b> <code> 12.00.4422.0.v1</code></li>
-     * </ul> <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
-     * <ul> <li><b>Version 10.50 (Available in all regions):</b> <code>
+     * 11.00.5058.0.v1</code></li> <li><b>Version 12.00 (Available in all
+     * regions):</b> <code> 12.00.4422.0.v1</code></li> </ul> <p><b>Microsoft
+     * SQL Server Standard Edition (sqlserver-se)</b> <ul> <li><b>Version
+     * 10.50 (Available in all regions):</b> <code>
      * 10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      * regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      * (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
@@ -2275,24 +2287,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
      *         eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 9.3.1 |
      *         9.3.2</code></li> <li><b>Version 9.3 (Available in all regions):</b>
-     *         <code> 9.3.3 | 9.3.5 | 9.3.6</code></li> <li><b>Version 9.4 (Available
-     *         in all regions):</b> <code> 9.4.1</code></li> </ul> <p><b>Microsoft
-     *         SQL Server Enterprise Edition (sqlserver-ee)</b> <ul> <li><b>Version
+     *         <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
+     *         <li><b>Version 9.4 (Available in all regions):</b> <code> 9.4.1 |
+     *         9.4.4 | 9.4.5</code></li> </ul> <p><b>Microsoft SQL Server Enterprise
+     *         Edition (sqlserver-ee)</b> <ul> <li><b>Version 10.50 (Available in all
+     *         regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
+     *         (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
+     *         <li><b>Version 11.00 (Available in all regions):</b> <code>
+     *         11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
+     *         regions):</b> <code> 11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft
+     *         SQL Server Express Edition (sqlserver-ex)</b> <ul> <li><b>Version
      *         10.50 (Available in all regions):</b> <code>
      *         10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      *         regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      *         (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
      *         <li><b>Version 11.00 (Available in all regions):</b> <code>
-     *         11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft SQL Server Express
-     *         Edition (sqlserver-ex)</b> <ul> <li><b>Version 10.50 (Available in all
-     *         regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
-     *         (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
-     *         <li><b>Version 11.00 (Available in all regions):</b> <code>
-     *         11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
-     *         regions):</b> <code> 11.00.5058.0.v1</code></li> <li><b>Version 12.00
-     *         (Available in all regions):</b> <code> 12.00.4422.0.v1</code></li>
-     *         </ul> <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
-     *         <ul> <li><b>Version 10.50 (Available in all regions):</b> <code>
+     *         11.00.5058.0.v1</code></li> <li><b>Version 12.00 (Available in all
+     *         regions):</b> <code> 12.00.4422.0.v1</code></li> </ul> <p><b>Microsoft
+     *         SQL Server Standard Edition (sqlserver-se)</b> <ul> <li><b>Version
+     *         10.50 (Available in all regions):</b> <code>
      *         10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      *         regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      *         (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
@@ -2359,24 +2372,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
      * eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 9.3.1 |
      * 9.3.2</code></li> <li><b>Version 9.3 (Available in all regions):</b>
-     * <code> 9.3.3 | 9.3.5 | 9.3.6</code></li> <li><b>Version 9.4 (Available
-     * in all regions):</b> <code> 9.4.1</code></li> </ul> <p><b>Microsoft
-     * SQL Server Enterprise Edition (sqlserver-ee)</b> <ul> <li><b>Version
+     * <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
+     * <li><b>Version 9.4 (Available in all regions):</b> <code> 9.4.1 |
+     * 9.4.4 | 9.4.5</code></li> </ul> <p><b>Microsoft SQL Server Enterprise
+     * Edition (sqlserver-ee)</b> <ul> <li><b>Version 10.50 (Available in all
+     * regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
+     * (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
+     * <li><b>Version 11.00 (Available in all regions):</b> <code>
+     * 11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
+     * regions):</b> <code> 11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft
+     * SQL Server Express Edition (sqlserver-ex)</b> <ul> <li><b>Version
      * 10.50 (Available in all regions):</b> <code>
      * 10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      * regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      * (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
      * <li><b>Version 11.00 (Available in all regions):</b> <code>
-     * 11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft SQL Server Express
-     * Edition (sqlserver-ex)</b> <ul> <li><b>Version 10.50 (Available in all
-     * regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
-     * (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b> <code>
-     * 11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
-     * regions):</b> <code> 11.00.5058.0.v1</code></li> <li><b>Version 12.00
-     * (Available in all regions):</b> <code> 12.00.4422.0.v1</code></li>
-     * </ul> <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
-     * <ul> <li><b>Version 10.50 (Available in all regions):</b> <code>
+     * 11.00.5058.0.v1</code></li> <li><b>Version 12.00 (Available in all
+     * regions):</b> <code> 12.00.4422.0.v1</code></li> </ul> <p><b>Microsoft
+     * SQL Server Standard Edition (sqlserver-se)</b> <ul> <li><b>Version
+     * 10.50 (Available in all regions):</b> <code>
      * 10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      * regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      * (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
@@ -2440,24 +2454,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
      *         eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 9.3.1 |
      *         9.3.2</code></li> <li><b>Version 9.3 (Available in all regions):</b>
-     *         <code> 9.3.3 | 9.3.5 | 9.3.6</code></li> <li><b>Version 9.4 (Available
-     *         in all regions):</b> <code> 9.4.1</code></li> </ul> <p><b>Microsoft
-     *         SQL Server Enterprise Edition (sqlserver-ee)</b> <ul> <li><b>Version
+     *         <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
+     *         <li><b>Version 9.4 (Available in all regions):</b> <code> 9.4.1 |
+     *         9.4.4 | 9.4.5</code></li> </ul> <p><b>Microsoft SQL Server Enterprise
+     *         Edition (sqlserver-ee)</b> <ul> <li><b>Version 10.50 (Available in all
+     *         regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
+     *         (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
+     *         <li><b>Version 11.00 (Available in all regions):</b> <code>
+     *         11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
+     *         regions):</b> <code> 11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft
+     *         SQL Server Express Edition (sqlserver-ex)</b> <ul> <li><b>Version
      *         10.50 (Available in all regions):</b> <code>
      *         10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      *         regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      *         (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
      *         <li><b>Version 11.00 (Available in all regions):</b> <code>
-     *         11.00.5058.0.v1</code></li> </ul> <p><b>Microsoft SQL Server Express
-     *         Edition (sqlserver-ex)</b> <ul> <li><b>Version 10.50 (Available in all
-     *         regions):</b> <code> 10.50.2789.0.v1</code></li> <li><b>Version 10.50
-     *         (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
-     *         <li><b>Version 11.00 (Available in all regions):</b> <code>
-     *         11.00.2100.60.v1</code></li> <li><b>Version 11.00 (Available in all
-     *         regions):</b> <code> 11.00.5058.0.v1</code></li> <li><b>Version 12.00
-     *         (Available in all regions):</b> <code> 12.00.4422.0.v1</code></li>
-     *         </ul> <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
-     *         <ul> <li><b>Version 10.50 (Available in all regions):</b> <code>
+     *         11.00.5058.0.v1</code></li> <li><b>Version 12.00 (Available in all
+     *         regions):</b> <code> 12.00.4422.0.v1</code></li> </ul> <p><b>Microsoft
+     *         SQL Server Standard Edition (sqlserver-se)</b> <ul> <li><b>Version
+     *         10.50 (Available in all regions):</b> <code>
      *         10.50.2789.0.v1</code></li> <li><b>Version 10.50 (Available in all
      *         regions):</b> <code> 10.50.6000.34.v1</code></li> <li><b>Version 11.00
      *         (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>

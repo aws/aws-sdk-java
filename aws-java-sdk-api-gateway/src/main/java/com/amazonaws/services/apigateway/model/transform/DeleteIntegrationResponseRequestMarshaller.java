@@ -62,6 +62,7 @@ public class DeleteIntegrationResponseRequestMarshaller
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration/responses/{status_code}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (deleteIntegrationResponseRequest.getRestApiId() == null) ? ""

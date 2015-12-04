@@ -60,6 +60,7 @@ public class GetStagesRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/restapis/{restapi_id}/stages";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (getStagesRequest.getRestApiId() == null) ? "" : StringUtils

@@ -61,6 +61,7 @@ public class UpdateIntegrationRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (updateIntegrationRequest.getRestApiId() == null) ? ""
