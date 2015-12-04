@@ -62,6 +62,7 @@ public class UpdateBasePathMappingRequestMarshaller
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{domain_name}",
                 (updateBasePathMappingRequest.getDomainName() == null) ? ""

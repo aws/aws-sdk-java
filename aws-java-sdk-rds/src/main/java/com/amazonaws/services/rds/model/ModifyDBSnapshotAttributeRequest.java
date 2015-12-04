@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#modifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest) ModifyDBSnapshotAttribute operation}.
  * <p>
- * Adds an attribute and values to, or removes an attibute and values
+ * Adds an attribute and values to, or removes an attribute and values
  * from a manual DB snapshot.
  * </p>
  * <p>

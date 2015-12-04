@@ -61,6 +61,7 @@ public class UpdateApiKeyRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/apikeys/{api_Key}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{api_Key}",
                 (updateApiKeyRequest.getApiKey() == null) ? "" : StringUtils

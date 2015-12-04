@@ -61,6 +61,7 @@ public class GetDomainNamesRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/domainnames";
+
         request.setResourcePath(uriResourcePath);
 
         String position = (getDomainNamesRequest.getPosition() == null) ? null

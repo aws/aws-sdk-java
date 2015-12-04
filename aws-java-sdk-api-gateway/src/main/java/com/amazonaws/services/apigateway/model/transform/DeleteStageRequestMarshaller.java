@@ -61,6 +61,7 @@ public class DeleteStageRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (deleteStageRequest.getRestApiId() == null) ? "" : StringUtils

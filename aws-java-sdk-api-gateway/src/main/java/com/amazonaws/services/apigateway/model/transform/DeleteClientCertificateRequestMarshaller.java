@@ -62,6 +62,7 @@ public class DeleteClientCertificateRequestMarshaller
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/clientcertificates/{clientcertificate_id}";
+
         uriResourcePath = uriResourcePath
                 .replace(
                         "{clientcertificate_id}",

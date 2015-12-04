@@ -61,6 +61,7 @@ public class TestInvokeMethodRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (testInvokeMethodRequest.getRestApiId() == null) ? ""

@@ -201,6 +201,9 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                                     if (resourceRecordSetResourceRecordSet.getHealthCheckId() != null) {
                                         xmlWriter.startElement("HealthCheckId").value(resourceRecordSetResourceRecordSet.getHealthCheckId()).endElement();
                                     }
+                                    if (resourceRecordSetResourceRecordSet.getTrafficPolicyInstanceId() != null) {
+                                        xmlWriter.startElement("TrafficPolicyInstanceId").value(resourceRecordSetResourceRecordSet.getTrafficPolicyInstanceId()).endElement();
+                                    }
                                     xmlWriter.endElement();
                                 }
                             }

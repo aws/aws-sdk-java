@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The VPC you are trying to disassociate from the hosted zone is the
- * last the VPC that is associated with the hosted zone. Route 53
+ * last the VPC that is associated with the hosted zone. Amazon Route 53
  * currently doesn't support disassociate the last VPC from the hosted
  * zone.
  * </p>

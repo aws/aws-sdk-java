@@ -26,10 +26,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
  * in the <i>IAM User Guide</i> .
  * </p>
- * <p>
- * The policy in the following example grants permission to an EC2
- * instance to assume the role.
- * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createRole(CreateRoleRequest)
  */
@@ -57,7 +53,8 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
     private String roleName;
 
     /**
-     * The policy that grants an entity permission to assume the role.
+     * The trust relationship policy document that grants an entity
+     * permission to assume the role.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
@@ -174,33 +171,38 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * The policy that grants an entity permission to assume the role.
+     * The trust relationship policy document that grants an entity
+     * permission to assume the role.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return The policy that grants an entity permission to assume the role.
+     * @return The trust relationship policy document that grants an entity
+     *         permission to assume the role.
      */
     public String getAssumeRolePolicyDocument() {
         return assumeRolePolicyDocument;
     }
     
     /**
-     * The policy that grants an entity permission to assume the role.
+     * The trust relationship policy document that grants an entity
+     * permission to assume the role.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param assumeRolePolicyDocument The policy that grants an entity permission to assume the role.
+     * @param assumeRolePolicyDocument The trust relationship policy document that grants an entity
+     *         permission to assume the role.
      */
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
         this.assumeRolePolicyDocument = assumeRolePolicyDocument;
     }
     
     /**
-     * The policy that grants an entity permission to assume the role.
+     * The trust relationship policy document that grants an entity
+     * permission to assume the role.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -208,7 +210,8 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param assumeRolePolicyDocument The policy that grants an entity permission to assume the role.
+     * @param assumeRolePolicyDocument The trust relationship policy document that grants an entity
+     *         permission to assume the role.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

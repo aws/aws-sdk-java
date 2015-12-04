@@ -21,9 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#updateHostedZoneComment(UpdateHostedZoneCommentRequest) UpdateHostedZoneComment operation}.
  * <p>
- * To update the hosted zone comment, send a <code>POST</code> request
- * to the <code>2013-04-01/hostedzone/hosted zone ID </code> resource.
- * The request body must include an XML document with a
+ * To update the hosted zone comment, send a <code>POST</code> request to
+ * the <code>2013-04-01/hostedzone/hosted zone ID </code> resource. The
+ * request body must include an XML document with a
  * <code>UpdateHostedZoneCommentRequest</code> element. The response to
  * this request includes the modified <code>HostedZone</code> element.
  * </p>

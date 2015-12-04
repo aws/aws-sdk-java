@@ -61,6 +61,7 @@ public class CreatePolicyRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/policies/{policyName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
                 (createPolicyRequest.getPolicyName() == null) ? ""

@@ -61,6 +61,7 @@ public class UpdateModelRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/restapis/{restapi_id}/models/{model_name}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (updateModelRequest.getRestApiId() == null) ? "" : StringUtils

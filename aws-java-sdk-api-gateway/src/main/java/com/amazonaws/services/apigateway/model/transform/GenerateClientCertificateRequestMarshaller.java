@@ -62,6 +62,7 @@ public class GenerateClientCertificateRequestMarshaller
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/clientcertificates";
+
         request.setResourcePath(uriResourcePath);
 
         try {

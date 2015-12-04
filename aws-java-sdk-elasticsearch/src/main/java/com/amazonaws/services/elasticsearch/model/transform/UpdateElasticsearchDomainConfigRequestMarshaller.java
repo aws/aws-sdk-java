@@ -62,6 +62,7 @@ public class UpdateElasticsearchDomainConfigRequestMarshaller
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/2015-01-01/es/domain/{DomainName}/config";
+
         uriResourcePath = uriResourcePath
                 .replace(
                         "{DomainName}",

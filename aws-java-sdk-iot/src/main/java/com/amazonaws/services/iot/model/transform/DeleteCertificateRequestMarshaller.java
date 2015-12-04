@@ -61,6 +61,7 @@ public class DeleteCertificateRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/certificates/{certificateId}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{certificateId}",
                 (deleteCertificateRequest.getCertificateId() == null) ? ""

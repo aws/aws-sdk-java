@@ -60,6 +60,7 @@ public class GetSdkRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/sdks/{sdk_type}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (getSdkRequest.getRestApiId() == null) ? "" : StringUtils

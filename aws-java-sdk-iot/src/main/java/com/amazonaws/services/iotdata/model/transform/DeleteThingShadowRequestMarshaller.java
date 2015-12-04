@@ -61,6 +61,7 @@ public class DeleteThingShadowRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/things/{thingName}/shadow";
+
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
                 (deleteThingShadowRequest.getThingName() == null) ? ""

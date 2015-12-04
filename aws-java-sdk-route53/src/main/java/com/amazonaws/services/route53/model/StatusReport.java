@@ -34,8 +34,7 @@ public class StatusReport implements Serializable, Cloneable {
      * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      * standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      * the time indicates that the time is listed in Coordinated Universal
-     * Time (UTC), which is synonymous with Greenwich Mean Time in this
-     * context.
+     * Time (UTC).
      */
     private java.util.Date checkedTime;
 
@@ -77,15 +76,13 @@ public class StatusReport implements Serializable, Cloneable {
      * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      * standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      * the time indicates that the time is listed in Coordinated Universal
-     * Time (UTC), which is synonymous with Greenwich Mean Time in this
-     * context.
+     * Time (UTC).
      *
      * @return The date and time the health check status was observed, in the format
      *         <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      *         standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      *         the time indicates that the time is listed in Coordinated Universal
-     *         Time (UTC), which is synonymous with Greenwich Mean Time in this
-     *         context.
+     *         Time (UTC).
      */
     public java.util.Date getCheckedTime() {
         return checkedTime;
@@ -96,15 +93,13 @@ public class StatusReport implements Serializable, Cloneable {
      * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      * standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      * the time indicates that the time is listed in Coordinated Universal
-     * Time (UTC), which is synonymous with Greenwich Mean Time in this
-     * context.
+     * Time (UTC).
      *
      * @param checkedTime The date and time the health check status was observed, in the format
      *         <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      *         standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      *         the time indicates that the time is listed in Coordinated Universal
-     *         Time (UTC), which is synonymous with Greenwich Mean Time in this
-     *         context.
+     *         Time (UTC).
      */
     public void setCheckedTime(java.util.Date checkedTime) {
         this.checkedTime = checkedTime;
@@ -115,8 +110,7 @@ public class StatusReport implements Serializable, Cloneable {
      * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      * standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      * the time indicates that the time is listed in Coordinated Universal
-     * Time (UTC), which is synonymous with Greenwich Mean Time in this
-     * context.
+     * Time (UTC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -124,8 +118,7 @@ public class StatusReport implements Serializable, Cloneable {
      *         <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
      *         standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after
      *         the time indicates that the time is listed in Coordinated Universal
-     *         Time (UTC), which is synonymous with Greenwich Mean Time in this
-     *         context.
+     *         Time (UTC).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

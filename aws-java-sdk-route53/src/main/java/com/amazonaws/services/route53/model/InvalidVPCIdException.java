@@ -19,8 +19,8 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The hosted zone you are trying to create for your VPC_ID does not
- * belong to you. Route 53 returns this error when the VPC specified by
- * <code>VPCId</code> does not belong to you.
+ * belong to you. Amazon Route 53 returns this error when the VPC
+ * specified by <code>VPCId</code> does not belong to you.
  * </p>
  */        
 public class InvalidVPCIdException extends AmazonServiceException {

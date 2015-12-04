@@ -18,15 +18,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the IP address of a Route 53 health
- * checker and the reason for the health check status.
+ * A complex type that contains the IP address of a Amazon Route 53
+ * health checker and the reason for the health check status.
  * </p>
  */
 public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
-     * The IP address of the Route 53 health checker that performed the
-     * health check.
+     * The IP address of the Amazon Route 53 health checker that performed
+     * the health check.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 15<br/>
@@ -41,38 +41,38 @@ public class HealthCheckObservation implements Serializable, Cloneable {
     private StatusReport statusReport;
 
     /**
-     * The IP address of the Route 53 health checker that performed the
-     * health check.
+     * The IP address of the Amazon Route 53 health checker that performed
+     * the health check.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 15<br/>
      * <b>Pattern: </b>^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$<br/>
      *
-     * @return The IP address of the Route 53 health checker that performed the
-     *         health check.
+     * @return The IP address of the Amazon Route 53 health checker that performed
+     *         the health check.
      */
     public String getIPAddress() {
         return iPAddress;
     }
     
     /**
-     * The IP address of the Route 53 health checker that performed the
-     * health check.
+     * The IP address of the Amazon Route 53 health checker that performed
+     * the health check.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 15<br/>
      * <b>Pattern: </b>^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$<br/>
      *
-     * @param iPAddress The IP address of the Route 53 health checker that performed the
-     *         health check.
+     * @param iPAddress The IP address of the Amazon Route 53 health checker that performed
+     *         the health check.
      */
     public void setIPAddress(String iPAddress) {
         this.iPAddress = iPAddress;
     }
     
     /**
-     * The IP address of the Route 53 health checker that performed the
-     * health check.
+     * The IP address of the Amazon Route 53 health checker that performed
+     * the health check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -80,8 +80,8 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      * <b>Length: </b>0 - 15<br/>
      * <b>Pattern: </b>^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$<br/>
      *
-     * @param iPAddress The IP address of the Route 53 health checker that performed the
-     *         health check.
+     * @param iPAddress The IP address of the Amazon Route 53 health checker that performed
+     *         the health check.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

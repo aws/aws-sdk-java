@@ -67,6 +67,7 @@ public class ListPrincipalPoliciesRequestMarshaller
         }
 
         String uriResourcePath = "/principal-policies";
+
         request.setResourcePath(uriResourcePath);
 
         String marker = (listPrincipalPoliciesRequest.getMarker() == null) ? null

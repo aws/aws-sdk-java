@@ -61,6 +61,7 @@ public class DeleteDomainNameRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/domainnames/{domain_name}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{domain_name}",
                 (deleteDomainNameRequest.getDomainName() == null) ? ""

@@ -60,6 +60,7 @@ public class GetPolicyRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/policies/{policyName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
                 (getPolicyRequest.getPolicyName() == null) ? "" : StringUtils

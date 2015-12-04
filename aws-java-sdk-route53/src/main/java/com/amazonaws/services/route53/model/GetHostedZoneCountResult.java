@@ -18,8 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the count of hosted zones associated
- * with the current AWS account.
+ * A complex type that contains the count of hosted zones associated with
+ * the current AWS account.
  * </p>
  */
 public class GetHostedZoneCountResult implements Serializable, Cloneable {

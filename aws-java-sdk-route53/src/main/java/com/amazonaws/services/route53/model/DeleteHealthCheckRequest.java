@@ -31,9 +31,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * record sets are associated with this health check, you must
  * disassociate them before you can delete your health check. If you try
  * to delete a health check that is associated with resource record sets,
- * Route 53 will deny your request with a HealthCheckInUse error. For
- * information about disassociating the records from your health check,
- * see ChangeResourceRecordSets.
+ * Amazon Route 53 will deny your request with a HealthCheckInUse error.
+ * For information about disassociating the records from your health
+ * check, see ChangeResourceRecordSets.
  * </p>
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#deleteHealthCheck(DeleteHealthCheckRequest)

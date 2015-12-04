@@ -71,6 +71,10 @@ public class UploadDocumentsRequestMarshaller implements
         }
 
         String uriResourcePath = "/2013-01-01/documents/batch?format=sdk";
+
+        uriResourcePath = com.amazonaws.util.UriResourcePathUtils
+                .addStaticQueryParamtersToRequest(request, uriResourcePath);
+
         request.setResourcePath(uriResourcePath);
 
         request.setContent(uploadDocumentsRequest.getDocuments());

@@ -30,8 +30,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * there are no associated hosted zones. If your reusable delegation set
  * contains associated hosted zones, you must delete them before you can
  * delete your reusable delegation set. If you try to delete a reusable
- * delegation set that contains associated hosted zones, Route 53 will
- * deny your request with a DelegationSetInUse error.
+ * delegation set that contains associated hosted zones, Amazon Route 53
+ * will deny your request with a DelegationSetInUse error.
  * </p>
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#deleteReusableDelegationSet(DeleteReusableDelegationSetRequest)

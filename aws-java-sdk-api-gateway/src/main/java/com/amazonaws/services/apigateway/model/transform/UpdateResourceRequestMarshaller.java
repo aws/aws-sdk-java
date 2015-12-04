@@ -61,6 +61,7 @@ public class UpdateResourceRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (updateResourceRequest.getRestApiId() == null) ? ""

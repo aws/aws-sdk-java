@@ -61,6 +61,7 @@ public class DeletePolicyRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/policies/{policyName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
                 (deletePolicyRequest.getPolicyName() == null) ? ""

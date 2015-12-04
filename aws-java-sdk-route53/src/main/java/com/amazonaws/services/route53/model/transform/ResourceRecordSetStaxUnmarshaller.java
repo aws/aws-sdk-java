@@ -86,6 +86,10 @@ public class ResourceRecordSetStaxUnmarshaller implements Unmarshaller<ResourceR
                     resourceRecordSet.setHealthCheckId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("TrafficPolicyInstanceId", targetDepth)) {
+                    resourceRecordSet.setTrafficPolicyInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return resourceRecordSet;

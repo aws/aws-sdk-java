@@ -62,6 +62,7 @@ public class GetClientCertificatesRequestMarshaller
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/clientcertificates";
+
         request.setResourcePath(uriResourcePath);
 
         String position = (getClientCertificatesRequest.getPosition() == null) ? null

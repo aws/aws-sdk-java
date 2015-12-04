@@ -86,6 +86,11 @@ public class DecryptResult implements Serializable, Cloneable {
      * Decrypted plaintext data. This value may not be returned if the customer
      * master key is not available or if you didn't have permission to use it.
      * </p>
+     * <p>
+     * AWS SDK for Java performs a Base64 encoding on this field before sending
+     * this request to AWS service by default. Users of the SDK should not
+     * perform Base64 encoding on this field.
+     * </p>
      * 
      * @param plaintext
      *        Decrypted plaintext data. This value may not be returned if the

@@ -38,8 +38,8 @@ public class Computer implements Serializable, Cloneable {
     private String computerName;
     /**
      * <p>
-     * An array of <a>Attribute</a> objects that contain the LDAP attributes
-     * that belong to the computer account.
+     * An array of <a>Attribute</a> objects containing the LDAP attributes that
+     * belong to the computer account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attribute> computerAttributes;
@@ -122,11 +122,11 @@ public class Computer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects that contain the LDAP attributes
-     * that belong to the computer account.
+     * An array of <a>Attribute</a> objects containing the LDAP attributes that
+     * belong to the computer account.
      * </p>
      * 
-     * @return An array of <a>Attribute</a> objects that contain the LDAP
+     * @return An array of <a>Attribute</a> objects containing the LDAP
      *         attributes that belong to the computer account.
      */
     public java.util.List<Attribute> getComputerAttributes() {
@@ -138,12 +138,12 @@ public class Computer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects that contain the LDAP attributes
-     * that belong to the computer account.
+     * An array of <a>Attribute</a> objects containing the LDAP attributes that
+     * belong to the computer account.
      * </p>
      * 
      * @param computerAttributes
-     *        An array of <a>Attribute</a> objects that contain the LDAP
+     *        An array of <a>Attribute</a> objects containing the LDAP
      *        attributes that belong to the computer account.
      */
     public void setComputerAttributes(
@@ -159,8 +159,8 @@ public class Computer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects that contain the LDAP attributes
-     * that belong to the computer account.
+     * An array of <a>Attribute</a> objects containing the LDAP attributes that
+     * belong to the computer account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -170,7 +170,7 @@ public class Computer implements Serializable, Cloneable {
      * </p>
      * 
      * @param computerAttributes
-     *        An array of <a>Attribute</a> objects that contain the LDAP
+     *        An array of <a>Attribute</a> objects containing the LDAP
      *        attributes that belong to the computer account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -188,12 +188,12 @@ public class Computer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects that contain the LDAP attributes
-     * that belong to the computer account.
+     * An array of <a>Attribute</a> objects containing the LDAP attributes that
+     * belong to the computer account.
      * </p>
      * 
      * @param computerAttributes
-     *        An array of <a>Attribute</a> objects that contain the LDAP
+     *        An array of <a>Attribute</a> objects containing the LDAP
      *        attributes that belong to the computer account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

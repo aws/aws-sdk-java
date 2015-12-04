@@ -61,6 +61,7 @@ public class DescribeThingRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/things/{thingName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
                 (describeThingRequest.getThingName() == null) ? ""

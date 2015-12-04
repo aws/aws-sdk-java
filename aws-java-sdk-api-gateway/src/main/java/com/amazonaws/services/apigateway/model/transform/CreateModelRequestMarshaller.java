@@ -61,6 +61,7 @@ public class CreateModelRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/restapis/{restapi_id}/models";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (createModelRequest.getRestApiId() == null) ? "" : StringUtils

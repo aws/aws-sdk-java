@@ -26,8 +26,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * - <code>PENDING</code> indicates that the changes in this request have
- * not replicated to all Route 53 DNS servers. This is the initial status
- * of all change batch requests.
+ * not replicated to all Amazon Route 53 DNS servers. This is the initial
+ * status of all change batch requests.
  * </p>
  * <p>
  * - <code>INSYNC</code> indicates that the changes have replicated to

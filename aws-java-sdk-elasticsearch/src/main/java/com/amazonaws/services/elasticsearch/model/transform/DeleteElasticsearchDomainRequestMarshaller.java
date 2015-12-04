@@ -62,6 +62,7 @@ public class DeleteElasticsearchDomainRequestMarshaller
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/2015-01-01/es/domain/{DomainName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{DomainName}",
                 (deleteElasticsearchDomainRequest.getDomainName() == null) ? ""

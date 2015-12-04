@@ -1395,7 +1395,7 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.*/",
+        "setterDocumentation" : "/**<p>A Binary data type.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param b A Binary data type.*/",
         "getterDocumentation" : "/**<p>A Binary data type.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return A Binary data type.*/",
         "fluentSetterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -1692,10 +1692,10 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -2124,7 +2124,7 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.*/",
+          "setterDocumentation" : "/**<p>A Binary data type.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param b A Binary data type.*/",
           "getterDocumentation" : "/**<p>A Binary data type.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return A Binary data type.*/",
           "fluentSetterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -2398,10 +2398,10 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
@@ -7364,10 +7364,10 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -7480,10 +7480,10 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -7596,10 +7596,10 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -7888,10 +7888,10 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
@@ -8161,10 +8161,10 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
@@ -8278,10 +8278,10 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,

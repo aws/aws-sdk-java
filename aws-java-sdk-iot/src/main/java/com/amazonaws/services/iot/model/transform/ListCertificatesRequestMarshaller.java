@@ -61,6 +61,7 @@ public class ListCertificatesRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/certificates";
+
         request.setResourcePath(uriResourcePath);
 
         String pageSize = (listCertificatesRequest.getPageSize() == null) ? null

@@ -81,6 +81,11 @@ public class UpdateThingShadowRequest extends AmazonWebServiceRequest implements
      * <p>
      * The state information, in JSON format.
      * </p>
+     * <p>
+     * AWS SDK for Java performs a Base64 encoding on this field before sending
+     * this request to AWS service by default. Users of the SDK should not
+     * perform Base64 encoding on this field.
+     * </p>
      * 
      * @param payload
      *        The state information, in JSON format.

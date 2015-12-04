@@ -61,6 +61,7 @@ public class CreateApiKeyRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/apikeys";
+
         request.setResourcePath(uriResourcePath);
 
         try {

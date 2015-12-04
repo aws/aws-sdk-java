@@ -127,7 +127,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
      * reboot. Review the table of parameters in <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> to see the
      * impact that setting <code>ApplyImmediately</code> to <code>true</code>
      * or <code>false</code> has for each modified parameter and to determine
@@ -351,6 +351,23 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * instance; otherwise false. The default is false.
      */
     private Boolean copyTagsToSnapshot;
+
+    /**
+     * The port number on which the database accepts connections. <p>
+     * <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
+     * <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
+     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     * <code>1150-65535</code> except for <code>1434</code>,
+     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
+     * <code>49152</code> through <code>49156</code>. <p> <b>Amazon
+     * Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code>
+     */
+    private Integer dBPortNumber;
 
     /**
      * True to make the DB instance Internet-facing with a publicly
@@ -1037,7 +1054,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
      * reboot. Review the table of parameters in <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> to see the
      * impact that setting <code>ApplyImmediately</code> to <code>true</code>
      * or <code>false</code> has for each modified parameter and to determine
@@ -1051,7 +1068,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
      *         reboot. Review the table of parameters in <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      *         a DB Instance and Using the Apply Immediately Parameter</a> to see the
      *         impact that setting <code>ApplyImmediately</code> to <code>true</code>
      *         or <code>false</code> has for each modified parameter and to determine
@@ -1070,7 +1087,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
      * reboot. Review the table of parameters in <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> to see the
      * impact that setting <code>ApplyImmediately</code> to <code>true</code>
      * or <code>false</code> has for each modified parameter and to determine
@@ -1084,7 +1101,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
      *         reboot. Review the table of parameters in <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      *         a DB Instance and Using the Apply Immediately Parameter</a> to see the
      *         impact that setting <code>ApplyImmediately</code> to <code>true</code>
      *         or <code>false</code> has for each modified parameter and to determine
@@ -1103,7 +1120,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
      * reboot. Review the table of parameters in <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> to see the
      * impact that setting <code>ApplyImmediately</code> to <code>true</code>
      * or <code>false</code> has for each modified parameter and to determine
@@ -1119,7 +1136,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
      *         reboot. Review the table of parameters in <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      *         a DB Instance and Using the Apply Immediately Parameter</a> to see the
      *         impact that setting <code>ApplyImmediately</code> to <code>true</code>
      *         or <code>false</code> has for each modified parameter and to determine
@@ -1142,7 +1159,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
      * reboot. Review the table of parameters in <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> to see the
      * impact that setting <code>ApplyImmediately</code> to <code>true</code>
      * or <code>false</code> has for each modified parameter and to determine
@@ -1156,7 +1173,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
      *         reboot. Review the table of parameters in <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      *         a DB Instance and Using the Apply Immediately Parameter</a> to see the
      *         impact that setting <code>ApplyImmediately</code> to <code>true</code>
      *         or <code>false</code> has for each modified parameter and to determine
@@ -2596,6 +2613,111 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * The port number on which the database accepts connections. <p>
+     * <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
+     * <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
+     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     * <code>1150-65535</code> except for <code>1434</code>,
+     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
+     * <code>49152</code> through <code>49156</code>. <p> <b>Amazon
+     * Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code>
+     *
+     * @return The port number on which the database accepts connections. <p>
+     *         <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     *         <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
+     *         <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
+     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
+     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     *         <code>1150-65535</code> except for <code>1434</code>,
+     *         <code>3389</code>, <code>47001</code>, <code>49152</code>, and
+     *         <code>49152</code> through <code>49156</code>. <p> <b>Amazon
+     *         Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code>
+     */
+    public Integer getDBPortNumber() {
+        return dBPortNumber;
+    }
+    
+    /**
+     * The port number on which the database accepts connections. <p>
+     * <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
+     * <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
+     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     * <code>1150-65535</code> except for <code>1434</code>,
+     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
+     * <code>49152</code> through <code>49156</code>. <p> <b>Amazon
+     * Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code>
+     *
+     * @param dBPortNumber The port number on which the database accepts connections. <p>
+     *         <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     *         <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
+     *         <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
+     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
+     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     *         <code>1150-65535</code> except for <code>1434</code>,
+     *         <code>3389</code>, <code>47001</code>, <code>49152</code>, and
+     *         <code>49152</code> through <code>49156</code>. <p> <b>Amazon
+     *         Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code>
+     */
+    public void setDBPortNumber(Integer dBPortNumber) {
+        this.dBPortNumber = dBPortNumber;
+    }
+    
+    /**
+     * The port number on which the database accepts connections. <p>
+     * <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
+     * <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
+     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     * <code>1150-65535</code> except for <code>1434</code>,
+     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
+     * <code>49152</code> through <code>49156</code>. <p> <b>Amazon
+     * Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dBPortNumber The port number on which the database accepts connections. <p>
+     *         <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     *         <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
+     *         <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
+     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
+     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     *         <code>1150-65535</code> except for <code>1434</code>,
+     *         <code>3389</code>, <code>47001</code>, <code>49152</code>, and
+     *         <code>49152</code> through <code>49156</code>. <p> <b>Amazon
+     *         Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyDBInstanceRequest withDBPortNumber(Integer dBPortNumber) {
+        this.dBPortNumber = dBPortNumber;
+        return this;
+    }
+
+    /**
      * True to make the DB instance Internet-facing with a publicly
      * resolvable DNS name, which resolves to a public IP address. False to
      * make the DB instance internal with a DNS name that resolves to a
@@ -2736,6 +2858,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() + ",");
         if (getCACertificateIdentifier() != null) sb.append("CACertificateIdentifier: " + getCACertificateIdentifier() + ",");
         if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() + ",");
+        if (getDBPortNumber() != null) sb.append("DBPortNumber: " + getDBPortNumber() + ",");
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() );
         sb.append("}");
         return sb.toString();
@@ -2769,6 +2892,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode()); 
         hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((isCopyTagsToSnapshot() == null) ? 0 : isCopyTagsToSnapshot().hashCode()); 
+        hashCode = prime * hashCode + ((getDBPortNumber() == null) ? 0 : getDBPortNumber().hashCode()); 
         hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         return hashCode;
     }
@@ -2827,6 +2951,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.getCACertificateIdentifier() != null && other.getCACertificateIdentifier().equals(this.getCACertificateIdentifier()) == false) return false; 
         if (other.isCopyTagsToSnapshot() == null ^ this.isCopyTagsToSnapshot() == null) return false;
         if (other.isCopyTagsToSnapshot() != null && other.isCopyTagsToSnapshot().equals(this.isCopyTagsToSnapshot()) == false) return false; 
+        if (other.getDBPortNumber() == null ^ this.getDBPortNumber() == null) return false;
+        if (other.getDBPortNumber() != null && other.getDBPortNumber().equals(this.getDBPortNumber()) == false) return false; 
         if (other.isPubliclyAccessible() == null ^ this.isPubliclyAccessible() == null) return false;
         if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         return true;

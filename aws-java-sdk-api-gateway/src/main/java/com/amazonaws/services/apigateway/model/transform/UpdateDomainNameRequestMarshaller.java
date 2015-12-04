@@ -61,6 +61,7 @@ public class UpdateDomainNameRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/domainnames/{domain_name}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{domain_name}",
                 (updateDomainNameRequest.getDomainName() == null) ? ""

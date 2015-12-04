@@ -78,6 +78,11 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * <p>
      * Ciphertext of the data to re-encrypt.
      * </p>
+     * <p>
+     * AWS SDK for Java performs a Base64 encoding on this field before sending
+     * this request to AWS service by default. Users of the SDK should not
+     * perform Base64 encoding on this field.
+     * </p>
      * 
      * @param ciphertextBlob
      *        Ciphertext of the data to re-encrypt.

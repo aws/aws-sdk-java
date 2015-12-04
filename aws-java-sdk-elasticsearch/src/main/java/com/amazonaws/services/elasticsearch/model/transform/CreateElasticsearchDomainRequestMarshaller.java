@@ -62,6 +62,7 @@ public class CreateElasticsearchDomainRequestMarshaller
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/2015-01-01/es/domain";
+
         request.setResourcePath(uriResourcePath);
 
         try {

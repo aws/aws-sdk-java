@@ -61,6 +61,7 @@ public class DeleteModelRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/restapis/{restapi_id}/models/{model_name}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (deleteModelRequest.getRestApiId() == null) ? "" : StringUtils

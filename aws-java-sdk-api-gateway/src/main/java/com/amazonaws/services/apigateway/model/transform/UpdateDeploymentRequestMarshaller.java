@@ -61,6 +61,7 @@ public class UpdateDeploymentRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.PATCH);
 
         String uriResourcePath = "/restapis/{restapi_id}/deployments/{deployment_id}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
                 (updateDeploymentRequest.getRestApiId() == null) ? ""

@@ -61,6 +61,7 @@ public class CreateDomainNameRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/domainnames";
+
         request.setResourcePath(uriResourcePath);
 
         try {

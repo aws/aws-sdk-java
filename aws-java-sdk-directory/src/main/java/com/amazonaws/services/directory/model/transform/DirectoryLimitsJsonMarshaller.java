@@ -64,6 +64,21 @@ public class DirectoryLimitsJsonMarshaller {
                         directoryLimits.getCloudOnlyDirectoriesLimitReached());
             }
 
+            if (directoryLimits.getCloudOnlyMicrosoftADLimit() != null) {
+                jsonWriter.key("CloudOnlyMicrosoftADLimit").value(
+                        directoryLimits.getCloudOnlyMicrosoftADLimit());
+            }
+
+            if (directoryLimits.getCloudOnlyMicrosoftADCurrentCount() != null) {
+                jsonWriter.key("CloudOnlyMicrosoftADCurrentCount").value(
+                        directoryLimits.getCloudOnlyMicrosoftADCurrentCount());
+            }
+
+            if (directoryLimits.getCloudOnlyMicrosoftADLimitReached() != null) {
+                jsonWriter.key("CloudOnlyMicrosoftADLimitReached").value(
+                        directoryLimits.getCloudOnlyMicrosoftADLimitReached());
+            }
+
             if (directoryLimits.getConnectedDirectoriesLimit() != null) {
                 jsonWriter.key("ConnectedDirectoriesLimit").value(
                         directoryLimits.getConnectedDirectoriesLimit());

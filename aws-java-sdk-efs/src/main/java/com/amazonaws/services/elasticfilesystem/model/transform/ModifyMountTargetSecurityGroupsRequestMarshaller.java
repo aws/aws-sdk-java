@@ -63,6 +63,7 @@ public class ModifyMountTargetSecurityGroupsRequestMarshaller
         request.setHttpMethod(HttpMethodName.PUT);
 
         String uriResourcePath = "/2015-02-01/mount-targets/{MountTargetId}/security-groups";
+
         uriResourcePath = uriResourcePath
                 .replace(
                         "{MountTargetId}",

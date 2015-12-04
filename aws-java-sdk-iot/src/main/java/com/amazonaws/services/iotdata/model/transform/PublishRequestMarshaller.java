@@ -60,6 +60,7 @@ public class PublishRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/topics/{topic}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{topic}",
                 (publishRequest.getTopic() == null) ? "" : StringUtils

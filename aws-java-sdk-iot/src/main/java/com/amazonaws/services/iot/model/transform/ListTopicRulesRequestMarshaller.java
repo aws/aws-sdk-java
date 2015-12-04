@@ -61,6 +61,7 @@ public class ListTopicRulesRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/rules";
+
         request.setResourcePath(uriResourcePath);
 
         String topic = (listTopicRulesRequest.getTopic() == null) ? null

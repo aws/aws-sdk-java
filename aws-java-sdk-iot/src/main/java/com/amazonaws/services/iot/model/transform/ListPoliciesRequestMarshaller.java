@@ -61,6 +61,7 @@ public class ListPoliciesRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/policies";
+
         request.setResourcePath(uriResourcePath);
 
         String marker = (listPoliciesRequest.getMarker() == null) ? null

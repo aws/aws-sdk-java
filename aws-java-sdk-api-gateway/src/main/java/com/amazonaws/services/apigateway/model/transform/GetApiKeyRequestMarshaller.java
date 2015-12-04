@@ -60,6 +60,7 @@ public class GetApiKeyRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/apikeys/{api_Key}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{api_Key}",
                 (getApiKeyRequest.getApiKey() == null) ? "" : StringUtils

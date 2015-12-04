@@ -63,6 +63,11 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      * If you are using the CLI, the value is Base64 encoded. Otherwise, it is
      * not encoded.
      * </p>
+     * <p>
+     * AWS SDK for Java performs a Base64 encoding on this field before sending
+     * this request to AWS service by default. Users of the SDK should not
+     * perform Base64 encoding on this field.
+     * </p>
      * 
      * @param ciphertextBlob
      *        Ciphertext that contains the encrypted data key. You must store
@@ -152,6 +157,11 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      * <p>
      * Plaintext that contains the data key. Use this for encryption and
      * decryption and then remove it from memory as soon as possible.
+     * </p>
+     * <p>
+     * AWS SDK for Java performs a Base64 encoding on this field before sending
+     * this request to AWS service by default. Users of the SDK should not
+     * perform Base64 encoding on this field.
      * </p>
      * 
      * @param plaintext

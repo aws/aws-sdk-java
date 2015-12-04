@@ -28,7 +28,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to create the computer account in.
+     * The identifier of the directory in which to create the computer account.
      * </p>
      */
     private String directoryId;
@@ -62,11 +62,12 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to create the computer account in.
+     * The identifier of the directory in which to create the computer account.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to create the computer account in.
+     *        The identifier of the directory in which to create the computer
+     *        account.
      */
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
@@ -74,11 +75,11 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to create the computer account in.
+     * The identifier of the directory in which to create the computer account.
      * </p>
      * 
-     * @return The identifier of the directory to create the computer account
-     *         in.
+     * @return The identifier of the directory in which to create the computer
+     *         account.
      */
     public String getDirectoryId() {
         return this.directoryId;
@@ -86,11 +87,12 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to create the computer account in.
+     * The identifier of the directory in which to create the computer account.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to create the computer account in.
+     *        The identifier of the directory in which to create the computer
+     *        account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

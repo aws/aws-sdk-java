@@ -28,7 +28,7 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to disable single-sign on for.
+     * The identifier of the directory for which to disable single-sign on.
      * </p>
      */
     private String directoryId;
@@ -36,11 +36,11 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
      * <p>
      * The username of an alternate account to use to disable single-sign on.
      * This is only used for AD Connector directories. This account must have
-     * privileges to remove a service principle name.
+     * privileges to remove a service principal name.
      * </p>
      * <p>
      * If the AD Connector service account does not have privileges to remove a
-     * service principle name, you can specify an alternate account with the
+     * service principal name, you can specify an alternate account with the
      * <i>UserName</i> and <i>Password</i> parameters. These credentials are
      * only used to disable single sign-on and are not stored by the service.
      * The AD Connector service account is not changed.
@@ -50,19 +50,20 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The password of an alternate account to use to disable single-sign on.
-     * This is only used for AD Connector directories. See the <i>UserName</i>
-     * parameter for more information.
+     * This is only used for AD Connector directories. For more information, see
+     * the <i>UserName</i> parameter.
      * </p>
      */
     private String password;
 
     /**
      * <p>
-     * The identifier of the directory to disable single-sign on for.
+     * The identifier of the directory for which to disable single-sign on.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to disable single-sign on for.
+     *        The identifier of the directory for which to disable single-sign
+     *        on.
      */
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
@@ -70,10 +71,11 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to disable single-sign on for.
+     * The identifier of the directory for which to disable single-sign on.
      * </p>
      * 
-     * @return The identifier of the directory to disable single-sign on for.
+     * @return The identifier of the directory for which to disable single-sign
+     *         on.
      */
     public String getDirectoryId() {
         return this.directoryId;
@@ -81,11 +83,12 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to disable single-sign on for.
+     * The identifier of the directory for which to disable single-sign on.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to disable single-sign on for.
+     *        The identifier of the directory for which to disable single-sign
+     *        on.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -98,11 +101,11 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
      * <p>
      * The username of an alternate account to use to disable single-sign on.
      * This is only used for AD Connector directories. This account must have
-     * privileges to remove a service principle name.
+     * privileges to remove a service principal name.
      * </p>
      * <p>
      * If the AD Connector service account does not have privileges to remove a
-     * service principle name, you can specify an alternate account with the
+     * service principal name, you can specify an alternate account with the
      * <i>UserName</i> and <i>Password</i> parameters. These credentials are
      * only used to disable single sign-on and are not stored by the service.
      * The AD Connector service account is not changed.
@@ -111,10 +114,10 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The username of an alternate account to use to disable single-sign
      *        on. This is only used for AD Connector directories. This account
-     *        must have privileges to remove a service principle name. </p>
+     *        must have privileges to remove a service principal name. </p>
      *        <p>
      *        If the AD Connector service account does not have privileges to
-     *        remove a service principle name, you can specify an alternate
+     *        remove a service principal name, you can specify an alternate
      *        account with the <i>UserName</i> and <i>Password</i> parameters.
      *        These credentials are only used to disable single sign-on and are
      *        not stored by the service. The AD Connector service account is not
@@ -128,11 +131,11 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
      * <p>
      * The username of an alternate account to use to disable single-sign on.
      * This is only used for AD Connector directories. This account must have
-     * privileges to remove a service principle name.
+     * privileges to remove a service principal name.
      * </p>
      * <p>
      * If the AD Connector service account does not have privileges to remove a
-     * service principle name, you can specify an alternate account with the
+     * service principal name, you can specify an alternate account with the
      * <i>UserName</i> and <i>Password</i> parameters. These credentials are
      * only used to disable single sign-on and are not stored by the service.
      * The AD Connector service account is not changed.
@@ -140,11 +143,11 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
      * 
      * @return The username of an alternate account to use to disable
      *         single-sign on. This is only used for AD Connector directories.
-     *         This account must have privileges to remove a service principle
+     *         This account must have privileges to remove a service principal
      *         name. </p>
      *         <p>
      *         If the AD Connector service account does not have privileges to
-     *         remove a service principle name, you can specify an alternate
+     *         remove a service principal name, you can specify an alternate
      *         account with the <i>UserName</i> and <i>Password</i> parameters.
      *         These credentials are only used to disable single sign-on and are
      *         not stored by the service. The AD Connector service account is
@@ -158,11 +161,11 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
      * <p>
      * The username of an alternate account to use to disable single-sign on.
      * This is only used for AD Connector directories. This account must have
-     * privileges to remove a service principle name.
+     * privileges to remove a service principal name.
      * </p>
      * <p>
      * If the AD Connector service account does not have privileges to remove a
-     * service principle name, you can specify an alternate account with the
+     * service principal name, you can specify an alternate account with the
      * <i>UserName</i> and <i>Password</i> parameters. These credentials are
      * only used to disable single sign-on and are not stored by the service.
      * The AD Connector service account is not changed.
@@ -171,10 +174,10 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The username of an alternate account to use to disable single-sign
      *        on. This is only used for AD Connector directories. This account
-     *        must have privileges to remove a service principle name. </p>
+     *        must have privileges to remove a service principal name. </p>
      *        <p>
      *        If the AD Connector service account does not have privileges to
-     *        remove a service principle name, you can specify an alternate
+     *        remove a service principal name, you can specify an alternate
      *        account with the <i>UserName</i> and <i>Password</i> parameters.
      *        These credentials are only used to disable single sign-on and are
      *        not stored by the service. The AD Connector service account is not
@@ -190,14 +193,14 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The password of an alternate account to use to disable single-sign on.
-     * This is only used for AD Connector directories. See the <i>UserName</i>
-     * parameter for more information.
+     * This is only used for AD Connector directories. For more information, see
+     * the <i>UserName</i> parameter.
      * </p>
      * 
      * @param password
      *        The password of an alternate account to use to disable single-sign
-     *        on. This is only used for AD Connector directories. See the
-     *        <i>UserName</i> parameter for more information.
+     *        on. This is only used for AD Connector directories. For more
+     *        information, see the <i>UserName</i> parameter.
      */
     public void setPassword(String password) {
         this.password = password;
@@ -206,13 +209,13 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The password of an alternate account to use to disable single-sign on.
-     * This is only used for AD Connector directories. See the <i>UserName</i>
-     * parameter for more information.
+     * This is only used for AD Connector directories. For more information, see
+     * the <i>UserName</i> parameter.
      * </p>
      * 
      * @return The password of an alternate account to use to disable
      *         single-sign on. This is only used for AD Connector directories.
-     *         See the <i>UserName</i> parameter for more information.
+     *         For more information, see the <i>UserName</i> parameter.
      */
     public String getPassword() {
         return this.password;
@@ -221,14 +224,14 @@ public class DisableSsoRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The password of an alternate account to use to disable single-sign on.
-     * This is only used for AD Connector directories. See the <i>UserName</i>
-     * parameter for more information.
+     * This is only used for AD Connector directories. For more information, see
+     * the <i>UserName</i> parameter.
      * </p>
      * 
      * @param password
      *        The password of an alternate account to use to disable single-sign
-     *        on. This is only used for AD Connector directories. See the
-     *        <i>UserName</i> parameter for more information.
+     *        on. This is only used for AD Connector directories. For more
+     *        information, see the <i>UserName</i> parameter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

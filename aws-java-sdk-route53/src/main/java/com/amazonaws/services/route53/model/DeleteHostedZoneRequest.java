@@ -36,9 +36,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * record sets. If your hosted zone contains other resource record sets,
  * you must delete them before you can delete your hosted zone. If you
  * try to delete a hosted zone that contains other resource record sets,
- * Route 53 will deny your request with a HostedZoneNotEmpty error. For
- * information about deleting records from your hosted zone, see
- * ChangeResourceRecordSets.
+ * Amazon Route 53 will deny your request with a HostedZoneNotEmpty
+ * error. For information about deleting records from your hosted zone,
+ * see ChangeResourceRecordSets.
  * </p>
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#deleteHostedZone(DeleteHostedZoneRequest)

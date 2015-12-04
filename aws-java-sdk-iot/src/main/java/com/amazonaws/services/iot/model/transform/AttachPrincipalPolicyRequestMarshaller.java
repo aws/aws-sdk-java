@@ -67,6 +67,7 @@ public class AttachPrincipalPolicyRequestMarshaller
         }
 
         String uriResourcePath = "/principal-policies/{policyName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
                 (attachPrincipalPolicyRequest.getPolicyName() == null) ? ""

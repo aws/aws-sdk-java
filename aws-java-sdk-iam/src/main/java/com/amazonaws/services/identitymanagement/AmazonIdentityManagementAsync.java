@@ -6778,10 +6778,6 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in the <i>IAM User Guide</i> .
      * </p>
-     * <p>
-     * The policy in the following example grants permission to an EC2
-     * instance to assume the role.
-     * </p>
      *
      * @param createRoleRequest Container for the necessary parameters to
      *           execute the CreateRole operation on AmazonIdentityManagement.
@@ -6807,10 +6803,6 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * roles, go to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in the <i>IAM User Guide</i> .
-     * </p>
-     * <p>
-     * The policy in the following example grants permission to an EC2
-     * instance to assume the role.
      * </p>
      *
      * @param createRoleRequest Container for the necessary parameters to

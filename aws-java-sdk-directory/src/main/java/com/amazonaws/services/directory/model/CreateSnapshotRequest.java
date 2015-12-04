@@ -28,7 +28,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to take a snapshot of.
+     * The identifier of the directory of which to take a snapshot.
      * </p>
      */
     private String directoryId;
@@ -41,11 +41,11 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to take a snapshot of.
+     * The identifier of the directory of which to take a snapshot.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to take a snapshot of.
+     *        The identifier of the directory of which to take a snapshot.
      */
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
@@ -53,10 +53,10 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to take a snapshot of.
+     * The identifier of the directory of which to take a snapshot.
      * </p>
      * 
-     * @return The identifier of the directory to take a snapshot of.
+     * @return The identifier of the directory of which to take a snapshot.
      */
     public String getDirectoryId() {
         return this.directoryId;
@@ -64,11 +64,11 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to take a snapshot of.
+     * The identifier of the directory of which to take a snapshot.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to take a snapshot of.
+     *        The identifier of the directory of which to take a snapshot.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

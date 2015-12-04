@@ -19,15 +19,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information for the <a>CreateDirectory</a> operation when a Simple
- * AD directory is being created.
+ * Contains VPC information for the <a>CreateDirectory</a> or
+ * <a>CreateMicrosoftAD</a> operation.
  * </p>
  */
 public class DirectoryVpcSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the VPC to create the Simple AD directory in.
+     * The identifier of the VPC in which to create the directory.
      * </p>
      */
     private String vpcId;
@@ -42,11 +42,11 @@ public class DirectoryVpcSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the VPC to create the Simple AD directory in.
+     * The identifier of the VPC in which to create the directory.
      * </p>
      * 
      * @param vpcId
-     *        The identifier of the VPC to create the Simple AD directory in.
+     *        The identifier of the VPC in which to create the directory.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -54,10 +54,10 @@ public class DirectoryVpcSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the VPC to create the Simple AD directory in.
+     * The identifier of the VPC in which to create the directory.
      * </p>
      * 
-     * @return The identifier of the VPC to create the Simple AD directory in.
+     * @return The identifier of the VPC in which to create the directory.
      */
     public String getVpcId() {
         return this.vpcId;
@@ -65,11 +65,11 @@ public class DirectoryVpcSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the VPC to create the Simple AD directory in.
+     * The identifier of the VPC in which to create the directory.
      * </p>
      * 
      * @param vpcId
-     *        The identifier of the VPC to create the Simple AD directory in.
+     *        The identifier of the VPC in which to create the directory.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

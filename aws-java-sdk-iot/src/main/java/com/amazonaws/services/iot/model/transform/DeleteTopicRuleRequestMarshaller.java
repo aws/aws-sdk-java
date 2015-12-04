@@ -61,6 +61,7 @@ public class DeleteTopicRuleRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/rules/{ruleName}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{ruleName}",
                 (deleteTopicRuleRequest.getRuleName() == null) ? ""

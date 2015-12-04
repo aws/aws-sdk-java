@@ -60,6 +60,7 @@ public class ListTagsRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2015-01-01/tags/";
+
         request.setResourcePath(uriResourcePath);
 
         String aRN = (listTagsRequest.getARN() == null) ? null : StringUtils

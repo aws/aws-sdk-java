@@ -28,18 +28,18 @@ public class DisableRadiusRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to disable MFA for.
+     * The identifier of the directory for which to disable MFA.
      * </p>
      */
     private String directoryId;
 
     /**
      * <p>
-     * The identifier of the directory to disable MFA for.
+     * The identifier of the directory for which to disable MFA.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to disable MFA for.
+     *        The identifier of the directory for which to disable MFA.
      */
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
@@ -47,10 +47,10 @@ public class DisableRadiusRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to disable MFA for.
+     * The identifier of the directory for which to disable MFA.
      * </p>
      * 
-     * @return The identifier of the directory to disable MFA for.
+     * @return The identifier of the directory for which to disable MFA.
      */
     public String getDirectoryId() {
         return this.directoryId;
@@ -58,11 +58,11 @@ public class DisableRadiusRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory to disable MFA for.
+     * The identifier of the directory for which to disable MFA.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory to disable MFA for.
+     *        The identifier of the directory for which to disable MFA.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

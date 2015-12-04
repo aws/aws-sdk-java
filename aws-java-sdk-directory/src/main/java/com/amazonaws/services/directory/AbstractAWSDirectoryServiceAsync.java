@@ -89,6 +89,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMicrosoftADResult> createMicrosoftADAsync(
+            CreateMicrosoftADRequest request) {
+
+        return createMicrosoftADAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMicrosoftADResult> createMicrosoftADAsync(
+            CreateMicrosoftADRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateMicrosoftADRequest, CreateMicrosoftADResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(
             CreateSnapshotRequest request) {
 
@@ -99,6 +114,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     public java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(
             CreateSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrustResult> createTrustAsync(
+            CreateTrustRequest request) {
+
+        return createTrustAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrustResult> createTrustAsync(
+            CreateTrustRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTrustRequest, CreateTrustResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -129,6 +159,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     public java.util.concurrent.Future<DeleteSnapshotResult> deleteSnapshotAsync(
             DeleteSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, DeleteSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrustResult> deleteTrustAsync(
+            DeleteTrustRequest request) {
+
+        return deleteTrustAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrustResult> deleteTrustAsync(
+            DeleteTrustRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrustRequest, DeleteTrustResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -211,6 +256,21 @@ public class AbstractAWSDirectoryServiceAsync extends
 
         return describeSnapshotsAsync(new DescribeSnapshotsRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrustsResult> describeTrustsAsync(
+            DescribeTrustsRequest request) {
+
+        return describeTrustsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrustsResult> describeTrustsAsync(
+            DescribeTrustsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrustsRequest, DescribeTrustsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -354,6 +414,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     public java.util.concurrent.Future<UpdateRadiusResult> updateRadiusAsync(
             UpdateRadiusRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRadiusRequest, UpdateRadiusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyTrustResult> verifyTrustAsync(
+            VerifyTrustRequest request) {
+
+        return verifyTrustAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyTrustResult> verifyTrustAsync(
+            VerifyTrustRequest request,
+            com.amazonaws.handlers.AsyncHandler<VerifyTrustRequest, VerifyTrustResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -62,6 +62,7 @@ public class DeletePolicyVersionRequestMarshaller
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/policies/{policyName}/version/{policyVersionId}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
                 (deletePolicyVersionRequest.getPolicyName() == null) ? ""

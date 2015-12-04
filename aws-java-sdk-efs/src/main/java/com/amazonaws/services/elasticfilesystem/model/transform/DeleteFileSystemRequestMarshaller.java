@@ -61,6 +61,7 @@ public class DeleteFileSystemRequestMarshaller implements
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/2015-02-01/file-systems/{FileSystemId}";
+
         uriResourcePath = uriResourcePath.replace(
                 "{FileSystemId}",
                 (deleteFileSystemRequest.getFileSystemId() == null) ? ""

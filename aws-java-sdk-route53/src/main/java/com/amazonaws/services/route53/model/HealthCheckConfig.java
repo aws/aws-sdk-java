@@ -54,8 +54,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * Path to ping on the instance to check the health. Required for HTTP,
-     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
-     * is issued to the instance on the given port and path.
+     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks. The HTTP
+     * request is issued to the instance on the given port and path.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
@@ -80,10 +80,11 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     private String searchString;
 
     /**
-     * The number of seconds between the time that Route 53 gets a response
-     * from your endpoint and the time that it sends the next health-check
-     * request. <p>Each Route 53 health checker makes requests at this
-     * interval. Valid values are 10 and 30. The default value is 30.
+     * The number of seconds between the time that Amazon Route 53 gets a
+     * response from your endpoint and the time that it sends the next
+     * health-check request. <p>Each Amazon Route 53 health checker makes
+     * requests at this interval. Valid values are 10 and 30. The default
+     * value is 30.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>10 - 30<br/>
@@ -92,8 +93,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * The number of consecutive health checks that an endpoint must pass or
-     * fail for Route 53 to change the current status of the endpoint from
-     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * fail for Amazon Route 53 to change the current status of the endpoint
+     * from unhealthy to healthy or vice versa. <p>Valid values are integers
      * between 1 and 10. For more information, see "How Amazon Route 53
      * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      * Developer Guide.
@@ -104,25 +105,25 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     private Integer failureThreshold;
 
     /**
-     * A Boolean value that indicates whether you want Route 53 to measure
-     * the latency between health checkers in multiple AWS regions and your
-     * endpoint and to display CloudWatch latency graphs in the Route 53
-     * console.
+     * A Boolean value that indicates whether you want Amazon Route 53 to
+     * measure the latency between health checkers in multiple AWS regions
+     * and your endpoint and to display CloudWatch latency graphs in the
+     * Amazon Route 53 console.
      */
     private Boolean measureLatency;
 
     /**
      * A boolean value that indicates whether the status of health check
      * should be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     * the health check to be unhealthy.
+     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     * considers the health check to be unhealthy.
      */
     private Boolean inverted;
 
     /**
      * The minimum number of child health checks that must be healthy for
-     * Route 53 to consider the parent health check to be healthy. Valid
-     * values are integers between 0 and 256, inclusive.
+     * Amazon Route 53 to consider the parent health check to be healthy.
+     * Valid values are integers between 0 and 256, inclusive.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 256<br/>
@@ -338,15 +339,15 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * Path to ping on the instance to check the health. Required for HTTP,
-     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
-     * is issued to the instance on the given port and path.
+     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks. The HTTP
+     * request is issued to the instance on the given port and path.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
      *
      * @return Path to ping on the instance to check the health. Required for HTTP,
-     *         HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
-     *         is issued to the instance on the given port and path.
+     *         HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks. The HTTP
+     *         request is issued to the instance on the given port and path.
      */
     public String getResourcePath() {
         return resourcePath;
@@ -354,15 +355,15 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     
     /**
      * Path to ping on the instance to check the health. Required for HTTP,
-     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
-     * is issued to the instance on the given port and path.
+     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks. The HTTP
+     * request is issued to the instance on the given port and path.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
      *
      * @param resourcePath Path to ping on the instance to check the health. Required for HTTP,
-     *         HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
-     *         is issued to the instance on the given port and path.
+     *         HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks. The HTTP
+     *         request is issued to the instance on the given port and path.
      */
     public void setResourcePath(String resourcePath) {
         this.resourcePath = resourcePath;
@@ -370,8 +371,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     
     /**
      * Path to ping on the instance to check the health. Required for HTTP,
-     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
-     * is issued to the instance on the given port and path.
+     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks. The HTTP
+     * request is issued to the instance on the given port and path.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -379,8 +380,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <b>Length: </b>0 - 255<br/>
      *
      * @param resourcePath Path to ping on the instance to check the health. Required for HTTP,
-     *         HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
-     *         is issued to the instance on the given port and path.
+     *         HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks. The HTTP
+     *         request is issued to the instance on the given port and path.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -481,56 +482,62 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     }
 
     /**
-     * The number of seconds between the time that Route 53 gets a response
-     * from your endpoint and the time that it sends the next health-check
-     * request. <p>Each Route 53 health checker makes requests at this
-     * interval. Valid values are 10 and 30. The default value is 30.
+     * The number of seconds between the time that Amazon Route 53 gets a
+     * response from your endpoint and the time that it sends the next
+     * health-check request. <p>Each Amazon Route 53 health checker makes
+     * requests at this interval. Valid values are 10 and 30. The default
+     * value is 30.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>10 - 30<br/>
      *
-     * @return The number of seconds between the time that Route 53 gets a response
-     *         from your endpoint and the time that it sends the next health-check
-     *         request. <p>Each Route 53 health checker makes requests at this
-     *         interval. Valid values are 10 and 30. The default value is 30.
+     * @return The number of seconds between the time that Amazon Route 53 gets a
+     *         response from your endpoint and the time that it sends the next
+     *         health-check request. <p>Each Amazon Route 53 health checker makes
+     *         requests at this interval. Valid values are 10 and 30. The default
+     *         value is 30.
      */
     public Integer getRequestInterval() {
         return requestInterval;
     }
     
     /**
-     * The number of seconds between the time that Route 53 gets a response
-     * from your endpoint and the time that it sends the next health-check
-     * request. <p>Each Route 53 health checker makes requests at this
-     * interval. Valid values are 10 and 30. The default value is 30.
+     * The number of seconds between the time that Amazon Route 53 gets a
+     * response from your endpoint and the time that it sends the next
+     * health-check request. <p>Each Amazon Route 53 health checker makes
+     * requests at this interval. Valid values are 10 and 30. The default
+     * value is 30.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>10 - 30<br/>
      *
-     * @param requestInterval The number of seconds between the time that Route 53 gets a response
-     *         from your endpoint and the time that it sends the next health-check
-     *         request. <p>Each Route 53 health checker makes requests at this
-     *         interval. Valid values are 10 and 30. The default value is 30.
+     * @param requestInterval The number of seconds between the time that Amazon Route 53 gets a
+     *         response from your endpoint and the time that it sends the next
+     *         health-check request. <p>Each Amazon Route 53 health checker makes
+     *         requests at this interval. Valid values are 10 and 30. The default
+     *         value is 30.
      */
     public void setRequestInterval(Integer requestInterval) {
         this.requestInterval = requestInterval;
     }
     
     /**
-     * The number of seconds between the time that Route 53 gets a response
-     * from your endpoint and the time that it sends the next health-check
-     * request. <p>Each Route 53 health checker makes requests at this
-     * interval. Valid values are 10 and 30. The default value is 30.
+     * The number of seconds between the time that Amazon Route 53 gets a
+     * response from your endpoint and the time that it sends the next
+     * health-check request. <p>Each Amazon Route 53 health checker makes
+     * requests at this interval. Valid values are 10 and 30. The default
+     * value is 30.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>10 - 30<br/>
      *
-     * @param requestInterval The number of seconds between the time that Route 53 gets a response
-     *         from your endpoint and the time that it sends the next health-check
-     *         request. <p>Each Route 53 health checker makes requests at this
-     *         interval. Valid values are 10 and 30. The default value is 30.
+     * @param requestInterval The number of seconds between the time that Amazon Route 53 gets a
+     *         response from your endpoint and the time that it sends the next
+     *         health-check request. <p>Each Amazon Route 53 health checker makes
+     *         requests at this interval. Valid values are 10 and 30. The default
+     *         value is 30.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -542,8 +549,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * The number of consecutive health checks that an endpoint must pass or
-     * fail for Route 53 to change the current status of the endpoint from
-     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * fail for Amazon Route 53 to change the current status of the endpoint
+     * from unhealthy to healthy or vice versa. <p>Valid values are integers
      * between 1 and 10. For more information, see "How Amazon Route 53
      * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      * Developer Guide.
@@ -552,8 +559,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <b>Range: </b>1 - 10<br/>
      *
      * @return The number of consecutive health checks that an endpoint must pass or
-     *         fail for Route 53 to change the current status of the endpoint from
-     *         unhealthy to healthy or vice versa. <p>Valid values are integers
+     *         fail for Amazon Route 53 to change the current status of the endpoint
+     *         from unhealthy to healthy or vice versa. <p>Valid values are integers
      *         between 1 and 10. For more information, see "How Amazon Route 53
      *         Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      *         Developer Guide.
@@ -564,8 +571,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     
     /**
      * The number of consecutive health checks that an endpoint must pass or
-     * fail for Route 53 to change the current status of the endpoint from
-     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * fail for Amazon Route 53 to change the current status of the endpoint
+     * from unhealthy to healthy or vice versa. <p>Valid values are integers
      * between 1 and 10. For more information, see "How Amazon Route 53
      * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      * Developer Guide.
@@ -574,8 +581,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <b>Range: </b>1 - 10<br/>
      *
      * @param failureThreshold The number of consecutive health checks that an endpoint must pass or
-     *         fail for Route 53 to change the current status of the endpoint from
-     *         unhealthy to healthy or vice versa. <p>Valid values are integers
+     *         fail for Amazon Route 53 to change the current status of the endpoint
+     *         from unhealthy to healthy or vice versa. <p>Valid values are integers
      *         between 1 and 10. For more information, see "How Amazon Route 53
      *         Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      *         Developer Guide.
@@ -586,8 +593,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     
     /**
      * The number of consecutive health checks that an endpoint must pass or
-     * fail for Route 53 to change the current status of the endpoint from
-     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * fail for Amazon Route 53 to change the current status of the endpoint
+     * from unhealthy to healthy or vice versa. <p>Valid values are integers
      * between 1 and 10. For more information, see "How Amazon Route 53
      * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      * Developer Guide.
@@ -598,8 +605,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <b>Range: </b>1 - 10<br/>
      *
      * @param failureThreshold The number of consecutive health checks that an endpoint must pass or
-     *         fail for Route 53 to change the current status of the endpoint from
-     *         unhealthy to healthy or vice versa. <p>Valid values are integers
+     *         fail for Amazon Route 53 to change the current status of the endpoint
+     *         from unhealthy to healthy or vice versa. <p>Valid values are integers
      *         between 1 and 10. For more information, see "How Amazon Route 53
      *         Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      *         Developer Guide.
@@ -613,47 +620,47 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A Boolean value that indicates whether you want Route 53 to measure
-     * the latency between health checkers in multiple AWS regions and your
-     * endpoint and to display CloudWatch latency graphs in the Route 53
-     * console.
+     * A Boolean value that indicates whether you want Amazon Route 53 to
+     * measure the latency between health checkers in multiple AWS regions
+     * and your endpoint and to display CloudWatch latency graphs in the
+     * Amazon Route 53 console.
      *
-     * @return A Boolean value that indicates whether you want Route 53 to measure
-     *         the latency between health checkers in multiple AWS regions and your
-     *         endpoint and to display CloudWatch latency graphs in the Route 53
-     *         console.
+     * @return A Boolean value that indicates whether you want Amazon Route 53 to
+     *         measure the latency between health checkers in multiple AWS regions
+     *         and your endpoint and to display CloudWatch latency graphs in the
+     *         Amazon Route 53 console.
      */
     public Boolean isMeasureLatency() {
         return measureLatency;
     }
     
     /**
-     * A Boolean value that indicates whether you want Route 53 to measure
-     * the latency between health checkers in multiple AWS regions and your
-     * endpoint and to display CloudWatch latency graphs in the Route 53
-     * console.
+     * A Boolean value that indicates whether you want Amazon Route 53 to
+     * measure the latency between health checkers in multiple AWS regions
+     * and your endpoint and to display CloudWatch latency graphs in the
+     * Amazon Route 53 console.
      *
-     * @param measureLatency A Boolean value that indicates whether you want Route 53 to measure
-     *         the latency between health checkers in multiple AWS regions and your
-     *         endpoint and to display CloudWatch latency graphs in the Route 53
-     *         console.
+     * @param measureLatency A Boolean value that indicates whether you want Amazon Route 53 to
+     *         measure the latency between health checkers in multiple AWS regions
+     *         and your endpoint and to display CloudWatch latency graphs in the
+     *         Amazon Route 53 console.
      */
     public void setMeasureLatency(Boolean measureLatency) {
         this.measureLatency = measureLatency;
     }
     
     /**
-     * A Boolean value that indicates whether you want Route 53 to measure
-     * the latency between health checkers in multiple AWS regions and your
-     * endpoint and to display CloudWatch latency graphs in the Route 53
-     * console.
+     * A Boolean value that indicates whether you want Amazon Route 53 to
+     * measure the latency between health checkers in multiple AWS regions
+     * and your endpoint and to display CloudWatch latency graphs in the
+     * Amazon Route 53 console.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param measureLatency A Boolean value that indicates whether you want Route 53 to measure
-     *         the latency between health checkers in multiple AWS regions and your
-     *         endpoint and to display CloudWatch latency graphs in the Route 53
-     *         console.
+     * @param measureLatency A Boolean value that indicates whether you want Amazon Route 53 to
+     *         measure the latency between health checkers in multiple AWS regions
+     *         and your endpoint and to display CloudWatch latency graphs in the
+     *         Amazon Route 53 console.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -664,15 +671,15 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A Boolean value that indicates whether you want Route 53 to measure
-     * the latency between health checkers in multiple AWS regions and your
-     * endpoint and to display CloudWatch latency graphs in the Route 53
-     * console.
+     * A Boolean value that indicates whether you want Amazon Route 53 to
+     * measure the latency between health checkers in multiple AWS regions
+     * and your endpoint and to display CloudWatch latency graphs in the
+     * Amazon Route 53 console.
      *
-     * @return A Boolean value that indicates whether you want Route 53 to measure
-     *         the latency between health checkers in multiple AWS regions and your
-     *         endpoint and to display CloudWatch latency graphs in the Route 53
-     *         console.
+     * @return A Boolean value that indicates whether you want Amazon Route 53 to
+     *         measure the latency between health checkers in multiple AWS regions
+     *         and your endpoint and to display CloudWatch latency graphs in the
+     *         Amazon Route 53 console.
      */
     public Boolean getMeasureLatency() {
         return measureLatency;
@@ -681,13 +688,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * A boolean value that indicates whether the status of health check
      * should be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     * the health check to be unhealthy.
+     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     * considers the health check to be unhealthy.
      *
      * @return A boolean value that indicates whether the status of health check
      *         should be inverted. For example, if a health check is healthy but
-     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     *         the health check to be unhealthy.
+     *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     *         considers the health check to be unhealthy.
      */
     public Boolean isInverted() {
         return inverted;
@@ -696,13 +703,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * A boolean value that indicates whether the status of health check
      * should be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     * the health check to be unhealthy.
+     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     * considers the health check to be unhealthy.
      *
      * @param inverted A boolean value that indicates whether the status of health check
      *         should be inverted. For example, if a health check is healthy but
-     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     *         the health check to be unhealthy.
+     *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     *         considers the health check to be unhealthy.
      */
     public void setInverted(Boolean inverted) {
         this.inverted = inverted;
@@ -711,15 +718,15 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * A boolean value that indicates whether the status of health check
      * should be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     * the health check to be unhealthy.
+     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     * considers the health check to be unhealthy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param inverted A boolean value that indicates whether the status of health check
      *         should be inverted. For example, if a health check is healthy but
-     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     *         the health check to be unhealthy.
+     *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     *         considers the health check to be unhealthy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -732,13 +739,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * A boolean value that indicates whether the status of health check
      * should be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     * the health check to be unhealthy.
+     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     * considers the health check to be unhealthy.
      *
      * @return A boolean value that indicates whether the status of health check
      *         should be inverted. For example, if a health check is healthy but
-     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
-     *         the health check to be unhealthy.
+     *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
+     *         considers the health check to be unhealthy.
      */
     public Boolean getInverted() {
         return inverted;
@@ -746,15 +753,15 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * The minimum number of child health checks that must be healthy for
-     * Route 53 to consider the parent health check to be healthy. Valid
-     * values are integers between 0 and 256, inclusive.
+     * Amazon Route 53 to consider the parent health check to be healthy.
+     * Valid values are integers between 0 and 256, inclusive.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 256<br/>
      *
      * @return The minimum number of child health checks that must be healthy for
-     *         Route 53 to consider the parent health check to be healthy. Valid
-     *         values are integers between 0 and 256, inclusive.
+     *         Amazon Route 53 to consider the parent health check to be healthy.
+     *         Valid values are integers between 0 and 256, inclusive.
      */
     public Integer getHealthThreshold() {
         return healthThreshold;
@@ -762,15 +769,15 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     
     /**
      * The minimum number of child health checks that must be healthy for
-     * Route 53 to consider the parent health check to be healthy. Valid
-     * values are integers between 0 and 256, inclusive.
+     * Amazon Route 53 to consider the parent health check to be healthy.
+     * Valid values are integers between 0 and 256, inclusive.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 256<br/>
      *
      * @param healthThreshold The minimum number of child health checks that must be healthy for
-     *         Route 53 to consider the parent health check to be healthy. Valid
-     *         values are integers between 0 and 256, inclusive.
+     *         Amazon Route 53 to consider the parent health check to be healthy.
+     *         Valid values are integers between 0 and 256, inclusive.
      */
     public void setHealthThreshold(Integer healthThreshold) {
         this.healthThreshold = healthThreshold;
@@ -778,8 +785,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     
     /**
      * The minimum number of child health checks that must be healthy for
-     * Route 53 to consider the parent health check to be healthy. Valid
-     * values are integers between 0 and 256, inclusive.
+     * Amazon Route 53 to consider the parent health check to be healthy.
+     * Valid values are integers between 0 and 256, inclusive.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -787,8 +794,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <b>Range: </b>0 - 256<br/>
      *
      * @param healthThreshold The minimum number of child health checks that must be healthy for
-     *         Route 53 to consider the parent health check to be healthy. Valid
-     *         values are integers between 0 and 256, inclusive.
+     *         Amazon Route 53 to consider the parent health check to be healthy.
+     *         Valid values are integers between 0 and 256, inclusive.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
