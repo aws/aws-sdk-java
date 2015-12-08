@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.flow.pojo;
 
+import java.beans.Expression;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -233,15 +234,7 @@ public class POJOWorkflowDefinitionFactoryFactory extends WorkflowDefinitionFact
 
             @Override
             public Object newInstance(DecisionContext decisionContext, Object[] constructorArgs) throws Exception {
-                List<Class<?>> constructorArgsTypes = new ArrayList<Class<?>>();
-
-                for (Object arg : constructorArgs) {
-                    constructorArgsTypes.add(arg.getClass());
-                }
-
-                Class<?>[] constructorArgsTypesArray = constructorArgsTypes.toArray(new Class<?>[constructorArgs.length]);
-
-                return workflowImplementationType.getDeclaredConstructor(constructorArgsTypesArray).newInstance(constructorArgs);
+                return new Expression(workflowImplementationType, "new", constructorArgs).getValue();
             }
 
             @Override
