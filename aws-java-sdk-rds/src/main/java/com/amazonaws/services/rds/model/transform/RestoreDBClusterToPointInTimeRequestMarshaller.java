@@ -90,6 +90,9 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements Marshalle
 
             tagsListIndex++;
         }
+        if (restoreDBClusterToPointInTimeRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getKmsKeyId()));
+        }
 
         return request;
     }

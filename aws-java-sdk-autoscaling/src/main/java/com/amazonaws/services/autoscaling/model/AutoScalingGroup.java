@@ -62,8 +62,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private Integer desiredCapacity;
     /**
      * <p>
-     * The number of seconds after a scaling activity completes before any
-     * further scaling activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before
+     * another scaling activity can start.
      * </p>
      */
     private Integer defaultCooldown;
@@ -81,17 +81,15 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> loadBalancerNames;
     /**
      * <p>
-     * The service of interest for the health status check, which can be either
-     * <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load
-     * Balancing.
+     * The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.
      * </p>
      */
     private String healthCheckType;
     /**
      * <p>
-     * The amount of time that Auto Scaling waits before checking an instance's
-     * health status. The grace period begins when an instance comes into
-     * service.
+     * The amount of time, in seconds, that Auto Scaling waits before checking
+     * the health status of an EC2 instance that has come into service.
      * </p>
      */
     private Integer healthCheckGracePeriod;
@@ -159,6 +157,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> terminationPolicies;
+    /**
+     * <p>
+     * Indicates whether newly launched instances are protected from termination
+     * by Auto Scaling when scaling in.
+     * </p>
+     */
+    private Boolean newInstancesProtectedFromScaleIn;
 
     /**
      * <p>
@@ -391,13 +396,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds after a scaling activity completes before any
-     * further scaling activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before
+     * another scaling activity can start.
      * </p>
      * 
      * @param defaultCooldown
-     *        The number of seconds after a scaling activity completes before
-     *        any further scaling activities can start.
+     *        The amount of time, in seconds, after a scaling activity completes
+     *        before another scaling activity can start.
      */
     public void setDefaultCooldown(Integer defaultCooldown) {
         this.defaultCooldown = defaultCooldown;
@@ -405,12 +410,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds after a scaling activity completes before any
-     * further scaling activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before
+     * another scaling activity can start.
      * </p>
      * 
-     * @return The number of seconds after a scaling activity completes before
-     *         any further scaling activities can start.
+     * @return The amount of time, in seconds, after a scaling activity
+     *         completes before another scaling activity can start.
      */
     public Integer getDefaultCooldown() {
         return this.defaultCooldown;
@@ -418,13 +423,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds after a scaling activity completes before any
-     * further scaling activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before
+     * another scaling activity can start.
      * </p>
      * 
      * @param defaultCooldown
-     *        The number of seconds after a scaling activity completes before
-     *        any further scaling activities can start.
+     *        The amount of time, in seconds, after a scaling activity completes
+     *        before another scaling activity can start.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -587,15 +592,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service of interest for the health status check, which can be either
-     * <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load
-     * Balancing.
+     * The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.
      * </p>
      * 
      * @param healthCheckType
-     *        The service of interest for the health status check, which can be
-     *        either <code>EC2</code> for Amazon EC2 or <code>ELB</code> for
-     *        Elastic Load Balancing.
+     *        The service to use for the health checks. The valid values are
+     *        <code>EC2</code> and <code>ELB</code>.
      */
     public void setHealthCheckType(String healthCheckType) {
         this.healthCheckType = healthCheckType;
@@ -603,14 +606,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service of interest for the health status check, which can be either
-     * <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load
-     * Balancing.
+     * The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.
      * </p>
      * 
-     * @return The service of interest for the health status check, which can be
-     *         either <code>EC2</code> for Amazon EC2 or <code>ELB</code> for
-     *         Elastic Load Balancing.
+     * @return The service to use for the health checks. The valid values are
+     *         <code>EC2</code> and <code>ELB</code>.
      */
     public String getHealthCheckType() {
         return this.healthCheckType;
@@ -618,15 +619,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service of interest for the health status check, which can be either
-     * <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load
-     * Balancing.
+     * The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.
      * </p>
      * 
      * @param healthCheckType
-     *        The service of interest for the health status check, which can be
-     *        either <code>EC2</code> for Amazon EC2 or <code>ELB</code> for
-     *        Elastic Load Balancing.
+     *        The service to use for the health checks. The valid values are
+     *        <code>EC2</code> and <code>ELB</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -637,15 +636,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time that Auto Scaling waits before checking an instance's
-     * health status. The grace period begins when an instance comes into
-     * service.
+     * The amount of time, in seconds, that Auto Scaling waits before checking
+     * the health status of an EC2 instance that has come into service.
      * </p>
      * 
      * @param healthCheckGracePeriod
-     *        The amount of time that Auto Scaling waits before checking an
-     *        instance's health status. The grace period begins when an instance
-     *        comes into service.
+     *        The amount of time, in seconds, that Auto Scaling waits before
+     *        checking the health status of an EC2 instance that has come into
+     *        service.
      */
     public void setHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
         this.healthCheckGracePeriod = healthCheckGracePeriod;
@@ -653,14 +651,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time that Auto Scaling waits before checking an instance's
-     * health status. The grace period begins when an instance comes into
-     * service.
+     * The amount of time, in seconds, that Auto Scaling waits before checking
+     * the health status of an EC2 instance that has come into service.
      * </p>
      * 
-     * @return The amount of time that Auto Scaling waits before checking an
-     *         instance's health status. The grace period begins when an
-     *         instance comes into service.
+     * @return The amount of time, in seconds, that Auto Scaling waits before
+     *         checking the health status of an EC2 instance that has come into
+     *         service.
      */
     public Integer getHealthCheckGracePeriod() {
         return this.healthCheckGracePeriod;
@@ -668,15 +665,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time that Auto Scaling waits before checking an instance's
-     * health status. The grace period begins when an instance comes into
-     * service.
+     * The amount of time, in seconds, that Auto Scaling waits before checking
+     * the health status of an EC2 instance that has come into service.
      * </p>
      * 
      * @param healthCheckGracePeriod
-     *        The amount of time that Auto Scaling waits before checking an
-     *        instance's health status. The grace period begins when an instance
-     *        comes into service.
+     *        The amount of time, in seconds, that Auto Scaling waits before
+     *        checking the health status of an EC2 instance that has come into
+     *        service.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1276,6 +1272,65 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether newly launched instances are protected from termination
+     * by Auto Scaling when scaling in.
+     * </p>
+     * 
+     * @param newInstancesProtectedFromScaleIn
+     *        Indicates whether newly launched instances are protected from
+     *        termination by Auto Scaling when scaling in.
+     */
+    public void setNewInstancesProtectedFromScaleIn(
+            Boolean newInstancesProtectedFromScaleIn) {
+        this.newInstancesProtectedFromScaleIn = newInstancesProtectedFromScaleIn;
+    }
+
+    /**
+     * <p>
+     * Indicates whether newly launched instances are protected from termination
+     * by Auto Scaling when scaling in.
+     * </p>
+     * 
+     * @return Indicates whether newly launched instances are protected from
+     *         termination by Auto Scaling when scaling in.
+     */
+    public Boolean getNewInstancesProtectedFromScaleIn() {
+        return this.newInstancesProtectedFromScaleIn;
+    }
+
+    /**
+     * <p>
+     * Indicates whether newly launched instances are protected from termination
+     * by Auto Scaling when scaling in.
+     * </p>
+     * 
+     * @param newInstancesProtectedFromScaleIn
+     *        Indicates whether newly launched instances are protected from
+     *        termination by Auto Scaling when scaling in.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public AutoScalingGroup withNewInstancesProtectedFromScaleIn(
+            Boolean newInstancesProtectedFromScaleIn) {
+        setNewInstancesProtectedFromScaleIn(newInstancesProtectedFromScaleIn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether newly launched instances are protected from termination
+     * by Auto Scaling when scaling in.
+     * </p>
+     * 
+     * @return Indicates whether newly launched instances are protected from
+     *         termination by Auto Scaling when scaling in.
+     */
+    public Boolean isNewInstancesProtectedFromScaleIn() {
+        return this.newInstancesProtectedFromScaleIn;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1329,7 +1384,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: " + getTags() + ",");
         if (getTerminationPolicies() != null)
-            sb.append("TerminationPolicies: " + getTerminationPolicies());
+            sb.append("TerminationPolicies: " + getTerminationPolicies() + ",");
+        if (getNewInstancesProtectedFromScaleIn() != null)
+            sb.append("NewInstancesProtectedFromScaleIn: "
+                    + getNewInstancesProtectedFromScaleIn());
         sb.append("}");
         return sb.toString();
     }
@@ -1467,6 +1525,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
                 && other.getTerminationPolicies().equals(
                         this.getTerminationPolicies()) == false)
             return false;
+        if (other.getNewInstancesProtectedFromScaleIn() == null
+                ^ this.getNewInstancesProtectedFromScaleIn() == null)
+            return false;
+        if (other.getNewInstancesProtectedFromScaleIn() != null
+                && other.getNewInstancesProtectedFromScaleIn().equals(
+                        this.getNewInstancesProtectedFromScaleIn()) == false)
+            return false;
         return true;
     }
 
@@ -1544,6 +1609,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
                 * hashCode
                 + ((getTerminationPolicies() == null) ? 0
                         : getTerminationPolicies().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNewInstancesProtectedFromScaleIn() == null) ? 0
+                        : getNewInstancesProtectedFromScaleIn().hashCode());
         return hashCode;
     }
 

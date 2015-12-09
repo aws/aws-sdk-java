@@ -121,6 +121,12 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
 
             tagsListIndex++;
         }
+        if (createDBClusterRequest.isStorageEncrypted() != null) {
+            request.addParameter("StorageEncrypted", StringUtils.fromBoolean(createDBClusterRequest.isStorageEncrypted()));
+        }
+        if (createDBClusterRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(createDBClusterRequest.getKmsKeyId()));
+        }
 
         return request;
     }

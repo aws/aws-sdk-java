@@ -65,6 +65,13 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * </p>
      */
     private String launchConfigurationName;
+    /**
+     * <p>
+     * Indicates whether the instance is protected from termination by Auto
+     * Scaling when scaling in.
+     * </p>
+     */
+    private Boolean protectedFromScaleIn;
 
     /**
      * <p>
@@ -334,6 +341,64 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the instance is protected from termination by Auto
+     * Scaling when scaling in.
+     * </p>
+     * 
+     * @param protectedFromScaleIn
+     *        Indicates whether the instance is protected from termination by
+     *        Auto Scaling when scaling in.
+     */
+    public void setProtectedFromScaleIn(Boolean protectedFromScaleIn) {
+        this.protectedFromScaleIn = protectedFromScaleIn;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is protected from termination by Auto
+     * Scaling when scaling in.
+     * </p>
+     * 
+     * @return Indicates whether the instance is protected from termination by
+     *         Auto Scaling when scaling in.
+     */
+    public Boolean getProtectedFromScaleIn() {
+        return this.protectedFromScaleIn;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is protected from termination by Auto
+     * Scaling when scaling in.
+     * </p>
+     * 
+     * @param protectedFromScaleIn
+     *        Indicates whether the instance is protected from termination by
+     *        Auto Scaling when scaling in.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public AutoScalingInstanceDetails withProtectedFromScaleIn(
+            Boolean protectedFromScaleIn) {
+        setProtectedFromScaleIn(protectedFromScaleIn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is protected from termination by Auto
+     * Scaling when scaling in.
+     * </p>
+     * 
+     * @return Indicates whether the instance is protected from termination by
+     *         Auto Scaling when scaling in.
+     */
+    public Boolean isProtectedFromScaleIn() {
+        return this.protectedFromScaleIn;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -358,7 +423,9 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
             sb.append("HealthStatus: " + getHealthStatus() + ",");
         if (getLaunchConfigurationName() != null)
             sb.append("LaunchConfigurationName: "
-                    + getLaunchConfigurationName());
+                    + getLaunchConfigurationName() + ",");
+        if (getProtectedFromScaleIn() != null)
+            sb.append("ProtectedFromScaleIn: " + getProtectedFromScaleIn());
         sb.append("}");
         return sb.toString();
     }
@@ -410,6 +477,13 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
                 && other.getLaunchConfigurationName().equals(
                         this.getLaunchConfigurationName()) == false)
             return false;
+        if (other.getProtectedFromScaleIn() == null
+                ^ this.getProtectedFromScaleIn() == null)
+            return false;
+        if (other.getProtectedFromScaleIn() != null
+                && other.getProtectedFromScaleIn().equals(
+                        this.getProtectedFromScaleIn()) == false)
+            return false;
         return true;
     }
 
@@ -440,6 +514,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
                 * hashCode
                 + ((getLaunchConfigurationName() == null) ? 0
                         : getLaunchConfigurationName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getProtectedFromScaleIn() == null) ? 0
+                        : getProtectedFromScaleIn().hashCode());
         return hashCode;
     }
 

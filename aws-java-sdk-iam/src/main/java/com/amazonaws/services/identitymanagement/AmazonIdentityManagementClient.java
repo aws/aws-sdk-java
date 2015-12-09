@@ -1242,9 +1242,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * and an optional certificate chain, which should all be PEM-encoded.
      * </p>
      * <p>
+     * For more information about working with server certificates,
+     * including a list of AWS services that can use the server certificates
+     * that you manage with IAM, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html"> Working with Server Certificates </a>
+     * in the <i>IAM User Guide</i> .
+     * </p>
+     * <p>
      * For information about the number of server certificates you can
      * upload, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html"> Limitations on IAM Entities and Objects </a>
      * in the <i>IAM User Guide</i> .
      * </p>
      * <p>
@@ -1253,8 +1260,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * rather than GET when calling UploadServerCertificate. For information
      * about setting up signatures and authorization through the API, go to
      * Signing AWS API Requests in the AWS General Reference. For general
-     * information about using the Query API with IAM, go to Making Query
-     * Requests in the IAM User Guide.
+     * information about using the Query API with IAM, go to Calling the API
+     * by Making HTTP Query Requests in the IAM User Guide.
      * </p>
      *
      * @param uploadServerCertificateRequest Container for the necessary
@@ -3704,6 +3711,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * You can paginate the results using the <code>MaxItems</code> and
      * <code>Marker</code> parameters.
      * </p>
+     * <p>
+     * For more information about working with server certificates,
+     * including a list of AWS services that can use the server certificates
+     * that you manage with IAM, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html"> Working with Server Certificates </a>
+     * in the <i>IAM User Guide</i> .
+     * </p>
      *
      * @param listServerCertificatesRequest Container for the necessary
      *           parameters to execute the ListServerCertificates service method on
@@ -3753,9 +3767,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * Updates the name and/or the path of the specified server certificate.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> You should understand the implications of changing
-     * a server certificate's path or name. For more information, see
-     * Managing Server Certificates in the IAM User Guide.
+     * For more information about working with server certificates,
+     * including a list of AWS services that can use the server certificates
+     * that you manage with IAM, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html"> Working with Server Certificates </a>
+     * in the <i>IAM User Guide</i> .
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>You should understand the implications of changing a
+     * server certificate's path or name. For more information, see Renaming
+     * a Server Certificate in the IAM User Guide.
      * </p>
      * <p>
      * <b>NOTE:</b>To change a server certificate name the requester must
@@ -3763,7 +3784,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * object. For example, to change the name from ProductionCert to
      * ProdCert, the entity making the request must have permission on
      * ProductionCert and ProdCert, or must have permission on all (*). For
-     * more information about permissions, see Permissions and Policies.
+     * more information about permissions, see Access Management in the IAM
+     * User Guide.
      * </p>
      *
      * @param updateServerCertificateRequest Container for the necessary
@@ -4907,6 +4929,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * Deletes the specified server certificate.
      * </p>
      * <p>
+     * For more information about working with server certificates,
+     * including a list of AWS services that can use the server certificates
+     * that you manage with IAM, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html"> Working with Server Certificates </a>
+     * in the <i>IAM User Guide</i> .
+     * </p>
+     * <p>
      * <b>IMPORTANT:</b> If you are using a server certificate with Elastic
      * Load Balancing, deleting the certificate could have implications for
      * your application. If Elastic Load Balancing doesn't detect the
@@ -5920,6 +5949,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Retrieves information about the specified server certificate.
+     * </p>
+     * <p>
+     * For more information about working with server certificates,
+     * including a list of AWS services that can use the server certificates
+     * that you manage with IAM, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html"> Working with Server Certificates </a>
+     * in the <i>IAM User Guide</i> .
      * </p>
      *
      * @param getServerCertificateRequest Container for the necessary
@@ -7286,6 +7322,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
      * <code>Marker</code> parameters.
+     * </p>
+     * <p>
+     * For more information about working with server certificates,
+     * including a list of AWS services that can use the server certificates
+     * that you manage with IAM, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html"> Working with Server Certificates </a>
+     * in the <i>IAM User Guide</i> .
      * </p>
      * 
      * @return The response from the ListServerCertificates service method,

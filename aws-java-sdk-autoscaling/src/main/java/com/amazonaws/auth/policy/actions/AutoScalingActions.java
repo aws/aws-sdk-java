@@ -119,6 +119,8 @@ public enum AutoScalingActions implements Action {
     SetDesiredCapacity("autoscaling:SetDesiredCapacity"),
     /** Action for the SetInstanceHealth operation. */
     SetInstanceHealth("autoscaling:SetInstanceHealth"),
+    /** Action for the SetInstanceProtection operation. */
+    SetInstanceProtection("autoscaling:SetInstanceProtection"),
     /** Action for the SuspendProcesses operation. */
     SuspendProcesses("autoscaling:SuspendProcesses"),
     /** Action for the TerminateInstanceInAutoScalingGroup operation. */

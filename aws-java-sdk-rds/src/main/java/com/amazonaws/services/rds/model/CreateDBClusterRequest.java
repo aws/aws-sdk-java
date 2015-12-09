@@ -164,6 +164,25 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
+     * Specifies whether the DB cluster is encrypted.
+     */
+    private Boolean storageEncrypted;
+
+    /**
+     * The KMS key identifier for an encrypted DB cluster. <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption
+     * key. If you are creating a DB cluster with the same AWS account that
+     * owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption
+     * key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has
+     * a different default encryption key for each AWS region.
+     */
+    private String kmsKeyId;
+
+    /**
      * A list of EC2 Availability Zones that instances in the DB cluster can
      * be created in. For information on regions and Availability Zones, see
      * <a
@@ -1135,6 +1154,135 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
+     * Specifies whether the DB cluster is encrypted.
+     *
+     * @return Specifies whether the DB cluster is encrypted.
+     */
+    public Boolean isStorageEncrypted() {
+        return storageEncrypted;
+    }
+    
+    /**
+     * Specifies whether the DB cluster is encrypted.
+     *
+     * @param storageEncrypted Specifies whether the DB cluster is encrypted.
+     */
+    public void setStorageEncrypted(Boolean storageEncrypted) {
+        this.storageEncrypted = storageEncrypted;
+    }
+    
+    /**
+     * Specifies whether the DB cluster is encrypted.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param storageEncrypted Specifies whether the DB cluster is encrypted.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBClusterRequest withStorageEncrypted(Boolean storageEncrypted) {
+        this.storageEncrypted = storageEncrypted;
+        return this;
+    }
+
+    /**
+     * Specifies whether the DB cluster is encrypted.
+     *
+     * @return Specifies whether the DB cluster is encrypted.
+     */
+    public Boolean getStorageEncrypted() {
+        return storageEncrypted;
+    }
+
+    /**
+     * The KMS key identifier for an encrypted DB cluster. <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption
+     * key. If you are creating a DB cluster with the same AWS account that
+     * owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption
+     * key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has
+     * a different default encryption key for each AWS region.
+     *
+     * @return The KMS key identifier for an encrypted DB cluster. <p>The KMS key
+     *         identifier is the Amazon Resource Name (ARN) for the KMS encryption
+     *         key. If you are creating a DB cluster with the same AWS account that
+     *         owns the KMS encryption key used to encrypt the new DB cluster, then
+     *         you can use the KMS key alias instead of the ARN for the KM encryption
+     *         key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     *         you do not specify a value for the <code>KmsKeyId</code> parameter,
+     *         then Amazon RDS will use your default encryption key. AWS KMS creates
+     *         the default encryption key for your AWS account. Your AWS account has
+     *         a different default encryption key for each AWS region.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The KMS key identifier for an encrypted DB cluster. <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption
+     * key. If you are creating a DB cluster with the same AWS account that
+     * owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption
+     * key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has
+     * a different default encryption key for each AWS region.
+     *
+     * @param kmsKeyId The KMS key identifier for an encrypted DB cluster. <p>The KMS key
+     *         identifier is the Amazon Resource Name (ARN) for the KMS encryption
+     *         key. If you are creating a DB cluster with the same AWS account that
+     *         owns the KMS encryption key used to encrypt the new DB cluster, then
+     *         you can use the KMS key alias instead of the ARN for the KM encryption
+     *         key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     *         you do not specify a value for the <code>KmsKeyId</code> parameter,
+     *         then Amazon RDS will use your default encryption key. AWS KMS creates
+     *         the default encryption key for your AWS account. Your AWS account has
+     *         a different default encryption key for each AWS region.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The KMS key identifier for an encrypted DB cluster. <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption
+     * key. If you are creating a DB cluster with the same AWS account that
+     * owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption
+     * key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has
+     * a different default encryption key for each AWS region.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The KMS key identifier for an encrypted DB cluster. <p>The KMS key
+     *         identifier is the Amazon Resource Name (ARN) for the KMS encryption
+     *         key. If you are creating a DB cluster with the same AWS account that
+     *         owns the KMS encryption key used to encrypt the new DB cluster, then
+     *         you can use the KMS key alias instead of the ARN for the KM encryption
+     *         key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     *         you do not specify a value for the <code>KmsKeyId</code> parameter,
+     *         then Amazon RDS will use your default encryption key. AWS KMS creates
+     *         the default encryption key for your AWS account. Your AWS account has
+     *         a different default encryption key for each AWS region.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBClusterRequest withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1162,7 +1310,9 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
         if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");
         if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (isStorageEncrypted() != null) sb.append("StorageEncrypted: " + isStorageEncrypted() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -1189,6 +1339,8 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
         hashCode = prime * hashCode + ((getPreferredBackupWindow() == null) ? 0 : getPreferredBackupWindow().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((isStorageEncrypted() == null) ? 0 : isStorageEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -1234,6 +1386,10 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
         if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.isStorageEncrypted() == null ^ this.isStorageEncrypted() == null) return false;
+        if (other.isStorageEncrypted() != null && other.isStorageEncrypted().equals(this.isStorageEncrypted()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     

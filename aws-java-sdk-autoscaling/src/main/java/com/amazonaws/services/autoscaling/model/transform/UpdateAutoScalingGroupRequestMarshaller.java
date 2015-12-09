@@ -139,6 +139,12 @@ public class UpdateAutoScalingGroupRequestMarshaller
             }
         }
 
+        if (updateAutoScalingGroupRequest.getNewInstancesProtectedFromScaleIn() != null) {
+            request.addParameter("NewInstancesProtectedFromScaleIn",
+                    StringUtils.fromBoolean(updateAutoScalingGroupRequest
+                            .getNewInstancesProtectedFromScaleIn()));
+        }
+
         return request;
     }
 

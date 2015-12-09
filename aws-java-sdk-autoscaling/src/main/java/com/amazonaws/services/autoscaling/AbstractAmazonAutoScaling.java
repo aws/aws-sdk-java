@@ -375,6 +375,12 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
+    public SetInstanceProtectionResult setInstanceProtection(
+            SetInstanceProtectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void suspendProcesses(SuspendProcessesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

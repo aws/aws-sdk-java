@@ -102,6 +102,16 @@ public class RestoreDBClusterToPointInTimeRequest extends AmazonWebServiceReques
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
+     * The KMS key identifier to use when restoring an encrypted DB cluster.
+     * <p>The KMS key identifier is the Amazon Resource Name (ARN) for the
+     * KMS encryption key. If you are restoring a DB cluster with the same
+     * AWS account that owns the KMS encryption key used to encrypt the new
+     * DB cluster, then you can use the KMS key alias instead of the ARN for
+     * the KMS encryption key.
+     */
+    private String kmsKeyId;
+
+    /**
      * The name of the new DB cluster to be created. <p>Constraints: <ul>
      * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -602,6 +612,69 @@ public class RestoreDBClusterToPointInTimeRequest extends AmazonWebServiceReques
     }
 
     /**
+     * The KMS key identifier to use when restoring an encrypted DB cluster.
+     * <p>The KMS key identifier is the Amazon Resource Name (ARN) for the
+     * KMS encryption key. If you are restoring a DB cluster with the same
+     * AWS account that owns the KMS encryption key used to encrypt the new
+     * DB cluster, then you can use the KMS key alias instead of the ARN for
+     * the KMS encryption key.
+     *
+     * @return The KMS key identifier to use when restoring an encrypted DB cluster.
+     *         <p>The KMS key identifier is the Amazon Resource Name (ARN) for the
+     *         KMS encryption key. If you are restoring a DB cluster with the same
+     *         AWS account that owns the KMS encryption key used to encrypt the new
+     *         DB cluster, then you can use the KMS key alias instead of the ARN for
+     *         the KMS encryption key.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The KMS key identifier to use when restoring an encrypted DB cluster.
+     * <p>The KMS key identifier is the Amazon Resource Name (ARN) for the
+     * KMS encryption key. If you are restoring a DB cluster with the same
+     * AWS account that owns the KMS encryption key used to encrypt the new
+     * DB cluster, then you can use the KMS key alias instead of the ARN for
+     * the KMS encryption key.
+     *
+     * @param kmsKeyId The KMS key identifier to use when restoring an encrypted DB cluster.
+     *         <p>The KMS key identifier is the Amazon Resource Name (ARN) for the
+     *         KMS encryption key. If you are restoring a DB cluster with the same
+     *         AWS account that owns the KMS encryption key used to encrypt the new
+     *         DB cluster, then you can use the KMS key alias instead of the ARN for
+     *         the KMS encryption key.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The KMS key identifier to use when restoring an encrypted DB cluster.
+     * <p>The KMS key identifier is the Amazon Resource Name (ARN) for the
+     * KMS encryption key. If you are restoring a DB cluster with the same
+     * AWS account that owns the KMS encryption key used to encrypt the new
+     * DB cluster, then you can use the KMS key alias instead of the ARN for
+     * the KMS encryption key.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The KMS key identifier to use when restoring an encrypted DB cluster.
+     *         <p>The KMS key identifier is the Amazon Resource Name (ARN) for the
+     *         KMS encryption key. If you are restoring a DB cluster with the same
+     *         AWS account that owns the KMS encryption key used to encrypt the new
+     *         DB cluster, then you can use the KMS key alias instead of the ARN for
+     *         the KMS encryption key.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreDBClusterToPointInTimeRequest withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -621,7 +694,8 @@ public class RestoreDBClusterToPointInTimeRequest extends AmazonWebServiceReques
         if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
         if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -640,6 +714,7 @@ public class RestoreDBClusterToPointInTimeRequest extends AmazonWebServiceReques
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -669,6 +744,8 @@ public class RestoreDBClusterToPointInTimeRequest extends AmazonWebServiceReques
         if (other.getVpcSecurityGroupIds() != null && other.getVpcSecurityGroupIds().equals(this.getVpcSecurityGroupIds()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     

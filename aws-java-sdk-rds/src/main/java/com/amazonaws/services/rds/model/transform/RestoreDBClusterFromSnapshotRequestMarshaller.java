@@ -103,6 +103,9 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements Marshaller
 
             tagsListIndex++;
         }
+        if (restoreDBClusterFromSnapshotRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getKmsKeyId()));
+        }
 
         return request;
     }

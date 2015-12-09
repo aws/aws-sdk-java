@@ -21,8 +21,8 @@
     "signingName" : "machinelearning",
     "serviceName" : "Amazon Machine Learning",
     "jsonProtocol" : true,
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {

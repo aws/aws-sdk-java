@@ -247,6 +247,12 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * Attaches one or more EC2 instances to the specified Auto Scaling group.
      * </p>
      * <p>
+     * When you attach instances, Auto Scaling increases the desired capacity of
+     * the group by the number of instances being attached. If the number of
+     * instances being attached plus the desired capacity of the group exceeds
+     * the maximum size of the group, the operation fails.
+     * </p>
+     * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html"
      * >Attach EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto
@@ -612,12 +618,24 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * Deletes the specified Auto Scaling group.
      * </p>
      * <p>
-     * The group must have no instances and no scaling activities in progress.
+     * If the group has instances or scaling activities in progress, you must
+     * specify the option to force the deletion in order for it to succeed.
      * </p>
      * <p>
-     * To remove all instances before calling
-     * <code>DeleteAutoScalingGroup</code>, call <a>UpdateAutoScalingGroup</a>
-     * to set the minimum and maximum size of the Auto Scaling group to zero.
+     * If the group has policies, deleting the group deletes the policies, the
+     * underlying alarm actions, and any alarm that no longer has an associated
+     * action.
+     * </p>
+     * <p>
+     * To remove instances from the Auto Scaling group before deleting it, call
+     * <a>DetachInstances</a> with the list of instances and the option to
+     * decrement the desired capacity so that Auto Scaling does not launch
+     * replacement instances.
+     * </p>
+     * <p>
+     * To terminate all instances before deleting the Auto Scaling group, call
+     * <a>UpdateAutoScalingGroup</a> and set the minimum size and desired
+     * capacity of the Auto Scaling group to zero.
      * </p>
      * 
      * @param deleteAutoScalingGroupRequest
@@ -809,6 +827,10 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Deletes the specified Auto Scaling policy.
+     * </p>
+     * <p>
+     * Deleting a policy deletes the underlying alarm action, but does not
+     * delete the alarm, even if it no longer has an associated action.
      * </p>
      * 
      * @param deletePolicyRequest
@@ -1835,8 +1857,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Removes one or more instances from the specified Auto Scaling group.
+     * </p>
+     * <p>
      * After the instances are detached, you can manage them independently from
      * the rest of the Auto Scaling group.
+     * </p>
+     * <p>
+     * If you do not specify the option to decrement the desired capacity, Auto
+     * Scaling launches instances to replace the ones that are detached.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -2643,6 +2671,61 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
             StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
                     null);
             invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the instance protection settings of the specified instances.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection"
+     * >Instance Protection</a> in the <i>Auto Scaling Developer Guide</i>.
+     * </p>
+     * 
+     * @param setInstanceProtectionRequest
+     * @return Result of the SetInstanceProtection operation returned by the
+     *         service.
+     * @throws LimitExceededException
+     *         You have already reached a limit for your Auto Scaling resources
+     *         (for example, groups, launch configurations, or lifecycle hooks).
+     *         For more information, see <a>DescribeAccountLimits</a>.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Auto Scaling resource
+     *         (for example, a group, instance, or load balancer).
+     */
+    @Override
+    public SetInstanceProtectionResult setInstanceProtection(
+            SetInstanceProtectionRequest setInstanceProtectionRequest) {
+        ExecutionContext executionContext = createExecutionContext(setInstanceProtectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetInstanceProtectionRequest> request = null;
+        Response<SetInstanceProtectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetInstanceProtectionRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(setInstanceProtectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<SetInstanceProtectionResult> responseHandler = new StaxResponseHandler<SetInstanceProtectionResult>(
+                    new SetInstanceProtectionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 

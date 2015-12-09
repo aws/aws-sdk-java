@@ -23,6 +23,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Retrieves information about the specified server certificate.
  * </p>
+ * <p>
+ * For more information about working with server certificates, including
+ * a list of AWS services that can use the server certificates that you
+ * manage with IAM, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html"> Working with Server Certificates </a>
+ * in the <i>IAM User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getServerCertificate(GetServerCertificateRequest)
  */

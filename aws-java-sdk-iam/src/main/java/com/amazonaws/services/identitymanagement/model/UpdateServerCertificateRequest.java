@@ -24,9 +24,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Updates the name and/or the path of the specified server certificate.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> You should understand the implications of changing a
- * server certificate's path or name. For more information, see Managing
- * Server Certificates in the IAM User Guide.
+ * For more information about working with server certificates, including
+ * a list of AWS services that can use the server certificates that you
+ * manage with IAM, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html"> Working with Server Certificates </a>
+ * in the <i>IAM User Guide</i> .
+ * </p>
+ * <p>
+ * <b>IMPORTANT:</b>You should understand the implications of changing a
+ * server certificate's path or name. For more information, see Renaming
+ * a Server Certificate in the IAM User Guide.
  * </p>
  * <p>
  * <b>NOTE:</b>To change a server certificate name the requester must
@@ -34,7 +41,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * object. For example, to change the name from ProductionCert to
  * ProdCert, the entity making the request must have permission on
  * ProductionCert and ProdCert, or must have permission on all (*). For
- * more information about permissions, see Permissions and Policies.
+ * more information about permissions, see Access Management in the IAM
+ * User Guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateServerCertificate(UpdateServerCertificateRequest)

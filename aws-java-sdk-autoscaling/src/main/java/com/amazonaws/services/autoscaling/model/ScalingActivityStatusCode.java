@@ -20,6 +20,7 @@ package com.amazonaws.services.autoscaling.model;
  */
 public enum ScalingActivityStatusCode {
 
+    PendingSpotBidPlacement("PendingSpotBidPlacement"),
     WaitingForSpotInstanceRequestId("WaitingForSpotInstanceRequestId"),
     WaitingForSpotInstanceId("WaitingForSpotInstanceId"),
     WaitingForInstanceId("WaitingForInstanceId"),
@@ -53,6 +54,8 @@ public enum ScalingActivityStatusCode {
     public static ScalingActivityStatusCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
+        } else if ("PendingSpotBidPlacement".equals(value)) {
+            return PendingSpotBidPlacement;
         } else if ("WaitingForSpotInstanceRequestId".equals(value)) {
             return WaitingForSpotInstanceRequestId;
         } else if ("WaitingForSpotInstanceId".equals(value)) {

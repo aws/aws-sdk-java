@@ -105,6 +105,14 @@ public class DBClusterSnapshotStaxUnmarshaller implements Unmarshaller<DBCluster
                     dBClusterSnapshot.setPercentProgress(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("StorageEncrypted", targetDepth)) {
+                    dBClusterSnapshot.setStorageEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("KmsKeyId", targetDepth)) {
+                    dBClusterSnapshot.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBClusterSnapshot;

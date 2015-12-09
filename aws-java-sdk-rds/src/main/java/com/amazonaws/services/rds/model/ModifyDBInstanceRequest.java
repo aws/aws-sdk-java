@@ -353,19 +353,23 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private Boolean copyTagsToSnapshot;
 
     /**
-     * The port number on which the database accepts connections. <p>
-     * <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     * The port number on which the database accepts connections. <p>The
+     * value of the <code>DBPortNumber</code> parameter must not match any of
+     * the port values specified for options in the option group for the DB
+     * instance. <p>Your database will restart when you change the
+     * <code>DBPortNumber</code> value regardless of the value of the
+     * <code>ApplyImmediately</code> parameter. <p> <b>MySQL</b> <p> Default:
      * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
-     * <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
-     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code>,
-     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     * <code>49152</code> through <code>49156</code>. <p> <b>Amazon
-     * Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code>
+     * <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
+     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
+     * <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     * <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
+     * <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * <p> <b>Amazon Aurora</b> <p> Default: <code>3306</code> <p> Valid
+     * Values: <code>1150-65535</code>
      */
     private Integer dBPortNumber;
 
@@ -2613,101 +2617,125 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The port number on which the database accepts connections. <p>
-     * <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     * The port number on which the database accepts connections. <p>The
+     * value of the <code>DBPortNumber</code> parameter must not match any of
+     * the port values specified for options in the option group for the DB
+     * instance. <p>Your database will restart when you change the
+     * <code>DBPortNumber</code> value regardless of the value of the
+     * <code>ApplyImmediately</code> parameter. <p> <b>MySQL</b> <p> Default:
      * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
-     * <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
-     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code>,
-     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     * <code>49152</code> through <code>49156</code>. <p> <b>Amazon
-     * Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code>
+     * <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
+     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
+     * <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     * <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
+     * <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * <p> <b>Amazon Aurora</b> <p> Default: <code>3306</code> <p> Valid
+     * Values: <code>1150-65535</code>
      *
-     * @return The port number on which the database accepts connections. <p>
-     *         <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     * @return The port number on which the database accepts connections. <p>The
+     *         value of the <code>DBPortNumber</code> parameter must not match any of
+     *         the port values specified for options in the option group for the DB
+     *         instance. <p>Your database will restart when you change the
+     *         <code>DBPortNumber</code> value regardless of the value of the
+     *         <code>ApplyImmediately</code> parameter. <p> <b>MySQL</b> <p> Default:
      *         <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
-     *         <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
-     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
-     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     *         <code>1150-65535</code> except for <code>1434</code>,
-     *         <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     *         <code>49152</code> through <code>49156</code>. <p> <b>Amazon
-     *         Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
-     *         <code>1150-65535</code>
+     *         <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
+     *         <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
+     *         <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     *         <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
+     *         <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     *         <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     *         <p> <b>Amazon Aurora</b> <p> Default: <code>3306</code> <p> Valid
+     *         Values: <code>1150-65535</code>
      */
     public Integer getDBPortNumber() {
         return dBPortNumber;
     }
     
     /**
-     * The port number on which the database accepts connections. <p>
-     * <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     * The port number on which the database accepts connections. <p>The
+     * value of the <code>DBPortNumber</code> parameter must not match any of
+     * the port values specified for options in the option group for the DB
+     * instance. <p>Your database will restart when you change the
+     * <code>DBPortNumber</code> value regardless of the value of the
+     * <code>ApplyImmediately</code> parameter. <p> <b>MySQL</b> <p> Default:
      * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
-     * <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
-     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code>,
-     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     * <code>49152</code> through <code>49156</code>. <p> <b>Amazon
-     * Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code>
+     * <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
+     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
+     * <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     * <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
+     * <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * <p> <b>Amazon Aurora</b> <p> Default: <code>3306</code> <p> Valid
+     * Values: <code>1150-65535</code>
      *
-     * @param dBPortNumber The port number on which the database accepts connections. <p>
-     *         <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     * @param dBPortNumber The port number on which the database accepts connections. <p>The
+     *         value of the <code>DBPortNumber</code> parameter must not match any of
+     *         the port values specified for options in the option group for the DB
+     *         instance. <p>Your database will restart when you change the
+     *         <code>DBPortNumber</code> value regardless of the value of the
+     *         <code>ApplyImmediately</code> parameter. <p> <b>MySQL</b> <p> Default:
      *         <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
-     *         <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
-     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
-     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     *         <code>1150-65535</code> except for <code>1434</code>,
-     *         <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     *         <code>49152</code> through <code>49156</code>. <p> <b>Amazon
-     *         Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
-     *         <code>1150-65535</code>
+     *         <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
+     *         <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
+     *         <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     *         <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
+     *         <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     *         <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     *         <p> <b>Amazon Aurora</b> <p> Default: <code>3306</code> <p> Valid
+     *         Values: <code>1150-65535</code>
      */
     public void setDBPortNumber(Integer dBPortNumber) {
         this.dBPortNumber = dBPortNumber;
     }
     
     /**
-     * The port number on which the database accepts connections. <p>
-     * <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     * The port number on which the database accepts connections. <p>The
+     * value of the <code>DBPortNumber</code> parameter must not match any of
+     * the port values specified for options in the option group for the DB
+     * instance. <p>Your database will restart when you change the
+     * <code>DBPortNumber</code> value regardless of the value of the
+     * <code>ApplyImmediately</code> parameter. <p> <b>MySQL</b> <p> Default:
      * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
-     * <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
-     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code>,
-     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     * <code>49152</code> through <code>49156</code>. <p> <b>Amazon
-     * Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code>
+     * <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
+     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
+     * <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
+     * <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     * <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
+     * <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * <p> <b>Amazon Aurora</b> <p> Default: <code>3306</code> <p> Valid
+     * Values: <code>1150-65535</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBPortNumber The port number on which the database accepts connections. <p>
-     *         <b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p> <b>MariaDB</b> <p> Default:
+     * @param dBPortNumber The port number on which the database accepts connections. <p>The
+     *         value of the <code>DBPortNumber</code> parameter must not match any of
+     *         the port values specified for options in the option group for the DB
+     *         instance. <p>Your database will restart when you change the
+     *         <code>DBPortNumber</code> value regardless of the value of the
+     *         <code>ApplyImmediately</code> parameter. <p> <b>MySQL</b> <p> Default:
      *         <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
-     *         <b>PostgreSQL</b> <p> Default: <code>5432</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p> <b>Oracle</b> <p> Default:
-     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p> <b>SQL
-     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     *         <code>1150-65535</code> except for <code>1434</code>,
-     *         <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     *         <code>49152</code> through <code>49156</code>. <p> <b>Amazon
-     *         Aurora</b> <p> Default: <code>3306</code> <p> Valid Values:
-     *         <code>1150-65535</code>
+     *         <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
+     *         <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
+     *         <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     *         <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
+     *         <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     *         <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     *         <p> <b>Amazon Aurora</b> <p> Default: <code>3306</code> <p> Valid
+     *         Values: <code>1150-65535</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

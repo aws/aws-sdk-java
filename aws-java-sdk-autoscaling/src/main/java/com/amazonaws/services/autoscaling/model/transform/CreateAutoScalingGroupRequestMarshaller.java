@@ -160,6 +160,12 @@ public class CreateAutoScalingGroupRequestMarshaller
             }
         }
 
+        if (createAutoScalingGroupRequest.getNewInstancesProtectedFromScaleIn() != null) {
+            request.addParameter("NewInstancesProtectedFromScaleIn",
+                    StringUtils.fromBoolean(createAutoScalingGroupRequest
+                            .getNewInstancesProtectedFromScaleIn()));
+        }
+
         com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createAutoScalingGroupRequest
                 .getTags();
         if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {

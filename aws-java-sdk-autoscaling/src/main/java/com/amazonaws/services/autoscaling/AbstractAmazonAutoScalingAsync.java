@@ -1140,6 +1140,21 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
+    public java.util.concurrent.Future<SetInstanceProtectionResult> setInstanceProtectionAsync(
+            SetInstanceProtectionRequest request) {
+
+        return setInstanceProtectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetInstanceProtectionResult> setInstanceProtectionAsync(
+            SetInstanceProtectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetInstanceProtectionRequest, SetInstanceProtectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<Void> suspendProcessesAsync(
             SuspendProcessesRequest request) {
 

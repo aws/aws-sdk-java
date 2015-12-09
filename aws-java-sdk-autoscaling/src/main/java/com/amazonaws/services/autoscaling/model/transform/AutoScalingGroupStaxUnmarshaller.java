@@ -187,6 +187,13 @@ public class AutoScalingGroupStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("NewInstancesProtectedFromScaleIn",
+                        targetDepth)) {
+                    autoScalingGroup
+                            .setNewInstancesProtectedFromScaleIn(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return autoScalingGroup;

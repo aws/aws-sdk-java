@@ -1103,9 +1103,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Record",
           "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Record>",
-          "templateImplType" : "java.util.ArrayList<Record>"
+          "templateImplType" : "java.util.ArrayList<Record>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1245,9 +1245,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Record",
             "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Record>",
-            "templateImplType" : "java.util.ArrayList<Record>"
+            "templateImplType" : "java.util.ArrayList<Record>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1578,9 +1578,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1768,9 +1768,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7673,9 +7673,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "PutRecordBatchResponseEntry",
           "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<PutRecordBatchResponseEntry>",
-          "templateImplType" : "java.util.ArrayList<PutRecordBatchResponseEntry>"
+          "templateImplType" : "java.util.ArrayList<PutRecordBatchResponseEntry>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7811,9 +7811,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "PutRecordBatchResponseEntry",
             "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<PutRecordBatchResponseEntry>",
-            "templateImplType" : "java.util.ArrayList<PutRecordBatchResponseEntry>"
+            "templateImplType" : "java.util.ArrayList<PutRecordBatchResponseEntry>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9741,9 +9741,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "DestinationDescription",
           "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<DestinationDescription>",
-          "templateImplType" : "java.util.ArrayList<DestinationDescription>"
+          "templateImplType" : "java.util.ArrayList<DestinationDescription>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9982,9 +9982,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "DestinationDescription",
             "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<DestinationDescription>",
-            "templateImplType" : "java.util.ArrayList<DestinationDescription>"
+            "templateImplType" : "java.util.ArrayList<DestinationDescription>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,

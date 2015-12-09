@@ -2304,6 +2304,41 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
+    public java.util.concurrent.Future<SetInstanceProtectionResult> setInstanceProtectionAsync(
+            SetInstanceProtectionRequest request) {
+
+        return setInstanceProtectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetInstanceProtectionResult> setInstanceProtectionAsync(
+            final SetInstanceProtectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetInstanceProtectionRequest, SetInstanceProtectionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<SetInstanceProtectionResult>() {
+                    @Override
+                    public SetInstanceProtectionResult call() throws Exception {
+                        SetInstanceProtectionResult result;
+
+                        try {
+                            result = setInstanceProtection(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<Void> suspendProcessesAsync(
             SuspendProcessesRequest request) {
 

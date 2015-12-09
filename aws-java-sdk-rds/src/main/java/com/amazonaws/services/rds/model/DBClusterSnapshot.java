@@ -117,6 +117,17 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private Integer percentProgress;
 
     /**
+     * Specifies whether the DB cluster snapshot is encrypted.
+     */
+    private Boolean storageEncrypted;
+
+    /**
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     * the encrypted DB cluster snapshot.
+     */
+    private String kmsKeyId;
+
+    /**
      * Provides the list of EC2 Availability Zones that instances in the DB
      * cluster snapshot can be restored in.
      *
@@ -696,6 +707,87 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * Specifies whether the DB cluster snapshot is encrypted.
+     *
+     * @return Specifies whether the DB cluster snapshot is encrypted.
+     */
+    public Boolean isStorageEncrypted() {
+        return storageEncrypted;
+    }
+    
+    /**
+     * Specifies whether the DB cluster snapshot is encrypted.
+     *
+     * @param storageEncrypted Specifies whether the DB cluster snapshot is encrypted.
+     */
+    public void setStorageEncrypted(Boolean storageEncrypted) {
+        this.storageEncrypted = storageEncrypted;
+    }
+    
+    /**
+     * Specifies whether the DB cluster snapshot is encrypted.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param storageEncrypted Specifies whether the DB cluster snapshot is encrypted.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBClusterSnapshot withStorageEncrypted(Boolean storageEncrypted) {
+        this.storageEncrypted = storageEncrypted;
+        return this;
+    }
+
+    /**
+     * Specifies whether the DB cluster snapshot is encrypted.
+     *
+     * @return Specifies whether the DB cluster snapshot is encrypted.
+     */
+    public Boolean getStorageEncrypted() {
+        return storageEncrypted;
+    }
+
+    /**
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     * the encrypted DB cluster snapshot.
+     *
+     * @return If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     *         the encrypted DB cluster snapshot.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     * the encrypted DB cluster snapshot.
+     *
+     * @param kmsKeyId If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     *         the encrypted DB cluster snapshot.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     * the encrypted DB cluster snapshot.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     *         the encrypted DB cluster snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBClusterSnapshot withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -721,7 +813,9 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
         if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");
         if (getSnapshotType() != null) sb.append("SnapshotType: " + getSnapshotType() + ",");
-        if (getPercentProgress() != null) sb.append("PercentProgress: " + getPercentProgress() );
+        if (getPercentProgress() != null) sb.append("PercentProgress: " + getPercentProgress() + ",");
+        if (isStorageEncrypted() != null) sb.append("StorageEncrypted: " + isStorageEncrypted() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -746,6 +840,8 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotType() == null) ? 0 : getSnapshotType().hashCode()); 
         hashCode = prime * hashCode + ((getPercentProgress() == null) ? 0 : getPercentProgress().hashCode()); 
+        hashCode = prime * hashCode + ((isStorageEncrypted() == null) ? 0 : isStorageEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -787,6 +883,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (other.getSnapshotType() != null && other.getSnapshotType().equals(this.getSnapshotType()) == false) return false; 
         if (other.getPercentProgress() == null ^ this.getPercentProgress() == null) return false;
         if (other.getPercentProgress() != null && other.getPercentProgress().equals(this.getPercentProgress()) == false) return false; 
+        if (other.isStorageEncrypted() == null ^ this.isStorageEncrypted() == null) return false;
+        if (other.isStorageEncrypted() != null && other.isStorageEncrypted().equals(this.isStorageEncrypted()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     

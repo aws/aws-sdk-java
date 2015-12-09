@@ -36,6 +36,18 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * </p>
      */
     private Integer maxNumberOfLaunchConfigurations;
+    /**
+     * <p>
+     * The current number of groups for your AWS account.
+     * </p>
+     */
+    private Integer numberOfAutoScalingGroups;
+    /**
+     * <p>
+     * The current number of launch configurations for your AWS account.
+     * </p>
+     */
+    private Integer numberOfLaunchConfigurations;
 
     /**
      * <p>
@@ -130,6 +142,85 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The current number of groups for your AWS account.
+     * </p>
+     * 
+     * @param numberOfAutoScalingGroups
+     *        The current number of groups for your AWS account.
+     */
+    public void setNumberOfAutoScalingGroups(Integer numberOfAutoScalingGroups) {
+        this.numberOfAutoScalingGroups = numberOfAutoScalingGroups;
+    }
+
+    /**
+     * <p>
+     * The current number of groups for your AWS account.
+     * </p>
+     * 
+     * @return The current number of groups for your AWS account.
+     */
+    public Integer getNumberOfAutoScalingGroups() {
+        return this.numberOfAutoScalingGroups;
+    }
+
+    /**
+     * <p>
+     * The current number of groups for your AWS account.
+     * </p>
+     * 
+     * @param numberOfAutoScalingGroups
+     *        The current number of groups for your AWS account.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeAccountLimitsResult withNumberOfAutoScalingGroups(
+            Integer numberOfAutoScalingGroups) {
+        setNumberOfAutoScalingGroups(numberOfAutoScalingGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current number of launch configurations for your AWS account.
+     * </p>
+     * 
+     * @param numberOfLaunchConfigurations
+     *        The current number of launch configurations for your AWS account.
+     */
+    public void setNumberOfLaunchConfigurations(
+            Integer numberOfLaunchConfigurations) {
+        this.numberOfLaunchConfigurations = numberOfLaunchConfigurations;
+    }
+
+    /**
+     * <p>
+     * The current number of launch configurations for your AWS account.
+     * </p>
+     * 
+     * @return The current number of launch configurations for your AWS account.
+     */
+    public Integer getNumberOfLaunchConfigurations() {
+        return this.numberOfLaunchConfigurations;
+    }
+
+    /**
+     * <p>
+     * The current number of launch configurations for your AWS account.
+     * </p>
+     * 
+     * @param numberOfLaunchConfigurations
+     *        The current number of launch configurations for your AWS account.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeAccountLimitsResult withNumberOfLaunchConfigurations(
+            Integer numberOfLaunchConfigurations) {
+        setNumberOfLaunchConfigurations(numberOfLaunchConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -146,7 +237,13 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
                     + getMaxNumberOfAutoScalingGroups() + ",");
         if (getMaxNumberOfLaunchConfigurations() != null)
             sb.append("MaxNumberOfLaunchConfigurations: "
-                    + getMaxNumberOfLaunchConfigurations());
+                    + getMaxNumberOfLaunchConfigurations() + ",");
+        if (getNumberOfAutoScalingGroups() != null)
+            sb.append("NumberOfAutoScalingGroups: "
+                    + getNumberOfAutoScalingGroups() + ",");
+        if (getNumberOfLaunchConfigurations() != null)
+            sb.append("NumberOfLaunchConfigurations: "
+                    + getNumberOfLaunchConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -175,6 +272,20 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
                 && other.getMaxNumberOfLaunchConfigurations().equals(
                         this.getMaxNumberOfLaunchConfigurations()) == false)
             return false;
+        if (other.getNumberOfAutoScalingGroups() == null
+                ^ this.getNumberOfAutoScalingGroups() == null)
+            return false;
+        if (other.getNumberOfAutoScalingGroups() != null
+                && other.getNumberOfAutoScalingGroups().equals(
+                        this.getNumberOfAutoScalingGroups()) == false)
+            return false;
+        if (other.getNumberOfLaunchConfigurations() == null
+                ^ this.getNumberOfLaunchConfigurations() == null)
+            return false;
+        if (other.getNumberOfLaunchConfigurations() != null
+                && other.getNumberOfLaunchConfigurations().equals(
+                        this.getNumberOfLaunchConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -191,6 +302,14 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
                 * hashCode
                 + ((getMaxNumberOfLaunchConfigurations() == null) ? 0
                         : getMaxNumberOfLaunchConfigurations().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNumberOfAutoScalingGroups() == null) ? 0
+                        : getNumberOfAutoScalingGroups().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNumberOfLaunchConfigurations() == null) ? 0
+                        : getNumberOfLaunchConfigurations().hashCode());
         return hashCode;
     }
 

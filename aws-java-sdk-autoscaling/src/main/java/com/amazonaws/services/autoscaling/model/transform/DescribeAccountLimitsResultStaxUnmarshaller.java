@@ -63,6 +63,22 @@ public class DescribeAccountLimitsResultStaxUnmarshaller implements
                                     .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("NumberOfAutoScalingGroups",
+                        targetDepth)) {
+                    describeAccountLimitsResult
+                            .setNumberOfAutoScalingGroups(IntegerStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("NumberOfLaunchConfigurations",
+                        targetDepth)) {
+                    describeAccountLimitsResult
+                            .setNumberOfLaunchConfigurations(IntegerStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeAccountLimitsResult;
