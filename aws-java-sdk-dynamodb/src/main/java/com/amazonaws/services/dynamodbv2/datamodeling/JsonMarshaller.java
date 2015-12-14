@@ -21,9 +21,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
 /**
- * Simple JSON marshaller that uses Jackson mapper. It has all the limitations
- * of that library, the documentation of which is available here:
- * http://docs.codehaus.org/display/JACKSON/Home
+ * A simple JSON marshaller that uses the Jackson JSON processor. It shares all limitations of that
+ * library. For more information about Jackson, see: http://wiki.fasterxml.com/JacksonHome
  */
 public class JsonMarshaller<T extends Object> implements DynamoDBMarshaller<T> {
 
