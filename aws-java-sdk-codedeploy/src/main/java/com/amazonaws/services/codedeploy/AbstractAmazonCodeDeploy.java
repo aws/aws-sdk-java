@@ -15,6 +15,7 @@
 package com.amazonaws.services.codedeploy;
 
 import com.amazonaws.services.codedeploy.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonCodeDeploy}. Convenient method forms

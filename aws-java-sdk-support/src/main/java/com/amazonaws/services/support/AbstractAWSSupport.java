@@ -15,6 +15,7 @@
 package com.amazonaws.services.support;
 
 import com.amazonaws.services.support.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSSupport}. Convenient method forms pass

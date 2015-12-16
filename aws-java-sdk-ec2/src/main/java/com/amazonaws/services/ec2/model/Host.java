@@ -17,7 +17,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes the properties of the Dedicated host.
+ * </p>
  */
 public class Host implements Serializable, Cloneable {
 
@@ -35,8 +37,9 @@ public class Host implements Serializable, Cloneable {
     private String autoPlacement;
 
     /**
-     * The reservation ID of the Dedicated host. This returns a "null"
-     * response if the Dedicated host doesn't have an associated reservation.
+     * The reservation ID of the Dedicated host. This returns a
+     * <code>null</code> response if the Dedicated host doesn't have an
+     * associated reservation.
      */
     private String hostReservationId;
 
@@ -55,8 +58,7 @@ public class Host implements Serializable, Cloneable {
     private HostProperties hostProperties;
 
     /**
-     * The Dedicated host's state. Can be "available", "under assessment, or
-     * "released".
+     * The Dedicated host's state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, under-assessment, permanent-failure, released, released-permanent-failure
@@ -196,35 +198,41 @@ public class Host implements Serializable, Cloneable {
     }
 
     /**
-     * The reservation ID of the Dedicated host. This returns a "null"
-     * response if the Dedicated host doesn't have an associated reservation.
+     * The reservation ID of the Dedicated host. This returns a
+     * <code>null</code> response if the Dedicated host doesn't have an
+     * associated reservation.
      *
-     * @return The reservation ID of the Dedicated host. This returns a "null"
-     *         response if the Dedicated host doesn't have an associated reservation.
+     * @return The reservation ID of the Dedicated host. This returns a
+     *         <code>null</code> response if the Dedicated host doesn't have an
+     *         associated reservation.
      */
     public String getHostReservationId() {
         return hostReservationId;
     }
     
     /**
-     * The reservation ID of the Dedicated host. This returns a "null"
-     * response if the Dedicated host doesn't have an associated reservation.
+     * The reservation ID of the Dedicated host. This returns a
+     * <code>null</code> response if the Dedicated host doesn't have an
+     * associated reservation.
      *
-     * @param hostReservationId The reservation ID of the Dedicated host. This returns a "null"
-     *         response if the Dedicated host doesn't have an associated reservation.
+     * @param hostReservationId The reservation ID of the Dedicated host. This returns a
+     *         <code>null</code> response if the Dedicated host doesn't have an
+     *         associated reservation.
      */
     public void setHostReservationId(String hostReservationId) {
         this.hostReservationId = hostReservationId;
     }
     
     /**
-     * The reservation ID of the Dedicated host. This returns a "null"
-     * response if the Dedicated host doesn't have an associated reservation.
+     * The reservation ID of the Dedicated host. This returns a
+     * <code>null</code> response if the Dedicated host doesn't have an
+     * associated reservation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hostReservationId The reservation ID of the Dedicated host. This returns a "null"
-     *         response if the Dedicated host doesn't have an associated reservation.
+     * @param hostReservationId The reservation ID of the Dedicated host. This returns a
+     *         <code>null</code> response if the Dedicated host doesn't have an
+     *         associated reservation.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -325,14 +333,12 @@ public class Host implements Serializable, Cloneable {
     }
 
     /**
-     * The Dedicated host's state. Can be "available", "under assessment, or
-     * "released".
+     * The Dedicated host's state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, under-assessment, permanent-failure, released, released-permanent-failure
      *
-     * @return The Dedicated host's state. Can be "available", "under assessment, or
-     *         "released".
+     * @return The Dedicated host's state.
      *
      * @see AllocationState
      */
@@ -341,14 +347,12 @@ public class Host implements Serializable, Cloneable {
     }
     
     /**
-     * The Dedicated host's state. Can be "available", "under assessment, or
-     * "released".
+     * The Dedicated host's state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, under-assessment, permanent-failure, released, released-permanent-failure
      *
-     * @param state The Dedicated host's state. Can be "available", "under assessment, or
-     *         "released".
+     * @param state The Dedicated host's state.
      *
      * @see AllocationState
      */
@@ -357,16 +361,14 @@ public class Host implements Serializable, Cloneable {
     }
     
     /**
-     * The Dedicated host's state. Can be "available", "under assessment, or
-     * "released".
+     * The Dedicated host's state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, under-assessment, permanent-failure, released, released-permanent-failure
      *
-     * @param state The Dedicated host's state. Can be "available", "under assessment, or
-     *         "released".
+     * @param state The Dedicated host's state.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -379,14 +381,12 @@ public class Host implements Serializable, Cloneable {
     }
 
     /**
-     * The Dedicated host's state. Can be "available", "under assessment, or
-     * "released".
+     * The Dedicated host's state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, under-assessment, permanent-failure, released, released-permanent-failure
      *
-     * @param state The Dedicated host's state. Can be "available", "under assessment, or
-     *         "released".
+     * @param state The Dedicated host's state.
      *
      * @see AllocationState
      */
@@ -395,16 +395,14 @@ public class Host implements Serializable, Cloneable {
     }
     
     /**
-     * The Dedicated host's state. Can be "available", "under assessment, or
-     * "released".
+     * The Dedicated host's state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, under-assessment, permanent-failure, released, released-permanent-failure
      *
-     * @param state The Dedicated host's state. Can be "available", "under assessment, or
-     *         "released".
+     * @param state The Dedicated host's state.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

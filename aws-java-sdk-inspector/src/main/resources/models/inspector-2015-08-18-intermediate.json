@@ -1610,8 +1610,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -1749,8 +1749,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -1826,8 +1826,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -1913,8 +1913,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -2589,8 +2589,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Agent",
           "simple" : false,
+          "simpleType" : "Agent",
           "map" : false,
           "templateType" : "java.util.List<Agent>",
           "templateImplType" : "java.util.ArrayList<Agent>"
@@ -2830,8 +2830,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Agent",
             "simple" : false,
+            "simpleType" : "Agent",
             "map" : false,
             "templateType" : "java.util.List<Agent>",
             "templateImplType" : "java.util.ArrayList<Agent>"
@@ -3281,8 +3281,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Parameter",
           "simple" : false,
+          "simpleType" : "Parameter",
           "map" : false,
           "templateType" : "java.util.List<Parameter>",
           "templateImplType" : "java.util.ArrayList<Parameter>"
@@ -3419,8 +3419,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Parameter",
             "simple" : false,
+            "simpleType" : "Parameter",
             "map" : false,
             "templateType" : "java.util.List<Parameter>",
             "templateImplType" : "java.util.ArrayList<Parameter>"
@@ -4276,8 +4276,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -4466,8 +4466,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -4681,8 +4681,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -4796,8 +4796,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Attribute",
           "simple" : false,
+          "simpleType" : "Attribute",
           "map" : false,
           "templateType" : "java.util.List<Attribute>",
           "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -4938,8 +4938,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Attribute",
             "simple" : false,
+            "simpleType" : "Attribute",
             "map" : false,
             "templateType" : "java.util.List<Attribute>",
             "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -5003,8 +5003,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -5131,8 +5131,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Tag",
           "simple" : false,
+          "simpleType" : "Tag",
           "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "java.util.ArrayList<Tag>"
@@ -5269,8 +5269,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Tag",
             "simple" : false,
+            "simpleType" : "Tag",
             "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "java.util.ArrayList<Tag>"
@@ -5906,8 +5906,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -6096,8 +6096,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -7180,8 +7180,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -7370,8 +7370,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -7692,8 +7692,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -7756,8 +7756,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -8047,8 +8047,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -8268,8 +8268,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -8601,8 +8601,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Attribute",
           "simple" : false,
+          "simpleType" : "Attribute",
           "map" : false,
           "templateType" : "java.util.List<Attribute>",
           "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -8795,8 +8795,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Attribute",
             "simple" : false,
+            "simpleType" : "Attribute",
             "map" : false,
             "templateType" : "java.util.List<Attribute>",
             "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -8976,8 +8976,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -9376,8 +9376,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -9595,8 +9595,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -9659,8 +9659,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -9723,8 +9723,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -9838,8 +9838,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Attribute",
           "simple" : false,
+          "simpleType" : "Attribute",
           "map" : false,
           "templateType" : "java.util.List<Attribute>",
           "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -9953,8 +9953,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Attribute",
           "simple" : false,
+          "simpleType" : "Attribute",
           "map" : false,
           "templateType" : "java.util.List<Attribute>",
           "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -10091,8 +10091,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Attribute",
             "simple" : false,
+            "simpleType" : "Attribute",
             "map" : false,
             "templateType" : "java.util.List<Attribute>",
             "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -10207,8 +10207,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Attribute",
             "simple" : false,
+            "simpleType" : "Attribute",
             "map" : false,
             "templateType" : "java.util.List<Attribute>",
             "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -10272,8 +10272,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -10337,8 +10337,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -10402,8 +10402,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -10561,8 +10561,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Telemetry",
           "simple" : false,
+          "simpleType" : "Telemetry",
           "map" : false,
           "templateType" : "java.util.List<Telemetry>",
           "templateImplType" : "java.util.ArrayList<Telemetry>"
@@ -10699,8 +10699,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Telemetry",
             "simple" : false,
+            "simpleType" : "Telemetry",
             "map" : false,
             "templateType" : "java.util.List<Telemetry>",
             "templateImplType" : "java.util.ArrayList<Telemetry>"
@@ -11293,8 +11293,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -11483,8 +11483,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -11560,8 +11560,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -11647,8 +11647,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -11866,8 +11866,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -11930,8 +11930,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -12021,8 +12021,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -12086,8 +12086,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -12648,8 +12648,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Tag",
           "simple" : false,
+          "simpleType" : "Tag",
           "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "java.util.ArrayList<Tag>"
@@ -12790,8 +12790,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Tag",
             "simple" : false,
+            "simpleType" : "Tag",
             "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "java.util.ArrayList<Tag>"
@@ -13429,8 +13429,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Attribute",
           "simple" : false,
+          "simpleType" : "Attribute",
           "map" : false,
           "templateType" : "java.util.List<Attribute>",
           "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -13671,8 +13671,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Attribute",
             "simple" : false,
+            "simpleType" : "Attribute",
             "map" : false,
             "templateType" : "java.util.List<Attribute>",
             "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -14688,8 +14688,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "AgentPreview",
           "simple" : false,
+          "simpleType" : "AgentPreview",
           "map" : false,
           "templateType" : "java.util.List<AgentPreview>",
           "templateImplType" : "java.util.ArrayList<AgentPreview>"
@@ -14929,8 +14929,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "AgentPreview",
             "simple" : false,
+            "simpleType" : "AgentPreview",
             "map" : false,
             "templateType" : "java.util.List<AgentPreview>",
             "templateImplType" : "java.util.ArrayList<AgentPreview>"
@@ -16089,8 +16089,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -16279,8 +16279,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -17736,8 +17736,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Telemetry",
           "simple" : false,
+          "simpleType" : "Telemetry",
           "map" : false,
           "templateType" : "java.util.List<Telemetry>",
           "templateImplType" : "java.util.ArrayList<Telemetry>"
@@ -17978,8 +17978,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Telemetry",
             "simple" : false,
+            "simpleType" : "Telemetry",
             "map" : false,
             "templateType" : "java.util.List<Telemetry>",
             "templateImplType" : "java.util.ArrayList<Telemetry>"
@@ -19003,8 +19003,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -19193,8 +19193,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -20620,8 +20620,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Attribute",
           "simple" : false,
+          "simpleType" : "Attribute",
           "map" : false,
           "templateType" : "java.util.List<Attribute>",
           "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -20735,8 +20735,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Attribute",
           "simple" : false,
+          "simpleType" : "Attribute",
           "map" : false,
           "templateType" : "java.util.List<Attribute>",
           "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -20873,8 +20873,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Attribute",
             "simple" : false,
+            "simpleType" : "Attribute",
             "map" : false,
             "templateType" : "java.util.List<Attribute>",
             "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -20989,8 +20989,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Attribute",
             "simple" : false,
+            "simpleType" : "Attribute",
             "map" : false,
             "templateType" : "java.util.List<Attribute>",
             "templateImplType" : "java.util.ArrayList<Attribute>"
@@ -22589,8 +22589,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -22989,8 +22989,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -23066,8 +23066,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -23256,8 +23256,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -23522,8 +23522,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "LocalizedText",
           "simple" : false,
+          "simpleType" : "LocalizedText",
           "map" : false,
           "templateType" : "java.util.List<LocalizedText>",
           "templateImplType" : "java.util.ArrayList<LocalizedText>"
@@ -23715,8 +23715,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "LocalizedText",
             "simple" : false,
+            "simpleType" : "LocalizedText",
             "map" : false,
             "templateType" : "java.util.List<LocalizedText>",
             "templateImplType" : "java.util.ArrayList<LocalizedText>"
@@ -23844,8 +23844,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -23908,8 +23908,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -23972,8 +23972,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -24213,8 +24213,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -24278,8 +24278,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -24343,8 +24343,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -25103,8 +25103,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "MessageTypeTelemetry",
           "simple" : false,
+          "simpleType" : "MessageTypeTelemetry",
           "map" : false,
           "templateType" : "java.util.List<MessageTypeTelemetry>",
           "templateImplType" : "java.util.ArrayList<MessageTypeTelemetry>"
@@ -25293,8 +25293,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "MessageTypeTelemetry",
             "simple" : false,
+            "simpleType" : "MessageTypeTelemetry",
             "map" : false,
             "templateType" : "java.util.List<MessageTypeTelemetry>",
             "templateImplType" : "java.util.ArrayList<MessageTypeTelemetry>"
@@ -25957,8 +25957,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -26354,8 +26354,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -27332,8 +27332,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -27732,8 +27732,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -28957,6 +28957,10 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null
+  },
+  "examples" : {
+    "version" : "1.0",
+    "operationExamples" : { }
   },
   "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
 }

@@ -72,7 +72,7 @@ public class UpdateThingShadowRequestMarshaller implements
         request.setContent(BinaryUtils.toStream(updateThingShadowRequest
                 .getPayload()));
         if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", "binary/octet-stream");
+            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
         }
 
         return request;

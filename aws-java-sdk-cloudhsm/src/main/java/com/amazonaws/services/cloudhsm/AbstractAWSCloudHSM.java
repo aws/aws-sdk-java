@@ -15,6 +15,7 @@
 package com.amazonaws.services.cloudhsm;
 
 import com.amazonaws.services.cloudhsm.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSCloudHSM}. Convenient method forms pass

@@ -3458,8 +3458,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -3704,8 +3704,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -3936,11 +3936,11 @@
           "valueType" : "Boolean",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Boolean>",
-          "templateImplType" : "java.util.HashMap<String,Boolean>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Boolean>",
+          "templateImplType" : "java.util.HashMap<String,Boolean>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -4001,11 +4001,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -4117,11 +4117,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,MethodResponse>",
-          "templateImplType" : "java.util.HashMap<String,MethodResponse>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,MethodResponse>",
+          "templateImplType" : "java.util.HashMap<String,MethodResponse>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -4360,11 +4360,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -4426,11 +4426,11 @@
             "valueType" : "Boolean",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Boolean>",
-            "templateImplType" : "java.util.HashMap<String,Boolean>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Boolean>",
+            "templateImplType" : "java.util.HashMap<String,Boolean>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -4543,11 +4543,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,MethodResponse>",
-            "templateImplType" : "java.util.HashMap<String,MethodResponse>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,MethodResponse>",
+            "templateImplType" : "java.util.HashMap<String,MethodResponse>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -4805,8 +4805,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Stage",
           "simple" : false,
+          "simpleType" : "Stage",
           "map" : false,
           "templateType" : "java.util.List<Stage>",
           "templateImplType" : "java.util.ArrayList<Stage>"
@@ -4943,8 +4943,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Stage",
             "simple" : false,
+            "simpleType" : "Stage",
             "map" : false,
             "templateType" : "java.util.List<Stage>",
             "templateImplType" : "java.util.ArrayList<Stage>"
@@ -5980,11 +5980,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,MethodSetting>",
-          "templateImplType" : "java.util.HashMap<String,MethodSetting>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,MethodSetting>",
+          "templateImplType" : "java.util.HashMap<String,MethodSetting>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -6045,11 +6045,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -6391,11 +6391,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6768,11 +6768,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,MethodSetting>",
-            "templateImplType" : "java.util.HashMap<String,MethodSetting>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,MethodSetting>",
+            "templateImplType" : "java.util.HashMap<String,MethodSetting>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7650,8 +7650,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "StageKey",
           "simple" : false,
+          "simpleType" : "StageKey",
           "map" : false,
           "templateType" : "java.util.List<StageKey>",
           "templateImplType" : "java.util.ArrayList<StageKey>"
@@ -7948,8 +7948,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "StageKey",
             "simple" : false,
+            "simpleType" : "StageKey",
             "map" : false,
             "templateType" : "java.util.List<StageKey>",
             "templateImplType" : "java.util.ArrayList<StageKey>"
@@ -8129,11 +8129,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -8371,11 +8371,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8705,8 +8705,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "RestApi",
           "simple" : false,
+          "simpleType" : "RestApi",
           "map" : false,
           "templateType" : "java.util.List<RestApi>",
           "templateImplType" : "java.util.ArrayList<RestApi>"
@@ -8843,8 +8843,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "RestApi",
             "simple" : false,
+            "simpleType" : "RestApi",
             "map" : false,
             "templateType" : "java.util.List<RestApi>",
             "templateImplType" : "java.util.ArrayList<RestApi>"
@@ -10166,11 +10166,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10231,11 +10231,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10375,11 +10375,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -10441,11 +10441,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -12525,11 +12525,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12590,11 +12590,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12730,11 +12730,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -12796,11 +12796,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -13334,11 +13334,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,MethodSetting>",
-          "templateImplType" : "java.util.HashMap<String,MethodSetting>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,MethodSetting>",
+          "templateImplType" : "java.util.HashMap<String,MethodSetting>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -13399,11 +13399,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -13745,11 +13745,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -14122,11 +14122,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,MethodSetting>",
-            "templateImplType" : "java.util.HashMap<String,MethodSetting>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,MethodSetting>",
+            "templateImplType" : "java.util.HashMap<String,MethodSetting>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -14647,11 +14647,11 @@
                 "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                 "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
               },
-              "templateType" : "java.util.Map<String,MethodSnapshot>",
-              "templateImplType" : "java.util.HashMap<String,MethodSnapshot>",
               "keySimple" : true,
               "valueSimple" : false,
-              "valueList" : false
+              "valueList" : false,
+              "templateType" : "java.util.Map<String,MethodSnapshot>",
+              "templateImplType" : "java.util.HashMap<String,MethodSnapshot>"
             },
             "enumType" : null,
             "xmlNameSpaceUri" : null,
@@ -14663,11 +14663,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -14903,11 +14903,11 @@
                   "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                   "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
                 },
-                "templateType" : "java.util.Map<String,MethodSnapshot>",
-                "templateImplType" : "java.util.HashMap<String,MethodSnapshot>",
                 "keySimple" : true,
                 "valueSimple" : false,
-                "valueList" : false
+                "valueList" : false,
+                "templateType" : "java.util.Map<String,MethodSnapshot>",
+                "templateImplType" : "java.util.HashMap<String,MethodSnapshot>"
               },
               "enumType" : null,
               "xmlNameSpaceUri" : null,
@@ -14919,11 +14919,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -15509,11 +15509,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,MethodSetting>",
-          "templateImplType" : "java.util.HashMap<String,MethodSetting>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,MethodSetting>",
+          "templateImplType" : "java.util.HashMap<String,MethodSetting>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -15574,11 +15574,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -15920,11 +15920,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -16297,11 +16297,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,MethodSetting>",
-            "templateImplType" : "java.util.HashMap<String,MethodSetting>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,MethodSetting>",
+            "templateImplType" : "java.util.HashMap<String,MethodSetting>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -17115,8 +17115,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -17361,8 +17361,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -17776,8 +17776,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -18074,8 +18074,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -20860,11 +20860,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,MethodSetting>",
-          "templateImplType" : "java.util.HashMap<String,MethodSetting>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,MethodSetting>",
+          "templateImplType" : "java.util.HashMap<String,MethodSetting>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -20925,11 +20925,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -21271,11 +21271,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -21648,11 +21648,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,MethodSetting>",
-            "templateImplType" : "java.util.HashMap<String,MethodSetting>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,MethodSetting>",
+            "templateImplType" : "java.util.HashMap<String,MethodSetting>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -22170,8 +22170,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -22416,8 +22416,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -22697,8 +22697,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -22943,8 +22943,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -24150,8 +24150,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -24292,8 +24292,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -24819,8 +24819,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -24961,8 +24961,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -25193,8 +25193,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -25335,8 +25335,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -25618,11 +25618,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -25683,11 +25683,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -25797,8 +25797,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -25914,11 +25914,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,IntegrationResponse>",
-          "templateImplType" : "java.util.HashMap<String,IntegrationResponse>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,IntegrationResponse>",
+          "templateImplType" : "java.util.HashMap<String,IntegrationResponse>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -26105,11 +26105,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,IntegrationResponse>",
-            "templateImplType" : "java.util.HashMap<String,IntegrationResponse>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,IntegrationResponse>",
+            "templateImplType" : "java.util.HashMap<String,IntegrationResponse>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -26171,11 +26171,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -26289,11 +26289,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -26457,8 +26457,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -26790,8 +26790,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -27187,8 +27187,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -28317,11 +28317,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -28433,11 +28433,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -28525,11 +28525,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -28643,11 +28643,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -29460,8 +29460,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Deployment",
           "simple" : false,
+          "simpleType" : "Deployment",
           "map" : false,
           "templateType" : "java.util.List<Deployment>",
           "templateImplType" : "java.util.ArrayList<Deployment>"
@@ -29598,8 +29598,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Deployment",
             "simple" : false,
+            "simpleType" : "Deployment",
             "map" : false,
             "templateType" : "java.util.List<Deployment>",
             "templateImplType" : "java.util.ArrayList<Deployment>"
@@ -30025,11 +30025,11 @@
           "valueType" : "Boolean",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Boolean>",
-          "templateImplType" : "java.util.HashMap<String,Boolean>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Boolean>",
+          "templateImplType" : "java.util.HashMap<String,Boolean>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -30090,11 +30090,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -30230,11 +30230,11 @@
             "valueType" : "Boolean",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Boolean>",
-            "templateImplType" : "java.util.HashMap<String,Boolean>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Boolean>",
+            "templateImplType" : "java.util.HashMap<String,Boolean>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -30296,11 +30296,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -30576,8 +30576,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -30973,8 +30973,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -31895,11 +31895,11 @@
           "valueType" : "Boolean",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Boolean>",
-          "templateImplType" : "java.util.HashMap<String,Boolean>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Boolean>",
+          "templateImplType" : "java.util.HashMap<String,Boolean>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -31960,11 +31960,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -32100,11 +32100,11 @@
             "valueType" : "Boolean",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Boolean>",
-            "templateImplType" : "java.util.HashMap<String,Boolean>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Boolean>",
+            "templateImplType" : "java.util.HashMap<String,Boolean>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -32166,11 +32166,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -33093,11 +33093,11 @@
           "valueType" : "Boolean",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Boolean>",
-          "templateImplType" : "java.util.HashMap<String,Boolean>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Boolean>",
+          "templateImplType" : "java.util.HashMap<String,Boolean>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -33158,11 +33158,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -33274,11 +33274,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,MethodResponse>",
-          "templateImplType" : "java.util.HashMap<String,MethodResponse>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,MethodResponse>",
+          "templateImplType" : "java.util.HashMap<String,MethodResponse>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -33517,11 +33517,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -33583,11 +33583,11 @@
             "valueType" : "Boolean",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Boolean>",
-            "templateImplType" : "java.util.HashMap<String,Boolean>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Boolean>",
+            "templateImplType" : "java.util.HashMap<String,Boolean>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -33700,11 +33700,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,MethodResponse>",
-            "templateImplType" : "java.util.HashMap<String,MethodResponse>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,MethodResponse>",
+            "templateImplType" : "java.util.HashMap<String,MethodResponse>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -34686,11 +34686,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -34751,11 +34751,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -34865,8 +34865,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -35114,11 +35114,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -35232,11 +35232,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -35400,8 +35400,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -35836,11 +35836,11 @@
                 "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                 "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
               },
-              "templateType" : "java.util.Map<String,MethodSnapshot>",
-              "templateImplType" : "java.util.HashMap<String,MethodSnapshot>",
               "keySimple" : true,
               "valueSimple" : false,
-              "valueList" : false
+              "valueList" : false,
+              "templateType" : "java.util.Map<String,MethodSnapshot>",
+              "templateImplType" : "java.util.HashMap<String,MethodSnapshot>"
             },
             "enumType" : null,
             "xmlNameSpaceUri" : null,
@@ -35852,11 +35852,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -36092,11 +36092,11 @@
                   "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                   "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
                 },
-                "templateType" : "java.util.Map<String,MethodSnapshot>",
-                "templateImplType" : "java.util.HashMap<String,MethodSnapshot>",
                 "keySimple" : true,
                 "valueSimple" : false,
-                "valueList" : false
+                "valueList" : false,
+                "templateType" : "java.util.Map<String,MethodSnapshot>",
+                "templateImplType" : "java.util.HashMap<String,MethodSnapshot>"
               },
               "enumType" : null,
               "xmlNameSpaceUri" : null,
@@ -36108,11 +36108,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -36545,11 +36545,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,Method>",
-          "templateImplType" : "java.util.HashMap<String,Method>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Method>",
+          "templateImplType" : "java.util.HashMap<String,Method>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -36736,11 +36736,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,Method>",
-            "templateImplType" : "java.util.HashMap<String,Method>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Method>",
+            "templateImplType" : "java.util.HashMap<String,Method>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -37906,11 +37906,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -37971,11 +37971,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -38111,11 +38111,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -38177,11 +38177,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -39493,11 +39493,11 @@
           "valueType" : "Boolean",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Boolean>",
-          "templateImplType" : "java.util.HashMap<String,Boolean>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Boolean>",
+          "templateImplType" : "java.util.HashMap<String,Boolean>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -39558,11 +39558,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -39674,11 +39674,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,MethodResponse>",
-          "templateImplType" : "java.util.HashMap<String,MethodResponse>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,MethodResponse>",
+          "templateImplType" : "java.util.HashMap<String,MethodResponse>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -39917,11 +39917,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -39983,11 +39983,11 @@
             "valueType" : "Boolean",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Boolean>",
-            "templateImplType" : "java.util.HashMap<String,Boolean>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Boolean>",
+            "templateImplType" : "java.util.HashMap<String,Boolean>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -40100,11 +40100,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,MethodResponse>",
-            "templateImplType" : "java.util.HashMap<String,MethodResponse>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,MethodResponse>",
+            "templateImplType" : "java.util.HashMap<String,MethodResponse>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -40486,11 +40486,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -40551,11 +40551,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -40665,8 +40665,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -40782,11 +40782,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,IntegrationResponse>",
-          "templateImplType" : "java.util.HashMap<String,IntegrationResponse>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,IntegrationResponse>",
+          "templateImplType" : "java.util.HashMap<String,IntegrationResponse>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -40973,11 +40973,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,IntegrationResponse>",
-            "templateImplType" : "java.util.HashMap<String,IntegrationResponse>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,IntegrationResponse>",
+            "templateImplType" : "java.util.HashMap<String,IntegrationResponse>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -41039,11 +41039,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -41157,11 +41157,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -41325,8 +41325,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -42286,8 +42286,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "DomainName",
           "simple" : false,
+          "simpleType" : "DomainName",
           "map" : false,
           "templateType" : "java.util.List<DomainName>",
           "templateImplType" : "java.util.ArrayList<DomainName>"
@@ -42424,8 +42424,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "DomainName",
             "simple" : false,
+            "simpleType" : "DomainName",
             "map" : false,
             "templateType" : "java.util.List<DomainName>",
             "templateImplType" : "java.util.ArrayList<DomainName>"
@@ -42810,11 +42810,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,Method>",
-          "templateImplType" : "java.util.HashMap<String,Method>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Method>",
+          "templateImplType" : "java.util.HashMap<String,Method>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -43001,11 +43001,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,Method>",
-            "templateImplType" : "java.util.HashMap<String,Method>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Method>",
+            "templateImplType" : "java.util.HashMap<String,Method>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -43825,8 +43825,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -44019,8 +44019,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -44578,8 +44578,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ClientCertificate",
           "simple" : false,
+          "simpleType" : "ClientCertificate",
           "map" : false,
           "templateType" : "java.util.List<ClientCertificate>",
           "templateImplType" : "java.util.ArrayList<ClientCertificate>"
@@ -44716,8 +44716,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ClientCertificate",
             "simple" : false,
+            "simpleType" : "ClientCertificate",
             "map" : false,
             "templateType" : "java.util.List<ClientCertificate>",
             "templateImplType" : "java.util.ArrayList<ClientCertificate>"
@@ -47282,8 +47282,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "BasePathMapping",
           "simple" : false,
+          "simpleType" : "BasePathMapping",
           "map" : false,
           "templateType" : "java.util.List<BasePathMapping>",
           "templateImplType" : "java.util.ArrayList<BasePathMapping>"
@@ -47420,8 +47420,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "BasePathMapping",
             "simple" : false,
+            "simpleType" : "BasePathMapping",
             "map" : false,
             "templateType" : "java.util.List<BasePathMapping>",
             "templateImplType" : "java.util.ArrayList<BasePathMapping>"
@@ -47755,11 +47755,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -47820,11 +47820,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -47934,8 +47934,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -48051,11 +48051,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,IntegrationResponse>",
-          "templateImplType" : "java.util.HashMap<String,IntegrationResponse>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,IntegrationResponse>",
+          "templateImplType" : "java.util.HashMap<String,IntegrationResponse>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -48242,11 +48242,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,IntegrationResponse>",
-            "templateImplType" : "java.util.HashMap<String,IntegrationResponse>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,IntegrationResponse>",
+            "templateImplType" : "java.util.HashMap<String,IntegrationResponse>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -48308,11 +48308,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -48426,11 +48426,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -48594,8 +48594,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -48825,8 +48825,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -49019,8 +49019,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -50148,8 +50148,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Model",
           "simple" : false,
+          "simpleType" : "Model",
           "map" : false,
           "templateType" : "java.util.List<Model>",
           "templateImplType" : "java.util.ArrayList<Model>"
@@ -50286,8 +50286,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Model",
             "simple" : false,
+            "simpleType" : "Model",
             "map" : false,
             "templateType" : "java.util.List<Model>",
             "templateImplType" : "java.util.ArrayList<Model>"
@@ -51398,8 +51398,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -51644,8 +51644,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -52427,8 +52427,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -52725,8 +52725,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -53058,8 +53058,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -53455,8 +53455,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -53984,11 +53984,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -54049,11 +54049,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -54163,8 +54163,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -54280,11 +54280,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,IntegrationResponse>",
-          "templateImplType" : "java.util.HashMap<String,IntegrationResponse>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,IntegrationResponse>",
+          "templateImplType" : "java.util.HashMap<String,IntegrationResponse>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -54471,11 +54471,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,IntegrationResponse>",
-            "templateImplType" : "java.util.HashMap<String,IntegrationResponse>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,IntegrationResponse>",
+            "templateImplType" : "java.util.HashMap<String,IntegrationResponse>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -54537,11 +54537,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -54655,11 +54655,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -54823,8 +54823,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -55657,11 +55657,11 @@
           "valueType" : "Boolean",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Boolean>",
-          "templateImplType" : "java.util.HashMap<String,Boolean>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Boolean>",
+          "templateImplType" : "java.util.HashMap<String,Boolean>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -55722,11 +55722,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -55838,11 +55838,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,MethodResponse>",
-          "templateImplType" : "java.util.HashMap<String,MethodResponse>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,MethodResponse>",
+          "templateImplType" : "java.util.HashMap<String,MethodResponse>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -56081,11 +56081,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -56147,11 +56147,11 @@
             "valueType" : "Boolean",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Boolean>",
-            "templateImplType" : "java.util.HashMap<String,Boolean>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Boolean>",
+            "templateImplType" : "java.util.HashMap<String,Boolean>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -56264,11 +56264,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,MethodResponse>",
-            "templateImplType" : "java.util.HashMap<String,MethodResponse>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,MethodResponse>",
+            "templateImplType" : "java.util.HashMap<String,MethodResponse>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -57242,8 +57242,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Resource",
           "simple" : false,
+          "simpleType" : "Resource",
           "map" : false,
           "templateType" : "java.util.List<Resource>",
           "templateImplType" : "java.util.ArrayList<Resource>"
@@ -57380,8 +57380,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Resource",
             "simple" : false,
+            "simpleType" : "Resource",
             "map" : false,
             "templateType" : "java.util.List<Resource>",
             "templateImplType" : "java.util.ArrayList<Resource>"
@@ -57613,11 +57613,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -57678,11 +57678,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -57818,11 +57818,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -57884,11 +57884,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -58411,11 +58411,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,Method>",
-          "templateImplType" : "java.util.HashMap<String,Method>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Method>",
+          "templateImplType" : "java.util.HashMap<String,Method>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -58602,11 +58602,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,Method>",
-            "templateImplType" : "java.util.HashMap<String,Method>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Method>",
+            "templateImplType" : "java.util.HashMap<String,Method>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -60129,11 +60129,11 @@
                 "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                 "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
               },
-              "templateType" : "java.util.Map<String,MethodSnapshot>",
-              "templateImplType" : "java.util.HashMap<String,MethodSnapshot>",
               "keySimple" : true,
               "valueSimple" : false,
-              "valueList" : false
+              "valueList" : false,
+              "templateType" : "java.util.Map<String,MethodSnapshot>",
+              "templateImplType" : "java.util.HashMap<String,MethodSnapshot>"
             },
             "enumType" : null,
             "xmlNameSpaceUri" : null,
@@ -60145,11 +60145,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -60385,11 +60385,11 @@
                   "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                   "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
                 },
-                "templateType" : "java.util.Map<String,MethodSnapshot>",
-                "templateImplType" : "java.util.HashMap<String,MethodSnapshot>",
                 "keySimple" : true,
                 "valueSimple" : false,
-                "valueList" : false
+                "valueList" : false,
+                "templateType" : "java.util.Map<String,MethodSnapshot>",
+                "templateImplType" : "java.util.HashMap<String,MethodSnapshot>"
               },
               "enumType" : null,
               "xmlNameSpaceUri" : null,
@@ -60401,11 +60401,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -61439,11 +61439,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -61635,11 +61635,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -62176,11 +62176,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,Method>",
-          "templateImplType" : "java.util.HashMap<String,Method>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Method>",
+          "templateImplType" : "java.util.HashMap<String,Method>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -62367,11 +62367,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,Method>",
-            "templateImplType" : "java.util.HashMap<String,Method>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Method>",
+            "templateImplType" : "java.util.HashMap<String,Method>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -62701,8 +62701,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -62895,8 +62895,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -63216,8 +63216,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ApiKey",
           "simple" : false,
+          "simpleType" : "ApiKey",
           "map" : false,
           "templateType" : "java.util.List<ApiKey>",
           "templateImplType" : "java.util.ArrayList<ApiKey>"
@@ -63354,8 +63354,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ApiKey",
             "simple" : false,
+            "simpleType" : "ApiKey",
             "map" : false,
             "templateType" : "java.util.List<ApiKey>",
             "templateImplType" : "java.util.ArrayList<ApiKey>"
@@ -63687,8 +63687,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -64084,8 +64084,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -64420,11 +64420,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -64512,11 +64512,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -64797,11 +64797,11 @@
           "valueType" : "Boolean",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Boolean>",
-          "templateImplType" : "java.util.HashMap<String,Boolean>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Boolean>",
+          "templateImplType" : "java.util.HashMap<String,Boolean>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -64862,11 +64862,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -65002,11 +65002,11 @@
             "valueType" : "Boolean",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Boolean>",
-            "templateImplType" : "java.util.HashMap<String,Boolean>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Boolean>",
+            "templateImplType" : "java.util.HashMap<String,Boolean>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -65068,11 +65068,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -65248,11 +65248,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -65313,11 +65313,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -65453,11 +65453,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -65519,11 +65519,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -65902,11 +65902,11 @@
                 "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                 "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
               },
-              "templateType" : "java.util.Map<String,MethodSnapshot>",
-              "templateImplType" : "java.util.HashMap<String,MethodSnapshot>",
               "keySimple" : true,
               "valueSimple" : false,
-              "valueList" : false
+              "valueList" : false,
+              "templateType" : "java.util.Map<String,MethodSnapshot>",
+              "templateImplType" : "java.util.HashMap<String,MethodSnapshot>"
             },
             "enumType" : null,
             "xmlNameSpaceUri" : null,
@@ -65918,11 +65918,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -66158,11 +66158,11 @@
                   "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                   "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
                 },
-                "templateType" : "java.util.Map<String,MethodSnapshot>",
-                "templateImplType" : "java.util.HashMap<String,MethodSnapshot>",
                 "keySimple" : true,
                 "valueSimple" : false,
-                "valueList" : false
+                "valueList" : false,
+                "templateType" : "java.util.Map<String,MethodSnapshot>",
+                "templateImplType" : "java.util.HashMap<String,MethodSnapshot>"
               },
               "enumType" : null,
               "xmlNameSpaceUri" : null,
@@ -66174,11 +66174,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,java.util.Map<String,MethodSnapshot>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.Map<String,MethodSnapshot>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -68377,8 +68377,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -68623,8 +68623,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -68957,11 +68957,11 @@
           "valueType" : "Boolean",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Boolean>",
-          "templateImplType" : "java.util.HashMap<String,Boolean>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Boolean>",
+          "templateImplType" : "java.util.HashMap<String,Boolean>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -69022,11 +69022,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -69322,11 +69322,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -69388,11 +69388,11 @@
             "valueType" : "Boolean",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Boolean>",
-            "templateImplType" : "java.util.HashMap<String,Boolean>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Boolean>",
+            "templateImplType" : "java.util.HashMap<String,Boolean>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -69824,11 +69824,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -69968,11 +69968,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -70808,11 +70808,11 @@
           "valueType" : "Boolean",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Boolean>",
-          "templateImplType" : "java.util.HashMap<String,Boolean>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Boolean>",
+          "templateImplType" : "java.util.HashMap<String,Boolean>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -70873,11 +70873,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -71013,11 +71013,11 @@
             "valueType" : "Boolean",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Boolean>",
-            "templateImplType" : "java.util.HashMap<String,Boolean>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Boolean>",
+            "templateImplType" : "java.util.HashMap<String,Boolean>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -71079,11 +71079,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -71361,11 +71361,11 @@
           "valueType" : "Boolean",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Boolean>",
-          "templateImplType" : "java.util.HashMap<String,Boolean>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,Boolean>",
+          "templateImplType" : "java.util.HashMap<String,Boolean>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -71426,11 +71426,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -71570,11 +71570,11 @@
             "valueType" : "Boolean",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Boolean>",
-            "templateImplType" : "java.util.HashMap<String,Boolean>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,Boolean>",
+            "templateImplType" : "java.util.HashMap<String,Boolean>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -71740,11 +71740,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -71839,6 +71839,10 @@
       }
     },
     "shapeModifiers" : null
+  },
+  "examples" : {
+    "version" : "1.0",
+    "operationExamples" : { }
   },
   "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
 }

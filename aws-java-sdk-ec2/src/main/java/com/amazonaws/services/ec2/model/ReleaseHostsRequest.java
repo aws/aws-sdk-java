@@ -22,10 +22,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#releaseHosts(ReleaseHostsRequest) ReleaseHosts operation}.
  * <p>
  * When you no longer want to use a Dedicated host it can be released.
- * On-Demand billing is stopped and the host goes into "released" state.
- * The host ID of Dedicated hosts that have been released can no longer
- * be specified in another request, e.g., ModifyHosts. You must stop or
- * terminate all instances on a host before it can be released.
+ * On-Demand billing is stopped and the host goes into
+ * <code>released</code> state. The host ID of Dedicated hosts that have
+ * been released can no longer be specified in another request, e.g.,
+ * ModifyHosts. You must stop or terminate all instances on a host before
+ * it can be released.
  * </p>
  * <p>
  * When Dedicated hosts are released, it make take some time for them to

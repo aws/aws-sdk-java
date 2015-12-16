@@ -29,7 +29,7 @@ public class PricingDetail implements Serializable, Cloneable {
     private Double price;
 
     /**
-     * The number of instances available for the price.
+     * The number of reservations available for the price.
      */
     private Integer count;
 
@@ -67,29 +67,29 @@ public class PricingDetail implements Serializable, Cloneable {
     }
 
     /**
-     * The number of instances available for the price.
+     * The number of reservations available for the price.
      *
-     * @return The number of instances available for the price.
+     * @return The number of reservations available for the price.
      */
     public Integer getCount() {
         return count;
     }
     
     /**
-     * The number of instances available for the price.
+     * The number of reservations available for the price.
      *
-     * @param count The number of instances available for the price.
+     * @param count The number of reservations available for the price.
      */
     public void setCount(Integer count) {
         this.count = count;
     }
     
     /**
-     * The number of instances available for the price.
+     * The number of reservations available for the price.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param count The number of instances available for the price.
+     * @param count The number of reservations available for the price.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -15,6 +15,7 @@
 package com.amazonaws.services.opsworks;
 
 import com.amazonaws.services.opsworks.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSOpsWorks}. Convenient method forms pass

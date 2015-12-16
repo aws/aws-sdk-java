@@ -465,7 +465,10 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "output":{"shape":"Locations"},
+      "output":{
+        "shape":"Locations",
+        "documentation":"<p>A location is a network facility where AWS Direct Connect routers are available to be connected. Generally, these are colocation hubs where many network providers have equipment, and where cross connects can be delivered. Locations include a name and facility code, and must be provided when creating a connection.</p>"
+      },
       "errors":[
         {
           "shape":"DirectConnectServerException",
@@ -548,7 +551,10 @@
         "vlan"
       ],
       "members":{
-        "bandwidth":{"shape":"Bandwidth"},
+        "bandwidth":{
+          "shape":"Bandwidth",
+          "documentation":"<p>Bandwidth of the connection.</p> <p>Example: \"<i>500Mbps</i>\"</p> <p>Default: None</p>"
+        },
         "connectionName":{
           "shape":"ConnectionName",
           "documentation":"<p>Name of the provisioned connection.</p> <p>Example: \"<i>500M Connection to AWS</i>\"</p> <p>Default: None</p>"
@@ -688,7 +694,10 @@
         "connectionState":{"shape":"ConnectionState"},
         "region":{"shape":"Region"},
         "location":{"shape":"LocationCode"},
-        "bandwidth":{"shape":"Bandwidth"},
+        "bandwidth":{
+          "shape":"Bandwidth",
+          "documentation":"<p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)</p> <p>Default: None</p>"
+        },
         "vlan":{"shape":"VLAN"},
         "partnerName":{"shape":"PartnerName"}
       },
@@ -705,7 +714,7 @@
     },
     "ConnectionName":{
       "type":"string",
-      "documentation":"<p>The name of the connection.</p> <p>Example: \"<i>1G Connection to AWS</i>\"</p> <p>Default: None</p>"
+      "documentation":"<p>The name of the connection.</p> <p>Example: \"<i>My Connection to AWS</i>\"</p> <p>Default: None</p>"
     },
     "ConnectionState":{
       "type":"string",
@@ -719,7 +728,7 @@
         "deleted",
         "rejected"
       ],
-      "documentation":"State of the connection. <ul> <li> <b>Ordering</b>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</li> <li> <b>Requested</b>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</li> <li> <b>Pending</b>: The connection has been approved, and is being initialized.</li> <li> <b>Available</b>: The network link is up, and the connection is ready for use.</li> <li> <b>Down</b>: The network link is down.</li> <li> <b>Deleted</b>: The connection has been deleted.</li> <li> <b>Rejected</b>: A hosted connection in the 'Ordering' state will enter the 'Rejected' state if it is deleted by the end customer.</li> </ul>"
+      "documentation":"State of the connection. <ul> <li> <b>Ordering</b>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</li> <li> <b>Requested</b>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</li> <li> <b>Pending</b>: The connection has been approved, and is being initialized.</li> <li> <b>Available</b>: The network link is up, and the connection is ready for use.</li> <li> <b>Down</b>: The network link is down.</li> <li> <b>Deleting</b>: The connection is in the process of being deleted.</li> <li> <b>Deleted</b>: The connection has been deleted.</li> <li> <b>Rejected</b>: A hosted connection in the 'Ordering' state will enter the 'Rejected' state if it is deleted by the end customer.</li> </ul>"
     },
     "Connections":{
       "type":"structure",
@@ -876,7 +885,10 @@
     "DirectConnectClientException":{
       "type":"structure",
       "members":{
-        "message":{"shape":"ErrorMessage"}
+        "message":{
+          "shape":"ErrorMessage",
+          "documentation":"<p>This is an exception thrown when there is an issue with the input provided by the API call. For example, the name provided for a connection contains a pound sign (#). This can also occur when a valid value is provided, but is otherwise constrained. For example, the valid VLAN tag range is 1-4096 but each can only be used once per connection.</p>"
+        }
       },
       "exception":true,
       "documentation":"<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
@@ -884,7 +896,10 @@
     "DirectConnectServerException":{
       "type":"structure",
       "members":{
-        "message":{"shape":"ErrorMessage"}
+        "message":{
+          "shape":"ErrorMessage",
+          "documentation":"<p>This is an exception thrown when there is a backend issue on the server side.</p>"
+        }
       },
       "exception":true,
       "documentation":"<p>A server-side error occurred during the API call. The error message will contain additional details about the cause.</p>"
@@ -925,7 +940,7 @@
         "deleting",
         "deleted"
       ],
-      "documentation":"State of the interconnect. <ul> <li> <b>Requested</b>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</li> <li> <b>Pending</b>: The interconnect has been approved, and is being initialized.</li> <li> <b>Available</b>: The network link is up, and the interconnect is ready for use.</li> <li> <b>Down</b>: The network link is down.</li> <li> <b>Deleted</b>: The interconnect has been deleted.</li> </ul>"
+      "documentation":"State of the interconnect. <ul> <li> <b>Requested</b>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</li> <li> <b>Pending</b>: The interconnect has been approved, and is being initialized.</li> <li> <b>Available</b>: The network link is up, and the interconnect is ready for use.</li> <li> <b>Down</b>: The network link is down.</li> <li> <b>Deleting</b>: The interconnect is in the process of being deleted.</li> <li> <b>Deleted</b>: The interconnect has been deleted.</li> </ul>"
     },
     "Interconnects":{
       "type":"structure",
@@ -963,8 +978,12 @@
     "Locations":{
       "type":"structure",
       "members":{
-        "locations":{"shape":"LocationList"}
-      }
+        "locations":{
+          "shape":"LocationList",
+          "documentation":"<p>A list of colocation hubs where network providers have equipment. Most regions have multiple locations available.</p>"
+        }
+      },
+      "documentation":"<p>A location is a network facility where AWS Direct Connect routers are available to be connected. Generally, these are colocation hubs where many network providers have equipment, and where cross connects can be delivered. Locations include a name and facility code, and must be provided when creating a connection.</p>"
     },
     "NewPrivateVirtualInterface":{
       "type":"structure",
@@ -1063,7 +1082,7 @@
     "RouteFilterPrefixList":{
       "type":"list",
       "member":{"shape":"RouteFilterPrefix"},
-      "documentation":"<p>A list of routes to be advertised to the AWS network in this region (public virtual interface) or your VPC (private virtual interface).</p>"
+      "documentation":"<p>A list of routes to be advertised to the AWS network in this region (public virtual interface).</p>"
     },
     "RouterConfig":{"type":"string"},
     "VLAN":{
@@ -1149,7 +1168,7 @@
         "deleted",
         "rejected"
       ],
-      "documentation":"State of the virtual interface. <ul> <li> <b>Confirming</b>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</li> <li> <b>Verifying</b>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</li> <li> <b>Pending</b>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</li> <li> <b>Available</b>: A virtual interface that is able to forward traffic.</li> <li> <b>Deleting</b>: A virtual interface is in this state immediately after calling <i>DeleteVirtualInterface</i> until it can no longer forward traffic.</li> <li> <b>Deleted</b>: A virtual interface that cannot forward traffic.</li> <li> <b>Rejected</b>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the 'Confirming' state is deleted by the virtual interface owner, the virtual interface will enter the 'Rejected' state.</li> </ul>"
+      "documentation":"State of the virtual interface. <ul> <li> <b>Confirming</b>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</li> <li> <b>Verifying</b>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</li> <li> <b>Pending</b>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</li> <li> <b>Available</b>: A virtual interface that is able to forward traffic.</li> <li> <b>Down</b>: A virtual interface that is BGP down.</li> <li> <b>Deleting</b>: A virtual interface is in this state immediately after calling <i>DeleteVirtualInterface</i> until it can no longer forward traffic.</li> <li> <b>Deleted</b>: A virtual interface that cannot forward traffic.</li> <li> <b>Rejected</b>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the 'Confirming' state is deleted by the virtual interface owner, the virtual interface will enter the 'Rejected' state.</li> </ul>"
     },
     "VirtualInterfaceType":{
       "type":"string",

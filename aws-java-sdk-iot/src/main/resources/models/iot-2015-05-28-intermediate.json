@@ -2622,8 +2622,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -2709,8 +2709,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -4009,8 +4009,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PolicyVersion",
           "simple" : false,
+          "simpleType" : "PolicyVersion",
           "map" : false,
           "templateType" : "java.util.List<PolicyVersion>",
           "templateImplType" : "java.util.ArrayList<PolicyVersion>"
@@ -4147,8 +4147,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PolicyVersion",
             "simple" : false,
+            "simpleType" : "PolicyVersion",
             "map" : false,
             "templateType" : "java.util.List<PolicyVersion>",
             "templateImplType" : "java.util.ArrayList<PolicyVersion>"
@@ -5092,8 +5092,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -5230,8 +5230,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -6034,8 +6034,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "TopicRuleListItem",
           "simple" : false,
+          "simpleType" : "TopicRuleListItem",
           "map" : false,
           "templateType" : "java.util.List<TopicRuleListItem>",
           "templateImplType" : "java.util.ArrayList<TopicRuleListItem>"
@@ -6275,8 +6275,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "TopicRuleListItem",
             "simple" : false,
+            "simpleType" : "TopicRuleListItem",
             "map" : false,
             "templateType" : "java.util.List<TopicRuleListItem>",
             "templateImplType" : "java.util.ArrayList<TopicRuleListItem>"
@@ -11494,8 +11494,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Action",
           "simple" : false,
+          "simpleType" : "Action",
           "map" : false,
           "templateType" : "java.util.List<Action>",
           "templateImplType" : "java.util.ArrayList<Action>"
@@ -11787,8 +11787,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Action",
             "simple" : false,
+            "simpleType" : "Action",
             "map" : false,
             "templateType" : "java.util.List<Action>",
             "templateImplType" : "java.util.ArrayList<Action>"
@@ -17679,8 +17679,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ThingAttribute",
           "simple" : false,
+          "simpleType" : "ThingAttribute",
           "map" : false,
           "templateType" : "java.util.List<ThingAttribute>",
           "templateImplType" : "java.util.ArrayList<ThingAttribute>"
@@ -17868,8 +17868,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ThingAttribute",
             "simple" : false,
+            "simpleType" : "ThingAttribute",
             "map" : false,
             "templateType" : "java.util.List<ThingAttribute>",
             "templateImplType" : "java.util.ArrayList<ThingAttribute>"
@@ -18435,8 +18435,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Policy",
           "simple" : false,
+          "simpleType" : "Policy",
           "map" : false,
           "templateType" : "java.util.List<Policy>",
           "templateImplType" : "java.util.ArrayList<Policy>"
@@ -18624,8 +18624,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Policy",
             "simple" : false,
+            "simpleType" : "Policy",
             "map" : false,
             "templateType" : "java.util.List<Policy>",
             "templateImplType" : "java.util.ArrayList<Policy>"
@@ -18804,8 +18804,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Policy",
           "simple" : false,
+          "simpleType" : "Policy",
           "map" : false,
           "templateType" : "java.util.List<Policy>",
           "templateImplType" : "java.util.ArrayList<Policy>"
@@ -18993,8 +18993,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Policy",
             "simple" : false,
+            "simpleType" : "Policy",
             "map" : false,
             "templateType" : "java.util.List<Policy>",
             "templateImplType" : "java.util.ArrayList<Policy>"
@@ -20868,8 +20868,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Certificate",
           "simple" : false,
+          "simpleType" : "Certificate",
           "map" : false,
           "templateType" : "java.util.List<Certificate>",
           "templateImplType" : "java.util.ArrayList<Certificate>"
@@ -21057,8 +21057,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Certificate",
             "simple" : false,
+            "simpleType" : "Certificate",
             "map" : false,
             "templateType" : "java.util.List<Certificate>",
             "templateImplType" : "java.util.ArrayList<Certificate>"
@@ -25402,8 +25402,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Action",
           "simple" : false,
+          "simpleType" : "Action",
           "map" : false,
           "templateType" : "java.util.List<Action>",
           "templateImplType" : "java.util.ArrayList<Action>"
@@ -25695,8 +25695,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Action",
             "simple" : false,
+            "simpleType" : "Action",
             "map" : false,
             "templateType" : "java.util.List<Action>",
             "templateImplType" : "java.util.ArrayList<Action>"
@@ -25894,6 +25894,10 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null
+  },
+  "examples" : {
+    "version" : "1.0",
+    "operationExamples" : { }
   },
   "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
 }

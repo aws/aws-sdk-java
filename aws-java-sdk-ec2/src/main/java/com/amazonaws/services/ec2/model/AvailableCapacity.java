@@ -17,7 +17,10 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The capacity information for instances launched onto the Dedicated
+ * host.
+ * </p>
  */
 public class AvailableCapacity implements Serializable, Cloneable {
 

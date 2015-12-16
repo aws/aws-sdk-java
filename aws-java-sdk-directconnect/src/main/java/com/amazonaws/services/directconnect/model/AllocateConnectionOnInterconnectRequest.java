@@ -27,6 +27,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class AllocateConnectionOnInterconnectRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Bandwidth of the connection.
+     * </p>
+     * <p>
+     * Example: "<i>500Mbps</i>"
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     */
     private String bandwidth;
     /**
      * <p>
@@ -79,21 +90,68 @@ public class AllocateConnectionOnInterconnectRequest extends
     private Integer vlan;
 
     /**
+     * <p>
+     * Bandwidth of the connection.
+     * </p>
+     * <p>
+     * Example: "<i>500Mbps</i>"
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
      * @param bandwidth
+     *        Bandwidth of the connection.</p>
+     *        <p>
+     *        Example: "<i>500Mbps</i>"
+     *        </p>
+     *        <p>
+     *        Default: None
      */
     public void setBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
     }
 
     /**
-     * @return
+     * <p>
+     * Bandwidth of the connection.
+     * </p>
+     * <p>
+     * Example: "<i>500Mbps</i>"
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
+     * @return Bandwidth of the connection.</p>
+     *         <p>
+     *         Example: "<i>500Mbps</i>"
+     *         </p>
+     *         <p>
+     *         Default: None
      */
     public String getBandwidth() {
         return this.bandwidth;
     }
 
     /**
+     * <p>
+     * Bandwidth of the connection.
+     * </p>
+     * <p>
+     * Example: "<i>500Mbps</i>"
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
      * @param bandwidth
+     *        Bandwidth of the connection.</p>
+     *        <p>
+     *        Example: "<i>500Mbps</i>"
+     *        </p>
+     *        <p>
+     *        Default: None
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

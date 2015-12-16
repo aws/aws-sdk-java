@@ -47,6 +47,6 @@ final class DownloadTaskImpl implements
     @Override
     public boolean needIntegrityCheck() {
         // Don't perform the integrity check if the checksum won't matchup.
-        return !(s3 instanceof AmazonS3Encryption) && !skipMd5CheckStrategy.skipMd5CheckPerRequest(getObjectRequest);
+        return !(s3 instanceof AmazonS3Encryption) && !skipMd5CheckStrategy.skipClientSideValidationPerRequest(getObjectRequest);
     }
 }

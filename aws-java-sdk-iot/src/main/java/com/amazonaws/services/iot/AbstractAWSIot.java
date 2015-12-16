@@ -15,6 +15,7 @@
 package com.amazonaws.services.iot;
 
 import com.amazonaws.services.iot.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSIot}. Convenient method forms pass

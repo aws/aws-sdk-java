@@ -15,6 +15,7 @@
 package com.amazonaws.services.kinesis;
 
 import com.amazonaws.services.kinesis.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonKinesis}. Convenient method forms

@@ -1107,6 +1107,12 @@
         <Hostname>cloudhsm.ap-southeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>codedeploy</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>codedeploy.ap-southeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>config</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -2338,7 +2344,7 @@
         <ServiceName>iam</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>iam.cn-north-1.amazonaws.com</Hostname>
+        <Hostname>iam.cn-north-1.amazonaws.com.cn</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>sts</ServiceName>
@@ -2540,6 +2546,7 @@
       <RegionName>us-east-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
+      <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>

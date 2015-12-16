@@ -45,7 +45,7 @@ import com.amazonaws.util.json.*;
 public class UploadDocumentsRequestMarshaller implements
         Marshaller<Request<UploadDocumentsRequest>, UploadDocumentsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
 
     public Request<UploadDocumentsRequest> marshall(
             UploadDocumentsRequest uploadDocumentsRequest) {
@@ -79,7 +79,7 @@ public class UploadDocumentsRequestMarshaller implements
 
         request.setContent(uploadDocumentsRequest.getDocuments());
         if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", "binary/octet-stream");
+            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
         }
 
         return request;

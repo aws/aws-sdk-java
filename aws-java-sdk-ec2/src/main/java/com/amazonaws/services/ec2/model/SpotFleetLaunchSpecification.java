@@ -85,7 +85,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private SpotFleetMonitoring monitoring;
 
     /**
-     * The ID of the subnet in which to launch the instances.
+     * The ID of the subnet in which to launch the instances. To specify
+     * multiple subnets, separate them using commas; for example,
+     * "subnet-a61dafcf, subnet-65ea5f08".
      */
     private String subnetId;
 
@@ -644,29 +646,41 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the subnet in which to launch the instances.
+     * The ID of the subnet in which to launch the instances. To specify
+     * multiple subnets, separate them using commas; for example,
+     * "subnet-a61dafcf, subnet-65ea5f08".
      *
-     * @return The ID of the subnet in which to launch the instances.
+     * @return The ID of the subnet in which to launch the instances. To specify
+     *         multiple subnets, separate them using commas; for example,
+     *         "subnet-a61dafcf, subnet-65ea5f08".
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * The ID of the subnet in which to launch the instances.
+     * The ID of the subnet in which to launch the instances. To specify
+     * multiple subnets, separate them using commas; for example,
+     * "subnet-a61dafcf, subnet-65ea5f08".
      *
-     * @param subnetId The ID of the subnet in which to launch the instances.
+     * @param subnetId The ID of the subnet in which to launch the instances. To specify
+     *         multiple subnets, separate them using commas; for example,
+     *         "subnet-a61dafcf, subnet-65ea5f08".
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * The ID of the subnet in which to launch the instances.
+     * The ID of the subnet in which to launch the instances. To specify
+     * multiple subnets, separate them using commas; for example,
+     * "subnet-a61dafcf, subnet-65ea5f08".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId The ID of the subnet in which to launch the instances.
+     * @param subnetId The ID of the subnet in which to launch the instances. To specify
+     *         multiple subnets, separate them using commas; for example,
+     *         "subnet-a61dafcf, subnet-65ea5f08".
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

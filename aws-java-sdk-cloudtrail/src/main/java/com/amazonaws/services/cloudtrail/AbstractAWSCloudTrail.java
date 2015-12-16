@@ -15,6 +15,7 @@
 package com.amazonaws.services.cloudtrail;
 
 import com.amazonaws.services.cloudtrail.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSCloudTrail}. Convenient method forms

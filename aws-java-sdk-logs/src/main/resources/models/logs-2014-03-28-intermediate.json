@@ -54,9 +54,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Cancels an export task if it is in <code>PENDING</code> or <code>RUNNING</code> state. </p>\n@param cancelExportTaskRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Cancels an export task if it is in <code>PENDING</code> or <code>RUNNING</code> state. </p>\n@param cancelExportTaskRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws InvalidOperationException Returned if the operation is not valid on the specified resource\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Cancels an export task if it is in <code>PENDING</code> or <code>RUNNING</code> state. </p>\n@param cancelExportTaskRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Cancels an export task if it is in <code>PENDING</code> or <code>RUNNING</code> state. </p>\n@param cancelExportTaskRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -65,7 +65,7 @@
       "methodName" : "cancelExportTask"
     },
     "CreateExportTask" : {
-      "documentation" : "<p> Creates an <code>ExportTask</code> which allows you to efficiently export data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous call. If all the required information is provided, this API will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code> can be used to get the status of an export task. </p>",
+      "documentation" : "<p> Creates an <code>ExportTask</code> which allows you to efficiently export data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous call. If all the required information is provided, this API will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code> can be used to get the status of an export task. </p> <p> You can export logs from multiple log groups or multiple time ranges to the same Amazon S3 bucket. To separate out log data for each export task, you can specify a prefix that will be used as the Amazon S3 key prefix for all exported objects. </p>",
       "operationName" : "CreateExportTask",
       "deprecated" : false,
       "input" : {
@@ -101,9 +101,9 @@
         "documentation" : "<p>Returned if the specified resource already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Creates an <code>ExportTask</code> which allows you to efficiently export data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous call. If all the required information is provided, this API will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code> can be used to get the status of an export task. </p>\n@param createExportTaskRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateExportTask operation returned by the service.*/",
-      "syncDocumentation" : "/**<p> Creates an <code>ExportTask</code> which allows you to efficiently export data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous call. If all the required information is provided, this API will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code> can be used to get the status of an export task. </p>\n@param createExportTaskRequest \n@return Result of the CreateExportTask operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws LimitExceededException Returned if you have reached the maximum number of resources that can be created.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws ResourceAlreadyExistsException Returned if the specified resource already exists.*/",
-      "asyncDocumentation" : "/**<p> Creates an <code>ExportTask</code> which allows you to efficiently export data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous call. If all the required information is provided, this API will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code> can be used to get the status of an export task. </p>\n@param createExportTaskRequest \n@return A Java Future containing the result of the CreateExportTask operation returned by the service.*/",
+      "syncDocumentation" : "/**<p> Creates an <code>ExportTask</code> which allows you to efficiently export data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous call. If all the required information is provided, this API will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code> can be used to get the status of an export task. </p> <p> You can export logs from multiple log groups or multiple time ranges to the same Amazon S3 bucket. To separate out log data for each export task, you can specify a prefix that will be used as the Amazon S3 key prefix for all exported objects. </p>\n@param createExportTaskRequest \n@return Result of the CreateExportTask operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws LimitExceededException Returned if you have reached the maximum number of resources that can be created.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws ResourceAlreadyExistsException Returned if the specified resource already exists.*/",
+      "asyncDocumentation" : "/**<p> Creates an <code>ExportTask</code> which allows you to efficiently export data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous call. If all the required information is provided, this API will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code> can be used to get the status of an export task. </p> <p> You can export logs from multiple log groups or multiple time ranges to the same Amazon S3 bucket. To separate out log data for each export task, you can specify a prefix that will be used as the Amazon S3 key prefix for all exported objects. </p>\n@param createExportTaskRequest \n@return A Java Future containing the result of the CreateExportTask operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Creates an <code>ExportTask</code> which allows you to efficiently export data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous call. If all the required information is provided, this API will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code> can be used to get the status of an export task. </p> <p> You can export logs from multiple log groups or multiple time ranges to the same Amazon S3 bucket. To separate out log data for each export task, you can specify a prefix that will be used as the Amazon S3 key prefix for all exported objects. </p>\n@param createExportTaskRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateExportTask operation returned by the service.*/",
       "syncReturnType" : "CreateExportTaskResult",
       "asyncReturnType" : "CreateExportTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateExportTaskResult>",
@@ -142,9 +142,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Creates a new log group with the specified name. The name of the log group must be unique within a region for an AWS account. You can create up to 500 log groups per account. </p> <p> You must use the following guidelines when naming a log group: <ul> <li>Log group names can be between 1 and 512 characters long.</li> <li>Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</li> </ul> </p>\n@param createLogGroupRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Creates a new log group with the specified name. The name of the log group must be unique within a region for an AWS account. You can create up to 500 log groups per account. </p> <p> You must use the following guidelines when naming a log group: <ul> <li>Log group names can be between 1 and 512 characters long.</li> <li>Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</li> </ul> </p>\n@param createLogGroupRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceAlreadyExistsException Returned if the specified resource already exists.\n@throws LimitExceededException Returned if you have reached the maximum number of resources that can be created.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Creates a new log group with the specified name. The name of the log group must be unique within a region for an AWS account. You can create up to 500 log groups per account. </p> <p> You must use the following guidelines when naming a log group: <ul> <li>Log group names can be between 1 and 512 characters long.</li> <li>Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</li> </ul> </p>\n@param createLogGroupRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Creates a new log group with the specified name. The name of the log group must be unique within a region for an AWS account. You can create up to 500 log groups per account. </p> <p> You must use the following guidelines when naming a log group: <ul> <li>Log group names can be between 1 and 512 characters long.</li> <li>Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</li> </ul> </p>\n@param createLogGroupRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -180,9 +180,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Creates a new log stream in the specified log group. The name of the log stream must be unique within the log group. There is no limit on the number of log streams that can exist in a log group. </p> <p> You must use the following guidelines when naming a log stream: <ul> <li>Log stream names can be between 1 and 512 characters long.</li> <li>The ':' colon character is not allowed.</li> </ul> </p>\n@param createLogStreamRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Creates a new log stream in the specified log group. The name of the log stream must be unique within the log group. There is no limit on the number of log streams that can exist in a log group. </p> <p> You must use the following guidelines when naming a log stream: <ul> <li>Log stream names can be between 1 and 512 characters long.</li> <li>The ':' colon character is not allowed.</li> </ul> </p>\n@param createLogStreamRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceAlreadyExistsException Returned if the specified resource already exists.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Creates a new log stream in the specified log group. The name of the log stream must be unique within the log group. There is no limit on the number of log streams that can exist in a log group. </p> <p> You must use the following guidelines when naming a log stream: <ul> <li>Log stream names can be between 1 and 512 characters long.</li> <li>The ':' colon character is not allowed.</li> </ul> </p>\n@param createLogStreamRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Creates a new log stream in the specified log group. The name of the log stream must be unique within the log group. There is no limit on the number of log streams that can exist in a log group. </p> <p> You must use the following guidelines when naming a log stream: <ul> <li>Log stream names can be between 1 and 512 characters long.</li> <li>The ':' colon character is not allowed.</li> </ul> </p>\n@param createLogStreamRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -218,9 +218,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Deletes the destination with the specified name and eventually disables all the subscription filters that publish to it. This will not delete the physical resource encapsulated by the destination. </p>\n@param deleteDestinationRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Deletes the destination with the specified name and eventually disables all the subscription filters that publish to it. This will not delete the physical resource encapsulated by the destination. </p>\n@param deleteDestinationRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Deletes the destination with the specified name and eventually disables all the subscription filters that publish to it. This will not delete the physical resource encapsulated by the destination. </p>\n@param deleteDestinationRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Deletes the destination with the specified name and eventually disables all the subscription filters that publish to it. This will not delete the physical resource encapsulated by the destination. </p>\n@param deleteDestinationRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -256,9 +256,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Deletes the log group with the specified name and permanently deletes all the archived log events associated with it. </p>\n@param deleteLogGroupRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Deletes the log group with the specified name and permanently deletes all the archived log events associated with it. </p>\n@param deleteLogGroupRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Deletes the log group with the specified name and permanently deletes all the archived log events associated with it. </p>\n@param deleteLogGroupRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Deletes the log group with the specified name and permanently deletes all the archived log events associated with it. </p>\n@param deleteLogGroupRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -294,9 +294,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Deletes a log stream and permanently deletes all the archived log events associated with it. </p>\n@param deleteLogStreamRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Deletes a log stream and permanently deletes all the archived log events associated with it. </p>\n@param deleteLogStreamRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Deletes a log stream and permanently deletes all the archived log events associated with it. </p>\n@param deleteLogStreamRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Deletes a log stream and permanently deletes all the archived log events associated with it. </p>\n@param deleteLogStreamRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -332,9 +332,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Deletes a metric filter associated with the specified log group. </p>\n@param deleteMetricFilterRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Deletes a metric filter associated with the specified log group. </p>\n@param deleteMetricFilterRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Deletes a metric filter associated with the specified log group. </p>\n@param deleteMetricFilterRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Deletes a metric filter associated with the specified log group. </p>\n@param deleteMetricFilterRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -370,9 +370,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Deletes the retention policy of the specified log group. Log events would not expire if they belong to log groups without a retention policy. </p>\n@param deleteRetentionPolicyRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Deletes the retention policy of the specified log group. Log events would not expire if they belong to log groups without a retention policy. </p>\n@param deleteRetentionPolicyRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Deletes the retention policy of the specified log group. Log events would not expire if they belong to log groups without a retention policy. </p>\n@param deleteRetentionPolicyRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Deletes the retention policy of the specified log group. Log events would not expire if they belong to log groups without a retention policy. </p>\n@param deleteRetentionPolicyRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -408,9 +408,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Deletes a subscription filter associated with the specified log group. </p>\n@param deleteSubscriptionFilterRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Deletes a subscription filter associated with the specified log group. </p>\n@param deleteSubscriptionFilterRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Deletes a subscription filter associated with the specified log group. </p>\n@param deleteSubscriptionFilterRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Deletes a subscription filter associated with the specified log group. </p>\n@param deleteSubscriptionFilterRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -443,9 +443,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Returns all the destinations that are associated with the AWS account making the request. The list returned in the response is ASCII-sorted by destination name. </p> <p> By default, this operation returns up to 50 destinations. If there are more destinations to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of destinations returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeDestinationsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeDestinations operation returned by the service.*/",
       "syncDocumentation" : "/**<p> Returns all the destinations that are associated with the AWS account making the request. The list returned in the response is ASCII-sorted by destination name. </p> <p> By default, this operation returns up to 50 destinations. If there are more destinations to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of destinations returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeDestinationsRequest \n@return Result of the DescribeDestinations operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Returns all the destinations that are associated with the AWS account making the request. The list returned in the response is ASCII-sorted by destination name. </p> <p> By default, this operation returns up to 50 destinations. If there are more destinations to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of destinations returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeDestinationsRequest \n@return A Java Future containing the result of the DescribeDestinations operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Returns all the destinations that are associated with the AWS account making the request. The list returned in the response is ASCII-sorted by destination name. </p> <p> By default, this operation returns up to 50 destinations. If there are more destinations to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of destinations returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeDestinationsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeDestinations operation returned by the service.*/",
       "syncReturnType" : "DescribeDestinationsResult",
       "asyncReturnType" : "DescribeDestinationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDestinationsResult>",
@@ -478,9 +478,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Returns all the export tasks that are associated with the AWS account making the request. The export tasks can be filtered based on <code>TaskId</code> or <code>TaskStatus</code>. </p> <p> By default, this operation returns up to 50 export tasks that satisfy the specified filters. If there are more export tasks to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of export tasks returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeExportTasksRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeExportTasks operation returned by the service.*/",
       "syncDocumentation" : "/**<p> Returns all the export tasks that are associated with the AWS account making the request. The export tasks can be filtered based on <code>TaskId</code> or <code>TaskStatus</code>. </p> <p> By default, this operation returns up to 50 export tasks that satisfy the specified filters. If there are more export tasks to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of export tasks returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeExportTasksRequest \n@return Result of the DescribeExportTasks operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Returns all the export tasks that are associated with the AWS account making the request. The export tasks can be filtered based on <code>TaskId</code> or <code>TaskStatus</code>. </p> <p> By default, this operation returns up to 50 export tasks that satisfy the specified filters. If there are more export tasks to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of export tasks returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeExportTasksRequest \n@return A Java Future containing the result of the DescribeExportTasks operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Returns all the export tasks that are associated with the AWS account making the request. The export tasks can be filtered based on <code>TaskId</code> or <code>TaskStatus</code>. </p> <p> By default, this operation returns up to 50 export tasks that satisfy the specified filters. If there are more export tasks to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of export tasks returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeExportTasksRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeExportTasks operation returned by the service.*/",
       "syncReturnType" : "DescribeExportTasksResult",
       "asyncReturnType" : "DescribeExportTasksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeExportTasksResult>",
@@ -513,9 +513,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Returns all the log groups that are associated with the AWS account making the request. The list returned in the response is ASCII-sorted by log group name. </p> <p> By default, this operation returns up to 50 log groups. If there are more log groups to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of log groups returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeLogGroupsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeLogGroups operation returned by the service.*/",
       "syncDocumentation" : "/**<p> Returns all the log groups that are associated with the AWS account making the request. The list returned in the response is ASCII-sorted by log group name. </p> <p> By default, this operation returns up to 50 log groups. If there are more log groups to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of log groups returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeLogGroupsRequest \n@return Result of the DescribeLogGroups operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Returns all the log groups that are associated with the AWS account making the request. The list returned in the response is ASCII-sorted by log group name. </p> <p> By default, this operation returns up to 50 log groups. If there are more log groups to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of log groups returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeLogGroupsRequest \n@return A Java Future containing the result of the DescribeLogGroups operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Returns all the log groups that are associated with the AWS account making the request. The list returned in the response is ASCII-sorted by log group name. </p> <p> By default, this operation returns up to 50 log groups. If there are more log groups to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of log groups returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeLogGroupsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeLogGroups operation returned by the service.*/",
       "syncReturnType" : "DescribeLogGroupsResult",
       "asyncReturnType" : "DescribeLogGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLogGroupsResult>",
@@ -551,9 +551,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Returns all the log streams that are associated with the specified log group. The list returned in the response is ASCII-sorted by log stream name. </p> <p> By default, this operation returns up to 50 log streams. If there are more log streams to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of log streams returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. This operation has a limit of five transactions per second, after which transactions are throttled. </p>\n@param describeLogStreamsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeLogStreams operation returned by the service.*/",
       "syncDocumentation" : "/**<p> Returns all the log streams that are associated with the specified log group. The list returned in the response is ASCII-sorted by log stream name. </p> <p> By default, this operation returns up to 50 log streams. If there are more log streams to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of log streams returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. This operation has a limit of five transactions per second, after which transactions are throttled. </p>\n@param describeLogStreamsRequest \n@return Result of the DescribeLogStreams operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Returns all the log streams that are associated with the specified log group. The list returned in the response is ASCII-sorted by log stream name. </p> <p> By default, this operation returns up to 50 log streams. If there are more log streams to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of log streams returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. This operation has a limit of five transactions per second, after which transactions are throttled. </p>\n@param describeLogStreamsRequest \n@return A Java Future containing the result of the DescribeLogStreams operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Returns all the log streams that are associated with the specified log group. The list returned in the response is ASCII-sorted by log stream name. </p> <p> By default, this operation returns up to 50 log streams. If there are more log streams to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of log streams returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. This operation has a limit of five transactions per second, after which transactions are throttled. </p>\n@param describeLogStreamsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeLogStreams operation returned by the service.*/",
       "syncReturnType" : "DescribeLogStreamsResult",
       "asyncReturnType" : "DescribeLogStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLogStreamsResult>",
@@ -589,9 +589,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Returns all the metrics filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 metric filters. If there are more metric filters to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of metric filters returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeMetricFiltersRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeMetricFilters operation returned by the service.*/",
       "syncDocumentation" : "/**<p> Returns all the metrics filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 metric filters. If there are more metric filters to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of metric filters returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeMetricFiltersRequest \n@return Result of the DescribeMetricFilters operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Returns all the metrics filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 metric filters. If there are more metric filters to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of metric filters returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeMetricFiltersRequest \n@return A Java Future containing the result of the DescribeMetricFilters operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Returns all the metrics filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 metric filters. If there are more metric filters to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of metric filters returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeMetricFiltersRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeMetricFilters operation returned by the service.*/",
       "syncReturnType" : "DescribeMetricFiltersResult",
       "asyncReturnType" : "DescribeMetricFiltersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMetricFiltersResult>",
@@ -627,9 +627,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Returns all the subscription filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 subscription filters. If there are more subscription filters to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of subscription filters returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeSubscriptionFiltersRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeSubscriptionFilters operation returned by the service.*/",
       "syncDocumentation" : "/**<p> Returns all the subscription filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 subscription filters. If there are more subscription filters to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of subscription filters returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeSubscriptionFiltersRequest \n@return Result of the DescribeSubscriptionFilters operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Returns all the subscription filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 subscription filters. If there are more subscription filters to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of subscription filters returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeSubscriptionFiltersRequest \n@return A Java Future containing the result of the DescribeSubscriptionFilters operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Returns all the subscription filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 subscription filters. If there are more subscription filters to list, the response would contain a <code class=\"code\">nextToken</code> value in the response body. You can also limit the number of subscription filters returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param describeSubscriptionFiltersRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeSubscriptionFilters operation returned by the service.*/",
       "syncReturnType" : "DescribeSubscriptionFiltersResult",
       "asyncReturnType" : "DescribeSubscriptionFiltersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSubscriptionFiltersResult>",
@@ -665,9 +665,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Retrieves log events, optionally filtered by a filter pattern from the specified log group. You can provide an optional time range to filter the results on the event <code class=\"code\">timestamp</code>. You can limit the streams searched to an explicit list of <code class=\"code\">logStreamNames</code>. </p> <p> By default, this operation returns as much matching log events as can fit in a response size of 1MB, up to 10,000 log events, or all the events found within a time-bounded scan window. If the response includes a <code class=\"code\">nextToken</code>, then there is more data to search, and the search can be resumed with a new request providing the nextToken. The response will contain a list of <code class=\"code\">searchedLogStreams</code> that contains information about which streams were searched in the request and whether they have been searched completely or require further pagination. The <code class=\"code\">limit</code> parameter in the request. can be used to specify the maximum number of events to return in a page. </p>\n@param filterLogEventsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the FilterLogEvents operation returned by the service.*/",
       "syncDocumentation" : "/**<p> Retrieves log events, optionally filtered by a filter pattern from the specified log group. You can provide an optional time range to filter the results on the event <code class=\"code\">timestamp</code>. You can limit the streams searched to an explicit list of <code class=\"code\">logStreamNames</code>. </p> <p> By default, this operation returns as much matching log events as can fit in a response size of 1MB, up to 10,000 log events, or all the events found within a time-bounded scan window. If the response includes a <code class=\"code\">nextToken</code>, then there is more data to search, and the search can be resumed with a new request providing the nextToken. The response will contain a list of <code class=\"code\">searchedLogStreams</code> that contains information about which streams were searched in the request and whether they have been searched completely or require further pagination. The <code class=\"code\">limit</code> parameter in the request. can be used to specify the maximum number of events to return in a page. </p>\n@param filterLogEventsRequest \n@return Result of the FilterLogEvents operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Retrieves log events, optionally filtered by a filter pattern from the specified log group. You can provide an optional time range to filter the results on the event <code class=\"code\">timestamp</code>. You can limit the streams searched to an explicit list of <code class=\"code\">logStreamNames</code>. </p> <p> By default, this operation returns as much matching log events as can fit in a response size of 1MB, up to 10,000 log events, or all the events found within a time-bounded scan window. If the response includes a <code class=\"code\">nextToken</code>, then there is more data to search, and the search can be resumed with a new request providing the nextToken. The response will contain a list of <code class=\"code\">searchedLogStreams</code> that contains information about which streams were searched in the request and whether they have been searched completely or require further pagination. The <code class=\"code\">limit</code> parameter in the request. can be used to specify the maximum number of events to return in a page. </p>\n@param filterLogEventsRequest \n@return A Java Future containing the result of the FilterLogEvents operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Retrieves log events, optionally filtered by a filter pattern from the specified log group. You can provide an optional time range to filter the results on the event <code class=\"code\">timestamp</code>. You can limit the streams searched to an explicit list of <code class=\"code\">logStreamNames</code>. </p> <p> By default, this operation returns as much matching log events as can fit in a response size of 1MB, up to 10,000 log events, or all the events found within a time-bounded scan window. If the response includes a <code class=\"code\">nextToken</code>, then there is more data to search, and the search can be resumed with a new request providing the nextToken. The response will contain a list of <code class=\"code\">searchedLogStreams</code> that contains information about which streams were searched in the request and whether they have been searched completely or require further pagination. The <code class=\"code\">limit</code> parameter in the request. can be used to specify the maximum number of events to return in a page. </p>\n@param filterLogEventsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the FilterLogEvents operation returned by the service.*/",
       "syncReturnType" : "FilterLogEventsResult",
       "asyncReturnType" : "FilterLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<FilterLogEventsResult>",
@@ -703,9 +703,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Retrieves log events from the specified log stream. You can provide an optional time range to filter the results on the event <code class=\"code\">timestamp</code>. </p> <p> By default, this operation returns as much log events as can fit in a response size of 1MB, up to 10,000 log events. The response will always include a <code class=\"code\">nextForwardToken</code> and a <code class=\"code\">nextBackwardToken</code> in the response body. You can use any of these tokens in subsequent <code class=\"code\">GetLogEvents</code> requests to paginate through events in either forward or backward direction. You can also limit the number of log events returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param getLogEventsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetLogEvents operation returned by the service.*/",
       "syncDocumentation" : "/**<p> Retrieves log events from the specified log stream. You can provide an optional time range to filter the results on the event <code class=\"code\">timestamp</code>. </p> <p> By default, this operation returns as much log events as can fit in a response size of 1MB, up to 10,000 log events. The response will always include a <code class=\"code\">nextForwardToken</code> and a <code class=\"code\">nextBackwardToken</code> in the response body. You can use any of these tokens in subsequent <code class=\"code\">GetLogEvents</code> requests to paginate through events in either forward or backward direction. You can also limit the number of log events returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param getLogEventsRequest \n@return Result of the GetLogEvents operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Retrieves log events from the specified log stream. You can provide an optional time range to filter the results on the event <code class=\"code\">timestamp</code>. </p> <p> By default, this operation returns as much log events as can fit in a response size of 1MB, up to 10,000 log events. The response will always include a <code class=\"code\">nextForwardToken</code> and a <code class=\"code\">nextBackwardToken</code> in the response body. You can use any of these tokens in subsequent <code class=\"code\">GetLogEvents</code> requests to paginate through events in either forward or backward direction. You can also limit the number of log events returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param getLogEventsRequest \n@return A Java Future containing the result of the GetLogEvents operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Retrieves log events from the specified log stream. You can provide an optional time range to filter the results on the event <code class=\"code\">timestamp</code>. </p> <p> By default, this operation returns as much log events as can fit in a response size of 1MB, up to 10,000 log events. The response will always include a <code class=\"code\">nextForwardToken</code> and a <code class=\"code\">nextBackwardToken</code> in the response body. You can use any of these tokens in subsequent <code class=\"code\">GetLogEvents</code> requests to paginate through events in either forward or backward direction. You can also limit the number of log events returned in the response by specifying the <code class=\"code\">limit</code> parameter in the request. </p>\n@param getLogEventsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetLogEvents operation returned by the service.*/",
       "syncReturnType" : "GetLogEventsResult",
       "asyncReturnType" : "GetLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetLogEventsResult>",
@@ -741,9 +741,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Creates or updates a <code>Destination</code>. A destination encapsulates a physical resource (such as a Kinesis stream) and allows you to subscribe to a real-time stream of log events of a different account, ingested through <code class=\"code\">PutLogEvents</code> requests. Currently, the only supported physical resource is a Amazon Kinesis stream belonging to the same account as the destination. </p> <p> A destination controls what is written to its Amazon Kinesis stream through an access policy. By default, PutDestination does not set any access policy with the destination, which means a cross-account user will not be able to call <code>PutSubscriptionFilter</code> against this destination. To enable that, the destination owner must call <code>PutDestinationPolicy</code> after PutDestination. </p>\n@param putDestinationRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the PutDestination operation returned by the service.*/",
       "syncDocumentation" : "/**<p> Creates or updates a <code>Destination</code>. A destination encapsulates a physical resource (such as a Kinesis stream) and allows you to subscribe to a real-time stream of log events of a different account, ingested through <code class=\"code\">PutLogEvents</code> requests. Currently, the only supported physical resource is a Amazon Kinesis stream belonging to the same account as the destination. </p> <p> A destination controls what is written to its Amazon Kinesis stream through an access policy. By default, PutDestination does not set any access policy with the destination, which means a cross-account user will not be able to call <code>PutSubscriptionFilter</code> against this destination. To enable that, the destination owner must call <code>PutDestinationPolicy</code> after PutDestination. </p>\n@param putDestinationRequest \n@return Result of the PutDestination operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Creates or updates a <code>Destination</code>. A destination encapsulates a physical resource (such as a Kinesis stream) and allows you to subscribe to a real-time stream of log events of a different account, ingested through <code class=\"code\">PutLogEvents</code> requests. Currently, the only supported physical resource is a Amazon Kinesis stream belonging to the same account as the destination. </p> <p> A destination controls what is written to its Amazon Kinesis stream through an access policy. By default, PutDestination does not set any access policy with the destination, which means a cross-account user will not be able to call <code>PutSubscriptionFilter</code> against this destination. To enable that, the destination owner must call <code>PutDestinationPolicy</code> after PutDestination. </p>\n@param putDestinationRequest \n@return A Java Future containing the result of the PutDestination operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Creates or updates a <code>Destination</code>. A destination encapsulates a physical resource (such as a Kinesis stream) and allows you to subscribe to a real-time stream of log events of a different account, ingested through <code class=\"code\">PutLogEvents</code> requests. Currently, the only supported physical resource is a Amazon Kinesis stream belonging to the same account as the destination. </p> <p> A destination controls what is written to its Amazon Kinesis stream through an access policy. By default, PutDestination does not set any access policy with the destination, which means a cross-account user will not be able to call <code>PutSubscriptionFilter</code> against this destination. To enable that, the destination owner must call <code>PutDestinationPolicy</code> after PutDestination. </p>\n@param putDestinationRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the PutDestination operation returned by the service.*/",
       "syncReturnType" : "PutDestinationResult",
       "asyncReturnType" : "PutDestinationResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutDestinationResult>",
@@ -776,9 +776,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Creates or updates an access policy associated with an existing <code>Destination</code>. An access policy is an <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html\">IAM policy document</a> that is used to authorize claims to register a subscription filter against a given destination. </p>\n@param putDestinationPolicyRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Creates or updates an access policy associated with an existing <code>Destination</code>. An access policy is an <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html\">IAM policy document</a> that is used to authorize claims to register a subscription filter against a given destination. </p>\n@param putDestinationPolicyRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Creates or updates an access policy associated with an existing <code>Destination</code>. An access policy is an <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html\">IAM policy document</a> that is used to authorize claims to register a subscription filter against a given destination. </p>\n@param putDestinationPolicyRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Creates or updates an access policy associated with an existing <code>Destination</code>. An access policy is an <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html\">IAM policy document</a> that is used to authorize claims to register a subscription filter against a given destination. </p>\n@param putDestinationPolicyRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -823,9 +823,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Uploads a batch of log events to the specified log stream. </p> <p> Every PutLogEvents request must include the <code class=\"code\">sequenceToken</code> obtained from the response of the previous request. An upload in a newly created log stream does not require a <code class=\"code\">sequenceToken</code>. </p> <p> The batch of events must satisfy the following constraints: <ul> <li>The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</li> <li>None of the log events in the batch can be more than 2 hours in the future.</li> <li>None of the log events in the batch can be older than 14 days or the retention period of the log group.</li> <li>The log events in the batch must be in chronological ordered by their <code class=\"code\">timestamp</code>.</li> <li>The maximum number of log events in a batch is 10,000.</li> </ul> </p>\n@param putLogEventsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the PutLogEvents operation returned by the service.*/",
       "syncDocumentation" : "/**<p> Uploads a batch of log events to the specified log stream. </p> <p> Every PutLogEvents request must include the <code class=\"code\">sequenceToken</code> obtained from the response of the previous request. An upload in a newly created log stream does not require a <code class=\"code\">sequenceToken</code>. </p> <p> The batch of events must satisfy the following constraints: <ul> <li>The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</li> <li>None of the log events in the batch can be more than 2 hours in the future.</li> <li>None of the log events in the batch can be older than 14 days or the retention period of the log group.</li> <li>The log events in the batch must be in chronological ordered by their <code class=\"code\">timestamp</code>.</li> <li>The maximum number of log events in a batch is 10,000.</li> </ul> </p>\n@param putLogEventsRequest \n@return Result of the PutLogEvents operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws InvalidSequenceTokenException \n@throws DataAlreadyAcceptedException \n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Uploads a batch of log events to the specified log stream. </p> <p> Every PutLogEvents request must include the <code class=\"code\">sequenceToken</code> obtained from the response of the previous request. An upload in a newly created log stream does not require a <code class=\"code\">sequenceToken</code>. </p> <p> The batch of events must satisfy the following constraints: <ul> <li>The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</li> <li>None of the log events in the batch can be more than 2 hours in the future.</li> <li>None of the log events in the batch can be older than 14 days or the retention period of the log group.</li> <li>The log events in the batch must be in chronological ordered by their <code class=\"code\">timestamp</code>.</li> <li>The maximum number of log events in a batch is 10,000.</li> </ul> </p>\n@param putLogEventsRequest \n@return A Java Future containing the result of the PutLogEvents operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Uploads a batch of log events to the specified log stream. </p> <p> Every PutLogEvents request must include the <code class=\"code\">sequenceToken</code> obtained from the response of the previous request. An upload in a newly created log stream does not require a <code class=\"code\">sequenceToken</code>. </p> <p> The batch of events must satisfy the following constraints: <ul> <li>The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</li> <li>None of the log events in the batch can be more than 2 hours in the future.</li> <li>None of the log events in the batch can be older than 14 days or the retention period of the log group.</li> <li>The log events in the batch must be in chronological ordered by their <code class=\"code\">timestamp</code>.</li> <li>The maximum number of log events in a batch is 10,000.</li> </ul> </p>\n@param putLogEventsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the PutLogEvents operation returned by the service.*/",
       "syncReturnType" : "PutLogEventsResult",
       "asyncReturnType" : "PutLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutLogEventsResult>",
@@ -864,9 +864,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to configure rules to extract metric data from log events ingested through <code class=\"code\">PutLogEvents</code> requests. </p> <p> The maximum number of metric filters that can be associated with a log group is 100. </p>\n@param putMetricFilterRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to configure rules to extract metric data from log events ingested through <code class=\"code\">PutLogEvents</code> requests. </p> <p> The maximum number of metric filters that can be associated with a log group is 100. </p>\n@param putMetricFilterRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws LimitExceededException Returned if you have reached the maximum number of resources that can be created.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to configure rules to extract metric data from log events ingested through <code class=\"code\">PutLogEvents</code> requests. </p> <p> The maximum number of metric filters that can be associated with a log group is 100. </p>\n@param putMetricFilterRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to configure rules to extract metric data from log events ingested through <code class=\"code\">PutLogEvents</code> requests. </p> <p> The maximum number of metric filters that can be associated with a log group is 100. </p>\n@param putMetricFilterRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -902,9 +902,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Sets the retention of the specified log group. A retention policy allows you to configure the number of days you want to retain log events in the specified log group. </p>\n@param putRetentionPolicyRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Sets the retention of the specified log group. A retention policy allows you to configure the number of days you want to retain log events in the specified log group. </p>\n@param putRetentionPolicyRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Sets the retention of the specified log group. A retention policy allows you to configure the number of days you want to retain log events in the specified log group. </p>\n@param putRetentionPolicyRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Sets the retention of the specified log group. A retention policy allows you to configure the number of days you want to retain log events in the specified log group. </p>\n@param putRetentionPolicyRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -943,9 +943,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Creates or updates a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events ingested through <code class=\"code\">PutLogEvents</code> requests and have them delivered to a specific destination. Currently, the supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for cross-account delivery. </li> </ul> </p> <p> Currently there can only be one subscription filter associated with a log group. </p>\n@param putSubscriptionFilterRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p> Creates or updates a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events ingested through <code class=\"code\">PutLogEvents</code> requests and have them delivered to a specific destination. Currently, the supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for cross-account delivery. </li> </ul> </p> <p> Currently there can only be one subscription filter associated with a log group. </p>\n@param putSubscriptionFilterRequest \n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ResourceNotFoundException Returned if the specified resource does not exist.\n@throws OperationAbortedException Returned if multiple requests to update the same resource were in conflict.\n@throws LimitExceededException Returned if you have reached the maximum number of resources that can be created.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Creates or updates a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events ingested through <code class=\"code\">PutLogEvents</code> requests and have them delivered to a specific destination. Currently, the supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for cross-account delivery. </li> </ul> </p> <p> Currently there can only be one subscription filter associated with a log group. </p>\n@param putSubscriptionFilterRequest */",
+      "asyncDocumentationWithHandler" : "/**<p> Creates or updates a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events ingested through <code class=\"code\">PutLogEvents</code> requests and have them delivered to a specific destination. Currently, the supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for cross-account delivery. </li> </ul> </p> <p> Currently there can only be one subscription filter associated with a log group. </p>\n@param putSubscriptionFilterRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -978,9 +978,9 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p> Tests the filter pattern of a metric filter against a sample of log event messages. You can use this operation to validate the correctness of a metric filter pattern. </p>\n@param testMetricFilterRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the TestMetricFilter operation returned by the service.*/",
       "syncDocumentation" : "/**<p> Tests the filter pattern of a metric filter against a sample of log event messages. You can use this operation to validate the correctness of a metric filter pattern. </p>\n@param testMetricFilterRequest \n@return Result of the TestMetricFilter operation returned by the service.\n@throws InvalidParameterException Returned if a parameter of the request is incorrectly specified.\n@throws ServiceUnavailableException Returned if the service cannot complete the request.*/",
       "asyncDocumentation" : "/**<p> Tests the filter pattern of a metric filter against a sample of log event messages. You can use this operation to validate the correctness of a metric filter pattern. </p>\n@param testMetricFilterRequest \n@return A Java Future containing the result of the TestMetricFilter operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p> Tests the filter pattern of a metric filter against a sample of log event messages. You can use this operation to validate the correctness of a metric filter pattern. </p>\n@param testMetricFilterRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the TestMetricFilter operation returned by the service.*/",
       "syncReturnType" : "TestMetricFilterResult",
       "asyncReturnType" : "TestMetricFilterResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestMetricFilterResult>",
@@ -3630,8 +3630,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "SubscriptionFilter",
           "simple" : false,
+          "simpleType" : "SubscriptionFilter",
           "map" : false,
           "templateType" : "java.util.List<SubscriptionFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<SubscriptionFilter>"
@@ -3871,8 +3871,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "SubscriptionFilter",
             "simple" : false,
+            "simpleType" : "SubscriptionFilter",
             "map" : false,
             "templateType" : "java.util.List<SubscriptionFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<SubscriptionFilter>"
@@ -3999,8 +3999,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "OutputLogEvent",
           "simple" : false,
+          "simpleType" : "OutputLogEvent",
           "map" : false,
           "templateType" : "java.util.List<OutputLogEvent>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<OutputLogEvent>"
@@ -4239,8 +4239,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "OutputLogEvent",
             "simple" : false,
+            "simpleType" : "OutputLogEvent",
             "map" : false,
             "templateType" : "java.util.List<OutputLogEvent>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<OutputLogEvent>"
@@ -4805,8 +4805,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "LogStream",
           "simple" : false,
+          "simpleType" : "LogStream",
           "map" : false,
           "templateType" : "java.util.List<LogStream>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogStream>"
@@ -5046,8 +5046,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "LogStream",
             "simple" : false,
+            "simpleType" : "LogStream",
             "map" : false,
             "templateType" : "java.util.List<LogStream>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogStream>"
@@ -7551,8 +7551,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -7568,7 +7568,7 @@
         "fluentSetterDocumentation" : "/**<p> Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group. </p>\n@param logStreamNames Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p> Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLogStreamNames(java.util.Collection)} or {@link #withLogStreamNames(java.util.Collection)} if you want to override the existing values.</p>\n@param logStreamNames Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>",
+        "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>",
         "name" : "StartTime",
         "c2jName" : "startTime",
         "c2jShape" : "Timestamp",
@@ -7576,7 +7576,7 @@
           "variableName" : "startTime",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
-          "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -7614,12 +7614,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>\n@param startTime A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.*/",
-        "getterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>\n@return A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.*/",
-        "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>\n@param startTime A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>\n@param startTime A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>\n@param startTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.*/",
+        "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.*/",
+        "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>\n@param startTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>\n@param startTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>",
+        "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>",
         "name" : "EndTime",
         "c2jName" : "endTime",
         "c2jShape" : "Timestamp",
@@ -7627,7 +7627,7 @@
           "variableName" : "endTime",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
-          "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -7665,10 +7665,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>\n@param endTime A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.*/",
-        "getterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>\n@return A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.*/",
-        "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>\n@param endTime A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>\n@param endTime A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>\n@param endTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.*/",
+        "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.*/",
+        "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>\n@param endTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>\n@param endTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p> A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched. </p>",
         "name" : "FilterPattern",
@@ -7721,7 +7721,7 @@
         "fluentSetterDocumentation" : "/**<p> A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched. </p>\n@param filterPattern A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p> A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched. </p>\n@param filterPattern A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>",
+        "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>",
         "name" : "NextToken",
         "c2jName" : "nextToken",
         "c2jShape" : "NextToken",
@@ -7729,7 +7729,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>",
+          "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7767,10 +7767,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.*/",
-        "getterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@return A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.*/",
-        "fluentSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.*/",
+        "getterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@return A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.*/",
+        "fluentSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The maximum number of events to return in a page of results. Default is 10,000 events.</p>",
         "name" : "Limit",
@@ -7901,7 +7901,7 @@
       },
       "membersAsMap" : {
         "NextToken" : {
-          "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>",
+          "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>",
           "name" : "NextToken",
           "c2jName" : "nextToken",
           "c2jShape" : "NextToken",
@@ -7909,7 +7909,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>",
+            "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7947,10 +7947,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.*/",
-          "getterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@return A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.*/",
-          "fluentSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.*/",
+          "getterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@return A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.*/",
+          "fluentSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "LogStreamNames" : {
           "documentation" : "<p> Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group. </p>",
@@ -8000,8 +8000,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8070,7 +8070,7 @@
           "varargSetterDocumentation" : "/**<p>If provided, the API will make a best effort to provide responses that contain events from multiple log streams within the log group interleaved in a single response. If not provided, all the matched log events in the first log stream will be searched first, then those in the next log stream, etc.</p>\n@param interleaved If provided, the API will make a best effort to provide responses that contain events from multiple log streams within the log group interleaved in a single response. If not provided, all the matched log events in the first log stream will be searched first, then those in the next log stream, etc.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "EndTime" : {
-          "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>",
           "name" : "EndTime",
           "c2jName" : "endTime",
           "c2jShape" : "Timestamp",
@@ -8078,7 +8078,7 @@
             "variableName" : "endTime",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
-            "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>",
+            "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -8116,13 +8116,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>\n@param endTime A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.*/",
-          "getterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>\n@return A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.*/",
-          "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>\n@param endTime A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>\n@param endTime A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>\n@param endTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.*/",
+          "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.*/",
+          "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>\n@param endTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>\n@param endTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "StartTime" : {
-          "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>",
           "name" : "StartTime",
           "c2jName" : "startTime",
           "c2jShape" : "Timestamp",
@@ -8130,7 +8130,7 @@
             "variableName" : "startTime",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
-            "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>",
+            "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -8168,10 +8168,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>\n@param startTime A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.*/",
-          "getterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>\n@return A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.*/",
-          "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>\n@param startTime A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>\n@param startTime A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>\n@param startTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.*/",
+          "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.*/",
+          "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>\n@param startTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>\n@param startTime A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "LogGroupName" : {
           "documentation" : "<p> The name of the log group to query. </p>",
@@ -9167,8 +9167,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "LogGroup",
           "simple" : false,
+          "simpleType" : "LogGroup",
           "map" : false,
           "templateType" : "java.util.List<LogGroup>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogGroup>"
@@ -9408,8 +9408,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "LogGroup",
             "simple" : false,
+            "simpleType" : "LogGroup",
             "map" : false,
             "templateType" : "java.util.List<LogGroup>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogGroup>"
@@ -9733,7 +9733,7 @@
         "fluentSetterDocumentation" : "/**<p>The name of the log group from which logs data was exported.</p>\n@param logGroupName The name of the log group from which logs data was exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The name of the log group from which logs data was exported.</p>\n@param logGroupName The name of the log group from which logs data was exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>",
+        "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>",
         "name" : "From",
         "c2jName" : "from",
         "c2jShape" : "Timestamp",
@@ -9741,7 +9741,7 @@
           "variableName" : "from",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
-          "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -9779,12 +9779,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.*/",
-        "getterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>\n@return A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.*/",
-        "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.*/",
+        "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.*/",
+        "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>",
+        "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>",
         "name" : "To",
         "c2jName" : "to",
         "c2jShape" : "Timestamp",
@@ -9792,7 +9792,7 @@
           "variableName" : "to",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
-          "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -9830,10 +9830,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.*/",
-        "getterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>\n@return A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.*/",
-        "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.*/",
+        "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.*/",
+        "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>Name of Amazon S3 bucket to which the log data was exported.</p>",
         "name" : "Destination",
@@ -10218,7 +10218,7 @@
           "varargSetterDocumentation" : "/**<p>Prefix that was used as the start of Amazon S3 key for every object exported.</p>\n@param destinationPrefix Prefix that was used as the start of Amazon S3 key for every object exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "To" : {
-          "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>",
           "name" : "To",
           "c2jName" : "to",
           "c2jShape" : "Timestamp",
@@ -10226,7 +10226,7 @@
             "variableName" : "to",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
-            "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>",
+            "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -10264,10 +10264,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.*/",
-          "getterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>\n@return A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.*/",
-          "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.*/",
+          "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.*/",
+          "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "TaskId" : {
           "documentation" : "<p>Id of the export task.</p>",
@@ -10478,7 +10478,7 @@
           "varargSetterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data was exported.</p>\n@param destination Name of Amazon S3 bucket to which the log data was exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "From" : {
-          "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>",
           "name" : "From",
           "c2jName" : "from",
           "c2jShape" : "Timestamp",
@@ -10486,7 +10486,7 @@
             "variableName" : "from",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
-            "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>",
+            "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -10524,10 +10524,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.*/",
-          "getterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>\n@return A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.*/",
-          "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.*/",
+          "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.*/",
+          "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -12421,11 +12421,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12613,11 +12613,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -13432,8 +13432,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "MetricFilter",
           "simple" : false,
+          "simpleType" : "MetricFilter",
           "map" : false,
           "templateType" : "java.util.List<MetricFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilter>"
@@ -13673,8 +13673,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "MetricFilter",
             "simple" : false,
+            "simpleType" : "MetricFilter",
             "map" : false,
             "templateType" : "java.util.List<MetricFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilter>"
@@ -14046,8 +14046,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "MetricFilterMatchRecord",
           "simple" : false,
+          "simpleType" : "MetricFilterMatchRecord",
           "map" : false,
           "templateType" : "java.util.List<MetricFilterMatchRecord>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>"
@@ -14184,8 +14184,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "MetricFilterMatchRecord",
             "simple" : false,
+            "simpleType" : "MetricFilterMatchRecord",
             "map" : false,
             "templateType" : "java.util.List<MetricFilterMatchRecord>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>"
@@ -14312,8 +14312,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Destination",
           "simple" : false,
+          "simpleType" : "Destination",
           "map" : false,
           "templateType" : "java.util.List<Destination>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Destination>"
@@ -14553,8 +14553,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Destination",
             "simple" : false,
+            "simpleType" : "Destination",
             "map" : false,
             "templateType" : "java.util.List<Destination>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Destination>"
@@ -15005,8 +15005,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ExportTask",
           "simple" : false,
+          "simpleType" : "ExportTask",
           "map" : false,
           "templateType" : "java.util.List<ExportTask>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExportTask>"
@@ -15246,8 +15246,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ExportTask",
             "simple" : false,
+            "simpleType" : "ExportTask",
             "map" : false,
             "templateType" : "java.util.List<ExportTask>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExportTask>"
@@ -15476,8 +15476,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "InputLogEvent",
           "simple" : false,
+          "simpleType" : "InputLogEvent",
           "map" : false,
           "templateType" : "java.util.List<InputLogEvent>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<InputLogEvent>"
@@ -15825,8 +15825,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "InputLogEvent",
             "simple" : false,
+            "simpleType" : "InputLogEvent",
             "map" : false,
             "templateType" : "java.util.List<InputLogEvent>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<InputLogEvent>"
@@ -16055,8 +16055,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "MetricTransformation",
           "simple" : false,
+          "simpleType" : "MetricTransformation",
           "map" : false,
           "templateType" : "java.util.List<MetricTransformation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
@@ -16348,8 +16348,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "MetricTransformation",
             "simple" : false,
+            "simpleType" : "MetricTransformation",
             "map" : false,
             "templateType" : "java.util.List<MetricTransformation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
@@ -18918,8 +18918,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "FilteredLogEvent",
           "simple" : false,
+          "simpleType" : "FilteredLogEvent",
           "map" : false,
           "templateType" : "java.util.List<FilteredLogEvent>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FilteredLogEvent>"
@@ -19033,8 +19033,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "SearchedLogStream",
           "simple" : false,
+          "simpleType" : "SearchedLogStream",
           "map" : false,
           "templateType" : "java.util.List<SearchedLogStream>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<SearchedLogStream>"
@@ -19050,7 +19050,7 @@
         "fluentSetterDocumentation" : "/**<p>A list of <code class=\"code\">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.</p>\n@param searchedLogStreams A list of <code class=\"code\">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>A list of <code class=\"code\">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSearchedLogStreams(java.util.Collection)} or {@link #withSearchedLogStreams(java.util.Collection)} if you want to override the existing values.</p>\n@param searchedLogStreams A list of <code class=\"code\">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>",
+        "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>",
         "name" : "NextToken",
         "c2jName" : "nextToken",
         "c2jShape" : "NextToken",
@@ -19058,7 +19058,7 @@
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>",
+          "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -19096,10 +19096,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.*/",
-        "getterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@return A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.*/",
-        "fluentSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.*/",
+        "getterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@return A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.*/",
+        "fluentSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -19124,7 +19124,7 @@
       },
       "membersAsMap" : {
         "NextToken" : {
-          "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>",
+          "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>",
           "name" : "NextToken",
           "c2jName" : "nextToken",
           "c2jShape" : "NextToken",
@@ -19132,7 +19132,7 @@
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>",
+            "documentation" : "<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -19170,10 +19170,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.*/",
-          "getterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@return A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.*/",
-          "fluentSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.*/",
+          "getterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@return A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.*/",
+          "fluentSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>\n@param nextToken A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SearchedLogStreams" : {
           "documentation" : "<p>A list of <code class=\"code\">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.</p>",
@@ -19274,8 +19274,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "SearchedLogStream",
             "simple" : false,
+            "simpleType" : "SearchedLogStream",
             "map" : false,
             "templateType" : "java.util.List<SearchedLogStream>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<SearchedLogStream>"
@@ -19390,8 +19390,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "FilteredLogEvent",
             "simple" : false,
+            "simpleType" : "FilteredLogEvent",
             "map" : false,
             "templateType" : "java.util.List<FilteredLogEvent>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FilteredLogEvent>"
@@ -19671,8 +19671,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "MetricTransformation",
           "simple" : false,
+          "simpleType" : "MetricTransformation",
           "map" : false,
           "templateType" : "java.util.List<MetricTransformation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
@@ -19865,8 +19865,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "MetricTransformation",
             "simple" : false,
+            "simpleType" : "MetricTransformation",
             "map" : false,
             "templateType" : "java.util.List<MetricTransformation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
@@ -20776,7 +20776,7 @@
         "fluentSetterDocumentation" : "/**<p>Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied.</p>\n@param logStreamNamePrefix Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied.</p>\n@param logStreamNamePrefix Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>",
+        "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>",
         "name" : "From",
         "c2jName" : "from",
         "c2jShape" : "Timestamp",
@@ -20784,7 +20784,7 @@
           "variableName" : "from",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
-          "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -20822,12 +20822,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.*/",
-        "getterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@return A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.*/",
-        "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.*/",
+        "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.*/",
+        "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>",
+        "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>",
         "name" : "To",
         "c2jName" : "to",
         "c2jShape" : "Timestamp",
@@ -20835,7 +20835,7 @@
           "variableName" : "to",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
-          "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -20873,12 +20873,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.*/",
-        "getterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@return A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.*/",
-        "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.*/",
+        "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.*/",
+        "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>",
+        "documentation" : "<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>",
         "name" : "Destination",
         "c2jName" : "destination",
         "c2jShape" : "ExportDestinationBucket",
@@ -20886,7 +20886,7 @@
           "variableName" : "destination",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>",
+          "documentation" : "<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -20924,10 +20924,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b>*/",
-        "getterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@return Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b>*/",
-        "fluentSetterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b>*/",
+        "getterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@return Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b>*/",
+        "fluentSetterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b>\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>Prefix that will be used as the start of Amazon S3 key for every object exported. If not specified, this defaults to 'exportedlogs'.</p>",
         "name" : "DestinationPrefix",
@@ -21059,7 +21059,7 @@
           "varargSetterDocumentation" : "/**<p>Prefix that will be used as the start of Amazon S3 key for every object exported. If not specified, this defaults to 'exportedlogs'.</p>\n@param destinationPrefix Prefix that will be used as the start of Amazon S3 key for every object exported. If not specified, this defaults to 'exportedlogs'.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "To" : {
-          "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>",
           "name" : "To",
           "c2jName" : "to",
           "c2jShape" : "Timestamp",
@@ -21067,7 +21067,7 @@
             "variableName" : "to",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
-            "documentation" : "<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>",
+            "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -21105,10 +21105,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.*/",
-          "getterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@return A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.*/",
-          "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.*/",
+          "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.*/",
+          "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>\n@param to A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "LogStreamNamePrefix" : {
           "documentation" : "<p>Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied.</p>",
@@ -21267,7 +21267,7 @@
           "varargSetterDocumentation" : "/**<p>The name of the export task.</p>\n@param taskName The name of the export task.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Destination" : {
-          "documentation" : "<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>",
+          "documentation" : "<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>",
           "name" : "Destination",
           "c2jName" : "destination",
           "c2jShape" : "ExportDestinationBucket",
@@ -21275,7 +21275,7 @@
             "variableName" : "destination",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>",
+            "documentation" : "<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -21313,13 +21313,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b>*/",
-          "getterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@return Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b>*/",
-          "fluentSetterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b>*/",
+          "getterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@return Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b>*/",
+          "fluentSetterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>\n@param destination Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b>\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "From" : {
-          "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>",
+          "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>",
           "name" : "From",
           "c2jName" : "from",
           "c2jShape" : "Timestamp",
@@ -21327,7 +21327,7 @@
             "variableName" : "from",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
-            "documentation" : "<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>",
+            "documentation" : "<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -21365,10 +21365,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.*/",
-          "getterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@return A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.*/",
-          "fluentSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.*/",
+          "getterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.*/",
+          "fluentSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>\n@param from A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -21481,8 +21481,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -21572,8 +21572,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -22605,6 +22605,10 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null
+  },
+  "examples" : {
+    "version" : "1.0",
+    "operationExamples" : { }
   },
   "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
 }

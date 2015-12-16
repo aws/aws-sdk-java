@@ -15,6 +15,7 @@
 package com.amazonaws.services.autoscaling;
 
 import com.amazonaws.services.autoscaling.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonAutoScaling}. Convenient method forms

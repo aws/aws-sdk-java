@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The results describe only the Dedicated hosts in the region you're
  * currently using. All listed instances consume capacity on your
  * Dedicated host. Dedicated hosts that have recently been released will
- * be listed with the status "released".
+ * be listed with the state <code>released</code> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeHosts(DescribeHostsRequest)

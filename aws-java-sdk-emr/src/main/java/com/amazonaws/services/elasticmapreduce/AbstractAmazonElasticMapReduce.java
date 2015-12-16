@@ -15,6 +15,7 @@
 package com.amazonaws.services.elasticmapreduce;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonElasticMapReduce}. Convenient method

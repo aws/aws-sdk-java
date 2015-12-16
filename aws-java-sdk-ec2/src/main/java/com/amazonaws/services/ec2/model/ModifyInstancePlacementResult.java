@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class ModifyInstancePlacementResult implements Serializable, Cloneable {
 
     /**
-     * Is <c>true</c> if the request succeeds, and an error otherwise.
+     * Is <code>true</code> if the request succeeds, and an error otherwise.
      */
     private Boolean returnValue;
 
     /**
-     * Is <c>true</c> if the request succeeds, and an error otherwise.
+     * Is <code>true</code> if the request succeeds, and an error otherwise.
      *
-     * @return Is <c>true</c> if the request succeeds, and an error otherwise.
+     * @return Is <code>true</code> if the request succeeds, and an error otherwise.
      */
     public Boolean isReturn() {
         return returnValue;
     }
     
     /**
-     * Is <c>true</c> if the request succeeds, and an error otherwise.
+     * Is <code>true</code> if the request succeeds, and an error otherwise.
      *
-     * @param returnValue Is <c>true</c> if the request succeeds, and an error otherwise.
+     * @param returnValue Is <code>true</code> if the request succeeds, and an error otherwise.
      */
     public void setReturn(Boolean returnValue) {
         this.returnValue = returnValue;
     }
     
     /**
-     * Is <c>true</c> if the request succeeds, and an error otherwise.
+     * Is <code>true</code> if the request succeeds, and an error otherwise.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param returnValue Is <c>true</c> if the request succeeds, and an error otherwise.
+     * @param returnValue Is <code>true</code> if the request succeeds, and an error otherwise.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -60,9 +60,9 @@ public class ModifyInstancePlacementResult implements Serializable, Cloneable {
     }
 
     /**
-     * Is <c>true</c> if the request succeeds, and an error otherwise.
+     * Is <code>true</code> if the request succeeds, and an error otherwise.
      *
-     * @return Is <c>true</c> if the request succeeds, and an error otherwise.
+     * @return Is <code>true</code> if the request succeeds, and an error otherwise.
      */
     public Boolean getReturn() {
         return returnValue;

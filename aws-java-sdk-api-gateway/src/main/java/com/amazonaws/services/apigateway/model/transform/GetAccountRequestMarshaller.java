@@ -66,7 +66,7 @@ public class GetAccountRequestMarshaller implements
 
         request.setContent(new ByteArrayInputStream(new byte[0]));
         if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", "binary/octet-stream");
+            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
         }
 
         return request;

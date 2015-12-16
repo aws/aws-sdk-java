@@ -15,6 +15,7 @@
 package com.amazonaws.services.cloudformation;
 
 import com.amazonaws.services.cloudformation.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonCloudFormation}. Convenient method

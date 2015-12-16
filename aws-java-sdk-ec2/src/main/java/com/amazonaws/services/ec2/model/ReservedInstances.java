@@ -67,7 +67,7 @@ public class ReservedInstances implements Serializable, Cloneable {
     private Float fixedPrice;
 
     /**
-     * The number of Reserved instances purchased.
+     * The number of reservations purchased.
      */
     private Integer instanceCount;
 
@@ -437,29 +437,29 @@ public class ReservedInstances implements Serializable, Cloneable {
     }
 
     /**
-     * The number of Reserved instances purchased.
+     * The number of reservations purchased.
      *
-     * @return The number of Reserved instances purchased.
+     * @return The number of reservations purchased.
      */
     public Integer getInstanceCount() {
         return instanceCount;
     }
     
     /**
-     * The number of Reserved instances purchased.
+     * The number of reservations purchased.
      *
-     * @param instanceCount The number of Reserved instances purchased.
+     * @param instanceCount The number of reservations purchased.
      */
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
     
     /**
-     * The number of Reserved instances purchased.
+     * The number of reservations purchased.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceCount The number of Reserved instances purchased.
+     * @param instanceCount The number of reservations purchased.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -15,6 +15,7 @@
 package com.amazonaws.services.waf;
 
 import com.amazonaws.services.waf.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSWAF}. Convenient method forms pass

@@ -68,6 +68,32 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     private String clientToken;
 
     /**
+     * Specifies whether the destination snapshots of the copied image should
+     * be encrypted. The default CMK for EBS is used unless a non-default AWS
+     * Key Management Service (AWS KMS) CMK is specified with
+     * <code>KmsKeyId</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     */
+    private Boolean encrypted;
+
+    /**
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
+     * when encrypting the snapshots of an image during a copy operation.
+     * This parameter is only required if you want to use a non-default CMK;
+     * if this parameter is not specified, the default CMK for EBS is used.
+     * The ARN contains the <code>arn:aws:kms</code> namespace, followed by
+     * the region of the CMK, the AWS account ID of the CMK owner, the
+     * <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * The specified CMK must exist in the region that the snapshot is being
+     * copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
+     */
+    private String kmsKeyId;
+
+    /**
      * The name of the region that contains the AMI to copy.
      *
      * @return The name of the region that contains the AMI to copy.
@@ -257,6 +283,189 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
+     * Specifies whether the destination snapshots of the copied image should
+     * be encrypted. The default CMK for EBS is used unless a non-default AWS
+     * Key Management Service (AWS KMS) CMK is specified with
+     * <code>KmsKeyId</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     *
+     * @return Specifies whether the destination snapshots of the copied image should
+     *         be encrypted. The default CMK for EBS is used unless a non-default AWS
+     *         Key Management Service (AWS KMS) CMK is specified with
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     */
+    public Boolean isEncrypted() {
+        return encrypted;
+    }
+    
+    /**
+     * Specifies whether the destination snapshots of the copied image should
+     * be encrypted. The default CMK for EBS is used unless a non-default AWS
+     * Key Management Service (AWS KMS) CMK is specified with
+     * <code>KmsKeyId</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     *
+     * @param encrypted Specifies whether the destination snapshots of the copied image should
+     *         be encrypted. The default CMK for EBS is used unless a non-default AWS
+     *         Key Management Service (AWS KMS) CMK is specified with
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     */
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+    
+    /**
+     * Specifies whether the destination snapshots of the copied image should
+     * be encrypted. The default CMK for EBS is used unless a non-default AWS
+     * Key Management Service (AWS KMS) CMK is specified with
+     * <code>KmsKeyId</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encrypted Specifies whether the destination snapshots of the copied image should
+     *         be encrypted. The default CMK for EBS is used unless a non-default AWS
+     *         Key Management Service (AWS KMS) CMK is specified with
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CopyImageRequest withEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+        return this;
+    }
+
+    /**
+     * Specifies whether the destination snapshots of the copied image should
+     * be encrypted. The default CMK for EBS is used unless a non-default AWS
+     * Key Management Service (AWS KMS) CMK is specified with
+     * <code>KmsKeyId</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     *
+     * @return Specifies whether the destination snapshots of the copied image should
+     *         be encrypted. The default CMK for EBS is used unless a non-default AWS
+     *         Key Management Service (AWS KMS) CMK is specified with
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     */
+    public Boolean getEncrypted() {
+        return encrypted;
+    }
+
+    /**
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
+     * when encrypting the snapshots of an image during a copy operation.
+     * This parameter is only required if you want to use a non-default CMK;
+     * if this parameter is not specified, the default CMK for EBS is used.
+     * The ARN contains the <code>arn:aws:kms</code> namespace, followed by
+     * the region of the CMK, the AWS account ID of the CMK owner, the
+     * <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * The specified CMK must exist in the region that the snapshot is being
+     * copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
+     *
+     * @return The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
+     *         when encrypting the snapshots of an image during a copy operation.
+     *         This parameter is only required if you want to use a non-default CMK;
+     *         if this parameter is not specified, the default CMK for EBS is used.
+     *         The ARN contains the <code>arn:aws:kms</code> namespace, followed by
+     *         the region of the CMK, the AWS account ID of the CMK owner, the
+     *         <code>key</code> namespace, and then the CMK ID. For example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         The specified CMK must exist in the region that the snapshot is being
+     *         copied to. If a <code>KmsKeyId</code> is specified, the
+     *         <code>Encrypted</code> flag must also be set.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
+     * when encrypting the snapshots of an image during a copy operation.
+     * This parameter is only required if you want to use a non-default CMK;
+     * if this parameter is not specified, the default CMK for EBS is used.
+     * The ARN contains the <code>arn:aws:kms</code> namespace, followed by
+     * the region of the CMK, the AWS account ID of the CMK owner, the
+     * <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * The specified CMK must exist in the region that the snapshot is being
+     * copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
+     *
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
+     *         when encrypting the snapshots of an image during a copy operation.
+     *         This parameter is only required if you want to use a non-default CMK;
+     *         if this parameter is not specified, the default CMK for EBS is used.
+     *         The ARN contains the <code>arn:aws:kms</code> namespace, followed by
+     *         the region of the CMK, the AWS account ID of the CMK owner, the
+     *         <code>key</code> namespace, and then the CMK ID. For example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         The specified CMK must exist in the region that the snapshot is being
+     *         copied to. If a <code>KmsKeyId</code> is specified, the
+     *         <code>Encrypted</code> flag must also be set.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
+     * when encrypting the snapshots of an image during a copy operation.
+     * This parameter is only required if you want to use a non-default CMK;
+     * if this parameter is not specified, the default CMK for EBS is used.
+     * The ARN contains the <code>arn:aws:kms</code> namespace, followed by
+     * the region of the CMK, the AWS account ID of the CMK owner, the
+     * <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * The specified CMK must exist in the region that the snapshot is being
+     * copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
+     *         when encrypting the snapshots of an image during a copy operation.
+     *         This parameter is only required if you want to use a non-default CMK;
+     *         if this parameter is not specified, the default CMK for EBS is used.
+     *         The ARN contains the <code>arn:aws:kms</code> namespace, followed by
+     *         the region of the CMK, the AWS account ID of the CMK owner, the
+     *         <code>key</code> namespace, and then the CMK ID. For example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         The specified CMK must exist in the region that the snapshot is being
+     *         copied to. If a <code>KmsKeyId</code> is specified, the
+     *         <code>Encrypted</code> flag must also be set.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CopyImageRequest withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to
      * enable operation dry-run.
@@ -284,7 +493,9 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         if (getSourceImageId() != null) sb.append("SourceImageId: " + getSourceImageId() + ",");
         if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
-        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() );
+        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ",");
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -299,6 +510,8 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode()); 
+        hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -320,6 +533,10 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
         if (other.getClientToken() == null ^ this.getClientToken() == null) return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false) return false; 
+        if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
+        if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     

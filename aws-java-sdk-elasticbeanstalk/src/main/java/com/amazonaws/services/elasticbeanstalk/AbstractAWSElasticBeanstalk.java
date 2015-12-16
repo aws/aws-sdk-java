@@ -15,6 +15,7 @@
 package com.amazonaws.services.elasticbeanstalk;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSElasticBeanstalk}. Convenient method
