@@ -15,6 +15,7 @@
 package com.amazonaws.services.cloudsearchdomain;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonCloudSearchDomain}. Convenient method

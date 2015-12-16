@@ -15,6 +15,7 @@
 package com.amazonaws.services.apigateway;
 
 import com.amazonaws.services.apigateway.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonApiGateway}. Convenient method forms

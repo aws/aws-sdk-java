@@ -45,15 +45,15 @@
         "documentation" : "<p> The named resource does not exist. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteAlarms",
+      "asyncDocumentationWithHandler" : "/**<p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>\n@param deleteAlarmsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncDocumentation" : "/**<p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>\n@param deleteAlarmsRequest \n@throws ResourceNotFoundException The named resource does not exist.*/",
+      "asyncDocumentation" : "/**<p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>\n@param deleteAlarmsRequest */",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAlarmsRequest, Void>",
-      "syncDocumentation" : "/**<p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>\n@param deleteAlarmsRequest \n@throws ResourceNotFoundException The named resource does not exist.*/",
-      "asyncDocumentation" : "/**<p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>\n@param deleteAlarmsRequest */",
-      "asyncDocumentationWithHandler" : "/**<p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>\n@param deleteAlarmsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "methodName" : "deleteAlarms"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAlarmsRequest, Void>"
     },
     "DescribeAlarmHistory" : {
       "documentation" : "<p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p> <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you delete the alarm. </note>",
@@ -77,15 +77,15 @@
         "documentation" : "<p> The next token specified is invalid. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeAlarmHistory",
+      "asyncDocumentationWithHandler" : "/**<p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p> <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you delete the alarm. </note>\n@param describeAlarmHistoryRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeAlarmHistory operation returned by the service.*/",
+      "syncDocumentation" : "/**<p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p> <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you delete the alarm. </note>\n@param describeAlarmHistoryRequest \n@return Result of the DescribeAlarmHistory operation returned by the service.\n@throws InvalidNextTokenException The next token specified is invalid.*/",
+      "asyncDocumentation" : "/**<p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p> <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you delete the alarm. </note>\n@param describeAlarmHistoryRequest \n@return A Java Future containing the result of the DescribeAlarmHistory operation returned by the service.*/",
       "syncReturnType" : "DescribeAlarmHistoryResult",
       "asyncReturnType" : "DescribeAlarmHistoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAlarmHistoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAlarmHistoryResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAlarmHistoryRequest, DescribeAlarmHistoryResult>",
-      "syncDocumentation" : "/**<p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p> <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you delete the alarm. </note>\n@param describeAlarmHistoryRequest \n@return Result of the DescribeAlarmHistory operation returned by the service.\n@throws InvalidNextTokenException The next token specified is invalid.*/",
-      "asyncDocumentation" : "/**<p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p> <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you delete the alarm. </note>\n@param describeAlarmHistoryRequest \n@return A Java Future containing the result of the DescribeAlarmHistory operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p> <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you delete the alarm. </note>\n@param describeAlarmHistoryRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeAlarmHistory operation returned by the service.*/",
-      "methodName" : "describeAlarmHistory"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAlarmHistoryRequest, DescribeAlarmHistoryResult>"
     },
     "DescribeAlarms" : {
       "documentation" : "<p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>",
@@ -109,15 +109,15 @@
         "documentation" : "<p> The next token specified is invalid. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeAlarms",
+      "asyncDocumentationWithHandler" : "/**<p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>\n@param describeAlarmsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeAlarms operation returned by the service.*/",
+      "syncDocumentation" : "/**<p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>\n@param describeAlarmsRequest \n@return Result of the DescribeAlarms operation returned by the service.\n@throws InvalidNextTokenException The next token specified is invalid.*/",
+      "asyncDocumentation" : "/**<p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>\n@param describeAlarmsRequest \n@return A Java Future containing the result of the DescribeAlarms operation returned by the service.*/",
       "syncReturnType" : "DescribeAlarmsResult",
       "asyncReturnType" : "DescribeAlarmsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAlarmsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAlarmsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAlarmsRequest, DescribeAlarmsResult>",
-      "syncDocumentation" : "/**<p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>\n@param describeAlarmsRequest \n@return Result of the DescribeAlarms operation returned by the service.\n@throws InvalidNextTokenException The next token specified is invalid.*/",
-      "asyncDocumentation" : "/**<p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>\n@param describeAlarmsRequest \n@return A Java Future containing the result of the DescribeAlarms operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>\n@param describeAlarmsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeAlarms operation returned by the service.*/",
-      "methodName" : "describeAlarms"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAlarmsRequest, DescribeAlarmsResult>"
     },
     "DescribeAlarmsForMetric" : {
       "documentation" : "<p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>",
@@ -138,15 +138,15 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeAlarmsForMetric",
+      "asyncDocumentationWithHandler" : "/**<p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>\n@param describeAlarmsForMetricRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeAlarmsForMetric operation returned by the service.*/",
+      "syncDocumentation" : "/**<p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>\n@param describeAlarmsForMetricRequest \n@return Result of the DescribeAlarmsForMetric operation returned by the service.*/",
+      "asyncDocumentation" : "/**<p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>\n@param describeAlarmsForMetricRequest \n@return A Java Future containing the result of the DescribeAlarmsForMetric operation returned by the service.*/",
       "syncReturnType" : "DescribeAlarmsForMetricResult",
       "asyncReturnType" : "DescribeAlarmsForMetricResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAlarmsForMetricResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAlarmsForMetricResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAlarmsForMetricRequest, DescribeAlarmsForMetricResult>",
-      "syncDocumentation" : "/**<p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>\n@param describeAlarmsForMetricRequest \n@return Result of the DescribeAlarmsForMetric operation returned by the service.*/",
-      "asyncDocumentation" : "/**<p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>\n@param describeAlarmsForMetricRequest \n@return A Java Future containing the result of the DescribeAlarmsForMetric operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>\n@param describeAlarmsForMetricRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeAlarmsForMetric operation returned by the service.*/",
-      "methodName" : "describeAlarmsForMetric"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAlarmsForMetricRequest, DescribeAlarmsForMetricResult>"
     },
     "DisableAlarmActions" : {
       "documentation" : "<p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>",
@@ -164,15 +164,15 @@
       "returnType" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "disableAlarmActions",
+      "asyncDocumentationWithHandler" : "/**<p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>\n@param disableAlarmActionsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncDocumentation" : "/**<p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>\n@param disableAlarmActionsRequest */",
+      "asyncDocumentation" : "/**<p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>\n@param disableAlarmActionsRequest */",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, Void>",
-      "syncDocumentation" : "/**<p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>\n@param disableAlarmActionsRequest */",
-      "asyncDocumentation" : "/**<p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>\n@param disableAlarmActionsRequest */",
-      "asyncDocumentationWithHandler" : "/**<p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>\n@param disableAlarmActionsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "methodName" : "disableAlarmActions"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, Void>"
     },
     "EnableAlarmActions" : {
       "documentation" : "<p> Enables actions for the specified alarms. </p>",
@@ -190,15 +190,15 @@
       "returnType" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "enableAlarmActions",
+      "asyncDocumentationWithHandler" : "/**<p> Enables actions for the specified alarms. </p>\n@param enableAlarmActionsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncDocumentation" : "/**<p> Enables actions for the specified alarms. </p>\n@param enableAlarmActionsRequest */",
+      "asyncDocumentation" : "/**<p> Enables actions for the specified alarms. </p>\n@param enableAlarmActionsRequest */",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, Void>",
-      "syncDocumentation" : "/**<p> Enables actions for the specified alarms. </p>\n@param enableAlarmActionsRequest */",
-      "asyncDocumentation" : "/**<p> Enables actions for the specified alarms. </p>\n@param enableAlarmActionsRequest */",
-      "asyncDocumentationWithHandler" : "/**<p> Enables actions for the specified alarms. </p>\n@param enableAlarmActionsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "methodName" : "enableAlarmActions"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, Void>"
     },
     "GetMetricStatistics" : {
       "documentation" : "<p> Gets statistics for the specified metric. </p> <note> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440. If a request is made that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, alter the request by narrowing the specified time range or increasing the specified period. Alternatively, make multiple requests across adjacent time ranges. </note> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <note> The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is 1,440. </note> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul>",
@@ -231,15 +231,15 @@
         "documentation" : "<p> Indicates that the request processing has failed due to some unknown error, exception, or failure. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getMetricStatistics",
+      "asyncDocumentationWithHandler" : "/**<p> Gets statistics for the specified metric. </p> <note> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440. If a request is made that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, alter the request by narrowing the specified time range or increasing the specified period. Alternatively, make multiple requests across adjacent time ranges. </note> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <note> The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is 1,440. </note> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul>\n@param getMetricStatisticsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetMetricStatistics operation returned by the service.*/",
+      "syncDocumentation" : "/**<p> Gets statistics for the specified metric. </p> <note> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440. If a request is made that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, alter the request by narrowing the specified time range or increasing the specified period. Alternatively, make multiple requests across adjacent time ranges. </note> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <note> The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is 1,440. </note> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul>\n@param getMetricStatisticsRequest \n@return Result of the GetMetricStatistics operation returned by the service.\n@throws InvalidParameterValueException Bad or out-of-range value was supplied for the input parameter.\n@throws MissingRequiredParameterException An input parameter that is mandatory for processing the request is not supplied.\n@throws InvalidParameterCombinationException Parameters that must not be used together were used together.\n@throws InternalServiceException Indicates that the request processing has failed due to some unknown error, exception, or failure.*/",
+      "asyncDocumentation" : "/**<p> Gets statistics for the specified metric. </p> <note> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440. If a request is made that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, alter the request by narrowing the specified time range or increasing the specified period. Alternatively, make multiple requests across adjacent time ranges. </note> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <note> The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is 1,440. </note> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul>\n@param getMetricStatisticsRequest \n@return A Java Future containing the result of the GetMetricStatistics operation returned by the service.*/",
       "syncReturnType" : "GetMetricStatisticsResult",
       "asyncReturnType" : "GetMetricStatisticsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetMetricStatisticsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetMetricStatisticsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetMetricStatisticsRequest, GetMetricStatisticsResult>",
-      "syncDocumentation" : "/**<p> Gets statistics for the specified metric. </p> <note> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440. If a request is made that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, alter the request by narrowing the specified time range or increasing the specified period. Alternatively, make multiple requests across adjacent time ranges. </note> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <note> The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is 1,440. </note> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul>\n@param getMetricStatisticsRequest \n@return Result of the GetMetricStatistics operation returned by the service.\n@throws InvalidParameterValueException Bad or out-of-range value was supplied for the input parameter.\n@throws MissingRequiredParameterException An input parameter that is mandatory for processing the request is not supplied.\n@throws InvalidParameterCombinationException Parameters that must not be used together were used together.\n@throws InternalServiceException Indicates that the request processing has failed due to some unknown error, exception, or failure.*/",
-      "asyncDocumentation" : "/**<p> Gets statistics for the specified metric. </p> <note> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440. If a request is made that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, alter the request by narrowing the specified time range or increasing the specified period. Alternatively, make multiple requests across adjacent time ranges. </note> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <note> The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is 1,440. </note> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul>\n@param getMetricStatisticsRequest \n@return A Java Future containing the result of the GetMetricStatistics operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p> Gets statistics for the specified metric. </p> <note> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440. If a request is made that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, alter the request by narrowing the specified time range or increasing the specified period. Alternatively, make multiple requests across adjacent time ranges. </note> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <note> The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is 1,440. </note> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul>\n@param getMetricStatisticsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetMetricStatistics operation returned by the service.*/",
-      "methodName" : "getMetricStatistics"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetMetricStatisticsRequest, GetMetricStatisticsResult>"
     },
     "ListMetrics" : {
       "documentation" : "<p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <code>GetMetricStatistics</code> to obtain statistical data for a given metric. </p> <note> Up to 500 results are returned for any one call. To retrieve further results, use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action, allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code> action. </note>",
@@ -266,15 +266,15 @@
         "documentation" : "<p> Bad or out-of-range value was supplied for the input parameter. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listMetrics",
+      "asyncDocumentationWithHandler" : "/**<p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <code>GetMetricStatistics</code> to obtain statistical data for a given metric. </p> <note> Up to 500 results are returned for any one call. To retrieve further results, use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action, allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code> action. </note>\n@param listMetricsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListMetrics operation returned by the service.*/",
+      "syncDocumentation" : "/**<p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <code>GetMetricStatistics</code> to obtain statistical data for a given metric. </p> <note> Up to 500 results are returned for any one call. To retrieve further results, use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action, allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code> action. </note>\n@param listMetricsRequest \n@return Result of the ListMetrics operation returned by the service.\n@throws InternalServiceException Indicates that the request processing has failed due to some unknown error, exception, or failure.\n@throws InvalidParameterValueException Bad or out-of-range value was supplied for the input parameter.*/",
+      "asyncDocumentation" : "/**<p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <code>GetMetricStatistics</code> to obtain statistical data for a given metric. </p> <note> Up to 500 results are returned for any one call. To retrieve further results, use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action, allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code> action. </note>\n@param listMetricsRequest \n@return A Java Future containing the result of the ListMetrics operation returned by the service.*/",
       "syncReturnType" : "ListMetricsResult",
       "asyncReturnType" : "ListMetricsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListMetricsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListMetricsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListMetricsRequest, ListMetricsResult>",
-      "syncDocumentation" : "/**<p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <code>GetMetricStatistics</code> to obtain statistical data for a given metric. </p> <note> Up to 500 results are returned for any one call. To retrieve further results, use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action, allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code> action. </note>\n@param listMetricsRequest \n@return Result of the ListMetrics operation returned by the service.\n@throws InternalServiceException Indicates that the request processing has failed due to some unknown error, exception, or failure.\n@throws InvalidParameterValueException Bad or out-of-range value was supplied for the input parameter.*/",
-      "asyncDocumentation" : "/**<p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <code>GetMetricStatistics</code> to obtain statistical data for a given metric. </p> <note> Up to 500 results are returned for any one call. To retrieve further results, use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action, allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code> action. </note>\n@param listMetricsRequest \n@return A Java Future containing the result of the ListMetrics operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <code>GetMetricStatistics</code> to obtain statistical data for a given metric. </p> <note> Up to 500 results are returned for any one call. To retrieve further results, use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action, allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code> action. </note>\n@param listMetricsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListMetrics operation returned by the service.*/",
-      "methodName" : "listMetrics"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListMetricsRequest, ListMetricsResult>"
     },
     "PutMetricAlarm" : {
       "documentation" : "<p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p> <note> When updating an existing alarm, its <code>StateValue</code> is left unchanged. </note>",
@@ -295,15 +295,15 @@
         "documentation" : "<p> The quota for alarms for this customer has already been reached. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "putMetricAlarm",
+      "asyncDocumentationWithHandler" : "/**<p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p> <note> When updating an existing alarm, its <code>StateValue</code> is left unchanged. </note>\n@param putMetricAlarmRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncDocumentation" : "/**<p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p> <note> When updating an existing alarm, its <code>StateValue</code> is left unchanged. </note>\n@param putMetricAlarmRequest \n@throws LimitExceededException The quota for alarms for this customer has already been reached.*/",
+      "asyncDocumentation" : "/**<p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p> <note> When updating an existing alarm, its <code>StateValue</code> is left unchanged. </note>\n@param putMetricAlarmRequest */",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutMetricAlarmRequest, Void>",
-      "syncDocumentation" : "/**<p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p> <note> When updating an existing alarm, its <code>StateValue</code> is left unchanged. </note>\n@param putMetricAlarmRequest \n@throws LimitExceededException The quota for alarms for this customer has already been reached.*/",
-      "asyncDocumentation" : "/**<p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p> <note> When updating an existing alarm, its <code>StateValue</code> is left unchanged. </note>\n@param putMetricAlarmRequest */",
-      "asyncDocumentationWithHandler" : "/**<p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p> <note> When updating an existing alarm, its <code>StateValue</code> is left unchanged. </note>\n@param putMetricAlarmRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "methodName" : "putMetricAlarm"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutMetricAlarmRequest, Void>"
     },
     "PutMetricData" : {
       "documentation" : "<p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. </p> <note> If you create a metric with the <code>PutMetricData</code> action, allow up to fifteen minutes for the metric to appear in calls to the <a>ListMetrics</a> action. </note> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important>",
@@ -333,15 +333,15 @@
         "documentation" : "<p> Indicates that the request processing has failed due to some unknown error, exception, or failure. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "putMetricData",
+      "asyncDocumentationWithHandler" : "/**<p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. </p> <note> If you create a metric with the <code>PutMetricData</code> action, allow up to fifteen minutes for the metric to appear in calls to the <a>ListMetrics</a> action. </note> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important>\n@param putMetricDataRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncDocumentation" : "/**<p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. </p> <note> If you create a metric with the <code>PutMetricData</code> action, allow up to fifteen minutes for the metric to appear in calls to the <a>ListMetrics</a> action. </note> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important>\n@param putMetricDataRequest \n@throws InvalidParameterValueException Bad or out-of-range value was supplied for the input parameter.\n@throws MissingRequiredParameterException An input parameter that is mandatory for processing the request is not supplied.\n@throws InvalidParameterCombinationException Parameters that must not be used together were used together.\n@throws InternalServiceException Indicates that the request processing has failed due to some unknown error, exception, or failure.*/",
+      "asyncDocumentation" : "/**<p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. </p> <note> If you create a metric with the <code>PutMetricData</code> action, allow up to fifteen minutes for the metric to appear in calls to the <a>ListMetrics</a> action. </note> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important>\n@param putMetricDataRequest */",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutMetricDataRequest, Void>",
-      "syncDocumentation" : "/**<p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. </p> <note> If you create a metric with the <code>PutMetricData</code> action, allow up to fifteen minutes for the metric to appear in calls to the <a>ListMetrics</a> action. </note> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important>\n@param putMetricDataRequest \n@throws InvalidParameterValueException Bad or out-of-range value was supplied for the input parameter.\n@throws MissingRequiredParameterException An input parameter that is mandatory for processing the request is not supplied.\n@throws InvalidParameterCombinationException Parameters that must not be used together were used together.\n@throws InternalServiceException Indicates that the request processing has failed due to some unknown error, exception, or failure.*/",
-      "asyncDocumentation" : "/**<p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. </p> <note> If you create a metric with the <code>PutMetricData</code> action, allow up to fifteen minutes for the metric to appear in calls to the <a>ListMetrics</a> action. </note> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important>\n@param putMetricDataRequest */",
-      "asyncDocumentationWithHandler" : "/**<p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. </p> <note> If you create a metric with the <code>PutMetricData</code> action, allow up to fifteen minutes for the metric to appear in calls to the <a>ListMetrics</a> action. </note> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important>\n@param putMetricDataRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "methodName" : "putMetricData"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutMetricDataRequest, Void>"
     },
     "SetAlarmState" : {
       "documentation" : "<p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>",
@@ -365,15 +365,15 @@
         "documentation" : "<p> Data was not syntactically valid JSON. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "setAlarmState",
+      "asyncDocumentationWithHandler" : "/**<p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>\n@param setAlarmStateRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncDocumentation" : "/**<p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>\n@param setAlarmStateRequest \n@throws ResourceNotFoundException The named resource does not exist.\n@throws InvalidFormatException Data was not syntactically valid JSON.*/",
+      "asyncDocumentation" : "/**<p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>\n@param setAlarmStateRequest */",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, Void>",
-      "syncDocumentation" : "/**<p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>\n@param setAlarmStateRequest \n@throws ResourceNotFoundException The named resource does not exist.\n@throws InvalidFormatException Data was not syntactically valid JSON.*/",
-      "asyncDocumentation" : "/**<p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>\n@param setAlarmStateRequest */",
-      "asyncDocumentationWithHandler" : "/**<p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>\n@param setAlarmStateRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "methodName" : "setAlarmState"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, Void>"
     }
   },
   "shapes" : {
@@ -648,8 +648,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Dimension",
           "simple" : false,
+          "simpleType" : "Dimension",
           "map" : false,
           "templateType" : "java.util.List<Dimension>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -1146,8 +1146,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Dimension",
             "simple" : false,
+            "simpleType" : "Dimension",
             "map" : false,
             "templateType" : "java.util.List<Dimension>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -2134,8 +2134,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "MetricAlarm",
           "simple" : false,
+          "simpleType" : "MetricAlarm",
           "map" : false,
           "templateType" : "java.util.List<MetricAlarm>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricAlarm>"
@@ -2272,8 +2272,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "MetricAlarm",
             "simple" : false,
+            "simpleType" : "MetricAlarm",
             "map" : false,
             "templateType" : "java.util.List<MetricAlarm>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricAlarm>"
@@ -2451,8 +2451,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "MetricDatum",
           "simple" : false,
+          "simpleType" : "MetricDatum",
           "map" : false,
           "templateType" : "java.util.List<MetricDatum>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricDatum>"
@@ -2593,8 +2593,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "MetricDatum",
             "simple" : false,
+            "simpleType" : "MetricDatum",
             "map" : false,
             "templateType" : "java.util.List<MetricDatum>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricDatum>"
@@ -3275,8 +3275,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Datapoint",
           "simple" : false,
+          "simpleType" : "Datapoint",
           "map" : false,
           "templateType" : "java.util.List<Datapoint>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Datapoint>"
@@ -3413,8 +3413,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Datapoint",
             "simple" : false,
+            "simpleType" : "Datapoint",
             "map" : false,
             "templateType" : "java.util.List<Datapoint>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Datapoint>"
@@ -4327,8 +4327,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Dimension",
           "simple" : false,
+          "simpleType" : "Dimension",
           "map" : false,
           "templateType" : "java.util.List<Dimension>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -4727,8 +4727,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Dimension",
             "simple" : false,
+            "simpleType" : "Dimension",
             "map" : false,
             "templateType" : "java.util.List<Dimension>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -5120,8 +5120,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "AlarmHistoryItem",
           "simple" : false,
+          "simpleType" : "AlarmHistoryItem",
           "map" : false,
           "templateType" : "java.util.List<AlarmHistoryItem>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AlarmHistoryItem>"
@@ -5361,8 +5361,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "AlarmHistoryItem",
             "simple" : false,
+            "simpleType" : "AlarmHistoryItem",
             "map" : false,
             "templateType" : "java.util.List<AlarmHistoryItem>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AlarmHistoryItem>"
@@ -5591,8 +5591,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5655,8 +5655,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5719,8 +5719,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5987,8 +5987,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Dimension",
           "simple" : false,
+          "simpleType" : "Dimension",
           "map" : false,
           "templateType" : "java.util.List<Dimension>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -6593,8 +6593,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -6658,8 +6658,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -6775,8 +6775,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -7047,8 +7047,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Dimension",
             "simple" : false,
+            "simpleType" : "Dimension",
             "map" : false,
             "templateType" : "java.util.List<Dimension>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -7228,8 +7228,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -7730,8 +7730,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8752,8 +8752,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Dimension",
           "simple" : false,
+          "simpleType" : "Dimension",
           "map" : false,
           "templateType" : "java.util.List<Dimension>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -8942,8 +8942,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Dimension",
             "simple" : false,
+            "simpleType" : "Dimension",
             "map" : false,
             "templateType" : "java.util.List<Dimension>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -9071,8 +9071,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9162,8 +9162,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9735,8 +9735,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9799,8 +9799,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9863,8 +9863,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10335,8 +10335,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Dimension",
           "simple" : false,
+          "simpleType" : "Dimension",
           "map" : false,
           "templateType" : "java.util.List<Dimension>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -10989,8 +10989,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11054,8 +11054,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11171,8 +11171,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11651,8 +11651,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Dimension",
             "simple" : false,
+            "simpleType" : "Dimension",
             "map" : false,
             "templateType" : "java.util.List<Dimension>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -11935,8 +11935,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "MetricAlarm",
           "simple" : false,
+          "simpleType" : "MetricAlarm",
           "map" : false,
           "templateType" : "java.util.List<MetricAlarm>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricAlarm>"
@@ -12176,8 +12176,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "MetricAlarm",
             "simple" : false,
+            "simpleType" : "MetricAlarm",
             "map" : false,
             "templateType" : "java.util.List<MetricAlarm>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricAlarm>"
@@ -12406,8 +12406,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Dimension",
           "simple" : false,
+          "simpleType" : "Dimension",
           "map" : false,
           "templateType" : "java.util.List<Dimension>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -12674,8 +12674,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12919,8 +12919,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -13087,8 +13087,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Dimension",
             "simple" : false,
+            "simpleType" : "Dimension",
             "map" : false,
             "templateType" : "java.util.List<Dimension>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dimension>"
@@ -14165,8 +14165,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -14256,8 +14256,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -14486,8 +14486,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "DimensionFilter",
           "simple" : false,
+          "simpleType" : "DimensionFilter",
           "map" : false,
           "templateType" : "java.util.List<DimensionFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DimensionFilter>"
@@ -14783,8 +14783,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "DimensionFilter",
             "simple" : false,
+            "simpleType" : "DimensionFilter",
             "map" : false,
             "templateType" : "java.util.List<DimensionFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DimensionFilter>"
@@ -15068,8 +15068,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Metric",
           "simple" : false,
+          "simpleType" : "Metric",
           "map" : false,
           "templateType" : "java.util.List<Metric>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Metric>"
@@ -15309,8 +15309,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Metric",
             "simple" : false,
+            "simpleType" : "Metric",
             "map" : false,
             "templateType" : "java.util.List<Metric>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Metric>"
@@ -15386,8 +15386,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15477,8 +15477,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15530,6 +15530,10 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null
+  },
+  "examples" : {
+    "version" : "1.0",
+    "operationExamples" : { }
   },
   "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
 }

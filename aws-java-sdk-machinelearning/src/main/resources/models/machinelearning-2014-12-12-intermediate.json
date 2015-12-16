@@ -34804,5 +34804,9 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null
   },
+  "examples" : {
+    "version" : "1.0",
+    "operationExamples" : { }
+  },
   "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
 }

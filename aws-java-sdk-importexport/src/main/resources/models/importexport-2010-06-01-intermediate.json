@@ -866,8 +866,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -1986,8 +1986,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -3045,8 +3045,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
@@ -3183,8 +3183,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
@@ -4308,8 +4308,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Job",
           "simple" : false,
+          "simpleType" : "Job",
           "map" : false,
           "templateType" : "java.util.List<Job>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
@@ -4497,8 +4497,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Job",
             "simple" : false,
+            "simpleType" : "Job",
             "map" : false,
             "templateType" : "java.util.List<Job>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
@@ -5364,8 +5364,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
@@ -5502,8 +5502,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
@@ -6644,8 +6644,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
@@ -6834,8 +6834,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
@@ -8802,6 +8802,10 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null
+  },
+  "examples" : {
+    "version" : "1.0",
+    "operationExamples" : { }
   },
   "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
 }

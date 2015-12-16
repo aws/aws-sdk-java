@@ -15,6 +15,7 @@
 package com.amazonaws.services.kms;
 
 import com.amazonaws.services.kms.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSKMS}. Convenient method forms pass

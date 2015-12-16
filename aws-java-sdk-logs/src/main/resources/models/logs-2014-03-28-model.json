@@ -84,7 +84,7 @@
           "documentation":"<p>Returned if the specified resource already exists.</p>"
         }
       ],
-      "documentation":"<p> Creates an <code>ExportTask</code> which allows you to efficiently export data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous call. If all the required information is provided, this API will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code> can be used to get the status of an export task. </p>"
+      "documentation":"<p> Creates an <code>ExportTask</code> which allows you to efficiently export data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous call. If all the required information is provided, this API will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code> can be used to get the status of an export task. </p> <p> You can export logs from multiple log groups or multiple time ranges to the same Amazon S3 bucket. To separate out log data for each export task, you can specify a prefix that will be used as the Amazon S3 key prefix for all exported objects. </p>"
     },
     "CreateLogGroup":{
       "name":"CreateLogGroup",
@@ -821,15 +821,15 @@
         },
         "from":{
           "shape":"Timestamp",
-          "documentation":"<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>"
+          "documentation":"<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start time of the range for the request. Events with a timestamp prior to this time will not be exported.</p>"
         },
         "to":{
           "shape":"Timestamp",
-          "documentation":"<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>"
+          "documentation":"<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time of the range for the request. Events with a timestamp later than this time will not be exported.</p>"
         },
         "destination":{
           "shape":"ExportDestinationBucket",
-          "documentation":"<p>Name of Amazon S3 bucket to which the log data will be exported. <br><b>NOTE: Only buckets in the same AWS region are supported</b></p>"
+          "documentation":"<p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p><b>NOTE: Only buckets in the same AWS region are supported</b></p>"
         },
         "destinationPrefix":{
           "shape":"ExportDestinationPrefix",
@@ -1210,11 +1210,11 @@
         },
         "from":{
           "shape":"Timestamp",
-          "documentation":"<p>A unix timestamp indicating the start time of the range for the request. Events with a timestamp prior to this time were not exported.</p>"
+          "documentation":"<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>"
         },
         "to":{
           "shape":"Timestamp",
-          "documentation":"<p>A unix timestamp indicating the end time of the range for the request. Events with a timestamp later than this time were not exported.</p>"
+          "documentation":"<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>"
         },
         "destination":{
           "shape":"ExportDestinationBucket",
@@ -1313,11 +1313,11 @@
         },
         "startTime":{
           "shape":"Timestamp",
-          "documentation":"<p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>"
+          "documentation":"<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp prior to this time are not returned.</p>"
         },
         "endTime":{
           "shape":"Timestamp",
-          "documentation":"<p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>"
+          "documentation":"<p>A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. If provided, events with a timestamp later than this time are not returned.</p>"
         },
         "filterPattern":{
           "shape":"FilterPattern",
@@ -1325,7 +1325,7 @@
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>"
+          "documentation":"<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>"
         },
         "limit":{
           "shape":"EventsLimit",
@@ -1350,7 +1350,7 @@
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>"
+          "documentation":"<p>A pagination token obtained from a <code class=\"code\">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. This token is omitted from the response when there are no other events to display.</p>"
         }
       }
     },

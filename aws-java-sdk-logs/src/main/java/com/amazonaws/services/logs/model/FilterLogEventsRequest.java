@@ -39,17 +39,17 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> logStreamNames;
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
-     * If provided, events with a timestamp prior to this time will not be
-     * returned.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp prior to this time are
+     * not returned.
      * </p>
      */
     private Long startTime;
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request. If
-     * provided, events with a timestamp later than this time will not be
-     * returned.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp later than this time
+     * are not returned.
      * </p>
      */
     private Long endTime;
@@ -64,7 +64,8 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A pagination token obtained from a
      * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results.
+     * the FilterLogEvents results. This token is omitted from the response when
+     * there are no other events to display.
      * </p>
      */
     private String nextToken;
@@ -209,15 +210,15 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
-     * If provided, events with a timestamp prior to this time will not be
-     * returned.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp prior to this time are
+     * not returned.
      * </p>
      * 
      * @param startTime
-     *        A unix timestamp indicating the start time of the range for the
-     *        request. If provided, events with a timestamp prior to this time
-     *        will not be returned.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. If provided, events with a timestamp prior
+     *        to this time are not returned.
      */
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
@@ -225,14 +226,14 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
-     * If provided, events with a timestamp prior to this time will not be
-     * returned.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp prior to this time are
+     * not returned.
      * </p>
      * 
-     * @return A unix timestamp indicating the start time of the range for the
-     *         request. If provided, events with a timestamp prior to this time
-     *         will not be returned.
+     * @return A point in time expressed as the number of milliseconds since Jan
+     *         1, 1970 00:00:00 UTC. If provided, events with a timestamp prior
+     *         to this time are not returned.
      */
     public Long getStartTime() {
         return this.startTime;
@@ -240,15 +241,15 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
-     * If provided, events with a timestamp prior to this time will not be
-     * returned.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp prior to this time are
+     * not returned.
      * </p>
      * 
      * @param startTime
-     *        A unix timestamp indicating the start time of the range for the
-     *        request. If provided, events with a timestamp prior to this time
-     *        will not be returned.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. If provided, events with a timestamp prior
+     *        to this time are not returned.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -259,15 +260,15 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request. If
-     * provided, events with a timestamp later than this time will not be
-     * returned.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp later than this time
+     * are not returned.
      * </p>
      * 
      * @param endTime
-     *        A unix timestamp indicating the end time of the range for the
-     *        request. If provided, events with a timestamp later than this time
-     *        will not be returned.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. If provided, events with a timestamp later
+     *        than this time are not returned.
      */
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
@@ -275,14 +276,14 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request. If
-     * provided, events with a timestamp later than this time will not be
-     * returned.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp later than this time
+     * are not returned.
      * </p>
      * 
-     * @return A unix timestamp indicating the end time of the range for the
-     *         request. If provided, events with a timestamp later than this
-     *         time will not be returned.
+     * @return A point in time expressed as the number of milliseconds since Jan
+     *         1, 1970 00:00:00 UTC. If provided, events with a timestamp later
+     *         than this time are not returned.
      */
     public Long getEndTime() {
         return this.endTime;
@@ -290,15 +291,15 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request. If
-     * provided, events with a timestamp later than this time will not be
-     * returned.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp later than this time
+     * are not returned.
      * </p>
      * 
      * @param endTime
-     *        A unix timestamp indicating the end time of the range for the
-     *        request. If provided, events with a timestamp later than this time
-     *        will not be returned.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. If provided, events with a timestamp later
+     *        than this time are not returned.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -355,13 +356,15 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A pagination token obtained from a
      * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results.
+     * the FilterLogEvents results. This token is omitted from the response when
+     * there are no other events to display.
      * </p>
      * 
      * @param nextToken
      *        A pagination token obtained from a
      *        <code class="code">FilterLogEvents</code> response to continue
-     *        paginating the FilterLogEvents results.
+     *        paginating the FilterLogEvents results. This token is omitted from
+     *        the response when there are no other events to display.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -371,12 +374,14 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A pagination token obtained from a
      * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results.
+     * the FilterLogEvents results. This token is omitted from the response when
+     * there are no other events to display.
      * </p>
      * 
      * @return A pagination token obtained from a
      *         <code class="code">FilterLogEvents</code> response to continue
-     *         paginating the FilterLogEvents results.
+     *         paginating the FilterLogEvents results. This token is omitted
+     *         from the response when there are no other events to display.
      */
     public String getNextToken() {
         return this.nextToken;
@@ -386,13 +391,15 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A pagination token obtained from a
      * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results.
+     * the FilterLogEvents results. This token is omitted from the response when
+     * there are no other events to display.
      * </p>
      * 
      * @param nextToken
      *        A pagination token obtained from a
      *        <code class="code">FilterLogEvents</code> response to continue
-     *        paginating the FilterLogEvents results.
+     *        paginating the FilterLogEvents results. This token is omitted from
+     *        the response when there are no other events to display.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

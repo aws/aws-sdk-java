@@ -173,6 +173,12 @@ public interface AWSLogs {
      * Id. Once started, <code>DescribeExportTasks</code> can be used to get the
      * status of an export task.
      * </p>
+     * <p>
+     * You can export logs from multiple log groups or multiple time ranges to
+     * the same Amazon S3 bucket. To separate out log data for each export task,
+     * you can specify a prefix that will be used as the Amazon S3 key prefix
+     * for all exported objects.
+     * </p>
      * 
      * @param createExportTaskRequest
      * @return Result of the CreateExportTask operation returned by the service.

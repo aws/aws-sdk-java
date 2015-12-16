@@ -48,9 +48,9 @@
         "documentation" : "<p>Information about any problems encountered while processing a search request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "asyncDocumentationWithHandler" : "/**<p>Retrieves a list of documents that match the specified search criteria. How you specify the search criteria depends on which query parser you use. Amazon CloudSearch supports four query parsers:</p> <ul> <li><code>simple</code>: search all <code>text</code> and <code>text-array</code> fields for the specified string. Search for phrases, individual terms, and prefixes. </li> <li><code>structured</code>: search specific fields, construct compound queries using Boolean operators, and use advanced features such as term boosting and proximity searching.</li> <li><code>lucene</code>: specify search criteria using the Apache Lucene query parser syntax.</li> <li><code>dismax</code>: specify search criteria using the simplified subset of the Apache Lucene query parser syntax defined by the DisMax query parser.</li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/searching.html\">Searching Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p> <p>The endpoint for submitting <code>Search</code> requests is domain-specific. You submit search requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>\n@param searchRequest Container for the parameters to the <code>Search</code> request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the Search operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Retrieves a list of documents that match the specified search criteria. How you specify the search criteria depends on which query parser you use. Amazon CloudSearch supports four query parsers:</p> <ul> <li><code>simple</code>: search all <code>text</code> and <code>text-array</code> fields for the specified string. Search for phrases, individual terms, and prefixes. </li> <li><code>structured</code>: search specific fields, construct compound queries using Boolean operators, and use advanced features such as term boosting and proximity searching.</li> <li><code>lucene</code>: specify search criteria using the Apache Lucene query parser syntax.</li> <li><code>dismax</code>: specify search criteria using the simplified subset of the Apache Lucene query parser syntax defined by the DisMax query parser.</li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/searching.html\">Searching Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p> <p>The endpoint for submitting <code>Search</code> requests is domain-specific. You submit search requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>\n@param searchRequest Container for the parameters to the <code>Search</code> request.\n@return Result of the Search operation returned by the service.\n@throws SearchException Information about any problems encountered while processing a search request.*/",
       "asyncDocumentation" : "/**<p>Retrieves a list of documents that match the specified search criteria. How you specify the search criteria depends on which query parser you use. Amazon CloudSearch supports four query parsers:</p> <ul> <li><code>simple</code>: search all <code>text</code> and <code>text-array</code> fields for the specified string. Search for phrases, individual terms, and prefixes. </li> <li><code>structured</code>: search specific fields, construct compound queries using Boolean operators, and use advanced features such as term boosting and proximity searching.</li> <li><code>lucene</code>: specify search criteria using the Apache Lucene query parser syntax.</li> <li><code>dismax</code>: specify search criteria using the simplified subset of the Apache Lucene query parser syntax defined by the DisMax query parser.</li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/searching.html\">Searching Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p> <p>The endpoint for submitting <code>Search</code> requests is domain-specific. You submit search requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>\n@param searchRequest Container for the parameters to the <code>Search</code> request.\n@return A Java Future containing the result of the Search operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Retrieves a list of documents that match the specified search criteria. How you specify the search criteria depends on which query parser you use. Amazon CloudSearch supports four query parsers:</p> <ul> <li><code>simple</code>: search all <code>text</code> and <code>text-array</code> fields for the specified string. Search for phrases, individual terms, and prefixes. </li> <li><code>structured</code>: search specific fields, construct compound queries using Boolean operators, and use advanced features such as term boosting and proximity searching.</li> <li><code>lucene</code>: specify search criteria using the Apache Lucene query parser syntax.</li> <li><code>dismax</code>: specify search criteria using the simplified subset of the Apache Lucene query parser syntax defined by the DisMax query parser.</li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/searching.html\">Searching Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p> <p>The endpoint for submitting <code>Search</code> requests is domain-specific. You submit search requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>\n@param searchRequest Container for the parameters to the <code>Search</code> request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the Search operation returned by the service.*/",
       "syncReturnType" : "SearchResult",
       "asyncReturnType" : "SearchResult",
       "asyncFutureType" : "java.util.concurrent.Future<SearchResult>",
@@ -80,9 +80,9 @@
         "documentation" : "<p>Information about any problems encountered while processing a search request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "asyncDocumentationWithHandler" : "/**<p>Retrieves autocomplete suggestions for a partial query string. You can use suggestions enable you to display likely matches before users finish typing. In Amazon CloudSearch, suggestions are based on the contents of a particular text field. When you request suggestions, Amazon CloudSearch finds all of the documents whose values in the suggester field start with the specified query string. The beginning of the field must match the query string to be considered a match. </p> <p>For more information about configuring suggesters and retrieving suggestions, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\">Getting Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p> <p>The endpoint for submitting <code>Suggest</code> requests is domain-specific. You submit suggest requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>\n@param suggestRequest Container for the parameters to the <code>Suggest</code> request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the Suggest operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Retrieves autocomplete suggestions for a partial query string. You can use suggestions enable you to display likely matches before users finish typing. In Amazon CloudSearch, suggestions are based on the contents of a particular text field. When you request suggestions, Amazon CloudSearch finds all of the documents whose values in the suggester field start with the specified query string. The beginning of the field must match the query string to be considered a match. </p> <p>For more information about configuring suggesters and retrieving suggestions, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\">Getting Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p> <p>The endpoint for submitting <code>Suggest</code> requests is domain-specific. You submit suggest requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>\n@param suggestRequest Container for the parameters to the <code>Suggest</code> request.\n@return Result of the Suggest operation returned by the service.\n@throws SearchException Information about any problems encountered while processing a search request.*/",
       "asyncDocumentation" : "/**<p>Retrieves autocomplete suggestions for a partial query string. You can use suggestions enable you to display likely matches before users finish typing. In Amazon CloudSearch, suggestions are based on the contents of a particular text field. When you request suggestions, Amazon CloudSearch finds all of the documents whose values in the suggester field start with the specified query string. The beginning of the field must match the query string to be considered a match. </p> <p>For more information about configuring suggesters and retrieving suggestions, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\">Getting Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p> <p>The endpoint for submitting <code>Suggest</code> requests is domain-specific. You submit suggest requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>\n@param suggestRequest Container for the parameters to the <code>Suggest</code> request.\n@return A Java Future containing the result of the Suggest operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Retrieves autocomplete suggestions for a partial query string. You can use suggestions enable you to display likely matches before users finish typing. In Amazon CloudSearch, suggestions are based on the contents of a particular text field. When you request suggestions, Amazon CloudSearch finds all of the documents whose values in the suggester field start with the specified query string. The beginning of the field must match the query string to be considered a match. </p> <p>For more information about configuring suggesters and retrieving suggestions, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\">Getting Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p> <p>The endpoint for submitting <code>Suggest</code> requests is domain-specific. You submit suggest requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>\n@param suggestRequest Container for the parameters to the <code>Suggest</code> request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the Suggest operation returned by the service.*/",
       "syncReturnType" : "SuggestResult",
       "asyncReturnType" : "SuggestResult",
       "asyncFutureType" : "java.util.concurrent.Future<SuggestResult>",
@@ -112,9 +112,9 @@
         "documentation" : "<p>Information about any problems encountered while processing an upload request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "asyncDocumentationWithHandler" : "/**<p>Posts a batch of documents to a search domain for indexing. A document batch is a collection of add and delete operations that represent the documents you want to add, update, or delete from your domain. Batches can be described in either JSON or XML. Each item that you want Amazon CloudSearch to return as a search result (such as a product) is represented as a document. Every document has a unique ID and one or more fields that contain the data that you want to search and return in results. Individual documents cannot contain more than 1 MB of data. The entire batch cannot exceed 5 MB. To get the best possible upload performance, group add and delete operations in batches that are close the 5 MB limit. Submitting a large volume of single-document batches can overload a domain's document service. </p> <p>The endpoint for submitting <code>UploadDocuments</code> requests is domain-specific. To get the document endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p> <p>For more information about formatting your data for Amazon CloudSearch, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/preparing-data.html\">Preparing Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. For more information about uploading data for indexing, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/uploading-data.html\">Uploading Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>\n@param uploadDocumentsRequest Container for the parameters to the <code>UploadDocuments</code> request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UploadDocuments operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Posts a batch of documents to a search domain for indexing. A document batch is a collection of add and delete operations that represent the documents you want to add, update, or delete from your domain. Batches can be described in either JSON or XML. Each item that you want Amazon CloudSearch to return as a search result (such as a product) is represented as a document. Every document has a unique ID and one or more fields that contain the data that you want to search and return in results. Individual documents cannot contain more than 1 MB of data. The entire batch cannot exceed 5 MB. To get the best possible upload performance, group add and delete operations in batches that are close the 5 MB limit. Submitting a large volume of single-document batches can overload a domain's document service. </p> <p>The endpoint for submitting <code>UploadDocuments</code> requests is domain-specific. To get the document endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p> <p>For more information about formatting your data for Amazon CloudSearch, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/preparing-data.html\">Preparing Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. For more information about uploading data for indexing, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/uploading-data.html\">Uploading Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>\n@param uploadDocumentsRequest Container for the parameters to the <code>UploadDocuments</code> request.\n@return Result of the UploadDocuments operation returned by the service.\n@throws DocumentServiceException Information about any problems encountered while processing an upload request.*/",
       "asyncDocumentation" : "/**<p>Posts a batch of documents to a search domain for indexing. A document batch is a collection of add and delete operations that represent the documents you want to add, update, or delete from your domain. Batches can be described in either JSON or XML. Each item that you want Amazon CloudSearch to return as a search result (such as a product) is represented as a document. Every document has a unique ID and one or more fields that contain the data that you want to search and return in results. Individual documents cannot contain more than 1 MB of data. The entire batch cannot exceed 5 MB. To get the best possible upload performance, group add and delete operations in batches that are close the 5 MB limit. Submitting a large volume of single-document batches can overload a domain's document service. </p> <p>The endpoint for submitting <code>UploadDocuments</code> requests is domain-specific. To get the document endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p> <p>For more information about formatting your data for Amazon CloudSearch, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/preparing-data.html\">Preparing Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. For more information about uploading data for indexing, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/uploading-data.html\">Uploading Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>\n@param uploadDocumentsRequest Container for the parameters to the <code>UploadDocuments</code> request.\n@return A Java Future containing the result of the UploadDocuments operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Posts a batch of documents to a search domain for indexing. A document batch is a collection of add and delete operations that represent the documents you want to add, update, or delete from your domain. Batches can be described in either JSON or XML. Each item that you want Amazon CloudSearch to return as a search result (such as a product) is represented as a document. Every document has a unique ID and one or more fields that contain the data that you want to search and return in results. Individual documents cannot contain more than 1 MB of data. The entire batch cannot exceed 5 MB. To get the best possible upload performance, group add and delete operations in batches that are close the 5 MB limit. Submitting a large volume of single-document batches can overload a domain's document service. </p> <p>The endpoint for submitting <code>UploadDocuments</code> requests is domain-specific. To get the document endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p> <p>For more information about formatting your data for Amazon CloudSearch, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/preparing-data.html\">Preparing Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. For more information about uploading data for indexing, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/uploading-data.html\">Uploading Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>\n@param uploadDocumentsRequest Container for the parameters to the <code>UploadDocuments</code> request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UploadDocuments operation returned by the service.*/",
       "syncReturnType" : "UploadDocumentsResult",
       "asyncReturnType" : "UploadDocumentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UploadDocumentsResult>",
@@ -626,8 +626,8 @@
               "listMemberModel" : null,
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
-              "simpleType" : "String",
               "simple" : true,
+              "simpleType" : "String",
               "map" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -974,8 +974,8 @@
                 "listMemberModel" : null,
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
-                "simpleType" : "String",
                 "simple" : true,
+                "simpleType" : "String",
                 "map" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -1555,8 +1555,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "DocumentServiceWarning",
           "simple" : false,
+          "simpleType" : "DocumentServiceWarning",
           "map" : false,
           "templateType" : "java.util.List<DocumentServiceWarning>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentServiceWarning>"
@@ -1797,8 +1797,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "DocumentServiceWarning",
             "simple" : false,
+            "simpleType" : "DocumentServiceWarning",
             "map" : false,
             "templateType" : "java.util.List<DocumentServiceWarning>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentServiceWarning>"
@@ -4476,8 +4476,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Hit",
           "simple" : false,
+          "simpleType" : "Hit",
           "map" : false,
           "templateType" : "java.util.List<Hit>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Hit>"
@@ -4614,8 +4614,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Hit",
             "simple" : false,
+            "simpleType" : "Hit",
             "map" : false,
             "templateType" : "java.util.List<Hit>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Hit>"
@@ -6109,8 +6109,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "SuggestionMatch",
           "simple" : false,
+          "simpleType" : "SuggestionMatch",
           "map" : false,
           "templateType" : "java.util.List<SuggestionMatch>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<SuggestionMatch>"
@@ -6247,8 +6247,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "SuggestionMatch",
             "simple" : false,
+            "simpleType" : "SuggestionMatch",
             "map" : false,
             "templateType" : "java.util.List<SuggestionMatch>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<SuggestionMatch>"
@@ -6519,8 +6519,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Bucket",
           "simple" : false,
+          "simpleType" : "Bucket",
           "map" : false,
           "templateType" : "java.util.List<Bucket>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Bucket>"
@@ -6657,8 +6657,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Bucket",
             "simple" : false,
+            "simpleType" : "Bucket",
             "map" : false,
             "templateType" : "java.util.List<Bucket>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Bucket>"
@@ -6960,6 +6960,10 @@
         } ]
       }
     }
+  },
+  "examples" : {
+    "version" : "1.0",
+    "operationExamples" : { }
   },
   "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
 }

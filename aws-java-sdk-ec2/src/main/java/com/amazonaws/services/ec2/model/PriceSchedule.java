@@ -45,9 +45,9 @@ public class PriceSchedule implements Serializable, Cloneable {
 
     /**
      * The current price schedule, as determined by the term remaining for
-     * the Reserved Instance in the listing. <p>A specific price schedule is
+     * the Reserved instance in the listing. <p>A specific price schedule is
      * always in effect, but only one price schedule can be active at any
-     * time. Take, for example, a Reserved Instance listing that has five
+     * time. Take, for example, a Reserved instance listing that has five
      * months remaining in its term. When you specify price schedules for
      * five months and two months, this means that schedule 1, covering the
      * first three months of the remaining term, will be active during months
@@ -222,9 +222,9 @@ public class PriceSchedule implements Serializable, Cloneable {
 
     /**
      * The current price schedule, as determined by the term remaining for
-     * the Reserved Instance in the listing. <p>A specific price schedule is
+     * the Reserved instance in the listing. <p>A specific price schedule is
      * always in effect, but only one price schedule can be active at any
-     * time. Take, for example, a Reserved Instance listing that has five
+     * time. Take, for example, a Reserved instance listing that has five
      * months remaining in its term. When you specify price schedules for
      * five months and two months, this means that schedule 1, covering the
      * first three months of the remaining term, will be active during months
@@ -232,9 +232,9 @@ public class PriceSchedule implements Serializable, Cloneable {
      * term, will be active for months 2 and 1.
      *
      * @return The current price schedule, as determined by the term remaining for
-     *         the Reserved Instance in the listing. <p>A specific price schedule is
+     *         the Reserved instance in the listing. <p>A specific price schedule is
      *         always in effect, but only one price schedule can be active at any
-     *         time. Take, for example, a Reserved Instance listing that has five
+     *         time. Take, for example, a Reserved instance listing that has five
      *         months remaining in its term. When you specify price schedules for
      *         five months and two months, this means that schedule 1, covering the
      *         first three months of the remaining term, will be active during months
@@ -247,9 +247,9 @@ public class PriceSchedule implements Serializable, Cloneable {
     
     /**
      * The current price schedule, as determined by the term remaining for
-     * the Reserved Instance in the listing. <p>A specific price schedule is
+     * the Reserved instance in the listing. <p>A specific price schedule is
      * always in effect, but only one price schedule can be active at any
-     * time. Take, for example, a Reserved Instance listing that has five
+     * time. Take, for example, a Reserved instance listing that has five
      * months remaining in its term. When you specify price schedules for
      * five months and two months, this means that schedule 1, covering the
      * first three months of the remaining term, will be active during months
@@ -257,9 +257,9 @@ public class PriceSchedule implements Serializable, Cloneable {
      * term, will be active for months 2 and 1.
      *
      * @param active The current price schedule, as determined by the term remaining for
-     *         the Reserved Instance in the listing. <p>A specific price schedule is
+     *         the Reserved instance in the listing. <p>A specific price schedule is
      *         always in effect, but only one price schedule can be active at any
-     *         time. Take, for example, a Reserved Instance listing that has five
+     *         time. Take, for example, a Reserved instance listing that has five
      *         months remaining in its term. When you specify price schedules for
      *         five months and two months, this means that schedule 1, covering the
      *         first three months of the remaining term, will be active during months
@@ -272,9 +272,9 @@ public class PriceSchedule implements Serializable, Cloneable {
     
     /**
      * The current price schedule, as determined by the term remaining for
-     * the Reserved Instance in the listing. <p>A specific price schedule is
+     * the Reserved instance in the listing. <p>A specific price schedule is
      * always in effect, but only one price schedule can be active at any
-     * time. Take, for example, a Reserved Instance listing that has five
+     * time. Take, for example, a Reserved instance listing that has five
      * months remaining in its term. When you specify price schedules for
      * five months and two months, this means that schedule 1, covering the
      * first three months of the remaining term, will be active during months
@@ -284,9 +284,9 @@ public class PriceSchedule implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param active The current price schedule, as determined by the term remaining for
-     *         the Reserved Instance in the listing. <p>A specific price schedule is
+     *         the Reserved instance in the listing. <p>A specific price schedule is
      *         always in effect, but only one price schedule can be active at any
-     *         time. Take, for example, a Reserved Instance listing that has five
+     *         time. Take, for example, a Reserved instance listing that has five
      *         months remaining in its term. When you specify price schedules for
      *         five months and two months, this means that schedule 1, covering the
      *         first three months of the remaining term, will be active during months
@@ -303,9 +303,9 @@ public class PriceSchedule implements Serializable, Cloneable {
 
     /**
      * The current price schedule, as determined by the term remaining for
-     * the Reserved Instance in the listing. <p>A specific price schedule is
+     * the Reserved instance in the listing. <p>A specific price schedule is
      * always in effect, but only one price schedule can be active at any
-     * time. Take, for example, a Reserved Instance listing that has five
+     * time. Take, for example, a Reserved instance listing that has five
      * months remaining in its term. When you specify price schedules for
      * five months and two months, this means that schedule 1, covering the
      * first three months of the remaining term, will be active during months
@@ -313,9 +313,9 @@ public class PriceSchedule implements Serializable, Cloneable {
      * term, will be active for months 2 and 1.
      *
      * @return The current price schedule, as determined by the term remaining for
-     *         the Reserved Instance in the listing. <p>A specific price schedule is
+     *         the Reserved instance in the listing. <p>A specific price schedule is
      *         always in effect, but only one price schedule can be active at any
-     *         time. Take, for example, a Reserved Instance listing that has five
+     *         time. Take, for example, a Reserved instance listing that has five
      *         months remaining in its term. When you specify price schedules for
      *         five months and two months, this means that schedule 1, covering the
      *         first three months of the remaining term, will be active during months

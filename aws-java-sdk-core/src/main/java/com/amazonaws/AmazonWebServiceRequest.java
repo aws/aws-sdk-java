@@ -422,7 +422,7 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
     }
 
     /**
-     * Returns the amount of time (in milliseconds) to allow the client to complete the execution of
+     * Sets the amount of time (in milliseconds) to allow the client to complete the execution of
      * an API call. This timeout covers the entire client execution except for marshalling. This
      * includes request handler execution, all HTTP request including retries, unmarshalling, etc.
      * <p>
@@ -458,7 +458,7 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
     }
 
     /**
-     * Returns the amount of time (in milliseconds) to allow the client to complete the execution of
+     * Sets the amount of time (in milliseconds) to allow the client to complete the execution of
      * an API call. This timeout covers the entire client execution except for marshalling. This
      * includes request handler execution, all HTTP request including retries, unmarshalling, etc.
      * <p>

@@ -15,6 +15,7 @@
 package com.amazonaws.services.inspector;
 
 import com.amazonaws.services.inspector.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonInspector}. Convenient method forms

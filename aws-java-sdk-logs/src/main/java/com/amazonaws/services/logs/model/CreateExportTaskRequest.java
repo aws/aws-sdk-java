@@ -45,21 +45,25 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
     private String logStreamNamePrefix;
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. It indicates the start time of the range for the request.
      * Events with a timestamp prior to this time will not be exported.
      * </p>
      */
     private Long from;
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. It indicates the end time of the range for the request.
      * Events with a timestamp later than this time will not be exported.
      * </p>
      */
     private Long to;
     /**
      * <p>
-     * Name of Amazon S3 bucket to which the log data will be exported. <br>
+     * Name of Amazon S3 bucket to which the log data will be exported.
+     * </p>
+     * <p>
      * <b>NOTE: Only buckets in the same AWS region are supported</b>
      * </p>
      */
@@ -198,14 +202,16 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. It indicates the start time of the range for the request.
      * Events with a timestamp prior to this time will not be exported.
      * </p>
      * 
      * @param from
-     *        A unix timestamp indicating the start time of the range for the
-     *        request. Events with a timestamp prior to this time will not be
-     *        exported.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. It indicates the start time of the range for
+     *        the request. Events with a timestamp prior to this time will not
+     *        be exported.
      */
     public void setFrom(Long from) {
         this.from = from;
@@ -213,13 +219,15 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. It indicates the start time of the range for the request.
      * Events with a timestamp prior to this time will not be exported.
      * </p>
      * 
-     * @return A unix timestamp indicating the start time of the range for the
-     *         request. Events with a timestamp prior to this time will not be
-     *         exported.
+     * @return A point in time expressed as the number of milliseconds since Jan
+     *         1, 1970 00:00:00 UTC. It indicates the start time of the range
+     *         for the request. Events with a timestamp prior to this time will
+     *         not be exported.
      */
     public Long getFrom() {
         return this.from;
@@ -227,14 +235,16 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. It indicates the start time of the range for the request.
      * Events with a timestamp prior to this time will not be exported.
      * </p>
      * 
      * @param from
-     *        A unix timestamp indicating the start time of the range for the
-     *        request. Events with a timestamp prior to this time will not be
-     *        exported.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. It indicates the start time of the range for
+     *        the request. Events with a timestamp prior to this time will not
+     *        be exported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -245,14 +255,16 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. It indicates the end time of the range for the request.
      * Events with a timestamp later than this time will not be exported.
      * </p>
      * 
      * @param to
-     *        A unix timestamp indicating the end time of the range for the
-     *        request. Events with a timestamp later than this time will not be
-     *        exported.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. It indicates the end time of the range for
+     *        the request. Events with a timestamp later than this time will not
+     *        be exported.
      */
     public void setTo(Long to) {
         this.to = to;
@@ -260,13 +272,15 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. It indicates the end time of the range for the request.
      * Events with a timestamp later than this time will not be exported.
      * </p>
      * 
-     * @return A unix timestamp indicating the end time of the range for the
-     *         request. Events with a timestamp later than this time will not be
-     *         exported.
+     * @return A point in time expressed as the number of milliseconds since Jan
+     *         1, 1970 00:00:00 UTC. It indicates the end time of the range for
+     *         the request. Events with a timestamp later than this time will
+     *         not be exported.
      */
     public Long getTo() {
         return this.to;
@@ -274,14 +288,16 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. It indicates the end time of the range for the request.
      * Events with a timestamp later than this time will not be exported.
      * </p>
      * 
      * @param to
-     *        A unix timestamp indicating the end time of the range for the
-     *        request. Events with a timestamp later than this time will not be
-     *        exported.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. It indicates the end time of the range for
+     *        the request. Events with a timestamp later than this time will not
+     *        be exported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -292,12 +308,16 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Name of Amazon S3 bucket to which the log data will be exported. <br>
+     * Name of Amazon S3 bucket to which the log data will be exported.
+     * </p>
+     * <p>
      * <b>NOTE: Only buckets in the same AWS region are supported</b>
      * </p>
      * 
      * @param destination
-     *        Name of Amazon S3 bucket to which the log data will be exported. <br>
+     *        Name of Amazon S3 bucket to which the log data will be
+     *        exported.</p>
+     *        <p>
      *        <b>NOTE: Only buckets in the same AWS region are supported</b>
      */
     public void setDestination(String destination) {
@@ -306,11 +326,15 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Name of Amazon S3 bucket to which the log data will be exported. <br>
+     * Name of Amazon S3 bucket to which the log data will be exported.
+     * </p>
+     * <p>
      * <b>NOTE: Only buckets in the same AWS region are supported</b>
      * </p>
      * 
-     * @return Name of Amazon S3 bucket to which the log data will be exported. <br>
+     * @return Name of Amazon S3 bucket to which the log data will be
+     *         exported.</p>
+     *         <p>
      *         <b>NOTE: Only buckets in the same AWS region are supported</b>
      */
     public String getDestination() {
@@ -319,12 +343,16 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Name of Amazon S3 bucket to which the log data will be exported. <br>
+     * Name of Amazon S3 bucket to which the log data will be exported.
+     * </p>
+     * <p>
      * <b>NOTE: Only buckets in the same AWS region are supported</b>
      * </p>
      * 
      * @param destination
-     *        Name of Amazon S3 bucket to which the log data will be exported. <br>
+     *        Name of Amazon S3 bucket to which the log data will be
+     *        exported.</p>
+     *        <p>
      *        <b>NOTE: Only buckets in the same AWS region are supported</b>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

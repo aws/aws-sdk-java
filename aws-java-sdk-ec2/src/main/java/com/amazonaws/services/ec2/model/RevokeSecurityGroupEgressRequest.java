@@ -23,9 +23,11 @@ import com.amazonaws.services.ec2.model.transform.RevokeSecurityGroupEgressReque
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest) RevokeSecurityGroupEgress operation}.
  * <p>
- * Removes one or more egress rules from a security group for EC2-VPC.
- * The values that you specify in the revoke request (for example, ports)
- * must match the existing rule's values for the rule to be revoked.
+ * [EC2-VPC only] Removes one or more egress rules from a security group
+ * for EC2-VPC. This action doesn't apply to security groups for use in
+ * EC2-Classic. The values that you specify in the revoke request (for
+ * example, ports) must match the existing rule's values for the rule to
+ * be revoked.
  * </p>
  * <p>
  * Each rule consists of the protocol and the CIDR range or source
@@ -62,30 +64,28 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
     private String sourceSecurityGroupOwnerId;
 
     /**
-     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.
+     * The IP protocol name or number. We recommend that you specify the
+     * protocol in a set of IP permissions instead.
      */
     private String ipProtocol;
 
     /**
      * The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. For the ICMP type number, use <code>-1</code> to specify all
-     * ICMP types.
+     * number. We recommend that you specify the port range in a set of IP
+     * permissions instead.
      */
     private Integer fromPort;
 
     /**
-     * The end of port range for the TCP and UDP protocols, or an ICMP code
-     * number. For the ICMP code number, use <code>-1</code> to specify all
-     * ICMP codes for the ICMP type.
+     * The end of port range for the TCP and UDP protocols, or an ICMP type
+     * number. We recommend that you specify the port range in a set of IP
+     * permissions instead.
      */
     private Integer toPort;
 
     /**
-     * The CIDR IP address range. You can't specify this parameter when
-     * specifying a source security group.
+     * The CIDR IP address range. We recommend that you specify the CIDR
+     * range in a set of IP permissions instead.
      */
     private String cidrIp;
 
@@ -219,47 +219,35 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.
+     * The IP protocol name or number. We recommend that you specify the
+     * protocol in a set of IP permissions instead.
      *
-     * @return The IP protocol name (<code>tcp</code>, <code>udp</code>,
-     *         <code>icmp</code>) or number (see <a
-     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     *         Numbers</a>). Use <code>-1</code> to specify all.
+     * @return The IP protocol name or number. We recommend that you specify the
+     *         protocol in a set of IP permissions instead.
      */
     public String getIpProtocol() {
         return ipProtocol;
     }
     
     /**
-     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.
+     * The IP protocol name or number. We recommend that you specify the
+     * protocol in a set of IP permissions instead.
      *
-     * @param ipProtocol The IP protocol name (<code>tcp</code>, <code>udp</code>,
-     *         <code>icmp</code>) or number (see <a
-     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     *         Numbers</a>). Use <code>-1</code> to specify all.
+     * @param ipProtocol The IP protocol name or number. We recommend that you specify the
+     *         protocol in a set of IP permissions instead.
      */
     public void setIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
     }
     
     /**
-     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.
+     * The IP protocol name or number. We recommend that you specify the
+     * protocol in a set of IP permissions instead.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipProtocol The IP protocol name (<code>tcp</code>, <code>udp</code>,
-     *         <code>icmp</code>) or number (see <a
-     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     *         Numbers</a>). Use <code>-1</code> to specify all.
+     * @param ipProtocol The IP protocol name or number. We recommend that you specify the
+     *         protocol in a set of IP permissions instead.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -271,12 +259,12 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
 
     /**
      * The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. For the ICMP type number, use <code>-1</code> to specify all
-     * ICMP types.
+     * number. We recommend that you specify the port range in a set of IP
+     * permissions instead.
      *
      * @return The start of port range for the TCP and UDP protocols, or an ICMP type
-     *         number. For the ICMP type number, use <code>-1</code> to specify all
-     *         ICMP types.
+     *         number. We recommend that you specify the port range in a set of IP
+     *         permissions instead.
      */
     public Integer getFromPort() {
         return fromPort;
@@ -284,12 +272,12 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
     
     /**
      * The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. For the ICMP type number, use <code>-1</code> to specify all
-     * ICMP types.
+     * number. We recommend that you specify the port range in a set of IP
+     * permissions instead.
      *
      * @param fromPort The start of port range for the TCP and UDP protocols, or an ICMP type
-     *         number. For the ICMP type number, use <code>-1</code> to specify all
-     *         ICMP types.
+     *         number. We recommend that you specify the port range in a set of IP
+     *         permissions instead.
      */
     public void setFromPort(Integer fromPort) {
         this.fromPort = fromPort;
@@ -297,14 +285,14 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
     
     /**
      * The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. For the ICMP type number, use <code>-1</code> to specify all
-     * ICMP types.
+     * number. We recommend that you specify the port range in a set of IP
+     * permissions instead.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fromPort The start of port range for the TCP and UDP protocols, or an ICMP type
-     *         number. For the ICMP type number, use <code>-1</code> to specify all
-     *         ICMP types.
+     *         number. We recommend that you specify the port range in a set of IP
+     *         permissions instead.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -315,41 +303,41 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The end of port range for the TCP and UDP protocols, or an ICMP code
-     * number. For the ICMP code number, use <code>-1</code> to specify all
-     * ICMP codes for the ICMP type.
+     * The end of port range for the TCP and UDP protocols, or an ICMP type
+     * number. We recommend that you specify the port range in a set of IP
+     * permissions instead.
      *
-     * @return The end of port range for the TCP and UDP protocols, or an ICMP code
-     *         number. For the ICMP code number, use <code>-1</code> to specify all
-     *         ICMP codes for the ICMP type.
+     * @return The end of port range for the TCP and UDP protocols, or an ICMP type
+     *         number. We recommend that you specify the port range in a set of IP
+     *         permissions instead.
      */
     public Integer getToPort() {
         return toPort;
     }
     
     /**
-     * The end of port range for the TCP and UDP protocols, or an ICMP code
-     * number. For the ICMP code number, use <code>-1</code> to specify all
-     * ICMP codes for the ICMP type.
+     * The end of port range for the TCP and UDP protocols, or an ICMP type
+     * number. We recommend that you specify the port range in a set of IP
+     * permissions instead.
      *
-     * @param toPort The end of port range for the TCP and UDP protocols, or an ICMP code
-     *         number. For the ICMP code number, use <code>-1</code> to specify all
-     *         ICMP codes for the ICMP type.
+     * @param toPort The end of port range for the TCP and UDP protocols, or an ICMP type
+     *         number. We recommend that you specify the port range in a set of IP
+     *         permissions instead.
      */
     public void setToPort(Integer toPort) {
         this.toPort = toPort;
     }
     
     /**
-     * The end of port range for the TCP and UDP protocols, or an ICMP code
-     * number. For the ICMP code number, use <code>-1</code> to specify all
-     * ICMP codes for the ICMP type.
+     * The end of port range for the TCP and UDP protocols, or an ICMP type
+     * number. We recommend that you specify the port range in a set of IP
+     * permissions instead.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param toPort The end of port range for the TCP and UDP protocols, or an ICMP code
-     *         number. For the ICMP code number, use <code>-1</code> to specify all
-     *         ICMP codes for the ICMP type.
+     * @param toPort The end of port range for the TCP and UDP protocols, or an ICMP type
+     *         number. We recommend that you specify the port range in a set of IP
+     *         permissions instead.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -360,35 +348,35 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The CIDR IP address range. You can't specify this parameter when
-     * specifying a source security group.
+     * The CIDR IP address range. We recommend that you specify the CIDR
+     * range in a set of IP permissions instead.
      *
-     * @return The CIDR IP address range. You can't specify this parameter when
-     *         specifying a source security group.
+     * @return The CIDR IP address range. We recommend that you specify the CIDR
+     *         range in a set of IP permissions instead.
      */
     public String getCidrIp() {
         return cidrIp;
     }
     
     /**
-     * The CIDR IP address range. You can't specify this parameter when
-     * specifying a source security group.
+     * The CIDR IP address range. We recommend that you specify the CIDR
+     * range in a set of IP permissions instead.
      *
-     * @param cidrIp The CIDR IP address range. You can't specify this parameter when
-     *         specifying a source security group.
+     * @param cidrIp The CIDR IP address range. We recommend that you specify the CIDR
+     *         range in a set of IP permissions instead.
      */
     public void setCidrIp(String cidrIp) {
         this.cidrIp = cidrIp;
     }
     
     /**
-     * The CIDR IP address range. You can't specify this parameter when
-     * specifying a source security group.
+     * The CIDR IP address range. We recommend that you specify the CIDR
+     * range in a set of IP permissions instead.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrIp The CIDR IP address range. You can't specify this parameter when
-     *         specifying a source security group.
+     * @param cidrIp The CIDR IP address range. We recommend that you specify the CIDR
+     *         range in a set of IP permissions instead.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

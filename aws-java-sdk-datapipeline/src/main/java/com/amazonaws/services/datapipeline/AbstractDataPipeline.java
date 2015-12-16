@@ -15,6 +15,7 @@
 package com.amazonaws.services.datapipeline;
 
 import com.amazonaws.services.datapipeline.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code DataPipeline}. Convenient method forms pass

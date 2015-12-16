@@ -15,6 +15,7 @@
 package com.amazonaws.services.dynamodbv2;
 
 import com.amazonaws.services.dynamodbv2.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonDynamoDB}. Convenient method forms

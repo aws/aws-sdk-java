@@ -29,6 +29,7 @@ package com.amazonaws.services.directconnect.model;
  * <li><b>Pending</b>: A virtual interface is in this state from the time that
  * it is created until the virtual interface is ready to forward traffic.</li>
  * <li><b>Available</b>: A virtual interface that is able to forward traffic.</li>
+ * <li><b>Down</b>: A virtual interface that is BGP down.</li>
  * <li><b>Deleting</b>: A virtual interface is in this state immediately after
  * calling <i>DeleteVirtualInterface</i> until it can no longer forward traffic.
  * </li>

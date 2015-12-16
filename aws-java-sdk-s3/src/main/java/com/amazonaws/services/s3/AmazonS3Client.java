@@ -1173,22 +1173,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             // we're downloading the whole object, by default we wrap the
             // stream in a validator that calculates an MD5 of the downloaded
             // bytes and complains if what we received doesn't match the Etag.
-            if (!skipMd5CheckStrategy.skipMd5CheckPerRequest(getObjectRequest)
-                    && !skipMd5CheckStrategy.skipMd5CheckPerResponse(s3Object.getObjectMetadata())) {
-                byte[] serverSideHash = null;
-                String etag = s3Object.getObjectMetadata().getETag();
-                if (etag != null && ServiceUtils.isMultipartUploadETag(etag) == false) {
-                    serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
-                    try {
-                        // No content length check is performed when the
-                        // MD5 check is enabled, since a correct MD5 check would
-                        // imply a correct content length.
-                        MessageDigest digest = MessageDigest.getInstance("MD5");
-                        is = new DigestValidationInputStream(is, digest, serverSideHash);
-                    } catch (NoSuchAlgorithmException e) {
-                        log.warn("No MD5 digest algorithm available.  Unable to calculate "
-                                    + "checksum and verify data integrity.", e);
-                    }
+            if (!skipMd5CheckStrategy.skipClientSideValidation(getObjectRequest, s3Object.getObjectMetadata())) {
+                byte[] serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
+                try {
+                    // No content length check is performed when the
+                    // MD5 check is enabled, since a correct MD5 check would
+                    // imply a correct content length.
+                    MessageDigest digest = MessageDigest.getInstance("MD5");
+                    is = new DigestValidationInputStream(is, digest, serverSideHash);
+                } catch (NoSuchAlgorithmException e) {
+                    log.warn("No MD5 digest algorithm available.  Unable to calculate "
+                            + "checksum and verify data integrity.", e);
                 }
             } else {
                 // Ensures the data received from S3 has the same length as the
@@ -1236,7 +1231,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             @Override
             public boolean needIntegrityCheck() {
-                return !skipMd5CheckStrategy.skipMd5CheckPerRequest(getObjectRequest);
+                return !skipMd5CheckStrategy.skipClientSideValidationPerRequest(getObjectRequest);
             }
 
         }, ServiceUtils.OVERWRITE_MODE);
@@ -1294,7 +1289,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             metadata = new ObjectMetadata();
         rejectNull(bucketName, "The bucket name parameter must be specified when uploading an object");
         rejectNull(key, "The key parameter must be specified when uploading an object");
-        final boolean skipContentMd5Check = skipMd5CheckStrategy.skipMd5CheckPerRequest(putObjectRequest);
         // If a file is specified for upload, we need to pull some additional
         // information from it to auto-configure a few options
         if (file == null) {
@@ -1311,7 +1305,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 metadata.setContentType(Mimetypes.getInstance().getMimetype(file));
             }
 
-            if (calculateMD5 && !skipContentMd5Check) {
+            if (calculateMD5 && !skipMd5CheckStrategy.skipServerSideValidation(putObjectRequest)) {
                 try {
                     String contentMd5_b64 = Md5Utils.md5AsBase64(file);
                     metadata.setContentMD5(contentMd5_b64);
@@ -1388,12 +1382,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     input = lcis;
                 }
             }
-            if (metadata.getContentMD5() == null && !skipContentMd5Check) {
+            if (metadata.getContentMD5() == null
+                    && !skipMd5CheckStrategy.skipClientSideValidationPerRequest(putObjectRequest)) {
                 /*
-                 * If the user hasn't set the content MD5, then we don't want to
-                 * buffer the whole stream in memory just to calculate it. Instead,
-                 * we can calculate it on the fly and validate it with the returned
-                 * ETag from the object upload.
+                 * If the user hasn't set the content MD5, then we don't want to buffer the whole
+                 * stream in memory just to calculate it. Instead, we can calculate it on the fly
+                 * and validate it with the returned ETag from the object upload.
                  */
                 input = md5DigestStream = new MD5DigestCalculatingInputStream(input);
             }
@@ -1425,7 +1419,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         final String etag = returnedMetadata.getETag();
-        if (contentMd5 != null && !skipContentMd5Check) {
+        if (contentMd5 != null && !skipMd5CheckStrategy.skipClientSideValidationPerPutResponse(returnedMetadata)) {
             byte[] clientSideHash = BinaryUtils.fromBase64(contentMd5);
             byte[] serverSideHash = BinaryUtils.fromHex(etag);
 
@@ -2759,12 +2753,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     uploadPartRequest.isLastPart());
             MD5DigestCalculatingInputStream md5DigestStream = null;
             if (uploadPartRequest.getMd5Digest() == null
-                    && !skipMd5CheckStrategy.skipMd5CheckPerRequest(uploadPartRequest)) {
+                    && !skipMd5CheckStrategy.skipClientSideValidationPerRequest(uploadPartRequest)) {
                 /*
-                 * If the user hasn't set the content MD5, then we don't want to
-                 * buffer the whole stream in memory just to calculate it. Instead,
-                 * we can calculate it on the fly and validate it with the returned
-                 * ETag from the object upload.
+                 * If the user hasn't set the content MD5, then we don't want to buffer the whole
+                 * stream in memory just to calculate it. Instead, we can calculate it on the fly
+                 * and validate it with the returned ETag from the object upload.
                  */
                 isCurr = md5DigestStream = new MD5DigestCalculatingInputStream(isCurr);
             }
@@ -2788,7 +2781,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ObjectMetadata metadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
             final String etag = metadata.getETag();
 
-            if (md5DigestStream != null && !skipMd5CheckStrategy.skipMd5CheckPerResponse(metadata)) {
+            if (md5DigestStream != null
+                    && !skipMd5CheckStrategy.skipClientSideValidationPerUploadPartResponse(metadata)) {
                 byte[] clientSideHash = md5DigestStream.getMd5Digest();
                 byte[] serverSideHash = BinaryUtils.fromHex(etag);
 

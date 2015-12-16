@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * To sell your Reserved instances, you must first register as a seller
  * in the Reserved Instance Marketplace. After completing the
  * registration process, you can create a Reserved Instance Marketplace
- * listing of some or all of your Reserved Instances, and specify the
+ * listing of some or all of your Reserved instances, and specify the
  * upfront price to receive for them. Your Reserved instance listings
  * then become available for purchase. To view the details of your
  * Reserved instance listing, you can use the

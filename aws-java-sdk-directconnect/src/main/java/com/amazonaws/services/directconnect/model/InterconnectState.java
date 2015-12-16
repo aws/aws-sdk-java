@@ -26,6 +26,7 @@ package com.amazonaws.services.directconnect.model;
  * <li><b>Available</b>: The network link is up, and the interconnect is ready
  * for use.</li>
  * <li><b>Down</b>: The network link is down.</li>
+ * <li><b>Deleting</b>: The interconnect is in the process of being deleted.</li>
  * <li><b>Deleted</b>: The interconnect has been deleted.</li>
  * </ul>
  */

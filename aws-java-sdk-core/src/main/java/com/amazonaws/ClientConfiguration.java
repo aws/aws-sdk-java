@@ -905,7 +905,7 @@ public class ClientConfiguration {
      * <p>
      * <b>Note:</b> This feature is not compatible with Java 1.6.
      * </p>
-     *
+     * 
      * @return The amount of time (in milliseconds) to allow the client to complete the execution of
      *         an API call.
      * @see {@link ClientConfiguration#setRequestTimeout(int)} to enforce a timeout per HTTP request

@@ -15,6 +15,7 @@
 package com.amazonaws.services.cloudwatch;
 
 import com.amazonaws.services.cloudwatch.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonCloudWatch}. Convenient method forms

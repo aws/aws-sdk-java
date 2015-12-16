@@ -15,6 +15,7 @@
 package com.amazonaws.services.ecs;
 
 import com.amazonaws.services.ecs.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonECS}. Convenient method forms pass

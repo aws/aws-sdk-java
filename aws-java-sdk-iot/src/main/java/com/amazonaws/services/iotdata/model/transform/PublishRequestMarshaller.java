@@ -75,7 +75,7 @@ public class PublishRequestMarshaller implements
 
         request.setContent(BinaryUtils.toStream(publishRequest.getPayload()));
         if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", "binary/octet-stream");
+            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
         }
 
         return request;

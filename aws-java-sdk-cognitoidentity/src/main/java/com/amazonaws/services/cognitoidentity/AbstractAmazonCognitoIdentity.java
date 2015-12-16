@@ -15,6 +15,7 @@
 package com.amazonaws.services.cognitoidentity;
 
 import com.amazonaws.services.cognitoidentity.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonCognitoIdentity}. Convenient method

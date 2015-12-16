@@ -15,6 +15,7 @@
 package com.amazonaws.services.machinelearning;
 
 import com.amazonaws.services.machinelearning.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonMachineLearning}. Convenient method

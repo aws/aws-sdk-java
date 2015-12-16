@@ -56,6 +56,12 @@ public class CopyImageRequestMarshaller implements Marshaller<Request<CopyImageR
         if (copyImageRequest.getClientToken() != null) {
             request.addParameter("ClientToken", StringUtils.fromString(copyImageRequest.getClientToken()));
         }
+        if (copyImageRequest.isEncrypted() != null) {
+            request.addParameter("Encrypted", StringUtils.fromBoolean(copyImageRequest.isEncrypted()));
+        }
+        if (copyImageRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(copyImageRequest.getKmsKeyId()));
+        }
 
         return request;
     }

@@ -38,6 +38,8 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
 
     private final HttpRequestBase httpRequest;
 
+    private boolean eof;
+
     public S3ObjectInputStream(InputStream in, HttpRequestBase httpRequest) {
         this(in, httpRequest, wrapWithByteCounting(in));
     }
@@ -88,7 +90,17 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
      */
     @Override
     public void abort() {
-        getHttpRequest().abort();
+        doAbort();
+    }
+
+    /**
+     * To allow customers to override abort to just close. We can think about exposing this method
+     * as protected to allow customers to completely prevent the abort behavior if there is a need
+     */
+    private void doAbort() {
+        if (httpRequest != null) {
+            httpRequest.abort();
+        }
         IOUtils.closeQuietly(in, null);
     }
 
@@ -113,5 +125,63 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     public int available() throws IOException {
         int estimate = super.available();
         return estimate == 0 ? 1 : estimate;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int read() throws IOException {
+        int value = super.read();
+        if (value == -1) {
+            eof = true;
+        }
+        return value;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int read(byte[] b) throws IOException {
+        return read(b, 0, b.length);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int read(byte[] b, int off, int len) throws IOException {
+        int value = super.read(b, off, len);
+        if (value == -1) {
+            eof = true;
+        }
+        return value;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void reset() throws IOException {
+        super.reset();
+        eof = false;
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * Delegate to {@link S3ObjectInputStream#abort()} if there is data remaining in the stream. If the stream has been
+     * read completely, with no data remaining, safely close the stream.
+     *
+     * @see {@link S3ObjectInputStream#abort()}
+     */
+    @Override
+    public void close() throws IOException {
+        if (eof) {
+            super.close();
+        } else {
+            doAbort();
+        }
     }
 }

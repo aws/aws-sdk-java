@@ -45,7 +45,7 @@ import com.amazonaws.util.json.*;
 public class SearchRequestMarshaller implements
         Marshaller<Request<SearchRequest>, SearchRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
 
     public Request<SearchRequest> marshall(SearchRequest searchRequest) {
 
@@ -146,7 +146,7 @@ public class SearchRequestMarshaller implements
 
         request.setContent(new ByteArrayInputStream(new byte[0]));
         if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", "binary/octet-stream");
+            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
         }
 
         return request;

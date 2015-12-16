@@ -36,7 +36,18 @@ public class Connection implements Serializable, Cloneable {
     private String region;
 
     private String location;
-
+    /**
+     * <p>
+     * Bandwidth of the connection.
+     * </p>
+     * <p>
+     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted
+     * connections)
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     */
     private String bandwidth;
 
     private Integer vlan;
@@ -212,21 +223,74 @@ public class Connection implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Bandwidth of the connection.
+     * </p>
+     * <p>
+     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted
+     * connections)
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
      * @param bandwidth
+     *        Bandwidth of the connection.</p>
+     *        <p>
+     *        Example: 1Gbps (for regular connections), or 500Mbps (for hosted
+     *        connections)
+     *        </p>
+     *        <p>
+     *        Default: None
      */
     public void setBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
     }
 
     /**
-     * @return
+     * <p>
+     * Bandwidth of the connection.
+     * </p>
+     * <p>
+     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted
+     * connections)
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
+     * @return Bandwidth of the connection.</p>
+     *         <p>
+     *         Example: 1Gbps (for regular connections), or 500Mbps (for hosted
+     *         connections)
+     *         </p>
+     *         <p>
+     *         Default: None
      */
     public String getBandwidth() {
         return this.bandwidth;
     }
 
     /**
+     * <p>
+     * Bandwidth of the connection.
+     * </p>
+     * <p>
+     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted
+     * connections)
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
      * @param bandwidth
+     *        Bandwidth of the connection.</p>
+     *        <p>
+     *        Example: 1Gbps (for regular connections), or 500Mbps (for hosted
+     *        connections)
+     *        </p>
+     *        <p>
+     *        Default: None
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

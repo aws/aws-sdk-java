@@ -874,7 +874,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * The results describe only the Dedicated hosts in the region you're
      * currently using. All listed instances consume capacity on your
      * Dedicated host. Dedicated hosts that have recently been released will
-     * be listed with the status "released".
+     * be listed with the state <code>released</code> .
      * </p>
      *
      * @param describeHostsRequest Container for the necessary parameters to
@@ -973,21 +973,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Adds one or more egress rules to a security group for use with a VPC.
-     * Specifically, this action permits instances to send traffic to one or
-     * more destination CIDR IP address ranges, or to one or more destination
-     * security groups for the same VPC.
+     * [EC2-VPC only] Adds one or more egress rules to a security group for
+     * use with a VPC. Specifically, this action permits instances to send
+     * traffic to one or more destination CIDR IP address ranges, or to one
+     * or more destination security groups for the same VPC. This action
+     * doesn't apply to security groups for use in EC2-Classic. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> You can have up to 50 rules per security group
      * (covering both ingress and egress rules).
-     * </p>
-     * <p>
-     * A security group is for use with instances either in the EC2-Classic
-     * platform or in a specific VPC. This action doesn't apply to security
-     * groups for use in EC2-Classic. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
-     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * Each rule consists of the protocol (for example, TCP), plus either a
@@ -1780,7 +1777,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * To sell your Reserved instances, you must first register as a seller
      * in the Reserved Instance Marketplace. After completing the
      * registration process, you can create a Reserved Instance Marketplace
-     * listing of some or all of your Reserved Instances, and specify the
+     * listing of some or all of your Reserved instances, and specify the
      * upfront price to receive for them. Your Reserved instance listings
      * then become available for purchase. To view the details of your
      * Reserved instance listing, you can use the
@@ -2420,10 +2417,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * When you no longer want to use a Dedicated host it can be released.
-     * On-Demand billing is stopped and the host goes into "released" state.
-     * The host ID of Dedicated hosts that have been released can no longer
-     * be specified in another request, e.g., ModifyHosts. You must stop or
-     * terminate all instances on a host before it can be released.
+     * On-Demand billing is stopped and the host goes into
+     * <code>released</code> state. The host ID of Dedicated hosts that have
+     * been released can no longer be specified in another request, e.g.,
+     * ModifyHosts. You must stop or terminate all instances on a host before
+     * it can be released.
      * </p>
      * <p>
      * When Dedicated hosts are released, it make take some time for them to
@@ -3409,8 +3407,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Modifies the Availability Zone, instance count, instance type, or
-     * network platform (EC2-Classic or EC2-VPC) of your Reserved Instances.
-     * The Reserved Instances to be modified must be identical, except for
+     * network platform (EC2-Classic or EC2-VPC) of your Reserved instances.
+     * The Reserved instances to be modified must be identical, except for
      * Availability Zone, network platform, and instance type.
      * </p>
      * <p>
@@ -8096,7 +8094,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes the modifications made to your Reserved instances. If no
-     * parameter is specified, information about all your Reserved Instances
+     * parameter is specified, information about all your Reserved instances
      * modification requests is returned. If a modification ID is specified,
      * only information about the specific modification is returned.
      * </p>
@@ -8770,9 +8768,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Removes one or more egress rules from a security group for EC2-VPC.
-     * The values that you specify in the revoke request (for example, ports)
-     * must match the existing rule's values for the rule to be revoked.
+     * [EC2-VPC only] Removes one or more egress rules from a security group
+     * for EC2-VPC. This action doesn't apply to security groups for use in
+     * EC2-Classic. The values that you specify in the revoke request (for
+     * example, ports) must match the existing rule's values for the rule to
+     * be revoked.
      * </p>
      * <p>
      * Each rule consists of the protocol and the CIDR range or source
@@ -9150,6 +9150,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * receive insufficient capacity errors, and you pay a lower usage rate
      * than the rate charged for On-Demand instances for the actual time
      * used.
+     * </p>
+     * <p>
+     * If you have listed your own Reserved instances for sale in the
+     * Reserved Instance Marketplace, they will be excluded from these
+     * results. This is to ensure that you do not purchase your own Reserved
+     * instances.
      * </p>
      * <p>
      * For more information, see
@@ -10726,7 +10732,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * The results describe only the Dedicated hosts in the region you're
      * currently using. All listed instances consume capacity on your
      * Dedicated host. Dedicated hosts that have recently been released will
-     * be listed with the status "released".
+     * be listed with the state <code>released</code> .
      * </p>
      * 
      * @return The response from the DescribeHosts service method, as
@@ -11890,7 +11896,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes the modifications made to your Reserved instances. If no
-     * parameter is specified, information about all your Reserved Instances
+     * parameter is specified, information about all your Reserved instances
      * modification requests is returned. If a modification ID is specified,
      * only information about the specific modification is returned.
      * </p>
@@ -12074,6 +12080,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * receive insufficient capacity errors, and you pay a lower usage rate
      * than the rate charged for On-Demand instances for the actual time
      * used.
+     * </p>
+     * <p>
+     * If you have listed your own Reserved instances for sale in the
+     * Reserved Instance Marketplace, they will be excluded from these
+     * results. This is to ensure that you do not purchase your own Reserved
+     * instances.
      * </p>
      * <p>
      * For more information, see

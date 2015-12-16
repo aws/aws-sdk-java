@@ -29,6 +29,7 @@ package com.amazonaws.services.directconnect.model;
  * <li><b>Available</b>: The network link is up, and the connection is ready for
  * use.</li>
  * <li><b>Down</b>: The network link is down.</li>
+ * <li><b>Deleting</b>: The connection is in the process of being deleted.</li>
  * <li><b>Deleted</b>: The connection has been deleted.</li>
  * <li><b>Rejected</b>: A hosted connection in the 'Ordering' state will enter
  * the 'Rejected' state if it is deleted by the end customer.</li>

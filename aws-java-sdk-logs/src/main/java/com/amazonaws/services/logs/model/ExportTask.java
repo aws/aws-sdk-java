@@ -44,15 +44,17 @@ public class ExportTask implements Serializable, Cloneable {
     private String logGroupName;
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
-     * Events with a timestamp prior to this time were not exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp prior to this time are not
+     * exported.
      * </p>
      */
     private Long from;
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request.
-     * Events with a timestamp later than this time were not exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp later than this time are not
+     * exported.
      * </p>
      */
     private Long to;
@@ -198,14 +200,15 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
-     * Events with a timestamp prior to this time were not exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp prior to this time are not
+     * exported.
      * </p>
      * 
      * @param from
-     *        A unix timestamp indicating the start time of the range for the
-     *        request. Events with a timestamp prior to this time were not
-     *        exported.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. Events with a timestamp prior to this time
+     *        are not exported.
      */
     public void setFrom(Long from) {
         this.from = from;
@@ -213,13 +216,14 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
-     * Events with a timestamp prior to this time were not exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp prior to this time are not
+     * exported.
      * </p>
      * 
-     * @return A unix timestamp indicating the start time of the range for the
-     *         request. Events with a timestamp prior to this time were not
-     *         exported.
+     * @return A point in time expressed as the number of milliseconds since Jan
+     *         1, 1970 00:00:00 UTC. Events with a timestamp prior to this time
+     *         are not exported.
      */
     public Long getFrom() {
         return this.from;
@@ -227,14 +231,15 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unix timestamp indicating the start time of the range for the request.
-     * Events with a timestamp prior to this time were not exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp prior to this time are not
+     * exported.
      * </p>
      * 
      * @param from
-     *        A unix timestamp indicating the start time of the range for the
-     *        request. Events with a timestamp prior to this time were not
-     *        exported.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. Events with a timestamp prior to this time
+     *        are not exported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -245,14 +250,15 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request.
-     * Events with a timestamp later than this time were not exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp later than this time are not
+     * exported.
      * </p>
      * 
      * @param to
-     *        A unix timestamp indicating the end time of the range for the
-     *        request. Events with a timestamp later than this time were not
-     *        exported.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. Events with a timestamp later than this time
+     *        are not exported.
      */
     public void setTo(Long to) {
         this.to = to;
@@ -260,13 +266,14 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request.
-     * Events with a timestamp later than this time were not exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp later than this time are not
+     * exported.
      * </p>
      * 
-     * @return A unix timestamp indicating the end time of the range for the
-     *         request. Events with a timestamp later than this time were not
-     *         exported.
+     * @return A point in time expressed as the number of milliseconds since Jan
+     *         1, 1970 00:00:00 UTC. Events with a timestamp later than this
+     *         time are not exported.
      */
     public Long getTo() {
         return this.to;
@@ -274,14 +281,15 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unix timestamp indicating the end time of the range for the request.
-     * Events with a timestamp later than this time were not exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp later than this time are not
+     * exported.
      * </p>
      * 
      * @param to
-     *        A unix timestamp indicating the end time of the range for the
-     *        request. Events with a timestamp later than this time were not
-     *        exported.
+     *        A point in time expressed as the number of milliseconds since Jan
+     *        1, 1970 00:00:00 UTC. Events with a timestamp later than this time
+     *        are not exported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

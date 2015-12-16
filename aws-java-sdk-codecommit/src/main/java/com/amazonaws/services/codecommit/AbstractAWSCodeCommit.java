@@ -15,6 +15,7 @@
 package com.amazonaws.services.codecommit;
 
 import com.amazonaws.services.codecommit.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSCodeCommit}. Convenient method forms

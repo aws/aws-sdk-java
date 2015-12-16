@@ -17,7 +17,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Information about the instance type that the Dedicated host supports.
+ * </p>
  */
 public class InstanceCapacity implements Serializable, Cloneable {
 

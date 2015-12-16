@@ -15,6 +15,7 @@
 package com.amazonaws.services.config;
 
 import com.amazonaws.services.config.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonConfig}. Convenient method forms pass

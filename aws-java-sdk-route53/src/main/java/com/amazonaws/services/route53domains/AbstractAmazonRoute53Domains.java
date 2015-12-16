@@ -15,6 +15,7 @@
 package com.amazonaws.services.route53domains;
 
 import com.amazonaws.services.route53domains.model.*;
+import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonRoute53Domains}. Convenient method

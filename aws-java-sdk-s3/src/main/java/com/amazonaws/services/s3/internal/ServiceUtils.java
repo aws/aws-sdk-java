@@ -81,20 +81,6 @@ public class ServiceUtils {
     }
 
     /**
-     * Returns true if the specified ETag was from a multipart upload.
-     *
-     * @param eTag
-     *            The ETag to test.
-     *
-     * @return True if the specified ETag was from a multipart upload, otherwise
-     *         false it if belongs to an object that was uploaded in a single
-     *         part.
-     */
-    public static boolean isMultipartUploadETag(String eTag) {
-        return eTag.contains("-");
-    }
-
-    /**
      * Safely converts a string to a byte array, first attempting to explicitly
      * use our preferred encoding (UTF-8), and then falling back to the
      * platform's default encoding if for some reason our preferred encoding
@@ -306,18 +292,10 @@ public class ServiceUtils {
             byte[] clientSideHash = null;
             byte[] serverSideHash = null;
             try {
-                // Multipart Uploads don't have an MD5 calculated on the service
-                // side
-                // Server Side encryption with AWS KMS enabled objects has MD5 of
-                // cipher text. So the MD5 validation needs to be skipped.
                 final ObjectMetadata metadata = s3Object.getObjectMetadata();
-                if (metadata != null) {
-                    final String etag = metadata.getETag();
-                    if (!ServiceUtils.isMultipartUploadETag(etag)
-                            && !skipMd5CheckStrategy.skipMd5CheckPerResponse(metadata)) {
-                        clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(dstfile));
-                        serverSideHash = BinaryUtils.fromHex(etag);
-                    }
+                if (!skipMd5CheckStrategy.skipClientSideValidationPerGetResponse(metadata)) {
+                    clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(dstfile));
+                    serverSideHash = BinaryUtils.fromHex(metadata.getETag());
                 }
             } catch (Exception e) {
                 log.warn("Unable to calculate MD5 hash to validate download: " + e.getMessage(), e);

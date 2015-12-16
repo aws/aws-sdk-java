@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest) DescribeReservedInstancesModifications operation}.
  * <p>
  * Describes the modifications made to your Reserved instances. If no
- * parameter is specified, information about all your Reserved Instances
+ * parameter is specified, information about all your Reserved instances
  * modification requests is returned. If a modification ID is specified,
  * only information about the specific modification is returned.
  * </p>

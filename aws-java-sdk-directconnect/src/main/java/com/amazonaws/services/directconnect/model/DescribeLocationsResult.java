@@ -18,14 +18,32 @@ package com.amazonaws.services.directconnect.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A location is a network facility where AWS Direct Connect routers are
+ * available to be connected. Generally, these are colocation hubs where many
+ * network providers have equipment, and where cross connects can be delivered.
+ * Locations include a name and facility code, and must be provided when
+ * creating a connection.
+ * </p>
  */
 public class DescribeLocationsResult implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of colocation hubs where network providers have equipment. Most
+     * regions have multiple locations available.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Location> locations;
 
     /**
-     * @return
+     * <p>
+     * A list of colocation hubs where network providers have equipment. Most
+     * regions have multiple locations available.
+     * </p>
+     * 
+     * @return A list of colocation hubs where network providers have equipment.
+     *         Most regions have multiple locations available.
      */
     public java.util.List<Location> getLocations() {
         if (locations == null) {
@@ -35,7 +53,14 @@ public class DescribeLocationsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of colocation hubs where network providers have equipment. Most
+     * regions have multiple locations available.
+     * </p>
+     * 
      * @param locations
+     *        A list of colocation hubs where network providers have equipment.
+     *        Most regions have multiple locations available.
      */
     public void setLocations(java.util.Collection<Location> locations) {
         if (locations == null) {
@@ -49,6 +74,10 @@ public class DescribeLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A list of colocation hubs where network providers have equipment. Most
+     * regions have multiple locations available.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLocations(java.util.Collection)} or
      * {@link #withLocations(java.util.Collection)} if you want to override the
@@ -56,6 +85,8 @@ public class DescribeLocationsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param locations
+     *        A list of colocation hubs where network providers have equipment.
+     *        Most regions have multiple locations available.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -71,7 +102,14 @@ public class DescribeLocationsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of colocation hubs where network providers have equipment. Most
+     * regions have multiple locations available.
+     * </p>
+     * 
      * @param locations
+     *        A list of colocation hubs where network providers have equipment.
+     *        Most regions have multiple locations available.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

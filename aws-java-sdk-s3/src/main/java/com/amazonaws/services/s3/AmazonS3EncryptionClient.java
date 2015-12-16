@@ -501,11 +501,10 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
         // Delete the object
         super.deleteObject(req);
         // If it exists, delete the instruction file.
-        InstructionFileId ifid =
-            new S3ObjectId(req.getBucketName(), req.getKey())
-            .instructionFileId();
-        DeleteObjectRequest instructionDeleteRequest =
-            new DeleteObjectRequest(ifid.getBucket(), ifid.getKey());
+        InstructionFileId ifid = new S3ObjectId(req.getBucketName(), req.getKey()).instructionFileId();
+
+        DeleteObjectRequest instructionDeleteRequest = (DeleteObjectRequest) req.clone();
+        instructionDeleteRequest.withBucketName(ifid.getBucket()).withKey(ifid.getKey());
         super.deleteObject(instructionDeleteRequest);
     }
 
