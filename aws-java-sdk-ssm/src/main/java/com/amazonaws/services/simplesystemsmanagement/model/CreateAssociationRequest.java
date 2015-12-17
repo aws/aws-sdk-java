@@ -32,11 +32,11 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
     private String name;
     /**
      * <p>
-     * The instance ID.
+     * The Windows Server instance ID.
      * </p>
      */
     private String instanceId;
-    /** The parameters for the document’s runtime configuration. */
+    /** The parameters for the documents runtime configuration. */
     private java.util.Map<String, java.util.List<String>> parameters;
 
     /**
@@ -79,11 +79,11 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The instance ID.
+     * The Windows Server instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The instance ID.
+     *        The Windows Server instance ID.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -91,10 +91,10 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The instance ID.
+     * The Windows Server instance ID.
      * </p>
      * 
-     * @return The instance ID.
+     * @return The Windows Server instance ID.
      */
     public String getInstanceId() {
         return this.instanceId;
@@ -102,11 +102,11 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The instance ID.
+     * The Windows Server instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The instance ID.
+     *        The Windows Server instance ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -116,19 +116,19 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * The parameters for the document’s runtime configuration.
+     * The parameters for the documents runtime configuration.
      * 
-     * @return The parameters for the document’s runtime configuration.
+     * @return The parameters for the documents runtime configuration.
      */
     public java.util.Map<String, java.util.List<String>> getParameters() {
         return parameters;
     }
 
     /**
-     * The parameters for the document’s runtime configuration.
+     * The parameters for the documents runtime configuration.
      * 
      * @param parameters
-     *        The parameters for the document’s runtime configuration.
+     *        The parameters for the documents runtime configuration.
      */
     public void setParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
@@ -136,10 +136,10 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * The parameters for the document’s runtime configuration.
+     * The parameters for the documents runtime configuration.
      * 
      * @param parameters
-     *        The parameters for the document’s runtime configuration.
+     *        The parameters for the documents runtime configuration.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

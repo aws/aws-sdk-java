@@ -26,18 +26,21 @@ public class DescribeEndpointResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address.
+     * The endpoint. The format of the endpoint is as follows:
+     * <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      * </p>
      */
     private String endpointAddress;
 
     /**
      * <p>
-     * The address.
+     * The endpoint. The format of the endpoint is as follows:
+     * <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      * </p>
      * 
      * @param endpointAddress
-     *        The address.
+     *        The endpoint. The format of the endpoint is as follows:
+     *        <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      */
     public void setEndpointAddress(String endpointAddress) {
         this.endpointAddress = endpointAddress;
@@ -45,10 +48,12 @@ public class DescribeEndpointResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address.
+     * The endpoint. The format of the endpoint is as follows:
+     * <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      * </p>
      * 
-     * @return The address.
+     * @return The endpoint. The format of the endpoint is as follows:
+     *         <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      */
     public String getEndpointAddress() {
         return this.endpointAddress;
@@ -56,11 +61,13 @@ public class DescribeEndpointResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address.
+     * The endpoint. The format of the endpoint is as follows:
+     * <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      * </p>
      * 
      * @param endpointAddress
-     *        The address.
+     *        The endpoint. The format of the endpoint is as follows:
+     *        <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

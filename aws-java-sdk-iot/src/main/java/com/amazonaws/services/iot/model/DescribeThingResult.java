@@ -41,8 +41,8 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * The attributes which are name/value pairs in JSON format. For example:
      * </p>
      * <p>
-     * {\"attributes\":{\"some-name1\":\"some-value1\”},
-     * {\"some-name2\":\"some-value2\”}, {\"some-name3\":\"some-value3\”}}
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}
      * </p>
      */
     private java.util.Map<String, String> attributes;
@@ -128,16 +128,16 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * The attributes which are name/value pairs in JSON format. For example:
      * </p>
      * <p>
-     * {\"attributes\":{\"some-name1\":\"some-value1\”},
-     * {\"some-name2\":\"some-value2\”}, {\"some-name3\":\"some-value3\”}}
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}
      * </p>
      * 
      * @return The attributes which are name/value pairs in JSON format. For
      *         example: </p>
      *         <p>
-     *         {\"attributes\":{\"some-name1\":\"some-value1\”},
-     *         {\"some-name2\":\"some-value2\”},
-     *         {\"some-name3\":\"some-value3\”}}
+     *         {\"attributes\":{\"some-name1\":\"some-value1\"},
+     *         {\"some-name2\":\"some-value2\"},
+     *         {\"some-name3\":\"some-value3\"}}
      */
     public java.util.Map<String, String> getAttributes() {
         return attributes;
@@ -148,17 +148,17 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * The attributes which are name/value pairs in JSON format. For example:
      * </p>
      * <p>
-     * {\"attributes\":{\"some-name1\":\"some-value1\”},
-     * {\"some-name2\":\"some-value2\”}, {\"some-name3\":\"some-value3\”}}
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}
      * </p>
      * 
      * @param attributes
      *        The attributes which are name/value pairs in JSON format. For
      *        example: </p>
      *        <p>
-     *        {\"attributes\":{\"some-name1\":\"some-value1\”},
-     *        {\"some-name2\":\"some-value2\”},
-     *        {\"some-name3\":\"some-value3\”}}
+     *        {\"attributes\":{\"some-name1\":\"some-value1\"},
+     *        {\"some-name2\":\"some-value2\"},
+     *        {\"some-name3\":\"some-value3\"}}
      */
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes;
@@ -169,17 +169,17 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * The attributes which are name/value pairs in JSON format. For example:
      * </p>
      * <p>
-     * {\"attributes\":{\"some-name1\":\"some-value1\”},
-     * {\"some-name2\":\"some-value2\”}, {\"some-name3\":\"some-value3\”}}
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}
      * </p>
      * 
      * @param attributes
      *        The attributes which are name/value pairs in JSON format. For
      *        example: </p>
      *        <p>
-     *        {\"attributes\":{\"some-name1\":\"some-value1\”},
-     *        {\"some-name2\":\"some-value2\”},
-     *        {\"some-name3\":\"some-value3\”}}
+     *        {\"attributes\":{\"some-name1\":\"some-value1\"},
+     *        {\"some-name2\":\"some-value2\"},
+     *        {\"some-name3\":\"some-value3\"}}
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

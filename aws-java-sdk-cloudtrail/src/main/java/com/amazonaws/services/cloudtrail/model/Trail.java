@@ -68,6 +68,19 @@ public class Trail implements Serializable, Cloneable {
     private Boolean includeGlobalServiceEvents;
     /**
      * <p>
+     * Specifies whether the trail belongs only to one region or exists in all
+     * regions.
+     * </p>
+     */
+    private Boolean isMultiRegionTrail;
+    /**
+     * <p>
+     * The region in which the trail was created.
+     * </p>
+     */
+    private String homeRegion;
+    /**
+     * <p>
      * The Amazon Resource Name of the trail. The <code>TrailARN</code> format
      * is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      * </p>
@@ -380,6 +393,101 @@ public class Trail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Specifies whether the trail belongs only to one region or exists in all
+     * regions.
+     * </p>
+     * 
+     * @param isMultiRegionTrail
+     *        Specifies whether the trail belongs only to one region or exists
+     *        in all regions.
+     */
+    public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
+        this.isMultiRegionTrail = isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail belongs only to one region or exists in all
+     * regions.
+     * </p>
+     * 
+     * @return Specifies whether the trail belongs only to one region or exists
+     *         in all regions.
+     */
+    public Boolean getIsMultiRegionTrail() {
+        return this.isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail belongs only to one region or exists in all
+     * regions.
+     * </p>
+     * 
+     * @param isMultiRegionTrail
+     *        Specifies whether the trail belongs only to one region or exists
+     *        in all regions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Trail withIsMultiRegionTrail(Boolean isMultiRegionTrail) {
+        setIsMultiRegionTrail(isMultiRegionTrail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail belongs only to one region or exists in all
+     * regions.
+     * </p>
+     * 
+     * @return Specifies whether the trail belongs only to one region or exists
+     *         in all regions.
+     */
+    public Boolean isMultiRegionTrail() {
+        return this.isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
+     * The region in which the trail was created.
+     * </p>
+     * 
+     * @param homeRegion
+     *        The region in which the trail was created.
+     */
+    public void setHomeRegion(String homeRegion) {
+        this.homeRegion = homeRegion;
+    }
+
+    /**
+     * <p>
+     * The region in which the trail was created.
+     * </p>
+     * 
+     * @return The region in which the trail was created.
+     */
+    public String getHomeRegion() {
+        return this.homeRegion;
+    }
+
+    /**
+     * <p>
+     * The region in which the trail was created.
+     * </p>
+     * 
+     * @param homeRegion
+     *        The region in which the trail was created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Trail withHomeRegion(String homeRegion) {
+        setHomeRegion(homeRegion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name of the trail. The <code>TrailARN</code> format
      * is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      * </p>
@@ -644,6 +752,10 @@ public class Trail implements Serializable, Cloneable {
         if (getIncludeGlobalServiceEvents() != null)
             sb.append("IncludeGlobalServiceEvents: "
                     + getIncludeGlobalServiceEvents() + ",");
+        if (getIsMultiRegionTrail() != null)
+            sb.append("IsMultiRegionTrail: " + getIsMultiRegionTrail() + ",");
+        if (getHomeRegion() != null)
+            sb.append("HomeRegion: " + getHomeRegion() + ",");
         if (getTrailARN() != null)
             sb.append("TrailARN: " + getTrailARN() + ",");
         if (getLogFileValidationEnabled() != null)
@@ -697,6 +809,18 @@ public class Trail implements Serializable, Cloneable {
         if (other.getIncludeGlobalServiceEvents() != null
                 && other.getIncludeGlobalServiceEvents().equals(
                         this.getIncludeGlobalServiceEvents()) == false)
+            return false;
+        if (other.getIsMultiRegionTrail() == null
+                ^ this.getIsMultiRegionTrail() == null)
+            return false;
+        if (other.getIsMultiRegionTrail() != null
+                && other.getIsMultiRegionTrail().equals(
+                        this.getIsMultiRegionTrail()) == false)
+            return false;
+        if (other.getHomeRegion() == null ^ this.getHomeRegion() == null)
+            return false;
+        if (other.getHomeRegion() != null
+                && other.getHomeRegion().equals(this.getHomeRegion()) == false)
             return false;
         if (other.getTrailARN() == null ^ this.getTrailARN() == null)
             return false;
@@ -754,6 +878,12 @@ public class Trail implements Serializable, Cloneable {
                 * hashCode
                 + ((getIncludeGlobalServiceEvents() == null) ? 0
                         : getIncludeGlobalServiceEvents().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIsMultiRegionTrail() == null) ? 0
+                        : getIsMultiRegionTrail().hashCode());
+        hashCode = prime * hashCode
+                + ((getHomeRegion() == null) ? 0 : getHomeRegion().hashCode());
         hashCode = prime * hashCode
                 + ((getTrailARN() == null) ? 0 : getTrailARN().hashCode());
         hashCode = prime

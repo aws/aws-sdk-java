@@ -444,6 +444,28 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     private Boolean copyTagsToSnapshot;
 
     /**
+     * The interval, in seconds, between points when Enhanced Monitoring
+     * metrics are collected for the DB instance. To disable collecting
+     * Enhanced Monitoring metrics, specify 0. The default is 60. <p>If
+     * <code>MonitoringRoleArn</code> is specified, then you must also set
+     * <code>MonitoringInterval</code> to a value other than 0. <p>Valid
+     * Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+     */
+    private Integer monitoringInterval;
+
+    /**
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring
+     * metrics to CloudWatch Logs. For example,
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information
+     * on creating a monitoring role, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a>. <p>If
+     * <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value.
+     */
+    private String monitoringRoleArn;
+
+    /**
      * Default constructor for a new CreateDBInstanceRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -3317,6 +3339,144 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * The interval, in seconds, between points when Enhanced Monitoring
+     * metrics are collected for the DB instance. To disable collecting
+     * Enhanced Monitoring metrics, specify 0. The default is 60. <p>If
+     * <code>MonitoringRoleArn</code> is specified, then you must also set
+     * <code>MonitoringInterval</code> to a value other than 0. <p>Valid
+     * Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+     *
+     * @return The interval, in seconds, between points when Enhanced Monitoring
+     *         metrics are collected for the DB instance. To disable collecting
+     *         Enhanced Monitoring metrics, specify 0. The default is 60. <p>If
+     *         <code>MonitoringRoleArn</code> is specified, then you must also set
+     *         <code>MonitoringInterval</code> to a value other than 0. <p>Valid
+     *         Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+     */
+    public Integer getMonitoringInterval() {
+        return monitoringInterval;
+    }
+    
+    /**
+     * The interval, in seconds, between points when Enhanced Monitoring
+     * metrics are collected for the DB instance. To disable collecting
+     * Enhanced Monitoring metrics, specify 0. The default is 60. <p>If
+     * <code>MonitoringRoleArn</code> is specified, then you must also set
+     * <code>MonitoringInterval</code> to a value other than 0. <p>Valid
+     * Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+     *
+     * @param monitoringInterval The interval, in seconds, between points when Enhanced Monitoring
+     *         metrics are collected for the DB instance. To disable collecting
+     *         Enhanced Monitoring metrics, specify 0. The default is 60. <p>If
+     *         <code>MonitoringRoleArn</code> is specified, then you must also set
+     *         <code>MonitoringInterval</code> to a value other than 0. <p>Valid
+     *         Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+     */
+    public void setMonitoringInterval(Integer monitoringInterval) {
+        this.monitoringInterval = monitoringInterval;
+    }
+    
+    /**
+     * The interval, in seconds, between points when Enhanced Monitoring
+     * metrics are collected for the DB instance. To disable collecting
+     * Enhanced Monitoring metrics, specify 0. The default is 60. <p>If
+     * <code>MonitoringRoleArn</code> is specified, then you must also set
+     * <code>MonitoringInterval</code> to a value other than 0. <p>Valid
+     * Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param monitoringInterval The interval, in seconds, between points when Enhanced Monitoring
+     *         metrics are collected for the DB instance. To disable collecting
+     *         Enhanced Monitoring metrics, specify 0. The default is 60. <p>If
+     *         <code>MonitoringRoleArn</code> is specified, then you must also set
+     *         <code>MonitoringInterval</code> to a value other than 0. <p>Valid
+     *         Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceRequest withMonitoringInterval(Integer monitoringInterval) {
+        this.monitoringInterval = monitoringInterval;
+        return this;
+    }
+
+    /**
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring
+     * metrics to CloudWatch Logs. For example,
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information
+     * on creating a monitoring role, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a>. <p>If
+     * <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value.
+     *
+     * @return The ARN for the IAM role that permits RDS to send enhanced monitoring
+     *         metrics to CloudWatch Logs. For example,
+     *         <code>arn:aws:iam:123456789012:role/emaccess</code>. For information
+     *         on creating a monitoring role, go to <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     *         create an IAM role for Amazon RDS Enhanced Monitoring</a>. <p>If
+     *         <code>MonitoringInterval</code> is set to a value other than 0, then
+     *         you must supply a <code>MonitoringRoleArn</code> value.
+     */
+    public String getMonitoringRoleArn() {
+        return monitoringRoleArn;
+    }
+    
+    /**
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring
+     * metrics to CloudWatch Logs. For example,
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information
+     * on creating a monitoring role, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a>. <p>If
+     * <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value.
+     *
+     * @param monitoringRoleArn The ARN for the IAM role that permits RDS to send enhanced monitoring
+     *         metrics to CloudWatch Logs. For example,
+     *         <code>arn:aws:iam:123456789012:role/emaccess</code>. For information
+     *         on creating a monitoring role, go to <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     *         create an IAM role for Amazon RDS Enhanced Monitoring</a>. <p>If
+     *         <code>MonitoringInterval</code> is set to a value other than 0, then
+     *         you must supply a <code>MonitoringRoleArn</code> value.
+     */
+    public void setMonitoringRoleArn(String monitoringRoleArn) {
+        this.monitoringRoleArn = monitoringRoleArn;
+    }
+    
+    /**
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring
+     * metrics to CloudWatch Logs. For example,
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information
+     * on creating a monitoring role, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a>. <p>If
+     * <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param monitoringRoleArn The ARN for the IAM role that permits RDS to send enhanced monitoring
+     *         metrics to CloudWatch Logs. For example,
+     *         <code>arn:aws:iam:123456789012:role/emaccess</code>. For information
+     *         on creating a monitoring role, go to <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     *         create an IAM role for Amazon RDS Enhanced Monitoring</a>. <p>If
+     *         <code>MonitoringInterval</code> is set to a value other than 0, then
+     *         you must supply a <code>MonitoringRoleArn</code> value.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceRequest withMonitoringRoleArn(String monitoringRoleArn) {
+        this.monitoringRoleArn = monitoringRoleArn;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -3359,7 +3519,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() + ",");
         if (isStorageEncrypted() != null) sb.append("StorageEncrypted: " + isStorageEncrypted() + ",");
         if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
-        if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() );
+        if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() + ",");
+        if (getMonitoringInterval() != null) sb.append("MonitoringInterval: " + getMonitoringInterval() + ",");
+        if (getMonitoringRoleArn() != null) sb.append("MonitoringRoleArn: " + getMonitoringRoleArn() );
         sb.append("}");
         return sb.toString();
     }
@@ -3401,6 +3563,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((isStorageEncrypted() == null) ? 0 : isStorageEncrypted().hashCode()); 
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         hashCode = prime * hashCode + ((isCopyTagsToSnapshot() == null) ? 0 : isCopyTagsToSnapshot().hashCode()); 
+        hashCode = prime * hashCode + ((getMonitoringInterval() == null) ? 0 : getMonitoringInterval().hashCode()); 
+        hashCode = prime * hashCode + ((getMonitoringRoleArn() == null) ? 0 : getMonitoringRoleArn().hashCode()); 
         return hashCode;
     }
     
@@ -3476,6 +3640,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         if (other.isCopyTagsToSnapshot() == null ^ this.isCopyTagsToSnapshot() == null) return false;
         if (other.isCopyTagsToSnapshot() != null && other.isCopyTagsToSnapshot().equals(this.isCopyTagsToSnapshot()) == false) return false; 
+        if (other.getMonitoringInterval() == null ^ this.getMonitoringInterval() == null) return false;
+        if (other.getMonitoringInterval() != null && other.getMonitoringInterval().equals(this.getMonitoringInterval()) == false) return false; 
+        if (other.getMonitoringRoleArn() == null ^ this.getMonitoringRoleArn() == null) return false;
+        if (other.getMonitoringRoleArn() != null && other.getMonitoringRoleArn().equals(this.getMonitoringRoleArn()) == false) return false; 
         return true;
     }
     

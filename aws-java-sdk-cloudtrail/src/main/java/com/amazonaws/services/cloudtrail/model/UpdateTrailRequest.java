@@ -82,6 +82,18 @@ public class UpdateTrailRequest extends AmazonWebServiceRequest implements
     private Boolean includeGlobalServiceEvents;
     /**
      * <p>
+     * Specifies whether the trail applies only to the current region or to all
+     * regions. The default is false. If the trail exists only in the current
+     * region and this value is set to true, shadow trails (replications of the
+     * trail) will be created in the other regions. If the trail exists in all
+     * regions and this value is set to false, the trail will remain in the
+     * region where it was created, and its shadow trails in other regions will
+     * be deleted.
+     * </p>
+     */
+    private Boolean isMultiRegionTrail;
+    /**
+     * <p>
      * Specifies whether log file validation is enabled. The default is false.
      * </p>
      * <note>When you disable log file integrity validation, the chain of digest
@@ -489,6 +501,103 @@ public class UpdateTrailRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
+     * Specifies whether the trail applies only to the current region or to all
+     * regions. The default is false. If the trail exists only in the current
+     * region and this value is set to true, shadow trails (replications of the
+     * trail) will be created in the other regions. If the trail exists in all
+     * regions and this value is set to false, the trail will remain in the
+     * region where it was created, and its shadow trails in other regions will
+     * be deleted.
+     * </p>
+     * 
+     * @param isMultiRegionTrail
+     *        Specifies whether the trail applies only to the current region or
+     *        to all regions. The default is false. If the trail exists only in
+     *        the current region and this value is set to true, shadow trails
+     *        (replications of the trail) will be created in the other regions.
+     *        If the trail exists in all regions and this value is set to false,
+     *        the trail will remain in the region where it was created, and its
+     *        shadow trails in other regions will be deleted.
+     */
+    public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
+        this.isMultiRegionTrail = isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail applies only to the current region or to all
+     * regions. The default is false. If the trail exists only in the current
+     * region and this value is set to true, shadow trails (replications of the
+     * trail) will be created in the other regions. If the trail exists in all
+     * regions and this value is set to false, the trail will remain in the
+     * region where it was created, and its shadow trails in other regions will
+     * be deleted.
+     * </p>
+     * 
+     * @return Specifies whether the trail applies only to the current region or
+     *         to all regions. The default is false. If the trail exists only in
+     *         the current region and this value is set to true, shadow trails
+     *         (replications of the trail) will be created in the other regions.
+     *         If the trail exists in all regions and this value is set to
+     *         false, the trail will remain in the region where it was created,
+     *         and its shadow trails in other regions will be deleted.
+     */
+    public Boolean getIsMultiRegionTrail() {
+        return this.isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail applies only to the current region or to all
+     * regions. The default is false. If the trail exists only in the current
+     * region and this value is set to true, shadow trails (replications of the
+     * trail) will be created in the other regions. If the trail exists in all
+     * regions and this value is set to false, the trail will remain in the
+     * region where it was created, and its shadow trails in other regions will
+     * be deleted.
+     * </p>
+     * 
+     * @param isMultiRegionTrail
+     *        Specifies whether the trail applies only to the current region or
+     *        to all regions. The default is false. If the trail exists only in
+     *        the current region and this value is set to true, shadow trails
+     *        (replications of the trail) will be created in the other regions.
+     *        If the trail exists in all regions and this value is set to false,
+     *        the trail will remain in the region where it was created, and its
+     *        shadow trails in other regions will be deleted.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateTrailRequest withIsMultiRegionTrail(Boolean isMultiRegionTrail) {
+        setIsMultiRegionTrail(isMultiRegionTrail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail applies only to the current region or to all
+     * regions. The default is false. If the trail exists only in the current
+     * region and this value is set to true, shadow trails (replications of the
+     * trail) will be created in the other regions. If the trail exists in all
+     * regions and this value is set to false, the trail will remain in the
+     * region where it was created, and its shadow trails in other regions will
+     * be deleted.
+     * </p>
+     * 
+     * @return Specifies whether the trail applies only to the current region or
+     *         to all regions. The default is false. If the trail exists only in
+     *         the current region and this value is set to true, shadow trails
+     *         (replications of the trail) will be created in the other regions.
+     *         If the trail exists in all regions and this value is set to
+     *         false, the trail will remain in the region where it was created,
+     *         and its shadow trails in other regions will be deleted.
+     */
+    public Boolean isMultiRegionTrail() {
+        return this.isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
      * Specifies whether log file validation is enabled. The default is false.
      * </p>
      * <note>When you disable log file integrity validation, the chain of digest
@@ -851,6 +960,8 @@ public class UpdateTrailRequest extends AmazonWebServiceRequest implements
         if (getIncludeGlobalServiceEvents() != null)
             sb.append("IncludeGlobalServiceEvents: "
                     + getIncludeGlobalServiceEvents() + ",");
+        if (getIsMultiRegionTrail() != null)
+            sb.append("IsMultiRegionTrail: " + getIsMultiRegionTrail() + ",");
         if (getEnableLogFileValidation() != null)
             sb.append("EnableLogFileValidation: "
                     + getEnableLogFileValidation() + ",");
@@ -903,6 +1014,13 @@ public class UpdateTrailRequest extends AmazonWebServiceRequest implements
                 && other.getIncludeGlobalServiceEvents().equals(
                         this.getIncludeGlobalServiceEvents()) == false)
             return false;
+        if (other.getIsMultiRegionTrail() == null
+                ^ this.getIsMultiRegionTrail() == null)
+            return false;
+        if (other.getIsMultiRegionTrail() != null
+                && other.getIsMultiRegionTrail().equals(
+                        this.getIsMultiRegionTrail()) == false)
+            return false;
         if (other.getEnableLogFileValidation() == null
                 ^ this.getEnableLogFileValidation() == null)
             return false;
@@ -954,6 +1072,10 @@ public class UpdateTrailRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getIncludeGlobalServiceEvents() == null) ? 0
                         : getIncludeGlobalServiceEvents().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIsMultiRegionTrail() == null) ? 0
+                        : getIsMultiRegionTrail().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getEnableLogFileValidation() == null) ? 0

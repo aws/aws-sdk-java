@@ -38,7 +38,7 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      * pairs.
      * </p>
      * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\”}}
+     * For example: {\"attributes\":{\"string1\":\"string2\"}}
      * </p>
      */
     private AttributePayload attributePayload;
@@ -87,14 +87,14 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      * pairs.
      * </p>
      * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\”}}
+     * For example: {\"attributes\":{\"string1\":\"string2\"}}
      * </p>
      * 
      * @param attributePayload
      *        The attribute payload, a JSON string containing up to three
      *        key-value pairs.</p>
      *        <p>
-     *        For example: {\"attributes\":{\"string1\":\"string2\”}}
+     *        For example: {\"attributes\":{\"string1\":\"string2\"}}
      */
     public void setAttributePayload(AttributePayload attributePayload) {
         this.attributePayload = attributePayload;
@@ -106,13 +106,13 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      * pairs.
      * </p>
      * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\”}}
+     * For example: {\"attributes\":{\"string1\":\"string2\"}}
      * </p>
      * 
      * @return The attribute payload, a JSON string containing up to three
      *         key-value pairs.</p>
      *         <p>
-     *         For example: {\"attributes\":{\"string1\":\"string2\”}}
+     *         For example: {\"attributes\":{\"string1\":\"string2\"}}
      */
     public AttributePayload getAttributePayload() {
         return this.attributePayload;
@@ -124,14 +124,14 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      * pairs.
      * </p>
      * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\”}}
+     * For example: {\"attributes\":{\"string1\":\"string2\"}}
      * </p>
      * 
      * @param attributePayload
      *        The attribute payload, a JSON string containing up to three
      *        key-value pairs.</p>
      *        <p>
-     *        For example: {\"attributes\":{\"string1\":\"string2\”}}
+     *        For example: {\"attributes\":{\"string1\":\"string2\"}}
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -27,8 +27,8 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteRequestMarshaller;
  * </p>
  * <p>
  * You must specify one of the following targets: Internet gateway or
- * virtual private gateway, NAT instance, VPC peering connection, or
- * network interface.
+ * virtual private gateway, NAT instance, NAT gateway, VPC peering
+ * connection, or network interface.
  * </p>
  * <p>
  * When determining how to route traffic, we use the route with the most
@@ -97,6 +97,11 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
      * The ID of a VPC peering connection.
      */
     private String vpcPeeringConnectionId;
+
+    /**
+     * The ID of a NAT gateway.
+     */
+    private String natGatewayId;
 
     /**
      * The ID of the route table for the route.
@@ -321,6 +326,39 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * The ID of a NAT gateway.
+     *
+     * @return The ID of a NAT gateway.
+     */
+    public String getNatGatewayId() {
+        return natGatewayId;
+    }
+    
+    /**
+     * The ID of a NAT gateway.
+     *
+     * @param natGatewayId The ID of a NAT gateway.
+     */
+    public void setNatGatewayId(String natGatewayId) {
+        this.natGatewayId = natGatewayId;
+    }
+    
+    /**
+     * The ID of a NAT gateway.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param natGatewayId The ID of a NAT gateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateRouteRequest withNatGatewayId(String natGatewayId) {
+        this.natGatewayId = natGatewayId;
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to
      * enable operation dry-run.
@@ -349,7 +387,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ",");
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
-        if (getVpcPeeringConnectionId() != null) sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() );
+        if (getVpcPeeringConnectionId() != null) sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() + ",");
+        if (getNatGatewayId() != null) sb.append("NatGatewayId: " + getNatGatewayId() );
         sb.append("}");
         return sb.toString();
     }
@@ -365,6 +404,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode()); 
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode()); 
+        hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode()); 
         return hashCode;
     }
     
@@ -388,6 +428,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false) return false; 
         if (other.getVpcPeeringConnectionId() == null ^ this.getVpcPeeringConnectionId() == null) return false;
         if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false) return false; 
+        if (other.getNatGatewayId() == null ^ this.getNatGatewayId() == null) return false;
+        if (other.getNatGatewayId() != null && other.getNatGatewayId().equals(this.getNatGatewayId()) == false) return false; 
         return true;
     }
     

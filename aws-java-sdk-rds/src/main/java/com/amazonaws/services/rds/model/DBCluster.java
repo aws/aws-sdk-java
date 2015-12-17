@@ -170,7 +170,7 @@ public class DBCluster implements Serializable, Cloneable {
     private String hostedZoneId;
 
     /**
-     * Specifies whetehr the DB cluster is encrypted.
+     * Specifies whether the DB cluster is encrypted.
      */
     private Boolean storageEncrypted;
 
@@ -1213,29 +1213,29 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whetehr the DB cluster is encrypted.
+     * Specifies whether the DB cluster is encrypted.
      *
-     * @return Specifies whetehr the DB cluster is encrypted.
+     * @return Specifies whether the DB cluster is encrypted.
      */
     public Boolean isStorageEncrypted() {
         return storageEncrypted;
     }
     
     /**
-     * Specifies whetehr the DB cluster is encrypted.
+     * Specifies whether the DB cluster is encrypted.
      *
-     * @param storageEncrypted Specifies whetehr the DB cluster is encrypted.
+     * @param storageEncrypted Specifies whether the DB cluster is encrypted.
      */
     public void setStorageEncrypted(Boolean storageEncrypted) {
         this.storageEncrypted = storageEncrypted;
     }
     
     /**
-     * Specifies whetehr the DB cluster is encrypted.
+     * Specifies whether the DB cluster is encrypted.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storageEncrypted Specifies whetehr the DB cluster is encrypted.
+     * @param storageEncrypted Specifies whether the DB cluster is encrypted.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1246,9 +1246,9 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whetehr the DB cluster is encrypted.
+     * Specifies whether the DB cluster is encrypted.
      *
-     * @return Specifies whetehr the DB cluster is encrypted.
+     * @return Specifies whether the DB cluster is encrypted.
      */
     public Boolean getStorageEncrypted() {
         return storageEncrypted;

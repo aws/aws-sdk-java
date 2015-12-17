@@ -64,6 +64,20 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
     private java.util.Date lastFailedInvocationTime;
     /**
      * <p>
+     * The time that AWS Config last successfully evaluated your AWS resources
+     * against the rule.
+     * </p>
+     */
+    private java.util.Date lastSuccessfulEvaluationTime;
+    /**
+     * <p>
+     * The time that AWS Config last failed to evaluate your AWS resources
+     * against the rule.
+     * </p>
+     */
+    private java.util.Date lastFailedEvaluationTime;
+    /**
+     * <p>
      * The time that you first activated the AWS Config rule.
      * </p>
      */
@@ -80,6 +94,19 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * </p>
      */
     private String lastErrorMessage;
+    /**
+     * <p>
+     * Indicates whether AWS Config has evaluated your resources against the
+     * rule at least once.
+     * </p>
+     * <ul>
+     * <li> <code>true</code> - AWS Config has evaluated your AWS resources
+     * against the rule at least once.</li>
+     * <li> <code>false</code> - AWS Config has not once finished evaluating your
+     * AWS resources against the rule.</li>
+     * </ul>
+     */
+    private Boolean firstEvaluationStarted;
 
     /**
      * <p>
@@ -289,6 +316,98 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The time that AWS Config last successfully evaluated your AWS resources
+     * against the rule.
+     * </p>
+     * 
+     * @param lastSuccessfulEvaluationTime
+     *        The time that AWS Config last successfully evaluated your AWS
+     *        resources against the rule.
+     */
+    public void setLastSuccessfulEvaluationTime(
+            java.util.Date lastSuccessfulEvaluationTime) {
+        this.lastSuccessfulEvaluationTime = lastSuccessfulEvaluationTime;
+    }
+
+    /**
+     * <p>
+     * The time that AWS Config last successfully evaluated your AWS resources
+     * against the rule.
+     * </p>
+     * 
+     * @return The time that AWS Config last successfully evaluated your AWS
+     *         resources against the rule.
+     */
+    public java.util.Date getLastSuccessfulEvaluationTime() {
+        return this.lastSuccessfulEvaluationTime;
+    }
+
+    /**
+     * <p>
+     * The time that AWS Config last successfully evaluated your AWS resources
+     * against the rule.
+     * </p>
+     * 
+     * @param lastSuccessfulEvaluationTime
+     *        The time that AWS Config last successfully evaluated your AWS
+     *        resources against the rule.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ConfigRuleEvaluationStatus withLastSuccessfulEvaluationTime(
+            java.util.Date lastSuccessfulEvaluationTime) {
+        setLastSuccessfulEvaluationTime(lastSuccessfulEvaluationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time that AWS Config last failed to evaluate your AWS resources
+     * against the rule.
+     * </p>
+     * 
+     * @param lastFailedEvaluationTime
+     *        The time that AWS Config last failed to evaluate your AWS
+     *        resources against the rule.
+     */
+    public void setLastFailedEvaluationTime(
+            java.util.Date lastFailedEvaluationTime) {
+        this.lastFailedEvaluationTime = lastFailedEvaluationTime;
+    }
+
+    /**
+     * <p>
+     * The time that AWS Config last failed to evaluate your AWS resources
+     * against the rule.
+     * </p>
+     * 
+     * @return The time that AWS Config last failed to evaluate your AWS
+     *         resources against the rule.
+     */
+    public java.util.Date getLastFailedEvaluationTime() {
+        return this.lastFailedEvaluationTime;
+    }
+
+    /**
+     * <p>
+     * The time that AWS Config last failed to evaluate your AWS resources
+     * against the rule.
+     * </p>
+     * 
+     * @param lastFailedEvaluationTime
+     *        The time that AWS Config last failed to evaluate your AWS
+     *        resources against the rule.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ConfigRuleEvaluationStatus withLastFailedEvaluationTime(
+            java.util.Date lastFailedEvaluationTime) {
+        setLastFailedEvaluationTime(lastFailedEvaluationTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time that you first activated the AWS Config rule.
      * </p>
      * 
@@ -408,6 +527,108 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether AWS Config has evaluated your resources against the
+     * rule at least once.
+     * </p>
+     * <ul>
+     * <li> <code>true</code> - AWS Config has evaluated your AWS resources
+     * against the rule at least once.</li>
+     * <li> <code>false</code> - AWS Config has not once finished evaluating your
+     * AWS resources against the rule.</li>
+     * </ul>
+     * 
+     * @param firstEvaluationStarted
+     *        Indicates whether AWS Config has evaluated your resources against
+     *        the rule at least once.</p>
+     *        <ul>
+     *        <li> <code>true</code> - AWS Config has evaluated your AWS
+     *        resources against the rule at least once.</li>
+     *        <li> <code>false</code> - AWS Config has not once finished
+     *        evaluating your AWS resources against the rule.</li>
+     */
+    public void setFirstEvaluationStarted(Boolean firstEvaluationStarted) {
+        this.firstEvaluationStarted = firstEvaluationStarted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether AWS Config has evaluated your resources against the
+     * rule at least once.
+     * </p>
+     * <ul>
+     * <li> <code>true</code> - AWS Config has evaluated your AWS resources
+     * against the rule at least once.</li>
+     * <li> <code>false</code> - AWS Config has not once finished evaluating your
+     * AWS resources against the rule.</li>
+     * </ul>
+     * 
+     * @return Indicates whether AWS Config has evaluated your resources against
+     *         the rule at least once.</p>
+     *         <ul>
+     *         <li> <code>true</code> - AWS Config has evaluated your AWS
+     *         resources against the rule at least once.</li>
+     *         <li> <code>false</code> - AWS Config has not once finished
+     *         evaluating your AWS resources against the rule.</li>
+     */
+    public Boolean getFirstEvaluationStarted() {
+        return this.firstEvaluationStarted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether AWS Config has evaluated your resources against the
+     * rule at least once.
+     * </p>
+     * <ul>
+     * <li> <code>true</code> - AWS Config has evaluated your AWS resources
+     * against the rule at least once.</li>
+     * <li> <code>false</code> - AWS Config has not once finished evaluating your
+     * AWS resources against the rule.</li>
+     * </ul>
+     * 
+     * @param firstEvaluationStarted
+     *        Indicates whether AWS Config has evaluated your resources against
+     *        the rule at least once.</p>
+     *        <ul>
+     *        <li> <code>true</code> - AWS Config has evaluated your AWS
+     *        resources against the rule at least once.</li>
+     *        <li> <code>false</code> - AWS Config has not once finished
+     *        evaluating your AWS resources against the rule.</li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ConfigRuleEvaluationStatus withFirstEvaluationStarted(
+            Boolean firstEvaluationStarted) {
+        setFirstEvaluationStarted(firstEvaluationStarted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether AWS Config has evaluated your resources against the
+     * rule at least once.
+     * </p>
+     * <ul>
+     * <li> <code>true</code> - AWS Config has evaluated your AWS resources
+     * against the rule at least once.</li>
+     * <li> <code>false</code> - AWS Config has not once finished evaluating your
+     * AWS resources against the rule.</li>
+     * </ul>
+     * 
+     * @return Indicates whether AWS Config has evaluated your resources against
+     *         the rule at least once.</p>
+     *         <ul>
+     *         <li> <code>true</code> - AWS Config has evaluated your AWS
+     *         resources against the rule at least once.</li>
+     *         <li> <code>false</code> - AWS Config has not once finished
+     *         evaluating your AWS resources against the rule.</li>
+     */
+    public Boolean isFirstEvaluationStarted() {
+        return this.firstEvaluationStarted;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -431,12 +652,20 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
         if (getLastFailedInvocationTime() != null)
             sb.append("LastFailedInvocationTime: "
                     + getLastFailedInvocationTime() + ",");
+        if (getLastSuccessfulEvaluationTime() != null)
+            sb.append("LastSuccessfulEvaluationTime: "
+                    + getLastSuccessfulEvaluationTime() + ",");
+        if (getLastFailedEvaluationTime() != null)
+            sb.append("LastFailedEvaluationTime: "
+                    + getLastFailedEvaluationTime() + ",");
         if (getFirstActivatedTime() != null)
             sb.append("FirstActivatedTime: " + getFirstActivatedTime() + ",");
         if (getLastErrorCode() != null)
             sb.append("LastErrorCode: " + getLastErrorCode() + ",");
         if (getLastErrorMessage() != null)
-            sb.append("LastErrorMessage: " + getLastErrorMessage());
+            sb.append("LastErrorMessage: " + getLastErrorMessage() + ",");
+        if (getFirstEvaluationStarted() != null)
+            sb.append("FirstEvaluationStarted: " + getFirstEvaluationStarted());
         sb.append("}");
         return sb.toString();
     }
@@ -481,6 +710,20 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
                 && other.getLastFailedInvocationTime().equals(
                         this.getLastFailedInvocationTime()) == false)
             return false;
+        if (other.getLastSuccessfulEvaluationTime() == null
+                ^ this.getLastSuccessfulEvaluationTime() == null)
+            return false;
+        if (other.getLastSuccessfulEvaluationTime() != null
+                && other.getLastSuccessfulEvaluationTime().equals(
+                        this.getLastSuccessfulEvaluationTime()) == false)
+            return false;
+        if (other.getLastFailedEvaluationTime() == null
+                ^ this.getLastFailedEvaluationTime() == null)
+            return false;
+        if (other.getLastFailedEvaluationTime() != null
+                && other.getLastFailedEvaluationTime().equals(
+                        this.getLastFailedEvaluationTime()) == false)
+            return false;
         if (other.getFirstActivatedTime() == null
                 ^ this.getFirstActivatedTime() == null)
             return false;
@@ -499,6 +742,13 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
         if (other.getLastErrorMessage() != null
                 && other.getLastErrorMessage().equals(
                         this.getLastErrorMessage()) == false)
+            return false;
+        if (other.getFirstEvaluationStarted() == null
+                ^ this.getFirstEvaluationStarted() == null)
+            return false;
+        if (other.getFirstEvaluationStarted() != null
+                && other.getFirstEvaluationStarted().equals(
+                        this.getFirstEvaluationStarted()) == false)
             return false;
         return true;
     }
@@ -530,6 +780,14 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
                         : getLastFailedInvocationTime().hashCode());
         hashCode = prime
                 * hashCode
+                + ((getLastSuccessfulEvaluationTime() == null) ? 0
+                        : getLastSuccessfulEvaluationTime().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLastFailedEvaluationTime() == null) ? 0
+                        : getLastFailedEvaluationTime().hashCode());
+        hashCode = prime
+                * hashCode
                 + ((getFirstActivatedTime() == null) ? 0
                         : getFirstActivatedTime().hashCode());
         hashCode = prime
@@ -540,6 +798,10 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
                 * hashCode
                 + ((getLastErrorMessage() == null) ? 0 : getLastErrorMessage()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getFirstEvaluationStarted() == null) ? 0
+                        : getFirstEvaluationStarted().hashCode());
         return hashCode;
     }
 

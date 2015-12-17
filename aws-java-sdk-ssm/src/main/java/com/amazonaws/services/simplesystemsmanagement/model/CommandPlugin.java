@@ -23,10 +23,9 @@ import java.io.Serializable;
 public class CommandPlugin implements Serializable, Cloneable {
 
     /**
-     * The name of the plugin. Must be one of the following:
-     * AWS-JoinDirectoryServiceDomain, AWS-InstallApplication,
-     * AWS-RunPowerShellScript, AWS-InstallPowerShellModule,
-     * AWS-ConfigureCloudWatch.
+     * The name of the plugin. Must be one of the following: aws:updateAgent,
+     * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
+     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
      */
     private String name;
     /**
@@ -58,47 +57,44 @@ public class CommandPlugin implements Serializable, Cloneable {
     private String outputS3KeyPrefix;
 
     /**
-     * The name of the plugin. Must be one of the following:
-     * AWS-JoinDirectoryServiceDomain, AWS-InstallApplication,
-     * AWS-RunPowerShellScript, AWS-InstallPowerShellModule,
-     * AWS-ConfigureCloudWatch.
+     * The name of the plugin. Must be one of the following: aws:updateAgent,
+     * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
+     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
      * 
      * @param name
      *        The name of the plugin. Must be one of the following:
-     *        AWS-JoinDirectoryServiceDomain, AWS-InstallApplication,
-     *        AWS-RunPowerShellScript, AWS-InstallPowerShellModule,
-     *        AWS-ConfigureCloudWatch.
+     *        aws:updateAgent, aws:domainjoin, aws:applications,
+     *        aws:runPowerShellScript, aws:psmodule, aws:cloudWatch,
+     *        aws:runShellScript, or aws:updateSSMAgent.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * The name of the plugin. Must be one of the following:
-     * AWS-JoinDirectoryServiceDomain, AWS-InstallApplication,
-     * AWS-RunPowerShellScript, AWS-InstallPowerShellModule,
-     * AWS-ConfigureCloudWatch.
+     * The name of the plugin. Must be one of the following: aws:updateAgent,
+     * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
+     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
      * 
      * @return The name of the plugin. Must be one of the following:
-     *         AWS-JoinDirectoryServiceDomain, AWS-InstallApplication,
-     *         AWS-RunPowerShellScript, AWS-InstallPowerShellModule,
-     *         AWS-ConfigureCloudWatch.
+     *         aws:updateAgent, aws:domainjoin, aws:applications,
+     *         aws:runPowerShellScript, aws:psmodule, aws:cloudWatch,
+     *         aws:runShellScript, or aws:updateSSMAgent.
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * The name of the plugin. Must be one of the following:
-     * AWS-JoinDirectoryServiceDomain, AWS-InstallApplication,
-     * AWS-RunPowerShellScript, AWS-InstallPowerShellModule,
-     * AWS-ConfigureCloudWatch.
+     * The name of the plugin. Must be one of the following: aws:updateAgent,
+     * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
+     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
      * 
      * @param name
      *        The name of the plugin. Must be one of the following:
-     *        AWS-JoinDirectoryServiceDomain, AWS-InstallApplication,
-     *        AWS-RunPowerShellScript, AWS-InstallPowerShellModule,
-     *        AWS-ConfigureCloudWatch.
+     *        aws:updateAgent, aws:domainjoin, aws:applications,
+     *        aws:runPowerShellScript, aws:psmodule, aws:cloudWatch,
+     *        aws:runShellScript, or aws:updateSSMAgent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

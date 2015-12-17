@@ -59,6 +59,9 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
         if (replaceRouteRequest.getVpcPeeringConnectionId() != null) {
             request.addParameter("VpcPeeringConnectionId", StringUtils.fromString(replaceRouteRequest.getVpcPeeringConnectionId()));
         }
+        if (replaceRouteRequest.getNatGatewayId() != null) {
+            request.addParameter("NatGatewayId", StringUtils.fromString(replaceRouteRequest.getNatGatewayId()));
+        }
 
         return request;
     }

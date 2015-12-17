@@ -77,6 +77,18 @@ public class ConfigRuleEvaluationStatusJsonMarshaller {
                                 .getLastFailedInvocationTime());
             }
 
+            if (configRuleEvaluationStatus.getLastSuccessfulEvaluationTime() != null) {
+                jsonWriter.key("LastSuccessfulEvaluationTime").value(
+                        configRuleEvaluationStatus
+                                .getLastSuccessfulEvaluationTime());
+            }
+
+            if (configRuleEvaluationStatus.getLastFailedEvaluationTime() != null) {
+                jsonWriter.key("LastFailedEvaluationTime").value(
+                        configRuleEvaluationStatus
+                                .getLastFailedEvaluationTime());
+            }
+
             if (configRuleEvaluationStatus.getFirstActivatedTime() != null) {
                 jsonWriter.key("FirstActivatedTime").value(
                         configRuleEvaluationStatus.getFirstActivatedTime());
@@ -90,6 +102,11 @@ public class ConfigRuleEvaluationStatusJsonMarshaller {
             if (configRuleEvaluationStatus.getLastErrorMessage() != null) {
                 jsonWriter.key("LastErrorMessage").value(
                         configRuleEvaluationStatus.getLastErrorMessage());
+            }
+
+            if (configRuleEvaluationStatus.getFirstEvaluationStarted() != null) {
+                jsonWriter.key("FirstEvaluationStarted").value(
+                        configRuleEvaluationStatus.getFirstEvaluationStarted());
             }
 
             jsonWriter.endObject();

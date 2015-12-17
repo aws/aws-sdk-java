@@ -27,7 +27,11 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
     private String nextToken;
-
+    /**
+     * <p>
+     * The maximum number of principals to return.
+     * </p>
+     */
     private Integer maxResults;
     /**
      * <p>
@@ -61,21 +65,35 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The maximum number of principals to return.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of principals to return.
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of principals to return.
+     * </p>
+     * 
+     * @return The maximum number of principals to return.
      */
     public Integer getMaxResults() {
         return this.maxResults;
     }
 
     /**
+     * <p>
+     * The maximum number of principals to return.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of principals to return.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -55,6 +55,13 @@ public class RecordingGroupJsonUnmarshaller implements
                     recordingGroup.setAllSupported(BooleanJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("includeGlobalResourceTypes",
+                        targetDepth)) {
+                    context.nextToken();
+                    recordingGroup
+                            .setIncludeGlobalResourceTypes(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("resourceTypes", targetDepth)) {
                     context.nextToken();
                     recordingGroup

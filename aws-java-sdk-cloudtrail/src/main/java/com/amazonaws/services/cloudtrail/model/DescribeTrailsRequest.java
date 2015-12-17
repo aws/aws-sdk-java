@@ -34,8 +34,28 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      * an empty list is specified, information for the trail in the current
      * region is returned.
      * </p>
+     * <ul>
+     * <li>If an empty list is specified and <code>IncludeShadowTrails</code> is
+     * false, then information for all trails in the current region is returned.
+     * </li>
+     * <li>If an empty list is specified and IncludeShadowTrails is null or
+     * true, then information for all trails in the current region and any
+     * associated shadow trails in other regions is returned.</li>
+     * </ul>
+     * <note>If one or more trail names are specified, information is returned
+     * only if the names match the names of trails belonging only to the current
+     * region. To return information about a trail in another region, you must
+     * specify its trail ARN.</note>
      */
     private com.amazonaws.internal.SdkInternalList<String> trailNameList;
+    /**
+     * <p>
+     * Specifies whether to include shadow trails in the response. A shadow
+     * trail is the replication in a region of a trail that was created in a
+     * different region. The default is true.
+     * </p>
+     */
+    private Boolean includeShadowTrails;
 
     /**
      * <p>
@@ -45,12 +65,36 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      * an empty list is specified, information for the trail in the current
      * region is returned.
      * </p>
+     * <ul>
+     * <li>If an empty list is specified and <code>IncludeShadowTrails</code> is
+     * false, then information for all trails in the current region is returned.
+     * </li>
+     * <li>If an empty list is specified and IncludeShadowTrails is null or
+     * true, then information for all trails in the current region and any
+     * associated shadow trails in other regions is returned.</li>
+     * </ul>
+     * <note>If one or more trail names are specified, information is returned
+     * only if the names match the names of trails belonging only to the current
+     * region. To return information about a trail in another region, you must
+     * specify its trail ARN.</note>
      * 
      * @return Specifies a list of trail names, trail ARNs, or both, of the
      *         trails to describe. The format of a trail ARN is
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      *         . If an empty list is specified, information for the trail in the
-     *         current region is returned.
+     *         current region is returned.</p>
+     *         <ul>
+     *         <li>If an empty list is specified and
+     *         <code>IncludeShadowTrails</code> is false, then information for
+     *         all trails in the current region is returned.</li>
+     *         <li>If an empty list is specified and IncludeShadowTrails is null
+     *         or true, then information for all trails in the current region
+     *         and any associated shadow trails in other regions is returned.</li>
+     *         </ul>
+     *         <note>If one or more trail names are specified, information is
+     *         returned only if the names match the names of trails belonging
+     *         only to the current region. To return information about a trail
+     *         in another region, you must specify its trail ARN.
      */
     public java.util.List<String> getTrailNameList() {
         if (trailNameList == null) {
@@ -67,13 +111,37 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      * an empty list is specified, information for the trail in the current
      * region is returned.
      * </p>
+     * <ul>
+     * <li>If an empty list is specified and <code>IncludeShadowTrails</code> is
+     * false, then information for all trails in the current region is returned.
+     * </li>
+     * <li>If an empty list is specified and IncludeShadowTrails is null or
+     * true, then information for all trails in the current region and any
+     * associated shadow trails in other regions is returned.</li>
+     * </ul>
+     * <note>If one or more trail names are specified, information is returned
+     * only if the names match the names of trails belonging only to the current
+     * region. To return information about a trail in another region, you must
+     * specify its trail ARN.</note>
      * 
      * @param trailNameList
      *        Specifies a list of trail names, trail ARNs, or both, of the
      *        trails to describe. The format of a trail ARN is
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      *        . If an empty list is specified, information for the trail in the
-     *        current region is returned.
+     *        current region is returned.</p>
+     *        <ul>
+     *        <li>If an empty list is specified and
+     *        <code>IncludeShadowTrails</code> is false, then information for
+     *        all trails in the current region is returned.</li>
+     *        <li>If an empty list is specified and IncludeShadowTrails is null
+     *        or true, then information for all trails in the current region and
+     *        any associated shadow trails in other regions is returned.</li>
+     *        </ul>
+     *        <note>If one or more trail names are specified, information is
+     *        returned only if the names match the names of trails belonging
+     *        only to the current region. To return information about a trail in
+     *        another region, you must specify its trail ARN.
      */
     public void setTrailNameList(java.util.Collection<String> trailNameList) {
         if (trailNameList == null) {
@@ -93,6 +161,18 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      * an empty list is specified, information for the trail in the current
      * region is returned.
      * </p>
+     * <ul>
+     * <li>If an empty list is specified and <code>IncludeShadowTrails</code> is
+     * false, then information for all trails in the current region is returned.
+     * </li>
+     * <li>If an empty list is specified and IncludeShadowTrails is null or
+     * true, then information for all trails in the current region and any
+     * associated shadow trails in other regions is returned.</li>
+     * </ul>
+     * <note>If one or more trail names are specified, information is returned
+     * only if the names match the names of trails belonging only to the current
+     * region. To return information about a trail in another region, you must
+     * specify its trail ARN.</note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTrailNameList(java.util.Collection)} or
@@ -105,7 +185,19 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      *        trails to describe. The format of a trail ARN is
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      *        . If an empty list is specified, information for the trail in the
-     *        current region is returned.
+     *        current region is returned.</p>
+     *        <ul>
+     *        <li>If an empty list is specified and
+     *        <code>IncludeShadowTrails</code> is false, then information for
+     *        all trails in the current region is returned.</li>
+     *        <li>If an empty list is specified and IncludeShadowTrails is null
+     *        or true, then information for all trails in the current region and
+     *        any associated shadow trails in other regions is returned.</li>
+     *        </ul>
+     *        <note>If one or more trail names are specified, information is
+     *        returned only if the names match the names of trails belonging
+     *        only to the current region. To return information about a trail in
+     *        another region, you must specify its trail ARN.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -128,13 +220,37 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      * an empty list is specified, information for the trail in the current
      * region is returned.
      * </p>
+     * <ul>
+     * <li>If an empty list is specified and <code>IncludeShadowTrails</code> is
+     * false, then information for all trails in the current region is returned.
+     * </li>
+     * <li>If an empty list is specified and IncludeShadowTrails is null or
+     * true, then information for all trails in the current region and any
+     * associated shadow trails in other regions is returned.</li>
+     * </ul>
+     * <note>If one or more trail names are specified, information is returned
+     * only if the names match the names of trails belonging only to the current
+     * region. To return information about a trail in another region, you must
+     * specify its trail ARN.</note>
      * 
      * @param trailNameList
      *        Specifies a list of trail names, trail ARNs, or both, of the
      *        trails to describe. The format of a trail ARN is
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      *        . If an empty list is specified, information for the trail in the
-     *        current region is returned.
+     *        current region is returned.</p>
+     *        <ul>
+     *        <li>If an empty list is specified and
+     *        <code>IncludeShadowTrails</code> is false, then information for
+     *        all trails in the current region is returned.</li>
+     *        <li>If an empty list is specified and IncludeShadowTrails is null
+     *        or true, then information for all trails in the current region and
+     *        any associated shadow trails in other regions is returned.</li>
+     *        </ul>
+     *        <note>If one or more trail names are specified, information is
+     *        returned only if the names match the names of trails belonging
+     *        only to the current region. To return information about a trail in
+     *        another region, you must specify its trail ARN.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -142,6 +258,72 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
             java.util.Collection<String> trailNameList) {
         setTrailNameList(trailNameList);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include shadow trails in the response. A shadow
+     * trail is the replication in a region of a trail that was created in a
+     * different region. The default is true.
+     * </p>
+     * 
+     * @param includeShadowTrails
+     *        Specifies whether to include shadow trails in the response. A
+     *        shadow trail is the replication in a region of a trail that was
+     *        created in a different region. The default is true.
+     */
+    public void setIncludeShadowTrails(Boolean includeShadowTrails) {
+        this.includeShadowTrails = includeShadowTrails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include shadow trails in the response. A shadow
+     * trail is the replication in a region of a trail that was created in a
+     * different region. The default is true.
+     * </p>
+     * 
+     * @return Specifies whether to include shadow trails in the response. A
+     *         shadow trail is the replication in a region of a trail that was
+     *         created in a different region. The default is true.
+     */
+    public Boolean getIncludeShadowTrails() {
+        return this.includeShadowTrails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include shadow trails in the response. A shadow
+     * trail is the replication in a region of a trail that was created in a
+     * different region. The default is true.
+     * </p>
+     * 
+     * @param includeShadowTrails
+     *        Specifies whether to include shadow trails in the response. A
+     *        shadow trail is the replication in a region of a trail that was
+     *        created in a different region. The default is true.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeTrailsRequest withIncludeShadowTrails(
+            Boolean includeShadowTrails) {
+        setIncludeShadowTrails(includeShadowTrails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include shadow trails in the response. A shadow
+     * trail is the replication in a region of a trail that was created in a
+     * different region. The default is true.
+     * </p>
+     * 
+     * @return Specifies whether to include shadow trails in the response. A
+     *         shadow trail is the replication in a region of a trail that was
+     *         created in a different region. The default is true.
+     */
+    public Boolean isIncludeShadowTrails() {
+        return this.includeShadowTrails;
     }
 
     /**
@@ -157,7 +339,9 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrailNameList() != null)
-            sb.append("TrailNameList: " + getTrailNameList());
+            sb.append("TrailNameList: " + getTrailNameList() + ",");
+        if (getIncludeShadowTrails() != null)
+            sb.append("IncludeShadowTrails: " + getIncludeShadowTrails());
         sb.append("}");
         return sb.toString();
     }
@@ -177,6 +361,13 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
         if (other.getTrailNameList() != null
                 && other.getTrailNameList().equals(this.getTrailNameList()) == false)
             return false;
+        if (other.getIncludeShadowTrails() == null
+                ^ this.getIncludeShadowTrails() == null)
+            return false;
+        if (other.getIncludeShadowTrails() != null
+                && other.getIncludeShadowTrails().equals(
+                        this.getIncludeShadowTrails()) == false)
+            return false;
         return true;
     }
 
@@ -189,6 +380,10 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getTrailNameList() == null) ? 0 : getTrailNameList()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIncludeShadowTrails() == null) ? 0
+                        : getIncludeShadowTrails().hashCode());
         return hashCode;
     }
 

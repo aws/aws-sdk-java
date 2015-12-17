@@ -54,6 +54,11 @@ public class RecordingGroupJsonMarshaller {
                         recordingGroup.getAllSupported());
             }
 
+            if (recordingGroup.getIncludeGlobalResourceTypes() != null) {
+                jsonWriter.key("includeGlobalResourceTypes").value(
+                        recordingGroup.getIncludeGlobalResourceTypes());
+            }
+
             com.amazonaws.internal.SdkInternalList<String> resourceTypesList = (com.amazonaws.internal.SdkInternalList<String>) recordingGroup
                     .getResourceTypes();
             if (!resourceTypesList.isEmpty()

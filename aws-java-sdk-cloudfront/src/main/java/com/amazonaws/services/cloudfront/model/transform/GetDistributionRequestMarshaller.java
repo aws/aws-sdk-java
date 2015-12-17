@@ -42,7 +42,7 @@ public class GetDistributionRequestMarshaller implements Marshaller<Request<GetD
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "2015-07-27/distribution/{Id}";
+        String path = "2015-09-17/distribution/{Id}";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 

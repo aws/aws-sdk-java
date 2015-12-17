@@ -115,6 +115,10 @@ public class NetworkInterfaceStaxUnmarshaller implements Unmarshaller<NetworkInt
                     networkInterface.getPrivateIpAddresses().add(NetworkInterfacePrivateIpAddressStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("interfaceType", targetDepth)) {
+                    networkInterface.setInterfaceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return networkInterface;

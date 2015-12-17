@@ -75,6 +75,16 @@ public class TrailJsonUnmarshaller implements
                     trail.setIncludeGlobalServiceEvents(BooleanJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("IsMultiRegionTrail", targetDepth)) {
+                    context.nextToken();
+                    trail.setIsMultiRegionTrail(BooleanJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("HomeRegion", targetDepth)) {
+                    context.nextToken();
+                    trail.setHomeRegion(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
                 if (context.testExpression("TrailARN", targetDepth)) {
                     context.nextToken();
                     trail.setTrailARN(StringJsonUnmarshaller.getInstance()

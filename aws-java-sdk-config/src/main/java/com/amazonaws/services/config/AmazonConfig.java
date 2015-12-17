@@ -137,6 +137,9 @@ public interface AmazonConfig {
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify
      *         that the rule names are correct and try again.
+     * @throws ResourceInUseException
+     *         The rule is currently being deleted. Wait for a while and try
+     *         again.
      */
     void deleteConfigRule(DeleteConfigRuleRequest deleteConfigRuleRequest);
 
@@ -705,6 +708,13 @@ public interface AmazonConfig {
      * @throws ResourceInUseException
      *         The rule is currently being deleted. Wait for a while and try
      *         again.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>The rule cannot be created because the IAM role assigned to
+     *         AWS Config lacks permissions to perform the config:Put* action.</li>
+     *         <li>The AWS Lambda function cannot be invoked. Check the function
+     *         ARN, and check the function's permissions.</li>
      */
     void putConfigRule(PutConfigRuleRequest putConfigRuleRequest);
 

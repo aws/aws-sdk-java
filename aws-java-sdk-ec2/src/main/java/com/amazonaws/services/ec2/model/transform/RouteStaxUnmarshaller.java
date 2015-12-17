@@ -71,6 +71,10 @@ public class RouteStaxUnmarshaller implements Unmarshaller<Route, StaxUnmarshall
                     route.setVpcPeeringConnectionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("natGatewayId", targetDepth)) {
+                    route.setNatGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("state", targetDepth)) {
                     route.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

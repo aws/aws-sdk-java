@@ -85,6 +85,7 @@ public class EC2MetadataClient {
 
         HttpURLConnection connection = (HttpURLConnection)url.openConnection();
         connection.setConnectTimeout(1000 * 2);
+        connection.setReadTimeout(1000 * 5);
         connection.setRequestMethod("GET");
         connection.setDoOutput(true);
         connection.connect();

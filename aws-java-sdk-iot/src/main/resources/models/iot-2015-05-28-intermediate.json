@@ -4,7 +4,7 @@
     "exceptionUnmarshallerImpl" : null,
     "protocol" : "rest-json",
     "checksumFormat" : null,
-    "documentation" : "<fullname>AWS IoT (Beta)</fullname> <p><b>AWS IoT is in beta and is subject to change</b></p> <p>AWS IoT provides secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each thing (Thing Registry), configure logging, and create and manage policies and credentials to authenticate things.</p> <p>For more information about how AWS IoT works, see the <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p>",
+    "documentation" : "<fullname>AWS IoT</fullname> <p>AWS IoT provides secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each thing (Thing Registry), configure logging, and create and manage policies and credentials to authenticate things.</p> <p>For more information about how AWS IoT works, see the <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p>",
     "defaultEndpoint" : "https://iot.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "iot.us-east-1.amazonaws.com",
     "syncInterface" : "AWSIot",
@@ -215,7 +215,7 @@
       "methodName" : "cancelCertificateTransfer"
     },
     "CreateCertificateFromCsr" : {
-      "documentation" : "<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p>",
+      "documentation" : "<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> <p>You can create multiple certificates in a batch by creating a directory and copying multiple .csr files into that directory and specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs. </p> <p>Assuming a set of CSRs are located inside of the directory my-csr-directory:</p>&gt; <p>On Linux and OSX, the command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p> This command lists all of the CSRs in my-csr-directory and pipes each CSR filename to the aws iot create-certificate-from-csr AWS CLI command to create a certificate for the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the certificate creation process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_} </p> <p> On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\"</p>",
       "operationName" : "CreateCertificateFromCsr",
       "deprecated" : false,
       "input" : {
@@ -248,9 +248,9 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p>\n@param createCertificateFromCsrRequest The input for the CreateCertificateFromCsr operation.\n@return Result of the CreateCertificateFromCsr operation returned by the service.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
-      "asyncDocumentation" : "/**<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p>\n@param createCertificateFromCsrRequest The input for the CreateCertificateFromCsr operation.\n@return A Java Future containing the result of the CreateCertificateFromCsr operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p>\n@param createCertificateFromCsrRequest The input for the CreateCertificateFromCsr operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateCertificateFromCsr operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> <p>You can create multiple certificates in a batch by creating a directory and copying multiple .csr files into that directory and specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs. </p> <p>Assuming a set of CSRs are located inside of the directory my-csr-directory:</p>&gt; <p>On Linux and OSX, the command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p> This command lists all of the CSRs in my-csr-directory and pipes each CSR filename to the aws iot create-certificate-from-csr AWS CLI command to create a certificate for the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the certificate creation process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_} </p> <p> On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\"</p>\n@param createCertificateFromCsrRequest The input for the CreateCertificateFromCsr operation.\n@return Result of the CreateCertificateFromCsr operation returned by the service.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
+      "asyncDocumentation" : "/**<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> <p>You can create multiple certificates in a batch by creating a directory and copying multiple .csr files into that directory and specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs. </p> <p>Assuming a set of CSRs are located inside of the directory my-csr-directory:</p>&gt; <p>On Linux and OSX, the command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p> This command lists all of the CSRs in my-csr-directory and pipes each CSR filename to the aws iot create-certificate-from-csr AWS CLI command to create a certificate for the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the certificate creation process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_} </p> <p> On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\"</p>\n@param createCertificateFromCsrRequest The input for the CreateCertificateFromCsr operation.\n@return A Java Future containing the result of the CreateCertificateFromCsr operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> <p>You can create multiple certificates in a batch by creating a directory and copying multiple .csr files into that directory and specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs. </p> <p>Assuming a set of CSRs are located inside of the directory my-csr-directory:</p>&gt; <p>On Linux and OSX, the command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p> This command lists all of the CSRs in my-csr-directory and pipes each CSR filename to the aws iot create-certificate-from-csr AWS CLI command to create a certificate for the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the certificate creation process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_} </p> <p> On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\"</p>\n@param createCertificateFromCsrRequest The input for the CreateCertificateFromCsr operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateCertificateFromCsr operation returned by the service.*/",
       "syncReturnType" : "CreateCertificateFromCsrResult",
       "asyncReturnType" : "CreateCertificateFromCsrResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateCertificateFromCsrResult>",
@@ -353,7 +353,7 @@
       "methodName" : "createPolicy"
     },
     "CreatePolicyVersion" : {
-      "documentation" : "<p>Creates a new version of the specified AWS IoT policy.</p>",
+      "documentation" : "<p>Creates a new version of the specified AWS IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must delete an existing version using <a>DeletePolicyVersion</a> before you create a new version.</p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>",
       "operationName" : "CreatePolicyVersion",
       "deprecated" : false,
       "input" : {
@@ -395,9 +395,9 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Creates a new version of the specified AWS IoT policy.</p>\n@param createPolicyVersionRequest The input for the CreatePolicyVersion operation.\n@return Result of the CreatePolicyVersion operation returned by the service.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws MalformedPolicyException The policy documentation is not valid.\n@throws VersionsLimitExceededException The number of policy versions exceeds the limit.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
-      "asyncDocumentation" : "/**<p>Creates a new version of the specified AWS IoT policy.</p>\n@param createPolicyVersionRequest The input for the CreatePolicyVersion operation.\n@return A Java Future containing the result of the CreatePolicyVersion operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Creates a new version of the specified AWS IoT policy.</p>\n@param createPolicyVersionRequest The input for the CreatePolicyVersion operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreatePolicyVersion operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Creates a new version of the specified AWS IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must delete an existing version using <a>DeletePolicyVersion</a> before you create a new version.</p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>\n@param createPolicyVersionRequest The input for the CreatePolicyVersion operation.\n@return Result of the CreatePolicyVersion operation returned by the service.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws MalformedPolicyException The policy documentation is not valid.\n@throws VersionsLimitExceededException The number of policy versions exceeds the limit.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
+      "asyncDocumentation" : "/**<p>Creates a new version of the specified AWS IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must delete an existing version using <a>DeletePolicyVersion</a> before you create a new version.</p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>\n@param createPolicyVersionRequest The input for the CreatePolicyVersion operation.\n@return A Java Future containing the result of the CreatePolicyVersion operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Creates a new version of the specified AWS IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must delete an existing version using <a>DeletePolicyVersion</a> before you create a new version.</p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>\n@param createPolicyVersionRequest The input for the CreatePolicyVersion operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreatePolicyVersion operation returned by the service.*/",
       "syncReturnType" : "CreatePolicyVersionResult",
       "asyncReturnType" : "CreatePolicyVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePolicyVersionResult>",
@@ -494,7 +494,7 @@
       "methodName" : "createTopicRule"
     },
     "DeleteCertificate" : {
-      "documentation" : "<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a> operation.</p> <p>In addition, a certificate cannot be deleted if it is in ACTIVE status. To delete a certificate, first change the status to INACTIVE using the <a>UpdateCertificate</a> operation.</p>",
+      "documentation" : "<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a> API. Next use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.</p>",
       "operationName" : "DeleteCertificate",
       "deprecated" : false,
       "input" : {
@@ -518,9 +518,9 @@
         "documentation" : "<p>The certificate operation is not allowed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a> operation.</p> <p>In addition, a certificate cannot be deleted if it is in ACTIVE status. To delete a certificate, first change the status to INACTIVE using the <a>UpdateCertificate</a> operation.</p>\n@param deleteCertificateRequest The input for the DeleteCertificate operation.\n@throws DeleteConflictException You can't delete the resource because it is attached to one or more resources.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws CertificateStateException The certificate operation is not allowed.*/",
-      "asyncDocumentation" : "/**<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a> operation.</p> <p>In addition, a certificate cannot be deleted if it is in ACTIVE status. To delete a certificate, first change the status to INACTIVE using the <a>UpdateCertificate</a> operation.</p>\n@param deleteCertificateRequest The input for the DeleteCertificate operation.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a> operation.</p> <p>In addition, a certificate cannot be deleted if it is in ACTIVE status. To delete a certificate, first change the status to INACTIVE using the <a>UpdateCertificate</a> operation.</p>\n@param deleteCertificateRequest The input for the DeleteCertificate operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncDocumentation" : "/**<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a> API. Next use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.</p>\n@param deleteCertificateRequest The input for the DeleteCertificate operation.\n@throws DeleteConflictException You can't delete the resource because it is attached to one or more resources.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws CertificateStateException The certificate operation is not allowed.*/",
+      "asyncDocumentation" : "/**<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a> API. Next use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.</p>\n@param deleteCertificateRequest The input for the DeleteCertificate operation.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a> API. Next use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.</p>\n@param deleteCertificateRequest The input for the DeleteCertificate operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -529,7 +529,7 @@
       "methodName" : "deleteCertificate"
     },
     "DeletePolicy" : {
-      "documentation" : "<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if: </p> <p> - it has non-default versions</p> <p> - it is attached to any certificate</p> <p>To delete a policy:</p> <p> - First delete all the non-default versions of the policy using the <a>DeletePolicyVersion</a> API.</p> <p> - Detach it from any certificate using the <a>DetachPrincipalPolicy</a> API.</p> <p>When a policy is deleted, its default version is deleted with it.</p>",
+      "documentation" : "<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has non-default versions and/or it is attached to any certificate.</p> <p>To delete a policy, delete all non-default versions of the policy using the DeletePolicyVersion API, detach the policy from any certificate using the DetachPrincipalPolicy API, and then use the DeletePolicy API to delete the policy.</p> <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p>",
       "operationName" : "DeletePolicy",
       "deprecated" : false,
       "input" : {
@@ -565,9 +565,9 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if: </p> <p> - it has non-default versions</p> <p> - it is attached to any certificate</p> <p>To delete a policy:</p> <p> - First delete all the non-default versions of the policy using the <a>DeletePolicyVersion</a> API.</p> <p> - Detach it from any certificate using the <a>DetachPrincipalPolicy</a> API.</p> <p>When a policy is deleted, its default version is deleted with it.</p>\n@param deletePolicyRequest The input for the DeletePolicy operation.\n@throws DeleteConflictException You can't delete the resource because it is attached to one or more resources.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
-      "asyncDocumentation" : "/**<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if: </p> <p> - it has non-default versions</p> <p> - it is attached to any certificate</p> <p>To delete a policy:</p> <p> - First delete all the non-default versions of the policy using the <a>DeletePolicyVersion</a> API.</p> <p> - Detach it from any certificate using the <a>DetachPrincipalPolicy</a> API.</p> <p>When a policy is deleted, its default version is deleted with it.</p>\n@param deletePolicyRequest The input for the DeletePolicy operation.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if: </p> <p> - it has non-default versions</p> <p> - it is attached to any certificate</p> <p>To delete a policy:</p> <p> - First delete all the non-default versions of the policy using the <a>DeletePolicyVersion</a> API.</p> <p> - Detach it from any certificate using the <a>DetachPrincipalPolicy</a> API.</p> <p>When a policy is deleted, its default version is deleted with it.</p>\n@param deletePolicyRequest The input for the DeletePolicy operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncDocumentation" : "/**<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has non-default versions and/or it is attached to any certificate.</p> <p>To delete a policy, delete all non-default versions of the policy using the DeletePolicyVersion API, detach the policy from any certificate using the DetachPrincipalPolicy API, and then use the DeletePolicy API to delete the policy.</p> <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p>\n@param deletePolicyRequest The input for the DeletePolicy operation.\n@throws DeleteConflictException You can't delete the resource because it is attached to one or more resources.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
+      "asyncDocumentation" : "/**<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has non-default versions and/or it is attached to any certificate.</p> <p>To delete a policy, delete all non-default versions of the policy using the DeletePolicyVersion API, detach the policy from any certificate using the DetachPrincipalPolicy API, and then use the DeletePolicy API to delete the policy.</p> <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p>\n@param deletePolicyRequest The input for the DeletePolicy operation.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has non-default versions and/or it is attached to any certificate.</p> <p>To delete a policy, delete all non-default versions of the policy using the DeletePolicyVersion API, detach the policy from any certificate using the DetachPrincipalPolicy API, and then use the DeletePolicy API to delete the policy.</p> <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p>\n@param deletePolicyRequest The input for the DeletePolicy operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -576,7 +576,7 @@
       "methodName" : "deletePolicy"
     },
     "DeletePolicyVersion" : {
-      "documentation" : "<p>Deletes the specified version of the specified policy. The default version of the policy cannot be deleted.</p> <p>To delete the default version use the <a>DeletePolicy</a> API or mark the policy as non-default and then delete it.</p>",
+      "documentation" : "<p>Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.</p>",
       "operationName" : "DeletePolicyVersion",
       "deprecated" : false,
       "input" : {
@@ -612,9 +612,9 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Deletes the specified version of the specified policy. The default version of the policy cannot be deleted.</p> <p>To delete the default version use the <a>DeletePolicy</a> API or mark the policy as non-default and then delete it.</p>\n@param deletePolicyVersionRequest The input for the DeletePolicyVersion operation.\n@throws DeleteConflictException You can't delete the resource because it is attached to one or more resources.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
-      "asyncDocumentation" : "/**<p>Deletes the specified version of the specified policy. The default version of the policy cannot be deleted.</p> <p>To delete the default version use the <a>DeletePolicy</a> API or mark the policy as non-default and then delete it.</p>\n@param deletePolicyVersionRequest The input for the DeletePolicyVersion operation.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Deletes the specified version of the specified policy. The default version of the policy cannot be deleted.</p> <p>To delete the default version use the <a>DeletePolicy</a> API or mark the policy as non-default and then delete it.</p>\n@param deletePolicyVersionRequest The input for the DeletePolicyVersion operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncDocumentation" : "/**<p>Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.</p>\n@param deletePolicyVersionRequest The input for the DeletePolicyVersion operation.\n@throws DeleteConflictException You can't delete the resource because it is attached to one or more resources.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
+      "asyncDocumentation" : "/**<p>Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.</p>\n@param deletePolicyVersionRequest The input for the DeletePolicyVersion operation.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.</p>\n@param deletePolicyVersionRequest The input for the DeletePolicyVersion operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -755,7 +755,7 @@
       "methodName" : "describeCertificate"
     },
     "DescribeEndpoint" : {
-      "documentation" : "<p>Returns a unique URL specific to the AWS account making the call. The URL points to the AWS IoT data plane endpoint. The customer-specific endpoint should be provided to all data plane operations.</p>",
+      "documentation" : "<p>Returns a unique endpoint specific to the AWS account making the call. You specify the following URI when updating state information for your thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.</p>",
       "operationName" : "DescribeEndpoint",
       "deprecated" : false,
       "input" : {
@@ -777,11 +777,14 @@
       }, {
         "exceptionName" : "UnauthorizedException",
         "documentation" : "<p>You are not authorized to perform this operation.</p>"
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The rate exceeds the limit.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Returns a unique URL specific to the AWS account making the call. The URL points to the AWS IoT data plane endpoint. The customer-specific endpoint should be provided to all data plane operations.</p>\n@param describeEndpointRequest The input for the DescribeEndpoint operation.\n@return Result of the DescribeEndpoint operation returned by the service.\n@throws InternalFailureException An unexpected error has occurred.\n@throws UnauthorizedException You are not authorized to perform this operation.*/",
-      "asyncDocumentation" : "/**<p>Returns a unique URL specific to the AWS account making the call. The URL points to the AWS IoT data plane endpoint. The customer-specific endpoint should be provided to all data plane operations.</p>\n@param describeEndpointRequest The input for the DescribeEndpoint operation.\n@return A Java Future containing the result of the DescribeEndpoint operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Returns a unique URL specific to the AWS account making the call. The URL points to the AWS IoT data plane endpoint. The customer-specific endpoint should be provided to all data plane operations.</p>\n@param describeEndpointRequest The input for the DescribeEndpoint operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeEndpoint operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Returns a unique endpoint specific to the AWS account making the call. You specify the following URI when updating state information for your thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.</p>\n@param describeEndpointRequest The input for the DescribeEndpoint operation.\n@return Result of the DescribeEndpoint operation returned by the service.\n@throws InternalFailureException An unexpected error has occurred.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ThrottlingException The rate exceeds the limit.*/",
+      "asyncDocumentation" : "/**<p>Returns a unique endpoint specific to the AWS account making the call. You specify the following URI when updating state information for your thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.</p>\n@param describeEndpointRequest The input for the DescribeEndpoint operation.\n@return A Java Future containing the result of the DescribeEndpoint operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Returns a unique endpoint specific to the AWS account making the call. You specify the following URI when updating state information for your thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.</p>\n@param describeEndpointRequest The input for the DescribeEndpoint operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeEndpoint operation returned by the service.*/",
       "syncReturnType" : "DescribeEndpointResult",
       "asyncReturnType" : "DescribeEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEndpointResult>",
@@ -1541,7 +1544,7 @@
       "methodName" : "replaceTopicRule"
     },
     "SetDefaultPolicyVersion" : {
-      "documentation" : "<p>Sets the specified policy version as the default for the specified policy.</p>",
+      "documentation" : "<p>Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates that the policy is attached to. To list the principals the policy is attached to, use the ListPrincipalPolicy API.</p>",
       "operationName" : "SetDefaultPolicyVersion",
       "deprecated" : false,
       "input" : {
@@ -1574,9 +1577,9 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Sets the specified policy version as the default for the specified policy.</p>\n@param setDefaultPolicyVersionRequest The input for the SetDefaultPolicyVersion operation.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
-      "asyncDocumentation" : "/**<p>Sets the specified policy version as the default for the specified policy.</p>\n@param setDefaultPolicyVersionRequest The input for the SetDefaultPolicyVersion operation.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Sets the specified policy version as the default for the specified policy.</p>\n@param setDefaultPolicyVersionRequest The input for the SetDefaultPolicyVersion operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
+      "syncDocumentation" : "/**<p>Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates that the policy is attached to. To list the principals the policy is attached to, use the ListPrincipalPolicy API.</p>\n@param setDefaultPolicyVersionRequest The input for the SetDefaultPolicyVersion operation.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws InvalidRequestException The request is not valid.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
+      "asyncDocumentation" : "/**<p>Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates that the policy is attached to. To list the principals the policy is attached to, use the ListPrincipalPolicy API.</p>\n@param setDefaultPolicyVersionRequest The input for the SetDefaultPolicyVersion operation.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates that the policy is attached to. To list the principals the policy is attached to, use the ListPrincipalPolicy API.</p>\n@param setDefaultPolicyVersionRequest The input for the SetDefaultPolicyVersion operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -1620,7 +1623,7 @@
       "methodName" : "setLoggingOptions"
     },
     "TransferCertificate" : {
-      "documentation" : "<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account, it is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. It can be deactivated using the UpdateCertificate API.</p> <p>The certificate must not have any policies attached to it. These can be detached using the <a>DetachPrincipalPolicy</a> API.</p>",
+      "documentation" : "<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account, it is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. It can be deactivated using the UpdateCertificate API.</p> <p>The certificate must not have any policies attached to it. These can be detached using the DetachPrincipalPolicy API.</p>",
       "operationName" : "TransferCertificate",
       "deprecated" : false,
       "input" : {
@@ -1662,9 +1665,9 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account, it is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. It can be deactivated using the UpdateCertificate API.</p> <p>The certificate must not have any policies attached to it. These can be detached using the <a>DetachPrincipalPolicy</a> API.</p>\n@param transferCertificateRequest The input for the TransferCertificate operation.\n@return Result of the TransferCertificate operation returned by the service.\n@throws InvalidRequestException The request is not valid.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws CertificateStateException The certificate operation is not allowed.\n@throws TransferConflictException You can't transfer the the certificate because authorization policies are still attached.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
-      "asyncDocumentation" : "/**<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account, it is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. It can be deactivated using the UpdateCertificate API.</p> <p>The certificate must not have any policies attached to it. These can be detached using the <a>DetachPrincipalPolicy</a> API.</p>\n@param transferCertificateRequest The input for the TransferCertificate operation.\n@return A Java Future containing the result of the TransferCertificate operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account, it is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. It can be deactivated using the UpdateCertificate API.</p> <p>The certificate must not have any policies attached to it. These can be detached using the <a>DetachPrincipalPolicy</a> API.</p>\n@param transferCertificateRequest The input for the TransferCertificate operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the TransferCertificate operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account, it is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. It can be deactivated using the UpdateCertificate API.</p> <p>The certificate must not have any policies attached to it. These can be detached using the DetachPrincipalPolicy API.</p>\n@param transferCertificateRequest The input for the TransferCertificate operation.\n@return Result of the TransferCertificate operation returned by the service.\n@throws InvalidRequestException The request is not valid.\n@throws ResourceNotFoundException The specified resource does not exist.\n@throws CertificateStateException The certificate operation is not allowed.\n@throws TransferConflictException You can't transfer the the certificate because authorization policies are still attached.\n@throws ThrottlingException The rate exceeds the limit.\n@throws UnauthorizedException You are not authorized to perform this operation.\n@throws ServiceUnavailableException The service is temporarily unavailable.\n@throws InternalFailureException An unexpected error has occurred.*/",
+      "asyncDocumentation" : "/**<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account, it is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. It can be deactivated using the UpdateCertificate API.</p> <p>The certificate must not have any policies attached to it. These can be detached using the DetachPrincipalPolicy API.</p>\n@param transferCertificateRequest The input for the TransferCertificate operation.\n@return A Java Future containing the result of the TransferCertificate operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account, it is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. It can be deactivated using the UpdateCertificate API.</p> <p>The certificate must not have any policies attached to it. These can be detached using the DetachPrincipalPolicy API.</p>\n@param transferCertificateRequest The input for the TransferCertificate operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the TransferCertificate operation returned by the service.*/",
       "syncReturnType" : "TransferCertificateResult",
       "asyncReturnType" : "TransferCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<TransferCertificateResult>",
@@ -2622,8 +2625,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -2709,8 +2712,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -3575,7 +3578,7 @@
         "fluentSetterDocumentation" : "/**<p>The thing name.</p>\n@param thingName The thing name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The thing name.</p>\n@param thingName The thing name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+        "documentation" : "<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
         "name" : "AttributePayload",
         "c2jName" : "attributePayload",
         "c2jShape" : "AttributePayload",
@@ -3583,7 +3586,7 @@
           "variableName" : "attributePayload",
           "variableType" : "AttributePayload",
           "variableDeclarationType" : "AttributePayload",
-          "documentation" : "<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+          "documentation" : "<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
           "simpleType" : "AttributePayload",
           "variableSetterType" : "AttributePayload"
         },
@@ -3621,10 +3624,10 @@
         "simple" : false,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-        "getterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@return The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-        "fluentSetterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+        "getterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@return The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+        "fluentSetterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -3653,7 +3656,7 @@
       },
       "membersAsMap" : {
         "AttributePayload" : {
-          "documentation" : "<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+          "documentation" : "<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
           "name" : "AttributePayload",
           "c2jName" : "attributePayload",
           "c2jShape" : "AttributePayload",
@@ -3661,7 +3664,7 @@
             "variableName" : "attributePayload",
             "variableType" : "AttributePayload",
             "variableDeclarationType" : "AttributePayload",
-            "documentation" : "<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+            "documentation" : "<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
             "simpleType" : "AttributePayload",
             "variableSetterType" : "AttributePayload"
           },
@@ -3699,10 +3702,10 @@
           "simple" : false,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-          "getterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@return The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-          "fluentSetterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+          "getterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@return The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+          "fluentSetterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ThingName" : {
           "documentation" : "<p>The thing name.</p>",
@@ -4009,8 +4012,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "PolicyVersion",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<PolicyVersion>",
           "templateImplType" : "java.util.ArrayList<PolicyVersion>"
@@ -4147,8 +4150,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "PolicyVersion",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<PolicyVersion>",
             "templateImplType" : "java.util.ArrayList<PolicyVersion>"
@@ -5092,8 +5095,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -5230,8 +5233,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -5312,7 +5315,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : "<p>The address.</p>",
+        "documentation" : "<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>",
         "name" : "EndpointAddress",
         "c2jName" : "endpointAddress",
         "c2jShape" : "EndpointAddress",
@@ -5320,7 +5323,7 @@
           "variableName" : "endpointAddress",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The address.</p>",
+          "documentation" : "<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5358,10 +5361,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The address.</p>\n@param endpointAddress The address.*/",
-        "getterDocumentation" : "/**<p>The address.</p>\n@return The address.*/",
-        "fluentSetterDocumentation" : "/**<p>The address.</p>\n@param endpointAddress The address.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The address.</p>\n@param endpointAddress The address.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>\n@param endpointAddress The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.*/",
+        "getterDocumentation" : "/**<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>\n@return The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.*/",
+        "fluentSetterDocumentation" : "/**<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>\n@param endpointAddress The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>\n@param endpointAddress The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -5386,7 +5389,7 @@
       },
       "membersAsMap" : {
         "EndpointAddress" : {
-          "documentation" : "<p>The address.</p>",
+          "documentation" : "<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>",
           "name" : "EndpointAddress",
           "c2jName" : "endpointAddress",
           "c2jShape" : "EndpointAddress",
@@ -5394,7 +5397,7 @@
             "variableName" : "endpointAddress",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The address.</p>",
+            "documentation" : "<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5432,10 +5435,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The address.</p>\n@param endpointAddress The address.*/",
-          "getterDocumentation" : "/**<p>The address.</p>\n@return The address.*/",
-          "fluentSetterDocumentation" : "/**<p>The address.</p>\n@param endpointAddress The address.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The address.</p>\n@param endpointAddress The address.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>\n@param endpointAddress The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.*/",
+          "getterDocumentation" : "/**<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>\n@return The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.*/",
+          "fluentSetterDocumentation" : "/**<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>\n@param endpointAddress The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>\n@param endpointAddress The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -6034,8 +6037,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "TopicRuleListItem",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<TopicRuleListItem>",
           "templateImplType" : "java.util.ArrayList<TopicRuleListItem>"
@@ -6275,8 +6278,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "TopicRuleListItem",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<TopicRuleListItem>",
             "templateImplType" : "java.util.ArrayList<TopicRuleListItem>"
@@ -7717,7 +7720,7 @@
         "fluentSetterDocumentation" : "/**<p>The range key value.</p>\n@param rangeKeyValue The range key value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The range key value.</p>\n@param rangeKeyValue The range key value.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The action payload.</p>",
+        "documentation" : "<p>The action payload, this name can be customized.</p>",
         "name" : "PayloadField",
         "c2jName" : "payloadField",
         "c2jShape" : "PayloadField",
@@ -7725,7 +7728,7 @@
           "variableName" : "payloadField",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The action payload.</p>",
+          "documentation" : "<p>The action payload, this name can be customized.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7763,10 +7766,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The action payload.</p>\n@param payloadField The action payload.*/",
-        "getterDocumentation" : "/**<p>The action payload.</p>\n@return The action payload.*/",
-        "fluentSetterDocumentation" : "/**<p>The action payload.</p>\n@param payloadField The action payload.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The action payload.</p>\n@param payloadField The action payload.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The action payload, this name can be customized.</p>\n@param payloadField The action payload, this name can be customized.*/",
+        "getterDocumentation" : "/**<p>The action payload, this name can be customized.</p>\n@return The action payload, this name can be customized.*/",
+        "fluentSetterDocumentation" : "/**<p>The action payload, this name can be customized.</p>\n@param payloadField The action payload, this name can be customized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The action payload, this name can be customized.</p>\n@param payloadField The action payload, this name can be customized.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -7843,7 +7846,7 @@
           "varargSetterDocumentation" : "/**<p>The range key name.</p>\n@param rangeKeyField The range key name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "PayloadField" : {
-          "documentation" : "<p>The action payload.</p>",
+          "documentation" : "<p>The action payload, this name can be customized.</p>",
           "name" : "PayloadField",
           "c2jName" : "payloadField",
           "c2jShape" : "PayloadField",
@@ -7851,7 +7854,7 @@
             "variableName" : "payloadField",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The action payload.</p>",
+            "documentation" : "<p>The action payload, this name can be customized.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7889,10 +7892,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The action payload.</p>\n@param payloadField The action payload.*/",
-          "getterDocumentation" : "/**<p>The action payload.</p>\n@return The action payload.*/",
-          "fluentSetterDocumentation" : "/**<p>The action payload.</p>\n@param payloadField The action payload.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The action payload.</p>\n@param payloadField The action payload.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The action payload, this name can be customized.</p>\n@param payloadField The action payload, this name can be customized.*/",
+          "getterDocumentation" : "/**<p>The action payload, this name can be customized.</p>\n@return The action payload, this name can be customized.*/",
+          "fluentSetterDocumentation" : "/**<p>The action payload, this name can be customized.</p>\n@param payloadField The action payload, this name can be customized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The action payload, this name can be customized.</p>\n@param payloadField The action payload, this name can be customized.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "RangeKeyValue" : {
           "documentation" : "<p>The range key value.</p>",
@@ -11494,8 +11497,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Action",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Action>",
           "templateImplType" : "java.util.ArrayList<Action>"
@@ -11787,8 +11790,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Action",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Action>",
             "templateImplType" : "java.util.ArrayList<Action>"
@@ -13000,7 +13003,7 @@
     },
     "AttributePayload" : {
       "c2jName" : "AttributePayload",
-      "documentation" : "<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+      "documentation" : "<p>The attribute payload, a JSON string containing up to three key-value pairs.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
       "shapeName" : "AttributePayload",
       "deprecated" : false,
       "required" : null,
@@ -13009,7 +13012,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : "<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+        "documentation" : "<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
         "name" : "Attributes",
         "c2jName" : "attributes",
         "c2jShape" : "Attributes",
@@ -13017,7 +13020,7 @@
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
           "variableDeclarationType" : "java.util.Map<String,String>",
-          "documentation" : "<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+          "documentation" : "<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
@@ -13069,10 +13072,10 @@
         "simple" : false,
         "list" : false,
         "map" : true,
-        "setterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-        "getterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@return A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-        "fluentSetterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+        "getterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@return A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+        "fluentSetterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -13097,7 +13100,7 @@
       },
       "membersAsMap" : {
         "Attributes" : {
-          "documentation" : "<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+          "documentation" : "<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
           "name" : "Attributes",
           "c2jName" : "attributes",
           "c2jShape" : "Attributes",
@@ -13105,7 +13108,7 @@
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
             "variableDeclarationType" : "java.util.Map<String,String>",
-            "documentation" : "<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+            "documentation" : "<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
@@ -13157,10 +13160,10 @@
           "simple" : false,
           "list" : false,
           "map" : true,
-          "setterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-          "getterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@return A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-          "fluentSetterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+          "getterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@return A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+          "fluentSetterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributes A JSON string containing up to three key-value pair in JSON format.</p> <p>For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -14125,7 +14128,7 @@
         "fluentSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "",
+        "documentation" : "<p>The maximum number of principals to return.</p>",
         "name" : "MaxResults",
         "c2jName" : "maxResults",
         "c2jShape" : "MaxResults",
@@ -14133,7 +14136,7 @@
           "variableName" : "maxResults",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : "",
+          "documentation" : "<p>The maximum number of principals to return.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -14171,10 +14174,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**\n@param maxResults */",
-        "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The maximum number of principals to return.</p>\n@param maxResults The maximum number of principals to return.*/",
+        "getterDocumentation" : "/**<p>The maximum number of principals to return.</p>\n@return The maximum number of principals to return.*/",
+        "fluentSetterDocumentation" : "/**<p>The maximum number of principals to return.</p>\n@param maxResults The maximum number of principals to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The maximum number of principals to return.</p>\n@param maxResults The maximum number of principals to return.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The principal.</p>",
         "name" : "Principal",
@@ -14358,7 +14361,7 @@
           "varargSetterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "MaxResults" : {
-          "documentation" : "",
+          "documentation" : "<p>The maximum number of principals to return.</p>",
           "name" : "MaxResults",
           "c2jName" : "maxResults",
           "c2jShape" : "MaxResults",
@@ -14366,7 +14369,7 @@
             "variableName" : "maxResults",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : "",
+            "documentation" : "<p>The maximum number of principals to return.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -14404,10 +14407,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**\n@param maxResults */",
-          "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The maximum number of principals to return.</p>\n@param maxResults The maximum number of principals to return.*/",
+          "getterDocumentation" : "/**<p>The maximum number of principals to return.</p>\n@return The maximum number of principals to return.*/",
+          "fluentSetterDocumentation" : "/**<p>The maximum number of principals to return.</p>\n@param maxResults The maximum number of principals to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The maximum number of principals to return.</p>\n@param maxResults The maximum number of principals to return.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -15747,7 +15750,7 @@
         "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>",
+        "documentation" : "<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>",
         "name" : "Attributes",
         "c2jName" : "attributes",
         "c2jShape" : "Attributes",
@@ -15755,7 +15758,7 @@
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
           "variableDeclarationType" : "java.util.Map<String,String>",
-          "documentation" : "<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>",
+          "documentation" : "<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>",
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
@@ -15807,10 +15810,10 @@
         "simple" : false,
         "list" : false,
         "map" : true,
-        "setterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}*/",
-        "getterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>\n@return The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}*/",
-        "fluentSetterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}*/",
+        "getterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>\n@return The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}*/",
+        "fluentSetterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -15835,7 +15838,7 @@
       },
       "membersAsMap" : {
         "Attributes" : {
-          "documentation" : "<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>",
+          "documentation" : "<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>",
           "name" : "Attributes",
           "c2jName" : "attributes",
           "c2jShape" : "Attributes",
@@ -15843,7 +15846,7 @@
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
             "variableDeclarationType" : "java.util.Map<String,String>",
-            "documentation" : "<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>",
+            "documentation" : "<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>",
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
@@ -15895,10 +15898,10 @@
           "simple" : false,
           "list" : false,
           "map" : true,
-          "setterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}*/",
-          "getterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>\n@return The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}*/",
-          "fluentSetterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\”}, {\\\"some-name2\\\":\\\"some-value2\\”}, {\\\"some-name3\\\":\\\"some-value3\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}*/",
+          "getterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>\n@return The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}*/",
+          "fluentSetterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}</p>\n@param attributes The attributes which are name/value pairs in JSON format. For example: </p> <p>{\\\"attributes\\\":{\\\"some-name1\\\":\\\"some-value1\\\"}, {\\\"some-name2\\\":\\\"some-value2\\\"}, {\\\"some-name3\\\":\\\"some-value3\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ThingName" : {
           "documentation" : "<p>The name of the thing.</p>",
@@ -16313,7 +16316,7 @@
         "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+        "documentation" : "<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
         "name" : "AttributePayload",
         "c2jName" : "attributePayload",
         "c2jShape" : "AttributePayload",
@@ -16321,7 +16324,7 @@
           "variableName" : "attributePayload",
           "variableType" : "AttributePayload",
           "variableDeclarationType" : "AttributePayload",
-          "documentation" : "<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+          "documentation" : "<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
           "simpleType" : "AttributePayload",
           "variableSetterType" : "AttributePayload"
         },
@@ -16359,10 +16362,10 @@
         "simple" : false,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-        "getterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@return The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-        "fluentSetterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+        "getterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@return The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+        "fluentSetterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -16391,7 +16394,7 @@
       },
       "membersAsMap" : {
         "AttributePayload" : {
-          "documentation" : "<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+          "documentation" : "<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
           "name" : "AttributePayload",
           "c2jName" : "attributePayload",
           "c2jShape" : "AttributePayload",
@@ -16399,7 +16402,7 @@
             "variableName" : "attributePayload",
             "variableType" : "AttributePayload",
             "variableDeclarationType" : "AttributePayload",
-            "documentation" : "<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>",
+            "documentation" : "<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>",
             "simpleType" : "AttributePayload",
             "variableSetterType" : "AttributePayload"
           },
@@ -16437,10 +16440,10 @@
           "simple" : false,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-          "getterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@return The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}*/",
-          "fluentSetterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\”}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+          "getterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@return The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}*/",
+          "fluentSetterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}</p>\n@param attributePayload The attribute payload. Which consists of up to 3 name/value pairs in a JSON document. For example: {\\\"attributes\\\":{\\\"string1\\\":\\\"string2\\\"}}\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ThingName" : {
           "documentation" : "<p>The name of the thing.</p>",
@@ -17679,8 +17682,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ThingAttribute",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ThingAttribute>",
           "templateImplType" : "java.util.ArrayList<ThingAttribute>"
@@ -17868,8 +17871,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ThingAttribute",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ThingAttribute>",
             "templateImplType" : "java.util.ArrayList<ThingAttribute>"
@@ -18435,8 +18438,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Policy",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Policy>",
           "templateImplType" : "java.util.ArrayList<Policy>"
@@ -18624,8 +18627,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Policy",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Policy>",
             "templateImplType" : "java.util.ArrayList<Policy>"
@@ -18804,8 +18807,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Policy",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Policy>",
           "templateImplType" : "java.util.ArrayList<Policy>"
@@ -18993,8 +18996,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Policy",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Policy>",
             "templateImplType" : "java.util.ArrayList<Policy>"
@@ -20868,8 +20871,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Certificate",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Certificate>",
           "templateImplType" : "java.util.ArrayList<Certificate>"
@@ -21057,8 +21060,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Certificate",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Certificate>",
             "templateImplType" : "java.util.ArrayList<Certificate>"
@@ -22875,7 +22878,7 @@
         "fluentSetterDocumentation" : "/**<p>The policy name.</p>\n@param policyName The policy name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The policy name.</p>\n@param policyName The policy name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The JSON document that describes the policy.</p>",
+        "documentation" : "<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>",
         "name" : "PolicyDocument",
         "c2jName" : "policyDocument",
         "c2jShape" : "PolicyDocument",
@@ -22883,7 +22886,7 @@
           "variableName" : "policyDocument",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The JSON document that describes the policy.</p>",
+          "documentation" : "<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -22921,12 +22924,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The JSON document that describes the policy.</p>\n@param policyDocument The JSON document that describes the policy.*/",
-        "getterDocumentation" : "/**<p>The JSON document that describes the policy.</p>\n@return The JSON document that describes the policy.*/",
-        "fluentSetterDocumentation" : "/**<p>The JSON document that describes the policy.</p>\n@param policyDocument The JSON document that describes the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The JSON document that describes the policy.</p>\n@param policyDocument The JSON document that describes the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>\n@param policyDocument The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces*/",
+        "getterDocumentation" : "/**<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>\n@return The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces*/",
+        "fluentSetterDocumentation" : "/**<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>\n@param policyDocument The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>\n@param policyDocument The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>Specifies whether the policy version is set as the default.</p>",
+        "documentation" : "<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>",
         "name" : "SetAsDefault",
         "c2jName" : "setAsDefault",
         "c2jShape" : "SetAsDefault",
@@ -22934,7 +22937,7 @@
           "variableName" : "setAsDefault",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : "<p>Specifies whether the policy version is set as the default.</p>",
+          "documentation" : "<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -22972,10 +22975,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>Specifies whether the policy version is set as the default.</p>\n@param setAsDefault Specifies whether the policy version is set as the default.*/",
-        "getterDocumentation" : "/**<p>Specifies whether the policy version is set as the default.</p>\n@return Specifies whether the policy version is set as the default.*/",
-        "fluentSetterDocumentation" : "/**<p>Specifies whether the policy version is set as the default.</p>\n@param setAsDefault Specifies whether the policy version is set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Specifies whether the policy version is set as the default.</p>\n@param setAsDefault Specifies whether the policy version is set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>\n@param setAsDefault Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.*/",
+        "getterDocumentation" : "/**<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>\n@return Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.*/",
+        "fluentSetterDocumentation" : "/**<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>\n@param setAsDefault Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>\n@param setAsDefault Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -23056,7 +23059,7 @@
           "varargSetterDocumentation" : "/**<p>The policy name.</p>\n@param policyName The policy name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "PolicyDocument" : {
-          "documentation" : "<p>The JSON document that describes the policy.</p>",
+          "documentation" : "<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>",
           "name" : "PolicyDocument",
           "c2jName" : "policyDocument",
           "c2jShape" : "PolicyDocument",
@@ -23064,7 +23067,7 @@
             "variableName" : "policyDocument",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The JSON document that describes the policy.</p>",
+            "documentation" : "<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -23102,13 +23105,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The JSON document that describes the policy.</p>\n@param policyDocument The JSON document that describes the policy.*/",
-          "getterDocumentation" : "/**<p>The JSON document that describes the policy.</p>\n@return The JSON document that describes the policy.*/",
-          "fluentSetterDocumentation" : "/**<p>The JSON document that describes the policy.</p>\n@param policyDocument The JSON document that describes the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The JSON document that describes the policy.</p>\n@param policyDocument The JSON document that describes the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>\n@param policyDocument The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces*/",
+          "getterDocumentation" : "/**<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>\n@return The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces*/",
+          "fluentSetterDocumentation" : "/**<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>\n@param policyDocument The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</p>\n@param policyDocument The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SetAsDefault" : {
-          "documentation" : "<p>Specifies whether the policy version is set as the default.</p>",
+          "documentation" : "<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>",
           "name" : "SetAsDefault",
           "c2jName" : "setAsDefault",
           "c2jShape" : "SetAsDefault",
@@ -23116,7 +23119,7 @@
             "variableName" : "setAsDefault",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : "<p>Specifies whether the policy version is set as the default.</p>",
+            "documentation" : "<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -23154,10 +23157,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>Specifies whether the policy version is set as the default.</p>\n@param setAsDefault Specifies whether the policy version is set as the default.*/",
-          "getterDocumentation" : "/**<p>Specifies whether the policy version is set as the default.</p>\n@return Specifies whether the policy version is set as the default.*/",
-          "fluentSetterDocumentation" : "/**<p>Specifies whether the policy version is set as the default.</p>\n@param setAsDefault Specifies whether the policy version is set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Specifies whether the policy version is set as the default.</p>\n@param setAsDefault Specifies whether the policy version is set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>\n@param setAsDefault Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.*/",
+          "getterDocumentation" : "/**<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>\n@return Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.*/",
+          "fluentSetterDocumentation" : "/**<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>\n@param setAsDefault Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</p>\n@param setAsDefault Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -25402,8 +25405,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Action",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Action>",
           "templateImplType" : "java.util.ArrayList<Action>"
@@ -25695,8 +25698,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Action",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Action>",
             "templateImplType" : "java.util.ArrayList<Action>"

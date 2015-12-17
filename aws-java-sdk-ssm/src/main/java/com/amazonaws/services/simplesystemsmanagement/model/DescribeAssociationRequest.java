@@ -32,7 +32,7 @@ public class DescribeAssociationRequest extends AmazonWebServiceRequest
     private String name;
     /**
      * <p>
-     * The ID of the instance.
+     * The Windows Server instance ID.
      * </p>
      */
     private String instanceId;
@@ -77,11 +77,11 @@ public class DescribeAssociationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the instance.
+     * The Windows Server instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance.
+     *        The Windows Server instance ID.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -89,10 +89,10 @@ public class DescribeAssociationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the instance.
+     * The Windows Server instance ID.
      * </p>
      * 
-     * @return The ID of the instance.
+     * @return The Windows Server instance ID.
      */
     public String getInstanceId() {
         return this.instanceId;
@@ -100,11 +100,11 @@ public class DescribeAssociationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the instance.
+     * The Windows Server instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance.
+     *        The Windows Server instance ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

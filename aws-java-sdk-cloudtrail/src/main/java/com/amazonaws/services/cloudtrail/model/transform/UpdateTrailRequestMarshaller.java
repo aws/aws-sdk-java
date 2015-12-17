@@ -92,6 +92,11 @@ public class UpdateTrailRequestMarshaller implements
                         updateTrailRequest.getIncludeGlobalServiceEvents());
             }
 
+            if (updateTrailRequest.getIsMultiRegionTrail() != null) {
+                jsonWriter.key("IsMultiRegionTrail").value(
+                        updateTrailRequest.getIsMultiRegionTrail());
+            }
+
             if (updateTrailRequest.getEnableLogFileValidation() != null) {
                 jsonWriter.key("EnableLogFileValidation").value(
                         updateTrailRequest.getEnableLogFileValidation());

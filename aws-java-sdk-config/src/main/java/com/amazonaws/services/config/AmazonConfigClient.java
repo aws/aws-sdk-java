@@ -334,6 +334,10 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 "InvalidRoleException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.config.model.InsufficientPermissionsException.class,
+                        "InsufficientPermissionsException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.config.model.ResourceNotDiscoveredException.class,
                         "ResourceNotDiscoveredException"));
         jsonErrorUnmarshallers
@@ -386,6 +390,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify
      *         that the rule names are correct and try again.
+     * @throws ResourceInUseException
+     *         The rule is currently being deleted. Wait for a while and try
+     *         again.
      */
     @Override
     public void deleteConfigRule(DeleteConfigRuleRequest deleteConfigRuleRequest) {
@@ -1465,6 +1472,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * @throws ResourceInUseException
      *         The rule is currently being deleted. Wait for a while and try
      *         again.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>The rule cannot be created because the IAM role assigned to
+     *         AWS Config lacks permissions to perform the config:Put* action.</li>
+     *         <li>The AWS Lambda function cannot be invoked. Check the function
+     *         ARN, and check the function's permissions.</li>
      */
     @Override
     public void putConfigRule(PutConfigRuleRequest putConfigRuleRequest) {

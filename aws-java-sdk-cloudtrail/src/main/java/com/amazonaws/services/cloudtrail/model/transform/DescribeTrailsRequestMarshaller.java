@@ -82,6 +82,11 @@ public class DescribeTrailsRequestMarshaller implements
                 jsonWriter.endArray();
             }
 
+            if (describeTrailsRequest.getIncludeShadowTrails() != null) {
+                jsonWriter.key("includeShadowTrails").value(
+                        describeTrailsRequest.getIncludeShadowTrails());
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

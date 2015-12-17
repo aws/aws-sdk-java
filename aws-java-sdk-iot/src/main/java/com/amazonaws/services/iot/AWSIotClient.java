@@ -40,10 +40,7 @@ import com.amazonaws.services.iot.model.transform.*;
  * Client for accessing AWS IoT. All service calls made using this client are
  * blocking, and will not return until the service call completes.
  * <p>
- * <fullname>AWS IoT (Beta)</fullname>
- * <p>
- * <b>AWS IoT is in beta and is subject to change</b>
- * </p>
+ * <fullname>AWS IoT</fullname>
  * <p>
  * AWS IoT provides secure, bi-directional communication between
  * Internet-connected things (such as sensors, actuators, embedded devices, or
@@ -551,6 +548,54 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * <b>Note</b> Reusing the same certificate signing request (CSR) results in
      * a distinct certificate.
      * </p>
+     * <p>
+     * You can create multiple certificates in a batch by creating a directory
+     * and copying multiple .csr files into that directory and specifying that
+     * directory on the command line. The following commands show how to create
+     * a batch of certificates given a batch of CSRs.
+     * </p>
+     * <p>
+     * Assuming a set of CSRs are located inside of the directory
+     * my-csr-directory:
+     * </p>
+     * &gt;
+     * <p>
+     * On Linux and OSX, the command is:
+     * </p>
+     * <p>
+     * $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
+     * --certificate-signing-request file://my-csr-directory/{}
+     * </p>
+     * <p>
+     * This command lists all of the CSRs in my-csr-directory and pipes each CSR
+     * filename to the aws iot create-certificate-from-csr AWS CLI command to
+     * create a certificate for the corresponding CSR.
+     * </p>
+     * <p>
+     * The aws iot create-certificate-from-csr part of the command can also be
+     * run in parallel to speed up the certificate creation process:
+     * </p>
+     * <p>
+     * $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
+     * create-certificate-from-csr --certificate-signing-request
+     * file://my-csr-directory/{}
+     * </p>
+     * <p>
+     * On Windows PowerShell, the command to create certificates for all CSRs in
+     * my-csr-directory is:
+     * </p>
+     * <p>
+     * &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr
+     * --certificate-signing-request file://my-csr-directory/$_}
+     * </p>
+     * <p>
+     * On Windows Command Prompt, the command to create certificates for all
+     * CSRs in my-csr-directory is:
+     * </p>
+     * <p>
+     * &gt; forfiles /p my-csr-directory /c
+     * "cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path"
+     * </p>
      * 
      * @param createCertificateFromCsrRequest
      *        The input for the CreateCertificateFromCsr operation.
@@ -726,7 +771,15 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Creates a new version of the specified AWS IoT policy.
+     * Creates a new version of the specified AWS IoT policy. To update a
+     * policy, create a new policy version. A managed policy can have up to five
+     * versions. If the policy has five versions, you must delete an existing
+     * version using <a>DeletePolicyVersion</a> before you create a new version.
+     * </p>
+     * <p>
+     * Optionally, you can set the new version as the policy's default version.
+     * The default version is the operative version; that is, the version that
+     * is in effect for the certificates that the policy is attached to.
      * </p>
      * 
      * @param createPolicyVersionRequest
@@ -893,14 +946,11 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * Deletes the specified certificate.
      * </p>
      * <p>
-     * A certificate cannot be deleted if it has a policy attached to it. To
-     * delete a certificate, first detach all policies using the
-     * <a>DetachPrincipalPolicy</a> operation.
-     * </p>
-     * <p>
-     * In addition, a certificate cannot be deleted if it is in ACTIVE status.
-     * To delete a certificate, first change the status to INACTIVE using the
-     * <a>UpdateCertificate</a> operation.
+     * A certificate cannot be deleted if it has a policy attached to it or if
+     * its status is set to ACTIVE. To delete a certificate, first detach all
+     * policies using the <a>DetachPrincipalPolicy</a> API. Next use the
+     * <a>UpdateCertificate</a> API to set the certificate to the INACTIVE
+     * status.
      * </p>
      * 
      * @param deleteCertificateRequest
@@ -951,27 +1001,18 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * Deletes the specified policy.
      * </p>
      * <p>
-     * A policy cannot be deleted if:
+     * A policy cannot be deleted if it has non-default versions and/or it is
+     * attached to any certificate.
      * </p>
      * <p>
-     * - it has non-default versions
+     * To delete a policy, delete all non-default versions of the policy using
+     * the DeletePolicyVersion API, detach the policy from any certificate using
+     * the DetachPrincipalPolicy API, and then use the DeletePolicy API to
+     * delete the policy.
      * </p>
      * <p>
-     * - it is attached to any certificate
-     * </p>
-     * <p>
-     * To delete a policy:
-     * </p>
-     * <p>
-     * - First delete all the non-default versions of the policy using the
-     * <a>DeletePolicyVersion</a> API.
-     * </p>
-     * <p>
-     * - Detach it from any certificate using the <a>DetachPrincipalPolicy</a>
-     * API.
-     * </p>
-     * <p>
-     * When a policy is deleted, its default version is deleted with it.
+     * When a policy is deleted using DeletePolicy, its default version is
+     * deleted with it.
      * </p>
      * 
      * @param deletePolicyRequest
@@ -1025,12 +1066,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Deletes the specified version of the specified policy. The default
-     * version of the policy cannot be deleted.
-     * </p>
-     * <p>
-     * To delete the default version use the <a>DeletePolicy</a> API or mark the
-     * policy as non-default and then delete it.
+     * Deletes the specified version of the specified policy. You cannot delete
+     * the default version of a policy using this API. To delete the default
+     * version of a policy, use <a>DeletePolicy</a>. To find out which version
+     * of a policy is marked as the default version, use ListPolicyVersions.
      * </p>
      * 
      * @param deletePolicyVersionRequest
@@ -1244,9 +1283,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Returns a unique URL specific to the AWS account making the call. The URL
-     * points to the AWS IoT data plane endpoint. The customer-specific endpoint
-     * should be provided to all data plane operations.
+     * Returns a unique endpoint specific to the AWS account making the call.
+     * You specify the following URI when updating state information for your
+     * thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.
      * </p>
      * 
      * @param describeEndpointRequest
@@ -1256,6 +1295,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         An unexpected error has occurred.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      */
     @Override
     public DescribeEndpointResult describeEndpoint(
@@ -2232,8 +2273,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Sets the specified policy version as the default for the specified
-     * policy.
+     * Sets the specified version of the specified policy as the policy's
+     * default (operative) version. This action affects all certificates that
+     * the policy is attached to. To list the principals the policy is attached
+     * to, use the ListPrincipalPolicy API.
      * </p>
      * 
      * @param setDefaultPolicyVersionRequest
@@ -2348,7 +2391,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * </p>
      * <p>
      * The certificate must not have any policies attached to it. These can be
-     * detached using the <a>DetachPrincipalPolicy</a> API.
+     * detached using the DetachPrincipalPolicy API.
      * </p>
      * 
      * @param transferCertificateRequest

@@ -294,6 +294,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                         "InvalidLookupAttributesException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException.class,
+                        "InvalidHomeRegionException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException.class,
                         "MaximumNumberOfTrailsExceededException"));
         jsonErrorUnmarshallers
@@ -354,6 +358,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                         "ResourceNotFoundException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.cloudtrail.model.InvalidParameterCombinationException.class,
+                        "InvalidParameterCombinationException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.cloudtrail.model.InvalidTrailNameException.class,
                         "InvalidTrailNameException"));
         jsonErrorUnmarshallers
@@ -376,7 +384,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * Adds one or more tags to a trail, up to a limit of 10. Tags must be
      * unique per trail. Overwrites an existing tag's value when a new value is
      * specified for an existing tag key. If you specify a key without a value,
-     * the tag will be created with the specified key and a value of null.
+     * the tag will be created with the specified key and a value of null. You
+     * can tag a trail that applies to all regions only from the region in which
+     * the trail was created (that is, from its home region).
      * </p>
      * 
      * @param addTagsRequest
@@ -415,9 +425,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         <code>^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$</code>.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not
-     *         supported. For example, this exception will occur if an attempt
-     *         is made to tag a trail and tagging is not supported in the
-     *         current region.
+     *         supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
@@ -458,7 +466,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Creates a trail that specifies the settings for delivery of log data to
-     * an Amazon S3 bucket.
+     * an Amazon S3 bucket. A maximum of five trails can exist in a region,
+     * irrespective of the region in which they were created.
      * </p>
      * 
      * @param createTrailRequest
@@ -507,6 +516,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
      * @throws TrailNotProvidedException
      *         This exception is deprecated.
+     * @throws InvalidParameterCombinationException
+     *         This exception is thrown when the combination of parameters
+     *         provided is not valid.
      * @throws KmsKeyNotFoundException
      *         This exception is thrown when the KMS key does not exist, or when
      *         the S3 bucket and the KMS key are not in the same region.
@@ -521,9 +533,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         Cannot set a CloudWatch Logs delivery for this region.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not
-     *         supported. For example, this exception will occur if an attempt
-     *         is made to tag a trail and tagging is not supported in the
-     *         current region.
+     *         supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
@@ -564,7 +574,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Deletes a trail. This operation must be called from the region in which
-     * the trail was created.
+     * the trail was created. <code>DeleteTrail</code> cannot be called on the
+     * shadow trails (replicated trails in other regions) of a trail that is
+     * enabled in all regions.
      * </p>
      * 
      * @param deleteTrailRequest
@@ -586,6 +598,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
      *         invalid.</li>
      *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * @throws InvalidHomeRegionException
+     *         This exception is thrown when an operation is called on a trail
+     *         from a region other than the region in which the trail was
+     *         created.
      */
     @Override
     public DeleteTrailResult deleteTrail(DeleteTrailRequest deleteTrailRequest) {
@@ -631,9 +647,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * @return Result of the DescribeTrails operation returned by the service.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not
-     *         supported. For example, this exception will occur if an attempt
-     *         is made to tag a trail and tagging is not supported in the
-     *         current region.
+     *         supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
@@ -761,9 +775,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         of possible values.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not
-     *         supported. For example, this exception will occur if an attempt
-     *         is made to tag a trail and tagging is not supported in the
-     *         current region.
+     *         supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
@@ -811,6 +823,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Lists the tags for the specified trail or trails in the current region.
+     * </p>
+     * <p>
      * Lists the tags for the trail in the current region.
      * </p>
      * 
@@ -843,9 +858,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not
-     *         supported. For example, this exception will occur if an attempt
-     *         is made to tag a trail and tagging is not supported in the
-     *         current region.
+     *         supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
@@ -997,9 +1010,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         <code>^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$</code>.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not
-     *         supported. For example, this exception will occur if an attempt
-     *         is made to tag a trail and tagging is not supported in the
-     *         current region.
+     *         supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
@@ -1040,6 +1051,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Starts the recording of AWS API calls and log file delivery for a trail.
+     * For a trail that is enabled in all regions, this operation must be called
+     * from the region in which the trail was created. This operation cannot be
+     * called on the shadow trails (replicated trails in other regions) of a
+     * trail that is enabled in all regions.
      * </p>
      * 
      * @param startLoggingRequest
@@ -1062,6 +1077,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
      *         invalid.</li>
      *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * @throws InvalidHomeRegionException
+     *         This exception is thrown when an operation is called on a trail
+     *         from a region other than the region in which the trail was
+     *         created.
      */
     @Override
     public StartLoggingResult startLogging(
@@ -1102,7 +1121,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * Suspends the recording of AWS API calls and log file delivery for the
      * specified trail. Under most circumstances, there is no need to use this
      * action. You can update a trail without stopping it first. This action is
-     * the only way to stop recording.
+     * the only way to stop recording. For a trail enabled in all regions, this
+     * operation must be called from the region in which the trail was created,
+     * or an <code>InvalidHomeRegionException</code> will occur. This operation
+     * cannot be called on the shadow trails (replicated trails in other
+     * regions) of a trail enabled in all regions.
      * </p>
      * 
      * @param stopLoggingRequest
@@ -1125,6 +1148,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
      *         invalid.</li>
      *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * @throws InvalidHomeRegionException
+     *         This exception is thrown when an operation is called on a trail
+     *         from a region other than the region in which the trail was
+     *         created.
      */
     @Override
     public StopLoggingResult stopLogging(StopLoggingRequest stopLoggingRequest) {
@@ -1165,7 +1192,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * trail do not require stopping the CloudTrail service. Use this action to
      * designate an existing bucket for log delivery. If the existing bucket has
      * previously been a target for CloudTrail log files, an IAM policy exists
-     * for the bucket.
+     * for the bucket. <code>UpdateTrail</code> must be called from the region
+     * in which the trail was created; otherwise, an
+     * <code>InvalidHomeRegionException</code> is thrown.
      * </p>
      * 
      * @param updateTrailRequest
@@ -1212,6 +1241,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
      * @throws TrailNotProvidedException
      *         This exception is deprecated.
+     * @throws InvalidParameterCombinationException
+     *         This exception is thrown when the combination of parameters
+     *         provided is not valid.
+     * @throws InvalidHomeRegionException
+     *         This exception is thrown when an operation is called on a trail
+     *         from a region other than the region in which the trail was
+     *         created.
      * @throws KmsKeyNotFoundException
      *         This exception is thrown when the KMS key does not exist, or when
      *         the S3 bucket and the KMS key are not in the same region.
@@ -1226,9 +1262,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         Cannot set a CloudWatch Logs delivery for this region.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not
-     *         supported. For example, this exception will occur if an attempt
-     *         is made to tag a trail and tagging is not supported in the
-     *         current region.
+     *         supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
