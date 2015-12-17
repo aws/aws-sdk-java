@@ -42,7 +42,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "2015-07-27/distribution";
+        String path = "2015-09-17/distribution";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -89,7 +89,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         }
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2015-07-27/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2015-09-17/");
 
                     if (createDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = createDistributionRequest.getDistributionConfig();
@@ -369,6 +369,9 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                         if (defaultCacheBehaviorDefaultCacheBehavior.getMaxTTL() != null) {
                             xmlWriter.startElement("MaxTTL").value(defaultCacheBehaviorDefaultCacheBehavior.getMaxTTL()).endElement();
                         }
+                        if (defaultCacheBehaviorDefaultCacheBehavior.isCompress() != null) {
+                            xmlWriter.startElement("Compress").value(defaultCacheBehaviorDefaultCacheBehavior.isCompress()).endElement();
+                        }
                         xmlWriter.endElement();
                     }
                 }
@@ -567,6 +570,9 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                     if (cacheBehaviorsCacheBehaviorsitemsListValue.getMaxTTL() != null) {
                                         xmlWriter.startElement("MaxTTL").value(cacheBehaviorsCacheBehaviorsitemsListValue.getMaxTTL()).endElement();
                                     }
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.isCompress() != null) {
+                                        xmlWriter.startElement("Compress").value(cacheBehaviorsCacheBehaviorsitemsListValue.isCompress()).endElement();
+                                    }
                                 xmlWriter.endElement();
 
                                     cacheBehaviorsCacheBehaviorsitemsListIndex++;
@@ -647,17 +653,23 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                     ViewerCertificate viewerCertificateViewerCertificate = distributionConfigDistributionConfig.getViewerCertificate();
                     if (viewerCertificateViewerCertificate != null) {
                         xmlWriter.startElement("ViewerCertificate");
-                        if (viewerCertificateViewerCertificate.getIAMCertificateId() != null) {
-                            xmlWriter.startElement("IAMCertificateId").value(viewerCertificateViewerCertificate.getIAMCertificateId()).endElement();
+                        if (viewerCertificateViewerCertificate.getCertificate() != null) {
+                            xmlWriter.startElement("Certificate").value(viewerCertificateViewerCertificate.getCertificate()).endElement();
                         }
-                        if (viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate() != null) {
-                            xmlWriter.startElement("CloudFrontDefaultCertificate").value(viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate()).endElement();
+                        if (viewerCertificateViewerCertificate.getCertificateSource() != null) {
+                            xmlWriter.startElement("CertificateSource").value(viewerCertificateViewerCertificate.getCertificateSource()).endElement();
                         }
                         if (viewerCertificateViewerCertificate.getSSLSupportMethod() != null) {
                             xmlWriter.startElement("SSLSupportMethod").value(viewerCertificateViewerCertificate.getSSLSupportMethod()).endElement();
                         }
                         if (viewerCertificateViewerCertificate.getMinimumProtocolVersion() != null) {
                             xmlWriter.startElement("MinimumProtocolVersion").value(viewerCertificateViewerCertificate.getMinimumProtocolVersion()).endElement();
+                        }
+                        if (viewerCertificateViewerCertificate.getIAMCertificateId() != null) {
+                            xmlWriter.startElement("IAMCertificateId").value(viewerCertificateViewerCertificate.getIAMCertificateId()).endElement();
+                        }
+                        if (viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate() != null) {
+                            xmlWriter.startElement("CloudFrontDefaultCertificate").value(viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate()).endElement();
                         }
                         xmlWriter.endElement();
                     }

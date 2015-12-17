@@ -34,7 +34,11 @@ public enum ResourceType {
     AWSEC2Volume("AWS::EC2::Volume"),
     AWSEC2VPC("AWS::EC2::VPC"),
     AWSEC2VPNConnection("AWS::EC2::VPNConnection"),
-    AWSEC2VPNGateway("AWS::EC2::VPNGateway");
+    AWSEC2VPNGateway("AWS::EC2::VPNGateway"),
+    AWSIAMGroup("AWS::IAM::Group"),
+    AWSIAMPolicy("AWS::IAM::Policy"),
+    AWSIAMRole("AWS::IAM::Role"),
+    AWSIAMUser("AWS::IAM::User");
 
     private String value;
 
@@ -87,6 +91,14 @@ public enum ResourceType {
             return AWSEC2VPNConnection;
         } else if ("AWS::EC2::VPNGateway".equals(value)) {
             return AWSEC2VPNGateway;
+        } else if ("AWS::IAM::Group".equals(value)) {
+            return AWSIAMGroup;
+        } else if ("AWS::IAM::Policy".equals(value)) {
+            return AWSIAMPolicy;
+        } else if ("AWS::IAM::Role".equals(value)) {
+            return AWSIAMRole;
+        } else if ("AWS::IAM::User".equals(value)) {
+            return AWSIAMUser;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

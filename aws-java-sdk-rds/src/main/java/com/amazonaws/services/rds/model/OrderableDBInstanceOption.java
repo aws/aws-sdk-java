@@ -85,6 +85,12 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     private Boolean supportsIops;
 
     /**
+     * Indicates whether the DB instance supports enhanced monitoring at
+     * intervals from 1 to 60 seconds.
+     */
+    private Boolean supportsEnhancedMonitoring;
+
+    /**
      * The engine type of the orderable DB instance.
      *
      * @return The engine type of the orderable DB instance.
@@ -549,6 +555,56 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
+     * Indicates whether the DB instance supports enhanced monitoring at
+     * intervals from 1 to 60 seconds.
+     *
+     * @return Indicates whether the DB instance supports enhanced monitoring at
+     *         intervals from 1 to 60 seconds.
+     */
+    public Boolean isSupportsEnhancedMonitoring() {
+        return supportsEnhancedMonitoring;
+    }
+    
+    /**
+     * Indicates whether the DB instance supports enhanced monitoring at
+     * intervals from 1 to 60 seconds.
+     *
+     * @param supportsEnhancedMonitoring Indicates whether the DB instance supports enhanced monitoring at
+     *         intervals from 1 to 60 seconds.
+     */
+    public void setSupportsEnhancedMonitoring(Boolean supportsEnhancedMonitoring) {
+        this.supportsEnhancedMonitoring = supportsEnhancedMonitoring;
+    }
+    
+    /**
+     * Indicates whether the DB instance supports enhanced monitoring at
+     * intervals from 1 to 60 seconds.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param supportsEnhancedMonitoring Indicates whether the DB instance supports enhanced monitoring at
+     *         intervals from 1 to 60 seconds.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public OrderableDBInstanceOption withSupportsEnhancedMonitoring(Boolean supportsEnhancedMonitoring) {
+        this.supportsEnhancedMonitoring = supportsEnhancedMonitoring;
+        return this;
+    }
+
+    /**
+     * Indicates whether the DB instance supports enhanced monitoring at
+     * intervals from 1 to 60 seconds.
+     *
+     * @return Indicates whether the DB instance supports enhanced monitoring at
+     *         intervals from 1 to 60 seconds.
+     */
+    public Boolean getSupportsEnhancedMonitoring() {
+        return supportsEnhancedMonitoring;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -570,7 +626,8 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (isVpc() != null) sb.append("Vpc: " + isVpc() + ",");
         if (isSupportsStorageEncryption() != null) sb.append("SupportsStorageEncryption: " + isSupportsStorageEncryption() + ",");
         if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
-        if (isSupportsIops() != null) sb.append("SupportsIops: " + isSupportsIops() );
+        if (isSupportsIops() != null) sb.append("SupportsIops: " + isSupportsIops() + ",");
+        if (isSupportsEnhancedMonitoring() != null) sb.append("SupportsEnhancedMonitoring: " + isSupportsEnhancedMonitoring() );
         sb.append("}");
         return sb.toString();
     }
@@ -591,6 +648,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((isSupportsStorageEncryption() == null) ? 0 : isSupportsStorageEncryption().hashCode()); 
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
         hashCode = prime * hashCode + ((isSupportsIops() == null) ? 0 : isSupportsIops().hashCode()); 
+        hashCode = prime * hashCode + ((isSupportsEnhancedMonitoring() == null) ? 0 : isSupportsEnhancedMonitoring().hashCode()); 
         return hashCode;
     }
     
@@ -624,6 +682,8 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
         if (other.isSupportsIops() == null ^ this.isSupportsIops() == null) return false;
         if (other.isSupportsIops() != null && other.isSupportsIops().equals(this.isSupportsIops()) == false) return false; 
+        if (other.isSupportsEnhancedMonitoring() == null ^ this.isSupportsEnhancedMonitoring() == null) return false;
+        if (other.isSupportsEnhancedMonitoring() != null && other.isSupportsEnhancedMonitoring().equals(this.isSupportsEnhancedMonitoring()) == false) return false; 
         return true;
     }
     

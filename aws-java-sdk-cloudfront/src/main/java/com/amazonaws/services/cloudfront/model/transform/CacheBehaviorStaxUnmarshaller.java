@@ -82,6 +82,10 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     cacheBehavior.setMaxTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Compress", targetDepth)) {
+                    cacheBehavior.setCompress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheBehavior;

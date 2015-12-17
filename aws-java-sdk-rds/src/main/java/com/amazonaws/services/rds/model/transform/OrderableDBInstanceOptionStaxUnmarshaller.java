@@ -89,6 +89,10 @@ public class OrderableDBInstanceOptionStaxUnmarshaller implements Unmarshaller<O
                     orderableDBInstanceOption.setSupportsIops(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("SupportsEnhancedMonitoring", targetDepth)) {
+                    orderableDBInstanceOption.setSupportsEnhancedMonitoring(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return orderableDBInstanceOption;

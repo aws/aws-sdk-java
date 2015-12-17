@@ -95,7 +95,7 @@
             "senderFault":true
           },
           "exception":true,
-          "documentation":"<p>This exception is thrown when the requested operation is not supported. For example, this exception will occur if an attempt is made to tag a trail and tagging is not supported in the current region.</p>"
+          "documentation":"<p>This exception is thrown when the requested operation is not supported.</p>"
         },
         {
           "shape":"OperationNotPermittedException",
@@ -108,7 +108,7 @@
           "documentation":"<p>This exception is thrown when the requested operation is not permitted.</p>"
         }
       ],
-      "documentation":"<p>Adds one or more tags to a trail, up to a limit of 10. Tags must be unique per trail. Overwrites an existing tag's value when a new value is specified for an existing tag key. If you specify a key without a value, the tag will be created with the specified key and a value of null.</p>"
+      "documentation":"<p>Adds one or more tags to a trail, up to a limit of 10. Tags must be unique per trail. Overwrites an existing tag's value when a new value is specified for an existing tag key. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail that applies to all regions only from the region in which the trail was created (that is, from its home region).</p>"
     },
     "CreateTrail":{
       "name":"CreateTrail",
@@ -246,6 +246,16 @@
           "documentation":"<p>This exception is deprecated.</p>"
         },
         {
+          "shape":"InvalidParameterCombinationException",
+          "error":{
+            "code":"InvalidParameterCombinationError",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>This exception is thrown when the combination of parameters provided is not valid.</p>"
+        },
+        {
           "shape":"KmsKeyNotFoundException",
           "error":{
             "code":"KmsKeyNotFound",
@@ -303,7 +313,7 @@
             "senderFault":true
           },
           "exception":true,
-          "documentation":"<p>This exception is thrown when the requested operation is not supported. For example, this exception will occur if an attempt is made to tag a trail and tagging is not supported in the current region.</p>"
+          "documentation":"<p>This exception is thrown when the requested operation is not supported.</p>"
         },
         {
           "shape":"OperationNotPermittedException",
@@ -316,7 +326,7 @@
           "documentation":"<p>This exception is thrown when the requested operation is not permitted.</p>"
         }
       ],
-      "documentation":"<p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. </p>"
+      "documentation":"<p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective of the region in which they were created.</p>"
     },
     "DeleteTrail":{
       "name":"DeleteTrail",
@@ -352,9 +362,19 @@
           },
           "exception":true,
           "documentation":"<p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p> <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li> </ul>"
+        },
+        {
+          "shape":"InvalidHomeRegionException",
+          "error":{
+            "code":"InvalidHomeRegion",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
         }
       ],
-      "documentation":"<p>Deletes a trail. This operation must be called from the region in which the trail was created.</p>"
+      "documentation":"<p>Deletes a trail. This operation must be called from the region in which the trail was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>"
     },
     "DescribeTrails":{
       "name":"DescribeTrails",
@@ -379,7 +399,7 @@
             "senderFault":true
           },
           "exception":true,
-          "documentation":"<p>This exception is thrown when the requested operation is not supported. For example, this exception will occur if an attempt is made to tag a trail and tagging is not supported in the current region.</p>"
+          "documentation":"<p>This exception is thrown when the requested operation is not supported.</p>"
         },
         {
           "shape":"OperationNotPermittedException",
@@ -465,7 +485,7 @@
             "senderFault":true
           },
           "exception":true,
-          "documentation":"<p>This exception is thrown when the requested operation is not supported. For example, this exception will occur if an attempt is made to tag a trail and tagging is not supported in the current region.</p>"
+          "documentation":"<p>This exception is thrown when the requested operation is not supported.</p>"
         },
         {
           "shape":"OperationNotPermittedException",
@@ -553,7 +573,7 @@
             "senderFault":true
           },
           "exception":true,
-          "documentation":"<p>This exception is thrown when the requested operation is not supported. For example, this exception will occur if an attempt is made to tag a trail and tagging is not supported in the current region.</p>"
+          "documentation":"<p>This exception is thrown when the requested operation is not supported.</p>"
         },
         {
           "shape":"OperationNotPermittedException",
@@ -576,7 +596,7 @@
           "documentation":"<p>Reserved for future use.</p>"
         }
       ],
-      "documentation":"<p>Lists the tags for the trail in the current region.</p>"
+      "documentation":"<p>Lists the tags for the specified trail or trails in the current region.</p> <p>Lists the tags for the trail in the current region.</p>"
     },
     "LookupEvents":{
       "name":"LookupEvents",
@@ -709,7 +729,7 @@
             "senderFault":true
           },
           "exception":true,
-          "documentation":"<p>This exception is thrown when the requested operation is not supported. For example, this exception will occur if an attempt is made to tag a trail and tagging is not supported in the current region.</p>"
+          "documentation":"<p>This exception is thrown when the requested operation is not supported.</p>"
         },
         {
           "shape":"OperationNotPermittedException",
@@ -758,9 +778,19 @@
           },
           "exception":true,
           "documentation":"<p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p> <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li> </ul>"
+        },
+        {
+          "shape":"InvalidHomeRegionException",
+          "error":{
+            "code":"InvalidHomeRegion",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
         }
       ],
-      "documentation":"<p>Starts the recording of AWS API calls and log file delivery for a trail. </p>"
+      "documentation":"<p>Starts the recording of AWS API calls and log file delivery for a trail. For a trail that is enabled in all regions, this operation must be called from the region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>"
     },
     "StopLogging":{
       "name":"StopLogging",
@@ -796,9 +826,19 @@
           },
           "exception":true,
           "documentation":"<p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p> <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li> </ul>"
+        },
+        {
+          "shape":"InvalidHomeRegionException",
+          "error":{
+            "code":"InvalidHomeRegion",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
         }
       ],
-      "documentation":"<p>Suspends the recording of AWS API calls and log file delivery for the specified trail. Under most circumstances, there is no need to use this action. You can update a trail without stopping it first. This action is the only way to stop recording. </p>"
+      "documentation":"<p>Suspends the recording of AWS API calls and log file delivery for the specified trail. Under most circumstances, there is no need to use this action. You can update a trail without stopping it first. This action is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail enabled in all regions.</p>"
     },
     "UpdateTrail":{
       "name":"UpdateTrail",
@@ -926,6 +966,26 @@
           "documentation":"<p>This exception is deprecated.</p>"
         },
         {
+          "shape":"InvalidParameterCombinationException",
+          "error":{
+            "code":"InvalidParameterCombinationError",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>This exception is thrown when the combination of parameters provided is not valid.</p>"
+        },
+        {
+          "shape":"InvalidHomeRegionException",
+          "error":{
+            "code":"InvalidHomeRegion",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
+        },
+        {
           "shape":"KmsKeyNotFoundException",
           "error":{
             "code":"KmsKeyNotFound",
@@ -983,7 +1043,7 @@
             "senderFault":true
           },
           "exception":true,
-          "documentation":"<p>This exception is thrown when the requested operation is not supported. For example, this exception will occur if an attempt is made to tag a trail and tagging is not supported in the current region.</p>"
+          "documentation":"<p>This exception is thrown when the requested operation is not supported.</p>"
         },
         {
           "shape":"OperationNotPermittedException",
@@ -996,7 +1056,7 @@
           "documentation":"<p>This exception is thrown when the requested operation is not permitted.</p>"
         }
       ],
-      "documentation":"<p>Updates the settings that specify delivery of log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. </p>"
+      "documentation":"<p>Updates the settings that specify delivery of log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p>"
     }
   },
   "shapes":{
@@ -1074,6 +1134,10 @@
           "shape":"Boolean",
           "documentation":"<p>Specifies whether the trail is publishing events from global services such as IAM to the log files. </p>"
         },
+        "IsMultiRegionTrail":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether the trail is created in the current region or in all regions. The default is false.</p>"
+        },
         "EnableLogFileValidation":{
           "shape":"Boolean",
           "documentation":"<p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail will not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</note>"
@@ -1115,6 +1179,10 @@
         "IncludeGlobalServiceEvents":{
           "shape":"Boolean",
           "documentation":"<p>Specifies whether the trail is publishing events from global services such as IAM to the log files. </p>"
+        },
+        "IsMultiRegionTrail":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether the trail exists in one region or in all regions.</p>"
         },
         "TrailARN":{
           "shape":"String",
@@ -1162,7 +1230,11 @@
       "members":{
         "trailNameList":{
           "shape":"TrailNameList",
-          "documentation":"<p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>. If an empty list is specified, information for the trail in the current region is returned.</p>"
+          "documentation":"<p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>. If an empty list is specified, information for the trail in the current region is returned.</p> <ul> <li>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</li> <li> If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned. </li> </ul> <note>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</note>"
+        },
+        "includeShadowTrails":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>"
         }
       },
       "documentation":"<p>Returns information about the trail.</p>"
@@ -1217,7 +1289,7 @@
       "members":{
         "Name":{
           "shape":"String",
-          "documentation":"<p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.</p>"
+          "documentation":"<p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.</p>"
         }
       },
       "documentation":"<p>The name of a trail about which you want the current status.</p>"
@@ -1356,6 +1428,18 @@
       "exception":true,
       "documentation":"<p>This exception is thrown when the provided role is not valid.</p>"
     },
+    "InvalidHomeRegionException":{
+      "type":"structure",
+      "members":{
+      },
+      "error":{
+        "code":"InvalidHomeRegion",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true,
+      "documentation":"<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
+    },
     "InvalidKmsKeyIdException":{
       "type":"structure",
       "members":{
@@ -1403,6 +1487,18 @@
       },
       "exception":true,
       "documentation":"<p>Invalid token or token that was previously used in a request with different parameters. This exception is thrown if the token is invalid. </p>"
+    },
+    "InvalidParameterCombinationException":{
+      "type":"structure",
+      "members":{
+      },
+      "error":{
+        "code":"InvalidParameterCombinationError",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true,
+      "documentation":"<p>This exception is thrown when the combination of parameters provided is not valid.</p>"
     },
     "InvalidS3BucketNameException":{
       "type":"structure",
@@ -1884,6 +1980,14 @@
           "shape":"Boolean",
           "documentation":"<p>Set to <b>True</b> to include AWS API calls from AWS global services such as IAM. Otherwise, <b>False</b>.</p>"
         },
+        "IsMultiRegionTrail":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether the trail belongs only to one region or exists in all regions.</p>"
+        },
+        "HomeRegion":{
+          "shape":"String",
+          "documentation":"<p>The region in which the trail was created.</p>"
+        },
         "TrailARN":{
           "shape":"String",
           "documentation":"<p>The Amazon Resource Name of the trail. The <code>TrailARN</code> format is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.</p>"
@@ -1961,7 +2065,7 @@
         "senderFault":true
       },
       "exception":true,
-      "documentation":"<p>This exception is thrown when the requested operation is not supported. For example, this exception will occur if an attempt is made to tag a trail and tagging is not supported in the current region.</p>"
+      "documentation":"<p>This exception is thrown when the requested operation is not supported.</p>"
     },
     "UpdateTrailRequest":{
       "type":"structure",
@@ -1986,6 +2090,10 @@
         "IncludeGlobalServiceEvents":{
           "shape":"Boolean",
           "documentation":"<p>Specifies whether the trail is publishing events from global services such as IAM to the log files. </p>"
+        },
+        "IsMultiRegionTrail":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted.</p>"
         },
         "EnableLogFileValidation":{
           "shape":"Boolean",
@@ -2028,6 +2136,10 @@
         "IncludeGlobalServiceEvents":{
           "shape":"Boolean",
           "documentation":"<p>Specifies whether the trail is publishing events from global services such as IAM to the log files. </p>"
+        },
+        "IsMultiRegionTrail":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether the trail exists in one region or in all regions.</p>"
         },
         "TrailARN":{
           "shape":"String",

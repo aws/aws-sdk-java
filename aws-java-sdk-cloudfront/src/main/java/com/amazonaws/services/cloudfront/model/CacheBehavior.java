@@ -148,6 +148,28 @@ public class CacheBehavior implements Serializable, Cloneable {
     private Long maxTTL;
 
     /**
+     * Whether you want CloudFront to automatically compress content for web
+     * requests that include Accept-Encoding: gzip in the request header. If
+     * so, specify true; if not, specify false. CloudFront compresses files
+     * larger than 1000 bytes and less than 1 megabyte for both Amazon S3 and
+     * custom origins. When a CloudFront edge location is unusually busy,
+     * some files might not be compressed. The value of the Content-Type
+     * header must be on the list of file types that CloudFront will
+     * compress. For the current list, see <a
+     * href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving
+     * Compressed Content</a> in the Amazon CloudFront Developer Guide. If
+     * you configure CloudFront to compress content, CloudFront removes the
+     * ETag response header from the objects that it compresses. The ETag
+     * header indicates that the version in a CloudFront edge cache is
+     * identical to the version on the origin server, but after compression
+     * the two versions are no longer identical. As a result, for compressed
+     * objects, CloudFront can't use the ETag header to determine whether an
+     * expired object in the CloudFront edge cache is still the latest
+     * version.
+     */
+    private Boolean compress;
+
+    /**
      * The pattern (for example, images/*.jpg) that specifies which requests
      * you want this cache behavior to apply to. When CloudFront receives an
      * end-user request, the requested path is compared with path patterns in
@@ -898,6 +920,184 @@ public class CacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * Whether you want CloudFront to automatically compress content for web
+     * requests that include Accept-Encoding: gzip in the request header. If
+     * so, specify true; if not, specify false. CloudFront compresses files
+     * larger than 1000 bytes and less than 1 megabyte for both Amazon S3 and
+     * custom origins. When a CloudFront edge location is unusually busy,
+     * some files might not be compressed. The value of the Content-Type
+     * header must be on the list of file types that CloudFront will
+     * compress. For the current list, see <a
+     * href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving
+     * Compressed Content</a> in the Amazon CloudFront Developer Guide. If
+     * you configure CloudFront to compress content, CloudFront removes the
+     * ETag response header from the objects that it compresses. The ETag
+     * header indicates that the version in a CloudFront edge cache is
+     * identical to the version on the origin server, but after compression
+     * the two versions are no longer identical. As a result, for compressed
+     * objects, CloudFront can't use the ETag header to determine whether an
+     * expired object in the CloudFront edge cache is still the latest
+     * version.
+     *
+     * @return Whether you want CloudFront to automatically compress content for web
+     *         requests that include Accept-Encoding: gzip in the request header. If
+     *         so, specify true; if not, specify false. CloudFront compresses files
+     *         larger than 1000 bytes and less than 1 megabyte for both Amazon S3 and
+     *         custom origins. When a CloudFront edge location is unusually busy,
+     *         some files might not be compressed. The value of the Content-Type
+     *         header must be on the list of file types that CloudFront will
+     *         compress. For the current list, see <a
+     *         href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving
+     *         Compressed Content</a> in the Amazon CloudFront Developer Guide. If
+     *         you configure CloudFront to compress content, CloudFront removes the
+     *         ETag response header from the objects that it compresses. The ETag
+     *         header indicates that the version in a CloudFront edge cache is
+     *         identical to the version on the origin server, but after compression
+     *         the two versions are no longer identical. As a result, for compressed
+     *         objects, CloudFront can't use the ETag header to determine whether an
+     *         expired object in the CloudFront edge cache is still the latest
+     *         version.
+     */
+    public Boolean isCompress() {
+        return compress;
+    }
+    
+    /**
+     * Whether you want CloudFront to automatically compress content for web
+     * requests that include Accept-Encoding: gzip in the request header. If
+     * so, specify true; if not, specify false. CloudFront compresses files
+     * larger than 1000 bytes and less than 1 megabyte for both Amazon S3 and
+     * custom origins. When a CloudFront edge location is unusually busy,
+     * some files might not be compressed. The value of the Content-Type
+     * header must be on the list of file types that CloudFront will
+     * compress. For the current list, see <a
+     * href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving
+     * Compressed Content</a> in the Amazon CloudFront Developer Guide. If
+     * you configure CloudFront to compress content, CloudFront removes the
+     * ETag response header from the objects that it compresses. The ETag
+     * header indicates that the version in a CloudFront edge cache is
+     * identical to the version on the origin server, but after compression
+     * the two versions are no longer identical. As a result, for compressed
+     * objects, CloudFront can't use the ETag header to determine whether an
+     * expired object in the CloudFront edge cache is still the latest
+     * version.
+     *
+     * @param compress Whether you want CloudFront to automatically compress content for web
+     *         requests that include Accept-Encoding: gzip in the request header. If
+     *         so, specify true; if not, specify false. CloudFront compresses files
+     *         larger than 1000 bytes and less than 1 megabyte for both Amazon S3 and
+     *         custom origins. When a CloudFront edge location is unusually busy,
+     *         some files might not be compressed. The value of the Content-Type
+     *         header must be on the list of file types that CloudFront will
+     *         compress. For the current list, see <a
+     *         href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving
+     *         Compressed Content</a> in the Amazon CloudFront Developer Guide. If
+     *         you configure CloudFront to compress content, CloudFront removes the
+     *         ETag response header from the objects that it compresses. The ETag
+     *         header indicates that the version in a CloudFront edge cache is
+     *         identical to the version on the origin server, but after compression
+     *         the two versions are no longer identical. As a result, for compressed
+     *         objects, CloudFront can't use the ETag header to determine whether an
+     *         expired object in the CloudFront edge cache is still the latest
+     *         version.
+     */
+    public void setCompress(Boolean compress) {
+        this.compress = compress;
+    }
+    
+    /**
+     * Whether you want CloudFront to automatically compress content for web
+     * requests that include Accept-Encoding: gzip in the request header. If
+     * so, specify true; if not, specify false. CloudFront compresses files
+     * larger than 1000 bytes and less than 1 megabyte for both Amazon S3 and
+     * custom origins. When a CloudFront edge location is unusually busy,
+     * some files might not be compressed. The value of the Content-Type
+     * header must be on the list of file types that CloudFront will
+     * compress. For the current list, see <a
+     * href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving
+     * Compressed Content</a> in the Amazon CloudFront Developer Guide. If
+     * you configure CloudFront to compress content, CloudFront removes the
+     * ETag response header from the objects that it compresses. The ETag
+     * header indicates that the version in a CloudFront edge cache is
+     * identical to the version on the origin server, but after compression
+     * the two versions are no longer identical. As a result, for compressed
+     * objects, CloudFront can't use the ETag header to determine whether an
+     * expired object in the CloudFront edge cache is still the latest
+     * version.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param compress Whether you want CloudFront to automatically compress content for web
+     *         requests that include Accept-Encoding: gzip in the request header. If
+     *         so, specify true; if not, specify false. CloudFront compresses files
+     *         larger than 1000 bytes and less than 1 megabyte for both Amazon S3 and
+     *         custom origins. When a CloudFront edge location is unusually busy,
+     *         some files might not be compressed. The value of the Content-Type
+     *         header must be on the list of file types that CloudFront will
+     *         compress. For the current list, see <a
+     *         href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving
+     *         Compressed Content</a> in the Amazon CloudFront Developer Guide. If
+     *         you configure CloudFront to compress content, CloudFront removes the
+     *         ETag response header from the objects that it compresses. The ETag
+     *         header indicates that the version in a CloudFront edge cache is
+     *         identical to the version on the origin server, but after compression
+     *         the two versions are no longer identical. As a result, for compressed
+     *         objects, CloudFront can't use the ETag header to determine whether an
+     *         expired object in the CloudFront edge cache is still the latest
+     *         version.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CacheBehavior withCompress(Boolean compress) {
+        this.compress = compress;
+        return this;
+    }
+
+    /**
+     * Whether you want CloudFront to automatically compress content for web
+     * requests that include Accept-Encoding: gzip in the request header. If
+     * so, specify true; if not, specify false. CloudFront compresses files
+     * larger than 1000 bytes and less than 1 megabyte for both Amazon S3 and
+     * custom origins. When a CloudFront edge location is unusually busy,
+     * some files might not be compressed. The value of the Content-Type
+     * header must be on the list of file types that CloudFront will
+     * compress. For the current list, see <a
+     * href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving
+     * Compressed Content</a> in the Amazon CloudFront Developer Guide. If
+     * you configure CloudFront to compress content, CloudFront removes the
+     * ETag response header from the objects that it compresses. The ETag
+     * header indicates that the version in a CloudFront edge cache is
+     * identical to the version on the origin server, but after compression
+     * the two versions are no longer identical. As a result, for compressed
+     * objects, CloudFront can't use the ETag header to determine whether an
+     * expired object in the CloudFront edge cache is still the latest
+     * version.
+     *
+     * @return Whether you want CloudFront to automatically compress content for web
+     *         requests that include Accept-Encoding: gzip in the request header. If
+     *         so, specify true; if not, specify false. CloudFront compresses files
+     *         larger than 1000 bytes and less than 1 megabyte for both Amazon S3 and
+     *         custom origins. When a CloudFront edge location is unusually busy,
+     *         some files might not be compressed. The value of the Content-Type
+     *         header must be on the list of file types that CloudFront will
+     *         compress. For the current list, see <a
+     *         href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving
+     *         Compressed Content</a> in the Amazon CloudFront Developer Guide. If
+     *         you configure CloudFront to compress content, CloudFront removes the
+     *         ETag response header from the objects that it compresses. The ETag
+     *         header indicates that the version in a CloudFront edge cache is
+     *         identical to the version on the origin server, but after compression
+     *         the two versions are no longer identical. As a result, for compressed
+     *         objects, CloudFront can't use the ETag header to determine whether an
+     *         expired object in the CloudFront edge cache is still the latest
+     *         version.
+     */
+    public Boolean getCompress() {
+        return compress;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -918,7 +1118,8 @@ public class CacheBehavior implements Serializable, Cloneable {
         if (getAllowedMethods() != null) sb.append("AllowedMethods: " + getAllowedMethods() + ",");
         if (isSmoothStreaming() != null) sb.append("SmoothStreaming: " + isSmoothStreaming() + ",");
         if (getDefaultTTL() != null) sb.append("DefaultTTL: " + getDefaultTTL() + ",");
-        if (getMaxTTL() != null) sb.append("MaxTTL: " + getMaxTTL() );
+        if (getMaxTTL() != null) sb.append("MaxTTL: " + getMaxTTL() + ",");
+        if (isCompress() != null) sb.append("Compress: " + isCompress() );
         sb.append("}");
         return sb.toString();
     }
@@ -938,6 +1139,7 @@ public class CacheBehavior implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((isSmoothStreaming() == null) ? 0 : isSmoothStreaming().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultTTL() == null) ? 0 : getDefaultTTL().hashCode()); 
         hashCode = prime * hashCode + ((getMaxTTL() == null) ? 0 : getMaxTTL().hashCode()); 
+        hashCode = prime * hashCode + ((isCompress() == null) ? 0 : isCompress().hashCode()); 
         return hashCode;
     }
     
@@ -969,6 +1171,8 @@ public class CacheBehavior implements Serializable, Cloneable {
         if (other.getDefaultTTL() != null && other.getDefaultTTL().equals(this.getDefaultTTL()) == false) return false; 
         if (other.getMaxTTL() == null ^ this.getMaxTTL() == null) return false;
         if (other.getMaxTTL() != null && other.getMaxTTL().equals(this.getMaxTTL()) == false) return false; 
+        if (other.isCompress() == null ^ this.isCompress() == null) return false;
+        if (other.isCompress() != null && other.isCompress().equals(this.isCompress()) == false) return false; 
         return true;
     }
     

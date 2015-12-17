@@ -77,6 +77,12 @@ public class UpdateTrailResultJsonUnmarshaller implements
                             .setIncludeGlobalServiceEvents(BooleanJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("IsMultiRegionTrail", targetDepth)) {
+                    context.nextToken();
+                    updateTrailResult
+                            .setIsMultiRegionTrail(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("TrailARN", targetDepth)) {
                     context.nextToken();
                     updateTrailResult.setTrailARN(StringJsonUnmarshaller

@@ -55,7 +55,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * Adds one or more tags to a trail, up to a limit of 10. Tags must be
      * unique per trail. Overwrites an existing tag's value when a new value is
      * specified for an existing tag key. If you specify a key without a value,
-     * the tag will be created with the specified key and a value of null.
+     * the tag will be created with the specified key and a value of null. You
+     * can tag a trail that applies to all regions only from the region in which
+     * the trail was created (that is, from its home region).
      * </p>
      * 
      * @param addTagsRequest
@@ -71,7 +73,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * Adds one or more tags to a trail, up to a limit of 10. Tags must be
      * unique per trail. Overwrites an existing tag's value when a new value is
      * specified for an existing tag key. If you specify a key without a value,
-     * the tag will be created with the specified key and a value of null.
+     * the tag will be created with the specified key and a value of null. You
+     * can tag a trail that applies to all regions only from the region in which
+     * the trail was created (that is, from its home region).
      * </p>
      * 
      * @param addTagsRequest
@@ -91,7 +95,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Creates a trail that specifies the settings for delivery of log data to
-     * an Amazon S3 bucket.
+     * an Amazon S3 bucket. A maximum of five trails can exist in a region,
+     * irrespective of the region in which they were created.
      * </p>
      * 
      * @param createTrailRequest
@@ -105,7 +110,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Creates a trail that specifies the settings for delivery of log data to
-     * an Amazon S3 bucket.
+     * an Amazon S3 bucket. A maximum of five trails can exist in a region,
+     * irrespective of the region in which they were created.
      * </p>
      * 
      * @param createTrailRequest
@@ -125,7 +131,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Deletes a trail. This operation must be called from the region in which
-     * the trail was created.
+     * the trail was created. <code>DeleteTrail</code> cannot be called on the
+     * shadow trails (replicated trails in other regions) of a trail that is
+     * enabled in all regions.
      * </p>
      * 
      * @param deleteTrailRequest
@@ -139,7 +147,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Deletes a trail. This operation must be called from the region in which
-     * the trail was created.
+     * the trail was created. <code>DeleteTrail</code> cannot be called on the
+     * shadow trails (replicated trails in other regions) of a trail that is
+     * enabled in all regions.
      * </p>
      * 
      * @param deleteTrailRequest
@@ -312,6 +322,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Lists the tags for the specified trail or trails in the current region.
+     * </p>
+     * <p>
      * Lists the tags for the trail in the current region.
      * </p>
      * 
@@ -324,6 +337,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
             ListTagsRequest listTagsRequest);
 
     /**
+     * <p>
+     * Lists the tags for the specified trail or trails in the current region.
+     * </p>
      * <p>
      * Lists the tags for the trail in the current region.
      * </p>
@@ -454,6 +470,10 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Starts the recording of AWS API calls and log file delivery for a trail.
+     * For a trail that is enabled in all regions, this operation must be called
+     * from the region in which the trail was created. This operation cannot be
+     * called on the shadow trails (replicated trails in other regions) of a
+     * trail that is enabled in all regions.
      * </p>
      * 
      * @param startLoggingRequest
@@ -468,6 +488,10 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Starts the recording of AWS API calls and log file delivery for a trail.
+     * For a trail that is enabled in all regions, this operation must be called
+     * from the region in which the trail was created. This operation cannot be
+     * called on the shadow trails (replicated trails in other regions) of a
+     * trail that is enabled in all regions.
      * </p>
      * 
      * @param startLoggingRequest
@@ -490,7 +514,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * Suspends the recording of AWS API calls and log file delivery for the
      * specified trail. Under most circumstances, there is no need to use this
      * action. You can update a trail without stopping it first. This action is
-     * the only way to stop recording.
+     * the only way to stop recording. For a trail enabled in all regions, this
+     * operation must be called from the region in which the trail was created,
+     * or an <code>InvalidHomeRegionException</code> will occur. This operation
+     * cannot be called on the shadow trails (replicated trails in other
+     * regions) of a trail enabled in all regions.
      * </p>
      * 
      * @param stopLoggingRequest
@@ -507,7 +535,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * Suspends the recording of AWS API calls and log file delivery for the
      * specified trail. Under most circumstances, there is no need to use this
      * action. You can update a trail without stopping it first. This action is
-     * the only way to stop recording.
+     * the only way to stop recording. For a trail enabled in all regions, this
+     * operation must be called from the region in which the trail was created,
+     * or an <code>InvalidHomeRegionException</code> will occur. This operation
+     * cannot be called on the shadow trails (replicated trails in other
+     * regions) of a trail enabled in all regions.
      * </p>
      * 
      * @param stopLoggingRequest
@@ -531,7 +563,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * trail do not require stopping the CloudTrail service. Use this action to
      * designate an existing bucket for log delivery. If the existing bucket has
      * previously been a target for CloudTrail log files, an IAM policy exists
-     * for the bucket.
+     * for the bucket. <code>UpdateTrail</code> must be called from the region
+     * in which the trail was created; otherwise, an
+     * <code>InvalidHomeRegionException</code> is thrown.
      * </p>
      * 
      * @param updateTrailRequest
@@ -548,7 +582,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * trail do not require stopping the CloudTrail service. Use this action to
      * designate an existing bucket for log delivery. If the existing bucket has
      * previously been a target for CloudTrail log files, an IAM policy exists
-     * for the bucket.
+     * for the bucket. <code>UpdateTrail</code> must be called from the region
+     * in which the trail was created; otherwise, an
+     * <code>InvalidHomeRegionException</code> is thrown.
      * </p>
      * 
      * @param updateTrailRequest

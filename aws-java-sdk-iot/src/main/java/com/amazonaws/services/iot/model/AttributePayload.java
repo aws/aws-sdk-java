@@ -22,7 +22,7 @@ import java.io.Serializable;
  * The attribute payload, a JSON string containing up to three key-value pairs.
  * </p>
  * <p>
- * For example: {\"attributes\":{\"string1\":\"string2\”}}
+ * For example: {\"attributes\":{\"string1\":\"string2\"}}
  * </p>
  */
 public class AttributePayload implements Serializable, Cloneable {
@@ -32,7 +32,7 @@ public class AttributePayload implements Serializable, Cloneable {
      * A JSON string containing up to three key-value pair in JSON format.
      * </p>
      * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\”}}
+     * For example: {\"attributes\":{\"string1\":\"string2\"}}
      * </p>
      */
     private java.util.Map<String, String> attributes;
@@ -42,13 +42,13 @@ public class AttributePayload implements Serializable, Cloneable {
      * A JSON string containing up to three key-value pair in JSON format.
      * </p>
      * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\”}}
+     * For example: {\"attributes\":{\"string1\":\"string2\"}}
      * </p>
      * 
      * @return A JSON string containing up to three key-value pair in JSON
      *         format.</p>
      *         <p>
-     *         For example: {\"attributes\":{\"string1\":\"string2\”}}
+     *         For example: {\"attributes\":{\"string1\":\"string2\"}}
      */
     public java.util.Map<String, String> getAttributes() {
         return attributes;
@@ -59,14 +59,14 @@ public class AttributePayload implements Serializable, Cloneable {
      * A JSON string containing up to three key-value pair in JSON format.
      * </p>
      * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\”}}
+     * For example: {\"attributes\":{\"string1\":\"string2\"}}
      * </p>
      * 
      * @param attributes
      *        A JSON string containing up to three key-value pair in JSON
      *        format.</p>
      *        <p>
-     *        For example: {\"attributes\":{\"string1\":\"string2\”}}
+     *        For example: {\"attributes\":{\"string1\":\"string2\"}}
      */
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes;
@@ -77,14 +77,14 @@ public class AttributePayload implements Serializable, Cloneable {
      * A JSON string containing up to three key-value pair in JSON format.
      * </p>
      * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\”}}
+     * For example: {\"attributes\":{\"string1\":\"string2\"}}
      * </p>
      * 
      * @param attributes
      *        A JSON string containing up to three key-value pair in JSON
      *        format.</p>
      *        <p>
-     *        For example: {\"attributes\":{\"string1\":\"string2\”}}
+     *        For example: {\"attributes\":{\"string1\":\"string2\"}}
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

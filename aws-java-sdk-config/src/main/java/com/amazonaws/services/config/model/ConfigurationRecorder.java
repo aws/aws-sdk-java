@@ -42,9 +42,8 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
     private String roleARN;
     /**
      * <p>
-     * The recording group specifies either to record configurations for all
-     * supported resources or to provide a list of resource types to record. The
-     * list of resource types must be a subset of supported resource types.
+     * Specifies the types of AWS resource for which AWS Config records
+     * configuration changes.
      * </p>
      */
     private RecordingGroup recordingGroup;
@@ -145,16 +144,13 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The recording group specifies either to record configurations for all
-     * supported resources or to provide a list of resource types to record. The
-     * list of resource types must be a subset of supported resource types.
+     * Specifies the types of AWS resource for which AWS Config records
+     * configuration changes.
      * </p>
      * 
      * @param recordingGroup
-     *        The recording group specifies either to record configurations for
-     *        all supported resources or to provide a list of resource types to
-     *        record. The list of resource types must be a subset of supported
-     *        resource types.
+     *        Specifies the types of AWS resource for which AWS Config records
+     *        configuration changes.
      */
     public void setRecordingGroup(RecordingGroup recordingGroup) {
         this.recordingGroup = recordingGroup;
@@ -162,15 +158,12 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The recording group specifies either to record configurations for all
-     * supported resources or to provide a list of resource types to record. The
-     * list of resource types must be a subset of supported resource types.
+     * Specifies the types of AWS resource for which AWS Config records
+     * configuration changes.
      * </p>
      * 
-     * @return The recording group specifies either to record configurations for
-     *         all supported resources or to provide a list of resource types to
-     *         record. The list of resource types must be a subset of supported
-     *         resource types.
+     * @return Specifies the types of AWS resource for which AWS Config records
+     *         configuration changes.
      */
     public RecordingGroup getRecordingGroup() {
         return this.recordingGroup;
@@ -178,16 +171,13 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The recording group specifies either to record configurations for all
-     * supported resources or to provide a list of resource types to record. The
-     * list of resource types must be a subset of supported resource types.
+     * Specifies the types of AWS resource for which AWS Config records
+     * configuration changes.
      * </p>
      * 
      * @param recordingGroup
-     *        The recording group specifies either to record configurations for
-     *        all supported resources or to provide a list of resource types to
-     *        record. The list of resource types must be a subset of supported
-     *        resource types.
+     *        Specifies the types of AWS resource for which AWS Config records
+     *        configuration changes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

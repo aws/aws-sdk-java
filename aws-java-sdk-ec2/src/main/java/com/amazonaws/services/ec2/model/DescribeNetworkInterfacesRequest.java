@@ -58,19 +58,21 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * <p><code>association.public-dns-name</code> - The public DNS name for
      * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
-     * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
-     * of the instance to which the network interface is attached. </li> <li>
+     * attachment. </li> <li> <p><code>attachment.attach.time</code> - The
+     * time that the network interface was attached to an instance. </li>
+     * <li> <p><code>attachment.delete-on-termination</code> - Indicates
+     * whether the attachment is deleted when an instance is terminated.
+     * </li> <li> <p><code>attachment.device-index</code> - The device index
+     * to which the network interface is attached. </li> <li>
+     * <p><code>attachment.instance-id</code> - The ID of the instance to
+     * which the network interface is attached. </li> <li>
      * <p><code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached. </li> <li>
-     * <p><code>attachment.device-index</code> - The device index to which
-     * the network interface is attached. </li> <li>
+     * <p><code>attachment.nat-gateway-id</code> - The ID of the NAT gateway
+     * to which the network interface is attached. </li> <li>
      * <p><code>attachment.status</code> - The status of the attachment
      * (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>). </li> <li>
-     * <p><code>attachment.attach.time</code> - The time that the network
-     * interface was attached to an instance. </li> <li>
-     * <p><code>attachment.delete-on-termination</code> - Indicates whether
-     * the attachment is deleted when an instance is terminated. </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the
      * network interface. </li> <li> <p><code>description</code> - The
      * description of the network interface. </li> <li>
@@ -94,7 +96,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * interface performs source/destination checking. A value of
      * <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for
-     * the network interface to perform Network Address Translation (NAT) in
+     * the network interface to perform network address translation (NAT) in
      * your VPC. </li> <li> <p><code>status</code> - The status of the
      * network interface. If the network interface is not attached to an
      * instance, the status is <code>available</code>; if a network interface
@@ -220,19 +222,21 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * <p><code>association.public-dns-name</code> - The public DNS name for
      * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
-     * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
-     * of the instance to which the network interface is attached. </li> <li>
+     * attachment. </li> <li> <p><code>attachment.attach.time</code> - The
+     * time that the network interface was attached to an instance. </li>
+     * <li> <p><code>attachment.delete-on-termination</code> - Indicates
+     * whether the attachment is deleted when an instance is terminated.
+     * </li> <li> <p><code>attachment.device-index</code> - The device index
+     * to which the network interface is attached. </li> <li>
+     * <p><code>attachment.instance-id</code> - The ID of the instance to
+     * which the network interface is attached. </li> <li>
      * <p><code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached. </li> <li>
-     * <p><code>attachment.device-index</code> - The device index to which
-     * the network interface is attached. </li> <li>
+     * <p><code>attachment.nat-gateway-id</code> - The ID of the NAT gateway
+     * to which the network interface is attached. </li> <li>
      * <p><code>attachment.status</code> - The status of the attachment
      * (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>). </li> <li>
-     * <p><code>attachment.attach.time</code> - The time that the network
-     * interface was attached to an instance. </li> <li>
-     * <p><code>attachment.delete-on-termination</code> - Indicates whether
-     * the attachment is deleted when an instance is terminated. </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the
      * network interface. </li> <li> <p><code>description</code> - The
      * description of the network interface. </li> <li>
@@ -256,7 +260,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * interface performs source/destination checking. A value of
      * <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for
-     * the network interface to perform Network Address Translation (NAT) in
+     * the network interface to perform network address translation (NAT) in
      * your VPC. </li> <li> <p><code>status</code> - The status of the
      * network interface. If the network interface is not attached to an
      * instance, the status is <code>available</code>; if a network interface
@@ -298,19 +302,21 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         <p><code>association.public-dns-name</code> - The public DNS name for
      *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
-     *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
-     *         of the instance to which the network interface is attached. </li> <li>
+     *         attachment. </li> <li> <p><code>attachment.attach.time</code> - The
+     *         time that the network interface was attached to an instance. </li>
+     *         <li> <p><code>attachment.delete-on-termination</code> - Indicates
+     *         whether the attachment is deleted when an instance is terminated.
+     *         </li> <li> <p><code>attachment.device-index</code> - The device index
+     *         to which the network interface is attached. </li> <li>
+     *         <p><code>attachment.instance-id</code> - The ID of the instance to
+     *         which the network interface is attached. </li> <li>
      *         <p><code>attachment.instance-owner-id</code> - The owner ID of the
      *         instance to which the network interface is attached. </li> <li>
-     *         <p><code>attachment.device-index</code> - The device index to which
-     *         the network interface is attached. </li> <li>
+     *         <p><code>attachment.nat-gateway-id</code> - The ID of the NAT gateway
+     *         to which the network interface is attached. </li> <li>
      *         <p><code>attachment.status</code> - The status of the attachment
      *         (<code>attaching</code> | <code>attached</code> |
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
-     *         <p><code>attachment.attach.time</code> - The time that the network
-     *         interface was attached to an instance. </li> <li>
-     *         <p><code>attachment.delete-on-termination</code> - Indicates whether
-     *         the attachment is deleted when an instance is terminated. </li> <li>
      *         <p><code>availability-zone</code> - The Availability Zone of the
      *         network interface. </li> <li> <p><code>description</code> - The
      *         description of the network interface. </li> <li>
@@ -334,7 +340,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         interface performs source/destination checking. A value of
      *         <code>true</code> means checking is enabled, and <code>false</code>
      *         means checking is disabled. The value must be <code>false</code> for
-     *         the network interface to perform Network Address Translation (NAT) in
+     *         the network interface to perform network address translation (NAT) in
      *         your VPC. </li> <li> <p><code>status</code> - The status of the
      *         network interface. If the network interface is not attached to an
      *         instance, the status is <code>available</code>; if a network interface
@@ -385,19 +391,21 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * <p><code>association.public-dns-name</code> - The public DNS name for
      * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
-     * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
-     * of the instance to which the network interface is attached. </li> <li>
+     * attachment. </li> <li> <p><code>attachment.attach.time</code> - The
+     * time that the network interface was attached to an instance. </li>
+     * <li> <p><code>attachment.delete-on-termination</code> - Indicates
+     * whether the attachment is deleted when an instance is terminated.
+     * </li> <li> <p><code>attachment.device-index</code> - The device index
+     * to which the network interface is attached. </li> <li>
+     * <p><code>attachment.instance-id</code> - The ID of the instance to
+     * which the network interface is attached. </li> <li>
      * <p><code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached. </li> <li>
-     * <p><code>attachment.device-index</code> - The device index to which
-     * the network interface is attached. </li> <li>
+     * <p><code>attachment.nat-gateway-id</code> - The ID of the NAT gateway
+     * to which the network interface is attached. </li> <li>
      * <p><code>attachment.status</code> - The status of the attachment
      * (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>). </li> <li>
-     * <p><code>attachment.attach.time</code> - The time that the network
-     * interface was attached to an instance. </li> <li>
-     * <p><code>attachment.delete-on-termination</code> - Indicates whether
-     * the attachment is deleted when an instance is terminated. </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the
      * network interface. </li> <li> <p><code>description</code> - The
      * description of the network interface. </li> <li>
@@ -421,7 +429,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * interface performs source/destination checking. A value of
      * <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for
-     * the network interface to perform Network Address Translation (NAT) in
+     * the network interface to perform network address translation (NAT) in
      * your VPC. </li> <li> <p><code>status</code> - The status of the
      * network interface. If the network interface is not attached to an
      * instance, the status is <code>available</code>; if a network interface
@@ -463,19 +471,21 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         <p><code>association.public-dns-name</code> - The public DNS name for
      *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
-     *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
-     *         of the instance to which the network interface is attached. </li> <li>
+     *         attachment. </li> <li> <p><code>attachment.attach.time</code> - The
+     *         time that the network interface was attached to an instance. </li>
+     *         <li> <p><code>attachment.delete-on-termination</code> - Indicates
+     *         whether the attachment is deleted when an instance is terminated.
+     *         </li> <li> <p><code>attachment.device-index</code> - The device index
+     *         to which the network interface is attached. </li> <li>
+     *         <p><code>attachment.instance-id</code> - The ID of the instance to
+     *         which the network interface is attached. </li> <li>
      *         <p><code>attachment.instance-owner-id</code> - The owner ID of the
      *         instance to which the network interface is attached. </li> <li>
-     *         <p><code>attachment.device-index</code> - The device index to which
-     *         the network interface is attached. </li> <li>
+     *         <p><code>attachment.nat-gateway-id</code> - The ID of the NAT gateway
+     *         to which the network interface is attached. </li> <li>
      *         <p><code>attachment.status</code> - The status of the attachment
      *         (<code>attaching</code> | <code>attached</code> |
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
-     *         <p><code>attachment.attach.time</code> - The time that the network
-     *         interface was attached to an instance. </li> <li>
-     *         <p><code>attachment.delete-on-termination</code> - Indicates whether
-     *         the attachment is deleted when an instance is terminated. </li> <li>
      *         <p><code>availability-zone</code> - The Availability Zone of the
      *         network interface. </li> <li> <p><code>description</code> - The
      *         description of the network interface. </li> <li>
@@ -499,7 +509,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         interface performs source/destination checking. A value of
      *         <code>true</code> means checking is enabled, and <code>false</code>
      *         means checking is disabled. The value must be <code>false</code> for
-     *         the network interface to perform Network Address Translation (NAT) in
+     *         the network interface to perform network address translation (NAT) in
      *         your VPC. </li> <li> <p><code>status</code> - The status of the
      *         network interface. If the network interface is not attached to an
      *         instance, the status is <code>available</code>; if a network interface
@@ -552,19 +562,21 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * <p><code>association.public-dns-name</code> - The public DNS name for
      * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
-     * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
-     * of the instance to which the network interface is attached. </li> <li>
+     * attachment. </li> <li> <p><code>attachment.attach.time</code> - The
+     * time that the network interface was attached to an instance. </li>
+     * <li> <p><code>attachment.delete-on-termination</code> - Indicates
+     * whether the attachment is deleted when an instance is terminated.
+     * </li> <li> <p><code>attachment.device-index</code> - The device index
+     * to which the network interface is attached. </li> <li>
+     * <p><code>attachment.instance-id</code> - The ID of the instance to
+     * which the network interface is attached. </li> <li>
      * <p><code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached. </li> <li>
-     * <p><code>attachment.device-index</code> - The device index to which
-     * the network interface is attached. </li> <li>
+     * <p><code>attachment.nat-gateway-id</code> - The ID of the NAT gateway
+     * to which the network interface is attached. </li> <li>
      * <p><code>attachment.status</code> - The status of the attachment
      * (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>). </li> <li>
-     * <p><code>attachment.attach.time</code> - The time that the network
-     * interface was attached to an instance. </li> <li>
-     * <p><code>attachment.delete-on-termination</code> - Indicates whether
-     * the attachment is deleted when an instance is terminated. </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the
      * network interface. </li> <li> <p><code>description</code> - The
      * description of the network interface. </li> <li>
@@ -588,7 +600,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * interface performs source/destination checking. A value of
      * <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for
-     * the network interface to perform Network Address Translation (NAT) in
+     * the network interface to perform network address translation (NAT) in
      * your VPC. </li> <li> <p><code>status</code> - The status of the
      * network interface. If the network interface is not attached to an
      * instance, the status is <code>available</code>; if a network interface
@@ -637,19 +649,21 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         <p><code>association.public-dns-name</code> - The public DNS name for
      *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
-     *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
-     *         of the instance to which the network interface is attached. </li> <li>
+     *         attachment. </li> <li> <p><code>attachment.attach.time</code> - The
+     *         time that the network interface was attached to an instance. </li>
+     *         <li> <p><code>attachment.delete-on-termination</code> - Indicates
+     *         whether the attachment is deleted when an instance is terminated.
+     *         </li> <li> <p><code>attachment.device-index</code> - The device index
+     *         to which the network interface is attached. </li> <li>
+     *         <p><code>attachment.instance-id</code> - The ID of the instance to
+     *         which the network interface is attached. </li> <li>
      *         <p><code>attachment.instance-owner-id</code> - The owner ID of the
      *         instance to which the network interface is attached. </li> <li>
-     *         <p><code>attachment.device-index</code> - The device index to which
-     *         the network interface is attached. </li> <li>
+     *         <p><code>attachment.nat-gateway-id</code> - The ID of the NAT gateway
+     *         to which the network interface is attached. </li> <li>
      *         <p><code>attachment.status</code> - The status of the attachment
      *         (<code>attaching</code> | <code>attached</code> |
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
-     *         <p><code>attachment.attach.time</code> - The time that the network
-     *         interface was attached to an instance. </li> <li>
-     *         <p><code>attachment.delete-on-termination</code> - Indicates whether
-     *         the attachment is deleted when an instance is terminated. </li> <li>
      *         <p><code>availability-zone</code> - The Availability Zone of the
      *         network interface. </li> <li> <p><code>description</code> - The
      *         description of the network interface. </li> <li>
@@ -673,7 +687,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         interface performs source/destination checking. A value of
      *         <code>true</code> means checking is enabled, and <code>false</code>
      *         means checking is disabled. The value must be <code>false</code> for
-     *         the network interface to perform Network Address Translation (NAT) in
+     *         the network interface to perform network address translation (NAT) in
      *         your VPC. </li> <li> <p><code>status</code> - The status of the
      *         network interface. If the network interface is not attached to an
      *         instance, the status is <code>available</code>; if a network interface
@@ -727,19 +741,21 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * <p><code>association.public-dns-name</code> - The public DNS name for
      * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
-     * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
-     * of the instance to which the network interface is attached. </li> <li>
+     * attachment. </li> <li> <p><code>attachment.attach.time</code> - The
+     * time that the network interface was attached to an instance. </li>
+     * <li> <p><code>attachment.delete-on-termination</code> - Indicates
+     * whether the attachment is deleted when an instance is terminated.
+     * </li> <li> <p><code>attachment.device-index</code> - The device index
+     * to which the network interface is attached. </li> <li>
+     * <p><code>attachment.instance-id</code> - The ID of the instance to
+     * which the network interface is attached. </li> <li>
      * <p><code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached. </li> <li>
-     * <p><code>attachment.device-index</code> - The device index to which
-     * the network interface is attached. </li> <li>
+     * <p><code>attachment.nat-gateway-id</code> - The ID of the NAT gateway
+     * to which the network interface is attached. </li> <li>
      * <p><code>attachment.status</code> - The status of the attachment
      * (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>). </li> <li>
-     * <p><code>attachment.attach.time</code> - The time that the network
-     * interface was attached to an instance. </li> <li>
-     * <p><code>attachment.delete-on-termination</code> - Indicates whether
-     * the attachment is deleted when an instance is terminated. </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the
      * network interface. </li> <li> <p><code>description</code> - The
      * description of the network interface. </li> <li>
@@ -763,7 +779,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * interface performs source/destination checking. A value of
      * <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for
-     * the network interface to perform Network Address Translation (NAT) in
+     * the network interface to perform network address translation (NAT) in
      * your VPC. </li> <li> <p><code>status</code> - The status of the
      * network interface. If the network interface is not attached to an
      * instance, the status is <code>available</code>; if a network interface
@@ -807,19 +823,21 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         <p><code>association.public-dns-name</code> - The public DNS name for
      *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
-     *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
-     *         of the instance to which the network interface is attached. </li> <li>
+     *         attachment. </li> <li> <p><code>attachment.attach.time</code> - The
+     *         time that the network interface was attached to an instance. </li>
+     *         <li> <p><code>attachment.delete-on-termination</code> - Indicates
+     *         whether the attachment is deleted when an instance is terminated.
+     *         </li> <li> <p><code>attachment.device-index</code> - The device index
+     *         to which the network interface is attached. </li> <li>
+     *         <p><code>attachment.instance-id</code> - The ID of the instance to
+     *         which the network interface is attached. </li> <li>
      *         <p><code>attachment.instance-owner-id</code> - The owner ID of the
      *         instance to which the network interface is attached. </li> <li>
-     *         <p><code>attachment.device-index</code> - The device index to which
-     *         the network interface is attached. </li> <li>
+     *         <p><code>attachment.nat-gateway-id</code> - The ID of the NAT gateway
+     *         to which the network interface is attached. </li> <li>
      *         <p><code>attachment.status</code> - The status of the attachment
      *         (<code>attaching</code> | <code>attached</code> |
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
-     *         <p><code>attachment.attach.time</code> - The time that the network
-     *         interface was attached to an instance. </li> <li>
-     *         <p><code>attachment.delete-on-termination</code> - Indicates whether
-     *         the attachment is deleted when an instance is terminated. </li> <li>
      *         <p><code>availability-zone</code> - The Availability Zone of the
      *         network interface. </li> <li> <p><code>description</code> - The
      *         description of the network interface. </li> <li>
@@ -843,7 +861,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         interface performs source/destination checking. A value of
      *         <code>true</code> means checking is enabled, and <code>false</code>
      *         means checking is disabled. The value must be <code>false</code> for
-     *         the network interface to perform Network Address Translation (NAT) in
+     *         the network interface to perform network address translation (NAT) in
      *         your VPC. </li> <li> <p><code>status</code> - The status of the
      *         network interface. If the network interface is not attached to an
      *         instance, the status is <code>available</code>; if a network interface

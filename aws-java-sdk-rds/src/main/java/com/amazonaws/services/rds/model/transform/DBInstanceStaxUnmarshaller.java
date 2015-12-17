@@ -205,6 +205,18 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     dBInstance.setCopyTagsToSnapshot(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("MonitoringInterval", targetDepth)) {
+                    dBInstance.setMonitoringInterval(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("EnhancedMonitoringResourceArn", targetDepth)) {
+                    dBInstance.setEnhancedMonitoringResourceArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("MonitoringRoleArn", targetDepth)) {
+                    dBInstance.setMonitoringRoleArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBInstance;

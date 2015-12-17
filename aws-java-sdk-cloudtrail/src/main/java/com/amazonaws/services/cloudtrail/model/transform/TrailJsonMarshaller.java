@@ -70,6 +70,15 @@ public class TrailJsonMarshaller {
                         trail.getIncludeGlobalServiceEvents());
             }
 
+            if (trail.getIsMultiRegionTrail() != null) {
+                jsonWriter.key("IsMultiRegionTrail").value(
+                        trail.getIsMultiRegionTrail());
+            }
+
+            if (trail.getHomeRegion() != null) {
+                jsonWriter.key("HomeRegion").value(trail.getHomeRegion());
+            }
+
             if (trail.getTrailARN() != null) {
                 jsonWriter.key("TrailARN").value(trail.getTrailARN());
             }

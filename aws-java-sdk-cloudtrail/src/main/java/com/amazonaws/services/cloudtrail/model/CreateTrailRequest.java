@@ -78,6 +78,13 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
     private Boolean includeGlobalServiceEvents;
     /**
      * <p>
+     * Specifies whether the trail is created in the current region or in all
+     * regions. The default is false.
+     * </p>
+     */
+    private Boolean isMultiRegionTrail;
+    /**
+     * <p>
      * Specifies whether log file integrity validation is enabled. The default
      * is false.
      * </p>
@@ -459,6 +466,63 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
+     * Specifies whether the trail is created in the current region or in all
+     * regions. The default is false.
+     * </p>
+     * 
+     * @param isMultiRegionTrail
+     *        Specifies whether the trail is created in the current region or in
+     *        all regions. The default is false.
+     */
+    public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
+        this.isMultiRegionTrail = isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is created in the current region or in all
+     * regions. The default is false.
+     * </p>
+     * 
+     * @return Specifies whether the trail is created in the current region or
+     *         in all regions. The default is false.
+     */
+    public Boolean getIsMultiRegionTrail() {
+        return this.isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is created in the current region or in all
+     * regions. The default is false.
+     * </p>
+     * 
+     * @param isMultiRegionTrail
+     *        Specifies whether the trail is created in the current region or in
+     *        all regions. The default is false.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateTrailRequest withIsMultiRegionTrail(Boolean isMultiRegionTrail) {
+        setIsMultiRegionTrail(isMultiRegionTrail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is created in the current region or in all
+     * regions. The default is false.
+     * </p>
+     * 
+     * @return Specifies whether the trail is created in the current region or
+     *         in all regions. The default is false.
+     */
+    public Boolean isMultiRegionTrail() {
+        return this.isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
      * Specifies whether log file integrity validation is enabled. The default
      * is false.
      * </p>
@@ -825,6 +889,8 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
         if (getIncludeGlobalServiceEvents() != null)
             sb.append("IncludeGlobalServiceEvents: "
                     + getIncludeGlobalServiceEvents() + ",");
+        if (getIsMultiRegionTrail() != null)
+            sb.append("IsMultiRegionTrail: " + getIsMultiRegionTrail() + ",");
         if (getEnableLogFileValidation() != null)
             sb.append("EnableLogFileValidation: "
                     + getEnableLogFileValidation() + ",");
@@ -877,6 +943,13 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
                 && other.getIncludeGlobalServiceEvents().equals(
                         this.getIncludeGlobalServiceEvents()) == false)
             return false;
+        if (other.getIsMultiRegionTrail() == null
+                ^ this.getIsMultiRegionTrail() == null)
+            return false;
+        if (other.getIsMultiRegionTrail() != null
+                && other.getIsMultiRegionTrail().equals(
+                        this.getIsMultiRegionTrail()) == false)
+            return false;
         if (other.getEnableLogFileValidation() == null
                 ^ this.getEnableLogFileValidation() == null)
             return false;
@@ -928,6 +1001,10 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getIncludeGlobalServiceEvents() == null) ? 0
                         : getIncludeGlobalServiceEvents().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIsMultiRegionTrail() == null) ? 0
+                        : getIsMultiRegionTrail().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getEnableLogFileValidation() == null) ? 0

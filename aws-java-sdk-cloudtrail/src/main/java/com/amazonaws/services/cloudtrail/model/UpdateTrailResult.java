@@ -62,6 +62,12 @@ public class UpdateTrailResult implements Serializable, Cloneable {
     private Boolean includeGlobalServiceEvents;
     /**
      * <p>
+     * Specifies whether the trail exists in one region or in all regions.
+     * </p>
+     */
+    private Boolean isMultiRegionTrail;
+    /**
+     * <p>
      * Specifies the ARN of the trail that was updated.
      * </p>
      */
@@ -343,6 +349,59 @@ public class UpdateTrailResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Specifies whether the trail exists in one region or in all regions.
+     * </p>
+     * 
+     * @param isMultiRegionTrail
+     *        Specifies whether the trail exists in one region or in all
+     *        regions.
+     */
+    public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
+        this.isMultiRegionTrail = isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail exists in one region or in all regions.
+     * </p>
+     * 
+     * @return Specifies whether the trail exists in one region or in all
+     *         regions.
+     */
+    public Boolean getIsMultiRegionTrail() {
+        return this.isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail exists in one region or in all regions.
+     * </p>
+     * 
+     * @param isMultiRegionTrail
+     *        Specifies whether the trail exists in one region or in all
+     *        regions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateTrailResult withIsMultiRegionTrail(Boolean isMultiRegionTrail) {
+        setIsMultiRegionTrail(isMultiRegionTrail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail exists in one region or in all regions.
+     * </p>
+     * 
+     * @return Specifies whether the trail exists in one region or in all
+     *         regions.
+     */
+    public Boolean isMultiRegionTrail() {
+        return this.isMultiRegionTrail;
+    }
+
+    /**
+     * <p>
      * Specifies the ARN of the trail that was updated.
      * </p>
      * 
@@ -595,6 +654,8 @@ public class UpdateTrailResult implements Serializable, Cloneable {
         if (getIncludeGlobalServiceEvents() != null)
             sb.append("IncludeGlobalServiceEvents: "
                     + getIncludeGlobalServiceEvents() + ",");
+        if (getIsMultiRegionTrail() != null)
+            sb.append("IsMultiRegionTrail: " + getIsMultiRegionTrail() + ",");
         if (getTrailARN() != null)
             sb.append("TrailARN: " + getTrailARN() + ",");
         if (getLogFileValidationEnabled() != null)
@@ -648,6 +709,13 @@ public class UpdateTrailResult implements Serializable, Cloneable {
         if (other.getIncludeGlobalServiceEvents() != null
                 && other.getIncludeGlobalServiceEvents().equals(
                         this.getIncludeGlobalServiceEvents()) == false)
+            return false;
+        if (other.getIsMultiRegionTrail() == null
+                ^ this.getIsMultiRegionTrail() == null)
+            return false;
+        if (other.getIsMultiRegionTrail() != null
+                && other.getIsMultiRegionTrail().equals(
+                        this.getIsMultiRegionTrail()) == false)
             return false;
         if (other.getTrailARN() == null ^ this.getTrailARN() == null)
             return false;
@@ -705,6 +773,10 @@ public class UpdateTrailResult implements Serializable, Cloneable {
                 * hashCode
                 + ((getIncludeGlobalServiceEvents() == null) ? 0
                         : getIncludeGlobalServiceEvents().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIsMultiRegionTrail() == null) ? 0
+                        : getIsMultiRegionTrail().hashCode());
         hashCode = prime * hashCode
                 + ((getTrailARN() == null) ? 0 : getTrailARN().hashCode());
         hashCode = prime

@@ -27,19 +27,25 @@ public class ViewerCertificate implements Serializable, Cloneable {
     /**
      * If you want viewers to use HTTPS to request your objects and you're
      * using an alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier
-     * of the custom viewer certificate for this distribution. Specify either
-     * this value or CloudFrontDefaultCertificate.
+     * https://example.com/logo.jpg), set to the IAM certificate identifier
+     * of the custom viewer certificate for this distribution.
      */
-    private String iAMCertificateId;
+    private String certificate;
 
     /**
      * If you want viewers to use HTTPS to request your objects and you're
      * using the CloudFront domain name of your distribution in your object
      * URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-     * set to true. Omit this value if you are setting an IAMCertificateId.
+     * set to "cloudfront". If you want viewers to use HTTPS to request your
+     * objects and you're using an alternate domain name in your object URLs
+     * (for example, https://example.com/logo.jpg), set to "iam", and update
+     * the Certificate field with the IAM certificate identifier of the
+     * custom viewer certificate for this distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cloudfront, iam
      */
-    private Boolean cloudFrontDefaultCertificate;
+    private String certificateSource;
 
     /**
      * If you specify a value for IAMCertificateId, you must also specify how
@@ -80,59 +86,76 @@ public class ViewerCertificate implements Serializable, Cloneable {
     private String minimumProtocolVersion;
 
     /**
-     * If you want viewers to use HTTPS to request your objects and you're
-     * using an alternate domain name in your object URLs (for example,
+     * Note: this field is deprecated. Please use "iam" as CertificateSource
+     * and specify the IAM certificate Id as the Certificate. If you want
+     * viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
      * https://example.com/logo.jpg), specify the IAM certificate identifier
      * of the custom viewer certificate for this distribution. Specify either
      * this value or CloudFrontDefaultCertificate.
+     */
+    @Deprecated
+    private String iAMCertificateId;
+
+    /**
+     * Note: this field is deprecated. Please use "cloudfront" as
+     * CertificateSource and omit specifying a Certificate. If you want
+     * viewers to use HTTPS to request your objects and you're using the
+     * CloudFront domain name of your distribution in your object URLs (for
+     * example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to true.
+     * Omit this value if you are setting an IAMCertificateId.
+     */
+    @Deprecated
+    private Boolean cloudFrontDefaultCertificate;
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're
+     * using an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), set to the IAM certificate identifier
+     * of the custom viewer certificate for this distribution.
      *
      * @return If you want viewers to use HTTPS to request your objects and you're
      *         using an alternate domain name in your object URLs (for example,
-     *         https://example.com/logo.jpg), specify the IAM certificate identifier
-     *         of the custom viewer certificate for this distribution. Specify either
-     *         this value or CloudFrontDefaultCertificate.
+     *         https://example.com/logo.jpg), set to the IAM certificate identifier
+     *         of the custom viewer certificate for this distribution.
      */
-    public String getIAMCertificateId() {
-        return iAMCertificateId;
+    public String getCertificate() {
+        return certificate;
     }
     
     /**
      * If you want viewers to use HTTPS to request your objects and you're
      * using an alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier
-     * of the custom viewer certificate for this distribution. Specify either
-     * this value or CloudFrontDefaultCertificate.
+     * https://example.com/logo.jpg), set to the IAM certificate identifier
+     * of the custom viewer certificate for this distribution.
      *
-     * @param iAMCertificateId If you want viewers to use HTTPS to request your objects and you're
+     * @param certificate If you want viewers to use HTTPS to request your objects and you're
      *         using an alternate domain name in your object URLs (for example,
-     *         https://example.com/logo.jpg), specify the IAM certificate identifier
-     *         of the custom viewer certificate for this distribution. Specify either
-     *         this value or CloudFrontDefaultCertificate.
+     *         https://example.com/logo.jpg), set to the IAM certificate identifier
+     *         of the custom viewer certificate for this distribution.
      */
-    public void setIAMCertificateId(String iAMCertificateId) {
-        this.iAMCertificateId = iAMCertificateId;
+    public void setCertificate(String certificate) {
+        this.certificate = certificate;
     }
     
     /**
      * If you want viewers to use HTTPS to request your objects and you're
      * using an alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier
-     * of the custom viewer certificate for this distribution. Specify either
-     * this value or CloudFrontDefaultCertificate.
+     * https://example.com/logo.jpg), set to the IAM certificate identifier
+     * of the custom viewer certificate for this distribution.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param iAMCertificateId If you want viewers to use HTTPS to request your objects and you're
+     * @param certificate If you want viewers to use HTTPS to request your objects and you're
      *         using an alternate domain name in your object URLs (for example,
-     *         https://example.com/logo.jpg), specify the IAM certificate identifier
-     *         of the custom viewer certificate for this distribution. Specify either
-     *         this value or CloudFrontDefaultCertificate.
+     *         https://example.com/logo.jpg), set to the IAM certificate identifier
+     *         of the custom viewer certificate for this distribution.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public ViewerCertificate withIAMCertificateId(String iAMCertificateId) {
-        this.iAMCertificateId = iAMCertificateId;
+    public ViewerCertificate withCertificate(String certificate) {
+        this.certificate = certificate;
         return this;
     }
 
@@ -140,50 +163,89 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * If you want viewers to use HTTPS to request your objects and you're
      * using the CloudFront domain name of your distribution in your object
      * URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-     * set to true. Omit this value if you are setting an IAMCertificateId.
+     * set to "cloudfront". If you want viewers to use HTTPS to request your
+     * objects and you're using an alternate domain name in your object URLs
+     * (for example, https://example.com/logo.jpg), set to "iam", and update
+     * the Certificate field with the IAM certificate identifier of the
+     * custom viewer certificate for this distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cloudfront, iam
      *
      * @return If you want viewers to use HTTPS to request your objects and you're
      *         using the CloudFront domain name of your distribution in your object
      *         URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-     *         set to true. Omit this value if you are setting an IAMCertificateId.
+     *         set to "cloudfront". If you want viewers to use HTTPS to request your
+     *         objects and you're using an alternate domain name in your object URLs
+     *         (for example, https://example.com/logo.jpg), set to "iam", and update
+     *         the Certificate field with the IAM certificate identifier of the
+     *         custom viewer certificate for this distribution.
+     *
+     * @see CertificateSource
      */
-    public Boolean isCloudFrontDefaultCertificate() {
-        return cloudFrontDefaultCertificate;
+    public String getCertificateSource() {
+        return certificateSource;
     }
     
     /**
      * If you want viewers to use HTTPS to request your objects and you're
      * using the CloudFront domain name of your distribution in your object
      * URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-     * set to true. Omit this value if you are setting an IAMCertificateId.
+     * set to "cloudfront". If you want viewers to use HTTPS to request your
+     * objects and you're using an alternate domain name in your object URLs
+     * (for example, https://example.com/logo.jpg), set to "iam", and update
+     * the Certificate field with the IAM certificate identifier of the
+     * custom viewer certificate for this distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cloudfront, iam
      *
-     * @param cloudFrontDefaultCertificate If you want viewers to use HTTPS to request your objects and you're
+     * @param certificateSource If you want viewers to use HTTPS to request your objects and you're
      *         using the CloudFront domain name of your distribution in your object
      *         URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-     *         set to true. Omit this value if you are setting an IAMCertificateId.
+     *         set to "cloudfront". If you want viewers to use HTTPS to request your
+     *         objects and you're using an alternate domain name in your object URLs
+     *         (for example, https://example.com/logo.jpg), set to "iam", and update
+     *         the Certificate field with the IAM certificate identifier of the
+     *         custom viewer certificate for this distribution.
+     *
+     * @see CertificateSource
      */
-    public void setCloudFrontDefaultCertificate(Boolean cloudFrontDefaultCertificate) {
-        this.cloudFrontDefaultCertificate = cloudFrontDefaultCertificate;
+    public void setCertificateSource(String certificateSource) {
+        this.certificateSource = certificateSource;
     }
     
     /**
      * If you want viewers to use HTTPS to request your objects and you're
      * using the CloudFront domain name of your distribution in your object
      * URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-     * set to true. Omit this value if you are setting an IAMCertificateId.
+     * set to "cloudfront". If you want viewers to use HTTPS to request your
+     * objects and you're using an alternate domain name in your object URLs
+     * (for example, https://example.com/logo.jpg), set to "iam", and update
+     * the Certificate field with the IAM certificate identifier of the
+     * custom viewer certificate for this distribution.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cloudfront, iam
      *
-     * @param cloudFrontDefaultCertificate If you want viewers to use HTTPS to request your objects and you're
+     * @param certificateSource If you want viewers to use HTTPS to request your objects and you're
      *         using the CloudFront domain name of your distribution in your object
      *         URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-     *         set to true. Omit this value if you are setting an IAMCertificateId.
+     *         set to "cloudfront". If you want viewers to use HTTPS to request your
+     *         objects and you're using an alternate domain name in your object URLs
+     *         (for example, https://example.com/logo.jpg), set to "iam", and update
+     *         the Certificate field with the IAM certificate identifier of the
+     *         custom viewer certificate for this distribution.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
+     *
+     * @see CertificateSource
      */
-    public ViewerCertificate withCloudFrontDefaultCertificate(Boolean cloudFrontDefaultCertificate) {
-        this.cloudFrontDefaultCertificate = cloudFrontDefaultCertificate;
+    public ViewerCertificate withCertificateSource(String certificateSource) {
+        this.certificateSource = certificateSource;
         return this;
     }
 
@@ -191,15 +253,62 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * If you want viewers to use HTTPS to request your objects and you're
      * using the CloudFront domain name of your distribution in your object
      * URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-     * set to true. Omit this value if you are setting an IAMCertificateId.
+     * set to "cloudfront". If you want viewers to use HTTPS to request your
+     * objects and you're using an alternate domain name in your object URLs
+     * (for example, https://example.com/logo.jpg), set to "iam", and update
+     * the Certificate field with the IAM certificate identifier of the
+     * custom viewer certificate for this distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cloudfront, iam
      *
-     * @return If you want viewers to use HTTPS to request your objects and you're
+     * @param certificateSource If you want viewers to use HTTPS to request your objects and you're
      *         using the CloudFront domain name of your distribution in your object
      *         URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-     *         set to true. Omit this value if you are setting an IAMCertificateId.
+     *         set to "cloudfront". If you want viewers to use HTTPS to request your
+     *         objects and you're using an alternate domain name in your object URLs
+     *         (for example, https://example.com/logo.jpg), set to "iam", and update
+     *         the Certificate field with the IAM certificate identifier of the
+     *         custom viewer certificate for this distribution.
+     *
+     * @see CertificateSource
      */
-    public Boolean getCloudFrontDefaultCertificate() {
-        return cloudFrontDefaultCertificate;
+    public void setCertificateSource(CertificateSource certificateSource) {
+        this.certificateSource = certificateSource.toString();
+    }
+    
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're
+     * using the CloudFront domain name of your distribution in your object
+     * URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     * set to "cloudfront". If you want viewers to use HTTPS to request your
+     * objects and you're using an alternate domain name in your object URLs
+     * (for example, https://example.com/logo.jpg), set to "iam", and update
+     * the Certificate field with the IAM certificate identifier of the
+     * custom viewer certificate for this distribution.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cloudfront, iam
+     *
+     * @param certificateSource If you want viewers to use HTTPS to request your objects and you're
+     *         using the CloudFront domain name of your distribution in your object
+     *         URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     *         set to "cloudfront". If you want viewers to use HTTPS to request your
+     *         objects and you're using an alternate domain name in your object URLs
+     *         (for example, https://example.com/logo.jpg), set to "iam", and update
+     *         the Certificate field with the IAM certificate identifier of the
+     *         custom viewer certificate for this distribution.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see CertificateSource
+     */
+    public ViewerCertificate withCertificateSource(CertificateSource certificateSource) {
+        this.certificateSource = certificateSource.toString();
+        return this;
     }
 
     /**
@@ -587,6 +696,163 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * Note: this field is deprecated. Please use "iam" as CertificateSource
+     * and specify the IAM certificate Id as the Certificate. If you want
+     * viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier
+     * of the custom viewer certificate for this distribution. Specify either
+     * this value or CloudFrontDefaultCertificate.
+     *
+     * @return Note: this field is deprecated. Please use "iam" as CertificateSource
+     *         and specify the IAM certificate Id as the Certificate. If you want
+     *         viewers to use HTTPS to request your objects and you're using an
+     *         alternate domain name in your object URLs (for example,
+     *         https://example.com/logo.jpg), specify the IAM certificate identifier
+     *         of the custom viewer certificate for this distribution. Specify either
+     *         this value or CloudFrontDefaultCertificate.
+     */
+    @Deprecated
+    public String getIAMCertificateId() {
+        return iAMCertificateId;
+    }
+    
+    /**
+     * Note: this field is deprecated. Please use "iam" as CertificateSource
+     * and specify the IAM certificate Id as the Certificate. If you want
+     * viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier
+     * of the custom viewer certificate for this distribution. Specify either
+     * this value or CloudFrontDefaultCertificate.
+     *
+     * @param iAMCertificateId Note: this field is deprecated. Please use "iam" as CertificateSource
+     *         and specify the IAM certificate Id as the Certificate. If you want
+     *         viewers to use HTTPS to request your objects and you're using an
+     *         alternate domain name in your object URLs (for example,
+     *         https://example.com/logo.jpg), specify the IAM certificate identifier
+     *         of the custom viewer certificate for this distribution. Specify either
+     *         this value or CloudFrontDefaultCertificate.
+     */
+    @Deprecated
+    public void setIAMCertificateId(String iAMCertificateId) {
+        this.iAMCertificateId = iAMCertificateId;
+    }
+    
+    /**
+     * Note: this field is deprecated. Please use "iam" as CertificateSource
+     * and specify the IAM certificate Id as the Certificate. If you want
+     * viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier
+     * of the custom viewer certificate for this distribution. Specify either
+     * this value or CloudFrontDefaultCertificate.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iAMCertificateId Note: this field is deprecated. Please use "iam" as CertificateSource
+     *         and specify the IAM certificate Id as the Certificate. If you want
+     *         viewers to use HTTPS to request your objects and you're using an
+     *         alternate domain name in your object URLs (for example,
+     *         https://example.com/logo.jpg), specify the IAM certificate identifier
+     *         of the custom viewer certificate for this distribution. Specify either
+     *         this value or CloudFrontDefaultCertificate.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    @Deprecated
+    public ViewerCertificate withIAMCertificateId(String iAMCertificateId) {
+        this.iAMCertificateId = iAMCertificateId;
+        return this;
+    }
+
+    /**
+     * Note: this field is deprecated. Please use "cloudfront" as
+     * CertificateSource and omit specifying a Certificate. If you want
+     * viewers to use HTTPS to request your objects and you're using the
+     * CloudFront domain name of your distribution in your object URLs (for
+     * example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to true.
+     * Omit this value if you are setting an IAMCertificateId.
+     *
+     * @return Note: this field is deprecated. Please use "cloudfront" as
+     *         CertificateSource and omit specifying a Certificate. If you want
+     *         viewers to use HTTPS to request your objects and you're using the
+     *         CloudFront domain name of your distribution in your object URLs (for
+     *         example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to true.
+     *         Omit this value if you are setting an IAMCertificateId.
+     */
+    @Deprecated
+    public Boolean isCloudFrontDefaultCertificate() {
+        return cloudFrontDefaultCertificate;
+    }
+    
+    /**
+     * Note: this field is deprecated. Please use "cloudfront" as
+     * CertificateSource and omit specifying a Certificate. If you want
+     * viewers to use HTTPS to request your objects and you're using the
+     * CloudFront domain name of your distribution in your object URLs (for
+     * example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to true.
+     * Omit this value if you are setting an IAMCertificateId.
+     *
+     * @param cloudFrontDefaultCertificate Note: this field is deprecated. Please use "cloudfront" as
+     *         CertificateSource and omit specifying a Certificate. If you want
+     *         viewers to use HTTPS to request your objects and you're using the
+     *         CloudFront domain name of your distribution in your object URLs (for
+     *         example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to true.
+     *         Omit this value if you are setting an IAMCertificateId.
+     */
+    @Deprecated
+    public void setCloudFrontDefaultCertificate(Boolean cloudFrontDefaultCertificate) {
+        this.cloudFrontDefaultCertificate = cloudFrontDefaultCertificate;
+    }
+    
+    /**
+     * Note: this field is deprecated. Please use "cloudfront" as
+     * CertificateSource and omit specifying a Certificate. If you want
+     * viewers to use HTTPS to request your objects and you're using the
+     * CloudFront domain name of your distribution in your object URLs (for
+     * example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to true.
+     * Omit this value if you are setting an IAMCertificateId.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cloudFrontDefaultCertificate Note: this field is deprecated. Please use "cloudfront" as
+     *         CertificateSource and omit specifying a Certificate. If you want
+     *         viewers to use HTTPS to request your objects and you're using the
+     *         CloudFront domain name of your distribution in your object URLs (for
+     *         example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to true.
+     *         Omit this value if you are setting an IAMCertificateId.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    @Deprecated
+    public ViewerCertificate withCloudFrontDefaultCertificate(Boolean cloudFrontDefaultCertificate) {
+        this.cloudFrontDefaultCertificate = cloudFrontDefaultCertificate;
+        return this;
+    }
+
+    /**
+     * Note: this field is deprecated. Please use "cloudfront" as
+     * CertificateSource and omit specifying a Certificate. If you want
+     * viewers to use HTTPS to request your objects and you're using the
+     * CloudFront domain name of your distribution in your object URLs (for
+     * example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to true.
+     * Omit this value if you are setting an IAMCertificateId.
+     *
+     * @return Note: this field is deprecated. Please use "cloudfront" as
+     *         CertificateSource and omit specifying a Certificate. If you want
+     *         viewers to use HTTPS to request your objects and you're using the
+     *         CloudFront domain name of your distribution in your object URLs (for
+     *         example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to true.
+     *         Omit this value if you are setting an IAMCertificateId.
+     */
+    public Boolean getCloudFrontDefaultCertificate() {
+        return cloudFrontDefaultCertificate;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -598,10 +864,12 @@ public class ViewerCertificate implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIAMCertificateId() != null) sb.append("IAMCertificateId: " + getIAMCertificateId() + ",");
-        if (isCloudFrontDefaultCertificate() != null) sb.append("CloudFrontDefaultCertificate: " + isCloudFrontDefaultCertificate() + ",");
+        if (getCertificate() != null) sb.append("Certificate: " + getCertificate() + ",");
+        if (getCertificateSource() != null) sb.append("CertificateSource: " + getCertificateSource() + ",");
         if (getSSLSupportMethod() != null) sb.append("SSLSupportMethod: " + getSSLSupportMethod() + ",");
-        if (getMinimumProtocolVersion() != null) sb.append("MinimumProtocolVersion: " + getMinimumProtocolVersion() );
+        if (getMinimumProtocolVersion() != null) sb.append("MinimumProtocolVersion: " + getMinimumProtocolVersion() + ",");
+        if (getIAMCertificateId() != null) sb.append("IAMCertificateId: " + getIAMCertificateId() + ",");
+        if (isCloudFrontDefaultCertificate() != null) sb.append("CloudFrontDefaultCertificate: " + isCloudFrontDefaultCertificate() );
         sb.append("}");
         return sb.toString();
     }
@@ -611,10 +879,12 @@ public class ViewerCertificate implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getIAMCertificateId() == null) ? 0 : getIAMCertificateId().hashCode()); 
-        hashCode = prime * hashCode + ((isCloudFrontDefaultCertificate() == null) ? 0 : isCloudFrontDefaultCertificate().hashCode()); 
+        hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode()); 
+        hashCode = prime * hashCode + ((getCertificateSource() == null) ? 0 : getCertificateSource().hashCode()); 
         hashCode = prime * hashCode + ((getSSLSupportMethod() == null) ? 0 : getSSLSupportMethod().hashCode()); 
         hashCode = prime * hashCode + ((getMinimumProtocolVersion() == null) ? 0 : getMinimumProtocolVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getIAMCertificateId() == null) ? 0 : getIAMCertificateId().hashCode()); 
+        hashCode = prime * hashCode + ((isCloudFrontDefaultCertificate() == null) ? 0 : isCloudFrontDefaultCertificate().hashCode()); 
         return hashCode;
     }
     
@@ -626,14 +896,18 @@ public class ViewerCertificate implements Serializable, Cloneable {
         if (obj instanceof ViewerCertificate == false) return false;
         ViewerCertificate other = (ViewerCertificate)obj;
         
-        if (other.getIAMCertificateId() == null ^ this.getIAMCertificateId() == null) return false;
-        if (other.getIAMCertificateId() != null && other.getIAMCertificateId().equals(this.getIAMCertificateId()) == false) return false; 
-        if (other.isCloudFrontDefaultCertificate() == null ^ this.isCloudFrontDefaultCertificate() == null) return false;
-        if (other.isCloudFrontDefaultCertificate() != null && other.isCloudFrontDefaultCertificate().equals(this.isCloudFrontDefaultCertificate()) == false) return false; 
+        if (other.getCertificate() == null ^ this.getCertificate() == null) return false;
+        if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false) return false; 
+        if (other.getCertificateSource() == null ^ this.getCertificateSource() == null) return false;
+        if (other.getCertificateSource() != null && other.getCertificateSource().equals(this.getCertificateSource()) == false) return false; 
         if (other.getSSLSupportMethod() == null ^ this.getSSLSupportMethod() == null) return false;
         if (other.getSSLSupportMethod() != null && other.getSSLSupportMethod().equals(this.getSSLSupportMethod()) == false) return false; 
         if (other.getMinimumProtocolVersion() == null ^ this.getMinimumProtocolVersion() == null) return false;
         if (other.getMinimumProtocolVersion() != null && other.getMinimumProtocolVersion().equals(this.getMinimumProtocolVersion()) == false) return false; 
+        if (other.getIAMCertificateId() == null ^ this.getIAMCertificateId() == null) return false;
+        if (other.getIAMCertificateId() != null && other.getIAMCertificateId().equals(this.getIAMCertificateId()) == false) return false; 
+        if (other.isCloudFrontDefaultCertificate() == null ^ this.isCloudFrontDefaultCertificate() == null) return false;
+        if (other.isCloudFrontDefaultCertificate() != null && other.isCloudFrontDefaultCertificate().equals(this.isCloudFrontDefaultCertificate()) == false) return false; 
         return true;
     }
     

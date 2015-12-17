@@ -82,6 +82,20 @@ public class ConfigRuleEvaluationStatusJsonUnmarshaller implements
                             .setLastFailedInvocationTime(DateJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LastSuccessfulEvaluationTime",
+                        targetDepth)) {
+                    context.nextToken();
+                    configRuleEvaluationStatus
+                            .setLastSuccessfulEvaluationTime(DateJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LastFailedEvaluationTime",
+                        targetDepth)) {
+                    context.nextToken();
+                    configRuleEvaluationStatus
+                            .setLastFailedEvaluationTime(DateJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("FirstActivatedTime", targetDepth)) {
                     context.nextToken();
                     configRuleEvaluationStatus
@@ -98,6 +112,13 @@ public class ConfigRuleEvaluationStatusJsonUnmarshaller implements
                     context.nextToken();
                     configRuleEvaluationStatus
                             .setLastErrorMessage(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("FirstEvaluationStarted",
+                        targetDepth)) {
+                    context.nextToken();
+                    configRuleEvaluationStatus
+                            .setFirstEvaluationStarted(BooleanJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -86,7 +86,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
     private String rangeKeyValue;
     /**
      * <p>
-     * The action payload.
+     * The action payload, this name can be customized.
      * </p>
      */
     private String payloadField;
@@ -321,11 +321,11 @@ public class DynamoDBAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action payload.
+     * The action payload, this name can be customized.
      * </p>
      * 
      * @param payloadField
-     *        The action payload.
+     *        The action payload, this name can be customized.
      */
     public void setPayloadField(String payloadField) {
         this.payloadField = payloadField;
@@ -333,10 +333,10 @@ public class DynamoDBAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action payload.
+     * The action payload, this name can be customized.
      * </p>
      * 
-     * @return The action payload.
+     * @return The action payload, this name can be customized.
      */
     public String getPayloadField() {
         return this.payloadField;
@@ -344,11 +344,11 @@ public class DynamoDBAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action payload.
+     * The action payload, this name can be customized.
      * </p>
      * 
      * @param payloadField
-     *        The action payload.
+     *        The action payload, this name can be customized.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

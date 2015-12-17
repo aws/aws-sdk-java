@@ -92,6 +92,11 @@ public class CreateTrailRequestMarshaller implements
                         createTrailRequest.getIncludeGlobalServiceEvents());
             }
 
+            if (createTrailRequest.getIsMultiRegionTrail() != null) {
+                jsonWriter.key("IsMultiRegionTrail").value(
+                        createTrailRequest.getIsMultiRegionTrail());
+            }
+
             if (createTrailRequest.getEnableLogFileValidation() != null) {
                 jsonWriter.key("EnableLogFileValidation").value(
                         createTrailRequest.getEnableLogFileValidation());

@@ -4,7 +4,7 @@
     "exceptionUnmarshallerImpl" : null,
     "protocol" : "json",
     "checksumFormat" : null,
-    "documentation" : "<p>Simple Systems Manager (SSM) is a set of capabilities that can help you manage your Amazon EC2 instances running on Windows. SSM enables you to run scripts or other common administrative tasks on your instances using either SSM Run Command or SSM Config. </p> <p>Run Command extends the server administration capabilities of SSM by offering an on-demand experience for executing commands. You can use pre-defined Amazon SSM documents (formerly called configuration documents) to perform the actions listed later in this section, or you can create your own documents. With these document, you can then remotely configure your instances by sending commands using the AWS command line interface (CLI), AWS Tools for Windows PowerShell, or the <b>Commands</b> page in the Amazon EC2 console. Additionally, because Run Command enables you to execute PowerShell commands or scripts, you can administer your instances remotely using PowerShell as though you were logged on locally to the instance. Run Command reports the status of the command execution for each instance targeted by a command. You can also audit the command execution to understand who executed commands, when, and what changes were made. By switching between different SSM documents, you can quickly configure your instances with different types of commands.</p> <p>SSM Config is a lightweight instance configuration solution. With SSM Config, you can specify a setup configuration for your instances. SSM Config is similar to EC2 User Data, which is another way of running one-time scripts or applying settings during instance launch. SSM Config is an extension of this capability. Using SSM documents, you can specify which actions the system should perform on your instances, including which applications to install, which AWS Directory Service directory to join, which Microsoft PowerShell modules to install, etc. If an instance is missing one or more of these configurations, the system makes those changes. By default, the system checks every five minutes to see if there is a new configuration to apply as defined in a new SSM document. If so, the system updates the instances accordingly. In this way, you can remotely maintain a consistent configuration baseline on your instances. SSM Config is available using the AWS CLI or the AWS Tools for Windows PowerShell.</p> <note> <p>SSM is currently not supported on Linux instances.</p> </note> <p>You can use Run Command and SSM Config to do the following:</p> <ul> <li> <p>Join an AWS Directory Service directory (SSM Config and Run Command)</p> </li> <li> <p>Install, repair, or uninstall software using an MSI package (SSM Config and Run Command)</p> </li> <li> <p>Install PowerShell modules (SSM Config and Run Command)</p> </li> <li> <p>Configure CloudWatch Logs to monitor applications and systems (SSM Config and Run Command)</p> </li> <li> <p>Run PowerShell commands or scripts (Run Command only)</p> </li> <li> <p>Update the EC2Config service (Run Command only)</p> </li> <li> <p>Configure Windows Update settings (Run Command only)</p> </li> </ul> <important> <p>SSM documents run with administrative privilege on Windows instances because the EC2Config service runs in the Local System account. If a user has permission to execute any of the pre-defined SSM documents (any document that begins with AWS-*) then that user also has administrator access to the instance. Delegate access to SSM Config and Run Command judiciously. This becomes extremely important if you create your own SSM documents. Amazon Web Services does not provide guidance about how to create secure SSM documents. You create SSM documents and delegate access to Run Command actions at your own risk. As a security best practice, we recommend that you assign access to \"AWS-*\" documents, especially the AWS-RunPowerShellScript document, to trusted administrators only. You can create low-level SSM documents for low security tasks and delegate access to non-administrators. </p> </important>",
+    "documentation" : "<p>Simple Systems Manager (SSM) enables you to remotely manage the configuration of your Amazon EC2 instance. Using SSM, you can run scripts or commands using either EC2 Run Command or SSM Config. (SSM Config is currently available only for Windows instances.) </p> <p></p> <b>Run Command</b> <p>Run Command provides an on-demand experience for executing commands. You can use pre-defined Amazon SSM documents to perform the actions listed later in this section, or you can create your own documents. With these documents, you can remotely configure your instances by sending commands using the <b>Commands</b> page in the <a href=\"http://console.aws.amazon.com/ec2/\">Amazon EC2 console</a>, <a href=\"http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html\">AWS Tools for Windows PowerShell</a>, or the <a href=\"http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html\">AWS CLI</a>.</p> <p>Run Command reports the status of the command execution for each instance targeted by a command. You can also audit the command execution to understand who executed commands, when, and what changes were made. By switching between different SSM documents, you can quickly configure your instances with different types of commands. To get started with Run Command, verify that your environment meets the prerequisites for remotely running commands on EC2 instances (<a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/remote-commands-prereq.html\">Linux</a> or <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/remote-commands-prereq.html\">Windows</a>). </p> <p></p> <b>SSM Config</b> <p>SSM Config is a lightweight instance configuration solution. SSM Config is currently only available for Windows instances. With SSM Config, you can specify a setup configuration for your instances. SSM Config is similar to EC2 User Data, which is another way of running one-time scripts or applying settings during instance launch. SSM Config is an extension of this capability. Using SSM documents, you can specify which actions the system should perform on your instances, including which applications to install, which AWS Directory Service directory to join, which Microsoft PowerShell modules to install, etc. If an instance is missing one or more of these configurations, the system makes those changes. By default, the system checks every five minutes to see if there is a new configuration to apply as defined in a new SSM document. If so, the system updates the instances accordingly. In this way, you can remotely maintain a consistent configuration baseline on your instances. SSM Config is available using the AWS CLI or the AWS Tools for Windows PowerShell. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-configuration-manage.html\">Managing Windows Instance Configuration</a>.</p> <para>SSM Config and Run Command include the following pre-defined documents.</para> <table> <title>Amazon Pre-defined SSM Documents</title> <tgroup cols=\"3\"> <colspec colnum=\"1\" colname=\"col1\" colwidth=\"1*\"></colspec> <colspec colnum=\"2\" colname=\"col2\" colwidth=\"1*\"></colspec> <colspec colnum=\"3\" colname=\"col3\" colwidth=\"1*\"></colspec> <thead> <row> <entry>Name</entry> <entry>Description</entry> <entry>Platform</entry> </row> </thead> <tbody> <row> <entry> <para>AWS-RunShellScript</para> </entry> <entry> <para>Run shell scripts</para> </entry> <entry> <para>Linux</para> </entry> </row> <row> <entry> <para>AWS-UpdateSSMAgent</para> </entry> <entry> <para>Update the Amazon SSM agent</para> </entry> <entry> <para>Linux</para> </entry> </row> <row> <entry> <para>AWS-JoinDirectoryServiceDomain </para> </entry> <entry> <para>Join an AWS Directory </para> </entry> <entry> <para>Windows</para> </entry> </row> <row> <entry> <para>AWS-RunPowerShellScript</para> </entry> <entry> <para>Run PowerShell commands or scripts</para> </entry> <entry> <para>Windows</para> </entry> </row> <row> <entry> <para>AWS-UpdateEC2Config</para> </entry> <entry> <para>Update the EC2Config service </para> </entry> <entry> <para>Windows</para> </entry> </row> <row> <entry> <para>AWS-ConfigureWindowsUpdate</para> </entry> <entry> <para>Configure Windows Update settings</para> </entry> <entry> <para>Windows</para> </entry> </row> <row> <entry> <para>AWS-InstallApplication</para> </entry> <entry> <para>Install, repair, or uninstall software using an MSI package</para> </entry> <entry> <para>Windows</para> </entry> </row> <row> <entry> <para>AWS-InstallPowerShellModule</para> </entry> <entry> <para>Install PowerShell modules </para> </entry> <entry> <para>Windows</para> </entry> </row> <row> <entry> <para>AWS-ConfigureCloudWatch</para> </entry> <entry> <para>Configure Amazon CloudWatch Logs to monitor applications and systems</para> </entry> <entry> <para>Windows</para> </entry> </row> </tbody> </tgroup> </table> <important> <simpara>The commands or scripts specified in SSM documents run with administrative privilege on your instances because the Amazon SSM agent runs as root on Linux and the EC2Config service runs in the Local System account on Windows. If a user has permission to execute any of the pre-defined SSM documents (any document that begins with AWS-*) then that user also has administrator access to the instance. Delegate access to SSM and Run Command judiciously. This becomes extremely important if you create your own SSM documents. Amazon Web Services does not provide guidance about how to create secure SSM documents. You create SSM documents and delegate access to Run Command at your own risk. As a security best practice, we recommend that you assign access to \"AWS-*\" documents, especially the AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript document on Windows, to trusted administrators only. You can create SSM documents for specific tasks and delegate access to non-administrators.</simpara> </important>",
     "defaultEndpoint" : "https://ssm.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "ssm.us-east-1.amazonaws.com",
     "syncInterface" : "AWSSimpleSystemsManagement",
@@ -1108,8 +1108,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "AssociationFilter",
           "simple" : false,
+          "simpleType" : "AssociationFilter",
           "map" : false,
           "templateType" : "java.util.List<AssociationFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>"
@@ -1456,8 +1456,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "AssociationFilter",
             "simple" : false,
+            "simpleType" : "AssociationFilter",
             "map" : false,
             "templateType" : "java.util.List<AssociationFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>"
@@ -2047,8 +2047,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2237,8 +2237,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2691,8 +2691,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "InstanceInformationFilter",
           "simple" : false,
+          "simpleType" : "InstanceInformationFilter",
           "map" : false,
           "templateType" : "java.util.List<InstanceInformationFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformationFilter>"
@@ -2935,8 +2935,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "InstanceInformationFilter",
             "simple" : false,
+            "simpleType" : "InstanceInformationFilter",
             "map" : false,
             "templateType" : "java.util.List<InstanceInformationFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformationFilter>"
@@ -4327,8 +4327,8 @@
               "listMemberModel" : null,
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
-              "simpleType" : "String",
               "simple" : true,
+              "simpleType" : "String",
               "map" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -4344,11 +4344,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<String>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : true,
-          "templateType" : "java.util.Map<String,java.util.List<String>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+          "valueList" : true
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -4531,8 +4531,8 @@
                 "listMemberModel" : null,
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
-                "simpleType" : "String",
                 "simple" : true,
+                "simpleType" : "String",
                 "map" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -4548,11 +4548,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<String>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : true,
-            "templateType" : "java.util.Map<String,java.util.List<String>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+            "valueList" : true
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -5641,8 +5641,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "CommandPlugin",
           "simple" : false,
+          "simpleType" : "CommandPlugin",
           "map" : false,
           "templateType" : "java.util.List<CommandPlugin>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandPlugin>"
@@ -5987,8 +5987,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "CommandPlugin",
             "simple" : false,
+            "simpleType" : "CommandPlugin",
             "map" : false,
             "templateType" : "java.util.List<CommandPlugin>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandPlugin>"
@@ -6850,8 +6850,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "CommandFilter",
           "simple" : false,
+          "simpleType" : "CommandFilter",
           "map" : false,
           "templateType" : "java.util.List<CommandFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
@@ -7043,8 +7043,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "CommandFilter",
             "simple" : false,
+            "simpleType" : "CommandFilter",
             "map" : false,
             "templateType" : "java.util.List<CommandFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
@@ -7672,8 +7672,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "AssociationDescription",
           "simple" : false,
+          "simpleType" : "AssociationDescription",
           "map" : false,
           "templateType" : "java.util.List<AssociationDescription>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>"
@@ -7787,8 +7787,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "FailedCreateAssociation",
           "simple" : false,
+          "simpleType" : "FailedCreateAssociation",
           "map" : false,
           "templateType" : "java.util.List<FailedCreateAssociation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>"
@@ -7925,8 +7925,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "AssociationDescription",
             "simple" : false,
+            "simpleType" : "AssociationDescription",
             "map" : false,
             "templateType" : "java.util.List<AssociationDescription>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>"
@@ -8041,8 +8041,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "FailedCreateAssociation",
             "simple" : false,
+            "simpleType" : "FailedCreateAssociation",
             "map" : false,
             "templateType" : "java.util.List<FailedCreateAssociation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>"
@@ -8729,8 +8729,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "CommandInvocation",
           "simple" : false,
+          "simpleType" : "CommandInvocation",
           "map" : false,
           "templateType" : "java.util.List<CommandInvocation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandInvocation>"
@@ -8918,8 +8918,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "CommandInvocation",
             "simple" : false,
+            "simpleType" : "CommandInvocation",
             "map" : false,
             "templateType" : "java.util.List<CommandInvocation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandInvocation>"
@@ -9198,8 +9198,8 @@
               "listMemberModel" : null,
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
-              "simpleType" : "String",
               "simple" : true,
+              "simpleType" : "String",
               "map" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9215,11 +9215,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<String>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : true,
-          "templateType" : "java.util.Map<String,java.util.List<String>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+          "valueList" : true
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -9402,8 +9402,8 @@
                 "listMemberModel" : null,
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
-                "simpleType" : "String",
                 "simple" : true,
+                "simpleType" : "String",
                 "map" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9419,11 +9419,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<String>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : true,
-            "templateType" : "java.util.Map<String,java.util.List<String>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+            "valueList" : true
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -9551,7 +9551,7 @@
         "fluentSetterDocumentation" : "/**<p>The name of the SSM document.</p>\n@param name The name of the SSM document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The name of the SSM document.</p>\n@param name The name of the SSM document.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The instance ID.</p>",
+        "documentation" : "<p>The Windows Server instance ID.</p>",
         "name" : "InstanceId",
         "c2jName" : "InstanceId",
         "c2jShape" : "InstanceId",
@@ -9559,7 +9559,7 @@
           "variableName" : "instanceId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The instance ID.</p>",
+          "documentation" : "<p>The Windows Server instance ID.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9597,12 +9597,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The instance ID.</p>\n@param instanceId The instance ID.*/",
-        "getterDocumentation" : "/**<p>The instance ID.</p>\n@return The instance ID.*/",
-        "fluentSetterDocumentation" : "/**<p>The instance ID.</p>\n@param instanceId The instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The instance ID.</p>\n@param instanceId The instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.*/",
+        "getterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@return The Windows Server instance ID.*/",
+        "fluentSetterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "The parameters for the document’s runtime configuration.",
+        "documentation" : "The parameters for the documents runtime configuration.",
         "name" : "Parameters",
         "c2jName" : "Parameters",
         "c2jShape" : "Parameters",
@@ -9610,7 +9610,7 @@
           "variableName" : "parameters",
           "variableType" : "java.util.Map<String,java.util.List<String>>",
           "variableDeclarationType" : "java.util.Map<String,java.util.List<String>>",
-          "documentation" : "The parameters for the document’s runtime configuration.",
+          "documentation" : "The parameters for the documents runtime configuration.",
           "simpleType" : "List<String>>",
           "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
         },
@@ -9698,8 +9698,8 @@
               "listMemberModel" : null,
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
-              "simpleType" : "String",
               "simple" : true,
+              "simpleType" : "String",
               "map" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9715,21 +9715,21 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<String>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : true,
-          "templateType" : "java.util.Map<String,java.util.List<String>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+          "valueList" : true
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "simple" : false,
         "list" : false,
         "map" : true,
-        "setterDocumentation" : "/**The parameters for the document’s runtime configuration.\n@param parameters The parameters for the document’s runtime configuration.*/",
-        "getterDocumentation" : "/**The parameters for the document’s runtime configuration.\n@return The parameters for the document’s runtime configuration.*/",
-        "fluentSetterDocumentation" : "/**The parameters for the document’s runtime configuration.\n@param parameters The parameters for the document’s runtime configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**The parameters for the document’s runtime configuration.\n@param parameters The parameters for the document’s runtime configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**The parameters for the documents runtime configuration.\n@param parameters The parameters for the documents runtime configuration.*/",
+        "getterDocumentation" : "/**The parameters for the documents runtime configuration.\n@return The parameters for the documents runtime configuration.*/",
+        "fluentSetterDocumentation" : "/**The parameters for the documents runtime configuration.\n@param parameters The parameters for the documents runtime configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**The parameters for the documents runtime configuration.\n@param parameters The parameters for the documents runtime configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -9810,7 +9810,7 @@
           "varargSetterDocumentation" : "/**<p>The name of the SSM document.</p>\n@param name The name of the SSM document.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Parameters" : {
-          "documentation" : "The parameters for the document’s runtime configuration.",
+          "documentation" : "The parameters for the documents runtime configuration.",
           "name" : "Parameters",
           "c2jName" : "Parameters",
           "c2jShape" : "Parameters",
@@ -9818,7 +9818,7 @@
             "variableName" : "parameters",
             "variableType" : "java.util.Map<String,java.util.List<String>>",
             "variableDeclarationType" : "java.util.Map<String,java.util.List<String>>",
-            "documentation" : "The parameters for the document’s runtime configuration.",
+            "documentation" : "The parameters for the documents runtime configuration.",
             "simpleType" : "List<String>>",
             "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
           },
@@ -9906,8 +9906,8 @@
                 "listMemberModel" : null,
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
-                "simpleType" : "String",
                 "simple" : true,
+                "simpleType" : "String",
                 "map" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9923,24 +9923,24 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<String>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : true,
-            "templateType" : "java.util.Map<String,java.util.List<String>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+            "valueList" : true
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "simple" : false,
           "list" : false,
           "map" : true,
-          "setterDocumentation" : "/**The parameters for the document’s runtime configuration.\n@param parameters The parameters for the document’s runtime configuration.*/",
-          "getterDocumentation" : "/**The parameters for the document’s runtime configuration.\n@return The parameters for the document’s runtime configuration.*/",
-          "fluentSetterDocumentation" : "/**The parameters for the document’s runtime configuration.\n@param parameters The parameters for the document’s runtime configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**The parameters for the document’s runtime configuration.\n@param parameters The parameters for the document’s runtime configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**The parameters for the documents runtime configuration.\n@param parameters The parameters for the documents runtime configuration.*/",
+          "getterDocumentation" : "/**The parameters for the documents runtime configuration.\n@return The parameters for the documents runtime configuration.*/",
+          "fluentSetterDocumentation" : "/**The parameters for the documents runtime configuration.\n@param parameters The parameters for the documents runtime configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**The parameters for the documents runtime configuration.\n@param parameters The parameters for the documents runtime configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "InstanceId" : {
-          "documentation" : "<p>The instance ID.</p>",
+          "documentation" : "<p>The Windows Server instance ID.</p>",
           "name" : "InstanceId",
           "c2jName" : "InstanceId",
           "c2jShape" : "InstanceId",
@@ -9948,7 +9948,7 @@
             "variableName" : "instanceId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The instance ID.</p>",
+            "documentation" : "<p>The Windows Server instance ID.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9986,10 +9986,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The instance ID.</p>\n@param instanceId The instance ID.*/",
-          "getterDocumentation" : "/**<p>The instance ID.</p>\n@return The instance ID.*/",
-          "fluentSetterDocumentation" : "/**<p>The instance ID.</p>\n@param instanceId The instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The instance ID.</p>\n@param instanceId The instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.*/",
+          "getterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@return The Windows Server instance ID.*/",
+          "fluentSetterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -10304,8 +10304,8 @@
               "listMemberModel" : null,
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
-              "simpleType" : "String",
               "simple" : true,
+              "simpleType" : "String",
               "map" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10321,11 +10321,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<String>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : true,
-          "templateType" : "java.util.Map<String,java.util.List<String>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+          "valueList" : true
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10384,8 +10384,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10776,8 +10776,8 @@
                 "listMemberModel" : null,
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
-                "simpleType" : "String",
                 "simple" : true,
+                "simpleType" : "String",
                 "map" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10793,11 +10793,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<String>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : true,
-            "templateType" : "java.util.Map<String,java.util.List<String>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+            "valueList" : true
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -10909,8 +10909,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12221,8 +12221,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12487,8 +12487,8 @@
               "listMemberModel" : null,
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
-              "simpleType" : "String",
               "simple" : true,
+              "simpleType" : "String",
               "map" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12504,11 +12504,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<String>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : true,
-          "templateType" : "java.util.Map<String,java.util.List<String>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+          "valueList" : true
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12745,8 +12745,8 @@
                 "listMemberModel" : null,
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
-                "simpleType" : "String",
                 "simple" : true,
+                "simpleType" : "String",
                 "map" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12762,11 +12762,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<String>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : true,
-            "templateType" : "java.util.Map<String,java.util.List<String>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+            "valueList" : true
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -12878,8 +12878,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -13958,8 +13958,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "CommandFilter",
           "simple" : false,
+          "simpleType" : "CommandFilter",
           "map" : false,
           "templateType" : "java.util.List<CommandFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
@@ -14100,8 +14100,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "CommandFilter",
             "simple" : false,
+            "simpleType" : "CommandFilter",
             "map" : false,
             "templateType" : "java.util.List<CommandFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
@@ -14470,8 +14470,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -14561,8 +14561,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15124,8 +15124,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "DocumentIdentifier",
           "simple" : false,
+          "simpleType" : "DocumentIdentifier",
           "map" : false,
           "templateType" : "java.util.List<DocumentIdentifier>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>"
@@ -15313,8 +15313,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "DocumentIdentifier",
             "simple" : false,
+            "simpleType" : "DocumentIdentifier",
             "map" : false,
             "templateType" : "java.util.List<DocumentIdentifier>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>"
@@ -15748,8 +15748,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "DocumentParameter",
           "simple" : false,
+          "simpleType" : "DocumentParameter",
           "map" : false,
           "templateType" : "java.util.List<DocumentParameter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentParameter>"
@@ -15863,8 +15863,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -16053,8 +16053,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "DocumentParameter",
             "simple" : false,
+            "simpleType" : "DocumentParameter",
             "map" : false,
             "templateType" : "java.util.List<DocumentParameter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentParameter>"
@@ -16273,8 +16273,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -16520,7 +16520,7 @@
         "fluentSetterDocumentation" : "/**<p>The name of the SSM document.</p>\n@param name The name of the SSM document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The name of the SSM document.</p>\n@param name The name of the SSM document.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The ID of the instance.</p>",
+        "documentation" : "<p>The Windows Server instance ID.</p>",
         "name" : "InstanceId",
         "c2jName" : "InstanceId",
         "c2jShape" : "InstanceId",
@@ -16528,7 +16528,7 @@
           "variableName" : "instanceId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The ID of the instance.</p>",
+          "documentation" : "<p>The Windows Server instance ID.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -16566,10 +16566,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The ID of the instance.</p>\n@param instanceId The ID of the instance.*/",
-        "getterDocumentation" : "/**<p>The ID of the instance.</p>\n@return The ID of the instance.*/",
-        "fluentSetterDocumentation" : "/**<p>The ID of the instance.</p>\n@param instanceId The ID of the instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The ID of the instance.</p>\n@param instanceId The ID of the instance.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.*/",
+        "getterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@return The Windows Server instance ID.*/",
+        "fluentSetterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -16650,7 +16650,7 @@
           "varargSetterDocumentation" : "/**<p>The name of the SSM document.</p>\n@param name The name of the SSM document.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "InstanceId" : {
-          "documentation" : "<p>The ID of the instance.</p>",
+          "documentation" : "<p>The Windows Server instance ID.</p>",
           "name" : "InstanceId",
           "c2jName" : "InstanceId",
           "c2jShape" : "InstanceId",
@@ -16658,7 +16658,7 @@
             "variableName" : "instanceId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The ID of the instance.</p>",
+            "documentation" : "<p>The Windows Server instance ID.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -16696,10 +16696,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The ID of the instance.</p>\n@param instanceId The ID of the instance.*/",
-          "getterDocumentation" : "/**<p>The ID of the instance.</p>\n@return The ID of the instance.*/",
-          "fluentSetterDocumentation" : "/**<p>The ID of the instance.</p>\n@param instanceId The ID of the instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The ID of the instance.</p>\n@param instanceId The ID of the instance.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.*/",
+          "getterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@return The Windows Server instance ID.*/",
+          "fluentSetterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Windows Server instance ID.</p>\n@param instanceId The Windows Server instance ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -17088,8 +17088,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Command",
           "simple" : false,
+          "simpleType" : "Command",
           "map" : false,
           "templateType" : "java.util.List<Command>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Command>"
@@ -17329,8 +17329,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Command",
             "simple" : false,
+            "simpleType" : "Command",
             "map" : false,
             "templateType" : "java.util.List<Command>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Command>"
@@ -17457,8 +17457,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "InstanceInformation",
           "simple" : false,
+          "simpleType" : "InstanceInformation",
           "map" : false,
           "templateType" : "java.util.List<InstanceInformation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformation>"
@@ -17646,8 +17646,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "InstanceInformation",
             "simple" : false,
+            "simpleType" : "InstanceInformation",
             "map" : false,
             "templateType" : "java.util.List<InstanceInformation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformation>"
@@ -17826,8 +17826,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "DocumentFilter",
           "simple" : false,
+          "simpleType" : "DocumentFilter",
           "map" : false,
           "templateType" : "java.util.List<DocumentFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>"
@@ -18122,8 +18122,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "DocumentFilter",
             "simple" : false,
+            "simpleType" : "DocumentFilter",
             "map" : false,
             "templateType" : "java.util.List<DocumentFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>"
@@ -18440,8 +18440,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -18527,8 +18527,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -18680,7 +18680,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : "The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.",
+        "documentation" : "The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.",
         "name" : "Name",
         "c2jName" : "Name",
         "c2jShape" : "CommandPluginName",
@@ -18688,7 +18688,7 @@
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.",
+          "documentation" : "The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -18726,10 +18726,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@param name The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.*/",
-        "getterDocumentation" : "/**The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@return The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.*/",
-        "fluentSetterDocumentation" : "/**The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@param name The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@param name The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@param name The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.*/",
+        "getterDocumentation" : "/**The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@return The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.*/",
+        "fluentSetterDocumentation" : "/**The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@param name The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@param name The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "The status of this plugin. You can execute a document with multiple plugins.",
         "name" : "Status",
@@ -19111,7 +19111,7 @@
       },
       "membersAsMap" : {
         "Name" : {
-          "documentation" : "The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.",
+          "documentation" : "The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.",
           "name" : "Name",
           "c2jName" : "Name",
           "c2jShape" : "CommandPluginName",
@@ -19119,7 +19119,7 @@
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.",
+            "documentation" : "The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -19157,10 +19157,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@param name The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.*/",
-          "getterDocumentation" : "/**The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@return The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.*/",
-          "fluentSetterDocumentation" : "/**The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@param name The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@param name The name of the plugin. Must be one of the following: AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule, AWS-ConfigureCloudWatch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@param name The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.*/",
+          "getterDocumentation" : "/**The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@return The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.*/",
+          "fluentSetterDocumentation" : "/**The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@param name The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@param name The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Status" : {
           "documentation" : "The status of this plugin. You can execute a document with multiple plugins.",
@@ -19637,8 +19637,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "CreateAssociationBatchRequestEntry",
           "simple" : false,
+          "simpleType" : "CreateAssociationBatchRequestEntry",
           "map" : false,
           "templateType" : "java.util.List<CreateAssociationBatchRequestEntry>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>"
@@ -19779,8 +19779,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "CreateAssociationBatchRequestEntry",
             "simple" : false,
+            "simpleType" : "CreateAssociationBatchRequestEntry",
             "map" : false,
             "templateType" : "java.util.List<CreateAssociationBatchRequestEntry>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>"
@@ -20542,8 +20542,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Association",
           "simple" : false,
+          "simpleType" : "Association",
           "map" : false,
           "templateType" : "java.util.List<Association>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>"
@@ -20783,8 +20783,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Association",
             "simple" : false,
+            "simpleType" : "Association",
             "map" : false,
             "templateType" : "java.util.List<Association>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>"

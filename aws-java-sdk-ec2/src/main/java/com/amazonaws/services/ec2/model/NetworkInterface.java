@@ -119,6 +119,14 @@ public class NetworkInterface implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterfacePrivateIpAddress> privateIpAddresses;
 
     /**
+     * The type of interface.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>interface, natGateway
+     */
+    private String interfaceType;
+
+    /**
      * The ID of the network interface.
      *
      * @return The ID of the network interface.
@@ -912,6 +920,88 @@ public class NetworkInterface implements Serializable, Cloneable {
     }
 
     /**
+     * The type of interface.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>interface, natGateway
+     *
+     * @return The type of interface.
+     *
+     * @see NetworkInterfaceType
+     */
+    public String getInterfaceType() {
+        return interfaceType;
+    }
+    
+    /**
+     * The type of interface.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>interface, natGateway
+     *
+     * @param interfaceType The type of interface.
+     *
+     * @see NetworkInterfaceType
+     */
+    public void setInterfaceType(String interfaceType) {
+        this.interfaceType = interfaceType;
+    }
+    
+    /**
+     * The type of interface.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>interface, natGateway
+     *
+     * @param interfaceType The type of interface.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see NetworkInterfaceType
+     */
+    public NetworkInterface withInterfaceType(String interfaceType) {
+        this.interfaceType = interfaceType;
+        return this;
+    }
+
+    /**
+     * The type of interface.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>interface, natGateway
+     *
+     * @param interfaceType The type of interface.
+     *
+     * @see NetworkInterfaceType
+     */
+    public void setInterfaceType(NetworkInterfaceType interfaceType) {
+        this.interfaceType = interfaceType.toString();
+    }
+    
+    /**
+     * The type of interface.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>interface, natGateway
+     *
+     * @param interfaceType The type of interface.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see NetworkInterfaceType
+     */
+    public NetworkInterface withInterfaceType(NetworkInterfaceType interfaceType) {
+        this.interfaceType = interfaceType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -940,7 +1030,8 @@ public class NetworkInterface implements Serializable, Cloneable {
         if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ",");
         if (getAssociation() != null) sb.append("Association: " + getAssociation() + ",");
         if (getTagSet() != null) sb.append("TagSet: " + getTagSet() + ",");
-        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() );
+        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ",");
+        if (getInterfaceType() != null) sb.append("InterfaceType: " + getInterfaceType() );
         sb.append("}");
         return sb.toString();
     }
@@ -968,6 +1059,7 @@ public class NetworkInterface implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAssociation() == null) ? 0 : getAssociation().hashCode()); 
         hashCode = prime * hashCode + ((getTagSet() == null) ? 0 : getTagSet().hashCode()); 
         hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode()); 
+        hashCode = prime * hashCode + ((getInterfaceType() == null) ? 0 : getInterfaceType().hashCode()); 
         return hashCode;
     }
     
@@ -1015,6 +1107,8 @@ public class NetworkInterface implements Serializable, Cloneable {
         if (other.getTagSet() != null && other.getTagSet().equals(this.getTagSet()) == false) return false; 
         if (other.getPrivateIpAddresses() == null ^ this.getPrivateIpAddresses() == null) return false;
         if (other.getPrivateIpAddresses() != null && other.getPrivateIpAddresses().equals(this.getPrivateIpAddresses()) == false) return false; 
+        if (other.getInterfaceType() == null ^ this.getInterfaceType() == null) return false;
+        if (other.getInterfaceType() != null && other.getInterfaceType().equals(this.getInterfaceType()) == false) return false; 
         return true;
     }
     

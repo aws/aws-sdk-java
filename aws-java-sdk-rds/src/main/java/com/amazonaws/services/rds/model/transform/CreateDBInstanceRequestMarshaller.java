@@ -167,6 +167,12 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
         if (createDBInstanceRequest.isCopyTagsToSnapshot() != null) {
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(createDBInstanceRequest.isCopyTagsToSnapshot()));
         }
+        if (createDBInstanceRequest.getMonitoringInterval() != null) {
+            request.addParameter("MonitoringInterval", StringUtils.fromInteger(createDBInstanceRequest.getMonitoringInterval()));
+        }
+        if (createDBInstanceRequest.getMonitoringRoleArn() != null) {
+            request.addParameter("MonitoringRoleArn", StringUtils.fromString(createDBInstanceRequest.getMonitoringRoleArn()));
+        }
 
         return request;
     }
