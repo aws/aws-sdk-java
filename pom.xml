@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.10.43</version>
+  <version>1.10.44-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -31,7 +31,6 @@
       </roles>
     </developer>
   </developers>
-  <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
     <module>aws-java-sdk-support</module>
     <module>aws-java-sdk-simpledb</module>
@@ -96,7 +95,7 @@
     <module>aws-java-sdk-core</module>
     <module>aws-java-sdk-bom</module>
     <module>aws-java-sdk-test-utils</module>
-</modules>
+  </modules>
   <scm>
     <url>https://github.com/aws/aws-sdk-java.git</url>
   </scm>
@@ -132,7 +131,6 @@
     <pluginManagement>
       <plugins>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>2.3</version>
           <configuration>
@@ -142,9 +140,7 @@
             <forceJavacCompilerUse>true</forceJavacCompilerUse>
           </configuration>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>2.9.1</version>
           <configuration>
@@ -162,7 +158,6 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
             <executions>
               <execution>
