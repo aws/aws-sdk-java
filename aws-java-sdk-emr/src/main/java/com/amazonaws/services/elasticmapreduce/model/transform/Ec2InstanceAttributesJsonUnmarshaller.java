@@ -86,6 +86,13 @@ public class Ec2InstanceAttributesJsonUnmarshaller implements
                             .setEmrManagedSlaveSecurityGroup(StringJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ServiceAccessSecurityGroup",
+                        targetDepth)) {
+                    context.nextToken();
+                    ec2InstanceAttributes
+                            .setServiceAccessSecurityGroup(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AdditionalMasterSecurityGroups",
                         targetDepth)) {
                     context.nextToken();

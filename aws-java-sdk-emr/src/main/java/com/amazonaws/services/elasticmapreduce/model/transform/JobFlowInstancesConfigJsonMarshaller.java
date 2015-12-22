@@ -125,6 +125,11 @@ public class JobFlowInstancesConfigJsonMarshaller {
                                 .getEmrManagedSlaveSecurityGroup());
             }
 
+            if (jobFlowInstancesConfig.getServiceAccessSecurityGroup() != null) {
+                jsonWriter.key("ServiceAccessSecurityGroup").value(
+                        jobFlowInstancesConfig.getServiceAccessSecurityGroup());
+            }
+
             com.amazonaws.internal.SdkInternalList<String> additionalMasterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) jobFlowInstancesConfig
                     .getAdditionalMasterSecurityGroups();
             if (!additionalMasterSecurityGroupsList.isEmpty()

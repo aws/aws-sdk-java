@@ -82,6 +82,11 @@ public class Ec2InstanceAttributesJsonMarshaller {
                                 .getEmrManagedSlaveSecurityGroup());
             }
 
+            if (ec2InstanceAttributes.getServiceAccessSecurityGroup() != null) {
+                jsonWriter.key("ServiceAccessSecurityGroup").value(
+                        ec2InstanceAttributes.getServiceAccessSecurityGroup());
+            }
+
             com.amazonaws.internal.SdkInternalList<String> additionalMasterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) ec2InstanceAttributes
                     .getAdditionalMasterSecurityGroups();
             if (!additionalMasterSecurityGroupsList.isEmpty()

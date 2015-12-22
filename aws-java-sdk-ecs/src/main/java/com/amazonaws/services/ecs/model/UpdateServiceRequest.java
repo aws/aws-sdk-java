@@ -57,6 +57,13 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String taskDefinition;
+    /**
+     * <p>
+     * Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.
+     * </p>
+     */
+    private DeploymentConfiguration deploymentConfiguration;
 
     /**
      * <p>
@@ -268,6 +275,55 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.
+     * </p>
+     * 
+     * @param deploymentConfiguration
+     *        Optional deployment parameters that control how many tasks run
+     *        during the deployment and the ordering of stopping and starting
+     *        tasks.
+     */
+    public void setDeploymentConfiguration(
+            DeploymentConfiguration deploymentConfiguration) {
+        this.deploymentConfiguration = deploymentConfiguration;
+    }
+
+    /**
+     * <p>
+     * Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.
+     * </p>
+     * 
+     * @return Optional deployment parameters that control how many tasks run
+     *         during the deployment and the ordering of stopping and starting
+     *         tasks.
+     */
+    public DeploymentConfiguration getDeploymentConfiguration() {
+        return this.deploymentConfiguration;
+    }
+
+    /**
+     * <p>
+     * Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.
+     * </p>
+     * 
+     * @param deploymentConfiguration
+     *        Optional deployment parameters that control how many tasks run
+     *        during the deployment and the ordering of stopping and starting
+     *        tasks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateServiceRequest withDeploymentConfiguration(
+            DeploymentConfiguration deploymentConfiguration) {
+        setDeploymentConfiguration(deploymentConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -286,7 +342,10 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
         if (getDesiredCount() != null)
             sb.append("DesiredCount: " + getDesiredCount() + ",");
         if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: " + getTaskDefinition());
+            sb.append("TaskDefinition: " + getTaskDefinition() + ",");
+        if (getDeploymentConfiguration() != null)
+            sb.append("DeploymentConfiguration: "
+                    + getDeploymentConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -322,6 +381,13 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
         if (other.getTaskDefinition() != null
                 && other.getTaskDefinition().equals(this.getTaskDefinition()) == false)
             return false;
+        if (other.getDeploymentConfiguration() == null
+                ^ this.getDeploymentConfiguration() == null)
+            return false;
+        if (other.getDeploymentConfiguration() != null
+                && other.getDeploymentConfiguration().equals(
+                        this.getDeploymentConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -342,6 +408,10 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getTaskDefinition() == null) ? 0 : getTaskDefinition()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDeploymentConfiguration() == null) ? 0
+                        : getDeploymentConfiguration().hashCode());
         return hashCode;
     }
 

@@ -88,6 +88,13 @@ public class UpdateServiceRequestMarshaller implements
                         updateServiceRequest.getTaskDefinition());
             }
 
+            if (updateServiceRequest.getDeploymentConfiguration() != null) {
+                jsonWriter.key("deploymentConfiguration");
+                DeploymentConfigurationJsonMarshaller.getInstance().marshall(
+                        updateServiceRequest.getDeploymentConfiguration(),
+                        jsonWriter);
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

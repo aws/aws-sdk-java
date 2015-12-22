@@ -960,11 +960,15 @@
         },
         "EmrManagedMasterSecurityGroup":{
           "shape":"String",
-          "documentation":"<p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the master node.</p>"
+          "documentation":"<p>The identifier of the Amazon EC2 security group for the master node.</p>"
         },
         "EmrManagedSlaveSecurityGroup":{
           "shape":"String",
-          "documentation":"<p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the slave nodes.</p>"
+          "documentation":"<p>The identifier of the Amazon EC2 security group for the slave nodes.</p>"
+        },
+        "ServiceAccessSecurityGroup":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>"
         },
         "AdditionalMasterSecurityGroups":{
           "shape":"StringList",
@@ -1633,11 +1637,15 @@
         },
         "EmrManagedMasterSecurityGroup":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the master node.</p>"
+          "documentation":"<p>The identifier of the Amazon EC2 security group for the master node.</p>"
         },
         "EmrManagedSlaveSecurityGroup":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the slave nodes.</p>"
+          "documentation":"<p>The identifier of the Amazon EC2 security group for the slave nodes.</p>"
+        },
+        "ServiceAccessSecurityGroup":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>"
         },
         "AdditionalMasterSecurityGroups":{
           "shape":"SecurityGroupsList",
@@ -2018,7 +2026,7 @@
         },
         "JobFlowRole":{
           "shape":"XmlString",
-          "documentation":"<p>An IAM role for the job flow. The EC2 instances of the job flow assume this role. The default role is <code>EMRJobflowDefault</code>. In order to use the default role, you must have already created it using the CLI.</p>"
+          "documentation":"<p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>"
         },
         "ServiceRole":{
           "shape":"XmlString",

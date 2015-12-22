@@ -113,6 +113,13 @@ public class CreateServiceRequestMarshaller implements
                 jsonWriter.key("role").value(createServiceRequest.getRole());
             }
 
+            if (createServiceRequest.getDeploymentConfiguration() != null) {
+                jsonWriter.key("deploymentConfiguration");
+                DeploymentConfigurationJsonMarshaller.getInstance().marshall(
+                        createServiceRequest.getDeploymentConfiguration(),
+                        jsonWriter);
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

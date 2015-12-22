@@ -125,6 +125,13 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements
                             .setEmrManagedSlaveSecurityGroup(StringJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ServiceAccessSecurityGroup",
+                        targetDepth)) {
+                    context.nextToken();
+                    jobFlowInstancesConfig
+                            .setServiceAccessSecurityGroup(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AdditionalMasterSecurityGroups",
                         targetDepth)) {
                     context.nextToken();

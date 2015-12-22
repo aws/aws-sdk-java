@@ -32,7 +32,8 @@ public class LoadBalancer implements Serializable, Cloneable {
     private String loadBalancerName;
     /**
      * <p>
-     * The name of the container to associate with the load balancer.
+     * The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.
      * </p>
      */
     private String containerName;
@@ -86,11 +87,13 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the container to associate with the load balancer.
+     * The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.
      * </p>
      * 
      * @param containerName
-     *        The name of the container to associate with the load balancer.
+     *        The name of the container (as it appears in a container
+     *        definition) to associate with the load balancer.
      */
     public void setContainerName(String containerName) {
         this.containerName = containerName;
@@ -98,10 +101,12 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the container to associate with the load balancer.
+     * The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.
      * </p>
      * 
-     * @return The name of the container to associate with the load balancer.
+     * @return The name of the container (as it appears in a container
+     *         definition) to associate with the load balancer.
      */
     public String getContainerName() {
         return this.containerName;
@@ -109,11 +114,13 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the container to associate with the load balancer.
+     * The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.
      * </p>
      * 
      * @param containerName
-     *        The name of the container to associate with the load balancer.
+     *        The name of the container (as it appears in a container
+     *        definition) to associate with the load balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

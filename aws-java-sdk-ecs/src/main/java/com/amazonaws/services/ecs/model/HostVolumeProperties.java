@@ -28,7 +28,12 @@ public class HostVolumeProperties implements Serializable, Cloneable {
      * <p>
      * The path on the host container instance that is presented to the
      * container. If this parameter is empty, then the Docker daemon has
-     * assigned a host path for you.
+     * assigned a host path for you. If the <code>host</code> parameter contains
+     * a <code>sourcePath</code> file location, then the data volume persists at
+     * the specified location on the host container instance until you delete it
+     * manually. If the <code>sourcePath</code> value does not exist on the host
+     * container instance, the Docker daemon creates it. If the location does
+     * exist, the contents of the source path folder are exported.
      * </p>
      */
     private String sourcePath;
@@ -37,13 +42,24 @@ public class HostVolumeProperties implements Serializable, Cloneable {
      * <p>
      * The path on the host container instance that is presented to the
      * container. If this parameter is empty, then the Docker daemon has
-     * assigned a host path for you.
+     * assigned a host path for you. If the <code>host</code> parameter contains
+     * a <code>sourcePath</code> file location, then the data volume persists at
+     * the specified location on the host container instance until you delete it
+     * manually. If the <code>sourcePath</code> value does not exist on the host
+     * container instance, the Docker daemon creates it. If the location does
+     * exist, the contents of the source path folder are exported.
      * </p>
      * 
      * @param sourcePath
      *        The path on the host container instance that is presented to the
      *        container. If this parameter is empty, then the Docker daemon has
-     *        assigned a host path for you.
+     *        assigned a host path for you. If the <code>host</code> parameter
+     *        contains a <code>sourcePath</code> file location, then the data
+     *        volume persists at the specified location on the host container
+     *        instance until you delete it manually. If the
+     *        <code>sourcePath</code> value does not exist on the host container
+     *        instance, the Docker daemon creates it. If the location does
+     *        exist, the contents of the source path folder are exported.
      */
     public void setSourcePath(String sourcePath) {
         this.sourcePath = sourcePath;
@@ -53,12 +69,23 @@ public class HostVolumeProperties implements Serializable, Cloneable {
      * <p>
      * The path on the host container instance that is presented to the
      * container. If this parameter is empty, then the Docker daemon has
-     * assigned a host path for you.
+     * assigned a host path for you. If the <code>host</code> parameter contains
+     * a <code>sourcePath</code> file location, then the data volume persists at
+     * the specified location on the host container instance until you delete it
+     * manually. If the <code>sourcePath</code> value does not exist on the host
+     * container instance, the Docker daemon creates it. If the location does
+     * exist, the contents of the source path folder are exported.
      * </p>
      * 
      * @return The path on the host container instance that is presented to the
      *         container. If this parameter is empty, then the Docker daemon has
-     *         assigned a host path for you.
+     *         assigned a host path for you. If the <code>host</code> parameter
+     *         contains a <code>sourcePath</code> file location, then the data
+     *         volume persists at the specified location on the host container
+     *         instance until you delete it manually. If the
+     *         <code>sourcePath</code> value does not exist on the host
+     *         container instance, the Docker daemon creates it. If the location
+     *         does exist, the contents of the source path folder are exported.
      */
     public String getSourcePath() {
         return this.sourcePath;
@@ -68,13 +95,24 @@ public class HostVolumeProperties implements Serializable, Cloneable {
      * <p>
      * The path on the host container instance that is presented to the
      * container. If this parameter is empty, then the Docker daemon has
-     * assigned a host path for you.
+     * assigned a host path for you. If the <code>host</code> parameter contains
+     * a <code>sourcePath</code> file location, then the data volume persists at
+     * the specified location on the host container instance until you delete it
+     * manually. If the <code>sourcePath</code> value does not exist on the host
+     * container instance, the Docker daemon creates it. If the location does
+     * exist, the contents of the source path folder are exported.
      * </p>
      * 
      * @param sourcePath
      *        The path on the host container instance that is presented to the
      *        container. If this parameter is empty, then the Docker daemon has
-     *        assigned a host path for you.
+     *        assigned a host path for you. If the <code>host</code> parameter
+     *        contains a <code>sourcePath</code> file location, then the data
+     *        volume persists at the specified location on the host container
+     *        instance until you delete it manually. If the
+     *        <code>sourcePath</code> value does not exist on the host container
+     *        instance, the Docker daemon creates it. If the location does
+     *        exist, the contents of the source path folder are exported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

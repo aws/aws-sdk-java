@@ -36,7 +36,10 @@ public class Service implements Serializable, Cloneable {
     private String serviceArn;
     /**
      * <p>
-     * A user-generated string that you can use to identify your service.
+     * The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be
+     * unique within a cluster, but you can have similarly named services in
+     * multiple clusters within a region or across multiple regions.
      * </p>
      */
     private String serviceName;
@@ -93,6 +96,13 @@ public class Service implements Serializable, Cloneable {
      * </p>
      */
     private String taskDefinition;
+    /**
+     * <p>
+     * Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.
+     * </p>
+     */
+    private DeploymentConfiguration deploymentConfiguration;
     /**
      * <p>
      * The current state of deployments for the service.
@@ -185,11 +195,18 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A user-generated string that you can use to identify your service.
+     * The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be
+     * unique within a cluster, but you can have similarly named services in
+     * multiple clusters within a region or across multiple regions.
      * </p>
      * 
      * @param serviceName
-     *        A user-generated string that you can use to identify your service.
+     *        The name of your service. Up to 255 letters (uppercase and
+     *        lowercase), numbers, hyphens, and underscores are allowed. Service
+     *        names must be unique within a cluster, but you can have similarly
+     *        named services in multiple clusters within a region or across
+     *        multiple regions.
      */
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
@@ -197,11 +214,17 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A user-generated string that you can use to identify your service.
+     * The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be
+     * unique within a cluster, but you can have similarly named services in
+     * multiple clusters within a region or across multiple regions.
      * </p>
      * 
-     * @return A user-generated string that you can use to identify your
-     *         service.
+     * @return The name of your service. Up to 255 letters (uppercase and
+     *         lowercase), numbers, hyphens, and underscores are allowed.
+     *         Service names must be unique within a cluster, but you can have
+     *         similarly named services in multiple clusters within a region or
+     *         across multiple regions.
      */
     public String getServiceName() {
         return this.serviceName;
@@ -209,11 +232,18 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A user-generated string that you can use to identify your service.
+     * The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be
+     * unique within a cluster, but you can have similarly named services in
+     * multiple clusters within a region or across multiple regions.
      * </p>
      * 
      * @param serviceName
-     *        A user-generated string that you can use to identify your service.
+     *        The name of your service. Up to 255 letters (uppercase and
+     *        lowercase), numbers, hyphens, and underscores are allowed. Service
+     *        names must be unique within a cluster, but you can have similarly
+     *        named services in multiple clusters within a region or across
+     *        multiple regions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -606,6 +636,55 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.
+     * </p>
+     * 
+     * @param deploymentConfiguration
+     *        Optional deployment parameters that control how many tasks run
+     *        during the deployment and the ordering of stopping and starting
+     *        tasks.
+     */
+    public void setDeploymentConfiguration(
+            DeploymentConfiguration deploymentConfiguration) {
+        this.deploymentConfiguration = deploymentConfiguration;
+    }
+
+    /**
+     * <p>
+     * Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.
+     * </p>
+     * 
+     * @return Optional deployment parameters that control how many tasks run
+     *         during the deployment and the ordering of stopping and starting
+     *         tasks.
+     */
+    public DeploymentConfiguration getDeploymentConfiguration() {
+        return this.deploymentConfiguration;
+    }
+
+    /**
+     * <p>
+     * Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.
+     * </p>
+     * 
+     * @param deploymentConfiguration
+     *        Optional deployment parameters that control how many tasks run
+     *        during the deployment and the ordering of stopping and starting
+     *        tasks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Service withDeploymentConfiguration(
+            DeploymentConfiguration deploymentConfiguration) {
+        setDeploymentConfiguration(deploymentConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The current state of deployments for the service.
      * </p>
      * 
@@ -840,6 +919,9 @@ public class Service implements Serializable, Cloneable {
             sb.append("PendingCount: " + getPendingCount() + ",");
         if (getTaskDefinition() != null)
             sb.append("TaskDefinition: " + getTaskDefinition() + ",");
+        if (getDeploymentConfiguration() != null)
+            sb.append("DeploymentConfiguration: "
+                    + getDeploymentConfiguration() + ",");
         if (getDeployments() != null)
             sb.append("Deployments: " + getDeployments() + ",");
         if (getRoleArn() != null)
@@ -906,6 +988,13 @@ public class Service implements Serializable, Cloneable {
         if (other.getTaskDefinition() != null
                 && other.getTaskDefinition().equals(this.getTaskDefinition()) == false)
             return false;
+        if (other.getDeploymentConfiguration() == null
+                ^ this.getDeploymentConfiguration() == null)
+            return false;
+        if (other.getDeploymentConfiguration() != null
+                && other.getDeploymentConfiguration().equals(
+                        this.getDeploymentConfiguration()) == false)
+            return false;
         if (other.getDeployments() == null ^ this.getDeployments() == null)
             return false;
         if (other.getDeployments() != null
@@ -958,6 +1047,10 @@ public class Service implements Serializable, Cloneable {
                 * hashCode
                 + ((getTaskDefinition() == null) ? 0 : getTaskDefinition()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDeploymentConfiguration() == null) ? 0
+                        : getDeploymentConfiguration().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getDeployments() == null) ? 0 : getDeployments().hashCode());

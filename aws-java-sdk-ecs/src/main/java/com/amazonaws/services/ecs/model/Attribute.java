@@ -32,7 +32,9 @@ public class Attribute implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The value of the container instance attribute.
+     * The value of the container instance attribute (at this time, the value
+     * here is <code>Null</code>, but this could change in future revisions for
+     * expandability).
      * </p>
      */
     private String value;
@@ -77,11 +79,15 @@ public class Attribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the container instance attribute.
+     * The value of the container instance attribute (at this time, the value
+     * here is <code>Null</code>, but this could change in future revisions for
+     * expandability).
      * </p>
      * 
      * @param value
-     *        The value of the container instance attribute.
+     *        The value of the container instance attribute (at this time, the
+     *        value here is <code>Null</code>, but this could change in future
+     *        revisions for expandability).
      */
     public void setValue(String value) {
         this.value = value;
@@ -89,10 +95,14 @@ public class Attribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the container instance attribute.
+     * The value of the container instance attribute (at this time, the value
+     * here is <code>Null</code>, but this could change in future revisions for
+     * expandability).
      * </p>
      * 
-     * @return The value of the container instance attribute.
+     * @return The value of the container instance attribute (at this time, the
+     *         value here is <code>Null</code>, but this could change in future
+     *         revisions for expandability).
      */
     public String getValue() {
         return this.value;
@@ -100,11 +110,15 @@ public class Attribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the container instance attribute.
+     * The value of the container instance attribute (at this time, the value
+     * here is <code>Null</code>, but this could change in future revisions for
+     * expandability).
      * </p>
      * 
      * @param value
-     *        The value of the container instance attribute.
+     *        The value of the container instance attribute (at this time, the
+     *        value here is <code>Null</code>, but this could change in future
+     *        revisions for expandability).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

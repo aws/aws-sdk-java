@@ -56,6 +56,14 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <ul>
+     * <li>Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).</li>
+     * <li>Images in other repositories on Docker Hub are qualified with an
+     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li>
+     * <li>Images in other online repositories are qualified further by a domain
+     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li>
+     * </ul>
      */
     private String image;
     /**
@@ -169,6 +177,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * After a task reaches the <code>RUNNING</code> status, manual and
+     * automatic host and container port assignments are visible in the
+     * <b>Network Bindings</b> section of a container description of a selected
+     * task in the Amazon ECS console, or the <code>networkBindings</code>
+     * section <a>DescribeTasks</a> responses.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<PortMapping> portMappings;
     /**
@@ -584,6 +601,14 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <ul>
+     * <li>Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).</li>
+     * <li>Images in other repositories on Docker Hub are qualified with an
+     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li>
+     * <li>Images in other online repositories are qualified further by a domain
+     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li>
+     * </ul>
      * 
      * @param image
      *        The image used to start a container. This string is passed
@@ -599,7 +624,16 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.
+     *        run</a>.</p>
+     *        <ul>
+     *        <li>Images in official repositories on Docker Hub use a single
+     *        name (for example, <code>ubuntu</code> or <code>mongo</code>).</li>
+     *        <li>Images in other repositories on Docker Hub are qualified with
+     *        an organization name (for example,
+     *        <code>amazon/amazon-ecs-agent</code>).</li>
+     *        <li>Images in other online repositories are qualified further by a
+     *        domain name (for example, <code>quay.io/assemblyline/ubuntu</code>
+     *        ).</li>
      */
     public void setImage(String image) {
         this.image = image;
@@ -620,6 +654,14 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <ul>
+     * <li>Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).</li>
+     * <li>Images in other repositories on Docker Hub are qualified with an
+     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li>
+     * <li>Images in other online repositories are qualified further by a domain
+     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li>
+     * </ul>
      * 
      * @return The image used to start a container. This string is passed
      *         directly to the Docker daemon. Images in the Docker Hub registry
@@ -634,7 +676,16 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *         >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
-     *         run</a>.
+     *         run</a>.</p>
+     *         <ul>
+     *         <li>Images in official repositories on Docker Hub use a single
+     *         name (for example, <code>ubuntu</code> or <code>mongo</code>).</li>
+     *         <li>Images in other repositories on Docker Hub are qualified with
+     *         an organization name (for example,
+     *         <code>amazon/amazon-ecs-agent</code>).</li>
+     *         <li>Images in other online repositories are qualified further by
+     *         a domain name (for example,
+     *         <code>quay.io/assemblyline/ubuntu</code>).</li>
      */
     public String getImage() {
         return this.image;
@@ -655,6 +706,14 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <ul>
+     * <li>Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).</li>
+     * <li>Images in other repositories on Docker Hub are qualified with an
+     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li>
+     * <li>Images in other online repositories are qualified further by a domain
+     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li>
+     * </ul>
      * 
      * @param image
      *        The image used to start a container. This string is passed
@@ -670,7 +729,16 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.
+     *        run</a>.</p>
+     *        <ul>
+     *        <li>Images in official repositories on Docker Hub use a single
+     *        name (for example, <code>ubuntu</code> or <code>mongo</code>).</li>
+     *        <li>Images in other repositories on Docker Hub are qualified with
+     *        an organization name (for example,
+     *        <code>amazon/amazon-ecs-agent</code>).</li>
+     *        <li>Images in other online repositories are qualified further by a
+     *        domain name (for example, <code>quay.io/assemblyline/ubuntu</code>
+     *        ).</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1385,6 +1453,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * After a task reaches the <code>RUNNING</code> status, manual and
+     * automatic host and container port assignments are visible in the
+     * <b>Network Bindings</b> section of a container description of a selected
+     * task in the Amazon ECS console, or the <code>networkBindings</code>
+     * section <a>DescribeTasks</a> responses.
+     * </p>
+     * </note>
      * 
      * @return The list of port mappings for the container. Port mappings allow
      *         containers to access ports on the host container instance to send
@@ -1395,7 +1472,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *         >Docker Remote API</a> and the <code>--publish</code> option to
      *         <a href="https://docs.docker.com/reference/commandline/run/">
-     *         docker run</a>.
+     *         docker run</a>.</p> <note>
+     *         <p>
+     *         After a task reaches the <code>RUNNING</code> status, manual and
+     *         automatic host and container port assignments are visible in the
+     *         <b>Network Bindings</b> section of a container description of a
+     *         selected task in the Amazon ECS console, or the
+     *         <code>networkBindings</code> section <a>DescribeTasks</a>
+     *         responses.
+     *         </p>
      */
     public java.util.List<PortMapping> getPortMappings() {
         if (portMappings == null) {
@@ -1416,6 +1501,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * After a task reaches the <code>RUNNING</code> status, manual and
+     * automatic host and container port assignments are visible in the
+     * <b>Network Bindings</b> section of a container description of a selected
+     * task in the Amazon ECS console, or the <code>networkBindings</code>
+     * section <a>DescribeTasks</a> responses.
+     * </p>
+     * </note>
      * 
      * @param portMappings
      *        The list of port mappings for the container. Port mappings allow
@@ -1427,7 +1521,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--publish</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.
+     *        run</a>.</p> <note>
+     *        <p>
+     *        After a task reaches the <code>RUNNING</code> status, manual and
+     *        automatic host and container port assignments are visible in the
+     *        <b>Network Bindings</b> section of a container description of a
+     *        selected task in the Amazon ECS console, or the
+     *        <code>networkBindings</code> section <a>DescribeTasks</a>
+     *        responses.
+     *        </p>
      */
     public void setPortMappings(java.util.Collection<PortMapping> portMappings) {
         if (portMappings == null) {
@@ -1451,6 +1553,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * After a task reaches the <code>RUNNING</code> status, manual and
+     * automatic host and container port assignments are visible in the
+     * <b>Network Bindings</b> section of a container description of a selected
+     * task in the Amazon ECS console, or the <code>networkBindings</code>
+     * section <a>DescribeTasks</a> responses.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPortMappings(java.util.Collection)} or
@@ -1468,7 +1579,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--publish</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.
+     *        run</a>.</p> <note>
+     *        <p>
+     *        After a task reaches the <code>RUNNING</code> status, manual and
+     *        automatic host and container port assignments are visible in the
+     *        <b>Network Bindings</b> section of a container description of a
+     *        selected task in the Amazon ECS console, or the
+     *        <code>networkBindings</code> section <a>DescribeTasks</a>
+     *        responses.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1495,6 +1614,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Docker Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * After a task reaches the <code>RUNNING</code> status, manual and
+     * automatic host and container port assignments are visible in the
+     * <b>Network Bindings</b> section of a container description of a selected
+     * task in the Amazon ECS console, or the <code>networkBindings</code>
+     * section <a>DescribeTasks</a> responses.
+     * </p>
+     * </note>
      * 
      * @param portMappings
      *        The list of port mappings for the container. Port mappings allow
@@ -1506,7 +1634,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--publish</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.
+     *        run</a>.</p> <note>
+     *        <p>
+     *        After a task reaches the <code>RUNNING</code> status, manual and
+     *        automatic host and container port assignments are visible in the
+     *        <b>Network Bindings</b> section of a container description of a
+     *        selected task in the Amazon ECS console, or the
+     *        <code>networkBindings</code> section <a>DescribeTasks</a>
+     *        responses.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

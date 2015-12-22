@@ -42,8 +42,8 @@ public class InternalConfig {
     //@formatter:off
     private static final ObjectMapper MAPPER = new ObjectMapper()
             .disable(MapperFeature.CAN_OVERRIDE_ACCESS_MODIFIERS)
-            .enable(JsonParser.Feature.ALLOW_COMMENTS)
-            .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+            .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+            .configure(JsonParser.Feature.ALLOW_COMMENTS, true);
     //@formatter:on
 
     private static final InternalLogApi log = InternalLogFactory.getLog(InternalConfig.class);

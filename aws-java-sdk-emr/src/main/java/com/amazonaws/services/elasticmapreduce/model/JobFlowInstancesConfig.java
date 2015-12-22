@@ -107,18 +107,23 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
     private String ec2SubnetId;
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group (managed by Amazon
-     * ElasticMapReduce) for the master node.
+     * The identifier of the Amazon EC2 security group for the master node.
      * </p>
      */
     private String emrManagedMasterSecurityGroup;
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group (managed by Amazon
-     * ElasticMapReduce) for the slave nodes.
+     * The identifier of the Amazon EC2 security group for the slave nodes.
      * </p>
      */
     private String emrManagedSlaveSecurityGroup;
+    /**
+     * <p>
+     * The identifier of the Amazon EC2 security group for the Amazon EMR
+     * service to access clusters in VPC private subnets.
+     * </p>
+     */
+    private String serviceAccessSecurityGroup;
     /**
      * <p>
      * A list of additional Amazon EC2 security group IDs for the master node.
@@ -690,13 +695,12 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group (managed by Amazon
-     * ElasticMapReduce) for the master node.
+     * The identifier of the Amazon EC2 security group for the master node.
      * </p>
      * 
      * @param emrManagedMasterSecurityGroup
-     *        The identifier of the Amazon EC2 security group (managed by Amazon
-     *        ElasticMapReduce) for the master node.
+     *        The identifier of the Amazon EC2 security group for the master
+     *        node.
      */
     public void setEmrManagedMasterSecurityGroup(
             String emrManagedMasterSecurityGroup) {
@@ -705,12 +709,11 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group (managed by Amazon
-     * ElasticMapReduce) for the master node.
+     * The identifier of the Amazon EC2 security group for the master node.
      * </p>
      * 
-     * @return The identifier of the Amazon EC2 security group (managed by
-     *         Amazon ElasticMapReduce) for the master node.
+     * @return The identifier of the Amazon EC2 security group for the master
+     *         node.
      */
     public String getEmrManagedMasterSecurityGroup() {
         return this.emrManagedMasterSecurityGroup;
@@ -718,13 +721,12 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group (managed by Amazon
-     * ElasticMapReduce) for the master node.
+     * The identifier of the Amazon EC2 security group for the master node.
      * </p>
      * 
      * @param emrManagedMasterSecurityGroup
-     *        The identifier of the Amazon EC2 security group (managed by Amazon
-     *        ElasticMapReduce) for the master node.
+     *        The identifier of the Amazon EC2 security group for the master
+     *        node.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -736,13 +738,12 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group (managed by Amazon
-     * ElasticMapReduce) for the slave nodes.
+     * The identifier of the Amazon EC2 security group for the slave nodes.
      * </p>
      * 
      * @param emrManagedSlaveSecurityGroup
-     *        The identifier of the Amazon EC2 security group (managed by Amazon
-     *        ElasticMapReduce) for the slave nodes.
+     *        The identifier of the Amazon EC2 security group for the slave
+     *        nodes.
      */
     public void setEmrManagedSlaveSecurityGroup(
             String emrManagedSlaveSecurityGroup) {
@@ -751,12 +752,11 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group (managed by Amazon
-     * ElasticMapReduce) for the slave nodes.
+     * The identifier of the Amazon EC2 security group for the slave nodes.
      * </p>
      * 
-     * @return The identifier of the Amazon EC2 security group (managed by
-     *         Amazon ElasticMapReduce) for the slave nodes.
+     * @return The identifier of the Amazon EC2 security group for the slave
+     *         nodes.
      */
     public String getEmrManagedSlaveSecurityGroup() {
         return this.emrManagedSlaveSecurityGroup;
@@ -764,19 +764,63 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group (managed by Amazon
-     * ElasticMapReduce) for the slave nodes.
+     * The identifier of the Amazon EC2 security group for the slave nodes.
      * </p>
      * 
      * @param emrManagedSlaveSecurityGroup
-     *        The identifier of the Amazon EC2 security group (managed by Amazon
-     *        ElasticMapReduce) for the slave nodes.
+     *        The identifier of the Amazon EC2 security group for the slave
+     *        nodes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
     public JobFlowInstancesConfig withEmrManagedSlaveSecurityGroup(
             String emrManagedSlaveSecurityGroup) {
         setEmrManagedSlaveSecurityGroup(emrManagedSlaveSecurityGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon EC2 security group for the Amazon EMR
+     * service to access clusters in VPC private subnets.
+     * </p>
+     * 
+     * @param serviceAccessSecurityGroup
+     *        The identifier of the Amazon EC2 security group for the Amazon EMR
+     *        service to access clusters in VPC private subnets.
+     */
+    public void setServiceAccessSecurityGroup(String serviceAccessSecurityGroup) {
+        this.serviceAccessSecurityGroup = serviceAccessSecurityGroup;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon EC2 security group for the Amazon EMR
+     * service to access clusters in VPC private subnets.
+     * </p>
+     * 
+     * @return The identifier of the Amazon EC2 security group for the Amazon
+     *         EMR service to access clusters in VPC private subnets.
+     */
+    public String getServiceAccessSecurityGroup() {
+        return this.serviceAccessSecurityGroup;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon EC2 security group for the Amazon EMR
+     * service to access clusters in VPC private subnets.
+     * </p>
+     * 
+     * @param serviceAccessSecurityGroup
+     *        The identifier of the Amazon EC2 security group for the Amazon EMR
+     *        service to access clusters in VPC private subnets.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public JobFlowInstancesConfig withServiceAccessSecurityGroup(
+            String serviceAccessSecurityGroup) {
+        setServiceAccessSecurityGroup(serviceAccessSecurityGroup);
         return this;
     }
 
@@ -983,6 +1027,9 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
         if (getEmrManagedSlaveSecurityGroup() != null)
             sb.append("EmrManagedSlaveSecurityGroup: "
                     + getEmrManagedSlaveSecurityGroup() + ",");
+        if (getServiceAccessSecurityGroup() != null)
+            sb.append("ServiceAccessSecurityGroup: "
+                    + getServiceAccessSecurityGroup() + ",");
         if (getAdditionalMasterSecurityGroups() != null)
             sb.append("AdditionalMasterSecurityGroups: "
                     + getAdditionalMasterSecurityGroups() + ",");
@@ -1076,6 +1123,13 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
                 && other.getEmrManagedSlaveSecurityGroup().equals(
                         this.getEmrManagedSlaveSecurityGroup()) == false)
             return false;
+        if (other.getServiceAccessSecurityGroup() == null
+                ^ this.getServiceAccessSecurityGroup() == null)
+            return false;
+        if (other.getServiceAccessSecurityGroup() != null
+                && other.getServiceAccessSecurityGroup().equals(
+                        this.getServiceAccessSecurityGroup()) == false)
+            return false;
         if (other.getAdditionalMasterSecurityGroups() == null
                 ^ this.getAdditionalMasterSecurityGroups() == null)
             return false;
@@ -1141,6 +1195,10 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
                 * hashCode
                 + ((getEmrManagedSlaveSecurityGroup() == null) ? 0
                         : getEmrManagedSlaveSecurityGroup().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getServiceAccessSecurityGroup() == null) ? 0
+                        : getServiceAccessSecurityGroup().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getAdditionalMasterSecurityGroups() == null) ? 0

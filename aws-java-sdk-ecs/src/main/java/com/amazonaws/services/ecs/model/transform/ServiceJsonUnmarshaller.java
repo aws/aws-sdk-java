@@ -95,6 +95,12 @@ public class ServiceJsonUnmarshaller implements
                     service.setTaskDefinition(StringJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("deploymentConfiguration",
+                        targetDepth)) {
+                    context.nextToken();
+                    service.setDeploymentConfiguration(DeploymentConfigurationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("deployments", targetDepth)) {
                     context.nextToken();
                     service.setDeployments(new ListUnmarshaller<Deployment>(

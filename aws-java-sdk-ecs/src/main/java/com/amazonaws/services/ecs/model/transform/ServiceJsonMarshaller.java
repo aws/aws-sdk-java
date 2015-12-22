@@ -98,6 +98,12 @@ public class ServiceJsonMarshaller {
                         service.getTaskDefinition());
             }
 
+            if (service.getDeploymentConfiguration() != null) {
+                jsonWriter.key("deploymentConfiguration");
+                DeploymentConfigurationJsonMarshaller.getInstance().marshall(
+                        service.getDeploymentConfiguration(), jsonWriter);
+            }
+
             com.amazonaws.internal.SdkInternalList<Deployment> deploymentsList = (com.amazonaws.internal.SdkInternalList<Deployment>) service
                     .getDeployments();
             if (!deploymentsList.isEmpty()
