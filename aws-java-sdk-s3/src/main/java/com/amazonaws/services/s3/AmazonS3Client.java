@@ -237,6 +237,7 @@ import com.amazonaws.services.s3.model.transform.RequestXmlFactory;
 import com.amazonaws.services.s3.model.transform.Unmarshallers;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
+import com.amazonaws.services.s3.request.S3HandlerContextKeys;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -3567,6 +3568,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     protected <X extends AmazonWebServiceRequest> Request<X> createRequest(String bucketName, String key, X originalRequest, HttpMethodName httpMethod, URI endpoint) {
         Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_DISPLAY_NAME);
         request.setHttpMethod(httpMethod);
+        request.addHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED,
+                Boolean.valueOf(clientOptions.isChunkedEncodingDisabled()));
         resolveRequestEndpoint(request, bucketName, key, endpoint);
         return request;
     }
@@ -3609,8 +3612,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         checkHttps(originalRequest);
         ExecutionContext executionContext = createExecutionContext(originalRequest);
         // Retry V4 auth errors
-        executionContext.setAuthErrorRetryStrategy(new S3V4AuthErrorRetryStrategy(buildDefaultEndpointResolver(
-                getProtocol(request), bucket, key)));
+        executionContext.setAuthErrorRetryStrategy(
+                new S3V4AuthErrorRetryStrategy(buildDefaultEndpointResolver(getProtocol(request), bucket, key)));
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         // Binds the request metrics to the current request.
         request.setAWSRequestMetrics(awsRequestMetrics);
