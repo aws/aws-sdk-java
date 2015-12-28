@@ -49,8 +49,7 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
     private final SdkPredicate<AmazonServiceException> sigV4RetryPredicate;
 
     public S3V4AuthErrorRetryStrategy(S3RequestEndpointResolver endpointResolver) {
-        this.endpointResolver = endpointResolver;
-        this.sigV4RetryPredicate = new IsSigV4RetryablePredicate();
+        this(endpointResolver, new IsSigV4RetryablePredicate());
     }
 
     /**
@@ -92,17 +91,18 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
     /**
      * If the response doesn't have the x-amz-region header we have to resort to sending a request
      * to s3-external-1
-     * 
+     *
      * @return
      */
     private AuthRetryParameters redirectToS3External() {
         AWSS3V4Signer v4Signer = buildSigV4Signer(Regions.US_EAST_1.getName());
         try {
-            URI bucketEndpoint = new URI(String.format("https://%s.s3-external-1.amazonaws.com", endpointResolver.getBucketName()));
+            URI bucketEndpoint = new URI(
+                    String.format("https://%s.s3-external-1.amazonaws.com", endpointResolver.getBucketName()));
             return buildRetryParams(v4Signer, bucketEndpoint);
         } catch (URISyntaxException e) {
-            throw new AmazonClientException("Failed to re-send the request to \"s3-external-1.amazonaws.com\". "
-                    + V4_REGION_WARNING, e);
+            throw new AmazonClientException(
+                    "Failed to re-send the request to \"s3-external-1.amazonaws.com\". " + V4_REGION_WARNING, e);
         }
     }
 

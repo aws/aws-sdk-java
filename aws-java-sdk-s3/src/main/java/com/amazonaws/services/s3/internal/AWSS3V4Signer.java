@@ -21,6 +21,7 @@ import java.io.InputStream;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ReadLimitInfo;
+import com.amazonaws.Request;
 import com.amazonaws.ResetException;
 import com.amazonaws.SignableRequest;
 import com.amazonaws.auth.AWS4Signer;
@@ -29,6 +30,7 @@ import com.amazonaws.auth.internal.AWS4SignerRequestParams;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
+import com.amazonaws.services.s3.request.S3HandlerContextKeys;
 import com.amazonaws.util.BinaryUtils;
 
 /**
@@ -78,8 +80,7 @@ public class AWSS3V4Signer extends AWS4Signer {
         // notified to pick up the header value returned by this method.
         request.addHeader(X_AMZ_CONTENT_SHA256, "required");
         if (useChunkEncoding(request)) {
-            final String contentLength =
-                request.getHeaders().get(Headers.CONTENT_LENGTH);
+            final String contentLength = request.getHeaders().get(Headers.CONTENT_LENGTH);
             final long originalContentLength;
             if (contentLength != null) {
                 originalContentLength = Long.parseLong(contentLength);
@@ -117,14 +118,31 @@ public class AWSS3V4Signer extends AWS4Signer {
     /**
      * Determine whether to use aws-chunked for signing
      */
-    private static boolean useChunkEncoding(SignableRequest<?> request) {
-        // Whether to use chunked encoding for signing the request
-        boolean chunkedEncodingEnabled = false;
+    private boolean useChunkEncoding(SignableRequest<?> request) {
+        // If chunked encoding is explicitly disabled through client options
+        // return right here.
+        if (isChunkedEncodingDisabled(request)) {
+            return false;
+        }
         if (request.getOriginalRequestObject() instanceof PutObjectRequest
                 || request.getOriginalRequestObject() instanceof UploadPartRequest) {
-            chunkedEncodingEnabled = true;
+            return true;
         }
-        return chunkedEncodingEnabled;
+        return false;
+    }
+
+    /**
+     * @return True if chunked encoding has been explicitly disabled per the request. False
+     *         otherwise.
+     */
+    private boolean isChunkedEncodingDisabled(SignableRequest<?> signableRequest) {
+        if (signableRequest instanceof Request) {
+            Request<?> request = (Request<?>) signableRequest;
+            Boolean isChunkedEncodingDisabled = request
+                    .getHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED);
+            return isChunkedEncodingDisabled != null && isChunkedEncodingDisabled == true;
+        }
+        return false;
     }
 
     /**
